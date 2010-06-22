@@ -9,8 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.SupplyActivityOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SupplyImpl;
@@ -88,6 +91,24 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 */
 	public boolean validateSupplyActivityFulfillmentInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return SupplyActivityOperations.validateSupplyActivityFulfillmentInstruction(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationStatusObservation getMedicationStatusObservation() {
+		return SupplyActivityOperations.getMedicationStatusObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<FulfillmentInstruction> getFulfillmentInstructions() {
+		return SupplyActivityOperations.getFulfillmentInstructions(this);
 	}
 
 	/**

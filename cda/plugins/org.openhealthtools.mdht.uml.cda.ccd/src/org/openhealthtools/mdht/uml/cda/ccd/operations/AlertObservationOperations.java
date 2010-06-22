@@ -6,17 +6,24 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
 
@@ -37,6 +44,8 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationAlertStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Alert Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Reaction Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#getAlertStatusObservation() <em>Get Alert Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#getReactionObservations() <em>Get Reaction Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -581,6 +590,96 @@ public class AlertObservationOperations extends ObservationOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getAlertStatusObservation(AlertObservation) <em>Get Alert Status Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlertStatusObservation(AlertObservation)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_ALERT_STATUS_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::AlertStatusObservation))->asSequence()->first().oclAsType(ccd::AlertStatusObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getAlertStatusObservation(AlertObservation) <em>Get Alert Status Observation</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlertStatusObservation(AlertObservation)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_ALERT_STATUS_OBSERVATION__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::AlertStatusObservation))->asSequence()->first().oclAsType(ccd::AlertStatusObservation)
+	 * @param alertObservation The receiving '<em><b>Alert Observation</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  AlertStatusObservation getAlertStatusObservation(AlertObservation alertObservation) {
+		if (GET_ALERT_STATUS_OBSERVATION__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.ALERT_OBSERVATION, CCDPackage.Literals.ALERT_OBSERVATION.getEAllOperations().get(42));
+			try {
+				GET_ALERT_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_ALERT_STATUS_OBSERVATION__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_ALERT_STATUS_OBSERVATION__EOCL_QRY);
+		return (AlertStatusObservation) query.evaluate(alertObservation);
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getReactionObservations(AlertObservation) <em>Get Reaction Observations</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReactionObservations(AlertObservation)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_REACTION_OBSERVATIONS__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ReactionObservation)).oclAsType(ccd::ReactionObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getReactionObservations(AlertObservation) <em>Get Reaction Observations</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReactionObservations(AlertObservation)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_REACTION_OBSERVATIONS__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ReactionObservation)).oclAsType(ccd::ReactionObservation)
+	 * @param alertObservation The receiving '<em><b>Alert Observation</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EList<ReactionObservation> getReactionObservations(AlertObservation alertObservation) {
+		if (GET_REACTION_OBSERVATIONS__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.ALERT_OBSERVATION, CCDPackage.Literals.ALERT_OBSERVATION.getEAllOperations().get(43));
+			try {
+				GET_REACTION_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_REACTION_OBSERVATIONS__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_REACTION_OBSERVATIONS__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<ReactionObservation> result = (Collection<ReactionObservation>) query.evaluate(alertObservation);
+		return new BasicEList.UnmodifiableEList<ReactionObservation>(result.size(), result.toArray());
 	}
 
 } // AlertObservationOperations

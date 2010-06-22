@@ -6,16 +6,23 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.operations.SupplyOperations;
@@ -33,6 +40,8 @@ import org.openhealthtools.mdht.uml.cda.operations.SupplyOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Medication Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityFulfillmentInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Fulfillment Instruction</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getMedicationStatusObservation() <em>Get Medication Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getFulfillmentInstructions() <em>Get Fulfillment Instructions</em>}</li>
  * </ul>
  * </p>
  *
@@ -331,6 +340,96 @@ public class SupplyActivityOperations extends SupplyOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getMedicationStatusObservation(SupplyActivity) <em>Get Medication Status Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMedicationStatusObservation(SupplyActivity)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_MEDICATION_STATUS_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::MedicationStatusObservation))->asSequence()->first().oclAsType(ccd::MedicationStatusObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getMedicationStatusObservation(SupplyActivity) <em>Get Medication Status Observation</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMedicationStatusObservation(SupplyActivity)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_MEDICATION_STATUS_OBSERVATION__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::MedicationStatusObservation))->asSequence()->first().oclAsType(ccd::MedicationStatusObservation)
+	 * @param supplyActivity The receiving '<em><b>Supply Activity</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  MedicationStatusObservation getMedicationStatusObservation(SupplyActivity supplyActivity) {
+		if (GET_MEDICATION_STATUS_OBSERVATION__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.SUPPLY_ACTIVITY, CCDPackage.Literals.SUPPLY_ACTIVITY.getEAllOperations().get(38));
+			try {
+				GET_MEDICATION_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_MEDICATION_STATUS_OBSERVATION__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_MEDICATION_STATUS_OBSERVATION__EOCL_QRY);
+		return (MedicationStatusObservation) query.evaluate(supplyActivity);
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getFulfillmentInstructions(SupplyActivity) <em>Get Fulfillment Instructions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFulfillmentInstructions(SupplyActivity)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_FULFILLMENT_INSTRUCTIONS__EOCL_EXP = "self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ccd::FulfillmentInstruction)).oclAsType(ccd::FulfillmentInstruction)";
+
+	/**
+	 * The cached OCL query for the '{@link #getFulfillmentInstructions(SupplyActivity) <em>Get Fulfillment Instructions</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFulfillmentInstructions(SupplyActivity)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_FULFILLMENT_INSTRUCTIONS__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ccd::FulfillmentInstruction)).oclAsType(ccd::FulfillmentInstruction)
+	 * @param supplyActivity The receiving '<em><b>Supply Activity</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EList<FulfillmentInstruction> getFulfillmentInstructions(SupplyActivity supplyActivity) {
+		if (GET_FULFILLMENT_INSTRUCTIONS__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.SUPPLY_ACTIVITY, CCDPackage.Literals.SUPPLY_ACTIVITY.getEAllOperations().get(39));
+			try {
+				GET_FULFILLMENT_INSTRUCTIONS__EOCL_QRY = helper.createQuery(GET_FULFILLMENT_INSTRUCTIONS__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_FULFILLMENT_INSTRUCTIONS__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<FulfillmentInstruction> result = (Collection<FulfillmentInstruction>) query.evaluate(supplyActivity);
+		return new BasicEList.UnmodifiableEList<FulfillmentInstruction>(result.size(), result.toArray());
 	}
 
 } // SupplyActivityOperations

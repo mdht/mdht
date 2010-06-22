@@ -10,8 +10,24 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -286,6 +302,150 @@ public class ContinuityOfCareDocumentImpl extends ClinicalDocumentImpl implement
 	 */
 	public boolean validateContinuityOfCareDocumentPurposeSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentPurposeSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemSection getProblemSection() {
+		return ContinuityOfCareDocumentOperations.getProblemSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FamilyHistorySection getFamilyHistorySection() {
+		return ContinuityOfCareDocumentOperations.getFamilyHistorySection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SocialHistorySection getSocialHistorySection() {
+		return ContinuityOfCareDocumentOperations.getSocialHistorySection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlertsSection getAlertsSection() {
+		return ContinuityOfCareDocumentOperations.getAlertsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationsSection getMedicationsSection() {
+		return ContinuityOfCareDocumentOperations.getMedicationsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResultsSection getResultsSection() {
+		return ContinuityOfCareDocumentOperations.getResultsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProceduresSection getProceduresSection() {
+		return ContinuityOfCareDocumentOperations.getProceduresSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncountersSection getEncountersSection() {
+		return ContinuityOfCareDocumentOperations.getEncountersSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareSection getPlanOfCareSection() {
+		return ContinuityOfCareDocumentOperations.getPlanOfCareSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImmunizationsSection getImmunizationsSection() {
+		return ContinuityOfCareDocumentOperations.getImmunizationsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsSection getVitalSignsSection() {
+		return ContinuityOfCareDocumentOperations.getVitalSignsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicalEquipmentSection getMedicalEquipmentSection() {
+		return ContinuityOfCareDocumentOperations.getMedicalEquipmentSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionalStatusSection getFunctionalStatusSection() {
+		return ContinuityOfCareDocumentOperations.getFunctionalStatusSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdvanceDirectivesSection getAdvanceDirectivesSection() {
+		return ContinuityOfCareDocumentOperations.getAdvanceDirectivesSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PayersSection getPayersSection() {
+		return ContinuityOfCareDocumentOperations.getPayersSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PurposeSection getPurposeSection() {
+		return ContinuityOfCareDocumentOperations.getPurposeSection(this);
 	}
 
 	/**

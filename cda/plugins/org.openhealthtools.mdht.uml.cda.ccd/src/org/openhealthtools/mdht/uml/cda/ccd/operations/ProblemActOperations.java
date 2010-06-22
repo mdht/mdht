@@ -11,11 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
@@ -40,6 +43,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActCodeNullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Code Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActEpisodeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Episode Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#getEpisodeObservation() <em>Get Episode Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -743,6 +747,50 @@ public class ProblemActOperations extends ActOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getEpisodeObservation(ProblemAct) <em>Get Episode Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEpisodeObservation(ProblemAct)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_EPISODE_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::EpisodeObservation))->asSequence()->first().oclAsType(ccd::EpisodeObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getEpisodeObservation(ProblemAct) <em>Get Episode Observation</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEpisodeObservation(ProblemAct)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_EPISODE_OBSERVATION__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::EpisodeObservation))->asSequence()->first().oclAsType(ccd::EpisodeObservation)
+	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EpisodeObservation getEpisodeObservation(ProblemAct problemAct) {
+		if (GET_EPISODE_OBSERVATION__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.PROBLEM_ACT, CCDPackage.Literals.PROBLEM_ACT.getEAllOperations().get(45));
+			try {
+				GET_EPISODE_OBSERVATION__EOCL_QRY = helper.createQuery(GET_EPISODE_OBSERVATION__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_EPISODE_OBSERVATION__EOCL_QRY);
+		return (EpisodeObservation) query.evaluate(problemAct);
 	}
 
 } // ProblemActOperations

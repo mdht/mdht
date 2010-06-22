@@ -9,8 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PurposeSectionOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
@@ -88,6 +90,15 @@ public class PurposeSectionImpl extends SectionImpl implements PurposeSection {
 	 */
 	public boolean validatePurposeSectionPurposeActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return PurposeSectionOperations.validatePurposeSectionPurposeActivity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PurposeActivity> getPurposeActivities() {
+		return PurposeSectionOperations.getPurposeActivities(this);
 	}
 
 	/**

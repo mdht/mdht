@@ -9,9 +9,13 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationActivityOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -106,6 +110,33 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 */
 	public boolean validateMedicationActivityPatientInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationActivityOperations.validateMedicationActivityPatientInstruction(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationSeriesNumberObservation getMedicationSeriesNumberObservation() {
+		return MedicationActivityOperations.getMedicationSeriesNumberObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationStatusObservation getMedicationStatusObservation() {
+		return MedicationActivityOperations.getMedicationStatusObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PatientInstruction> getPatientInstructions() {
+		return MedicationActivityOperations.getPatientInstructions(this);
 	}
 
 	/**

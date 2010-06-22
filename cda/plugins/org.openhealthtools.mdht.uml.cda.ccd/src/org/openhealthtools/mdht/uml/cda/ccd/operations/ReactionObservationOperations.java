@@ -11,12 +11,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
 
@@ -33,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationSeverityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Severity Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#getSeverityObservation() <em>Get Severity Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -335,6 +339,50 @@ public class ReactionObservationOperations extends ObservationOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getSeverityObservation(ReactionObservation) <em>Get Severity Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeverityObservation(ReactionObservation)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_SEVERITY_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::SeverityObservation))->asSequence()->first().oclAsType(ccd::SeverityObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getSeverityObservation(ReactionObservation) <em>Get Severity Observation</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeverityObservation(ReactionObservation)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_SEVERITY_OBSERVATION__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::SeverityObservation))->asSequence()->first().oclAsType(ccd::SeverityObservation)
+	 * @param reactionObservation The receiving '<em><b>Reaction Observation</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  SeverityObservation getSeverityObservation(ReactionObservation reactionObservation) {
+		if (GET_SEVERITY_OBSERVATION__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.REACTION_OBSERVATION, CCDPackage.Literals.REACTION_OBSERVATION.getEAllOperations().get(38));
+			try {
+				GET_SEVERITY_OBSERVATION__EOCL_QRY = helper.createQuery(GET_SEVERITY_OBSERVATION__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_SEVERITY_OBSERVATION__EOCL_QRY);
+		return (SeverityObservation) query.evaluate(reactionObservation);
 	}
 
 } // ReactionObservationOperations

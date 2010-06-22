@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ReactionObservationOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -88,6 +89,15 @@ public class ReactionObservationImpl extends ObservationImpl implements Reaction
 	 */
 	public boolean validateReactionObservationSeverityObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ReactionObservationOperations.validateReactionObservationSeverityObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SeverityObservation getSeverityObservation() {
+		return ReactionObservationOperations.getSeverityObservation(this);
 	}
 
 	/**

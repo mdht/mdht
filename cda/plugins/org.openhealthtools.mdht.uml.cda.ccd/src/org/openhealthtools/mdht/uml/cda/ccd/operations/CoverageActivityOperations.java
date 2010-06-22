@@ -6,17 +6,23 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
 
@@ -28,6 +34,8 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivityInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Information Source</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivitySequenceNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Sequence Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Mood Code</em>}</li>
@@ -35,6 +43,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#validateCoverageActivityPolicyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Policy Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity#getPolicyActivities() <em>Get Policy Activities</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +57,132 @@ public class CoverageActivityOperations extends ActOperations {
 	 */
 	protected CoverageActivityOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateCoverageActivityInformationSource(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Information Source</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCoverageActivityInformationSource(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_COVERAGE_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.informant->isEmpty() "+
+"  or not self.getSection().informant->isEmpty()"+
+"  or not self.getClinicalDocument().informant->isEmpty()"+
+"  or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"+
+"  or (self.entryRelationship->exists(rel : cda::EntryRelationship | "+
+"   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR"+
+"   and rel.observation.code.code = '48766-0'))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateCoverageActivityInformationSource(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Information Source</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCoverageActivityInformationSource(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_COVERAGE_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.informant->isEmpty() 
+	 *   or not self.getSection().informant->isEmpty()
+	 *   or not self.getClinicalDocument().informant->isEmpty()
+	 *   or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+	 *   or (self.entryRelationship->exists(rel : cda::EntryRelationship | 
+	 *    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+	 *    and rel.observation.code.code = '48766-0'))
+	 * @param coverageActivity The receiving '<em><b>Coverage Activity</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateCoverageActivityInformationSource(CoverageActivity coverageActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_COVERAGE_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.COVERAGE_ACTIVITY);
+			try {
+				VALIDATE_COVERAGE_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_COVERAGE_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_COVERAGE_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(coverageActivity)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_INFORMATION_SOURCE,
+						 CCDPlugin.INSTANCE.getString("CoverageActivityInformationSource"),
+						 new Object [] { coverageActivity }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateCoverageActivitySequenceNumber(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Sequence Number</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCoverageActivitySequenceNumber(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_COVERAGE_ACTIVITY_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(rel : cda::EntryRelationship | not rel.sequenceNumber.oclIsUndefined())";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateCoverageActivitySequenceNumber(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Sequence Number</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCoverageActivitySequenceNumber(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_COVERAGE_ACTIVITY_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->exists(rel : cda::EntryRelationship | not rel.sequenceNumber.oclIsUndefined())
+	 * @param coverageActivity The receiving '<em><b>Coverage Activity</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateCoverageActivitySequenceNumber(CoverageActivity coverageActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_COVERAGE_ACTIVITY_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.COVERAGE_ACTIVITY);
+			try {
+				VALIDATE_COVERAGE_ACTIVITY_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_COVERAGE_ACTIVITY_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_COVERAGE_ACTIVITY_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(coverageActivity)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_SEQUENCE_NUMBER,
+						 CCDPlugin.INSTANCE.getString("CoverageActivitySequenceNumber"),
+						 new Object [] { coverageActivity }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -408,7 +543,7 @@ public class CoverageActivityOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_COVERAGE_ACTIVITY_POLICY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))";
+	protected static final String VALIDATE_COVERAGE_ACTIVITY_POLICY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PolicyActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::COMP)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateCoverageActivityPolicyActivity(CoverageActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Policy Activity</em>}' invariant operation.
@@ -424,7 +559,7 @@ public class CoverageActivityOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PolicyActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::COMP)
 	 * @param coverageActivity The receiving '<em><b>Coverage Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -455,6 +590,52 @@ public class CoverageActivityOperations extends ActOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getPolicyActivities(CoverageActivity) <em>Get Policy Activities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPolicyActivities(CoverageActivity)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_POLICY_ACTIVITIES__EOCL_EXP = "self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ccd::PolicyActivity)).oclAsType(ccd::PolicyActivity)";
+
+	/**
+	 * The cached OCL query for the '{@link #getPolicyActivities(CoverageActivity) <em>Get Policy Activities</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPolicyActivities(CoverageActivity)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_POLICY_ACTIVITIES__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ccd::PolicyActivity)).oclAsType(ccd::PolicyActivity)
+	 * @param coverageActivity The receiving '<em><b>Coverage Activity</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EList<PolicyActivity> getPolicyActivities(CoverageActivity coverageActivity) {
+		if (GET_POLICY_ACTIVITIES__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.COVERAGE_ACTIVITY, CCDPackage.Literals.COVERAGE_ACTIVITY.getEAllOperations().get(42));
+			try {
+				GET_POLICY_ACTIVITIES__EOCL_QRY = helper.createQuery(GET_POLICY_ACTIVITIES__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_POLICY_ACTIVITIES__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<PolicyActivity> result = (Collection<PolicyActivity>) query.evaluate(coverageActivity);
+		return new BasicEList.UnmodifiableEList<PolicyActivity>(result.size(), result.toArray());
 	}
 
 } // CoverageActivityOperations

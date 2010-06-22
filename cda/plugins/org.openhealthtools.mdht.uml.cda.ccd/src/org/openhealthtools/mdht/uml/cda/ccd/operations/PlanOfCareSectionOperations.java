@@ -12,12 +12,20 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
@@ -41,6 +49,12 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Plan Of Care Activity Substance Administration</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionPlanOfCareActivitySupply(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Plan Of Care Activity Supply</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#getPlanOfCareActivities() <em>Get Plan Of Care Activities</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#getPlanOfCareActivityAct() <em>Get Plan Of Care Activity Act</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#getPlanOfCareActivityEncounter() <em>Get Plan Of Care Activity Encounter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#getPlanOfCareActivityObservation() <em>Get Plan Of Care Activity Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#getPlanOfCareActivityProcedure() <em>Get Plan Of Care Activity Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#getPlanOfCareActivitySubstanceAdministration() <em>Get Plan Of Care Activity Substance Administration</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#getPlanOfCareActivitySupply() <em>Get Plan Of Care Activity Supply</em>}</li>
  * </ul>
  * </p>
  *
@@ -639,6 +653,270 @@ public class PlanOfCareSectionOperations extends SectionOperations {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getPlanOfCareActivityAct(PlanOfCareSection) <em>Get Plan Of Care Activity Act</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityAct(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PLAN_OF_CARE_ACTIVITY_ACT__EOCL_EXP = "self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ccd::PlanOfCareActivityAct))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityAct)";
+
+	/**
+	 * The cached OCL query for the '{@link #getPlanOfCareActivityAct(PlanOfCareSection) <em>Get Plan Of Care Activity Act</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityAct(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PLAN_OF_CARE_ACTIVITY_ACT__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ccd::PlanOfCareActivityAct))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityAct)
+	 * @param planOfCareSection The receiving '<em><b>Plan Of Care Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  PlanOfCareActivityAct getPlanOfCareActivityAct(PlanOfCareSection planOfCareSection) {
+		if (GET_PLAN_OF_CARE_ACTIVITY_ACT__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.PLAN_OF_CARE_SECTION, CCDPackage.Literals.PLAN_OF_CARE_SECTION.getEAllOperations().get(47));
+			try {
+				GET_PLAN_OF_CARE_ACTIVITY_ACT__EOCL_QRY = helper.createQuery(GET_PLAN_OF_CARE_ACTIVITY_ACT__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PLAN_OF_CARE_ACTIVITY_ACT__EOCL_QRY);
+		return (PlanOfCareActivityAct) query.evaluate(planOfCareSection);
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getPlanOfCareActivityEncounter(PlanOfCareSection) <em>Get Plan Of Care Activity Encounter</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityEncounter(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PLAN_OF_CARE_ACTIVITY_ENCOUNTER__EOCL_EXP = "self.getEncounters()->select(encounter : cda::Encounter | not encounter.oclIsUndefined() and encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityEncounter)";
+
+	/**
+	 * The cached OCL query for the '{@link #getPlanOfCareActivityEncounter(PlanOfCareSection) <em>Get Plan Of Care Activity Encounter</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityEncounter(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PLAN_OF_CARE_ACTIVITY_ENCOUNTER__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getEncounters()->select(encounter : cda::Encounter | not encounter.oclIsUndefined() and encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityEncounter)
+	 * @param planOfCareSection The receiving '<em><b>Plan Of Care Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  PlanOfCareActivityEncounter getPlanOfCareActivityEncounter(PlanOfCareSection planOfCareSection) {
+		if (GET_PLAN_OF_CARE_ACTIVITY_ENCOUNTER__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.PLAN_OF_CARE_SECTION, CCDPackage.Literals.PLAN_OF_CARE_SECTION.getEAllOperations().get(48));
+			try {
+				GET_PLAN_OF_CARE_ACTIVITY_ENCOUNTER__EOCL_QRY = helper.createQuery(GET_PLAN_OF_CARE_ACTIVITY_ENCOUNTER__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PLAN_OF_CARE_ACTIVITY_ENCOUNTER__EOCL_QRY);
+		return (PlanOfCareActivityEncounter) query.evaluate(planOfCareSection);
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getPlanOfCareActivityObservation(PlanOfCareSection) <em>Get Plan Of Care Activity Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityObservation(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PLAN_OF_CARE_ACTIVITY_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getPlanOfCareActivityObservation(PlanOfCareSection) <em>Get Plan Of Care Activity Observation</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityObservation(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PLAN_OF_CARE_ACTIVITY_OBSERVATION__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityObservation)
+	 * @param planOfCareSection The receiving '<em><b>Plan Of Care Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  PlanOfCareActivityObservation getPlanOfCareActivityObservation(PlanOfCareSection planOfCareSection) {
+		if (GET_PLAN_OF_CARE_ACTIVITY_OBSERVATION__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.PLAN_OF_CARE_SECTION, CCDPackage.Literals.PLAN_OF_CARE_SECTION.getEAllOperations().get(49));
+			try {
+				GET_PLAN_OF_CARE_ACTIVITY_OBSERVATION__EOCL_QRY = helper.createQuery(GET_PLAN_OF_CARE_ACTIVITY_OBSERVATION__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PLAN_OF_CARE_ACTIVITY_OBSERVATION__EOCL_QRY);
+		return (PlanOfCareActivityObservation) query.evaluate(planOfCareSection);
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getPlanOfCareActivityProcedure(PlanOfCareSection) <em>Get Plan Of Care Activity Procedure</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityProcedure(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PLAN_OF_CARE_ACTIVITY_PROCEDURE__EOCL_EXP = "self.getProcedures()->select(procedure : cda::Procedure | not procedure.oclIsUndefined() and procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityProcedure)";
+
+	/**
+	 * The cached OCL query for the '{@link #getPlanOfCareActivityProcedure(PlanOfCareSection) <em>Get Plan Of Care Activity Procedure</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivityProcedure(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PLAN_OF_CARE_ACTIVITY_PROCEDURE__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getProcedures()->select(procedure : cda::Procedure | not procedure.oclIsUndefined() and procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))->asSequence()->first().oclAsType(ccd::PlanOfCareActivityProcedure)
+	 * @param planOfCareSection The receiving '<em><b>Plan Of Care Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  PlanOfCareActivityProcedure getPlanOfCareActivityProcedure(PlanOfCareSection planOfCareSection) {
+		if (GET_PLAN_OF_CARE_ACTIVITY_PROCEDURE__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.PLAN_OF_CARE_SECTION, CCDPackage.Literals.PLAN_OF_CARE_SECTION.getEAllOperations().get(50));
+			try {
+				GET_PLAN_OF_CARE_ACTIVITY_PROCEDURE__EOCL_QRY = helper.createQuery(GET_PLAN_OF_CARE_ACTIVITY_PROCEDURE__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PLAN_OF_CARE_ACTIVITY_PROCEDURE__EOCL_QRY);
+		return (PlanOfCareActivityProcedure) query.evaluate(planOfCareSection);
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getPlanOfCareActivitySubstanceAdministration(PlanOfCareSection) <em>Get Plan Of Care Activity Substance Administration</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivitySubstanceAdministration(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.getSubstanceAdministrations()->select(substanceAdministration : cda::SubstanceAdministration | not substanceAdministration.oclIsUndefined() and substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))->asSequence()->first().oclAsType(ccd::PlanOfCareActivitySubstanceAdministration)";
+
+	/**
+	 * The cached OCL query for the '{@link #getPlanOfCareActivitySubstanceAdministration(PlanOfCareSection) <em>Get Plan Of Care Activity Substance Administration</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivitySubstanceAdministration(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSubstanceAdministrations()->select(substanceAdministration : cda::SubstanceAdministration | not substanceAdministration.oclIsUndefined() and substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))->asSequence()->first().oclAsType(ccd::PlanOfCareActivitySubstanceAdministration)
+	 * @param planOfCareSection The receiving '<em><b>Plan Of Care Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  PlanOfCareActivitySubstanceAdministration getPlanOfCareActivitySubstanceAdministration(PlanOfCareSection planOfCareSection) {
+		if (GET_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.PLAN_OF_CARE_SECTION, CCDPackage.Literals.PLAN_OF_CARE_SECTION.getEAllOperations().get(51));
+			try {
+				GET_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__EOCL_QRY = helper.createQuery(GET_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__EOCL_QRY);
+		return (PlanOfCareActivitySubstanceAdministration) query.evaluate(planOfCareSection);
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getPlanOfCareActivitySupply(PlanOfCareSection) <em>Get Plan Of Care Activity Supply</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivitySupply(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PLAN_OF_CARE_ACTIVITY_SUPPLY__EOCL_EXP = "self.getSupplies()->select(supply : cda::Supply | not supply.oclIsUndefined() and supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))->asSequence()->first().oclAsType(ccd::PlanOfCareActivitySupply)";
+
+	/**
+	 * The cached OCL query for the '{@link #getPlanOfCareActivitySupply(PlanOfCareSection) <em>Get Plan Of Care Activity Supply</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlanOfCareActivitySupply(PlanOfCareSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PLAN_OF_CARE_ACTIVITY_SUPPLY__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSupplies()->select(supply : cda::Supply | not supply.oclIsUndefined() and supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))->asSequence()->first().oclAsType(ccd::PlanOfCareActivitySupply)
+	 * @param planOfCareSection The receiving '<em><b>Plan Of Care Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  PlanOfCareActivitySupply getPlanOfCareActivitySupply(PlanOfCareSection planOfCareSection) {
+		if (GET_PLAN_OF_CARE_ACTIVITY_SUPPLY__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CCDPackage.Literals.PLAN_OF_CARE_SECTION, CCDPackage.Literals.PLAN_OF_CARE_SECTION.getEAllOperations().get(52));
+			try {
+				GET_PLAN_OF_CARE_ACTIVITY_SUPPLY__EOCL_QRY = helper.createQuery(GET_PLAN_OF_CARE_ACTIVITY_SUPPLY__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PLAN_OF_CARE_ACTIVITY_SUPPLY__EOCL_QRY);
+		return (PlanOfCareActivitySupply) query.evaluate(planOfCareSection);
 	}
 
 } // PlanOfCareSectionOperations

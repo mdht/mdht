@@ -9,6 +9,7 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.cda.Observation;
 
 /**
@@ -147,6 +148,30 @@ public interface AlertObservation extends Observation {
 	 * @generated
 	 */
 	boolean validateAlertObservationReactionObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::AlertStatusObservation))->asSequence()->first().oclAsType(ccd::AlertStatusObservation)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::AlertStatusObservation))->asSequence()->first().oclAsType(ccd::AlertStatusObservation)'"
+	 * @generated
+	 */
+	AlertStatusObservation getAlertStatusObservation();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ReactionObservation)).oclAsType(ccd::ReactionObservation)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ReactionObservation)).oclAsType(ccd::ReactionObservation)'"
+	 * @generated
+	 */
+	EList<ReactionObservation> getReactionObservations();
 
 	/**
 	 * <!-- begin-user-doc -->

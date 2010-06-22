@@ -16,8 +16,11 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -130,6 +133,33 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 */
 	public boolean validateProblemObservationAgeObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemObservationOperations.validateProblemObservationAgeObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemStatusObservation getProblemStatusObservation() {
+		return ProblemObservationOperations.getProblemStatusObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemHealthStatusObservation getProblemHealthStatusObservation() {
+		return ProblemObservationOperations.getProblemHealthStatusObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgeObservation getAgeObservation() {
+		return ProblemObservationOperations.getAgeObservation(this);
 	}
 
 	/**
