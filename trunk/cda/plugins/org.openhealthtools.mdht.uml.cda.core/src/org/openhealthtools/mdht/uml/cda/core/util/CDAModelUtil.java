@@ -80,6 +80,10 @@ public class CDAModelUtil {
 		if (templateProperty.getClass_() == null) {
 			return null;
 		}
+
+		// if the provided property is from a CDA class and not a template
+		if (CDA_PACKAGE_NAME.equals(templateProperty.getNearestPackage().getName()))
+			return templateProperty;
 		
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
@@ -292,40 +296,44 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
+
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
+		return computeConformanceMessage(generalization, markup, UMLUtil.getTopPackage(generalization));
+	}
+	
+	public static String computeConformanceMessage(Generalization generalization, boolean markup, Package xrefSource) {
+		Class general = (Class) generalization.getGeneral();
+		return computeGeneralizationConformanceMessage(general, markup, xrefSource);
+	}
+
+	public static String computeGeneralizationConformanceMessage(Class general, boolean markup, Package xrefSource) {
 		StringBuffer message = new StringBuffer();
+
+		String prefix = !isSamePackage(xrefSource, general) ? getModelPrefix(general)+" " : "";
+		String xref = computeXref(xrefSource, general);
+		boolean showXref = markup && (xref != null);
+		String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 		
-		if (generalization.getGeneral() instanceof Class) {
-			Class general = (Class) generalization.getGeneral();
+		message.append("Conforms to ");
+		message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
+		message.append(prefix).append(UMLUtil.splitName(general));
+		message.append(showXref?"</xref>":"");
 
-			Package thisModel = UMLUtil.getTopPackage(generalization);
-			Package generalModel = UMLUtil.getTopPackage(general);
-			String prefix = (thisModel != generalModel) ? getModelPrefix(general)+" " : "";
-			String xref = computeXref(generalization, general);
-			boolean showXref = markup && (xref != null);
-			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
-			
-			message.append("Conforms to ");
-			message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-			message.append(prefix).append(UMLUtil.splitName(general));
-			message.append(showXref?"</xref>":"");
-
-			String templateId = getTemplateId(general);
-			if (templateId != null) {
-				message.append(" template (templateId: ");
-				message.append(markup?"<tt>":"");
-				message.append(templateId);
-				message.append(markup?"</tt>":"");
-				message.append(")");
-			}
+		String templateId = getTemplateId(general);
+		if (templateId != null) {
+			message.append(" template (templateId: ");
+			message.append(markup?"<tt>":"");
+			message.append(templateId);
+			message.append(markup?"</tt>":"");
+			message.append(")");
 		}
 		
 		return message.toString();
 	}
 
-	private static String computeAssociationConformanceMessage(Property property, boolean markup) {
+	private static String computeAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
 		if (getTemplateId(property.getClass_()) != null) {
-			return computeTemplateAssociationConformanceMessage(property, markup);
+			return computeTemplateAssociationConformanceMessage(property, markup, xrefSource);
 		}
 
 		StringBuffer message = new StringBuffer();
@@ -353,8 +361,8 @@ public class CDAModelUtil {
 		if (endType != null) {
 			message.append(", where its type is ");
 			
-			String prefix = !isSamePackage(property, endType) ? getModelPrefix(endType)+" " : "";
-			String xref = computeXref(property, endType);
+			String prefix = !isSamePackage(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 			
@@ -366,7 +374,7 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
-	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup) {
+	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 		Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(
@@ -457,8 +465,8 @@ public class CDAModelUtil {
 			message.append(markup?"</b>":"");
 			message.append(" contain [1..1] ");
 
-			String prefix = !isSamePackage(property, endType) ? getModelPrefix(endType)+" " : "";
-			String xref = computeXref(property, endType);
+			String prefix = !isSamePackage(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 			
@@ -483,8 +491,12 @@ public class CDAModelUtil {
 	}
 
 	public static String computeConformanceMessage(Property property, boolean markup) {
+		return computeConformanceMessage(property, markup, UMLUtil.getTopPackage(property));
+	}
+	
+	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
 		if (property.getAssociation() != null && property.isNavigable()) {
-			return computeAssociationConformanceMessage(property, markup);
+			return computeAssociationConformanceMessage(property, markup, xrefSource);
 		}
 		
 		StringBuffer message = new StringBuffer();
