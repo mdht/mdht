@@ -95,7 +95,11 @@
       <topic label="Vital Signs Organizer" href="classes/VitalSignsOrganizer.html"/>
    </topic>
    <topic label="CLASSES" href="Classes.html">
+      <topic label="Coverage Plan Description" href="classes/CoveragePlanDescription.html"/>
+      <topic label="Covered Party" href="classes/CoveredParty.html"/>
+      <topic label="Payer Entity" href="classes/PayerEntity.html"/>
       <topic label="Plan Of Care Activity" href="classes/PlanOfCareActivity.html"/>
+      <topic label="Policy Subscriber" href="classes/PolicySubscriber.html"/>
       <topic label="Procedure Activity" href="classes/ProcedureActivity.html"/>
    </topic>
    <topic label="REFERENCES" href="References.html"/>
