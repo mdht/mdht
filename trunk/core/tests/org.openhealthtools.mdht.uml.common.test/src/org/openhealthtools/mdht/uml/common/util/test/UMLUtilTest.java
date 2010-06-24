@@ -6,7 +6,6 @@ import java.util.List;
 import junit.framework.TestCase;
 
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ClassifierTemplateParameter;
@@ -17,8 +16,6 @@ import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.TemplateParameterSubstitution;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
-import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
-import org.openhealthtools.mdht.uml.hl7.vocab.VocabFactory;
 
 public class UMLUtilTest extends TestCase {
 
@@ -68,18 +65,18 @@ public class UMLUtilTest extends TestCase {
 	}
 
 	
-	@SuppressWarnings("restriction")
 	public final void testVocabAll()
 	{
 		try{
+			org.openhealthtools.mdht.uml.common.internal.Activator.getDefault();
 			
-			Object instanceValue = null;
-		EDataType eDataType=null;
-		String literalValue="ActClass";
-		
-		org.openhealthtools.mdht.uml.hl7.vocab.internal.impl.VocabFactoryImpl.eINSTANCE.convertToString(eDataType, instanceValue);
-		
-		ActClass ac = (ActClass) VocabFactory.eINSTANCE.createFromString(eDataType, literalValue);
+//			Object instanceValue = null;
+//		EDataType eDataType=null;
+//		String literalValue="ActClass";
+//		
+//		org.openhealthtools.mdht.uml.hl7.vocab.internal.impl.VocabFactoryImpl.eINSTANCE.convertToString(eDataType, instanceValue);
+//		
+//		ActClass ac = (ActClass) VocabFactory.eINSTANCE.createFromString(eDataType, literalValue);
 		} catch(Exception e)
 		{
 			
