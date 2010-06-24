@@ -15,7 +15,9 @@ import java.io.Writer;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
@@ -42,11 +44,6 @@ import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
-import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
-import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-import org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -54,34 +51,47 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 
 public class InstanceGenerator {
 
-//	private ResourceSet resourceSet = new ResourceSetImpl();
+	private Map<String,EPackage> packageQNameMap = new HashMap<String,EPackage>();
 	private List<EPackage> ePackages = new ArrayList<EPackage>();
-	private EPackage cdaPackage = null;
-//	private EPackage datatypesPackage = null;
-	
+		
 	public InstanceGenerator() {
 		addEPackage(DatatypesPackage.eINSTANCE);
+		packageQNameMap.put("datatypes", DatatypesPackage.eINSTANCE);
 		addEPackage(CDAPackage.eINSTANCE);
-
-		addEPackage(CCDPackage.eINSTANCE);
-		addEPackage(CDTPackage.eINSTANCE);
-		addEPackage(IHEPackage.eINSTANCE);
-		addEPackage(HITSPPackage.eINSTANCE);
-		addEPackage(TBPNPackage.eINSTANCE);
-		
-		cdaPackage = getEPackageByName("cda");
-//		datatypesPackage = getEPackageByName("datatypes");
+		packageQNameMap.put("cda", CDAPackage.eINSTANCE);
 	}
 	
-    public final void addEPackage(final java.lang.Class<EPackage> ePackageClass) {
+	@SuppressWarnings("unchecked")
+	public EPackage getEPackage(String ePackageClassQName) {
+		EPackage ePackage = packageQNameMap.get(ePackageClassQName);
+		if (! packageQNameMap.containsKey(ePackageClassQName)) {
+			try {
+				java.lang.Class ePackageClass = this.getClass().getClassLoader().loadClass(ePackageClassQName);
+				if (EPackage.class.isAssignableFrom(ePackageClass)) {
+					ePackage = getEPackage((java.lang.Class<EPackage>) ePackageClass);
+					packageQNameMap.put(ePackageClassQName, ePackage);
+				}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				packageQNameMap.put(ePackageClassQName, null);
+			}
+		}
+		
+		return ePackage;
+	}
+	
+    private EPackage getEPackage(java.lang.Class<EPackage> ePackageClass) {
+    	EPackage modelPackage = null;
 		try {
-			EPackage modelPackage = (EPackage) ePackageClass.getField("eINSTANCE").get(null);
+			modelPackage = (EPackage) ePackageClass.getField("eINSTANCE").get(null);
 			if (modelPackage != null) {
 				addEPackage(modelPackage);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return modelPackage;
     }
 	
 	public void addEPackage(EPackage ePackage) {
@@ -150,31 +160,22 @@ public class InstanceGenerator {
 	}
 
 	public EClass getEClass(Type umlType) {
-		// iterate through list of available EPackages
-		// handle duplicate class names. Need to find ePackage.getName() == umlPackage.getName()
-		for (EPackage ePackage : ePackages) {
-			if (umlType.getNearestPackage().getName().equals(ePackage.getName())) {
+		String ePackageClassQName = CDAModelUtil.getEcorePackageClassName(umlType);
+		if (ePackageClassQName != null) {
+			EPackage ePackage = getEPackage(ePackageClassQName);
+			if (ePackage != null) {
 				EClass eClass = (EClass) ePackage.getEClassifier(umlType.getName());
-				if (eClass != null)
-					return eClass;
+				return eClass;
 			}
 		}
 		
 		return null;
 	}
 	
-	public EPackage getEPackageByName(String packageName) {
-		for (EPackage ePackage : ePackages) {
-			if (ePackage.getName().equals(packageName))
-				return ePackage;
-		}
-		return null;
-	}
-	
 	public boolean addChild(EObject parent, EObject child) {
 		//TODO change to ALL reflection using feature name
-		EClass cdaSection = (EClass) cdaPackage.getEClassifier("Section");
-		EClass cdaOrganizer = (EClass) cdaPackage.getEClassifier("Organizer");
+		EClass cdaSection = (EClass) CDAPackage.eINSTANCE.getEClassifier("Section");
+		EClass cdaOrganizer = (EClass) CDAPackage.eINSTANCE.getEClassifier("Organizer");
 
 		if (parent instanceof ClinicalDocument) {
 			if (child instanceof Section) {
