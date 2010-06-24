@@ -6,6 +6,7 @@ import java.util.List;
 import junit.framework.TestCase;
 
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ClassifierTemplateParameter;
@@ -16,6 +17,9 @@ import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.TemplateParameterSubstitution;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
+import org.openhealthtools.mdht.uml.hl7.vocab.VocabFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage;
 
 public class UMLUtilTest extends TestCase {
 
@@ -64,6 +68,20 @@ public class UMLUtilTest extends TestCase {
 		super.setUp();
 	}
 
+	
+	public final void testVocabAll()
+	{
+		try{
+		EDataType eDataType=null;
+		String literalValue="ActClass";
+		ActClass ac = (ActClass) VocabFactory.eINSTANCE.createFromString(eDataType, literalValue);
+		} catch(Exception e)
+		{
+			
+		}
+	}
+	
+	
 	public final void testGetAllParentNames() {
 
 		String[] names = new String[] { "org.openhealthtools.mdht.uml.parent", "org.openhealthtools.mdht.uml.child1", "org.openhealthtools.mdht.uml.child2" };
@@ -261,6 +279,8 @@ public class UMLUtilTest extends TestCase {
 		
 		fail("Not yet implemented"); // TODO
 	}
+	
+	
 
 	public final void testAddAliasName() {
 		
