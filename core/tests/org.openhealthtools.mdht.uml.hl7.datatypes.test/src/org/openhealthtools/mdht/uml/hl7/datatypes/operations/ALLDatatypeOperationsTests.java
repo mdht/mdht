@@ -12,9 +12,10 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
+import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-
 /**
  * This class represents a suite of Junit 4 test cases for HL7 Datatypes.
  */
@@ -23,5 +24,9 @@ import org.junit.runners.Suite;
 	EDOperationsTest.class, ENOperationsTest.class, ONOperationsTest.class,
 	PNOperationsTest.class, TNOperationsTest.class })
 	public class ALLDatatypeOperationsTests {
+	
+	public static junit.framework.Test suite() { 
+	    return new JUnit4TestAdapter(ALLDatatypeOperationsTests.class); 
+	}
 	// Nothing
 } // ALLDatatypeOperationsTests
