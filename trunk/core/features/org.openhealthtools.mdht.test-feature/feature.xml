@@ -22,9 +22,10 @@
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.openhealthtools.mdht.uml" />
-      <import feature="org.openhealthtools.mdht.uml.cda" />
-      <import feature="org.openhealthtools.mdht.uml.hdf" />
+      <import feature="org.openhealthtools.mdht.uml"/>
+      <import feature="org.openhealthtools.mdht.uml.cda"/>
+      <import feature="org.openhealthtools.mdht.uml.hdf"/>
+      <import feature="org.openhealthtools.mdht.uml.cda.models" />
    </requires>
 
    <plugin
