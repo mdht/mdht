@@ -17,9 +17,15 @@
       [Enter License Description here.]
    </license>
 
-	<includes
+   <includes
          id="org.openhealthtools.mdht.test.source"
          version="0.0.0"/>
+
+   <requires>
+      <import feature="org.openhealthtools.mdht.uml" />
+      <import feature="org.openhealthtools.mdht.uml.cda" />
+      <import feature="org.openhealthtools.mdht.uml.hdf" />
+   </requires>
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.util.test"
@@ -28,24 +34,20 @@
          version="0.0.0"
          fragment="true"
          unpack="false"/>
+
    <plugin
          id="org.openhealthtools.mdht.uml.cda.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         fragment="false"
          unpack="false"/>
+
    <plugin
          id="org.openhealthtools.mdht.uml.cda.ccd.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         fragment="false"
          unpack="false"/>
-
-
-
-
 
    <plugin
          id="org.openhealthtools.mdht.uml.common.test"
@@ -63,22 +65,20 @@
          fragment="true"
          unpack="false"/>
 
- <plugin
+   <plugin
          id="org.openhealthtools.mdht.uml.hl7.datatypes.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
          fragment="true"
          unpack="false"/>
-         
-         
-    <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.hl7.vocab.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
          fragment="true"
          unpack="false"/>
-         
 
 </feature>
