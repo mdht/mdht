@@ -145,5 +145,9 @@ fragment@org.openhealthtools.mdht.uml.hl7.datatypes.test=SVN,trunk,https://mdht.
 
 fragment@org.openhealthtools.mdht.uml.hl7.vocab.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/tests/org.openhealthtools.mdht.uml.hl7.vocab.test
 
+plugin@org.openhealthtools.mdht.uml.cda.hitsp.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.hitsp.test
+
+plugin@org.openhealthtools.mdht.uml.cda.ihe.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.ihe.test
+
 
 
