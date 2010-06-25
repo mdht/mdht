@@ -39,6 +39,7 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
@@ -286,6 +287,13 @@ public class CDAModelUtil {
 
 		String templateId = getTemplateId(template);
 		if (templateId != null) {
+			String ruleId = getConformanceRuleIds(template);
+			if (ruleId.length() > 0) {
+				message.append(markup?"<b>":"");
+				message.append(ruleId + ": ");
+				message.append(markup?"</b>":"");
+			}
+			
 			if (!markup) {
 				message.append(getPrefixedSplitName(template)).append(" ");
 			}
@@ -295,7 +303,6 @@ public class CDAModelUtil {
 		
 		return message.toString();
 	}
-
 
 	public static String computeConformanceMessage(Generalization generalization, boolean markup) {
 		return computeConformanceMessage(generalization, markup, UMLUtil.getTopPackage(generalization));
@@ -314,6 +321,13 @@ public class CDAModelUtil {
 		boolean showXref = markup && (xref != null);
 		String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 		
+//		String ruleId = getConformanceRuleIds(generalization);
+//		if (ruleId.length() > 0) {
+//			message.append(markup?"<b>":"");
+//			message.append(ruleId + ": ");
+//			message.append(markup?"</b>":"");
+//		}
+			
 		message.append("Conforms to ");
 		message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
 		message.append(prefix).append(UMLUtil.splitName(general));
@@ -339,6 +353,13 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
+		String ruleId = getConformanceRuleIds(association);
+		if (ruleId.length() > 0) {
+			message.append(markup?"<b>":"");
+			message.append(ruleId + ": ");
+			message.append(markup?"</b>":"");
+		}
+		
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
@@ -425,6 +446,13 @@ public class CDAModelUtil {
 		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && "AssignedEntity".equals(cdaTargetClass.getName())) {
 			elementName = "performer";
 		}
+
+		String ruleId = getConformanceRuleIds(association);
+		if (ruleId.length() > 0) {
+			message.append(markup?"<b>":"");
+			message.append(ruleId + ": ");
+			message.append(markup?"</b>":"");
+		}
 		
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
@@ -501,6 +529,13 @@ public class CDAModelUtil {
 		
 		StringBuffer message = new StringBuffer();
 
+		String ruleId = getConformanceRuleIds(property);
+		if (ruleId.length() > 0) {
+			message.append(markup?"<b>":"");
+			message.append(ruleId + ": ");
+			message.append(markup?"</b>":"");
+		}
+		
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
@@ -784,6 +819,13 @@ public class CDAModelUtil {
 		}
 		
 		if (body != null) {
+			String ruleId = getConformanceRuleIds(constraint);
+			if (ruleId.length() > 0) {
+				message.append(markup?"<b>":"");
+				message.append(ruleId + ": ");
+				message.append(markup?"</b>":"");
+			}
+			
 			if (!markup) {
 				message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
 			}
@@ -962,7 +1004,25 @@ public class CDAModelUtil {
 		
 		return null;
 	}
-
+	
+	/**
+	 * Returns a comma separated list of conformance rule IDs, or an empty string if no IDs.
+	 */
+	public static String getConformanceRuleIds(Element element) {
+		StringBuffer ruleIdDisplay = new StringBuffer();
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		if (validationSupport != null) {
+			Validation validation = (Validation) element.getStereotypeApplication(validationSupport);
+			for (String ruleId : validation.getRuleId()) {
+				if (ruleIdDisplay.length() > 0)
+					ruleIdDisplay.append(", ");
+				ruleIdDisplay.append(ruleId);
+			}
+		}
+		
+		return ruleIdDisplay.toString();
+	}
+	
 	public static String getValidationKeyword(Element element) {
 		String severity = getValidationSeverity(element);
 		if (severity != null) {
