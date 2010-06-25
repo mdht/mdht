@@ -870,7 +870,7 @@ public class CDAModelUtil {
 		return templateId;
 	}
 	
-	public static String getModelPrefix(NamedElement element) {
+	public static String getModelPrefix(Element element) {
 		String prefix = null;
 		Package model = UMLUtil.getTopPackage(element);
 		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(model, ICDAProfileConstants.CODEGEN_SUPPORT);
@@ -884,7 +884,7 @@ public class CDAModelUtil {
 		return prefix;
 	}
 
-	public static String getModelNamespacePrefix(NamedElement element) {
+	public static String getModelNamespacePrefix(Element element) {
 		String prefix = null;
 		Package model = UMLUtil.getTopPackage(element);
 		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(model, ICDAProfileConstants.CODEGEN_SUPPORT);
@@ -895,7 +895,7 @@ public class CDAModelUtil {
 		return prefix;
 	}
 
-	public static String getModelBasePackage(NamedElement element) {
+	public static String getModelBasePackage(Element element) {
 		String basePackage = null;
 		Package model = UMLUtil.getTopPackage(element);
 		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(model, ICDAProfileConstants.CODEGEN_SUPPORT);
@@ -904,6 +904,29 @@ public class CDAModelUtil {
 		}
 		
 		return basePackage;
+	}
+	
+	public static String getEcorePackageClassName(Element element) {
+		String packageQName = null;
+		Package model = UMLUtil.getTopPackage(element);
+		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(model, ICDAProfileConstants.CODEGEN_SUPPORT);
+		if (codegenSupport != null) {
+			String basePackage = (String) model.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
+			String prefix = getModelPrefix(element);
+			if (basePackage != null && prefix != null)
+				packageQName = basePackage + "." + model.getName() + "." + prefix + "Package";
+		}
+		else {
+			// for base models without codegenSupport
+			if (model.getName().equals("cda"))
+				packageQName = "org.openhealthtools.mdht.uml.cda.CDAPackage";
+			else if (model.getName().equals("datatypes"))
+				packageQName = "org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage";
+			else if (model.getName().equals("vocab"))
+				packageQName = "org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage";
+		}
+		
+		return packageQName;
 	}
 
 	public static String getPrefixedSplitName(NamedElement element) {

@@ -22,6 +22,7 @@ import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -46,7 +47,6 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 
 public class InstanceGenerator {
@@ -55,10 +55,9 @@ public class InstanceGenerator {
 	private List<EPackage> ePackages = new ArrayList<EPackage>();
 		
 	public InstanceGenerator() {
-		addEPackage(DatatypesPackage.eINSTANCE);
-		packageQNameMap.put("datatypes", DatatypesPackage.eINSTANCE);
-		addEPackage(CDAPackage.eINSTANCE);
-		packageQNameMap.put("cda", CDAPackage.eINSTANCE);
+//		getEPackage("org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage");
+//		getEPackage("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage");
+//		getEPackage("org.openhealthtools.mdht.uml.cda.CDAPackage");
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -164,8 +163,9 @@ public class InstanceGenerator {
 		if (ePackageClassQName != null) {
 			EPackage ePackage = getEPackage(ePackageClassQName);
 			if (ePackage != null) {
-				EClass eClass = (EClass) ePackage.getEClassifier(umlType.getName());
-				return eClass;
+				EClassifier eClassifier = ePackage.getEClassifier(umlType.getName());
+				if (eClassifier instanceof EClass)
+				return (EClass) eClassifier;
 			}
 		}
 		
