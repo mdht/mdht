@@ -6085,13 +6085,22 @@ public interface CDAPackage extends EPackage {
 	int PLAYING_ENTITY__NAME = 5;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Birth Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAYING_ENTITY__SDTC_BIRTH_TIME = 6;
+
+	/**
 	 * The feature id for the '<em><b>Desc</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__DESC = 6;
+	int PLAYING_ENTITY__DESC = 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6100,7 +6109,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__NULL_FLAVOR = 7;
+	int PLAYING_ENTITY__NULL_FLAVOR = 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -6109,7 +6118,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__CLASS_CODE = 8;
+	int PLAYING_ENTITY__CLASS_CODE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -6118,7 +6127,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__DETERMINER_CODE = 9;
+	int PLAYING_ENTITY__DETERMINER_CODE = 10;
 
 	/**
 	 * The number of structural features of the '<em>Playing Entity</em>' class.
@@ -6127,7 +6136,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY_FEATURE_COUNT = 10;
+	int PLAYING_ENTITY_FEATURE_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Performer2Impl <em>Performer2</em>}' class.
@@ -16913,6 +16922,17 @@ public interface CDAPackage extends EPackage {
 	EReference getPlayingEntity_Name();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getSDTCBirthTime <em>SDTC Birth Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Birth Time</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getSDTCBirthTime()
+	 * @see #getPlayingEntity()
+	 * @generated
+	 */
+	EReference getPlayingEntity_SDTCBirthTime();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getDesc <em>Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26633,6 +26653,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PLAYING_ENTITY__NAME = eINSTANCE.getPlayingEntity_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Birth Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__SDTC_BIRTH_TIME = eINSTANCE.getPlayingEntity_SDTCBirthTime();
 
 		/**
 		 * The meta object literal for the '<em><b>Desc</b></em>' containment reference feature.

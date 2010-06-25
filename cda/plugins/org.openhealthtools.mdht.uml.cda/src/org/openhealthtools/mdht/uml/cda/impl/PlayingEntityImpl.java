@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -49,6 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getQuantities <em>Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getNames <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getSDTCBirthTime <em>SDTC Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getClassCode <em>Class Code</em>}</li>
@@ -118,6 +120,16 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 * @ordered
 	 */
 	protected EList<PN> names;
+
+	/**
+	 * The cached value of the '{@link #getSDTCBirthTime() <em>SDTC Birth Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCBirthTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected TS sDTCBirthTime;
 
 	/**
 	 * The cached value of the '{@link #getDesc() <em>Desc</em>}' containment reference.
@@ -374,6 +386,49 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TS getSDTCBirthTime() {
+		return sDTCBirthTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCBirthTime(TS newSDTCBirthTime, NotificationChain msgs) {
+		TS oldSDTCBirthTime = sDTCBirthTime;
+		sDTCBirthTime = newSDTCBirthTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME, oldSDTCBirthTime, newSDTCBirthTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCBirthTime(TS newSDTCBirthTime) {
+		if (newSDTCBirthTime != sDTCBirthTime) {
+			NotificationChain msgs = null;
+			if (sDTCBirthTime != null)
+				msgs = ((InternalEObject)sDTCBirthTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME, null, msgs);
+			if (newSDTCBirthTime != null)
+				msgs = ((InternalEObject)newSDTCBirthTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME, null, msgs);
+			msgs = basicSetSDTCBirthTime(newSDTCBirthTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME, newSDTCBirthTime, newSDTCBirthTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ED getDesc() {
 		return desc;
 	}
@@ -570,6 +625,8 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 				return ((InternalEList<?>)getQuantities()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PLAYING_ENTITY__NAME:
 				return ((InternalEList<?>)getNames()).basicRemove(otherEnd, msgs);
+			case CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME:
+				return basicSetSDTCBirthTime(null, msgs);
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				return basicSetDesc(null, msgs);
 		}
@@ -596,6 +653,8 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 				return getQuantities();
 			case CDAPackage.PLAYING_ENTITY__NAME:
 				return getNames();
+			case CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME:
+				return getSDTCBirthTime();
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				return getDesc();
 			case CDAPackage.PLAYING_ENTITY__NULL_FLAVOR:
@@ -639,6 +698,9 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 				getNames().clear();
 				getNames().addAll((Collection<? extends PN>)newValue);
 				return;
+			case CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME:
+				setSDTCBirthTime((TS)newValue);
+				return;
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				setDesc((ED)newValue);
 				return;
@@ -681,6 +743,9 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 			case CDAPackage.PLAYING_ENTITY__NAME:
 				getNames().clear();
 				return;
+			case CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME:
+				setSDTCBirthTime((TS)null);
+				return;
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				setDesc((ED)null);
 				return;
@@ -717,6 +782,8 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 				return quantities != null && !quantities.isEmpty();
 			case CDAPackage.PLAYING_ENTITY__NAME:
 				return names != null && !names.isEmpty();
+			case CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME:
+				return sDTCBirthTime != null;
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				return desc != null;
 			case CDAPackage.PLAYING_ENTITY__NULL_FLAVOR:
