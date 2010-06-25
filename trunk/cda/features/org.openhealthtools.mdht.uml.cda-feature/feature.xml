@@ -27,6 +27,23 @@
    </requires>
 
  
+      <plugin
+         id="org.openhealthtools.mdht.uml.cda.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+         
+ 
+ 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.ant"
          download-size="0"
@@ -71,6 +88,20 @@
 
    <plugin
          id="org.openhealthtools.mdht.uml.term.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+          <plugin
+         id="org.openhealthtools.mdht.uml.hl7.datatypes"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+  <plugin
+         id="org.openhealthtools.mdht.uml.hl7.vocab"
          download-size="0"
          install-size="0"
          version="0.0.0"
