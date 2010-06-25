@@ -1308,6 +1308,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//PlayingEntity/name"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//PlayingEntity/sDTCBirthTime"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//PlayingEntity/desc"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PlayingEntity/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PlayingEntity/classCode"/>

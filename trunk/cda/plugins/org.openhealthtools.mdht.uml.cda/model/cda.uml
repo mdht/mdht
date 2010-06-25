@@ -7841,6 +7841,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PG65gUrhEd6FXKclYGEDCw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PG65gErhEd6FXKclYGEDCw"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_UbzwoICaEd-tCqqhK7qkow" name="sDTCBirthTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_4ysYYD59Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y14vQICaEd-tCqqhK7qkow" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y2CgQICaEd-tCqqhK7qkow"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_Qf4QgErhEd6FXKclYGEDCw" name="desc" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RH-LQUrhEd6FXKclYGEDCw" value="1"/>
@@ -9679,9 +9684,9 @@
   <Ecore:EAttribute xmi:id="_vJLegHrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_ue0l8ErgEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_wFO3EHrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_zg-4QErgEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_xTUa0HrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_fSoO30xwEd6h-an5IXo-DA"/>
-  <Ecore:EAttribute xmi:id="_yyr70HrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_SxK9sErhEd6FXKclYGEDCw"/>
-  <Ecore:EAttribute xmi:id="_0QaeEHrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_WSxcMErhEd6FXKclYGEDCw"/>
-  <Ecore:EAttribute xmi:id="_1SIZwHrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_fSoO60xwEd6h-an5IXo-DA"/>
+  <Ecore:EAttribute xmi:id="_yyr70HrYEd648OeXdSIbLg" xmlName="classCode" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_SxK9sErhEd6FXKclYGEDCw"/>
+  <Ecore:EAttribute xmi:id="_0QaeEHrYEd648OeXdSIbLg" xmlName="determinerCode" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_WSxcMErhEd6FXKclYGEDCw"/>
+  <Ecore:EAttribute xmi:id="_1SIZwHrYEd648OeXdSIbLg" xmlName="nullFlavor" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_fSoO60xwEd6h-an5IXo-DA"/>
   <Ecore:EAttribute xmi:id="_3XyesHrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_fSoO90xwEd6h-an5IXo-DA"/>
   <Ecore:EAttribute xmi:id="_4a_oIHrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_cdWvIErhEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_5uScAHrYEd648OeXdSIbLg" isUnsettable="true" base_Property="_Hp3ssEb9Ed6besF9iFIJkQ"/>
@@ -10250,13 +10255,13 @@
   <Ecore:EReference xmi:id="__tBTcp73Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO3ExwEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="__tBTc573Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO4kxwEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="__tLEcJ73Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO5UxwEd6h-an5IXo-DA"/>
-  <Ecore:EReference xmi:id="_BbJCIJ74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_JVhioErhEd6FXKclYGEDCw"/>
-  <Ecore:EReference xmi:id="_BbJCIZ74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_Qf4QgErhEd6FXKclYGEDCw"/>
-  <Ecore:EReference xmi:id="_BbJCIp74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_OQPJIErhEd6FXKclYGEDCw"/>
-  <Ecore:EReference xmi:id="_BbJCI574Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_LhvikErhEd6FXKclYGEDCw"/>
-  <Ecore:EReference xmi:id="_BbSzIJ74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO6ExwEd6h-an5IXo-DA"/>
-  <Ecore:EReference xmi:id="_BbSzIZ74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO7kxwEd6h-an5IXo-DA"/>
-  <Ecore:EReference xmi:id="_BbSzIp74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO8UxwEd6h-an5IXo-DA"/>
+  <Ecore:EReference xmi:id="_BbJCIJ74Ed6BCKDGgDgllw" xmlName="code" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_JVhioErhEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_BbJCIZ74Ed6BCKDGgDgllw" xmlName="desc" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_Qf4QgErhEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_BbJCIp74Ed6BCKDGgDgllw" xmlName="name" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_OQPJIErhEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_BbJCI574Ed6BCKDGgDgllw" xmlName="quantity" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_LhvikErhEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_BbSzIJ74Ed6BCKDGgDgllw" xmlName="realmCode" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fSoO6ExwEd6h-an5IXo-DA"/>
+  <Ecore:EReference xmi:id="_BbSzIZ74Ed6BCKDGgDgllw" xmlName="templateId" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fSoO7kxwEd6h-an5IXo-DA"/>
+  <Ecore:EReference xmi:id="_BbSzIp74Ed6BCKDGgDgllw" xmlName="typeId" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fSoO8UxwEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="_C9MDsJ74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_N1f_4EobEd6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_C9MDsZ74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO9ExwEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="_C9MDsp74Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_fSoO-kxwEd6h-an5IXo-DA"/>
@@ -10455,4 +10460,5 @@
   <Ecore:EReference xmi:id="_i9ybYHfeEd-OZ-5CAiSgsw" xmlName="patient" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_dXaowHfeEd-OZ-5CAiSgsw"/>
   <Ecore:EReference xmi:id="_kA3zkHffEd-OZ-5CAiSgsw" xmlName="patient" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_dKVZkHffEd-OZ-5CAiSgsw"/>
   <Ecore:EReference xmi:id="_Oj6GQHfgEd-OZ-5CAiSgsw" xmlName="patient" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_LAN9EHfgEd-OZ-5CAiSgsw"/>
+  <Ecore:EReference xmi:id="_n2Q-MICaEd-tCqqhK7qkow" xmlName="birthTime" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_UbzwoICaEd-tCqqhK7qkow"/>
 </xmi:XMI>

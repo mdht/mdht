@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -38,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getQuantities <em>Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getNames <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getSDTCBirthTime <em>SDTC Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getDesc <em>Desc</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getClassCode <em>Class Code</em>}</li>
@@ -62,7 +64,7 @@ public interface PlayingEntity extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_RealmCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='realmCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<CS> getRealmCodes();
@@ -79,7 +81,7 @@ public interface PlayingEntity extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_TypeId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='typeId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -106,7 +108,7 @@ public interface PlayingEntity extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_TemplateId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='templateId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<II> getTemplateIds();
@@ -123,7 +125,7 @@ public interface PlayingEntity extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_Code()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='code' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	CE getCode();
@@ -150,7 +152,7 @@ public interface PlayingEntity extends EObject {
 	 * @return the value of the '<em>Quantity</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_Quantity()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='quantity' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<PQ> getQuantities();
@@ -167,10 +169,37 @@ public interface PlayingEntity extends EObject {
 	 * @return the value of the '<em>Name</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_Name()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='name' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<PN> getNames();
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Birth Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Birth Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Birth Time</em>' containment reference.
+	 * @see #setSDTCBirthTime(TS)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_SDTCBirthTime()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='birthTime' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	TS getSDTCBirthTime();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getSDTCBirthTime <em>SDTC Birth Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Birth Time</em>' containment reference.
+	 * @see #getSDTCBirthTime()
+	 * @generated
+	 */
+	void setSDTCBirthTime(TS value);
 
 	/**
 	 * Returns the value of the '<em><b>Desc</b></em>' containment reference.
@@ -184,7 +213,7 @@ public interface PlayingEntity extends EObject {
 	 * @see #setDesc(ED)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_Desc()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='desc' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	ED getDesc();
@@ -215,6 +244,7 @@ public interface PlayingEntity extends EObject {
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_NullFlavor()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="name='nullFlavor' kind='attribute'"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -272,6 +302,7 @@ public interface PlayingEntity extends EObject {
 	 * @see #setClassCode(EntityClassRoot)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_ClassCode()
 	 * @model default="ENT" unsettable="true" ordered="false"
+	 *        extendedMetaData="name='classCode' kind='attribute'"
 	 * @generated
 	 */
 	EntityClassRoot getClassCode();
@@ -329,6 +360,7 @@ public interface PlayingEntity extends EObject {
 	 * @see #setDeterminerCode(EntityDeterminer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlayingEntity_DeterminerCode()
 	 * @model default="INSTANCE" unsettable="true" ordered="false"
+	 *        extendedMetaData="name='determinerCode' kind='attribute'"
 	 * @generated
 	 */
 	EntityDeterminer getDeterminerCode();

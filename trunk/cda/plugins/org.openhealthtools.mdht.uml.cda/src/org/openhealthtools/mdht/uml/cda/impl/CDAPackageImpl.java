@@ -6336,7 +6336,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPlayingEntity_Desc() {
+	public EReference getPlayingEntity_SDTCBirthTime() {
         return (EReference)getPlayingEntity().getEStructuralFeatures().get(6);
 	}
 
@@ -6345,8 +6345,8 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlayingEntity_NullFlavor() {
-        return (EAttribute)getPlayingEntity().getEStructuralFeatures().get(7);
+	public EReference getPlayingEntity_Desc() {
+        return (EReference)getPlayingEntity().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -6354,7 +6354,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlayingEntity_ClassCode() {
+	public EAttribute getPlayingEntity_NullFlavor() {
         return (EAttribute)getPlayingEntity().getEStructuralFeatures().get(8);
 	}
 
@@ -6363,8 +6363,17 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlayingEntity_DeterminerCode() {
+	public EAttribute getPlayingEntity_ClassCode() {
         return (EAttribute)getPlayingEntity().getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlayingEntity_DeterminerCode() {
+        return (EAttribute)getPlayingEntity().getEStructuralFeatures().get(10);
 	}
 
 	/**
