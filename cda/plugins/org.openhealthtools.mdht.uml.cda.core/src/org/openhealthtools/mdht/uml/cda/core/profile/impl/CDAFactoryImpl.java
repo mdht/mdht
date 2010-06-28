@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
@@ -28,10 +29,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
-import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 
@@ -79,7 +80,6 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CDAPackage.VALIDATION_SUPPORT: return createValidationSupport();
 			case CDAPackage.ENTRY: return createEntry();
 			case CDAPackage.ASSOCIATION_VALIDATION: return createAssociationValidation();
 			case CDAPackage.ENTRY_RELATIONSHIP: return createEntryRelationship();
@@ -95,6 +95,8 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT: return createConceptDomainConstraint();
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT: return createCodeSystemConstraint();
 			case CDAPackage.VALUE_SET_CONSTRAINT: return createValueSetConstraint();
+			case CDAPackage.ACT_RELATIONSHIP: return createActRelationship();
+			case CDAPackage.PARTICIPATION: return createParticipation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -140,16 +142,6 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ValidationSupport createValidationSupport() {
-		ValidationSupportImpl validationSupport = new ValidationSupportImpl();
-		return validationSupport;
 	}
 
 	/**
@@ -300,6 +292,26 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public ValueSetConstraint createValueSetConstraint() {
 		ValueSetConstraintImpl valueSetConstraint = new ValueSetConstraintImpl();
 		return valueSetConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActRelationship createActRelationship() {
+		ActRelationshipImpl actRelationship = new ActRelationshipImpl();
+		return actRelationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Participation createParticipation() {
+		ParticipationImpl participation = new ParticipationImpl();
+		return participation;
 	}
 
 	/**

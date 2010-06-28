@@ -26,15 +26,6 @@ public interface CDAFactory extends EFactory {
 	CDAFactory eINSTANCE = org.openhealthtools.mdht.uml.cda.core.profile.impl.CDAFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Validation Support</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Validation Support</em>'.
-	 * @generated
-	 */
-	ValidationSupport createValidationSupport();
-
-	/**
 	 * Returns a new object of class '<em>Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,6 +159,24 @@ public interface CDAFactory extends EFactory {
 	 * @generated
 	 */
 	ValueSetConstraint createValueSetConstraint();
+
+	/**
+	 * Returns a new object of class '<em>Act Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Act Relationship</em>'.
+	 * @generated
+	 */
+	ActRelationship createActRelationship();
+
+	/**
+	 * Returns a new object of class '<em>Participation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Participation</em>'.
+	 * @generated
+	 */
+	Participation createParticipation();
 
 	/**
 	 * Returns the package supported by this factory.
