@@ -51,53 +51,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 
 public class InstanceGenerator {
 
-	private Map<String,EPackage> packageQNameMap = new HashMap<String,EPackage>();
-	private List<EPackage> ePackages = new ArrayList<EPackage>();
+	private Map<String,EPackage> packageURIMap = new HashMap<String,EPackage>();
 		
 	public InstanceGenerator() {
-//		getEPackage("org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage");
-//		getEPackage("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage");
-//		getEPackage("org.openhealthtools.mdht.uml.cda.CDAPackage");
 	}
 	
-	@SuppressWarnings("unchecked")
-	public EPackage getEPackage(String ePackageClassQName) {
-		EPackage ePackage = packageQNameMap.get(ePackageClassQName);
-		if (! packageQNameMap.containsKey(ePackageClassQName)) {
-			try {
-				java.lang.Class ePackageClass = this.getClass().getClassLoader().loadClass(ePackageClassQName);
-				if (EPackage.class.isAssignableFrom(ePackageClass)) {
-					ePackage = getEPackage((java.lang.Class<EPackage>) ePackageClass);
-					packageQNameMap.put(ePackageClassQName, ePackage);
-				}
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-				packageQNameMap.put(ePackageClassQName, null);
+	private EPackage getEPackageForURI(String ePackageURI) {
+		EPackage ePackage = packageURIMap.get(ePackageURI);
+		if (! packageURIMap.containsKey(ePackageURI)) {
+			ePackage = EPackage.Registry.INSTANCE.getEPackage(ePackageURI);
+			packageURIMap.put(ePackageURI, ePackage);
+			
+			if (ePackage == null) {
+				System.err.println("Cannot load EPackage for: " + ePackageURI);
 			}
 		}
 		
 		return ePackage;
 	}
-	
-    private EPackage getEPackage(java.lang.Class<EPackage> ePackageClass) {
-    	EPackage modelPackage = null;
-		try {
-			modelPackage = (EPackage) ePackageClass.getField("eINSTANCE").get(null);
-			if (modelPackage != null) {
-				addEPackage(modelPackage);
+
+	public EClass getEClass(Type umlType) {
+		String ePackageURI = CDAModelUtil.getEcorePackageURI(umlType);
+		if (ePackageURI != null) {
+			EPackage ePackage = getEPackageForURI(ePackageURI);
+			if (ePackage != null) {
+				EClassifier eClassifier = ePackage.getEClassifier(umlType.getName());
+				if (eClassifier instanceof EClass) {
+					return (EClass) eClassifier;
+				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		
-		return modelPackage;
-    }
-	
-	public void addEPackage(EPackage ePackage) {
-		if (ePackage != null && !ePackages.contains(ePackage))
-			ePackages.add(ePackage);
+		return null;
 	}
-
+	
 	public EObject createInstance(Class umlClass, int levels) {
 		EObject eObject = null;
 		EClass eClass = getEClass(umlClass);
@@ -158,20 +145,6 @@ public class InstanceGenerator {
 		return allProperties;
 	}
 
-	public EClass getEClass(Type umlType) {
-		String ePackageClassQName = CDAModelUtil.getEcorePackageClassName(umlType);
-		if (ePackageClassQName != null) {
-			EPackage ePackage = getEPackage(ePackageClassQName);
-			if (ePackage != null) {
-				EClassifier eClassifier = ePackage.getEClassifier(umlType.getName());
-				if (eClassifier instanceof EClass)
-				return (EClass) eClassifier;
-			}
-		}
-		
-		return null;
-	}
-	
 	public boolean addChild(EObject parent, EObject child) {
 		//TODO change to ALL reflection using feature name
 		EClass cdaSection = (EClass) CDAPackage.eINSTANCE.getEClassifier("Section");

@@ -11,7 +11,6 @@ import java.util.List;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
@@ -34,9 +33,6 @@ public class TransformClassProperties extends TransformAbstract {
 		
 		if (Platform.getBundle("org.openhealthtools.mdht.uml.cda") != null) {
 			instanceGenerator = new InstanceGenerator();
-			for (EPackage ePackage : options.getEPackages()) {
-				instanceGenerator.addEPackage(ePackage);
-			}
 		}
 	}
 
