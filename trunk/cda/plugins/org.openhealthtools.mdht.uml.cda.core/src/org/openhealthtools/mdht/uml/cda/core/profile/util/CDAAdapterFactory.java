@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
@@ -22,10 +23,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
+import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 
@@ -85,10 +86,6 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected CDASwitch<Adapter> modelSwitch =
 		new CDASwitch<Adapter>() {
-			@Override
-			public Adapter caseValidationSupport(ValidationSupport object) {
-				return createValidationSupportAdapter();
-			}
 			@Override
 			public Adapter caseEntry(Entry object) {
 				return createEntryAdapter();
@@ -154,6 +151,14 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 				return createValueSetConstraintAdapter();
 			}
 			@Override
+			public Adapter caseActRelationship(ActRelationship object) {
+				return createActRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseParticipation(Participation object) {
+				return createParticipationAdapter();
+			}
+			@Override
 			public Adapter caseTerm_ConceptDomainConstraint(org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint object) {
 				return createTerm_ConceptDomainConstraintAdapter();
 			}
@@ -184,20 +189,6 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport <em>Validation Support</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport
-	 * @generated
-	 */
-	public Adapter createValidationSupportAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Entry <em>Entry</em>}'.
@@ -420,6 +411,34 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createValueSetConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship <em>Act Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship
+	 * @generated
+	 */
+	public Adapter createActRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation <em>Participation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Participation
+	 * @generated
+	 */
+	public Adapter createParticipationAdapter() {
 		return null;
 	}
 

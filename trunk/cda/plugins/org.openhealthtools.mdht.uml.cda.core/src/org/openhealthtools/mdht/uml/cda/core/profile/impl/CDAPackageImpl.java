@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
@@ -29,11 +30,11 @@ import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
@@ -45,13 +46,6 @@ import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
  * @generated
  */
 public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass validationSupportEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,6 +163,20 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass actRelationshipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass participationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum severityKindEEnum = null;
 
 	/**
@@ -254,60 +262,6 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CDAPackage.eNS_URI, theCDAPackage);
 		return theCDAPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getValidationSupport() {
-		return validationSupportEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getValidationSupport_Severity() {
-		return (EAttribute)validationSupportEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getValidationSupport_Message() {
-		return (EAttribute)validationSupportEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getValidationSupport_Base_Association() {
-		return (EReference)validationSupportEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getValidationSupport_Base_Class() {
-		return (EReference)validationSupportEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getValidationSupport_Base_Property() {
-		return (EReference)validationSupportEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -711,6 +665,60 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getActRelationship() {
+		return actRelationshipEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActRelationship_Base_Association() {
+		return (EReference)actRelationshipEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActRelationship_TypeCode() {
+		return (EReference)actRelationshipEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParticipation() {
+		return participationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParticipation_Base_Association() {
+		return (EReference)participationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParticipation_TypeCode() {
+		return (EReference)participationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSeverityKind() {
 		return severityKindEEnum;
 	}
@@ -770,13 +778,6 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		validationSupportEClass = createEClass(VALIDATION_SUPPORT);
-		createEAttribute(validationSupportEClass, VALIDATION_SUPPORT__SEVERITY);
-		createEAttribute(validationSupportEClass, VALIDATION_SUPPORT__MESSAGE);
-		createEReference(validationSupportEClass, VALIDATION_SUPPORT__BASE_ASSOCIATION);
-		createEReference(validationSupportEClass, VALIDATION_SUPPORT__BASE_CLASS);
-		createEReference(validationSupportEClass, VALIDATION_SUPPORT__BASE_PROPERTY);
-
 		entryEClass = createEClass(ENTRY);
 		createEAttribute(entryEClass, ENTRY__TYPE_CODE);
 
@@ -837,6 +838,14 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		valueSetConstraintEClass = createEClass(VALUE_SET_CONSTRAINT);
 
+		actRelationshipEClass = createEClass(ACT_RELATIONSHIP);
+		createEReference(actRelationshipEClass, ACT_RELATIONSHIP__BASE_ASSOCIATION);
+		createEReference(actRelationshipEClass, ACT_RELATIONSHIP__TYPE_CODE);
+
+		participationEClass = createEClass(PARTICIPATION);
+		createEReference(participationEClass, PARTICIPATION__BASE_ASSOCIATION);
+		createEReference(participationEClass, PARTICIPATION__TYPE_CODE);
+
 		// Create enums
 		severityKindEEnum = createEEnum(SEVERITY_KIND);
 		entryKindEEnum = createEEnum(ENTRY_KIND);
@@ -895,13 +904,6 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		valueSetConstraintEClass.getESuperTypes().add(this.getValidation());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(validationSupportEClass, ValidationSupport.class, "ValidationSupport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValidationSupport_Severity(), this.getSeverityKind(), "severity", null, 0, 1, ValidationSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValidationSupport_Message(), ecorePackage.getEString(), "message", null, 0, 1, ValidationSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getValidationSupport_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 1, 1, ValidationSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getValidationSupport_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, ValidationSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getValidationSupport_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, ValidationSupport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(entryEClass, Entry.class, "Entry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntry_TypeCode(), this.getEntryKind(), "typeCode", null, 0, 1, Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -961,6 +963,14 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEClass(codeSystemConstraintEClass, CodeSystemConstraint.class, "CodeSystemConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(valueSetConstraintEClass, ValueSetConstraint.class, "ValueSetConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(actRelationshipEClass, ActRelationship.class, "ActRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActRelationship_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 1, 1, ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActRelationship_TypeCode(), theUMLPackage.getEnumerationLiteral(), null, "typeCode", null, 0, 1, ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(participationEClass, Participation.class, "Participation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParticipation_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 1, 1, Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getParticipation_TypeCode(), theUMLPackage.getEnumerationLiteral(), null, "typeCode", null, 0, 1, Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(severityKindEEnum, SeverityKind.class, "SeverityKind");

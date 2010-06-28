@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
@@ -22,10 +23,10 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
+import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 
@@ -103,12 +104,6 @@ public class CDASwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CDAPackage.VALIDATION_SUPPORT: {
-				ValidationSupport validationSupport = (ValidationSupport)theEObject;
-				T result = caseValidationSupport(validationSupport);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CDAPackage.ENTRY: {
 				Entry entry = (Entry)theEObject;
 				T result = caseEntry(entry);
@@ -228,23 +223,20 @@ public class CDASwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CDAPackage.ACT_RELATIONSHIP: {
+				ActRelationship actRelationship = (ActRelationship)theEObject;
+				T result = caseActRelationship(actRelationship);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDAPackage.PARTICIPATION: {
+				Participation participation = (Participation)theEObject;
+				T result = caseParticipation(participation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Validation Support</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Validation Support</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseValidationSupport(ValidationSupport object) {
-		return null;
 	}
 
 	/**
@@ -484,6 +476,36 @@ public class CDASwitch<T> {
 	 * @generated
 	 */
 	public T caseValueSetConstraint(ValueSetConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Act Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Act Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActRelationship(ActRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParticipation(Participation object) {
 		return null;
 	}
 

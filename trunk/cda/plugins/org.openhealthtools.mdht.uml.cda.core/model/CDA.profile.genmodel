@@ -61,16 +61,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//NullFlavorKind/UNC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//NullFlavorKind/UNK"/>
     </genEnums>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValidationSupport">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValidationSupport/severity"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValidationSupport/message"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValidationSupport/base_Association"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValidationSupport/base_Class"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValidationSupport/base_Property"/>
-    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//Entry">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Entry/typeCode"/>
     </genClasses>
@@ -134,5 +124,17 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ConceptDomainConstraint"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//CodeSystemConstraint"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSetConstraint"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ActRelationship">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ActRelationship/base_Association"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ActRelationship/typeCode"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//Participation">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//Participation/base_Association"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//Participation/typeCode"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

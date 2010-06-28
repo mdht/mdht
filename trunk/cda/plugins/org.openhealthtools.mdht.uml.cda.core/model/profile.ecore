@@ -8,18 +8,6 @@
     <eLiterals name="WARNING" value="1"/>
     <eLiterals name="INFO" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ValidationSupport">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
-        eType="#//SeverityKind"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
-        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
-        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
-        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EntryKind">
     <eLiterals name="COMP"/>
     <eLiterals name="DRIV" value="1"/>
@@ -135,4 +123,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConceptDomainConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//ConceptDomainConstraint #//Validation"/>
   <eClassifiers xsi:type="ecore:EClass" name="CodeSystemConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//CodeSystemConstraint #//Validation"/>
   <eClassifiers xsi:type="ecore:EClass" name="ValueSetConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//ValueSetConstraint #//Validation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeCode" ordered="false"
+        eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//EnumerationLiteral"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Participation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeCode" ordered="false"
+        eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//EnumerationLiteral"/>
+  </eClassifiers>
 </ecore:EPackage>
