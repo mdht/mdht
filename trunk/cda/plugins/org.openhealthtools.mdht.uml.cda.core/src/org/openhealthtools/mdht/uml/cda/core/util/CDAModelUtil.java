@@ -948,27 +948,24 @@ public class CDAModelUtil {
 		return basePackage;
 	}
 	
-	public static String getEcorePackageClassName(Element element) {
-		String packageQName = null;
+	public static String getEcorePackageURI(Element element) {
+		String nsURI = null;
 		Package model = UMLUtil.getTopPackage(element);
 		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(model, ICDAProfileConstants.CODEGEN_SUPPORT);
 		if (codegenSupport != null) {
-			String basePackage = (String) model.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
-			String prefix = getModelPrefix(element);
-			if (basePackage != null && prefix != null)
-				packageQName = basePackage + "." + model.getName() + "." + prefix + "Package";
+			nsURI = (String) model.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
 		}
-		else {
+		if (nsURI == null) {
 			// for base models without codegenSupport
 			if (model.getName().equals("cda"))
-				packageQName = "org.openhealthtools.mdht.uml.cda.CDAPackage";
+				nsURI = "urn:hl7-org:v3";
 			else if (model.getName().equals("datatypes"))
-				packageQName = "org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage";
+				nsURI = "http://www.openhealthtools.org/mdht/uml/hl7/datatypes";
 			else if (model.getName().equals("vocab"))
-				packageQName = "org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage";
+				nsURI = "http://www.openhealthtools.org/mdht/uml/hl7/vocab";
 		}
 		
-		return packageQName;
+		return nsURI;
 	}
 
 	public static String getPrefixedSplitName(NamedElement element) {
