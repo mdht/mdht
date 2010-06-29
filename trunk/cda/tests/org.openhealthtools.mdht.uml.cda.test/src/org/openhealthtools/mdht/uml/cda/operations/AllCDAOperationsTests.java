@@ -16,13 +16,14 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * This class represents a suite of Junit 4 test cases for CDA document
+ * This class represents a suite of JUnit 4 test cases for CDA document
  * processing.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses( { ActOperationsTest.class,
+@Suite.SuiteClasses({ ActOperationsTest.class,
 	AssignedAuthorOperationsTest.class,
-	ClinicalDocumentOperationsTest.class, Component2OperationsTest.class,
+	ClinicalDocumentOperationsTest.class,
+	ClinicalStatementOperationsTest.class, Component2OperationsTest.class,
 	Component4OperationsTest.class, EncounterOperationsTest.class,
 	EntryOperationsTest.class, EntryRelationshipOperationsTest.class,
 	GuardianOperationsTest.class, Informant12OperationsTest.class,
