@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
@@ -70,18 +71,18 @@ public abstract class CDAValidationTest {
 				testTargetDescription = testCase.getTestTargetDescription();
 				final EObject eObjectToTest = getEObjectToValidate();
 				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-						.createDefaultDiagnostic(eObjectToTest);
+				.createDefaultDiagnostic(eObjectToTest);
 
 				testCase.doTest(eObjectToTest, diagnostician, map);
 			}
 
 		} catch (final UnsupportedOperationException uoe) {
 			fail(createUnsupportedOperationFailureMessage(testTargetDescription,uoe));
-		} 
-//		finally {
-//			count += getTestCases().size();
-//			System.out.println("count = " + count);
-//		}
+		}
+		//		finally {
+		//			count += getTestCases().size();
+		//			System.out.println("count = " + count);
+		//		}
 	} // testAll
 
 	protected List<CDATestCase> getTestCases() {
@@ -127,7 +128,7 @@ public abstract class CDAValidationTest {
 	} // CDAOperationsTestCase
 
 	static abstract protected class CDAAddTestCase extends
-			CDAOperationsTestCase {
+	CDAOperationsTestCase {
 
 		protected CDAAddTestCase(final String testTargetDescription) {
 			super(testTargetDescription);
@@ -151,13 +152,13 @@ public abstract class CDAValidationTest {
 		protected boolean isFound(final EObject eObjectToTest,
 				final EObject eObjectToFind, final EStructuralFeature feature) {
 			return eObjectToFind.eContainingFeature().equals(feature)
-					&& eObjectToFind.eContainer().eContainer().equals(
-							eObjectToTest);
+			&& eObjectToFind.eContainer().eContainer().equals(
+					eObjectToTest);
 		} // isFound
 	} // CDAAddTestCase
 
 	static abstract protected class CDAGetTestCase extends
-			CDAOperationsTestCase {
+	CDAOperationsTestCase {
 
 		protected CDAGetTestCase(final String testTargetDescription) {
 			super(testTargetDescription);
@@ -188,19 +189,22 @@ public abstract class CDAValidationTest {
 	} // CDAGetTestCase
 
 	static abstract protected class CDAHasTestCase extends
-			CDAOperationsTestCase {
+	CDAOperationsTestCase {
 
 		protected static final String TEMPLATE_ID = "1.2.3.4";
 		protected static final II THE_II = DatatypesFactory.eINSTANCE
-				.createII();
+		.createII();
 
 		protected static final String CODE = "code";
 		protected static final String CODE_SYSTEM = "codeSystem";
 		protected static final String CODE_SYSTEM_NAME = "codeSystemName";
 		protected static final String CODE_DISPLAY_NAME = "codeDisplayName";
 		protected static final CD THE_CODE = DatatypesFactory.eINSTANCE
-				.createCD(CODE, CODE_SYSTEM, CODE_SYSTEM_NAME,
-						CODE_DISPLAY_NAME);
+		.createCD(CODE, CODE_SYSTEM, CODE_SYSTEM_NAME,
+				CODE_DISPLAY_NAME);
+		protected static final CE THE_CE_CODE = DatatypesFactory.eINSTANCE
+		.createCE(CODE, CODE_SYSTEM, CODE_SYSTEM_NAME,
+				CODE_DISPLAY_NAME);
 
 		protected CDAHasTestCase(final String testTargetDescription) {
 			super(testTargetDescription);
@@ -256,7 +260,7 @@ public abstract class CDAValidationTest {
 	} // CDAValidationTestCase
 
 	static abstract protected class UndefinedValidationTestCase extends
-			CDAValidationTestCase {
+	CDAValidationTestCase {
 
 		private final Set<String> eReferenceNames;
 
@@ -274,13 +278,13 @@ public abstract class CDAValidationTest {
 		protected String createEReferenceNotFoundMessage(
 				final EObject eObjectToTest, final String eReferenceName) {
 			return "EReference \"" + eReferenceName + "\" not found in \""
-					+ eObjectToTest.eClass().getName() + "\"";
+			+ eObjectToTest.eClass().getName() + "\"";
 		}
 
 	} // UndefinedValidationTestCase
 
 	static abstract protected class UndefinedORValidationTestCase extends
-			UndefinedValidationTestCase {
+	UndefinedValidationTestCase {
 
 		public UndefinedORValidationTestCase(
 				final String validationTargetDescription,
@@ -300,7 +304,7 @@ public abstract class CDAValidationTest {
 			// and test for validation failure.
 			for (final String eReferenceName : getEReferenceNames()) {
 				final EReference eReference = (EReference) eObjectToTest
-						.eClass().getEStructuralFeature(eReferenceName);
+				.eClass().getEStructuralFeature(eReferenceName);
 
 				assertNotNull(createEReferenceNotFoundMessage(eObjectToTest,
 						eReferenceName), eReference);
@@ -318,7 +322,7 @@ public abstract class CDAValidationTest {
 			// failure.
 			for (final String eReferenceName : getEReferenceNames()) {
 				final EReference eReference = (EReference) eObjectToTest
-						.eClass().getEStructuralFeature(eReferenceName);
+				.eClass().getEStructuralFeature(eReferenceName);
 				final EObject temp = (EObject) eObjectToTest.eGet(eReference);
 				eObjectToTest.eUnset(eReference);
 				validateExpectPass(eObjectToTest, diagnostician, map);
@@ -330,7 +334,7 @@ public abstract class CDAValidationTest {
 	} // UndefinedORValidationTestCase
 
 	static abstract protected class UndefinedXORValidationTestCase extends
-			UndefinedValidationTestCase {
+	UndefinedValidationTestCase {
 
 		public UndefinedXORValidationTestCase(
 				final String validationTargetDescription,
@@ -349,7 +353,7 @@ public abstract class CDAValidationTest {
 			// those which we will set and set them all.
 			for (final String eReferenceName : getEReferenceNames()) {
 				final EReference eReference = (EReference) eObjectToTest
-						.eClass().getEStructuralFeature(eReferenceName);
+				.eClass().getEStructuralFeature(eReferenceName);
 				assertNotNull(createEReferenceNotFoundMessage(eObjectToTest,
 						eReferenceName), eReference);
 				eObjectToTest.eSet(eReference, CDAFactory.eINSTANCE
@@ -363,7 +367,7 @@ public abstract class CDAValidationTest {
 			// validating
 			for (final String eReferenceName : getEReferenceNames()) {
 				final EReference eReference = (EReference) eObjectToTest
-						.eClass().getEStructuralFeature(eReferenceName);
+				.eClass().getEStructuralFeature(eReferenceName);
 				final EObject temp = (EObject) eObjectToTest.eGet(eReference);
 				eObjectToTest.eUnset(eReference);
 				validateExpectPass(eObjectToTest, diagnostician, map);
@@ -375,7 +379,7 @@ public abstract class CDAValidationTest {
 	} // UndefinedXORValidationTestCase
 
 	static abstract protected class MutualExclusionValidationTestCase extends
-			UndefinedValidationTestCase {
+	UndefinedValidationTestCase {
 
 		public MutualExclusionValidationTestCase(
 				final String validationTargetDescription,
@@ -399,7 +403,7 @@ public abstract class CDAValidationTest {
 			// test for validation failure.
 			for (final String eReferenceName : getEReferenceNames()) {
 				final EReference eReference = (EReference) eObjectToTest
-						.eClass().getEStructuralFeature(eReferenceName);
+				.eClass().getEStructuralFeature(eReferenceName);
 
 				assertNotNull(createEReferenceNotFoundMessage(eObjectToTest,
 						eReferenceName), eReference);
@@ -419,7 +423,7 @@ public abstract class CDAValidationTest {
 	} // MutualExclusionValidationTestCase
 
 	static abstract protected class CDAMutualExclusionValidationTestCase extends
-			MutualExclusionValidationTestCase {
+	MutualExclusionValidationTestCase {
 
 		/**
 		 * This is the list of the names of the EReferences that cannot be set
@@ -429,10 +433,10 @@ public abstract class CDAValidationTest {
 		 */
 		private static final Set<String> MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES = new HashSet<String>(
 				Arrays
-						.asList(/* "act", */"encounter", "observation",
-								"observationMedia", "organizer", "procedure",
-								"regionOfInterest", "substanceAdministration",
-								"supply"));
+				.asList(/* "act", */"encounter", "observation",
+						"observationMedia", "organizer", "procedure",
+						"regionOfInterest", "substanceAdministration",
+				"supply"));
 
 		protected CDAMutualExclusionValidationTestCase(
 				final String validationTargetDescription) {
@@ -443,11 +447,11 @@ public abstract class CDAValidationTest {
 	} // CDAMutualExclusionValidationTestCase
 
 	static protected String createUnsupportedOperationFailureMessage(
-			String testTargetDescription,
+			final String testTargetDescription,
 			final UnsupportedOperationException uoe) {
 		return "The test \"" + testTargetDescription + "\" failed because of \""
-				+ uoe.getMessage()
-				+ "\".  This is likely due to errors in the OCL.";
+		+ uoe.getMessage()
+		+ "\".  This is likely due to errors in the OCL.";
 	}
 
 	static protected String createAssertionFailureMessage(
@@ -456,7 +460,7 @@ public abstract class CDAValidationTest {
 	}
 
 	static protected String createAssertionFailureMessage(
-			final BasicDiagnostic diagnostician, String source) {
+			final BasicDiagnostic diagnostician, final String source) {
 		final StringBuilder sb = new StringBuilder(source);
 		sb.append(": ");
 		for (final Diagnostic diagnostic : diagnostician.getChildren()) {
