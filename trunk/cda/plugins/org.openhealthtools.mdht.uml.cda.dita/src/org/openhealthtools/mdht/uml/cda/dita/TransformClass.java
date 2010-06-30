@@ -105,13 +105,13 @@ public class TransformClass extends TransformAbstract {
 //		writer.println("<ol conref=\"generated/_" + className + ".dita#classId/aggregate\">");
 		writer.println("<li></li>");
 		writer.println("</ol>");
-		if (hl7Template != null) {
+//		if (hl7Template != null) {
 			writer.println("<fig>");
 			writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
 			writer.println("<codeblock conref=\"generated/_" + className + ".dita#classId/example\">");
 			writer.println("</codeblock>");
 			writer.println("</fig>");
-		}
+//		}
 		
 		writer.println("</body>");
 		writer.println("</topic>");
