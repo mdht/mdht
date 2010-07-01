@@ -997,6 +997,7 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getProcedures"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSections"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getAllSections"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSubstanceAdministrations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/hasActTemplate">

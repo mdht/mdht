@@ -2969,6 +2969,8 @@
         <details key="body" value="self.component.section"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getAllSections" ordered="false" unique="false" upperBound="-1"
+        eType="#//Section"/>
     <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

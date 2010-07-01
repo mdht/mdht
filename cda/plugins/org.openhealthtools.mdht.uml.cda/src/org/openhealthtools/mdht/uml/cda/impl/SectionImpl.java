@@ -1144,6 +1144,15 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Section> getAllSections() {
+		return SectionOperations.getAllSections(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<SubstanceAdministration> getSubstanceAdministrations() {
 		return SectionOperations.getSubstanceAdministrations(this);
 	}

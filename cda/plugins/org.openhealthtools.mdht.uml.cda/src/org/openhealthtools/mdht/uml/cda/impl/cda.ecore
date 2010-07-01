@@ -2812,6 +2812,8 @@
         eType="#//RegionOfInterest"/>
     <eOperations name="getSections" ordered="false" unique="false" upperBound="-1"
         eType="#//Section"/>
+    <eOperations name="getAllSections" ordered="false" unique="false" upperBound="-1"
+        eType="#//Section"/>
     <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
