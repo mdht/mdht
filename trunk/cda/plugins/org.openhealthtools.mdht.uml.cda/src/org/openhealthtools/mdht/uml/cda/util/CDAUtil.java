@@ -702,6 +702,11 @@ public class CDAUtil {
 		return allSections;
 	}
 
+	// get all nested sections in the section (closure)
+	public static List<Section> getAllSections(Section section) {
+		return getSections(section);
+	}
+
 	private static List<Section> getSections(Section section) {
 		List<Section> sections = new ArrayList<Section>();
 		Stack<Section> stack = new Stack<Section>();

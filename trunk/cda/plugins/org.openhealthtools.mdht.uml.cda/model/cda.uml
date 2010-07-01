@@ -684,6 +684,12 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b3c11VwxEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_89B10IUqEd-2zZPpbLXGnA" name="getAllSections" isQuery="true">
+        <ownedParameter xmi:id="_89B10YUqEd-2zZPpbLXGnA" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_89B10oUqEd-2zZPpbLXGnA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_89B104UqEd-2zZPpbLXGnA"/>
+        </ownedParameter>
+      </ownedOperation>
       <ownedOperation xmi:id="_-AfvAFxCEd6ZEsfifJz_3w" name="getSubstanceAdministrations" isQuery="true" bodyCondition="_1F9ngFxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_1F9ngFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_-AfvAFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_1F9ngVxDEd6ZEsfifJz_3w">
