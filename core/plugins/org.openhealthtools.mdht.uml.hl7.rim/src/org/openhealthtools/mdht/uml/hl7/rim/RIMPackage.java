@@ -8,7 +8,6 @@ package org.openhealthtools.mdht.uml.hl7.rim;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -88,40 +87,13 @@ public interface RIMPackage extends EPackage {
 	int RIM_ACT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Participation</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ACT__PARTICIPATION = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Outbound Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ACT__OUTBOUND_RELATIONSHIP = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Inbound Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ACT__INBOUND_RELATIONSHIP = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Act</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIM_ACT_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 3;
+	int RIM_ACT_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMParticipationImpl <em>Participation</em>}' class.
@@ -134,31 +106,13 @@ public interface RIMPackage extends EPackage {
 	int RIM_PARTICIPATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Act</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_PARTICIPATION__ACT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_PARTICIPATION__ROLE = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Participation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIM_PARTICIPATION_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 2;
+	int RIM_PARTICIPATION_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleImpl <em>Role</em>}' class.
@@ -171,58 +125,13 @@ public interface RIMPackage extends EPackage {
 	int RIM_ROLE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Player</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ROLE__PLAYER = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Scoper</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ROLE__SCOPER = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Participation</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ROLE__PARTICIPATION = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Outbound Link</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ROLE__OUTBOUND_LINK = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ROLE__INBOUND_LINK = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIM_ROLE_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 5;
+	int RIM_ROLE_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMEntityImpl <em>Entity</em>}' class.
@@ -235,31 +144,13 @@ public interface RIMPackage extends EPackage {
 	int RIM_ENTITY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Played Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ENTITY__PLAYED_ROLE = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Scoped Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ENTITY__SCOPED_ROLE = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIM_ENTITY_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 2;
+	int RIM_ENTITY_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleLinkImpl <em>Role Link</em>}' class.
@@ -272,31 +163,13 @@ public interface RIMPackage extends EPackage {
 	int RIM_ROLE_LINK = 5;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ROLE_LINK__TARGET = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ROLE_LINK__SOURCE = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Role Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIM_ROLE_LINK_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 2;
+	int RIM_ROLE_LINK_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActRelationshipImpl <em>Act Relationship</em>}' class.
@@ -309,31 +182,13 @@ public interface RIMPackage extends EPackage {
 	int RIM_ACT_RELATIONSHIP = 6;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ACT_RELATIONSHIP__TARGET = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIM_ACT_RELATIONSHIP__SOURCE = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Act Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIM_ACT_RELATIONSHIP_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 2;
+	int RIM_ACT_RELATIONSHIP_FEATURE_COUNT = RIM_INFRASTRUCTURE_ROOT_FEATURE_COUNT + 0;
 
 
 	/**
@@ -345,39 +200,6 @@ public interface RIMPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRIMAct();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getParticipations <em>Participation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Participation</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getParticipations()
-	 * @see #getRIMAct()
-	 * @generated
-	 */
-	EReference getRIMAct_Participation();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getOutboundRelationships <em>Outbound Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outbound Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getOutboundRelationships()
-	 * @see #getRIMAct()
-	 * @generated
-	 */
-	EReference getRIMAct_OutboundRelationship();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getInboundRelationships <em>Inbound Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Inbound Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getInboundRelationships()
-	 * @see #getRIMAct()
-	 * @generated
-	 */
-	EReference getRIMAct_InboundRelationship();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot <em>Infrastructure Root</em>}'.
@@ -400,28 +222,6 @@ public interface RIMPackage extends EPackage {
 	EClass getRIMParticipation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation#getAct <em>Act</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Act</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation#getAct()
-	 * @see #getRIMParticipation()
-	 * @generated
-	 */
-	EReference getRIMParticipation_Act();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation#getRole <em>Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Role</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation#getRole()
-	 * @see #getRIMParticipation()
-	 * @generated
-	 */
-	EReference getRIMParticipation_Role();
-
-	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -430,61 +230,6 @@ public interface RIMPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRIMRole();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getPlayer <em>Player</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Player</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getPlayer()
-	 * @see #getRIMRole()
-	 * @generated
-	 */
-	EReference getRIMRole_Player();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getScoper <em>Scoper</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Scoper</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getScoper()
-	 * @see #getRIMRole()
-	 * @generated
-	 */
-	EReference getRIMRole_Scoper();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getParticipations <em>Participation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Participation</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getParticipations()
-	 * @see #getRIMRole()
-	 * @generated
-	 */
-	EReference getRIMRole_Participation();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getOutboundLinks <em>Outbound Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outbound Link</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getOutboundLinks()
-	 * @see #getRIMRole()
-	 * @generated
-	 */
-	EReference getRIMRole_OutboundLink();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getInboundLinks <em>Inbound Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Inbound Link</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole#getInboundLinks()
-	 * @see #getRIMRole()
-	 * @generated
-	 */
-	EReference getRIMRole_InboundLink();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity <em>Entity</em>}'.
@@ -497,28 +242,6 @@ public interface RIMPackage extends EPackage {
 	EClass getRIMEntity();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getPlayedRoles <em>Played Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Played Role</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getPlayedRoles()
-	 * @see #getRIMEntity()
-	 * @generated
-	 */
-	EReference getRIMEntity_PlayedRole();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getScopedRoles <em>Scoped Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Scoped Role</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getScopedRoles()
-	 * @see #getRIMEntity()
-	 * @generated
-	 */
-	EReference getRIMEntity_ScopedRole();
-
-	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink <em>Role Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -529,28 +252,6 @@ public interface RIMPackage extends EPackage {
 	EClass getRIMRoleLink();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink#getTarget()
-	 * @see #getRIMRoleLink()
-	 * @generated
-	 */
-	EReference getRIMRoleLink_Target();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink#getSource()
-	 * @see #getRIMRoleLink()
-	 * @generated
-	 */
-	EReference getRIMRoleLink_Source();
-
-	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship <em>Act Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -559,28 +260,6 @@ public interface RIMPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRIMActRelationship();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getTarget()
-	 * @see #getRIMActRelationship()
-	 * @generated
-	 */
-	EReference getRIMActRelationship_Target();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getSource()
-	 * @see #getRIMActRelationship()
-	 * @generated
-	 */
-	EReference getRIMActRelationship_Source();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -615,30 +294,6 @@ public interface RIMPackage extends EPackage {
 		EClass RIM_ACT = eINSTANCE.getRIMAct();
 
 		/**
-		 * The meta object literal for the '<em><b>Participation</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ACT__PARTICIPATION = eINSTANCE.getRIMAct_Participation();
-
-		/**
-		 * The meta object literal for the '<em><b>Outbound Relationship</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ACT__OUTBOUND_RELATIONSHIP = eINSTANCE.getRIMAct_OutboundRelationship();
-
-		/**
-		 * The meta object literal for the '<em><b>Inbound Relationship</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ACT__INBOUND_RELATIONSHIP = eINSTANCE.getRIMAct_InboundRelationship();
-
-		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMInfrastructureRootImpl <em>Infrastructure Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -659,22 +314,6 @@ public interface RIMPackage extends EPackage {
 		EClass RIM_PARTICIPATION = eINSTANCE.getRIMParticipation();
 
 		/**
-		 * The meta object literal for the '<em><b>Act</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_PARTICIPATION__ACT = eINSTANCE.getRIMParticipation_Act();
-
-		/**
-		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_PARTICIPATION__ROLE = eINSTANCE.getRIMParticipation_Role();
-
-		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleImpl <em>Role</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -683,46 +322,6 @@ public interface RIMPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RIM_ROLE = eINSTANCE.getRIMRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Player</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ROLE__PLAYER = eINSTANCE.getRIMRole_Player();
-
-		/**
-		 * The meta object literal for the '<em><b>Scoper</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ROLE__SCOPER = eINSTANCE.getRIMRole_Scoper();
-
-		/**
-		 * The meta object literal for the '<em><b>Participation</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ROLE__PARTICIPATION = eINSTANCE.getRIMRole_Participation();
-
-		/**
-		 * The meta object literal for the '<em><b>Outbound Link</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ROLE__OUTBOUND_LINK = eINSTANCE.getRIMRole_OutboundLink();
-
-		/**
-		 * The meta object literal for the '<em><b>Inbound Link</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ROLE__INBOUND_LINK = eINSTANCE.getRIMRole_InboundLink();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMEntityImpl <em>Entity</em>}' class.
@@ -735,22 +334,6 @@ public interface RIMPackage extends EPackage {
 		EClass RIM_ENTITY = eINSTANCE.getRIMEntity();
 
 		/**
-		 * The meta object literal for the '<em><b>Played Role</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ENTITY__PLAYED_ROLE = eINSTANCE.getRIMEntity_PlayedRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Scoped Role</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ENTITY__SCOPED_ROLE = eINSTANCE.getRIMEntity_ScopedRole();
-
-		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleLinkImpl <em>Role Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -761,22 +344,6 @@ public interface RIMPackage extends EPackage {
 		EClass RIM_ROLE_LINK = eINSTANCE.getRIMRoleLink();
 
 		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ROLE_LINK__TARGET = eINSTANCE.getRIMRoleLink_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ROLE_LINK__SOURCE = eINSTANCE.getRIMRoleLink_Source();
-
-		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActRelationshipImpl <em>Act Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -785,22 +352,6 @@ public interface RIMPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RIM_ACT_RELATIONSHIP = eINSTANCE.getRIMActRelationship();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ACT_RELATIONSHIP__TARGET = eINSTANCE.getRIMActRelationship_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RIM_ACT_RELATIONSHIP__SOURCE = eINSTANCE.getRIMActRelationship_Source();
 
 	}
 

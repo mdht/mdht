@@ -7,6 +7,7 @@
 package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import org.eclipse.emf.common.util.Enumerator;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
 
 /**
@@ -18,6 +19,8 @@ import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getTypeCode() <em>Get Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getTarget() <em>Get Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getSource() <em>Get Source</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +42,28 @@ public class RIMActRelationshipOperations extends RIMInfrastructureRootOperation
 	 * @generated
 	 */
 	public static  Enumerator getTypeCode(RIMActRelationship rimActRelationship) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static  RIMAct getTarget(RIMActRelationship rimActRelationship) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static  RIMAct getSource(RIMActRelationship rimActRelationship) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.hl7.rim/src"
+    xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.hl7.rim/src"
     modelPluginID="org.openhealthtools.mdht.uml.hl7.rim" modelName="RIM" modelPluginClass="RIMPlugin"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
     usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
@@ -28,15 +28,12 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="RIM" basePackage="org.openhealthtools.mdht.uml.hl7"
       disposableProviderFactory="true" ecorePackage="rim.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.hl7.rim.operations">
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMAct">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMAct/participation"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMAct/outboundRelationship"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMAct/inboundRelationship"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getClassCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getMoodCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getNegationInd"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getParticipations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getOutboundRelationships"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getInboundRelationships"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMInfrastructureRoot">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMInfrastructureRoot/getRealmCodes"/>
@@ -45,46 +42,33 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMInfrastructureRoot/getNullFlavor"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMParticipation">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMParticipation/act"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMParticipation/role"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMParticipation/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMParticipation/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMParticipation/getRole"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMRole">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMRole/player"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMRole/scoper"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMRole/participation"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMRole/outboundLink"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMRole/inboundLink"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getClassCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getPlayer"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getScoper"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getParticipations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getOutboundLinks"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getInboundLinks"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMEntity">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMEntity/playedRole"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMEntity/scopedRole"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getClassCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getDeterminerCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getPlayedRoles"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getScopedRoles"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMRoleLink">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMRoleLink/target"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMRoleLink/source"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRoleLink/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRoleLink/getTarget"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRoleLink/getSource"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMActRelationship">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMActRelationship/target"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference rim.ecore#//RIMActRelationship/source"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMActRelationship/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMActRelationship/getTarget"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMActRelationship/getSource"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
