@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMParticipationOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  *
  * @generated
  */
-public class PatientAwarenessOperations {
+public class PatientAwarenessOperations extends RIMParticipationOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

@@ -552,7 +552,7 @@ public class ResultOrganizerOperations extends OrganizerOperations {
 	public static  EList<ResultObservation> getResultObservations(ResultOrganizer resultOrganizer) {
 		if (GET_RESULT_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.RESULT_ORGANIZER, CCDPackage.Literals.RESULT_ORGANIZER.getEAllOperations().get(41));
+			helper.setOperationContext(CCDPackage.Literals.RESULT_ORGANIZER, CCDPackage.Literals.RESULT_ORGANIZER.getEAllOperations().get(51));
 			try {
 				GET_RESULT_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_RESULT_OBSERVATIONS__EOCL_EXP);
 			}

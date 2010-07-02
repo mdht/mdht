@@ -13,10 +13,10 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
 import org.openhealthtools.mdht.uml.hl7.vocab.ContextControl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
@@ -45,7 +45,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  * @model
  * @generated
  */
-public interface LegalAuthenticator extends EObject {
+public interface LegalAuthenticator extends RIMParticipation {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

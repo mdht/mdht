@@ -374,7 +374,7 @@ public class SupplyActivityOperations extends SupplyOperations {
 	public static  MedicationStatusObservation getMedicationStatusObservation(SupplyActivity supplyActivity) {
 		if (GET_MEDICATION_STATUS_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.SUPPLY_ACTIVITY, CCDPackage.Literals.SUPPLY_ACTIVITY.getEAllOperations().get(38));
+			helper.setOperationContext(CCDPackage.Literals.SUPPLY_ACTIVITY, CCDPackage.Literals.SUPPLY_ACTIVITY.getEAllOperations().get(48));
 			try {
 				GET_MEDICATION_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_MEDICATION_STATUS_OBSERVATION__EOCL_EXP);
 			}
@@ -418,7 +418,7 @@ public class SupplyActivityOperations extends SupplyOperations {
 	public static  EList<FulfillmentInstruction> getFulfillmentInstructions(SupplyActivity supplyActivity) {
 		if (GET_FULFILLMENT_INSTRUCTIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.SUPPLY_ACTIVITY, CCDPackage.Literals.SUPPLY_ACTIVITY.getEAllOperations().get(39));
+			helper.setOperationContext(CCDPackage.Literals.SUPPLY_ACTIVITY, CCDPackage.Literals.SUPPLY_ACTIVITY.getEAllOperations().get(49));
 			try {
 				GET_FULFILLMENT_INSTRUCTIONS__EOCL_QRY = helper.createQuery(GET_FULFILLMENT_INSTRUCTIONS__EOCL_EXP);
 			}

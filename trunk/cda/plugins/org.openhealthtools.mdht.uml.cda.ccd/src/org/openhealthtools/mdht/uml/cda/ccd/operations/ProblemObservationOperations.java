@@ -621,7 +621,7 @@ public class ProblemObservationOperations extends ObservationOperations {
 	public static  ProblemStatusObservation getProblemStatusObservation(ProblemObservation problemObservation) {
 		if (GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(42));
+			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(52));
 			try {
 				GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_PROBLEM_STATUS_OBSERVATION__EOCL_EXP);
 			}
@@ -665,7 +665,7 @@ public class ProblemObservationOperations extends ObservationOperations {
 	public static  ProblemHealthStatusObservation getProblemHealthStatusObservation(ProblemObservation problemObservation) {
 		if (GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(43));
+			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(53));
 			try {
 				GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_EXP);
 			}
@@ -709,7 +709,7 @@ public class ProblemObservationOperations extends ObservationOperations {
 	public static  AgeObservation getAgeObservation(ProblemObservation problemObservation) {
 		if (GET_AGE_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(44));
+			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(54));
 			try {
 				GET_AGE_OBSERVATION__EOCL_QRY = helper.createQuery(GET_AGE_OBSERVATION__EOCL_EXP);
 			}

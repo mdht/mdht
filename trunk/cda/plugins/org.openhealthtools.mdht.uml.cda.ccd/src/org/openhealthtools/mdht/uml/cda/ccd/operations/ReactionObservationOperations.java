@@ -373,7 +373,7 @@ public class ReactionObservationOperations extends ObservationOperations {
 	public static  SeverityObservation getSeverityObservation(ReactionObservation reactionObservation) {
 		if (GET_SEVERITY_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.REACTION_OBSERVATION, CCDPackage.Literals.REACTION_OBSERVATION.getEAllOperations().get(38));
+			helper.setOperationContext(CCDPackage.Literals.REACTION_OBSERVATION, CCDPackage.Literals.REACTION_OBSERVATION.getEAllOperations().get(48));
 			try {
 				GET_SEVERITY_OBSERVATION__EOCL_QRY = helper.createQuery(GET_SEVERITY_OBSERVATION__EOCL_EXP);
 			}

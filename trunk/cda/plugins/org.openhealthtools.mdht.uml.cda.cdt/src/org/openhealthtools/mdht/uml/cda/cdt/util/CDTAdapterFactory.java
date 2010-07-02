@@ -38,6 +38,8 @@ import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
 
 /**
  * <!-- begin-user-doc -->
@@ -186,6 +188,14 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCDTRegistryDelegate(CDTRegistryDelegate object) {
 				return createCDTRegistryDelegateAdapter();
+			}
+			@Override
+			public Adapter caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
+				return createRIMInfrastructureRootAdapter();
+			}
+			@Override
+			public Adapter caseRIMAct(RIMAct object) {
+				return createRIMActAdapter();
 			}
 			@Override
 			public Adapter caseClinicalDocument(ClinicalDocument object) {
@@ -546,6 +556,34 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCDTRegistryDelegateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot <em>Infrastructure Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot
+	 * @generated
+	 */
+	public Adapter createRIMInfrastructureRootAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct <em>Act</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMAct
+	 * @generated
+	 */
+	public Adapter createRIMActAdapter() {
 		return null;
 	}
 

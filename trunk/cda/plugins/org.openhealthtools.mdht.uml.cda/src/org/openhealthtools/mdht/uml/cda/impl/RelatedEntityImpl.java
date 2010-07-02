@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -34,6 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
 
@@ -60,7 +60,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
  *
  * @generated
  */
-public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
+public class RelatedEntityImpl extends RIMRoleImpl implements RelatedEntity {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

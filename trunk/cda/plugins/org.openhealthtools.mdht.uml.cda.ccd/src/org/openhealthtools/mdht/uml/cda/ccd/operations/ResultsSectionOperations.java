@@ -376,7 +376,7 @@ public class ResultsSectionOperations extends SectionOperations {
 	public static  EList<ResultOrganizer> getResultOrganizers(ResultsSection resultsSection) {
 		if (GET_RESULT_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.RESULTS_SECTION, CCDPackage.Literals.RESULTS_SECTION.getEAllOperations().get(41));
+			helper.setOperationContext(CCDPackage.Literals.RESULTS_SECTION, CCDPackage.Literals.RESULTS_SECTION.getEAllOperations().get(52));
 			try {
 				GET_RESULT_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_RESULT_ORGANIZERS__EOCL_EXP);
 			}

@@ -781,7 +781,7 @@ public class ProblemActOperations extends ActOperations {
 	public static  EpisodeObservation getEpisodeObservation(ProblemAct problemAct) {
 		if (GET_EPISODE_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.PROBLEM_ACT, CCDPackage.Literals.PROBLEM_ACT.getEAllOperations().get(45));
+			helper.setOperationContext(CCDPackage.Literals.PROBLEM_ACT, CCDPackage.Literals.PROBLEM_ACT.getEAllOperations().get(55));
 			try {
 				GET_EPISODE_OBSERVATION__EOCL_QRY = helper.createQuery(GET_EPISODE_OBSERVATION__EOCL_EXP);
 			}

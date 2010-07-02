@@ -114,6 +114,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.QTY;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -192,6 +198,8 @@ public class CDASwitch<T> {
 			case CDAPackage.CLINICAL_DOCUMENT: {
 				ClinicalDocument clinicalDocument = (ClinicalDocument)theEObject;
 				T result = caseClinicalDocument(clinicalDocument);
+				if (result == null) result = caseRIMAct(clinicalDocument);
+				if (result == null) result = caseRIMInfrastructureRoot(clinicalDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -206,54 +214,72 @@ public class CDASwitch<T> {
 			case CDAPackage.RECORD_TARGET: {
 				RecordTarget recordTarget = (RecordTarget)theEObject;
 				T result = caseRecordTarget(recordTarget);
+				if (result == null) result = caseRIMParticipation(recordTarget);
+				if (result == null) result = caseRIMInfrastructureRoot(recordTarget);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PATIENT_ROLE: {
 				PatientRole patientRole = (PatientRole)theEObject;
 				T result = casePatientRole(patientRole);
+				if (result == null) result = caseRIMRole(patientRole);
+				if (result == null) result = caseRIMInfrastructureRoot(patientRole);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PATIENT: {
 				Patient patient = (Patient)theEObject;
 				T result = casePatient(patient);
+				if (result == null) result = caseRIMEntity(patient);
+				if (result == null) result = caseRIMInfrastructureRoot(patient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.GUARDIAN: {
 				Guardian guardian = (Guardian)theEObject;
 				T result = caseGuardian(guardian);
+				if (result == null) result = caseRIMRole(guardian);
+				if (result == null) result = caseRIMInfrastructureRoot(guardian);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PERSON: {
 				Person person = (Person)theEObject;
 				T result = casePerson(person);
+				if (result == null) result = caseRIMEntity(person);
+				if (result == null) result = caseRIMInfrastructureRoot(person);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ORGANIZATION: {
 				Organization organization = (Organization)theEObject;
 				T result = caseOrganization(organization);
+				if (result == null) result = caseRIMEntity(organization);
+				if (result == null) result = caseRIMInfrastructureRoot(organization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ORGANIZATION_PART_OF: {
 				OrganizationPartOf organizationPartOf = (OrganizationPartOf)theEObject;
 				T result = caseOrganizationPartOf(organizationPartOf);
+				if (result == null) result = caseRIMRole(organizationPartOf);
+				if (result == null) result = caseRIMInfrastructureRoot(organizationPartOf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.BIRTHPLACE: {
 				Birthplace birthplace = (Birthplace)theEObject;
 				T result = caseBirthplace(birthplace);
+				if (result == null) result = caseRIMRole(birthplace);
+				if (result == null) result = caseRIMInfrastructureRoot(birthplace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PLACE: {
 				Place place = (Place)theEObject;
 				T result = casePlace(place);
+				if (result == null) result = caseRIMEntity(place);
+				if (result == null) result = caseRIMInfrastructureRoot(place);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -266,36 +292,48 @@ public class CDASwitch<T> {
 			case CDAPackage.AUTHOR: {
 				Author author = (Author)theEObject;
 				T result = caseAuthor(author);
+				if (result == null) result = caseRIMParticipation(author);
+				if (result == null) result = caseRIMInfrastructureRoot(author);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ASSIGNED_AUTHOR: {
 				AssignedAuthor assignedAuthor = (AssignedAuthor)theEObject;
 				T result = caseAssignedAuthor(assignedAuthor);
+				if (result == null) result = caseRIMRole(assignedAuthor);
+				if (result == null) result = caseRIMInfrastructureRoot(assignedAuthor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.AUTHORING_DEVICE: {
 				AuthoringDevice authoringDevice = (AuthoringDevice)theEObject;
 				T result = caseAuthoringDevice(authoringDevice);
+				if (result == null) result = caseRIMEntity(authoringDevice);
+				if (result == null) result = caseRIMInfrastructureRoot(authoringDevice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.MAINTAINED_ENTITY: {
 				MaintainedEntity maintainedEntity = (MaintainedEntity)theEObject;
 				T result = caseMaintainedEntity(maintainedEntity);
+				if (result == null) result = caseRIMRole(maintainedEntity);
+				if (result == null) result = caseRIMInfrastructureRoot(maintainedEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.DATA_ENTERER: {
 				DataEnterer dataEnterer = (DataEnterer)theEObject;
 				T result = caseDataEnterer(dataEnterer);
+				if (result == null) result = caseRIMParticipation(dataEnterer);
+				if (result == null) result = caseRIMInfrastructureRoot(dataEnterer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ASSIGNED_ENTITY: {
 				AssignedEntity assignedEntity = (AssignedEntity)theEObject;
 				T result = caseAssignedEntity(assignedEntity);
+				if (result == null) result = caseRIMRole(assignedEntity);
+				if (result == null) result = caseRIMInfrastructureRoot(assignedEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -308,186 +346,248 @@ public class CDASwitch<T> {
 			case CDAPackage.INFORMANT12: {
 				Informant12 informant12 = (Informant12)theEObject;
 				T result = caseInformant12(informant12);
+				if (result == null) result = caseRIMParticipation(informant12);
+				if (result == null) result = caseRIMInfrastructureRoot(informant12);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.RELATED_ENTITY: {
 				RelatedEntity relatedEntity = (RelatedEntity)theEObject;
 				T result = caseRelatedEntity(relatedEntity);
+				if (result == null) result = caseRIMRole(relatedEntity);
+				if (result == null) result = caseRIMInfrastructureRoot(relatedEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.CUSTODIAN: {
 				Custodian custodian = (Custodian)theEObject;
 				T result = caseCustodian(custodian);
+				if (result == null) result = caseRIMParticipation(custodian);
+				if (result == null) result = caseRIMInfrastructureRoot(custodian);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ASSIGNED_CUSTODIAN: {
 				AssignedCustodian assignedCustodian = (AssignedCustodian)theEObject;
 				T result = caseAssignedCustodian(assignedCustodian);
+				if (result == null) result = caseRIMRole(assignedCustodian);
+				if (result == null) result = caseRIMInfrastructureRoot(assignedCustodian);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.CUSTODIAN_ORGANIZATION: {
 				CustodianOrganization custodianOrganization = (CustodianOrganization)theEObject;
 				T result = caseCustodianOrganization(custodianOrganization);
+				if (result == null) result = caseRIMEntity(custodianOrganization);
+				if (result == null) result = caseRIMInfrastructureRoot(custodianOrganization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.INFORMATION_RECIPIENT: {
 				InformationRecipient informationRecipient = (InformationRecipient)theEObject;
 				T result = caseInformationRecipient(informationRecipient);
+				if (result == null) result = caseRIMParticipation(informationRecipient);
+				if (result == null) result = caseRIMInfrastructureRoot(informationRecipient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.INTENDED_RECIPIENT: {
 				IntendedRecipient intendedRecipient = (IntendedRecipient)theEObject;
 				T result = caseIntendedRecipient(intendedRecipient);
+				if (result == null) result = caseRIMRole(intendedRecipient);
+				if (result == null) result = caseRIMInfrastructureRoot(intendedRecipient);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.LEGAL_AUTHENTICATOR: {
 				LegalAuthenticator legalAuthenticator = (LegalAuthenticator)theEObject;
 				T result = caseLegalAuthenticator(legalAuthenticator);
+				if (result == null) result = caseRIMParticipation(legalAuthenticator);
+				if (result == null) result = caseRIMInfrastructureRoot(legalAuthenticator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.AUTHENTICATOR: {
 				Authenticator authenticator = (Authenticator)theEObject;
 				T result = caseAuthenticator(authenticator);
+				if (result == null) result = caseRIMParticipation(authenticator);
+				if (result == null) result = caseRIMInfrastructureRoot(authenticator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PARTICIPANT1: {
 				Participant1 participant1 = (Participant1)theEObject;
 				T result = caseParticipant1(participant1);
+				if (result == null) result = caseRIMParticipation(participant1);
+				if (result == null) result = caseRIMInfrastructureRoot(participant1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ASSOCIATED_ENTITY: {
 				AssociatedEntity associatedEntity = (AssociatedEntity)theEObject;
 				T result = caseAssociatedEntity(associatedEntity);
+				if (result == null) result = caseRIMRole(associatedEntity);
+				if (result == null) result = caseRIMInfrastructureRoot(associatedEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.IN_FULFILLMENT_OF: {
 				InFulfillmentOf inFulfillmentOf = (InFulfillmentOf)theEObject;
 				T result = caseInFulfillmentOf(inFulfillmentOf);
+				if (result == null) result = caseRIMActRelationship(inFulfillmentOf);
+				if (result == null) result = caseRIMInfrastructureRoot(inFulfillmentOf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ORDER: {
 				Order order = (Order)theEObject;
 				T result = caseOrder(order);
+				if (result == null) result = caseRIMAct(order);
+				if (result == null) result = caseRIMInfrastructureRoot(order);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.DOCUMENTATION_OF: {
 				DocumentationOf documentationOf = (DocumentationOf)theEObject;
 				T result = caseDocumentationOf(documentationOf);
+				if (result == null) result = caseRIMActRelationship(documentationOf);
+				if (result == null) result = caseRIMInfrastructureRoot(documentationOf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.SERVICE_EVENT: {
 				ServiceEvent serviceEvent = (ServiceEvent)theEObject;
 				T result = caseServiceEvent(serviceEvent);
+				if (result == null) result = caseRIMAct(serviceEvent);
+				if (result == null) result = caseRIMInfrastructureRoot(serviceEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PERFORMER1: {
 				Performer1 performer1 = (Performer1)theEObject;
 				T result = casePerformer1(performer1);
+				if (result == null) result = caseRIMParticipation(performer1);
+				if (result == null) result = caseRIMInfrastructureRoot(performer1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.RELATED_DOCUMENT: {
 				RelatedDocument relatedDocument = (RelatedDocument)theEObject;
 				T result = caseRelatedDocument(relatedDocument);
+				if (result == null) result = caseRIMActRelationship(relatedDocument);
+				if (result == null) result = caseRIMInfrastructureRoot(relatedDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PARENT_DOCUMENT: {
 				ParentDocument parentDocument = (ParentDocument)theEObject;
 				T result = caseParentDocument(parentDocument);
+				if (result == null) result = caseRIMAct(parentDocument);
+				if (result == null) result = caseRIMInfrastructureRoot(parentDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.AUTHORIZATION: {
 				Authorization authorization = (Authorization)theEObject;
 				T result = caseAuthorization(authorization);
+				if (result == null) result = caseRIMActRelationship(authorization);
+				if (result == null) result = caseRIMInfrastructureRoot(authorization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.CONSENT: {
 				Consent consent = (Consent)theEObject;
 				T result = caseConsent(consent);
+				if (result == null) result = caseRIMAct(consent);
+				if (result == null) result = caseRIMInfrastructureRoot(consent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.COMPONENT1: {
 				Component1 component1 = (Component1)theEObject;
 				T result = caseComponent1(component1);
+				if (result == null) result = caseRIMActRelationship(component1);
+				if (result == null) result = caseRIMInfrastructureRoot(component1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ENCOMPASSING_ENCOUNTER: {
 				EncompassingEncounter encompassingEncounter = (EncompassingEncounter)theEObject;
 				T result = caseEncompassingEncounter(encompassingEncounter);
+				if (result == null) result = caseRIMAct(encompassingEncounter);
+				if (result == null) result = caseRIMInfrastructureRoot(encompassingEncounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.RESPONSIBLE_PARTY: {
 				ResponsibleParty responsibleParty = (ResponsibleParty)theEObject;
 				T result = caseResponsibleParty(responsibleParty);
+				if (result == null) result = caseRIMParticipation(responsibleParty);
+				if (result == null) result = caseRIMInfrastructureRoot(responsibleParty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ENCOUNTER_PARTICIPANT: {
 				EncounterParticipant encounterParticipant = (EncounterParticipant)theEObject;
 				T result = caseEncounterParticipant(encounterParticipant);
+				if (result == null) result = caseRIMParticipation(encounterParticipant);
+				if (result == null) result = caseRIMInfrastructureRoot(encounterParticipant);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.LOCATION: {
 				Location location = (Location)theEObject;
 				T result = caseLocation(location);
+				if (result == null) result = caseRIMParticipation(location);
+				if (result == null) result = caseRIMInfrastructureRoot(location);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.HEALTH_CARE_FACILITY: {
 				HealthCareFacility healthCareFacility = (HealthCareFacility)theEObject;
 				T result = caseHealthCareFacility(healthCareFacility);
+				if (result == null) result = caseRIMRole(healthCareFacility);
+				if (result == null) result = caseRIMInfrastructureRoot(healthCareFacility);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.COMPONENT2: {
 				Component2 component2 = (Component2)theEObject;
 				T result = caseComponent2(component2);
+				if (result == null) result = caseRIMActRelationship(component2);
+				if (result == null) result = caseRIMInfrastructureRoot(component2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.NON_XML_BODY: {
 				NonXMLBody nonXMLBody = (NonXMLBody)theEObject;
 				T result = caseNonXMLBody(nonXMLBody);
+				if (result == null) result = caseRIMAct(nonXMLBody);
+				if (result == null) result = caseRIMInfrastructureRoot(nonXMLBody);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.STRUCTURED_BODY: {
 				StructuredBody structuredBody = (StructuredBody)theEObject;
 				T result = caseStructuredBody(structuredBody);
+				if (result == null) result = caseRIMAct(structuredBody);
+				if (result == null) result = caseRIMInfrastructureRoot(structuredBody);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.COMPONENT3: {
 				Component3 component3 = (Component3)theEObject;
 				T result = caseComponent3(component3);
+				if (result == null) result = caseRIMActRelationship(component3);
+				if (result == null) result = caseRIMInfrastructureRoot(component3);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.SECTION: {
 				Section section = (Section)theEObject;
 				T result = caseSection(section);
+				if (result == null) result = caseRIMAct(section);
+				if (result == null) result = caseRIMInfrastructureRoot(section);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -500,24 +600,32 @@ public class CDASwitch<T> {
 			case CDAPackage.SUBJECT: {
 				Subject subject = (Subject)theEObject;
 				T result = caseSubject(subject);
+				if (result == null) result = caseRIMParticipation(subject);
+				if (result == null) result = caseRIMInfrastructureRoot(subject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.RELATED_SUBJECT: {
 				RelatedSubject relatedSubject = (RelatedSubject)theEObject;
 				T result = caseRelatedSubject(relatedSubject);
+				if (result == null) result = caseRIMRole(relatedSubject);
+				if (result == null) result = caseRIMInfrastructureRoot(relatedSubject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.SUBJECT_PERSON: {
 				SubjectPerson subjectPerson = (SubjectPerson)theEObject;
 				T result = caseSubjectPerson(subjectPerson);
+				if (result == null) result = caseRIMEntity(subjectPerson);
+				if (result == null) result = caseRIMInfrastructureRoot(subjectPerson);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ENTRY: {
 				Entry entry = (Entry)theEObject;
 				T result = caseEntry(entry);
+				if (result == null) result = caseRIMActRelationship(entry);
+				if (result == null) result = caseRIMInfrastructureRoot(entry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -525,66 +633,88 @@ public class CDASwitch<T> {
 				Act act = (Act)theEObject;
 				T result = caseAct(act);
 				if (result == null) result = caseClinicalStatement(act);
+				if (result == null) result = caseRIMAct(act);
+				if (result == null) result = caseRIMInfrastructureRoot(act);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.CLINICAL_STATEMENT: {
 				ClinicalStatement clinicalStatement = (ClinicalStatement)theEObject;
 				T result = caseClinicalStatement(clinicalStatement);
+				if (result == null) result = caseRIMAct(clinicalStatement);
+				if (result == null) result = caseRIMInfrastructureRoot(clinicalStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.SPECIMEN: {
 				Specimen specimen = (Specimen)theEObject;
 				T result = caseSpecimen(specimen);
+				if (result == null) result = caseRIMParticipation(specimen);
+				if (result == null) result = caseRIMInfrastructureRoot(specimen);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.SPECIMEN_ROLE: {
 				SpecimenRole specimenRole = (SpecimenRole)theEObject;
 				T result = caseSpecimenRole(specimenRole);
+				if (result == null) result = caseRIMRole(specimenRole);
+				if (result == null) result = caseRIMInfrastructureRoot(specimenRole);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PLAYING_ENTITY: {
 				PlayingEntity playingEntity = (PlayingEntity)theEObject;
 				T result = casePlayingEntity(playingEntity);
+				if (result == null) result = caseRIMEntity(playingEntity);
+				if (result == null) result = caseRIMInfrastructureRoot(playingEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PERFORMER2: {
 				Performer2 performer2 = (Performer2)theEObject;
 				T result = casePerformer2(performer2);
+				if (result == null) result = caseRIMParticipation(performer2);
+				if (result == null) result = caseRIMInfrastructureRoot(performer2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PARTICIPANT2: {
 				Participant2 participant2 = (Participant2)theEObject;
 				T result = caseParticipant2(participant2);
+				if (result == null) result = caseRIMParticipation(participant2);
+				if (result == null) result = caseRIMInfrastructureRoot(participant2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PARTICIPANT_ROLE: {
 				ParticipantRole participantRole = (ParticipantRole)theEObject;
 				T result = caseParticipantRole(participantRole);
+				if (result == null) result = caseRIMRole(participantRole);
+				if (result == null) result = caseRIMInfrastructureRoot(participantRole);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.DEVICE: {
 				Device device = (Device)theEObject;
 				T result = caseDevice(device);
+				if (result == null) result = caseRIMEntity(device);
+				if (result == null) result = caseRIMInfrastructureRoot(device);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ENTITY: {
 				Entity entity = (Entity)theEObject;
 				T result = caseEntity(entity);
+				if (result == null) result = caseRIMEntity(entity);
+				if (result == null) result = caseRIMInfrastructureRoot(entity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ENTRY_RELATIONSHIP: {
 				EntryRelationship entryRelationship = (EntryRelationship)theEObject;
 				T result = caseEntryRelationship(entryRelationship);
+				if (result == null) result = caseRIMActRelationship(entryRelationship);
+				if (result == null) result = caseRIMInfrastructureRoot(entryRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -592,48 +722,64 @@ public class CDASwitch<T> {
 				Encounter encounter = (Encounter)theEObject;
 				T result = caseEncounter(encounter);
 				if (result == null) result = caseClinicalStatement(encounter);
+				if (result == null) result = caseRIMAct(encounter);
+				if (result == null) result = caseRIMInfrastructureRoot(encounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.REFERENCE: {
 				Reference reference = (Reference)theEObject;
 				T result = caseReference(reference);
+				if (result == null) result = caseRIMActRelationship(reference);
+				if (result == null) result = caseRIMInfrastructureRoot(reference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.EXTERNAL_ACT: {
 				ExternalAct externalAct = (ExternalAct)theEObject;
 				T result = caseExternalAct(externalAct);
+				if (result == null) result = caseRIMAct(externalAct);
+				if (result == null) result = caseRIMInfrastructureRoot(externalAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.EXTERNAL_OBSERVATION: {
 				ExternalObservation externalObservation = (ExternalObservation)theEObject;
 				T result = caseExternalObservation(externalObservation);
+				if (result == null) result = caseRIMAct(externalObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(externalObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.EXTERNAL_PROCEDURE: {
 				ExternalProcedure externalProcedure = (ExternalProcedure)theEObject;
 				T result = caseExternalProcedure(externalProcedure);
+				if (result == null) result = caseRIMAct(externalProcedure);
+				if (result == null) result = caseRIMInfrastructureRoot(externalProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.EXTERNAL_DOCUMENT: {
 				ExternalDocument externalDocument = (ExternalDocument)theEObject;
 				T result = caseExternalDocument(externalDocument);
+				if (result == null) result = caseRIMAct(externalDocument);
+				if (result == null) result = caseRIMInfrastructureRoot(externalDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PRECONDITION: {
 				Precondition precondition = (Precondition)theEObject;
 				T result = casePrecondition(precondition);
+				if (result == null) result = caseRIMActRelationship(precondition);
+				if (result == null) result = caseRIMInfrastructureRoot(precondition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.CRITERION: {
 				Criterion criterion = (Criterion)theEObject;
 				T result = caseCriterion(criterion);
+				if (result == null) result = caseRIMAct(criterion);
+				if (result == null) result = caseRIMInfrastructureRoot(criterion);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -641,18 +787,24 @@ public class CDASwitch<T> {
 				Observation observation = (Observation)theEObject;
 				T result = caseObservation(observation);
 				if (result == null) result = caseClinicalStatement(observation);
+				if (result == null) result = caseRIMAct(observation);
+				if (result == null) result = caseRIMInfrastructureRoot(observation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.REFERENCE_RANGE: {
 				ReferenceRange referenceRange = (ReferenceRange)theEObject;
 				T result = caseReferenceRange(referenceRange);
+				if (result == null) result = caseRIMActRelationship(referenceRange);
+				if (result == null) result = caseRIMInfrastructureRoot(referenceRange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.OBSERVATION_RANGE: {
 				ObservationRange observationRange = (ObservationRange)theEObject;
 				T result = caseObservationRange(observationRange);
+				if (result == null) result = caseRIMAct(observationRange);
+				if (result == null) result = caseRIMInfrastructureRoot(observationRange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -660,6 +812,8 @@ public class CDASwitch<T> {
 				ObservationMedia observationMedia = (ObservationMedia)theEObject;
 				T result = caseObservationMedia(observationMedia);
 				if (result == null) result = caseClinicalStatement(observationMedia);
+				if (result == null) result = caseRIMAct(observationMedia);
+				if (result == null) result = caseRIMInfrastructureRoot(observationMedia);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -667,12 +821,16 @@ public class CDASwitch<T> {
 				Organizer organizer = (Organizer)theEObject;
 				T result = caseOrganizer(organizer);
 				if (result == null) result = caseClinicalStatement(organizer);
+				if (result == null) result = caseRIMAct(organizer);
+				if (result == null) result = caseRIMInfrastructureRoot(organizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.COMPONENT4: {
 				Component4 component4 = (Component4)theEObject;
 				T result = caseComponent4(component4);
+				if (result == null) result = caseRIMActRelationship(component4);
+				if (result == null) result = caseRIMInfrastructureRoot(component4);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -680,6 +838,8 @@ public class CDASwitch<T> {
 				Procedure procedure = (Procedure)theEObject;
 				T result = caseProcedure(procedure);
 				if (result == null) result = caseClinicalStatement(procedure);
+				if (result == null) result = caseRIMAct(procedure);
+				if (result == null) result = caseRIMInfrastructureRoot(procedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -687,6 +847,8 @@ public class CDASwitch<T> {
 				RegionOfInterest regionOfInterest = (RegionOfInterest)theEObject;
 				T result = caseRegionOfInterest(regionOfInterest);
 				if (result == null) result = caseClinicalStatement(regionOfInterest);
+				if (result == null) result = caseRIMAct(regionOfInterest);
+				if (result == null) result = caseRIMInfrastructureRoot(regionOfInterest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -703,30 +865,40 @@ public class CDASwitch<T> {
 				SubstanceAdministration substanceAdministration = (SubstanceAdministration)theEObject;
 				T result = caseSubstanceAdministration(substanceAdministration);
 				if (result == null) result = caseClinicalStatement(substanceAdministration);
+				if (result == null) result = caseRIMAct(substanceAdministration);
+				if (result == null) result = caseRIMInfrastructureRoot(substanceAdministration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.CONSUMABLE: {
 				Consumable consumable = (Consumable)theEObject;
 				T result = caseConsumable(consumable);
+				if (result == null) result = caseRIMParticipation(consumable);
+				if (result == null) result = caseRIMInfrastructureRoot(consumable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.MANUFACTURED_PRODUCT: {
 				ManufacturedProduct manufacturedProduct = (ManufacturedProduct)theEObject;
 				T result = caseManufacturedProduct(manufacturedProduct);
+				if (result == null) result = caseRIMRole(manufacturedProduct);
+				if (result == null) result = caseRIMInfrastructureRoot(manufacturedProduct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.LABELED_DRUG: {
 				LabeledDrug labeledDrug = (LabeledDrug)theEObject;
 				T result = caseLabeledDrug(labeledDrug);
+				if (result == null) result = caseRIMEntity(labeledDrug);
+				if (result == null) result = caseRIMInfrastructureRoot(labeledDrug);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.MATERIAL: {
 				Material material = (Material)theEObject;
 				T result = caseMaterial(material);
+				if (result == null) result = caseRIMEntity(material);
+				if (result == null) result = caseRIMInfrastructureRoot(material);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -734,18 +906,24 @@ public class CDASwitch<T> {
 				Supply supply = (Supply)theEObject;
 				T result = caseSupply(supply);
 				if (result == null) result = caseClinicalStatement(supply);
+				if (result == null) result = caseRIMAct(supply);
+				if (result == null) result = caseRIMInfrastructureRoot(supply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.PRODUCT: {
 				Product product = (Product)theEObject;
 				T result = caseProduct(product);
+				if (result == null) result = caseRIMParticipation(product);
+				if (result == null) result = caseRIMInfrastructureRoot(product);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.COMPONENT5: {
 				Component5 component5 = (Component5)theEObject;
 				T result = caseComponent5(component5);
+				if (result == null) result = caseRIMActRelationship(component5);
+				if (result == null) result = caseRIMInfrastructureRoot(component5);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2161,6 +2339,36 @@ public class CDASwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Infrastructure Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Infrastructure Root</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMAct(RIMAct object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>ANY</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2187,6 +2395,66 @@ public class CDASwitch<T> {
 	 * @generated
 	 */
 	public T caseII(II object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMRole(RIMRole object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMEntity(RIMEntity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Act Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Act Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMActRelationship(RIMActRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMParticipation(RIMParticipation object) {
 		return null;
 	}
 

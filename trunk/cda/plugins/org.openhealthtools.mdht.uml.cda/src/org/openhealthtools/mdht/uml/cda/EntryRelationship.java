@@ -16,11 +16,11 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
@@ -58,7 +58,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * @model
  * @generated
  */
-public interface EntryRelationship extends EObject {
+public interface EntryRelationship extends RIMActRelationship {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

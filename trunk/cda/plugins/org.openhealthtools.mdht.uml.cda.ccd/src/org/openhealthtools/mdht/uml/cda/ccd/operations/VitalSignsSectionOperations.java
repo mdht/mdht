@@ -376,7 +376,7 @@ public class VitalSignsSectionOperations extends SectionOperations {
 	public static  EList<VitalSignsOrganizer> getVitalSignsOrganizers(VitalSignsSection vitalSignsSection) {
 		if (GET_VITAL_SIGNS_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.VITAL_SIGNS_SECTION, CCDPackage.Literals.VITAL_SIGNS_SECTION.getEAllOperations().get(41));
+			helper.setOperationContext(CCDPackage.Literals.VITAL_SIGNS_SECTION, CCDPackage.Literals.VITAL_SIGNS_SECTION.getEAllOperations().get(52));
 			try {
 				GET_VITAL_SIGNS_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_VITAL_SIGNS_ORGANIZERS__EOCL_EXP);
 			}

@@ -624,7 +624,7 @@ public class CoverageActivityOperations extends ActOperations {
 	public static  EList<PolicyActivity> getPolicyActivities(CoverageActivity coverageActivity) {
 		if (GET_POLICY_ACTIVITIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.COVERAGE_ACTIVITY, CCDPackage.Literals.COVERAGE_ACTIVITY.getEAllOperations().get(42));
+			helper.setOperationContext(CCDPackage.Literals.COVERAGE_ACTIVITY, CCDPackage.Literals.COVERAGE_ACTIVITY.getEAllOperations().get(52));
 			try {
 				GET_POLICY_ACTIVITIES__EOCL_QRY = helper.createQuery(GET_POLICY_ACTIVITIES__EOCL_EXP);
 			}
