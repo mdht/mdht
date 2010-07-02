@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rim"
+    nsURI="http://www.openhealthtools.org/mdht/uml/hl7/rim" nsPrefix="rim">
+  <eClassifiers xsi:type="ecore:EClass" name="RIMAct" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+    <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eOperations name="getMoodCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eOperations name="getNegationInd" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participation" ordered="false"
+        upperBound="-1" eType="#//RIMParticipation" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outboundRelationship" ordered="false"
+        upperBound="-1" eType="#//RIMActRelationship" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inboundRelationship" ordered="false"
+        upperBound="-1" eType="#//RIMActRelationship" volatile="true" transient="true"
+        derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RIMInfrastructureRoot" abstract="true">
+    <eOperations name="getRealmCodes" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"/>
+    <eOperations name="getTypeId" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//II"/>
+    <eOperations name="getTemplateIds" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//II"/>
+    <eOperations name="getNullFlavor" ordered="false" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RIMParticipation" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+    <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="act" ordered="false" lowerBound="1"
+        eType="#//RIMAct" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" ordered="false" lowerBound="1"
+        eType="#//RIMRole" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RIMRole" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+    <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="player" ordered="false"
+        eType="#//RIMEntity" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoper" ordered="false"
+        eType="#//RIMEntity" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participation" ordered="false"
+        upperBound="-1" eType="#//RIMParticipation" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outboundLink" ordered="false"
+        upperBound="-1" eType="#//RIMRoleLink" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inboundLink" ordered="false"
+        upperBound="-1" eType="#//RIMRoleLink" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RIMEntity" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+    <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eOperations name="getDeterminerCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="playedRole" ordered="false"
+        upperBound="-1" eType="#//RIMRole" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scopedRole" ordered="false"
+        upperBound="-1" eType="#//RIMRole" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RIMRoleLink" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+    <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="#//RIMRole" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="#//RIMRole" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RIMActRelationship" abstract="true"
+      eSuperTypes="#//RIMInfrastructureRoot">
+    <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="#//RIMAct" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="#//RIMAct" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+</ecore:EPackage>
