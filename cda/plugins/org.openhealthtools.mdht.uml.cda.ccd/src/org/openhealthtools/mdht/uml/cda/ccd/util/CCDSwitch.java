@@ -102,6 +102,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -181,6 +185,8 @@ public class CCDSwitch<T> {
 				MedicationsSection medicationsSection = (MedicationsSection)theEObject;
 				T result = caseMedicationsSection(medicationsSection);
 				if (result == null) result = caseSection(medicationsSection);
+				if (result == null) result = caseRIMAct(medicationsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -188,6 +194,8 @@ public class CCDSwitch<T> {
 				ContinuityOfCareDocument continuityOfCareDocument = (ContinuityOfCareDocument)theEObject;
 				T result = caseContinuityOfCareDocument(continuityOfCareDocument);
 				if (result == null) result = caseClinicalDocument(continuityOfCareDocument);
+				if (result == null) result = caseRIMAct(continuityOfCareDocument);
+				if (result == null) result = caseRIMInfrastructureRoot(continuityOfCareDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,6 +203,8 @@ public class CCDSwitch<T> {
 				ProblemSection problemSection = (ProblemSection)theEObject;
 				T result = caseProblemSection(problemSection);
 				if (result == null) result = caseSection(problemSection);
+				if (result == null) result = caseRIMAct(problemSection);
+				if (result == null) result = caseRIMInfrastructureRoot(problemSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -203,6 +213,8 @@ public class CCDSwitch<T> {
 				T result = caseProblemAct(problemAct);
 				if (result == null) result = caseAct(problemAct);
 				if (result == null) result = caseClinicalStatement(problemAct);
+				if (result == null) result = caseRIMAct(problemAct);
+				if (result == null) result = caseRIMInfrastructureRoot(problemAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -211,6 +223,8 @@ public class CCDSwitch<T> {
 				T result = caseEpisodeObservation(episodeObservation);
 				if (result == null) result = caseObservation(episodeObservation);
 				if (result == null) result = caseClinicalStatement(episodeObservation);
+				if (result == null) result = caseRIMAct(episodeObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(episodeObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -218,6 +232,8 @@ public class CCDSwitch<T> {
 				FamilyHistorySection familyHistorySection = (FamilyHistorySection)theEObject;
 				T result = caseFamilyHistorySection(familyHistorySection);
 				if (result == null) result = caseSection(familyHistorySection);
+				if (result == null) result = caseRIMAct(familyHistorySection);
+				if (result == null) result = caseRIMInfrastructureRoot(familyHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -225,6 +241,8 @@ public class CCDSwitch<T> {
 				SocialHistorySection socialHistorySection = (SocialHistorySection)theEObject;
 				T result = caseSocialHistorySection(socialHistorySection);
 				if (result == null) result = caseSection(socialHistorySection);
+				if (result == null) result = caseRIMAct(socialHistorySection);
+				if (result == null) result = caseRIMInfrastructureRoot(socialHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -232,6 +250,8 @@ public class CCDSwitch<T> {
 				AlertsSection alertsSection = (AlertsSection)theEObject;
 				T result = caseAlertsSection(alertsSection);
 				if (result == null) result = caseSection(alertsSection);
+				if (result == null) result = caseRIMAct(alertsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(alertsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -239,6 +259,8 @@ public class CCDSwitch<T> {
 				ResultsSection resultsSection = (ResultsSection)theEObject;
 				T result = caseResultsSection(resultsSection);
 				if (result == null) result = caseSection(resultsSection);
+				if (result == null) result = caseRIMAct(resultsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(resultsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -247,6 +269,8 @@ public class CCDSwitch<T> {
 				T result = caseResultOrganizer(resultOrganizer);
 				if (result == null) result = caseOrganizer(resultOrganizer);
 				if (result == null) result = caseClinicalStatement(resultOrganizer);
+				if (result == null) result = caseRIMAct(resultOrganizer);
+				if (result == null) result = caseRIMInfrastructureRoot(resultOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -255,6 +279,8 @@ public class CCDSwitch<T> {
 				T result = caseResultObservation(resultObservation);
 				if (result == null) result = caseObservation(resultObservation);
 				if (result == null) result = caseClinicalStatement(resultObservation);
+				if (result == null) result = caseRIMAct(resultObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(resultObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -262,6 +288,8 @@ public class CCDSwitch<T> {
 				ProceduresSection proceduresSection = (ProceduresSection)theEObject;
 				T result = caseProceduresSection(proceduresSection);
 				if (result == null) result = caseSection(proceduresSection);
+				if (result == null) result = caseRIMAct(proceduresSection);
+				if (result == null) result = caseRIMInfrastructureRoot(proceduresSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,6 +297,8 @@ public class CCDSwitch<T> {
 				EncountersSection encountersSection = (EncountersSection)theEObject;
 				T result = caseEncountersSection(encountersSection);
 				if (result == null) result = caseSection(encountersSection);
+				if (result == null) result = caseRIMAct(encountersSection);
+				if (result == null) result = caseRIMInfrastructureRoot(encountersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -276,6 +306,8 @@ public class CCDSwitch<T> {
 				PlanOfCareSection planOfCareSection = (PlanOfCareSection)theEObject;
 				T result = casePlanOfCareSection(planOfCareSection);
 				if (result == null) result = caseSection(planOfCareSection);
+				if (result == null) result = caseRIMAct(planOfCareSection);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -291,6 +323,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseAct(planOfCareActivityAct);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityAct);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityAct);
+				if (result == null) result = caseRIMAct(planOfCareActivityAct);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -300,6 +334,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseEncounter(planOfCareActivityEncounter);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityEncounter);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityEncounter);
+				if (result == null) result = caseRIMAct(planOfCareActivityEncounter);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityEncounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -309,6 +345,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseObservation(planOfCareActivityObservation);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityObservation);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityObservation);
+				if (result == null) result = caseRIMAct(planOfCareActivityObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -318,6 +356,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseProcedure(planOfCareActivityProcedure);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityProcedure);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityProcedure);
+				if (result == null) result = caseRIMAct(planOfCareActivityProcedure);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -327,6 +367,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseSubstanceAdministration(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = caseClinicalStatement(planOfCareActivitySubstanceAdministration);
+				if (result == null) result = caseRIMAct(planOfCareActivitySubstanceAdministration);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -336,6 +378,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseSupply(planOfCareActivitySupply);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySupply);
 				if (result == null) result = caseClinicalStatement(planOfCareActivitySupply);
+				if (result == null) result = caseRIMAct(planOfCareActivitySupply);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivitySupply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -343,6 +387,8 @@ public class CCDSwitch<T> {
 				ImmunizationsSection immunizationsSection = (ImmunizationsSection)theEObject;
 				T result = caseImmunizationsSection(immunizationsSection);
 				if (result == null) result = caseSection(immunizationsSection);
+				if (result == null) result = caseRIMAct(immunizationsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(immunizationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -350,6 +396,8 @@ public class CCDSwitch<T> {
 				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
 				T result = caseVitalSignsSection(vitalSignsSection);
 				if (result == null) result = caseSection(vitalSignsSection);
+				if (result == null) result = caseRIMAct(vitalSignsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(vitalSignsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -359,6 +407,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseClinicalStatement(vitalSignsOrganizer);
+				if (result == null) result = caseRIMAct(vitalSignsOrganizer);
+				if (result == null) result = caseRIMInfrastructureRoot(vitalSignsOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -366,6 +416,8 @@ public class CCDSwitch<T> {
 				MedicalEquipmentSection medicalEquipmentSection = (MedicalEquipmentSection)theEObject;
 				T result = caseMedicalEquipmentSection(medicalEquipmentSection);
 				if (result == null) result = caseSection(medicalEquipmentSection);
+				if (result == null) result = caseRIMAct(medicalEquipmentSection);
+				if (result == null) result = caseRIMInfrastructureRoot(medicalEquipmentSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -373,6 +425,8 @@ public class CCDSwitch<T> {
 				FunctionalStatusSection functionalStatusSection = (FunctionalStatusSection)theEObject;
 				T result = caseFunctionalStatusSection(functionalStatusSection);
 				if (result == null) result = caseSection(functionalStatusSection);
+				if (result == null) result = caseRIMAct(functionalStatusSection);
+				if (result == null) result = caseRIMInfrastructureRoot(functionalStatusSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -380,6 +434,8 @@ public class CCDSwitch<T> {
 				AdvanceDirectivesSection advanceDirectivesSection = (AdvanceDirectivesSection)theEObject;
 				T result = caseAdvanceDirectivesSection(advanceDirectivesSection);
 				if (result == null) result = caseSection(advanceDirectivesSection);
+				if (result == null) result = caseRIMAct(advanceDirectivesSection);
+				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectivesSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -388,6 +444,8 @@ public class CCDSwitch<T> {
 				T result = caseAdvanceDirectiveObservation(advanceDirectiveObservation);
 				if (result == null) result = caseObservation(advanceDirectiveObservation);
 				if (result == null) result = caseClinicalStatement(advanceDirectiveObservation);
+				if (result == null) result = caseRIMAct(advanceDirectiveObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectiveObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -395,6 +453,8 @@ public class CCDSwitch<T> {
 				PayersSection payersSection = (PayersSection)theEObject;
 				T result = casePayersSection(payersSection);
 				if (result == null) result = caseSection(payersSection);
+				if (result == null) result = caseRIMAct(payersSection);
+				if (result == null) result = caseRIMInfrastructureRoot(payersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -403,6 +463,8 @@ public class CCDSwitch<T> {
 				T result = caseCoverageActivity(coverageActivity);
 				if (result == null) result = caseAct(coverageActivity);
 				if (result == null) result = caseClinicalStatement(coverageActivity);
+				if (result == null) result = caseRIMAct(coverageActivity);
+				if (result == null) result = caseRIMInfrastructureRoot(coverageActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -411,6 +473,8 @@ public class CCDSwitch<T> {
 				T result = casePolicyActivity(policyActivity);
 				if (result == null) result = caseAct(policyActivity);
 				if (result == null) result = caseClinicalStatement(policyActivity);
+				if (result == null) result = caseRIMAct(policyActivity);
+				if (result == null) result = caseRIMInfrastructureRoot(policyActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -418,6 +482,8 @@ public class CCDSwitch<T> {
 				PurposeSection purposeSection = (PurposeSection)theEObject;
 				T result = casePurposeSection(purposeSection);
 				if (result == null) result = caseSection(purposeSection);
+				if (result == null) result = caseRIMAct(purposeSection);
+				if (result == null) result = caseRIMInfrastructureRoot(purposeSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -426,6 +492,8 @@ public class CCDSwitch<T> {
 				T result = casePurposeActivity(purposeActivity);
 				if (result == null) result = caseAct(purposeActivity);
 				if (result == null) result = caseClinicalStatement(purposeActivity);
+				if (result == null) result = caseRIMAct(purposeActivity);
+				if (result == null) result = caseRIMInfrastructureRoot(purposeActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -434,6 +502,8 @@ public class CCDSwitch<T> {
 				T result = caseProblemObservation(problemObservation);
 				if (result == null) result = caseObservation(problemObservation);
 				if (result == null) result = caseClinicalStatement(problemObservation);
+				if (result == null) result = caseRIMAct(problemObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(problemObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -443,6 +513,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(problemStatusObservation);
 				if (result == null) result = caseObservation(problemStatusObservation);
 				if (result == null) result = caseClinicalStatement(problemStatusObservation);
+				if (result == null) result = caseRIMAct(problemStatusObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(problemStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -451,6 +523,8 @@ public class CCDSwitch<T> {
 				T result = caseStatusObservation(statusObservation);
 				if (result == null) result = caseObservation(statusObservation);
 				if (result == null) result = caseClinicalStatement(statusObservation);
+				if (result == null) result = caseRIMAct(statusObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(statusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -460,6 +534,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(problemHealthStatusObservation);
 				if (result == null) result = caseObservation(problemHealthStatusObservation);
 				if (result == null) result = caseClinicalStatement(problemHealthStatusObservation);
+				if (result == null) result = caseRIMAct(problemHealthStatusObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(problemHealthStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -468,6 +544,8 @@ public class CCDSwitch<T> {
 				T result = caseAgeObservation(ageObservation);
 				if (result == null) result = caseObservation(ageObservation);
 				if (result == null) result = caseClinicalStatement(ageObservation);
+				if (result == null) result = caseRIMAct(ageObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(ageObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -475,6 +553,8 @@ public class CCDSwitch<T> {
 				PatientAwareness patientAwareness = (PatientAwareness)theEObject;
 				T result = casePatientAwareness(patientAwareness);
 				if (result == null) result = caseParticipant2(patientAwareness);
+				if (result == null) result = caseRIMParticipation(patientAwareness);
+				if (result == null) result = caseRIMInfrastructureRoot(patientAwareness);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -483,6 +563,8 @@ public class CCDSwitch<T> {
 				T result = caseFamilyHistoryObservation(familyHistoryObservation);
 				if (result == null) result = caseObservation(familyHistoryObservation);
 				if (result == null) result = caseClinicalStatement(familyHistoryObservation);
+				if (result == null) result = caseRIMAct(familyHistoryObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(familyHistoryObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -491,6 +573,8 @@ public class CCDSwitch<T> {
 				T result = caseFamilyHistoryOrganizer(familyHistoryOrganizer);
 				if (result == null) result = caseOrganizer(familyHistoryOrganizer);
 				if (result == null) result = caseClinicalStatement(familyHistoryOrganizer);
+				if (result == null) result = caseRIMAct(familyHistoryOrganizer);
+				if (result == null) result = caseRIMInfrastructureRoot(familyHistoryOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -499,6 +583,8 @@ public class CCDSwitch<T> {
 				T result = caseSocialHistoryObservation(socialHistoryObservation);
 				if (result == null) result = caseObservation(socialHistoryObservation);
 				if (result == null) result = caseClinicalStatement(socialHistoryObservation);
+				if (result == null) result = caseRIMAct(socialHistoryObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(socialHistoryObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -507,6 +593,8 @@ public class CCDSwitch<T> {
 				T result = caseEncountersActivity(encountersActivity);
 				if (result == null) result = caseEncounter(encountersActivity);
 				if (result == null) result = caseClinicalStatement(encountersActivity);
+				if (result == null) result = caseRIMAct(encountersActivity);
+				if (result == null) result = caseRIMInfrastructureRoot(encountersActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -515,6 +603,8 @@ public class CCDSwitch<T> {
 				T result = caseMedicationActivity(medicationActivity);
 				if (result == null) result = caseSubstanceAdministration(medicationActivity);
 				if (result == null) result = caseClinicalStatement(medicationActivity);
+				if (result == null) result = caseRIMAct(medicationActivity);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -523,6 +613,8 @@ public class CCDSwitch<T> {
 				T result = caseMedicationSeriesNumberObservation(medicationSeriesNumberObservation);
 				if (result == null) result = caseObservation(medicationSeriesNumberObservation);
 				if (result == null) result = caseClinicalStatement(medicationSeriesNumberObservation);
+				if (result == null) result = caseRIMAct(medicationSeriesNumberObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationSeriesNumberObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -532,6 +624,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(medicationStatusObservation);
 				if (result == null) result = caseObservation(medicationStatusObservation);
 				if (result == null) result = caseClinicalStatement(medicationStatusObservation);
+				if (result == null) result = caseRIMAct(medicationStatusObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -540,6 +634,8 @@ public class CCDSwitch<T> {
 				T result = casePatientInstruction(patientInstruction);
 				if (result == null) result = caseAct(patientInstruction);
 				if (result == null) result = caseClinicalStatement(patientInstruction);
+				if (result == null) result = caseRIMAct(patientInstruction);
+				if (result == null) result = caseRIMInfrastructureRoot(patientInstruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -548,6 +644,8 @@ public class CCDSwitch<T> {
 				T result = caseSupplyActivity(supplyActivity);
 				if (result == null) result = caseSupply(supplyActivity);
 				if (result == null) result = caseClinicalStatement(supplyActivity);
+				if (result == null) result = caseRIMAct(supplyActivity);
+				if (result == null) result = caseRIMInfrastructureRoot(supplyActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -556,6 +654,8 @@ public class CCDSwitch<T> {
 				T result = caseFulfillmentInstruction(fulfillmentInstruction);
 				if (result == null) result = caseAct(fulfillmentInstruction);
 				if (result == null) result = caseClinicalStatement(fulfillmentInstruction);
+				if (result == null) result = caseRIMAct(fulfillmentInstruction);
+				if (result == null) result = caseRIMInfrastructureRoot(fulfillmentInstruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -564,6 +664,8 @@ public class CCDSwitch<T> {
 				T result = caseAlertObservation(alertObservation);
 				if (result == null) result = caseObservation(alertObservation);
 				if (result == null) result = caseClinicalStatement(alertObservation);
+				if (result == null) result = caseRIMAct(alertObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(alertObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -573,6 +675,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(alertStatusObservation);
 				if (result == null) result = caseObservation(alertStatusObservation);
 				if (result == null) result = caseClinicalStatement(alertStatusObservation);
+				if (result == null) result = caseRIMAct(alertStatusObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(alertStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -581,6 +685,8 @@ public class CCDSwitch<T> {
 				T result = caseReactionObservation(reactionObservation);
 				if (result == null) result = caseObservation(reactionObservation);
 				if (result == null) result = caseClinicalStatement(reactionObservation);
+				if (result == null) result = caseRIMAct(reactionObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(reactionObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -589,6 +695,8 @@ public class CCDSwitch<T> {
 				T result = caseSeverityObservation(severityObservation);
 				if (result == null) result = caseObservation(severityObservation);
 				if (result == null) result = caseClinicalStatement(severityObservation);
+				if (result == null) result = caseRIMAct(severityObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(severityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -598,6 +706,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseFamilyHistoryObservation(causeOfDeathObservation);
 				if (result == null) result = caseObservation(causeOfDeathObservation);
 				if (result == null) result = caseClinicalStatement(causeOfDeathObservation);
+				if (result == null) result = caseRIMAct(causeOfDeathObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(causeOfDeathObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -605,6 +715,8 @@ public class CCDSwitch<T> {
 				EncounterLocation encounterLocation = (EncounterLocation)theEObject;
 				T result = caseEncounterLocation(encounterLocation);
 				if (result == null) result = caseParticipant2(encounterLocation);
+				if (result == null) result = caseRIMParticipation(encounterLocation);
+				if (result == null) result = caseRIMInfrastructureRoot(encounterLocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -612,6 +724,8 @@ public class CCDSwitch<T> {
 				Product product = (Product)theEObject;
 				T result = caseProduct(product);
 				if (result == null) result = caseManufacturedProduct(product);
+				if (result == null) result = caseRIMRole(product);
+				if (result == null) result = caseRIMInfrastructureRoot(product);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -621,6 +735,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(advanceDirectiveStatusObservation);
 				if (result == null) result = caseObservation(advanceDirectiveStatusObservation);
 				if (result == null) result = caseClinicalStatement(advanceDirectiveStatusObservation);
+				if (result == null) result = caseRIMAct(advanceDirectiveStatusObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectiveStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -628,6 +744,8 @@ public class CCDSwitch<T> {
 				AdvanceDirectiveVerification advanceDirectiveVerification = (AdvanceDirectiveVerification)theEObject;
 				T result = caseAdvanceDirectiveVerification(advanceDirectiveVerification);
 				if (result == null) result = caseParticipant2(advanceDirectiveVerification);
+				if (result == null) result = caseRIMParticipation(advanceDirectiveVerification);
+				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectiveVerification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -636,6 +754,8 @@ public class CCDSwitch<T> {
 				T result = caseAuthorizationActivity(authorizationActivity);
 				if (result == null) result = caseAct(authorizationActivity);
 				if (result == null) result = caseClinicalStatement(authorizationActivity);
+				if (result == null) result = caseRIMAct(authorizationActivity);
+				if (result == null) result = caseRIMInfrastructureRoot(authorizationActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -651,6 +771,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(functionalStatusObservation);
 				if (result == null) result = caseObservation(functionalStatusObservation);
 				if (result == null) result = caseClinicalStatement(functionalStatusObservation);
+				if (result == null) result = caseRIMAct(functionalStatusObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(functionalStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -658,6 +780,8 @@ public class CCDSwitch<T> {
 				ProductInstance productInstance = (ProductInstance)theEObject;
 				T result = caseProductInstance(productInstance);
 				if (result == null) result = caseParticipantRole(productInstance);
+				if (result == null) result = caseRIMRole(productInstance);
+				if (result == null) result = caseRIMInfrastructureRoot(productInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -667,6 +791,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseAct(procedureActivityAct);
 				if (result == null) result = caseProcedureActivity(procedureActivityAct);
 				if (result == null) result = caseClinicalStatement(procedureActivityAct);
+				if (result == null) result = caseRIMAct(procedureActivityAct);
+				if (result == null) result = caseRIMInfrastructureRoot(procedureActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -676,6 +802,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseObservation(procedureActivityObservation);
 				if (result == null) result = caseProcedureActivity(procedureActivityObservation);
 				if (result == null) result = caseClinicalStatement(procedureActivityObservation);
+				if (result == null) result = caseRIMAct(procedureActivityObservation);
+				if (result == null) result = caseRIMInfrastructureRoot(procedureActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -685,6 +813,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseProcedure(procedureActivityProcedure);
 				if (result == null) result = caseProcedureActivity(procedureActivityProcedure);
 				if (result == null) result = caseClinicalStatement(procedureActivityProcedure);
+				if (result == null) result = caseRIMAct(procedureActivityProcedure);
+				if (result == null) result = caseRIMInfrastructureRoot(procedureActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -692,6 +822,8 @@ public class CCDSwitch<T> {
 				PayerEntity payerEntity = (PayerEntity)theEObject;
 				T result = casePayerEntity(payerEntity);
 				if (result == null) result = caseAssignedEntity(payerEntity);
+				if (result == null) result = caseRIMRole(payerEntity);
+				if (result == null) result = caseRIMInfrastructureRoot(payerEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -699,6 +831,8 @@ public class CCDSwitch<T> {
 				CoveredParty coveredParty = (CoveredParty)theEObject;
 				T result = caseCoveredParty(coveredParty);
 				if (result == null) result = caseParticipantRole(coveredParty);
+				if (result == null) result = caseRIMRole(coveredParty);
+				if (result == null) result = caseRIMInfrastructureRoot(coveredParty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -706,6 +840,8 @@ public class CCDSwitch<T> {
 				PolicySubscriber policySubscriber = (PolicySubscriber)theEObject;
 				T result = casePolicySubscriber(policySubscriber);
 				if (result == null) result = caseParticipantRole(policySubscriber);
+				if (result == null) result = caseRIMRole(policySubscriber);
+				if (result == null) result = caseRIMInfrastructureRoot(policySubscriber);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -714,6 +850,8 @@ public class CCDSwitch<T> {
 				T result = caseCoveragePlanDescription(coveragePlanDescription);
 				if (result == null) result = caseAct(coveragePlanDescription);
 				if (result == null) result = caseClinicalStatement(coveragePlanDescription);
+				if (result == null) result = caseRIMAct(coveragePlanDescription);
+				if (result == null) result = caseRIMInfrastructureRoot(coveragePlanDescription);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1749,6 +1887,36 @@ public class CCDSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Infrastructure Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Infrastructure Root</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMAct(RIMAct object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1929,6 +2097,21 @@ public class CCDSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMParticipation(RIMParticipation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Manufactured Product</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1940,6 +2123,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseManufacturedProduct(ManufacturedProduct object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMRole(RIMRole object) {
 		return null;
 	}
 

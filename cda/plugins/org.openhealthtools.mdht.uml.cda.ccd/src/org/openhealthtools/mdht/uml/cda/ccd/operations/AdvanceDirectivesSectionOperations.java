@@ -318,7 +318,7 @@ public class AdvanceDirectivesSectionOperations extends SectionOperations {
 	public static  EList<AdvanceDirectiveObservation> getAdvanceDirectiveObservations(AdvanceDirectivesSection advanceDirectivesSection) {
 		if (GET_ADVANCE_DIRECTIVE_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.ADVANCE_DIRECTIVES_SECTION, CCDPackage.Literals.ADVANCE_DIRECTIVES_SECTION.getEAllOperations().get(40));
+			helper.setOperationContext(CCDPackage.Literals.ADVANCE_DIRECTIVES_SECTION, CCDPackage.Literals.ADVANCE_DIRECTIVES_SECTION.getEAllOperations().get(51));
 			try {
 				GET_ADVANCE_DIRECTIVE_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_ADVANCE_DIRECTIVE_OBSERVATIONS__EOCL_EXP);
 			}

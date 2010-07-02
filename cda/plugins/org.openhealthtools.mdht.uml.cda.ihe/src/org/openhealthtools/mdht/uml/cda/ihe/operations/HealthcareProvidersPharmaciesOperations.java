@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMParticipationOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +34,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  *
  * @generated
  */
-public class HealthcareProvidersPharmaciesOperations {
+public class HealthcareProvidersPharmaciesOperations extends RIMParticipationOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

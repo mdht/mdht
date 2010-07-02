@@ -962,7 +962,7 @@ public class PolicyActivityOperations extends ActOperations {
 	public static  AssignedEntity getPayerEntity(PolicyActivity policyActivity) {
 		if (GET_PAYER_ENTITY__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.POLICY_ACTIVITY, CCDPackage.Literals.POLICY_ACTIVITY.getEAllOperations().get(48));
+			helper.setOperationContext(CCDPackage.Literals.POLICY_ACTIVITY, CCDPackage.Literals.POLICY_ACTIVITY.getEAllOperations().get(58));
 			try {
 				GET_PAYER_ENTITY__EOCL_QRY = helper.createQuery(GET_PAYER_ENTITY__EOCL_EXP);
 			}
@@ -1006,7 +1006,7 @@ public class PolicyActivityOperations extends ActOperations {
 	public static  ParticipantRole getCoveredParty(PolicyActivity policyActivity) {
 		if (GET_COVERED_PARTY__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.POLICY_ACTIVITY, CCDPackage.Literals.POLICY_ACTIVITY.getEAllOperations().get(49));
+			helper.setOperationContext(CCDPackage.Literals.POLICY_ACTIVITY, CCDPackage.Literals.POLICY_ACTIVITY.getEAllOperations().get(59));
 			try {
 				GET_COVERED_PARTY__EOCL_QRY = helper.createQuery(GET_COVERED_PARTY__EOCL_EXP);
 			}
@@ -1050,7 +1050,7 @@ public class PolicyActivityOperations extends ActOperations {
 	public static  ParticipantRole getPolicySubscriber(PolicyActivity policyActivity) {
 		if (GET_POLICY_SUBSCRIBER__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.POLICY_ACTIVITY, CCDPackage.Literals.POLICY_ACTIVITY.getEAllOperations().get(50));
+			helper.setOperationContext(CCDPackage.Literals.POLICY_ACTIVITY, CCDPackage.Literals.POLICY_ACTIVITY.getEAllOperations().get(60));
 			try {
 				GET_POLICY_SUBSCRIBER__EOCL_QRY = helper.createQuery(GET_POLICY_SUBSCRIBER__EOCL_EXP);
 			}

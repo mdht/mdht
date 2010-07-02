@@ -1687,7 +1687,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  ProblemSection getProblemSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_PROBLEM_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(38));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(48));
 			try {
 				GET_PROBLEM_SECTION__EOCL_QRY = helper.createQuery(GET_PROBLEM_SECTION__EOCL_EXP);
 			}
@@ -1731,7 +1731,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  FamilyHistorySection getFamilyHistorySection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_FAMILY_HISTORY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(39));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(49));
 			try {
 				GET_FAMILY_HISTORY_SECTION__EOCL_QRY = helper.createQuery(GET_FAMILY_HISTORY_SECTION__EOCL_EXP);
 			}
@@ -1775,7 +1775,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  SocialHistorySection getSocialHistorySection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_SOCIAL_HISTORY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(40));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(50));
 			try {
 				GET_SOCIAL_HISTORY_SECTION__EOCL_QRY = helper.createQuery(GET_SOCIAL_HISTORY_SECTION__EOCL_EXP);
 			}
@@ -1819,7 +1819,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  AlertsSection getAlertsSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_ALERTS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(41));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(51));
 			try {
 				GET_ALERTS_SECTION__EOCL_QRY = helper.createQuery(GET_ALERTS_SECTION__EOCL_EXP);
 			}
@@ -1863,7 +1863,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  MedicationsSection getMedicationsSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_MEDICATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(42));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(52));
 			try {
 				GET_MEDICATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_MEDICATIONS_SECTION__EOCL_EXP);
 			}
@@ -1907,7 +1907,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  ResultsSection getResultsSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_RESULTS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(43));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(53));
 			try {
 				GET_RESULTS_SECTION__EOCL_QRY = helper.createQuery(GET_RESULTS_SECTION__EOCL_EXP);
 			}
@@ -1951,7 +1951,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  ProceduresSection getProceduresSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_PROCEDURES_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(44));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(54));
 			try {
 				GET_PROCEDURES_SECTION__EOCL_QRY = helper.createQuery(GET_PROCEDURES_SECTION__EOCL_EXP);
 			}
@@ -1995,7 +1995,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  EncountersSection getEncountersSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_ENCOUNTERS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(45));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(55));
 			try {
 				GET_ENCOUNTERS_SECTION__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS_SECTION__EOCL_EXP);
 			}
@@ -2039,7 +2039,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  PlanOfCareSection getPlanOfCareSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_PLAN_OF_CARE_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(46));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(56));
 			try {
 				GET_PLAN_OF_CARE_SECTION__EOCL_QRY = helper.createQuery(GET_PLAN_OF_CARE_SECTION__EOCL_EXP);
 			}
@@ -2083,7 +2083,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  ImmunizationsSection getImmunizationsSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_IMMUNIZATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(47));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(57));
 			try {
 				GET_IMMUNIZATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_IMMUNIZATIONS_SECTION__EOCL_EXP);
 			}
@@ -2127,7 +2127,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  VitalSignsSection getVitalSignsSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_VITAL_SIGNS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(48));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(58));
 			try {
 				GET_VITAL_SIGNS_SECTION__EOCL_QRY = helper.createQuery(GET_VITAL_SIGNS_SECTION__EOCL_EXP);
 			}
@@ -2171,7 +2171,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  MedicalEquipmentSection getMedicalEquipmentSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_MEDICAL_EQUIPMENT_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(49));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(59));
 			try {
 				GET_MEDICAL_EQUIPMENT_SECTION__EOCL_QRY = helper.createQuery(GET_MEDICAL_EQUIPMENT_SECTION__EOCL_EXP);
 			}
@@ -2215,7 +2215,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  FunctionalStatusSection getFunctionalStatusSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_FUNCTIONAL_STATUS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(50));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(60));
 			try {
 				GET_FUNCTIONAL_STATUS_SECTION__EOCL_QRY = helper.createQuery(GET_FUNCTIONAL_STATUS_SECTION__EOCL_EXP);
 			}
@@ -2259,7 +2259,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  AdvanceDirectivesSection getAdvanceDirectivesSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(51));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(61));
 			try {
 				GET_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY = helper.createQuery(GET_ADVANCE_DIRECTIVES_SECTION__EOCL_EXP);
 			}
@@ -2303,7 +2303,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  PayersSection getPayersSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_PAYERS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(52));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(62));
 			try {
 				GET_PAYERS_SECTION__EOCL_QRY = helper.createQuery(GET_PAYERS_SECTION__EOCL_EXP);
 			}
@@ -2347,7 +2347,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 	public static  PurposeSection getPurposeSection(ContinuityOfCareDocument continuityOfCareDocument) {
 		if (GET_PURPOSE_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(53));
+			helper.setOperationContext(CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT, CCDPackage.Literals.CONTINUITY_OF_CARE_DOCUMENT.getEAllOperations().get(63));
 			try {
 				GET_PURPOSE_SECTION__EOCL_QRY = helper.createQuery(GET_PURPOSE_SECTION__EOCL_EXP);
 			}

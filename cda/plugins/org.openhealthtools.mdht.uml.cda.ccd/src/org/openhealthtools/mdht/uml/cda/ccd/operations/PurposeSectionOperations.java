@@ -376,7 +376,7 @@ public class PurposeSectionOperations extends SectionOperations {
 	public static  EList<PurposeActivity> getPurposeActivities(PurposeSection purposeSection) {
 		if (GET_PURPOSE_ACTIVITIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.PURPOSE_SECTION, CCDPackage.Literals.PURPOSE_SECTION.getEAllOperations().get(41));
+			helper.setOperationContext(CCDPackage.Literals.PURPOSE_SECTION, CCDPackage.Literals.PURPOSE_SECTION.getEAllOperations().get(52));
 			try {
 				GET_PURPOSE_ACTIVITIES__EOCL_QRY = helper.createQuery(GET_PURPOSE_ACTIVITIES__EOCL_EXP);
 			}

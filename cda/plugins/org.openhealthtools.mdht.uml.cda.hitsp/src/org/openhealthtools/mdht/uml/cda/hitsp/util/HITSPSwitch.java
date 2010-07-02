@@ -100,6 +100,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
 
 /**
  * <!-- begin-user-doc -->
@@ -183,6 +186,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseProblemAct(allergyDrugSensitivity);
 				if (result == null) result = caseAct(allergyDrugSensitivity);
 				if (result == null) result = caseClinicalStatement(allergyDrugSensitivity);
+				if (result == null) result = caseRIMAct(allergyDrugSensitivity);
+				if (result == null) result = caseRIMInfrastructureRoot(allergyDrugSensitivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -193,6 +198,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicationActivity(medication);
 				if (result == null) result = caseSubstanceAdministration(medication);
 				if (result == null) result = caseClinicalStatement(medication);
+				if (result == null) result = caseRIMAct(medication);
+				if (result == null) result = caseRIMInfrastructureRoot(medication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -204,6 +211,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseProblemAct(condition);
 				if (result == null) result = caseAct(condition);
 				if (result == null) result = caseClinicalStatement(condition);
+				if (result == null) result = caseRIMAct(condition);
+				if (result == null) result = caseRIMInfrastructureRoot(condition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -214,6 +223,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseProblemObservation(conditionEntry);
 				if (result == null) result = caseObservation(conditionEntry);
 				if (result == null) result = caseClinicalStatement(conditionEntry);
+				if (result == null) result = caseRIMAct(conditionEntry);
+				if (result == null) result = caseRIMInfrastructureRoot(conditionEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -224,6 +235,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicalSummary(patientSummary);
 				if (result == null) result = caseMedicalDocument(patientSummary);
 				if (result == null) result = caseClinicalDocument(patientSummary);
+				if (result == null) result = caseRIMAct(patientSummary);
+				if (result == null) result = caseRIMInfrastructureRoot(patientSummary);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -233,6 +246,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseActiveProblemsSection(problemListSection);
 				if (result == null) result = caseProblemSection(problemListSection);
 				if (result == null) result = caseSection(problemListSection);
+				if (result == null) result = caseRIMAct(problemListSection);
+				if (result == null) result = caseRIMInfrastructureRoot(problemListSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +257,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_MedicationsSection(medicationsSection);
 				if (result == null) result = caseCCD_MedicationsSection(medicationsSection);
 				if (result == null) result = caseSection(medicationsSection);
+				if (result == null) result = caseRIMAct(medicationsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -252,6 +269,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_VitalSignsSection(vitalSignsSection);
 				if (result == null) result = caseCCD_VitalSignsSection(vitalSignsSection);
 				if (result == null) result = caseSection(vitalSignsSection);
+				if (result == null) result = caseRIMAct(vitalSignsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(vitalSignsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -263,6 +282,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseSimpleObservation(vitalSign);
 				if (result == null) result = caseObservation(vitalSign);
 				if (result == null) result = caseClinicalStatement(vitalSign);
+				if (result == null) result = caseRIMAct(vitalSign);
+				if (result == null) result = caseRIMInfrastructureRoot(vitalSign);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -272,6 +293,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_PayersSection(payersSection);
 				if (result == null) result = caseCCD_PayersSection(payersSection);
 				if (result == null) result = caseSection(payersSection);
+				if (result == null) result = caseRIMAct(payersSection);
+				if (result == null) result = caseRIMInfrastructureRoot(payersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -281,6 +304,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_AllergiesReactionsSection(allergiesReactionsSection);
 				if (result == null) result = caseAlertsSection(allergiesReactionsSection);
 				if (result == null) result = caseSection(allergiesReactionsSection);
+				if (result == null) result = caseRIMAct(allergiesReactionsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(allergiesReactionsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,6 +314,8 @@ public class HITSPSwitch<T> {
 				T result = caseHistoryOfPastIllnessSection(historyOfPastIllnessSection);
 				if (result == null) result = caseIHE_HistoryOfPastIllnessSection(historyOfPastIllnessSection);
 				if (result == null) result = caseSection(historyOfPastIllnessSection);
+				if (result == null) result = caseRIMAct(historyOfPastIllnessSection);
+				if (result == null) result = caseRIMInfrastructureRoot(historyOfPastIllnessSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -297,6 +324,8 @@ public class HITSPSwitch<T> {
 				T result = caseChiefComplaintSection(chiefComplaintSection);
 				if (result == null) result = caseIHE_ChiefComplaintSection(chiefComplaintSection);
 				if (result == null) result = caseSection(chiefComplaintSection);
+				if (result == null) result = caseRIMAct(chiefComplaintSection);
+				if (result == null) result = caseRIMInfrastructureRoot(chiefComplaintSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -305,6 +334,8 @@ public class HITSPSwitch<T> {
 				T result = caseReasonForReferralSection(reasonForReferralSection);
 				if (result == null) result = caseIHE_ReasonForReferralSection(reasonForReferralSection);
 				if (result == null) result = caseSection(reasonForReferralSection);
+				if (result == null) result = caseRIMAct(reasonForReferralSection);
+				if (result == null) result = caseRIMInfrastructureRoot(reasonForReferralSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -313,6 +344,8 @@ public class HITSPSwitch<T> {
 				T result = caseHistoryOfPresentIllness(historyOfPresentIllness);
 				if (result == null) result = caseIHE_HistoryOfPresentIllness(historyOfPresentIllness);
 				if (result == null) result = caseSection(historyOfPresentIllness);
+				if (result == null) result = caseRIMAct(historyOfPresentIllness);
+				if (result == null) result = caseRIMInfrastructureRoot(historyOfPresentIllness);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -323,6 +356,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_SurgeriesSection(surgeriesSection);
 				if (result == null) result = caseProceduresSection(surgeriesSection);
 				if (result == null) result = caseSection(surgeriesSection);
+				if (result == null) result = caseRIMAct(surgeriesSection);
+				if (result == null) result = caseRIMInfrastructureRoot(surgeriesSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -331,6 +366,8 @@ public class HITSPSwitch<T> {
 				T result = caseFunctionalStatusSection(functionalStatusSection);
 				if (result == null) result = caseCCD_FunctionalStatusSection(functionalStatusSection);
 				if (result == null) result = caseSection(functionalStatusSection);
+				if (result == null) result = caseRIMAct(functionalStatusSection);
+				if (result == null) result = caseRIMInfrastructureRoot(functionalStatusSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -339,6 +376,8 @@ public class HITSPSwitch<T> {
 				T result = caseHospitalAdmissionDiagnosisSection(hospitalAdmissionDiagnosisSection);
 				if (result == null) result = caseIHE_HospitalAdmissionDiagnosisSection(hospitalAdmissionDiagnosisSection);
 				if (result == null) result = caseSection(hospitalAdmissionDiagnosisSection);
+				if (result == null) result = caseRIMAct(hospitalAdmissionDiagnosisSection);
+				if (result == null) result = caseRIMInfrastructureRoot(hospitalAdmissionDiagnosisSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -347,6 +386,8 @@ public class HITSPSwitch<T> {
 				T result = caseDischargeDiagnosisSection(dischargeDiagnosisSection);
 				if (result == null) result = caseIHE_DischargeDiagnosisSection(dischargeDiagnosisSection);
 				if (result == null) result = caseSection(dischargeDiagnosisSection);
+				if (result == null) result = caseRIMAct(dischargeDiagnosisSection);
+				if (result == null) result = caseRIMInfrastructureRoot(dischargeDiagnosisSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -355,6 +396,8 @@ public class HITSPSwitch<T> {
 				T result = caseAdmissionMedicationHistorySection(admissionMedicationHistorySection);
 				if (result == null) result = caseIHE_AdmissionMedicationHistorySection(admissionMedicationHistorySection);
 				if (result == null) result = caseSection(admissionMedicationHistorySection);
+				if (result == null) result = caseRIMAct(admissionMedicationHistorySection);
+				if (result == null) result = caseRIMInfrastructureRoot(admissionMedicationHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -363,6 +406,8 @@ public class HITSPSwitch<T> {
 				T result = caseHospitalDischargeMedicationsSection(hospitalDischargeMedicationsSection);
 				if (result == null) result = caseIHE_HospitalDischargeMedicationsSection(hospitalDischargeMedicationsSection);
 				if (result == null) result = caseSection(hospitalDischargeMedicationsSection);
+				if (result == null) result = caseRIMAct(hospitalDischargeMedicationsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(hospitalDischargeMedicationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -371,6 +416,8 @@ public class HITSPSwitch<T> {
 				T result = caseMedicationsAdministeredSection(medicationsAdministeredSection);
 				if (result == null) result = caseIHE_MedicationsAdministeredSection(medicationsAdministeredSection);
 				if (result == null) result = caseSection(medicationsAdministeredSection);
+				if (result == null) result = caseRIMAct(medicationsAdministeredSection);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationsAdministeredSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -381,6 +428,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_AdvanceDirectivesSection(advanceDirectivesSection);
 				if (result == null) result = caseCCD_AdvanceDirectivesSection(advanceDirectivesSection);
 				if (result == null) result = caseSection(advanceDirectivesSection);
+				if (result == null) result = caseRIMAct(advanceDirectivesSection);
+				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectivesSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -390,6 +439,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_ImmunizationsSection(immunizationsSection);
 				if (result == null) result = caseCCD_ImmunizationsSection(immunizationsSection);
 				if (result == null) result = caseSection(immunizationsSection);
+				if (result == null) result = caseRIMAct(immunizationsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(immunizationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -399,6 +450,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_PhysicalExamSection(physicalExamSection);
 				if (result == null) result = casePhysicalExamNarrativeSection(physicalExamSection);
 				if (result == null) result = caseSection(physicalExamSection);
+				if (result == null) result = caseRIMAct(physicalExamSection);
+				if (result == null) result = caseRIMInfrastructureRoot(physicalExamSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -407,6 +460,8 @@ public class HITSPSwitch<T> {
 				T result = caseReviewOfSystemsSection(reviewOfSystemsSection);
 				if (result == null) result = caseIHE_ReviewOfSystemsSection(reviewOfSystemsSection);
 				if (result == null) result = caseSection(reviewOfSystemsSection);
+				if (result == null) result = caseRIMAct(reviewOfSystemsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(reviewOfSystemsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -415,6 +470,8 @@ public class HITSPSwitch<T> {
 				T result = caseHospitalCourseSection(hospitalCourseSection);
 				if (result == null) result = caseIHE_HospitalCourseSection(hospitalCourseSection);
 				if (result == null) result = caseSection(hospitalCourseSection);
+				if (result == null) result = caseRIMAct(hospitalCourseSection);
+				if (result == null) result = caseRIMInfrastructureRoot(hospitalCourseSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -423,6 +480,8 @@ public class HITSPSwitch<T> {
 				T result = caseDiagnosticResultsSection(diagnosticResultsSection);
 				if (result == null) result = caseCodedResultsSection(diagnosticResultsSection);
 				if (result == null) result = caseSection(diagnosticResultsSection);
+				if (result == null) result = caseRIMAct(diagnosticResultsSection);
+				if (result == null) result = caseRIMInfrastructureRoot(diagnosticResultsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -431,6 +490,8 @@ public class HITSPSwitch<T> {
 				T result = caseAssessmentAndPlanSection(assessmentAndPlanSection);
 				if (result == null) result = caseIHE_AssessmentAndPlanSection(assessmentAndPlanSection);
 				if (result == null) result = caseSection(assessmentAndPlanSection);
+				if (result == null) result = caseRIMAct(assessmentAndPlanSection);
+				if (result == null) result = caseRIMInfrastructureRoot(assessmentAndPlanSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -440,6 +501,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseCarePlanSection(planOfCareSection);
 				if (result == null) result = caseCCD_PlanOfCareSection(planOfCareSection);
 				if (result == null) result = caseSection(planOfCareSection);
+				if (result == null) result = caseRIMAct(planOfCareSection);
+				if (result == null) result = caseRIMInfrastructureRoot(planOfCareSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -449,6 +512,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseFamilyMedicalHistorySection(familyHistorySection);
 				if (result == null) result = caseCCD_FamilyHistorySection(familyHistorySection);
 				if (result == null) result = caseSection(familyHistorySection);
+				if (result == null) result = caseRIMAct(familyHistorySection);
+				if (result == null) result = caseRIMInfrastructureRoot(familyHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -458,6 +523,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_SocialHistorySection(socialHistorySection);
 				if (result == null) result = caseCCD_SocialHistorySection(socialHistorySection);
 				if (result == null) result = caseSection(socialHistorySection);
+				if (result == null) result = caseRIMAct(socialHistorySection);
+				if (result == null) result = caseRIMInfrastructureRoot(socialHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -467,6 +534,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseEncounterHistorySection(encountersSection);
 				if (result == null) result = caseCCD_EncountersSection(encountersSection);
 				if (result == null) result = caseSection(encountersSection);
+				if (result == null) result = caseRIMAct(encountersSection);
+				if (result == null) result = caseRIMInfrastructureRoot(encountersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -476,6 +545,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicalDevicesSection(medicalEquipmentSection);
 				if (result == null) result = caseCCD_MedicalEquipmentSection(medicalEquipmentSection);
 				if (result == null) result = caseSection(medicalEquipmentSection);
+				if (result == null) result = caseRIMAct(medicalEquipmentSection);
+				if (result == null) result = caseRIMInfrastructureRoot(medicalEquipmentSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -486,6 +557,8 @@ public class HITSPSwitch<T> {
 				if (theResult == null) theResult = caseSimpleObservation(result);
 				if (theResult == null) theResult = caseObservation(result);
 				if (theResult == null) theResult = caseClinicalStatement(result);
+				if (theResult == null) theResult = caseRIMAct(result);
+				if (theResult == null) theResult = caseRIMInfrastructureRoot(result);
 				if (theResult == null) theResult = defaultCase(theEObject);
 				return theResult;
 			}
@@ -504,6 +577,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseCoverageActivity(insuranceProvider);
 				if (result == null) result = caseAct(insuranceProvider);
 				if (result == null) result = caseClinicalStatement(insuranceProvider);
+				if (result == null) result = caseRIMAct(insuranceProvider);
+				if (result == null) result = caseRIMInfrastructureRoot(insuranceProvider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -512,6 +587,8 @@ public class HITSPSwitch<T> {
 				T result = caseHealthcareProvider(healthcareProvider);
 				if (result == null) result = caseHealthcareProvidersPharmacies(healthcareProvider);
 				if (result == null) result = casePerformer1(healthcareProvider);
+				if (result == null) result = caseRIMParticipation(healthcareProvider);
+				if (result == null) result = caseRIMInfrastructureRoot(healthcareProvider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -522,6 +599,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicationActivity(immunization);
 				if (result == null) result = caseSubstanceAdministration(immunization);
 				if (result == null) result = caseClinicalStatement(immunization);
+				if (result == null) result = caseRIMAct(immunization);
+				if (result == null) result = caseRIMInfrastructureRoot(immunization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -531,6 +610,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseIHE_Comment(comment);
 				if (result == null) result = caseAct(comment);
 				if (result == null) result = caseClinicalStatement(comment);
+				if (result == null) result = caseRIMAct(comment);
+				if (result == null) result = caseRIMInfrastructureRoot(comment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -543,6 +624,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicationActivity(medicationNormalDose);
 				if (result == null) result = caseSubstanceAdministration(medicationNormalDose);
 				if (result == null) result = caseClinicalStatement(medicationNormalDose);
+				if (result == null) result = caseRIMAct(medicationNormalDose);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationNormalDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -555,6 +638,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicationActivity(medicationSplitDose);
 				if (result == null) result = caseSubstanceAdministration(medicationSplitDose);
 				if (result == null) result = caseClinicalStatement(medicationSplitDose);
+				if (result == null) result = caseRIMAct(medicationSplitDose);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationSplitDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -567,6 +652,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicationActivity(medicationTaperedDose);
 				if (result == null) result = caseSubstanceAdministration(medicationTaperedDose);
 				if (result == null) result = caseClinicalStatement(medicationTaperedDose);
+				if (result == null) result = caseRIMAct(medicationTaperedDose);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationTaperedDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -579,6 +666,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicationActivity(medicationConditionalDose);
 				if (result == null) result = caseSubstanceAdministration(medicationConditionalDose);
 				if (result == null) result = caseClinicalStatement(medicationConditionalDose);
+				if (result == null) result = caseRIMAct(medicationConditionalDose);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationConditionalDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -591,6 +680,8 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseMedicationActivity(medicationCombinationMedication);
 				if (result == null) result = caseSubstanceAdministration(medicationCombinationMedication);
 				if (result == null) result = caseClinicalStatement(medicationCombinationMedication);
+				if (result == null) result = caseRIMAct(medicationCombinationMedication);
+				if (result == null) result = caseRIMInfrastructureRoot(medicationCombinationMedication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1277,6 +1368,36 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseHITSPRegistryDelegate(HITSPRegistryDelegate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Infrastructure Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Infrastructure Root</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMAct(RIMAct object) {
 		return null;
 	}
 
@@ -2282,6 +2403,21 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseCoverageEntry(CoverageEntry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRIMParticipation(RIMParticipation object) {
 		return null;
 	}
 

@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -742,8 +742,8 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		DatatypesPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
+		RIMPackage.eINSTANCE.eClass();
 
 		// Load packages
 		theCDAPackage.loadPackage();

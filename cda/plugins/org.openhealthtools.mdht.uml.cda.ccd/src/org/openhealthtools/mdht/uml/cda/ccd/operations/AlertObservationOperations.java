@@ -624,7 +624,7 @@ public class AlertObservationOperations extends ObservationOperations {
 	public static  AlertStatusObservation getAlertStatusObservation(AlertObservation alertObservation) {
 		if (GET_ALERT_STATUS_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.ALERT_OBSERVATION, CCDPackage.Literals.ALERT_OBSERVATION.getEAllOperations().get(42));
+			helper.setOperationContext(CCDPackage.Literals.ALERT_OBSERVATION, CCDPackage.Literals.ALERT_OBSERVATION.getEAllOperations().get(52));
 			try {
 				GET_ALERT_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_ALERT_STATUS_OBSERVATION__EOCL_EXP);
 			}
@@ -668,7 +668,7 @@ public class AlertObservationOperations extends ObservationOperations {
 	public static  EList<ReactionObservation> getReactionObservations(AlertObservation alertObservation) {
 		if (GET_REACTION_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CCDPackage.Literals.ALERT_OBSERVATION, CCDPackage.Literals.ALERT_OBSERVATION.getEAllOperations().get(43));
+			helper.setOperationContext(CCDPackage.Literals.ALERT_OBSERVATION, CCDPackage.Literals.ALERT_OBSERVATION.getEAllOperations().get(53));
 			try {
 				GET_REACTION_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_REACTION_OBSERVATIONS__EOCL_EXP);
 			}

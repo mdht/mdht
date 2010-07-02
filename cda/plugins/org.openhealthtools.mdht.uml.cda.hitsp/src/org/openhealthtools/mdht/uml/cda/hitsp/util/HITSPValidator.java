@@ -1097,6 +1097,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTemplateId(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCode(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTitle(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionText(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCoverageActivity(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validatePayersSection_validateIHEPayersSectionTemplateId(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validatePayersSection_validateIHEPayersSectionCoverageEntry(payersSection, diagnostics, context);
@@ -2038,6 +2039,8 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(insuranceProvider, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityInformationSource(insuranceProvider, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivitySequenceNumber(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityTemplateId(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityClassCode(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityMoodCode(insuranceProvider, diagnostics, context);
