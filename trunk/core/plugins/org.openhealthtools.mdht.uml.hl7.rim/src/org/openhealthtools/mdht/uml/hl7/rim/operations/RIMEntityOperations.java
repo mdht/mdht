@@ -6,8 +6,10 @@
  */
 package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +21,8 @@ import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getClassCode() <em>Get Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getDeterminerCode() <em>Get Determiner Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getPlayedRoles() <em>Get Played Roles</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity#getScopedRoles() <em>Get Scoped Roles</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +55,28 @@ public class RIMEntityOperations extends RIMInfrastructureRootOperations {
 	 * @generated
 	 */
 	public static  Enumerator getDeterminerCode(RIMEntity rimEntity) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static  EList<RIMRole> getPlayedRoles(RIMEntity rimEntity) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static  EList<RIMRole> getScopedRoles(RIMEntity rimEntity) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
