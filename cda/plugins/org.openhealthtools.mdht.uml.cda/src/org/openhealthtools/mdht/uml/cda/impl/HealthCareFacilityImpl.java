@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.cda.Place;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.RoleImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassServiceDeliveryLocation;
 
@@ -55,7 +55,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassServiceDeliveryLocation;
  *
  * @generated
  */
-public class HealthCareFacilityImpl extends RIMRoleImpl implements HealthCareFacility {
+public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacility {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

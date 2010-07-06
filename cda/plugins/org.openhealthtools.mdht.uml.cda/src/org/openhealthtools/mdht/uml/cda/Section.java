@@ -17,7 +17,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -56,7 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
  * @model
  * @generated
  */
-public interface Section extends RIMAct {
+public interface Section extends Act {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.
@@ -605,7 +605,7 @@ public interface Section extends RIMAct {
 	 * @model actRequired="true" actOrdered="false"
 	 * @generated
 	 */
-	void addAct(Act act);
+	void addAct(org.openhealthtools.mdht.uml.cda.Act act);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -697,7 +697,7 @@ public interface Section extends RIMAct {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.act->select(act : cda::Act | not act.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Act> getActs();
+	EList<org.openhealthtools.mdht.uml.cda.Act> getActs();
 
 	/**
 	 * <!-- begin-user-doc -->

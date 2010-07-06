@@ -47,7 +47,7 @@ import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
 
 /**
@@ -100,7 +100,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
  *
  * @generated
  */
-public class SectionOperations extends RIMActOperations {
+public class SectionOperations extends ActOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

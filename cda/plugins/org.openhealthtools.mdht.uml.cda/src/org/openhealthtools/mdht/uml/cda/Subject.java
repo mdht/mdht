@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 import org.openhealthtools.mdht.uml.hl7.vocab.ContextControl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetSubject;
@@ -44,7 +44,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetSubject;
  * @model
  * @generated
  */
-public interface Subject extends RIMParticipation {
+public interface Subject extends Participation {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

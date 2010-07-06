@@ -10,15 +10,15 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Entity;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMFactory;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
 import org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage;
 
 /**
@@ -33,49 +33,49 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rimActEClass = null;
+	private EClass actEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rimInfrastructureRootEClass = null;
+	private EClass infrastructureRootEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rimParticipationEClass = null;
+	private EClass participationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rimRoleEClass = null;
+	private EClass roleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rimEntityEClass = null;
+	private EClass entityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rimRoleLinkEClass = null;
+	private EClass roleLinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rimActRelationshipEClass = null;
+	private EClass actRelationshipEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -146,8 +146,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRIMAct() {
-		return rimActEClass;
+	public EClass getAct() {
+		return actEClass;
 	}
 
 	/**
@@ -155,8 +155,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRIMInfrastructureRoot() {
-		return rimInfrastructureRootEClass;
+	public EClass getInfrastructureRoot() {
+		return infrastructureRootEClass;
 	}
 
 	/**
@@ -164,8 +164,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRIMParticipation() {
-		return rimParticipationEClass;
+	public EClass getParticipation() {
+		return participationEClass;
 	}
 
 	/**
@@ -173,8 +173,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRIMRole() {
-		return rimRoleEClass;
+	public EClass getRole() {
+		return roleEClass;
 	}
 
 	/**
@@ -182,8 +182,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRIMEntity() {
-		return rimEntityEClass;
+	public EClass getEntity() {
+		return entityEClass;
 	}
 
 	/**
@@ -191,8 +191,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRIMRoleLink() {
-		return rimRoleLinkEClass;
+	public EClass getRoleLink() {
+		return roleLinkEClass;
 	}
 
 	/**
@@ -200,8 +200,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRIMActRelationship() {
-		return rimActRelationshipEClass;
+	public EClass getActRelationship() {
+		return actRelationshipEClass;
 	}
 
 	/**
@@ -232,19 +232,19 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		rimActEClass = createEClass(RIM_ACT);
+		actEClass = createEClass(ACT);
 
-		rimInfrastructureRootEClass = createEClass(RIM_INFRASTRUCTURE_ROOT);
+		infrastructureRootEClass = createEClass(INFRASTRUCTURE_ROOT);
 
-		rimParticipationEClass = createEClass(RIM_PARTICIPATION);
+		participationEClass = createEClass(PARTICIPATION);
 
-		rimRoleEClass = createEClass(RIM_ROLE);
+		roleEClass = createEClass(ROLE);
 
-		rimEntityEClass = createEClass(RIM_ENTITY);
+		entityEClass = createEClass(ENTITY);
 
-		rimRoleLinkEClass = createEClass(RIM_ROLE_LINK);
+		roleLinkEClass = createEClass(ROLE_LINK);
 
-		rimActRelationshipEClass = createEClass(RIM_ACT_RELATIONSHIP);
+		actRelationshipEClass = createEClass(ACT_RELATIONSHIP);
 	}
 
 	/**
@@ -279,85 +279,85 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		rimActEClass.getESuperTypes().add(this.getRIMInfrastructureRoot());
-		rimParticipationEClass.getESuperTypes().add(this.getRIMInfrastructureRoot());
-		rimRoleEClass.getESuperTypes().add(this.getRIMInfrastructureRoot());
-		rimEntityEClass.getESuperTypes().add(this.getRIMInfrastructureRoot());
-		rimRoleLinkEClass.getESuperTypes().add(this.getRIMInfrastructureRoot());
-		rimActRelationshipEClass.getESuperTypes().add(this.getRIMInfrastructureRoot());
+		actEClass.getESuperTypes().add(this.getInfrastructureRoot());
+		participationEClass.getESuperTypes().add(this.getInfrastructureRoot());
+		roleEClass.getESuperTypes().add(this.getInfrastructureRoot());
+		entityEClass.getESuperTypes().add(this.getInfrastructureRoot());
+		roleLinkEClass.getESuperTypes().add(this.getInfrastructureRoot());
+		actRelationshipEClass.getESuperTypes().add(this.getInfrastructureRoot());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(rimActEClass, RIMAct.class, "RIMAct", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(actEClass, Act.class, "Act", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(rimActEClass, ecorePackage.getEEnumerator(), "getClassCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, ecorePackage.getEEnumerator(), "getClassCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimActEClass, ecorePackage.getEEnumerator(), "getMoodCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, ecorePackage.getEEnumerator(), "getMoodCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimActEClass, ecorePackage.getEBooleanObject(), "getNegationInd", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, ecorePackage.getEBooleanObject(), "getNegationInd", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimActEClass, this.getRIMParticipation(), "getParticipations", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, this.getParticipation(), "getParticipations", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimActEClass, this.getRIMActRelationship(), "getOutboundRelationships", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, this.getActRelationship(), "getOutboundRelationships", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimActEClass, this.getRIMActRelationship(), "getInboundRelationships", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actEClass, this.getActRelationship(), "getInboundRelationships", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(rimInfrastructureRootEClass, RIMInfrastructureRoot.class, "RIMInfrastructureRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(infrastructureRootEClass, InfrastructureRoot.class, "InfrastructureRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(rimInfrastructureRootEClass, theDatatypesPackage.getCS(), "getRealmCodes", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(infrastructureRootEClass, theDatatypesPackage.getCS(), "getRealmCodes", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimInfrastructureRootEClass, theDatatypesPackage.getII(), "getTypeId", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(infrastructureRootEClass, theDatatypesPackage.getII(), "getTypeId", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimInfrastructureRootEClass, theDatatypesPackage.getII(), "getTemplateIds", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(infrastructureRootEClass, theDatatypesPackage.getII(), "getTemplateIds", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimInfrastructureRootEClass, theVocabPackage.getNullFlavor(), "getNullFlavor", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(infrastructureRootEClass, theVocabPackage.getNullFlavor(), "getNullFlavor", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(rimParticipationEClass, RIMParticipation.class, "RIMParticipation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(participationEClass, Participation.class, "Participation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(rimParticipationEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(participationEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimParticipationEClass, this.getRIMAct(), "getAct", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(participationEClass, this.getAct(), "getAct", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimParticipationEClass, this.getRIMRole(), "getRole", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(participationEClass, this.getRole(), "getRole", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(rimRoleEClass, RIMRole.class, "RIMRole", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(roleEClass, Role.class, "Role", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(rimRoleEClass, ecorePackage.getEEnumerator(), "getClassCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleEClass, ecorePackage.getEEnumerator(), "getClassCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimRoleEClass, this.getRIMEntity(), "getPlayer", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleEClass, this.getEntity(), "getPlayer", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimRoleEClass, this.getRIMEntity(), "getScoper", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleEClass, this.getEntity(), "getScoper", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimRoleEClass, this.getRIMParticipation(), "getParticipations", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleEClass, this.getParticipation(), "getParticipations", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimRoleEClass, this.getRIMRoleLink(), "getOutboundLinks", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleEClass, this.getRoleLink(), "getOutboundLinks", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimRoleEClass, this.getRIMRoleLink(), "getInboundLinks", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleEClass, this.getRoleLink(), "getInboundLinks", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(rimEntityEClass, RIMEntity.class, "RIMEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(rimEntityEClass, ecorePackage.getEEnumerator(), "getClassCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(entityEClass, ecorePackage.getEEnumerator(), "getClassCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimEntityEClass, ecorePackage.getEEnumerator(), "getDeterminerCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(entityEClass, ecorePackage.getEEnumerator(), "getDeterminerCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimEntityEClass, this.getRIMRole(), "getPlayedRoles", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(entityEClass, this.getRole(), "getPlayedRoles", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimEntityEClass, this.getRIMRole(), "getScopedRoles", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(entityEClass, this.getRole(), "getScopedRoles", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(rimRoleLinkEClass, RIMRoleLink.class, "RIMRoleLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(roleLinkEClass, RoleLink.class, "RoleLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(rimRoleLinkEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleLinkEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimRoleLinkEClass, this.getRIMRole(), "getTarget", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleLinkEClass, this.getRole(), "getTarget", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimRoleLinkEClass, this.getRIMRole(), "getSource", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(roleLinkEClass, this.getRole(), "getSource", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(rimActRelationshipEClass, RIMActRelationship.class, "RIMActRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(actRelationshipEClass, ActRelationship.class, "ActRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(rimActRelationshipEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actRelationshipEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimActRelationshipEClass, this.getRIMAct(), "getTarget", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actRelationshipEClass, this.getAct(), "getTarget", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(rimActRelationshipEClass, this.getRIMAct(), "getSource", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(actRelationshipEClass, this.getAct(), "getSource", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

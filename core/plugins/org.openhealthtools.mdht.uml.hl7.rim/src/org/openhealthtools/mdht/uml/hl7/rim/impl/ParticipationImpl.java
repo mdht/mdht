@@ -8,27 +8,28 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActRelationshipOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ParticipationOperations;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Act Relationship</b></em>'.
+ * An implementation of the model object '<em><b>Participation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class RIMActRelationshipImpl extends RIMInfrastructureRootImpl implements RIMActRelationship {
+public abstract class ParticipationImpl extends InfrastructureRootImpl implements Participation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMActRelationshipImpl() {
+	protected ParticipationImpl() {
 		super();
 	}
 
@@ -39,25 +40,7 @@ public abstract class RIMActRelationshipImpl extends RIMInfrastructureRootImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RIMPackage.Literals.RIM_ACT_RELATIONSHIP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMAct getTarget() {
-		return RIMActRelationshipOperations.getTarget(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMAct getSource() {
-		return RIMActRelationshipOperations.getSource(this);
+		return RIMPackage.Literals.PARTICIPATION;
 	}
 
 	/**
@@ -66,7 +49,25 @@ public abstract class RIMActRelationshipImpl extends RIMInfrastructureRootImpl i
 	 * @generated
 	 */
 	public Enumerator getTypeCode() {
-		return RIMActRelationshipOperations.getTypeCode(this);
+		return ParticipationOperations.getTypeCode(this);
 	}
 
-} //RIMActRelationshipImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Act getAct() {
+		return ParticipationOperations.getAct(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role getRole() {
+		return ParticipationOperations.getRole(this);
+	}
+
+} //ParticipationImpl

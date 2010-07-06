@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
+import org.openhealthtools.mdht.uml.hl7.rim.Entity;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassManufacturedMaterial;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminerDetermined;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -47,7 +47,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * @model
  * @generated
  */
-public interface Material extends RIMEntity {
+public interface Material extends Entity {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

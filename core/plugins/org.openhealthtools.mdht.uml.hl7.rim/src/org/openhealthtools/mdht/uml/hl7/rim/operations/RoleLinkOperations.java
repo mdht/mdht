@@ -7,32 +7,32 @@
 package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import org.eclipse.emf.common.util.Enumerator;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
 
 /**
  * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Act Relationship</b></em>' model objects.
+ * A static utility class that provides operations related to '<em><b>Role Link</b></em>' model objects.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getTypeCode() <em>Get Type Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getTarget() <em>Get Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship#getSource() <em>Get Source</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RoleLink#getTypeCode() <em>Get Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RoleLink#getTarget() <em>Get Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RoleLink#getSource() <em>Get Source</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RIMActRelationshipOperations extends RIMInfrastructureRootOperations {
+public class RoleLinkOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMActRelationshipOperations() {
+	protected RoleLinkOperations() {
 		super();
 	}
 
@@ -41,7 +41,7 @@ public class RIMActRelationshipOperations extends RIMInfrastructureRootOperation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getTypeCode(RIMActRelationship rimActRelationship) {
+	public static  Enumerator getTypeCode(RoleLink roleLink) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -52,7 +52,7 @@ public class RIMActRelationshipOperations extends RIMInfrastructureRootOperation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  RIMAct getTarget(RIMActRelationship rimActRelationship) {
+	public static  Role getTarget(RoleLink roleLink) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -63,10 +63,10 @@ public class RIMActRelationshipOperations extends RIMInfrastructureRootOperation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  RIMAct getSource(RIMActRelationship rimActRelationship) {
+	public static  Role getSource(RoleLink roleLink) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
-} // RIMActRelationshipOperations
+} // RoleLinkOperations

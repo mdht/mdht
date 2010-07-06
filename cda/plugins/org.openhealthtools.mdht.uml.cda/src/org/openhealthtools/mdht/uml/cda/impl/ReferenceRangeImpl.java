@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ObservationRange;
 import org.openhealthtools.mdht.uml.cda.ReferenceRange;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActRelationshipImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ActRelationshipImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
@@ -50,7 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *
  * @generated
  */
-public class ReferenceRangeImpl extends RIMActRelationshipImpl implements ReferenceRange {
+public class ReferenceRangeImpl extends ActRelationshipImpl implements ReferenceRange {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

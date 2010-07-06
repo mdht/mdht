@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalStatementOperations;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ActImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
@@ -23,7 +23,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *
  * @generated
  */
-public abstract class ClinicalStatementImpl extends RIMActImpl implements ClinicalStatement {
+public abstract class ClinicalStatementImpl extends ActImpl implements ClinicalStatement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

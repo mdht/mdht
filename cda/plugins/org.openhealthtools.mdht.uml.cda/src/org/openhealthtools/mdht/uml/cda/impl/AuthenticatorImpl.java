@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMParticipationImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ParticipationImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 
@@ -53,7 +53,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *
  * @generated
  */
-public class AuthenticatorImpl extends RIMParticipationImpl implements Authenticator {
+public class AuthenticatorImpl extends ParticipationImpl implements Authenticator {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

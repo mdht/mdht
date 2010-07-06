@@ -9,11 +9,11 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,13 +24,13 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActOperations;
  *
  * @generated
  */
-public abstract class RIMActImpl extends RIMInfrastructureRootImpl implements RIMAct {
+public abstract class ActImpl extends InfrastructureRootImpl implements Act {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMActImpl() {
+	protected ActImpl() {
 		super();
 	}
 
@@ -41,34 +41,7 @@ public abstract class RIMActImpl extends RIMInfrastructureRootImpl implements RI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RIMPackage.Literals.RIM_ACT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMParticipation> getParticipations() {
-		return RIMActOperations.getParticipations(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMActRelationship> getOutboundRelationships() {
-		return RIMActOperations.getOutboundRelationships(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMActRelationship> getInboundRelationships() {
-		return RIMActOperations.getInboundRelationships(this);
+		return RIMPackage.Literals.ACT;
 	}
 
 	/**
@@ -77,7 +50,7 @@ public abstract class RIMActImpl extends RIMInfrastructureRootImpl implements RI
 	 * @generated
 	 */
 	public Enumerator getClassCode() {
-		return RIMActOperations.getClassCode(this);
+		return ActOperations.getClassCode(this);
 	}
 
 	/**
@@ -86,7 +59,7 @@ public abstract class RIMActImpl extends RIMInfrastructureRootImpl implements RI
 	 * @generated
 	 */
 	public Enumerator getMoodCode() {
-		return RIMActOperations.getMoodCode(this);
+		return ActOperations.getMoodCode(this);
 	}
 
 	/**
@@ -95,7 +68,34 @@ public abstract class RIMActImpl extends RIMInfrastructureRootImpl implements RI
 	 * @generated
 	 */
 	public Boolean getNegationInd() {
-		return RIMActOperations.getNegationInd(this);
+		return ActOperations.getNegationInd(this);
 	}
 
-} //RIMActImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Participation> getParticipations() {
+		return ActOperations.getParticipations(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ActRelationship> getOutboundRelationships() {
+		return ActOperations.getOutboundRelationships(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ActRelationship> getInboundRelationships() {
+		return ActOperations.getInboundRelationships(this);
+	}
+
+} //ActImpl

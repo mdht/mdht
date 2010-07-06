@@ -10,14 +10,14 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Entity;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,51 +93,51 @@ public class RIMSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case RIMPackage.RIM_ACT: {
-				RIMAct rimAct = (RIMAct)theEObject;
-				T result = caseRIMAct(rimAct);
-				if (result == null) result = caseRIMInfrastructureRoot(rimAct);
+			case RIMPackage.ACT: {
+				Act act = (Act)theEObject;
+				T result = caseAct(act);
+				if (result == null) result = caseInfrastructureRoot(act);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RIMPackage.RIM_INFRASTRUCTURE_ROOT: {
-				RIMInfrastructureRoot rimInfrastructureRoot = (RIMInfrastructureRoot)theEObject;
-				T result = caseRIMInfrastructureRoot(rimInfrastructureRoot);
+			case RIMPackage.INFRASTRUCTURE_ROOT: {
+				InfrastructureRoot infrastructureRoot = (InfrastructureRoot)theEObject;
+				T result = caseInfrastructureRoot(infrastructureRoot);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RIMPackage.RIM_PARTICIPATION: {
-				RIMParticipation rimParticipation = (RIMParticipation)theEObject;
-				T result = caseRIMParticipation(rimParticipation);
-				if (result == null) result = caseRIMInfrastructureRoot(rimParticipation);
+			case RIMPackage.PARTICIPATION: {
+				Participation participation = (Participation)theEObject;
+				T result = caseParticipation(participation);
+				if (result == null) result = caseInfrastructureRoot(participation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RIMPackage.RIM_ROLE: {
-				RIMRole rimRole = (RIMRole)theEObject;
-				T result = caseRIMRole(rimRole);
-				if (result == null) result = caseRIMInfrastructureRoot(rimRole);
+			case RIMPackage.ROLE: {
+				Role role = (Role)theEObject;
+				T result = caseRole(role);
+				if (result == null) result = caseInfrastructureRoot(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RIMPackage.RIM_ENTITY: {
-				RIMEntity rimEntity = (RIMEntity)theEObject;
-				T result = caseRIMEntity(rimEntity);
-				if (result == null) result = caseRIMInfrastructureRoot(rimEntity);
+			case RIMPackage.ENTITY: {
+				Entity entity = (Entity)theEObject;
+				T result = caseEntity(entity);
+				if (result == null) result = caseInfrastructureRoot(entity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RIMPackage.RIM_ROLE_LINK: {
-				RIMRoleLink rimRoleLink = (RIMRoleLink)theEObject;
-				T result = caseRIMRoleLink(rimRoleLink);
-				if (result == null) result = caseRIMInfrastructureRoot(rimRoleLink);
+			case RIMPackage.ROLE_LINK: {
+				RoleLink roleLink = (RoleLink)theEObject;
+				T result = caseRoleLink(roleLink);
+				if (result == null) result = caseInfrastructureRoot(roleLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RIMPackage.RIM_ACT_RELATIONSHIP: {
-				RIMActRelationship rimActRelationship = (RIMActRelationship)theEObject;
-				T result = caseRIMActRelationship(rimActRelationship);
-				if (result == null) result = caseRIMInfrastructureRoot(rimActRelationship);
+			case RIMPackage.ACT_RELATIONSHIP: {
+				ActRelationship actRelationship = (ActRelationship)theEObject;
+				T result = caseActRelationship(actRelationship);
+				if (result == null) result = caseInfrastructureRoot(actRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,7 +156,7 @@ public class RIMSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMAct(RIMAct object) {
+	public T caseAct(Act object) {
 		return null;
 	}
 
@@ -171,7 +171,7 @@ public class RIMSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
+	public T caseInfrastructureRoot(InfrastructureRoot object) {
 		return null;
 	}
 
@@ -186,7 +186,7 @@ public class RIMSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMParticipation(RIMParticipation object) {
+	public T caseParticipation(Participation object) {
 		return null;
 	}
 
@@ -201,7 +201,7 @@ public class RIMSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMRole(RIMRole object) {
+	public T caseRole(Role object) {
 		return null;
 	}
 
@@ -216,7 +216,7 @@ public class RIMSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMEntity(RIMEntity object) {
+	public T caseEntity(Entity object) {
 		return null;
 	}
 
@@ -231,7 +231,7 @@ public class RIMSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMRoleLink(RIMRoleLink object) {
+	public T caseRoleLink(RoleLink object) {
 		return null;
 	}
 
@@ -246,7 +246,7 @@ public class RIMSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMActRelationship(RIMActRelationship object) {
+	public T caseActRelationship(ActRelationship object) {
 		return null;
 	}
 

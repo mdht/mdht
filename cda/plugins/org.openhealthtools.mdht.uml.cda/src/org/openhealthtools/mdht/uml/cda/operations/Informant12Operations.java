@@ -23,7 +23,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMParticipationOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ParticipationOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMParticipationOperation
  *
  * @generated
  */
-public class Informant12Operations extends RIMParticipationOperations {
+public class Informant12Operations extends ParticipationOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

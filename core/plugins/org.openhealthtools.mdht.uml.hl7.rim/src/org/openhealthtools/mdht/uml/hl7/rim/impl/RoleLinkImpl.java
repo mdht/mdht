@@ -8,28 +8,27 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMParticipationOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.RoleLinkOperations;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Participation</b></em>'.
+ * An implementation of the model object '<em><b>Role Link</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class RIMParticipationImpl extends RIMInfrastructureRootImpl implements RIMParticipation {
+public abstract class RoleLinkImpl extends InfrastructureRootImpl implements RoleLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMParticipationImpl() {
+	protected RoleLinkImpl() {
 		super();
 	}
 
@@ -40,25 +39,7 @@ public abstract class RIMParticipationImpl extends RIMInfrastructureRootImpl imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RIMPackage.Literals.RIM_PARTICIPATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMAct getAct() {
-		return RIMParticipationOperations.getAct(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMRole getRole() {
-		return RIMParticipationOperations.getRole(this);
+		return RIMPackage.Literals.ROLE_LINK;
 	}
 
 	/**
@@ -67,7 +48,25 @@ public abstract class RIMParticipationImpl extends RIMInfrastructureRootImpl imp
 	 * @generated
 	 */
 	public Enumerator getTypeCode() {
-		return RIMParticipationOperations.getTypeCode(this);
+		return RoleLinkOperations.getTypeCode(this);
 	}
 
-} //RIMParticipationImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role getTarget() {
+		return RoleLinkOperations.getTarget(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role getSource() {
+		return RoleLinkOperations.getSource(this);
+	}
+
+} //RoleLinkImpl

@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipDocument;
 
@@ -40,7 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipDocument;
  * @model
  * @generated
  */
-public interface RelatedDocument extends RIMActRelationship {
+public interface RelatedDocument extends ActRelationship {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

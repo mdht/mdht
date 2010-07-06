@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassManufacturedProduct;
 
@@ -46,7 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassManufacturedProduct;
  * @model
  * @generated
  */
-public interface ManufacturedProduct extends RIMRole {
+public interface ManufacturedProduct extends Role {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

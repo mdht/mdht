@@ -23,7 +23,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActRelationshipOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActRelationshipOperati
  *
  * @generated
  */
-public class ReferenceOperations extends RIMActRelationshipOperations {
+public class ReferenceOperations extends ActRelationshipOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

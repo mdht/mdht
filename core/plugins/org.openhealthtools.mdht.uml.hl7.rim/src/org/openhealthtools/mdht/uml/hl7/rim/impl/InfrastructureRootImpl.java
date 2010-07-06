@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMInfrastructureRootOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.InfrastructureRootOperations;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
@@ -25,13 +25,13 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *
  * @generated
  */
-public abstract class RIMInfrastructureRootImpl extends EObjectImpl implements RIMInfrastructureRoot {
+public abstract class InfrastructureRootImpl extends EObjectImpl implements InfrastructureRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMInfrastructureRootImpl() {
+	protected InfrastructureRootImpl() {
 		super();
 	}
 
@@ -42,7 +42,7 @@ public abstract class RIMInfrastructureRootImpl extends EObjectImpl implements R
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RIMPackage.Literals.RIM_INFRASTRUCTURE_ROOT;
+		return RIMPackage.Literals.INFRASTRUCTURE_ROOT;
 	}
 
 	/**
@@ -51,7 +51,7 @@ public abstract class RIMInfrastructureRootImpl extends EObjectImpl implements R
 	 * @generated
 	 */
 	public EList<CS> getRealmCodes() {
-		return RIMInfrastructureRootOperations.getRealmCodes(this);
+		return InfrastructureRootOperations.getRealmCodes(this);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public abstract class RIMInfrastructureRootImpl extends EObjectImpl implements R
 	 * @generated
 	 */
 	public II getTypeId() {
-		return RIMInfrastructureRootOperations.getTypeId(this);
+		return InfrastructureRootOperations.getTypeId(this);
 	}
 
 	/**
@@ -69,7 +69,7 @@ public abstract class RIMInfrastructureRootImpl extends EObjectImpl implements R
 	 * @generated
 	 */
 	public EList<II> getTemplateIds() {
-		return RIMInfrastructureRootOperations.getTemplateIds(this);
+		return InfrastructureRootOperations.getTemplateIds(this);
 	}
 
 	/**
@@ -78,7 +78,7 @@ public abstract class RIMInfrastructureRootImpl extends EObjectImpl implements R
 	 * @generated
 	 */
 	public NullFlavor getNullFlavor() {
-		return RIMInfrastructureRootOperations.getNullFlavor(this);
+		return InfrastructureRootOperations.getNullFlavor(this);
 	}
 
-} //RIMInfrastructureRootImpl
+} //InfrastructureRootImpl

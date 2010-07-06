@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMParticipationImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ParticipationImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.ContextControl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetSubject;
@@ -54,7 +54,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetSubject;
  *
  * @generated
  */
-public class SubjectImpl extends RIMParticipationImpl implements Subject {
+public class SubjectImpl extends ParticipationImpl implements Subject {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

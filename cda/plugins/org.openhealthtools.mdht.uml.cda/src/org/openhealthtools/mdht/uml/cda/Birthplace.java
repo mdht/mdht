@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClass;
 
@@ -40,7 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClass;
  * @model
  * @generated
  */
-public interface Birthplace extends RIMRole {
+public interface Birthplace extends Role {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

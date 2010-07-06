@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cda"
     nsURI="urn:hl7-org:v3" nsPrefix="cda">
-  <eClassifiers xsi:type="ecore:EClass" name="ClinicalDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ClinicalDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eOperations name="addPatient" ordered="false" lowerBound="1">
       <eParameters name="patient" ordered="false" lowerBound="1" eType="#//Patient"/>
     </eOperations>
@@ -237,7 +237,7 @@
       <eAnnotations source="redefines" references="http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II/extension"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RecordTarget" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="RecordTarget" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -274,7 +274,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PatientRole" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="PatientRole" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -335,7 +335,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClass"
         defaultValueLiteral="PAT" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Patient" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="Patient" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -491,7 +491,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Guardian" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="Guardian" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eOperations name="guardianChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -563,7 +563,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClass"
         defaultValueLiteral="GUAR" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -633,7 +633,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -705,7 +705,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//EntityDeterminer"
         defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OrganizationPartOf" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="OrganizationPartOf" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -766,7 +766,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClass"
         defaultValueLiteral="PART" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Birthplace" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="Birthplace" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -800,7 +800,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClass"
         defaultValueLiteral="BIRTHPL" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -896,7 +896,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//NullFlavor"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -947,7 +947,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssignedAuthor" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="AssignedAuthor" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eOperations name="assignedAuthorChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -1029,7 +1029,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClassAssignedEntity"
         defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AuthoringDevice" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="AuthoringDevice" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1086,7 +1086,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//EntityDeterminer"
         defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MaintainedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="MaintainedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1127,7 +1127,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClass"
         defaultValueLiteral="MNT" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataEnterer" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="DataEnterer" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1170,7 +1170,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssignedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="AssignedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1280,7 +1280,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Informant12" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Informant12" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eOperations name="informantChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -1332,7 +1332,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelatedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="RelatedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1425,7 +1425,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Custodian" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Custodian" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1459,7 +1459,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
         defaultValueLiteral="CST" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssignedCustodian" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="AssignedCustodian" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1493,7 +1493,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClassAssignedEntity"
         defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CustodianOrganization" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="CustodianOrganization" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1550,7 +1550,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//EntityDeterminer"
         defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InformationRecipient" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="InformationRecipient" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1584,7 +1584,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_InformationRecipient"
         defaultValueLiteral="PRCP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntendedRecipient" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="IntendedRecipient" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1645,7 +1645,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_InformationRecipientRole"
         defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LegalAuthenticator" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="LegalAuthenticator" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1696,7 +1696,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Authenticator" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Authenticator" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1744,7 +1744,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
         defaultValueLiteral="AUTHEN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Participant1" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Participant1" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1794,7 +1794,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssociatedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="AssociatedEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1893,7 +1893,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InFulfillmentOf" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="InFulfillmentOf" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1927,7 +1927,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActRelationshipFulfills"
         defaultValueLiteral="FLFS" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Order" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="Order" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1978,7 +1978,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="RQO" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DocumentationOf" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentationOf" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2012,7 +2012,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActRelationshipType"
         defaultValueLiteral="DOC" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceEvent" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceEvent" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2069,7 +2069,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Performer1" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Performer1" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2116,7 +2116,7 @@
         lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ServiceEventPerformer"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelatedDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="RelatedDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2150,7 +2150,7 @@
         lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActRelationshipDocument"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParentDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ParentDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2214,7 +2214,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Authorization" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Authorization" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2248,7 +2248,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActRelationshipType"
         defaultValueLiteral="AUTH" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Consent" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="Consent" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2299,7 +2299,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component1" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Component1" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2333,7 +2333,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActRelationshipHasComponent"
         defaultValueLiteral="COMP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EncompassingEncounter" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="EncompassingEncounter" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2409,7 +2409,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2443,7 +2443,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
         defaultValueLiteral="RESP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EncounterParticipant" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="EncounterParticipant" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2483,7 +2483,7 @@
         lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_EncounterParticipant"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2517,7 +2517,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationTargetLocation"
         defaultValueLiteral="LOC" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HealthCareFacility" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="HealthCareFacility" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2570,7 +2570,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClassServiceDeliveryLocation"
         defaultValueLiteral="SDLOC" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component2" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Component2" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eOperations name="bodyChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -2622,7 +2622,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NonXMLBody" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="NonXMLBody" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2674,7 +2674,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StructuredBody" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredBody" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2725,7 +2725,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component3" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Component3" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -2762,7 +2762,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eOperations name="addAct" ordered="false" lowerBound="1">
       <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
     </eOperations>
@@ -2999,7 +2999,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Subject" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Subject" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3043,7 +3043,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelatedSubject" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="RelatedSubject" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3097,7 +3097,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_DocumentSubject"
         defaultValueLiteral="PRS" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubjectPerson" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="SubjectPerson" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3149,7 +3149,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//EntityDeterminer"
         defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entry" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Entry" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eOperations name="clinicalStatement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -3463,7 +3463,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClinicalStatement" abstract="true" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ClinicalStatement" abstract="true" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eOperations name="getEntryRelationshipTargets" ordered="false" upperBound="-1"
         eType="#//ClinicalStatement">
       <eParameters name="typeCode" ordered="false" lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActRelationshipEntryRelationship"/>
@@ -3474,7 +3474,7 @@
       <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Specimen" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Specimen" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3508,7 +3508,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
         defaultValueLiteral="SPC" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SpecimenRole" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="SpecimenRole" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3549,7 +3549,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClassSpecimen"
         defaultValueLiteral="SPEC" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlayingEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="PlayingEntity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3644,7 +3644,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Performer2" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Performer2" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3691,7 +3691,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationPhysicalPerformer"
         defaultValueLiteral="PRF" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Participant2" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Participant2" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3741,7 +3741,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ContextControl"
         defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParticipantRole" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipantRole" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eOperations name="playingEntityChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -3823,7 +3823,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClassRoot"
         defaultValueLiteral="ROL" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3874,7 +3874,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//EntityDeterminer"
         defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3924,7 +3924,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//EntityDeterminer"
         defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EntryRelationship" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="EntryRelationship" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eOperations name="clinicalStatement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -4247,7 +4247,7 @@
         lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_DocumentEncounterMood"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eOperations name="externalActChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -4315,7 +4315,7 @@
         lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActRelationshipExternalReference"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalAct" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalAct" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4365,7 +4365,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalObservation" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalObservation" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4415,7 +4415,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalProcedure" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalProcedure" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4465,7 +4465,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalDocument" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4529,7 +4529,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Precondition" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Precondition" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4563,7 +4563,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActRelationshipType"
         defaultValueLiteral="PRCN" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Criterion" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="Criterion" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4881,7 +4881,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReferenceRange" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceRange" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4915,7 +4915,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActRelationshipType"
         defaultValueLiteral="REFV" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObservationRange" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMAct">
+  <eClassifiers xsi:type="ecore:EClass" name="ObservationRange" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -5373,7 +5373,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component4" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Component4" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eOperations name="clinicalStatement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -6188,7 +6188,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Consumable" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Consumable" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -6222,7 +6222,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
         defaultValueLiteral="CSM" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ManufacturedProduct" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMRole">
+  <eClassifiers xsi:type="ecore:EClass" name="ManufacturedProduct" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Role">
     <eOperations name="manufacturedDrugOrOtherMaterial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context">
@@ -6284,7 +6284,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//RoleClassManufacturedProduct"
         defaultValueLiteral="MANU" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LabeledDrug" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="LabeledDrug" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -6327,7 +6327,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//EntityDeterminerDetermined"
         defaultValueLiteral="KIND" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Material" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="Material" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -6620,7 +6620,7 @@
         lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_DocumentSubstanceMood"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMParticipation">
+  <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -6654,7 +6654,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
         defaultValueLiteral="PRD" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component5" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//RIMActRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Component5" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">

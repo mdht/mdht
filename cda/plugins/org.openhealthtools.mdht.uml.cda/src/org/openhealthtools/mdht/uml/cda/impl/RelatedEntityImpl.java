@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.RoleImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
 
@@ -60,7 +60,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
  *
  * @generated
  */
-public class RelatedEntityImpl extends RIMRoleImpl implements RelatedEntity {
+public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

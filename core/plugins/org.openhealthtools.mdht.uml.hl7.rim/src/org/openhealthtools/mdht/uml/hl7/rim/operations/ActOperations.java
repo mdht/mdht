@@ -8,9 +8,9 @@ package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,24 +20,24 @@ import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getClassCode() <em>Get Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getMoodCode() <em>Get Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getNegationInd() <em>Get Negation Ind</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getParticipations() <em>Get Participations</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getOutboundRelationships() <em>Get Outbound Relationships</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct#getInboundRelationships() <em>Get Inbound Relationships</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.Act#getClassCode() <em>Get Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.Act#getMoodCode() <em>Get Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.Act#getNegationInd() <em>Get Negation Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.Act#getParticipations() <em>Get Participations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.Act#getOutboundRelationships() <em>Get Outbound Relationships</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.Act#getInboundRelationships() <em>Get Inbound Relationships</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RIMActOperations extends RIMInfrastructureRootOperations {
+public class ActOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMActOperations() {
+	protected ActOperations() {
 		super();
 	}
 
@@ -46,7 +46,7 @@ public class RIMActOperations extends RIMInfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getClassCode(RIMAct rimAct) {
+	public static  Enumerator getClassCode(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -57,7 +57,7 @@ public class RIMActOperations extends RIMInfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getMoodCode(RIMAct rimAct) {
+	public static  Enumerator getMoodCode(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -68,7 +68,7 @@ public class RIMActOperations extends RIMInfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Boolean getNegationInd(RIMAct rimAct) {
+	public static  Boolean getNegationInd(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -79,7 +79,7 @@ public class RIMActOperations extends RIMInfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<RIMParticipation> getParticipations(RIMAct rimAct) {
+	public static  EList<Participation> getParticipations(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -90,7 +90,7 @@ public class RIMActOperations extends RIMInfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<RIMActRelationship> getOutboundRelationships(RIMAct rimAct) {
+	public static  EList<ActRelationship> getOutboundRelationships(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -101,10 +101,10 @@ public class RIMActOperations extends RIMInfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<RIMActRelationship> getInboundRelationships(RIMAct rimAct) {
+	public static  EList<ActRelationship> getInboundRelationships(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 
-} // RIMActOperations
+} // ActOperations

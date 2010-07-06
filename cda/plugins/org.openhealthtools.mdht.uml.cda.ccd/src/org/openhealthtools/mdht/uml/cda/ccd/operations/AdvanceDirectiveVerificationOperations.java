@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMParticipationOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ParticipationOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMParticipationOperation
  *
  * @generated
  */
-public class AdvanceDirectiveVerificationOperations extends RIMParticipationOperations {
+public class AdvanceDirectiveVerificationOperations extends ParticipationOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->
