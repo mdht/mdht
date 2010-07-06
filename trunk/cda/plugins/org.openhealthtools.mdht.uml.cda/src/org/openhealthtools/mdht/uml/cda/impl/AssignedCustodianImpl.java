@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.RoleImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
 
@@ -50,7 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
  *
  * @generated
  */
-public class AssignedCustodianImpl extends RIMRoleImpl implements AssignedCustodian {
+public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

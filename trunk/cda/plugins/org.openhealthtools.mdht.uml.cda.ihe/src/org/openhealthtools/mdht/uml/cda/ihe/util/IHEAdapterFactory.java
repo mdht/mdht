@@ -1,22 +1,15 @@
-/*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.ihe.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
@@ -108,10 +101,10 @@ import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
 
 /**
  * <!-- begin-user-doc -->
@@ -410,12 +403,12 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createIHERegistryDelegateAdapter();
 			}
 			@Override
-			public Adapter caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
-				return createRIMInfrastructureRootAdapter();
+			public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
+				return createInfrastructureRootAdapter();
 			}
 			@Override
-			public Adapter caseRIMAct(RIMAct object) {
-				return createRIMActAdapter();
+			public Adapter caseAct(Act object) {
+				return createActAdapter();
 			}
 			@Override
 			public Adapter caseSection(Section object) {
@@ -430,8 +423,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createClinicalStatementAdapter();
 			}
 			@Override
-			public Adapter caseAct(Act object) {
-				return createActAdapter();
+			public Adapter caseCDA_Act(org.openhealthtools.mdht.uml.cda.Act object) {
+				return createCDA_ActAdapter();
 			}
 			@Override
 			public Adapter caseProblemAct(ProblemAct object) {
@@ -530,8 +523,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createCoverageActivityAdapter();
 			}
 			@Override
-			public Adapter caseRIMParticipation(RIMParticipation object) {
-				return createRIMParticipationAdapter();
+			public Adapter caseParticipation(Participation object) {
+				return createParticipationAdapter();
 			}
 			@Override
 			public Adapter casePerformer1(Performer1 object) {
@@ -546,8 +539,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createPlanOfCareActivityObservationAdapter();
 			}
 			@Override
-			public Adapter caseRIMRole(RIMRole object) {
-				return createRIMRoleAdapter();
+			public Adapter caseRole(Role object) {
+				return createRoleAdapter();
 			}
 			@Override
 			public Adapter caseManufacturedProduct(ManufacturedProduct object) {
@@ -1442,86 +1435,30 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot <em>Infrastructure Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot <em>Infrastructure Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot
 	 * @generated
 	 */
-	public Adapter createRIMInfrastructureRootAdapter() {
+	public Adapter createInfrastructureRootAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct <em>Act</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Act <em>Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMAct
-	 * @generated
-	 */
-	public Adapter createRIMActAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.Act <em>Act</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.Act
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Act
 	 * @generated
 	 */
 	public Adapter createActAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct <em>Problem Act</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemAct
-	 * @generated
-	 */
-	public Adapter createProblemActAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument <em>Clinical Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument
-	 * @generated
-	 */
-	public Adapter createClinicalDocumentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemSection <em>Problem Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemSection
-	 * @generated
-	 */
-	public Adapter createProblemSectionAdapter() {
 		return null;
 	}
 
@@ -1564,6 +1501,62 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClinicalStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.Act <em>Act</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.Act
+	 * @generated
+	 */
+	public Adapter createCDA_ActAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct <em>Problem Act</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemAct
+	 * @generated
+	 */
+	public Adapter createProblemActAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument <em>Clinical Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument
+	 * @generated
+	 */
+	public Adapter createClinicalDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemSection <em>Problem Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemSection
+	 * @generated
+	 */
+	public Adapter createProblemSectionAdapter() {
 		return null;
 	}
 
@@ -1862,16 +1855,16 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation <em>Participation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Participation <em>Participation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Participation
 	 * @generated
 	 */
-	public Adapter createRIMParticipationAdapter() {
+	public Adapter createParticipationAdapter() {
 		return null;
 	}
 
@@ -1918,16 +1911,16 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole <em>Role</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Role
 	 * @generated
 	 */
-	public Adapter createRIMRoleAdapter() {
+	public Adapter createRoleAdapter() {
 		return null;
 	}
 

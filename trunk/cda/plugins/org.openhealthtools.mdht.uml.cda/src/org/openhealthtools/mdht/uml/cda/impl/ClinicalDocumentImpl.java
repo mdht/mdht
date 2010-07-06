@@ -51,7 +51,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ActImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -98,7 +98,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *
  * @generated
  */
-public class ClinicalDocumentImpl extends RIMActImpl implements ClinicalDocument {
+public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

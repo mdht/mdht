@@ -9,12 +9,12 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
+import org.openhealthtools.mdht.uml.hl7.rim.Entity;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMRoleOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,13 +25,13 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMRoleOperations;
  *
  * @generated
  */
-public abstract class RIMRoleImpl extends RIMInfrastructureRootImpl implements RIMRole {
+public abstract class RoleImpl extends InfrastructureRootImpl implements Role {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMRoleImpl() {
+	protected RoleImpl() {
 		super();
 	}
 
@@ -42,52 +42,7 @@ public abstract class RIMRoleImpl extends RIMInfrastructureRootImpl implements R
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RIMPackage.Literals.RIM_ROLE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMEntity getPlayer() {
-		return RIMRoleOperations.getPlayer(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMEntity getScoper() {
-		return RIMRoleOperations.getScoper(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMParticipation> getParticipations() {
-		return RIMRoleOperations.getParticipations(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMRoleLink> getOutboundLinks() {
-		return RIMRoleOperations.getOutboundLinks(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMRoleLink> getInboundLinks() {
-		return RIMRoleOperations.getInboundLinks(this);
+		return RIMPackage.Literals.ROLE;
 	}
 
 	/**
@@ -96,7 +51,52 @@ public abstract class RIMRoleImpl extends RIMInfrastructureRootImpl implements R
 	 * @generated
 	 */
 	public Enumerator getClassCode() {
-		return RIMRoleOperations.getClassCode(this);
+		return RoleOperations.getClassCode(this);
 	}
 
-} //RIMRoleImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity getPlayer() {
+		return RoleOperations.getPlayer(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity getScoper() {
+		return RoleOperations.getScoper(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Participation> getParticipations() {
+		return RoleOperations.getParticipations(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RoleLink> getOutboundLinks() {
+		return RoleOperations.getOutboundLinks(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RoleLink> getInboundLinks() {
+		return RoleOperations.getInboundLinks(this);
+	}
+
+} //RoleImpl

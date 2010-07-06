@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -49,7 +49,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * @model
  * @generated
  */
-public interface ExternalDocument extends RIMAct {
+public interface ExternalDocument extends Act {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.

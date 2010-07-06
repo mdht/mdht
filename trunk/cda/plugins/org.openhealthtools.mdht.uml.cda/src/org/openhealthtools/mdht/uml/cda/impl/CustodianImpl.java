@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.Custodian;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMParticipationImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ParticipationImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 
@@ -50,7 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *
  * @generated
  */
-public class CustodianImpl extends RIMParticipationImpl implements Custodian {
+public class CustodianImpl extends ParticipationImpl implements Custodian {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

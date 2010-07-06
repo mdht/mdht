@@ -84,7 +84,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int CLINICAL_DOCUMENT__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -93,7 +93,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int CLINICAL_DOCUMENT__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -102,7 +102,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int CLINICAL_DOCUMENT__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -111,7 +111,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int CLINICAL_DOCUMENT__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -120,7 +120,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int CLINICAL_DOCUMENT__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -129,7 +129,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__TITLE = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int CLINICAL_DOCUMENT__TITLE = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -138,7 +138,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__EFFECTIVE_TIME = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int CLINICAL_DOCUMENT__EFFECTIVE_TIME = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -147,7 +147,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -156,7 +156,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__LANGUAGE_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int CLINICAL_DOCUMENT__LANGUAGE_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -165,7 +165,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__SET_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int CLINICAL_DOCUMENT__SET_ID = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -174,7 +174,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__VERSION_NUMBER = RIMPackage.RIM_ACT_FEATURE_COUNT + 10;
+	int CLINICAL_DOCUMENT__VERSION_NUMBER = RIMPackage.ACT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
@@ -183,7 +183,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__COPY_TIME = RIMPackage.RIM_ACT_FEATURE_COUNT + 11;
+	int CLINICAL_DOCUMENT__COPY_TIME = RIMPackage.ACT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
@@ -192,7 +192,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__RECORD_TARGET = RIMPackage.RIM_ACT_FEATURE_COUNT + 12;
+	int CLINICAL_DOCUMENT__RECORD_TARGET = RIMPackage.ACT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -201,7 +201,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__AUTHOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 13;
+	int CLINICAL_DOCUMENT__AUTHOR = RIMPackage.ACT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
@@ -210,7 +210,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__DATA_ENTERER = RIMPackage.RIM_ACT_FEATURE_COUNT + 14;
+	int CLINICAL_DOCUMENT__DATA_ENTERER = RIMPackage.ACT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -219,7 +219,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__INFORMANT = RIMPackage.RIM_ACT_FEATURE_COUNT + 15;
+	int CLINICAL_DOCUMENT__INFORMANT = RIMPackage.ACT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
@@ -228,7 +228,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__CUSTODIAN = RIMPackage.RIM_ACT_FEATURE_COUNT + 16;
+	int CLINICAL_DOCUMENT__CUSTODIAN = RIMPackage.ACT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
@@ -237,7 +237,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__INFORMATION_RECIPIENT = RIMPackage.RIM_ACT_FEATURE_COUNT + 17;
+	int CLINICAL_DOCUMENT__INFORMATION_RECIPIENT = RIMPackage.ACT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -246,7 +246,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 18;
+	int CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR = RIMPackage.ACT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
@@ -255,7 +255,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__AUTHENTICATOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 19;
+	int CLINICAL_DOCUMENT__AUTHENTICATOR = RIMPackage.ACT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -264,7 +264,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__PARTICIPANT = RIMPackage.RIM_ACT_FEATURE_COUNT + 20;
+	int CLINICAL_DOCUMENT__PARTICIPANT = RIMPackage.ACT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -273,7 +273,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__IN_FULFILLMENT_OF = RIMPackage.RIM_ACT_FEATURE_COUNT + 21;
+	int CLINICAL_DOCUMENT__IN_FULFILLMENT_OF = RIMPackage.ACT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -282,7 +282,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__DOCUMENTATION_OF = RIMPackage.RIM_ACT_FEATURE_COUNT + 22;
+	int CLINICAL_DOCUMENT__DOCUMENTATION_OF = RIMPackage.ACT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
@@ -291,7 +291,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__RELATED_DOCUMENT = RIMPackage.RIM_ACT_FEATURE_COUNT + 23;
+	int CLINICAL_DOCUMENT__RELATED_DOCUMENT = RIMPackage.ACT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
@@ -300,7 +300,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__AUTHORIZATION = RIMPackage.RIM_ACT_FEATURE_COUNT + 24;
+	int CLINICAL_DOCUMENT__AUTHORIZATION = RIMPackage.ACT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
@@ -309,7 +309,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__COMPONENT_OF = RIMPackage.RIM_ACT_FEATURE_COUNT + 25;
+	int CLINICAL_DOCUMENT__COMPONENT_OF = RIMPackage.ACT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -318,7 +318,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__COMPONENT = RIMPackage.RIM_ACT_FEATURE_COUNT + 26;
+	int CLINICAL_DOCUMENT__COMPONENT = RIMPackage.ACT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -327,7 +327,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 27;
+	int CLINICAL_DOCUMENT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -336,7 +336,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 28;
+	int CLINICAL_DOCUMENT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -345,7 +345,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 29;
+	int CLINICAL_DOCUMENT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 29;
 
 	/**
 	 * The number of structural features of the '<em>Clinical Document</em>' class.
@@ -354,7 +354,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 30;
+	int CLINICAL_DOCUMENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 30;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.InfrastructureRootTypeIdImpl <em>Infrastructure Root Type Id</em>}' class.
@@ -455,7 +455,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int RECORD_TARGET__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -464,7 +464,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int RECORD_TARGET__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -473,7 +473,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int RECORD_TARGET__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Patient Role</b></em>' containment reference.
@@ -482,7 +482,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET__PATIENT_ROLE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int RECORD_TARGET__PATIENT_ROLE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -491,7 +491,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int RECORD_TARGET__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -500,7 +500,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int RECORD_TARGET__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -509,7 +509,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int RECORD_TARGET__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Record Target</em>' class.
@@ -518,7 +518,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TARGET_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int RECORD_TARGET_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.PatientRoleImpl <em>Patient Role</em>}' class.
@@ -537,7 +537,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int PATIENT_ROLE__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -546,7 +546,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int PATIENT_ROLE__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -555,7 +555,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int PATIENT_ROLE__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -564,7 +564,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int PATIENT_ROLE__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -573,7 +573,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int PATIENT_ROLE__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -582,7 +582,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int PATIENT_ROLE__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Patient</b></em>' containment reference.
@@ -591,7 +591,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__PATIENT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int PATIENT_ROLE__PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Provider Organization</b></em>' containment reference.
@@ -600,7 +600,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__PROVIDER_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int PATIENT_ROLE__PROVIDER_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -609,7 +609,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int PATIENT_ROLE__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -618,7 +618,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int PATIENT_ROLE__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Patient Role</em>' class.
@@ -627,7 +627,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_ROLE_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int PATIENT_ROLE_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl <em>Patient</em>}' class.
@@ -646,7 +646,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int PATIENT__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -655,7 +655,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int PATIENT__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -664,7 +664,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int PATIENT__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -673,7 +673,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int PATIENT__ID = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
@@ -682,7 +682,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int PATIENT__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Administrative Gender Code</b></em>' containment reference.
@@ -691,7 +691,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__ADMINISTRATIVE_GENDER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int PATIENT__ADMINISTRATIVE_GENDER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Birth Time</b></em>' containment reference.
@@ -700,7 +700,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__BIRTH_TIME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int PATIENT__BIRTH_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Marital Status Code</b></em>' containment reference.
@@ -709,7 +709,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__MARITAL_STATUS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int PATIENT__MARITAL_STATUS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Religious Affiliation Code</b></em>' containment reference.
@@ -718,7 +718,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__RELIGIOUS_AFFILIATION_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int PATIENT__RELIGIOUS_AFFILIATION_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Race Code</b></em>' containment reference.
@@ -727,7 +727,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__RACE_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int PATIENT__RACE_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Race Code</b></em>' containment reference list.
@@ -736,7 +736,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__SDTC_RACE_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 10;
+	int PATIENT__SDTC_RACE_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Ethnic Group Code</b></em>' containment reference.
@@ -745,7 +745,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__ETHNIC_GROUP_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 11;
+	int PATIENT__ETHNIC_GROUP_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Guardian</b></em>' containment reference list.
@@ -754,7 +754,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__GUARDIAN = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 12;
+	int PATIENT__GUARDIAN = RIMPackage.ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Birthplace</b></em>' containment reference.
@@ -763,7 +763,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__BIRTHPLACE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 13;
+	int PATIENT__BIRTHPLACE = RIMPackage.ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Language Communication</b></em>' containment reference list.
@@ -772,7 +772,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__LANGUAGE_COMMUNICATION = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 14;
+	int PATIENT__LANGUAGE_COMMUNICATION = RIMPackage.ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -781,7 +781,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 15;
+	int PATIENT__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -790,7 +790,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 16;
+	int PATIENT__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -799,7 +799,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 17;
+	int PATIENT__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Patient</em>' class.
@@ -808,7 +808,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 18;
+	int PATIENT_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl <em>Guardian</em>}' class.
@@ -827,7 +827,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int GUARDIAN__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -836,7 +836,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int GUARDIAN__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -845,7 +845,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int GUARDIAN__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -854,7 +854,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int GUARDIAN__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -863,7 +863,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int GUARDIAN__CODE = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -872,7 +872,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int GUARDIAN__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -881,7 +881,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int GUARDIAN__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Guardian Person</b></em>' containment reference.
@@ -890,7 +890,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__GUARDIAN_PERSON = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int GUARDIAN__GUARDIAN_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Guardian Organization</b></em>' containment reference.
@@ -899,7 +899,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__GUARDIAN_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int GUARDIAN__GUARDIAN_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -908,7 +908,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int GUARDIAN__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -917,7 +917,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int GUARDIAN__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Guardian</em>' class.
@@ -926,7 +926,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARDIAN_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 11;
+	int GUARDIAN_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl <em>Person</em>}' class.
@@ -945,7 +945,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int PERSON__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -954,7 +954,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int PERSON__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -963,7 +963,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int PERSON__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
@@ -972,7 +972,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int PERSON__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Birth Time</b></em>' containment reference.
@@ -981,7 +981,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__SDTC_BIRTH_TIME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int PERSON__SDTC_BIRTH_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -990,7 +990,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int PERSON__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -999,7 +999,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int PERSON__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -1008,7 +1008,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int PERSON__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Person</em>' class.
@@ -1017,7 +1017,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int PERSON_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrganizationImpl <em>Organization</em>}' class.
@@ -1036,7 +1036,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int ORGANIZATION__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1045,7 +1045,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int ORGANIZATION__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1054,7 +1054,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int ORGANIZATION__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -1063,7 +1063,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int ORGANIZATION__ID = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
@@ -1072,7 +1072,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int ORGANIZATION__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -1081,7 +1081,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__TELECOM = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int ORGANIZATION__TELECOM = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -1090,7 +1090,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__ADDR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int ORGANIZATION__ADDR = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Standard Industry Class Code</b></em>' containment reference.
@@ -1099,7 +1099,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>As Organization Part Of</b></em>' containment reference.
@@ -1108,7 +1108,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__AS_ORGANIZATION_PART_OF = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int ORGANIZATION__AS_ORGANIZATION_PART_OF = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1117,7 +1117,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int ORGANIZATION__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1126,7 +1126,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 10;
+	int ORGANIZATION__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -1135,7 +1135,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 11;
+	int ORGANIZATION__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Organization</em>' class.
@@ -1144,7 +1144,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 12;
+	int ORGANIZATION_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrganizationPartOfImpl <em>Organization Part Of</em>}' class.
@@ -1163,7 +1163,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int ORGANIZATION_PART_OF__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1172,7 +1172,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int ORGANIZATION_PART_OF__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1181,7 +1181,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int ORGANIZATION_PART_OF__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -1190,7 +1190,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int ORGANIZATION_PART_OF__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1199,7 +1199,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int ORGANIZATION_PART_OF__CODE = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -1208,7 +1208,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__STATUS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int ORGANIZATION_PART_OF__STATUS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1217,7 +1217,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__EFFECTIVE_TIME = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int ORGANIZATION_PART_OF__EFFECTIVE_TIME = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Whole Organization</b></em>' containment reference.
@@ -1226,7 +1226,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__WHOLE_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int ORGANIZATION_PART_OF__WHOLE_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1235,7 +1235,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int ORGANIZATION_PART_OF__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1244,7 +1244,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int ORGANIZATION_PART_OF__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Organization Part Of</em>' class.
@@ -1253,7 +1253,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_PART_OF_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int ORGANIZATION_PART_OF_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl <em>Birthplace</em>}' class.
@@ -1272,7 +1272,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIRTHPLACE__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int BIRTHPLACE__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1281,7 +1281,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIRTHPLACE__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int BIRTHPLACE__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1290,7 +1290,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIRTHPLACE__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int BIRTHPLACE__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Place</b></em>' containment reference.
@@ -1299,7 +1299,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIRTHPLACE__PLACE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int BIRTHPLACE__PLACE = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1308,7 +1308,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIRTHPLACE__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int BIRTHPLACE__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1317,7 +1317,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIRTHPLACE__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int BIRTHPLACE__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Birthplace</em>' class.
@@ -1326,7 +1326,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIRTHPLACE_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int BIRTHPLACE_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.PlaceImpl <em>Place</em>}' class.
@@ -1345,7 +1345,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int PLACE__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1354,7 +1354,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int PLACE__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1363,7 +1363,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int PLACE__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -1372,7 +1372,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int PLACE__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference.
@@ -1381,7 +1381,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__ADDR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int PLACE__ADDR = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1390,7 +1390,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int PLACE__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1399,7 +1399,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int PLACE__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -1408,7 +1408,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int PLACE__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Place</em>' class.
@@ -1417,7 +1417,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int PLACE_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.LanguageCommunicationImpl <em>Language Communication</em>}' class.
@@ -1527,7 +1527,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int AUTHOR__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1536,7 +1536,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int AUTHOR__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1545,7 +1545,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int AUTHOR__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Function Code</b></em>' containment reference.
@@ -1554,7 +1554,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__FUNCTION_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int AUTHOR__FUNCTION_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -1563,7 +1563,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int AUTHOR__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Author</b></em>' containment reference.
@@ -1572,7 +1572,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__ASSIGNED_AUTHOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int AUTHOR__ASSIGNED_AUTHOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1581,7 +1581,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int AUTHOR__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -1590,7 +1590,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int AUTHOR__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -1599,7 +1599,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int AUTHOR__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Author</em>' class.
@@ -1608,7 +1608,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 9;
+	int AUTHOR_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssignedAuthorImpl <em>Assigned Author</em>}' class.
@@ -1627,7 +1627,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int ASSIGNED_AUTHOR__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1636,7 +1636,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int ASSIGNED_AUTHOR__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1645,7 +1645,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int ASSIGNED_AUTHOR__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -1654,7 +1654,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int ASSIGNED_AUTHOR__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1663,7 +1663,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int ASSIGNED_AUTHOR__CODE = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -1672,7 +1672,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int ASSIGNED_AUTHOR__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -1681,7 +1681,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int ASSIGNED_AUTHOR__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Person</b></em>' containment reference.
@@ -1690,7 +1690,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__ASSIGNED_PERSON = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int ASSIGNED_AUTHOR__ASSIGNED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Authoring Device</b></em>' containment reference.
@@ -1699,7 +1699,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Represented Organization</b></em>' containment reference.
@@ -1708,7 +1708,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1717,7 +1717,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int ASSIGNED_AUTHOR__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1726,7 +1726,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 11;
+	int ASSIGNED_AUTHOR__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Assigned Author</em>' class.
@@ -1735,7 +1735,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_AUTHOR_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 12;
+	int ASSIGNED_AUTHOR_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl <em>Authoring Device</em>}' class.
@@ -1754,7 +1754,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int AUTHORING_DEVICE__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1763,7 +1763,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int AUTHORING_DEVICE__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1772,7 +1772,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int AUTHORING_DEVICE__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1781,7 +1781,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int AUTHORING_DEVICE__CODE = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Manufacturer Model Name</b></em>' containment reference.
@@ -1790,7 +1790,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Software Name</b></em>' containment reference.
@@ -1799,7 +1799,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__SOFTWARE_NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int AUTHORING_DEVICE__SOFTWARE_NAME = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>As Maintained Entity</b></em>' containment reference list.
@@ -1808,7 +1808,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__AS_MAINTAINED_ENTITY = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int AUTHORING_DEVICE__AS_MAINTAINED_ENTITY = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1817,7 +1817,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int AUTHORING_DEVICE__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1826,7 +1826,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int AUTHORING_DEVICE__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -1835,7 +1835,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int AUTHORING_DEVICE__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Authoring Device</em>' class.
@@ -1844,7 +1844,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORING_DEVICE_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 10;
+	int AUTHORING_DEVICE_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.MaintainedEntityImpl <em>Maintained Entity</em>}' class.
@@ -1863,7 +1863,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int MAINTAINED_ENTITY__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1872,7 +1872,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int MAINTAINED_ENTITY__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1881,7 +1881,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int MAINTAINED_ENTITY__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1890,7 +1890,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY__EFFECTIVE_TIME = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int MAINTAINED_ENTITY__EFFECTIVE_TIME = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Maintaining Person</b></em>' containment reference.
@@ -1899,7 +1899,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY__MAINTAINING_PERSON = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int MAINTAINED_ENTITY__MAINTAINING_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1908,7 +1908,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int MAINTAINED_ENTITY__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1917,7 +1917,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int MAINTAINED_ENTITY__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Maintained Entity</em>' class.
@@ -1926,7 +1926,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINTAINED_ENTITY_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int MAINTAINED_ENTITY_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.DataEntererImpl <em>Data Enterer</em>}' class.
@@ -1945,7 +1945,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int DATA_ENTERER__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1954,7 +1954,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int DATA_ENTERER__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1963,7 +1963,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int DATA_ENTERER__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -1972,7 +1972,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int DATA_ENTERER__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -1981,7 +1981,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int DATA_ENTERER__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1990,7 +1990,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int DATA_ENTERER__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -1999,7 +1999,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int DATA_ENTERER__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -2008,7 +2008,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int DATA_ENTERER__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Data Enterer</em>' class.
@@ -2017,7 +2017,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ENTERER_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int DATA_ENTERER_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl <em>Assigned Entity</em>}' class.
@@ -2036,7 +2036,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int ASSIGNED_ENTITY__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2045,7 +2045,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int ASSIGNED_ENTITY__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2054,7 +2054,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int ASSIGNED_ENTITY__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -2063,7 +2063,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int ASSIGNED_ENTITY__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -2072,7 +2072,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int ASSIGNED_ENTITY__CODE = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -2081,7 +2081,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int ASSIGNED_ENTITY__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -2090,7 +2090,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int ASSIGNED_ENTITY__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
@@ -2099,7 +2099,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__SDTC_PATIENT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int ASSIGNED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Person</b></em>' containment reference.
@@ -2108,7 +2108,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__ASSIGNED_PERSON = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int ASSIGNED_ENTITY__ASSIGNED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Represented Organization</b></em>' containment reference list.
@@ -2117,7 +2117,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2126,7 +2126,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int ASSIGNED_ENTITY__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2135,7 +2135,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 11;
+	int ASSIGNED_ENTITY__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Assigned Entity</em>' class.
@@ -2144,7 +2144,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 12;
+	int ASSIGNED_ENTITY_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.SDTCPatientImpl <em>SDTC Patient</em>}' class.
@@ -2191,7 +2191,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int INFORMANT12__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2200,7 +2200,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int INFORMANT12__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2209,7 +2209,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int INFORMANT12__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -2218,7 +2218,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int INFORMANT12__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Related Entity</b></em>' containment reference.
@@ -2227,7 +2227,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__RELATED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int INFORMANT12__RELATED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2236,7 +2236,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int INFORMANT12__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -2245,7 +2245,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int INFORMANT12__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -2254,7 +2254,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int INFORMANT12__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Informant12</em>' class.
@@ -2263,7 +2263,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMANT12_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int INFORMANT12_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl <em>Related Entity</em>}' class.
@@ -2282,7 +2282,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int RELATED_ENTITY__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2291,7 +2291,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int RELATED_ENTITY__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2300,7 +2300,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int RELATED_ENTITY__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -2309,7 +2309,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int RELATED_ENTITY__CODE = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -2318,7 +2318,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int RELATED_ENTITY__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -2327,7 +2327,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int RELATED_ENTITY__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -2336,7 +2336,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__EFFECTIVE_TIME = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int RELATED_ENTITY__EFFECTIVE_TIME = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
@@ -2345,7 +2345,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__SDTC_PATIENT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int RELATED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Related Person</b></em>' containment reference.
@@ -2354,7 +2354,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__RELATED_PERSON = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int RELATED_ENTITY__RELATED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2363,7 +2363,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int RELATED_ENTITY__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2372,7 +2372,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int RELATED_ENTITY__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Related Entity</em>' class.
@@ -2381,7 +2381,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 11;
+	int RELATED_ENTITY_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.CustodianImpl <em>Custodian</em>}' class.
@@ -2400,7 +2400,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int CUSTODIAN__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2409,7 +2409,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int CUSTODIAN__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2418,7 +2418,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int CUSTODIAN__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Custodian</b></em>' containment reference.
@@ -2427,7 +2427,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN__ASSIGNED_CUSTODIAN = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int CUSTODIAN__ASSIGNED_CUSTODIAN = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2436,7 +2436,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int CUSTODIAN__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -2445,7 +2445,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int CUSTODIAN__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Custodian</em>' class.
@@ -2454,7 +2454,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int CUSTODIAN_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssignedCustodianImpl <em>Assigned Custodian</em>}' class.
@@ -2473,7 +2473,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_CUSTODIAN__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int ASSIGNED_CUSTODIAN__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2482,7 +2482,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_CUSTODIAN__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int ASSIGNED_CUSTODIAN__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2491,7 +2491,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_CUSTODIAN__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int ASSIGNED_CUSTODIAN__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Represented Custodian Organization</b></em>' containment reference.
@@ -2500,7 +2500,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2509,7 +2509,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_CUSTODIAN__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int ASSIGNED_CUSTODIAN__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2518,7 +2518,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_CUSTODIAN__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int ASSIGNED_CUSTODIAN__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Assigned Custodian</em>' class.
@@ -2527,7 +2527,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_CUSTODIAN_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int ASSIGNED_CUSTODIAN_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl <em>Custodian Organization</em>}' class.
@@ -2546,7 +2546,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int CUSTODIAN_ORGANIZATION__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2555,7 +2555,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int CUSTODIAN_ORGANIZATION__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2564,7 +2564,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int CUSTODIAN_ORGANIZATION__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -2573,7 +2573,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int CUSTODIAN_ORGANIZATION__ID = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -2582,7 +2582,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int CUSTODIAN_ORGANIZATION__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference.
@@ -2591,7 +2591,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__TELECOM = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int CUSTODIAN_ORGANIZATION__TELECOM = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference.
@@ -2600,7 +2600,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__ADDR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int CUSTODIAN_ORGANIZATION__ADDR = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2609,7 +2609,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int CUSTODIAN_ORGANIZATION__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2618,7 +2618,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int CUSTODIAN_ORGANIZATION__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -2627,7 +2627,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int CUSTODIAN_ORGANIZATION__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Custodian Organization</em>' class.
@@ -2636,7 +2636,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTODIAN_ORGANIZATION_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 10;
+	int CUSTODIAN_ORGANIZATION_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.InformationRecipientImpl <em>Information Recipient</em>}' class.
@@ -2655,7 +2655,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_RECIPIENT__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int INFORMATION_RECIPIENT__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2664,7 +2664,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_RECIPIENT__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int INFORMATION_RECIPIENT__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2673,7 +2673,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_RECIPIENT__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int INFORMATION_RECIPIENT__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Intended Recipient</b></em>' containment reference.
@@ -2682,7 +2682,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_RECIPIENT__INTENDED_RECIPIENT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int INFORMATION_RECIPIENT__INTENDED_RECIPIENT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2691,7 +2691,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_RECIPIENT__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int INFORMATION_RECIPIENT__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -2700,7 +2700,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_RECIPIENT__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int INFORMATION_RECIPIENT__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Information Recipient</em>' class.
@@ -2709,7 +2709,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_RECIPIENT_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int INFORMATION_RECIPIENT_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.IntendedRecipientImpl <em>Intended Recipient</em>}' class.
@@ -2728,7 +2728,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int INTENDED_RECIPIENT__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2737,7 +2737,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int INTENDED_RECIPIENT__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2746,7 +2746,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int INTENDED_RECIPIENT__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -2755,7 +2755,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int INTENDED_RECIPIENT__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -2764,7 +2764,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int INTENDED_RECIPIENT__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -2773,7 +2773,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int INTENDED_RECIPIENT__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference.
@@ -2782,7 +2782,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__INFORMATION_RECIPIENT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int INTENDED_RECIPIENT__INFORMATION_RECIPIENT = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Received Organization</b></em>' containment reference.
@@ -2791,7 +2791,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__RECEIVED_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int INTENDED_RECIPIENT__RECEIVED_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2800,7 +2800,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int INTENDED_RECIPIENT__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2809,7 +2809,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int INTENDED_RECIPIENT__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Intended Recipient</em>' class.
@@ -2818,7 +2818,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTENDED_RECIPIENT_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int INTENDED_RECIPIENT_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.LegalAuthenticatorImpl <em>Legal Authenticator</em>}' class.
@@ -2837,7 +2837,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int LEGAL_AUTHENTICATOR__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2846,7 +2846,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int LEGAL_AUTHENTICATOR__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2855,7 +2855,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int LEGAL_AUTHENTICATOR__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -2864,7 +2864,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int LEGAL_AUTHENTICATOR__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Signature Code</b></em>' containment reference.
@@ -2873,7 +2873,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__SIGNATURE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int LEGAL_AUTHENTICATOR__SIGNATURE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -2882,7 +2882,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int LEGAL_AUTHENTICATOR__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2891,7 +2891,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int LEGAL_AUTHENTICATOR__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -2900,7 +2900,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int LEGAL_AUTHENTICATOR__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -2909,7 +2909,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Legal Authenticator</em>' class.
@@ -2918,7 +2918,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEGAL_AUTHENTICATOR_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 9;
+	int LEGAL_AUTHENTICATOR_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl <em>Authenticator</em>}' class.
@@ -2937,7 +2937,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int AUTHENTICATOR__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2946,7 +2946,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int AUTHENTICATOR__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2955,7 +2955,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int AUTHENTICATOR__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -2964,7 +2964,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int AUTHENTICATOR__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Signature Code</b></em>' containment reference.
@@ -2973,7 +2973,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__SIGNATURE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int AUTHENTICATOR__SIGNATURE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference list.
@@ -2982,7 +2982,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int AUTHENTICATOR__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2991,7 +2991,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int AUTHENTICATOR__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -3000,7 +3000,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int AUTHENTICATOR__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Authenticator</em>' class.
@@ -3009,7 +3009,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int AUTHENTICATOR_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Participant1Impl <em>Participant1</em>}' class.
@@ -3028,7 +3028,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int PARTICIPANT1__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3037,7 +3037,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int PARTICIPANT1__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3046,7 +3046,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int PARTICIPANT1__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Function Code</b></em>' containment reference.
@@ -3055,7 +3055,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__FUNCTION_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int PARTICIPANT1__FUNCTION_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -3064,7 +3064,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int PARTICIPANT1__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Associated Entity</b></em>' containment reference.
@@ -3073,7 +3073,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__ASSOCIATED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int PARTICIPANT1__ASSOCIATED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3082,7 +3082,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int PARTICIPANT1__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -3091,7 +3091,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int PARTICIPANT1__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -3100,7 +3100,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int PARTICIPANT1__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Participant1</em>' class.
@@ -3109,7 +3109,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT1_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 9;
+	int PARTICIPANT1_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl <em>Associated Entity</em>}' class.
@@ -3128,7 +3128,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int ASSOCIATED_ENTITY__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3137,7 +3137,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int ASSOCIATED_ENTITY__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3146,7 +3146,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int ASSOCIATED_ENTITY__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -3155,7 +3155,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int ASSOCIATED_ENTITY__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -3164,7 +3164,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int ASSOCIATED_ENTITY__CODE = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -3173,7 +3173,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int ASSOCIATED_ENTITY__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -3182,7 +3182,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int ASSOCIATED_ENTITY__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
@@ -3191,7 +3191,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__SDTC_PATIENT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int ASSOCIATED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Associated Person</b></em>' containment reference.
@@ -3200,7 +3200,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__ASSOCIATED_PERSON = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int ASSOCIATED_ENTITY__ASSOCIATED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Scoping Organization</b></em>' containment reference.
@@ -3209,7 +3209,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__SCOPING_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int ASSOCIATED_ENTITY__SCOPING_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3218,7 +3218,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int ASSOCIATED_ENTITY__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3227,7 +3227,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 11;
+	int ASSOCIATED_ENTITY__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Associated Entity</em>' class.
@@ -3236,7 +3236,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 12;
+	int ASSOCIATED_ENTITY_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.InFulfillmentOfImpl <em>In Fulfillment Of</em>}' class.
@@ -3255,7 +3255,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IN_FULFILLMENT_OF__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int IN_FULFILLMENT_OF__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3264,7 +3264,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IN_FULFILLMENT_OF__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int IN_FULFILLMENT_OF__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3273,7 +3273,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IN_FULFILLMENT_OF__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int IN_FULFILLMENT_OF__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Order</b></em>' containment reference.
@@ -3282,7 +3282,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IN_FULFILLMENT_OF__ORDER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int IN_FULFILLMENT_OF__ORDER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3291,7 +3291,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IN_FULFILLMENT_OF__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int IN_FULFILLMENT_OF__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -3300,7 +3300,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IN_FULFILLMENT_OF__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int IN_FULFILLMENT_OF__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>In Fulfillment Of</em>' class.
@@ -3309,7 +3309,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IN_FULFILLMENT_OF_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int IN_FULFILLMENT_OF_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrderImpl <em>Order</em>}' class.
@@ -3328,7 +3328,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int ORDER__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3337,7 +3337,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int ORDER__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3346,7 +3346,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int ORDER__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -3355,7 +3355,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int ORDER__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -3364,7 +3364,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int ORDER__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -3373,7 +3373,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__PRIORITY_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int ORDER__PRIORITY_CODE = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3382,7 +3382,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int ORDER__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3391,7 +3391,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int ORDER__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -3400,7 +3400,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int ORDER__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Order</em>' class.
@@ -3409,7 +3409,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORDER_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int ORDER_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.DocumentationOfImpl <em>Documentation Of</em>}' class.
@@ -3428,7 +3428,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_OF__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int DOCUMENTATION_OF__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3437,7 +3437,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_OF__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int DOCUMENTATION_OF__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3446,7 +3446,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_OF__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int DOCUMENTATION_OF__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Service Event</b></em>' containment reference.
@@ -3455,7 +3455,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_OF__SERVICE_EVENT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int DOCUMENTATION_OF__SERVICE_EVENT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3464,7 +3464,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_OF__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int DOCUMENTATION_OF__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -3473,7 +3473,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_OF__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int DOCUMENTATION_OF__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Documentation Of</em>' class.
@@ -3482,7 +3482,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_OF_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int DOCUMENTATION_OF_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ServiceEventImpl <em>Service Event</em>}' class.
@@ -3501,7 +3501,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int SERVICE_EVENT__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3510,7 +3510,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int SERVICE_EVENT__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3519,7 +3519,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int SERVICE_EVENT__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -3528,7 +3528,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int SERVICE_EVENT__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -3537,7 +3537,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int SERVICE_EVENT__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -3546,7 +3546,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__EFFECTIVE_TIME = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int SERVICE_EVENT__EFFECTIVE_TIME = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -3555,7 +3555,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__PERFORMER = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int SERVICE_EVENT__PERFORMER = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3564,7 +3564,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int SERVICE_EVENT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3573,7 +3573,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int SERVICE_EVENT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -3582,7 +3582,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int SERVICE_EVENT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Service Event</em>' class.
@@ -3591,7 +3591,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_EVENT_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 10;
+	int SERVICE_EVENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Performer1Impl <em>Performer1</em>}' class.
@@ -3610,7 +3610,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int PERFORMER1__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3619,7 +3619,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int PERFORMER1__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3628,7 +3628,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int PERFORMER1__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Function Code</b></em>' containment reference.
@@ -3637,7 +3637,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__FUNCTION_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int PERFORMER1__FUNCTION_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -3646,7 +3646,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int PERFORMER1__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -3655,7 +3655,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int PERFORMER1__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3664,7 +3664,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int PERFORMER1__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -3673,7 +3673,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int PERFORMER1__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Performer1</em>' class.
@@ -3682,7 +3682,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER1_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int PERFORMER1_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.RelatedDocumentImpl <em>Related Document</em>}' class.
@@ -3701,7 +3701,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_DOCUMENT__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int RELATED_DOCUMENT__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3710,7 +3710,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_DOCUMENT__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int RELATED_DOCUMENT__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3719,7 +3719,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_DOCUMENT__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int RELATED_DOCUMENT__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Document</b></em>' containment reference.
@@ -3728,7 +3728,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_DOCUMENT__PARENT_DOCUMENT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int RELATED_DOCUMENT__PARENT_DOCUMENT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3737,7 +3737,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_DOCUMENT__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int RELATED_DOCUMENT__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -3746,7 +3746,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_DOCUMENT__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int RELATED_DOCUMENT__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Related Document</em>' class.
@@ -3755,7 +3755,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_DOCUMENT_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int RELATED_DOCUMENT_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ParentDocumentImpl <em>Parent Document</em>}' class.
@@ -3774,7 +3774,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int PARENT_DOCUMENT__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3783,7 +3783,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int PARENT_DOCUMENT__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3792,7 +3792,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int PARENT_DOCUMENT__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -3801,7 +3801,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int PARENT_DOCUMENT__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -3810,7 +3810,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int PARENT_DOCUMENT__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -3819,7 +3819,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int PARENT_DOCUMENT__TEXT = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -3828,7 +3828,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__SET_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int PARENT_DOCUMENT__SET_ID = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -3837,7 +3837,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__VERSION_NUMBER = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int PARENT_DOCUMENT__VERSION_NUMBER = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3846,7 +3846,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int PARENT_DOCUMENT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3855,7 +3855,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int PARENT_DOCUMENT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -3864,7 +3864,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 10;
+	int PARENT_DOCUMENT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Parent Document</em>' class.
@@ -3873,7 +3873,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARENT_DOCUMENT_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 11;
+	int PARENT_DOCUMENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthorizationImpl <em>Authorization</em>}' class.
@@ -3892,7 +3892,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int AUTHORIZATION__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3901,7 +3901,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int AUTHORIZATION__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3910,7 +3910,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int AUTHORIZATION__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Consent</b></em>' containment reference.
@@ -3919,7 +3919,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION__CONSENT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int AUTHORIZATION__CONSENT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3928,7 +3928,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int AUTHORIZATION__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -3937,7 +3937,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int AUTHORIZATION__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Authorization</em>' class.
@@ -3946,7 +3946,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHORIZATION_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int AUTHORIZATION_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ConsentImpl <em>Consent</em>}' class.
@@ -3965,7 +3965,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int CONSENT__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3974,7 +3974,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int CONSENT__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3983,7 +3983,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int CONSENT__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -3992,7 +3992,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int CONSENT__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -4001,7 +4001,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int CONSENT__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -4010,7 +4010,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__STATUS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int CONSENT__STATUS_CODE = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4019,7 +4019,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int CONSENT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -4028,7 +4028,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int CONSENT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -4037,7 +4037,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int CONSENT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Consent</em>' class.
@@ -4046,7 +4046,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSENT_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int CONSENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component1Impl <em>Component1</em>}' class.
@@ -4065,7 +4065,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT1__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int COMPONENT1__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4074,7 +4074,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT1__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int COMPONENT1__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4083,7 +4083,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT1__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int COMPONENT1__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Encompassing Encounter</b></em>' containment reference.
@@ -4092,7 +4092,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT1__ENCOMPASSING_ENCOUNTER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int COMPONENT1__ENCOMPASSING_ENCOUNTER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4101,7 +4101,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT1__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int COMPONENT1__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -4110,7 +4110,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT1__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int COMPONENT1__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Component1</em>' class.
@@ -4119,7 +4119,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT1_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int COMPONENT1_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl <em>Encompassing Encounter</em>}' class.
@@ -4138,7 +4138,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int ENCOMPASSING_ENCOUNTER__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4147,7 +4147,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int ENCOMPASSING_ENCOUNTER__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4156,7 +4156,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int ENCOMPASSING_ENCOUNTER__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -4165,7 +4165,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int ENCOMPASSING_ENCOUNTER__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -4174,7 +4174,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int ENCOMPASSING_ENCOUNTER__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -4183,7 +4183,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Discharge Disposition Code</b></em>' containment reference.
@@ -4192,7 +4192,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Party</b></em>' containment reference.
@@ -4201,7 +4201,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Encounter Participant</b></em>' containment reference list.
@@ -4210,7 +4210,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' containment reference.
@@ -4219,7 +4219,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__LOCATION = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int ENCOMPASSING_ENCOUNTER__LOCATION = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4228,7 +4228,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 10;
+	int ENCOMPASSING_ENCOUNTER__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -4237,7 +4237,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 11;
+	int ENCOMPASSING_ENCOUNTER__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -4246,7 +4246,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 12;
+	int ENCOMPASSING_ENCOUNTER__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Encompassing Encounter</em>' class.
@@ -4255,7 +4255,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOMPASSING_ENCOUNTER_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 13;
+	int ENCOMPASSING_ENCOUNTER_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ResponsiblePartyImpl <em>Responsible Party</em>}' class.
@@ -4274,7 +4274,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int RESPONSIBLE_PARTY__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4283,7 +4283,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int RESPONSIBLE_PARTY__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4292,7 +4292,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int RESPONSIBLE_PARTY__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -4301,7 +4301,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int RESPONSIBLE_PARTY__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4310,7 +4310,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int RESPONSIBLE_PARTY__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -4319,7 +4319,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int RESPONSIBLE_PARTY__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Responsible Party</em>' class.
@@ -4328,7 +4328,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int RESPONSIBLE_PARTY_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EncounterParticipantImpl <em>Encounter Participant</em>}' class.
@@ -4347,7 +4347,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int ENCOUNTER_PARTICIPANT__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4356,7 +4356,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int ENCOUNTER_PARTICIPANT__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4365,7 +4365,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int ENCOUNTER_PARTICIPANT__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -4374,7 +4374,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int ENCOUNTER_PARTICIPANT__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -4383,7 +4383,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4392,7 +4392,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int ENCOUNTER_PARTICIPANT__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -4401,7 +4401,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int ENCOUNTER_PARTICIPANT__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Encounter Participant</em>' class.
@@ -4410,7 +4410,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCOUNTER_PARTICIPANT_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int ENCOUNTER_PARTICIPANT_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.LocationImpl <em>Location</em>}' class.
@@ -4429,7 +4429,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int LOCATION__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4438,7 +4438,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int LOCATION__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4447,7 +4447,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int LOCATION__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Health Care Facility</b></em>' containment reference.
@@ -4456,7 +4456,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__HEALTH_CARE_FACILITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int LOCATION__HEALTH_CARE_FACILITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4465,7 +4465,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int LOCATION__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -4474,7 +4474,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int LOCATION__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Location</em>' class.
@@ -4483,7 +4483,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int LOCATION_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.HealthCareFacilityImpl <em>Health Care Facility</em>}' class.
@@ -4502,7 +4502,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int HEALTH_CARE_FACILITY__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4511,7 +4511,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int HEALTH_CARE_FACILITY__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4520,7 +4520,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int HEALTH_CARE_FACILITY__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -4529,7 +4529,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int HEALTH_CARE_FACILITY__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -4538,7 +4538,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int HEALTH_CARE_FACILITY__CODE = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' containment reference.
@@ -4547,7 +4547,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__LOCATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int HEALTH_CARE_FACILITY__LOCATION = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Service Provider Organization</b></em>' containment reference.
@@ -4556,7 +4556,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4565,7 +4565,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int HEALTH_CARE_FACILITY__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -4574,7 +4574,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int HEALTH_CARE_FACILITY__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Health Care Facility</em>' class.
@@ -4583,7 +4583,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_CARE_FACILITY_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int HEALTH_CARE_FACILITY_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl <em>Component2</em>}' class.
@@ -4602,7 +4602,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int COMPONENT2__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4611,7 +4611,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int COMPONENT2__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4620,7 +4620,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int COMPONENT2__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Non XML Body</b></em>' containment reference.
@@ -4629,7 +4629,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__NON_XML_BODY = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int COMPONENT2__NON_XML_BODY = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Structured Body</b></em>' containment reference.
@@ -4638,7 +4638,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__STRUCTURED_BODY = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int COMPONENT2__STRUCTURED_BODY = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4647,7 +4647,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int COMPONENT2__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -4656,7 +4656,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int COMPONENT2__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Context Conduction Ind</b></em>' attribute.
@@ -4665,7 +4665,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2__CONTEXT_CONDUCTION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 7;
+	int COMPONENT2__CONTEXT_CONDUCTION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Component2</em>' class.
@@ -4674,7 +4674,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT2_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 8;
+	int COMPONENT2_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl <em>Non XML Body</em>}' class.
@@ -4693,7 +4693,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int NON_XML_BODY__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4702,7 +4702,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int NON_XML_BODY__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4711,7 +4711,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int NON_XML_BODY__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -4720,7 +4720,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int NON_XML_BODY__TEXT = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -4729,7 +4729,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__CONFIDENTIALITY_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int NON_XML_BODY__CONFIDENTIALITY_CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -4738,7 +4738,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__LANGUAGE_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int NON_XML_BODY__LANGUAGE_CODE = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4747,7 +4747,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int NON_XML_BODY__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -4756,7 +4756,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int NON_XML_BODY__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -4765,7 +4765,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int NON_XML_BODY__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Non XML Body</em>' class.
@@ -4774,7 +4774,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_XML_BODY_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int NON_XML_BODY_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.StructuredBodyImpl <em>Structured Body</em>}' class.
@@ -4793,7 +4793,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int STRUCTURED_BODY__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4802,7 +4802,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int STRUCTURED_BODY__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4811,7 +4811,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int STRUCTURED_BODY__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -4820,7 +4820,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__CONFIDENTIALITY_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int STRUCTURED_BODY__CONFIDENTIALITY_CODE = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -4829,7 +4829,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__LANGUAGE_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int STRUCTURED_BODY__LANGUAGE_CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -4838,7 +4838,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__COMPONENT = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int STRUCTURED_BODY__COMPONENT = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4847,7 +4847,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int STRUCTURED_BODY__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -4856,7 +4856,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int STRUCTURED_BODY__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -4865,7 +4865,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int STRUCTURED_BODY__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Structured Body</em>' class.
@@ -4874,7 +4874,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_BODY_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int STRUCTURED_BODY_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component3Impl <em>Component3</em>}' class.
@@ -4893,7 +4893,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int COMPONENT3__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4902,7 +4902,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int COMPONENT3__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4911,7 +4911,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int COMPONENT3__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Section</b></em>' containment reference.
@@ -4920,7 +4920,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3__SECTION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int COMPONENT3__SECTION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -4929,7 +4929,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int COMPONENT3__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -4938,7 +4938,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int COMPONENT3__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Context Conduction Ind</b></em>' attribute.
@@ -4947,7 +4947,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3__CONTEXT_CONDUCTION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int COMPONENT3__CONTEXT_CONDUCTION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Component3</em>' class.
@@ -4956,7 +4956,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT3_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 7;
+	int COMPONENT3_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl <em>Section</em>}' class.
@@ -4975,7 +4975,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int SECTION__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -4984,7 +4984,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int SECTION__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -4993,7 +4993,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int SECTION__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -5002,7 +5002,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int SECTION__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -5011,7 +5011,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int SECTION__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -5020,7 +5020,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TITLE = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int SECTION__TITLE = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -5029,7 +5029,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int SECTION__TEXT = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -5038,7 +5038,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__CONFIDENTIALITY_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int SECTION__CONFIDENTIALITY_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -5047,7 +5047,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__LANGUAGE_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int SECTION__LANGUAGE_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -5056,7 +5056,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__SUBJECT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int SECTION__SUBJECT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -5065,7 +5065,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__AUTHOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 10;
+	int SECTION__AUTHOR = RIMPackage.ACT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -5074,7 +5074,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__INFORMANT = RIMPackage.RIM_ACT_FEATURE_COUNT + 11;
+	int SECTION__INFORMANT = RIMPackage.ACT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
@@ -5083,7 +5083,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__ENTRY = RIMPackage.RIM_ACT_FEATURE_COUNT + 12;
+	int SECTION__ENTRY = RIMPackage.ACT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -5092,7 +5092,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__COMPONENT = RIMPackage.RIM_ACT_FEATURE_COUNT + 13;
+	int SECTION__COMPONENT = RIMPackage.ACT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
@@ -5101,7 +5101,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__SECTION_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 14;
+	int SECTION__SECTION_ID = RIMPackage.ACT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -5110,7 +5110,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 15;
+	int SECTION__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -5119,7 +5119,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 16;
+	int SECTION__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -5128,7 +5128,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 17;
+	int SECTION__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Section</em>' class.
@@ -5137,7 +5137,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 18;
+	int SECTION_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 18;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.StrucDocTextImpl <em>Struc Doc Text</em>}' class.
@@ -5193,7 +5193,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int SUBJECT__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -5202,7 +5202,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int SUBJECT__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -5211,7 +5211,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int SUBJECT__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Awareness Code</b></em>' containment reference.
@@ -5220,7 +5220,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__AWARENESS_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int SUBJECT__AWARENESS_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Related Subject</b></em>' containment reference.
@@ -5229,7 +5229,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__RELATED_SUBJECT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int SUBJECT__RELATED_SUBJECT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -5238,7 +5238,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int SUBJECT__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -5247,7 +5247,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int SUBJECT__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -5256,7 +5256,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int SUBJECT__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Subject</em>' class.
@@ -5265,7 +5265,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int SUBJECT_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl <em>Related Subject</em>}' class.
@@ -5284,7 +5284,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int RELATED_SUBJECT__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -5293,7 +5293,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int RELATED_SUBJECT__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -5302,7 +5302,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int RELATED_SUBJECT__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -5311,7 +5311,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int RELATED_SUBJECT__CODE = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -5320,7 +5320,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int RELATED_SUBJECT__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -5329,7 +5329,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int RELATED_SUBJECT__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -5338,7 +5338,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__SUBJECT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int RELATED_SUBJECT__SUBJECT = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -5347,7 +5347,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int RELATED_SUBJECT__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -5356,7 +5356,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int RELATED_SUBJECT__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Related Subject</em>' class.
@@ -5365,7 +5365,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int RELATED_SUBJECT_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl <em>Subject Person</em>}' class.
@@ -5384,7 +5384,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int SUBJECT_PERSON__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -5393,7 +5393,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int SUBJECT_PERSON__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -5402,7 +5402,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int SUBJECT_PERSON__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
@@ -5411,7 +5411,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int SUBJECT_PERSON__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Administrative Gender Code</b></em>' containment reference.
@@ -5420,7 +5420,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Birth Time</b></em>' containment reference.
@@ -5429,7 +5429,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__BIRTH_TIME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int SUBJECT_PERSON__BIRTH_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -5438,7 +5438,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int SUBJECT_PERSON__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -5447,7 +5447,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int SUBJECT_PERSON__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -5456,7 +5456,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int SUBJECT_PERSON__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Subject Person</em>' class.
@@ -5465,7 +5465,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int SUBJECT_PERSON_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntryImpl <em>Entry</em>}' class.
@@ -5484,7 +5484,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int ENTRY__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -5493,7 +5493,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int ENTRY__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -5502,7 +5502,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int ENTRY__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Act</b></em>' containment reference.
@@ -5511,7 +5511,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__ACT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int ENTRY__ACT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
@@ -5520,7 +5520,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__ENCOUNTER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int ENTRY__ENCOUNTER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
@@ -5529,7 +5529,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__OBSERVATION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int ENTRY__OBSERVATION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Observation Media</b></em>' containment reference.
@@ -5538,7 +5538,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__OBSERVATION_MEDIA = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int ENTRY__OBSERVATION_MEDIA = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Organizer</b></em>' containment reference.
@@ -5547,7 +5547,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__ORGANIZER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 7;
+	int ENTRY__ORGANIZER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Procedure</b></em>' containment reference.
@@ -5556,7 +5556,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__PROCEDURE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 8;
+	int ENTRY__PROCEDURE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Region Of Interest</b></em>' containment reference.
@@ -5565,7 +5565,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__REGION_OF_INTEREST = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 9;
+	int ENTRY__REGION_OF_INTEREST = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Substance Administration</b></em>' containment reference.
@@ -5574,7 +5574,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__SUBSTANCE_ADMINISTRATION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 10;
+	int ENTRY__SUBSTANCE_ADMINISTRATION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Supply</b></em>' containment reference.
@@ -5583,7 +5583,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__SUPPLY = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 11;
+	int ENTRY__SUPPLY = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -5592,7 +5592,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 12;
+	int ENTRY__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -5601,7 +5601,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 13;
+	int ENTRY__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Context Conduction Ind</b></em>' attribute.
@@ -5610,7 +5610,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY__CONTEXT_CONDUCTION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 14;
+	int ENTRY__CONTEXT_CONDUCTION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Entry</em>' class.
@@ -5619,7 +5619,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 15;
+	int ENTRY_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 15;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalStatementImpl <em>Clinical Statement</em>}' class.
@@ -5638,7 +5638,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_STATEMENT_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int CLINICAL_STATEMENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl <em>Act</em>}' class.
@@ -5883,7 +5883,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int SPECIMEN__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -5892,7 +5892,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int SPECIMEN__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -5901,7 +5901,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int SPECIMEN__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Specimen Role</b></em>' containment reference.
@@ -5910,7 +5910,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN__SPECIMEN_ROLE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int SPECIMEN__SPECIMEN_ROLE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -5919,7 +5919,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int SPECIMEN__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -5928,7 +5928,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int SPECIMEN__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Specimen</em>' class.
@@ -5937,7 +5937,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int SPECIMEN_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenRoleImpl <em>Specimen Role</em>}' class.
@@ -5956,7 +5956,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int SPECIMEN_ROLE__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -5965,7 +5965,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int SPECIMEN_ROLE__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -5974,7 +5974,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int SPECIMEN_ROLE__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -5983,7 +5983,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int SPECIMEN_ROLE__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Specimen Playing Entity</b></em>' containment reference.
@@ -5992,7 +5992,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE__SPECIMEN_PLAYING_ENTITY = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int SPECIMEN_ROLE__SPECIMEN_PLAYING_ENTITY = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6001,7 +6001,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int SPECIMEN_ROLE__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -6010,7 +6010,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int SPECIMEN_ROLE__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Specimen Role</em>' class.
@@ -6019,7 +6019,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIMEN_ROLE_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int SPECIMEN_ROLE_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl <em>Playing Entity</em>}' class.
@@ -6038,7 +6038,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int PLAYING_ENTITY__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -6047,7 +6047,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int PLAYING_ENTITY__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -6056,7 +6056,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int PLAYING_ENTITY__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -6065,7 +6065,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int PLAYING_ENTITY__CODE = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' containment reference list.
@@ -6074,7 +6074,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__QUANTITY = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int PLAYING_ENTITY__QUANTITY = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
@@ -6083,7 +6083,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int PLAYING_ENTITY__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Birth Time</b></em>' containment reference.
@@ -6092,7 +6092,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__SDTC_BIRTH_TIME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int PLAYING_ENTITY__SDTC_BIRTH_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Desc</b></em>' containment reference.
@@ -6101,7 +6101,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__DESC = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int PLAYING_ENTITY__DESC = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6110,7 +6110,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int PLAYING_ENTITY__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -6119,7 +6119,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int PLAYING_ENTITY__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -6128,7 +6128,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 10;
+	int PLAYING_ENTITY__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Playing Entity</em>' class.
@@ -6137,7 +6137,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYING_ENTITY_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 11;
+	int PLAYING_ENTITY_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Performer2Impl <em>Performer2</em>}' class.
@@ -6156,7 +6156,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int PERFORMER2__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -6165,7 +6165,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int PERFORMER2__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -6174,7 +6174,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int PERFORMER2__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -6183,7 +6183,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int PERFORMER2__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Mode Code</b></em>' containment reference.
@@ -6192,7 +6192,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__MODE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int PERFORMER2__MODE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -6201,7 +6201,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__ASSIGNED_ENTITY = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int PERFORMER2__ASSIGNED_ENTITY = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6210,7 +6210,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int PERFORMER2__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -6219,7 +6219,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int PERFORMER2__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Performer2</em>' class.
@@ -6228,7 +6228,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERFORMER2_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int PERFORMER2_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Participant2Impl <em>Participant2</em>}' class.
@@ -6247,7 +6247,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int PARTICIPANT2__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -6256,7 +6256,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int PARTICIPANT2__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -6265,7 +6265,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int PARTICIPANT2__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -6274,7 +6274,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__TIME = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int PARTICIPANT2__TIME = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Awareness Code</b></em>' containment reference.
@@ -6283,7 +6283,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__AWARENESS_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int PARTICIPANT2__AWARENESS_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Participant Role</b></em>' containment reference.
@@ -6292,7 +6292,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__PARTICIPANT_ROLE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int PARTICIPANT2__PARTICIPANT_ROLE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6301,7 +6301,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int PARTICIPANT2__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -6310,7 +6310,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 7;
+	int PARTICIPANT2__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
@@ -6319,7 +6319,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2__CONTEXT_CONTROL_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 8;
+	int PARTICIPANT2__CONTEXT_CONTROL_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Participant2</em>' class.
@@ -6328,7 +6328,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT2_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 9;
+	int PARTICIPANT2_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl <em>Participant Role</em>}' class.
@@ -6347,7 +6347,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int PARTICIPANT_ROLE__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -6356,7 +6356,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int PARTICIPANT_ROLE__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -6365,7 +6365,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int PARTICIPANT_ROLE__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -6374,7 +6374,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int PARTICIPANT_ROLE__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -6383,7 +6383,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int PARTICIPANT_ROLE__CODE = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Addr</b></em>' containment reference list.
@@ -6392,7 +6392,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__ADDR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int PARTICIPANT_ROLE__ADDR = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Telecom</b></em>' containment reference list.
@@ -6401,7 +6401,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__TELECOM = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int PARTICIPANT_ROLE__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Playing Device</b></em>' containment reference.
@@ -6410,7 +6410,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__PLAYING_DEVICE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int PARTICIPANT_ROLE__PLAYING_DEVICE = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Playing Entity</b></em>' containment reference.
@@ -6419,7 +6419,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__PLAYING_ENTITY = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int PARTICIPANT_ROLE__PLAYING_ENTITY = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Scoping Entity</b></em>' containment reference.
@@ -6428,7 +6428,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__SCOPING_ENTITY = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int PARTICIPANT_ROLE__SCOPING_ENTITY = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6437,7 +6437,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 10;
+	int PARTICIPANT_ROLE__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -6446,7 +6446,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 11;
+	int PARTICIPANT_ROLE__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Participant Role</em>' class.
@@ -6455,7 +6455,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_ROLE_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 12;
+	int PARTICIPANT_ROLE_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.DeviceImpl <em>Device</em>}' class.
@@ -6474,7 +6474,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int DEVICE__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -6483,7 +6483,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int DEVICE__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -6492,7 +6492,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int DEVICE__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -6501,7 +6501,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int DEVICE__CODE = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Manufacturer Model Name</b></em>' containment reference.
@@ -6510,7 +6510,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__MANUFACTURER_MODEL_NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int DEVICE__MANUFACTURER_MODEL_NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Software Name</b></em>' containment reference.
@@ -6519,7 +6519,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__SOFTWARE_NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int DEVICE__SOFTWARE_NAME = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6528,7 +6528,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int DEVICE__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -6537,7 +6537,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int DEVICE__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -6546,7 +6546,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int DEVICE__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Device</em>' class.
@@ -6555,7 +6555,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int DEVICE_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntityImpl <em>Entity</em>}' class.
@@ -6574,7 +6574,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int ENTITY__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -6583,7 +6583,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int ENTITY__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -6592,7 +6592,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int ENTITY__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -6601,7 +6601,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int ENTITY__ID = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -6610,7 +6610,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int ENTITY__CODE = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Desc</b></em>' containment reference.
@@ -6619,7 +6619,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__DESC = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int ENTITY__DESC = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6628,7 +6628,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int ENTITY__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -6637,7 +6637,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int ENTITY__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -6646,7 +6646,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int ENTITY__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -6655,7 +6655,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int ENTITY_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntryRelationshipImpl <em>Entry Relationship</em>}' class.
@@ -6674,7 +6674,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int ENTRY_RELATIONSHIP__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -6683,7 +6683,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int ENTRY_RELATIONSHIP__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -6692,7 +6692,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int ENTRY_RELATIONSHIP__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Number</b></em>' containment reference.
@@ -6701,7 +6701,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__SEQUENCE_NUMBER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int ENTRY_RELATIONSHIP__SEQUENCE_NUMBER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Seperatable Ind</b></em>' containment reference.
@@ -6710,7 +6710,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__SEPERATABLE_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int ENTRY_RELATIONSHIP__SEPERATABLE_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Act</b></em>' containment reference.
@@ -6719,7 +6719,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__ACT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int ENTRY_RELATIONSHIP__ACT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
@@ -6728,7 +6728,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__ENCOUNTER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int ENTRY_RELATIONSHIP__ENCOUNTER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
@@ -6737,7 +6737,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__OBSERVATION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 7;
+	int ENTRY_RELATIONSHIP__OBSERVATION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Observation Media</b></em>' containment reference.
@@ -6746,7 +6746,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__OBSERVATION_MEDIA = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 8;
+	int ENTRY_RELATIONSHIP__OBSERVATION_MEDIA = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Organizer</b></em>' containment reference.
@@ -6755,7 +6755,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__ORGANIZER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 9;
+	int ENTRY_RELATIONSHIP__ORGANIZER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Procedure</b></em>' containment reference.
@@ -6764,7 +6764,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__PROCEDURE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 10;
+	int ENTRY_RELATIONSHIP__PROCEDURE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Region Of Interest</b></em>' containment reference.
@@ -6773,7 +6773,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__REGION_OF_INTEREST = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 11;
+	int ENTRY_RELATIONSHIP__REGION_OF_INTEREST = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Substance Administration</b></em>' containment reference.
@@ -6782,7 +6782,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__SUBSTANCE_ADMINISTRATION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 12;
+	int ENTRY_RELATIONSHIP__SUBSTANCE_ADMINISTRATION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Supply</b></em>' containment reference.
@@ -6791,7 +6791,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__SUPPLY = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 13;
+	int ENTRY_RELATIONSHIP__SUPPLY = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6800,7 +6800,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 14;
+	int ENTRY_RELATIONSHIP__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -6809,7 +6809,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 15;
+	int ENTRY_RELATIONSHIP__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Inversion Ind</b></em>' attribute.
@@ -6818,7 +6818,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__INVERSION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 16;
+	int ENTRY_RELATIONSHIP__INVERSION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Context Conduction Ind</b></em>' attribute.
@@ -6827,7 +6827,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 17;
+	int ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -6836,7 +6836,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP__NEGATION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 18;
+	int ENTRY_RELATIONSHIP__NEGATION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>Entry Relationship</em>' class.
@@ -6845,7 +6845,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_RELATIONSHIP_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 19;
+	int ENTRY_RELATIONSHIP_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 19;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EncounterImpl <em>Encounter</em>}' class.
@@ -7072,7 +7072,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int REFERENCE__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -7081,7 +7081,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int REFERENCE__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -7090,7 +7090,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int REFERENCE__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Seperatable Ind</b></em>' containment reference.
@@ -7099,7 +7099,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__SEPERATABLE_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int REFERENCE__SEPERATABLE_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>External Act</b></em>' containment reference.
@@ -7108,7 +7108,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__EXTERNAL_ACT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int REFERENCE__EXTERNAL_ACT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>External Observation</b></em>' containment reference.
@@ -7117,7 +7117,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__EXTERNAL_OBSERVATION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int REFERENCE__EXTERNAL_OBSERVATION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>External Procedure</b></em>' containment reference.
@@ -7126,7 +7126,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__EXTERNAL_PROCEDURE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int REFERENCE__EXTERNAL_PROCEDURE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>External Document</b></em>' containment reference.
@@ -7135,7 +7135,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__EXTERNAL_DOCUMENT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 7;
+	int REFERENCE__EXTERNAL_DOCUMENT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -7144,7 +7144,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 8;
+	int REFERENCE__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -7153,7 +7153,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 9;
+	int REFERENCE__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
@@ -7162,7 +7162,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 10;
+	int REFERENCE_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalActImpl <em>External Act</em>}' class.
@@ -7181,7 +7181,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int EXTERNAL_ACT__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -7190,7 +7190,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int EXTERNAL_ACT__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -7199,7 +7199,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int EXTERNAL_ACT__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -7208,7 +7208,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int EXTERNAL_ACT__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -7217,7 +7217,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int EXTERNAL_ACT__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -7226,7 +7226,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int EXTERNAL_ACT__TEXT = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -7235,7 +7235,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int EXTERNAL_ACT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -7244,7 +7244,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int EXTERNAL_ACT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -7253,7 +7253,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int EXTERNAL_ACT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>External Act</em>' class.
@@ -7262,7 +7262,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ACT_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int EXTERNAL_ACT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalObservationImpl <em>External Observation</em>}' class.
@@ -7281,7 +7281,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int EXTERNAL_OBSERVATION__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -7290,7 +7290,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int EXTERNAL_OBSERVATION__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -7299,7 +7299,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int EXTERNAL_OBSERVATION__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -7308,7 +7308,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int EXTERNAL_OBSERVATION__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -7317,7 +7317,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int EXTERNAL_OBSERVATION__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -7326,7 +7326,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int EXTERNAL_OBSERVATION__TEXT = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -7335,7 +7335,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int EXTERNAL_OBSERVATION__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -7344,7 +7344,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int EXTERNAL_OBSERVATION__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -7353,7 +7353,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int EXTERNAL_OBSERVATION__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>External Observation</em>' class.
@@ -7362,7 +7362,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_OBSERVATION_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int EXTERNAL_OBSERVATION_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalProcedureImpl <em>External Procedure</em>}' class.
@@ -7381,7 +7381,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int EXTERNAL_PROCEDURE__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -7390,7 +7390,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int EXTERNAL_PROCEDURE__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -7399,7 +7399,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int EXTERNAL_PROCEDURE__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -7408,7 +7408,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int EXTERNAL_PROCEDURE__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -7417,7 +7417,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int EXTERNAL_PROCEDURE__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -7426,7 +7426,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int EXTERNAL_PROCEDURE__TEXT = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -7435,7 +7435,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int EXTERNAL_PROCEDURE__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -7444,7 +7444,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int EXTERNAL_PROCEDURE__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -7453,7 +7453,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int EXTERNAL_PROCEDURE__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>External Procedure</em>' class.
@@ -7462,7 +7462,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_PROCEDURE_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int EXTERNAL_PROCEDURE_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalDocumentImpl <em>External Document</em>}' class.
@@ -7481,7 +7481,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int EXTERNAL_DOCUMENT__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -7490,7 +7490,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int EXTERNAL_DOCUMENT__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -7499,7 +7499,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int EXTERNAL_DOCUMENT__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -7508,7 +7508,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int EXTERNAL_DOCUMENT__ID = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -7517,7 +7517,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int EXTERNAL_DOCUMENT__CODE = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -7526,7 +7526,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int EXTERNAL_DOCUMENT__TEXT = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -7535,7 +7535,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__SET_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int EXTERNAL_DOCUMENT__SET_ID = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -7544,7 +7544,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__VERSION_NUMBER = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int EXTERNAL_DOCUMENT__VERSION_NUMBER = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -7553,7 +7553,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int EXTERNAL_DOCUMENT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -7562,7 +7562,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int EXTERNAL_DOCUMENT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -7571,7 +7571,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 10;
+	int EXTERNAL_DOCUMENT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>External Document</em>' class.
@@ -7580,7 +7580,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_DOCUMENT_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 11;
+	int EXTERNAL_DOCUMENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.PreconditionImpl <em>Precondition</em>}' class.
@@ -7599,7 +7599,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRECONDITION__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int PRECONDITION__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -7608,7 +7608,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRECONDITION__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int PRECONDITION__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -7617,7 +7617,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRECONDITION__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int PRECONDITION__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Criterion</b></em>' containment reference.
@@ -7626,7 +7626,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRECONDITION__CRITERION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int PRECONDITION__CRITERION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -7635,7 +7635,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRECONDITION__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int PRECONDITION__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -7644,7 +7644,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRECONDITION__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int PRECONDITION__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Precondition</em>' class.
@@ -7653,7 +7653,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRECONDITION_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int PRECONDITION_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.CriterionImpl <em>Criterion</em>}' class.
@@ -7672,7 +7672,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int CRITERION__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -7681,7 +7681,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int CRITERION__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -7690,7 +7690,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int CRITERION__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -7699,7 +7699,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int CRITERION__CODE = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -7708,7 +7708,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int CRITERION__TEXT = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -7717,7 +7717,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__VALUE = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int CRITERION__VALUE = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -7726,7 +7726,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int CRITERION__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -7735,7 +7735,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int CRITERION__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -7744,7 +7744,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int CRITERION__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Criterion</em>' class.
@@ -7753,7 +7753,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITERION_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int CRITERION_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl <em>Observation</em>}' class.
@@ -8061,7 +8061,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_RANGE__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int REFERENCE_RANGE__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -8070,7 +8070,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_RANGE__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int REFERENCE_RANGE__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -8079,7 +8079,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_RANGE__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int REFERENCE_RANGE__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Observation Range</b></em>' containment reference.
@@ -8088,7 +8088,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_RANGE__OBSERVATION_RANGE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int REFERENCE_RANGE__OBSERVATION_RANGE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -8097,7 +8097,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_RANGE__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int REFERENCE_RANGE__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -8106,7 +8106,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_RANGE__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int REFERENCE_RANGE__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Reference Range</em>' class.
@@ -8115,7 +8115,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_RANGE_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int REFERENCE_RANGE_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ObservationRangeImpl <em>Observation Range</em>}' class.
@@ -8134,7 +8134,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__REALM_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 0;
+	int OBSERVATION_RANGE__REALM_CODE = RIMPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -8143,7 +8143,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__TYPE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 1;
+	int OBSERVATION_RANGE__TYPE_ID = RIMPackage.ACT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -8152,7 +8152,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__TEMPLATE_ID = RIMPackage.RIM_ACT_FEATURE_COUNT + 2;
+	int OBSERVATION_RANGE__TEMPLATE_ID = RIMPackage.ACT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -8161,7 +8161,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 3;
+	int OBSERVATION_RANGE__CODE = RIMPackage.ACT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -8170,7 +8170,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__TEXT = RIMPackage.RIM_ACT_FEATURE_COUNT + 4;
+	int OBSERVATION_RANGE__TEXT = RIMPackage.ACT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -8179,7 +8179,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__VALUE = RIMPackage.RIM_ACT_FEATURE_COUNT + 5;
+	int OBSERVATION_RANGE__VALUE = RIMPackage.ACT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Interpretation Code</b></em>' containment reference.
@@ -8188,7 +8188,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__INTERPRETATION_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 6;
+	int OBSERVATION_RANGE__INTERPRETATION_CODE = RIMPackage.ACT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -8197,7 +8197,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__NULL_FLAVOR = RIMPackage.RIM_ACT_FEATURE_COUNT + 7;
+	int OBSERVATION_RANGE__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -8206,7 +8206,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__CLASS_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 8;
+	int OBSERVATION_RANGE__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -8215,7 +8215,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE__MOOD_CODE = RIMPackage.RIM_ACT_FEATURE_COUNT + 9;
+	int OBSERVATION_RANGE__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Observation Range</em>' class.
@@ -8224,7 +8224,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_RANGE_FEATURE_COUNT = RIMPackage.RIM_ACT_FEATURE_COUNT + 10;
+	int OBSERVATION_RANGE_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl <em>Observation Media</em>}' class.
@@ -8623,7 +8623,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int COMPONENT4__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -8632,7 +8632,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int COMPONENT4__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -8641,7 +8641,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int COMPONENT4__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Number</b></em>' containment reference.
@@ -8650,7 +8650,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__SEQUENCE_NUMBER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int COMPONENT4__SEQUENCE_NUMBER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Seperatable Ind</b></em>' containment reference.
@@ -8659,7 +8659,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__SEPERATABLE_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int COMPONENT4__SEPERATABLE_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Act</b></em>' containment reference.
@@ -8668,7 +8668,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__ACT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int COMPONENT4__ACT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Encounter</b></em>' containment reference.
@@ -8677,7 +8677,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__ENCOUNTER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int COMPONENT4__ENCOUNTER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
@@ -8686,7 +8686,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__OBSERVATION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 7;
+	int COMPONENT4__OBSERVATION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Observation Media</b></em>' containment reference.
@@ -8695,7 +8695,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__OBSERVATION_MEDIA = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 8;
+	int COMPONENT4__OBSERVATION_MEDIA = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Organizer</b></em>' containment reference.
@@ -8704,7 +8704,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__ORGANIZER = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 9;
+	int COMPONENT4__ORGANIZER = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Procedure</b></em>' containment reference.
@@ -8713,7 +8713,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__PROCEDURE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 10;
+	int COMPONENT4__PROCEDURE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Region Of Interest</b></em>' containment reference.
@@ -8722,7 +8722,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__REGION_OF_INTEREST = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 11;
+	int COMPONENT4__REGION_OF_INTEREST = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Substance Administration</b></em>' containment reference.
@@ -8731,7 +8731,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__SUBSTANCE_ADMINISTRATION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 12;
+	int COMPONENT4__SUBSTANCE_ADMINISTRATION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Supply</b></em>' containment reference.
@@ -8740,7 +8740,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__SUPPLY = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 13;
+	int COMPONENT4__SUPPLY = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -8749,7 +8749,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 14;
+	int COMPONENT4__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -8758,7 +8758,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 15;
+	int COMPONENT4__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Context Conduction Ind</b></em>' attribute.
@@ -8767,7 +8767,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4__CONTEXT_CONDUCTION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 16;
+	int COMPONENT4__CONTEXT_CONDUCTION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of structural features of the '<em>Component4</em>' class.
@@ -8776,7 +8776,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT4_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 17;
+	int COMPONENT4_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 17;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl <em>Procedure</em>}' class.
@@ -9573,7 +9573,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMABLE__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int CONSUMABLE__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -9582,7 +9582,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMABLE__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int CONSUMABLE__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -9591,7 +9591,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMABLE__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int CONSUMABLE__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Manufactured Product</b></em>' containment reference.
@@ -9600,7 +9600,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMABLE__MANUFACTURED_PRODUCT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int CONSUMABLE__MANUFACTURED_PRODUCT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -9609,7 +9609,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMABLE__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int CONSUMABLE__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -9618,7 +9618,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMABLE__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int CONSUMABLE__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Consumable</em>' class.
@@ -9627,7 +9627,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSUMABLE_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int CONSUMABLE_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl <em>Manufactured Product</em>}' class.
@@ -9646,7 +9646,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__REALM_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 0;
+	int MANUFACTURED_PRODUCT__REALM_CODE = RIMPackage.ROLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -9655,7 +9655,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__TYPE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 1;
+	int MANUFACTURED_PRODUCT__TYPE_ID = RIMPackage.ROLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -9664,7 +9664,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__TEMPLATE_ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 2;
+	int MANUFACTURED_PRODUCT__TEMPLATE_ID = RIMPackage.ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -9673,7 +9673,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__ID = RIMPackage.RIM_ROLE_FEATURE_COUNT + 3;
+	int MANUFACTURED_PRODUCT__ID = RIMPackage.ROLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Manufactured Labeled Drug</b></em>' containment reference.
@@ -9682,7 +9682,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG = RIMPackage.RIM_ROLE_FEATURE_COUNT + 4;
+	int MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG = RIMPackage.ROLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Manufactured Material</b></em>' containment reference.
@@ -9691,7 +9691,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL = RIMPackage.RIM_ROLE_FEATURE_COUNT + 5;
+	int MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL = RIMPackage.ROLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Manufacturer Organization</b></em>' containment reference.
@@ -9700,7 +9700,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__MANUFACTURER_ORGANIZATION = RIMPackage.RIM_ROLE_FEATURE_COUNT + 6;
+	int MANUFACTURED_PRODUCT__MANUFACTURER_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -9709,7 +9709,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__NULL_FLAVOR = RIMPackage.RIM_ROLE_FEATURE_COUNT + 7;
+	int MANUFACTURED_PRODUCT__NULL_FLAVOR = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -9718,7 +9718,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT__CLASS_CODE = RIMPackage.RIM_ROLE_FEATURE_COUNT + 8;
+	int MANUFACTURED_PRODUCT__CLASS_CODE = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Manufactured Product</em>' class.
@@ -9727,7 +9727,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUFACTURED_PRODUCT_FEATURE_COUNT = RIMPackage.RIM_ROLE_FEATURE_COUNT + 9;
+	int MANUFACTURED_PRODUCT_FEATURE_COUNT = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.LabeledDrugImpl <em>Labeled Drug</em>}' class.
@@ -9746,7 +9746,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int LABELED_DRUG__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -9755,7 +9755,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int LABELED_DRUG__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -9764,7 +9764,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int LABELED_DRUG__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -9773,7 +9773,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int LABELED_DRUG__CODE = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -9782,7 +9782,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int LABELED_DRUG__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -9791,7 +9791,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int LABELED_DRUG__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -9800,7 +9800,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int LABELED_DRUG__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -9809,7 +9809,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int LABELED_DRUG__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Labeled Drug</em>' class.
@@ -9818,7 +9818,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABELED_DRUG_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int LABELED_DRUG_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.MaterialImpl <em>Material</em>}' class.
@@ -9837,7 +9837,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__REALM_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 0;
+	int MATERIAL__REALM_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -9846,7 +9846,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__TYPE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 1;
+	int MATERIAL__TYPE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -9855,7 +9855,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__TEMPLATE_ID = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 2;
+	int MATERIAL__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -9864,7 +9864,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 3;
+	int MATERIAL__CODE = RIMPackage.ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -9873,7 +9873,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__NAME = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 4;
+	int MATERIAL__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Lot Number Text</b></em>' containment reference.
@@ -9882,7 +9882,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__LOT_NUMBER_TEXT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 5;
+	int MATERIAL__LOT_NUMBER_TEXT = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -9891,7 +9891,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__NULL_FLAVOR = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 6;
+	int MATERIAL__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -9900,7 +9900,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__CLASS_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 7;
+	int MATERIAL__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -9909,7 +9909,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL__DETERMINER_CODE = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 8;
+	int MATERIAL__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Material</em>' class.
@@ -9918,7 +9918,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL_FEATURE_COUNT = RIMPackage.RIM_ENTITY_FEATURE_COUNT + 9;
+	int MATERIAL_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.SupplyImpl <em>Supply</em>}' class.
@@ -10190,7 +10190,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__REALM_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 0;
+	int PRODUCT__REALM_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -10199,7 +10199,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__TYPE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 1;
+	int PRODUCT__TYPE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -10208,7 +10208,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__TEMPLATE_ID = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 2;
+	int PRODUCT__TEMPLATE_ID = RIMPackage.PARTICIPATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Manufactured Product</b></em>' containment reference.
@@ -10217,7 +10217,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__MANUFACTURED_PRODUCT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 3;
+	int PRODUCT__MANUFACTURED_PRODUCT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -10226,7 +10226,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__NULL_FLAVOR = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 4;
+	int PRODUCT__NULL_FLAVOR = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -10235,7 +10235,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__TYPE_CODE = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 5;
+	int PRODUCT__TYPE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Product</em>' class.
@@ -10244,7 +10244,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_COUNT = RIMPackage.RIM_PARTICIPATION_FEATURE_COUNT + 6;
+	int PRODUCT_FEATURE_COUNT = RIMPackage.PARTICIPATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component5Impl <em>Component5</em>}' class.
@@ -10263,7 +10263,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5__REALM_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int COMPONENT5__REALM_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -10272,7 +10272,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5__TYPE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int COMPONENT5__TYPE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -10281,7 +10281,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5__TEMPLATE_ID = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int COMPONENT5__TEMPLATE_ID = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Section</b></em>' containment reference.
@@ -10290,7 +10290,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5__SECTION = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 3;
+	int COMPONENT5__SECTION = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -10299,7 +10299,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5__NULL_FLAVOR = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 4;
+	int COMPONENT5__NULL_FLAVOR = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -10308,7 +10308,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5__TYPE_CODE = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 5;
+	int COMPONENT5__TYPE_CODE = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Context Conduction Ind</b></em>' attribute.
@@ -10317,7 +10317,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5__CONTEXT_CONDUCTION_IND = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 6;
+	int COMPONENT5__CONTEXT_CONDUCTION_IND = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Component5</em>' class.
@@ -10326,7 +10326,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT5_FEATURE_COUNT = RIMPackage.RIM_ACT_RELATIONSHIP_FEATURE_COUNT + 7;
+	int COMPONENT5_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
 
 	/**

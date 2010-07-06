@@ -10,39 +10,15 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Participation</b></em>'.
+ * A representation of the model object '<em><b>Act Relationship</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.hl7.rim.RIMPackage#getRIMParticipation()
+ * @see org.openhealthtools.mdht.uml.hl7.rim.RIMPackage#getActRelationship()
  * @model abstract="true"
  * @generated
  */
-public interface RIMParticipation extends RIMInfrastructureRoot {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Act</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	RIMAct getAct();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Role</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	RIMRole getRole();
-
+public interface ActRelationship extends InfrastructureRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,4 +27,20 @@ public interface RIMParticipation extends RIMInfrastructureRoot {
 	 */
 	Enumerator getTypeCode();
 
-} // RIMParticipation
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Act getTarget();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Act getSource();
+
+} // ActRelationship

@@ -23,7 +23,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMRoleOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMRoleOperations;
  *
  * @generated
  */
-public class GuardianOperations extends RIMRoleOperations {
+public class GuardianOperations extends RoleOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

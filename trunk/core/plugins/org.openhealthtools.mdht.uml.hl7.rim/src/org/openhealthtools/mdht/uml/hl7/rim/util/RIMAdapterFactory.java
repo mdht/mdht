@@ -10,14 +10,14 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Entity;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,32 +76,32 @@ public class RIMAdapterFactory extends AdapterFactoryImpl {
 	protected RIMSwitch<Adapter> modelSwitch =
 		new RIMSwitch<Adapter>() {
 			@Override
-			public Adapter caseRIMAct(RIMAct object) {
-				return createRIMActAdapter();
+			public Adapter caseAct(Act object) {
+				return createActAdapter();
 			}
 			@Override
-			public Adapter caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
-				return createRIMInfrastructureRootAdapter();
+			public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
+				return createInfrastructureRootAdapter();
 			}
 			@Override
-			public Adapter caseRIMParticipation(RIMParticipation object) {
-				return createRIMParticipationAdapter();
+			public Adapter caseParticipation(Participation object) {
+				return createParticipationAdapter();
 			}
 			@Override
-			public Adapter caseRIMRole(RIMRole object) {
-				return createRIMRoleAdapter();
+			public Adapter caseRole(Role object) {
+				return createRoleAdapter();
 			}
 			@Override
-			public Adapter caseRIMEntity(RIMEntity object) {
-				return createRIMEntityAdapter();
+			public Adapter caseEntity(Entity object) {
+				return createEntityAdapter();
 			}
 			@Override
-			public Adapter caseRIMRoleLink(RIMRoleLink object) {
-				return createRIMRoleLinkAdapter();
+			public Adapter caseRoleLink(RoleLink object) {
+				return createRoleLinkAdapter();
 			}
 			@Override
-			public Adapter caseRIMActRelationship(RIMActRelationship object) {
-				return createRIMActRelationshipAdapter();
+			public Adapter caseActRelationship(ActRelationship object) {
+				return createActRelationshipAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -124,100 +124,100 @@ public class RIMAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct <em>Act</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Act <em>Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMAct
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Act
 	 * @generated
 	 */
-	public Adapter createRIMActAdapter() {
+	public Adapter createActAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot <em>Infrastructure Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot <em>Infrastructure Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot
 	 * @generated
 	 */
-	public Adapter createRIMInfrastructureRootAdapter() {
+	public Adapter createInfrastructureRootAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation <em>Participation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Participation <em>Participation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Participation
 	 * @generated
 	 */
-	public Adapter createRIMParticipationAdapter() {
+	public Adapter createParticipationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole <em>Role</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Role
 	 * @generated
 	 */
-	public Adapter createRIMRoleAdapter() {
+	public Adapter createRoleAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity <em>Entity</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMEntity
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Entity
 	 * @generated
 	 */
-	public Adapter createRIMEntityAdapter() {
+	public Adapter createEntityAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink <em>Role Link</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RoleLink <em>Role Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.RoleLink
 	 * @generated
 	 */
-	public Adapter createRIMRoleLinkAdapter() {
+	public Adapter createRoleLinkAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship <em>Act Relationship</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.ActRelationship <em>Act Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.ActRelationship
 	 * @generated
 	 */
-	public Adapter createRIMActRelationshipAdapter() {
+	public Adapter createActRelationshipAdapter() {
 		return null;
 	}
 

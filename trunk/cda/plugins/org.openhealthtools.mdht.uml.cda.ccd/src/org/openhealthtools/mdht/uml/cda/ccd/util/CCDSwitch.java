@@ -1,12 +1,6 @@
 /**
- * Copyright (c) 2009 IBM Corporation
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     IBM Corporation - initial API and implementation
+ * <copyright>
+ * </copyright>
  *
  * $Id$
  */
@@ -16,7 +10,6 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
@@ -102,10 +95,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
 
 /**
  * <!-- begin-user-doc -->
@@ -185,8 +178,8 @@ public class CCDSwitch<T> {
 				MedicationsSection medicationsSection = (MedicationsSection)theEObject;
 				T result = caseMedicationsSection(medicationsSection);
 				if (result == null) result = caseSection(medicationsSection);
-				if (result == null) result = caseRIMAct(medicationsSection);
-				if (result == null) result = caseRIMInfrastructureRoot(medicationsSection);
+				if (result == null) result = caseAct(medicationsSection);
+				if (result == null) result = caseInfrastructureRoot(medicationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -194,8 +187,8 @@ public class CCDSwitch<T> {
 				ContinuityOfCareDocument continuityOfCareDocument = (ContinuityOfCareDocument)theEObject;
 				T result = caseContinuityOfCareDocument(continuityOfCareDocument);
 				if (result == null) result = caseClinicalDocument(continuityOfCareDocument);
-				if (result == null) result = caseRIMAct(continuityOfCareDocument);
-				if (result == null) result = caseRIMInfrastructureRoot(continuityOfCareDocument);
+				if (result == null) result = caseAct(continuityOfCareDocument);
+				if (result == null) result = caseInfrastructureRoot(continuityOfCareDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -203,18 +196,18 @@ public class CCDSwitch<T> {
 				ProblemSection problemSection = (ProblemSection)theEObject;
 				T result = caseProblemSection(problemSection);
 				if (result == null) result = caseSection(problemSection);
-				if (result == null) result = caseRIMAct(problemSection);
-				if (result == null) result = caseRIMInfrastructureRoot(problemSection);
+				if (result == null) result = caseAct(problemSection);
+				if (result == null) result = caseInfrastructureRoot(problemSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.PROBLEM_ACT: {
 				ProblemAct problemAct = (ProblemAct)theEObject;
 				T result = caseProblemAct(problemAct);
-				if (result == null) result = caseAct(problemAct);
+				if (result == null) result = caseCDA_Act(problemAct);
 				if (result == null) result = caseClinicalStatement(problemAct);
-				if (result == null) result = caseRIMAct(problemAct);
-				if (result == null) result = caseRIMInfrastructureRoot(problemAct);
+				if (result == null) result = caseAct(problemAct);
+				if (result == null) result = caseInfrastructureRoot(problemAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -223,8 +216,8 @@ public class CCDSwitch<T> {
 				T result = caseEpisodeObservation(episodeObservation);
 				if (result == null) result = caseObservation(episodeObservation);
 				if (result == null) result = caseClinicalStatement(episodeObservation);
-				if (result == null) result = caseRIMAct(episodeObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(episodeObservation);
+				if (result == null) result = caseAct(episodeObservation);
+				if (result == null) result = caseInfrastructureRoot(episodeObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -232,8 +225,8 @@ public class CCDSwitch<T> {
 				FamilyHistorySection familyHistorySection = (FamilyHistorySection)theEObject;
 				T result = caseFamilyHistorySection(familyHistorySection);
 				if (result == null) result = caseSection(familyHistorySection);
-				if (result == null) result = caseRIMAct(familyHistorySection);
-				if (result == null) result = caseRIMInfrastructureRoot(familyHistorySection);
+				if (result == null) result = caseAct(familyHistorySection);
+				if (result == null) result = caseInfrastructureRoot(familyHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -241,8 +234,8 @@ public class CCDSwitch<T> {
 				SocialHistorySection socialHistorySection = (SocialHistorySection)theEObject;
 				T result = caseSocialHistorySection(socialHistorySection);
 				if (result == null) result = caseSection(socialHistorySection);
-				if (result == null) result = caseRIMAct(socialHistorySection);
-				if (result == null) result = caseRIMInfrastructureRoot(socialHistorySection);
+				if (result == null) result = caseAct(socialHistorySection);
+				if (result == null) result = caseInfrastructureRoot(socialHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -250,8 +243,8 @@ public class CCDSwitch<T> {
 				AlertsSection alertsSection = (AlertsSection)theEObject;
 				T result = caseAlertsSection(alertsSection);
 				if (result == null) result = caseSection(alertsSection);
-				if (result == null) result = caseRIMAct(alertsSection);
-				if (result == null) result = caseRIMInfrastructureRoot(alertsSection);
+				if (result == null) result = caseAct(alertsSection);
+				if (result == null) result = caseInfrastructureRoot(alertsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -259,8 +252,8 @@ public class CCDSwitch<T> {
 				ResultsSection resultsSection = (ResultsSection)theEObject;
 				T result = caseResultsSection(resultsSection);
 				if (result == null) result = caseSection(resultsSection);
-				if (result == null) result = caseRIMAct(resultsSection);
-				if (result == null) result = caseRIMInfrastructureRoot(resultsSection);
+				if (result == null) result = caseAct(resultsSection);
+				if (result == null) result = caseInfrastructureRoot(resultsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,8 +262,8 @@ public class CCDSwitch<T> {
 				T result = caseResultOrganizer(resultOrganizer);
 				if (result == null) result = caseOrganizer(resultOrganizer);
 				if (result == null) result = caseClinicalStatement(resultOrganizer);
-				if (result == null) result = caseRIMAct(resultOrganizer);
-				if (result == null) result = caseRIMInfrastructureRoot(resultOrganizer);
+				if (result == null) result = caseAct(resultOrganizer);
+				if (result == null) result = caseInfrastructureRoot(resultOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -279,8 +272,8 @@ public class CCDSwitch<T> {
 				T result = caseResultObservation(resultObservation);
 				if (result == null) result = caseObservation(resultObservation);
 				if (result == null) result = caseClinicalStatement(resultObservation);
-				if (result == null) result = caseRIMAct(resultObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(resultObservation);
+				if (result == null) result = caseAct(resultObservation);
+				if (result == null) result = caseInfrastructureRoot(resultObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -288,8 +281,8 @@ public class CCDSwitch<T> {
 				ProceduresSection proceduresSection = (ProceduresSection)theEObject;
 				T result = caseProceduresSection(proceduresSection);
 				if (result == null) result = caseSection(proceduresSection);
-				if (result == null) result = caseRIMAct(proceduresSection);
-				if (result == null) result = caseRIMInfrastructureRoot(proceduresSection);
+				if (result == null) result = caseAct(proceduresSection);
+				if (result == null) result = caseInfrastructureRoot(proceduresSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -297,8 +290,8 @@ public class CCDSwitch<T> {
 				EncountersSection encountersSection = (EncountersSection)theEObject;
 				T result = caseEncountersSection(encountersSection);
 				if (result == null) result = caseSection(encountersSection);
-				if (result == null) result = caseRIMAct(encountersSection);
-				if (result == null) result = caseRIMInfrastructureRoot(encountersSection);
+				if (result == null) result = caseAct(encountersSection);
+				if (result == null) result = caseInfrastructureRoot(encountersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -306,8 +299,8 @@ public class CCDSwitch<T> {
 				PlanOfCareSection planOfCareSection = (PlanOfCareSection)theEObject;
 				T result = casePlanOfCareSection(planOfCareSection);
 				if (result == null) result = caseSection(planOfCareSection);
-				if (result == null) result = caseRIMAct(planOfCareSection);
-				if (result == null) result = caseRIMInfrastructureRoot(planOfCareSection);
+				if (result == null) result = caseAct(planOfCareSection);
+				if (result == null) result = caseInfrastructureRoot(planOfCareSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -320,11 +313,11 @@ public class CCDSwitch<T> {
 			case CCDPackage.PLAN_OF_CARE_ACTIVITY_ACT: {
 				PlanOfCareActivityAct planOfCareActivityAct = (PlanOfCareActivityAct)theEObject;
 				T result = casePlanOfCareActivityAct(planOfCareActivityAct);
-				if (result == null) result = caseAct(planOfCareActivityAct);
+				if (result == null) result = caseCDA_Act(planOfCareActivityAct);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityAct);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityAct);
-				if (result == null) result = caseRIMAct(planOfCareActivityAct);
-				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityAct);
+				if (result == null) result = caseAct(planOfCareActivityAct);
+				if (result == null) result = caseInfrastructureRoot(planOfCareActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -334,8 +327,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseEncounter(planOfCareActivityEncounter);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityEncounter);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityEncounter);
-				if (result == null) result = caseRIMAct(planOfCareActivityEncounter);
-				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityEncounter);
+				if (result == null) result = caseAct(planOfCareActivityEncounter);
+				if (result == null) result = caseInfrastructureRoot(planOfCareActivityEncounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -345,8 +338,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseObservation(planOfCareActivityObservation);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityObservation);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityObservation);
-				if (result == null) result = caseRIMAct(planOfCareActivityObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityObservation);
+				if (result == null) result = caseAct(planOfCareActivityObservation);
+				if (result == null) result = caseInfrastructureRoot(planOfCareActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -356,8 +349,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseProcedure(planOfCareActivityProcedure);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityProcedure);
 				if (result == null) result = caseClinicalStatement(planOfCareActivityProcedure);
-				if (result == null) result = caseRIMAct(planOfCareActivityProcedure);
-				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivityProcedure);
+				if (result == null) result = caseAct(planOfCareActivityProcedure);
+				if (result == null) result = caseInfrastructureRoot(planOfCareActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -367,8 +360,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseSubstanceAdministration(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = caseClinicalStatement(planOfCareActivitySubstanceAdministration);
-				if (result == null) result = caseRIMAct(planOfCareActivitySubstanceAdministration);
-				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivitySubstanceAdministration);
+				if (result == null) result = caseAct(planOfCareActivitySubstanceAdministration);
+				if (result == null) result = caseInfrastructureRoot(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -378,8 +371,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseSupply(planOfCareActivitySupply);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySupply);
 				if (result == null) result = caseClinicalStatement(planOfCareActivitySupply);
-				if (result == null) result = caseRIMAct(planOfCareActivitySupply);
-				if (result == null) result = caseRIMInfrastructureRoot(planOfCareActivitySupply);
+				if (result == null) result = caseAct(planOfCareActivitySupply);
+				if (result == null) result = caseInfrastructureRoot(planOfCareActivitySupply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -387,8 +380,8 @@ public class CCDSwitch<T> {
 				ImmunizationsSection immunizationsSection = (ImmunizationsSection)theEObject;
 				T result = caseImmunizationsSection(immunizationsSection);
 				if (result == null) result = caseSection(immunizationsSection);
-				if (result == null) result = caseRIMAct(immunizationsSection);
-				if (result == null) result = caseRIMInfrastructureRoot(immunizationsSection);
+				if (result == null) result = caseAct(immunizationsSection);
+				if (result == null) result = caseInfrastructureRoot(immunizationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -396,8 +389,8 @@ public class CCDSwitch<T> {
 				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
 				T result = caseVitalSignsSection(vitalSignsSection);
 				if (result == null) result = caseSection(vitalSignsSection);
-				if (result == null) result = caseRIMAct(vitalSignsSection);
-				if (result == null) result = caseRIMInfrastructureRoot(vitalSignsSection);
+				if (result == null) result = caseAct(vitalSignsSection);
+				if (result == null) result = caseInfrastructureRoot(vitalSignsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -407,8 +400,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseClinicalStatement(vitalSignsOrganizer);
-				if (result == null) result = caseRIMAct(vitalSignsOrganizer);
-				if (result == null) result = caseRIMInfrastructureRoot(vitalSignsOrganizer);
+				if (result == null) result = caseAct(vitalSignsOrganizer);
+				if (result == null) result = caseInfrastructureRoot(vitalSignsOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -416,8 +409,8 @@ public class CCDSwitch<T> {
 				MedicalEquipmentSection medicalEquipmentSection = (MedicalEquipmentSection)theEObject;
 				T result = caseMedicalEquipmentSection(medicalEquipmentSection);
 				if (result == null) result = caseSection(medicalEquipmentSection);
-				if (result == null) result = caseRIMAct(medicalEquipmentSection);
-				if (result == null) result = caseRIMInfrastructureRoot(medicalEquipmentSection);
+				if (result == null) result = caseAct(medicalEquipmentSection);
+				if (result == null) result = caseInfrastructureRoot(medicalEquipmentSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -425,8 +418,8 @@ public class CCDSwitch<T> {
 				FunctionalStatusSection functionalStatusSection = (FunctionalStatusSection)theEObject;
 				T result = caseFunctionalStatusSection(functionalStatusSection);
 				if (result == null) result = caseSection(functionalStatusSection);
-				if (result == null) result = caseRIMAct(functionalStatusSection);
-				if (result == null) result = caseRIMInfrastructureRoot(functionalStatusSection);
+				if (result == null) result = caseAct(functionalStatusSection);
+				if (result == null) result = caseInfrastructureRoot(functionalStatusSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -434,8 +427,8 @@ public class CCDSwitch<T> {
 				AdvanceDirectivesSection advanceDirectivesSection = (AdvanceDirectivesSection)theEObject;
 				T result = caseAdvanceDirectivesSection(advanceDirectivesSection);
 				if (result == null) result = caseSection(advanceDirectivesSection);
-				if (result == null) result = caseRIMAct(advanceDirectivesSection);
-				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectivesSection);
+				if (result == null) result = caseAct(advanceDirectivesSection);
+				if (result == null) result = caseInfrastructureRoot(advanceDirectivesSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -444,8 +437,8 @@ public class CCDSwitch<T> {
 				T result = caseAdvanceDirectiveObservation(advanceDirectiveObservation);
 				if (result == null) result = caseObservation(advanceDirectiveObservation);
 				if (result == null) result = caseClinicalStatement(advanceDirectiveObservation);
-				if (result == null) result = caseRIMAct(advanceDirectiveObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectiveObservation);
+				if (result == null) result = caseAct(advanceDirectiveObservation);
+				if (result == null) result = caseInfrastructureRoot(advanceDirectiveObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -453,28 +446,28 @@ public class CCDSwitch<T> {
 				PayersSection payersSection = (PayersSection)theEObject;
 				T result = casePayersSection(payersSection);
 				if (result == null) result = caseSection(payersSection);
-				if (result == null) result = caseRIMAct(payersSection);
-				if (result == null) result = caseRIMInfrastructureRoot(payersSection);
+				if (result == null) result = caseAct(payersSection);
+				if (result == null) result = caseInfrastructureRoot(payersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.COVERAGE_ACTIVITY: {
 				CoverageActivity coverageActivity = (CoverageActivity)theEObject;
 				T result = caseCoverageActivity(coverageActivity);
-				if (result == null) result = caseAct(coverageActivity);
+				if (result == null) result = caseCDA_Act(coverageActivity);
 				if (result == null) result = caseClinicalStatement(coverageActivity);
-				if (result == null) result = caseRIMAct(coverageActivity);
-				if (result == null) result = caseRIMInfrastructureRoot(coverageActivity);
+				if (result == null) result = caseAct(coverageActivity);
+				if (result == null) result = caseInfrastructureRoot(coverageActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.POLICY_ACTIVITY: {
 				PolicyActivity policyActivity = (PolicyActivity)theEObject;
 				T result = casePolicyActivity(policyActivity);
-				if (result == null) result = caseAct(policyActivity);
+				if (result == null) result = caseCDA_Act(policyActivity);
 				if (result == null) result = caseClinicalStatement(policyActivity);
-				if (result == null) result = caseRIMAct(policyActivity);
-				if (result == null) result = caseRIMInfrastructureRoot(policyActivity);
+				if (result == null) result = caseAct(policyActivity);
+				if (result == null) result = caseInfrastructureRoot(policyActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -482,18 +475,18 @@ public class CCDSwitch<T> {
 				PurposeSection purposeSection = (PurposeSection)theEObject;
 				T result = casePurposeSection(purposeSection);
 				if (result == null) result = caseSection(purposeSection);
-				if (result == null) result = caseRIMAct(purposeSection);
-				if (result == null) result = caseRIMInfrastructureRoot(purposeSection);
+				if (result == null) result = caseAct(purposeSection);
+				if (result == null) result = caseInfrastructureRoot(purposeSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.PURPOSE_ACTIVITY: {
 				PurposeActivity purposeActivity = (PurposeActivity)theEObject;
 				T result = casePurposeActivity(purposeActivity);
-				if (result == null) result = caseAct(purposeActivity);
+				if (result == null) result = caseCDA_Act(purposeActivity);
 				if (result == null) result = caseClinicalStatement(purposeActivity);
-				if (result == null) result = caseRIMAct(purposeActivity);
-				if (result == null) result = caseRIMInfrastructureRoot(purposeActivity);
+				if (result == null) result = caseAct(purposeActivity);
+				if (result == null) result = caseInfrastructureRoot(purposeActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -502,8 +495,8 @@ public class CCDSwitch<T> {
 				T result = caseProblemObservation(problemObservation);
 				if (result == null) result = caseObservation(problemObservation);
 				if (result == null) result = caseClinicalStatement(problemObservation);
-				if (result == null) result = caseRIMAct(problemObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(problemObservation);
+				if (result == null) result = caseAct(problemObservation);
+				if (result == null) result = caseInfrastructureRoot(problemObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -513,8 +506,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(problemStatusObservation);
 				if (result == null) result = caseObservation(problemStatusObservation);
 				if (result == null) result = caseClinicalStatement(problemStatusObservation);
-				if (result == null) result = caseRIMAct(problemStatusObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(problemStatusObservation);
+				if (result == null) result = caseAct(problemStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(problemStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -523,8 +516,8 @@ public class CCDSwitch<T> {
 				T result = caseStatusObservation(statusObservation);
 				if (result == null) result = caseObservation(statusObservation);
 				if (result == null) result = caseClinicalStatement(statusObservation);
-				if (result == null) result = caseRIMAct(statusObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(statusObservation);
+				if (result == null) result = caseAct(statusObservation);
+				if (result == null) result = caseInfrastructureRoot(statusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -534,8 +527,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(problemHealthStatusObservation);
 				if (result == null) result = caseObservation(problemHealthStatusObservation);
 				if (result == null) result = caseClinicalStatement(problemHealthStatusObservation);
-				if (result == null) result = caseRIMAct(problemHealthStatusObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(problemHealthStatusObservation);
+				if (result == null) result = caseAct(problemHealthStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(problemHealthStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -544,8 +537,8 @@ public class CCDSwitch<T> {
 				T result = caseAgeObservation(ageObservation);
 				if (result == null) result = caseObservation(ageObservation);
 				if (result == null) result = caseClinicalStatement(ageObservation);
-				if (result == null) result = caseRIMAct(ageObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(ageObservation);
+				if (result == null) result = caseAct(ageObservation);
+				if (result == null) result = caseInfrastructureRoot(ageObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -553,8 +546,8 @@ public class CCDSwitch<T> {
 				PatientAwareness patientAwareness = (PatientAwareness)theEObject;
 				T result = casePatientAwareness(patientAwareness);
 				if (result == null) result = caseParticipant2(patientAwareness);
-				if (result == null) result = caseRIMParticipation(patientAwareness);
-				if (result == null) result = caseRIMInfrastructureRoot(patientAwareness);
+				if (result == null) result = caseParticipation(patientAwareness);
+				if (result == null) result = caseInfrastructureRoot(patientAwareness);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -563,8 +556,8 @@ public class CCDSwitch<T> {
 				T result = caseFamilyHistoryObservation(familyHistoryObservation);
 				if (result == null) result = caseObservation(familyHistoryObservation);
 				if (result == null) result = caseClinicalStatement(familyHistoryObservation);
-				if (result == null) result = caseRIMAct(familyHistoryObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(familyHistoryObservation);
+				if (result == null) result = caseAct(familyHistoryObservation);
+				if (result == null) result = caseInfrastructureRoot(familyHistoryObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -573,8 +566,8 @@ public class CCDSwitch<T> {
 				T result = caseFamilyHistoryOrganizer(familyHistoryOrganizer);
 				if (result == null) result = caseOrganizer(familyHistoryOrganizer);
 				if (result == null) result = caseClinicalStatement(familyHistoryOrganizer);
-				if (result == null) result = caseRIMAct(familyHistoryOrganizer);
-				if (result == null) result = caseRIMInfrastructureRoot(familyHistoryOrganizer);
+				if (result == null) result = caseAct(familyHistoryOrganizer);
+				if (result == null) result = caseInfrastructureRoot(familyHistoryOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -583,8 +576,8 @@ public class CCDSwitch<T> {
 				T result = caseSocialHistoryObservation(socialHistoryObservation);
 				if (result == null) result = caseObservation(socialHistoryObservation);
 				if (result == null) result = caseClinicalStatement(socialHistoryObservation);
-				if (result == null) result = caseRIMAct(socialHistoryObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(socialHistoryObservation);
+				if (result == null) result = caseAct(socialHistoryObservation);
+				if (result == null) result = caseInfrastructureRoot(socialHistoryObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -593,8 +586,8 @@ public class CCDSwitch<T> {
 				T result = caseEncountersActivity(encountersActivity);
 				if (result == null) result = caseEncounter(encountersActivity);
 				if (result == null) result = caseClinicalStatement(encountersActivity);
-				if (result == null) result = caseRIMAct(encountersActivity);
-				if (result == null) result = caseRIMInfrastructureRoot(encountersActivity);
+				if (result == null) result = caseAct(encountersActivity);
+				if (result == null) result = caseInfrastructureRoot(encountersActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -603,8 +596,8 @@ public class CCDSwitch<T> {
 				T result = caseMedicationActivity(medicationActivity);
 				if (result == null) result = caseSubstanceAdministration(medicationActivity);
 				if (result == null) result = caseClinicalStatement(medicationActivity);
-				if (result == null) result = caseRIMAct(medicationActivity);
-				if (result == null) result = caseRIMInfrastructureRoot(medicationActivity);
+				if (result == null) result = caseAct(medicationActivity);
+				if (result == null) result = caseInfrastructureRoot(medicationActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -613,8 +606,8 @@ public class CCDSwitch<T> {
 				T result = caseMedicationSeriesNumberObservation(medicationSeriesNumberObservation);
 				if (result == null) result = caseObservation(medicationSeriesNumberObservation);
 				if (result == null) result = caseClinicalStatement(medicationSeriesNumberObservation);
-				if (result == null) result = caseRIMAct(medicationSeriesNumberObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(medicationSeriesNumberObservation);
+				if (result == null) result = caseAct(medicationSeriesNumberObservation);
+				if (result == null) result = caseInfrastructureRoot(medicationSeriesNumberObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -624,18 +617,18 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(medicationStatusObservation);
 				if (result == null) result = caseObservation(medicationStatusObservation);
 				if (result == null) result = caseClinicalStatement(medicationStatusObservation);
-				if (result == null) result = caseRIMAct(medicationStatusObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(medicationStatusObservation);
+				if (result == null) result = caseAct(medicationStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(medicationStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.PATIENT_INSTRUCTION: {
 				PatientInstruction patientInstruction = (PatientInstruction)theEObject;
 				T result = casePatientInstruction(patientInstruction);
-				if (result == null) result = caseAct(patientInstruction);
+				if (result == null) result = caseCDA_Act(patientInstruction);
 				if (result == null) result = caseClinicalStatement(patientInstruction);
-				if (result == null) result = caseRIMAct(patientInstruction);
-				if (result == null) result = caseRIMInfrastructureRoot(patientInstruction);
+				if (result == null) result = caseAct(patientInstruction);
+				if (result == null) result = caseInfrastructureRoot(patientInstruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -644,18 +637,18 @@ public class CCDSwitch<T> {
 				T result = caseSupplyActivity(supplyActivity);
 				if (result == null) result = caseSupply(supplyActivity);
 				if (result == null) result = caseClinicalStatement(supplyActivity);
-				if (result == null) result = caseRIMAct(supplyActivity);
-				if (result == null) result = caseRIMInfrastructureRoot(supplyActivity);
+				if (result == null) result = caseAct(supplyActivity);
+				if (result == null) result = caseInfrastructureRoot(supplyActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.FULFILLMENT_INSTRUCTION: {
 				FulfillmentInstruction fulfillmentInstruction = (FulfillmentInstruction)theEObject;
 				T result = caseFulfillmentInstruction(fulfillmentInstruction);
-				if (result == null) result = caseAct(fulfillmentInstruction);
+				if (result == null) result = caseCDA_Act(fulfillmentInstruction);
 				if (result == null) result = caseClinicalStatement(fulfillmentInstruction);
-				if (result == null) result = caseRIMAct(fulfillmentInstruction);
-				if (result == null) result = caseRIMInfrastructureRoot(fulfillmentInstruction);
+				if (result == null) result = caseAct(fulfillmentInstruction);
+				if (result == null) result = caseInfrastructureRoot(fulfillmentInstruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -664,8 +657,8 @@ public class CCDSwitch<T> {
 				T result = caseAlertObservation(alertObservation);
 				if (result == null) result = caseObservation(alertObservation);
 				if (result == null) result = caseClinicalStatement(alertObservation);
-				if (result == null) result = caseRIMAct(alertObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(alertObservation);
+				if (result == null) result = caseAct(alertObservation);
+				if (result == null) result = caseInfrastructureRoot(alertObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -675,8 +668,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(alertStatusObservation);
 				if (result == null) result = caseObservation(alertStatusObservation);
 				if (result == null) result = caseClinicalStatement(alertStatusObservation);
-				if (result == null) result = caseRIMAct(alertStatusObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(alertStatusObservation);
+				if (result == null) result = caseAct(alertStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(alertStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -685,8 +678,8 @@ public class CCDSwitch<T> {
 				T result = caseReactionObservation(reactionObservation);
 				if (result == null) result = caseObservation(reactionObservation);
 				if (result == null) result = caseClinicalStatement(reactionObservation);
-				if (result == null) result = caseRIMAct(reactionObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(reactionObservation);
+				if (result == null) result = caseAct(reactionObservation);
+				if (result == null) result = caseInfrastructureRoot(reactionObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -695,8 +688,8 @@ public class CCDSwitch<T> {
 				T result = caseSeverityObservation(severityObservation);
 				if (result == null) result = caseObservation(severityObservation);
 				if (result == null) result = caseClinicalStatement(severityObservation);
-				if (result == null) result = caseRIMAct(severityObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(severityObservation);
+				if (result == null) result = caseAct(severityObservation);
+				if (result == null) result = caseInfrastructureRoot(severityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -706,8 +699,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseFamilyHistoryObservation(causeOfDeathObservation);
 				if (result == null) result = caseObservation(causeOfDeathObservation);
 				if (result == null) result = caseClinicalStatement(causeOfDeathObservation);
-				if (result == null) result = caseRIMAct(causeOfDeathObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(causeOfDeathObservation);
+				if (result == null) result = caseAct(causeOfDeathObservation);
+				if (result == null) result = caseInfrastructureRoot(causeOfDeathObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -715,8 +708,8 @@ public class CCDSwitch<T> {
 				EncounterLocation encounterLocation = (EncounterLocation)theEObject;
 				T result = caseEncounterLocation(encounterLocation);
 				if (result == null) result = caseParticipant2(encounterLocation);
-				if (result == null) result = caseRIMParticipation(encounterLocation);
-				if (result == null) result = caseRIMInfrastructureRoot(encounterLocation);
+				if (result == null) result = caseParticipation(encounterLocation);
+				if (result == null) result = caseInfrastructureRoot(encounterLocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -724,8 +717,8 @@ public class CCDSwitch<T> {
 				Product product = (Product)theEObject;
 				T result = caseProduct(product);
 				if (result == null) result = caseManufacturedProduct(product);
-				if (result == null) result = caseRIMRole(product);
-				if (result == null) result = caseRIMInfrastructureRoot(product);
+				if (result == null) result = caseRole(product);
+				if (result == null) result = caseInfrastructureRoot(product);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -735,8 +728,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(advanceDirectiveStatusObservation);
 				if (result == null) result = caseObservation(advanceDirectiveStatusObservation);
 				if (result == null) result = caseClinicalStatement(advanceDirectiveStatusObservation);
-				if (result == null) result = caseRIMAct(advanceDirectiveStatusObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectiveStatusObservation);
+				if (result == null) result = caseAct(advanceDirectiveStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(advanceDirectiveStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -744,18 +737,18 @@ public class CCDSwitch<T> {
 				AdvanceDirectiveVerification advanceDirectiveVerification = (AdvanceDirectiveVerification)theEObject;
 				T result = caseAdvanceDirectiveVerification(advanceDirectiveVerification);
 				if (result == null) result = caseParticipant2(advanceDirectiveVerification);
-				if (result == null) result = caseRIMParticipation(advanceDirectiveVerification);
-				if (result == null) result = caseRIMInfrastructureRoot(advanceDirectiveVerification);
+				if (result == null) result = caseParticipation(advanceDirectiveVerification);
+				if (result == null) result = caseInfrastructureRoot(advanceDirectiveVerification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.AUTHORIZATION_ACTIVITY: {
 				AuthorizationActivity authorizationActivity = (AuthorizationActivity)theEObject;
 				T result = caseAuthorizationActivity(authorizationActivity);
-				if (result == null) result = caseAct(authorizationActivity);
+				if (result == null) result = caseCDA_Act(authorizationActivity);
 				if (result == null) result = caseClinicalStatement(authorizationActivity);
-				if (result == null) result = caseRIMAct(authorizationActivity);
-				if (result == null) result = caseRIMInfrastructureRoot(authorizationActivity);
+				if (result == null) result = caseAct(authorizationActivity);
+				if (result == null) result = caseInfrastructureRoot(authorizationActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -771,8 +764,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseStatusObservation(functionalStatusObservation);
 				if (result == null) result = caseObservation(functionalStatusObservation);
 				if (result == null) result = caseClinicalStatement(functionalStatusObservation);
-				if (result == null) result = caseRIMAct(functionalStatusObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(functionalStatusObservation);
+				if (result == null) result = caseAct(functionalStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(functionalStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -780,19 +773,19 @@ public class CCDSwitch<T> {
 				ProductInstance productInstance = (ProductInstance)theEObject;
 				T result = caseProductInstance(productInstance);
 				if (result == null) result = caseParticipantRole(productInstance);
-				if (result == null) result = caseRIMRole(productInstance);
-				if (result == null) result = caseRIMInfrastructureRoot(productInstance);
+				if (result == null) result = caseRole(productInstance);
+				if (result == null) result = caseInfrastructureRoot(productInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.PROCEDURE_ACTIVITY_ACT: {
 				ProcedureActivityAct procedureActivityAct = (ProcedureActivityAct)theEObject;
 				T result = caseProcedureActivityAct(procedureActivityAct);
-				if (result == null) result = caseAct(procedureActivityAct);
+				if (result == null) result = caseCDA_Act(procedureActivityAct);
 				if (result == null) result = caseProcedureActivity(procedureActivityAct);
 				if (result == null) result = caseClinicalStatement(procedureActivityAct);
-				if (result == null) result = caseRIMAct(procedureActivityAct);
-				if (result == null) result = caseRIMInfrastructureRoot(procedureActivityAct);
+				if (result == null) result = caseAct(procedureActivityAct);
+				if (result == null) result = caseInfrastructureRoot(procedureActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -802,8 +795,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseObservation(procedureActivityObservation);
 				if (result == null) result = caseProcedureActivity(procedureActivityObservation);
 				if (result == null) result = caseClinicalStatement(procedureActivityObservation);
-				if (result == null) result = caseRIMAct(procedureActivityObservation);
-				if (result == null) result = caseRIMInfrastructureRoot(procedureActivityObservation);
+				if (result == null) result = caseAct(procedureActivityObservation);
+				if (result == null) result = caseInfrastructureRoot(procedureActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -813,8 +806,8 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseProcedure(procedureActivityProcedure);
 				if (result == null) result = caseProcedureActivity(procedureActivityProcedure);
 				if (result == null) result = caseClinicalStatement(procedureActivityProcedure);
-				if (result == null) result = caseRIMAct(procedureActivityProcedure);
-				if (result == null) result = caseRIMInfrastructureRoot(procedureActivityProcedure);
+				if (result == null) result = caseAct(procedureActivityProcedure);
+				if (result == null) result = caseInfrastructureRoot(procedureActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -822,8 +815,8 @@ public class CCDSwitch<T> {
 				PayerEntity payerEntity = (PayerEntity)theEObject;
 				T result = casePayerEntity(payerEntity);
 				if (result == null) result = caseAssignedEntity(payerEntity);
-				if (result == null) result = caseRIMRole(payerEntity);
-				if (result == null) result = caseRIMInfrastructureRoot(payerEntity);
+				if (result == null) result = caseRole(payerEntity);
+				if (result == null) result = caseInfrastructureRoot(payerEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -831,8 +824,8 @@ public class CCDSwitch<T> {
 				CoveredParty coveredParty = (CoveredParty)theEObject;
 				T result = caseCoveredParty(coveredParty);
 				if (result == null) result = caseParticipantRole(coveredParty);
-				if (result == null) result = caseRIMRole(coveredParty);
-				if (result == null) result = caseRIMInfrastructureRoot(coveredParty);
+				if (result == null) result = caseRole(coveredParty);
+				if (result == null) result = caseInfrastructureRoot(coveredParty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -840,18 +833,18 @@ public class CCDSwitch<T> {
 				PolicySubscriber policySubscriber = (PolicySubscriber)theEObject;
 				T result = casePolicySubscriber(policySubscriber);
 				if (result == null) result = caseParticipantRole(policySubscriber);
-				if (result == null) result = caseRIMRole(policySubscriber);
-				if (result == null) result = caseRIMInfrastructureRoot(policySubscriber);
+				if (result == null) result = caseRole(policySubscriber);
+				if (result == null) result = caseInfrastructureRoot(policySubscriber);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.COVERAGE_PLAN_DESCRIPTION: {
 				CoveragePlanDescription coveragePlanDescription = (CoveragePlanDescription)theEObject;
 				T result = caseCoveragePlanDescription(coveragePlanDescription);
-				if (result == null) result = caseAct(coveragePlanDescription);
+				if (result == null) result = caseCDA_Act(coveragePlanDescription);
 				if (result == null) result = caseClinicalStatement(coveragePlanDescription);
-				if (result == null) result = caseRIMAct(coveragePlanDescription);
-				if (result == null) result = caseRIMInfrastructureRoot(coveragePlanDescription);
+				if (result == null) result = caseAct(coveragePlanDescription);
+				if (result == null) result = caseInfrastructureRoot(coveragePlanDescription);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -897,36 +890,6 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problem Act</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problem Act</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProblemAct(ProblemAct object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProblemObservation(ProblemObservation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Problem Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -942,17 +905,17 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Act</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProblemStatusObservation(ProblemStatusObservation object) {
+	public T caseProblemAct(ProblemAct object) {
 		return null;
 	}
 
@@ -972,21 +935,6 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Patient Awareness</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Patient Awareness</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePatientAwareness(PatientAwareness object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Family History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1002,32 +950,47 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Family History Observation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Social History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Family History Observation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Social History Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFamilyHistoryObservation(FamilyHistoryObservation object) {
+	public T caseSocialHistorySection(SocialHistorySection object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Family History Organizer</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Alerts Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Family History Organizer</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Alerts Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFamilyHistoryOrganizer(FamilyHistoryOrganizer object) {
+	public T caseAlertsSection(AlertsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Results Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Results Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResultsSection(ResultsSection object) {
 		return null;
 	}
 
@@ -1062,32 +1025,17 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Procedures Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Procedures Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSocialHistorySection(SocialHistorySection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Social History Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Social History Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSocialHistoryObservation(SocialHistoryObservation object) {
+	public T caseProceduresSection(ProceduresSection object) {
 		return null;
 	}
 
@@ -1103,246 +1051,6 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseEncountersSection(EncountersSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseImmunizationsSection(ImmunizationsSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Encounters Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Encounters Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEncountersActivity(EncountersActivity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationActivity(MedicationActivity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSupplyActivity(SupplyActivity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Alerts Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Alerts Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAlertsSection(AlertsSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Alert Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Alert Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAlertObservation(AlertObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reaction Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reaction Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReactionObservation(ReactionObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSeverityObservation(SeverityObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Alert Status Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Alert Status Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAlertStatusObservation(AlertStatusObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cause Of Death Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cause Of Death Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCauseOfDeathObservation(CauseOfDeathObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Results Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Results Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResultsSection(ResultsSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Series Number Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Series Number Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationSeriesNumberObservation(MedicationSeriesNumberObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Status Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Status Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicationStatusObservation(MedicationStatusObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEncounterLocation(EncounterLocation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Product</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Product</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProduct(Product object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Procedures Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Procedures Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProceduresSection(ProceduresSection object) {
 		return null;
 	}
 
@@ -1377,261 +1085,6 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Vital Signs Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Vital Signs Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVitalSignsSection(VitalSignsSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicalEquipmentSection(MedicalEquipmentSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Functional Status Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Functional Status Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFunctionalStatusSection(FunctionalStatusSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Advance Directives Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Advance Directives Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdvanceDirectivesSection(AdvanceDirectivesSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Payers Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Payers Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePayersSection(PayersSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Purpose Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Purpose Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePurposeSection(PurposeSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Purpose Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Purpose Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePurposeActivity(PurposeActivity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Vital Signs Organizer</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Vital Signs Organizer</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVitalSignsOrganizer(VitalSignsOrganizer object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdvanceDirectiveObservation(AdvanceDirectiveObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Status Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Status Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdvanceDirectiveStatusObservation(AdvanceDirectiveStatusObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Verification</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Verification</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdvanceDirectiveVerification(AdvanceDirectiveVerification object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Coverage Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Coverage Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCoverageActivity(CoverageActivity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePolicyActivity(PolicyActivity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Payer Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Payer Entity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePayerEntity(PayerEntity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Covered Party</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Covered Party</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCoveredParty(CoveredParty object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Policy Subscriber</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Policy Subscriber</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePolicySubscriber(PolicySubscriber object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Authorization Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Authorization Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAuthorizationActivity(AuthorizationActivity object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1647,92 +1100,17 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Procedure Activity</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Encounter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Procedure Activity</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Encounter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProcedureActivity(ProcedureActivity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Patient Instruction</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Patient Instruction</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePatientInstruction(PatientInstruction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fulfillment Instruction</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fulfillment Instruction</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFulfillmentInstruction(FulfillmentInstruction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Functional Status Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Functional Status Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFunctionalStatusObservation(FunctionalStatusObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Product Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Product Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProductInstance(ProductInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Age Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Age Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAgeObservation(AgeObservation object) {
+	public T casePlanOfCareActivityEncounter(PlanOfCareActivityEncounter object) {
 		return null;
 	}
 
@@ -1748,21 +1126,6 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T casePlanOfCareActivityObservation(PlanOfCareActivityObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Encounter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Encounter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePlanOfCareActivityEncounter(PlanOfCareActivityEncounter object) {
 		return null;
 	}
 
@@ -1812,6 +1175,621 @@ public class CCDSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImmunizationsSection(ImmunizationsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vital Signs Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVitalSignsSection(VitalSignsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vital Signs Organizer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVitalSignsOrganizer(VitalSignsOrganizer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicalEquipmentSection(MedicalEquipmentSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Functional Status Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Functional Status Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionalStatusSection(FunctionalStatusSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directives Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directives Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectivesSection(AdvanceDirectivesSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectiveObservation(AdvanceDirectiveObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Payers Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Payers Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePayersSection(PayersSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coverage Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coverage Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoverageActivity(CoverageActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePolicyActivity(PolicyActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Purpose Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Purpose Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePurposeSection(PurposeSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Purpose Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Purpose Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePurposeActivity(PurposeActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemObservation(ProblemObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemStatusObservation(ProblemStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatusObservation(StatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Health Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Health Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemHealthStatusObservation(ProblemHealthStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Age Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Age Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAgeObservation(AgeObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Patient Awareness</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Patient Awareness</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatientAwareness(PatientAwareness object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Family History Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Family History Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFamilyHistoryObservation(FamilyHistoryObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Family History Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Family History Organizer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFamilyHistoryOrganizer(FamilyHistoryOrganizer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Social History Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Social History Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSocialHistoryObservation(SocialHistoryObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encounters Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encounters Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncountersActivity(EncountersActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationActivity(MedicationActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Series Number Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Series Number Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationSeriesNumberObservation(MedicationSeriesNumberObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationStatusObservation(MedicationStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Patient Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Patient Instruction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatientInstruction(PatientInstruction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupplyActivity(SupplyActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fulfillment Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fulfillment Instruction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFulfillmentInstruction(FulfillmentInstruction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Alert Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Alert Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAlertObservation(AlertObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Alert Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Alert Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAlertStatusObservation(AlertStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reaction Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reaction Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReactionObservation(ReactionObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSeverityObservation(SeverityObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cause Of Death Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cause Of Death Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCauseOfDeathObservation(CauseOfDeathObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncounterLocation(EncounterLocation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Product</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProduct(Product object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectiveStatusObservation(AdvanceDirectiveStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Verification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Verification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectiveVerification(AdvanceDirectiveVerification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Authorization Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Authorization Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAuthorizationActivity(AuthorizationActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Procedure Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Procedure Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcedureActivity(ProcedureActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Functional Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Functional Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionalStatusObservation(FunctionalStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Product Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Product Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProductInstance(ProductInstance object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Procedure Activity Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1857,6 +1835,51 @@ public class CCDSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Payer Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Payer Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePayerEntity(PayerEntity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Covered Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Covered Party</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoveredParty(CoveredParty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Policy Subscriber</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Policy Subscriber</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePolicySubscriber(PolicySubscriber object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Coverage Plan Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1897,7 +1920,7 @@ public class CCDSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
+	public T caseInfrastructureRoot(InfrastructureRoot object) {
 		return null;
 	}
 
@@ -1912,37 +1935,22 @@ public class CCDSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMAct(RIMAct object) {
+	public T caseAct(Act object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStatusObservation(StatusObservation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problem Health Status Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problem Health Status Observation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProblemHealthStatusObservation(ProblemHealthStatusObservation object) {
+	public T caseSection(Section object) {
 		return null;
 	}
 
@@ -1987,7 +1995,7 @@ public class CCDSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAct(Act object) {
+	public T caseCDA_Act(org.openhealthtools.mdht.uml.cda.Act object) {
 		return null;
 	}
 
@@ -2003,36 +2011,6 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseObservation(Observation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSection(Section object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Participant2</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Participant2</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParticipant2(Participant2 object) {
 		return null;
 	}
 
@@ -2063,6 +2041,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseEncounter(Encounter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Procedure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcedure(Procedure object) {
 		return null;
 	}
 
@@ -2107,7 +2100,37 @@ public class CCDSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRIMParticipation(RIMParticipation object) {
+	public T caseParticipation(Participation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participant2</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participant2</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParticipant2(Participant2 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRole(Role object) {
 		return null;
 	}
 
@@ -2123,21 +2146,6 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseManufacturedProduct(ManufacturedProduct object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRIMRole(RIMRole object) {
 		return null;
 	}
 
@@ -2168,21 +2176,6 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseAssignedEntity(AssignedEntity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Procedure</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Procedure</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProcedure(Procedure object) {
 		return null;
 	}
 

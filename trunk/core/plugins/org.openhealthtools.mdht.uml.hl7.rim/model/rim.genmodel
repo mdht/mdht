@@ -27,48 +27,48 @@
   <foreignModel>rim.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="RIM" basePackage="org.openhealthtools.mdht.uml.hl7"
       disposableProviderFactory="true" ecorePackage="rim.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.hl7.rim.operations">
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMAct">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getClassCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getMoodCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getNegationInd"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getParticipations"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getOutboundRelationships"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMAct/getInboundRelationships"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Act">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getClassCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getMoodCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getNegationInd"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getParticipations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getOutboundRelationships"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getInboundRelationships"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMInfrastructureRoot">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMInfrastructureRoot/getRealmCodes"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMInfrastructureRoot/getTypeId"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMInfrastructureRoot/getTemplateIds"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMInfrastructureRoot/getNullFlavor"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//InfrastructureRoot">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getRealmCodes"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getTypeId"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getTemplateIds"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getNullFlavor"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMParticipation">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMParticipation/getTypeCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMParticipation/getAct"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMParticipation/getRole"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Participation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getRole"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMRole">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getClassCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getPlayer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getScoper"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getParticipations"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getOutboundLinks"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRole/getInboundLinks"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Role">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getClassCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getPlayer"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getScoper"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getParticipations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getOutboundLinks"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getInboundLinks"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMEntity">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getClassCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getDeterminerCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getPlayedRoles"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMEntity/getScopedRoles"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Entity">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getClassCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getDeterminerCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getPlayedRoles"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getScopedRoles"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMRoleLink">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRoleLink/getTypeCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRoleLink/getTarget"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMRoleLink/getSource"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RoleLink">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getTarget"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getSource"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RIMActRelationship">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMActRelationship/getTypeCode"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMActRelationship/getTarget"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RIMActRelationship/getSource"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//ActRelationship">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getTarget"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getSource"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

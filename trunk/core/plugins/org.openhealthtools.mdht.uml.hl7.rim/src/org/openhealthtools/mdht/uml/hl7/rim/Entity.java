@@ -7,29 +7,34 @@
 package org.openhealthtools.mdht.uml.hl7.rim;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
-import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Infrastructure Root</b></em>'.
+ * A representation of the model object '<em><b>Entity</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.hl7.rim.RIMPackage#getRIMInfrastructureRoot()
+ * @see org.openhealthtools.mdht.uml.hl7.rim.RIMPackage#getEntity()
  * @model abstract="true"
  * @generated
  */
-public interface RIMInfrastructureRoot extends EObject {
+public interface Entity extends InfrastructureRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	EList<CS> getRealmCodes();
+	Enumerator getClassCode();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Enumerator getDeterminerCode();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -37,7 +42,7 @@ public interface RIMInfrastructureRoot extends EObject {
 	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	II getTypeId();
+	EList<Role> getPlayedRoles();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,14 +50,6 @@ public interface RIMInfrastructureRoot extends EObject {
 	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList<II> getTemplateIds();
+	EList<Role> getScopedRoles();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" ordered="false"
-	 * @generated
-	 */
-	NullFlavor getNullFlavor();
-
-} // RIMInfrastructureRoot
+} // Entity

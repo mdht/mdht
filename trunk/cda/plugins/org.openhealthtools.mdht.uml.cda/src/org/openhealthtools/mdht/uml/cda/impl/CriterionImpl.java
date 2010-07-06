@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ActImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -56,7 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *
  * @generated
  */
-public class CriterionImpl extends RIMActImpl implements Criterion {
+public class CriterionImpl extends ActImpl implements Criterion {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

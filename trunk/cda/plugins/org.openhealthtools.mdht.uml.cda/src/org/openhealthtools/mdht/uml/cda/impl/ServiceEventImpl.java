@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ActImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -57,7 +57,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *
  * @generated
  */
-public class ServiceEventImpl extends RIMActImpl implements ServiceEvent {
+public class ServiceEventImpl extends ActImpl implements ServiceEvent {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

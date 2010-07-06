@@ -9,10 +9,10 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
+import org.openhealthtools.mdht.uml.hl7.rim.Entity;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMEntityOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.EntityOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,13 +23,13 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMEntityOperations;
  *
  * @generated
  */
-public abstract class RIMEntityImpl extends RIMInfrastructureRootImpl implements RIMEntity {
+public abstract class EntityImpl extends InfrastructureRootImpl implements Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMEntityImpl() {
+	protected EntityImpl() {
 		super();
 	}
 
@@ -40,25 +40,7 @@ public abstract class RIMEntityImpl extends RIMInfrastructureRootImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RIMPackage.Literals.RIM_ENTITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMRole> getPlayedRoles() {
-		return RIMEntityOperations.getPlayedRoles(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<RIMRole> getScopedRoles() {
-		return RIMEntityOperations.getScopedRoles(this);
+		return RIMPackage.Literals.ENTITY;
 	}
 
 	/**
@@ -67,7 +49,7 @@ public abstract class RIMEntityImpl extends RIMInfrastructureRootImpl implements
 	 * @generated
 	 */
 	public Enumerator getClassCode() {
-		return RIMEntityOperations.getClassCode(this);
+		return EntityOperations.getClassCode(this);
 	}
 
 	/**
@@ -76,7 +58,25 @@ public abstract class RIMEntityImpl extends RIMInfrastructureRootImpl implements
 	 * @generated
 	 */
 	public Enumerator getDeterminerCode() {
-		return RIMEntityOperations.getDeterminerCode(this);
+		return EntityOperations.getDeterminerCode(this);
 	}
 
-} //RIMEntityImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Role> getPlayedRoles() {
+		return EntityOperations.getPlayedRoles(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Role> getScopedRoles() {
+		return EntityOperations.getScopedRoles(this);
+	}
+
+} //EntityImpl

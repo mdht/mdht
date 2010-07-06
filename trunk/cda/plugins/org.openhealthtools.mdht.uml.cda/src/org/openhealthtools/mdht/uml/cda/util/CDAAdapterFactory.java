@@ -1,12 +1,6 @@
 /**
- * Copyright (c) 2009 IBM Corporation
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     IBM Corporation - initial API and implementation
+ * <copyright>
+ * </copyright>
  *
  * $Id$
  */
@@ -114,12 +108,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.QTY;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMAct;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMEntity;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
 
 /**
  * <!-- begin-user-doc -->
@@ -550,12 +542,12 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 				return createRegistryDelegateAdapter();
 			}
 			@Override
-			public Adapter caseRIMInfrastructureRoot(RIMInfrastructureRoot object) {
-				return createRIMInfrastructureRootAdapter();
+			public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
+				return createInfrastructureRootAdapter();
 			}
 			@Override
-			public Adapter caseRIMAct(RIMAct object) {
-				return createRIMActAdapter();
+			public Adapter caseRIM_Act(org.openhealthtools.mdht.uml.hl7.rim.Act object) {
+				return createRIM_ActAdapter();
 			}
 			@Override
 			public Adapter caseANY(ANY object) {
@@ -566,20 +558,20 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 				return createIIAdapter();
 			}
 			@Override
-			public Adapter caseRIMParticipation(RIMParticipation object) {
-				return createRIMParticipationAdapter();
+			public Adapter caseParticipation(Participation object) {
+				return createParticipationAdapter();
 			}
 			@Override
-			public Adapter caseRIMRole(RIMRole object) {
-				return createRIMRoleAdapter();
+			public Adapter caseRole(Role object) {
+				return createRoleAdapter();
 			}
 			@Override
-			public Adapter caseRIMEntity(RIMEntity object) {
-				return createRIMEntityAdapter();
+			public Adapter caseRIM_Entity(org.openhealthtools.mdht.uml.hl7.rim.Entity object) {
+				return createRIM_EntityAdapter();
 			}
 			@Override
-			public Adapter caseRIMActRelationship(RIMActRelationship object) {
-				return createRIMActRelationshipAdapter();
+			public Adapter caseActRelationship(ActRelationship object) {
+				return createActRelationshipAdapter();
 			}
 			@Override
 			public Adapter caseQTY(QTY object) {
@@ -1912,30 +1904,30 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot <em>Infrastructure Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot <em>Infrastructure Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMInfrastructureRoot
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot
 	 * @generated
 	 */
-	public Adapter createRIMInfrastructureRootAdapter() {
+	public Adapter createInfrastructureRootAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMAct <em>Act</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Act <em>Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMAct
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Act
 	 * @generated
 	 */
-	public Adapter createRIMActAdapter() {
+	public Adapter createRIM_ActAdapter() {
 		return null;
 	}
 
@@ -1968,58 +1960,58 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMRole <em>Role</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Participation <em>Participation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMRole
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Participation
 	 * @generated
 	 */
-	public Adapter createRIMRoleAdapter() {
+	public Adapter createParticipationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMEntity <em>Entity</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMEntity
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Role
 	 * @generated
 	 */
-	public Adapter createRIMEntityAdapter() {
+	public Adapter createRoleAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship <em>Act Relationship</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMActRelationship
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Entity
 	 * @generated
 	 */
-	public Adapter createRIMActRelationshipAdapter() {
+	public Adapter createRIM_EntityAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation <em>Participation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.ActRelationship <em>Act Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.hl7.rim.RIMParticipation
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.ActRelationship
 	 * @generated
 	 */
-	public Adapter createRIMParticipationAdapter() {
+	public Adapter createActRelationshipAdapter() {
 		return null;
 	}
 

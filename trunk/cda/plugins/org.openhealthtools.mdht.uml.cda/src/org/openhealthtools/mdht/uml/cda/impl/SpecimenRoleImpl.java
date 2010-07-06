@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.SpecimenRole;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMRoleImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.RoleImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassSpecimen;
 
@@ -51,7 +51,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassSpecimen;
  *
  * @generated
  */
-public class SpecimenRoleImpl extends RIMRoleImpl implements SpecimenRole {
+public class SpecimenRoleImpl extends RoleImpl implements SpecimenRole {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

@@ -3,48 +3,47 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rim"
     nsURI="http://www.openhealthtools.org/mdht/uml/hl7/rim" nsPrefix="rim">
-  <eClassifiers xsi:type="ecore:EClass" name="RIMAct" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+  <eClassifiers xsi:type="ecore:EClass" name="Act" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
     <eOperations name="getMoodCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
     <eOperations name="getNegationInd" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
-    <eOperations name="getParticipations" ordered="false" upperBound="-1" eType="#//RIMParticipation"/>
-    <eOperations name="getOutboundRelationships" ordered="false" upperBound="-1" eType="#//RIMActRelationship"/>
-    <eOperations name="getInboundRelationships" ordered="false" upperBound="-1" eType="#//RIMActRelationship"/>
+    <eOperations name="getParticipations" ordered="false" upperBound="-1" eType="#//Participation"/>
+    <eOperations name="getOutboundRelationships" ordered="false" upperBound="-1" eType="#//ActRelationship"/>
+    <eOperations name="getInboundRelationships" ordered="false" upperBound="-1" eType="#//ActRelationship"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RIMInfrastructureRoot" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="InfrastructureRoot" abstract="true">
     <eOperations name="getRealmCodes" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"/>
     <eOperations name="getTypeId" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//II"/>
     <eOperations name="getTemplateIds" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//II"/>
     <eOperations name="getNullFlavor" ordered="false" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RIMParticipation" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+  <eClassifiers xsi:type="ecore:EClass" name="Participation" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
-    <eOperations name="getAct" ordered="false" lowerBound="1" eType="#//RIMAct"/>
-    <eOperations name="getRole" ordered="false" lowerBound="1" eType="#//RIMRole"/>
+    <eOperations name="getAct" ordered="false" lowerBound="1" eType="#//Act"/>
+    <eOperations name="getRole" ordered="false" lowerBound="1" eType="#//Role"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RIMRole" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+  <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
-    <eOperations name="getPlayer" ordered="false" eType="#//RIMEntity"/>
-    <eOperations name="getScoper" ordered="false" eType="#//RIMEntity"/>
-    <eOperations name="getParticipations" ordered="false" upperBound="-1" eType="#//RIMParticipation"/>
-    <eOperations name="getOutboundLinks" ordered="false" upperBound="-1" eType="#//RIMRoleLink"/>
-    <eOperations name="getInboundLinks" ordered="false" upperBound="-1" eType="#//RIMRoleLink"/>
+    <eOperations name="getPlayer" ordered="false" eType="#//Entity"/>
+    <eOperations name="getScoper" ordered="false" eType="#//Entity"/>
+    <eOperations name="getParticipations" ordered="false" upperBound="-1" eType="#//Participation"/>
+    <eOperations name="getOutboundLinks" ordered="false" upperBound="-1" eType="#//RoleLink"/>
+    <eOperations name="getInboundLinks" ordered="false" upperBound="-1" eType="#//RoleLink"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RIMEntity" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
     <eOperations name="getDeterminerCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
-    <eOperations name="getPlayedRoles" ordered="false" upperBound="-1" eType="#//RIMRole"/>
-    <eOperations name="getScopedRoles" ordered="false" upperBound="-1" eType="#//RIMRole"/>
+    <eOperations name="getPlayedRoles" ordered="false" upperBound="-1" eType="#//Role"/>
+    <eOperations name="getScopedRoles" ordered="false" upperBound="-1" eType="#//Role"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RIMRoleLink" abstract="true" eSuperTypes="#//RIMInfrastructureRoot">
+  <eClassifiers xsi:type="ecore:EClass" name="RoleLink" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
-    <eOperations name="getTarget" ordered="false" lowerBound="1" eType="#//RIMRole"/>
-    <eOperations name="getSource" ordered="false" lowerBound="1" eType="#//RIMRole"/>
+    <eOperations name="getTarget" ordered="false" lowerBound="1" eType="#//Role"/>
+    <eOperations name="getSource" ordered="false" lowerBound="1" eType="#//Role"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RIMActRelationship" abstract="true"
-      eSuperTypes="#//RIMInfrastructureRoot">
+  <eClassifiers xsi:type="ecore:EClass" name="ActRelationship" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
-    <eOperations name="getTarget" ordered="false" lowerBound="1" eType="#//RIMAct"/>
-    <eOperations name="getSource" ordered="false" lowerBound="1" eType="#//RIMAct"/>
+    <eOperations name="getTarget" ordered="false" lowerBound="1" eType="#//Act"/>
+    <eOperations name="getSource" ordered="false" lowerBound="1" eType="#//Act"/>
   </eClassifiers>
 </ecore:EPackage>

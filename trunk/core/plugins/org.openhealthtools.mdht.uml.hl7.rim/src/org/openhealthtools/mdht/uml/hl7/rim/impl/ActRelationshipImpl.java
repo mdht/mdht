@@ -8,27 +8,27 @@ package org.openhealthtools.mdht.uml.hl7.rim.impl;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRole;
-import org.openhealthtools.mdht.uml.hl7.rim.RIMRoleLink;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMRoleLinkOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Role Link</b></em>'.
+ * An implementation of the model object '<em><b>Act Relationship</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class RIMRoleLinkImpl extends RIMInfrastructureRootImpl implements RIMRoleLink {
+public abstract class ActRelationshipImpl extends InfrastructureRootImpl implements ActRelationship {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMRoleLinkImpl() {
+	protected ActRelationshipImpl() {
 		super();
 	}
 
@@ -39,25 +39,7 @@ public abstract class RIMRoleLinkImpl extends RIMInfrastructureRootImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RIMPackage.Literals.RIM_ROLE_LINK;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMRole getTarget() {
-		return RIMRoleLinkOperations.getTarget(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RIMRole getSource() {
-		return RIMRoleLinkOperations.getSource(this);
+		return RIMPackage.Literals.ACT_RELATIONSHIP;
 	}
 
 	/**
@@ -66,7 +48,25 @@ public abstract class RIMRoleLinkImpl extends RIMInfrastructureRootImpl implemen
 	 * @generated
 	 */
 	public Enumerator getTypeCode() {
-		return RIMRoleLinkOperations.getTypeCode(this);
+		return ActRelationshipOperations.getTypeCode(this);
 	}
 
-} //RIMRoleLinkImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Act getTarget() {
+		return ActRelationshipOperations.getTarget(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Act getSource() {
+		return ActRelationshipOperations.getSource(this);
+	}
+
+} //ActRelationshipImpl

@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.cda.RecordTarget;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMActOperations;
  *
  * @generated
  */
-public class ClinicalDocumentOperations extends RIMActOperations {
+public class ClinicalDocumentOperations extends ActOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

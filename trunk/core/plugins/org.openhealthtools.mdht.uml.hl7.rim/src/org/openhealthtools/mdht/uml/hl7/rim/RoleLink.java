@@ -14,35 +14,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.hl7.rim.RIMPackage#getRIMRoleLink()
+ * @see org.openhealthtools.mdht.uml.hl7.rim.RIMPackage#getRoleLink()
  * @model abstract="true"
  * @generated
  */
-public interface RIMRoleLink extends RIMInfrastructureRoot {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	RIMRole getTarget();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	RIMRole getSource();
-
+public interface RoleLink extends InfrastructureRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,4 +27,20 @@ public interface RIMRoleLink extends RIMInfrastructureRoot {
 	 */
 	Enumerator getTypeCode();
 
-} // RIMRoleLink
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Role getTarget();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Role getSource();
+
+} // RoleLink

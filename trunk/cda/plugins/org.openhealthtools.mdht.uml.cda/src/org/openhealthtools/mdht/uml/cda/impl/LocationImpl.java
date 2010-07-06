@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Location;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMParticipationImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ParticipationImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetLocation;
 
@@ -50,7 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetLocation;
  *
  * @generated
  */
-public class LocationImpl extends RIMParticipationImpl implements Location {
+public class LocationImpl extends ParticipationImpl implements Location {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

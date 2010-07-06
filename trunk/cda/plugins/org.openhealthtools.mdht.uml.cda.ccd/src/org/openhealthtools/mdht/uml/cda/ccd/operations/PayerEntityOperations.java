@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.PayerEntity;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMRoleOperations;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMRoleOperations;
  *
  * @generated
  */
-public class PayerEntityOperations extends RIMRoleOperations {
+public class PayerEntityOperations extends RoleOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

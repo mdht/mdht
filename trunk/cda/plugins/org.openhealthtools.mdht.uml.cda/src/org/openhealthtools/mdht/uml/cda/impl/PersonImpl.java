@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMEntityImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.EntityImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -54,7 +54,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *
  * @generated
  */
-public class PersonImpl extends RIMEntityImpl implements Person {
+public class PersonImpl extends EntityImpl implements Person {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

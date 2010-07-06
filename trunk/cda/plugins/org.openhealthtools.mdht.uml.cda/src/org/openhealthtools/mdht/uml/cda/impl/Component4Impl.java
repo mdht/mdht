@@ -41,7 +41,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
-import org.openhealthtools.mdht.uml.hl7.rim.impl.RIMActRelationshipImpl;
+import org.openhealthtools.mdht.uml.hl7.rim.impl.ActRelationshipImpl;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipHasComponent;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
@@ -74,7 +74,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *
  * @generated
  */
-public class Component4Impl extends RIMActRelationshipImpl implements Component4 {
+public class Component4Impl extends ActRelationshipImpl implements Component4 {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

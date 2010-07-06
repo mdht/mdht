@@ -4,7 +4,7 @@
     <packageImport xmi:id="_3JZ8MDxVEd6JwqSGecoePg">
       <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_YiANsDxYEd6JwqSGecoePg" name="RIMAct" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_YiANsDxYEd6JwqSGecoePg" name="Act" isAbstract="true">
       <generalization xmi:id="_m3CcAIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
       <ownedOperation xmi:id="_-dONcIX_Ed-kaPURbz5lmQ" name="getClassCode">
         <ownedParameter xmi:id="_DS474IYAEd-kaPURbz5lmQ" name="return" direction="return">
@@ -42,7 +42,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_TNdfQIVdEd-AiaWHb2ykDw" name="RIMInfrastructureRoot" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_TNdfQIVdEd-AiaWHb2ykDw" name="InfrastructureRoot" isAbstract="true">
       <ownedOperation xmi:id="_N2kLcIX_Ed-kaPURbz5lmQ" name="getRealmCodes">
         <ownedParameter xmi:id="_QP4MMIX_Ed-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
@@ -72,7 +72,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_ZWm84IVfEd-9G7Mk0NuIMg" name="RIMEntity" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZWm84IVfEd-9G7Mk0NuIMg" name="Entity" isAbstract="true">
       <generalization xmi:id="_pJgN4IVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
       <ownedOperation xmi:id="_sA5CwIYEEd-kaPURbz5lmQ" name="getClassCode">
         <ownedParameter xmi:id="_sA5CwYYEEd-kaPURbz5lmQ" name="return" direction="return">
@@ -97,7 +97,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_eITxUIVfEd-9G7Mk0NuIMg" name="RIMRole" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_eITxUIVfEd-9G7Mk0NuIMg" name="Role" isAbstract="true">
       <generalization xmi:id="_rgSfEIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
       <ownedOperation xmi:id="__sMIsIYEEd-kaPURbz5lmQ" name="getClassCode">
         <ownedParameter xmi:id="__sMIsYYEEd-kaPURbz5lmQ" name="return" direction="return">
@@ -135,7 +135,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_frJdEIVfEd-9G7Mk0NuIMg" name="RIMActRelationship" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_frJdEIVfEd-9G7Mk0NuIMg" name="ActRelationship" isAbstract="true">
       <generalization xmi:id="_n0lCUIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
       <ownedOperation xmi:id="_EIowwIYDEd-kaPURbz5lmQ" name="getTypeCode">
         <ownedParameter xmi:id="_FkLhsIYDEd-kaPURbz5lmQ" name="return" direction="return">
@@ -149,7 +149,7 @@
         <ownedParameter xmi:id="_CaLIMIYhEd-kaPURbz5lmQ" name="return" type="_YiANsDxYEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_hVk-kIVfEd-9G7Mk0NuIMg" name="RIMParticipation" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_hVk-kIVfEd-9G7Mk0NuIMg" name="Participation" isAbstract="true">
       <generalization xmi:id="_qbKDAIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
       <ownedOperation xmi:id="_5TxOEIYEEd-kaPURbz5lmQ" name="getTypeCode">
         <ownedParameter xmi:id="_5Tx1IIYEEd-kaPURbz5lmQ" name="return" direction="return">
@@ -163,7 +163,7 @@
         <ownedParameter xmi:id="_osbMEIYqEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return"/>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_2qV8sIVfEd-9G7Mk0NuIMg" name="RIMRoleLink" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_2qV8sIVfEd-9G7Mk0NuIMg" name="RoleLink" isAbstract="true">
       <generalization xmi:id="_4PgjsIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
       <ownedOperation xmi:id="_8Dx3kIYEEd-kaPURbz5lmQ" name="getTypeCode">
         <ownedParameter xmi:id="_8Dx3kYYEEd-kaPURbz5lmQ" name="return" direction="return">
