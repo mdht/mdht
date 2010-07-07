@@ -20,12 +20,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
@@ -42,17 +44,23 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.Procedure;
+import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 
 public class InstanceGenerator {
 
 	private Map<String,EPackage> packageURIMap = new HashMap<String,EPackage>();
 		
+	private CDARegistry cdaRegistry = new CDARegistry();
+	
 	public InstanceGenerator() {
 	}
 	
@@ -101,22 +109,60 @@ public class InstanceGenerator {
 				// ignore if no init() method
 			}
 			
-			//TODO templateId.assigningAuthorityName = umlClass.getQualifiedName()
+			//templateId.assigningAuthorityName = umlClass.getQualifiedName()
+			List<EObject> templateIds = getChildElements(eObject, "templateId");
+			if (templateIds.isEmpty()) {
+				II templateId = DatatypesFactory.eINSTANCE.createII();
+				templateId.setAssigningAuthorityName(CDAModelUtil.getPrefixedSplitName(umlClass));
 
-			//TODO if no 'title' and has 'code', set title to code.displayName
+				EStructuralFeature feature = eClass.getEStructuralFeature("templateId");
+				if (feature != null) {
+					EList<II> ids = new BasicEList<II>();
+					ids.add(templateId);
+					eObject.eSet(feature, ids);
+				}
+			}
+			else {
+				//add assigningAuthorityName to all templateId elements
+				for (EObject templateId : templateIds) {
+					if (templateId instanceof II) {
+						EClass templateClass = cdaRegistry.getEClass(
+								((II) templateId).getRoot(), eObject);
+						if (templateClass != null) {
+							StringBuffer className = new StringBuffer();
+							className.append(templateClass.getEPackage().getName().toUpperCase());
+							for (String token : UMLUtil.splitName(templateClass.getName())) {
+								className.append(" ").append(token);
+							}
+							
+							((II)templateId).setAssigningAuthorityName(className.toString());
+						}
+					}
+				}
+			}
+
+			//If section has no 'title' and does have 'code', set title to code.displayName
+			if (eObject instanceof Section) {
+				Section section = (Section)eObject;
+				if (section.getTitle() == null && section.getCode() != null
+						&& section.getCode().getDisplayName() != null) {
+					section.setTitle(DatatypesFactory.eINSTANCE.createST(
+							section.getCode().getDisplayName()));
+				}
+			}
 			
-			List<Property> attributes = getAllConformanceRules(umlClass);
-			for (Property property : attributes) {
+			List<Property> conformanceRules = getAllConformanceRules(umlClass);
+			for (Property property : conformanceRules) {
 				EClass typeEClass = getEClass(property.getType());
 				if (typeEClass != null && typeEClass.getEPackage().getName().equals("datatypes")) {
 					setDatatypeValue(property, eObject, typeEClass);
 				}
 			}
 			if (levels > 0) {
-				// for now, don't get inherited associations (too many redefined dups)
-				List<Property> properties = umlClass.getAttributes();
-				for (Property property : properties) {
-					if (property.getAssociation() != null) {
+				// for now, only include inherited associations from same model, to exclude overridden
+				for (Property property : conformanceRules) {
+					if (property.getAssociation() != null
+							&& UMLUtil.getTopPackage(property).equals(UMLUtil.getTopPackage(umlClass))) {
 						EObject type = createInstance((Class)property.getType(), --levels);
 						addChild(eObject, type);
 					}
@@ -286,7 +332,7 @@ public class InstanceGenerator {
 			try {
 				EObject value = typeClass.getEPackage().getEFactoryInstance().create(typeClass);
 
-				setDefaultValues(value);
+				setDefaultValues(property, value);
 				
 				if (currentValue instanceof EList) {
 					owner.eSet(feature, Collections.singletonList(value));
@@ -307,21 +353,82 @@ public class InstanceGenerator {
 		}
 	}
 	
-	public void setDefaultValues(EObject dataValue) {
-		if ("IVL_TS".equals(dataValue.eClass().getName())) {
-			EStructuralFeature low = dataValue.eClass().getEStructuralFeature("low");
-			EStructuralFeature high = dataValue.eClass().getEStructuralFeature("high");
+	public void setDefaultValues(Property property, EObject dataValue) {
+		if (dataValue instanceof IVL_TS) {
 			IVXB_TS lowValue = DatatypesFactory.eINSTANCE.createIVXB_TS();
 			lowValue.setValue("1972");
 			IVXB_TS highValue = DatatypesFactory.eINSTANCE.createIVXB_TS();
 			highValue.setValue("2008");
-			dataValue.eSet(low, lowValue);
-			dataValue.eSet(high, highValue);
+			
+			((IVL_TS)dataValue).setLow(lowValue);
+			((IVL_TS)dataValue).setHigh(highValue);
 		}
-		else if("II".equals(dataValue.eClass().getName())) {
-			EStructuralFeature root = dataValue.eClass().getEStructuralFeature("root");
-			dataValue.eSet(root, UUID.randomUUID().toString());
+		else if(dataValue instanceof II) {
+			((II)dataValue).setRoot(UUID.randomUUID().toString());
 		}
+
+// This is already done by init() method.
+//		else if(dataValue instanceof ED) {
+//			TextValue textValue = CDAProfileUtil.getTextValue(property);
+//			if (textValue != null && textValue.getValue() != null) {
+//				((ED)dataValue).addText(textValue.getValue());
+//			}
+//		}
+		
+// This is already done by init() method.
+//		else if(dataValue instanceof CD) {
+//			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+//			CodeSystemVersion codeSystemVersion = codeSystemConstraint==null ? null : codeSystemConstraint.getReference();
+//			
+//			ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
+//			ValueSetVersion valueSetVersion = valueSetConstraint==null ? null : valueSetConstraint.getReference();
+//
+//			String codeSystemName = null;
+//			String codeSystemId = null;
+//			if (codeSystemConstraint != null) {
+//				if (codeSystemConstraint.getCode() != null) {
+//					((CD)dataValue).setCode(codeSystemConstraint.getCode());
+//				}
+//				codeSystemName = codeSystemVersion==null ? codeSystemConstraint.getName() : codeSystemVersion.getBase_Enumeration().getName();
+//				codeSystemId = codeSystemVersion==null ? codeSystemConstraint.getIdentifier() : codeSystemVersion.getIdentifier();
+//			}
+//			else if (valueSetConstraint != null) {
+//				if (valueSetVersion != null) {
+//					codeSystemVersion = valueSetVersion.getCodeSystem();
+//					
+//					codeSystemName = codeSystemVersion==null ? null : codeSystemVersion.getBase_Enumeration().getName();
+//					codeSystemId = codeSystemVersion==null ? null : codeSystemVersion.getIdentifier();
+//				}
+//			}
+//
+//			if (codeSystemName != null) {
+//				((CD)dataValue).setCodeSystemName(codeSystemName);
+//			}
+//			if (codeSystemId != null) {
+//				((CD)dataValue).setCodeSystem(codeSystemId);
+//			}
+//		}
+	}
+
+	@SuppressWarnings("unchecked")
+	private List<EObject> getChildElements(EObject eObject, String name) {
+		List<EObject> results = new ArrayList<EObject>();
+
+		EStructuralFeature feature = eObject.eClass().getEStructuralFeature(name);
+		if (feature != null) {
+			if (feature.isMany()) {
+				for (Object object : (List<Object>)eObject.eGet(feature)) {
+					if (object instanceof EObject)
+						results.add((EObject)object);
+				}
+			} else {
+				Object object = eObject.eGet(feature);
+				if (object instanceof EObject)
+					results.add((EObject)object);
+			}
+		}
+		
+		return results;
 	}
 	
 	public void save(EObject eObject, Writer writer) {
@@ -352,6 +459,57 @@ public class InstanceGenerator {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+	}
+	
+//	================================================
+// copied from CDA model internal package, for use here
+	protected class CDARegistry {
+		private Map<String, EClass> classes = null;
+		private Map<EClass, RegistryDelegate> delegates = null;
+		private static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
+		private static final String TEMPLATE_ID_ROOT = "templateId.root";
+		private static final String CONTEXT_DEPENDENT = "contextDependent";
+		private static final String REGISTRY_DELEGATE = "registryDelegate";
+
+		private CDARegistry() {
+			classes = new HashMap<String, EClass>();
+			delegates = new HashMap<EClass, RegistryDelegate>();
+			load();
+		}
+
+		private void load() {
+			EPackage.Registry registry = EPackage.Registry.INSTANCE;
+			for (String key : registry.keySet().toArray(new String[registry.size()])) {
+				try {
+					EPackage ePackage = registry.getEPackage(key);
+					for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+						String templateId = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
+						if (templateId != null) {
+							String contextDependent = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
+							if ("true".equals(contextDependent)) {
+								String registryDelegate = EcoreUtil.getAnnotation(ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
+								EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
+								classes.put(templateId, eClass);
+								if (!delegates.containsKey(eClass)) {
+									delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
+								}
+							} else {
+								classes.put(templateId, (EClass) eClassifier);
+							}
+						}
+					}
+				} catch (Exception e) {}
+			}
+		}
+
+		public EClass getEClass(String templateId, Object context) {
+			EClass eClass = classes.get(templateId);
+			if (delegates.containsKey(eClass)) {
+				RegistryDelegate delegate = delegates.get(eClass);
+				eClass = delegate.getEClass(templateId, context);
+			}
+			return eClass;
 		}
 	}
 }
