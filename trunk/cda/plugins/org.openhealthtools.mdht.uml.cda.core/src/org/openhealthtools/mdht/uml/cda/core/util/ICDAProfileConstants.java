@@ -7,13 +7,17 @@ public interface ICDAProfileConstants {
 	/*
 	 * Entry Stereotype and Properties
 	 */
+	/** @deprecated */
 	public static final String ENTRY = "Entry";
+	/** @deprecated */
 	public static final String ENTRY_TYPE_CODE = "typeCode";
 	
 	/*
 	 * Entry Relationship Stereotype and Properties
 	 */
+	/** @deprecated */
 	public static final String ENTRY_RELATIONSHIP = "EntryRelationship";
+	/** @deprecated */
 	public static final String ENTRY_RELATIONSHIP_TYPE_CODE = "typeCode";
 
 	/*
@@ -33,6 +37,15 @@ public interface ICDAProfileConstants {
 	 * Association Validation Stereotype and Properties
 	 */
 	public static final String ASSOCIATION_VALIDATION = "AssociationValidation";
+
+	/*
+	 * Association Stereotype and Properties, may be used with AssociationValidation.
+	 */
+	public static final String ACT_RELATIONSHIP = "ActRelationship";
+	public static final String ACT_RELATIONSHIP_TYPE_CODE = "typeCode";
+	
+	public static final String PARTICIPATION = "Participation";
+	public static final String PARTICIPATION_TYPE_CODE = "typeCode";
 	
 	/*
 	 * Class Validation Stereotype and Properties
@@ -47,6 +60,7 @@ public interface ICDAProfileConstants {
 	/*
 	 * Vocab Specification Stereotype and Properties
 	 */
+	/** @deprecated */
 	public static final String VOCAB_SPECIFICATION = "VocabSpecification";
 	public static final String VOCAB_SPECIFICATION_CODE = "code";
 	public static final String VOCAB_SPECIFICATION_CODE_SYSTEM = "codeSystem";
@@ -96,7 +110,10 @@ public interface ICDAProfileConstants {
 	 */
 	public static final String SEVERITY_KIND = "SeverityKind";
 	public static final String NULL_FLAVOR_KIND = "NullFlavorKind";
+
+	/** @deprecated */
 	public static final String ENTRY_KIND = "EntryKind";
+	/** @deprecated */
 	public static final String ENTRY_RELATIONSHIP_KIND = "EntryRelationshipKind";
 	
 }
