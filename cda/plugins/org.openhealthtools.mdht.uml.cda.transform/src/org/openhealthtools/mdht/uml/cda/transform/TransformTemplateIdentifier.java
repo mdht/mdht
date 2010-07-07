@@ -20,8 +20,8 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 public class TransformTemplateIdentifier extends TransformAbstract {
 	private static final String REGISTRY_DELEGATE_NAME = "RegistryDelegate";

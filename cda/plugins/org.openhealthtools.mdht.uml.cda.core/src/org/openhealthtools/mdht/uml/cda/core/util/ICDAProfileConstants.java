@@ -1,4 +1,4 @@
-package org.openhealthtools.mdht.uml.cda.resources.util;
+package org.openhealthtools.mdht.uml.cda.core.util;
 
 public interface ICDAProfileConstants {
 

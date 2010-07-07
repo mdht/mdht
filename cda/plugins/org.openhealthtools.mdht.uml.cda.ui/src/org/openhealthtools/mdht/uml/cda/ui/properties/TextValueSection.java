@@ -47,8 +47,8 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 
 /**

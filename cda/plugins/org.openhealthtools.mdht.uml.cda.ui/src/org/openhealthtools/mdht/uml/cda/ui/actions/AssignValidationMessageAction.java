@@ -23,7 +23,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 
 public class AssignValidationMessageAction implements IObjectActionDelegate {

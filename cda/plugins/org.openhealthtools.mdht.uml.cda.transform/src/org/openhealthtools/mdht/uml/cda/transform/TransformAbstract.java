@@ -29,8 +29,8 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 /**

@@ -41,8 +41,6 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
@@ -523,6 +521,10 @@ public class CDAModelUtil {
 	}
 	
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
+		if (property.getType() == null) {
+			System.out.println("Property has null type: " + property.getQualifiedName());
+			return "";
+		}
 		if (property.getAssociation() != null && property.isNavigable()) {
 			return computeAssociationConformanceMessage(property, markup, xrefSource);
 		}

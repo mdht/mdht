@@ -10,7 +10,7 @@
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.resources.util;
+package org.openhealthtools.mdht.uml.cda.core.util;
 
 import java.util.List;
 
@@ -21,12 +21,25 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAResource;
 
 public class CDAProfileUtil {
 
+	public static TextValue getTextValue(Property property) {
+		TextValue textValue = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICDAProfileConstants.TEXT_VALUE);
+		if (stereotype != null) {
+			textValue = (TextValue) property.getStereotypeApplication(stereotype);
+		}
+		return textValue;
+	}
+	
 	/**
 	 * Load CDA profile into provided resource set and return Profile.
 	 */

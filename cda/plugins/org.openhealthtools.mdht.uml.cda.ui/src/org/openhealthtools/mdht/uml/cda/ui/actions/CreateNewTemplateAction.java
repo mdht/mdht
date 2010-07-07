@@ -27,7 +27,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.ui.dialogs.TemplateEditorViewContentProvider;
 import org.openhealthtools.mdht.uml.cda.ui.dialogs.TemplateEditorViewLabelProvider;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;

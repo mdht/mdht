@@ -3,8 +3,8 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 public class TransformPackage extends TransformAbstract {
 	public TransformPackage(EcoreTransformerOptions options) {
