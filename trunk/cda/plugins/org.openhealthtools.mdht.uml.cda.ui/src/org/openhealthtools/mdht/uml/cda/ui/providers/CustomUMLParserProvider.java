@@ -23,7 +23,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.ui.parsers.PropertyParser;
 /**
  * This class provides custom edit parsers for HL7 class diagrams.
