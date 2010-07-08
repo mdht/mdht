@@ -55,6 +55,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
@@ -224,6 +225,12 @@ public class PropertySection extends AbstractModelerPropertySection {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Type") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					property.setType((Classifier) type);
+					
+					// refresh children, cause change notification to be sent
+					Class owner = property.getClass_();
+					int position = owner.getOwnedAttributes().lastIndexOf(property);
+					owner.getOwnedAttributes().remove(property);
+					owner.getOwnedAttributes().add(position, property);
 
 					return Status.OK_STATUS;
 				}
