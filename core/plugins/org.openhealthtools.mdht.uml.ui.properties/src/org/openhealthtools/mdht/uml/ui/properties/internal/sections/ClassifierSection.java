@@ -127,6 +127,12 @@ public class ClassifierSection extends AbstractModelerPropertySection {
 						Generalization generalization = 
 							(Generalization) classifier.getGeneralizations().get(0);
 			    		generalization.setGeneral((Classifier)type);
+						
+						// refresh children, cause change notification to be sent
+						Classifier owner = generalization.getSpecific();
+						int position = owner.getGeneralizations().lastIndexOf(generalization);
+						owner.getGeneralizations().remove(generalization);
+						owner.getGeneralizations().add(position, generalization);
 					}
 			        return Status.OK_STATUS;
 			    }};
