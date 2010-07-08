@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
@@ -67,9 +68,9 @@ public class ClassExtItemProvider extends ClassItemProvider
 	/* (non-Javadoc)
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		Class clazz = (Class) object;
-		List children = new ArrayList();
+		List<Element> children = new ArrayList<Element>();
 		children.addAll(clazz.getOwnedComments());
 		for (Property property : clazz.getOwnedAttributes()) {
 			if (property.getAssociation() == null) {

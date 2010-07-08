@@ -26,6 +26,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
@@ -37,6 +38,7 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
@@ -109,7 +111,7 @@ public class PropertyExtItemProvider extends
 	}
 
 	/**
-	 * Diplay a multiplicity string of the format [lower..upper], unless
+	 * Display a multiplicity string of the format [lower..upper], unless
 	 * both lower and upper are == 1.
 	 * 
 	 * @param multElement
@@ -137,9 +139,9 @@ public class PropertyExtItemProvider extends
 	/* (non-Javadoc)
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		Property property = (Property) object;
-		List children = new ArrayList();
+		List<Element> children = new ArrayList<Element>();
 //		if (XSDProfileHelper.isNestedGroup(property)) {
 //			children.addAll(TypeOperations.getOwnedAttributes(property.getType()));
 //		}
@@ -150,10 +152,10 @@ public class PropertyExtItemProvider extends
 		return children;
 	}
 
-	public Collection getChildrenFeatures(Object object) {
+	public Collection<EStructuralFeature> getChildrenFeatures(Object object) {
 		// disallow other add/move commands
 		if (childrenFeatures == null) {
-			childrenFeatures = new ArrayList();
+			childrenFeatures = new ArrayList<EStructuralFeature>();
 			childrenFeatures.add(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS);
 			childrenFeatures.add(UMLPackage.Literals.ELEMENT__OWNED_COMMENT);
 			childrenFeatures.add(UMLPackage.Literals.PROPERTY__DEFAULT_VALUE);
@@ -266,7 +268,10 @@ public class PropertyExtItemProvider extends
 	 * @param multElement
 	 * @return
 	 */
-	protected String displayColumnMultiplicity(MultiplicityElement multElement) {
+	protected static String displayColumnMultiplicity(MultiplicityElement multElement) {
+		if (multElement == null)
+			return "";
+			
 		StringBuffer multDisplay = new StringBuffer();
 		multDisplay.append(multElement.getLower());
 		multDisplay.append("..");
@@ -407,7 +412,7 @@ public class PropertyExtItemProvider extends
 	 * Set multiplicity parsed from a string value, e.g. "0..1" or "1..*".
 	 * Must be called from within a transaction.
 	 */
-	private void setMultiplicity(MultiplicityElement multiplicityElement, String value ) {
+	protected static void setMultiplicity(MultiplicityElement multiplicityElement, String value ) {
 		int lower = 1;
 		int upper = 1;
 		
@@ -444,7 +449,7 @@ public class PropertyExtItemProvider extends
 	/**
 	 * Parse an multiplicity range token; map 'n', '*', or "unbounded" to -1
 	 */
-	private int parseMultiplicityRangeToken( String token ) {
+	protected static int parseMultiplicityRangeToken( String token ) {
 		try {
 			if (token.equalsIgnoreCase("n") || token.equals("*") || token.equalsIgnoreCase("unbounded"))
 				return LiteralUnlimitedNatural.UNLIMITED;
