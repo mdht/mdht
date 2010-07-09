@@ -12,11 +12,28 @@
  */
 package org.openhealthtools.mdht.uml.cda.ui.dialogs;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewContentProvider;
 
 /**
  *
  */
 public class TemplateEditorViewContentProvider extends SubclassEditorViewContentProvider {
+
+	public Object[] getChildren(Object parentElement) {
+		List<NamedElement> children = new ArrayList<NamedElement>();
+
+		if (parentElement instanceof Class) {
+			// add properties, owned and inherited
+			PropertyList propertyList = new PropertyList((Class) parentElement);
+			children.addAll(propertyList.getAttributes());
+			children.addAll(propertyList.getAssociationEnds());
+		}
+		return children.toArray();
+	}
 
 }
