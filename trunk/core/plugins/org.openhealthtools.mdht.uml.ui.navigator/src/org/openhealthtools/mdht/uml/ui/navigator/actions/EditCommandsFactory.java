@@ -286,7 +286,7 @@ public class EditCommandsFactory implements IPropertyListener {
 		
 		ISharedImages sharedImages = PlatformUI.getWorkbench().getSharedImages();
 
-		deleteAction = new DeleteAction(editingDomain, removeAllReferencesOnDelete()) {
+		deleteAction = new DeleteUMLAction(editingDomain, removeAllReferencesOnDelete()) {
 			public boolean updateSelection(IStructuredSelection selection) {
 				return super.updateSelection(unwrap(selection));
 			}
