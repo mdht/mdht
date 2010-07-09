@@ -32,7 +32,15 @@ public class TemplateEditorViewLabelProvider extends SubclassEditorViewLabelProv
 				INotationProvider provider = 
 					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
 				if (provider != null) {
-					Object image = provider.getAnnotationImage(((Property)element));
+					Property property = (Property)element;
+					Object image = null;
+					if (property.getAssociation() != null) {
+						image = provider.getAnnotationImage(property.getAssociation());
+					}
+					else {
+						image = provider.getAnnotationImage(property);
+					}
+					
 					if (image instanceof Image) {
 						return (Image) image;
 					}
