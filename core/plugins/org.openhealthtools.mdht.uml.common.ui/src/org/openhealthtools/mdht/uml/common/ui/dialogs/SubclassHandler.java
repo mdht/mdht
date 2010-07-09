@@ -18,8 +18,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class SubclassHandler {
@@ -106,6 +109,18 @@ public class SubclassHandler {
 
 				// add redefinition relationship
 				clonedProperty.getRedefinedProperties().add(property);
+				
+				// add association
+				if (property.getAssociation() != null) {
+					Association association = (Association) selectedClass.getNearestPackage()
+							.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
+					association.getMemberEnds().add(clonedProperty);
+					Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
+					ownedEnd.setType(selectedClass);
+					association.getOwnedEnds().add(ownedEnd);
+
+					UMLUtil.cloneStereotypes(property.getAssociation(), association);
+				}
 			}
 		}
 	}
@@ -125,12 +140,14 @@ public class SubclassHandler {
 		for (Property existingProp : existingAttrList) {
 			// Checking on the attribute name, assuming that the RIM core class (Act, Entity, etc.)
 			// does not have attribute names as its subclass attributes
-			if (existingProp.getAssociation() != null) {
-				// don't remove any properties that are part of an Association
-			} else if (!selectedAttrMap.containsKey(existingProp.getName())) {
+			if (!selectedAttrMap.containsKey(existingProp.getName())) {
 				// user unselected the existing attribute, remove it from the subclass
+				if (existingProp.getAssociation() != null) {
+					existingProp.getAssociation().destroy();
+				}
 				getSubclass().getOwnedAttributes().remove(existingProp);
-			} else {
+			} 
+			else {
 				// user did not uncheck the existing attribute, remove it from the
 				// user selection list, so we won't add duplicate attribute.
 				newAttrList.remove(selectedAttrMap.get(existingProp.getName()));
