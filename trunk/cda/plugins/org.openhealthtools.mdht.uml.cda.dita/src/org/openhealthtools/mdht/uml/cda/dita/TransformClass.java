@@ -49,16 +49,16 @@ public class TransformClass extends TransformAbstract {
 			}
 		}
 
-		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(umlClass,
-				ICDAProfileConstants.CDA_TEMPLATE);
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
-		if (hl7Template != null && cdaClass != null) {
-			if ("ClinicalDocument".equals(cdaClass.getName()))
+		if (cdaClass != null) {
+			if (CDAModelUtil.isClinicalDocument(cdaClass))
 				transformerOptions.getDocumentList().add(fileName);
-			else if ("Section".equals(cdaClass.getName()))
+			else if (CDAModelUtil.isSection(cdaClass))
 				transformerOptions.getSectionList().add(fileName);
-			else
+			else if (CDAModelUtil.isClinicalStatement(cdaClass))
 				transformerOptions.getClinicalStatementList().add(fileName);
+			else
+				transformerOptions.getClassList().add(fileName);
 		}
 		else {
 			transformerOptions.getClassList().add(fileName);
