@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
@@ -235,24 +236,31 @@ public class CDAModelUtil {
 				}
 
 				public Object caseProperty(Property property) {
+					Association association = property.getAssociation();
+					
+					// don't assign a message unless severity has been set
+					String severity = association != null ? getValidationSeverity(association)
+							: getValidationSeverity(property);
+					if (severity == null) {
+						return null;
+					}
+					
 					String message = computeConformanceMessage(property, markup);
 					if (message != null && message.length() > 0) {
-						Association association = property.getAssociation();
-						
-						if (!hasValidationSupport(property)) {
-							if (isXMLAttribute(property)) {
-								if (property.isReadOnly()) {
-									CDAProfileUtil.applyCDAStereotype(property, ICDAProfileConstants.PROPERTY_VALIDATION);
-								}
-							}
-							else if (association == null) {
-								CDAProfileUtil.applyCDAStereotype(property, ICDAProfileConstants.PROPERTY_VALIDATION);
-							}
-						}
-						
-						if (association != null && !hasValidationSupport(association)) {
-							CDAProfileUtil.applyCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
-						}
+//						if (!hasValidationSupport(property)) {
+//							if (isXMLAttribute(property)) {
+//								if (property.isReadOnly()) {
+//									CDAProfileUtil.applyCDAStereotype(property, ICDAProfileConstants.PROPERTY_VALIDATION);
+//								}
+//							}
+//							else if (association == null) {
+//								CDAProfileUtil.applyCDAStereotype(property, ICDAProfileConstants.PROPERTY_VALIDATION);
+//							}
+//						}
+//						
+//						if (association != null && !hasValidationSupport(association)) {
+//							CDAProfileUtil.applyCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
+//						}
 
 						if (association == null && hasValidationSupport(property)) {
 							setValidationMessage(property, message);
@@ -350,12 +358,6 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
-		// don't assign a message unless severity has been set
-		String severity = getValidationSeverity(association);
-		if (severity == null) {
-			return null;
-		}
-		
 		String ruleId = getConformanceRuleIds(association);
 		if (ruleId.length() > 0) {
 			message.append(markup?"<b>":"");
@@ -400,18 +402,23 @@ public class CDAModelUtil {
 			message.append(showXref?"</xref>":"");
 		}
 		
+		// include comment text only in markup output
+		if (markup && association.getOwnedComments().size() > 0) {
+			message.append("<ul>");
+			for (Comment comment : association.getOwnedComments()) {
+				message.append("<li>");
+				message.append(comment.getBody());
+				message.append("</li>");
+			}
+			message.append("</ul>");
+		}
+		
 		return message.toString();
 	}
 
 	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
-		
-		// don't assign a message unless severity has been set
-		String severity = getValidationSeverity(association);
-		if (severity == null) {
-			return null;
-		}
 		
 		Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(
 				association, ICDAProfileConstants.ENTRY);
@@ -534,6 +541,17 @@ public class CDAModelUtil {
 
 		message.append(markup?"</li>":"");
 		message.append(markup?"</ol>":"");
+
+		// include comment text only in markup output
+		if (markup && association.getOwnedComments().size() > 0) {
+			message.append("<ul>");
+			for (Comment comment : association.getOwnedComments()) {
+				message.append("<li>");
+				message.append(comment.getBody());
+				message.append("</li>");
+			}
+			message.append("</ul>");
+		}
 		
 		return message.toString();
 	}
@@ -551,12 +569,6 @@ public class CDAModelUtil {
 			return computeAssociationConformanceMessage(property, markup, xrefSource);
 		}
 
-		// don't assign a message unless severity has been set
-		String severity = getValidationSeverity(property);
-		if (severity == null) {
-			return null;
-		}
-		
 		StringBuffer message = new StringBuffer();
 
 		String ruleId = getConformanceRuleIds(property);
@@ -651,6 +663,17 @@ public class CDAModelUtil {
 		if (redefinedProperty == null || (!isXMLAttribute(property)
 				&& (property.getType() != redefinedProperty.getType()))) {
 			message.append(", where its data type is ").append(property.getType().getName());
+		}
+		
+		// include comment text only in markup output
+		if (markup && property.getOwnedComments().size() > 0) {
+			message.append("<ul>");
+			for (Comment comment : property.getOwnedComments()) {
+				message.append("<li>");
+				message.append(comment.getBody());
+				message.append("</li>");
+			}
+			message.append("</ul>");
 		}
 		
 		return message.toString();
@@ -866,6 +889,9 @@ public class CDAModelUtil {
 			}
 			
 			String keyword = getValidationKeyword(constraint);
+			if (keyword == null) {
+				keyword = "MAY";
+			}
 			message.append(markup?"<b>":"");
 			message.append(keyword);
 			message.append(markup?"</b>":"");
