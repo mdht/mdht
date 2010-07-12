@@ -29,7 +29,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Generalization;
-import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
@@ -237,7 +236,7 @@ public class CDAModelUtil {
 
 				public Object caseProperty(Property property) {
 					String message = computeConformanceMessage(property, markup);
-					if (message.length() > 0) {
+					if (message != null && message.length() > 0) {
 						Association association = property.getAssociation();
 						
 						if (!hasValidationSupport(property)) {
@@ -269,7 +268,7 @@ public class CDAModelUtil {
 				public Object caseConstraint(Constraint constraint) {
 					if (hasValidationSupport(constraint)) {
 						String message = computeConformanceMessage(constraint, markup);
-						if (message.length() > 0) {
+						if (message != null && message.length() > 0) {
 							setValidationMessage(constraint, message);
 						}
 					}
@@ -351,6 +350,12 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
+		// don't assign a message unless severity has been set
+		String severity = getValidationSeverity(association);
+		if (severity == null) {
+			return null;
+		}
+		
 		String ruleId = getConformanceRuleIds(association);
 		if (ruleId.length() > 0) {
 			message.append(markup?"<b>":"");
@@ -363,11 +368,16 @@ public class CDAModelUtil {
 		}
 		
 		String keyword = getValidationKeyword(association);
-		message.append(markup?"<b>":"");
-		message.append(keyword);
-		message.append(markup?"</b>":"");
+		if (keyword != null) {
+			message.append(markup?"<b>":"");
+			message.append(keyword);
+			message.append(markup?"</b>":"");
+			message.append(" contain ");
+		}
+		else {
+			message.append("Contains ");
+		}
 		
-		message.append(" contain ");
 		message.append(getMultiplicityString(property)).append(" ");
 
 		message.append(markup?"<tt>":"");
@@ -396,6 +406,13 @@ public class CDAModelUtil {
 	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup, Package xrefSource) {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
+		
+		// don't assign a message unless severity has been set
+		String severity = getValidationSeverity(association);
+		if (severity == null) {
+			return null;
+		}
+		
 		Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(
 				association, ICDAProfileConstants.ENTRY);
 		Stereotype entryRelationshipStereotype = CDAProfileUtil.getAppliedCDAStereotype(
@@ -457,11 +474,16 @@ public class CDAModelUtil {
 		}
 		
 		String keyword = getValidationKeyword(association);
-		message.append(markup?"<b>":"");
-		message.append(keyword);
-		message.append(markup?"</b>":"");
+		if (keyword != null) {
+			message.append(markup?"<b>":"");
+			message.append(keyword);
+			message.append(markup?"</b>":"");
+			message.append(" contain ");
+		}
+		else {
+			message.append("Contains ");
+		}
 		
-		message.append(" contain ");
 		message.append(getMultiplicityString(property)).append(" ");
 
 		message.append(markup?"<tt>":"");
@@ -528,6 +550,12 @@ public class CDAModelUtil {
 		if (property.getAssociation() != null && property.isNavigable()) {
 			return computeAssociationConformanceMessage(property, markup, xrefSource);
 		}
+
+		// don't assign a message unless severity has been set
+		String severity = getValidationSeverity(property);
+		if (severity == null) {
+			return null;
+		}
 		
 		StringBuffer message = new StringBuffer();
 
@@ -543,11 +571,16 @@ public class CDAModelUtil {
 		}
 		
 		String keyword = getValidationKeyword(property);
-		message.append(markup?"<b>":"");
-		message.append(keyword);
-		message.append(markup?"</b>":"");
+		if (keyword != null) {
+			message.append(markup?"<b>":"");
+			message.append(keyword);
+			message.append(markup?"</b>":"");
+			message.append(" contain ");
+		}
+		else {
+			message.append("Contains ");
+		}
 		
-		message.append(" contain ");
 		message.append(getMultiplicityString(property)).append(" ");
 		
 		message.append(markup?"<tt>":"");
@@ -998,7 +1031,8 @@ public class CDAModelUtil {
 				severity = ((Enumerator)value).getName();
 			}
 			
-			return (severity != null) ? severity : SEVERITY_ERROR;
+//			return (severity != null) ? severity : SEVERITY_ERROR;
+			return severity;
 		}
 		
 		return null;
@@ -1024,33 +1058,36 @@ public class CDAModelUtil {
 	
 	public static String getValidationKeyword(Element element) {
 		String severity = getValidationSeverity(element);
+		
 		if (severity != null) {
 			if (SEVERITY_INFO.equals(severity))
 				return "MAY";
-			if (SEVERITY_WARNING.equals(severity))
+			else if (SEVERITY_WARNING.equals(severity))
 				return "SHOULD";
-			else
+			else if (SEVERITY_ERROR.equals(severity))
 				return "SHALL";
 		}
 		
-		if (element instanceof Association) {
-			for (Property end : ((Association)element).getMemberEnds()) {
-				if (end.isNavigable()) {
-					element = end;
-					break;
-				}
-			}
-		}
+		return null;
 		
-		if (element instanceof MultiplicityElement) {
-			if (((MultiplicityElement)element).getLower() == 0)
-				return "MAY";
-			else
-				return "SHALL";
-		}
-		else {
-			return "SHALL";
-		}
+//		if (element instanceof Association) {
+//			for (Property end : ((Association)element).getMemberEnds()) {
+//				if (end.isNavigable()) {
+//					element = end;
+//					break;
+//				}
+//			}
+//		}
+//		
+//		if (element instanceof MultiplicityElement) {
+//			if (((MultiplicityElement)element).getLower() == 0)
+//				return "MAY";
+//			else
+//				return "SHALL";
+//		}
+//		else {
+//			return "SHALL";
+//		}
 	}
 
 	public static void setValidationMessage(Element constrainedElement, String message) {
