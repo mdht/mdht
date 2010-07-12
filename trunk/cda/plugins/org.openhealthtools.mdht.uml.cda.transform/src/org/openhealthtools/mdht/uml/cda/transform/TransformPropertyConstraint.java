@@ -24,6 +24,7 @@ import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
@@ -49,6 +50,13 @@ public class TransformPropertyConstraint extends TransformAbstract {
 
 		// don't process properties that are part of an Association
 		if (property.getAssociation() != null) {
+			return null;
+		}
+		
+		String severity = CDAModelUtil.getValidationSeverity(property);
+		if (severity == null) {
+			// not a conformance rule
+			removeModelElement(property);
 			return null;
 		}
 		

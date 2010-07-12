@@ -62,6 +62,14 @@ public class TransformAssociation extends TransformAbstract {
 			return null;
 		}
 
+		String severity = CDAModelUtil.getValidationSeverity(association);
+		if (severity == null) {
+			// not a conformance rule
+			removeModelElement(sourceProperty);
+			removeModelElement(association);
+			return null;
+		}
+		
 		Class cdaSourceClass = getCDAClass(sourceClass);
 		Class cdaTargetClass = getCDAClass(targetClass);
 		
@@ -213,14 +221,6 @@ public class TransformAssociation extends TransformAbstract {
 
 		Stereotype validationSupport = stereotype != null ? stereotype : CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
 		if (validationSupport != null) {
-			Object value = association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			String severity = "ERROR";
-			if (value instanceof EnumerationLiteral) {
-				severity = ((EnumerationLiteral)value).getName();
-			}
-			else if (value instanceof Enumerator) {
-				severity = ((Enumerator)value).getName();
-			}
 			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
 			
 			if ("INFO".equals(severity)) {
