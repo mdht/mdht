@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,7 +52,149 @@ ClinicalDocumentOperationsTest {
 				return PatientSummaryOperations.validatePatientSummaryTemplateId(
 						(PatientSummary) eObjectToTest, diagnostician, map);
 			}
-		} }; // TEST_CASE_ARRAY
+		},
+
+		// AdvanceDirectiveSection
+		// -------------------------------------------------------------
+		new CDAValidationTestCase("AdvanceDirectiveSection") {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return PatientSummaryOperations.validatePatientSummaryAdvanceDirectivesSection(
+						(PatientSummary) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				fail("Not Implemented");
+
+			}
+		},
+
+		// AllergiesReactionsSection
+		// -------------------------------------------------------------
+		new CDAValidationTestCase("AllergiesReactionsSection") {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return PatientSummaryOperations.validatePatientSummaryAllergiesReactionsSection(
+						(PatientSummary) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				fail("Not Implemented");
+
+			}
+		},
+
+		// ProblemListSection
+		// -------------------------------------------------------------
+		new CDAValidationTestCase("ProblemListSection") {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return PatientSummaryOperations.validatePatientSummaryProblemListSection(
+						(PatientSummary) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				fail("Not Implemented");
+
+			}
+		},
+
+		// EncountersSection
+		// -------------------------------------------------------------
+		new CDAValidationTestCase("EncountersSection") {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return PatientSummaryOperations.validatePatientSummaryEncountersSection(
+						(PatientSummary) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				fail("Not Implemented");
+
+			}
+		},
+
+		// ImmunizationsSection
+		// -------------------------------------------------------------
+		new CDAValidationTestCase("ImmunizationsSection") {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return PatientSummaryOperations.validatePatientSummaryImmunizationsSection(
+						(PatientSummary) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				fail("Not Implemented");
+
+			}
+		},
+
+		// PayersSection
+		// -------------------------------------------------------------
+		new CDAValidationTestCase("PayersSection") {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return PatientSummaryOperations.validatePatientSummaryPayersSection(
+						(PatientSummary) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				fail("Not Implemented");
+
+			}
+		},
+
+		// MedicationsSection
+		// -------------------------------------------------------------
+		new CDAValidationTestCase("MedicationsSection") {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return PatientSummaryOperations.validatePatientSummaryMedicationsSection(
+						(PatientSummary) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				fail("Not Implemented");
+
+			}
+		}
+
+	}; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -59,6 +202,7 @@ ClinicalDocumentOperationsTest {
 		// unmodifiable so a sub-class can't append their test cases.
 		final List<CDATestCase> retValue = super.getTestCases();
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		retValue.addAll(super.getTestCases());
 		return retValue;
 	}
 
