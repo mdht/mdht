@@ -79,43 +79,43 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				final VitalSign vs = (VitalSign) eObjectToTest;
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE1,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE1,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE2,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE2,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE3,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE3,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE4,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE4,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE5,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE5,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE6,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE6,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE7,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE7,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE8,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE8,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE9,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE9,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
-				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE10,
+				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE10,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
 
