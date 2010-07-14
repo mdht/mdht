@@ -48,6 +48,7 @@ import org.junit.runners.Suite;
 	HospitalCourseSectionOperationsTest.class,
 	HospitalDischargeMedicationsSectionOperationsTest.class,
 	ImmunizationsSectionOperationsTest.class,
+	LanguageCommunicationOperationsTest.class,
 	MedicalDevicesSectionOperationsTest.class,
 	MedicalDocumentOperationsTest.class, MedicationOperationsTest.class,
 	MedicationsAdministeredSectionOperationsTest.class,
