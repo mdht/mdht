@@ -21,11 +21,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemEntryOperationsTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * This class is a JUnit4 test case.
@@ -54,17 +53,23 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 						diagnostician, map);
 			}
 		},
-		// Information Source
-		// -------------------------------------------------------------
-		new InformationSourceCCDValidationTest() {
+
+		// Condition Entry Text
+		//-------------------------------------------------------------
+		new CCDValidationTestCase("text") {
 			@Override
 			protected boolean validate(final EObject eObjectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
-				return ProblemObservationOperations.
-				validateProblemObservationInformationSource(
-						(ProblemObservation) eObjectToTest,
+				return ConditionEntryOperations.
+				validateConditionEntryText(
+						(ConditionEntry) eObjectToTest,
 						diagnostician, map);
+			}
+
+			@Override
+			protected Object getValueToSet() {
+				return DatatypesFactory.eINSTANCE.createED("some text");
 			}
 		}
 
@@ -76,18 +81,19 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 		// unmodifiable so a sub-class can't append their test cases.
 		final List<CDATestCase> retValue = super.getTestCases();
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		retValue.addAll(super.getTestCases());
 		return retValue;
 	}
 
 	@Override
 	protected EObject getEObjectToValidate() {
-		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
-		Section section = CDAFactory.eINSTANCE.createSection();
+		final ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
+		final Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
-		ConditionEntry conditionEntry = HITSPFactory.eINSTANCE.createConditionEntry();
+		final ConditionEntry conditionEntry = HITSPFactory.eINSTANCE.createConditionEntry();
 		section.addObservation(conditionEntry);
 		return conditionEntry;
-//		return HITSPFactory.eINSTANCE.createConditionEntry();
+		//		return HITSPFactory.eINSTANCE.createConditionEntry();
 	}
 
 	@Override
