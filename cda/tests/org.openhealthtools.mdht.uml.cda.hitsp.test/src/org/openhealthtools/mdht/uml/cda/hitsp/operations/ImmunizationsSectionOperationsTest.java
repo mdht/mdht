@@ -17,7 +17,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
 
@@ -47,6 +51,31 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.ImmunizationsSectionOperationsTe
 						diagnostician, map);
 			}
 
+		},
+
+		// Section Immunization
+		// -------------------------------------------------------------
+		new EntryCCDValidationTest() {
+
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return ImmunizationsSectionOperations
+				.validateHITSPImmunizationsSectionImmunization(
+						(ImmunizationsSection) eObjectToTest,
+						diagnostician, map);
+			}
+
+			@Override
+			protected Object getValueToSet() {
+				final EList<Entry> retValue = new BasicEList<Entry>();
+				final Entry entry = CDAFactory.eINSTANCE.createEntry();
+				entry.setSubstanceAdministration(HITSPFactory.eINSTANCE
+						.createImmunization());
+				retValue.add(entry);
+				return retValue;
+			}
 		}
 
 	}; // TEST_CASE_ARRAY
