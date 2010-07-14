@@ -46,6 +46,7 @@ import org.junit.runners.Suite;
 	PlanOfCareSectionOperationsTest.class,
 	ProblemListSectionOperationsTest.class,
 	ReasonForReferralSectionOperationsTest.class,
+	ResultOperationsTest.class,
 	ReviewOfSystemsSectionOperationsTest.class,
 	SocialHistorySectionOperationsTest.class,
 	SurgeriesSectionOperationsTest.class,
