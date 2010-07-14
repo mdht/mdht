@@ -24,6 +24,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.VitalSignObservationOperationsTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * This class is a JUnit4 test case.
@@ -33,6 +34,19 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.14";
+
+	protected static final String CODE1 = "9279-1";
+	protected static final String CODE2 = "8867-4";
+	protected static final String CODE3 = "2710-2";
+	protected static final String CODE4 = "8480-6";
+	protected static final String CODE5 = "8462-4";
+	protected static final String CODE6 = "8310-5";
+	protected static final String CODE7 = "8302-2";
+	protected static final String CODE8 = "8306-3";
+	protected static final String CODE9 = "8287-5";
+	protected static final String CODE10 = "3141-9";
+
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
@@ -47,6 +61,71 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 						(VitalSign) eObjectToTest, diagnostician, map);
 			}
 
+		},
+
+		// Code
+		// -------------------------------------------------------------
+		new CCDValidationTestCase("code") {
+			@Override
+			protected boolean validate(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return VitalSignOperations.validateResultObservationCode(
+						(VitalSign) eObjectToTest, diagnostician, map);
+			}
+
+			@Override
+			public void doTest(final EObject eObjectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				final VitalSign vs = (VitalSign) eObjectToTest;
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE1,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE2,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE3,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE4,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE5,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE6,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE7,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE8,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE9,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+				vs.setCode(DatatypesFactory.eINSTANCE.createCD(CODE10,
+						CODE_SYSTEM, "foo", "bar"));
+				validate(vs, diagnostician, map);
+
+			}
+
+			@Override
+			protected Object getValueToSet() {
+				// TODO Auto-generated method stub
+				return null;
+			}
 		}
 
 	}; // TEST_CASE_ARRAY
@@ -57,6 +136,7 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 		// unmodifiable so a sub-class can't append their test cases.
 		final List<CDATestCase> retValue = super.getTestCases();
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		retValue.addAll(super.getTestCases());
 		return retValue;
 	}
 
