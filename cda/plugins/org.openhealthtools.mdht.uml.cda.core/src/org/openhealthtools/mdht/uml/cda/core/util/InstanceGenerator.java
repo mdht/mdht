@@ -108,35 +108,41 @@ public class InstanceGenerator {
 			} catch (Exception e) {
 				// ignore if no init() method
 			}
-			
-			//templateId.assigningAuthorityName = umlClass.getQualifiedName()
+
+			//add assigningAuthorityName to all templateId elements
 			List<EObject> templateIds = getChildElements(eObject, "templateId");
-			if (templateIds.isEmpty()) {
+			for (EObject templateId : templateIds) {
+				if (templateId instanceof II) {
+					EClass templateClass = cdaRegistry.getEClass(
+							((II) templateId).getRoot(), eObject);
+					if (templateClass != null) {
+						StringBuffer className = new StringBuffer();
+						className.append(templateClass.getEPackage().getName().toUpperCase());
+						for (String token : UMLUtil.splitName(templateClass.getName())) {
+							className.append(" ").append(token);
+						}
+						
+						((II)templateId).setAssigningAuthorityName(className.toString());
+					}
+				}
+			}
+			
+			// for draft IGs, template IDs may not be filled
+			String thisTemplateId = CDAModelUtil.getTemplateId(umlClass);
+			if (thisTemplateId == null) {
+				// insert new element without root attribute
 				II templateId = DatatypesFactory.eINSTANCE.createII();
 				templateId.setAssigningAuthorityName(CDAModelUtil.getPrefixedSplitName(umlClass));
 
 				EStructuralFeature feature = eClass.getEStructuralFeature("templateId");
 				if (feature != null) {
-					EList<II> ids = new BasicEList<II>();
-					ids.add(templateId);
-					eObject.eSet(feature, ids);
-				}
-			}
-			else {
-				//add assigningAuthorityName to all templateId elements
-				for (EObject templateId : templateIds) {
-					if (templateId instanceof II) {
-						EClass templateClass = cdaRegistry.getEClass(
-								((II) templateId).getRoot(), eObject);
-						if (templateClass != null) {
-							StringBuffer className = new StringBuffer();
-							className.append(templateClass.getEPackage().getName().toUpperCase());
-							for (String token : UMLUtil.splitName(templateClass.getName())) {
-								className.append(" ").append(token);
-							}
-							
-							((II)templateId).setAssigningAuthorityName(className.toString());
-						}
+//					EList<II> ids = new BasicEList<II>();
+//					ids.add(templateId);
+//					eObject.eSet(feature, ids);
+					
+					Object ids = eObject.eGet(feature);
+					if (ids instanceof EList<?>) {
+						((EList)ids).add(templateId);
 					}
 				}
 			}
