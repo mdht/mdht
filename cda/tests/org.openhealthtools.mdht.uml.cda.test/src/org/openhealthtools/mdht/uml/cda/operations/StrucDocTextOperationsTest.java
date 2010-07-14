@@ -34,11 +34,24 @@ public class StrucDocTextOperationsTest {
 	@Test
 	public final void testAddText() {
 		final StrucDocText strcDocText = CDAFactory.eINSTANCE
-				.createStrucDocText();
+		.createStrucDocText();
 		assertTrue(StrucDocTextOperations.getText(strcDocText).equals(""));
 		StrucDocTextOperations.addText(strcDocText, TEST_TEXT);
 		assertTrue(StrucDocTextOperations.getText(strcDocText)
 				.equals(TEST_TEXT));
+	}
+
+	/**
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations#addText(org.openhealthtools.mdht.uml.cda.StrucDocText, java.lang.String)}
+	 * .
+	 */
+	@Test(expected=IllegalArgumentException.class)
+	public final void testAddTextNull() {
+		final StrucDocText strcDocText = CDAFactory.eINSTANCE
+		.createStrucDocText();
+		assertTrue(StrucDocTextOperations.getText(strcDocText).equals(""));
+		StrucDocTextOperations.addText(strcDocText, null);
 	}
 
 	/**
@@ -51,4 +64,15 @@ public class StrucDocTextOperationsTest {
 		testAddText();
 	}
 
+	/**
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations#getText(org.openhealthtools.mdht.uml.cda.StrucDocText)}
+	 * .
+	 */
+	@Test
+	public final void testGetText_StructDocText() {
+		final StrucDocText strcDocText = CDAFactory.eINSTANCE
+		.createStrucDocText();
+		assertTrue(StrucDocTextOperations.getText(strcDocText, "foo")==null);
+	}
 } // StrucDocTextOperationsTest
