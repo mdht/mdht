@@ -35,6 +35,7 @@ import org.junit.runners.Suite;
 	CodedVitalSignsSectionOperationsTest.class,
 	ConcernEntryOperationsTest.class,
 	CombinationMedicationOperationsTest.class,
+	CommentOperationsTest.class,
 	ConditionalDoseOperationsTest.class,
 	CoverageEntryOperationsTest.class,
 	DischargeDiagnosisSectionOperationsTest.class,
