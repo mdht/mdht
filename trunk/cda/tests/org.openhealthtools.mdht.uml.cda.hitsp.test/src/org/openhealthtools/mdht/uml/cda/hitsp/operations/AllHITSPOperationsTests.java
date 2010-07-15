@@ -57,6 +57,7 @@ import org.junit.runners.Suite;
 	ReviewOfSystemsSectionOperationsTest.class,
 	SocialHistorySectionOperationsTest.class,
 	SurgeriesSectionOperationsTest.class,
+	VitalSignOperationsTest.class,
 	VitalSignsSectionOperationsTest.class
 
 })
