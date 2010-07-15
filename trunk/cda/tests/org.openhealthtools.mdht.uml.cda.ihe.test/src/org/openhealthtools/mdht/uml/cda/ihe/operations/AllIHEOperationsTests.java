@@ -59,6 +59,7 @@ import org.junit.runners.Suite;
 	MedicationsSectionOperationsTest.class,
 	NormalDoseOperationsTest.class,
 	ObservationRequestEntryOperationsTest.class,
+	PayerEntryOperationsTest.class,
 	PayersSectionOperationsTest.class,
 	PhysicalExamNarrativeSectionOperationsTest.class,
 	PhysicalExamSectionOperationsTest.class,
