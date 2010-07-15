@@ -41,6 +41,7 @@ import org.junit.runners.Suite;
 	DischargeSummaryOperationsTest.class,
 	EncounterHistorySectionOperationsTest.class,
 	FamilyMedicalHistorySectionOperationsTest.class,
+	HealthcareProvidersPharmaciesOperationsTest.class,
 	HistoryOfPastIllnessSectionOperationsTest.class,
 	HistoryOfPresentIllnessOperationsTest.class,
 	HospitalAdmissionDiagnosisSectionOperationsTest.class,
