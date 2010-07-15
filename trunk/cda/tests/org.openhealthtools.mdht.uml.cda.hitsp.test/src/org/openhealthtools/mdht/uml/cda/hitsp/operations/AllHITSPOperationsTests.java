@@ -26,6 +26,7 @@ import org.junit.runners.Suite;
 	AllergyDrugSensitivityOperationsTest.class,
 	AssessmentAndPlanSectionOperationsTest.class,
 	ChiefComplaintSectionOperationsTest.class,
+	CommentOperationsTest.class,
 	ConditionEntryOperationsTest.class, ConditionOperationsTest.class,
 	DiagnosticResultsSectionOperationsTest.class,
 	DischargeDiagnosisSectionOperationsTest.class,
