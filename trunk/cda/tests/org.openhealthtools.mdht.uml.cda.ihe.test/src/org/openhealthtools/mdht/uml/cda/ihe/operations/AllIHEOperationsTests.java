@@ -38,6 +38,7 @@ import org.junit.runners.Suite;
 	ConditionalDoseOperationsTest.class,
 	CoverageEntryOperationsTest.class,
 	DischargeDiagnosisSectionOperationsTest.class,
+	DischargeSummaryOperationsTest.class,
 	EncounterHistorySectionOperationsTest.class,
 	FamilyMedicalHistorySectionOperationsTest.class,
 	HistoryOfPastIllnessSectionOperationsTest.class,
