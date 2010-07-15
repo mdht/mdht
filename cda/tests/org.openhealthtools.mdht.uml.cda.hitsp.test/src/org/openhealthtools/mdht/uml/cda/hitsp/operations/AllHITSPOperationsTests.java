@@ -33,6 +33,7 @@ import org.junit.runners.Suite;
 	EncountersSectionOperationsTest.class,
 	FamilyHistorySectionOperationsTest.class,
 	FunctionalStatusSectionOperationsTest.class,
+	HealthcareProviderOperationsTest.class,
 	HistoryOfPastIllnessSectionOperationsTest.class,
 	HistoryOfPresentIllnessOperationsTest.class,
 	HITSPRegistryDelegateOperationsTest.class,
