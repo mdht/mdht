@@ -49,8 +49,12 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 public class CDAModelUtil {
 
+	public static final String RIM_PACKAGE_NAME = "rim";
 	public static final String CDA_PACKAGE_NAME = "cda";
 
+	/** This base URL may be set from preferences or Ant task options. */
+	public static String INFOCENTER_URL = "http://www.cdatools.org/infocenter";
+	
 	public static final String SEVERITY_ERROR = "ERROR";
 	public static final String SEVERITY_WARNING = "WARNING";
 	public static final String SEVERITY_INFO = "INFO";
@@ -911,27 +915,32 @@ public class CDAModelUtil {
 			href="../" + target.getName() + ".dita";
 		}
 		else {
-			//TODO get this from preference setting or parameter
-			String infocenterURL = "http://www.cdatools.org/infocenter";
-			
 			String pathFolder = "classes";
 			String basePackage = "";
 			String prefix = "";
 			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.doc/classes/Act.html
 			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.ccd.doc/classes/ProblemAct.html
 			
-			if (! CDA_PACKAGE_NAME.equals(target.getNearestPackage().getName())) {
+			String packageName = target.getNearestPackage().getName();
+			if (RIM_PACKAGE_NAME.equals(packageName)) {
+				basePackage = "org.openhealthtools.mdht.uml.hl7.rim";
+			}
+			else if (CDA_PACKAGE_NAME.equals(packageName)) {
+				basePackage = "org.openhealthtools.mdht.uml.cda";
+			}
+			else {
 				basePackage = getModelBasePackage(target);
 				prefix = getModelNamespacePrefix(target);
 			}
+			
 			if (basePackage == null || basePackage.trim().length() == 0) {
 				basePackage = "org.openhealthtools.mdht.uml.cda";
 			}
 			if (prefix != null && prefix.trim().length() > 0) {
 				prefix += ".";
 			}
-			
-			href = infocenterURL + "/topic/" + basePackage + "."
+
+			href = INFOCENTER_URL + "/topic/" + basePackage + "."
 				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".html";
 		}
 		return href;
@@ -980,8 +989,11 @@ public class CDAModelUtil {
 		if (codegenSupport != null) {
 			prefix = (String) model.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX);
 		}
-		else if ("cda".equals(model.getName())) {
+		else if (CDA_PACKAGE_NAME.equals(model.getName())) {
 			prefix = "CDA";
+		}
+		else if (RIM_PACKAGE_NAME.equals(model.getName())) {
+			prefix = "RIM";
 		}
 		
 		return prefix;

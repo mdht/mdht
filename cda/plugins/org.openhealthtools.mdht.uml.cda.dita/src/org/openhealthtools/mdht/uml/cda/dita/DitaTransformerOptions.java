@@ -26,9 +26,11 @@ import org.openhealthtools.mdht.uml.cda.dita.internal.Activator;
  */
 public class DitaTransformerOptions {
 
+	public static final String BASE_URL = "baseURL";
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 	
 	private IPath outputPath;
+	private String baseURL;
 	private boolean includeVocabularyConstraints;
 	private List<EPackage> ePackages = new Vector<EPackage>();
 	
@@ -47,6 +49,7 @@ public class DitaTransformerOptions {
 	private void initializePreferences() {
 		Preferences store = Activator.getDefault().getPluginPreferences();
 
+		baseURL = store.getString(BASE_URL);
 		includeVocabularyConstraints = 
 			store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
 	}
@@ -57,6 +60,14 @@ public class DitaTransformerOptions {
 
 	public void setIncludeVocabularyConstraints(boolean includeVocabularyConstraints) {
 		this.includeVocabularyConstraints = includeVocabularyConstraints;
+	}
+
+	public String getBaseURL() {
+		return baseURL;
+	}
+
+	public void setBaseURL(String url) {
+		this.baseURL = url;
 	}
 
 	public IPath getOutputPath() {
