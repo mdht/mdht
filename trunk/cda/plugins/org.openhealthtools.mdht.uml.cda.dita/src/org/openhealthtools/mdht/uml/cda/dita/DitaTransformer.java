@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 
 public class DitaTransformer {
@@ -33,11 +34,15 @@ public class DitaTransformer {
 	private DitaTransformerOptions transformerOptions;
 
 	public DitaTransformer() {
-		transformerOptions = new DitaTransformerOptions();
+		this(new DitaTransformerOptions());
 	}
 
 	public DitaTransformer(DitaTransformerOptions options) {
 		transformerOptions = options;
+		
+		if (transformerOptions.getBaseURL() != null) {
+			CDAModelUtil.INFOCENTER_URL = transformerOptions.getBaseURL();
+		}
 	}
 	
 	public void transformElement(Element element) {

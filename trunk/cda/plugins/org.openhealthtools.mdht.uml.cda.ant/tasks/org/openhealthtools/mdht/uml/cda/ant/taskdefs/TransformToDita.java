@@ -35,6 +35,7 @@ public class TransformToDita extends CDAModelingSubTask {
 
     /* attributes of this Ant task */
 	private String ditaFilePath = null;
+	private String baseURL = null;
 	private Boolean includeVocabularyConstraints = null;
 	private List<EPackageClass> ePackageClasses = new ArrayList<EPackageClass>();
 
@@ -55,6 +56,9 @@ public class TransformToDita extends CDAModelingSubTask {
 
     	if (ditaFilePath == null && project.getProperty("ditaFilePath") != null) {
     		ditaFilePath = project.getProperty("ditaFilePath");
+    	}
+    	if (baseURL == null && project.getProperty("baseURL") != null) {
+    		baseURL = project.getProperty("baseURL");
     	}
     	if (includeVocabularyConstraints == null && project.getProperty("includeVocabularyConstraints") != null) {
     		includeVocabularyConstraints = Boolean.valueOf(project.getProperty("includeVocabularyConstraints"));
@@ -99,6 +103,9 @@ public class TransformToDita extends CDAModelingSubTask {
 
     	DitaTransformerOptions options = new DitaTransformerOptions();
     	options.setOutputPath(outputPath);
+    	if (baseURL != null) {
+    		options.setBaseURL(baseURL);
+    	}
     	if (includeVocabularyConstraints != null) {
     		options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
     	}
@@ -116,6 +123,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	public void setDitaFilePath(String path) {
 		ditaFilePath = path;
+	}
+
+	public void setBaseURL(String url) {
+		baseURL = url;
 	}
 
 	public void setIncludeVocabularyConstraints(boolean include) {
