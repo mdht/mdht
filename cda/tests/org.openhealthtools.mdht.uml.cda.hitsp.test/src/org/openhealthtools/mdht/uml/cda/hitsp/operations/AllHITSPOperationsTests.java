@@ -30,6 +30,7 @@ import org.junit.runners.Suite;
 	ConditionEntryOperationsTest.class, ConditionOperationsTest.class,
 	DiagnosticResultsSectionOperationsTest.class,
 	DischargeDiagnosisSectionOperationsTest.class,
+	EncountersSectionOperationsTest.class,
 	FamilyHistorySectionOperationsTest.class,
 	FunctionalStatusSectionOperationsTest.class,
 	HistoryOfPastIllnessSectionOperationsTest.class,
