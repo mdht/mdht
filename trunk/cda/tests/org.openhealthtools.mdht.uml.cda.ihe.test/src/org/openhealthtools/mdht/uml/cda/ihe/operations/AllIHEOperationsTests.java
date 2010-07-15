@@ -67,6 +67,7 @@ import org.junit.runners.Suite;
 	ProblemEntryOperationsTest.class,
 	ProcedureEntryPlanOfCareActivityProcedureOperationsTest.class,
 	ProcedureEntryProcedureActivityProcedureOperationsTest.class,
+	ProductEntryOperationsTest.class,
 	ReasonForReferralSectionOperationsTest.class,
 	ReviewOfSystemsSectionOperationsTest.class,
 	SocialHistorySectionOperationsTest.class,
