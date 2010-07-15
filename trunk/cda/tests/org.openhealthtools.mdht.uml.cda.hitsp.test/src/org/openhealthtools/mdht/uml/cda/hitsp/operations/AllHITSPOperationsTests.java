@@ -35,6 +35,7 @@ import org.junit.runners.Suite;
 	FunctionalStatusSectionOperationsTest.class,
 	HistoryOfPastIllnessSectionOperationsTest.class,
 	HistoryOfPresentIllnessOperationsTest.class,
+	HITSPRegistryDelegateOperationsTest.class,
 	HospitalAdmissionDiagnosisSectionOperationsTest.class,
 	HospitalCourseSectionOperationsTest.class,
 	HospitalDischargeMedicationsSectionOperationsTest.class,
