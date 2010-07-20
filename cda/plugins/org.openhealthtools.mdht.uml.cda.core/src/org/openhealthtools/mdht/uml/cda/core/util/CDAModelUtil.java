@@ -63,13 +63,13 @@ public class CDAModelUtil {
 		Class cdaClass = null;
 		
 		// if the provided class is from CDA and not a template
-		if (CDA_PACKAGE_NAME.equals(templateClass.getNearestPackage().getName()))
+		if (isCDAModel(templateClass))
 			return templateClass;
 		
 		for (Classifier parent : templateClass.allParents()) {
 			// nearest package may be null if CDA model is not available
 			if (parent.getNearestPackage() != null) {
-				if (CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()) && parent instanceof Class) {
+				if (isCDAModel(parent) && parent instanceof Class) {
 					cdaClass = (Class) parent;
 					break;
 				}
@@ -85,13 +85,13 @@ public class CDAModelUtil {
 		}
 
 		// if the provided property is from a CDA class and not a template
-		if (CDA_PACKAGE_NAME.equals(templateProperty.getNearestPackage().getName()))
+		if (isCDAModel(templateProperty))
 			return templateProperty;
 		
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
 				if (inherited.getName().equals(templateProperty.getName())
-						&& CDA_PACKAGE_NAME.equals(inherited.getNearestPackage().getName())) {
+						&& isCDAModel(inherited)) {
 					return inherited;
 				}
 			}
@@ -119,6 +119,10 @@ public class CDAModelUtil {
 		return null;
 	}
 
+	public static boolean isCDAModel(Element element) {
+		return CDA_PACKAGE_NAME.equals(element.getNearestPackage().getName());
+	}
+	
 	public static boolean isCDAType(Type templateClass, String typeName) {
 		if (templateClass instanceof Class && typeName != null) {
 			Class cdaClass = getCDAClass((Class)templateClass);
