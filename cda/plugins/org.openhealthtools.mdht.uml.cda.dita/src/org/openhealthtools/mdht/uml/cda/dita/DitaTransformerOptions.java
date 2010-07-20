@@ -29,9 +29,9 @@ public class DitaTransformerOptions {
 	public static final String BASE_URL = "baseURL";
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 	
-	private IPath outputPath;
-	private String baseURL;
-	private boolean includeVocabularyConstraints;
+	private IPath outputPath = null;
+	private String baseURL = null;
+	private boolean includeVocabularyConstraints = false;
 	private List<EPackage> ePackages = new Vector<EPackage>();
 	
 	// use Vector for a thread-safe synchronized List
@@ -49,7 +49,9 @@ public class DitaTransformerOptions {
 	private void initializePreferences() {
 		Preferences store = Activator.getDefault().getPluginPreferences();
 
-		baseURL = store.getString(BASE_URL);
+		if (store.getString(BASE_URL) != null && store.getString(BASE_URL).length() > 0) {
+			baseURL = store.getString(BASE_URL);
+		}
 		includeVocabularyConstraints = 
 			store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
 	}
