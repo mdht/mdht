@@ -216,6 +216,11 @@ public class TransformClassProperties extends TransformAbstract {
 			writer.println("<li>" + modelPrefix(constraint) +
 					CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
 		}
+		
+		// <ol> cannot be empty
+		if (allAttributes.isEmpty() && allProperties.isEmpty() && allConstraints.isEmpty()) {
+			writer.println("<li></li>");
+		}
 
 		writer.println("</ol>");
 	}
