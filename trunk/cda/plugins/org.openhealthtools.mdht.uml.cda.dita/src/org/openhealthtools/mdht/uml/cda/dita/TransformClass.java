@@ -101,8 +101,10 @@ public class TransformClass extends TransformAbstract {
 			}
 		}
 		writer.println();
-		writer.println("<ol conref=\"generated/_" + className + ".dita#classId/conformance\">");
-//		writer.println("<ol conref=\"generated/_" + className + ".dita#classId/aggregate\">");
+		writer.println("<ol audience=\"standards\" conref=\"generated/_" + className + ".dita#classId/conformance\">");
+		writer.println("<li></li>");
+		writer.println("</ol>");
+		writer.println("<ol audience=\"developer\" conref=\"generated/_" + className + ".dita#classId/aggregate\">");
 		writer.println("<li></li>");
 		writer.println("</ol>");
 //		if (hl7Template != null) {

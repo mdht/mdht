@@ -158,6 +158,10 @@ public class TransformClassProperties extends TransformAbstract {
 		// process parents in reverse order, CDA base class first
 		for (int i=allParents.size()-1; i>=0; i--) {
 			Class parent = (Class) allParents.get(i);
+			if (CDAModelUtil.isCDAModel(parent)) {
+				//TODO add option to include CDA class properties
+				continue;
+			}
 			
 			for (Property property : parent.getOwnedAttributes()) {
 				// if list contains this property name, replace it; else append
