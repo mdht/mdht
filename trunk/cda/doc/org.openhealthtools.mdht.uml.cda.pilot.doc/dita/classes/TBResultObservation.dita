@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>TB Result Observation</title>
+<shortdesc conref="generated/_TBResultObservation.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_TBResultObservation.dita#classId/prolog"></prolog>
+<body>
+<p>This clinical statement represents the name of the laboratory test, the date that the specimen for the laboratory test was taken from the subject of the case report, the date that the laboratory test was performed on the specimen, and the result of the laboratory test. If applicable, it may capture the physical body location from where the specimen for the lab report was taken from the subject. In addition, it captures the name of organization where the specimen was collected. This tuberculosis result observation also contains a susceptibility clinical statement.</p>
+
+<ol audience="standards" conref="generated/_TBResultObservation.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_TBResultObservation.dita#classId/aggregate">
+<li></li>
+</ol>
+<fig>
+<title>TB Result Observation example</title>
+<codeblock conref="generated/_TBResultObservation.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>
