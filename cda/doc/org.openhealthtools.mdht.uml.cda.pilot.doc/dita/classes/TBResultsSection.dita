@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>TB Results Section</title>
+<shortdesc conref="generated/_TBResultsSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_TBResultsSection.dita#classId/prolog"></prolog>
+<body>
+<p>The tuberculosis results section represents the name of the laboratory tests, the date that the specimens for the laboratory tests were taken from the subject of the case report, and the date that the tests were performed on the specimen. It represents the result of the laboratory tests and observation ranges and susceptibility results. In addition, it captures the name of organization where the specimens were collected.</p>
+
+<ol audience="standards" conref="generated/_TBResultsSection.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_TBResultsSection.dita#classId/aggregate">
+<li></li>
+</ol>
+<fig>
+<title>TB Results Section example</title>
+<codeblock conref="generated/_TBResultsSection.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>
