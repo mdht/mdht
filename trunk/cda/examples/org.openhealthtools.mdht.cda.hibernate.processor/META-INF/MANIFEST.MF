@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDHT CDA Demos
+Bundle-SymbolicName: org.openhealthtools.mdht.cda.hibernate.processor
+Bundle-Version: 0.7.0.qualifier
+Bundle-Activator: org.openhealthtools.mdht.cda.documentevent.processor.activator.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.openhealthtools.mdht.uml.cda;bundle-version="0.7.0",
+ org.openhealthtools.mdht.uml.cda.ccd;bundle-version="0.7.0",
+ org.openhealthtools.mdht.uml.cda.hitsp;bundle-version="0.7.0",
+ org.openhealthtools.mdht.uml.cda.ihe;bundle-version="0.7.0",
+ org.openhealthtools.mdht.uml.cda.ncr;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.teneo.hibernate,
+ org.eclipse.emf.ecore.change;bundle-version="2.5.0",
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda.pilot;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda.ccd;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda;visibility:=reexport,
+ org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
+ org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.junit,
+ org.hibernate;version="3.3.2",
+ org.hibernate.cfg;version="3.3.2",
+ org.hibernate.dialect;version="3.3.2",
+ org.apache.commons.logging,
+ com.mysql.jdbc
+
+
