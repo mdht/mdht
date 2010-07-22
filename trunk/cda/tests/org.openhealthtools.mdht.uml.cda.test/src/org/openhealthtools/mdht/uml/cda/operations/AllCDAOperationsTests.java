@@ -21,19 +21,18 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ ActOperationsTest.class,
-	AssignedAuthorOperationsTest.class,
-	ClinicalDocumentOperationsTest.class,
-	ClinicalStatementOperationsTest.class, Component2OperationsTest.class,
-	Component4OperationsTest.class, EncounterOperationsTest.class,
-	EntryOperationsTest.class, EntryRelationshipOperationsTest.class,
-	GuardianOperationsTest.class, Informant12OperationsTest.class,
-	ManufacturedProductOperationsTest.class,
-	ObservationMediaOperationsTest.class, ObservationOperationsTest.class,
-	OrganizerOperationsTest.class, ParticipantRoleOperationsTest.class,
-	ProcedureOperationsTest.class, ReferenceOperationsTest.class,
-	RegionOfInterestOperationsTest.class, SectionOperationsTest.class,
-	StrucDocTextOperationsTest.class,
-	SubstanceAdministrationOperationsTest.class, SupplyOperationsTest.class })
-	public class AllCDAOperationsTests {
+		AssignedAuthorOperationsTest.class,
+		ClinicalDocumentOperationsTest.class, Component2OperationsTest.class,
+		Component4OperationsTest.class, EncounterOperationsTest.class,
+		EntryOperationsTest.class, EntryRelationshipOperationsTest.class,
+		GuardianOperationsTest.class, Informant12OperationsTest.class,
+		ManufacturedProductOperationsTest.class,
+		ObservationMediaOperationsTest.class, ObservationOperationsTest.class,
+		OrganizerOperationsTest.class, ParticipantRoleOperationsTest.class,
+		ProcedureOperationsTest.class, ReferenceOperationsTest.class,
+		RegionOfInterestOperationsTest.class, SectionOperationsTest.class,
+		StrucDocTextOperationsTest.class,
+		SubstanceAdministrationOperationsTest.class, SupplyOperationsTest.class })
+public class AllCDAOperationsTests {
 	// Nothing
 } // AllCDATests

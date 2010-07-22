@@ -39,7 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 /**
  * This class is a JUnit4 test case.
  */
-public class OrganizerOperationsTest extends CDAValidationTest {
+public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 
 	@SuppressWarnings("nls")
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
