@@ -54,5 +54,4 @@ public class InfrastructureRootOperationsTest {
 		fail("Not yet implemented");
 	}
 
-}
- // InfrastructureRootOperationsTest
+} // InfrastructureRootOperationsTest

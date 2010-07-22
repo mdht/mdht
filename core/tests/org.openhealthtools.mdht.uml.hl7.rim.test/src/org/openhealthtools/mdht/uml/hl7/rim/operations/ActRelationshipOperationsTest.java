@@ -46,5 +46,4 @@ public class ActRelationshipOperationsTest extends InfrastructureRootOperationsT
 		fail("Not yet implemented");
 	}
 
-}
-// ActRelationshipOperationsTest
+} // ActRelationshipOperationsTest
