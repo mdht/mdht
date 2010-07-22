@@ -14,16 +14,44 @@ package org.openhealthtools.mdht.uml.cda.ncr.operations;
 
 import static org.junit.Assert.fail;
 
+import java.util.Arrays;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
 
 /**
  * This class
  */
 @SuppressWarnings("nls")
-public class EncountersSectionOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersSectionOperationsTest  {
+public class EncountersSectionOperationsTest
+		extends
+		org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersSectionOperationsTest {
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+
+	@Override
+	protected List<CDATestCase> getTestCases() {
+		// Return a new List because the one returned by Arrays.asList is
+		// unmodifiable so a sub-class can't append their test cases.
+		final List<CDATestCase> retValue = super.getTestCases();
+		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		return retValue;
+	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateEncountersSectionTemplateId(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getEObjectToValidate()
+	 */
+	@Override
+	protected EObject getEObjectToValidate() {
+		return NCRFactory.eINSTANCE.createEncountersSection();
+	}
+
+	/**
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateEncountersSectionTemplateId(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateEncountersSectionTemplateId() {
@@ -31,7 +59,9 @@ public class EncountersSectionOperationsTest extends org.openhealthtools.mdht.um
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateNCREncountersSectionText(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateNCREncountersSectionText(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateNCREncountersSectionText() {
@@ -39,7 +69,9 @@ public class EncountersSectionOperationsTest extends org.openhealthtools.mdht.um
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateNCREncountersSectionTitle(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateNCREncountersSectionTitle(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateNCREncountersSectionTitle() {
@@ -47,7 +79,9 @@ public class EncountersSectionOperationsTest extends org.openhealthtools.mdht.um
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateNCREncountersSectionNeonatalICUEncounterActivity(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateNCREncountersSectionNeonatalICUEncounterActivity(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateNCREncountersSectionNeonatalICUEncounterActivity() {
