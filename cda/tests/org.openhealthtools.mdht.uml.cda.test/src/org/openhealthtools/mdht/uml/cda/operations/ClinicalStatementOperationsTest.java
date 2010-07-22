@@ -12,12 +12,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.operations;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * This class is a JUnit 4 test case for ClinicalStatementOperations.
@@ -41,9 +45,18 @@ public abstract class ClinicalStatementOperationsTest extends CDAValidationTest 
 	 * {@link org.openhealthtools.mdht.uml.cda.operations.ClinicalStatementOperations#getEntryRelationshipTargets(org.openhealthtools.mdht.uml.cda.ClinicalStatement, org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship, java.lang.Object)}
 	 * .
 	 */
+	@SuppressWarnings("null")
 	@Test
 	public void testGetEntryRelationshipTargetsClinicalStatementX_ActRelationshipEntryRelationshipObject() {
 		fail("Not yet implemented");
+		final ClinicalStatement cs = (ClinicalStatement) getObjectToTest();
+		x_ActRelationshipEntryRelationship typeCode = x_ActRelationshipEntryRelationship.CAUS;
+		final EList<ClinicalStatement> result = ClinicalStatementOperations
+				.getEntryRelationshipTargets(cs, typeCode, cs);
+
+		assertTrue(result != null);
+		assertTrue(result.size() != 0);
+
 	}
 
 	/**
@@ -51,9 +64,31 @@ public abstract class ClinicalStatementOperationsTest extends CDAValidationTest 
 	 * {@link org.openhealthtools.mdht.uml.cda.operations.ClinicalStatementOperations#getEntryRelationshipTargets(org.openhealthtools.mdht.uml.cda.ClinicalStatement, java.lang.Object)}
 	 * .
 	 */
+	@SuppressWarnings("null")
 	@Test
 	public void testGetEntryRelationshipTargetsClinicalStatementObject() {
+
 		fail("Not yet implemented");
+		final ClinicalStatement cs = (ClinicalStatement) getObjectToTest();
+		final EList<ClinicalStatement> result = ClinicalStatementOperations
+				.getEntryRelationshipTargets(cs, cs);
+
+		assertTrue(result != null);
+		assertTrue(result.size() != 0);
+
+	}
+
+	/**
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.operations.ClinicalStatementOperations#getEntryRelationshipTargets(org.openhealthtools.mdht.uml.cda.ClinicalStatement, org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship, java.lang.Object)}
+	 * .
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testGetEntryRelationshipTargetsClinicalStatementIllegalArgumentException() {
+		final ClinicalStatement cs = (ClinicalStatement) getObjectToTest();
+		// The "CAUS" argument was choosen at random.
+		ClinicalStatementOperations.getEntryRelationshipTargets(cs,
+				x_ActRelationshipEntryRelationship.CAUS, cs);
 	}
 
 } // ClinicalStatementOperationsTest
