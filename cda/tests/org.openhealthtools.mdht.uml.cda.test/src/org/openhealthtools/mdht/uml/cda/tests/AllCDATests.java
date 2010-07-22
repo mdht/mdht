@@ -19,13 +19,17 @@ import org.junit.runners.Suite;
 import org.openhealthtools.mdht.uml.cda.operations.AllCDAOperationsTests;
 
 /**
- * This class represents a suite of Junit 4 test cases for CDA document
+ * This class represents a suite of JUnit 4 test cases for CDA document
  * processing.
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses( { CDADeserliazationTest.class, CDASerializationTest.class, AllCDAOperationsTests.class })
 public class AllCDATests {
 	
+	/**
+	 * Adapter
+	 * @return a test for JUnit 3
+	 */
 	public static junit.framework.Test suite() { 		
 	    return new JUnit4TestAdapter(AllCDATests.class); 
 	}

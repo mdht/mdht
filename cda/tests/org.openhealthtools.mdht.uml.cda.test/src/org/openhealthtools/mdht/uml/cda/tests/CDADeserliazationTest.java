@@ -36,13 +36,20 @@ public class CDADeserliazationTest {
 
 	
 	
+	/**
+	 * @throws Exception
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {	
 		CDAUtil.loadPackages();
 	}
 
+	/**
+	 * @throws Exception
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// nothing
 	}
 
 	
