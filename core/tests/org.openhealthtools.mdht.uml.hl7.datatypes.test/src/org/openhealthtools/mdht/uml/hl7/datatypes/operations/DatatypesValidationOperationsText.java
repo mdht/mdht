@@ -67,7 +67,7 @@ public abstract class DatatypesValidationOperationsText extends
 
 		try {
 			for (final DatatypeTestCase testCase : getTestCases()) {
-				final EObject eObjectToTest = getEObjectToTest();
+				final EObject eObjectToTest = getObjectToTest();
 				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 						.createDefaultDiagnostic(eObjectToTest);
 
@@ -105,7 +105,7 @@ public abstract class DatatypesValidationOperationsText extends
 
 		try {
 			for (final DatatypeTestCase testCase : getTestCases()) {
-				final EObject eObjectToTest = getEObjectToTest();
+				final EObject eObjectToTest = getObjectToTest();
 				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 						.createDefaultDiagnostic(eObjectToTest);
 

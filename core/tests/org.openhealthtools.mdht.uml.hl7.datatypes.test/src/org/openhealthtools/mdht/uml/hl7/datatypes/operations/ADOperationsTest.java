@@ -49,17 +49,17 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 
 		@Override
 		@SuppressWarnings("unchecked")
-		public void createAndAddPartType(final EObject eObjectToTest) {
+		public void createAndAddPartType(final EObject objectToTest) {
 			final ADXP enxp = DatatypesFactory.eINSTANCE.createADXP(partType,
 					TEST_TEXT);
-			((EList<ADXP>) (eObjectToTest.eGet(feature))).add(enxp);
+			((EList<ADXP>) (objectToTest.eGet(feature))).add(enxp);
 		}
 
 		@Override
 		@SuppressWarnings( { "unchecked" })
-		public void createAndAddBadPartType(final EObject eObjectToTest) {
+		public void createAndAddBadPartType(final EObject objectToTest) {
 			final ADXP enxpBad = DatatypesFactory.eINSTANCE.createADXP();
-			((EList<ADXP>) (eObjectToTest.eGet(feature))).add(enxpBad);
+			((EList<ADXP>) (objectToTest.eGet(feature))).add(enxpBad);
 		}
 	} // ADTestCase
 
@@ -70,16 +70,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.DEL) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateDelimiter((AD) eObjectToTest,
+					return ADOperations.validateDelimiter((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addDelimiter((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addDelimiter((AD) objectToTest, text);
 				}
 
 			},
@@ -90,16 +90,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.CNT) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateCountry((AD) eObjectToTest,
+					return ADOperations.validateCountry((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addCountry((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addCountry((AD) objectToTest, text);
 				}
 			},
 			
@@ -109,16 +109,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.STA) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateState((AD) eObjectToTest,
+					return ADOperations.validateState((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addState((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addState((AD) objectToTest, text);
 				}
 			},
 
@@ -128,16 +128,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.CPA) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateCounty((AD) eObjectToTest,
+					return ADOperations.validateCounty((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addCounty((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addCounty((AD) objectToTest, text);
 				}
 			},
 
@@ -147,16 +147,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.CTY) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateCity((AD) eObjectToTest,
+					return ADOperations.validateCity((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addCity((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addCity((AD) objectToTest, text);
 				}
 			},
 
@@ -166,16 +166,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.ZIP) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validatePostalCode((AD) eObjectToTest,
+					return ADOperations.validatePostalCode((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addPostalCode((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addPostalCode((AD) objectToTest, text);
 				}
 			},
 
@@ -186,16 +186,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.SAL) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateStreetAddressLine(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addStreetAddressLine((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addStreetAddressLine((AD) objectToTest, text);
 				}
 			},
 
@@ -205,16 +205,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.BNR) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateHouseNumber((AD) eObjectToTest,
+					return ADOperations.validateHouseNumber((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addHouseNumber((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addHouseNumber((AD) objectToTest, text);
 				}
 			},
 
@@ -224,17 +224,17 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					.getAD_HouseNumberNumeric(), AddressPartType.BNN) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateHouseNumberNumeric(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
+				public void add(final EObject objectToTest, final String text) {
 					ADOperations
-							.addHouseNumberNumeric((AD) eObjectToTest, text);
+							.addHouseNumberNumeric((AD) objectToTest, text);
 				}
 			},
 
@@ -244,16 +244,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.DIR) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateDirection((AD) eObjectToTest,
+					return ADOperations.validateDirection((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addDirection((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addDirection((AD) objectToTest, text);
 				}
 			},
 
@@ -263,16 +263,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.STR) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateStreetName((AD) eObjectToTest,
+					return ADOperations.validateStreetName((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addStreetName((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addStreetName((AD) objectToTest, text);
 				}
 			},
 
@@ -282,16 +282,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.STB) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateStreetNameBase(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addStreetNameBase((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addStreetNameBase((AD) objectToTest, text);
 				}
 			},
 
@@ -301,16 +301,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.STTYP) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateStreetNameType(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addStreetNameType((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addStreetNameType((AD) objectToTest, text);
 				}
 			},
 
@@ -321,26 +321,26 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.ADL) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateAdditionalLocator(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addAdditionalLocator((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addAdditionalLocator((AD) objectToTest, text);
 				}
 
 				// We override for this case because the default is ADL
 				@SuppressWarnings("unchecked")
 				@Override
-				public void createAndAddBadPartType(final EObject eObjectToTest) {
+				public void createAndAddBadPartType(final EObject objectToTest) {
 					final ADXP enxpBad = DatatypesFactory.eINSTANCE
 							.createADXP();
 					enxpBad.setPartType(AddressPartType.POB);
-					((EList<ADXP>) (eObjectToTest.eGet(feature))).add(enxpBad);
+					((EList<ADXP>) (objectToTest.eGet(feature))).add(enxpBad);
 				}
 
 			},
@@ -351,16 +351,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.UNID) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateUnitID((AD) eObjectToTest,
+					return ADOperations.validateUnitID((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addUnitID((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addUnitID((AD) objectToTest, text);
 				}
 
 			},
@@ -371,16 +371,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.UNIT) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateUnitType((AD) eObjectToTest,
+					return ADOperations.validateUnitType((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addUnitType((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addUnitType((AD) objectToTest, text);
 				}
 			},
 
@@ -390,16 +390,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.CAR) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateCareOf((AD) eObjectToTest,
+					return ADOperations.validateCareOf((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addCareOf((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addCareOf((AD) objectToTest, text);
 				}
 			},
 
@@ -409,16 +409,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.CEN) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validateCensusTract((AD) eObjectToTest,
+					return ADOperations.validateCensusTract((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addCensusTract((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addCensusTract((AD) objectToTest, text);
 				}
 			},
 
@@ -428,16 +428,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					.getAD_DeliveryAddressLine(), AddressPartType.DAL) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateDeliveryAddressLine(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addDeliveryAddressLine((AD) eObjectToTest,
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addDeliveryAddressLine((AD) objectToTest,
 							text);
 				}
 			},
@@ -448,17 +448,17 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					.getAD_DeliveryInstallationType(), AddressPartType.DINST) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateDeliveryInstallationType(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
+				public void add(final EObject objectToTest, final String text) {
 					ADOperations.addDeliveryInstallationType(
-							(AD) eObjectToTest, text);
+							(AD) objectToTest, text);
 				}
 			},
 
@@ -468,17 +468,17 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					.getAD_DeliveryInstallationArea(), AddressPartType.DINSTA) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateDeliveryInstallationArea(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
+				public void add(final EObject objectToTest, final String text) {
 					ADOperations.addDeliveryInstallationArea(
-							(AD) eObjectToTest, text);
+							(AD) objectToTest, text);
 				}
 			},
 
@@ -489,17 +489,17 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.DINSTQ) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateDeliveryInstallationQualifier(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
+				public void add(final EObject objectToTest, final String text) {
 					ADOperations.addDeliveryInstallationQualifier(
-							(AD) eObjectToTest, text);
+							(AD) objectToTest, text);
 				}
 			},
 
@@ -509,16 +509,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.DMOD) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateDeliveryMode(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addDeliveryMode((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addDeliveryMode((AD) objectToTest, text);
 				}
 			},
 
@@ -528,16 +528,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					.getAD_DeliveryModeIdentifier(), AddressPartType.DMODID) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateDeliveryModeIdentifier(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addDeliveryModeIdentifier((AD) eObjectToTest,
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addDeliveryModeIdentifier((AD) objectToTest,
 							text);
 				}
 			},
@@ -548,16 +548,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					.getAD_BuildingNumberSuffix(), AddressPartType.BNS) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ADOperations.validateBuildingNumberSuffix(
-							(AD) eObjectToTest, diagnostician, map);
+							(AD) objectToTest, diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addBuildingNumberSuffix((AD) eObjectToTest,
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addBuildingNumberSuffix((AD) objectToTest,
 							text);
 				}
 			},
@@ -568,16 +568,16 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.POB) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validatePostBox((AD) eObjectToTest,
+					return ADOperations.validatePostBox((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addPostBox((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addPostBox((AD) objectToTest, text);
 
 				}
 			},
@@ -588,21 +588,21 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 					AddressPartType.PRE) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ADOperations.validatePrecinct((AD) eObjectToTest,
+					return ADOperations.validatePrecinct((AD) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest, final String text) {
-					ADOperations.addPrecinct((AD) eObjectToTest, text);
+				public void add(final EObject objectToTest, final String text) {
+					ADOperations.addPrecinct((AD) objectToTest, text);
 				}
 			} };
 
 	@Override
-	protected EObject getEObjectToTest() {
+	protected EObject getObjectToTest() {
 		return DatatypesFactory.eINSTANCE.createAD();
 	}
 
@@ -620,7 +620,7 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 	 */
 	@Test
 	public final void testAddTextGetText() {
-		final AD ad = (AD) getEObjectToTest();
+		final AD ad = (AD) getObjectToTest();
 
 		ad.addText(DatatypeTestCase.TEST_TEXT);
 		assertTrue(ad.getText().equals(DatatypeTestCase.TEST_TEXT));
