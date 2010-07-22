@@ -27,7 +27,7 @@ public abstract class DatatypesOperationsTest {
 
 	final protected Map<Object, Object> map = new HashMap<Object, Object>();
 
-	protected abstract EObject getEObjectToTest();
+	protected abstract EObject getObjectToTest();
 
 	protected String createUnsupportedOperationFailureMessage(
 			final UnsupportedOperationException uoe) {

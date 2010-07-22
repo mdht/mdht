@@ -26,10 +26,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.operations.DatatypesValidation
 public class EDOperationsTest extends DatatypesOperationsTest {
 
 	/**
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.operations.DatatypesOperationsTest#getEObjectToTest()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.operations.DatatypesOperationsTest#getobjectToTest()
 	 */
 	@Override
-	protected EObject getEObjectToTest() {
+	protected EObject getObjectToTest() {
 		return DatatypesFactory.eINSTANCE.createED();
 	}
 
@@ -38,7 +38,7 @@ public class EDOperationsTest extends DatatypesOperationsTest {
 	 */
 	@Test
 	public final void testAddTextGetText() {
-		final ED ed = (ED) getEObjectToTest();
+		final ED ed = (ED) getObjectToTest();
 
 		ed.addText(DatatypeTestCase.TEST_TEXT);
 		assertTrue(ed.getText().equals(DatatypeTestCase.TEST_TEXT));

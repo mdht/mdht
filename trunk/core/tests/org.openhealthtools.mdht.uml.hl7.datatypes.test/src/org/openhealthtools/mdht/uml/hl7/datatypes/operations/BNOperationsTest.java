@@ -28,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 public class BNOperationsTest extends DatatypesOperationsTest {
 
 	/**
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.operations.DatatypesOperationsTest#getEObjectToTest()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.operations.DatatypesOperationsTest#getobjectToTest()
 	 */
 	@Override
-	protected EObject getEObjectToTest() {
+	protected EObject getObjectToTest() {
 		return DatatypesFactory.eINSTANCE.createBN();
 	}
 
@@ -42,10 +42,10 @@ public class BNOperationsTest extends DatatypesOperationsTest {
 	 */
 	@Test
 	public final void testValidateNullFlavor() {
-		final BN bn = (BN) getEObjectToTest();
-		final EObject eObjectToTest = getEObjectToTest();
+		final BN bn = (BN) getObjectToTest();
+		final EObject objectToTest = getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(eObjectToTest);
+				.createDefaultDiagnostic(objectToTest);
 
 		boolean isValid = BNOperations.validateNullFlavor(bn, diagnostician,
 				map);

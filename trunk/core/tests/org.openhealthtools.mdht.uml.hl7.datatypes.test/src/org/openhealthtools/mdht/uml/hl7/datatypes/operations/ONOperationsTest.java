@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 public class ONOperationsTest extends ENOperationsTest {
 
 	@Override
-	protected EObject getEObjectToTest() {
+	protected EObject getObjectToTest() {
 		return DatatypesFactory.eINSTANCE.createON();
 	}
 
@@ -38,7 +38,7 @@ public class ONOperationsTest extends ENOperationsTest {
 	 */
 	@Test
 	public final void testValidateInvariant() {
-		final ON on = (ON) getEObjectToTest();
+		final ON on = (ON) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(on);
 

@@ -49,18 +49,18 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 
 		@Override
 		@SuppressWarnings("unchecked")
-		public void createAndAddPartType(final EObject eObjectToTest) {
+		public void createAndAddPartType(final EObject objectToTest) {
 			final ENXP enxp = DatatypesFactory.eINSTANCE.createENXP(partType,
 					TEST_TEXT);
-			((EList<ENXP>) (eObjectToTest.eGet(feature))).add(enxp);
+			((EList<ENXP>) (objectToTest.eGet(feature))).add(enxp);
 
 		}
 
 		@Override
 		@SuppressWarnings("unchecked")
-		public void createAndAddBadPartType(final EObject eObjectToTest) {
+		public void createAndAddBadPartType(final EObject objectToTest) {
 			final ENXP enxpBad = DatatypesFactory.eINSTANCE.createENXP();
-			((EList<ENXP>) (eObjectToTest.eGet(feature))).add(enxpBad);
+			((EList<ENXP>) (objectToTest.eGet(feature))).add(enxpBad);
 		}
 
 	} // ADTestCase
@@ -73,27 +73,27 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 					EntityNamePartType.DEL) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateDelimiter((EN) eObjectToTest,
+					return ENOperations.validateDelimiter((EN) objectToTest,
 							diagnostician, map);
 				}
 
 				@SuppressWarnings("unchecked")
 				@Override
-				public void createAndAddBadPartType(final EObject eObjectToTest) {
+				public void createAndAddBadPartType(final EObject objectToTest) {
 					// The default is delimiter so, don't set that
 					final ENXP enxpBad = DatatypesFactory.eINSTANCE
 							.createENXP();
 					enxpBad.setPartType(EntityNamePartType.FAM);
-					((EList<ENXP>) (eObjectToTest.eGet(feature))).add(enxpBad);
+					((EList<ENXP>) (objectToTest.eGet(feature))).add(enxpBad);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest,
+				public void add(final EObject objectToTest,
 						final String adxpText) {
-					ENOperations.addDelimiter((EN) eObjectToTest, adxpText);
+					ENOperations.addDelimiter((EN) objectToTest, adxpText);
 				}
 
 			},
@@ -104,17 +104,17 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 					EntityNamePartType.FAM) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateFamily((EN) eObjectToTest,
+					return ENOperations.validateFamily((EN) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest,
+				public void add(final EObject objectToTest,
 						final String adxpText) {
-					ENOperations.addFamily((EN) eObjectToTest, adxpText);
+					ENOperations.addFamily((EN) objectToTest, adxpText);
 				}
 			},
 
@@ -124,17 +124,17 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 					EntityNamePartType.GIV) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateGiven((EN) eObjectToTest,
+					return ENOperations.validateGiven((EN) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest,
+				public void add(final EObject objectToTest,
 						final String adxpText) {
-					ENOperations.addGiven((EN) eObjectToTest, adxpText);
+					ENOperations.addGiven((EN) objectToTest, adxpText);
 				}
 			},
 
@@ -144,17 +144,17 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 					EntityNamePartType.PFX) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validatePrefix((EN) eObjectToTest,
+					return ENOperations.validatePrefix((EN) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest,
+				public void add(final EObject objectToTest,
 						final String adxpText) {
-					ENOperations.addPrefix((EN) eObjectToTest, adxpText);
+					ENOperations.addPrefix((EN) objectToTest, adxpText);
 				}
 			},
 
@@ -164,22 +164,22 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 					EntityNamePartType.SFX) {
 
 				@Override
-				public boolean validate(final EObject eObjectToTest,
+				public boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ENOperations.validateSuffix((EN) eObjectToTest,
+					return ENOperations.validateSuffix((EN) objectToTest,
 							diagnostician, map);
 				}
 
 				@Override
-				public void add(final EObject eObjectToTest,
+				public void add(final EObject objectToTest,
 						final String adxpText) {
-					ENOperations.addSuffix((EN) eObjectToTest, adxpText);
+					ENOperations.addSuffix((EN) objectToTest, adxpText);
 				}
 			} };
 
 	@Override
-	protected EObject getEObjectToTest() {
+	protected EObject getObjectToTest() {
 		return DatatypesFactory.eINSTANCE.createEN();
 	}
 
@@ -195,7 +195,7 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 	 */
 	@Test
 	public final void testAddTextGetText() {
-		final EN en = (EN) getEObjectToTest();
+		final EN en = (EN) getObjectToTest();
 
 		en.addText(DatatypeTestCase.TEST_TEXT);
 		assertTrue(en.getText().equals(DatatypeTestCase.TEST_TEXT));

@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TN;
 public class TNOperationsTest extends ENOperationsTest {
 
 	@Override
-	protected EObject getEObjectToTest() {
+	protected EObject getObjectToTest() {
 		return DatatypesFactory.eINSTANCE.createTN();
 	}
 
@@ -42,7 +42,7 @@ public class TNOperationsTest extends ENOperationsTest {
 		// self.given->isEmpty() and self.prefix->isEmpty() and
 		// self.suffix->isEmpty() and mixed->size() = 1
 
-		final TN tn = (TN) getEObjectToTest();
+		final TN tn = (TN) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(tn);
 

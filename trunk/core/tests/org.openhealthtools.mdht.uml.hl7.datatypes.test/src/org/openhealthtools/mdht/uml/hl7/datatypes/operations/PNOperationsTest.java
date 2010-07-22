@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartQualifier;
 public class PNOperationsTest extends ENOperationsTest {
 
 	@Override
-	protected EObject getEObjectToTest() {
+	protected EObject getObjectToTest() {
 		return DatatypesFactory.eINSTANCE.createPN();
 	}
 
@@ -51,7 +51,7 @@ public class PNOperationsTest extends ENOperationsTest {
 		// self.suffix->forAll(enxp : datatypes::ENXP | not
 		// enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS))
 
-		final PN pn = (PN) getEObjectToTest();
+		final PN pn = (PN) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(pn);
 
