@@ -18,7 +18,6 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TemplateIDCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTest;
