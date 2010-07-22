@@ -12,10 +12,22 @@
  */
 package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * This class is the super class of all JUnit 4 test cases for RIM operations
  */
-@SuppressWarnings("nls")
 public abstract class RIMOperationTest {
+
+	protected abstract EObject getObjectToTest();
+
+	/**
+	 * This is not currently used, but is implemented in many subclasses.
+	 * 
+	 * @return the initialized EObject instance to test
+	 */
+	protected EObject getObjectInitToTest() {
+		return null;
+	}
 
 } // RimOperationTest
