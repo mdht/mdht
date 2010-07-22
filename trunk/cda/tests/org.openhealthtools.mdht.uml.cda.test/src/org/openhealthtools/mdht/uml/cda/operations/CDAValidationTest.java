@@ -47,6 +47,17 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest;
 @SuppressWarnings("nls")
 public abstract class CDAValidationTest extends RIMOperationTest {
 
+	/**
+	 * The template id to use for the has* tests.
+	 */
+	protected static final String BAD_TEMPLATE_ID = "1.2.3.4";
+	protected static final II THE_BAD_II = DatatypesFactory.eINSTANCE
+	.createII();
+
+	static {
+		THE_BAD_II.setRoot(BAD_TEMPLATE_ID);
+	}
+	
 	// protected static int count = 0;
 
 	protected static Map<Object, Object> map = new HashMap<Object, Object>();
@@ -254,6 +265,52 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 	} // CDAValidationTestCase
 
+	// TemplateID Test Case
+	protected abstract static class TemplateIDCCDValidationTest extends
+	CDAValidationTestCase {
+		private static final String TEMPLATE_ID_FEATURE_NAME = "templateId";
+
+		private final String templateID;
+
+		/**
+		 * @param templateID
+		 */
+		public TemplateIDCCDValidationTest(final String templateID) {
+			super(TEMPLATE_ID_FEATURE_NAME);
+			this.templateID = templateID;
+		}
+
+		@Override
+		public void doTest(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			try {
+				validateExpectFail(objectToTest, diagnostician, map);
+				getTemplateIds(objectToTest).add(THE_BAD_II);
+				validateExpectFail(objectToTest, diagnostician, map);
+				getTemplateIds(objectToTest).add(createTheValidII());
+				validateExpectPass(objectToTest, diagnostician, map);
+			} catch (final UnsupportedOperationException uoe) {
+				fail(CDAValidationTest
+						.createUnsupportedOperationFailureMessage("templateId",
+								uoe));
+			}
+		}
+
+		@SuppressWarnings("unchecked")
+		private EList<II> getTemplateIds(final EObject eObjectToValidate) {
+			return (EList<II>) eObjectToValidate.eGet(eObjectToValidate
+					.eClass().getEStructuralFeature(TEMPLATE_ID_FEATURE_NAME));
+		}
+
+		private II createTheValidII() {
+			final II retValue = DatatypesFactory.eINSTANCE.createII();
+			retValue.setRoot(templateID);
+			return retValue;
+		}
+
+	} // TemplateIDCCDValidationTest
+	
 	static abstract protected class UndefinedValidationTestCase extends
 	CDAValidationTestCase {
 

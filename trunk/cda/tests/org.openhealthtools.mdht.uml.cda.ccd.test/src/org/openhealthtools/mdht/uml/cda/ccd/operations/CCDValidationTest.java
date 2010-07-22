@@ -67,16 +67,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference
 @SuppressWarnings("nls")
 public abstract class CCDValidationTest extends CDAValidationTest {
 
-	/**
-	 * The template id to use for the has* tests.
-	 */
-	protected static final String BAD_TEMPLATE_ID = "1.2.3.4";
-	protected static final II THE_BAD_II = DatatypesFactory.eINSTANCE
-	.createII();
 
-	static {
-		THE_BAD_II.setRoot(BAD_TEMPLATE_ID);
-	}
 	// this is a comment to be deleted
 	abstract protected static class CCDValidationTestCase extends
 	CDAValidationTestCase {
@@ -124,67 +115,11 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 					featureName), value);
 		}
 
-
-
 		abstract protected Object getValueToSet();
 
-	} // CDATestCase
+	} // CCDValidationTestCase
 
-	// TemplateID Test Case
-	/**
-	 * This class is a JUnit4 test case.
-	 */
-	public abstract static class TemplateIDCCDValidationTest extends
-	CCDValidationTestCase {
-		private static final String TEMPLATE_ID_FEATURE_NAME = "templateId";
-
-		private final String templateID;
-
-		/**
-		 * @param templateID
-		 */
-		public TemplateIDCCDValidationTest(final String templateID) {
-			super(TEMPLATE_ID_FEATURE_NAME);
-			this.templateID = templateID;
-		}
-
-		@SuppressWarnings("synthetic-access")
-		@Override
-		public void doTest(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			try {
-				validateExpectFail(objectToTest, diagnostician, map);
-				getTemplateIds(objectToTest).add(THE_BAD_II);
-				validateExpectFail(objectToTest, diagnostician, map);
-				getTemplateIds(objectToTest).add(createTheValidII());
-				validateExpectPass(objectToTest, diagnostician, map);
-			} catch (final UnsupportedOperationException uoe) {
-				fail(CDAValidationTest
-						.createUnsupportedOperationFailureMessage("templateId",
-								uoe));
-			}
-		}
-
-		@Override
-		protected Object getValueToSet() {
-			// Not used in this test
-			return null;
-		}
-
-		@SuppressWarnings("unchecked")
-		private EList<II> getTemplateIds(final EObject eObjectToValidate) {
-			return (EList<II>) eObjectToValidate.eGet(eObjectToValidate
-					.eClass().getEStructuralFeature(TEMPLATE_ID_FEATURE_NAME));
-		}
-
-		private II createTheValidII() {
-			final II retValue = DatatypesFactory.eINSTANCE.createII();
-			retValue.setRoot(templateID);
-			return retValue;
-		}
-
-	} // TemplateIDCCDValidationTest
+	
 
 	// Validate Title Test Case
 	abstract protected static class TitleCCDValidationTest extends
