@@ -13,7 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
 import static org.junit.Assert.assertTrue;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -66,7 +66,9 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	protected List<CDATestCase> getTestCases() {
 		// Return a new List because the one returned by Arrays.asList is
 		// unmodifiable so a sub-class can't append their test cases.
-		return new ArrayList<CDATestCase>(Arrays.asList(TEST_CASE_ARRAY));
+		final List<CDATestCase> retValue = super.getTestCases();
+		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		return retValue;
 	}
 
 	@Override

@@ -112,9 +112,11 @@ CCDValidationTest {
 	protected List<CDATestCase> getTestCases() {
 		// Return a new List because the one returned by Arrays.asList is
 		// unmodifiable so a sub-class can't append their test cases.
-		return new ArrayList<CDATestCase>(Arrays.asList(TEST_CASE_ARRAY));
+		final List<CDATestCase> retValue = super.getTestCases();
+		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		return retValue;
 	}
-
+	
 	@Override
 	protected EObject getEObjectToValidate() {
 		return CCDFactory.eINSTANCE.createPlanOfCareActivityEncounter();

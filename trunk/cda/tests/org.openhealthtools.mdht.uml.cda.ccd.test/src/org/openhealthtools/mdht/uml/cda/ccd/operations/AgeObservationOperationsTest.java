@@ -12,7 +12,6 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -26,9 +25,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
-import org.openhealthtools.mdht.uml.hl7.datatypes.*;
 
 /**
  * This class
@@ -141,7 +141,9 @@ StructuralAttributeValidationTest {
 	protected List<CDATestCase> getTestCases() {
 		// Return a new List because the one returned by Arrays.asList is
 		// unmodifiable so a sub-class can't append their test cases.
-		return new ArrayList<CDATestCase>(Arrays.asList(TEST_CASE_ARRAY));
+		final List<CDATestCase> retValue = super.getTestCases();
+		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		return retValue;
 	}
 
 	@Override
