@@ -12,16 +12,19 @@
  */
 package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
 /**
- * This class is a JUnit 4 tes case.
+ * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
 public class ActOperationsTest extends InfrastructureRootOperationsTest  {
 
+	
+
+	
 	/**
 	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getClassCode(org.openhealthtools.mdht.uml.hl7.rim.Act)}.
 	 */

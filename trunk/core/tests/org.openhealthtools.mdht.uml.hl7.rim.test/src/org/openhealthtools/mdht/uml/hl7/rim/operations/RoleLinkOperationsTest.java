@@ -46,5 +46,4 @@ public class RoleLinkOperationsTest extends InfrastructureRootOperationsTest{
 		fail("Not yet implemented");
 	}
 
-}
-// RoleLinkOperationsTest
+} // RoleLinkOperationsTest
