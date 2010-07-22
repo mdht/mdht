@@ -53,12 +53,12 @@ public class ReactionObservationOperationsTest extends StructuralAttributeValida
 		new TemplateIDCCDValidationTest(REACTION_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ReactionObservationOperations
 				.validateReactionObservationTemplateId(
-						(ReactionObservation) eObjectToTest,
+						(ReactionObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -69,12 +69,12 @@ public class ReactionObservationOperationsTest extends StructuralAttributeValida
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ReactionObservationOperations
 				.validateReactionObservationStatusCode(
-						(ReactionObservation) eObjectToTest,
+						(ReactionObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -83,12 +83,12 @@ public class ReactionObservationOperationsTest extends StructuralAttributeValida
 		// -------------------------------------------------------------
 		new EntryRelationshipCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ReactionObservationOperations
 				.validateReactionObservationSeverityObservation(
-						(ReactionObservation) eObjectToTest,
+						(ReactionObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -117,12 +117,12 @@ public class ReactionObservationOperationsTest extends StructuralAttributeValida
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createReactionObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createReactionObservation().init();
 	}
 

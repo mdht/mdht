@@ -60,12 +60,12 @@ public class MedicationActivityOperationsTest extends
 			new TemplateIDCCDValidationTest(MEDICATION_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationActivityOperations
 							.validateMedicationActivityTemplateId(
-									(MedicationActivity) eObjectToTest,
+									(MedicationActivity) objectToTest,
 									diagnostician, map);
 				}
 
@@ -75,12 +75,12 @@ public class MedicationActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationActivityOperations
 							.validateMedicationActivityId(
-									(MedicationActivity) eObjectToTest,
+									(MedicationActivity) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -90,12 +90,12 @@ public class MedicationActivityOperationsTest extends
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationActivityOperations
 							.validateMedicationActivityStatusCode(
-									(MedicationActivity) eObjectToTest,
+									(MedicationActivity) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -104,12 +104,12 @@ public class MedicationActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new EntryRelationshipCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationActivityOperations
 							.validateMedicationActivityPatientInstruction(
-									(MedicationActivity) eObjectToTest,
+									(MedicationActivity) objectToTest,
 									diagnostician, map);
 				}
 
@@ -139,12 +139,12 @@ public class MedicationActivityOperationsTest extends
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createMedicationActivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createMedicationActivity().init();
 	}
 
@@ -170,7 +170,7 @@ public class MedicationActivityOperationsTest extends
 	 */
 	@Test
 	public final void testValidateMedicationActivityMedicationSeriesNumberObservation() {
-		final MedicationActivity ma = (MedicationActivity) getEObjectToValidate();
+		final MedicationActivity ma = (MedicationActivity) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(ma);
 		boolean isValid = MedicationActivityOperations
@@ -194,7 +194,7 @@ public class MedicationActivityOperationsTest extends
 	 */
 	@Test
 	public final void testValidateMedicationActivityMedicationStatusObservation() {
-		final MedicationActivity ma = (MedicationActivity) getEObjectToValidate();
+		final MedicationActivity ma = (MedicationActivity) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(ma);
 

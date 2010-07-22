@@ -38,12 +38,12 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(ENCOUNTERS_ACTIVITY_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EncountersActivityOperations
 				.validateEncountersActivityTemplateId(
-						(EncountersActivity) eObjectToTest,
+						(EncountersActivity) objectToTest,
 						diagnostician, map);
 			}
 
@@ -53,12 +53,12 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new IDCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EncountersActivityOperations
 				.validateEncountersActivityId(
-						(EncountersActivity) eObjectToTest,
+						(EncountersActivity) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -67,12 +67,12 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EncountersActivityOperations
 				.validateEncountersActivityEffectiveTime(
-						(EncountersActivity) eObjectToTest,
+						(EncountersActivity) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -89,12 +89,12 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createEncountersActivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createEncountersActivity().init();
 	}
 

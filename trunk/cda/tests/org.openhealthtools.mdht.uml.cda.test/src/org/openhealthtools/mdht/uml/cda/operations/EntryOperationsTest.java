@@ -33,16 +33,16 @@ public class EntryOperationsTest extends CDAValidationTest {
 	new CDAMutualExclusionValidationTestCase("Entry") {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return EntryOperations.validateClinicalStatement(
-					(Entry) eObjectToTest, diagnostician, map);
+					(Entry) objectToTest, diagnostician, map);
 		}
 
 		@Override
-		protected void initializeEObjectToTest(final EObject eObjectToTest) {
-			((Entry) eObjectToTest).setAct(CDAFactory.eINSTANCE.createAct());
+		protected void initializeobjectToTest(final EObject objectToTest) {
+			((Entry) objectToTest).setAct(CDAFactory.eINSTANCE.createAct());
 		}
 	} };
 
@@ -59,9 +59,9 @@ public class EntryOperationsTest extends CDAValidationTest {
 	 * @return the EObject instance to be validated
 	 */
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createEntry();
-	} // getEObjectToValidate
+	} // getObjectToTest()
 
 } // EntryOperationsTest
 

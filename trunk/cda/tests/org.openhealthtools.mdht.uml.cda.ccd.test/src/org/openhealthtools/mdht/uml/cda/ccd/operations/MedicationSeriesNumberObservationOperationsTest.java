@@ -50,12 +50,12 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationSeriesNumberObservationOperations
 							.validateMedicationSeriesNumberObservationTemplateId(
-									(MedicationSeriesNumberObservation) eObjectToTest,
+									(MedicationSeriesNumberObservation) objectToTest,
 									diagnostician, map);
 				}
 
@@ -66,12 +66,12 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationSeriesNumberObservationOperations
 							.validateMedicationSeriesNumberObservationStatusCode(
-									(MedicationSeriesNumberObservation) eObjectToTest,
+									(MedicationSeriesNumberObservation) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -80,12 +80,12 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationSeriesNumberObservationOperations
 							.validateMedicationSeriesNumberObservationCode(
-									(MedicationSeriesNumberObservation) eObjectToTest,
+									(MedicationSeriesNumberObservation) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -94,12 +94,12 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 			// -------------------------------------------------------------
 			new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationSeriesNumberObservationOperations
 							.validateMedicationSeriesNumberObservationValue(
-									(MedicationSeriesNumberObservation) eObjectToTest,
+									(MedicationSeriesNumberObservation) objectToTest,
 									diagnostician, map);
 				}
 
@@ -123,12 +123,12 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createMedicationSeriesNumberObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createMedicationSeriesNumberObservation()
 				.init();
 	}

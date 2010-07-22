@@ -46,16 +46,16 @@ public class ReferenceOperationsTest extends CDAValidationTest {
 			MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return ReferenceOperations.validateExternalActChoice(
-					(Reference) eObjectToTest, diagnostician, map);
+					(Reference) objectToTest, diagnostician, map);
 		}
 
 		@Override
-		protected void initializeEObjectToTest(final EObject eObjectToTest) {
-			((Reference) eObjectToTest).setExternalAct(CDAFactory.eINSTANCE
+		protected void initializeobjectToTest(final EObject objectToTest) {
+			((Reference) objectToTest).setExternalAct(CDAFactory.eINSTANCE
 					.createExternalAct());
 		}
 	} };
@@ -75,8 +75,8 @@ public class ReferenceOperationsTest extends CDAValidationTest {
 	 * @return the EObject instance to be validated
 	 */
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createReference();
-	} // getEObjectToValidate
+	} // getObjectToTest()
 
 } // ReferenceOperationsTest

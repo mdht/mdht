@@ -69,12 +69,12 @@ StructuralAttributeValidationTest {
 		new TemplateIDCCDValidationTest(RESULT_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations
 				.validateResultObservationTemplateId(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -84,12 +84,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new IDCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations
 				.validateResultObservationId(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -99,12 +99,12 @@ StructuralAttributeValidationTest {
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations
 				.validateResultObservationStatusCode(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -113,12 +113,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations
 				.validateResultObservationCode(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -126,12 +126,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations
 				.validateResultObservationEffectiveTime(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -140,12 +140,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations
 				.validateResultObservationValue(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -154,12 +154,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new InformationSourceCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations
 				.validateResultObservationInformationSource(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -184,7 +184,7 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -195,7 +195,7 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createResultObservation().init();
 	}
 
@@ -219,7 +219,7 @@ StructuralAttributeValidationTest {
 	 */
 	@Test
 	public void testResultsObservationNoObservationRangeCode() {
-		final ResultObservation ro = (ResultObservation) getEObjectToValidate();
+		final ResultObservation ro = (ResultObservation) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ro);
 		try {
@@ -266,7 +266,7 @@ StructuralAttributeValidationTest {
 	 */
 	@Test
 	public void testResultsObservationReferenceRangeRequired() {
-		final ResultObservation ro = (ResultObservation) getEObjectToValidate();
+		final ResultObservation ro = (ResultObservation) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ro);
 		try {
@@ -304,7 +304,7 @@ StructuralAttributeValidationTest {
 	 */
 	@Test
 	public void testResultsObservationInterpretationCode() {
-		final ResultObservation ro = (ResultObservation) getEObjectToValidate();
+		final ResultObservation ro = (ResultObservation) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ro);
 		try {
@@ -333,7 +333,7 @@ StructuralAttributeValidationTest {
 	 */
 	@Test
 	public void testResultsObservationMethodCode() {
-		final ResultObservation ro = (ResultObservation) getEObjectToValidate();
+		final ResultObservation ro = (ResultObservation) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ro);
 		try {

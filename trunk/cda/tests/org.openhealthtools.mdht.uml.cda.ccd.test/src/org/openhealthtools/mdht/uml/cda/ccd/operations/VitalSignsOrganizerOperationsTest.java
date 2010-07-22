@@ -38,12 +38,12 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(VITAL_SIGNS_ORGANIZER_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return VitalSignsOrganizerOperations
 							.validateResultOrganizerTemplateId(
-									(VitalSignsOrganizer) eObjectToTest,
+									(VitalSignsOrganizer) objectToTest,
 									diagnostician, map);
 				}
 
@@ -53,12 +53,12 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new InformationSourceCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return VitalSignsOrganizerOperations
 							.validateVitalSignsOrganizerInformationSource(
-									(VitalSignsOrganizer) eObjectToTest,
+									(VitalSignsOrganizer) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -75,7 +75,7 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -86,7 +86,7 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createVitalSignsOrganizer().init();
 	}
 

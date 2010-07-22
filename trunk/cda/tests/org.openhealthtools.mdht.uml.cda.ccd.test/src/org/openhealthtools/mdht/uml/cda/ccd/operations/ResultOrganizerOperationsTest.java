@@ -62,12 +62,12 @@ StructuralAttributeValidationTest {
 		new TemplateIDCCDValidationTest(RESULT_ORGANIZER_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultOrganizerOperations
 				.validateResultOrganizerTemplateId(
-						(ResultOrganizer) eObjectToTest,
+						(ResultOrganizer) objectToTest,
 						diagnostician, map);
 			}
 
@@ -77,12 +77,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new IDCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultOrganizerOperations
 				.validateResultOrganizerId(
-						(ResultOrganizer) eObjectToTest,
+						(ResultOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -91,12 +91,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultOrganizerOperations
 				.validateResultOrganizerStatusCode(
-						(ResultOrganizer) eObjectToTest,
+						(ResultOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -105,12 +105,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultOrganizerOperations
 				.validateResultOrganizerCode(
-						(ResultOrganizer) eObjectToTest,
+						(ResultOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -120,12 +120,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new InformationSourceCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultOrganizerOperations
 				.validateResultOrganizerInformationSource(
-						(ResultOrganizer) eObjectToTest,
+						(ResultOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -142,7 +142,7 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -153,7 +153,7 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createResultOrganizer().init();
 	}
 
@@ -179,7 +179,7 @@ StructuralAttributeValidationTest {
 	 */
 	@Test
 	public final void testValidateResultOrganizerResultObservation() {
-		final ResultOrganizer ro = (ResultOrganizer) getEObjectToValidate();
+		final ResultOrganizer ro = (ResultOrganizer) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ro);
 		boolean isValid = ResultOrganizerOperations
@@ -203,7 +203,7 @@ StructuralAttributeValidationTest {
 	 */
 	@Test
 	public void testResultsOrganizerComponentElement() {
-		final ResultOrganizer ro = (ResultOrganizer) getEObjectToValidate();
+		final ResultOrganizer ro = (ResultOrganizer) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ro);
 

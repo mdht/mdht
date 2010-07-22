@@ -40,12 +40,12 @@ public class HospitalDischargeMedicationsSectionOperationsTest extends
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return HospitalDischargeMedicationsSectionOperations
 							.validateHospitalDischargeMedicationsSectionTemplateId(
-									(HospitalDischargeMedicationsSection) eObjectToTest,
+									(HospitalDischargeMedicationsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -55,12 +55,12 @@ public class HospitalDischargeMedicationsSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return HospitalDischargeMedicationsSectionOperations
 							.validateHospitalDischargeMedicationsSectionCode(
-									(HospitalDischargeMedicationsSection) eObjectToTest,
+									(HospitalDischargeMedicationsSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -77,12 +77,12 @@ public class HospitalDischargeMedicationsSectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createHospitalDischargeMedicationsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createHospitalDischargeMedicationsSection()
 				.init();
 	}

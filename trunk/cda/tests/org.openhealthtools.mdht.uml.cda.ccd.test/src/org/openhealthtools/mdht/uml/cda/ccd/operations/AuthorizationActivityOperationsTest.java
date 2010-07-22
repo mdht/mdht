@@ -47,12 +47,12 @@ public class AuthorizationActivityOperationsTest extends
 			new TemplateIDCCDValidationTest(AUTHORIZATION_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AuthorizationActivityOperations
 							.validateAuthorizationActivityTemplateId(
-									(AuthorizationActivity) eObjectToTest,
+									(AuthorizationActivity) objectToTest,
 									diagnostician, map);
 				}
 
@@ -62,12 +62,12 @@ public class AuthorizationActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AuthorizationActivityOperations
 							.validateAuthorizationActivityId(
-									(AuthorizationActivity) eObjectToTest,
+									(AuthorizationActivity) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -84,12 +84,12 @@ public class AuthorizationActivityOperationsTest extends
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAuthorizationActivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAuthorizationActivity().init();
 	}
 

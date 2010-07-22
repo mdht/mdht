@@ -41,12 +41,12 @@ public class ManufacturedProductOperationsTest extends CDAValidationTest {
 	new UndefinedXORValidationTestCase("Component2Operations", EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return ManufacturedProductOperations
 					.validateManufacturedDrugOrOtherMaterial(
-							(ManufacturedProduct) eObjectToTest, diagnostician,
+							(ManufacturedProduct) objectToTest, diagnostician,
 							map);
 		}
 	} };
@@ -61,10 +61,10 @@ public class ManufacturedProductOperationsTest extends CDAValidationTest {
 	}
 
 	/**
-	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getEObjectToValidate()
+	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getObjectToTest()
 	 */
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createManufacturedProduct();
 	}
 

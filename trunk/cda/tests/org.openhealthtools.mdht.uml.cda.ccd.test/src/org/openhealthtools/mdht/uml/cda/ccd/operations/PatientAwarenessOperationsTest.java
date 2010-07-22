@@ -45,12 +45,12 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientAwarenessOperations
 				.validatePatientAwarenessTemplateId(
-						(PatientAwareness) eObjectToTest, diagnostician,
+						(PatientAwareness) objectToTest, diagnostician,
 						map);
 			}
 
@@ -72,12 +72,12 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPatientAwareness();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createPatientAwareness().init();
 	}
 
@@ -88,7 +88,7 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidatePatientAwarenessTypeCode() {
-		final PatientAwareness pa = (PatientAwareness) getEObjectToValidate();
+		final PatientAwareness pa = (PatientAwareness) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(pa);
 		assertTrue(!PatientAwarenessOperations
@@ -110,7 +110,7 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidatePatientAwarenessAwarenessCode() {
-		final PatientAwareness pa = (PatientAwareness) getEObjectToValidate();
+		final PatientAwareness pa = (PatientAwareness) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(pa);
 		assertTrue(!PatientAwarenessOperations
@@ -130,7 +130,7 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public void testValidatePatientAwarenessParticipantRoleId() {
-		final PatientAwareness pa = (PatientAwareness) getEObjectToValidate();
+		final PatientAwareness pa = (PatientAwareness) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(pa);
 		assertTrue(!PatientAwarenessOperations

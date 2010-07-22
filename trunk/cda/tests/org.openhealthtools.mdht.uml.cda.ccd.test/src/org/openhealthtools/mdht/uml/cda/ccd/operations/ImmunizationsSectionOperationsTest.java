@@ -42,12 +42,12 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(IMMUNIZATIONS_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ImmunizationsSectionOperations
 							.validateImmunizationsSectionTemplateId(
-									(ImmunizationsSection) eObjectToTest,
+									(ImmunizationsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -58,12 +58,12 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ImmunizationsSectionOperations
 							.validateImmunizationsSectionTitle(
-									(ImmunizationsSection) eObjectToTest,
+									(ImmunizationsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -74,12 +74,12 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			new TextCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ImmunizationsSectionOperations
 							.validateImmunizationsSectionText(
-									(ImmunizationsSection) eObjectToTest,
+									(ImmunizationsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -89,12 +89,12 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ImmunizationsSectionOperations
 							.validateImmunizationsSectionCode(
-									(ImmunizationsSection) eObjectToTest,
+									(ImmunizationsSection) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -103,12 +103,12 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ImmunizationsSectionOperations
 							.validateImmunizationsSectionClinicalStatements(
-									(ImmunizationsSection) eObjectToTest,
+									(ImmunizationsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -139,12 +139,12 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createImmunizationsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createImmunizationsSection().init();
 	}
 

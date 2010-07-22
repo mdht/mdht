@@ -39,11 +39,11 @@ public class ResultOperationsTest extends ResultObservationOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultOperations.validateResultTemplateId(
-						(Result) eObjectToTest, diagnostician, map);
+						(Result) objectToTest, diagnostician, map);
 			}
 		},
 
@@ -51,11 +51,11 @@ public class ResultOperationsTest extends ResultObservationOperationsTest {
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultOperations.validateResultEffectiveTime(
-						(Result) eObjectToTest, diagnostician, map);
+						(Result) objectToTest, diagnostician, map);
 			}
 		}
 
@@ -72,12 +72,12 @@ public class ResultOperationsTest extends ResultObservationOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createResult();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createResult().init();
 	}
 

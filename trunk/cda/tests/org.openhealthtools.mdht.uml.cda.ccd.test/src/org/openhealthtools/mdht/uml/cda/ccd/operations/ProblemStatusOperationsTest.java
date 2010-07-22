@@ -36,11 +36,11 @@ public class ProblemStatusOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(PROBLEM_STATUS_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProblemStatusObservationOperations.validateStatusObservationTemplateId(
-						(ProblemStatusObservation) eObjectToTest, diagnostician, map);
+						(ProblemStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		}
@@ -57,12 +57,12 @@ public class ProblemStatusOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProblemStatusObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createProblemStatusObservation().init();
 	}
 

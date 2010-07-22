@@ -39,12 +39,12 @@ MedicationSectionOperationsTest {
 
 			@SuppressWarnings("static-access")
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return MedicationsSectionOperations
 				.validateMedicationsSectionTemplateId(
-						(MedicationsSection) eObjectToTest, diagnostician,
+						(MedicationsSection) objectToTest, diagnostician,
 						map);
 			}
 
@@ -62,12 +62,12 @@ MedicationSectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createMedicationsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createMedicationsSection().init();
 	}
 

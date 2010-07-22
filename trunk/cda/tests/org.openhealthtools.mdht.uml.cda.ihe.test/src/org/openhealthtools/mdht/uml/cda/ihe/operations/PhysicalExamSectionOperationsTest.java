@@ -37,12 +37,12 @@ PhysicalExamNarrativeSectionOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PhysicalExamSectionOperations
 				.validatePhysicalExamSectionTemplateId(
-						(PhysicalExamSection) eObjectToTest, diagnostician,
+						(PhysicalExamSection) objectToTest, diagnostician,
 						map);
 			}
 
@@ -60,12 +60,12 @@ PhysicalExamNarrativeSectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createPhysicalExamSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createPhysicalExamSection().init();
 	}
 

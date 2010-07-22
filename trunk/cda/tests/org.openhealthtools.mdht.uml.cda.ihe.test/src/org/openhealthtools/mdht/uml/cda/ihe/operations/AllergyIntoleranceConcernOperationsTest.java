@@ -36,12 +36,12 @@ public class AllergyIntoleranceConcernOperationsTest extends
 	new TemplateIDCCDValidationTest(ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return AllergyIntoleranceConcernOperations
 					.validateAllergyIntoleranceConcernTemplateId(
-							(AllergyIntoleranceConcern) eObjectToTest,
+							(AllergyIntoleranceConcern) objectToTest,
 							diagnostician, map);
 		}
 
@@ -59,12 +59,12 @@ public class AllergyIntoleranceConcernOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createAllergyIntoleranceConcern();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createAllergyIntoleranceConcern().init();
 	}
 

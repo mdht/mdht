@@ -41,11 +41,11 @@ public class Component2OperationsTest extends CDAValidationTest {
 	new UndefinedXORValidationTestCase("Component2Operations", EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return Component2Operations.validateBodyChoice(
-					(Component2) eObjectToTest, diagnostician, map);
+					(Component2) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -59,7 +59,7 @@ public class Component2OperationsTest extends CDAValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createComponent2();
 	}
 

@@ -45,12 +45,12 @@ public class FulfillmentInstructionOperationsTest extends
 	new TemplateIDCCDValidationTest(FULFILLMENT_INSTRUCTION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return FulfillmentInstructionOperations
 					.validateFulfillmentInstructionTemplateId(
-							(FulfillmentInstruction) eObjectToTest,
+							(FulfillmentInstruction) objectToTest,
 							diagnostician, map);
 		}
 
@@ -68,12 +68,12 @@ public class FulfillmentInstructionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createFulfillmentInstruction();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createFulfillmentInstruction().init();
 	}
 

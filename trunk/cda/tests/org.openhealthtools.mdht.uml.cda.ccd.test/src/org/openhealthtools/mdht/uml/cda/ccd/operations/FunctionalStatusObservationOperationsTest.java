@@ -38,12 +38,12 @@ CCDValidationTest {
 		new TemplateIDCCDValidationTest(FUNCTIONAL_STATUS_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return FunctionalStatusObservationOperations
 				.validateStatusObservationTemplateId(
-						(FunctionalStatusObservation) eObjectToTest,
+						(FunctionalStatusObservation) objectToTest,
 						diagnostician, map);
 			}
 		} }; // TEST_CASE_ARRAY
@@ -58,12 +58,12 @@ CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createFunctionalStatusObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createFunctionalStatusObservation().init();
 	}
 

@@ -38,12 +38,12 @@ AllergyIntoleranceConcernOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AllergyDrugSensitivityOperations
 				.validateAllergyDrugSensitivityTemplateId(
-						(AllergyDrugSensitivity) eObjectToTest,
+						(AllergyDrugSensitivity) objectToTest,
 						diagnostician, map);
 			}
 
@@ -61,12 +61,12 @@ AllergyIntoleranceConcernOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createAllergyDrugSensitivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createAllergyDrugSensitivity().init();
 	}
 

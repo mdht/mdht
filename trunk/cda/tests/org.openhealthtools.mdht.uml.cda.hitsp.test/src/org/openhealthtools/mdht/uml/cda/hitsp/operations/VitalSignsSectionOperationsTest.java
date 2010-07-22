@@ -45,12 +45,12 @@ CodedVitalSignsSectionOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignsSectionOperations
 				.validateHITSPVitalSignsSectionTemplateId(
-						(VitalSignsSection) eObjectToTest,
+						(VitalSignsSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -61,12 +61,12 @@ CodedVitalSignsSectionOperationsTest {
 		new EntryCCDValidationTest() {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignsSectionOperations
 				.validateHITSPVitalSignsSectionVitalSigns(
-						(VitalSignsSection) eObjectToTest,
+						(VitalSignsSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -103,12 +103,12 @@ CodedVitalSignsSectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createVitalSignsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createVitalSignsSection().init();
 	}
 

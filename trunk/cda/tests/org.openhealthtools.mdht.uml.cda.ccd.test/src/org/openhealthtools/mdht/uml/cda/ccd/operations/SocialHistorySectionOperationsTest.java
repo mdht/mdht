@@ -38,12 +38,12 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(SOCIAL_HISTORY_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SocialHistorySectionOperations
 							.validateSocialHistorySectionTemplateId(
-									(SocialHistorySection) eObjectToTest,
+									(SocialHistorySection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -54,12 +54,12 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SocialHistorySectionOperations
 							.validateSocialHistorySectionTitle(
-									(SocialHistorySection) eObjectToTest,
+									(SocialHistorySection) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -68,12 +68,12 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SocialHistorySectionOperations
 							.validateSocialHistorySectionCode(
-									(SocialHistorySection) eObjectToTest,
+									(SocialHistorySection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -90,12 +90,12 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createSocialHistorySection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createSocialHistorySection().init();
 	}
 

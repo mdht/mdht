@@ -38,11 +38,11 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.PayersSectionOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PayersSectionOperations.validateIHEPayersSectionTemplateId(
-						(PayersSection) eObjectToTest, diagnostician, map);
+						(PayersSection) objectToTest, diagnostician, map);
 			}
 
 		}
@@ -59,12 +59,12 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.PayersSectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createPayersSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createPayersSection().init();
 	}
 

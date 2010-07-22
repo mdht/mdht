@@ -38,12 +38,12 @@ EncounterHistorySectionOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EncountersSectionOperations
 				.validateHITSPEncountersSectionTemplateId(
-						(EncountersSection) eObjectToTest, diagnostician,
+						(EncountersSection) objectToTest, diagnostician,
 						map);
 			}
 
@@ -61,12 +61,12 @@ EncounterHistorySectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createEncountersSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createEncountersSection().init();
 	}
 

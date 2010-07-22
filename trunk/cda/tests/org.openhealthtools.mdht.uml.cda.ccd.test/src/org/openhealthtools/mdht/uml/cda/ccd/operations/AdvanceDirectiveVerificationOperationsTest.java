@@ -42,12 +42,12 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	new TemplateIDCCDValidationTest(ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return AdvanceDirectiveVerificationOperations
 					.validateAdvanceDirectiveVerificationTemplateId(
-							(AdvanceDirectiveVerification) eObjectToTest,
+							(AdvanceDirectiveVerification) objectToTest,
 							diagnostician, map);
 		}
 
@@ -65,12 +65,12 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectiveVerification();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectiveVerification().init();
 	}
 
@@ -81,7 +81,7 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	 */
 	@Test
 	public final void testValidateAdvanceDirectiveVerificationTypeCode() {
-		final AdvanceDirectiveVerification adv = (AdvanceDirectiveVerification) getEObjectToValidate();
+		final AdvanceDirectiveVerification adv = (AdvanceDirectiveVerification) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(adv);
 		assertTrue(!AdvanceDirectiveVerificationOperations
@@ -106,20 +106,20 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	 */
 	@Test
 	public final void testValidateAdvanceDirectiveVerificationTime() {
-		final EObject eObjectToTest = getEObjectToValidate();
+		final EObject objectToTest = getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(eObjectToTest);
+				.createDefaultDiagnostic(objectToTest);
 		assertTrue(!AdvanceDirectiveVerificationOperations
 				.validateAdvanceDirectiveVerificationTime(
-						(AdvanceDirectiveVerification) eObjectToTest,
+						(AdvanceDirectiveVerification) objectToTest,
 						diagnostician, map));
 
-		((AdvanceDirectiveVerification) eObjectToTest)
+		((AdvanceDirectiveVerification) objectToTest)
 				.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
 
 		assertTrue(AdvanceDirectiveVerificationOperations
 				.validateAdvanceDirectiveVerificationTime(
-						(AdvanceDirectiveVerification) eObjectToTest,
+						(AdvanceDirectiveVerification) objectToTest,
 						diagnostician, map));
 	}
 

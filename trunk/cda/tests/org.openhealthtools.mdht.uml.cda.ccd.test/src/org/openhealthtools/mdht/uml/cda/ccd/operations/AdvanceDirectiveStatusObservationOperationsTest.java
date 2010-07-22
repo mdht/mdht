@@ -39,12 +39,12 @@ CCDValidationTest {
 				ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AdvanceDirectiveStatusObservationOperations
 				.validateStatusObservationTemplateId(
-						(AdvanceDirectiveStatusObservation) eObjectToTest,
+						(AdvanceDirectiveStatusObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -62,12 +62,12 @@ CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectiveStatusObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectiveStatusObservation()
 		.init();
 	}

@@ -38,12 +38,12 @@ public class MedicationSectionOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationsSectionOperations
 							.validateMedicationsSectionTemplateId(
-									(MedicationsSection) eObjectToTest,
+									(MedicationsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -54,12 +54,12 @@ public class MedicationSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationsSectionOperations
 							.validateMedicationsSectionTitle(
-									(MedicationsSection) eObjectToTest,
+									(MedicationsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -69,12 +69,12 @@ public class MedicationSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationsSectionOperations
 							.validateMedicationsSectionCode(
-									(MedicationsSection) eObjectToTest,
+									(MedicationsSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -91,12 +91,12 @@ public class MedicationSectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createMedicationsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createMedicationsSection().init();
 	}
 

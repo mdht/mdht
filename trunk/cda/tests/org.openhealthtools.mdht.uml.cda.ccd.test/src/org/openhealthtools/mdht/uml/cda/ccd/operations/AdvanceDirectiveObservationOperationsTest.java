@@ -56,12 +56,12 @@ StructuralAttributeValidationTest {
 				ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AdvanceDirectiveObservationOperations
 				.validateAdvanceDirectiveObservationTemplateId(
-						(AdvanceDirectiveObservation) eObjectToTest,
+						(AdvanceDirectiveObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -71,12 +71,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new IDCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AdvanceDirectiveObservationOperations
 				.validateAdvanceDirectiveObservationId(
-						(AdvanceDirectiveObservation) eObjectToTest,
+						(AdvanceDirectiveObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -86,12 +86,12 @@ StructuralAttributeValidationTest {
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AdvanceDirectiveObservationOperations
 				.validateAdvanceDirectiveObservationStatusCode(
-						(AdvanceDirectiveObservation) eObjectToTest,
+						(AdvanceDirectiveObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -100,12 +100,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AdvanceDirectiveObservationOperations
 				.validateAdvanceDirectiveObservationEffectiveTime(
-						(AdvanceDirectiveObservation) eObjectToTest,
+						(AdvanceDirectiveObservation) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -122,12 +122,12 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectiveObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectiveObservation().init();
 	}
 

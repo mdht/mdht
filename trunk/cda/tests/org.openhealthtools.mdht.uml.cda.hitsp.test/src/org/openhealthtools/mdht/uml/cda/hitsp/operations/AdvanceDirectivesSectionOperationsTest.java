@@ -37,12 +37,12 @@ CodedAdvanceDirectivesSectionOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AdvanceDirectivesSectionOperations
 				.validateHITSPAdvanceDirectivesSectionTemplateId(
-						(AdvanceDirectivesSection) eObjectToTest,
+						(AdvanceDirectivesSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -60,12 +60,12 @@ CodedAdvanceDirectivesSectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createAdvanceDirectivesSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createAdvanceDirectivesSection().init();
 	}
 

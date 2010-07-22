@@ -41,11 +41,11 @@ public class GuardianOperationsTest extends CDAValidationTest {
 	new UndefinedXORValidationTestCase("Guardian", EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return GuardianOperations.validateGuardianChoice(
-					(Guardian) eObjectToTest, diagnostician, map);
+					(Guardian) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -59,7 +59,7 @@ public class GuardianOperationsTest extends CDAValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createGuardian();
 	}
 

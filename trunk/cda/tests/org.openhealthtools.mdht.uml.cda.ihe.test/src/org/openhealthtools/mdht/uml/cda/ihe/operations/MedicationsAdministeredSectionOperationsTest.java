@@ -40,12 +40,12 @@ public class MedicationsAdministeredSectionOperationsTest extends
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationsAdministeredSectionOperations
 							.validateMedicationsAdministeredSectionTemplateId(
-									(MedicationsAdministeredSection) eObjectToTest,
+									(MedicationsAdministeredSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -55,12 +55,12 @@ public class MedicationsAdministeredSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicationsAdministeredSectionOperations
 							.validateMedicationsAdministeredSectionCode(
-									(MedicationsAdministeredSection) eObjectToTest,
+									(MedicationsAdministeredSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -77,12 +77,12 @@ public class MedicationsAdministeredSectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createMedicationsAdministeredSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createMedicationsAdministeredSection()
 				.init();
 	}

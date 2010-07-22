@@ -37,12 +37,12 @@ public class ChiefComplaintSectionOperationsTest
 	new CCDValidationTest.TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return ChiefComplaintSectionOperations
 					.validateHITSPChiefComplaintSectionTemplateId(
-							(ChiefComplaintSection) eObjectToTest,
+							(ChiefComplaintSection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -60,12 +60,12 @@ public class ChiefComplaintSectionOperationsTest
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createChiefComplaintSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createChiefComplaintSection().init();
 	}
 

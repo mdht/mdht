@@ -48,12 +48,12 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(SUPPLY_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SupplyActivityOperations
 							.validateSupplyActivityTemplateId(
-									(SupplyActivity) eObjectToTest,
+									(SupplyActivity) objectToTest,
 									diagnostician, map);
 				}
 
@@ -63,11 +63,11 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SupplyActivityOperations.validateSupplyActivityId(
-							(SupplyActivity) eObjectToTest, diagnostician, map);
+							(SupplyActivity) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -76,12 +76,12 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SupplyActivityOperations
 							.validateSupplyActivityStatusCode(
-									(SupplyActivity) eObjectToTest,
+									(SupplyActivity) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -90,12 +90,12 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryRelationshipCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SupplyActivityOperations
 							.validateSupplyActivityFulfillmentInstruction(
-									(SupplyActivity) eObjectToTest,
+									(SupplyActivity) objectToTest,
 									diagnostician, map);
 
 				}
@@ -125,12 +125,12 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createSupplyActivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createSupplyActivity().init();
 	}
 
@@ -141,7 +141,7 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateSupplyActivityMedicationStatusObservation() {
-		final SupplyActivity sa = (SupplyActivity) getEObjectToValidate();
+		final SupplyActivity sa = (SupplyActivity) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(sa);
 		boolean isValid = SupplyActivityOperations

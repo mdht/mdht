@@ -41,11 +41,11 @@ public class Informant12OperationsTest extends CDAValidationTest {
 	new UndefinedXORValidationTestCase("Informant12", EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return Informant12Operations.validateInformantChoice(
-					(Informant12) eObjectToTest, diagnostician, map);
+					(Informant12) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -59,7 +59,7 @@ public class Informant12OperationsTest extends CDAValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createInformant12();
 	}
 

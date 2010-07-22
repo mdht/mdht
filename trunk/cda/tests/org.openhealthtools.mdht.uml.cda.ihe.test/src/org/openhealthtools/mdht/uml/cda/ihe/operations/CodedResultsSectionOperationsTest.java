@@ -40,12 +40,12 @@ public class CodedResultsSectionOperationsTest extends SectionOperationsTest {
 			new CCDValidationTest.TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return CodedResultsSectionOperations
 							.validateCodedResultsSectionTemplateId(
-									(CodedResultsSection) eObjectToTest,
+									(CodedResultsSection) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -54,12 +54,12 @@ public class CodedResultsSectionOperationsTest extends SectionOperationsTest {
 			// -------------------------------------------------------------
 			new CCDValidationTest.CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return CodedResultsSectionOperations
 							.validateCodedResultsSectionCode(
-									(CodedResultsSection) eObjectToTest,
+									(CodedResultsSection) objectToTest,
 									diagnostician, map);
 				}
 			} };
@@ -74,15 +74,15 @@ public class CodedResultsSectionOperationsTest extends SectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createCodedResultsSection();
 	}
 
 	/**
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest#getEObjectInitToValidate()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest#getObjectInitToTest()
 	 */
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createCodedResultsSection().init();
 	}
 

@@ -38,12 +38,12 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(FAMILY_HISTORY_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistorySectionOperations
 							.validateFamilyHistorySectionTemplateId(
-									(FamilyHistorySection) eObjectToTest,
+									(FamilyHistorySection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -54,12 +54,12 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistorySectionOperations
 							.validateFamilyHistorySectionTitle(
-									(FamilyHistorySection) eObjectToTest,
+									(FamilyHistorySection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -69,12 +69,12 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistorySectionOperations
 							.validateFamilyHistorySectionCode(
-									(FamilyHistorySection) eObjectToTest,
+									(FamilyHistorySection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -91,12 +91,12 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createFamilyHistorySection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createFamilyHistorySection().init();
 	}
 

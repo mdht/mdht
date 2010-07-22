@@ -53,10 +53,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addAct(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Act) eObjectToAdd);
 				}
 
@@ -76,10 +76,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addEncounter(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
 
@@ -100,10 +100,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addObservation(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Observation) eObjectToAdd);
 
 				}
@@ -125,10 +125,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addObservationMedia(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(ObservationMedia) eObjectToAdd);
 
 				}
@@ -150,10 +150,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addOrganizer(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Organizer) eObjectToAdd);
 				}
 
@@ -174,10 +174,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addProcedure(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Procedure) eObjectToAdd);
 				}
 
@@ -198,10 +198,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addRegionOfInterest(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(RegionOfInterest) eObjectToAdd);
 				}
 
@@ -222,11 +222,11 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations
 							.addSubstanceAdministration(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									(SubstanceAdministration) eObjectToAdd);
 				}
 
@@ -247,10 +247,10 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addSupply(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Supply) eObjectToAdd);
 				}
 
@@ -270,17 +270,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addAct(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Act) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getActs((SubstanceAdministration) eObjectToTest);
+							.getActs((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -294,17 +294,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addEncounter(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getEncounters((SubstanceAdministration) eObjectToTest);
+							.getEncounters((SubstanceAdministration) objectToTest);
 				}
 
 			},
@@ -319,17 +319,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addObservation(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Observation) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getObservations((SubstanceAdministration) eObjectToTest);
+							.getObservations((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -343,17 +343,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addObservationMedia(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(ObservationMedia) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getObservationMedia((SubstanceAdministration) eObjectToTest);
+							.getObservationMedia((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -367,17 +367,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addOrganizer(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Organizer) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getOrganizers((SubstanceAdministration) eObjectToTest);
+							.getOrganizers((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -391,17 +391,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addProcedure(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Procedure) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getProcedures((SubstanceAdministration) eObjectToTest);
+							.getProcedures((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -415,17 +415,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addRegionOfInterest(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(RegionOfInterest) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getRegionsOfInterest((SubstanceAdministration) eObjectToTest);
+							.getRegionsOfInterest((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -439,18 +439,18 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations
 							.addSubstanceAdministration(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									(SubstanceAdministration) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getSubstanceAdministrations((SubstanceAdministration) eObjectToTest);
+							.getSubstanceAdministrations((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -464,17 +464,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addSupply(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Supply) eObjectToAdd);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getSupplies((SubstanceAdministration) eObjectToTest);
+							.getSupplies((SubstanceAdministration) objectToTest);
 				}
 			},
 
@@ -488,21 +488,21 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					// The Add is reversed, the eObjectToTest is added to the
+					// The Add is reversed, the objectToTest is added to the
 					// clinical document
 					final Section section = CDAFactory.eINSTANCE
 							.createSection();
 					section
-							.addSubstanceAdministration((SubstanceAdministration) eObjectToTest);
+							.addSubstanceAdministration((SubstanceAdministration) objectToTest);
 					((ClinicalDocument) eObjectToAdd).addSection(section);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getClinicalDocument((SubstanceAdministration) eObjectToTest);
+							.getClinicalDocument((SubstanceAdministration) objectToTest);
 				}
 
 				@Override
@@ -522,18 +522,18 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					// The Add is reversed, the eObjectToTest is added to the
+					// The Add is reversed, the objectToTest is added to the
 					// clinical document
 					((Section) eObjectToAdd)
-							.addSubstanceAdministration((SubstanceAdministration) eObjectToTest);
+							.addSubstanceAdministration((SubstanceAdministration) objectToTest);
 				}
 
 				@Override
-				protected Object doGet(final EObject eObjectToTest) {
+				protected Object doGet(final EObject objectToTest) {
 					return SubstanceAdministrationOperations
-							.getSection((SubstanceAdministration) eObjectToTest);
+							.getSection((SubstanceAdministration) objectToTest);
 				}
 
 				@Override
@@ -553,19 +553,19 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addAct(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Act) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasActTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -586,19 +586,19 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addEncounter(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasEncounterTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -614,14 +614,14 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 			new CDAHasTestCase("Code") {
 
 				@Override
-				protected void doTest(final EObject eObjectToTest,
+				protected void doTest(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					((SubstanceAdministration) eObjectToTest).setCode(THE_CODE);
-					final boolean hasIsGood = doHas(eObjectToTest, TEMPLATE_ID);
+					((SubstanceAdministration) objectToTest).setCode(THE_CODE);
+					final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
 					assertTrue("Has \"" + getTestTargetDescription()
 							+ "\" failed for \""
-							+ eObjectToTest.eClass().getName() + "\"",
+							+ objectToTest.eClass().getName() + "\"",
 							hasIsGood);
 				}
 
@@ -631,18 +631,18 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addEncounter(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations.hasCode(
-							(SubstanceAdministration) eObjectToTest, CODE,
+							(SubstanceAdministration) objectToTest, CODE,
 							CODE_SYSTEM, CODE_SYSTEM_NAME);
 				}
 
@@ -663,19 +663,19 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addObservation(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Observation) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasObservationTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -696,20 +696,20 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addObservationMedia(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(ObservationMedia) eObjectToAdd);
 
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasObservationMediaTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -731,19 +731,19 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addOrganizer(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Organizer) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasOrganizerTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -764,19 +764,19 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addProcedure(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Procedure) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasProcedureTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -797,19 +797,19 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addRegionOfInterest(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(RegionOfInterest) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasRegionOfInterestTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -832,20 +832,20 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations
 							.addSubstanceAdministration(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									(SubstanceAdministration) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasSubstanceAdministrationTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -867,19 +867,19 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					SubstanceAdministrationOperations.addSupply(
-							(SubstanceAdministration) eObjectToTest,
+							(SubstanceAdministration) objectToTest,
 							(Supply) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasSupplyTemplate(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -895,15 +895,15 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 			new CDAHasTestCase("TemplateID") {
 
 				@Override
-				protected void doTest(final EObject eObjectToTest,
+				protected void doTest(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					((SubstanceAdministration) eObjectToTest).getTemplateIds()
+					((SubstanceAdministration) objectToTest).getTemplateIds()
 							.add(THE_II);
-					final boolean hasIsGood = doHas(eObjectToTest, TEMPLATE_ID);
+					final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
 					assertTrue("Has \"" + getTestTargetDescription()
 							+ "\" failed for \""
-							+ eObjectToTest.eClass().getName() + "\"",
+							+ objectToTest.eClass().getName() + "\"",
 							hasIsGood);
 				}
 
@@ -913,17 +913,17 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 				}
 
 				@Override
-				protected void doAdd(final EObject eObjectToTest,
+				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
 					// Nothing
 				}
 
 				@Override
-				protected boolean doHas(final EObject eObjectToTest,
+				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
 					return SubstanceAdministrationOperations
 							.hasTemplateId(
-									(SubstanceAdministration) eObjectToTest,
+									(SubstanceAdministration) objectToTest,
 									templateId);
 				}
 
@@ -944,7 +944,7 @@ public class SubstanceAdministrationOperationsTest extends ClinicalStatementOper
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createSubstanceAdministration();
 	}
 

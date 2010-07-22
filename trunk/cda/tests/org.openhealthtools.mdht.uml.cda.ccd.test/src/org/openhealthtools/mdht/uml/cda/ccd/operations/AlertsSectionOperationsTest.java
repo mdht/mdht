@@ -42,12 +42,12 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(ALERTS_SECTION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertsSectionOperations
 				.validateAlertsSectionTemplateId(
-						(AlertsSection) eObjectToTest,
+						(AlertsSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -58,11 +58,11 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 		new TitleCCDValidationTest() {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertsSectionOperations.validateAlertsSectionTitle(
-						(AlertsSection) eObjectToTest, diagnostician, map);
+						(AlertsSection) objectToTest, diagnostician, map);
 			}
 
 		},
@@ -71,11 +71,11 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertsSectionOperations.validateAlertsSectionCode(
-						(AlertsSection) eObjectToTest, diagnostician, map);
+						(AlertsSection) objectToTest, diagnostician, map);
 			}
 		},
 
@@ -84,12 +84,12 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 		new TextCCDValidationTest() {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertsSectionOperations
 				.validateAlertsSectionText(
-						(AlertsSection) eObjectToTest,
+						(AlertsSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -99,12 +99,12 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new EntryCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertsSectionOperations
 				.validateAlertsSectionProblemAct(
-						(AlertsSection) eObjectToTest,
+						(AlertsSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -130,12 +130,12 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAlertsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAlertsSection().init();
 	}
 

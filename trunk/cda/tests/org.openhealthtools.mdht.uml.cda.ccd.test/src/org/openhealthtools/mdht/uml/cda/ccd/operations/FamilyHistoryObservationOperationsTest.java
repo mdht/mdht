@@ -39,12 +39,12 @@ public class FamilyHistoryObservationOperationsTest extends CCDValidationTest {
 					FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistoryObservationOperations
 							.validateFamilyHistoryObservationTemplateId(
-									(FamilyHistoryObservation) eObjectToTest,
+									(FamilyHistoryObservation) objectToTest,
 									diagnostician, map);
 				}
 
@@ -54,12 +54,12 @@ public class FamilyHistoryObservationOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistoryObservationOperations
 							.validateFamilyHistoryObservationId(
-									(FamilyHistoryObservation) eObjectToTest,
+									(FamilyHistoryObservation) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -69,12 +69,12 @@ public class FamilyHistoryObservationOperationsTest extends CCDValidationTest {
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistoryObservationOperations
 							.validateFamilyHistoryObservationStatusCode(
-									(FamilyHistoryObservation) eObjectToTest,
+									(FamilyHistoryObservation) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -91,12 +91,12 @@ public class FamilyHistoryObservationOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createFamilyHistoryObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createFamilyHistoryObservation().init();
 	}
 

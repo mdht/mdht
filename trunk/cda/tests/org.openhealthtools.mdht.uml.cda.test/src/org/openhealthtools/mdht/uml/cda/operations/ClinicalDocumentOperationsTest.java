@@ -63,17 +63,17 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 		new CDAAddTestCase("Section") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 
 				final Section section = (Section) getEObjectToAdd();
 
 				ClinicalDocumentOperations.addSection(
-						(ClinicalDocument) eObjectToTest, section);
+						(ClinicalDocument) objectToTest, section);
 
 				assertTrue(ClinicalDocumentOperations.getSections(
-						(ClinicalDocument) eObjectToTest).get(0).equals(
+						(ClinicalDocument) objectToTest).get(0).equals(
 								section));
 			}
 
@@ -83,7 +83,7 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				// Nothing
 			}
@@ -105,16 +105,16 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				((ClinicalDocument) eObjectToTest)
+				((ClinicalDocument) objectToTest)
 				.addSection((Section) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return ClinicalDocumentOperations
-				.getSections((ClinicalDocument) eObjectToTest);
+				.getSections((ClinicalDocument) objectToTest);
 			}
 
 			@SuppressWarnings("unchecked")
@@ -130,18 +130,18 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 		new CDAHasTestCase("Code") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 
 				final CE code = DatatypesFactory.eINSTANCE.createCE(CODE,
 						CODE_SYSTEM);
 				code.setCodeSystemName(CODE_SYSTEM_NAME);
-				((ClinicalDocument) eObjectToTest).setCode(code);
-				final boolean hasIsGood = doHas(eObjectToTest, TEMPLATE_ID);
+				((ClinicalDocument) objectToTest).setCode(code);
+				final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
 				assertTrue("Has \"" + getTestTargetDescription()
 						+ "\" failed for \""
-						+ eObjectToTest.eClass().getName() + "\"",
+						+ objectToTest.eClass().getName() + "\"",
 						hasIsGood);
 			}
 
@@ -151,16 +151,16 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				// Nothing
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return ClinicalDocumentOperations.hasCode(
-						(ClinicalDocument) eObjectToTest, CODE,
+						(ClinicalDocument) objectToTest, CODE,
 						CODE_SYSTEM, CODE_SYSTEM_NAME);
 			}
 
@@ -176,15 +176,15 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 		new CDAHasTestCase("TemplateID") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
-				((ClinicalDocument) eObjectToTest).getTemplateIds().add(
+				((ClinicalDocument) objectToTest).getTemplateIds().add(
 						THE_II);
-				final boolean hasIsGood = doHas(eObjectToTest, TEMPLATE_ID);
+				final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
 				assertTrue("Has \"" + getTestTargetDescription()
 						+ "\" failed for \""
-						+ eObjectToTest.eClass().getName() + "\"",
+						+ objectToTest.eClass().getName() + "\"",
 						hasIsGood);
 			}
 
@@ -194,16 +194,16 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				// Nothing
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return ClinicalDocumentOperations.hasTemplateId(
-						(ClinicalDocument) eObjectToTest, templateId);
+						(ClinicalDocument) objectToTest, templateId);
 			}
 
 			@Override
@@ -218,14 +218,14 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 		new CDATestCase("SetStructureBody") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				final StructuredBody sb = CDAFactory.eINSTANCE
 				.createStructuredBody();
 				ClinicalDocumentOperations.setStructuredBody(
-						(ClinicalDocument) eObjectToTest, sb);
-				assertTrue(((ClinicalDocument) eObjectToTest)
+						(ClinicalDocument) objectToTest, sb);
+				assertTrue(((ClinicalDocument) objectToTest)
 						.getComponent().getStructuredBody().equals(sb));
 			}
 		},
@@ -235,17 +235,17 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 		new CDATestCase("GetPatients") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				assertTrue(ClinicalDocumentOperations.getPatients(
-						(ClinicalDocument) eObjectToTest).isEmpty());
+						(ClinicalDocument) objectToTest).isEmpty());
 				final Patient patient = CDAFactory.eINSTANCE
 				.createPatient();
 				ClinicalDocumentOperations.addPatient(
-						(ClinicalDocument) eObjectToTest, patient);
+						(ClinicalDocument) objectToTest, patient);
 				assertTrue(!ClinicalDocumentOperations.getPatients(
-						(ClinicalDocument) eObjectToTest).isEmpty());
+						(ClinicalDocument) objectToTest).isEmpty());
 			}
 		},
 
@@ -254,17 +254,17 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 		new CDATestCase("GetPatientRoles") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				assertTrue(ClinicalDocumentOperations.getPatientRoles(
-						(ClinicalDocument) eObjectToTest).isEmpty());
+						(ClinicalDocument) objectToTest).isEmpty());
 				final PatientRole patientRole = CDAFactory.eINSTANCE
 				.createPatientRole();
 				ClinicalDocumentOperations.addPatientRole(
-						(ClinicalDocument) eObjectToTest, patientRole);
+						(ClinicalDocument) objectToTest, patientRole);
 				assertTrue(!ClinicalDocumentOperations.getPatientRoles(
-						(ClinicalDocument) eObjectToTest).isEmpty());
+						(ClinicalDocument) objectToTest).isEmpty());
 			}
 		},
 		// HasSectionTemplate
@@ -272,11 +272,11 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 		new CDATestCase("HasSectionTemplate") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				assertTrue(!ClinicalDocumentOperations.hasSectionTemplate(
-						(ClinicalDocument) eObjectToTest, TEMPLATE_ID));
+						(ClinicalDocument) objectToTest, TEMPLATE_ID));
 			}
 		} };
 
@@ -290,7 +290,7 @@ public class ClinicalDocumentOperationsTest extends CDAValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createClinicalDocument();
 	}
 

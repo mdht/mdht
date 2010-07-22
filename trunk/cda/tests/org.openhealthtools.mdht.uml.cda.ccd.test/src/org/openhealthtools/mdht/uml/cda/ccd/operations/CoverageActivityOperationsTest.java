@@ -50,12 +50,12 @@ public class CoverageActivityOperationsTest extends
 			new TemplateIDCCDValidationTest(COVERAGE_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return CoverageActivityOperations
 							.validateCoverageActivityTemplateId(
-									(CoverageActivity) eObjectToTest,
+									(CoverageActivity) objectToTest,
 									diagnostician, map);
 				}
 
@@ -65,12 +65,12 @@ public class CoverageActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return CoverageActivityOperations
 							.validateCoverageActivityId(
-									(CoverageActivity) eObjectToTest,
+									(CoverageActivity) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -80,12 +80,12 @@ public class CoverageActivityOperationsTest extends
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return CoverageActivityOperations
 							.validateCoverageActivityStatusCode(
-									(CoverageActivity) eObjectToTest,
+									(CoverageActivity) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -102,12 +102,12 @@ public class CoverageActivityOperationsTest extends
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createCoverageActivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createCoverageActivity().init();
 	}
 

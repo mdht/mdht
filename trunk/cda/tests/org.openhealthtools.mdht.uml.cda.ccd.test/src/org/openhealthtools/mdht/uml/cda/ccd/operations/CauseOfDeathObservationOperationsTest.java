@@ -35,12 +35,12 @@ public class CauseOfDeathObservationOperationsTest extends CCDValidationTest {
 	new TemplateIDCCDValidationTest(CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return CauseOfDeathObservationOperations
 					.validateFamilyHistoryObservationTemplateId(
-							(CauseOfDeathObservation) eObjectToTest,
+							(CauseOfDeathObservation) objectToTest,
 							diagnostician, map);
 		}
 
@@ -58,12 +58,12 @@ public class CauseOfDeathObservationOperationsTest extends CCDValidationTest {
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createCauseOfDeathObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createCauseOfDeathObservation().init();
 	}
 
