@@ -25,6 +25,9 @@ import org.junit.runners.Suite;
 	PNOperationsTest.class, TNOperationsTest.class })
 	public class ALLDatatypeOperationsTests {
 	
+	/**
+	 * @return JUnit3 test
+	 */
 	public static junit.framework.Test suite() { 
 	    return new JUnit4TestAdapter(ALLDatatypeOperationsTests.class); 
 	}
