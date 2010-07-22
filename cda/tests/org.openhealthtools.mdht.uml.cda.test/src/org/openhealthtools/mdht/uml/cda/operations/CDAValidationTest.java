@@ -51,17 +51,6 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 	protected static Map<Object, Object> map = new HashMap<Object, Object>();
 
-	protected abstract EObject getObjectToTest();
-
-	/**
-	 * This is not currently used, but is implemented in many subclasses.
-	 * 
-	 * @return the initialized EObject instance to test
-	 */
-	protected EObject getObjectInitToTest() {
-		return null;
-	}
-
 	/**
 	 * Do all validation tests defined for the objectToTest.
 	 */
