@@ -36,12 +36,12 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 			new TemplateIDCCDValidationTest(CONCERN_ENTRY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ConcernEntryOperations
 							.validateConcernEntryTemplateId(
-									(ConcernEntry) eObjectToTest,
+									(ConcernEntry) objectToTest,
 									diagnostician, map);
 				}
 
@@ -51,12 +51,12 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 			// -------------------------------------------------------------
 			new EffectiveTimeCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ConcernEntryOperations
 							.validateConcernEntryEffectiveTime(
-									(ConcernEntry) eObjectToTest,
+									(ConcernEntry) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -73,12 +73,12 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createConcernEntry();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createConcernEntry().init();
 	}
 

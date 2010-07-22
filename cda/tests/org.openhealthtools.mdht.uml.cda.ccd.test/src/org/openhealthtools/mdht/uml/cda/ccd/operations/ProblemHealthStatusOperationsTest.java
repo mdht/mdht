@@ -40,12 +40,12 @@ public class ProblemHealthStatusOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProblemHealthStatusObservationOperations
 				.validateStatusObservationTemplateId(
-						(ProblemHealthStatusObservation) eObjectToTest,
+						(ProblemHealthStatusObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -56,13 +56,13 @@ public class ProblemHealthStatusOperationsTest extends CCDValidationTest {
 		new CodeCCDValidationTest(CODE,
 				CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				// The OCL specifies CD as the type but the type is CS
 				return ProblemHealthStatusObservationOperations
 				.validateStatusObservationCode(
-						(ProblemHealthStatusObservation) eObjectToTest,
+						(ProblemHealthStatusObservation) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -79,12 +79,12 @@ public class ProblemHealthStatusOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProblemHealthStatusObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createProblemHealthStatusObservation().init();
 	}
 

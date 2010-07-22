@@ -41,10 +41,10 @@ public class PastMedicalHistorySectionOperationsTest extends
 	}
 
 	/**
-	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getEObjectToValidate()
+	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getObjectToTest()
 	 */
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createPastMedicalHistorySection();
 	}
 

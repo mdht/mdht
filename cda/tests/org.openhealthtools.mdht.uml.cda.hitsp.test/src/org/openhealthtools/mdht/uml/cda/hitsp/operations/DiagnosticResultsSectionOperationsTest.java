@@ -38,12 +38,12 @@ public class DiagnosticResultsSectionOperationsTest extends
 	new CCDValidationTest.TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return DiagnosticResultsSectionOperations
 					.validateDiagnosticResultsSectionTemplateId(
-							(DiagnosticResultsSection) eObjectToTest,
+							(DiagnosticResultsSection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -61,12 +61,12 @@ public class DiagnosticResultsSectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createDiagnosticResultsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createDiagnosticResultsSection().init();
 	}
 

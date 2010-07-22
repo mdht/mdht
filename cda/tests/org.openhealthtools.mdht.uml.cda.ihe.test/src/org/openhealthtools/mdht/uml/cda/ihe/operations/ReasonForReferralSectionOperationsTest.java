@@ -41,12 +41,12 @@ public class ReasonForReferralSectionOperationsTest extends SectionOperationsTes
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ReasonForReferralSectionOperations
 							.validateReasonForReferralSectionTemplateId(
-									(ReasonForReferralSection) eObjectToTest,
+									(ReasonForReferralSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -56,12 +56,12 @@ public class ReasonForReferralSectionOperationsTest extends SectionOperationsTes
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ReasonForReferralSectionOperations
 							.validateReasonForReferralSectionCode(
-									(ReasonForReferralSection) eObjectToTest,
+									(ReasonForReferralSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -78,12 +78,12 @@ public class ReasonForReferralSectionOperationsTest extends SectionOperationsTes
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createReasonForReferralSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createReasonForReferralSection().init();
 	}
 

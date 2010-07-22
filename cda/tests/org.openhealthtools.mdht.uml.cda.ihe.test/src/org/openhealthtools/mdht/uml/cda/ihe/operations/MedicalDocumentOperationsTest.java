@@ -39,11 +39,11 @@ ClinicalDocumentOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return MedicalDocumentOperations.validateMedicalDocumentTemplateId(
-						(MedicalDocument) eObjectToTest, diagnostician, map);
+						(MedicalDocument) objectToTest, diagnostician, map);
 			}
 
 		}
@@ -60,12 +60,12 @@ ClinicalDocumentOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createMedicalDocument();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createMedicalDocument().init();
 	}
 

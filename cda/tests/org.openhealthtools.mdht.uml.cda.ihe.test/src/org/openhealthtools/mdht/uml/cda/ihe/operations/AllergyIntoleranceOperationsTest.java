@@ -41,12 +41,12 @@ public class AllergyIntoleranceOperationsTest extends
 	new TemplateIDCCDValidationTest(ALLERGY_INTOLERANCE_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return AllergyIntoleranceOperations
 					.validateAllergyIntoleranceTemplateId(
-							(AllergyIntolerance) eObjectToTest, diagnostician,
+							(AllergyIntolerance) objectToTest, diagnostician,
 							map);
 		}
 
@@ -56,12 +56,12 @@ public class AllergyIntoleranceOperationsTest extends
 	// -------------------------------------------------------------
 	new InformationSourceCCDValidationTest() {
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return ProblemObservationOperations.
 			validateProblemObservationInformationSource(
-					(ProblemObservation) eObjectToTest,
+					(ProblemObservation) objectToTest,
 					diagnostician, map);
 		}
 	}
@@ -78,7 +78,7 @@ public class AllergyIntoleranceOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -89,7 +89,7 @@ public class AllergyIntoleranceOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createAllergyIntolerance().init();
 	}
 

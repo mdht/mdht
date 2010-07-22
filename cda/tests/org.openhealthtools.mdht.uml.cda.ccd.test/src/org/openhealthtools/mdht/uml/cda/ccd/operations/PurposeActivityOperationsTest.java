@@ -60,12 +60,12 @@ public class PurposeActivityOperationsTest extends
 			new TemplateIDCCDValidationTest(PURPOSE_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PurposeActivityOperations
 							.validatePurposeActivityTemplateId(
-									(PurposeActivity) eObjectToTest,
+									(PurposeActivity) objectToTest,
 									diagnostician, map);
 				}
 
@@ -76,12 +76,12 @@ public class PurposeActivityOperationsTest extends
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PurposeActivityOperations
 							.validatePurposeActivityStatusCode(
-									(PurposeActivity) eObjectToTest,
+									(PurposeActivity) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -90,12 +90,12 @@ public class PurposeActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PurposeActivityOperations
 							.validatePurposeActivityCode(
-									(PurposeActivity) eObjectToTest,
+									(PurposeActivity) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -112,12 +112,12 @@ public class PurposeActivityOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPurposeActivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createPurposeActivity().init();
 	}
 
@@ -128,7 +128,7 @@ public class PurposeActivityOperationsTest extends
 	 */
 	@Test
 	public final void testValidatePurposeActivityHasReason() {
-		final PurposeActivity pa = (PurposeActivity) getEObjectToValidate();
+		final PurposeActivity pa = (PurposeActivity) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(pa);
 		boolean isValid = PurposeActivityOperations
@@ -153,7 +153,7 @@ public class PurposeActivityOperationsTest extends
 	 */
 	@Test
 	public final void testValidatePurposeActivityReasonType() {
-		final PurposeActivity pa = (PurposeActivity) getEObjectToValidate();
+		final PurposeActivity pa = (PurposeActivity) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 				.createDefaultDiagnostic(pa);
 

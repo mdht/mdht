@@ -35,12 +35,12 @@ public class ProcedureActivityObservationOperationsTest extends CCDValidationTes
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProcedureActivityObservationOperations
 				.validateProcedureActivityObservationTemplateId(
-						(ProcedureActivityObservation) eObjectToTest,
+						(ProcedureActivityObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -56,12 +56,12 @@ public class ProcedureActivityObservationOperationsTest extends CCDValidationTes
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProcedureActivityObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createProcedureActivityObservation().init();
 	}
 

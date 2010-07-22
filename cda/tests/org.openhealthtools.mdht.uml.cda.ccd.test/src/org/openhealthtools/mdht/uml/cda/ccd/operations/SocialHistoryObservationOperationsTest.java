@@ -35,12 +35,12 @@ public class SocialHistoryObservationOperationsTest extends CCDValidationTest {
 	new TemplateIDCCDValidationTest(SOCIAL_HISTORY_OBSERVATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return SocialHistoryObservationOperations
 					.validateSocialHistoryObservationTemplateId(
-							(SocialHistoryObservation) eObjectToTest,
+							(SocialHistoryObservation) objectToTest,
 							diagnostician, map);
 		}
 
@@ -58,12 +58,12 @@ public class SocialHistoryObservationOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createSocialHistoryObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createSocialHistoryObservation().init();
 	}
 

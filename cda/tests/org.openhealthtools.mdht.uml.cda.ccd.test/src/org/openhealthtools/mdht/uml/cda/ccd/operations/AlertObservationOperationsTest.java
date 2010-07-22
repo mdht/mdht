@@ -62,12 +62,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 				ALERT_OBSERVATION_VERIFICATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationTemplateId(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -78,12 +78,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationStatusCode(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -92,12 +92,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		// -------------------------------------------------------------
 		new InformationSourceCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationInformationSource(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -106,12 +106,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("participant") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationAgentRepresentation(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -133,12 +133,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("participant") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationPlayingEntityRequired(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -172,12 +172,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		// -------------------------------------------------------------
 		new EntryRelationshipCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationAlertStatusObservation(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -200,12 +200,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		// -------------------------------------------------------------
 		new EntryRelationshipCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationReactionObservation(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -228,12 +228,12 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertObservationOperations
 				.validateAlertObservationEffectiveTime(
-						(AlertObservation) eObjectToTest,
+						(AlertObservation) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -249,7 +249,7 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -260,7 +260,7 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAlertObservation().init();
 	}
 

@@ -43,12 +43,12 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 				FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return FunctionalStatusSectionOperations
 				.validateFunctionalStatusSectionTemplateId(
-						(FunctionalStatusSection) eObjectToTest,
+						(FunctionalStatusSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -59,12 +59,12 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 		new TitleCCDValidationTest() {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return FunctionalStatusSectionOperations
 				.validateFunctionalStatusSectionTitle(
-						(FunctionalStatusSection) eObjectToTest,
+						(FunctionalStatusSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -74,12 +74,12 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return FunctionalStatusSectionOperations
 				.validateFunctionalStatusSectionCode(
-						(FunctionalStatusSection) eObjectToTest,
+						(FunctionalStatusSection) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -88,12 +88,12 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new EntryCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return FunctionalStatusSectionOperations
 				.validateFunctionalStatusSectionClinicalStatements(
-						(FunctionalStatusSection) eObjectToTest,
+						(FunctionalStatusSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -125,12 +125,12 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createFunctionalStatusSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createFunctionalStatusSection().init();
 	}
 

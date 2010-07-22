@@ -54,11 +54,11 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignOperations.validateVitalSignTemplateId(
-						(VitalSign) eObjectToTest, diagnostician, map);
+						(VitalSign) objectToTest, diagnostician, map);
 			}
 
 		},
@@ -67,18 +67,18 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("code") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignOperations.validateResultObservationCode(
-						(VitalSign) eObjectToTest, diagnostician, map);
+						(VitalSign) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			public void doTest(final EObject eObjectToTest,
+			public void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
-				final VitalSign vs = (VitalSign) eObjectToTest;
+				final VitalSign vs = (VitalSign) objectToTest;
 				vs.setCode(DatatypesFactory.eINSTANCE.createCE(CODE1,
 						CODE_SYSTEM, "foo", "bar"));
 				validate(vs, diagnostician, map);
@@ -141,12 +141,12 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createVitalSign();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createVitalSign().init();
 	}
 

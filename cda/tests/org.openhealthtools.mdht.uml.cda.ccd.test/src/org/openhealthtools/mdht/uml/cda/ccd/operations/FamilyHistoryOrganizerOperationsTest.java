@@ -39,12 +39,12 @@ public class FamilyHistoryOrganizerOperationsTest extends CCDValidationTest {
 					FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistoryOrganizerOperations
 							.validateFamilyHistoryOrganizerTemplateId(
-									(FamilyHistoryOrganizer) eObjectToTest,
+									(FamilyHistoryOrganizer) objectToTest,
 									diagnostician, map);
 				}
 
@@ -55,12 +55,12 @@ public class FamilyHistoryOrganizerOperationsTest extends CCDValidationTest {
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return FamilyHistoryOrganizerOperations
 							.validateFamilyHistoryOrganizerStatusCode(
-									(FamilyHistoryOrganizer) eObjectToTest,
+									(FamilyHistoryOrganizer) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -77,12 +77,12 @@ public class FamilyHistoryOrganizerOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createFamilyHistoryOrganizer();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createFamilyHistoryOrganizer().init();
 	}
 

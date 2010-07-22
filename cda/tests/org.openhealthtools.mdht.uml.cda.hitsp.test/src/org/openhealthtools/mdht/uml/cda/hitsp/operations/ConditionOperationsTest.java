@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
 import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +29,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemConcernEntryOperationsTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
@@ -46,11 +46,11 @@ public class ConditionOperationsTest extends ProblemConcernEntryOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ConditionOperations.validateConditionTemplateId(
-						(Condition) eObjectToTest, diagnostician, map);
+						(Condition) objectToTest, diagnostician, map);
 			}
 
 		},
@@ -60,11 +60,11 @@ public class ConditionOperationsTest extends ProblemConcernEntryOperationsTest {
 		new EntryRelationshipCCDValidationTest() {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ConditionOperations.validateConditionProblemEntry(
-						(Condition) eObjectToTest, diagnostician, map);
+						(Condition) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -91,12 +91,12 @@ public class ConditionOperationsTest extends ProblemConcernEntryOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createCondition();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createCondition().init();
 	}
 

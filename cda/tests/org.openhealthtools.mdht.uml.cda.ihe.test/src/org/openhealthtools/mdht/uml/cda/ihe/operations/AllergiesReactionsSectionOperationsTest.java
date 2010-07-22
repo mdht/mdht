@@ -37,12 +37,12 @@ public class AllergiesReactionsSectionOperationsTest extends
 	new TemplateIDCCDValidationTest(ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return AllergiesReactionsSectionOperations
 					.validateAllergiesReactionsSectionTemplateId(
-							(AllergiesReactionsSection) eObjectToTest,
+							(AllergiesReactionsSection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -60,12 +60,12 @@ public class AllergiesReactionsSectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createAllergiesReactionsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createAllergiesReactionsSection().init();
 	}
 

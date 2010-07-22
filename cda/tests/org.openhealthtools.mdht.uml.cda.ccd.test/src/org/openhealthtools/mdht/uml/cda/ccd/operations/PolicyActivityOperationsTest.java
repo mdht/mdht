@@ -50,12 +50,12 @@ public class PolicyActivityOperationsTest extends
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PolicyActivityOperations
 							.validatePolicyActivityTemplateId(
-									(PolicyActivity) eObjectToTest,
+									(PolicyActivity) objectToTest,
 									diagnostician, map);
 				}
 
@@ -65,11 +65,11 @@ public class PolicyActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PolicyActivityOperations.validatePolicyActivityId(
-							(PolicyActivity) eObjectToTest, diagnostician, map);
+							(PolicyActivity) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -78,12 +78,12 @@ public class PolicyActivityOperationsTest extends
 			new StatusCodeCCDValidationTest(STATUS_CODE,
 					STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PolicyActivityOperations
 							.validatePolicyActivityStatusCode(
-									(PolicyActivity) eObjectToTest,
+									(PolicyActivity) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -100,12 +100,12 @@ public class PolicyActivityOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPolicyActivity();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createPolicyActivity().init();
 	}
 

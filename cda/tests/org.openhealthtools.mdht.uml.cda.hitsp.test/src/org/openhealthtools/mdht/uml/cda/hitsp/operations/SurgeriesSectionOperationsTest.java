@@ -37,12 +37,12 @@ CodedSurgeriesSectionOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return SurgeriesSectionOperations
 				.validateHITSPSurgeriesSectionTemplateId(
-						(SurgeriesSection) eObjectToTest, diagnostician,
+						(SurgeriesSection) objectToTest, diagnostician,
 						map);
 			}
 
@@ -60,12 +60,12 @@ CodedSurgeriesSectionOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createSurgeriesSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createSurgeriesSection().init();
 	}
 

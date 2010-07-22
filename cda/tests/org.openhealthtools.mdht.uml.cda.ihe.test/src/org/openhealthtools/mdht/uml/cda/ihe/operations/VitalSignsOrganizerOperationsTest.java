@@ -52,12 +52,12 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignsOrganizerOperations
 				.validateIHEVitalSignsOrganizerTemplateId(
-						(VitalSignsOrganizer) eObjectToTest,
+						(VitalSignsOrganizer) objectToTest,
 						diagnostician, map);
 			}
 
@@ -67,12 +67,12 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignsOrganizerOperations
 				.validateResultOrganizerCode(
-						(VitalSignsOrganizer) eObjectToTest,
+						(VitalSignsOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -82,12 +82,12 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignsOrganizerOperations
 				.validateResultOrganizerStatusCode(
-						(VitalSignsOrganizer) eObjectToTest,
+						(VitalSignsOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -96,12 +96,12 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignsOrganizerOperations
 				.validateIHEVitalSignsOrganizerEffectiveTime(
-						(VitalSignsOrganizer) eObjectToTest,
+						(VitalSignsOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -136,11 +136,11 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 			}
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				return VitalSignsOrganizerOperations
 				.validateIHEVitalSignsOrganizerVitalSignObservation(
-						(VitalSignsOrganizer) eObjectToTest,
+						(VitalSignsOrganizer) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -149,12 +149,12 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 		// -------------------------------------------------------------
 		new InformationSourceCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperations
 						.validateVitalSignsOrganizerInformationSource(
-								(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer) eObjectToTest,
+								(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer) objectToTest,
 								diagnostician, map);
 			}
 		}
@@ -171,7 +171,7 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -182,7 +182,7 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createVitalSignsOrganizer().init();
 	}
 

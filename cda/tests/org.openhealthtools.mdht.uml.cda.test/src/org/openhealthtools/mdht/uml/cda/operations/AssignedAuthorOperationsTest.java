@@ -41,11 +41,11 @@ public class AssignedAuthorOperationsTest extends CDAValidationTest {
 	new UndefinedORValidationTestCase("AssignedAuthor", EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return AssignedAuthorOperations.validateAssignedAuthorChoice(
-					(AssignedAuthor) eObjectToTest, diagnostician, map);
+					(AssignedAuthor) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -59,10 +59,10 @@ public class AssignedAuthorOperationsTest extends CDAValidationTest {
 	}
 
 	/**
-	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getEObjectToValidate()
+	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getObjectToTest()
 	 */
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createAssignedAuthor();
 	}
 

@@ -41,12 +41,12 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ReviewOfSystemsSectionOperations
 							.validateReviewOfSystemsSectionTemplateId(
-									(ReviewOfSystemsSection) eObjectToTest,
+									(ReviewOfSystemsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -56,12 +56,12 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ReviewOfSystemsSectionOperations
 							.validateReviewOfSystemsSectionCode(
-									(ReviewOfSystemsSection) eObjectToTest,
+									(ReviewOfSystemsSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -78,12 +78,12 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createReviewOfSystemsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createReviewOfSystemsSection().init();
 	}
 

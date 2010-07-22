@@ -60,12 +60,12 @@ ResultObservationOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignObservationOperations
 				.validateVitalSignObservationTemplateId(
-						(VitalSignObservation) eObjectToTest,
+						(VitalSignObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -75,12 +75,12 @@ ResultObservationOperationsTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignObservationOperations
 				.validateResultObservationCode(
-						(VitalSignObservation) eObjectToTest,
+						(VitalSignObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -91,12 +91,12 @@ ResultObservationOperationsTest {
 
 			@SuppressWarnings("synthetic-access")
 			@Override
-			public void doTest(final EObject eObjectToTest,
+			public void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				try {
-					validateExpectPass(eObjectToTest, diagnostician, map);
-					doSet(eObjectToTest);
-					validateExpectPass(eObjectToTest, diagnostician, map);
+					validateExpectPass(objectToTest, diagnostician, map);
+					doSet(objectToTest);
+					validateExpectPass(objectToTest, diagnostician, map);
 				} catch (final UnsupportedOperationException uoe) {
 					fail(CDAValidationTest
 							.createUnsupportedOperationFailureMessage(featureName,
@@ -105,12 +105,12 @@ ResultObservationOperationsTest {
 			}
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignObservationOperations
 				.validateVitalSignObservationValue(
-						(VitalSignObservation) eObjectToTest,
+						(VitalSignObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -126,12 +126,12 @@ ResultObservationOperationsTest {
 		// -------------------------------------------------------------
 		new InformationSourceCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ResultObservationOperations.
 				validateResultObservationInformationSource(
-						(ResultObservation) eObjectToTest,
+						(ResultObservation) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -148,7 +148,7 @@ ResultObservationOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -164,7 +164,7 @@ ResultObservationOperationsTest {
 	 */
 	@Test
 	public void testVitalSignsObservationTargetSiteCode() {
-		final VitalSignObservation vso = (VitalSignObservation) getEObjectToValidate();
+		final VitalSignObservation vso = (VitalSignObservation) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(vso);
 		try {

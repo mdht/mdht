@@ -42,12 +42,12 @@ CCDValidationTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivitySupplyOperations
 				.validatePlanOfCareActivitySupplyTemplateId(
-						(PlanOfCareActivitySupply) eObjectToTest,
+						(PlanOfCareActivitySupply) objectToTest,
 						diagnostician, map);
 			}
 
@@ -57,12 +57,12 @@ CCDValidationTest {
 		// -------------------------------------------------------------
 		new IDCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivitySupplyOperations
 				.validatePlanOfCareActivitySupplyId(
-						(PlanOfCareActivitySupply) eObjectToTest,
+						(PlanOfCareActivitySupply) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -71,11 +71,11 @@ CCDValidationTest {
 		// -------------------------------------------------------------
 		new MoodCodeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyMoodCode(
-						(PlanOfCareActivitySupply) eObjectToTest, diagnostician, map);
+						(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
 			}
 		},
 
@@ -83,12 +83,12 @@ CCDValidationTest {
 		// -------------------------------------------------------------
 		new MoodCodeValueCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivitySupplyOperations
 				.validatePlanOfCareActivitySupplyMoodCodeValue(
-						(PlanOfCareActivitySupply) eObjectToTest,
+						(PlanOfCareActivitySupply) objectToTest,
 						diagnostician, map);
 			}
 
@@ -115,12 +115,12 @@ CCDValidationTest {
 	}
 	
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPlanOfCareActivitySupply();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createPlanOfCareActivitySupply().init();
 	}
 

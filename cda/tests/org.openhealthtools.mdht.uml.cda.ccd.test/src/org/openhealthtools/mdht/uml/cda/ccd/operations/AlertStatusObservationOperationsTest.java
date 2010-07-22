@@ -37,12 +37,12 @@ public class AlertStatusObservationOperationsTest extends CCDValidationTest {
 				ALERTS_STATUS_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AlertStatusObservationOperations
 				.validateStatusObservationTemplateId(
-						(AlertStatusObservation) eObjectToTest,
+						(AlertStatusObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -60,12 +60,12 @@ public class AlertStatusObservationOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAlertStatusObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAlertStatusObservation().init();
 	}
 

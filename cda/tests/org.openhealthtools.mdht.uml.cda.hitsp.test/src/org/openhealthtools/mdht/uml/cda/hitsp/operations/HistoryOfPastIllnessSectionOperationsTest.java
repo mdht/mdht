@@ -38,12 +38,12 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.HistoryOfPastIllnessSectionOpera
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return HistoryOfPastIllnessSectionOperations
 				.validateHITSPHistoryOfPastIllnessSectionTemplateId(
-						(HistoryOfPastIllnessSection) eObjectToTest,
+						(HistoryOfPastIllnessSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -61,12 +61,12 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.HistoryOfPastIllnessSectionOpera
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createHistoryOfPastIllnessSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createHistoryOfPastIllnessSection()
 		.init();
 	}

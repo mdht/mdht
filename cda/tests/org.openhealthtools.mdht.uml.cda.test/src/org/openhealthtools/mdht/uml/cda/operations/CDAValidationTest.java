@@ -51,19 +51,19 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 	protected static Map<Object, Object> map = new HashMap<Object, Object>();
 
-	protected abstract EObject getEObjectToValidate();
+	protected abstract EObject getObjectToTest();
 
 	/**
 	 * This is not currently used, but is implemented in many subclasses.
 	 * 
 	 * @return the initialized EObject instance to test
 	 */
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return null;
 	}
 
 	/**
-	 * Do all validation tests defined for the eObjectTotest.
+	 * Do all validation tests defined for the objectToTest.
 	 */
 	@Test
 	public final void testAll() {
@@ -71,11 +71,11 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		try {
 			for (final CDATestCase testCase : getTestCases()) {
 				testTargetDescription = testCase.getTestTargetDescription();
-				final EObject eObjectToTest = getEObjectToValidate();
+				final EObject objectToTest = getObjectToTest();
 				final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(eObjectToTest);
+				.createDefaultDiagnostic(objectToTest);
 
-				testCase.doTest(eObjectToTest, diagnostician, map);
+				testCase.doTest(objectToTest, diagnostician, map);
 			}
 
 		} catch (final UnsupportedOperationException uoe) {
@@ -102,7 +102,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			this.testTargetDescription = testTargetDescription;
 		}
 
-		abstract protected void doTest(final EObject eObjectToTest,
+		abstract protected void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map);
 
@@ -123,7 +123,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			super(testTargetDescription);
 		}
 
-		abstract protected void doAdd(EObject eObjectToTest,
+		abstract protected void doAdd(EObject objectToTest,
 				EObject eObjectToAdd);
 
 		abstract protected EObject getEObjectToAdd();
@@ -138,25 +138,25 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject eObjectToTest,
+		protected void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			final EObject eObjectToAdd = getEObjectToAdd();
-			doAdd(eObjectToTest, eObjectToAdd);
-			final boolean isFound = isFound(eObjectToTest, eObjectToAdd,
+			doAdd(objectToTest, eObjectToAdd);
+			final boolean isFound = isFound(objectToTest, eObjectToAdd,
 					getFeature());
 			assertTrue("Add \"" + getTestTargetDescription()
-					+ "\" failed for \"" + eObjectToTest.eClass().getName()
+					+ "\" failed for \"" + objectToTest.eClass().getName()
 					+ "\"", isFound);
 		} // doTest
 
 		abstract protected EStructuralFeature getFeature();
 
-		protected boolean isFound(final EObject eObjectToTest,
+		protected boolean isFound(final EObject objectToTest,
 				final EObject eObjectToFind, final EStructuralFeature feature) {
 			return eObjectToFind.eContainingFeature().equals(feature)
 			&& eObjectToFind.eContainer().eContainer()
-			.equals(eObjectToTest);
+			.equals(objectToTest);
 		} // isFound
 	} // CDAAddTestCase
 
@@ -168,16 +168,16 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject eObjectToTest,
+		protected void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			final EObject eObjectToAdd = getEObjectToAdd();
-			doAdd(eObjectToTest, eObjectToAdd);
-			final Object value = doGet(eObjectToTest);
+			doAdd(objectToTest, eObjectToAdd);
+			final Object value = doGet(objectToTest);
 
 			final boolean getIsGood = isGetGood(eObjectToAdd, value);
 			assertTrue("Get \"" + getTestTargetDescription()
-					+ "\" failed for \"" + eObjectToTest.eClass().getName()
+					+ "\" failed for \"" + objectToTest.eClass().getName()
 					+ "\"", getIsGood);
 		} // doTest
 
@@ -187,7 +187,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			return list.size() == 1 && list.get(0).equals(eObjectToAdd);
 		}
 
-		abstract protected Object doGet(EObject eObjectToTest);
+		abstract protected Object doGet(EObject objectToTest);
 
 	} // CDAGetTestCase
 
@@ -218,21 +218,21 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject eObjectToTest,
+		protected void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			final EObject eObjectToAdd = getEObjectToAdd();
 			doAddTemplateId(eObjectToAdd, THE_II);
 
-			doAdd(eObjectToTest, eObjectToAdd);
+			doAdd(objectToTest, eObjectToAdd);
 
-			final boolean hasIsGood = doHas(eObjectToTest, TEMPLATE_ID);
+			final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
 			assertTrue("Has \"" + getTestTargetDescription()
-					+ "\" failed for \"" + eObjectToTest.eClass().getName()
+					+ "\" failed for \"" + objectToTest.eClass().getName()
 					+ "\"", hasIsGood);
 		} // doTest
 
-		protected abstract void doAddTemplateId(EObject eObjectToTest, II theIi);
+		protected abstract void doAddTemplateId(EObject objectToTest, II theIi);
 
 		protected abstract boolean doHas(EObject eObjectToAdd, String templateId);
 
@@ -244,21 +244,21 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			super(testTargetDescription);
 		}
 
-		abstract protected boolean validate(EObject eObjectToTest,
+		abstract protected boolean validate(EObject objectToTest,
 				BasicDiagnostic diagnostician, Map<Object, Object> map);
 
-		protected void validateExpectPass(final EObject eObjectToTest,
+		protected void validateExpectPass(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			final boolean isValid = validate(eObjectToTest, diagnostician, map);
+			final boolean isValid = validate(objectToTest, diagnostician, map);
 			assertTrue(CDAValidationTest.createAssertionFailureMessage(
 					diagnostician, getTestTargetDescription()), isValid);
 		}
 
-		protected void validateExpectFail(final EObject eObjectToTest,
+		protected void validateExpectFail(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			final boolean isValid = validate(eObjectToTest, diagnostician, map);
+			final boolean isValid = validate(objectToTest, diagnostician, map);
 			assertTrue("Validation of \"" + getTestTargetDescription()
 					+ "\" passed when it was expected to fail.", !isValid);
 		}
@@ -282,9 +282,9 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		protected String createEReferenceNotFoundMessage(
-				final EObject eObjectToTest, final String eReferenceName) {
+				final EObject objectToTest, final String eReferenceName) {
 			return "EReference \"" + eReferenceName + "\" not found in \""
-			+ eObjectToTest.eClass().getName() + "\"";
+			+ objectToTest.eClass().getName() + "\"";
 		}
 
 	} // UndefinedValidationTestCase
@@ -299,41 +299,41 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject eObjectToTest,
+		protected void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			// Validation should pass here as none of the references are set
-			validateExpectPass(eObjectToTest, diagnostician, map);
+			validateExpectPass(objectToTest, diagnostician, map);
 
 			// Go through the references of the eObjectToValidate looking for
 			// those which we will set and set them all. those which we will set
 			// and test for validation failure.
 			for (final String eReferenceName : getEReferenceNames()) {
-				final EReference eReference = (EReference) eObjectToTest
+				final EReference eReference = (EReference) objectToTest
 				.eClass().getEStructuralFeature(eReferenceName);
 
 				assertNotNull(
-						createEReferenceNotFoundMessage(eObjectToTest,
+						createEReferenceNotFoundMessage(objectToTest,
 								eReferenceName), eReference);
 
-				eObjectToTest.eSet(eReference, CDAFactory.eINSTANCE
+				objectToTest.eSet(eReference, CDAFactory.eINSTANCE
 						.create((EClass) (eReference.getEType())));
 
 			} // for each reference
 
 			// Validation should fail here because not one is invalid
-			validateExpectFail(eObjectToTest, diagnostician, map);
+			validateExpectFail(objectToTest, diagnostician, map);
 
 			// Now go through the same set unsetting, each in turn and
 			// validating those which we will set and test for validation
 			// failure.
 			for (final String eReferenceName : getEReferenceNames()) {
-				final EReference eReference = (EReference) eObjectToTest
+				final EReference eReference = (EReference) objectToTest
 				.eClass().getEStructuralFeature(eReferenceName);
-				final EObject temp = (EObject) eObjectToTest.eGet(eReference);
-				eObjectToTest.eUnset(eReference);
-				validateExpectPass(eObjectToTest, diagnostician, map);
-				eObjectToTest.eSet(eReference, temp);
+				final EObject temp = (EObject) objectToTest.eGet(eReference);
+				objectToTest.eUnset(eReference);
+				validateExpectPass(objectToTest, diagnostician, map);
+				objectToTest.eSet(eReference, temp);
 			} // for each reference
 
 		} // doTest
@@ -350,36 +350,36 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject eObjectToTest,
+		protected void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			// Validation should fail here as none of the references are set
-			validateExpectFail(eObjectToTest, diagnostician, map);
+			validateExpectFail(objectToTest, diagnostician, map);
 
 			// Go through the references of the eObjectToValidate looking for
 			// those which we will set and set them all.
 			for (final String eReferenceName : getEReferenceNames()) {
-				final EReference eReference = (EReference) eObjectToTest
+				final EReference eReference = (EReference) objectToTest
 				.eClass().getEStructuralFeature(eReferenceName);
 				assertNotNull(
-						createEReferenceNotFoundMessage(eObjectToTest,
+						createEReferenceNotFoundMessage(objectToTest,
 								eReferenceName), eReference);
-				eObjectToTest.eSet(eReference, CDAFactory.eINSTANCE
+				objectToTest.eSet(eReference, CDAFactory.eINSTANCE
 						.create((EClass) (eReference.getEType())));
 			} // for each reference
 
 			// Validation should fail here because not one is invalid
-			validateExpectFail(eObjectToTest, diagnostician, map);
+			validateExpectFail(objectToTest, diagnostician, map);
 
 			// Now go through the same set unsetting, each in turn and
 			// validating
 			for (final String eReferenceName : getEReferenceNames()) {
-				final EReference eReference = (EReference) eObjectToTest
+				final EReference eReference = (EReference) objectToTest
 				.eClass().getEStructuralFeature(eReferenceName);
-				final EObject temp = (EObject) eObjectToTest.eGet(eReference);
-				eObjectToTest.eUnset(eReference);
-				validateExpectPass(eObjectToTest, diagnostician, map);
-				eObjectToTest.eSet(eReference, temp);
+				final EObject temp = (EObject) objectToTest.eGet(eReference);
+				objectToTest.eUnset(eReference);
+				validateExpectPass(objectToTest, diagnostician, map);
+				objectToTest.eSet(eReference, temp);
 			} // for each reference
 
 		} // doTest
@@ -396,39 +396,39 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject eObjectToTest,
+		protected void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			// Validation should fail here as none of the references are set
-			validateExpectFail(eObjectToTest, diagnostician, map);
+			validateExpectFail(objectToTest, diagnostician, map);
 
-			initializeEObjectToTest(eObjectToTest);
+			initializeobjectToTest(objectToTest);
 
 			// Make sure everything is valid now
-			validateExpectPass(eObjectToTest, diagnostician, map);
+			validateExpectPass(objectToTest, diagnostician, map);
 
 			// Go through the references of the eObjectToValidate set them and
 			// test for validation failure.
 			for (final String eReferenceName : getEReferenceNames()) {
-				final EReference eReference = (EReference) eObjectToTest
+				final EReference eReference = (EReference) objectToTest
 				.eClass().getEStructuralFeature(eReferenceName);
 
 				assertNotNull(
-						createEReferenceNotFoundMessage(eObjectToTest,
+						createEReferenceNotFoundMessage(objectToTest,
 								eReferenceName), eReference);
 
 				// This should cause validation failure
-				eObjectToTest.eSet(eReference, CDAFactory.eINSTANCE
+				objectToTest.eSet(eReference, CDAFactory.eINSTANCE
 						.create((EClass) (eReference.getEType())));
 				// Which we are expecting
-				validateExpectFail(eObjectToTest, diagnostician, map);
+				validateExpectFail(objectToTest, diagnostician, map);
 
 				// Undo for the next reference
-				eObjectToTest.eUnset(eReference);
+				objectToTest.eUnset(eReference);
 			} // for each reference
 		} // doTest
 
-		abstract protected void initializeEObjectToTest(EObject eObjectToTest);
+		abstract protected void initializeobjectToTest(EObject objectToTest);
 	} // MutualExclusionValidationTestCase
 
 	static abstract protected class CDAMutualExclusionValidationTestCase extends

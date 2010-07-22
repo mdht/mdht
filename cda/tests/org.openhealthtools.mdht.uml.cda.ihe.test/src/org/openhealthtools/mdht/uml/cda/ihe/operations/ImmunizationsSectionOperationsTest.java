@@ -37,12 +37,12 @@ public class ImmunizationsSectionOperationsTest
 	new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return ImmunizationsSectionOperations
 					.validateIHEImmunizationsSectionTemplateId(
-							(ImmunizationsSection) eObjectToTest,
+							(ImmunizationsSection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -60,12 +60,12 @@ public class ImmunizationsSectionOperationsTest
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createImmunizationsSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createImmunizationsSection().init();
 	}
 

@@ -66,12 +66,12 @@ StructuralAttributeValidationTest {
 		new TemplateIDCCDValidationTest(EPISODE_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EpisodeObservationOperations
 				.validateEpisodeObservationTemplateId(
-						(EpisodeObservation) eObjectToTest,
+						(EpisodeObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -82,12 +82,12 @@ StructuralAttributeValidationTest {
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EpisodeObservationOperations
 				.validateEpisodeObservationStatusCode(
-						(EpisodeObservation) eObjectToTest,
+						(EpisodeObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -96,12 +96,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EpisodeObservationOperations
 				.validateEpisodeObservationCode(
-						(EpisodeObservation) eObjectToTest,
+						(EpisodeObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -111,12 +111,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new EntryRelationshipCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EpisodeObservationOperations
 				.validateEpisodeObservationExistsEntryRelationshipSAS(
-						(EpisodeObservation) eObjectToTest,
+						(EpisodeObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -146,12 +146,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("value") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return EpisodeObservationOperations
 				.validateEpisodeObservationValue(
-						(EpisodeObservation) eObjectToTest,
+						(EpisodeObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -180,12 +180,12 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createEpisodeObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createEpisodeObservation().init();
 	}
 
@@ -215,7 +215,7 @@ StructuralAttributeValidationTest {
 	 */
 	@Test
 	public void testvalidateEpisodeObservationOneEntryRelationshipSUBJ() {
-		final EpisodeObservation eo = (EpisodeObservation) getEObjectToValidate();
+		final EpisodeObservation eo = (EpisodeObservation) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(eo);
 		boolean isValid = EpisodeObservationOperations

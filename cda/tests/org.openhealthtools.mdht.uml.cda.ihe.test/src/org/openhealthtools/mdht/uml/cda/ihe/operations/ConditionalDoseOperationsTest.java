@@ -36,12 +36,12 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ConditionalDoseOperations
 				.validateConditionalDoseTemplateId(
-						(ConditionalDose) eObjectToTest, diagnostician,
+						(ConditionalDose) objectToTest, diagnostician,
 						map);
 			}
 
@@ -59,12 +59,12 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createConditionalDose();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createConditionalDose().init();
 	}
 

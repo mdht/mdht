@@ -39,12 +39,12 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 					MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicalEquipmentSectionOperations
 							.validateMedicalEquipmentSectionTemplateId(
-									(MedicalEquipmentSection) eObjectToTest,
+									(MedicalEquipmentSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -55,12 +55,12 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicalEquipmentSectionOperations
 							.validateMedicalEquipmentSectionTitle(
-									(MedicalEquipmentSection) eObjectToTest,
+									(MedicalEquipmentSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -70,12 +70,12 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return MedicalEquipmentSectionOperations
 							.validateMedicalEquipmentSectionCode(
-									(MedicalEquipmentSection) eObjectToTest,
+									(MedicalEquipmentSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -92,12 +92,12 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createMedicalEquipmentSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createMedicalEquipmentSection().init();
 	}
 

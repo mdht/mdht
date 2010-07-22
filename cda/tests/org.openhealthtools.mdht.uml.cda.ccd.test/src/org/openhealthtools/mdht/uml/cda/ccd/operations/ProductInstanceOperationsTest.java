@@ -45,11 +45,11 @@ public class ProductInstanceOperationsTest extends
 	new TemplateIDCCDValidationTest(PRODUCT_INSTANCE_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return ProductInstanceOperations.validateProductInstanceTemplateId(
-					(ProductInstance) eObjectToTest, diagnostician, map);
+					(ProductInstance) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -66,12 +66,12 @@ public class ProductInstanceOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProductInstance();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createProductInstance().init();
 	}
 

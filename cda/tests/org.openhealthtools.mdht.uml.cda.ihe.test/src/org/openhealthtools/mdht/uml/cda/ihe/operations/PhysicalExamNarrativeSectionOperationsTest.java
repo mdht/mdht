@@ -40,12 +40,12 @@ public class PhysicalExamNarrativeSectionOperationsTest extends
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PhysicalExamNarrativeSectionOperations
 							.validatePhysicalExamNarrativeSectionTemplateId(
-									(PhysicalExamNarrativeSection) eObjectToTest,
+									(PhysicalExamNarrativeSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -55,12 +55,12 @@ public class PhysicalExamNarrativeSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PhysicalExamNarrativeSectionOperations
 							.validatePhysicalExamNarrativeSectionCode(
-									(PhysicalExamNarrativeSection) eObjectToTest,
+									(PhysicalExamNarrativeSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -77,12 +77,12 @@ public class PhysicalExamNarrativeSectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createPhysicalExamNarrativeSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createPhysicalExamNarrativeSection().init();
 	}
 

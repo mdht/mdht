@@ -38,12 +38,12 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.AssessmentAndPlanSectionOperatio
 		new CCDValidationTest.TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AssessmentAndPlanSectionOperations
 				.validateHITSPAssessmentAndPlanSectionTemplateId(
-						(AssessmentAndPlanSection) eObjectToTest,
+						(AssessmentAndPlanSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -61,12 +61,12 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.AssessmentAndPlanSectionOperatio
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createAssessmentAndPlanSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createAssessmentAndPlanSection().init();
 	}
 

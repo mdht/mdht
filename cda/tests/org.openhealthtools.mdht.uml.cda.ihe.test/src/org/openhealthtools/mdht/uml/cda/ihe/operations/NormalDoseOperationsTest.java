@@ -36,11 +36,11 @@ public class NormalDoseOperationsTest extends MedicationOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return NormalDoseOperations.validateNormalDoseTemplateId(
-						(NormalDose) eObjectToTest, diagnostician, map);
+						(NormalDose) objectToTest, diagnostician, map);
 			}
 
 		}
@@ -57,12 +57,12 @@ public class NormalDoseOperationsTest extends MedicationOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createNormalDose();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createNormalDose().init();
 	}
 

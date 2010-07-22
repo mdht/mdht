@@ -60,12 +60,12 @@ StructuralAttributeValidationTest {
 		new TemplateIDCCDValidationTest(STATUS_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return StatusObservationOperations
 				.validateStatusObservationTemplateId(
-						(StatusObservation) eObjectToTest,
+						(StatusObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -76,12 +76,12 @@ StructuralAttributeValidationTest {
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return StatusObservationOperations
 				.validateStatusObservationStatusCode(
-						(StatusObservation) eObjectToTest,
+						(StatusObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -90,12 +90,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return StatusObservationOperations
 				.validateStatusObservationCode(
-						(StatusObservation) eObjectToTest,
+						(StatusObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -104,12 +104,12 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return StatusObservationOperations
 				.validateStatusObservationValue(
-						(StatusObservation) eObjectToTest,
+						(StatusObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -118,7 +118,7 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("participant") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				// We negate the validation because the test in
@@ -126,7 +126,7 @@ StructuralAttributeValidationTest {
 				// not set.
 				return !StatusObservationOperations
 				.validateStatusObservationNoAdditionalParticipants(
-						(StatusObservation) eObjectToTest,
+						(StatusObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -150,12 +150,12 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createStatusObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createStatusObservation().init();
 	}
 

@@ -37,12 +37,12 @@ public class AdmissionMedicationHistorySectionOperationsTest
 	new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return AdmissionMedicationHistorySectionOperations
 					.validateHITSPAdmissionMedicationHistorySectionTemplateId(
-							(AdmissionMedicationHistorySection) eObjectToTest,
+							(AdmissionMedicationHistorySection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -60,12 +60,12 @@ public class AdmissionMedicationHistorySectionOperationsTest
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createAdmissionMedicationHistorySection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createAdmissionMedicationHistorySection()
 				.init();
 	}

@@ -43,12 +43,12 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 					ADVANCE_DIRECTIVE_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AdvanceDirectivesSectionOperations
 							.validateAdvanceDirectivesSectionTemplateId(
-									(AdvanceDirectivesSection) eObjectToTest,
+									(AdvanceDirectivesSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -59,12 +59,12 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AdvanceDirectivesSectionOperations
 							.validateAdvanceDirectivesSectionTitle(
-									(AdvanceDirectivesSection) eObjectToTest,
+									(AdvanceDirectivesSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -74,12 +74,12 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AdvanceDirectivesSectionOperations
 							.validateAdvanceDirectivesSectionCode(
-									(AdvanceDirectivesSection) eObjectToTest,
+									(AdvanceDirectivesSection) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -88,12 +88,12 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AdvanceDirectivesSectionOperations
 							.validateAdvanceDirectivesSectionAdvanceDirectiveObservation(
-									(AdvanceDirectivesSection) eObjectToTest,
+									(AdvanceDirectivesSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -120,12 +120,12 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectivesSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectivesSection().init();
 	}
 

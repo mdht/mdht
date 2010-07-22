@@ -38,12 +38,12 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(ENCOUNTERS_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return EncountersSectionOperations
 							.validateEncountersSectionTemplateId(
-									(EncountersSection) eObjectToTest,
+									(EncountersSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -54,12 +54,12 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return EncountersSectionOperations
 							.validateEncountersSectionTitle(
-									(EncountersSection) eObjectToTest,
+									(EncountersSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -69,12 +69,12 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return EncountersSectionOperations
 							.validateEncountersSectionCode(
-									(EncountersSection) eObjectToTest,
+									(EncountersSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -91,12 +91,12 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createEncountersSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createEncountersSection().init();
 	}
 

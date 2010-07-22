@@ -41,12 +41,12 @@ public class ActiveProblemsSectionOperationsTest extends
 			new TemplateIDCCDValidationTest(ACTIVE_PROBLEM_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ActiveProblemsSectionOperations
 							.validateActiveProblemsSectionTemplateId(
-									(ActiveProblemsSection) eObjectToTest,
+									(ActiveProblemsSection) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -56,12 +56,12 @@ public class ActiveProblemsSectionOperationsTest extends
 			new EntryCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ActiveProblemsSectionOperations
 							.validateActiveProblemsSectionProblemConcernEntry(
-									(ActiveProblemsSection) eObjectToTest,
+									(ActiveProblemsSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -86,7 +86,7 @@ public class ActiveProblemsSectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createActiveProblemsSection();
 	}
 

@@ -35,12 +35,12 @@ public class EncounterLocationOperationsTest extends CCDValidationTest {
 	new TemplateIDCCDValidationTest(ENCOUNTER_LOCATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return EncounterLocationOperations
 					.validateEncounterLocationTemplateId(
-							(EncounterLocation) eObjectToTest, diagnostician,
+							(EncounterLocation) objectToTest, diagnostician,
 							map);
 		}
 
@@ -58,12 +58,12 @@ public class EncounterLocationOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createEncounterLocation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createEncounterLocation().init();
 	}
 

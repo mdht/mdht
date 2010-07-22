@@ -46,11 +46,11 @@ ClinicalDocumentOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryTemplateId(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 		},
 
@@ -59,15 +59,15 @@ ClinicalDocumentOperationsTest {
 		new CDAValidationTestCase("AdvanceDirectiveSection") {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryAdvanceDirectivesSection(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				fail("Not Implemented");
 
@@ -79,15 +79,15 @@ ClinicalDocumentOperationsTest {
 		new CDAValidationTestCase("AllergiesReactionsSection") {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryAllergiesReactionsSection(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				fail("Not Implemented");
 
@@ -99,15 +99,15 @@ ClinicalDocumentOperationsTest {
 		new CDAValidationTestCase("ProblemListSection") {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryProblemListSection(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				fail("Not Implemented");
 
@@ -119,15 +119,15 @@ ClinicalDocumentOperationsTest {
 		new CDAValidationTestCase("EncountersSection") {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryEncountersSection(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				fail("Not Implemented");
 
@@ -139,15 +139,15 @@ ClinicalDocumentOperationsTest {
 		new CDAValidationTestCase("ImmunizationsSection") {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryImmunizationsSection(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				fail("Not Implemented");
 
@@ -159,15 +159,15 @@ ClinicalDocumentOperationsTest {
 		new CDAValidationTestCase("PayersSection") {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryPayersSection(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				fail("Not Implemented");
 
@@ -179,15 +179,15 @@ ClinicalDocumentOperationsTest {
 		new CDAValidationTestCase("MedicationsSection") {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PatientSummaryOperations.validatePatientSummaryMedicationsSection(
-						(PatientSummary) eObjectToTest, diagnostician, map);
+						(PatientSummary) objectToTest, diagnostician, map);
 			}
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 				fail("Not Implemented");
 
@@ -207,12 +207,12 @@ ClinicalDocumentOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createPatientSummary();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createPatientSummary().init();
 	}
 

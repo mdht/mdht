@@ -58,7 +58,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference
  * tested.
  * 
  * As you read the code here and in other files, you see two different related
- * variable names "eObjectToTest" and "eObjectToValidate." The former is used in
+ * variable names "objectToTest" and "eObjectToValidate." The former is used in
  * the test template described above, the later is a global defined in the
  * superclass to this one (CDAValidationTest) that is initialized by the setUp
  * method. Ideally, there would be only a single approach (the former), but both
@@ -89,13 +89,13 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 
 		@Override
 		@SuppressWarnings("synthetic-access")
-		public void doTest(final EObject eObjectToTest,
+		public void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
-				validateExpectFail(eObjectToTest, diagnostician, map);
-				doSet(eObjectToTest);
-				validateExpectPass(eObjectToTest, diagnostician, map);
+				validateExpectFail(objectToTest, diagnostician, map);
+				doSet(objectToTest);
+				validateExpectPass(objectToTest, diagnostician, map);
 			} catch (final UnsupportedOperationException uoe) {
 				fail(CDAValidationTest
 						.createUnsupportedOperationFailureMessage(featureName,
@@ -103,24 +103,24 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 			}
 		}
 
-		protected void doSet(final EObject eObjectToTest) {
-			doSet(eObjectToTest, featureName);
+		protected void doSet(final EObject objectToTest) {
+			doSet(objectToTest, featureName);
 		}
 
-		protected void doSet(final EObject eObjectToTest,
+		protected void doSet(final EObject objectToTest,
 				final String featureName) {
-			doSet(eObjectToTest, featureName, getValueToSet());
+			doSet(objectToTest, featureName, getValueToSet());
 		}
 
-		protected void doSet(final EObject eObjectToTest,
+		protected void doSet(final EObject objectToTest,
 				final String featureName, final Object value) {
-			eObjectToTest.eSet(eObjectToTest.eClass().getEStructuralFeature(
+			objectToTest.eSet(objectToTest.eClass().getEStructuralFeature(
 					featureName), value);
 		}
 
-		protected void doSet(final EObject eObjectToTest,
+		protected void doSet(final EObject objectToTest,
 				final Object value) {
-			eObjectToTest.eSet(eObjectToTest.eClass().getEStructuralFeature(
+			objectToTest.eSet(objectToTest.eClass().getEStructuralFeature(
 					featureName), value);
 		}
 
@@ -150,15 +150,15 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 
 		@SuppressWarnings("synthetic-access")
 		@Override
-		public void doTest(final EObject eObjectToTest,
+		public void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
-				validateExpectFail(eObjectToTest, diagnostician, map);
-				getTemplateIds(eObjectToTest).add(THE_BAD_II);
-				validateExpectFail(eObjectToTest, diagnostician, map);
-				getTemplateIds(eObjectToTest).add(createTheValidII());
-				validateExpectPass(eObjectToTest, diagnostician, map);
+				validateExpectFail(objectToTest, diagnostician, map);
+				getTemplateIds(objectToTest).add(THE_BAD_II);
+				validateExpectFail(objectToTest, diagnostician, map);
+				getTemplateIds(objectToTest).add(createTheValidII());
+				validateExpectPass(objectToTest, diagnostician, map);
 			} catch (final UnsupportedOperationException uoe) {
 				fail(CDAValidationTest
 						.createUnsupportedOperationFailureMessage("templateId",
@@ -213,13 +213,13 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		 */
 		@SuppressWarnings("synthetic-access")
 		@Override
-		public void doTest(final EObject eObjectToTest,
+		public void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
 				// The mood code is initialized to a default value so it should
 				// always be defined.
-				validateExpectPass(eObjectToTest, diagnostician, map);
+				validateExpectPass(objectToTest, diagnostician, map);
 			} catch (final UnsupportedOperationException uoe) {
 				fail(CDAValidationTest
 						.createUnsupportedOperationFailureMessage("moodCode",
@@ -248,14 +248,14 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		 */
 		@SuppressWarnings("synthetic-access")
 		@Override
-		public void doTest(final EObject eObjectToTest,
+		public void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
 				for (final Object moodCodeValue : getModeCodeValues()) {
 					// set the value here
-					doSet(eObjectToTest,moodCodeValue);
-					validateExpectPass(eObjectToTest, diagnostician, map);
+					doSet(objectToTest,moodCodeValue);
+					validateExpectPass(objectToTest, diagnostician, map);
 				}
 
 			} catch (final UnsupportedOperationException uoe) {
@@ -420,34 +420,34 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 
 		@SuppressWarnings( { "unchecked", "synthetic-access" })
 		@Override
-		public void doTest(final EObject eObjectToTest,
+		public void doTest(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
 
-				final EStructuralFeature referenceFeature = eObjectToTest
+				final EStructuralFeature referenceFeature = objectToTest
 				.eClass().getEStructuralFeature(REFERENCE_FEATURE_NAME);
 
-				validateExpectFail(eObjectToTest, diagnostician, map);
+				validateExpectFail(objectToTest, diagnostician, map);
 
 				// The informant collection can be non-empty
 				final EList<Informant12> informants = new BasicEList<Informant12>();
 				informants.add(CDAFactory.eINSTANCE.createInformant12());
-				doSet(eObjectToTest, INFORMANT_FEATURE_NAME, informants);
+				doSet(objectToTest, INFORMANT_FEATURE_NAME, informants);
 
-				validateExpectPass(eObjectToTest, diagnostician, map);
+				validateExpectPass(objectToTest, diagnostician, map);
 
 				// Or, if empty
-				eObjectToTest.eUnset(eObjectToTest.eClass()
+				objectToTest.eUnset(objectToTest.eClass()
 						.getEStructuralFeature(INFORMANT_FEATURE_NAME));
 
 				final Reference ref = CDAFactory.eINSTANCE.createReference();
 				ref.setTypeCode(x_ActRelationshipExternalReference.XCRPT);
 
-				((EList<Reference>) eObjectToTest.eGet(referenceFeature))
+				((EList<Reference>) objectToTest.eGet(referenceFeature))
 				.add(ref);
 
-				validateExpectPass(eObjectToTest, diagnostician, map);
+				validateExpectPass(objectToTest, diagnostician, map);
 
 			} catch (final UnsupportedOperationException uoe) {
 				fail(CDAValidationTest

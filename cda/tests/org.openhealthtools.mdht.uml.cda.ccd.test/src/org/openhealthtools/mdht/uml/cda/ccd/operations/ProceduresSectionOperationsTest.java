@@ -38,12 +38,12 @@ public class ProceduresSectionOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(PROCEDURES_SECTION_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProceduresSectionOperations
 				.validateProceduresSectionTemplateId(
-						(ProceduresSection) eObjectToTest,
+						(ProceduresSection) objectToTest,
 						diagnostician, map);
 			}
 
@@ -54,12 +54,12 @@ public class ProceduresSectionOperationsTest extends CCDValidationTest {
 		new TitleCCDValidationTest() {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProceduresSectionOperations
 				.validateProceduresSectionTitle(
-						(ProceduresSection) eObjectToTest,
+						(ProceduresSection) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -68,12 +68,12 @@ public class ProceduresSectionOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProceduresSectionOperations
 				.validateProceduresSectionCode(
-						(ProceduresSection) eObjectToTest,
+						(ProceduresSection) objectToTest,
 						diagnostician, map);
 			}
 		}
@@ -90,12 +90,12 @@ public class ProceduresSectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProceduresSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createProceduresSection().init();
 	}
 

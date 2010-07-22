@@ -56,12 +56,12 @@ public class PlanOfCareActivityActOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivityActOperations
 				.validatePlanOfCareActivityActTemplateId(
-						(PlanOfCareActivityAct) eObjectToTest,
+						(PlanOfCareActivityAct) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -70,12 +70,12 @@ public class PlanOfCareActivityActOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new IDCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivityActOperations
 				.validatePlanOfCareActivityActId(
-						(PlanOfCareActivityAct) eObjectToTest,
+						(PlanOfCareActivityAct) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -84,12 +84,12 @@ public class PlanOfCareActivityActOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new MoodCodeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivityActOperations
 				.validatePlanOfCareActivityActMoodCode(
-						(PlanOfCareActivityAct) eObjectToTest,
+						(PlanOfCareActivityAct) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -98,12 +98,12 @@ public class PlanOfCareActivityActOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new MoodCodeValueCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return PlanOfCareActivityActOperations
 				.validatePlanOfCareActivityActMoodCodeValue(
-						(PlanOfCareActivityAct) eObjectToTest,
+						(PlanOfCareActivityAct) objectToTest,
 						diagnostician, map);
 			}
 
@@ -131,12 +131,12 @@ public class PlanOfCareActivityActOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPlanOfCareActivityAct();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createPlanOfCareActivityAct().init();
 	}
 

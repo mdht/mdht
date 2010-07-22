@@ -53,9 +53,9 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addAct((Section) eObjectToTest,
+				SectionOperations.addAct((Section) objectToTest,
 						(Act) eObjectToAdd);
 			}
 
@@ -75,9 +75,9 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addEncounter((Section) eObjectToTest,
+				SectionOperations.addEncounter((Section) objectToTest,
 						(Encounter) eObjectToAdd);
 			}
 
@@ -97,9 +97,9 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addObservation((Section) eObjectToTest,
+				SectionOperations.addObservation((Section) objectToTest,
 						(Observation) eObjectToAdd);
 
 			}
@@ -120,10 +120,10 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addObservationMedia(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(ObservationMedia) eObjectToAdd);
 
 			}
@@ -144,9 +144,9 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addOrganizer((Section) eObjectToTest,
+				SectionOperations.addOrganizer((Section) objectToTest,
 						(Organizer) eObjectToAdd);
 			}
 
@@ -166,9 +166,9 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addProcedure((Section) eObjectToTest,
+				SectionOperations.addProcedure((Section) objectToTest,
 						(Procedure) eObjectToAdd);
 			}
 
@@ -188,10 +188,10 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addRegionOfInterest(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(RegionOfInterest) eObjectToAdd);
 			}
 
@@ -211,10 +211,10 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addSubstanceAdministration(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(SubstanceAdministration) eObjectToAdd);
 			}
 
@@ -235,9 +235,9 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addSupply((Section) eObjectToTest,
+				SectionOperations.addSupply((Section) objectToTest,
 						(Supply) eObjectToAdd);
 			}
 
@@ -257,15 +257,15 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addAct((Section) eObjectToTest,
+				SectionOperations.addAct((Section) objectToTest,
 						(Act) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
-				return SectionOperations.getActs((Section) eObjectToTest);
+			protected Object doGet(final EObject objectToTest) {
+				return SectionOperations.getActs((Section) objectToTest);
 			}
 		},
 
@@ -279,16 +279,16 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addEncounter((Section) eObjectToTest,
+				SectionOperations.addEncounter((Section) objectToTest,
 						(Encounter) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getEncounters((Section) eObjectToTest);
+				.getEncounters((Section) objectToTest);
 			}
 
 		},
@@ -303,16 +303,16 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addObservation((Section) eObjectToTest,
+				SectionOperations.addObservation((Section) objectToTest,
 						(Observation) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getObservations((Section) eObjectToTest);
+				.getObservations((Section) objectToTest);
 			}
 		},
 
@@ -326,17 +326,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addObservationMedia(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(ObservationMedia) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getObservationMedia((Section) eObjectToTest);
+				.getObservationMedia((Section) objectToTest);
 			}
 		},
 
@@ -350,16 +350,16 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addOrganizer((Section) eObjectToTest,
+				SectionOperations.addOrganizer((Section) objectToTest,
 						(Organizer) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getOrganizers((Section) eObjectToTest);
+				.getOrganizers((Section) objectToTest);
 			}
 		},
 
@@ -373,16 +373,16 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addProcedure((Section) eObjectToTest,
+				SectionOperations.addProcedure((Section) objectToTest,
 						(Procedure) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getProcedures((Section) eObjectToTest);
+				.getProcedures((Section) objectToTest);
 			}
 		},
 
@@ -396,17 +396,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addRegionOfInterest(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(RegionOfInterest) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getRegionsOfInterest((Section) eObjectToTest);
+				.getRegionsOfInterest((Section) objectToTest);
 			}
 		},
 
@@ -420,17 +420,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addSubstanceAdministration(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(SubstanceAdministration) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getSubstanceAdministrations((Section) eObjectToTest);
+				.getSubstanceAdministrations((Section) objectToTest);
 			}
 		},
 
@@ -444,16 +444,16 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addSupply((Section) eObjectToTest,
+				SectionOperations.addSupply((Section) objectToTest,
 						(Supply) eObjectToAdd);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getSupplies((Section) eObjectToTest);
+				.getSupplies((Section) objectToTest);
 			}
 		},
 
@@ -467,20 +467,20 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				// The Add is reversed, the eObjectToTest is added to the
+				// The Add is reversed, the objectToTest is added to the
 				// clinical document
 				final Section section = CDAFactory.eINSTANCE
 				.createSection();
-				section.addSection((Section) eObjectToTest);
+				section.addSection((Section) objectToTest);
 				((ClinicalDocument) eObjectToAdd).addSection(section);
 			}
 
 			@Override
-			protected Object doGet(final EObject eObjectToTest) {
+			protected Object doGet(final EObject objectToTest) {
 				return SectionOperations
-				.getClinicalDocument((Section) eObjectToTest);
+				.getClinicalDocument((Section) objectToTest);
 			}
 
 			@Override
@@ -500,18 +500,18 @@ public class SectionOperationsTest extends CDAValidationTest {
 		//			}
 		//
 		//			@Override
-		//			protected void doAdd(final EObject eObjectToTest,
+		//			protected void doAdd(final EObject objectToTest,
 		//					final EObject eObjectToAdd) {
-		//				// The Add is reversed, the eObjectToTest is added to the
+		//				// The Add is reversed, the objectToTest is added to the
 		//				// clinical document
 		//				((Section) eObjectToAdd)
-		//				.addSection((Section) eObjectToTest);
+		//				.addSection((Section) objectToTest);
 		//			}
 		//
 		//			@Override
-		//			protected Object doGet(final EObject eObjectToTest) {
+		//			protected Object doGet(final EObject objectToTest) {
 		//				return SectionOperations
-		//				.getSection((Section) eObjectToTest);
+		//				.getSection((Section) objectToTest);
 		//			}
 		//
 		//			@Override
@@ -532,17 +532,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addAct((Section) eObjectToTest,
+				SectionOperations.addAct((Section) objectToTest,
 						(Act) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasActTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -562,17 +562,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addEncounter((Section) eObjectToTest,
+				SectionOperations.addEncounter((Section) objectToTest,
 						(Encounter) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasEncounterTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -587,14 +587,14 @@ public class SectionOperationsTest extends CDAValidationTest {
 		new CDAHasTestCase("Code") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
-				((Section) eObjectToTest).setCode( THE_CE_CODE);
-				final boolean hasIsGood = doHas(eObjectToTest, TEMPLATE_ID);
+				((Section) objectToTest).setCode( THE_CE_CODE);
+				final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
 				assertTrue("Has \"" + getTestTargetDescription()
 						+ "\" failed for \""
-						+ eObjectToTest.eClass().getName() + "\"",
+						+ objectToTest.eClass().getName() + "\"",
 						hasIsGood);
 			}
 
@@ -604,16 +604,16 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addEncounter((Section) eObjectToTest,
+				SectionOperations.addEncounter((Section) objectToTest,
 						(Encounter) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
-				return SectionOperations.hasCode((Section) eObjectToTest,
+				return SectionOperations.hasCode((Section) objectToTest,
 						CODE, CODE_SYSTEM, CODE_SYSTEM_NAME);
 			}
 
@@ -634,17 +634,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addObservation((Section) eObjectToTest,
+				SectionOperations.addObservation((Section) objectToTest,
 						(Observation) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasObservationTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -664,19 +664,19 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addObservationMedia(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(ObservationMedia) eObjectToAdd);
 
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasObservationMediaTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -697,17 +697,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addOrganizer((Section) eObjectToTest,
+				SectionOperations.addOrganizer((Section) objectToTest,
 						(Organizer) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasOrganizerTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -727,17 +727,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addProcedure((Section) eObjectToTest,
+				SectionOperations.addProcedure((Section) objectToTest,
 						(Procedure) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasProcedureTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -757,18 +757,18 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addRegionOfInterest(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(RegionOfInterest) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasRegionOfInterestTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -790,19 +790,19 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				SectionOperations.addSubstanceAdministration(
-						(Section) eObjectToTest,
+						(Section) objectToTest,
 						(SubstanceAdministration) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations
 				.hasSubstanceAdministrationTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -823,17 +823,17 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
-				SectionOperations.addSupply((Section) eObjectToTest,
+				SectionOperations.addSupply((Section) objectToTest,
 						(Supply) eObjectToAdd);
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasSupplyTemplate(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -848,14 +848,14 @@ public class SectionOperationsTest extends CDAValidationTest {
 		new CDAHasTestCase("TemplateID") {
 
 			@Override
-			protected void doTest(final EObject eObjectToTest,
+			protected void doTest(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
-				((Section) eObjectToTest).getTemplateIds().add(THE_II);
-				final boolean hasIsGood = doHas(eObjectToTest, TEMPLATE_ID);
+				((Section) objectToTest).getTemplateIds().add(THE_II);
+				final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
 				assertTrue("Has \"" + getTestTargetDescription()
 						+ "\" failed for \""
-						+ eObjectToTest.eClass().getName() + "\"",
+						+ objectToTest.eClass().getName() + "\"",
 						hasIsGood);
 			}
 
@@ -865,16 +865,16 @@ public class SectionOperationsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected void doAdd(final EObject eObjectToTest,
+			protected void doAdd(final EObject objectToTest,
 					final EObject eObjectToAdd) {
 				// Nothing
 			}
 
 			@Override
-			protected boolean doHas(final EObject eObjectToTest,
+			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
 				return SectionOperations.hasTemplateId(
-						(Section) eObjectToTest, templateId);
+						(Section) objectToTest, templateId);
 			}
 
 			@Override
@@ -894,7 +894,7 @@ public class SectionOperationsTest extends CDAValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createSection();
 	}
 

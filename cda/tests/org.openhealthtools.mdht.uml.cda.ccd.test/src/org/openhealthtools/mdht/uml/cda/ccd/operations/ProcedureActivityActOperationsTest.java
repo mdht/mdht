@@ -35,11 +35,11 @@ public class ProcedureActivityActOperationsTest extends CCDValidationTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProcedureActivityActOperations.validateProcedureActivityActTemplateId(
-						(ProcedureActivityAct) eObjectToTest, diagnostician, map);
+						(ProcedureActivityAct) objectToTest, diagnostician, map);
 			}
 
 		} }; // TEST_CASE_ARRAY
@@ -54,12 +54,12 @@ public class ProcedureActivityActOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProcedureActivityAct();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createProcedureActivityAct().init();
 	}
 

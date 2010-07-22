@@ -48,12 +48,12 @@ public class ProblemEntryOperationsTest extends
 			new TemplateIDCCDValidationTest(PROBLEM_ENTRY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ProblemEntryOperations
 							.validateProblemEntryTemplateId(
-									(ProblemEntry) eObjectToTest,
+									(ProblemEntry) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -62,11 +62,11 @@ public class ProblemEntryOperationsTest extends
 			// -------------------------------------------------------------
 			new ObservationValueCCDValidationTest(VALUE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ProblemEntryOperations.validateProblemEntryValue(
-							(ProblemEntry) eObjectToTest, diagnostician, map);
+							(ProblemEntry) objectToTest, diagnostician, map);
 				}
 
 				@Override
@@ -83,11 +83,11 @@ public class ProblemEntryOperationsTest extends
 			// -------------------------------------------------------------
 			new TextCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ProblemEntryOperations.validateProblemEntryText(
-							(ProblemEntry) eObjectToTest, diagnostician, map);
+							(ProblemEntry) objectToTest, diagnostician, map);
 				}
 
 				@Override
@@ -101,12 +101,12 @@ public class ProblemEntryOperationsTest extends
 			// -------------------------------------------------------------
 			new InformationSourceCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ProblemObservationOperations.
 					validateProblemObservationInformationSource(
-							(ProblemObservation) eObjectToTest,
+							(ProblemObservation) objectToTest,
 							diagnostician, map);
 				}
 			}
@@ -122,7 +122,7 @@ public class ProblemEntryOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -133,7 +133,7 @@ public class ProblemEntryOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createProblemEntry().init();
 	}
 

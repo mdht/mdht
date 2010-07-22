@@ -47,17 +47,17 @@ public abstract class StructuralAttributeValidationTest extends
 	@Test
 	public final void testValidateStructuralAttributes() {
 
-		final EObject eObjectToTest = getEObjectToValidate();
+		final EObject objectToTest = getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(eObjectToTest);
+				.createDefaultDiagnostic(objectToTest);
 
 		for (final String structuralAttributeName : STRUCTURAL_ATTRIBUTE_NAMES) {
-			final EStructuralFeature structuralFeature = eObjectToTest.eClass()
+			final EStructuralFeature structuralFeature = objectToTest.eClass()
 					.getEStructuralFeature(structuralAttributeName);
 			// Did we get it?
 			if (structuralFeature != null) {
 				// Yes
-				eObjectToTest
+				objectToTest
 						.eSet(
 								structuralFeature,
 								doGetValidStructuralAttributeValue(structuralAttributeName));
@@ -65,7 +65,7 @@ public abstract class StructuralAttributeValidationTest extends
 		} // for each suffix
 
 		final boolean isValid = doValidateStructuralAttributeValues(
-				eObjectToTest, diagnostician, map);
+				objectToTest, diagnostician, map);
 		assertTrue("Validation passed when it was expected to fail", isValid);
 
 	} // testValidateStructuralAttributes

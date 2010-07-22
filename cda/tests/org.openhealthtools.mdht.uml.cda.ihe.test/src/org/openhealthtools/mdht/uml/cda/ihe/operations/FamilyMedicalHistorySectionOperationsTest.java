@@ -37,12 +37,12 @@ public class FamilyMedicalHistorySectionOperationsTest extends
 	new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return FamilyMedicalHistorySectionOperations
 					.validateFamilyMedicalHistorySectionTemplateId(
-							(FamilyMedicalHistorySection) eObjectToTest,
+							(FamilyMedicalHistorySection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -60,12 +60,12 @@ public class FamilyMedicalHistorySectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createFamilyMedicalHistorySection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createFamilyMedicalHistorySection().init();
 	}
 

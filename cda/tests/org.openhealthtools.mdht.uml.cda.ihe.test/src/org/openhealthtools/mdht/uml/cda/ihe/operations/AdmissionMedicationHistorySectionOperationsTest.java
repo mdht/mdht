@@ -43,12 +43,12 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 					ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AdmissionMedicationHistorySectionOperations
 							.validateAdmissionMedicationHistorySectionTemplateId(
-									(AdmissionMedicationHistorySection) eObjectToTest,
+									(AdmissionMedicationHistorySection) objectToTest,
 									diagnostician, map);
 				}
 			},
@@ -57,12 +57,12 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AdmissionMedicationHistorySectionOperations
 							.validateAdmissionMedicationHistorySectionCode(
-									(AdmissionMedicationHistorySection) eObjectToTest,
+									(AdmissionMedicationHistorySection) objectToTest,
 									diagnostician, map);
 				}
 			} };
@@ -77,15 +77,15 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createAdmissionMedicationHistorySection();
 	}
 
 	/**
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest#getEObjectInitToValidate()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest#getObjectInitToTest()
 	 */
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createAdmissionMedicationHistorySection()
 				.init();
 	}

@@ -38,11 +38,11 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationOperationsTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return MedicationOperations.validateHITSPMedicationTemplateId(
-						(Medication) eObjectToTest, diagnostician, map);
+						(Medication) objectToTest, diagnostician, map);
 			}
 
 		}
@@ -59,12 +59,12 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createMedication();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createMedication().init();
 	}
 

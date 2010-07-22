@@ -36,7 +36,7 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 	protected static final String CODE = "whatever";
 	@SuppressWarnings("hiding")
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.3.88.12.3221.7.2";
-	private static final String VALUE_CODE_SYSTEM = "2.16.840.1.113883.3.88.12.3221.7.4";
+	//private static final String VALUE_CODE_SYSTEM = "2.16.840.1.113883.3.88.12.3221.7.4";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
@@ -44,12 +44,12 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ConditionEntryOperations
 				.validateConditionEntryEffectiveTime(
-						(ConditionEntry) eObjectToTest,
+						(ConditionEntry) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -58,12 +58,12 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 		//-------------------------------------------------------------
 		new CCDValidationTestCase("text") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ConditionEntryOperations.
 				validateConditionEntryText(
-						(ConditionEntry) eObjectToTest,
+						(ConditionEntry) objectToTest,
 						diagnostician, map);
 			}
 
@@ -86,7 +86,7 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		final ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 		final Section section = CDAFactory.eINSTANCE.createSection();
 		clinicalDocument.addSection(section);
@@ -97,7 +97,7 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createConditionEntry().init();
 	}
 

@@ -41,12 +41,12 @@ public class AssessmentAndPlanSectionOperationsTest extends SectionOperationsTes
 			new CCDValidationTest.TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AssessmentAndPlanSectionOperations
 							.validateAssessmentAndPlanSectionTemplateId(
-									(AssessmentAndPlanSection) eObjectToTest,
+									(AssessmentAndPlanSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -56,12 +56,12 @@ public class AssessmentAndPlanSectionOperationsTest extends SectionOperationsTes
 			// -------------------------------------------------------------
 			new CCDValidationTest.CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return AssessmentAndPlanSectionOperations
 							.validateAssessmentAndPlanSectionCode(
-									(AssessmentAndPlanSection) eObjectToTest,
+									(AssessmentAndPlanSection) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -78,12 +78,12 @@ public class AssessmentAndPlanSectionOperationsTest extends SectionOperationsTes
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createAssessmentAndPlanSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createAssessmentAndPlanSection().init();
 	}
 

@@ -38,12 +38,12 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 			new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PayersSectionOperations
 							.validatePayersSectionTemplateId(
-									(PayersSection) eObjectToTest,
+									(PayersSection) objectToTest,
 									diagnostician, map);
 				}
 
@@ -54,11 +54,11 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PayersSectionOperations.validatePayersSectionTitle(
-							(PayersSection) eObjectToTest, diagnostician, map);
+							(PayersSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -67,11 +67,11 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PayersSectionOperations.validatePayersSectionCode(
-							(PayersSection) eObjectToTest, diagnostician, map);
+							(PayersSection) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -87,12 +87,12 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPayersSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createPayersSection().init();
 	}
 

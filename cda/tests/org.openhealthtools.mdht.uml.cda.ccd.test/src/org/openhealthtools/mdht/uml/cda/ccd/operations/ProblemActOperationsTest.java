@@ -62,11 +62,11 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProblemActOperations.validateProblemActTemplateId(
-						(ProblemAct) eObjectToTest, diagnostician, map);
+						(ProblemAct) objectToTest, diagnostician, map);
 			}
 
 		},
@@ -75,11 +75,11 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 		// -------------------------------------------------------------
 		new IDCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProblemActOperations.validateProblemActId(
-						(ProblemAct) eObjectToTest, diagnostician, map);
+						(ProblemAct) objectToTest, diagnostician, map);
 			}
 		},
 
@@ -87,12 +87,12 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 		// -------------------------------------------------------------
 		new EffectiveTimeCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProblemActOperations
 				.validateProblemActEffectiveTime(
-						(ProblemAct) eObjectToTest, diagnostician,
+						(ProblemAct) objectToTest, diagnostician,
 						map);
 			}
 		},
@@ -101,20 +101,20 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 		// -------------------------------------------------------------
 		new EntryRelationshipCCDValidationTest() {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProblemActOperations
 				.validateProblemActEpisodeObservation(
-						(ProblemAct) eObjectToTest, diagnostician,
+						(ProblemAct) objectToTest, diagnostician,
 						map)
 						&& ProblemActOperations
 						.validateProblemActSubjectOfTarget(
-								(ProblemAct) eObjectToTest,
+								(ProblemAct) objectToTest,
 								diagnostician, map)
 								&& ProblemActOperations
 								.validateProblemActEntryRelationshipRequired(
-										(ProblemAct) eObjectToTest,
+										(ProblemAct) objectToTest,
 										diagnostician, map);
 			}
 
@@ -149,12 +149,12 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("participant") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ProblemActOperations
 				.validateProblemActContainsPatientAwareness(
-						(ProblemAct) eObjectToTest, diagnostician,
+						(ProblemAct) objectToTest, diagnostician,
 						map);
 			}
 
@@ -181,12 +181,12 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProblemAct();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createProblemAct().init();
 	}
 
@@ -214,7 +214,7 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	 */
 	@Test
 	public final void testValidateProblemActCodeNullFlavor() {
-		final ProblemAct pa = (ProblemAct) getEObjectToValidate();
+		final ProblemAct pa = (ProblemAct) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(pa);
 
@@ -240,7 +240,7 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	public void testValidateProblemActContainsProblemObservation() {
 		final ProblemSection problemSection = CCDFactory.eINSTANCE
 		.createProblemSection();
-		final ProblemAct problemAct = (ProblemAct) getEObjectToValidate();
+		final ProblemAct problemAct = (ProblemAct) getObjectToTest();
 		final Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setAct(problemAct);
 		problemSection.getEntries().add(entry);
@@ -271,7 +271,7 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	public void testValidateProblemActContainsAlertObservation() {
 		final AlertsSection problemSection = CCDFactory.eINSTANCE
 		.createAlertsSection();
-		final ProblemAct problemAct = (ProblemAct) getEObjectToValidate();
+		final ProblemAct problemAct = (ProblemAct) getObjectToTest();
 		final Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setAct(problemAct);
 		problemSection.getEntries().add(entry);

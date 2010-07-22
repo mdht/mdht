@@ -37,12 +37,12 @@ public class FunctionalStatusSectionOperationsTest
 	new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return FunctionalStatusSectionOperations
 					.validateHITSPFunctionalStatusSectionTemplateId(
-							(FunctionalStatusSection) eObjectToTest,
+							(FunctionalStatusSection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -60,12 +60,12 @@ public class FunctionalStatusSectionOperationsTest
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return HITSPFactory.eINSTANCE.createFunctionalStatusSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createFunctionalStatusSection().init();
 	}
 

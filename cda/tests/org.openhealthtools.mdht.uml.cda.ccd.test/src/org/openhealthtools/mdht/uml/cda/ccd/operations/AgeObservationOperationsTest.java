@@ -59,12 +59,12 @@ StructuralAttributeValidationTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AgeObservationOperations
 				.validateAgeObservationTemplateId(
-						(AgeObservation) eObjectToTest,
+						(AgeObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -74,11 +74,11 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AgeObservationOperations.validateAgeObservationCode(
-						(AgeObservation) eObjectToTest, diagnostician, map);
+						(AgeObservation) objectToTest, diagnostician, map);
 			}
 		},
 
@@ -87,12 +87,12 @@ StructuralAttributeValidationTest {
 		new StatusCodeCCDValidationTest(STATUS_CODE,
 				STATUS_CODE_CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AgeObservationOperations
 				.validateAgeObservationStatusCode(
-						(AgeObservation) eObjectToTest,
+						(AgeObservation) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -101,23 +101,23 @@ StructuralAttributeValidationTest {
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("value") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return AgeObservationOperations
 				.validateAgeObservationValue(
-						(AgeObservation) eObjectToTest,
+						(AgeObservation) objectToTest,
 						diagnostician, map);
 			}
 
 			@SuppressWarnings("unchecked")
 			@Override
-			protected void doSet(final EObject eObjectToTest,
+			protected void doSet(final EObject objectToTest,
 					final String featureName) {
-				//				final EObjectContainmentEList<ANY> theList = (EObjectContainmentEList<ANY>) eObjectToTest.eGet(eObjectToTest.eClass().getEStructuralFeature(
+				//				final EObjectContainmentEList<ANY> theList = (EObjectContainmentEList<ANY>) objectToTest.eGet(objectToTest.eClass().getEStructuralFeature(
 				//						featureName));
 
-				final EList<ANY> theList = (EList<ANY>) eObjectToTest.eGet(eObjectToTest.eClass().getEStructuralFeature(
+				final EList<ANY> theList = (EList<ANY>) objectToTest.eGet(objectToTest.eClass().getEStructuralFeature(
 						featureName));
 
 				theList.add(DatatypesFactory.eINSTANCE.createCE());
@@ -147,12 +147,12 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAgeObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createAgeObservation().init();
 	}
 

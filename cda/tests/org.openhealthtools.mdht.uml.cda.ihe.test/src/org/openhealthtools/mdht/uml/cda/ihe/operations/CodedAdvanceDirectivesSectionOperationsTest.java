@@ -36,12 +36,12 @@ public class CodedAdvanceDirectivesSectionOperationsTest extends
 	new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject eObjectToTest,
+		protected boolean validate(final EObject objectToTest,
 				final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return CodedAdvanceDirectivesSectionOperations
 					.validateCodedAdvanceDirectivesSectionTemplateId(
-							(CodedAdvanceDirectivesSection) eObjectToTest,
+							(CodedAdvanceDirectivesSection) objectToTest,
 							diagnostician, map);
 		}
 
@@ -59,12 +59,12 @@ public class CodedAdvanceDirectivesSectionOperationsTest extends
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createCodedAdvanceDirectivesSection();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createCodedAdvanceDirectivesSection()
 				.init();
 	}

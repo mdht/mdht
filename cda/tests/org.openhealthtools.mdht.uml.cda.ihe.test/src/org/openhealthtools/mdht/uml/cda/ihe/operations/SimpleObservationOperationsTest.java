@@ -40,7 +40,7 @@ public abstract class SimpleObservationOperationsTest extends ObservationOperati
 	}
 
 //	@Override
-//	protected EObject getEObjectToValidate() {
+//	protected EObject getObjectToTest() {
 //		return IHEFactory.eINSTANCE.createSimpleObservation();
 //	}
 //	

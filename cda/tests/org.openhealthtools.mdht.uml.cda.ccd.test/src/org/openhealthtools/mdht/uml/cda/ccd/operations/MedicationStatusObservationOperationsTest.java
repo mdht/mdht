@@ -38,12 +38,12 @@ CCDValidationTest {
 		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return MedicationStatusObservationOperations
 				.validateStatusObservationTemplateId(
-						(MedicationStatusObservation) eObjectToTest,
+						(MedicationStatusObservation) objectToTest,
 						diagnostician, map);
 			}
 
@@ -61,12 +61,12 @@ CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createMedicationStatusObservation();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createMedicationStatusObservation().init();
 	}
 

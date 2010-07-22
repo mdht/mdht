@@ -60,12 +60,12 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 				CONTINUITY_OF_CARE_DOCUMENT_TEMPLATE_ID) {
 
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ContinuityOfCareDocumentOperations
 				.validateContinuityOfCareDocumentTemplateId(
-						(ContinuityOfCareDocument) eObjectToTest,
+						(ContinuityOfCareDocument) objectToTest,
 						diagnostician, map);
 			}
 
@@ -75,12 +75,12 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ContinuityOfCareDocumentOperations
 				.validateContinuityOfCareDocumentCode(
-						(ContinuityOfCareDocument) eObjectToTest,
+						(ContinuityOfCareDocument) objectToTest,
 						diagnostician, map);
 			}
 		},
@@ -89,20 +89,20 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("documentationOf") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ContinuityOfCareDocumentOperations
 				.validateContinuityOfCareDocumentServiceEventRequired(
-						(ContinuityOfCareDocument) eObjectToTest,
+						(ContinuityOfCareDocument) objectToTest,
 						diagnostician, map)
 						&& ContinuityOfCareDocumentOperations
 						.validateContinuityOfCareDocumentServiceEventClassCode(
-								(ContinuityOfCareDocument) eObjectToTest,
+								(ContinuityOfCareDocument) objectToTest,
 								diagnostician, map)
 								&& ContinuityOfCareDocumentOperations
 								.validateContinuityOfCareDocumentServiceEventEffectiveTime(
-										(ContinuityOfCareDocument) eObjectToTest,
+										(ContinuityOfCareDocument) objectToTest,
 										diagnostician, map);
 			}
 
@@ -131,16 +131,16 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("author") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ContinuityOfCareDocumentOperations
 				.validateContinuityOfCareDocumentHasAssignedAuthor(
-						(ContinuityOfCareDocument) eObjectToTest,
+						(ContinuityOfCareDocument) objectToTest,
 						diagnostician, map)
 						&& ContinuityOfCareDocumentOperations
 						.validateContinuityOfCareDocumentHasAssignedAuthorNullFlavor(
-								(ContinuityOfCareDocument) eObjectToTest,
+								(ContinuityOfCareDocument) objectToTest,
 								diagnostician, map)
 
 								;
@@ -186,12 +186,12 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 		// -------------------------------------------------------------
 		new CCDValidationTestCase("informationRecipient") {
 			@Override
-			protected boolean validate(final EObject eObjectToTest,
+			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return ContinuityOfCareDocumentOperations
 				.validateContinuityOfCareDocumentHasInformationRecipient(
-						(ContinuityOfCareDocument) eObjectToTest,
+						(ContinuityOfCareDocument) objectToTest,
 						diagnostician, map);
 			}
 
@@ -216,12 +216,12 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createContinuityOfCareDocument();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
 	}
 
@@ -232,7 +232,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentNoTemplateIdExtension() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 
@@ -259,7 +259,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentOneOrTwoRecordTarget() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		boolean isValid = ContinuityOfCareDocumentOperations
@@ -305,7 +305,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareLanguageCode() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -331,7 +331,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentProblemSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -362,7 +362,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentFamilyHistorySection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -393,7 +393,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentSocialHistorySection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -424,7 +424,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentAlertsSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -455,7 +455,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentMedicationSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -486,7 +486,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentResultsSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -517,7 +517,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentProceduresSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -548,7 +548,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentEncountersSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -579,7 +579,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentPlanOfCareSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -610,7 +610,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentImmunizationsSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -641,7 +641,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentVitalSignsSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -672,7 +672,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentMedicalEquipmentSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -703,7 +703,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentFunctionalStatusSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -734,7 +734,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentAdvanceDirectivesSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -765,7 +765,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentPayersSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections
@@ -796,7 +796,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	 */
 	@Test
 	public final void testValidateContinuityOfCareDocumentPurposeSection() {
-		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getEObjectToValidate();
+		final ContinuityOfCareDocument ccd = (ContinuityOfCareDocument) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
 		.createDefaultDiagnostic(ccd);
 		// Can't have zero sections

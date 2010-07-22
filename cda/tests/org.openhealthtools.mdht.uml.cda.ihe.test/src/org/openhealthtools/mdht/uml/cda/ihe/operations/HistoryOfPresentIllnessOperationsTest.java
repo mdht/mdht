@@ -41,12 +41,12 @@ public class HistoryOfPresentIllnessOperationsTest extends SectionOperationsTest
 			new CCDValidationTest.TemplateIDCCDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return HistoryOfPresentIllnessOperations
 							.validateHistoryOfPresentIllnessTemplateId(
-									(HistoryOfPresentIllness) eObjectToTest,
+									(HistoryOfPresentIllness) objectToTest,
 									diagnostician, map);
 				}
 
@@ -56,12 +56,12 @@ public class HistoryOfPresentIllnessOperationsTest extends SectionOperationsTest
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject eObjectToTest,
+				protected boolean validate(final EObject objectToTest,
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return HistoryOfPresentIllnessOperations
 							.validateHistoryOfPresentIllnessCode(
-									(HistoryOfPresentIllness) eObjectToTest,
+									(HistoryOfPresentIllness) objectToTest,
 									diagnostician, map);
 				}
 			}
@@ -78,12 +78,12 @@ public class HistoryOfPresentIllnessOperationsTest extends SectionOperationsTest
 	}
 
 	@Override
-	protected EObject getEObjectToValidate() {
+	protected EObject getObjectToTest() {
 		return IHEFactory.eINSTANCE.createHistoryOfPresentIllness();
 	}
 
 	@Override
-	protected EObject getEObjectInitToValidate() {
+	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createHistoryOfPresentIllness().init();
 	}
 
