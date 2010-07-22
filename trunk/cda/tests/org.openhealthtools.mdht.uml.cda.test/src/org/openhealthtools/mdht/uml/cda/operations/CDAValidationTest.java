@@ -39,13 +39,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMValidationTest;
+import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest;
 
 /**
  * This class is the super class for all JUnit4 test cases for CDA based classes.
  */
 @SuppressWarnings("nls")
-public abstract class CDAValidationTest extends RIMValidationTest {
+public abstract class CDAValidationTest extends RIMOperationTest {
 
 	// protected static int count = 0;
 
