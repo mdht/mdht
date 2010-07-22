@@ -20,10 +20,13 @@ import org.junit.Test;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class RoleOperationsTest extends InfrastructureRootOperationsTest {
+public abstract class RoleOperationsTest extends
+		InfrastructureRootOperationsTest {
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getClassCode(org.openhealthtools.mdht.uml.hl7.rim.Role)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getClassCode(org.openhealthtools.mdht.uml.hl7.rim.Role)}
+	 * .
 	 */
 	@Test
 	public void testGetClassCode() {
@@ -31,7 +34,9 @@ public class RoleOperationsTest extends InfrastructureRootOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getPlayer(org.openhealthtools.mdht.uml.hl7.rim.Role)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getPlayer(org.openhealthtools.mdht.uml.hl7.rim.Role)}
+	 * .
 	 */
 	@Test
 	public void testGetPlayer() {
@@ -39,7 +44,9 @@ public class RoleOperationsTest extends InfrastructureRootOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getScoper(org.openhealthtools.mdht.uml.hl7.rim.Role)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getScoper(org.openhealthtools.mdht.uml.hl7.rim.Role)}
+	 * .
 	 */
 	@Test
 	public void testGetScoper() {
@@ -47,7 +54,9 @@ public class RoleOperationsTest extends InfrastructureRootOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getParticipations(org.openhealthtools.mdht.uml.hl7.rim.Role)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getParticipations(org.openhealthtools.mdht.uml.hl7.rim.Role)}
+	 * .
 	 */
 	@Test
 	public void testGetParticipations() {
@@ -55,7 +64,9 @@ public class RoleOperationsTest extends InfrastructureRootOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getOutboundLinks(org.openhealthtools.mdht.uml.hl7.rim.Role)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getOutboundLinks(org.openhealthtools.mdht.uml.hl7.rim.Role)}
+	 * .
 	 */
 	@Test
 	public void testGetOutboundLinks() {
@@ -63,7 +74,9 @@ public class RoleOperationsTest extends InfrastructureRootOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getInboundLinks(org.openhealthtools.mdht.uml.hl7.rim.Role)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations#getInboundLinks(org.openhealthtools.mdht.uml.hl7.rim.Role)}
+	 * .
 	 */
 	@Test
 	public void testGetInboundLinks() {

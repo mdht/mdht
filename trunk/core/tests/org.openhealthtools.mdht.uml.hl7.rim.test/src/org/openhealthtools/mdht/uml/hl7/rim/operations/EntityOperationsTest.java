@@ -20,7 +20,7 @@ import org.junit.Test;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class EntityOperationsTest extends InfrastructureRootOperationsTest {
+public  abstract class EntityOperationsTest extends InfrastructureRootOperationsTest {
 
 	/**
 	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.EntityOperations#getClassCode(org.openhealthtools.mdht.uml.hl7.rim.Entity)}.
