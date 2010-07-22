@@ -20,13 +20,13 @@ import org.junit.Test;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class ActOperationsTest extends InfrastructureRootOperationsTest  {
+public abstract class ActOperationsTest extends
+		InfrastructureRootOperationsTest {
 
-	
-
-	
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getClassCode(org.openhealthtools.mdht.uml.hl7.rim.Act)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getClassCode(org.openhealthtools.mdht.uml.hl7.rim.Act)}
+	 * .
 	 */
 	@Test
 	public void testGetClassCode() {
@@ -34,7 +34,9 @@ public class ActOperationsTest extends InfrastructureRootOperationsTest  {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getMoodCode(org.openhealthtools.mdht.uml.hl7.rim.Act)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getMoodCode(org.openhealthtools.mdht.uml.hl7.rim.Act)}
+	 * .
 	 */
 	@Test
 	public void testGetMoodCode() {
@@ -42,7 +44,9 @@ public class ActOperationsTest extends InfrastructureRootOperationsTest  {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getNegationInd(org.openhealthtools.mdht.uml.hl7.rim.Act)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getNegationInd(org.openhealthtools.mdht.uml.hl7.rim.Act)}
+	 * .
 	 */
 	@Test
 	public void testGetNegationInd() {
@@ -50,7 +54,9 @@ public class ActOperationsTest extends InfrastructureRootOperationsTest  {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getParticipations(org.openhealthtools.mdht.uml.hl7.rim.Act)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getParticipations(org.openhealthtools.mdht.uml.hl7.rim.Act)}
+	 * .
 	 */
 	@Test
 	public void testGetParticipations() {
@@ -58,7 +64,9 @@ public class ActOperationsTest extends InfrastructureRootOperationsTest  {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getOutboundRelationships(org.openhealthtools.mdht.uml.hl7.rim.Act)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getOutboundRelationships(org.openhealthtools.mdht.uml.hl7.rim.Act)}
+	 * .
 	 */
 	@Test
 	public void testGetOutboundRelationships() {
@@ -66,7 +74,9 @@ public class ActOperationsTest extends InfrastructureRootOperationsTest  {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getInboundRelationships(org.openhealthtools.mdht.uml.hl7.rim.Act)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations#getInboundRelationships(org.openhealthtools.mdht.uml.hl7.rim.Act)}
+	 * .
 	 */
 	@Test
 	public void testGetInboundRelationships() {

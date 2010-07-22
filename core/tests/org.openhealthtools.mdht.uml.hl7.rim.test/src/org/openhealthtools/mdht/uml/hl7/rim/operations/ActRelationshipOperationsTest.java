@@ -20,10 +20,13 @@ import org.junit.Test;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class ActRelationshipOperationsTest extends InfrastructureRootOperationsTest  {
+public abstract class ActRelationshipOperationsTest extends
+		InfrastructureRootOperationsTest {
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations#getTypeCode(org.openhealthtools.mdht.uml.hl7.rim.ActRelationship)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations#getTypeCode(org.openhealthtools.mdht.uml.hl7.rim.ActRelationship)}
+	 * .
 	 */
 	@Test
 	public void testGetTypeCode() {
@@ -31,7 +34,9 @@ public class ActRelationshipOperationsTest extends InfrastructureRootOperationsT
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations#getTarget(org.openhealthtools.mdht.uml.hl7.rim.ActRelationship)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations#getTarget(org.openhealthtools.mdht.uml.hl7.rim.ActRelationship)}
+	 * .
 	 */
 	@Test
 	public void testGetTarget() {
@@ -39,7 +44,9 @@ public class ActRelationshipOperationsTest extends InfrastructureRootOperationsT
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations#getSource(org.openhealthtools.mdht.uml.hl7.rim.ActRelationship)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations#getSource(org.openhealthtools.mdht.uml.hl7.rim.ActRelationship)}
+	 * .
 	 */
 	@Test
 	public void testGetSource() {

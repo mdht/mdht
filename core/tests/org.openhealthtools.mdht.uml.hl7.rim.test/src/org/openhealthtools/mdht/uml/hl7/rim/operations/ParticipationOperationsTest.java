@@ -17,10 +17,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
- * This class
+ * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class ParticipationOperationsTest extends InfrastructureRootOperationsTest{
+public abstract class ParticipationOperationsTest extends InfrastructureRootOperationsTest{
 
 	/**
 	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.ParticipationOperations#getTypeCode(org.openhealthtools.mdht.uml.hl7.rim.Participation)}.
