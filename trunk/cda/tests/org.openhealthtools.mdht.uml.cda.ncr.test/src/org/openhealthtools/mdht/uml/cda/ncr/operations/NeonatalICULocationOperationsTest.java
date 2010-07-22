@@ -14,17 +14,44 @@ package org.openhealthtools.mdht.uml.cda.ncr.operations;
 
 import static org.junit.Assert.fail;
 
+import java.util.Arrays;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncounterLocationOperationsTest;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
 
 /**
  * This class
  */
 @SuppressWarnings("nls")
-public class NeonatalICULocationOperationsTest extends EncounterLocationOperationsTest {
+public class NeonatalICULocationOperationsTest extends
+		EncounterLocationOperationsTest {
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+
+	@Override
+	protected List<CDATestCase> getTestCases() {
+		// Return a new List because the one returned by Arrays.asList is
+		// unmodifiable so a sub-class can't append their test cases.
+		final List<CDATestCase> retValue = super.getTestCases();
+		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		return retValue;
+	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICULocationOperations#validateNeonatalICULocationTypeCode(org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * @see org.openhealthtools.mdht.uml.cda.operations.MutualExclusionValidationTest#getEObjectToValidate()
+	 */
+	@Override
+	protected EObject getEObjectToValidate() {
+		return NCRFactory.eINSTANCE.createNeonatalICULocation();
+	}
+
+	/**
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICULocationOperations#validateNeonatalICULocationTypeCode(org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateNeonatalICULocationTypeCode() {
@@ -32,7 +59,9 @@ public class NeonatalICULocationOperationsTest extends EncounterLocationOperatio
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICULocationOperations#validateEncounterLocationTemplateId(org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICULocationOperations#validateEncounterLocationTemplateId(org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateEncounterLocationTemplateIdNeonatalICULocationDiagnosticChainMapOfObjectObject() {
