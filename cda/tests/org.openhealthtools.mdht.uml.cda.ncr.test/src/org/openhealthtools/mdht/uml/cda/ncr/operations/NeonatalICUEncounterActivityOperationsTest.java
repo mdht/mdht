@@ -34,20 +34,39 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.3.15";
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = { // Template ID
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+	@SuppressWarnings("hiding")
+	protected static final String CODE = "IMP";
+	@SuppressWarnings("hiding")
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.5.4";
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return NeonatalICUEncounterActivityOperations
-					.validateEncountersActivityTemplateId(
-							(NeonatalICUEncounterActivity) objectToTest,
-							diagnostician, map);
-		}
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+			// Template ID
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-	} };
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return NeonatalICUEncounterActivityOperations
+							.validateEncountersActivityTemplateId(
+									(NeonatalICUEncounterActivity) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return NeonatalICUEncounterActivityOperations
+							.validateEncountersActivityCode(
+									(NeonatalICUEncounterActivity) objectToTest,
+									diagnostician, map);
+				}
+			} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -93,16 +112,6 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 	 */
 	@Test
 	public void testValidateNeonatalICUEncounterActivityMoodCode() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICUEncounterActivityOperations#validateEncountersActivityCode(org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateEncountersActivityCode() {
 		fail("Not yet implemented");
 	}
 
