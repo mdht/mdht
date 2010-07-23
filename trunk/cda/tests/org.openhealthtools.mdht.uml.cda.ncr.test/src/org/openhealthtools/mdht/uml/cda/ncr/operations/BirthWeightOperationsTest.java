@@ -36,6 +36,10 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 	protected static final String CODE = "47340003";
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.96";
 
+	// Status code
+	private static final String STATUS_CODE = "completed";
+	private static final String STATUS_CODE_CODE_SYSTEM = "notspecified";
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 			// Template ID
 			new TemplateIDValidationTest(TEMPLATE_ID) {
@@ -61,6 +65,21 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 						final Map<Object, Object> map) {
 					return BirthWeightOperations.validateResultObservationCode(
 							(BirthWeight) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE,
+					STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return BirthWeightOperations
+							.validateResultObservationStatusCode(
+									(BirthWeight) objectToTest, diagnostician,
+									map);
 				}
 			} };
 
@@ -108,16 +127,6 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 	 */
 	@Test
 	public void testValidateBirthWeightValue() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.BirthWeightOperations#validateResultObservationStatusCode(org.openhealthtools.mdht.uml.cda.ncr.BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultObservationStatusCodeBirthWeight() {
 		fail("Not yet implemented");
 	}
 
