@@ -16,11 +16,14 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ResultOperationsTest;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
+import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;
 
 /**
  * This class is a JUnit 4 test case.
@@ -28,7 +31,24 @@ import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
 @SuppressWarnings("nls")
 public class TBResultObservationOperationsTest extends ResultOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	@SuppressWarnings("hiding")
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.13";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+
+	// Template ID
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return TBResultObservationOperations
+					.validateResultObservationTemplateId(
+							(TBResultObservation) objectToTest, diagnostician,
+							map);
+		}
+	} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -59,16 +79,6 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 
 	/**
 	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultObservationOperations#validateResultObservationTemplateId(org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultObservationTemplateIdTBResultObservationDiagnosticChainMapOfObjectObject() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultObservationOperations#validateResultObservationCode(org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
 	 * .
 	 */
@@ -87,5 +97,4 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 		fail("Not yet implemented");
 	}
 
-}
-// TBResultObservationOperationsTest
+} // TBResultObservationOperationsTest
