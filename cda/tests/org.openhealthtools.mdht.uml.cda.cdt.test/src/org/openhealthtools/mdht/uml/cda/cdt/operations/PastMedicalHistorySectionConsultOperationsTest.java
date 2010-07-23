@@ -12,22 +12,20 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TextCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
- * This class
+ * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
 public class PastMedicalHistorySectionConsultOperationsTest extends
@@ -67,6 +65,22 @@ public class PastMedicalHistorySectionConsultOperationsTest extends
 									(PastMedicalHistorySectionConsult) objectToTest,
 									diagnostician, map);
 				}
+			},
+
+			// Text
+			// -------------------------------------------------------------
+			new TextCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PastMedicalHistorySectionConsultOperations
+							.validatePastMedicalHistorySectionConsultText(
+									(PastMedicalHistorySectionConsult) objectToTest,
+									diagnostician, map);
+				}
+
 			} }; // TEST_CASE_ARRAY
 
 	@Override
@@ -84,16 +98,6 @@ public class PastMedicalHistorySectionConsultOperationsTest extends
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createPastMedicalHistorySectionConsult();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.PastMedicalHistorySectionConsultOperations#validatePastMedicalHistorySectionConsultText(org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidatePastMedicalHistorySectionConsultText() {
-		fail("Not yet implemented");
 	}
 
 } // PastMedicalHistorySectionConsultOperationsTest
