@@ -12,24 +12,50 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultsSectionOperationsTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
- * This class
+ * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
 public class DiagnosticFindingsOperationsTest extends
 		ResultsSectionOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+
+	// Title
+	// -------------------------------------------------------------
+	new TitleCCDValidationTest() {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return DiagnosticFindingsOperations
+					.validateDiagnosticFindingsTitle(
+							(DiagnosticFindings) objectToTest, diagnostician,
+							map);
+		}
+
+		/**
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TitleCCDValidationTest#getValueToSet()
+		 */
+		@Override
+		protected Object getValueToSet() {
+			final ST title = (ST) super.getValueToSet();
+			title.addText("Encounters");
+			return title;
+		}
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -46,16 +72,6 @@ public class DiagnosticFindingsOperationsTest extends
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createDiagnosticFindings();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.DiagnosticFindingsOperations#validateDiagnosticFindingsTitle(org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateDiagnosticFindingsTitle() {
-		fail("Not yet implemented");
 	}
 
 } // DiagnosticFindingsOperationsTest
