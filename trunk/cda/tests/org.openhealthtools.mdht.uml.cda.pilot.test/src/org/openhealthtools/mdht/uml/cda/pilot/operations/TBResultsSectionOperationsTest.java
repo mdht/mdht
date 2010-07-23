@@ -24,6 +24,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultsSectionOperationsTest;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * This class
@@ -36,17 +37,45 @@ public class TBResultsSectionOperationsTest extends
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
-	// Template ID
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return TBResultsSectionOperations.validateResultsSectionTemplateId(
-					(TBResultsSection) objectToTest, diagnostician, map);
-		}
-	} };
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return TBResultsSectionOperations
+							.validateResultsSectionTemplateId(
+									(TBResultsSection) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// Title
+			// -------------------------------------------------------------
+			new TitleCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return TBResultsSectionOperations
+							.validateTBResultsSectionTitle(
+									(TBResultsSection) objectToTest,
+									diagnostician, map);
+				}
+
+				/**
+				 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TitleCCDValidationTest#getValueToSet()
+				 */
+				@Override
+				protected Object getValueToSet() {
+					final ST title = (ST) super.getValueToSet();
+					title.addText("Relevant diagnostic tests and/or laboratory data");
+					return title;
+				}
+			} // Title
+	};
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -72,16 +101,6 @@ public class TBResultsSectionOperationsTest extends
 	 */
 	@Test
 	public void testValidateTBResultsSectionText() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultsSectionOperations#validateTBResultsSectionTitle(org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateTBResultsSectionTitle() {
 		fail("Not yet implemented");
 	}
 
