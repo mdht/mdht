@@ -23,9 +23,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.EffectiveTimeCCDValidationTest;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TitleCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * This class
@@ -84,6 +86,31 @@ public class GeneralHeaderConstraintsOperationsTest extends
 							.validateGeneralHeaderConstraintsEffectiveTime(
 									(GeneralHeaderConstraints) objectToTest,
 									diagnostician, map);
+				}
+			},
+
+			// Title
+			// -------------------------------------------------------------
+			new TitleCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return GeneralHeaderConstraintsOperations
+							.validateGeneralHeaderConstraintsTitle(
+									(GeneralHeaderConstraints) objectToTest,
+									diagnostician, map);
+				}
+
+				/**
+				 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TitleCCDValidationTest#getValueToSet()
+				 */
+				@Override
+				protected Object getValueToSet() {
+					final ST title = (ST) super.getValueToSet();
+					title.addText("not specified");
+					return title;
 				}
 			} }; // TEST_CASE_ARRAY
 
@@ -181,16 +208,6 @@ public class GeneralHeaderConstraintsOperationsTest extends
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsRealmCode() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.GeneralHeaderConstraintsOperations#validateGeneralHeaderConstraintsTitle(org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsTitle() {
 		fail("Not yet implemented");
 	}
 
