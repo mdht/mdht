@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.EffectiveTimeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTest;
@@ -67,6 +68,20 @@ public class GeneralHeaderConstraintsOperationsTest extends
 						final Map<Object, Object> map) {
 					return GeneralHeaderConstraintsOperations
 							.validateGeneralHeaderConstraintsCode(
+									(GeneralHeaderConstraints) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// EffectiveTime
+			// -------------------------------------------------------------
+			new EffectiveTimeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return GeneralHeaderConstraintsOperations
+							.validateGeneralHeaderConstraintsEffectiveTime(
 									(GeneralHeaderConstraints) objectToTest,
 									diagnostician, map);
 				}
@@ -136,16 +151,6 @@ public class GeneralHeaderConstraintsOperationsTest extends
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsConfidentialityCode() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.GeneralHeaderConstraintsOperations#validateGeneralHeaderConstraintsEffectiveTime(org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsEffectiveTime() {
 		fail("Not yet implemented");
 	}
 
