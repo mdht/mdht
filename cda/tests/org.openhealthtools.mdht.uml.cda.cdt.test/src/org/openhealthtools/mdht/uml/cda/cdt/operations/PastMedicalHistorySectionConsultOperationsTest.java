@@ -32,7 +32,6 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 public class PastMedicalHistorySectionConsultOperationsTest extends
 		SectionOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.4.9";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
