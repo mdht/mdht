@@ -34,21 +34,40 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.13";
 
+	// Status code
+	private static final String STATUS_CODE = "completed";
+	private static final String STATUS_CODE_CODE_SYSTEM = "notspecified";
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
-	// Template ID
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return TBResultObservationOperations
-					.validateResultObservationTemplateId(
-							(TBResultObservation) objectToTest, diagnostician,
-							map);
-		}
-	} };
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return TBResultObservationOperations
+							.validateResultObservationTemplateId(
+									(TBResultObservation) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE,
+					STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return TBResultObservationOperations
+							.validateResultObservationStatusCode(
+									(TBResultObservation) objectToTest,
+									diagnostician, map);
+				}
+			} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -83,17 +102,7 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 	 * .
 	 */
 	@Test
-	public void testValidateResultObservationCodeTBResultObservationDiagnosticChainMapOfObjectObject() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultObservationOperations#validateResultObservationStatusCode(org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultObservationStatusCodeTBResultObservationDiagnosticChainMapOfObjectObject() {
+	public void testValidateResultObservationCode() {
 		fail("Not yet implemented");
 	}
 
