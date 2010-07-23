@@ -14,7 +14,15 @@ package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.fail;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.Comment;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.operations.ActOperationsTest;
 
 /**
@@ -23,16 +31,46 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperationsTest;
 @SuppressWarnings("nls")
 public class CommentOperationsTest extends ActOperationsTest {
 
-	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentTemplateId(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
-	 */
-	@Test
-	public void testValidateCommentTemplateId() {
-		fail("Not yet implemented");
+	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.2";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return CommentOperations.validateCommentTemplateId(
+					(Comment) objectToTest, diagnostician, map);
+		}
+	} }; // TEST_CASE_ARRAY
+
+	@Override
+	protected List<CDATestCase> getTestCases() {
+		// Return a new List because the one returned by Arrays.asList is
+		// unmodifiable so a sub-class can't append their test cases.
+		final List<CDATestCase> retValue = super.getTestCases();
+		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+		retValue.addAll(super.getTestCases());
+		return retValue;
+	}
+
+	@Override
+	protected EObject getObjectToTest() {
+		return IHEFactory.eINSTANCE.createComment();
+	}
+
+	@Override
+	protected EObject getObjectInitToTest() {
+		return IHEFactory.eINSTANCE.createComment().init();
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentClassCode(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentClassCode(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateCommentClassCode() {
@@ -40,7 +78,9 @@ public class CommentOperationsTest extends ActOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentCode(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentCode(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateCommentCode() {
@@ -48,7 +88,9 @@ public class CommentOperationsTest extends ActOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentStatusCode(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentStatusCode(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateCommentStatusCode() {
@@ -56,7 +98,9 @@ public class CommentOperationsTest extends ActOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentText(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations#validateCommentText(org.openhealthtools.mdht.uml.cda.ihe.Comment, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateCommentText() {
