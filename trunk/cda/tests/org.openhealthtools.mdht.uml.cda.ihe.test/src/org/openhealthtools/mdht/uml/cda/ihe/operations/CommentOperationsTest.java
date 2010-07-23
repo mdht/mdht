@@ -33,19 +33,54 @@ public class CommentOperationsTest extends ActOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.2";
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Status code
+//	private static final String STATUS_CODE = "completed";
+//	private static final String STATUS_CODE_CODE_SYSTEM = "notspecified";
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return CommentOperations.validateCommentTemplateId(
-					(Comment) objectToTest, diagnostician, map);
-		}
-	} }; // TEST_CASE_ARRAY
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return CommentOperations.validateCommentTemplateId(
+							(Comment) objectToTest, diagnostician, map);
+				}
+			}
+//			,
+//
+//			// Status Code
+//			// -------------------------------------------------------------
+//			new StatusCodeCCDValidationTest(STATUS_CODE,
+//					STATUS_CODE_CODE_SYSTEM) {
+//				@Override
+//				protected boolean validate(final EObject objectToTest,
+//						final BasicDiagnostic diagnostician,
+//						final Map<Object, Object> map) {
+//					return CommentOperations.validateCommentStatusCode(
+//							(Comment) objectToTest, diagnostician, map);
+//				}
+//			},
+//
+//			// Text
+//			// -------------------------------------------------------------
+//			new TextCCDValidationTest() {
+//
+//				@Override
+//				protected boolean validate(final EObject objectToTest,
+//						final BasicDiagnostic diagnostician,
+//						final Map<Object, Object> map) {
+//					return CommentOperations.validateCommentText(
+//							(Comment) objectToTest, diagnostician, map);
+//				}
+//
+//			}
+
+	}; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
