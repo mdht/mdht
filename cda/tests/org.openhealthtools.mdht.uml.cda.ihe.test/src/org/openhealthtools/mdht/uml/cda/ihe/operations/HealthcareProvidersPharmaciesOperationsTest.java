@@ -14,17 +14,39 @@ package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.fail;
 
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.hl7.rim.operations.ParticipationOperationsTest;
 
 /**
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class HealthcareProvidersPharmaciesOperationsTest extends ParticipationOperationsTest {
+public class HealthcareProvidersPharmaciesOperationsTest extends
+		ParticipationOperationsTest {
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.HealthcareProvidersPharmaciesOperations#validateHealthcareProvidersPharmaciesTemplateId(org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest#getObjectToTest()
+	 */
+	@Override
+	protected EObject getObjectToTest() {
+		return IHEFactory.eINSTANCE.createHealthcareProvidersPharmacies();
+	}
+
+	/**
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest#getObjectInitToTest()
+	 */
+	@Override
+	protected EObject getObjectInitToTest() {
+		return IHEFactory.eINSTANCE.createHealthcareProvidersPharmacies()
+				.init();
+	}
+
+	/**
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.HealthcareProvidersPharmaciesOperations#validateHealthcareProvidersPharmaciesTemplateId(org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateHealthcareProvidersPharmaciesTemplateId() {
