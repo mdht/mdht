@@ -76,9 +76,23 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return NeonatalICUEncounterActivityOperations
-					.validateNeonatalICUEncounterActivityEffectiveTime(
-							(NeonatalICUEncounterActivity) objectToTest,
-							diagnostician, map);
+							.validateNeonatalICUEncounterActivityEffectiveTime(
+									(NeonatalICUEncounterActivity) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// ID
+			// -------------------------------------------------------------
+			new IDCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return NeonatalICUEncounterActivityOperations
+							.validateNeonatalICUEncounterActivityId(
+									(NeonatalICUEncounterActivity) objectToTest,
+									diagnostician, map);
 				}
 			} };
 
@@ -126,16 +140,6 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 	 */
 	@Test
 	public void testValidateNeonatalICUEncounterActivityMoodCode() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICUEncounterActivityOperations#validateNeonatalICUEncounterActivityId(org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateNeonatalICUEncounterActivityId() {
 		fail("Not yet implemented");
 	}
 
