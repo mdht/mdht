@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
- * This class
+ * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
 public class PatientDataSectionOperationsTest extends SectionOperationsTest {
@@ -37,20 +37,21 @@ public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 	protected static final String CODE = "55188-7";
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = { // Template ID
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+			// Template ID
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return PatientDataSectionOperations
-					.validatePatientDataSectionTemplateId(
-							(PatientDataSection) objectToTest, diagnostician,
-							map);
-		}
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PatientDataSectionOperations
+							.validatePatientDataSectionTemplateId(
+									(PatientDataSection) objectToTest,
+									diagnostician, map);
+				}
 
-	},
+			},
 
 			// Code
 			// -------------------------------------------------------------
@@ -64,9 +65,7 @@ public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 									(PatientDataSection) objectToTest,
 									diagnostician, map);
 				}
-			},
-
-	};
+			} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -105,5 +104,4 @@ public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 		fail("Not yet implemented");
 	}
 
-}
-// PatientDataSectionOperationsTest
+} // PatientDataSectionOperationsTest
