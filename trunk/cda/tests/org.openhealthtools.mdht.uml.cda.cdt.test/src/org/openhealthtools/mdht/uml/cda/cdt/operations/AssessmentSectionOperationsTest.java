@@ -16,9 +16,12 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSection;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
@@ -27,7 +30,25 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
  */
 @SuppressWarnings("nls")
 public class AssessmentSectionOperationsTest extends SectionOperationsTest {
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.2.7";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return AssessmentSectionOperations
+					.validateAssessmentSectionTemplateId(
+							(AssessmentSection) objectToTest, diagnostician,
+							map);
+		}
+
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -44,16 +65,6 @@ public class AssessmentSectionOperationsTest extends SectionOperationsTest {
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createAssessmentSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.AssessmentSectionOperations#validateAssessmentSectionTemplateId(org.openhealthtools.mdht.uml.cda.cdt.AssessmentSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateAssessmentSectionTemplateId() {
-		fail("Not yet implemented");
 	}
 
 	/**
