@@ -86,6 +86,9 @@ import org.junit.runners.Suite;
 	public class AllCCDOperationsTests {
 	
 	
+	/**
+	 * @return nothing
+	 */
 	public static junit.framework.Test suite() { 
 	    return new JUnit4TestAdapter(AllCCDOperationsTests.class); 
 	}
