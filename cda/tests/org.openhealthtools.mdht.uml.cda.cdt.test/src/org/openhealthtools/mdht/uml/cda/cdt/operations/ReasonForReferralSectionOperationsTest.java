@@ -16,10 +16,13 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
@@ -29,7 +32,23 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 public class ReasonForReferralSectionOperationsTest extends
 		SectionOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.4.8";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return ReasonForReferralSectionOperations
+					.validateReasonForReferralSectionTemplateId(
+							(ReasonForReferralSection) objectToTest,
+							diagnostician, map);
+		}
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -46,16 +65,6 @@ public class ReasonForReferralSectionOperationsTest extends
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createReasonForReferralSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ReasonForReferralSectionOperations#validateReasonForReferralSectionTemplateId(org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateReasonForReferralSectionTemplateId() {
-		fail("Not yet implemented");
 	}
 
 	/**
