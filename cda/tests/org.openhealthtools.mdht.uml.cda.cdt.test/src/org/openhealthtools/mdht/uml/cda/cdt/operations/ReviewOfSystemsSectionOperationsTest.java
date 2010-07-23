@@ -12,23 +12,58 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
- * This class
+ * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
 public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.4.10";
+
+	protected static final String CODE = "10187-3";
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ReviewOfSystemsSectionOperations
+							.validateReviewOfSystemsSectionTemplateId(
+									(ReviewOfSystemsSection) objectToTest,
+									diagnostician, map);
+				}
+
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ReviewOfSystemsSectionOperations
+							.validateReviewOfSystemsSectionCode(
+									(ReviewOfSystemsSection) objectToTest,
+									diagnostician, map);
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -45,26 +80,6 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createReviewOfSystemsSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ReviewOfSystemsSectionOperations#validateReviewOfSystemsSectionTemplateId(org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateReviewOfSystemsSectionTemplateId() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ReviewOfSystemsSectionOperations#validateReviewOfSystemsSectionCode(org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateReviewOfSystemsSectionCode() {
-		fail("Not yet implemented");
 	}
 
 } // ReviewOfSystemsSectionOperationsTest
