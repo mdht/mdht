@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TextCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
@@ -66,6 +67,22 @@ public class PastMedicalHistorySectionOperationsTest extends
 									(PastMedicalHistorySection) objectToTest,
 									diagnostician, map);
 				}
+			},
+
+			// Text
+			// -------------------------------------------------------------
+			new TextCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PastMedicalHistorySectionOperations
+							.validatePastMedicalHistorySectionText(
+									(PastMedicalHistorySection) objectToTest,
+									diagnostician, map);
+				}
+
 			} }; // TEST_CASE_ARRAY
 
 	@Override
@@ -92,16 +109,6 @@ public class PastMedicalHistorySectionOperationsTest extends
 	 */
 	@Test
 	public void testValidatePastMedicalHistorySectionClinicalStatements() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.PastMedicalHistorySectionOperations#validatePastMedicalHistorySectionText(org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidatePastMedicalHistorySectionText() {
 		fail("Not yet implemented");
 	}
 
