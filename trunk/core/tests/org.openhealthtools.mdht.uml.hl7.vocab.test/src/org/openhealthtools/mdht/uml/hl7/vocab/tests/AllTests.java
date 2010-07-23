@@ -22,6 +22,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.tests.VocabFactoryTest;
 /**
  * This class represents a suite of Junit 4 test cases for HL7 Datatypes.
  */@ RunWith ( Suite .class ) @ Suite.SuiteClasses ( { ActClassTest.class , VocabFactoryTest.class } ) public class AllTests { 
+	/**
+	 * @return nothing
+	 */
 	public static junit.framework.Test suite () { 
 		return new JUnit4TestAdapter ( AllTests.class ) ; 
 	} 
