@@ -16,10 +16,13 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
@@ -29,7 +32,25 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 public class PastMedicalHistorySectionConsultOperationsTest extends
 		SectionOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	@SuppressWarnings("hiding")
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.4.9";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return PastMedicalHistorySectionConsultOperations
+					.validatePastMedicalHistorySectionConsultTemplateId(
+							(PastMedicalHistorySectionConsult) objectToTest,
+							diagnostician, map);
+		}
+
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
