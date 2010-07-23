@@ -16,19 +16,39 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
- * This class
+ * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
 public class ChiefComplaintSectionOperationsTest extends SectionOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.2.8";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return ChiefComplaintSectionOperations
+					.validateChiefComplaintSectionTemplateId(
+							(ChiefComplaintSection) objectToTest,
+							diagnostician, map);
+		}
+
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -49,16 +69,6 @@ public class ChiefComplaintSectionOperationsTest extends SectionOperationsTest {
 
 	/**
 	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ChiefComplaintSectionOperations#validateChiefComplaintSectionTemplateId(org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateChiefComplaintSectionTemplateId() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ChiefComplaintSectionOperations#validateChiefComplaintSectionCode(org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
 	 * .
 	 */
@@ -67,5 +77,4 @@ public class ChiefComplaintSectionOperationsTest extends SectionOperationsTest {
 		fail("Not yet implemented");
 	}
 
-}
-// ChiefComplaintSectionOperationsTest
+} // ChiefComplaintSectionOperationsTest
