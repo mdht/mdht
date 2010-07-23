@@ -34,6 +34,10 @@ public class NeonatalICULocationOperationsTest extends
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.3.14";
 
+//	protected static final String CODE = "42348-3";
+//	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
+
+	
 	private static final CDATestCase TEST_CASE_ARRAY[] = { // Template ID
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
@@ -47,7 +51,26 @@ public class NeonatalICULocationOperationsTest extends
 							map);
 		}
 
-	} };
+	} 
+	// The ocl says the code should not be undefined.
+//	,
+//
+//	// Code
+//	// -------------------------------------------------------------
+//	new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+//		@Override
+//		protected boolean validate(final EObject objectToTest,
+//				final BasicDiagnostic diagnostician,
+//				final Map<Object, Object> map) {
+//			return NeonatalICULocationOperations
+//					.validateNeonatalICULocationTypeCode(
+//							(NeonatalICULocation) objectToTest,
+//							diagnostician, map);
+//		}
+//	},
+
+	
+	};
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
