@@ -74,7 +74,24 @@ public class TBResultsSectionOperationsTest extends
 					title.addText("Relevant diagnostic tests and/or laboratory data");
 					return title;
 				}
-			} // Title
+			},
+
+			// Text
+			// -------------------------------------------------------------
+			new TextCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return TBResultsSectionOperations
+							.validateTBResultsSectionText(
+									(TBResultsSection) objectToTest,
+									diagnostician, map);
+				}
+
+			},
+
 	};
 
 	@Override
@@ -92,16 +109,6 @@ public class TBResultsSectionOperationsTest extends
 	@Override
 	protected EObject getObjectToTest() {
 		return TBPNFactory.eINSTANCE.createTBResultsSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultsSectionOperations#validateTBResultsSectionText(org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateTBResultsSectionText() {
-		fail("Not yet implemented");
 	}
 
 	/**
