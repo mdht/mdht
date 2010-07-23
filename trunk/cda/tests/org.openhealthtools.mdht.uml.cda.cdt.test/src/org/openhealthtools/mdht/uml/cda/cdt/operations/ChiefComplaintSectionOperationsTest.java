@@ -21,6 +21,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
@@ -33,22 +34,39 @@ public class ChiefComplaintSectionOperationsTest extends SectionOperationsTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.2.8";
 
+	protected static final String CODE = "10154-3";
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return ChiefComplaintSectionOperations
-					.validateChiefComplaintSectionTemplateId(
-							(ChiefComplaintSection) objectToTest,
-							diagnostician, map);
-		}
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ChiefComplaintSectionOperations
+							.validateChiefComplaintSectionTemplateId(
+									(ChiefComplaintSection) objectToTest,
+									diagnostician, map);
+				}
 
-	} }; // TEST_CASE_ARRAY
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ChiefComplaintSectionOperations
+							.validateChiefComplaintSectionCode(
+									(ChiefComplaintSection) objectToTest,
+									diagnostician, map);
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -65,16 +83,6 @@ public class ChiefComplaintSectionOperationsTest extends SectionOperationsTest {
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createChiefComplaintSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ChiefComplaintSectionOperations#validateChiefComplaintSectionCode(org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateChiefComplaintSectionCode() {
-		fail("Not yet implemented");
 	}
 
 } // ChiefComplaintSectionOperationsTest
