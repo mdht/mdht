@@ -16,11 +16,14 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTest;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
+import org.openhealthtools.mdht.uml.cda.pilot.TuberculosisFollowUpProgressNote;
 
 /**
  * This class is a JUnit 4 test case.
@@ -29,7 +32,24 @@ import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
 public class TuberculosisFollowUpProgressNoteOperationsTest extends
 		ClinicalDocumentOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	@SuppressWarnings("hiding")
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+
+	// Template ID
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return TuberculosisFollowUpProgressNoteOperations
+					.validateTuberculosisFollowUpProgressNoteTemplateId(
+							(TuberculosisFollowUpProgressNote) objectToTest,
+							diagnostician, map);
+		}
+	} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -55,16 +75,6 @@ public class TuberculosisFollowUpProgressNoteOperationsTest extends
 	 */
 	@Test
 	public void testValidateTuberculosisFollowUpProgressNotePatientNames() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TuberculosisFollowUpProgressNoteOperations#validateTuberculosisFollowUpProgressNoteTemplateId(org.openhealthtools.mdht.uml.cda.pilot.TuberculosisFollowUpProgressNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateTuberculosisFollowUpProgressNoteTemplateId() {
 		fail("Not yet implemented");
 	}
 
