@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 public class CommentOperationsTest extends
 		org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperationsTest {
 
+	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.11";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
