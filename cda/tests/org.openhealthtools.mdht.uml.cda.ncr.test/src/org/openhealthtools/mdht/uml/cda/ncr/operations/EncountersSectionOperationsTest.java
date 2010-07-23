@@ -16,20 +16,40 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
 
 /**
- * This class
+ * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
 public class EncountersSectionOperationsTest
 		extends
 		org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersSectionOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.2.2";
+
+	
+	private static final CDATestCase TEST_CASE_ARRAY[] = {	// Template ID
+		new TemplateIDValidationTest(
+				TEMPLATE_ID) {
+
+			@Override
+			protected boolean validate(final EObject objectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return EncountersSectionOperations
+				.validateEncountersSectionTemplateId(
+						(EncountersSection) objectToTest,
+						diagnostician, map);
+			}
+
+		}};
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -46,16 +66,6 @@ public class EncountersSectionOperationsTest
 	@Override
 	protected EObject getObjectToTest() {
 		return NCRFactory.eINSTANCE.createEncountersSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateEncountersSectionTemplateId(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateEncountersSectionTemplateId() {
-		fail("Not yet implemented");
 	}
 
 	/**

@@ -16,10 +16,13 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
+import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
@@ -28,7 +31,22 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 @SuppressWarnings("nls")
 public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.2.4";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = { // Template ID
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return PatientDataSectionOperations
+					.validatePatientDataSectionTemplateId(
+							(PatientDataSection) objectToTest, diagnostician,
+							map);
+		}
+
+	} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -45,16 +63,6 @@ public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 	@Override
 	protected EObject getObjectToTest() {
 		return NCRFactory.eINSTANCE.createPatientDataSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.PatientDataSectionOperations#validatePatientDataSectionTemplateId(org.openhealthtools.mdht.uml.cda.ncr.PatientDataSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidatePatientDataSectionTemplateId() {
-		fail("Not yet implemented");
 	}
 
 	/**
