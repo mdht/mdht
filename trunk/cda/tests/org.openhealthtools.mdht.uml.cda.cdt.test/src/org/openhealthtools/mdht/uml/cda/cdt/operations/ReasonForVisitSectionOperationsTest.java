@@ -12,15 +12,13 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
@@ -33,21 +31,38 @@ public class ReasonForVisitSectionOperationsTest extends SectionOperationsTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.2.8";
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+	protected static final String CODE = "29299-5";
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return ReasonForVisitSectionOperations
-					.validateReasonForVisitSectionTemplateId(
-							(ReasonForVisitSection) objectToTest,
-							diagnostician, map);
-		}
-	} }; // TEST_CASE_ARRAY
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ReasonForVisitSectionOperations
+							.validateReasonForVisitSectionTemplateId(
+									(ReasonForVisitSection) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ReasonForVisitSectionOperations
+							.validateReasonForVisitSectionCode(
+									(ReasonForVisitSection) objectToTest,
+									diagnostician, map);
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -64,16 +79,6 @@ public class ReasonForVisitSectionOperationsTest extends SectionOperationsTest {
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createReasonForVisitSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ReasonForVisitSectionOperations#validateReasonForVisitSectionCode(org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateReasonForVisitSectionCode() {
-		fail("Not yet implemented");
 	}
 
 } // ReasonForVisitSectionOperationsTest
