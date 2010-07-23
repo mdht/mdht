@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * This class is a JUnit4 test case.
@@ -34,22 +35,47 @@ public class EncountersSectionOperationsTest
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.2.2";
 
-	
-	private static final CDATestCase TEST_CASE_ARRAY[] = {	// Template ID
-		new TemplateIDValidationTest(
-				TEMPLATE_ID) {
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+			// Template ID
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return EncountersSectionOperations
-				.validateEncountersSectionTemplateId(
-						(EncountersSection) objectToTest,
-						diagnostician, map);
-			}
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return EncountersSectionOperations
+							.validateEncountersSectionTemplateId(
+									(EncountersSection) objectToTest,
+									diagnostician, map);
+				}
 
-		}};
+			},
+
+			// Title
+			// -------------------------------------------------------------
+			new TitleCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return EncountersSectionOperations
+							.validateNCREncountersSectionTitle(
+									(EncountersSection) objectToTest,
+									diagnostician, map);
+				}
+
+				/**
+				 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TitleCCDValidationTest#getValueToSet()
+				 */
+				@Override
+				protected Object getValueToSet() {
+					final ST title = (ST) super.getValueToSet();
+					title.addText("Encounters");
+					return title;
+				}
+			} // Title
+	};
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -75,16 +101,6 @@ public class EncountersSectionOperationsTest
 	 */
 	@Test
 	public void testValidateNCREncountersSectionText() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations#validateNCREncountersSectionTitle(org.openhealthtools.mdht.uml.cda.ncr.EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateNCREncountersSectionTitle() {
 		fail("Not yet implemented");
 	}
 
