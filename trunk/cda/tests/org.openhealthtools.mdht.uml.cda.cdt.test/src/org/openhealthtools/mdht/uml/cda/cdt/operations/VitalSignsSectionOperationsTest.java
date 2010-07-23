@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.TextCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
@@ -65,6 +66,22 @@ public class VitalSignsSectionOperationsTest extends SectionOperationsTest {
 									(VitalSignsSection) objectToTest,
 									diagnostician, map);
 				}
+			},
+
+			// Text
+			// -------------------------------------------------------------
+			new TextCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsSectionOperations
+							.validateVitalSignsSectionText(
+									(VitalSignsSection) objectToTest,
+									diagnostician, map);
+				}
+
 			} }; // TEST_CASE_ARRAY
 
 	@Override
@@ -91,16 +108,6 @@ public class VitalSignsSectionOperationsTest extends SectionOperationsTest {
 	 */
 	@Test
 	public void testValidateVitalSignsSectionClinicalStatements() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.VitalSignsSectionOperations#validateVitalSignsSectionText(org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateVitalSignsSectionText() {
 		fail("Not yet implemented");
 	}
 
