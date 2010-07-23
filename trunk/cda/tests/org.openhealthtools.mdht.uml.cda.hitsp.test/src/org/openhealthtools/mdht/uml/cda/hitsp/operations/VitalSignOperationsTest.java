@@ -46,6 +46,7 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 	protected static final String CODE9 = "8287-5";
 	protected static final String CODE10 = "3141-9";
 
+	@SuppressWarnings("hiding")
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -152,8 +153,6 @@ public class VitalSignOperationsTest extends VitalSignObservationOperationsTest 
 
 	/**
 	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.hitsp.operations.VitalSignOperations#validateVitalSignCode(org.openhealthtools.mdht.uml.cda.hitsp.VitalSign, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
 	 */
 	@Test
 	public final void testValidateVitalSignCode() {

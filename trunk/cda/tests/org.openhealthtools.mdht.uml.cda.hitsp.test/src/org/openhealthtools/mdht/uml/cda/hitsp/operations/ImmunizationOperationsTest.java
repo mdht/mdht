@@ -29,6 +29,7 @@ public class ImmunizationOperationsTest
 		extends
 		org.openhealthtools.mdht.uml.cda.ihe.operations.ImmunizationOperationsTest {
 
+	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.13";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
