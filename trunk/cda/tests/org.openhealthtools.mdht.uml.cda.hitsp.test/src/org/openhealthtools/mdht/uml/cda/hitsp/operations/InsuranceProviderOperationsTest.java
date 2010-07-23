@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.CoverageEntryOperationsTe
 @SuppressWarnings("nls")
 public class InsuranceProviderOperationsTest extends CoverageEntryOperationsTest{
 
+	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.5";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
