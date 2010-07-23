@@ -20,7 +20,7 @@ import org.junit.Test;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public  abstract class InfrastructureRootOperationsTest {
+public  abstract class InfrastructureRootOperationsTest extends RIMOperationTest {
 
 	/**
 	 * Test method for {@link org.openhealthtools.mdht.uml.hl7.rim.operations.InfrastructureRootOperations#getRealmCodes(org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot)}.
