@@ -33,18 +33,36 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.3.1";
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = { // Template ID
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+	protected static final String CODE = "47340003";
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.96";
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return BirthWeightOperations.validateResultObservationTemplateId(
-					(BirthWeight) objectToTest, diagnostician, map);
-		}
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+			// Template ID
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-	} };
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return BirthWeightOperations
+							.validateResultObservationTemplateId(
+									(BirthWeight) objectToTest, diagnostician,
+									map);
+				}
+
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return BirthWeightOperations.validateResultObservationCode(
+							(BirthWeight) objectToTest, diagnostician, map);
+				}
+			} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -90,16 +108,6 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 	 */
 	@Test
 	public void testValidateBirthWeightValue() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.BirthWeightOperations#validateResultObservationCode(org.openhealthtools.mdht.uml.cda.ncr.BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultObservationCodeBirthWeight() {
 		fail("Not yet implemented");
 	}
 
