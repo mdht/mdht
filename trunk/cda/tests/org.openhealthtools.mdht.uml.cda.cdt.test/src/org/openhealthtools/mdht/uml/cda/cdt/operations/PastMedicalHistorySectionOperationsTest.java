@@ -21,6 +21,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
@@ -34,22 +35,38 @@ public class PastMedicalHistorySectionOperationsTest extends
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.2.9";
 
+	protected static final String CODE = "11348-0";
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return PastMedicalHistorySectionOperations
-					.validatePastMedicalHistorySectionTemplateId(
-							(PastMedicalHistorySection) objectToTest,
-							diagnostician, map);
-		}
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PastMedicalHistorySectionOperations
+							.validatePastMedicalHistorySectionTemplateId(
+									(PastMedicalHistorySection) objectToTest,
+									diagnostician, map);
+				}
+			},
 
-	} }; // TEST_CASE_ARRAY
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PastMedicalHistorySectionOperations
+							.validatePastMedicalHistorySectionCode(
+									(PastMedicalHistorySection) objectToTest,
+									diagnostician, map);
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -75,16 +92,6 @@ public class PastMedicalHistorySectionOperationsTest extends
 	 */
 	@Test
 	public void testValidatePastMedicalHistorySectionClinicalStatements() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.PastMedicalHistorySectionOperations#validatePastMedicalHistorySectionCode(org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidatePastMedicalHistorySectionCode() {
 		fail("Not yet implemented");
 	}
 
