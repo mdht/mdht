@@ -16,11 +16,14 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultOrganizerOperationsTest;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
+import org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer;
 
 /**
  * This class
@@ -29,7 +32,23 @@ import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
 public class TBResultOrganizerOperationsTest extends
 		ResultOrganizerOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.21";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+
+	// Template ID
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return TBResultOrganizerOperations
+					.validateResultOrganizerTemplateId(
+							(TBResultOrganizer) objectToTest, diagnostician,
+							map);
+		}
+	} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -55,16 +74,6 @@ public class TBResultOrganizerOperationsTest extends
 	 */
 	@Test
 	public void testValidateTBResultOrganizerTBResultObservation() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultOrganizerOperations#validateResultOrganizerTemplateId(org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultOrganizerTemplateIdTBResultOrganizerDiagnosticChainMapOfObjectObject() {
 		fail("Not yet implemented");
 	}
 
