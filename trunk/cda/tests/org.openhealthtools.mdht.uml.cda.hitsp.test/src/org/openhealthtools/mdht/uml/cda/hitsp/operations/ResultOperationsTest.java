@@ -21,6 +21,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.AgeObservationOperations;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperationsTest;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Result;
@@ -33,33 +35,46 @@ public class ResultOperationsTest extends ResultObservationOperationsTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.15";
 
+	protected static final String CODE = "notspecified";
+	protected static final String CODE_SYSTEM = "notspecified";
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultOperations.validateResultTemplateId(
-						(Result) objectToTest, diagnostician, map);
-			}
-		},
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOperations.validateResultTemplateId(
+							(Result) objectToTest, diagnostician, map);
+				}
+			},
 
-		// EffectiveTime
-		// -------------------------------------------------------------
-		new EffectiveTimeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultOperations.validateResultEffectiveTime(
-						(Result) objectToTest, diagnostician, map);
-			}
-		}
+			// EffectiveTime
+			// -------------------------------------------------------------
+			new EffectiveTimeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOperations.validateResultEffectiveTime(
+							(Result) objectToTest, diagnostician, map);
+				}
+			},
 
-	}; // TEST_CASE_ARRAY
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOperations.validateResultCode(
+							(Result) objectToTest, diagnostician, map);
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -80,16 +95,5 @@ public class ResultOperationsTest extends ResultObservationOperationsTest {
 	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createResult().init();
 	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.hitsp.operations.ResultOperations#validateResultCode(org.openhealthtools.mdht.uml.cda.hitsp.Result, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultCode() {
-		fail("Not yet implemented");
-	}
-
 
 } // ResultOperationsTest
