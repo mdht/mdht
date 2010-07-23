@@ -16,10 +16,13 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperationsTest;
+import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
 
 /**
@@ -28,7 +31,20 @@ import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
 @SuppressWarnings("nls")
 public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.3.1";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = { // Template ID
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return BirthWeightOperations.validateResultObservationTemplateId(
+					(BirthWeight) objectToTest, diagnostician, map);
+		}
+
+	} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -79,21 +95,11 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 
 	/**
 	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.BirthWeightOperations#validateResultObservationTemplateId(org.openhealthtools.mdht.uml.cda.ncr.BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultObservationTemplateIdBirthWeightDiagnosticChainMapOfObjectObject() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ncr.operations.BirthWeightOperations#validateResultObservationCode(org.openhealthtools.mdht.uml.cda.ncr.BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
 	 * .
 	 */
 	@Test
-	public void testValidateResultObservationCodeBirthWeightDiagnosticChainMapOfObjectObject() {
+	public void testValidateResultObservationCodeBirthWeight() {
 		fail("Not yet implemented");
 	}
 
@@ -103,7 +109,7 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 	 * .
 	 */
 	@Test
-	public void testValidateResultObservationStatusCodeBirthWeightDiagnosticChainMapOfObjectObject() {
+	public void testValidateResultObservationStatusCodeBirthWeight() {
 		fail("Not yet implemented");
 	}
 
