@@ -12,15 +12,12 @@
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CoverageEntryOperationsTest;
