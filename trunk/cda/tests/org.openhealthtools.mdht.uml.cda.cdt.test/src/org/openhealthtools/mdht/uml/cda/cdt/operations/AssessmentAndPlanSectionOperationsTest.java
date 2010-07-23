@@ -12,15 +12,13 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
@@ -32,24 +30,41 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 public class AssessmentAndPlanSectionOperationsTest extends
 		SectionOperationsTest {
 
-	protected static final String TEMPLATE_ID = "12.16.840.1.113883.10.20.2.7";
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.2.7";
+
+	protected static final String CODE = "51847-2";
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return AssessmentAndPlanSectionOperations
-					.validateAssessmentAndPlanSectionTemplateId(
-							(AssessmentAndPlanSection) objectToTest,
-							diagnostician, map);
-		}
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AssessmentAndPlanSectionOperations
+							.validateAssessmentAndPlanSectionTemplateId(
+									(AssessmentAndPlanSection) objectToTest,
+									diagnostician, map);
+				}
 
-	} }; // TEST_CASE_ARRAY
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AssessmentAndPlanSectionOperations
+							.validateAssessmentAndPlanSectionCode(
+									(AssessmentAndPlanSection) objectToTest,
+									diagnostician, map);
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -66,16 +81,6 @@ public class AssessmentAndPlanSectionOperationsTest extends
 	@Override
 	protected EObject getObjectToTest() {
 		return CDTFactory.eINSTANCE.createAssessmentAndPlanSection();
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.AssessmentAndPlanSectionOperations#validateAssessmentAndPlanSectionCode(org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateAssessmentAndPlanSectionCode() {
-		fail("Not yet implemented");
 	}
 
 } // AssessmentAndPlanSectionOperationsTest
