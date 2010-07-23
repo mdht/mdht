@@ -50,7 +50,7 @@ public class ReactionObservationOperationsTest extends StructuralAttributeValida
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(REACTION_OBSERVATION_TEMPLATE_ID) {
+		new TemplateIDValidationTest(REACTION_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
 			protected boolean validate(final EObject objectToTest,

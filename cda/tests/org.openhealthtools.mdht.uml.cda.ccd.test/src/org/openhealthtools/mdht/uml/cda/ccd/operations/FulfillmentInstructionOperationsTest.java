@@ -42,7 +42,7 @@ public class FulfillmentInstructionOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDCCDValidationTest(FULFILLMENT_INSTRUCTION_TEMPLATE_ID) {
+	new TemplateIDValidationTest(FULFILLMENT_INSTRUCTION_TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

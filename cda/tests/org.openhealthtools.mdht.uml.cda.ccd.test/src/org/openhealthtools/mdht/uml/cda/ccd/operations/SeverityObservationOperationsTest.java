@@ -41,7 +41,7 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(SEVERITY_OBSERVATION_TEMPLATE_ID) {
+			new TemplateIDValidationTest(SEVERITY_OBSERVATION_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

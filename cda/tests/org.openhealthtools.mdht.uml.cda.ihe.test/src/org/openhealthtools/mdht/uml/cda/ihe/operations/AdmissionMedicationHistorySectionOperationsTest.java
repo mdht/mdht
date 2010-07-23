@@ -39,7 +39,7 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(
+			new TemplateIDValidationTest(
 					ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID) {
 
 				@Override

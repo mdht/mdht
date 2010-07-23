@@ -35,7 +35,7 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(
+			new TemplateIDValidationTest(
 					MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID) {
 
 				@Override

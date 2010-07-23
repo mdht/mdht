@@ -35,7 +35,7 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(VITAL_SIGNS_ORGANIZER_TEMPLATE_ID) {
+			new TemplateIDValidationTest(VITAL_SIGNS_ORGANIZER_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

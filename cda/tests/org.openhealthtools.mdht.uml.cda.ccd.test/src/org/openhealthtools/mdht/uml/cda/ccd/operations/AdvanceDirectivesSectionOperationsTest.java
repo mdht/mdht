@@ -39,7 +39,7 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(
+			new TemplateIDValidationTest(
 					ADVANCE_DIRECTIVE_SECTION_TEMPLATE_ID) {
 
 				@Override

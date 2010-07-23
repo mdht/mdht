@@ -33,7 +33,7 @@ public class AlertStatusObservationOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(
+		new TemplateIDValidationTest(
 				ALERTS_STATUS_OBSERVATION_TEMPLATE_ID) {
 
 			@Override

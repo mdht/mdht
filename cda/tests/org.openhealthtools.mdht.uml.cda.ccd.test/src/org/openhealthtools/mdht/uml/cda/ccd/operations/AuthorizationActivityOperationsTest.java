@@ -44,7 +44,7 @@ public class AuthorizationActivityOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(AUTHORIZATION_ACTIVITY_TEMPLATE_ID) {
+			new TemplateIDValidationTest(AUTHORIZATION_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

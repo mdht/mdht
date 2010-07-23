@@ -39,7 +39,7 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.ImmunizationsSectionOperationsTe
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(TEMPLATE_ID) {
+		new TemplateIDValidationTest(TEMPLATE_ID) {
 
 			@Override
 			protected boolean validate(final EObject objectToTest,

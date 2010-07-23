@@ -266,7 +266,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 	} // CDAValidationTestCase
 
 	// TemplateID Test Case
-	protected abstract static class TemplateIDCCDValidationTest extends
+	protected abstract static class TemplateIDValidationTest extends
 	CDAValidationTestCase {
 		private static final String TEMPLATE_ID_FEATURE_NAME = "templateId";
 
@@ -275,7 +275,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		/**
 		 * @param templateID
 		 */
-		public TemplateIDCCDValidationTest(final String templateID) {
+		public TemplateIDValidationTest(final String templateID) {
 			super(TEMPLATE_ID_FEATURE_NAME);
 			this.templateID = templateID;
 		}
@@ -292,14 +292,14 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 				validateExpectPass(objectToTest, diagnostician, map);
 			} catch (final UnsupportedOperationException uoe) {
 				fail(CDAValidationTest
-						.createUnsupportedOperationFailureMessage("templateId",
+						.createUnsupportedOperationFailureMessage(TEMPLATE_ID_FEATURE_NAME,
 								uoe));
 			}
 		}
 
 		@SuppressWarnings("unchecked")
-		private EList<II> getTemplateIds(final EObject eObjectToValidate) {
-			return (EList<II>) eObjectToValidate.eGet(eObjectToValidate
+		private EList<II> getTemplateIds(final EObject objectToTest) {
+			return (EList<II>) objectToTest.eGet(objectToTest
 					.eClass().getEStructuralFeature(TEMPLATE_ID_FEATURE_NAME));
 		}
 
@@ -309,7 +309,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			return retValue;
 		}
 
-	} // TemplateIDCCDValidationTest
+	} // TemplateIDValidationTest
 	
 	static abstract protected class UndefinedValidationTestCase extends
 	CDAValidationTestCase {

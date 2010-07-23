@@ -35,7 +35,7 @@ public class FamilyHistoryOrganizerOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(
+			new TemplateIDValidationTest(
 					FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID) {
 
 				@Override

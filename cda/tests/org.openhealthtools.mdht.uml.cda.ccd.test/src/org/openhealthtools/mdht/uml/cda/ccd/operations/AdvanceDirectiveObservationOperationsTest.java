@@ -52,7 +52,7 @@ StructuralAttributeValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(
+		new TemplateIDValidationTest(
 				ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID) {
 
 			@Override

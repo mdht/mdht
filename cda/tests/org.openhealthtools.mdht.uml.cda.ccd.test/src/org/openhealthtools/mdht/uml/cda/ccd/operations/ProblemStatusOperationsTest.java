@@ -33,7 +33,7 @@ public class ProblemStatusOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(PROBLEM_STATUS_TEMPLATE_ID) {
+		new TemplateIDValidationTest(PROBLEM_STATUS_TEMPLATE_ID) {
 
 			@Override
 			protected boolean validate(final EObject objectToTest,
