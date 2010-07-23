@@ -121,10 +121,15 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 
 	
 
-	// Validate Title Test Case
-	abstract protected static class TitleCCDValidationTest extends
+	/**
+	 * This class tests title validation
+	 */
+	abstract public static class TitleCCDValidationTest extends
 	CCDValidationTestCase {
 
+		/**
+		 * nothing
+		 */
 		public TitleCCDValidationTest() {
 			super("title");
 		}
@@ -209,10 +214,15 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		}
 	} // MoodCode Value Validation Test
 
-	// Validate Text Test Case
-	abstract protected static class TextCCDValidationTest extends
+	/**
+	 * Validate Text Test Case
+	 */
+	abstract public static class TextCCDValidationTest extends
 	CCDValidationTestCase {
 
+		/**
+		 * nothing
+		 */
 		public TextCCDValidationTest() {
 			super("text");
 		}
@@ -223,10 +233,15 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		}
 	} // TextCCDValidationTest
 
-	// Validate Id Test Case
-	abstract protected static class IDCCDValidationTest extends
+	/**
+	 * Validate Id Test Case
+	 */
+	abstract public static class IDCCDValidationTest extends
 	CCDValidationTestCase {
 
+		/**
+		 * Nothing
+		 */
 		public IDCCDValidationTest() {
 			super("id");
 		}
@@ -291,10 +306,15 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		}
 	} // CodeCCDValidationTest
 
-	// Validate Effective Time Test Case
-	abstract protected static class EffectiveTimeCCDValidationTest extends
+	/**
+	 * Validate Effective Time Test Case
+	 */
+	abstract public static class EffectiveTimeCCDValidationTest extends
 	CCDValidationTestCase {
 
+		/**
+		 * nothing
+		 */
 		public EffectiveTimeCCDValidationTest() {
 			super("effectiveTime");
 		}
