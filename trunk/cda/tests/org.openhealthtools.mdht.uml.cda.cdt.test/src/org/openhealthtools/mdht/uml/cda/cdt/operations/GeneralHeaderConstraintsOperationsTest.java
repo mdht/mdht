@@ -112,7 +112,23 @@ public class GeneralHeaderConstraintsOperationsTest extends
 					title.addText("not specified");
 					return title;
 				}
-			} }; // TEST_CASE_ARRAY
+			}
+//			,
+//
+//			// ID
+//			// -------------------------------------------------------------
+//			new IDCCDValidationTest() {
+//				@Override
+//				protected boolean validate(final EObject objectToTest,
+//						final BasicDiagnostic diagnostician,
+//						final Map<Object, Object> map) {
+//					return GeneralHeaderConstraintsOperations
+//							.validateGeneralHeaderConstraintsId(
+//									(GeneralHeaderConstraints) objectToTest,
+//									diagnostician, map);
+//				}
+//			} 
+			}; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
