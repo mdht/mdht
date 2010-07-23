@@ -28,7 +28,6 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 @SuppressWarnings("nls")
 public class ProductEntryOperationsTest extends ProductOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.7.2";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
