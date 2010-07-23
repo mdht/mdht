@@ -16,10 +16,13 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote;
 
 /**
  * This class is a JUnit 4 test case.
@@ -28,7 +31,24 @@ import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 public class ConsultationNoteOperationsTest extends
 		GeneralHeaderConstraintsOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	@SuppressWarnings("hiding")
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.4";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return ConsultationNoteOperations
+					.validateGeneralHeaderConstraintsTemplateId(
+							(ConsultationNote) objectToTest, diagnostician, map);
+		}
+
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -62,8 +82,9 @@ public class ConsultationNoteOperationsTest extends
 	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ConsultationNoteOperations#validateGeneralHeaderConstraintsCode(org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
 	 * .
 	 */
+	@Override
 	@Test
-	public void testValidateGeneralHeaderConstraintsCodeConsultationNoteDiagnosticChainMapOfObjectObject() {
+	public void testValidateGeneralHeaderConstraintsCode() {
 		fail("Not yet implemented");
 	}
 
@@ -204,16 +225,6 @@ public class ConsultationNoteOperationsTest extends
 	 */
 	@Test
 	public void testValidateConsultationNoteResultsSection() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ConsultationNoteOperations#validateGeneralHeaderConstraintsTemplateId(org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsTemplateIdConsultationNoteDiagnosticChainMapOfObjectObject() {
 		fail("Not yet implemented");
 	}
 
