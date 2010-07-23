@@ -34,21 +34,38 @@ public class TBResultOrganizerOperationsTest extends
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.21";
 
+	protected static final String CODE = "notundefined";
+	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
-	// Template ID
-	new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return TBResultOrganizerOperations
-					.validateResultOrganizerTemplateId(
-							(TBResultOrganizer) objectToTest, diagnostician,
-							map);
-		}
-	} };
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return TBResultOrganizerOperations
+							.validateResultOrganizerTemplateId(
+									(TBResultOrganizer) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return TBResultOrganizerOperations
+							.validateResultOrganizerCode(
+									(TBResultOrganizer) objectToTest,
+									diagnostician, map);
+				}
+			} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -74,16 +91,6 @@ public class TBResultOrganizerOperationsTest extends
 	 */
 	@Test
 	public void testValidateTBResultOrganizerTBResultObservation() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultOrganizerOperations#validateResultOrganizerCode(org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateResultOrganizerCodeTBResultOrganizerDiagnosticChainMapOfObjectObject() {
 		fail("Not yet implemented");
 	}
 
