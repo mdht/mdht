@@ -34,7 +34,7 @@ public class ChiefComplaintSectionOperationsTest
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new CCDValidationTest.TemplateIDCCDValidationTest(TEMPLATE_ID) {
+	new CCDValidationTest.TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

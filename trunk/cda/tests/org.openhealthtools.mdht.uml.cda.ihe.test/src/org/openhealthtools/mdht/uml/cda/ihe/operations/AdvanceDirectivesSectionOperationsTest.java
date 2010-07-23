@@ -34,7 +34,7 @@ public class AdvanceDirectivesSectionOperationsTest
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDCCDValidationTest(ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID) {
+	new TemplateIDValidationTest(ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

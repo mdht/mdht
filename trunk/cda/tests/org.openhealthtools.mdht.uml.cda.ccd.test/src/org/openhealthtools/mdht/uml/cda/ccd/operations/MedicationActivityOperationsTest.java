@@ -57,7 +57,7 @@ public class MedicationActivityOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(MEDICATION_ACTIVITY_TEMPLATE_ID) {
+			new TemplateIDValidationTest(MEDICATION_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

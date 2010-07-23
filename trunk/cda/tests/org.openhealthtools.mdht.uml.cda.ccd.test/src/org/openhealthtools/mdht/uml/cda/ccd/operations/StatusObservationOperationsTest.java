@@ -57,7 +57,7 @@ StructuralAttributeValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(STATUS_OBSERVATION_TEMPLATE_ID) {
+		new TemplateIDValidationTest(STATUS_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
 			protected boolean validate(final EObject objectToTest,

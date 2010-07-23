@@ -39,7 +39,7 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(
+		new TemplateIDValidationTest(
 				FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID) {
 
 			@Override

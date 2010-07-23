@@ -35,7 +35,7 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(FAMILY_HISTORY_SECTION_TEMPLATE_ID) {
+			new TemplateIDValidationTest(FAMILY_HISTORY_SECTION_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

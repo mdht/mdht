@@ -45,7 +45,7 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(SUPPLY_ACTIVITY_TEMPLATE_ID) {
+			new TemplateIDValidationTest(SUPPLY_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

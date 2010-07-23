@@ -39,7 +39,7 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDCCDValidationTest(ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID) {
+	new TemplateIDValidationTest(ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

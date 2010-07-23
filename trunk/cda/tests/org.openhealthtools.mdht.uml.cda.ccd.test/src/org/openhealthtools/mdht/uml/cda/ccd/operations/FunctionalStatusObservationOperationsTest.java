@@ -35,7 +35,7 @@ CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(FUNCTIONAL_STATUS_OBSERVATION_TEMPLATE_ID) {
+		new TemplateIDValidationTest(FUNCTIONAL_STATUS_OBSERVATION_TEMPLATE_ID) {
 
 			@Override
 			protected boolean validate(final EObject objectToTest,

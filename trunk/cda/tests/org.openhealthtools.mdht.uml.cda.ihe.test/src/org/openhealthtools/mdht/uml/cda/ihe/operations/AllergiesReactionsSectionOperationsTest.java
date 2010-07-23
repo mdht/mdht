@@ -34,7 +34,7 @@ public class AllergiesReactionsSectionOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDCCDValidationTest(ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID) {
+	new TemplateIDValidationTest(ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

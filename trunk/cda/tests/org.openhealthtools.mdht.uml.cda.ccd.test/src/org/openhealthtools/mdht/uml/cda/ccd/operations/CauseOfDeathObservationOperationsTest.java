@@ -32,7 +32,7 @@ public class CauseOfDeathObservationOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDCCDValidationTest(CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID) {
+	new TemplateIDValidationTest(CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

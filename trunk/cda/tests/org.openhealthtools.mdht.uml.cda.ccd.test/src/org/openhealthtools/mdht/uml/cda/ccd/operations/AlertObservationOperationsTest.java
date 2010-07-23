@@ -58,7 +58,7 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(
+		new TemplateIDValidationTest(
 				ALERT_OBSERVATION_VERIFICATION_TEMPLATE_ID) {
 
 			@Override

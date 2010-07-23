@@ -32,7 +32,7 @@ public class SocialHistoryObservationOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDCCDValidationTest(SOCIAL_HISTORY_OBSERVATION_TEMPLATE_ID) {
+	new TemplateIDValidationTest(SOCIAL_HISTORY_OBSERVATION_TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

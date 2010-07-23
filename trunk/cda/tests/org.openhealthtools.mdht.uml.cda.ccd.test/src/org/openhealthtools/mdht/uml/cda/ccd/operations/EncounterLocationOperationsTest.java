@@ -32,7 +32,7 @@ public class EncounterLocationOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDCCDValidationTest(ENCOUNTER_LOCATION_TEMPLATE_ID) {
+	new TemplateIDValidationTest(ENCOUNTER_LOCATION_TEMPLATE_ID) {
 
 		@Override
 		protected boolean validate(final EObject objectToTest,

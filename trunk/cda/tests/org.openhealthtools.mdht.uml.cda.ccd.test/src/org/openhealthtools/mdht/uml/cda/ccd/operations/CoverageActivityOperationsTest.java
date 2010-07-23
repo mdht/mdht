@@ -47,7 +47,7 @@ public class CoverageActivityOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(COVERAGE_ACTIVITY_TEMPLATE_ID) {
+			new TemplateIDValidationTest(COVERAGE_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

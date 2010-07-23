@@ -57,7 +57,7 @@ public class PurposeActivityOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(PURPOSE_ACTIVITY_TEMPLATE_ID) {
+			new TemplateIDValidationTest(PURPOSE_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,

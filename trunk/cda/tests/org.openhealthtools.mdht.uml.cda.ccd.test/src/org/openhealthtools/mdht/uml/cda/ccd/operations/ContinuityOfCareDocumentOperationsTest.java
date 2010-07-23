@@ -56,7 +56,7 @@ public class ContinuityOfCareDocumentOperationsTest extends CCDValidationTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 		// Template ID
 		// -------------------------------------------------------------
-		new TemplateIDCCDValidationTest(
+		new TemplateIDValidationTest(
 				CONTINUITY_OF_CARE_DOCUMENT_TEMPLATE_ID) {
 
 			@Override

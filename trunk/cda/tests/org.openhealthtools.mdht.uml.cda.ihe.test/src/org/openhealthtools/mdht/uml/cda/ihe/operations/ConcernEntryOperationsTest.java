@@ -33,7 +33,7 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDCCDValidationTest(CONCERN_ENTRY_TEMPLATE_ID) {
+			new TemplateIDValidationTest(CONCERN_ENTRY_TEMPLATE_ID) {
 
 				@Override
 				protected boolean validate(final EObject objectToTest,
