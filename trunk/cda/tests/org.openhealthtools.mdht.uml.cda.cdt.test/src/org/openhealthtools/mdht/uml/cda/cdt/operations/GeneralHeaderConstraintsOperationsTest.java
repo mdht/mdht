@@ -16,10 +16,13 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTest;
 
 /**
@@ -29,7 +32,25 @@ import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTes
 public class GeneralHeaderConstraintsOperationsTest extends
 		ClinicalDocumentOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {};
+	@SuppressWarnings("hiding")
+	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.3";
+
+	private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
+
+		@Override
+		protected boolean validate(final EObject objectToTest,
+				final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return GeneralHeaderConstraintsOperations
+					.validateGeneralHeaderConstraintsTemplateId(
+							(GeneralHeaderConstraints) objectToTest,
+							diagnostician, map);
+		}
+
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -85,16 +106,6 @@ public class GeneralHeaderConstraintsOperationsTest extends
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsCopyTimeNotPresent() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.GeneralHeaderConstraintsOperations#validateGeneralHeaderConstraintsTemplateId(org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateGeneralHeaderConstraintsTemplateId() {
 		fail("Not yet implemented");
 	}
 
