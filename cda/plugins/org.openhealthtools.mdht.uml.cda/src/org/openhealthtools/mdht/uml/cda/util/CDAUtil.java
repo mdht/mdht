@@ -285,7 +285,7 @@ public class CDAUtil {
 
 	// walk up the containment tree until we reach a Section or we run out of containers
 	public static Section getSection(EObject object) {
-		while (object != null & !(object instanceof Section)) {
+		while (object != null && !(object instanceof Section)) {
 			object = object.eContainer();
 		}
 		return (Section) object;
