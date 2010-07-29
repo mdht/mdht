@@ -94,13 +94,13 @@ public class CDAUtil {
 	public static ClinicalDocument load(InputStream in, LoadHandler handler) throws Exception {
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
-		return load(doc,handler);
+		return load(doc, handler);
 	}
 
 	public static ClinicalDocument load(InputSource is, LoadHandler handler) throws Exception {
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(is);
-		return load(doc,handler);
+		return load(doc, handler);
 	}
 
 	private static ClinicalDocument load(Document doc, LoadHandler handler) throws Exception {
