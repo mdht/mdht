@@ -116,8 +116,8 @@
 			<visibility>
 				<objectClass name="org.eclipse.uml2.uml.Class" />
 			</visibility>
-			<action label="%assignValidationMessage.label"
-				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignValidationMessageAction"
+			<action label="%removeValidationMessages.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.RemoveValidationMessagesAction"
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignValidationMessageAction">
 			</action>
@@ -146,8 +146,8 @@
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.updateProfileVersionAction">
 			</action>
-			<action label="%assignValidationMessage.label"
-				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignValidationMessageAction"
+			<action label="%removeValidationMessages.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.RemoveValidationMessagesAction"
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignValidationMessageAction">
 			</action>
