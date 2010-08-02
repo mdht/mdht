@@ -161,6 +161,15 @@ public interface CDTFactory extends EFactory {
 	PastMedicalHistorySection createPastMedicalHistorySection();
 
 	/**
+	 * Returns a new object of class '<em>Review Of Systems Section IHE</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Review Of Systems Section IHE</em>'.
+	 * @generated
+	 */
+	ReviewOfSystemsSectionIHE createReviewOfSystemsSectionIHE();
+
+	/**
 	 * Returns a new object of class '<em>Review Of Systems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

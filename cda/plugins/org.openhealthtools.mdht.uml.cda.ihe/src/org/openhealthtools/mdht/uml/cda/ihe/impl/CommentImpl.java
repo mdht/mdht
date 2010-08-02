@@ -77,6 +77,15 @@ public class CommentImpl extends ActImpl implements Comment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateCommentMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CommentOperations.validateCommentMoodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateCommentStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return CommentOperations.validateCommentStatusCode(this, diagnostics, context);
 	}

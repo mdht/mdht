@@ -554,6 +554,24 @@ public interface IHEFactory extends EFactory {
 	PayerEntry createPayerEntry();
 
 	/**
+	 * Returns a new object of class '<em>PHR Extract</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PHR Extract</em>'.
+	 * @generated
+	 */
+	PHRExtract createPHRExtract();
+
+	/**
+	 * Returns a new object of class '<em>PHR Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PHR Update</em>'.
+	 * @generated
+	 */
+	PHRUpdate createPHRUpdate();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

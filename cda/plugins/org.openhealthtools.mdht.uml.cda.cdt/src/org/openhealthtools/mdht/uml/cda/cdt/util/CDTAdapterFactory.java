@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitAndChiefComplaintSecti
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -106,8 +107,40 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 				return createHistoryAndPhysicalAdapter();
 			}
 			@Override
+			public Adapter caseHistoryOfPresentIllness(HistoryOfPresentIllness object) {
+				return createHistoryOfPresentIllnessAdapter();
+			}
+			@Override
+			public Adapter casePastMedicalHistorySection(PastMedicalHistorySection object) {
+				return createPastMedicalHistorySectionAdapter();
+			}
+			@Override
+			public Adapter caseReviewOfSystemsSectionIHE(ReviewOfSystemsSectionIHE object) {
+				return createReviewOfSystemsSectionIHEAdapter();
+			}
+			@Override
+			public Adapter casePhysicalExaminationSection(PhysicalExaminationSection object) {
+				return createPhysicalExaminationSectionAdapter();
+			}
+			@Override
+			public Adapter caseVitalSignsSection(VitalSignsSection object) {
+				return createVitalSignsSectionAdapter();
+			}
+			@Override
+			public Adapter caseGeneralStatusSection(GeneralStatusSection object) {
+				return createGeneralStatusSectionAdapter();
+			}
+			@Override
 			public Adapter caseConsultationNote(ConsultationNote object) {
 				return createConsultationNoteAdapter();
+			}
+			@Override
+			public Adapter casePastMedicalHistorySectionConsult(PastMedicalHistorySectionConsult object) {
+				return createPastMedicalHistorySectionConsultAdapter();
+			}
+			@Override
+			public Adapter caseReviewOfSystemsSection(ReviewOfSystemsSection object) {
+				return createReviewOfSystemsSectionAdapter();
 			}
 			@Override
 			public Adapter caseReasonForReferralSection(ReasonForReferralSection object) {
@@ -130,28 +163,8 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 				return createLevelThreeConformanceAdapter();
 			}
 			@Override
-			public Adapter casePhysicalExaminationSection(PhysicalExaminationSection object) {
-				return createPhysicalExaminationSectionAdapter();
-			}
-			@Override
-			public Adapter casePastMedicalHistorySection(PastMedicalHistorySection object) {
-				return createPastMedicalHistorySectionAdapter();
-			}
-			@Override
-			public Adapter caseReviewOfSystemsSection(ReviewOfSystemsSection object) {
-				return createReviewOfSystemsSectionAdapter();
-			}
-			@Override
-			public Adapter caseGeneralStatusSection(GeneralStatusSection object) {
-				return createGeneralStatusSectionAdapter();
-			}
-			@Override
 			public Adapter caseDiagnosticFindings(DiagnosticFindings object) {
 				return createDiagnosticFindingsAdapter();
-			}
-			@Override
-			public Adapter caseVitalSignsSection(VitalSignsSection object) {
-				return createVitalSignsSectionAdapter();
 			}
 			@Override
 			public Adapter caseAssessmentSection(AssessmentSection object) {
@@ -178,14 +191,6 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 				return createReasonForVisitAndChiefComplaintSectionAdapter();
 			}
 			@Override
-			public Adapter caseHistoryOfPresentIllness(HistoryOfPresentIllness object) {
-				return createHistoryOfPresentIllnessAdapter();
-			}
-			@Override
-			public Adapter casePastMedicalHistorySectionConsult(PastMedicalHistorySectionConsult object) {
-				return createPastMedicalHistorySectionConsultAdapter();
-			}
-			@Override
 			public Adapter caseCDTRegistryDelegate(CDTRegistryDelegate object) {
 				return createCDTRegistryDelegateAdapter();
 			}
@@ -208,10 +213,6 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseResultsSection(ResultsSection object) {
 				return createResultsSectionAdapter();
-			}
-			@Override
-			public Adapter caseIHE_HistoryOfPresentIllness(org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness object) {
-				return createIHE_HistoryOfPresentIllnessAdapter();
 			}
 			@Override
 			public Adapter caseRegistryDelegate(RegistryDelegate object) {
@@ -374,6 +375,20 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPastMedicalHistorySectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE <em>Review Of Systems Section IHE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE
+	 * @generated
+	 */
+	public Adapter createReviewOfSystemsSectionIHEAdapter() {
 		return null;
 	}
 
@@ -626,20 +641,6 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResultsSectionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness <em>History Of Present Illness</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness
-	 * @generated
-	 */
-	public Adapter createIHE_HistoryOfPresentIllnessAdapter() {
 		return null;
 	}
 

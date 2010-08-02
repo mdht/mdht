@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitAndChiefComplaintSecti
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -134,6 +135,60 @@ public class CDTSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CDTPackage.HISTORY_OF_PRESENT_ILLNESS: {
+				HistoryOfPresentIllness historyOfPresentIllness = (HistoryOfPresentIllness)theEObject;
+				T result = caseHistoryOfPresentIllness(historyOfPresentIllness);
+				if (result == null) result = caseSection(historyOfPresentIllness);
+				if (result == null) result = caseAct(historyOfPresentIllness);
+				if (result == null) result = caseInfrastructureRoot(historyOfPresentIllness);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.PAST_MEDICAL_HISTORY_SECTION: {
+				PastMedicalHistorySection pastMedicalHistorySection = (PastMedicalHistorySection)theEObject;
+				T result = casePastMedicalHistorySection(pastMedicalHistorySection);
+				if (result == null) result = caseSection(pastMedicalHistorySection);
+				if (result == null) result = caseAct(pastMedicalHistorySection);
+				if (result == null) result = caseInfrastructureRoot(pastMedicalHistorySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.REVIEW_OF_SYSTEMS_SECTION_IHE: {
+				ReviewOfSystemsSectionIHE reviewOfSystemsSectionIHE = (ReviewOfSystemsSectionIHE)theEObject;
+				T result = caseReviewOfSystemsSectionIHE(reviewOfSystemsSectionIHE);
+				if (result == null) result = caseSection(reviewOfSystemsSectionIHE);
+				if (result == null) result = caseAct(reviewOfSystemsSectionIHE);
+				if (result == null) result = caseInfrastructureRoot(reviewOfSystemsSectionIHE);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.PHYSICAL_EXAMINATION_SECTION: {
+				PhysicalExaminationSection physicalExaminationSection = (PhysicalExaminationSection)theEObject;
+				T result = casePhysicalExaminationSection(physicalExaminationSection);
+				if (result == null) result = caseSection(physicalExaminationSection);
+				if (result == null) result = caseAct(physicalExaminationSection);
+				if (result == null) result = caseInfrastructureRoot(physicalExaminationSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.VITAL_SIGNS_SECTION: {
+				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
+				T result = caseVitalSignsSection(vitalSignsSection);
+				if (result == null) result = caseSection(vitalSignsSection);
+				if (result == null) result = caseAct(vitalSignsSection);
+				if (result == null) result = caseInfrastructureRoot(vitalSignsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.GENERAL_STATUS_SECTION: {
+				GeneralStatusSection generalStatusSection = (GeneralStatusSection)theEObject;
+				T result = caseGeneralStatusSection(generalStatusSection);
+				if (result == null) result = caseSection(generalStatusSection);
+				if (result == null) result = caseAct(generalStatusSection);
+				if (result == null) result = caseInfrastructureRoot(generalStatusSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CDTPackage.CONSULTATION_NOTE: {
 				ConsultationNote consultationNote = (ConsultationNote)theEObject;
 				T result = caseConsultationNote(consultationNote);
@@ -141,6 +196,24 @@ public class CDTSwitch<T> {
 				if (result == null) result = caseClinicalDocument(consultationNote);
 				if (result == null) result = caseAct(consultationNote);
 				if (result == null) result = caseInfrastructureRoot(consultationNote);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.PAST_MEDICAL_HISTORY_SECTION_CONSULT: {
+				PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult = (PastMedicalHistorySectionConsult)theEObject;
+				T result = casePastMedicalHistorySectionConsult(pastMedicalHistorySectionConsult);
+				if (result == null) result = caseSection(pastMedicalHistorySectionConsult);
+				if (result == null) result = caseAct(pastMedicalHistorySectionConsult);
+				if (result == null) result = caseInfrastructureRoot(pastMedicalHistorySectionConsult);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.REVIEW_OF_SYSTEMS_SECTION: {
+				ReviewOfSystemsSection reviewOfSystemsSection = (ReviewOfSystemsSection)theEObject;
+				T result = caseReviewOfSystemsSection(reviewOfSystemsSection);
+				if (result == null) result = caseSection(reviewOfSystemsSection);
+				if (result == null) result = caseAct(reviewOfSystemsSection);
+				if (result == null) result = caseInfrastructureRoot(reviewOfSystemsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,42 +268,6 @@ public class CDTSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CDTPackage.PHYSICAL_EXAMINATION_SECTION: {
-				PhysicalExaminationSection physicalExaminationSection = (PhysicalExaminationSection)theEObject;
-				T result = casePhysicalExaminationSection(physicalExaminationSection);
-				if (result == null) result = caseSection(physicalExaminationSection);
-				if (result == null) result = caseAct(physicalExaminationSection);
-				if (result == null) result = caseInfrastructureRoot(physicalExaminationSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CDTPackage.PAST_MEDICAL_HISTORY_SECTION: {
-				PastMedicalHistorySection pastMedicalHistorySection = (PastMedicalHistorySection)theEObject;
-				T result = casePastMedicalHistorySection(pastMedicalHistorySection);
-				if (result == null) result = caseSection(pastMedicalHistorySection);
-				if (result == null) result = caseAct(pastMedicalHistorySection);
-				if (result == null) result = caseInfrastructureRoot(pastMedicalHistorySection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CDTPackage.REVIEW_OF_SYSTEMS_SECTION: {
-				ReviewOfSystemsSection reviewOfSystemsSection = (ReviewOfSystemsSection)theEObject;
-				T result = caseReviewOfSystemsSection(reviewOfSystemsSection);
-				if (result == null) result = caseSection(reviewOfSystemsSection);
-				if (result == null) result = caseAct(reviewOfSystemsSection);
-				if (result == null) result = caseInfrastructureRoot(reviewOfSystemsSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CDTPackage.GENERAL_STATUS_SECTION: {
-				GeneralStatusSection generalStatusSection = (GeneralStatusSection)theEObject;
-				T result = caseGeneralStatusSection(generalStatusSection);
-				if (result == null) result = caseSection(generalStatusSection);
-				if (result == null) result = caseAct(generalStatusSection);
-				if (result == null) result = caseInfrastructureRoot(generalStatusSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CDTPackage.DIAGNOSTIC_FINDINGS: {
 				DiagnosticFindings diagnosticFindings = (DiagnosticFindings)theEObject;
 				T result = caseDiagnosticFindings(diagnosticFindings);
@@ -238,15 +275,6 @@ public class CDTSwitch<T> {
 				if (result == null) result = caseSection(diagnosticFindings);
 				if (result == null) result = caseAct(diagnosticFindings);
 				if (result == null) result = caseInfrastructureRoot(diagnosticFindings);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CDTPackage.VITAL_SIGNS_SECTION: {
-				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
-				T result = caseVitalSignsSection(vitalSignsSection);
-				if (result == null) result = caseSection(vitalSignsSection);
-				if (result == null) result = caseAct(vitalSignsSection);
-				if (result == null) result = caseInfrastructureRoot(vitalSignsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -301,25 +329,6 @@ public class CDTSwitch<T> {
 				if (result == null) result = caseSection(reasonForVisitAndChiefComplaintSection);
 				if (result == null) result = caseAct(reasonForVisitAndChiefComplaintSection);
 				if (result == null) result = caseInfrastructureRoot(reasonForVisitAndChiefComplaintSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CDTPackage.HISTORY_OF_PRESENT_ILLNESS: {
-				HistoryOfPresentIllness historyOfPresentIllness = (HistoryOfPresentIllness)theEObject;
-				T result = caseHistoryOfPresentIllness(historyOfPresentIllness);
-				if (result == null) result = caseIHE_HistoryOfPresentIllness(historyOfPresentIllness);
-				if (result == null) result = caseSection(historyOfPresentIllness);
-				if (result == null) result = caseAct(historyOfPresentIllness);
-				if (result == null) result = caseInfrastructureRoot(historyOfPresentIllness);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CDTPackage.PAST_MEDICAL_HISTORY_SECTION_CONSULT: {
-				PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult = (PastMedicalHistorySectionConsult)theEObject;
-				T result = casePastMedicalHistorySectionConsult(pastMedicalHistorySectionConsult);
-				if (result == null) result = caseSection(pastMedicalHistorySectionConsult);
-				if (result == null) result = caseAct(pastMedicalHistorySectionConsult);
-				if (result == null) result = caseInfrastructureRoot(pastMedicalHistorySectionConsult);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -481,6 +490,21 @@ public class CDTSwitch<T> {
 	 * @generated
 	 */
 	public T casePastMedicalHistorySection(PastMedicalHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Review Of Systems Section IHE</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Review Of Systems Section IHE</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReviewOfSystemsSectionIHE(ReviewOfSystemsSectionIHE object) {
 		return null;
 	}
 
@@ -751,21 +775,6 @@ public class CDTSwitch<T> {
 	 * @generated
 	 */
 	public T caseResultsSection(ResultsSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>History Of Present Illness</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>History Of Present Illness</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIHE_HistoryOfPresentIllness(org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness object) {
 		return null;
 	}
 

@@ -7,9 +7,6 @@
     <packageImport xmi:id="_kRcz0GhVEd-ilOLYnIx0jA">
       <importedPackage href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_qQyD8jxVEd6JwqSGecoePg"/>
     </packageImport>
-    <packageImport xmi:id="_oYQ4MGhVEd-ilOLYnIx0jA">
-      <importedPackage href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_qQyD8jxVEd6JwqSGecoePg"/>
-    </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_MwGRIGeLEd-ilOLYnIx0jA" name="GeneralHeaderConstraints">
       <ownedComment xmi:id="_QrycIHMnEd-9_cvcE5QEwg">
         <body>This section describes constraints that apply to the H and P Note and to other types of CDA&#xD;
@@ -224,8 +221,7 @@ wherever these general header constraints are applied.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pb6qUGkVEd-tUpkWYQgJlQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pb7RYGkVEd-tUpkWYQgJlQ" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_-b1Z0GkVEd-tUpkWYQgJlQ" name="reviewOfSystemsSection" association="_-b2A4WkVEd-tUpkWYQgJlQ">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_6fSusMiWEd6mWrHPmrIIfQ"/>
+      <ownedAttribute xmi:id="_-b1Z0GkVEd-tUpkWYQgJlQ" name="reviewOfSystemsSection" type="_3j9eUJvyEd-IotBrVd7ICA" association="_-b2A4WkVEd-tUpkWYQgJlQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__TFx8GkVEd-tUpkWYQgJlQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__TGZAGkVEd-tUpkWYQgJlQ" value="1"/>
       </ownedAttribute>
@@ -805,9 +801,16 @@ such information is available.</body>
       <ownedEnd xmi:id="_5DDFUmkXEd-tUpkWYQgJlQ" type="_XtmggGeLEd-ilOLYnIx0jA" association="_5DDFUWkXEd-tUpkWYQgJlQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_g_KRcGm6Ed-lxvPE33eETg" name="HistoryOfPresentIllness">
+      <ownedComment xmi:id="_lAIwEJvtEd-IotBrVd7ICA">
+        <body>Conforms to IHE PCC template.</body>
+      </ownedComment>
       <generalization xmi:id="_g_K4gGm6Ed-lxvPE33eETg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_jWj60MfhEd6VjLXh4DcWSg"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
+      <ownedAttribute xmi:id="_T0KzUJvtEd-IotBrVd7ICA" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_caQ3AMilEd6NKIaf5H7MFg"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_z2nc0GoAEd-d2MaU_RNQsA" name="PastMedicalHistorySectionConsult">
       <ownedComment xmi:id="_z2nc0WoAEd-d2MaU_RNQsA">
@@ -834,6 +837,25 @@ for CDA entries cited in the respective sections.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z2nc2WoAEd-d2MaU_RNQsA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z2nc2moAEd-d2MaU_RNQsA" value="1"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3j9eUJvyEd-IotBrVd7ICA" name="ReviewOfSystemsSectionIHE">
+      <ownedComment xmi:id="_3j9eUZvyEd-IotBrVd7ICA">
+        <body>The review of systems is a relevant collection of symptoms and function systematically&#xD;
+gathered by a clinician. It includes symptoms the patient is currently experiencing,&#xD;
+some of which were not elicited during the history of present illness, as well as a&#xD;
+potentially large number of pertinent negatives, e.g., symptoms that the patient was&#xD;
+specifically asked if they had experienced or were currently experiencing, but had&#xD;
+denied experiencing.</body>
+      </ownedComment>
+      <generalization xmi:id="_3j9eUpvyEd-IotBrVd7ICA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_3j9eU5vyEd-IotBrVd7ICA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3j9eVJvyEd-IotBrVd7ICA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3j9eVZvyEd-IotBrVd7ICA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9lgCcErmEd6FXKclYGEDCw"/>
       </ownedAttribute>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
@@ -869,281 +891,291 @@ for CDA entries cited in the respective sections.</body>
   <CDA:CodeSystemConstraint xmi:id="_68K5kDOiEd-4N_xqnt9Yew" code="48764-5" displayName="Summary purpose" message="CDT My Section SHALL contain [1..1] code/@code = &quot;48764-5&quot; Summary purpose (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:CDATemplate xmi:id="_PRnLoGeLEd-ilOLYnIx0jA" message="CDT General Header Constraints SHALL contain the template identifier 2.16.840.1.113883.10.20.3" base_Class="_MwGRIGeLEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.3">
+  <CDA:CDATemplate xmi:id="_PRnLoGeLEd-ilOLYnIx0jA" base_Class="_MwGRIGeLEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.3">
     <ruleId>CONF-HP-1</ruleId>
   </CDA:CDATemplate>
-  <CDA:CDATemplate xmi:id="_ZK2hoGeLEd-ilOLYnIx0jA" message="CDT History And Physical SHALL contain the template identifier 2.16.840.1.113883.10.20.2" base_Class="_XtmggGeLEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.2"/>
-  <CDA:CDATemplate xmi:id="_hM5sgGeLEd-ilOLYnIx0jA" message="CDT Consultation Note SHALL contain the template identifier 2.16.840.1.113883.10.20.4" base_Class="_f4_NkGeLEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.4"/>
+  <CDA:CDATemplate xmi:id="_ZK2hoGeLEd-ilOLYnIx0jA" base_Class="_XtmggGeLEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.2"/>
+  <CDA:CDATemplate xmi:id="_hM5sgGeLEd-ilOLYnIx0jA" base_Class="_f4_NkGeLEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.4"/>
   <CDA:ConformsTo xmi:id="_XYy0QGgyEd-ilOLYnIx0jA" base_Generalization="_f4_0oGeLEd-ilOLYnIx0jA">
     <ruleId>CONF-CO-1</ruleId>
   </CDA:ConformsTo>
-  <CDA:ConstraintValidation xmi:id="_4qKHQGgyEd-ilOLYnIx0jA" message="CDT Consultation Note SHALL satisfy: If pre-coordinated document type codes are used, values used in the&#xD;&#xA;assignedAuthor/code and assignedAuthor/author/functionCode elements SHALL NOT&#xD;&#xA;conflict with ClinicalDocument/code." base_Constraint="_wMCEYGgyEd-ilOLYnIx0jA">
+  <CDA:ConstraintValidation xmi:id="_4qKHQGgyEd-ilOLYnIx0jA" base_Constraint="_wMCEYGgyEd-ilOLYnIx0jA">
     <ruleId>CONF-CO-4</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_Q8tFIGgzEd-ilOLYnIx0jA" message="CDT Consultation Note SHALL satisfy: If pre-coordinated document type codes are used, values used in&#xD;&#xA;encompassingEncounter/location/healthCareFacility/code SHALL NOT conflict with&#xD;&#xA;ClinicalDocument/code." base_Constraint="_PoC_UGgzEd-ilOLYnIx0jA">
+  <CDA:ConstraintValidation xmi:id="_Q8tFIGgzEd-ilOLYnIx0jA" base_Constraint="_PoC_UGgzEd-ilOLYnIx0jA">
     <ruleId>CONF-CO-5</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_3TVo0GgzEd-ilOLYnIx0jA" message="CDT Consultation Note MAY satisfy: Implementations MAY use local codes in translation elements to specify&#xD;&#xA;a local code that is equivalent to the document type. An example of this is shown&#xD;&#xA;below." severity="INFO" base_Constraint="_xRmv4GgzEd-ilOLYnIx0jA">
+  <CDA:ConstraintValidation xmi:id="_3TVo0GgzEd-ilOLYnIx0jA" severity="INFO" base_Constraint="_xRmv4GgzEd-ilOLYnIx0jA">
     <ruleId>CONF-CO-3</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ValueSetConstraint xmi:id="_AaZT8Gg0Ed-ilOLYnIx0jA" base_Property="_wZajoGgzEd-ilOLYnIx0jA" message="CDT Consultation Note SHALL contain [1..1] code, which SHALL be selected from ValueSet ConsultDocumentTypeCodes DYNAMIC">
+  <CDA:ValueSetConstraint xmi:id="_AaZT8Gg0Ed-ilOLYnIx0jA" base_Property="_wZajoGgzEd-ilOLYnIx0jA">
     <reference href="cdt-vocab.uml#_ZjSOgGg1Ed-ilOLYnIx0jA"/>
     <ruleId>CONF-CO-2</ruleId>
   </CDA:ValueSetConstraint>
-  <CDA:CDATemplate xmi:id="_Cuh_IGhHEd-ilOLYnIx0jA" message="CDT Reason For Referral Section SHALL contain the template identifier 2.16.840.1.113883.10.20.4.8" base_Class="_A0ab0GhHEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.4.8" contextDependent="true"/>
-  <CDA:CDATemplate xmi:id="_JhHtQGhHEd-ilOLYnIx0jA" message="CDT Reason For Visit Section Consult SHALL contain the template identifier 2.16.840.1.113883.10.20.4.8" base_Class="_HwZ9kGhHEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.4.8" contextDependent="true"/>
-  <CDA:CodeSystemConstraint xmi:id="_X0nBAGhHEd-ilOLYnIx0jA" code="42349-1" displayName="REASON FOR REFERRAL" base_Property="_Bob5wGhHEd-ilOLYnIx0jA" message="CDT Reason For Referral Section SHALL contain [1..1] code/@code = &quot;42349-1&quot; REASON FOR REFERRAL (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_Cuh_IGhHEd-ilOLYnIx0jA" base_Class="_A0ab0GhHEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.4.8" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_JhHtQGhHEd-ilOLYnIx0jA" base_Class="_HwZ9kGhHEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.4.8" contextDependent="true"/>
+  <CDA:CodeSystemConstraint xmi:id="_X0nBAGhHEd-ilOLYnIx0jA" code="42349-1" displayName="REASON FOR REFERRAL" base_Property="_Bob5wGhHEd-ilOLYnIx0jA">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_bgHCYGhHEd-ilOLYnIx0jA" code="29299-5" displayName="REASON FOR VISIT" base_Property="_IKn0YGhHEd-ilOLYnIx0jA" message="CDT Reason For Visit Section Consult SHALL contain [1..1] code/@code = &quot;29299-5&quot; REASON FOR VISIT (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CodeSystemConstraint xmi:id="_bgHCYGhHEd-ilOLYnIx0jA" code="29299-5" displayName="REASON FOR VISIT" base_Property="_IKn0YGhHEd-ilOLYnIx0jA">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:ConstraintValidation xmi:id="_zJfugGhHEd-ilOLYnIx0jA" message="CDT Consultation Note SHALL satisfy: A Consultation Note contains either ReasonForReferral or ReasonForVisit, but not both." base_Constraint="_sZjrwGhHEd-ilOLYnIx0jA">
+  <CDA:ConstraintValidation xmi:id="_zJfugGhHEd-ilOLYnIx0jA" base_Constraint="_sZjrwGhHEd-ilOLYnIx0jA">
     <ruleId>CONF-CO-26</ruleId>
   </CDA:ConstraintValidation>
   <CDA:AssociationValidation xmi:id="_0J04MGhJEd-ilOLYnIx0jA" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] Reason For Referral (templateId: 2.16.840.1.113883.10.20.4.8)"/>
   <CDA:AssociationValidation xmi:id="_0J2GUGhJEd-ilOLYnIx0jA" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] Reason For Visit (templateId: 2.16.840.1.113883.10.20.4.8)"/>
-  <CDA:CDATemplate xmi:id="_OTEDMGhQEd-ilOLYnIx0jA" message="CDT Level One Conformance SHALL contain the template identifier 2.16.840.1.113883.10.20.10" base_Class="_MUy_sGhQEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.10">
+  <CDA:CDATemplate xmi:id="_OTEDMGhQEd-ilOLYnIx0jA" base_Class="_MUy_sGhQEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.10">
     <ruleId>CONF-HP-3</ruleId>
   </CDA:CDATemplate>
-  <CDA:CDATemplate xmi:id="_VymW4GhQEd-ilOLYnIx0jA" message="CDT Level Two Conformance SHALL contain the template identifier 2.16.840.1.113883.10.20.20" base_Class="_Uvc30GhQEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.20">
+  <CDA:CDATemplate xmi:id="_VymW4GhQEd-ilOLYnIx0jA" base_Class="_Uvc30GhQEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.20">
     <ruleId>CONF-HP-4</ruleId>
   </CDA:CDATemplate>
-  <CDA:CDATemplate xmi:id="_cUOQ0GhQEd-ilOLYnIx0jA" message="CDT Level Three Conformance SHALL contain the template identifier 2.16.840.1.113883.10.20.30" base_Class="_a-udgGhQEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.30">
+  <CDA:CDATemplate xmi:id="_cUOQ0GhQEd-ilOLYnIx0jA" base_Class="_a-udgGhQEd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.30">
     <ruleId>CONF-HP-5</ruleId>
   </CDA:CDATemplate>
-  <CDA:AssociationValidation xmi:id="_SyltEGhREd-ilOLYnIx0jA" message="CDT Consultation Note SHALL contain [1..1] component such that it, SHALL contain [1..1] History Of Present Illness" base_Association="_MVP2MmhREd-ilOLYnIx0jA">
+  <CDA:AssociationValidation xmi:id="_SyltEGhREd-ilOLYnIx0jA" base_Association="_MVP2MmhREd-ilOLYnIx0jA">
     <ruleId>CONF-CO-27</ruleId>
   </CDA:AssociationValidation>
-  <CDA:CDATemplate xmi:id="_0HQywGhREd-ilOLYnIx0jA" message="CDT Physical Examination Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.10" base_Class="_yN6rgGhREd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.2.10"/>
-  <CDA:CodeSystemConstraint xmi:id="_2oRW8GhREd-ilOLYnIx0jA" code="29545-1" displayName="PHYSICAL FINDINGS" base_Property="_y6IRQGhREd-ilOLYnIx0jA" message="CDT Physical Examination Section SHALL contain [1..1] code/@code = &quot;29545-1&quot; PHYSICAL FINDINGS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_0HQywGhREd-ilOLYnIx0jA" base_Class="_yN6rgGhREd-ilOLYnIx0jA" templateId="2.16.840.1.113883.10.20.2.10"/>
+  <CDA:CodeSystemConstraint xmi:id="_2oRW8GhREd-ilOLYnIx0jA" code="29545-1" displayName="PHYSICAL FINDINGS" base_Property="_y6IRQGhREd-ilOLYnIx0jA">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-85</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:AssociationValidation xmi:id="_nx6KMGhSEd-ilOLYnIx0jA" message="CDT Consultation Note SHALL contain [1..1] component such that it, SHALL contain [1..1] Physical Examination Section (templateId: 2.16.840.1.113883.10.20.2.10)" base_Association="_WIDXkmhSEd-ilOLYnIx0jA">
+  <CDA:AssociationValidation xmi:id="_nx6KMGhSEd-ilOLYnIx0jA" base_Association="_WIDXkmhSEd-ilOLYnIx0jA">
     <ruleId>CONF-CO-28</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_t3PM4GhWEd-ilOLYnIx0jA" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Problem Section (templateId: 2.16.840.1.113883.10.20.1.11)" severity="INFO" base_Association="_ssNkMWhWEd-ilOLYnIx0jA">
+  <CDA:AssociationValidation xmi:id="_t3PM4GhWEd-ilOLYnIx0jA" severity="INFO" base_Association="_ssNkMWhWEd-ilOLYnIx0jA">
     <ruleId>CONF-CO-32</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_VBrk8GjMEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Procedures Section (templateId: 2.16.840.1.113883.10.20.1.12)" severity="INFO" base_Association="_IYM78GjMEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_VBrk8GjMEd-tUpkWYQgJlQ" severity="INFO" base_Association="_IYM78GjMEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-33</ruleId>
   </CDA:AssociationValidation>
-  <CDA:CDATemplate xmi:id="_MT_KIGjOEd-tUpkWYQgJlQ" message="CDT Past Medical History Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.9" base_Class="_KSTmQGjOEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.9"/>
-  <CDA:CodeSystemConstraint xmi:id="_cVI5kGjOEd-tUpkWYQgJlQ" code="11348-0" displayName="HISTORY OF PAST ILLNESS" base_Property="_amyhYGjOEd-tUpkWYQgJlQ" message="CDT Past Medical History Section SHALL contain [1..1] code/@code = &quot;11348-0&quot; HISTORY OF PAST ILLNESS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_MT_KIGjOEd-tUpkWYQgJlQ" base_Class="_KSTmQGjOEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.9"/>
+  <CDA:CodeSystemConstraint xmi:id="_cVI5kGjOEd-tUpkWYQgJlQ" code="11348-0" displayName="HISTORY OF PAST ILLNESS" base_Property="_amyhYGjOEd-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-78</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:ConstraintValidation xmi:id="_F5OQsGjPEd-tUpkWYQgJlQ" message="CDT Past Medical History Section SHOULD satisfy: Contains clinical statements." severity="WARNING" base_Constraint="_DnthEGjPEd-tUpkWYQgJlQ"/>
-  <CDA:PropertyValidation xmi:id="_qYV5IGjPEd-tUpkWYQgJlQ" message="CDT Past Medical History Section SHALL contain [1..1] text" base_Property="_xfohYGjOEd-tUpkWYQgJlQ"/>
-  <CDA:AssociationValidation xmi:id="_AyANUGjREd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] Past Medical History Section Consult (templateId: 2.16.840.1.113883.10.20.4.9)" severity="INFO" base_Association="__c9tAWjQEd-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_F5OQsGjPEd-tUpkWYQgJlQ" severity="WARNING" base_Constraint="_DnthEGjPEd-tUpkWYQgJlQ"/>
+  <CDA:PropertyValidation xmi:id="_qYV5IGjPEd-tUpkWYQgJlQ" base_Property="_xfohYGjOEd-tUpkWYQgJlQ"/>
+  <CDA:AssociationValidation xmi:id="_AyANUGjREd-tUpkWYQgJlQ" severity="INFO" base_Association="__c9tAWjQEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-34</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_pExGgGjREd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Immunizations Section (templateId: 2.16.840.1.113883.10.20.1.6)" severity="INFO" base_Association="_jBKlUWjREd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_pExGgGjREd-tUpkWYQgJlQ" severity="INFO" base_Association="_jBKlUWjREd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-35</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_53PlMGjREd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Medications Section (templateId: 2.16.840.1.113883.10.20.1.8)" severity="INFO" base_Association="_5A_SoWjREd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_53PlMGjREd-tUpkWYQgJlQ" severity="INFO" base_Association="_5A_SoWjREd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-36</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_LsAnUGjSEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Alerts Section (templateId: 2.16.840.1.113883.10.20.1.2)" severity="INFO" base_Association="_K4h78mjSEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_LsAnUGjSEd-tUpkWYQgJlQ" severity="INFO" base_Association="_K4h78mjSEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-37</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_ZW_JkGjSEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Social History Section (templateId: 2.16.840.1.113883.10.20.1.15)" severity="INFO" base_Association="_YoS3kWjSEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_ZW_JkGjSEd-tUpkWYQgJlQ" severity="INFO" base_Association="_YoS3kWjSEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-38</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_kLHagGjSEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Family History Section (templateId: 2.16.840.1.113883.10.20.1.4)" severity="INFO" base_Association="_jXQ7sWjSEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_kLHagGjSEd-tUpkWYQgJlQ" severity="INFO" base_Association="_jXQ7sWjSEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-39</ruleId>
   </CDA:AssociationValidation>
-  <CDA:CDATemplate xmi:id="_hwFbIGjVEd-tUpkWYQgJlQ" message="CDT Review Of Systems Section SHALL contain the template identifier 2.16.840.1.113883.10.20.4.10" base_Class="_fo5sMGjVEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.4.10"/>
-  <CDA:CodeSystemConstraint xmi:id="_mDUK4GjVEd-tUpkWYQgJlQ" code="10187-3" displayName="REVIEW OF SYSTEMS" base_Property="_gLmwoGjVEd-tUpkWYQgJlQ" message="CDT Review Of Systems Section SHALL contain [1..1] code/@code = &quot;10187-3&quot; REVIEW OF SYSTEMS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_hwFbIGjVEd-tUpkWYQgJlQ" base_Class="_fo5sMGjVEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.4.10"/>
+  <CDA:CodeSystemConstraint xmi:id="_mDUK4GjVEd-tUpkWYQgJlQ" code="10187-3" displayName="REVIEW OF SYSTEMS" base_Property="_gLmwoGjVEd-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-CO-41</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:AssociationValidation xmi:id="_BxQ4oGjWEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] Review Of Systems Section (templateId: 2.16.840.1.113883.10.20.4.10)" severity="INFO" base_Association="_AwyTEWjWEd-tUpkWYQgJlQ"/>
-  <CDA:AssociationValidation xmi:id="_Q0ApoGjXEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Vital Signs Section (templateId: 2.16.840.1.113883.10.20.1.16)" severity="INFO" base_Association="_PuGxgWjXEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_BxQ4oGjWEd-tUpkWYQgJlQ" severity="INFO" base_Association="_AwyTEWjWEd-tUpkWYQgJlQ"/>
+  <CDA:AssociationValidation xmi:id="_Q0ApoGjXEd-tUpkWYQgJlQ" severity="INFO" base_Association="_PuGxgWjXEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-42</ruleId>
   </CDA:AssociationValidation>
-  <CDA:CDATemplate xmi:id="_auCbEGjdEd-tUpkWYQgJlQ" message="CDT General Status Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.5" base_Class="_Y_l8QGjdEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.5"/>
-  <CDA:CodeSystemConstraint xmi:id="_cxNMsGjdEd-tUpkWYQgJlQ" code="10210-3" displayName="GENERAL STATUS, PHYSICAL FINDINGS" base_Property="_ZfUlMGjdEd-tUpkWYQgJlQ" message="CDT General Status Section SHALL contain [1..1] code/@code = &quot;10210-3&quot; GENERAL STATUS, PHYSICAL FINDINGS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_auCbEGjdEd-tUpkWYQgJlQ" base_Class="_Y_l8QGjdEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.5"/>
+  <CDA:CodeSystemConstraint xmi:id="_cxNMsGjdEd-tUpkWYQgJlQ" code="10210-3" displayName="GENERAL STATUS, PHYSICAL FINDINGS" base_Property="_ZfUlMGjdEd-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-89</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:AssociationValidation xmi:id="_4TSBoGjdEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] General Status Section (templateId: 2.16.840.1.113883.10.20.2.5)" severity="INFO" base_Association="_3EX-gmjdEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_4TSBoGjdEd-tUpkWYQgJlQ" severity="INFO" base_Association="_3EX-gmjdEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-43</ruleId>
   </CDA:AssociationValidation>
-  <CDA:TextValue xmi:id="_Vq6NgWjfEd-tUpkWYQgJlQ" message="CDT Diagnostic Findings SHALL contain [1..1] title" base_Property="_Vq6NgGjfEd-tUpkWYQgJlQ"/>
-  <CDA:AssociationValidation xmi:id="_hY0mIGjfEd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] Diagnostic Findings" severity="INFO" base_Association="_gAWXUGjfEd-tUpkWYQgJlQ">
+  <CDA:TextValue xmi:id="_Vq6NgWjfEd-tUpkWYQgJlQ" base_Property="_Vq6NgGjfEd-tUpkWYQgJlQ"/>
+  <CDA:AssociationValidation xmi:id="_hY0mIGjfEd-tUpkWYQgJlQ" severity="INFO" base_Association="_gAWXUGjfEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-44</ruleId>
   </CDA:AssociationValidation>
-  <CDA:CDATemplate xmi:id="_jdRloGjpEd-tUpkWYQgJlQ" message="CDT Vital Signs Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.4" base_Class="_hnvnYGjpEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.4"/>
-  <CDA:CodeSystemConstraint xmi:id="_j8c08GjpEd-tUpkWYQgJlQ" code="8716-3" displayName="VITAL SIGNS" base_Property="_iUVnoGjpEd-tUpkWYQgJlQ" message="CDT Vital Signs Section SHALL contain [1..1] code/@code = &quot;8716-3&quot; VITAL SIGNS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_jdRloGjpEd-tUpkWYQgJlQ" base_Class="_hnvnYGjpEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.4"/>
+  <CDA:CodeSystemConstraint xmi:id="_j8c08GjpEd-tUpkWYQgJlQ" code="8716-3" displayName="VITAL SIGNS" base_Property="_iUVnoGjpEd-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-87</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:PropertyValidation xmi:id="_58fksGjpEd-tUpkWYQgJlQ" message="CDT Vital Signs Section SHALL contain [1..1] text" base_Property="_4Eb24GjpEd-tUpkWYQgJlQ"/>
-  <CDA:ConstraintValidation xmi:id="_CMr5QGjqEd-tUpkWYQgJlQ" message="CDT Vital Signs Section SHOULD satisfy: Contains clinical statements." severity="WARNING" base_Constraint="_BMavEGjqEd-tUpkWYQgJlQ">
+  <CDA:PropertyValidation xmi:id="_58fksGjpEd-tUpkWYQgJlQ" base_Property="_4Eb24GjpEd-tUpkWYQgJlQ"/>
+  <CDA:ConstraintValidation xmi:id="_CMr5QGjqEd-tUpkWYQgJlQ" severity="WARNING" base_Constraint="_BMavEGjqEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-87</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:AssociationValidation xmi:id="_O24T8GjqEd-tUpkWYQgJlQ" message="CDT Vital Signs Section SHOULD contain [0..1] entry such that it, SHALL contain [1..1] CCD Vital Signs Organizer (templateId: 2.16.840.1.113883.10.20.1.35)" severity="WARNING" base_Association="_Nq_IkGjqEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_O24T8GjqEd-tUpkWYQgJlQ" severity="WARNING" base_Association="_Nq_IkGjqEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-87</ruleId>
   </CDA:AssociationValidation>
-  <CDA:CDATemplate xmi:id="_MY_DQGjsEd-tUpkWYQgJlQ" message="CDT Assessment Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.7" base_Class="_IvsBUGjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
-  <CDA:CodeSystemConstraint xmi:id="_MuHlwGjsEd-tUpkWYQgJlQ" code="51848-0" displayName="Assessment" base_Property="_JfaOEGjsEd-tUpkWYQgJlQ" message="CDT Assessment Section SHALL contain [1..1] code/@code = &quot;51848-0&quot; Assessment (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_MY_DQGjsEd-tUpkWYQgJlQ" base_Class="_IvsBUGjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
+  <CDA:CodeSystemConstraint xmi:id="_MuHlwGjsEd-tUpkWYQgJlQ" code="51848-0" displayName="Assessment" base_Property="_JfaOEGjsEd-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-91</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:CDATemplate xmi:id="_drcCgGjsEd-tUpkWYQgJlQ" message="CDT Plan Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.7" base_Class="_a1dT4GjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
-  <CDA:CDATemplate xmi:id="_k8mjAGjsEd-tUpkWYQgJlQ" message="CDT Assessment And Plan Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.7" base_Class="_ikbxwGjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
-  <CDA:CodeSystemConstraint xmi:id="_qsbzoGjsEd-tUpkWYQgJlQ" code="18776-5" displayName="Plan" base_Property="_bT0q4GjsEd-tUpkWYQgJlQ" message="CDT Plan Section SHALL contain [1..1] code/@code = &quot;18776-5&quot; Plan (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_drcCgGjsEd-tUpkWYQgJlQ" base_Class="_a1dT4GjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_k8mjAGjsEd-tUpkWYQgJlQ" base_Class="_ikbxwGjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
+  <CDA:CodeSystemConstraint xmi:id="_qsbzoGjsEd-tUpkWYQgJlQ" code="18776-5" displayName="Plan" base_Property="_bT0q4GjsEd-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-91</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_10ftMGjsEd-tUpkWYQgJlQ" code="51847-2" displayName="Assessment + Plan" base_Property="_i7wsoGjsEd-tUpkWYQgJlQ" message="CDT Assessment And Plan Section SHALL contain [1..1] code/@code = &quot;51847-2&quot; Assessment + Plan (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CodeSystemConstraint xmi:id="_10ftMGjsEd-tUpkWYQgJlQ" code="51847-2" displayName="Assessment + Plan" base_Property="_i7wsoGjsEd-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-92</ruleId>
   </CDA:CodeSystemConstraint>
   <CDA:ConstraintValidation xmi:id="_dLfFMGjuEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: When Assessment Section is included, then Plan Section must also be included and there SHALL NOT be a combined Assessment + Plan section.">
     <ruleId>CONF-HP-91</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_w20x8GjvEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections." base_Constraint="_XkPTYGjvEd-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_w20x8GjvEd-tUpkWYQgJlQ" base_Constraint="_XkPTYGjvEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-92</ruleId>
   </CDA:ConstraintValidation>
   <CDA:ConstraintValidation xmi:id="_xVaycGjvEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: When Plan Section is included, then Assessment Section must also be included and there SHALL NOT be a combined Assessment + Plan section.">
     <ruleId>CONF-HP-91</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:CDATemplate xmi:id="_l8hY0Gj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_iwL_sGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" assigningAuthorityName="CONF-HP-73" contextDependent="true"/>
-  <CDA:CDATemplate xmi:id="_qRZHUGj1Ed-tUpkWYQgJlQ" message="CDT Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_o-ulkGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" contextDependent="true">
+  <CDA:CDATemplate xmi:id="_l8hY0Gj1Ed-tUpkWYQgJlQ" base_Class="_iwL_sGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" assigningAuthorityName="CONF-HP-73" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_qRZHUGj1Ed-tUpkWYQgJlQ" base_Class="_o-ulkGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" contextDependent="true">
     <ruleId>CONF-HP-73</ruleId>
   </CDA:CDATemplate>
-  <CDA:CDATemplate xmi:id="_wOKnwGj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit And Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_vEmXoGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" assigningAuthorityName="CONF-HP-73" contextDependent="true"/>
-  <CDA:CodeSystemConstraint xmi:id="_4mtnEGj1Ed-tUpkWYQgJlQ" code="10154-3" displayName="Chief complaint" base_Property="_phuk8Gj1Ed-tUpkWYQgJlQ" message="CDT Chief Complaint Section SHALL contain [1..1] code/@code = &quot;10154-3&quot; Chief complaint (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CDATemplate xmi:id="_wOKnwGj1Ed-tUpkWYQgJlQ" base_Class="_vEmXoGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" assigningAuthorityName="CONF-HP-73" contextDependent="true"/>
+  <CDA:CodeSystemConstraint xmi:id="_4mtnEGj1Ed-tUpkWYQgJlQ" code="10154-3" displayName="Chief complaint" base_Property="_phuk8Gj1Ed-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-74</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_AtuxgGj2Ed-tUpkWYQgJlQ" code="29299-5" displayName="Reason for visit" base_Property="_jV8_MGj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit Section SHALL contain [1..1] code/@code = &quot;29299-5&quot; Reason for visit (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CodeSystemConstraint xmi:id="_AtuxgGj2Ed-tUpkWYQgJlQ" code="29299-5" displayName="Reason for visit" base_Property="_jV8_MGj1Ed-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-74</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_Hk4PgGj2Ed-tUpkWYQgJlQ" code="46239-0" displayName="Reason for visit + Chief complaint" base_Property="_vdpw0Gj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit And Chief Complaint Section SHALL contain [1..1] code/@code = &quot;46239-0&quot; Reason for visit + Chief complaint (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CodeSystemConstraint xmi:id="_Hk4PgGj2Ed-tUpkWYQgJlQ" code="46239-0" displayName="Reason for visit + Chief complaint" base_Property="_vdpw0Gj1Ed-tUpkWYQgJlQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-75</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:ValueSetConstraint xmi:id="_11xzsGj5Ed-tUpkWYQgJlQ" base_Property="_02MmAGj5Ed-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.1.11.20.22 HPDocumentType DYNAMIC">
+  <CDA:ValueSetConstraint xmi:id="_11xzsGj5Ed-tUpkWYQgJlQ" base_Property="_02MmAGj5Ed-tUpkWYQgJlQ">
     <reference href="cdt-vocab.uml#_XKjcgWj5Ed-tUpkWYQgJlQ"/>
     <ruleId>CONF-HP-54</ruleId>
   </CDA:ValueSetConstraint>
-  <CDA:ConstraintValidation xmi:id="_NuptUGj6Ed-tUpkWYQgJlQ" message="CDT History And Physical MAY satisfy: Implementations MAY use local codes in translation elements to specify a local code that is equivalent to the document type." severity="INFO" base_Constraint="_Mq2uAGj6Ed-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_NuptUGj6Ed-tUpkWYQgJlQ" severity="INFO" base_Constraint="_Mq2uAGj6Ed-tUpkWYQgJlQ">
     <ruleId>CONF-HP-55</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_pmdhsGj6Ed-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: If pre-coordinated document type codes are used, values used in the&#xD;&#xA;assignedAuthor/code and assignedAuthor/author/functionCode elements SHALL NOT&#xD;&#xA;conflict with ClinicalDocument/code." base_Constraint="_mbTNQGj6Ed-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_pmdhsGj6Ed-tUpkWYQgJlQ" base_Constraint="_mbTNQGj6Ed-tUpkWYQgJlQ">
     <ruleId>CONF-HP-56</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_qHnuAGj6Ed-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: If pre-coordinated document type codes are used, values used in&#xD;&#xA;encompassingEncounter/location/healthCareFacility/code SHALL NOT conflict with&#xD;&#xA;ClinicalDocument/code." base_Constraint="_nKM6oGj6Ed-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_qHnuAGj6Ed-tUpkWYQgJlQ" base_Constraint="_nKM6oGj6Ed-tUpkWYQgJlQ">
     <ruleId>CONF-HP-57</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:AssociationValidation xmi:id="_QXSksGkUEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] History Of Present Illness" base_Association="_OqqDwGkUEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_QXSksGkUEd-tUpkWYQgJlQ" base_Association="_OqqDwGkUEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-76</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_mqJiwGkUEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] Past Medical History Section (templateId: 2.16.840.1.113883.10.20.2.9)" base_Association="_k6lpoWkUEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_mqJiwGkUEd-tUpkWYQgJlQ" base_Association="_k6lpoWkUEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-77</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_1xmqEGkUEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] CCD Medications Section (templateId: 2.16.840.1.113883.10.20.1.8)" base_Association="_0NDuIWkUEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_1xmqEGkUEd-tUpkWYQgJlQ" base_Association="_0NDuIWkUEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-79</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_KDnxwGkVEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] CCD Alerts Section (templateId: 2.16.840.1.113883.10.20.1.2)" base_Association="_I5JismkVEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_KDnxwGkVEd-tUpkWYQgJlQ" base_Association="_I5JismkVEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-80</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_UuPhYGkVEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] CCD Social History Section (templateId: 2.16.840.1.113883.10.20.1.15)" base_Association="_TQ2WUmkVEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_UuPhYGkVEd-tUpkWYQgJlQ" base_Association="_TQ2WUmkVEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-81</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_p_hGoGkVEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] CCD Family History Section (templateId: 2.16.840.1.113883.10.20.1.4)" base_Association="_okJ74mkVEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_p_hGoGkVEd-tUpkWYQgJlQ" base_Association="_okJ74mkVEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-82</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_AmsH0GkWEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] IHE Review Of Systems Section (templateId: 1.3.6.1.4.1.19376.1.5.3.1.3.18)" base_Association="_-b2A4WkVEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_AmsH0GkWEd-tUpkWYQgJlQ" base_Association="_-b2A4WkVEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-83</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_Ymfv4GkWEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] Physical Examination Section (templateId: 2.16.840.1.113883.10.20.2.10)" base_Association="_XcVC0WkWEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_Ymfv4GkWEd-tUpkWYQgJlQ" base_Association="_XcVC0WkWEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-84</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_lVbgoGkWEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] Vital Signs Section (templateId: 2.16.840.1.113883.10.20.2.4)" base_Association="_jwaqomkWEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_lVbgoGkWEd-tUpkWYQgJlQ" base_Association="_jwaqomkWEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-86</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_sv-moGkWEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] General Status Section (templateId: 2.16.840.1.113883.10.20.2.5)" base_Association="_rt_lMGkWEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_sv-moGkWEd-tUpkWYQgJlQ" base_Association="_rt_lMGkWEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-88</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_L07FYGkXEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL contain [1..1] component such that it, SHALL contain [1..1] Diagnostic Findings" base_Association="_KUdYMWkXEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_L07FYGkXEd-tUpkWYQgJlQ" base_Association="_KUdYMWkXEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-90</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_fkx7MGkXEd-tUpkWYQgJlQ" message="CDT History And Physical MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Problem Section (templateId: 2.16.840.1.113883.10.20.1.11)" severity="INFO" base_Association="_eRThIWkXEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_fkx7MGkXEd-tUpkWYQgJlQ" severity="INFO" base_Association="_eRThIWkXEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-93</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_uUaYYGkXEd-tUpkWYQgJlQ" message="CDT History And Physical MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Procedures Section (templateId: 2.16.840.1.113883.10.20.1.12)" severity="INFO" base_Association="_tHui0WkXEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_uUaYYGkXEd-tUpkWYQgJlQ" severity="INFO" base_Association="_tHui0WkXEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-94</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_5_OZsGkXEd-tUpkWYQgJlQ" message="CDT History And Physical MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Immunizations Section (templateId: 2.16.840.1.113883.10.20.1.6)" severity="INFO" base_Association="_5DDFUWkXEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_5_OZsGkXEd-tUpkWYQgJlQ" severity="INFO" base_Association="_5DDFUWkXEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-96</ruleId>
   </CDA:AssociationValidation>
-  <CDA:PropertyValidation xmi:id="_IQ190GkbEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] effectiveTime" base_Property="_pwvRgGkaEd-lxvPE33eETg">
+  <CDA:PropertyValidation xmi:id="_IQ190GkbEd-lxvPE33eETg" base_Property="_pwvRgGkaEd-lxvPE33eETg">
     <ruleId>CONF-HP-23</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_IwlN0GkbEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] id" base_Property="_pwv4kGkaEd-lxvPE33eETg"/>
-  <CDA:PropertyValidation xmi:id="_KS2R0GkbEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] typeId" base_Property="_pwxGsGkaEd-lxvPE33eETg"/>
-  <CDA:CodeSystemConstraint xmi:id="_37ylgGkbEd-lxvPE33eETg" code="US" base_Property="_pwwfo2kaEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] realmCode/@code = &quot;US&quot; "/>
-  <CDA:TextValue xmi:id="_UDeB4GkcEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] title" base_Property="_TUol8GkcEd-lxvPE33eETg">
+  <CDA:PropertyValidation xmi:id="_IwlN0GkbEd-lxvPE33eETg" base_Property="_pwv4kGkaEd-lxvPE33eETg"/>
+  <CDA:PropertyValidation xmi:id="_KS2R0GkbEd-lxvPE33eETg" base_Property="_pwxGsGkaEd-lxvPE33eETg"/>
+  <CDA:CodeSystemConstraint xmi:id="_37ylgGkbEd-lxvPE33eETg" code="US" base_Property="_pwwfo2kaEd-lxvPE33eETg"/>
+  <CDA:TextValue xmi:id="_UDeB4GkcEd-lxvPE33eETg" base_Property="_TUol8GkcEd-lxvPE33eETg">
     <ruleId>CONF-HP-22</ruleId>
   </CDA:TextValue>
-  <CDA:PropertyValidation xmi:id="_4HHbkGmmEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] languageCode" base_Property="_pwwfoGkaEd-lxvPE33eETg">
+  <CDA:PropertyValidation xmi:id="_4HHbkGmmEd-lxvPE33eETg" base_Property="_pwwfoGkaEd-lxvPE33eETg">
     <ruleId>CONF-HP-24</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_B5zdoGmnEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] code" base_Property="_LByJgGkdEd-lxvPE33eETg">
+  <CDA:PropertyValidation xmi:id="_B5zdoGmnEd-lxvPE33eETg" base_Property="_LByJgGkdEd-lxvPE33eETg">
     <ruleId>CONF-HP-21</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_C4SfIGmnEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] confidentialityCode" base_Property="_pwbIcGkaEd-lxvPE33eETg"/>
-  <CDA:CDATemplate xmi:id="_4ACwUGoAEd-d2MaU_RNQsA" message="CDT Past Medical History Section Consult SHALL contain the template identifier 2.16.840.1.113883.10.20.4.9" base_Class="_z2nc0GoAEd-d2MaU_RNQsA" templateId="2.16.840.1.113883.10.20.4.9"/>
-  <CDA:CodeSystemConstraint xmi:id="_FvTVoGoBEd-d2MaU_RNQsA" code="11348-0" displayName="HISTORY OF PAST ILLNESS" base_Property="_z2nc1WoAEd-d2MaU_RNQsA" message="CDT Past Medical History Section Consult SHALL contain [1..1] code/@code = &quot;11348-0&quot; HISTORY OF PAST ILLNESS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:PropertyValidation xmi:id="_C4SfIGmnEd-lxvPE33eETg" base_Property="_pwbIcGkaEd-lxvPE33eETg"/>
+  <CDA:CDATemplate xmi:id="_4ACwUGoAEd-d2MaU_RNQsA" base_Class="_z2nc0GoAEd-d2MaU_RNQsA" templateId="2.16.840.1.113883.10.20.4.9"/>
+  <CDA:CodeSystemConstraint xmi:id="_FvTVoGoBEd-d2MaU_RNQsA" code="11348-0" displayName="HISTORY OF PAST ILLNESS" base_Property="_z2nc1WoAEd-d2MaU_RNQsA">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:PropertyValidation xmi:id="_SxHmIGoBEd-d2MaU_RNQsA" message="CDT Past Medical History Section Consult SHALL contain [1..1] text" base_Property="_z2nc2GoAEd-d2MaU_RNQsA"/>
-  <CDA:ConstraintValidation xmi:id="_ZaWrAHBDEd-yJfEpFEwdpw" message="CDT History And Physical SHALL satisfy: Either combined Reason for Visit and Chief Complaint section is included, or separate Reason for Visit section and Chief Complaint section included, but not both combined and separate sections." base_Constraint="_8uY8MGj3Ed-tUpkWYQgJlQ">
+  <CDA:PropertyValidation xmi:id="_SxHmIGoBEd-d2MaU_RNQsA" base_Property="_z2nc2GoAEd-d2MaU_RNQsA"/>
+  <CDA:ConstraintValidation xmi:id="_ZaWrAHBDEd-yJfEpFEwdpw" base_Constraint="_8uY8MGj3Ed-tUpkWYQgJlQ">
     <ruleId>CONF-HP-75</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_0xODkHBFEd-yJfEpFEwdpw" message="CDT History And Physical SHALL satisfy: When Reason for Visit section or Chief Complaint section is included, then both sections SHALL be included." base_Constraint="_PuJ2AHBEEd-yJfEpFEwdpw">
+  <CDA:ConstraintValidation xmi:id="_0xODkHBFEd-yJfEpFEwdpw" base_Constraint="_PuJ2AHBEEd-yJfEpFEwdpw">
     <ruleId>CONF-HP-74</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_0UyKkHKHEd-yJfEpFEwdpw" message="CDT History And Physical SHALL satisfy: When Assessment section or Plan section is included, then both sections SHALL be included." base_Constraint="_d7dDAHKFEd-yJfEpFEwdpw">
+  <CDA:ConstraintValidation xmi:id="_0UyKkHKHEd-yJfEpFEwdpw" base_Constraint="_d7dDAHKFEd-yJfEpFEwdpw">
     <ruleId>CONF-HP-91</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_DIybEHMwEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: The extension attribute of the typeId element SHALL be POCD_HD000040." base_Constraint="_zKrYkHMvEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_DIybEHMwEd-9_cvcE5QEwg" base_Constraint="_zKrYkHMvEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-16</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_JRb-4HMxEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: The ClinicalDocument/id element SHALL be present. The ClinicalDocument/id/@root attribute SHALL be a syntactically correct UUID or OID." base_Constraint="_DHSw0HMxEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_JRb-4HMxEd-9_cvcE5QEwg" base_Constraint="_DHSw0HMxEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-17</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_RooTUHMxEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: UUIDs SHALL be represented in the form XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXX, where each X is a character from the set [A-Fa-f0-9]." base_Constraint="_OvdGwHMxEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_RooTUHMxEd-9_cvcE5QEwg" base_Constraint="_OvdGwHMxEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-18</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_ZWU-0HMxEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: OIDs SHALL be represented in dotted decimal notation, where each decimal number is either 0, or starts with a nonzero digit. More formally, an OID SHALL be in the form ([0-2])(.([1-9][0-9]*|0))+." base_Constraint="_U7S98HMxEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_ZWU-0HMxEd-9_cvcE5QEwg" base_Constraint="_U7S98HMxEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-19</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_fGbVMHMxEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: OIDs SHALL be no more than 64 characters in length." base_Constraint="_cubjEHMxEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_fGbVMHMxEd-9_cvcE5QEwg" base_Constraint="_cubjEHMxEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-20</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_wXJQAHPqEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: languageCode SHALL be in the form nn, or nn-CC." base_Constraint="_vaVCcHPqEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_wXJQAHPqEd-9_cvcE5QEwg" base_Constraint="_vaVCcHPqEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-25</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_F1yi4HPrEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: The nn portion of languageCode SHALL be a legal ISO-639-1 language code in lowercase." base_Constraint="_70rDQHPqEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_F1yi4HPrEd-9_cvcE5QEwg" base_Constraint="_70rDQHPqEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-26</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_JPDkwHPrEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: The CC portion languageCode, if present, SHALL be an ISO-3166 country code in uppercase." base_Constraint="_-dxzgHPqEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_JPDkwHPrEd-9_cvcE5QEwg" base_Constraint="_-dxzgHPqEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-27</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_Rs_IcHPtEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: Both setId and versionNumber SHALL be present or both SHALL be absent." base_Constraint="_CxwfQHPtEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_Rs_IcHPtEd-9_cvcE5QEwg" base_Constraint="_CxwfQHPtEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-28</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_r4RwoHPtEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: The @extension and/or @root of setId and id SHALL be different when both are present." base_Constraint="_pLdlEHPtEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_r4RwoHPtEd-9_cvcE5QEwg" base_Constraint="_pLdlEHPtEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-29</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_J725AHPuEd-9_cvcE5QEwg" message="CDT General Header Constraints SHALL satisfy: A copyTime element SHALL NOT be present." base_Constraint="_GI9PIHPuEd-9_cvcE5QEwg">
+  <CDA:ConstraintValidation xmi:id="_J725AHPuEd-9_cvcE5QEwg" base_Constraint="_GI9PIHPuEd-9_cvcE5QEwg">
     <ruleId>CONF-HP-30</ruleId>
   </CDA:ConstraintValidation>
+  <CDA:CodeSystemConstraint xmi:id="_T2_d0JvtEd-IotBrVd7ICA" code="10164-2" displayName="HISTORY OF PRESENT ILLNESS" base_Property="_T0KzUJvtEd-IotBrVd7ICA">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CDATemplate xmi:id="_bLtBkJvtEd-IotBrVd7ICA" base_Class="_g_KRcGm6Ed-lxvPE33eETg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.4" assigningAuthorityName="IHE PCC"/>
+  <CDA:CDATemplate xmi:id="_8dbusJvyEd-IotBrVd7ICA" base_Class="_3j9eUJvyEd-IotBrVd7ICA" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.18" assigningAuthorityName="IHE PCC">
+    <ruleId>CONF-HP-83</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CodeSystemConstraint xmi:id="_BDSfgJvzEd-IotBrVd7ICA" code="10187-3" displayName="REVIEW OF SYSTEMS" base_Property="_3j9eU5vyEd-IotBrVd7ICA">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
 </xmi:XMI>

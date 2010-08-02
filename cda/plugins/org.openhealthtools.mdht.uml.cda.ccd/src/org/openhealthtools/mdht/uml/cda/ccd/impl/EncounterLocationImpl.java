@@ -59,6 +59,15 @@ public class EncounterLocationImpl extends Participant2Impl implements Encounter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEncounterLocationTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncounterLocationOperations.validateEncounterLocationTypeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EncounterLocation init() {
     		CDAUtil.init(this);
     		return this;

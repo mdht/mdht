@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
@@ -81,6 +82,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PHRExtract;
+import org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate;
 import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
@@ -167,6 +170,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createImmunizationsSectionAdapter();
 			}
 			@Override
+			public Adapter caseImmunization(Immunization object) {
+				return createImmunizationAdapter();
+			}
+			@Override
 			public Adapter caseMedicationsAdministeredSection(MedicationsAdministeredSection object) {
 				return createMedicationsAdministeredSectionAdapter();
 			}
@@ -239,6 +246,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createCodedVitalSignsSectionAdapter();
 			}
 			@Override
+			public Adapter caseVitalSignsOrganizer(VitalSignsOrganizer object) {
+				return createVitalSignsOrganizerAdapter();
+			}
+			@Override
 			public Adapter caseVitalSignObservation(VitalSignObservation object) {
 				return createVitalSignObservationAdapter();
 			}
@@ -247,12 +258,12 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createSimpleObservationAdapter();
 			}
 			@Override
-			public Adapter caseVitalSignsOrganizer(VitalSignsOrganizer object) {
-				return createVitalSignsOrganizerAdapter();
-			}
-			@Override
 			public Adapter casePayersSection(PayersSection object) {
 				return createPayersSectionAdapter();
+			}
+			@Override
+			public Adapter caseCoverageEntry(CoverageEntry object) {
+				return createCoverageEntryAdapter();
 			}
 			@Override
 			public Adapter caseHistoryOfPastIllnessSection(HistoryOfPastIllnessSection object) {
@@ -359,16 +370,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createDischargeSummaryAdapter();
 			}
 			@Override
-			public Adapter caseCoverageEntry(CoverageEntry object) {
-				return createCoverageEntryAdapter();
-			}
-			@Override
 			public Adapter caseHealthcareProvidersPharmacies(HealthcareProvidersPharmacies object) {
 				return createHealthcareProvidersPharmaciesAdapter();
-			}
-			@Override
-			public Adapter caseImmunization(Immunization object) {
-				return createImmunizationAdapter();
 			}
 			@Override
 			public Adapter caseObservationRequestEntry(ObservationRequestEntry object) {
@@ -399,6 +402,14 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createPayerEntryAdapter();
 			}
 			@Override
+			public Adapter casePHRExtract(PHRExtract object) {
+				return createPHRExtractAdapter();
+			}
+			@Override
+			public Adapter casePHRUpdate(PHRUpdate object) {
+				return createPHRUpdateAdapter();
+			}
+			@Override
 			public Adapter caseIHERegistryDelegate(IHERegistryDelegate object) {
 				return createIHERegistryDelegateAdapter();
 			}
@@ -423,6 +434,14 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createClinicalStatementAdapter();
 			}
 			@Override
+			public Adapter caseSubstanceAdministration(SubstanceAdministration object) {
+				return createSubstanceAdministrationAdapter();
+			}
+			@Override
+			public Adapter caseMedicationActivity(MedicationActivity object) {
+				return createMedicationActivityAdapter();
+			}
+			@Override
 			public Adapter caseCDA_Act(org.openhealthtools.mdht.uml.cda.Act object) {
 				return createCDA_ActAdapter();
 			}
@@ -433,6 +452,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseClinicalDocument(ClinicalDocument object) {
 				return createClinicalDocumentAdapter();
+			}
+			@Override
+			public Adapter caseGeneralHeaderConstraints(GeneralHeaderConstraints object) {
+				return createGeneralHeaderConstraintsAdapter();
 			}
 			@Override
 			public Adapter caseProblemSection(ProblemSection object) {
@@ -447,14 +470,6 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createProblemObservationAdapter();
 			}
 			@Override
-			public Adapter caseSubstanceAdministration(SubstanceAdministration object) {
-				return createSubstanceAdministrationAdapter();
-			}
-			@Override
-			public Adapter caseMedicationActivity(MedicationActivity object) {
-				return createMedicationActivityAdapter();
-			}
-			@Override
 			public Adapter caseCCD_MedicationsSection(org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection object) {
 				return createCCD_MedicationsSectionAdapter();
 			}
@@ -465,10 +480,6 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCCD_VitalSignsSection(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection object) {
 				return createCCD_VitalSignsSectionAdapter();
-			}
-			@Override
-			public Adapter caseResultObservation(ResultObservation object) {
-				return createResultObservationAdapter();
 			}
 			@Override
 			public Adapter caseOrganizer(Organizer object) {
@@ -483,8 +494,16 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createCCD_VitalSignsOrganizerAdapter();
 			}
 			@Override
+			public Adapter caseResultObservation(ResultObservation object) {
+				return createResultObservationAdapter();
+			}
+			@Override
 			public Adapter caseCCD_PayersSection(org.openhealthtools.mdht.uml.cda.ccd.PayersSection object) {
 				return createCCD_PayersSectionAdapter();
+			}
+			@Override
+			public Adapter caseCoverageActivity(CoverageActivity object) {
+				return createCoverageActivityAdapter();
 			}
 			@Override
 			public Adapter caseProceduresSection(ProceduresSection object) {
@@ -517,10 +536,6 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCDA_LanguageCommunication(org.openhealthtools.mdht.uml.cda.LanguageCommunication object) {
 				return createCDA_LanguageCommunicationAdapter();
-			}
-			@Override
-			public Adapter caseCoverageActivity(CoverageActivity object) {
-				return createCoverageActivityAdapter();
 			}
 			@Override
 			public Adapter caseParticipation(Participation object) {
@@ -1421,6 +1436,34 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.PHRExtract <em>PHR Extract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.PHRExtract
+	 * @generated
+	 */
+	public Adapter createPHRExtractAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate <em>PHR Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate
+	 * @generated
+	 */
+	public Adapter createPHRUpdateAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate <em>Registry Delegate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1543,6 +1586,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClinicalDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints <em>General Header Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints
+	 * @generated
+	 */
+	public Adapter createGeneralHeaderConstraintsAdapter() {
 		return null;
 	}
 

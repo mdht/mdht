@@ -80,6 +80,15 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateSupplyActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateSupplyActivityMedicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return SupplyActivityOperations.validateSupplyActivityMedicationStatusObservation(this, diagnostics, context);
 	}
