@@ -46,7 +46,8 @@ public class TransformPackage extends TransformAbstract {
 				umlPackage.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, prefix);
 			}
 			
-			CDAProfileUtil.unapplyCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
+			// Do NOT unapply stereotype.  Needed for getting model prefix while transforming content.
+//			CDAProfileUtil.unapplyCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
 		}
 		return umlPackage;
 	}

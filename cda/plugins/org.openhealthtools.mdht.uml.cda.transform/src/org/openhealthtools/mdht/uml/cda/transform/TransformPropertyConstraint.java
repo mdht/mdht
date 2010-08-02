@@ -53,13 +53,6 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			return null;
 		}
 		
-		String severity = CDAModelUtil.getValidationSeverity(property);
-		if (severity == null) {
-			// not a conformance rule
-			removeModelElement(property);
-			return null;
-		}
-		
 		Property cdaProperty = getCDAProperty(property);
 		Property inheritedProperty = getInheritedProperty(property);
 		if (cdaProperty == null) {
@@ -227,22 +220,28 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				}
 			}
 		}
-		
-		if (body.length() > 0) {
-//			addOCLConstraint(property, body);
-			addOCLConstraint(property, body, constraintName);
-		}
-		else if (hasValidationSupport(property)) {
-			// Constraints that have no multiplicity or type restriction
-			//TODO is this adequate to catch MAY or SHOULD constraints?
-			if (cdaProperty.getUpper() == 1) {
-				body.append("not " + selfName + ".oclIsUndefined()");
+
+		/*
+		 * Only add OCL constraint if severity level is set.
+		 */
+		String severity = CDAModelUtil.getValidationSeverity(property);
+		if (severity != null) {
+			if (body.length() > 0) {
+//				addOCLConstraint(property, body);
+				addOCLConstraint(property, body, constraintName);
 			}
 			else {
-//				body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
-				body.append("not " + selfName + "->isEmpty()");
+				// Constraints that have no multiplicity or type restriction
+				//TODO is this adequate to catch MAY or SHOULD constraints?
+				if (cdaProperty.getUpper() == 1) {
+					body.append("not " + selfName + ".oclIsUndefined()");
+				}
+				else {
+//					body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
+					body.append("not " + selfName + "->isEmpty()");
+				}
+				addOCLConstraint(property, body);
 			}
-			addOCLConstraint(property, body);
 		}
 		
 		// test for redefinition
