@@ -65,6 +65,7 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter;
@@ -81,6 +82,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	private boolean severityModified = false;
 	private Text ruleIdText;
 	private boolean ruleIdModified = false;
+	private Text messageDisplay;
 	private Text messageText;
 	private boolean messageModified = false;
 
@@ -299,14 +301,25 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
 		ruleIdText.setLayoutData(data);
 
-		/* ---- message text ---- */
+		/* ---- message display ---- */
+		messageDisplay = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP | SWT.READ_ONLY); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		// if I set the width AND right, then I get proper wrapping for long text... whatever.
+		data.width = 300;
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(severityCombo, 0, SWT.BOTTOM);
+		data.height = charHeight * 3;
+		messageDisplay.setLayoutData(data);
+		
+		/* ---- custom message text ---- */
 		messageText = getWidgetFactory().createText(composite, "", 
 				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
 		CLabel messageLabel = getWidgetFactory()
-				.createCLabel(composite, "Message:"); //$NON-NLS-1$
+				.createCLabel(composite, "Custom Message:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.top = new FormAttachment(severityCombo, 0, SWT.BOTTOM);
+		data.top = new FormAttachment(messageDisplay, 0, SWT.BOTTOM);
 		messageLabel.setLayoutData(data);
 
 		data = new FormData();
@@ -315,7 +328,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		data.width = 300;
 		data.right = new FormAttachment(100, 0);
 		// if I set the top AND height, then I get vertical scroll within the tab page
-		data.top = new FormAttachment(severityCombo, 0, SWT.BOTTOM);
+		data.top = new FormAttachment(messageDisplay, 0, SWT.BOTTOM);
 		data.height = charHeight * 4;
 		messageText.setLayoutData(data);
 
@@ -371,6 +384,9 @@ public class ValidationSection extends AbstractModelerPropertySection {
 					cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
 		}
 		
+		String computedMessage = CDAModelUtil.computeConformanceMessage(namedElement, false);
+		messageDisplay.setText(computedMessage != null ? computedMessage : "");
+
 		messageText.removeModifyListener(modifyListener);
 		messageText.removeKeyListener(keyListener);
 		messageText.removeFocusListener(focusListener);
