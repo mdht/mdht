@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
@@ -55,7 +56,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		String body = "self.templateId->exists(id : datatypes::II | id.root = '" + templateId + "')";
 		expression.getBodies().add(body);
 
-		String message = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.VALIDATION_MESSAGE);
+		String message = CDAModelUtil.getValidationMessage(umlClass);
 		if (message == null) {
 			message = "The template identifier for " + umlClass.getName() + " must be " + templateId + ".";
 		}

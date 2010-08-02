@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 public class PluginPropertiesUtil {
+	private static String CONSTRAINT_MESSAGE_MARKER = "# Constraint messages";
 
 	private IFile pluginProperties;
 	private Properties properties;
@@ -59,9 +60,11 @@ public class PluginPropertiesUtil {
 	public void addProperty(String key, String value) {
 		// test if key exists
 		if (!properties.containsKey(key)) {
-			properties.setProperty(key, value);
 			newProperties.add(key);
 		}
+		
+		// update existing property with new value or add new property key
+		properties.setProperty(key, value);
 	}
 	
 	public String getProperty(String key) {
@@ -118,23 +121,30 @@ public class PluginPropertiesUtil {
 	
 	public void save() {
 		FileOutputStream out = null;
+		PrintStream printStream = null;
 		List<String> propertyKeys = new ArrayList<String>();
 		
 		try {
-			// append only new keys
-			out = new FileOutputStream(pluginProperties.getLocation().toFile(), true);
-			propertyKeys.addAll(newProperties);
-			
-			// append all keys after comment tag
-//			out = new FileOutputStream(pluginProperties.getLocation().toFile(), false);
-//			String header = copyFileHeader();
-//			printStream.print(header);
-//			
-//			for (Object key : properties.keySet()) {
-//				propertyKeys.add(key.toString());
-//			}
+			if (hasConstraintMessageMarker()) {
+				// append all keys after comment tag
+				String header = copyFileHeader();
+				
+				out = new FileOutputStream(pluginProperties.getLocation().toFile(), false);
+				printStream = new PrintStream(out);
+				printStream.print(header);
+				
+				for (Object key : properties.keySet()) {
+					propertyKeys.add(key.toString());
+				}
+			}
+			else {
+				// append only new keys
+				out = new FileOutputStream(pluginProperties.getLocation().toFile(), true);
+				printStream = new PrintStream(out);
+				
+				propertyKeys.addAll(newProperties);
+			}
 
-			PrintStream printStream = new PrintStream(out);
 			Collections.sort(propertyKeys);
 			for (String key : propertyKeys) {
 				if (!"pluginName".equals(key) && !"providerName".equals(key)) {
@@ -164,6 +174,32 @@ public class PluginPropertiesUtil {
 		}
 	}
 	
+	private boolean hasConstraintMessageMarker() {
+		BufferedReader reader = null;
+		
+		try {
+			reader = new BufferedReader(new FileReader(pluginProperties.getLocation().toFile()));
+			while (reader.ready()) {
+				String line = reader.readLine();
+				if (line.startsWith(CONSTRAINT_MESSAGE_MARKER)) {
+					return true;
+				}
+			}
+			
+		} catch (Exception e) {
+			// ignore and return false
+		} finally {
+			if (reader != null)
+				try {
+					reader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}
+		
+		return false;
+	}
+	
 	private String copyFileHeader() {
 		StringBuffer header = new StringBuffer();
 		BufferedReader reader = null;
@@ -173,7 +209,7 @@ public class PluginPropertiesUtil {
 			while (reader.ready()) {
 				String line = reader.readLine();
 				header.append(line).append("\n");
-				if (line.startsWith("# Constraint messages")) {
+				if (line.startsWith(CONSTRAINT_MESSAGE_MARKER)) {
 					break;
 				}
 			}

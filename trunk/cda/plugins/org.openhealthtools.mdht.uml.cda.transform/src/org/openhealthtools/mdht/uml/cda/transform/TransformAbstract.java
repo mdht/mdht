@@ -70,33 +70,9 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return validationSupport != null;
 	}
 
-	public String getValidationSeverity(Element element) {
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
-		if (validationSupport != null) {
-			Object value = element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			String severity = null;
-			if (value instanceof EnumerationLiteral) {
-				severity = ((EnumerationLiteral)value).getName();
-			}
-			else if (value instanceof Enumerator) {
-				severity = ((Enumerator)value).getName();
-			}
-			
-			return (severity != null) ? severity : SEVERITY_ERROR;
-		}
-		
-		return null;
-	}
-
 	public void addValidationSupport(Property property, String constraintName) {
-		String severity = SEVERITY_ERROR;
-		String message = null;
-		
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.VALIDATION);
-		if (validationSupport != null) {
-			message = (String) property.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
-			severity = getValidationSeverity(property);
-		}
+		String severity = CDAModelUtil.getValidationSeverity(property);
+		String message = CDAModelUtil.getValidationMessage(property);
 
 		Class constrainedClass = property.getClass_();
 		if (SEVERITY_INFO.equals(severity)) {
@@ -199,7 +175,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	
 	protected String createInheritedConstraintName(Property property) {
 		String constraintName = null;
-		if (SEVERITY_ERROR.equals(getValidationSeverity(property))) {
+		if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(property))) {
 			Property inheritedProperty = CDAModelUtil.getInheritedProperty(property);
 			if (CDAModelUtil.getTemplateId(inheritedProperty.getClass_()) != null) {
 				constraintName = createInheritedConstraintName(inheritedProperty);
@@ -222,7 +198,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		if (template.getGeneralizations().size() > 0) {
 			// use the first generalization, assuming it is used for implementation class extension
 			generalization = template.getGeneralizations().get(0);
-			severity = getValidationSeverity(generalization);
+			severity = CDAModelUtil.getValidationSeverity(generalization);
 			severity = severity == null ? SEVERITY_ERROR : severity;
 		}
 		

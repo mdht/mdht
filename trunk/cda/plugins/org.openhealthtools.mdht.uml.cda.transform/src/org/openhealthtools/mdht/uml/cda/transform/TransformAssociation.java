@@ -62,14 +62,6 @@ public class TransformAssociation extends TransformAbstract {
 			return null;
 		}
 
-		String severity = CDAModelUtil.getValidationSeverity(association);
-		if (severity == null) {
-			// not a conformance rule
-			removeModelElement(sourceProperty);
-			removeModelElement(association);
-			return null;
-		}
-		
 		Class cdaSourceClass = getCDAClass(sourceClass);
 		Class cdaTargetClass = getCDAClass(targetClass);
 		
@@ -210,25 +202,24 @@ public class TransformAssociation extends TransformAbstract {
 //					+ " -> " + targetClass.getQualifiedName();
 //			Logger.log(Logger.WARNING, message);
 //		}
-		
-		String constraintName = createConstraintName(sourceClass, targetName);
-		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
-		constraint.getConstrainedElements().add(sourceClass);
-		
-		OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
-		expression.getLanguages().add("OCL");
-		expression.getBodies().add(constraintBody.toString());
 
-		Stereotype validationSupport = stereotype != null ? stereotype : CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
-		if (validationSupport != null) {
-			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
+		String severity = CDAModelUtil.getValidationSeverity(association);
+		if (severity != null) {
+			String constraintName = createConstraintName(sourceClass, targetName);
+			Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
+			constraint.getConstrainedElements().add(sourceClass);
 			
+			OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+			expression.getLanguages().add("OCL");
+			expression.getBodies().add(constraintBody.toString());
+
+			String validationMessage = CDAModelUtil.getValidationMessage(association);
 			if ("INFO".equals(severity)) {
-				addValidationInfo(sourceClass, constraintName, message);
+				addValidationInfo(sourceClass, constraintName, validationMessage);
 			} else if ("WARNING".equals(severity)) {
-				addValidationWarning(sourceClass, constraintName, message);
+				addValidationWarning(sourceClass, constraintName, validationMessage);
 			} else {
-				addValidationError(sourceClass, constraintName, message);
+				addValidationError(sourceClass, constraintName, validationMessage);
 			}
 		}
 		

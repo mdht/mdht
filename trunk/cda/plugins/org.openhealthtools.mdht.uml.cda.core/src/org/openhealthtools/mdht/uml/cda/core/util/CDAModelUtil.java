@@ -165,7 +165,7 @@ public class CDAModelUtil {
 		
 		return false;
 	}
-	
+
 	public static void composeAllConformanceMessages(Element element, final PrintStream stream, final boolean markup) {
 		final TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
 				Collections.singletonList(element));
@@ -213,86 +213,38 @@ public class CDAModelUtil {
 			umlSwitch.doSwitch(child);
 		}
 	}
-	
-	public static void assignAllConformanceMessages(Element element, final boolean markup) {
-		final TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
-				Collections.singletonList(element));
-		while (iterator != null && iterator.hasNext()) {
-			EObject child = iterator.next();
 
-			UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
+	public static String computeConformanceMessage(Element element, final boolean markup) {
+		
+		UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
 
-				public Object caseAssociation(Association association) {
-					iterator.prune();
-					return association;
+			public Object caseAssociation(Association association) {
+				String message = null;
+				Property property = getNavigableEnd(association);
+				if (property != null) {
+					message = computeConformanceMessage(property, false);
 				}
+				return message;
+			}
 
-				public Object caseClass(Class umlClass) {
-					Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(
-							umlClass, ICDAProfileConstants.CDA_TEMPLATE);
-					if (hl7Template != null) {
-						String message = computeConformanceMessage(umlClass, markup);
-						if (message.length() > 0) {
-							umlClass.setValue(hl7Template, ICDAProfileConstants.VALIDATION_MESSAGE, message);
-						}
-					}
-					else if (CDAModelUtil.getCDAClass(umlClass) == null) {
-						// prune children of non-CDA classes, but include non-template subclasses
-						iterator.prune();
-					}
-					return umlClass;
-				}
+			public Object caseClass(Class umlClass) {
+				return computeConformanceMessage(umlClass, markup);
+			}
 
-				public Object caseProperty(Property property) {
-					Association association = property.getAssociation();
-					
-					// don't assign a message unless severity has been set
-					String severity = association != null ? getValidationSeverity(association)
-							: getValidationSeverity(property);
-					if (severity == null) {
-						return null;
-					}
-					
-					String message = computeConformanceMessage(property, markup);
-					if (message != null && message.length() > 0) {
-//						if (!hasValidationSupport(property)) {
-//							if (isXMLAttribute(property)) {
-//								if (property.isReadOnly()) {
-//									CDAProfileUtil.applyCDAStereotype(property, ICDAProfileConstants.PROPERTY_VALIDATION);
-//								}
-//							}
-//							else if (association == null) {
-//								CDAProfileUtil.applyCDAStereotype(property, ICDAProfileConstants.PROPERTY_VALIDATION);
-//							}
-//						}
-//						
-//						if (association != null && !hasValidationSupport(association)) {
-//							CDAProfileUtil.applyCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
-//						}
-
-						if (association == null && hasValidationSupport(property)) {
-							setValidationMessage(property, message);
-						}
-						else if (association != null && hasValidationSupport(association)) {
-							setValidationMessage(association, message);
-						}
-					}
-					
-					return property;
-				}
-				
-				public Object caseConstraint(Constraint constraint) {
-					if (hasValidationSupport(constraint)) {
-						String message = computeConformanceMessage(constraint, markup);
-						if (message != null && message.length() > 0) {
-							setValidationMessage(constraint, message);
-						}
-					}
-					return constraint;
-				}
-			};
-			umlSwitch.doSwitch(child);
-		}
+			public Object caseGeneralization(Generalization generalization) {
+				return computeConformanceMessage(generalization, markup);
+			}
+			
+			public Object caseProperty(Property property) {
+				return computeConformanceMessage(property, markup);
+			}
+			
+			public Object caseConstraint(Constraint constraint) {
+				return computeConformanceMessage(constraint, markup);
+			}
+		};
+		
+		return (String) umlSwitch.doSwitch(element);
 	}
 	
 	public static String computeConformanceMessage(Class template, boolean markup) {
@@ -898,7 +850,7 @@ public class CDAModelUtil {
 			
 			String keyword = getValidationKeyword(constraint);
 			if (keyword == null) {
-				keyword = "MAY";
+				keyword = "SHALL";
 			}
 			message.append(markup?"<b>":"");
 			message.append(keyword);
@@ -908,6 +860,20 @@ public class CDAModelUtil {
 			message.append(isOCL&&markup?"<codeblock>":"");
 			message.append(body);
 			message.append(isOCL&&markup?"</codeblock>":"");
+		}
+		
+		if (!markup) {
+			// remove line feeds
+			int index;
+			while ((index=message.indexOf("\r")) >=0) {
+				message.deleteCharAt(index);
+			}
+			while ((index=message.indexOf("\n")) >=0) {
+				message.deleteCharAt(index);
+				if (message.charAt(index) != ' ') {
+					message.insert(index, " ");
+				}
+			}
 		}
 		
 		return message.toString();
@@ -953,7 +919,21 @@ public class CDAModelUtil {
 	protected static boolean isSamePackage(Element first, Element second) {
 		return first.getNearestPackage().equals(second.getNearestPackage());
 	}
-	
+
+	public static Property getNavigableEnd(Association association) {
+		Property navigableEnd = null;
+		for (Property end : association.getMemberEnds()) {
+			if (end.isNavigable()) {
+				if (navigableEnd != null) {
+					return null; // multiple navigable ends
+				}
+				navigableEnd = end;
+			}
+		}
+		
+		return navigableEnd;
+	}
+
 	public static String getMultiplicityString(Property property) {
 		String lower = Integer.toString(property.getLower());
 		String upper = property.getUpper()==-1 ? "*" : Integer.toString(property.getUpper());
@@ -1062,10 +1042,11 @@ public class CDAModelUtil {
 	}
 
 	public static String getValidationSeverity(Element element) {
+		String severity = null;
+		
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
 		if (validationSupport != null) {
 			Object value = element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			String severity = null;
 			if (value instanceof EnumerationLiteral) {
 				severity = ((EnumerationLiteral)value).getName();
 			}
@@ -1074,10 +1055,23 @@ public class CDAModelUtil {
 			}
 			
 //			return (severity != null) ? severity : SEVERITY_ERROR;
-			return severity;
 		}
 		
-		return null;
+		return severity;
+	}
+
+	public static String getValidationMessage(Element element) {
+		String message = null;
+		
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		if (validationSupport != null) {
+			message = (String) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
+		}
+		if (message == null || message.length() == 0) {
+			message = computeConformanceMessage(element, false);
+		}
+		
+		return message;
 	}
 	
 	/**

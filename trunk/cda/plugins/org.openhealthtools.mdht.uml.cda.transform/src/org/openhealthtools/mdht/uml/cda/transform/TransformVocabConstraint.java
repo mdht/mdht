@@ -27,8 +27,8 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.CodeSystemConstraintUtil;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ValueSetConstraintUtil;
 
 public class TransformVocabConstraint extends TransformAbstract {
@@ -106,7 +106,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 	private void addAnnotation(Property property, String codeSystem, String codeSystemName,
 			String code, String displayName, String codeSystemVersion) {
 		
-		if (SEVERITY_INFO.equals(getValidationSeverity(property))) {
+		if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property))) {
 			// omit annotation for MAY constraints
 			return;
 		}
@@ -165,7 +165,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 			return;
 		}
 
-		if (SEVERITY_INFO.equals(getValidationSeverity(property))) {
+		if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property))) {
 			// constraint only applies if code system is undefined
 			body.append("not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined()");
 		}

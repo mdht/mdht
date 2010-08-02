@@ -18,10 +18,8 @@ import java.util.List;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.OpaqueExpression;
-import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 public class TransformConstraint extends TransformAbstract {
 	public TransformConstraint(EcoreTransformerOptions options) {
@@ -34,6 +32,10 @@ public class TransformConstraint extends TransformAbstract {
 				|| constraint.getName().endsWith("TemplateId")) {
 			return null;
 		}
+
+		// must get message before Analysis lang is removed
+		String severity = CDAModelUtil.getValidationSeverity(constraint);
+		String message = CDAModelUtil.getValidationMessage(constraint);
 		
 		// remove all spec languages other than the first OCL expression
 		ValueSpecification spec = constraint.getSpecification();
@@ -74,15 +76,6 @@ public class TransformConstraint extends TransformAbstract {
 			constraintName = constraintPrefix + constraintName;
 		}
 		constraint.setName(constraintName);
-		
-		String severity = SEVERITY_ERROR;
-		String message = null;
-		Stereotype validation = CDAProfileUtil.getAppliedCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-		if (validation != null) {
-			message = (String) constraint.getValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE);
-			severity = getValidationSeverity(constraint);
-			CDAProfileUtil.unapplyCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-		}
 		
 		if (SEVERITY_INFO.equals(severity)) {
 			addValidationInfo(constrainedClass, constraint.getName(), message);
