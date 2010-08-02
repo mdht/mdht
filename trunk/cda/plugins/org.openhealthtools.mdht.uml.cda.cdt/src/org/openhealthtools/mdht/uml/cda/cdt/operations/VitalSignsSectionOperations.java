@@ -11,9 +11,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPlugin;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
@@ -33,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection#validateVitalSignsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection#validateVitalSignsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection#validateVitalSignsSectionVitalSignsOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Vital Signs Organizer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection#getVitalSignsOrganizer() <em>Get Vital Signs Organizer</em>}</li>
  * </ul>
  * </p>
  *
@@ -335,6 +339,50 @@ public class VitalSignsSectionOperations extends SectionOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getVitalSignsOrganizer(VitalSignsSection) <em>Get Vital Signs Organizer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVitalSignsOrganizer(VitalSignsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_VITAL_SIGNS_ORGANIZER__EOCL_EXP = "self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(ccd::VitalSignsOrganizer))->asSequence()->first().oclAsType(ccd::VitalSignsOrganizer)";
+
+	/**
+	 * The cached OCL query for the '{@link #getVitalSignsOrganizer(VitalSignsSection) <em>Get Vital Signs Organizer</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVitalSignsOrganizer(VitalSignsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_VITAL_SIGNS_ORGANIZER__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(ccd::VitalSignsOrganizer))->asSequence()->first().oclAsType(ccd::VitalSignsOrganizer)
+	 * @param vitalSignsSection The receiving '<em><b>Vital Signs Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  VitalSignsOrganizer getVitalSignsOrganizer(VitalSignsSection vitalSignsSection) {
+		if (GET_VITAL_SIGNS_ORGANIZER__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(CDTPackage.Literals.VITAL_SIGNS_SECTION, CDTPackage.Literals.VITAL_SIGNS_SECTION.getEAllOperations().get(52));
+			try {
+				GET_VITAL_SIGNS_ORGANIZER__EOCL_QRY = helper.createQuery(GET_VITAL_SIGNS_ORGANIZER__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_VITAL_SIGNS_ORGANIZER__EOCL_QRY);
+		return (VitalSignsOrganizer) query.evaluate(vitalSignsSection);
 	}
 
 } // VitalSignsSectionOperations

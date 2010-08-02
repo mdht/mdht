@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.VitalSignsSectionOperations;
@@ -88,6 +89,15 @@ public class VitalSignsSectionImpl extends SectionImpl implements VitalSignsSect
 	 */
 	public boolean validateVitalSignsSectionVitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return VitalSignsSectionOperations.validateVitalSignsSectionVitalSignsOrganizer(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsOrganizer getVitalSignsOrganizer() {
+		return VitalSignsSectionOperations.getVitalSignsOrganizer(this);
 	}
 
 	/**

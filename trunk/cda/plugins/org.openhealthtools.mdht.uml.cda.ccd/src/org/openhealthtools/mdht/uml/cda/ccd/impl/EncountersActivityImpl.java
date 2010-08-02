@@ -59,6 +59,24 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEncountersActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersActivityOperations.validateEncountersActivityClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncountersActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersActivityOperations.validateEncountersActivityMoodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEncountersActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EncountersActivityOperations.validateEncountersActivityId(this, diagnostics, context);
 	}

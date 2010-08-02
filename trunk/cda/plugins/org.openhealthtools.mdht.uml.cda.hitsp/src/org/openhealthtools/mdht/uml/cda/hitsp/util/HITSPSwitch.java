@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
+import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
@@ -90,7 +91,6 @@ import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
-import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
@@ -231,8 +231,8 @@ public class HITSPSwitch<T> {
 				PatientSummary patientSummary = (PatientSummary)theEObject;
 				T result = casePatientSummary(patientSummary);
 				if (result == null) result = caseContinuityOfCareDocument(patientSummary);
-				if (result == null) result = caseMedicalSummary(patientSummary);
 				if (result == null) result = caseMedicalDocument(patientSummary);
+				if (result == null) result = caseGeneralHeaderConstraints(patientSummary);
 				if (result == null) result = caseClinicalDocument(patientSummary);
 				if (result == null) result = caseAct(patientSummary);
 				if (result == null) result = caseInfrastructureRoot(patientSummary);
@@ -261,6 +261,74 @@ public class HITSPSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HITSPPackage.ADVANCE_DIRECTIVES_SECTION: {
+				AdvanceDirectivesSection advanceDirectivesSection = (AdvanceDirectivesSection)theEObject;
+				T result = caseAdvanceDirectivesSection(advanceDirectivesSection);
+				if (result == null) result = caseCodedAdvanceDirectivesSection(advanceDirectivesSection);
+				if (result == null) result = caseIHE_AdvanceDirectivesSection(advanceDirectivesSection);
+				if (result == null) result = caseCCD_AdvanceDirectivesSection(advanceDirectivesSection);
+				if (result == null) result = caseSection(advanceDirectivesSection);
+				if (result == null) result = caseAct(advanceDirectivesSection);
+				if (result == null) result = caseInfrastructureRoot(advanceDirectivesSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.ALLERGIES_REACTIONS_SECTION: {
+				AllergiesReactionsSection allergiesReactionsSection = (AllergiesReactionsSection)theEObject;
+				T result = caseAllergiesReactionsSection(allergiesReactionsSection);
+				if (result == null) result = caseIHE_AllergiesReactionsSection(allergiesReactionsSection);
+				if (result == null) result = caseAlertsSection(allergiesReactionsSection);
+				if (result == null) result = caseSection(allergiesReactionsSection);
+				if (result == null) result = caseAct(allergiesReactionsSection);
+				if (result == null) result = caseInfrastructureRoot(allergiesReactionsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.ENCOUNTERS_SECTION: {
+				EncountersSection encountersSection = (EncountersSection)theEObject;
+				T result = caseEncountersSection(encountersSection);
+				if (result == null) result = caseEncounterHistorySection(encountersSection);
+				if (result == null) result = caseCCD_EncountersSection(encountersSection);
+				if (result == null) result = caseSection(encountersSection);
+				if (result == null) result = caseAct(encountersSection);
+				if (result == null) result = caseInfrastructureRoot(encountersSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.IMMUNIZATIONS_SECTION: {
+				ImmunizationsSection immunizationsSection = (ImmunizationsSection)theEObject;
+				T result = caseImmunizationsSection(immunizationsSection);
+				if (result == null) result = caseIHE_ImmunizationsSection(immunizationsSection);
+				if (result == null) result = caseCCD_ImmunizationsSection(immunizationsSection);
+				if (result == null) result = caseSection(immunizationsSection);
+				if (result == null) result = caseAct(immunizationsSection);
+				if (result == null) result = caseInfrastructureRoot(immunizationsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.IMMUNIZATION: {
+				Immunization immunization = (Immunization)theEObject;
+				T result = caseImmunization(immunization);
+				if (result == null) result = caseIHE_Immunization(immunization);
+				if (result == null) result = caseMedicationActivity(immunization);
+				if (result == null) result = caseSubstanceAdministration(immunization);
+				if (result == null) result = caseClinicalStatement(immunization);
+				if (result == null) result = caseAct(immunization);
+				if (result == null) result = caseInfrastructureRoot(immunization);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.PAYERS_SECTION: {
+				PayersSection payersSection = (PayersSection)theEObject;
+				T result = casePayersSection(payersSection);
+				if (result == null) result = caseIHE_PayersSection(payersSection);
+				if (result == null) result = caseCCD_PayersSection(payersSection);
+				if (result == null) result = caseSection(payersSection);
+				if (result == null) result = caseAct(payersSection);
+				if (result == null) result = caseInfrastructureRoot(payersSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case HITSPPackage.VITAL_SIGNS_SECTION: {
 				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
 				T result = caseVitalSignsSection(vitalSignsSection);
@@ -283,28 +351,6 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseClinicalStatement(vitalSign);
 				if (result == null) result = caseAct(vitalSign);
 				if (result == null) result = caseInfrastructureRoot(vitalSign);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HITSPPackage.PAYERS_SECTION: {
-				PayersSection payersSection = (PayersSection)theEObject;
-				T result = casePayersSection(payersSection);
-				if (result == null) result = caseIHE_PayersSection(payersSection);
-				if (result == null) result = caseCCD_PayersSection(payersSection);
-				if (result == null) result = caseSection(payersSection);
-				if (result == null) result = caseAct(payersSection);
-				if (result == null) result = caseInfrastructureRoot(payersSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HITSPPackage.ALLERGIES_REACTIONS_SECTION: {
-				AllergiesReactionsSection allergiesReactionsSection = (AllergiesReactionsSection)theEObject;
-				T result = caseAllergiesReactionsSection(allergiesReactionsSection);
-				if (result == null) result = caseIHE_AllergiesReactionsSection(allergiesReactionsSection);
-				if (result == null) result = caseAlertsSection(allergiesReactionsSection);
-				if (result == null) result = caseSection(allergiesReactionsSection);
-				if (result == null) result = caseAct(allergiesReactionsSection);
-				if (result == null) result = caseInfrastructureRoot(allergiesReactionsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -420,29 +466,6 @@ public class HITSPSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HITSPPackage.ADVANCE_DIRECTIVES_SECTION: {
-				AdvanceDirectivesSection advanceDirectivesSection = (AdvanceDirectivesSection)theEObject;
-				T result = caseAdvanceDirectivesSection(advanceDirectivesSection);
-				if (result == null) result = caseCodedAdvanceDirectivesSection(advanceDirectivesSection);
-				if (result == null) result = caseIHE_AdvanceDirectivesSection(advanceDirectivesSection);
-				if (result == null) result = caseCCD_AdvanceDirectivesSection(advanceDirectivesSection);
-				if (result == null) result = caseSection(advanceDirectivesSection);
-				if (result == null) result = caseAct(advanceDirectivesSection);
-				if (result == null) result = caseInfrastructureRoot(advanceDirectivesSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HITSPPackage.IMMUNIZATIONS_SECTION: {
-				ImmunizationsSection immunizationsSection = (ImmunizationsSection)theEObject;
-				T result = caseImmunizationsSection(immunizationsSection);
-				if (result == null) result = caseIHE_ImmunizationsSection(immunizationsSection);
-				if (result == null) result = caseCCD_ImmunizationsSection(immunizationsSection);
-				if (result == null) result = caseSection(immunizationsSection);
-				if (result == null) result = caseAct(immunizationsSection);
-				if (result == null) result = caseInfrastructureRoot(immunizationsSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case HITSPPackage.PHYSICAL_EXAM_SECTION: {
 				PhysicalExamSection physicalExamSection = (PhysicalExamSection)theEObject;
 				T result = casePhysicalExamSection(physicalExamSection);
@@ -527,17 +550,6 @@ public class HITSPSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HITSPPackage.ENCOUNTERS_SECTION: {
-				EncountersSection encountersSection = (EncountersSection)theEObject;
-				T result = caseEncountersSection(encountersSection);
-				if (result == null) result = caseEncounterHistorySection(encountersSection);
-				if (result == null) result = caseCCD_EncountersSection(encountersSection);
-				if (result == null) result = caseSection(encountersSection);
-				if (result == null) result = caseAct(encountersSection);
-				if (result == null) result = caseInfrastructureRoot(encountersSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case HITSPPackage.MEDICAL_EQUIPMENT_SECTION: {
 				MedicalEquipmentSection medicalEquipmentSection = (MedicalEquipmentSection)theEObject;
 				T result = caseMedicalEquipmentSection(medicalEquipmentSection);
@@ -588,18 +600,6 @@ public class HITSPSwitch<T> {
 				if (result == null) result = casePerformer1(healthcareProvider);
 				if (result == null) result = caseParticipation(healthcareProvider);
 				if (result == null) result = caseInfrastructureRoot(healthcareProvider);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HITSPPackage.IMMUNIZATION: {
-				Immunization immunization = (Immunization)theEObject;
-				T result = caseImmunization(immunization);
-				if (result == null) result = caseIHE_Immunization(immunization);
-				if (result == null) result = caseMedicationActivity(immunization);
-				if (result == null) result = caseSubstanceAdministration(immunization);
-				if (result == null) result = caseClinicalStatement(immunization);
-				if (result == null) result = caseAct(immunization);
-				if (result == null) result = caseInfrastructureRoot(immunization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1626,6 +1626,21 @@ public class HITSPSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>General Header Constraints</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGeneralHeaderConstraints(GeneralHeaderConstraints object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Medical Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1637,21 +1652,6 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseMedicalDocument(MedicalDocument object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medical Summary</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medical Summary</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMedicalSummary(MedicalSummary object) {
 		return null;
 	}
 

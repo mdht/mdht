@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.DischargeSummaryOperations;
@@ -60,6 +61,15 @@ public class DischargeSummaryImpl extends MedicalSummaryImpl implements Discharg
 	 */
 	public boolean validateDischargeSummaryActiveProblemsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return DischargeSummaryOperations.validateDischargeSummaryActiveProblemsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActiveProblemsSection getActiveProblemsSection() {
+		return DischargeSummaryOperations.getActiveProblemsSection(this);
 	}
 
 	/**

@@ -9,7 +9,9 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.PayersSectionOperations;
@@ -60,6 +62,15 @@ public class PayersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl
 	 */
 	public boolean validateIHEPayersSectionCoverageEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return PayersSectionOperations.validateIHEPayersSectionCoverageEntry(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<CoverageEntry> getCoverageEntries() {
+		return PayersSectionOperations.getCoverageEntries(this);
 	}
 
 	/**

@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getEncounterLocation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.45' constraints.validation.error='EncounterLocationTemplateId' typeCode='LOC'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.45' constraints.validation.error='EncounterLocationTemplateId EncounterLocationTypeCode' typeCode='LOC'"
  * @generated
  */
 public interface EncounterLocation extends Participant2 {
@@ -34,6 +34,19 @@ public interface EncounterLocation extends Participant2 {
 	 * @generated
 	 */
 	boolean validateEncounterLocationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.typeCode=vocab::ParticipationType::LOC
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.typeCode=vocab::ParticipationType::LOC'"
+	 * @generated
+	 */
+	boolean validateEncounterLocationTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -38,9 +38,9 @@ import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitAndChiefComplaintSecti
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.util.CDTValidator;
-import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,6 +159,13 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass reviewOfSystemsSectionIHEEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass reviewOfSystemsSectionEClass = null;
 
 	/**
@@ -257,7 +264,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		IHEPackage.eINSTANCE.eClass();
+		CCDPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCDTPackage.createPackageContents();
@@ -423,6 +430,15 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getReviewOfSystemsSectionIHE() {
+		return reviewOfSystemsSectionIHEEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReviewOfSystemsSection() {
 		return reviewOfSystemsSectionEClass;
 	}
@@ -522,7 +538,23 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 
 		historyAndPhysicalEClass = createEClass(HISTORY_AND_PHYSICAL);
 
+		historyOfPresentIllnessEClass = createEClass(HISTORY_OF_PRESENT_ILLNESS);
+
+		pastMedicalHistorySectionEClass = createEClass(PAST_MEDICAL_HISTORY_SECTION);
+
+		reviewOfSystemsSectionIHEEClass = createEClass(REVIEW_OF_SYSTEMS_SECTION_IHE);
+
+		physicalExaminationSectionEClass = createEClass(PHYSICAL_EXAMINATION_SECTION);
+
+		vitalSignsSectionEClass = createEClass(VITAL_SIGNS_SECTION);
+
+		generalStatusSectionEClass = createEClass(GENERAL_STATUS_SECTION);
+
 		consultationNoteEClass = createEClass(CONSULTATION_NOTE);
+
+		pastMedicalHistorySectionConsultEClass = createEClass(PAST_MEDICAL_HISTORY_SECTION_CONSULT);
+
+		reviewOfSystemsSectionEClass = createEClass(REVIEW_OF_SYSTEMS_SECTION);
 
 		reasonForReferralSectionEClass = createEClass(REASON_FOR_REFERRAL_SECTION);
 
@@ -534,17 +566,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 
 		levelThreeConformanceEClass = createEClass(LEVEL_THREE_CONFORMANCE);
 
-		physicalExaminationSectionEClass = createEClass(PHYSICAL_EXAMINATION_SECTION);
-
-		pastMedicalHistorySectionEClass = createEClass(PAST_MEDICAL_HISTORY_SECTION);
-
-		reviewOfSystemsSectionEClass = createEClass(REVIEW_OF_SYSTEMS_SECTION);
-
-		generalStatusSectionEClass = createEClass(GENERAL_STATUS_SECTION);
-
 		diagnosticFindingsEClass = createEClass(DIAGNOSTIC_FINDINGS);
-
-		vitalSignsSectionEClass = createEClass(VITAL_SIGNS_SECTION);
 
 		assessmentSectionEClass = createEClass(ASSESSMENT_SECTION);
 
@@ -557,10 +579,6 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		chiefComplaintSectionEClass = createEClass(CHIEF_COMPLAINT_SECTION);
 
 		reasonForVisitAndChiefComplaintSectionEClass = createEClass(REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION);
-
-		historyOfPresentIllnessEClass = createEClass(HISTORY_OF_PRESENT_ILLNESS);
-
-		pastMedicalHistorySectionConsultEClass = createEClass(PAST_MEDICAL_HISTORY_SECTION_CONSULT);
 
 		cdtRegistryDelegateEClass = createEClass(CDT_REGISTRY_DELEGATE);
 	}
@@ -591,7 +609,6 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		// Obtain other dependent packages
 		CDAPackage theCDAPackage = (CDAPackage)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI);
 		CCDPackage theCCDPackage = (CCDPackage)EPackage.Registry.INSTANCE.getEPackage(CCDPackage.eNS_URI);
-		IHEPackage theIHEPackage = (IHEPackage)EPackage.Registry.INSTANCE.getEPackage(IHEPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -600,26 +617,27 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		// Add supertypes to classes
 		generalHeaderConstraintsEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
 		historyAndPhysicalEClass.getESuperTypes().add(this.getGeneralHeaderConstraints());
+		historyOfPresentIllnessEClass.getESuperTypes().add(theCDAPackage.getSection());
+		pastMedicalHistorySectionEClass.getESuperTypes().add(theCDAPackage.getSection());
+		reviewOfSystemsSectionIHEEClass.getESuperTypes().add(theCDAPackage.getSection());
+		physicalExaminationSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
+		vitalSignsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
+		generalStatusSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		consultationNoteEClass.getESuperTypes().add(this.getGeneralHeaderConstraints());
+		pastMedicalHistorySectionConsultEClass.getESuperTypes().add(theCDAPackage.getSection());
+		reviewOfSystemsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		reasonForReferralSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		reasonForVisitSectionConsultEClass.getESuperTypes().add(theCDAPackage.getSection());
 		levelOneConformanceEClass.getESuperTypes().add(this.getGeneralHeaderConstraints());
 		levelTwoConformanceEClass.getESuperTypes().add(this.getLevelOneConformance());
 		levelThreeConformanceEClass.getESuperTypes().add(this.getLevelTwoConformance());
-		physicalExaminationSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
-		pastMedicalHistorySectionEClass.getESuperTypes().add(theCDAPackage.getSection());
-		reviewOfSystemsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
-		generalStatusSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		diagnosticFindingsEClass.getESuperTypes().add(theCCDPackage.getResultsSection());
-		vitalSignsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		assessmentSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		planSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		assessmentAndPlanSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		reasonForVisitSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		chiefComplaintSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		reasonForVisitAndChiefComplaintSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
-		historyOfPresentIllnessEClass.getESuperTypes().add(theIHEPackage.getHistoryOfPresentIllness());
-		pastMedicalHistorySectionConsultEClass.getESuperTypes().add(theCDAPackage.getSection());
 		cdtRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -834,7 +852,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(historyAndPhysicalEClass, ecorePackage.getEBoolean(), "validateHistoryAndPhysicalReviewOfSystemsSection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(historyAndPhysicalEClass, ecorePackage.getEBoolean(), "validateHistoryAndPhysicalReviewOfSystemsSectionIHE", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -870,7 +888,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(historyAndPhysicalEClass, ecorePackage.getEBoolean(), "validateHistoryAndPhysicalResultsSection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(historyAndPhysicalEClass, ecorePackage.getEBoolean(), "validateHistoryAndPhysicalDiagnosticFindings", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -898,6 +916,201 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(historyAndPhysicalEClass, ecorePackage.getEBoolean(), "validateHistoryAndPhysicalImmunizationsSection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, this.getHistoryOfPresentIllness(), "getHistoryOfPresentIllness", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, this.getPastMedicalHistorySection(), "getPastMedicalHistorySection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getMedicationsSection(), "getMedicationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getAlertsSection(), "getAlertsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getSocialHistorySection(), "getSocialHistorySection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getFamilyHistorySection(), "getFamilyHistorySection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, this.getReviewOfSystemsSectionIHE(), "getReviewOfSystemsSectionIHE", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, this.getPhysicalExaminationSection(), "getPhysicalExaminationSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, this.getVitalSignsSection(), "getVitalSignsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, this.getGeneralStatusSection(), "getGeneralStatusSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getResultsSection(), "getDiagnosticFindings", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getProblemSection(), "getProblemSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getProceduresSection(), "getProceduresSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(historyAndPhysicalEClass, theCCDPackage.getImmunizationsSection(), "getImmunizationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(historyOfPresentIllnessEClass, HistoryOfPresentIllness.class, "HistoryOfPresentIllness", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(historyOfPresentIllnessEClass, ecorePackage.getEBoolean(), "validateHistoryOfPresentIllnessTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(historyOfPresentIllnessEClass, ecorePackage.getEBoolean(), "validateHistoryOfPresentIllnessCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(pastMedicalHistorySectionEClass, PastMedicalHistorySection.class, "PastMedicalHistorySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionClinicalStatements", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(reviewOfSystemsSectionIHEEClass, ReviewOfSystemsSectionIHE.class, "ReviewOfSystemsSectionIHE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(reviewOfSystemsSectionIHEEClass, ecorePackage.getEBoolean(), "validateReviewOfSystemsSectionIHETemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(reviewOfSystemsSectionIHEEClass, ecorePackage.getEBoolean(), "validateReviewOfSystemsSectionIHECode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(physicalExaminationSectionEClass, PhysicalExaminationSection.class, "PhysicalExaminationSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(physicalExaminationSectionEClass, ecorePackage.getEBoolean(), "validatePhysicalExaminationSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(physicalExaminationSectionEClass, ecorePackage.getEBoolean(), "validatePhysicalExaminationSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(vitalSignsSectionEClass, VitalSignsSection.class, "VitalSignsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionClinicalStatements", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionVitalSignsOrganizer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(vitalSignsSectionEClass, theCCDPackage.getVitalSignsOrganizer(), "getVitalSignsOrganizer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(generalStatusSectionEClass, GeneralStatusSection.class, "GeneralStatusSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(generalStatusSectionEClass, ecorePackage.getEBoolean(), "validateGeneralStatusSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(generalStatusSectionEClass, ecorePackage.getEBoolean(), "validateGeneralStatusSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1034,7 +1247,84 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(consultationNoteEClass, ecorePackage.getEBoolean(), "validateConsultationNoteResultsSection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(consultationNoteEClass, ecorePackage.getEBoolean(), "validateConsultationNoteDiagnosticFindings", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, this.getHistoryOfPresentIllness(), "getHistoryOfPresentIllness", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, this.getPhysicalExaminationSection(), "getPhysicalExaminationSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getProblemSection(), "getProblemSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getProceduresSection(), "getProceduresSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, this.getPastMedicalHistorySectionConsult(), "getPastMedicalHistorySectionConsult", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getImmunizationsSection(), "getImmunizationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getMedicationsSection(), "getMedicationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getAlertsSection(), "getAlertsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getSocialHistorySection(), "getSocialHistorySection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getFamilyHistorySection(), "getFamilyHistorySection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, this.getReviewOfSystemsSection(), "getReviewOfSystemsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getVitalSignsSection(), "getVitalSignsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, this.getGeneralStatusSection(), "getGeneralStatusSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(consultationNoteEClass, theCCDPackage.getResultsSection(), "getDiagnosticFindings", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(pastMedicalHistorySectionConsultEClass, PastMedicalHistorySectionConsult.class, "PastMedicalHistorySectionConsult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(reviewOfSystemsSectionEClass, ReviewOfSystemsSection.class, "ReviewOfSystemsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(reviewOfSystemsSectionEClass, ecorePackage.getEBoolean(), "validateReviewOfSystemsSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(reviewOfSystemsSectionEClass, ecorePackage.getEBoolean(), "validateReviewOfSystemsSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1089,154 +1379,9 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 
 		initEClass(levelThreeConformanceEClass, LevelThreeConformance.class, "LevelThreeConformance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(physicalExaminationSectionEClass, PhysicalExaminationSection.class, "PhysicalExaminationSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(physicalExaminationSectionEClass, ecorePackage.getEBoolean(), "validatePhysicalExaminationSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(physicalExaminationSectionEClass, ecorePackage.getEBoolean(), "validatePhysicalExaminationSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(pastMedicalHistorySectionEClass, PastMedicalHistorySection.class, "PastMedicalHistorySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionClinicalStatements", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(pastMedicalHistorySectionEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(reviewOfSystemsSectionEClass, ReviewOfSystemsSection.class, "ReviewOfSystemsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(reviewOfSystemsSectionEClass, ecorePackage.getEBoolean(), "validateReviewOfSystemsSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(reviewOfSystemsSectionEClass, ecorePackage.getEBoolean(), "validateReviewOfSystemsSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(generalStatusSectionEClass, GeneralStatusSection.class, "GeneralStatusSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(generalStatusSectionEClass, ecorePackage.getEBoolean(), "validateGeneralStatusSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(generalStatusSectionEClass, ecorePackage.getEBoolean(), "validateGeneralStatusSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(diagnosticFindingsEClass, DiagnosticFindings.class, "DiagnosticFindings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(diagnosticFindingsEClass, ecorePackage.getEBoolean(), "validateDiagnosticFindingsTitle", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(vitalSignsSectionEClass, VitalSignsSection.class, "VitalSignsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionClinicalStatements", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionVitalSignsOrganizer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1365,37 +1510,6 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(historyOfPresentIllnessEClass, HistoryOfPresentIllness.class, "HistoryOfPresentIllness", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(pastMedicalHistorySectionConsultEClass, PastMedicalHistorySectionConsult.class, "PastMedicalHistorySectionConsult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultText", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(cdtRegistryDelegateEClass, CDTRegistryDelegate.class, "CDTRegistryDelegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
@@ -1436,10 +1550,78 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		   new String[] {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.2",
-			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId HistoryAndPhysicalAssessmentAndPlan HistoryAndPhysicalBothAssessmentAndPlan HistoryAndPhysicalReasonForVisitAndChiefComplaint HistoryAndPhysicalBothReasonForVisitAndChiefComplaint GeneralHeaderConstraintsCode HistoryAndPhysicalHistoryOfPresentIllness HistoryAndPhysicalPastMedicalHistorySection HistoryAndPhysicalMedicationsSection HistoryAndPhysicalAlertsSection HistoryAndPhysicalSocialHistorySection HistoryAndPhysicalFamilyHistorySection HistoryAndPhysicalReviewOfSystemsSection HistoryAndPhysicalPhysicalExaminationSection HistoryAndPhysicalVitalSignsSection HistoryAndPhysicalGeneralStatusSection HistoryAndPhysicalResultsSection",
+			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId HistoryAndPhysicalAssessmentAndPlan HistoryAndPhysicalBothAssessmentAndPlan HistoryAndPhysicalReasonForVisitAndChiefComplaint HistoryAndPhysicalBothReasonForVisitAndChiefComplaint GeneralHeaderConstraintsCode HistoryAndPhysicalHistoryOfPresentIllness HistoryAndPhysicalPastMedicalHistorySection HistoryAndPhysicalMedicationsSection HistoryAndPhysicalAlertsSection HistoryAndPhysicalSocialHistorySection HistoryAndPhysicalFamilyHistorySection HistoryAndPhysicalReviewOfSystemsSectionIHE HistoryAndPhysicalPhysicalExaminationSection HistoryAndPhysicalVitalSignsSection HistoryAndPhysicalGeneralStatusSection HistoryAndPhysicalDiagnosticFindings",
 			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.info", "HistoryAndPhysicalProblemSection HistoryAndPhysicalProceduresSection HistoryAndPhysicalImmunizationsSection"
-		   });																																																																											
+		   });																																																																																																							
+		addAnnotation
+		  (historyOfPresentIllnessEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.4",
+			 "code.displayName", "HISTORY OF PRESENT ILLNESS",
+			 "constraints.validation.error", "HistoryOfPresentIllnessTemplateId HistoryOfPresentIllnessCode",
+			 "code.codeSystemName", "LOINC",
+			 "code.code", "10164-2"
+		   });										
+		addAnnotation
+		  (pastMedicalHistorySectionEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.displayName", "HISTORY OF PAST ILLNESS",
+			 "templateId.root", "2.16.840.1.113883.10.20.2.9",
+			 "constraints.validation.error", "PastMedicalHistorySectionTemplateId PastMedicalHistorySectionCode PastMedicalHistorySectionText",
+			 "code.codeSystemName", "LOINC",
+			 "constraints.validation.warning", "PastMedicalHistorySectionClinicalStatements",
+			 "code.code", "11348-0"
+		   });																		
+		addAnnotation
+		  (reviewOfSystemsSectionIHEEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.18",
+			 "code.displayName", "REVIEW OF SYSTEMS",
+			 "constraints.validation.error", "ReviewOfSystemsSectionIHETemplateId ReviewOfSystemsSectionIHECode",
+			 "code.codeSystemName", "LOINC",
+			 "code.code", "10187-3"
+		   });										
+		addAnnotation
+		  (physicalExaminationSectionEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "templateId.root", "2.16.840.1.113883.10.20.2.10",
+			 "code.displayName", "PHYSICAL FINDINGS",
+			 "constraints.validation.error", "PhysicalExaminationSectionTemplateId PhysicalExaminationSectionCode",
+			 "code.codeSystemName", "LOINC",
+			 "code.code", "29545-1"
+		   });										
+		addAnnotation
+		  (vitalSignsSectionEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "templateId.root", "2.16.840.1.113883.10.20.2.4",
+			 "code.displayName", "VITAL SIGNS",
+			 "constraints.validation.error", "VitalSignsSectionTemplateId VitalSignsSectionCode VitalSignsSectionText",
+			 "code.codeSystemName", "LOINC",
+			 "constraints.validation.warning", "VitalSignsSectionClinicalStatements VitalSignsSectionVitalSignsOrganizer",
+			 "code.code", "8716-3"
+		   });																								
+		addAnnotation
+		  (generalStatusSectionEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "templateId.root", "2.16.840.1.113883.10.20.2.5",
+			 "code.displayName", "GENERAL STATUS, PHYSICAL FINDINGS",
+			 "constraints.validation.error", "GeneralStatusSectionTemplateId GeneralStatusSectionCode",
+			 "code.codeSystemName", "LOINC",
+			 "code.code", "10210-3"
+		   });										
 		addAnnotation
 		  (consultationNoteEClass, 
 		   source, 
@@ -1448,8 +1630,30 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "templateId.root", "2.16.840.1.113883.10.20.4",
 			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId ConsultationNoteReferralOrVisit GeneralHeaderConstraintsCode ConsultationNoteHistoryOfPresentIllness ConsultationNotePhysicalExaminationSection",
 			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.info", "ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySectionConsult ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteResultsSection"
-		   });																																																															
+			 "constraints.validation.info", "ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySectionConsult ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteDiagnosticFindings"
+		   });																																																																																											
+		addAnnotation
+		  (pastMedicalHistorySectionConsultEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.displayName", "HISTORY OF PAST ILLNESS",
+			 "templateId.root", "2.16.840.1.113883.10.20.4.9",
+			 "constraints.validation.error", "PastMedicalHistorySectionConsultTemplateId PastMedicalHistorySectionConsultCode PastMedicalHistorySectionConsultText",
+			 "code.codeSystemName", "LOINC",
+			 "code.code", "11348-0"
+		   });														
+		addAnnotation
+		  (reviewOfSystemsSectionEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "templateId.root", "2.16.840.1.113883.10.20.4.10",
+			 "code.displayName", "REVIEW OF SYSTEMS",
+			 "constraints.validation.error", "ReviewOfSystemsSectionTemplateId ReviewOfSystemsSectionCode",
+			 "code.codeSystemName", "LOINC",
+			 "code.code", "10187-3"
+		   });										
 		addAnnotation
 		  (reasonForReferralSectionEClass, 
 		   source, 
@@ -1496,68 +1700,11 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId"
 		   });			
 		addAnnotation
-		  (physicalExaminationSectionEClass, 
-		   source, 
-		   new String[] {
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "2.16.840.1.113883.10.20.2.10",
-			 "code.displayName", "PHYSICAL FINDINGS",
-			 "constraints.validation.error", "PhysicalExaminationSectionTemplateId PhysicalExaminationSectionCode",
-			 "code.codeSystemName", "LOINC",
-			 "code.code", "29545-1"
-		   });										
-		addAnnotation
-		  (pastMedicalHistorySectionEClass, 
-		   source, 
-		   new String[] {
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "code.displayName", "HISTORY OF PAST ILLNESS",
-			 "templateId.root", "2.16.840.1.113883.10.20.2.9",
-			 "constraints.validation.error", "PastMedicalHistorySectionTemplateId PastMedicalHistorySectionCode PastMedicalHistorySectionText",
-			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.warning", "PastMedicalHistorySectionClinicalStatements",
-			 "code.code", "11348-0"
-		   });																		
-		addAnnotation
-		  (reviewOfSystemsSectionEClass, 
-		   source, 
-		   new String[] {
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "2.16.840.1.113883.10.20.4.10",
-			 "code.displayName", "REVIEW OF SYSTEMS",
-			 "constraints.validation.error", "ReviewOfSystemsSectionTemplateId ReviewOfSystemsSectionCode",
-			 "code.codeSystemName", "LOINC",
-			 "code.code", "10187-3"
-		   });										
-		addAnnotation
-		  (generalStatusSectionEClass, 
-		   source, 
-		   new String[] {
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "2.16.840.1.113883.10.20.2.5",
-			 "code.displayName", "GENERAL STATUS, PHYSICAL FINDINGS",
-			 "constraints.validation.error", "GeneralStatusSectionTemplateId GeneralStatusSectionCode",
-			 "code.codeSystemName", "LOINC",
-			 "code.code", "10210-3"
-		   });										
-		addAnnotation
 		  (diagnosticFindingsEClass, 
 		   source, 
 		   new String[] {
 			 "constraints.validation.error", "DiagnosticFindingsTitle"
 		   });						
-		addAnnotation
-		  (vitalSignsSectionEClass, 
-		   source, 
-		   new String[] {
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "2.16.840.1.113883.10.20.2.4",
-			 "code.displayName", "VITAL SIGNS",
-			 "constraints.validation.error", "VitalSignsSectionTemplateId VitalSignsSectionCode VitalSignsSectionText",
-			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.warning", "VitalSignsSectionClinicalStatements VitalSignsSectionVitalSignsOrganizer",
-			 "code.code", "8716-3"
-		   });																						
 		addAnnotation
 		  (assessmentSectionEClass, 
 		   source, 
@@ -1629,18 +1776,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "constraints.validation.error", "ReasonForVisitAndChiefComplaintSectionTemplateId ReasonForVisitAndChiefComplaintSectionCode",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "46239-0"
-		   });										
-		addAnnotation
-		  (pastMedicalHistorySectionConsultEClass, 
-		   source, 
-		   new String[] {
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "code.displayName", "HISTORY OF PAST ILLNESS",
-			 "templateId.root", "2.16.840.1.113883.10.20.4.9",
-			 "constraints.validation.error", "PastMedicalHistorySectionConsultTemplateId PastMedicalHistorySectionConsultCode PastMedicalHistorySectionConsultText",
-			 "code.codeSystemName", "LOINC",
-			 "code.code", "11348-0"
-		   });												
+		   });								
 	}
 
 	/**
@@ -1655,12 +1791,12 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		  (historyAndPhysicalEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																											
+		   });																																																																																																																																																																																			
 		addAnnotation
 		  (consultationNoteEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																	
+		   });																																																																																																																																			
 		addAnnotation
 		  (levelOneConformanceEClass, 
 		   source, 
@@ -1675,7 +1811,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		  (levelThreeConformanceEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																									
+		   });																																																											
 	}
 
 } //CDTPackageImpl

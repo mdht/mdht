@@ -12,18 +12,24 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemSectionOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -36,6 +42,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#validateActiveProblemsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#validateActiveProblemsSectionProblemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Problem Concern Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#getProblemConcernEntries() <em>Get Problem Concern Entries</em>}</li>
  * </ul>
  * </p>
  *
@@ -163,6 +170,52 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getProblemConcernEntries(ActiveProblemsSection) <em>Get Problem Concern Entries</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProblemConcernEntries(ActiveProblemsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PROBLEM_CONCERN_ENTRIES__EOCL_EXP = "self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ihe::ProblemConcernEntry)).oclAsType(ihe::ProblemConcernEntry)";
+
+	/**
+	 * The cached OCL query for the '{@link #getProblemConcernEntries(ActiveProblemsSection) <em>Get Problem Concern Entries</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProblemConcernEntries(ActiveProblemsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PROBLEM_CONCERN_ENTRIES__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getActs()->select(act : cda::Act | not act.oclIsUndefined() and act.oclIsKindOf(ihe::ProblemConcernEntry)).oclAsType(ihe::ProblemConcernEntry)
+	 * @param activeProblemsSection The receiving '<em><b>Active Problems Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EList<ProblemConcernEntry> getProblemConcernEntries(ActiveProblemsSection activeProblemsSection) {
+		if (GET_PROBLEM_CONCERN_ENTRIES__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(IHEPackage.Literals.ACTIVE_PROBLEMS_SECTION, IHEPackage.Literals.ACTIVE_PROBLEMS_SECTION.getEAllOperations().get(55));
+			try {
+				GET_PROBLEM_CONCERN_ENTRIES__EOCL_QRY = helper.createQuery(GET_PROBLEM_CONCERN_ENTRIES__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PROBLEM_CONCERN_ENTRIES__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<ProblemConcernEntry> result = (Collection<ProblemConcernEntry>) query.evaluate(activeProblemsSection);
+		return new BasicEList.UnmodifiableEList<ProblemConcernEntry>(result.size(), result.toArray());
 	}
 
 } // ActiveProblemsSectionOperations

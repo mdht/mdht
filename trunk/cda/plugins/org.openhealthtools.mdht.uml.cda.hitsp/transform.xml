@@ -8,6 +8,7 @@
 		
 		<sequential>
 			<replace file="@{filePath}" token="/ccd.uml" value="/ccd_Ecore.uml"/>
+			<replace file="@{filePath}" token="/cdt.uml" value="/cdt_Ecore.uml"/>
 			<replace file="@{filePath}" token="/ihe.uml" value="/ihe_Ecore.uml"/>
 		</sequential>
 	</macrodef>

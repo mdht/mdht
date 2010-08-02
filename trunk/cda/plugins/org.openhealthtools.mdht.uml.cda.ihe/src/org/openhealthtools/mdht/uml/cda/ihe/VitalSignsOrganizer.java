@@ -9,6 +9,7 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,6 +60,18 @@ public interface VitalSignsOrganizer extends org.openhealthtools.mdht.uml.cda.cc
 	 * @generated
 	 */
 	boolean validateIHEVitalSignsOrganizerVitalSignObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ihe::VitalSignObservation)).oclAsType(ihe::VitalSignObservation)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ihe::VitalSignObservation)).oclAsType(ihe::VitalSignObservation)'"
+	 * @generated
+	 */
+	EList<VitalSignObservation> getVitalSignObservations();
 
 	/**
 	 * <!-- begin-user-doc -->

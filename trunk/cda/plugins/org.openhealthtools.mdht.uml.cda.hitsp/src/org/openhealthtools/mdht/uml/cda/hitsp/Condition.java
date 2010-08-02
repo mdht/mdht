@@ -15,7 +15,9 @@ package org.openhealthtools.mdht.uml.cda.hitsp;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +26,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getCondition()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.7' constraints.validation.error='ConditionTemplateId ConditionProblemEntry'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.7' constraints.validation.error='ConditionTemplateId ConditionConditionEntry'"
  * @generated
  */
 public interface Condition extends ProblemConcernEntry {
@@ -52,7 +54,7 @@ public interface Condition extends ProblemConcernEntry {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ihe::ProblemEntry) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)'"
 	 * @generated
 	 */
-	boolean validateConditionProblemEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateConditionConditionEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,6 +63,18 @@ public interface Condition extends ProblemConcernEntry {
 	 * @generated
 	 */
 	ConditionEntry createConditionEntry();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ihe::ProblemEntry)).oclAsType(ihe::ProblemEntry)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ihe::ProblemEntry)).oclAsType(ihe::ProblemEntry)'"
+	 * @generated
+	 */
+	EList<ProblemEntry> getConditionEntries();
 
 	/**
 	 * <!-- begin-user-doc -->

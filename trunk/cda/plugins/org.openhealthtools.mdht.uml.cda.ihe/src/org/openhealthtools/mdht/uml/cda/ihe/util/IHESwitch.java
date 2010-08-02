@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
@@ -81,6 +82,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PHRExtract;
+import org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate;
 import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
@@ -190,6 +193,17 @@ public class IHESwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case IHEPackage.IMMUNIZATION: {
+				Immunization immunization = (Immunization)theEObject;
+				T result = caseImmunization(immunization);
+				if (result == null) result = caseMedicationActivity(immunization);
+				if (result == null) result = caseSubstanceAdministration(immunization);
+				if (result == null) result = caseClinicalStatement(immunization);
+				if (result == null) result = caseAct(immunization);
+				if (result == null) result = caseInfrastructureRoot(immunization);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case IHEPackage.MEDICATIONS_ADMINISTERED_SECTION: {
 				MedicationsAdministeredSection medicationsAdministeredSection = (MedicationsAdministeredSection)theEObject;
 				T result = caseMedicationsAdministeredSection(medicationsAdministeredSection);
@@ -213,6 +227,7 @@ public class IHESwitch<T> {
 			case IHEPackage.MEDICAL_DOCUMENT: {
 				MedicalDocument medicalDocument = (MedicalDocument)theEObject;
 				T result = caseMedicalDocument(medicalDocument);
+				if (result == null) result = caseGeneralHeaderConstraints(medicalDocument);
 				if (result == null) result = caseClinicalDocument(medicalDocument);
 				if (result == null) result = caseAct(medicalDocument);
 				if (result == null) result = caseInfrastructureRoot(medicalDocument);
@@ -388,6 +403,18 @@ public class IHESwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case IHEPackage.VITAL_SIGNS_ORGANIZER: {
+				VitalSignsOrganizer vitalSignsOrganizer = (VitalSignsOrganizer)theEObject;
+				T result = caseVitalSignsOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseCCD_VitalSignsOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseClinicalStatement(vitalSignsOrganizer);
+				if (result == null) result = caseAct(vitalSignsOrganizer);
+				if (result == null) result = caseInfrastructureRoot(vitalSignsOrganizer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case IHEPackage.VITAL_SIGN_OBSERVATION: {
 				VitalSignObservation vitalSignObservation = (VitalSignObservation)theEObject;
 				T result = caseVitalSignObservation(vitalSignObservation);
@@ -410,18 +437,6 @@ public class IHESwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case IHEPackage.VITAL_SIGNS_ORGANIZER: {
-				VitalSignsOrganizer vitalSignsOrganizer = (VitalSignsOrganizer)theEObject;
-				T result = caseVitalSignsOrganizer(vitalSignsOrganizer);
-				if (result == null) result = caseCCD_VitalSignsOrganizer(vitalSignsOrganizer);
-				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
-				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
-				if (result == null) result = caseClinicalStatement(vitalSignsOrganizer);
-				if (result == null) result = caseAct(vitalSignsOrganizer);
-				if (result == null) result = caseInfrastructureRoot(vitalSignsOrganizer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case IHEPackage.PAYERS_SECTION: {
 				PayersSection payersSection = (PayersSection)theEObject;
 				T result = casePayersSection(payersSection);
@@ -429,6 +444,17 @@ public class IHESwitch<T> {
 				if (result == null) result = caseSection(payersSection);
 				if (result == null) result = caseAct(payersSection);
 				if (result == null) result = caseInfrastructureRoot(payersSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.COVERAGE_ENTRY: {
+				CoverageEntry coverageEntry = (CoverageEntry)theEObject;
+				T result = caseCoverageEntry(coverageEntry);
+				if (result == null) result = caseCoverageActivity(coverageEntry);
+				if (result == null) result = caseCDA_Act(coverageEntry);
+				if (result == null) result = caseClinicalStatement(coverageEntry);
+				if (result == null) result = caseAct(coverageEntry);
+				if (result == null) result = caseInfrastructureRoot(coverageEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -662,6 +688,7 @@ public class IHESwitch<T> {
 				MedicalSummary medicalSummary = (MedicalSummary)theEObject;
 				T result = caseMedicalSummary(medicalSummary);
 				if (result == null) result = caseMedicalDocument(medicalSummary);
+				if (result == null) result = caseGeneralHeaderConstraints(medicalSummary);
 				if (result == null) result = caseClinicalDocument(medicalSummary);
 				if (result == null) result = caseAct(medicalSummary);
 				if (result == null) result = caseInfrastructureRoot(medicalSummary);
@@ -673,20 +700,10 @@ public class IHESwitch<T> {
 				T result = caseDischargeSummary(dischargeSummary);
 				if (result == null) result = caseMedicalSummary(dischargeSummary);
 				if (result == null) result = caseMedicalDocument(dischargeSummary);
+				if (result == null) result = caseGeneralHeaderConstraints(dischargeSummary);
 				if (result == null) result = caseClinicalDocument(dischargeSummary);
 				if (result == null) result = caseAct(dischargeSummary);
 				if (result == null) result = caseInfrastructureRoot(dischargeSummary);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case IHEPackage.COVERAGE_ENTRY: {
-				CoverageEntry coverageEntry = (CoverageEntry)theEObject;
-				T result = caseCoverageEntry(coverageEntry);
-				if (result == null) result = caseCoverageActivity(coverageEntry);
-				if (result == null) result = caseCDA_Act(coverageEntry);
-				if (result == null) result = caseClinicalStatement(coverageEntry);
-				if (result == null) result = caseAct(coverageEntry);
-				if (result == null) result = caseInfrastructureRoot(coverageEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -696,17 +713,6 @@ public class IHESwitch<T> {
 				if (result == null) result = casePerformer1(healthcareProvidersPharmacies);
 				if (result == null) result = caseParticipation(healthcareProvidersPharmacies);
 				if (result == null) result = caseInfrastructureRoot(healthcareProvidersPharmacies);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case IHEPackage.IMMUNIZATION: {
-				Immunization immunization = (Immunization)theEObject;
-				T result = caseImmunization(immunization);
-				if (result == null) result = caseMedicationActivity(immunization);
-				if (result == null) result = caseSubstanceAdministration(immunization);
-				if (result == null) result = caseClinicalStatement(immunization);
-				if (result == null) result = caseAct(immunization);
-				if (result == null) result = caseInfrastructureRoot(immunization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -782,6 +788,30 @@ public class IHESwitch<T> {
 				if (result == null) result = caseClinicalStatement(payerEntry);
 				if (result == null) result = caseAct(payerEntry);
 				if (result == null) result = caseInfrastructureRoot(payerEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PHR_EXTRACT: {
+				PHRExtract phrExtract = (PHRExtract)theEObject;
+				T result = casePHRExtract(phrExtract);
+				if (result == null) result = caseMedicalSummary(phrExtract);
+				if (result == null) result = caseMedicalDocument(phrExtract);
+				if (result == null) result = caseGeneralHeaderConstraints(phrExtract);
+				if (result == null) result = caseClinicalDocument(phrExtract);
+				if (result == null) result = caseAct(phrExtract);
+				if (result == null) result = caseInfrastructureRoot(phrExtract);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PHR_UPDATE: {
+				PHRUpdate phrUpdate = (PHRUpdate)theEObject;
+				T result = casePHRUpdate(phrUpdate);
+				if (result == null) result = caseMedicalSummary(phrUpdate);
+				if (result == null) result = caseMedicalDocument(phrUpdate);
+				if (result == null) result = caseGeneralHeaderConstraints(phrUpdate);
+				if (result == null) result = caseClinicalDocument(phrUpdate);
+				if (result == null) result = caseAct(phrUpdate);
+				if (result == null) result = caseInfrastructureRoot(phrUpdate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1682,6 +1712,36 @@ public class IHESwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PHR Extract</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PHR Extract</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePHRExtract(PHRExtract object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PHR Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PHR Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePHRUpdate(PHRUpdate object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1813,6 +1873,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseClinicalDocument(ClinicalDocument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>General Header Constraints</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGeneralHeaderConstraints(GeneralHeaderConstraints object) {
 		return null;
 	}
 

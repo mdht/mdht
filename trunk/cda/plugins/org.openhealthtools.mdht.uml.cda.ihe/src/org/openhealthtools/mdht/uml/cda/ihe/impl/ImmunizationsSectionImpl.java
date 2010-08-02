@@ -9,8 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.Immunization;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ImmunizationsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -60,6 +62,15 @@ public class ImmunizationsSectionImpl extends org.openhealthtools.mdht.uml.cda.c
 	 */
 	public boolean validateIHEImmunizationsSectionImmunization(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ImmunizationsSectionOperations.validateIHEImmunizationsSectionImmunization(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Immunization> getImmunizations() {
+		return ImmunizationsSectionOperations.getImmunizations(this);
 	}
 
 	/**

@@ -6,9 +6,14 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.impl;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
+import org.openhealthtools.mdht.uml.cda.cdt.operations.HistoryOfPresentIllnessOperations;
+import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -20,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class HistoryOfPresentIllnessImpl extends org.openhealthtools.mdht.uml.cda.ihe.impl.HistoryOfPresentIllnessImpl implements HistoryOfPresentIllness {
+public class HistoryOfPresentIllnessImpl extends SectionImpl implements HistoryOfPresentIllness {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +43,24 @@ public class HistoryOfPresentIllnessImpl extends org.openhealthtools.mdht.uml.cd
 	@Override
 	protected EClass eStaticClass() {
 		return CDTPackage.Literals.HISTORY_OF_PRESENT_ILLNESS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHistoryOfPresentIllnessTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHistoryOfPresentIllnessCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessCode(this, diagnostics, context);
 	}
 
 	/**

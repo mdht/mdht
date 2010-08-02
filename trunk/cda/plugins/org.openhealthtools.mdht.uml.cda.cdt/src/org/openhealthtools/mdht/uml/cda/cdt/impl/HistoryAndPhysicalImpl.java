@@ -10,8 +10,22 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
+import org.openhealthtools.mdht.uml.cda.cdt.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical;
+import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
+import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.HistoryAndPhysicalOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -149,8 +163,8 @@ public class HistoryAndPhysicalImpl extends GeneralHeaderConstraintsImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryAndPhysicalReviewOfSystemsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalReviewOfSystemsSection(this, diagnostics, context);
+	public boolean validateHistoryAndPhysicalReviewOfSystemsSectionIHE(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalReviewOfSystemsSectionIHE(this, diagnostics, context);
 	}
 
 	/**
@@ -185,8 +199,8 @@ public class HistoryAndPhysicalImpl extends GeneralHeaderConstraintsImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryAndPhysicalResultsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalResultsSection(this, diagnostics, context);
+	public boolean validateHistoryAndPhysicalDiagnosticFindings(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalDiagnosticFindings(this, diagnostics, context);
 	}
 
 	/**
@@ -214,6 +228,132 @@ public class HistoryAndPhysicalImpl extends GeneralHeaderConstraintsImpl impleme
 	 */
 	public boolean validateHistoryAndPhysicalImmunizationsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalImmunizationsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HistoryOfPresentIllness getHistoryOfPresentIllness() {
+		return HistoryAndPhysicalOperations.getHistoryOfPresentIllness(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PastMedicalHistorySection getPastMedicalHistorySection() {
+		return HistoryAndPhysicalOperations.getPastMedicalHistorySection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationsSection getMedicationsSection() {
+		return HistoryAndPhysicalOperations.getMedicationsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlertsSection getAlertsSection() {
+		return HistoryAndPhysicalOperations.getAlertsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SocialHistorySection getSocialHistorySection() {
+		return HistoryAndPhysicalOperations.getSocialHistorySection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FamilyHistorySection getFamilyHistorySection() {
+		return HistoryAndPhysicalOperations.getFamilyHistorySection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReviewOfSystemsSectionIHE getReviewOfSystemsSectionIHE() {
+		return HistoryAndPhysicalOperations.getReviewOfSystemsSectionIHE(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PhysicalExaminationSection getPhysicalExaminationSection() {
+		return HistoryAndPhysicalOperations.getPhysicalExaminationSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsSection getVitalSignsSection() {
+		return HistoryAndPhysicalOperations.getVitalSignsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeneralStatusSection getGeneralStatusSection() {
+		return HistoryAndPhysicalOperations.getGeneralStatusSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResultsSection getDiagnosticFindings() {
+		return HistoryAndPhysicalOperations.getDiagnosticFindings(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemSection getProblemSection() {
+		return HistoryAndPhysicalOperations.getProblemSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProceduresSection getProceduresSection() {
+		return HistoryAndPhysicalOperations.getProceduresSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImmunizationsSection getImmunizationsSection() {
+		return HistoryAndPhysicalOperations.getImmunizationsSection(this);
 	}
 
 	/**

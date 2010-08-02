@@ -59,6 +59,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PHRExtract;
+import org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate;
 import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
@@ -124,6 +126,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case IHEPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
+			case IHEPackage.IMMUNIZATION: return createImmunization();
 			case IHEPackage.MEDICATIONS_ADMINISTERED_SECTION: return createMedicationsAdministeredSection();
 			case IHEPackage.CONCERN_ENTRY: return createConcernEntry();
 			case IHEPackage.MEDICAL_DOCUMENT: return createMedicalDocument();
@@ -142,9 +145,10 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.COMBINATION_MEDICATION: return createCombinationMedication();
 			case IHEPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
 			case IHEPackage.CODED_VITAL_SIGNS_SECTION: return createCodedVitalSignsSection();
-			case IHEPackage.VITAL_SIGN_OBSERVATION: return createVitalSignObservation();
 			case IHEPackage.VITAL_SIGNS_ORGANIZER: return createVitalSignsOrganizer();
+			case IHEPackage.VITAL_SIGN_OBSERVATION: return createVitalSignObservation();
 			case IHEPackage.PAYERS_SECTION: return createPayersSection();
+			case IHEPackage.COVERAGE_ENTRY: return createCoverageEntry();
 			case IHEPackage.HISTORY_OF_PAST_ILLNESS_SECTION: return createHistoryOfPastIllnessSection();
 			case IHEPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
 			case IHEPackage.REASON_FOR_REFERRAL_SECTION: return createReasonForReferralSection();
@@ -171,9 +175,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.LANGUAGE_COMMUNICATION: return createLanguageCommunication();
 			case IHEPackage.MEDICAL_SUMMARY: return createMedicalSummary();
 			case IHEPackage.DISCHARGE_SUMMARY: return createDischargeSummary();
-			case IHEPackage.COVERAGE_ENTRY: return createCoverageEntry();
 			case IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES: return createHealthcareProvidersPharmacies();
-			case IHEPackage.IMMUNIZATION: return createImmunization();
 			case IHEPackage.OBSERVATION_REQUEST_ENTRY: return createObservationRequestEntry();
 			case IHEPackage.PRODUCT_ENTRY: return createProductEntry();
 			case IHEPackage.PROCEDURE_ENTRY: return createProcedureEntry();
@@ -181,6 +183,8 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE: return createProcedureEntryPlanOfCareActivityProcedure();
 			case IHEPackage.COMMENT: return createComment();
 			case IHEPackage.PAYER_ENTRY: return createPayerEntry();
+			case IHEPackage.PHR_EXTRACT: return createPHRExtract();
+			case IHEPackage.PHR_UPDATE: return createPHRUpdate();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -765,6 +769,26 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public PayerEntry createPayerEntry() {
 		PayerEntryImpl payerEntry = new PayerEntryImpl();
 		return payerEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PHRExtract createPHRExtract() {
+		PHRExtractImpl phrExtract = new PHRExtractImpl();
+		return phrExtract;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PHRUpdate createPHRUpdate() {
+		PHRUpdateImpl phrUpdate = new PHRUpdateImpl();
+		return phrUpdate;
 	}
 
 	/**

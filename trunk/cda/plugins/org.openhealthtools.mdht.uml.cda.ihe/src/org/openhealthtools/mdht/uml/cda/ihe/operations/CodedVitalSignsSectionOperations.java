@@ -6,17 +6,23 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -29,6 +35,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection#validateCodedVitalSignsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Vital Signs Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection#validateCodedVitalSignsSectionVitalSignsOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Vital Signs Section Vital Signs Organizer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection#getVitalSignsOrganizers() <em>Get Vital Signs Organizers</em>}</li>
  * </ul>
  * </p>
  *
@@ -156,6 +163,52 @@ public class CodedVitalSignsSectionOperations extends VitalSignsSectionOperation
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getVitalSignsOrganizers(CodedVitalSignsSection) <em>Get Vital Signs Organizers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVitalSignsOrganizers(CodedVitalSignsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_VITAL_SIGNS_ORGANIZERS__EOCL_EXP = "self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(ihe::VitalSignsOrganizer)).oclAsType(ihe::VitalSignsOrganizer)";
+
+	/**
+	 * The cached OCL query for the '{@link #getVitalSignsOrganizers(CodedVitalSignsSection) <em>Get Vital Signs Organizers</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVitalSignsOrganizers(CodedVitalSignsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_VITAL_SIGNS_ORGANIZERS__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(ihe::VitalSignsOrganizer)).oclAsType(ihe::VitalSignsOrganizer)
+	 * @param codedVitalSignsSection The receiving '<em><b>Coded Vital Signs Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EList<VitalSignsOrganizer> getVitalSignsOrganizers(CodedVitalSignsSection codedVitalSignsSection) {
+		if (GET_VITAL_SIGNS_ORGANIZERS__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(IHEPackage.Literals.CODED_VITAL_SIGNS_SECTION, IHEPackage.Literals.CODED_VITAL_SIGNS_SECTION.getEAllOperations().get(56));
+			try {
+				GET_VITAL_SIGNS_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_VITAL_SIGNS_ORGANIZERS__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_VITAL_SIGNS_ORGANIZERS__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<VitalSignsOrganizer> result = (Collection<VitalSignsOrganizer>) query.evaluate(codedVitalSignsSection);
+		return new BasicEList.UnmodifiableEList<VitalSignsOrganizer>(result.size(), result.toArray());
 	}
 
 } // CodedVitalSignsSectionOperations

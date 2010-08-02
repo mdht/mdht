@@ -15,10 +15,12 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemSectionImpl;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ActiveProblemsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -67,6 +69,15 @@ public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements Act
 	 */
 	public boolean validateActiveProblemsSectionProblemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ActiveProblemsSectionOperations.validateActiveProblemsSectionProblemConcernEntry(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ProblemConcernEntry> getProblemConcernEntries() {
+		return ActiveProblemsSectionOperations.getProblemConcernEntries(this);
 	}
 
 	/**
