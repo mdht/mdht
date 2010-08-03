@@ -193,7 +193,7 @@ associated adverse reactions suffered by the patient.</body>
         <body>The vital signs section contains coded measurement results of a patient's vital signs.</body>
       </ownedComment>
       <generalization xmi:id="_8EJ0EK4FEd6_ioDelDcPPg" general="_iFB1EK4EEd6_ioDelDcPPg"/>
-      <ownedAttribute xmi:id="_wHDyIK4UEd6_ioDelDcPPg" name="iheVitalSignsOrganizer" visibility="private" type="_hVMdIK4QEd6_ioDelDcPPg" association="_wHB88K4UEd6_ioDelDcPPg">
+      <ownedAttribute xmi:id="_wHDyIK4UEd6_ioDelDcPPg" name="vitalSignsOrganizer" visibility="private" type="_hVMdIK4QEd6_ioDelDcPPg" association="_wHB88K4UEd6_ioDelDcPPg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wHEZMa4UEd6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wHEZMK4UEd6_ioDelDcPPg" value="1"/>
       </ownedAttribute>

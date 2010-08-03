@@ -9,9 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CodedVitalSignsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -60,6 +62,15 @@ public class CodedVitalSignsSectionImpl extends VitalSignsSectionImpl implements
 	 */
 	public boolean validateCodedVitalSignsSectionVitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionVitalSignsOrganizer(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<VitalSignsOrganizer> getIHEVitalSignsOrganizers() {
+		return CodedVitalSignsSectionOperations.getIHEVitalSignsOrganizers(this);
 	}
 
 	/**

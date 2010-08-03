@@ -1710,7 +1710,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(codedVitalSignsSectionEClass, this.getVitalSignsOrganizer(), "getVitalSignsOrganizers", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(codedVitalSignsSectionEClass, this.getVitalSignsOrganizer(), "getIHEVitalSignsOrganizers", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(vitalSignsOrganizerEClass, VitalSignsOrganizer.class, "VitalSignsOrganizer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

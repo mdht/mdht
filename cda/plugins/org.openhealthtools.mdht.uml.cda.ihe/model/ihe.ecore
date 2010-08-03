@@ -817,8 +817,8 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="getVitalSignsOrganizers" ordered="false" lowerBound="1" upperBound="-1"
-        eType="#//VitalSignsOrganizer">
+    <eOperations name="getIHEVitalSignsOrganizers" ordered="false" lowerBound="1"
+        upperBound="-1" eType="#//VitalSignsOrganizer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(ihe::VitalSignsOrganizer)).oclAsType(ihe::VitalSignsOrganizer)"/>
       </eAnnotations>

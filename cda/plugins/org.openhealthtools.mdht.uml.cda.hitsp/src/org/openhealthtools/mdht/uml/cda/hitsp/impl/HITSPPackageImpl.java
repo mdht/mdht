@@ -1234,19 +1234,19 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 
 		addEOperation(patientSummaryEClass, this.getMedicationsSection(), "createMedicationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(patientSummaryEClass, this.getAdvanceDirectivesSection(), "getAdvanceDirectivesSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(patientSummaryEClass, this.getAdvanceDirectivesSection(), "getHITSPAdvanceDirectivesSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(patientSummaryEClass, this.getAllergiesReactionsSection(), "getAllergiesReactionsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(patientSummaryEClass, this.getProblemListSection(), "getProblemListSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(patientSummaryEClass, this.getEncountersSection(), "getEncountersSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(patientSummaryEClass, this.getEncountersSection(), "getHITSPEncountersSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(patientSummaryEClass, this.getImmunizationsSection(), "getImmunizationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(patientSummaryEClass, this.getImmunizationsSection(), "getHITSPImmunizationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(patientSummaryEClass, this.getPayersSection(), "getPayersSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(patientSummaryEClass, this.getPayersSection(), "getHITSPPayersSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(patientSummaryEClass, this.getMedicationsSection(), "getMedicationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(patientSummaryEClass, this.getMedicationsSection(), "getHITSPMedicationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(problemListSectionEClass, ProblemListSection.class, "ProblemListSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1334,7 +1334,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(immunizationsSectionEClass, this.getImmunization(), "getImmunizations", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(immunizationsSectionEClass, this.getImmunization(), "getHITSPImmunizations", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(immunizationEClass, Immunization.class, "Immunization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

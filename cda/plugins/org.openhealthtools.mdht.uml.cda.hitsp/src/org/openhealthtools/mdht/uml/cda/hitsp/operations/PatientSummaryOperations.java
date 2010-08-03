@@ -55,13 +55,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#validatePatientSummaryMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#createProblemListSection() <em>Create Problem List Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#createMedicationsSection() <em>Create Medications Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getAdvanceDirectivesSection() <em>Get Advance Directives Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getHITSPAdvanceDirectivesSection() <em>Get HITSP Advance Directives Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getAllergiesReactionsSection() <em>Get Allergies Reactions Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getProblemListSection() <em>Get Problem List Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getEncountersSection() <em>Get Encounters Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getImmunizationsSection() <em>Get Immunizations Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getPayersSection() <em>Get Payers Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getMedicationsSection() <em>Get Medications Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getHITSPEncountersSection() <em>Get HITSP Encounters Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getHITSPImmunizationsSection() <em>Get HITSP Immunizations Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getHITSPPayersSection() <em>Get HITSP Payers Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#getHITSPMedicationsSection() <em>Get HITSP Medications Section</em>}</li>
  * </ul>
  * </p>
  *
@@ -552,23 +552,23 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getAdvanceDirectivesSection(PatientSummary) <em>Get Advance Directives Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getHITSPAdvanceDirectivesSection(PatientSummary) <em>Get HITSP Advance Directives Section</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAdvanceDirectivesSection(PatientSummary)
+	 * @see #getHITSPAdvanceDirectivesSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ADVANCE_DIRECTIVES_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::AdvanceDirectivesSection))->asSequence()->first().oclAsType(hitsp::AdvanceDirectivesSection)";
+	protected static final String GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::AdvanceDirectivesSection))->asSequence()->first().oclAsType(hitsp::AdvanceDirectivesSection)";
 	/**
-	 * The cached OCL query for the '{@link #getAdvanceDirectivesSection(PatientSummary) <em>Get Advance Directives Section</em>}' query operation.
+	 * The cached OCL query for the '{@link #getHITSPAdvanceDirectivesSection(PatientSummary) <em>Get HITSP Advance Directives Section</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAdvanceDirectivesSection(PatientSummary)
+	 * @see #getHITSPAdvanceDirectivesSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -579,18 +579,18 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  AdvanceDirectivesSection getAdvanceDirectivesSection(PatientSummary patientSummary) {
-		if (GET_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY == null) {
+	public static  AdvanceDirectivesSection getHITSPAdvanceDirectivesSection(PatientSummary patientSummary) {
+		if (GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(88));
 			try {
-				GET_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY = helper.createQuery(GET_ADVANCE_DIRECTIVES_SECTION__EOCL_EXP);
+				GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY);
 		return (AdvanceDirectivesSection) query.evaluate(patientSummary);
 	}
 
@@ -681,23 +681,23 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getEncountersSection(PatientSummary) <em>Get Encounters Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getHITSPEncountersSection(PatientSummary) <em>Get HITSP Encounters Section</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncountersSection(PatientSummary)
+	 * @see #getHITSPEncountersSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ENCOUNTERS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::EncountersSection))->asSequence()->first().oclAsType(hitsp::EncountersSection)";
+	protected static final String GET_HITSP_ENCOUNTERS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::EncountersSection))->asSequence()->first().oclAsType(hitsp::EncountersSection)";
 	/**
-	 * The cached OCL query for the '{@link #getEncountersSection(PatientSummary) <em>Get Encounters Section</em>}' query operation.
+	 * The cached OCL query for the '{@link #getHITSPEncountersSection(PatientSummary) <em>Get HITSP Encounters Section</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncountersSection(PatientSummary)
+	 * @see #getHITSPEncountersSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_ENCOUNTERS_SECTION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_HITSP_ENCOUNTERS_SECTION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -708,39 +708,39 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EncountersSection getEncountersSection(PatientSummary patientSummary) {
-		if (GET_ENCOUNTERS_SECTION__EOCL_QRY == null) {
+	public static  EncountersSection getHITSPEncountersSection(PatientSummary patientSummary) {
+		if (GET_HITSP_ENCOUNTERS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(91));
 			try {
-				GET_ENCOUNTERS_SECTION__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS_SECTION__EOCL_EXP);
+				GET_HITSP_ENCOUNTERS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_ENCOUNTERS_SECTION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ENCOUNTERS_SECTION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_HITSP_ENCOUNTERS_SECTION__EOCL_QRY);
 		return (EncountersSection) query.evaluate(patientSummary);
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getImmunizationsSection(PatientSummary) <em>Get Immunizations Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getHITSPImmunizationsSection(PatientSummary) <em>Get HITSP Immunizations Section</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImmunizationsSection(PatientSummary)
+	 * @see #getHITSPImmunizationsSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_IMMUNIZATIONS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::ImmunizationsSection))->asSequence()->first().oclAsType(hitsp::ImmunizationsSection)";
+	protected static final String GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::ImmunizationsSection))->asSequence()->first().oclAsType(hitsp::ImmunizationsSection)";
 	/**
-	 * The cached OCL query for the '{@link #getImmunizationsSection(PatientSummary) <em>Get Immunizations Section</em>}' query operation.
+	 * The cached OCL query for the '{@link #getHITSPImmunizationsSection(PatientSummary) <em>Get HITSP Immunizations Section</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImmunizationsSection(PatientSummary)
+	 * @see #getHITSPImmunizationsSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_IMMUNIZATIONS_SECTION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -751,39 +751,39 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  ImmunizationsSection getImmunizationsSection(PatientSummary patientSummary) {
-		if (GET_IMMUNIZATIONS_SECTION__EOCL_QRY == null) {
+	public static  ImmunizationsSection getHITSPImmunizationsSection(PatientSummary patientSummary) {
+		if (GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(92));
 			try {
-				GET_IMMUNIZATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_IMMUNIZATIONS_SECTION__EOCL_EXP);
+				GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_IMMUNIZATIONS_SECTION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_QRY);
 		return (ImmunizationsSection) query.evaluate(patientSummary);
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getPayersSection(PatientSummary) <em>Get Payers Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getHITSPPayersSection(PatientSummary) <em>Get HITSP Payers Section</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPayersSection(PatientSummary)
+	 * @see #getHITSPPayersSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PAYERS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::PayersSection))->asSequence()->first().oclAsType(hitsp::PayersSection)";
+	protected static final String GET_HITSP_PAYERS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::PayersSection))->asSequence()->first().oclAsType(hitsp::PayersSection)";
 	/**
-	 * The cached OCL query for the '{@link #getPayersSection(PatientSummary) <em>Get Payers Section</em>}' query operation.
+	 * The cached OCL query for the '{@link #getHITSPPayersSection(PatientSummary) <em>Get HITSP Payers Section</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPayersSection(PatientSummary)
+	 * @see #getHITSPPayersSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PAYERS_SECTION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_HITSP_PAYERS_SECTION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -794,39 +794,39 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  PayersSection getPayersSection(PatientSummary patientSummary) {
-		if (GET_PAYERS_SECTION__EOCL_QRY == null) {
+	public static  PayersSection getHITSPPayersSection(PatientSummary patientSummary) {
+		if (GET_HITSP_PAYERS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(93));
 			try {
-				GET_PAYERS_SECTION__EOCL_QRY = helper.createQuery(GET_PAYERS_SECTION__EOCL_EXP);
+				GET_HITSP_PAYERS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_PAYERS_SECTION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PAYERS_SECTION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_HITSP_PAYERS_SECTION__EOCL_QRY);
 		return (PayersSection) query.evaluate(patientSummary);
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getMedicationsSection(PatientSummary) <em>Get Medications Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getHITSPMedicationsSection(PatientSummary) <em>Get HITSP Medications Section</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMedicationsSection(PatientSummary)
+	 * @see #getHITSPMedicationsSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_MEDICATIONS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::MedicationsSection))->asSequence()->first().oclAsType(hitsp::MedicationsSection)";
+	protected static final String GET_HITSP_MEDICATIONS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::MedicationsSection))->asSequence()->first().oclAsType(hitsp::MedicationsSection)";
 	/**
-	 * The cached OCL query for the '{@link #getMedicationsSection(PatientSummary) <em>Get Medications Section</em>}' query operation.
+	 * The cached OCL query for the '{@link #getHITSPMedicationsSection(PatientSummary) <em>Get HITSP Medications Section</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMedicationsSection(PatientSummary)
+	 * @see #getHITSPMedicationsSection(PatientSummary)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_MEDICATIONS_SECTION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_HITSP_MEDICATIONS_SECTION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -837,18 +837,18 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  MedicationsSection getMedicationsSection(PatientSummary patientSummary) {
-		if (GET_MEDICATIONS_SECTION__EOCL_QRY == null) {
+	public static  MedicationsSection getHITSPMedicationsSection(PatientSummary patientSummary) {
+		if (GET_HITSP_MEDICATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(94));
 			try {
-				GET_MEDICATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_MEDICATIONS_SECTION__EOCL_EXP);
+				GET_HITSP_MEDICATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_MEDICATIONS_SECTION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_MEDICATIONS_SECTION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_HITSP_MEDICATIONS_SECTION__EOCL_QRY);
 		return (MedicationsSection) query.evaluate(patientSummary);
 	}
 
