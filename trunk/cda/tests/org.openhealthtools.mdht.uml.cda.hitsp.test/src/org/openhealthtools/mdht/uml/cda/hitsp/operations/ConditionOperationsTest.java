@@ -63,7 +63,7 @@ public class ConditionOperationsTest extends ProblemConcernEntryOperationsTest {
 			protected boolean validate(final EObject objectToTest,
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
-				return ConditionOperations.validateConditionProblemEntry(
+				return ConditionOperations.validateConditionConditionEntry(
 						(Condition) objectToTest, diagnostician, map);
 			}
 
