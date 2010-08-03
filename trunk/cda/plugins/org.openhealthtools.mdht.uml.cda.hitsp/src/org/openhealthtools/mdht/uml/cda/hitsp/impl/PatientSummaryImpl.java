@@ -281,8 +281,8 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AdvanceDirectivesSection getAdvanceDirectivesSection() {
-		return PatientSummaryOperations.getAdvanceDirectivesSection(this);
+	public AdvanceDirectivesSection getHITSPAdvanceDirectivesSection() {
+		return PatientSummaryOperations.getHITSPAdvanceDirectivesSection(this);
 	}
 
 	/**
@@ -308,8 +308,8 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EncountersSection getEncountersSection() {
-		return PatientSummaryOperations.getEncountersSection(this);
+	public EncountersSection getHITSPEncountersSection() {
+		return PatientSummaryOperations.getHITSPEncountersSection(this);
 	}
 
 	/**
@@ -317,8 +317,8 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImmunizationsSection getImmunizationsSection() {
-		return PatientSummaryOperations.getImmunizationsSection(this);
+	public ImmunizationsSection getHITSPImmunizationsSection() {
+		return PatientSummaryOperations.getHITSPImmunizationsSection(this);
 	}
 
 	/**
@@ -326,8 +326,8 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PayersSection getPayersSection() {
-		return PatientSummaryOperations.getPayersSection(this);
+	public PayersSection getHITSPPayersSection() {
+		return PatientSummaryOperations.getHITSPPayersSection(this);
 	}
 
 	/**
@@ -335,8 +335,8 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MedicationsSection getMedicationsSection() {
-		return PatientSummaryOperations.getMedicationsSection(this);
+	public MedicationsSection getHITSPMedicationsSection() {
+		return PatientSummaryOperations.getHITSPMedicationsSection(this);
 	}
 
 	/**

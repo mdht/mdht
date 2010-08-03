@@ -364,7 +364,7 @@
     </eOperations>
     <eOperations name="createProblemListSection" ordered="false" lowerBound="1" eType="#//ProblemListSection"/>
     <eOperations name="createMedicationsSection" ordered="false" lowerBound="1" eType="#//MedicationsSection"/>
-    <eOperations name="getAdvanceDirectivesSection" ordered="false" lowerBound="1"
+    <eOperations name="getHITSPAdvanceDirectivesSection" ordered="false" lowerBound="1"
         eType="#//AdvanceDirectivesSection">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::AdvanceDirectivesSection))->asSequence()->first().oclAsType(hitsp::AdvanceDirectivesSection)"/>
@@ -390,7 +390,7 @@
         <details key="body" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::ProblemListSection))->asSequence()->first().oclAsType(hitsp::ProblemListSection)"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getEncountersSection" ordered="false" lowerBound="1" eType="#//EncountersSection">
+    <eOperations name="getHITSPEncountersSection" ordered="false" lowerBound="1" eType="#//EncountersSection">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::EncountersSection))->asSequence()->first().oclAsType(hitsp::EncountersSection)"/>
       </eAnnotations>
@@ -398,7 +398,8 @@
         <details key="body" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::EncountersSection))->asSequence()->first().oclAsType(hitsp::EncountersSection)"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getImmunizationsSection" ordered="false" lowerBound="1" eType="#//ImmunizationsSection">
+    <eOperations name="getHITSPImmunizationsSection" ordered="false" lowerBound="1"
+        eType="#//ImmunizationsSection">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::ImmunizationsSection))->asSequence()->first().oclAsType(hitsp::ImmunizationsSection)"/>
       </eAnnotations>
@@ -406,7 +407,7 @@
         <details key="body" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::ImmunizationsSection))->asSequence()->first().oclAsType(hitsp::ImmunizationsSection)"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getPayersSection" ordered="false" lowerBound="1" eType="#//PayersSection">
+    <eOperations name="getHITSPPayersSection" ordered="false" lowerBound="1" eType="#//PayersSection">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::PayersSection))->asSequence()->first().oclAsType(hitsp::PayersSection)"/>
       </eAnnotations>
@@ -414,7 +415,8 @@
         <details key="body" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::PayersSection))->asSequence()->first().oclAsType(hitsp::PayersSection)"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getMedicationsSection" ordered="false" lowerBound="1" eType="#//MedicationsSection">
+    <eOperations name="getHITSPMedicationsSection" ordered="false" lowerBound="1"
+        eType="#//MedicationsSection">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::MedicationsSection))->asSequence()->first().oclAsType(hitsp::MedicationsSection)"/>
       </eAnnotations>
@@ -661,7 +663,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="getImmunizations" ordered="false" lowerBound="1" upperBound="-1"
+    <eOperations name="getHITSPImmunizations" ordered="false" lowerBound="1" upperBound="-1"
         eType="#//Immunization">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getSubstanceAdministrations()->select(substanceAdministration : cda::SubstanceAdministration | not substanceAdministration.oclIsUndefined() and substanceAdministration.oclIsKindOf(hitsp::Immunization)).oclAsType(hitsp::Immunization)"/>

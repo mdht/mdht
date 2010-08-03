@@ -35,7 +35,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#validateHITSPImmunizationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunizations Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#validateHITSPImmunizationsSectionImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunizations Section Immunization</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#getImmunizations() <em>Get Immunizations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#getHITSPImmunizations() <em>Get HITSP Immunizations</em>}</li>
  * </ul>
  * </p>
  *
@@ -166,24 +166,24 @@ public class ImmunizationsSectionOperations extends org.openhealthtools.mdht.uml
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getImmunizations(ImmunizationsSection) <em>Get Immunizations</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getHITSPImmunizations(ImmunizationsSection) <em>Get HITSP Immunizations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImmunizations(ImmunizationsSection)
+	 * @see #getHITSPImmunizations(ImmunizationsSection)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_IMMUNIZATIONS__EOCL_EXP = "self.getSubstanceAdministrations()->select(substanceAdministration : cda::SubstanceAdministration | not substanceAdministration.oclIsUndefined() and substanceAdministration.oclIsKindOf(hitsp::Immunization)).oclAsType(hitsp::Immunization)";
+	protected static final String GET_HITSP_IMMUNIZATIONS__EOCL_EXP = "self.getSubstanceAdministrations()->select(substanceAdministration : cda::SubstanceAdministration | not substanceAdministration.oclIsUndefined() and substanceAdministration.oclIsKindOf(hitsp::Immunization)).oclAsType(hitsp::Immunization)";
 
 	/**
-	 * The cached OCL query for the '{@link #getImmunizations(ImmunizationsSection) <em>Get Immunizations</em>}' query operation.
+	 * The cached OCL query for the '{@link #getHITSPImmunizations(ImmunizationsSection) <em>Get HITSP Immunizations</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImmunizations(ImmunizationsSection)
+	 * @see #getHITSPImmunizations(ImmunizationsSection)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_IMMUNIZATIONS__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_HITSP_IMMUNIZATIONS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,18 +194,18 @@ public class ImmunizationsSectionOperations extends org.openhealthtools.mdht.uml
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Immunization> getImmunizations(ImmunizationsSection immunizationsSection) {
-		if (GET_IMMUNIZATIONS__EOCL_QRY == null) {
+	public static  EList<Immunization> getHITSPImmunizations(ImmunizationsSection immunizationsSection) {
+		if (GET_HITSP_IMMUNIZATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(HITSPPackage.Literals.IMMUNIZATIONS_SECTION, HITSPPackage.Literals.IMMUNIZATIONS_SECTION.getEAllOperations().get(57));
 			try {
-				GET_IMMUNIZATIONS__EOCL_QRY = helper.createQuery(GET_IMMUNIZATIONS__EOCL_EXP);
+				GET_HITSP_IMMUNIZATIONS__EOCL_QRY = helper.createQuery(GET_HITSP_IMMUNIZATIONS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_IMMUNIZATIONS__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_HITSP_IMMUNIZATIONS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Immunization> result = (Collection<Immunization>) query.evaluate(immunizationsSection);
 		return new BasicEList.UnmodifiableEList<Immunization>(result.size(), result.toArray());

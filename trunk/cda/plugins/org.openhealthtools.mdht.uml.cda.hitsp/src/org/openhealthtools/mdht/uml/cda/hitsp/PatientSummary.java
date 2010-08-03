@@ -160,7 +160,7 @@ public interface PatientSummary extends ContinuityOfCareDocument, MedicalDocumen
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::AdvanceDirectivesSection))->asSequence()->first().oclAsType(hitsp::AdvanceDirectivesSection)'"
 	 * @generated
 	 */
-	AdvanceDirectivesSection getAdvanceDirectivesSection();
+	AdvanceDirectivesSection getHITSPAdvanceDirectivesSection();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,7 +196,7 @@ public interface PatientSummary extends ContinuityOfCareDocument, MedicalDocumen
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::EncountersSection))->asSequence()->first().oclAsType(hitsp::EncountersSection)'"
 	 * @generated
 	 */
-	EncountersSection getEncountersSection();
+	EncountersSection getHITSPEncountersSection();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface PatientSummary extends ContinuityOfCareDocument, MedicalDocumen
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::ImmunizationsSection))->asSequence()->first().oclAsType(hitsp::ImmunizationsSection)'"
 	 * @generated
 	 */
-	ImmunizationsSection getImmunizationsSection();
+	ImmunizationsSection getHITSPImmunizationsSection();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface PatientSummary extends ContinuityOfCareDocument, MedicalDocumen
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::PayersSection))->asSequence()->first().oclAsType(hitsp::PayersSection)'"
 	 * @generated
 	 */
-	PayersSection getPayersSection();
+	PayersSection getHITSPPayersSection();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +232,7 @@ public interface PatientSummary extends ContinuityOfCareDocument, MedicalDocumen
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(hitsp::MedicationsSection))->asSequence()->first().oclAsType(hitsp::MedicationsSection)'"
 	 * @generated
 	 */
-	MedicationsSection getMedicationsSection();
+	MedicationsSection getHITSPMedicationsSection();
 
 	/**
 	 * <!-- begin-user-doc -->
