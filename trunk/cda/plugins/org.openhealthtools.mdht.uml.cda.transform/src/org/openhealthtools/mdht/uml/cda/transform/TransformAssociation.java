@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformAssociation extends TransformAbstract {
 	public TransformAssociation(EcoreTransformerOptions options) {
@@ -230,7 +231,11 @@ public class TransformAssociation extends TransformAbstract {
 		operationBody.append(".oclAsType(" + constraintTargetQName + ")");
 		
 		// create "getter" operation
-		String operationName = "get" + ((sourceProperty.getUpper() == 1) ? targetName : pluralize(targetName));
+		String operationName = "get";
+		if (!UMLUtil.getRedefinedProperties(sourceProperty).isEmpty()) {
+			operationName += CDAModelUtil.getModelPrefix(sourceProperty);
+		}
+		operationName += ((sourceProperty.getUpper() == 1) ? capitalize(sourceProperty.getName()) : capitalize(pluralize(sourceProperty.getName())));
 		Operation operation = sourceClass.createOwnedOperation(operationName, null, null, constraintTarget);
 		operation.setUpper(sourceProperty.getUpper());
 		
@@ -256,5 +261,9 @@ public class TransformAssociation extends TransformAbstract {
 			return name;
 		}
 		return name + "s";
+	}
+	
+	private String capitalize(String name) {
+		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 }
