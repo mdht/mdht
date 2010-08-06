@@ -367,7 +367,7 @@ public class CDAModelUtil {
 			message.append("<ul>");
 			for (Comment comment : association.getOwnedComments()) {
 				message.append("<li>");
-				message.append(comment.getBody());
+				message.append(fixNonXMLCharacters(comment.getBody()));
 				message.append("</li>");
 			}
 			message.append("</ul>");
@@ -413,6 +413,10 @@ public class CDAModelUtil {
 			elementName = "component";
 		}
 		else if (CDAModelUtil.isSection(cdaSourceClass) 
+				&& (CDAModelUtil.isSection(cdaTargetClass))) {
+			elementName = "component";
+		} 
+		else if (CDAModelUtil.isSection(cdaSourceClass) 
 				&& (CDAModelUtil.isClinicalStatement(cdaTargetClass) || CDAModelUtil.isEntry(cdaTargetClass))) {
 			elementName = "entry";
 		} 
@@ -457,28 +461,22 @@ public class CDAModelUtil {
 		message.append(elementName);
 		message.append(markup?"</tt>":"");
 		
-		message.append(" such that it");
+		message.append(", such that it");
 		message.append(markup?"<ol>":"");
 		
 		if (typeCode != null) {
-			message.append(markup?"\n<li>":", ");
-			message.append(markup?"<b>":"");
-			message.append("SHALL");
-			message.append(markup?"</b>":"");
-			message.append(" contain [1..1] @typeCode=\"");
+			message.append(markup?"\n<li>":" ");
+			message.append("has @typeCode=\"");
 			message.append(typeCode).append("\" ");
 			message.append(markup?"<i>":"");
 			message.append(typeCodeDisplay);
 			message.append(markup?"</i>":"");
-			message.append(markup?"</li>":"");
+			message.append(markup?"</li>":", and");
 		}
 
 		if (endType != null) {
-			message.append(markup?"\n<li>":", ");
-			message.append(markup?"<b>":"");
-			message.append("SHALL");
-			message.append(markup?"</b>":"");
-			message.append(" contain [1..1] ");
+			message.append(markup?"\n<li>":" ");
+			message.append("contains ");
 
 			String prefix = !isSamePackage(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
 			String xref = computeXref(xrefSource, endType);
@@ -507,7 +505,7 @@ public class CDAModelUtil {
 			message.append("<ul>");
 			for (Comment comment : association.getOwnedComments()) {
 				message.append("<li>");
-				message.append(comment.getBody());
+				message.append(fixNonXMLCharacters(comment.getBody()));
 				message.append("</li>");
 			}
 			message.append("</ul>");
@@ -630,7 +628,7 @@ public class CDAModelUtil {
 			message.append("<ul>");
 			for (Comment comment : property.getOwnedComments()) {
 				message.append("<li>");
-				message.append(comment.getBody());
+				message.append(fixNonXMLCharacters(comment.getBody()));
 				message.append("</li>");
 			}
 			message.append("</ul>");
@@ -1161,6 +1159,36 @@ public class CDAModelUtil {
 		}
 		
 		return name;
+	}
+
+	private static String fixNonXMLCharacters(String text) {
+		if (text == null) {
+			return null;
+		}
+		
+		StringBuffer newText = new StringBuffer();
+		for (int i=0; i<text.length(); i++) {
+			if (text.charAt(i) == '“')
+				newText.append("\"");
+			else if (text.charAt(i) == '”')
+				newText.append("\"");
+			else if (text.charAt(i) == '‘')
+				newText.append("'");
+			else if (text.charAt(i) == '’')
+				newText.append("'");
+			else if (text.charAt(i) == '<')
+				newText.append("&lt;");
+			else if (text.charAt(i) == '>')
+				newText.append("&gt;");
+			else if (text.charAt(i) == '&')
+				newText.append("&amp;");
+			else if (text.charAt(i) == '"')
+				newText.append(" ");
+			else
+				newText.append(text.charAt(i));
+		}
+		
+		return newText.toString();
 	}
 
 }
