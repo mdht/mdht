@@ -92,9 +92,9 @@ public class CommentSection extends AbstractModelerPropertySection {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (bodyModified) {
 						bodyModified = false;
-						String commentText = bodyText.getText().trim();
+						String commentText = removeNonXMLCharacters(bodyText.getText().trim());
 						Comment comment = null;
-						for (Iterator iter = namedElement.getOwnedComments().iterator(); iter.hasNext();) {
+						for (Iterator<Comment> iter = namedElement.getOwnedComments().iterator(); iter.hasNext();) {
 							comment = (Comment) iter.next();
 							break;
 						}
@@ -131,6 +131,24 @@ public class CommentSection extends AbstractModelerPropertySection {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
+	}
+	
+	private String removeNonXMLCharacters(String text) {
+		StringBuffer newText = new StringBuffer();
+		for (int i=0; i<text.length(); i++) {
+			if (text.charAt(i) == '“')
+				newText.append("\"");
+			else if (text.charAt(i) == '”')
+				newText.append("\"");
+			else if (text.charAt(i) == '‘')
+				newText.append("'");
+			else if (text.charAt(i) == '’')
+				newText.append("'");
+			else
+				newText.append(text.charAt(i));
+		}
+		
+		return newText.toString();
 	}
 
 	public boolean shouldUseExtraSpace() {
@@ -203,7 +221,7 @@ public class CommentSection extends AbstractModelerPropertySection {
 
 	public void refresh() {
 		String commentText = "";
-		for (Iterator iter = namedElement.getOwnedComments().iterator(); iter.hasNext();) {
+		for (Iterator<Comment> iter = namedElement.getOwnedComments().iterator(); iter.hasNext();) {
 			Comment comment = (Comment) iter.next();
 			commentText = comment.getBody();
 			break;
