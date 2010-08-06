@@ -51,6 +51,34 @@
         <body>Specific classification codes for further qualifying RoleClass codes.</body>
       </ownedComment>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c2eGAKDqEd-dVeaMP0XXQw" name="Admit source (HL7)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c2mB0KDqEd-dVeaMP0XXQw" name="Admission type (HL7)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c6o0UKDqEd-dVeaMP0XXQw" name="Unique Ingredient Identifier (UNII)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dHfkkKDqEd-dVeaMP0XXQw" name="NDC-FDA Drug Registration and Listing System"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dHx4cKDqEd-dVeaMP0XXQw" name="RoleClass"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dH_64KDqEd-dVeaMP0XXQw" name="Healthcare Provider Taxonomy (HIPAA)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dIGokKDqEd-dVeaMP0XXQw" name="Immunization Information Source"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dIPygKDqEd-dVeaMP0XXQw" name="Financial Class (HL7)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dLvLYKDqEd-dVeaMP0XXQw" name="LanguageAbilityMode"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dL4VUKDqEd-dVeaMP0XXQw" name="Manufacturers of vaccines (MVX)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dRQkkKDqEd-dVeaMP0XXQw" name="MaritalStatus"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dSLxoKDqEd-dVeaMP0XXQw" name="RxNorm"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dV4l4KDqEd-dVeaMP0XXQw" name="NDF-RT (Drug Classification)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWKSsKDqEd-dVeaMP0XXQw" name="NCI Thesaurus"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWuTYKDqEd-dVeaMP0XXQw" name="ActReason"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfNhAKDqEd-dVeaMP0XXQw" name="Provider Role (HL7)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfcxkKDqEd-dVeaMP0XXQw" name="Race &amp; Ethnicity - CDC"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfoXwKDqEd-dVeaMP0XXQw" name="ReligiousAffiliation"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_df-9EKDqEd-dVeaMP0XXQw" name="Route of administration (HL7)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dkSOQKDqEd-dVeaMP0XXQw" name="FIPS 5-2 (State)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dkhe0KDqEd-dVeaMP0XXQw" name="UCUM - Unified Code for Units of Measure"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dk7HcKDqEd-dVeaMP0XXQw" name="Vaccines administered (CVX)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ZiLsKFkEd-dVeaMP0XXQw" name="Country (ISO 3166-1)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1db0QKFkEd-dVeaMP0XXQw" name="PHIN VS (CDC Local Coding System)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1dllQKFkEd-dVeaMP0XXQw" name="UMLS"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ejOkKFkEd-dVeaMP0XXQw" name="Industry (NAICS)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1o75oKFkEd-dVeaMP0XXQw" name="ObservationInterpretation"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pR34KFkEd-dVeaMP0XXQw" name="Occupation (SOC 2000)"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -68,4 +96,32 @@
   <term:CodeSystemVersion xmi:id="_CK6oYCvFEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.359" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_CK6BUCvFEd-1GpmIcz-YjA"/>
   <term:CodeSystemVersion xmi:id="_0shz0CvIEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.123" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_0seJcCvIEd-1GpmIcz-YjA"/>
   <term:CodeSystemVersion xmi:id="_ywdZ4Gg7Ed-ilOLYnIx0jA" identifier="2.16.840.1.113883.5.111" version="V3NE08" source="Health Level Seven (HL7)" url="http://www.hl7.org/memonly/downloads/v3edition.cfm#V32008" base_Enumeration="_ywcy0Gg7Ed-ilOLYnIx0jA"/>
+  <term:CodeSystemVersion xmi:id="_c2eGAaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.23" version="HL7 v2.5" source="HL70023" base_Enumeration="_c2eGAKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_c2mB0aDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.7" version="HL7 v2.5" source="HL70007" base_Enumeration="_c2mB0KDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_c6o0UaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.4.9" version="20100122" source="FDAUNII" base_Enumeration="_c6o0UKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dHfkkaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.69" version="20080902" source="NDC" base_Enumeration="_dHfkkKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dHx4caDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.110" version="20090501" source="HITSP-CS-110" base_Enumeration="_dHx4cKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dH_64aDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.53" version="8.1" source="HCPT" base_Enumeration="_dH_64KDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dIGokaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.5.293" version="20060630" source="NIP001" base_Enumeration="_dIGokKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dIPygaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.64" version="2.5.1" source="HL70064" base_Enumeration="_dIPygKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dLvLYaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.60" version="20090501" source="HITSP-CS-60" base_Enumeration="_dLvLYKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dL4VUaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.227" version="07/30/2008" source="MVX" base_Enumeration="_dL4VUKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dRQkkaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.2" version="20090501" source="HITSP-CS-2" base_Enumeration="_dRQkkKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dSLxoaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.88" version="20100201" source="RXNORM" base_Enumeration="_dSLxoKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dV4l4aDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.3.26.1.5" version="20090310" source="NDFRT" base_Enumeration="_dV4l4KDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dWKSsaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.3.26.1.1" version="20090526" source="NCIT" base_Enumeration="_dWKSsKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dWuTYaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.8" version="20090501" source="HITSP-CS-8" base_Enumeration="_dWuTYKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dfNhAaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.443" version="2.5.1" source="HL70443" base_Enumeration="_dfNhAKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dfdYoKDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.238" version="1.1" source="CDCREC" base_Enumeration="_dfcxkKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dfoXwaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.1076" version="20090501" source="HITSP-CS-1076" base_Enumeration="_dfoXwKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_df-9EaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.162" version="HL7 v2.5" source="HL70162" base_Enumeration="_df-9EKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dkSOQaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.92" version="19870528" source="FIPS5_2" base_Enumeration="_dkSOQKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dkiF4KDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.8" version="1.7" source="UCUM" base_Enumeration="_dkhe0KDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dk7ugKDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.292" version="20100107" source="CVX" base_Enumeration="_dk7HcKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_1ZiywKFkEd-dVeaMP0XXQw" identifier="1.0.3166.1" version="1997 Edition" source="ISO3166_1" base_Enumeration="_1ZiLsKFkEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_1dcbUKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.5.274" version="20100308" source="CDCPHINVS" base_Enumeration="_1db0QKFkEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_1dllQaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.86" version="2009AA" source="UML" base_Enumeration="_1dllQKFkEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_1ej1oKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.85" version="20070101" source="NAICS" base_Enumeration="_1ejOkKFkEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_1o75oaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.83" version="20090501" source="HITSP-CS-83" base_Enumeration="_1o75oKFkEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_1pR34aFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.243" version="2000" source="SOC" base_Enumeration="_1pR34KFkEd-dVeaMP0XXQw"/>
 </xmi:XMI>
