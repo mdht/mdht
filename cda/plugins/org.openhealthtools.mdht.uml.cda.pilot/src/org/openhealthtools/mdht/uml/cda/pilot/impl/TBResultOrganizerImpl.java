@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.impl.ResultOrganizerImpl;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage;
+import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.pilot.operations.TBResultOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -52,6 +53,15 @@ public class TBResultOrganizerImpl extends ResultOrganizerImpl implements TBResu
 	 */
 	public boolean validateTBResultOrganizerTBResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return TBResultOrganizerOperations.validateTBResultOrganizerTBResultObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TBResultObservation getTbResultObservation() {
+		return TBResultOrganizerOperations.getTbResultObservation(this);
 	}
 
 	/**

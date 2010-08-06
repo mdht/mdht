@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Section;
@@ -22,6 +23,8 @@ import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection;
 import org.openhealthtools.mdht.uml.cda.pilot.TuberculosisFollowUpProgressNote;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,28 +87,28 @@ public class TBPNAdapterFactory extends AdapterFactoryImpl {
 				return createTuberculosisFollowUpProgressNoteAdapter();
 			}
 			@Override
-			public Adapter caseTBResultOrganizer(TBResultOrganizer object) {
-				return createTBResultOrganizerAdapter();
-			}
-			@Override
 			public Adapter caseTBResultsSection(TBResultsSection object) {
 				return createTBResultsSectionAdapter();
+			}
+			@Override
+			public Adapter caseTBResultOrganizer(TBResultOrganizer object) {
+				return createTBResultOrganizerAdapter();
 			}
 			@Override
 			public Adapter caseTBResultObservation(TBResultObservation object) {
 				return createTBResultObservationAdapter();
 			}
 			@Override
+			public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
+				return createInfrastructureRootAdapter();
+			}
+			@Override
+			public Adapter caseAct(Act object) {
+				return createActAdapter();
+			}
+			@Override
 			public Adapter caseClinicalDocument(ClinicalDocument object) {
 				return createClinicalDocumentAdapter();
-			}
-			@Override
-			public Adapter caseOrganizer(Organizer object) {
-				return createOrganizerAdapter();
-			}
-			@Override
-			public Adapter caseResultOrganizer(ResultOrganizer object) {
-				return createResultOrganizerAdapter();
 			}
 			@Override
 			public Adapter caseSection(Section object) {
@@ -114,6 +117,18 @@ public class TBPNAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseResultsSection(ResultsSection object) {
 				return createResultsSectionAdapter();
+			}
+			@Override
+			public Adapter caseClinicalStatement(ClinicalStatement object) {
+				return createClinicalStatementAdapter();
+			}
+			@Override
+			public Adapter caseOrganizer(Organizer object) {
+				return createOrganizerAdapter();
+			}
+			@Override
+			public Adapter caseResultOrganizer(ResultOrganizer object) {
+				return createResultOrganizerAdapter();
 			}
 			@Override
 			public Adapter caseObservation(Observation object) {
@@ -200,6 +215,34 @@ public class TBPNAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot <em>Infrastructure Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot
+	 * @generated
+	 */
+	public Adapter createInfrastructureRootAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Act <em>Act</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.Act
+	 * @generated
+	 */
+	public Adapter createActAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument <em>Clinical Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -266,6 +309,20 @@ public class TBPNAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResultsSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement <em>Clinical Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalStatement
+	 * @generated
+	 */
+	public Adapter createClinicalStatementAdapter() {
 		return null;
 	}
 

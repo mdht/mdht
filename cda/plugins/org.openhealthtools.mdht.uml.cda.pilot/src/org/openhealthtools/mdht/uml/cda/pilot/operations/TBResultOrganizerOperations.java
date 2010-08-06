@@ -11,12 +11,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.pilot.PilotPlugin;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage;
+import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.pilot.util.TBPNValidator;
 
@@ -29,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.pilot.util.TBPNValidator;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer#validateTBResultOrganizerTBResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Result Organizer TB Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer#getTbResultObservation() <em>Get Tb Result Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer#validateResultOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer#validateResultOrganizerCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Code</em>}</li>
  * </ul>
@@ -101,6 +105,50 @@ public class TBResultOrganizerOperations extends ResultOrganizerOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getTbResultObservation(TBResultOrganizer) <em>Get Tb Result Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTbResultObservation(TBResultOrganizer)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_TB_RESULT_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(pilot::TBResultObservation))->asSequence()->first().oclAsType(pilot::TBResultObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getTbResultObservation(TBResultOrganizer) <em>Get Tb Result Observation</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTbResultObservation(TBResultOrganizer)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_TB_RESULT_OBSERVATION__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(pilot::TBResultObservation))->asSequence()->first().oclAsType(pilot::TBResultObservation)
+	 * @param tbResultOrganizer The receiving '<em><b>TB Result Organizer</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  TBResultObservation getTbResultObservation(TBResultOrganizer tbResultOrganizer) {
+		if (GET_TB_RESULT_OBSERVATION__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(TBPNPackage.Literals.TB_RESULT_ORGANIZER, TBPNPackage.Literals.TB_RESULT_ORGANIZER.getEAllOperations().get(53));
+			try {
+				GET_TB_RESULT_OBSERVATION__EOCL_QRY = helper.createQuery(GET_TB_RESULT_OBSERVATION__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_TB_RESULT_OBSERVATION__EOCL_QRY);
+		return (TBResultObservation) query.evaluate(tbResultOrganizer);
 	}
 
 	/**
