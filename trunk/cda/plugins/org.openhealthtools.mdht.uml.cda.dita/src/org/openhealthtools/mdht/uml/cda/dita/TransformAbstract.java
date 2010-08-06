@@ -29,14 +29,60 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		transformerOptions = options;
 	}
 	
-	public void removeModelElement(Element element) {
+	protected void removeModelElement(Element element) {
 		if (!isRemoved(element)) {
 			transformerOptions.getDeletedElementList().add(element);
 		}
 	}
 	
-	public boolean isRemoved(Element element) {
+	protected boolean isRemoved(Element element) {
 		return transformerOptions.getDeletedElementList().contains(element);
 	}
-	
+
+	protected String validFileName(String fileName) {
+		StringBuffer validName = new StringBuffer();
+		for (int i=0; i<fileName.length(); i++) {
+			if (fileName.charAt(i) == '/')
+				validName.append(" ");
+			else if (fileName.charAt(i) == '\\')
+				validName.append(" ");
+			else if (fileName.charAt(i) == '?')
+				validName.append("");
+			else
+				validName.append(fileName.charAt(i));
+		}
+		
+		return validName.toString();
+	}
+
+	protected String fixNonXMLCharacters(String text) {
+		if (text == null) {
+			return null;
+		}
+		
+		StringBuffer newText = new StringBuffer();
+		for (int i=0; i<text.length(); i++) {
+			if (text.charAt(i) == '“')
+				newText.append("\"");
+			else if (text.charAt(i) == '”')
+				newText.append("\"");
+			else if (text.charAt(i) == '‘')
+				newText.append("'");
+			else if (text.charAt(i) == '’')
+				newText.append("'");
+			else if (text.charAt(i) == '<')
+				newText.append("&lt;");
+			else if (text.charAt(i) == '>')
+				newText.append("&gt;");
+			else if (text.charAt(i) == '&')
+				newText.append("&amp;");
+			else if (text.charAt(i) == '"')
+				newText.append(" ");
+			else
+				newText.append(text.charAt(i));
+		}
+		
+		return newText.toString();
+	}
+
 }

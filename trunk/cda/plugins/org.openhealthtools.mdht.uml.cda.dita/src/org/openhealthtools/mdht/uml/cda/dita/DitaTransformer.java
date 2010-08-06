@@ -52,7 +52,9 @@ public class DitaTransformer {
 		UMLSwitch<Object> transformClass = 
 			new TransformClass(transformerOptions);
 		UMLSwitch<Object> transformClassProperties = 
-			new TransformClassProperties(transformerOptions);
+			new TransformClassContent(transformerOptions);
+		UMLSwitch<Object> transformValueSet = 
+			new TransformValueSet(transformerOptions);
 
 		try {
 			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
@@ -63,6 +65,7 @@ public class DitaTransformer {
 				transformPackage.doSwitch(child);
 				transformClass.doSwitch(child);
 				transformClassProperties.doSwitch(child);
+				transformValueSet.doSwitch(child);
 			}
 		}
 		catch (IndexOutOfBoundsException e) {
@@ -72,7 +75,8 @@ public class DitaTransformer {
 		writeMapFile("classes", "document", "Document Templates", transformerOptions.getDocumentList());
 		writeMapFile("classes", "section", "Section Templates", transformerOptions.getSectionList());
 		writeMapFile("classes", "clinicalstatement", "Clinical Statement Templates", transformerOptions.getClinicalStatementList());
-		writeMapFile("classes", "classes", "Classes", transformerOptions.getClassList());
+		writeMapFile("classes", "classes", "Other Classes", transformerOptions.getClassList());
+		writeMapFile("terminology", "valueset", "Value Sets", transformerOptions.getValueSetList());
 
 	}
 	
