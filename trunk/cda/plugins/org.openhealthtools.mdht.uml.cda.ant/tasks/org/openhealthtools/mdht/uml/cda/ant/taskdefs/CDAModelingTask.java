@@ -55,6 +55,7 @@ public class CDAModelingTask extends Task {
 	private File model;
 	private List<ModelLocation> modelLocations;
 	private Package defaultModel = null;
+	private List<Package> rootPackages = new ArrayList<Package>();
 
 	/** Creates a new instance of this task. */
 	public CDAModelingTask() {
@@ -66,6 +67,10 @@ public class CDAModelingTask extends Task {
 	
 	public final Package getDefaultModel() {
 		return defaultModel;
+	}
+	
+	public final List<Package> getRootPackages() {
+		return rootPackages;
 	}
 
 	// Implementation of Ant Task ----------------------------------------------
@@ -127,6 +132,7 @@ public class CDAModelingTask extends Task {
 				uri = URI.createFileURI(model.getAbsolutePath());
 				Package pkg = (Package) UMLUtil.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
 				if (pkg != null) {
+					rootPackages.add(pkg);
 					logInfo("Loaded model: " + pkg.getQualifiedName());
 					
 					if (defaultModel == null) {
@@ -154,6 +160,7 @@ public class CDAModelingTask extends Task {
 					}
 					Package pkg = (Package) UMLUtil.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
 					if (pkg != null) {
+						rootPackages.add(pkg);
 						logInfo("Loaded model: " + pkg.getQualifiedName());
 					}
 					else {
@@ -167,8 +174,8 @@ public class CDAModelingTask extends Task {
 		}
 
 		// execute subtasks
-		for (Iterator it = subtasks.iterator(); it.hasNext();) {
-			Task subtask = (Task) it.next();
+		for (Iterator<Task> it = subtasks.iterator(); it.hasNext();) {
+			Task subtask = it.next();
 			
 			try {
 				subtask.execute();

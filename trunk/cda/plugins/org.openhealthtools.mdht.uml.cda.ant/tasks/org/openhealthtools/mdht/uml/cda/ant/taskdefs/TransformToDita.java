@@ -75,7 +75,7 @@ public class TransformToDita extends CDAModelingSubTask {
     }
 
     private void transformToDITA(IProgressMonitor monitor) {
-    	Package umlModel = getHL7ModelingTask().getDefaultModel();
+    	List<Package> umlModels = getHL7ModelingTask().getRootPackages();
     	
 		monitor.worked(1);
 		if( monitor.isCanceled() )
@@ -88,7 +88,7 @@ public class TransformToDita extends CDAModelingSubTask {
 			outputPath = new Path(ditaFilePath);
 		}
 		if (outputPath == null) {
-			URI modelURI = umlModel.eResource().getURI();
+			URI modelURI = umlModels.get(0).eResource().getURI();
 			if (modelURI.isFile()) {
 				modelURI = modelURI.trimFileExtension().trimSegments(1);
 				outputPath = new Path(modelURI.path());
@@ -114,7 +114,9 @@ public class TransformToDita extends CDAModelingSubTask {
 		}
 
     	DitaTransformer transformer = new DitaTransformer(options);
-    	transformer.transformElement(umlModel);
+    	for (Package umlModel : umlModels) {
+        	transformer.transformElement(umlModel);
+		}
 		
     }
     
