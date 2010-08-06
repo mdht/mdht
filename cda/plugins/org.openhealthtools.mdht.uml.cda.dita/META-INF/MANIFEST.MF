@@ -13,5 +13,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml,
  org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.cda.resources,
- org.openhealthtools.mdht.uml.cda.core
+ org.openhealthtools.mdht.uml.cda.core,
+ org.openhealthtools.mdht.uml.term.core
 Export-Package: org.openhealthtools.mdht.uml.cda.dita

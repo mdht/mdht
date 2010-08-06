@@ -7,11 +7,7 @@ import java.io.PrintWriter;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Comment;
-import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
@@ -81,25 +77,13 @@ public class TransformClass extends TransformAbstract {
 	}
 
 	private void appendBody(PrintWriter writer, Class umlClass) {
-		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(umlClass,
-				ICDAProfileConstants.CDA_TEMPLATE);
 		String className = umlClass.getName();
 		
 		writer.println("<body>");
-		if (umlClass.getOwnedComments().isEmpty()) {
-			writer.println("<p>TODO: add class description</p>");
-		}
-		else {
-			for (Comment comment : umlClass.getOwnedComments()) {
-				String body = comment.getBody().trim();
-				if (body.startsWith("<p>")) {
-					writer.println(comment.getBody());
-				}
-				else {
-					writer.println("<p>" + comment.getBody() + "</p>");
-				}
-			}
-		}
+		writer.println("<!-- TODO: insert non-model class description markup here -->");
+		writer.println("<section conref=\"generated/_" + className + ".dita#classId/description\">");
+		writer.println("</section>");
+
 		writer.println();
 		writer.println("<ol audience=\"standards\" conref=\"generated/_" + className + ".dita#classId/conformance\">");
 		writer.println("<li></li>");
@@ -107,14 +91,15 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<ol audience=\"developer\" conref=\"generated/_" + className + ".dita#classId/aggregate\">");
 		writer.println("<li></li>");
 		writer.println("</ol>");
-//		if (hl7Template != null) {
-			writer.println("<fig>");
-			writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
-			writer.println("<codeblock conref=\"generated/_" + className + ".dita#classId/example\">");
-			writer.println("</codeblock>");
-			writer.println("</fig>");
-//		}
-		
+
+		writer.println("<fig>");
+		writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
+		writer.println("<!-- TODO: insert custom instance example here -->");
+		writer.println("<!-- generated instance example follows -->");
+		writer.println("<codeblock conref=\"generated/_" + className + ".dita#classId/example\">");
+		writer.println("</codeblock>");
+		writer.println("</fig>");
+
 		writer.println("</body>");
 		writer.println("</topic>");
 	}

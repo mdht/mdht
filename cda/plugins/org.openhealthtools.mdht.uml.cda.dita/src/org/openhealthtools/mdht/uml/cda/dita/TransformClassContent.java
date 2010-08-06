@@ -13,6 +13,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
@@ -24,11 +25,11 @@ import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
-public class TransformClassProperties extends TransformAbstract {
+public class TransformClassContent extends TransformAbstract {
 	
 	private InstanceGenerator instanceGenerator;
 
-	public TransformClassProperties(DitaTransformerOptions options) {
+	public TransformClassContent(DitaTransformerOptions options) {
 		super(options);
 		
 		if (Platform.getBundle("org.openhealthtools.mdht.uml.cda") != null) {
@@ -93,13 +94,32 @@ public class TransformClassProperties extends TransformAbstract {
 
 	private void appendBody(PrintWriter writer, Class umlClass) {
 		writer.println("<body>");
-		
+
+		appendClassDocumentation(writer, umlClass);
 		appendConformanceRules(writer, umlClass);
 		appendAggregateRules(writer, umlClass);
 		appendExample(writer, umlClass);
 		
 		writer.println("</body>");
 		writer.println("</topic>");
+	}
+
+	private void appendClassDocumentation(PrintWriter writer, Class umlClass) {
+		writer.println("<section id=\"description\">");
+		
+		// TODO if blank line, wrap before and after contents in <p>
+		
+		for (Comment comment : umlClass.getOwnedComments()) {
+			String body = comment.getBody().trim();
+			if (body.startsWith("<p>")) {
+				writer.println(comment.getBody());
+			}
+			else {
+				writer.println("<p>" + comment.getBody() + "</p>");
+			}
+		}
+		
+		writer.println("</section>");
 	}
 
 	private void appendConformanceRules(PrintWriter writer, Class umlClass) {
