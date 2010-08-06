@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage;
+import org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection;
 import org.openhealthtools.mdht.uml.cda.pilot.TuberculosisFollowUpProgressNote;
 import org.openhealthtools.mdht.uml.cda.pilot.operations.TuberculosisFollowUpProgressNoteOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -70,6 +71,15 @@ public class TuberculosisFollowUpProgressNoteImpl extends ClinicalDocumentImpl i
 	 */
 	public boolean validateTuberculosisFollowUpProgressNoteTBResultsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return TuberculosisFollowUpProgressNoteOperations.validateTuberculosisFollowUpProgressNoteTBResultsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TBResultsSection getTbResultsSection() {
+		return TuberculosisFollowUpProgressNoteOperations.getTbResultsSection(this);
 	}
 
 	/**

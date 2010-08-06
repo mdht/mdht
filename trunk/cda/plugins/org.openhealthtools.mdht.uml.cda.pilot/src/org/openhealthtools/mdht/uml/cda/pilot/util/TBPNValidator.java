@@ -77,7 +77,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_ORGANIZER__TB_RESULT_ORGANIZER_TB_RESULT_OBSERVATION = 4;
+	public static final int TB_RESULT_ORGANIZER__TB_RESULT_ORGANIZER_TB_RESULT_OBSERVATION = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Template Id' of 'TB Result Organizer'.
@@ -85,7 +85,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID = 5;
+	public static final int TB_RESULT_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Code' of 'TB Result Organizer'.
@@ -93,7 +93,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_ORGANIZER__RESULT_ORGANIZER_CODE = 6;
+	public static final int TB_RESULT_ORGANIZER__RESULT_ORGANIZER_CODE = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section Text' of 'TB Results Section'.
@@ -101,7 +101,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TEXT = 7;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TEXT = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section Title' of 'TB Results Section'.
@@ -109,7 +109,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TITLE = 8;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TITLE = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section TB Result Organizer' of 'TB Results Section'.
@@ -117,7 +117,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_ORGANIZER = 9;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_ORGANIZER = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section TB Result Observation' of 'TB Results Section'.
@@ -125,7 +125,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_OBSERVATION = 10;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_OBSERVATION = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Template Id' of 'TB Results Section'.
@@ -133,7 +133,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__RESULTS_SECTION_TEMPLATE_ID = 11;
+	public static final int TB_RESULTS_SECTION__RESULTS_SECTION_TEMPLATE_ID = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Code' of 'TB Results Section'.
@@ -141,7 +141,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__RESULTS_SECTION_CODE = 12;
+	public static final int TB_RESULTS_SECTION__RESULTS_SECTION_CODE = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Observation Class Code' of 'TB Result Observation'.
@@ -232,10 +232,10 @@ public class TBPNValidator extends EObjectValidator {
 		switch (classifierID) {
 			case TBPNPackage.TUBERCULOSIS_FOLLOW_UP_PROGRESS_NOTE:
 				return validateTuberculosisFollowUpProgressNote((TuberculosisFollowUpProgressNote)value, diagnostics, context);
-			case TBPNPackage.TB_RESULT_ORGANIZER:
-				return validateTBResultOrganizer((TBResultOrganizer)value, diagnostics, context);
 			case TBPNPackage.TB_RESULTS_SECTION:
 				return validateTBResultsSection((TBResultsSection)value, diagnostics, context);
+			case TBPNPackage.TB_RESULT_ORGANIZER:
+				return validateTBResultOrganizer((TBResultOrganizer)value, diagnostics, context);
 			case TBPNPackage.TB_RESULT_OBSERVATION:
 				return validateTBResultObservation((TBResultObservation)value, diagnostics, context);
 			default:

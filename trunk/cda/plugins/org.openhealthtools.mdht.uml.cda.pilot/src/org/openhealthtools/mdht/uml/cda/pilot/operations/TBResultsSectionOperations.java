@@ -6,17 +6,24 @@
  */
 package org.openhealthtools.mdht.uml.cda.pilot.operations;
 
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.pilot.PilotPlugin;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage;
+import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;
+import org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection;
 import org.openhealthtools.mdht.uml.cda.pilot.util.TBPNValidator;
 
@@ -32,6 +39,8 @@ import org.openhealthtools.mdht.uml.cda.pilot.util.TBPNValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionTBResultOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Organizer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionTBResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#getTbResultOrganizers() <em>Get Tb Result Organizers</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#getTbResultObservations() <em>Get Tb Result Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateResultsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Results Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateResultsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Results Section Code</em>}</li>
  * </ul>
@@ -275,6 +284,98 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getTbResultOrganizers(TBResultsSection) <em>Get Tb Result Organizers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTbResultOrganizers(TBResultsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_TB_RESULT_ORGANIZERS__EOCL_EXP = "self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(pilot::TBResultOrganizer)).oclAsType(pilot::TBResultOrganizer)";
+
+	/**
+	 * The cached OCL query for the '{@link #getTbResultOrganizers(TBResultsSection) <em>Get Tb Result Organizers</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTbResultOrganizers(TBResultsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_TB_RESULT_ORGANIZERS__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(pilot::TBResultOrganizer)).oclAsType(pilot::TBResultOrganizer)
+	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EList<TBResultOrganizer> getTbResultOrganizers(TBResultsSection tbResultsSection) {
+		if (GET_TB_RESULT_ORGANIZERS__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(TBPNPackage.Literals.TB_RESULTS_SECTION, TBPNPackage.Literals.TB_RESULTS_SECTION.getEAllOperations().get(57));
+			try {
+				GET_TB_RESULT_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_TB_RESULT_ORGANIZERS__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_TB_RESULT_ORGANIZERS__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<TBResultOrganizer> result = (Collection<TBResultOrganizer>) query.evaluate(tbResultsSection);
+		return new BasicEList.UnmodifiableEList<TBResultOrganizer>(result.size(), result.toArray());
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getTbResultObservations(TBResultsSection) <em>Get Tb Result Observations</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTbResultObservations(TBResultsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_TB_RESULT_OBSERVATIONS__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(pilot::TBResultObservation)).oclAsType(pilot::TBResultObservation)";
+
+	/**
+	 * The cached OCL query for the '{@link #getTbResultObservations(TBResultsSection) <em>Get Tb Result Observations</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTbResultObservations(TBResultsSection)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_TB_RESULT_OBSERVATIONS__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(pilot::TBResultObservation)).oclAsType(pilot::TBResultObservation)
+	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  EList<TBResultObservation> getTbResultObservations(TBResultsSection tbResultsSection) {
+		if (GET_TB_RESULT_OBSERVATIONS__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(TBPNPackage.Literals.TB_RESULTS_SECTION, TBPNPackage.Literals.TB_RESULTS_SECTION.getEAllOperations().get(58));
+			try {
+				GET_TB_RESULT_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_TB_RESULT_OBSERVATIONS__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_TB_RESULT_OBSERVATIONS__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<TBResultObservation> result = (Collection<TBResultObservation>) query.evaluate(tbResultsSection);
+		return new BasicEList.UnmodifiableEList<TBResultObservation>(result.size(), result.toArray());
 	}
 
 	/**

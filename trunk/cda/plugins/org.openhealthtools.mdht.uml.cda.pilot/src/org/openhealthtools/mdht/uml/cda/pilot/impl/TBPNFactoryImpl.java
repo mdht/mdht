@@ -63,8 +63,8 @@ public class TBPNFactoryImpl extends EFactoryImpl implements TBPNFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case TBPNPackage.TUBERCULOSIS_FOLLOW_UP_PROGRESS_NOTE: return createTuberculosisFollowUpProgressNote();
-			case TBPNPackage.TB_RESULT_ORGANIZER: return createTBResultOrganizer();
 			case TBPNPackage.TB_RESULTS_SECTION: return createTBResultsSection();
+			case TBPNPackage.TB_RESULT_ORGANIZER: return createTBResultOrganizer();
 			case TBPNPackage.TB_RESULT_OBSERVATION: return createTBResultObservation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");

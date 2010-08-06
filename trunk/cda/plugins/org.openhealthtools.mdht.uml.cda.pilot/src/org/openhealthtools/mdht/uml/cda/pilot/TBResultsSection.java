@@ -9,6 +9,7 @@ package org.openhealthtools.mdht.uml.cda.pilot;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
 
 /**
@@ -77,6 +78,30 @@ public interface TBResultsSection extends ResultsSection {
 	 * @generated
 	 */
 	boolean validateTBResultsSectionTBResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(pilot::TBResultOrganizer)).oclAsType(pilot::TBResultOrganizer)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(pilot::TBResultOrganizer)).oclAsType(pilot::TBResultOrganizer)'"
+	 * @generated
+	 */
+	EList<TBResultOrganizer> getTbResultOrganizers();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(pilot::TBResultObservation)).oclAsType(pilot::TBResultObservation)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(pilot::TBResultObservation)).oclAsType(pilot::TBResultObservation)'"
+	 * @generated
+	 */
+	EList<TBResultObservation> getTbResultObservations();
 
 	/**
 	 * <!-- begin-user-doc -->
