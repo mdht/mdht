@@ -138,7 +138,7 @@ fragment@org.openhealthtools.mdht.uml.hdf.test=SVN,trunk,https://mdht.projects.o
 
 fragment@org.openhealthtools.mdht.uml.cda.util.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.util.test
 
-plugin@org.openhealthtools.mdht.uml.hl7.rim.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.hl7.rim.test
+plugin@org.openhealthtools.mdht.uml.hl7.rim.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/tests/org.openhealthtools.mdht.uml.hl7.rim.test
 
 plugin@org.openhealthtools.mdht.uml.cda.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.test
 
