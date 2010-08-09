@@ -1091,6 +1091,21 @@
       <ownedLiteral xmi:id="__zOqc0DcEd6xYZuu1VKCVw" name="PRF"/>
       <ownedLiteral xmi:id="__zOqdEDcEd6xYZuu1VKCVw" name="SPRF"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_toprsKQJEd-QEohlUVMP5A" name="TimingEvent">
+      <ownedLiteral xmi:id="_3RHawKQJEd-QEohlUVMP5A" name="AC"/>
+      <ownedLiteral xmi:id="_5lOycKQJEd-QEohlUVMP5A" name="ACD"/>
+      <ownedLiteral xmi:id="_6LhWYKQJEd-QEohlUVMP5A" name="ACM"/>
+      <ownedLiteral xmi:id="_AKVeMKQKEd-QEohlUVMP5A" name="ACV"/>
+      <ownedLiteral xmi:id="_EMH4oKQKEd-QEohlUVMP5A" name="HS"/>
+      <ownedLiteral xmi:id="_Eg_VYKQKEd-QEohlUVMP5A" name="IC"/>
+      <ownedLiteral xmi:id="_E4-XkKQKEd-QEohlUVMP5A" name="ICD"/>
+      <ownedLiteral xmi:id="_IpCI0KQKEd-QEohlUVMP5A" name="ICM"/>
+      <ownedLiteral xmi:id="_I6ByMKQKEd-QEohlUVMP5A" name="ICV"/>
+      <ownedLiteral xmi:id="_JSdgUKQKEd-QEohlUVMP5A" name="PC"/>
+      <ownedLiteral xmi:id="_NbjcoKQKEd-QEohlUVMP5A" name="PCD"/>
+      <ownedLiteral xmi:id="_NvXwgKQKEd-QEohlUVMP5A" name="PCM"/>
+      <ownedLiteral xmi:id="_OEFcQKQKEd-QEohlUVMP5A" name="PCV"/>
+    </packagedElement>
     <profileApplication xmi:id="__zOqqUDcEd6xYZuu1VKCVw">
       <eAnnotations xmi:id="__zOqqkDcEd6xYZuu1VKCVw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>

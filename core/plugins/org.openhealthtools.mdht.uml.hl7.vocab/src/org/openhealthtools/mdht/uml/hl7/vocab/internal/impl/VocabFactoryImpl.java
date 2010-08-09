@@ -60,6 +60,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassServiceDeliveryLocation;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassSpecimen;
 import org.openhealthtools.mdht.uml.hl7.vocab.SetOperator;
 import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
+import org.openhealthtools.mdht.uml.hl7.vocab.TimingEvent;
 import org.openhealthtools.mdht.uml.hl7.vocab.VocabFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryAct;
@@ -252,6 +253,8 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 				return createx_InformationRecipientRoleFromString(eDataType, initialValue);
 			case VocabPackage.XSERVICE_EVENT_PERFORMER:
 				return createx_ServiceEventPerformerFromString(eDataType, initialValue);
+			case VocabPackage.TIMING_EVENT:
+				return createTimingEventFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -381,6 +384,8 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 				return convertx_InformationRecipientRoleToString(eDataType, instanceValue);
 			case VocabPackage.XSERVICE_EVENT_PERFORMER:
 				return convertx_ServiceEventPerformerToString(eDataType, instanceValue);
+			case VocabPackage.TIMING_EVENT:
+				return convertTimingEventToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -1543,6 +1548,26 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ServiceEventPerformerToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimingEvent createTimingEventFromString(EDataType eDataType, String initialValue) {
+		TimingEvent result = TimingEvent.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTimingEventToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

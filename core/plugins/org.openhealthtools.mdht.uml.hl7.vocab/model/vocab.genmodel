@@ -1117,5 +1117,20 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ServiceEventPerformer/PRF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ServiceEventPerformer/SPRF"/>
     </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//TimingEvent">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/AC"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/ACD"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/ACM"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/ACV"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/HS"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/IC"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/ICD"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/ICM"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/ICV"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/PC"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/PCD"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/PCM"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TimingEvent/PCV"/>
+    </genEnums>
   </genPackages>
 </genmodel:GenModel>

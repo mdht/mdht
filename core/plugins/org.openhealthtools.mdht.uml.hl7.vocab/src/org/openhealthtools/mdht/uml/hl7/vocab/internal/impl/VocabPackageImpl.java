@@ -447,6 +447,13 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	private EEnum x_ServiceEventPerformerEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum timingEventEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -1199,6 +1206,18 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 			x_ServiceEventPerformerEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(57);
 		}
 		return x_ServiceEventPerformerEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTimingEvent() {
+		if (timingEventEEnum == null) {
+			timingEventEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(58);
+		}
+		return timingEventEEnum;
 	}
 
 	/**
