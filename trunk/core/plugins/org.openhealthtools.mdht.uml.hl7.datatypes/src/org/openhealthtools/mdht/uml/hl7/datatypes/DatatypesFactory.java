@@ -404,6 +404,22 @@ public interface DatatypesFactory extends EFactory {
 	PIVL_TS createPIVL_TS();
 
 	/**
+	 * Returns a new object of class '<em>EIVL event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EIVL event</em>'.
+	 * @generated
+	 */
+	EIVL_event createEIVL_event();
+	/**
+	 * Returns a new object of class '<em>EIVL TS</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EIVL TS</em>'.
+	 * @generated
+	 */
+	EIVL_TS createEIVL_TS();
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

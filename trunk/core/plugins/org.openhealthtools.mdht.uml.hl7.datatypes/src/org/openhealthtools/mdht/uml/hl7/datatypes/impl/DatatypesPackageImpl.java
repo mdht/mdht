@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event;
 import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 import org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage;
 
@@ -334,6 +335,20 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * @generated
 	 */
 	private EClass pivL_TSEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eivL_eventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eivL_TSEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1824,6 +1839,42 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEIVL_event() {
+		return eivL_eventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEIVL_TS() {
+		return eivL_TSEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEIVL_TS_Event() {
+		return (EReference)eivL_TSEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEIVL_TS_Offset() {
+		return (EReference)eivL_TSEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBinaryDataEncoding() {
 		return binaryDataEncodingEEnum;
 	}
@@ -2055,6 +2106,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		createEAttribute(pivL_TSEClass, PIVL_TS__ALIGNMENT);
 		createEAttribute(pivL_TSEClass, PIVL_TS__INSTITUTION_SPECIFIED);
 
+		eivL_eventEClass = createEClass(EIVL_EVENT);
+
+		eivL_TSEClass = createEClass(EIVL_TS);
+		createEReference(eivL_TSEClass, EIVL_TS__EVENT);
+		createEReference(eivL_TSEClass, EIVL_TS__OFFSET);
+
 		// Create enums
 		binaryDataEncodingEEnum = createEEnum(BINARY_DATA_ENCODING);
 	}
@@ -2132,6 +2189,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		ivL_PQEClass.getESuperTypes().add(this.getSXCM_PQ());
 		rtO_PQ_PQEClass.getESuperTypes().add(this.getQTY());
 		pivL_TSEClass.getESuperTypes().add(this.getSXCM_TS());
+		eivL_eventEClass.getESuperTypes().add(this.getCE());
+		eivL_TSEClass.getESuperTypes().add(this.getSXCM_TS());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(anyEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, "ANY", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2768,6 +2827,14 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getPIVL_TS_Alignment(), theVocabPackage.getCalendarCycle(), "alignment", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPIVL_TS_InstitutionSpecified(), ecorePackage.getEBooleanObject(), "institutionSpecified", "false", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(eivL_eventEClass, EIVL_event.class, "EIVL_event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(eivL_eventEClass, this.getEIVL_event(), "init", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(eivL_TSEClass, org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS.class, "EIVL_TS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEIVL_TS_Event(), this.getEIVL_event(), null, "event", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEIVL_TS_Offset(), this.getIVL_PQ(), null, "offset", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(binaryDataEncodingEEnum, BinaryDataEncoding.class, "BinaryDataEncoding");
 		addEEnumLiteral(binaryDataEncodingEEnum, BinaryDataEncoding.B64);
@@ -3326,6 +3393,18 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   });		
 		addAnnotation
 		  (getPIVL_TS_Period(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getEIVL_TS_Event(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getEIVL_TS_Offset(), 
 		   source, 
 		   new String[] {
 			 "namespace", "urn:hl7-org:v3"

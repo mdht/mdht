@@ -544,5 +544,14 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PIVL_TS/alignment"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PIVL_TS/institutionSpecified"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EIVL_event">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/init"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EIVL_TS">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//EIVL_TS/event"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//EIVL_TS/offset"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

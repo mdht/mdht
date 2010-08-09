@@ -34,6 +34,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPlugin;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -511,6 +513,10 @@ public class DatatypesValidator extends EObjectValidator {
 				return validateRTO_PQ_PQ((RTO_PQ_PQ)value, diagnostics, context);
 			case DatatypesPackage.PIVL_TS:
 				return validatePIVL_TS((PIVL_TS)value, diagnostics, context);
+			case DatatypesPackage.EIVL_EVENT:
+				return validateEIVL_event((EIVL_event)value, diagnostics, context);
+			case DatatypesPackage.EIVL_TS:
+				return validateEIVL_TS((EIVL_TS)value, diagnostics, context);
 			case DatatypesPackage.BINARY_DATA_ENCODING:
 				return validateBinaryDataEncoding((BinaryDataEncoding)value, diagnostics, context);
 			default:
@@ -1356,6 +1362,24 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	public boolean validatePIVL_TS(PIVL_TS pivL_TS, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(pivL_TS, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEIVL_event(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eivL_event, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEIVL_TS(EIVL_TS eivL_TS, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eivL_TS, diagnostics, context);
 	}
 
 	/**

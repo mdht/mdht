@@ -3431,6 +3431,170 @@ public interface DatatypesPackage extends EPackage {
 	int PIVL_TS_FEATURE_COUNT = SXCM_TS_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_eventImpl <em>EIVL event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_eventImpl
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getEIVL_event()
+	 * @generated
+	 */
+	int EIVL_EVENT = 43;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__NULL_FLAVOR = CE__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Original Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__ORIGINAL_TEXT = CE__ORIGINAL_TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Qualifier</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__QUALIFIER = CE__QUALIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Translation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__TRANSLATION = CE__TRANSLATION;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__CODE = CE__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Code System</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__CODE_SYSTEM = CE__CODE_SYSTEM;
+
+	/**
+	 * The feature id for the '<em><b>Code System Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__CODE_SYSTEM_NAME = CE__CODE_SYSTEM_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Code System Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__CODE_SYSTEM_VERSION = CE__CODE_SYSTEM_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT__DISPLAY_NAME = CE__DISPLAY_NAME;
+
+	/**
+	 * The number of structural features of the '<em>EIVL event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_EVENT_FEATURE_COUNT = CE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_TSImpl <em>EIVL TS</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_TSImpl
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getEIVL_TS()
+	 * @generated
+	 */
+	int EIVL_TS = 44;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_TS__NULL_FLAVOR = SXCM_TS__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_TS__VALUE = SXCM_TS__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_TS__OPERATOR = SXCM_TS__OPERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Event</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_TS__EVENT = SXCM_TS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_TS__OFFSET = SXCM_TS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>EIVL TS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EIVL_TS_FEATURE_COUNT = SXCM_TS_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding <em>Binary Data Encoding</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3438,7 +3602,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getBinaryDataEncoding()
 	 * @generated
 	 */
-	int BINARY_DATA_ENCODING = 43;
+	int BINARY_DATA_ENCODING = 45;
 
 
 	/**
@@ -5115,6 +5279,48 @@ public interface DatatypesPackage extends EPackage {
 	EAttribute getPIVL_TS_InstitutionSpecified();
 
 	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event <em>EIVL event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EIVL event</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event
+	 * @generated
+	 */
+	EClass getEIVL_event();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS <em>EIVL TS</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EIVL TS</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS
+	 * @generated
+	 */
+	EClass getEIVL_TS();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS#getEvent <em>Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Event</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS#getEvent()
+	 * @see #getEIVL_TS()
+	 * @generated
+	 */
+	EReference getEIVL_TS_Event();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS#getOffset <em>Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Offset</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS#getOffset()
+	 * @see #getEIVL_TS()
+	 * @generated
+	 */
+	EReference getEIVL_TS_Offset();
+
+	/**
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding <em>Binary Data Encoding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6479,6 +6685,42 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PIVL_TS__INSTITUTION_SPECIFIED = eINSTANCE.getPIVL_TS_InstitutionSpecified();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_eventImpl <em>EIVL event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_eventImpl
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getEIVL_event()
+		 * @generated
+		 */
+		EClass EIVL_EVENT = eINSTANCE.getEIVL_event();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_TSImpl <em>EIVL TS</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.EIVL_TSImpl
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getEIVL_TS()
+		 * @generated
+		 */
+		EClass EIVL_TS = eINSTANCE.getEIVL_TS();
+
+		/**
+		 * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EIVL_TS__EVENT = eINSTANCE.getEIVL_TS_Event();
+
+		/**
+		 * The meta object literal for the '<em><b>Offset</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EIVL_TS__OFFSET = eINSTANCE.getEIVL_TS_Offset();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding <em>Binary Data Encoding</em>}' enum.

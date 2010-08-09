@@ -1637,4 +1637,21 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EIVL_event" eSuperTypes="#//CE">
+    <eOperations name="init" ordered="false" lowerBound="1" eType="#//EIVL_event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EIVL_TS" eSuperTypes="#//SXCM_TS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" ordered="false"
+        eType="#//EIVL_event" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offset" ordered="false"
+        eType="#//IVL_PQ" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
 </ecore:EPackage>
