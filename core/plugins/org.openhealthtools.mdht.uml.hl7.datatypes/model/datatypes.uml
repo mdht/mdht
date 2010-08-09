@@ -1110,6 +1110,23 @@
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Cm05UKQLEd-QEohlUVMP5A" name="EIVL_event">
+      <generalization xmi:id="_E5AXUKQLEd-QEohlUVMP5A" general="_Z1EGIDxaEd6JwqSGecoePg"/>
+      <ownedOperation xmi:id="_EX9qUKQMEd-QEohlUVMP5A" name="init">
+        <ownedParameter xmi:id="_Fx9jIKQMEd-QEohlUVMP5A" name="return" type="_Cm05UKQLEd-QEohlUVMP5A" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HG3WAKQLEd-QEohlUVMP5A" name="EIVL_TS">
+      <generalization xmi:id="_Ij2RYKQLEd-QEohlUVMP5A" general="_kSZ5QD5_Ed6cla2oXsPtlA"/>
+      <ownedAttribute xmi:id="_JpJFgKQLEd-QEohlUVMP5A" name="event" visibility="private" type="_Cm05UKQLEd-QEohlUVMP5A" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Mrv64KQLEd-QEohlUVMP5A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Mrv64aQLEd-QEohlUVMP5A"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Z5ix4KQLEd-QEohlUVMP5A" name="offset" type="_1VHHUErrEd6FXKclYGEDCw" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bcCfYKQLEd-QEohlUVMP5A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcCfYaQLEd-QEohlUVMP5A"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_XgMSyDxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_XgMSyTxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -1277,4 +1294,6 @@
   <Ecore:EReference xmi:id="_1rvJ0J75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_vZmsoD5-Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_1r460J75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_uY750D5-Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_4puk8J75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_S9G6AD6CEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_e-sGwKQLEd-QEohlUVMP5A" xmlNamespace="urn:hl7-org:v3" base_Property="_JpJFgKQLEd-QEohlUVMP5A"/>
+  <Ecore:EReference xmi:id="_f0LkUKQLEd-QEohlUVMP5A" xmlNamespace="urn:hl7-org:v3" base_Property="_Z5ix4KQLEd-QEohlUVMP5A"/>
 </xmi:XMI>

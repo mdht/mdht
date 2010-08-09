@@ -32,6 +32,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -147,6 +149,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.IVL_PQ: return createIVL_PQ();
 			case DatatypesPackage.RTO_PQ_PQ: return createRTO_PQ_PQ();
 			case DatatypesPackage.PIVL_TS: return createPIVL_TS();
+			case DatatypesPackage.EIVL_EVENT: return createEIVL_event();
+			case DatatypesPackage.EIVL_TS: return createEIVL_TS();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -695,6 +699,26 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	public PIVL_TS createPIVL_TS() {
 		PIVL_TSImpl pivL_TS = new PIVL_TSImpl();
 		return pivL_TS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EIVL_event createEIVL_event() {
+		EIVL_eventImpl eivL_event = new EIVL_eventImpl();
+		return eivL_event;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EIVL_TS createEIVL_TS() {
+		EIVL_TSImpl eivL_TS = new EIVL_TSImpl();
+		return eivL_TS;
 	}
 
 	/**

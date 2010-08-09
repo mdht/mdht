@@ -30,6 +30,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -494,6 +496,25 @@ public class DatatypesSwitch<T> {
 				if (result == null) result = caseTS(pivL_TS);
 				if (result == null) result = caseQTY(pivL_TS);
 				if (result == null) result = caseANY(pivL_TS);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DatatypesPackage.EIVL_EVENT: {
+				EIVL_event eivL_event = (EIVL_event)theEObject;
+				T result = caseEIVL_event(eivL_event);
+				if (result == null) result = caseCE(eivL_event);
+				if (result == null) result = caseCD(eivL_event);
+				if (result == null) result = caseANY(eivL_event);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DatatypesPackage.EIVL_TS: {
+				EIVL_TS eivL_TS = (EIVL_TS)theEObject;
+				T result = caseEIVL_TS(eivL_TS);
+				if (result == null) result = caseSXCM_TS(eivL_TS);
+				if (result == null) result = caseTS(eivL_TS);
+				if (result == null) result = caseQTY(eivL_TS);
+				if (result == null) result = caseANY(eivL_TS);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1143,6 +1164,36 @@ public class DatatypesSwitch<T> {
 	 * @generated
 	 */
 	public T casePIVL_TS(PIVL_TS object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EIVL event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EIVL event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEIVL_event(EIVL_event object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EIVL TS</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EIVL TS</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEIVL_TS(EIVL_TS object) {
 		return null;
 	}
 

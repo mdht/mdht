@@ -30,6 +30,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -288,6 +290,14 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePIVL_TS(PIVL_TS object) {
 				return createPIVL_TSAdapter();
+			}
+			@Override
+			public Adapter caseEIVL_event(EIVL_event object) {
+				return createEIVL_eventAdapter();
+			}
+			@Override
+			public Adapter caseEIVL_TS(EIVL_TS object) {
+				return createEIVL_TSAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -908,6 +918,34 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPIVL_TSAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event <em>EIVL event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event
+	 * @generated
+	 */
+	public Adapter createEIVL_eventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS <em>EIVL TS</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS
+	 * @generated
+	 */
+	public Adapter createEIVL_TSAdapter() {
 		return null;
 	}
 
