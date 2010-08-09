@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
+import org.eclipse.emf.ecore.xmi.DOMHandler;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.ocl.ecore.Constraint;
@@ -163,6 +164,11 @@ public class CDAUtil {
 	public static void save(ClinicalDocument clinicalDocument, Writer writer, boolean defaults) throws Exception {
 		CDAResource resource = prepare(clinicalDocument, defaults);
 		resource.save(writer, null);
+	}
+	
+	public static Document save(ClinicalDocument clinicalDocument, DOMHandler handler) throws Exception {
+		CDAResource resource = prepare(clinicalDocument, true);
+		return resource.save(newDocumentBuilder().newDocument(), null, handler);
 	}
 
 	private static CDAResource prepare(ClinicalDocument clinicalDocument, boolean defaults) {
