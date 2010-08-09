@@ -645,6 +645,17 @@ public interface VocabPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.vocab.TimingEvent <em>Timing Event</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.TimingEvent
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.internal.impl.VocabPackageImpl#getTimingEvent()
+	 * @generated
+	 */
+	int TIMING_EVENT = 58;
+
+
+	/**
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClass <em>Act Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1223,6 +1234,16 @@ public interface VocabPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getx_ServiceEventPerformer();
+
+	/**
+	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.hl7.vocab.TimingEvent <em>Timing Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Timing Event</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.TimingEvent
+	 * @generated
+	 */
+	EEnum getTimingEvent();
 
 	/**
 	 * Returns the factory that creates the instances of the model.

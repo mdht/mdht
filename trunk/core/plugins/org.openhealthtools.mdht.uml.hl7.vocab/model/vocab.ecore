@@ -1093,4 +1093,19 @@
     <eLiterals name="PRF"/>
     <eLiterals name="SPRF" value="1"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimingEvent">
+    <eLiterals name="AC"/>
+    <eLiterals name="ACD" value="1"/>
+    <eLiterals name="ACM" value="2"/>
+    <eLiterals name="ACV" value="3"/>
+    <eLiterals name="HS" value="4"/>
+    <eLiterals name="IC" value="5"/>
+    <eLiterals name="ICD" value="6"/>
+    <eLiterals name="ICM" value="7"/>
+    <eLiterals name="ICV" value="8"/>
+    <eLiterals name="PC" value="9"/>
+    <eLiterals name="PCD" value="10"/>
+    <eLiterals name="PCM" value="11"/>
+    <eLiterals name="PCV" value="12"/>
+  </eClassifiers>
 </ecore:EPackage>
