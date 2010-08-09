@@ -1161,29 +1161,30 @@ public class CDAModelUtil {
 		return name;
 	}
 
-	private static String fixNonXMLCharacters(String text) {
+	public static String fixNonXMLCharacters(String text) {
 		if (text == null) {
 			return null;
 		}
 		
 		StringBuffer newText = new StringBuffer();
 		for (int i=0; i<text.length(); i++) {
-			if (text.charAt(i) == '“')
+			// test for unicode characters from copy/paste of MS Word text
+			if (text.charAt(i) == '\u201D')			// right double quote
 				newText.append("\"");
-			else if (text.charAt(i) == '”')
+			else if (text.charAt(i) == '\u201C')	// left double quote
 				newText.append("\"");
-			else if (text.charAt(i) == '‘')
+			else if (text.charAt(i) == '\u2019')	// right single quote
 				newText.append("'");
-			else if (text.charAt(i) == '’')
+			else if (text.charAt(i) == '\u2018')	// left single quote
 				newText.append("'");
+			
+			// other invalid characters in XML
 			else if (text.charAt(i) == '<')
 				newText.append("&lt;");
 			else if (text.charAt(i) == '>')
 				newText.append("&gt;");
 			else if (text.charAt(i) == '&')
 				newText.append("&amp;");
-			else if (text.charAt(i) == '"')
-				newText.append(" ");
 			else
 				newText.append(text.charAt(i));
 		}

@@ -110,12 +110,12 @@ public class TransformClassContent extends TransformAbstract {
 		// TODO if blank line, wrap before and after contents in <p>
 		
 		for (Comment comment : umlClass.getOwnedComments()) {
-			String body = comment.getBody().trim();
+			String body = CDAModelUtil.fixNonXMLCharacters(comment.getBody().trim());
 			if (body.startsWith("<p>")) {
-				writer.println(comment.getBody());
+				writer.println(body);
 			}
 			else {
-				writer.println("<p>" + comment.getBody() + "</p>");
+				writer.println("<p>" + body + "</p>");
 			}
 		}
 		
