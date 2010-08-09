@@ -55,34 +55,4 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return validName.toString();
 	}
 
-	protected String fixNonXMLCharacters(String text) {
-		if (text == null) {
-			return null;
-		}
-		
-		StringBuffer newText = new StringBuffer();
-		for (int i=0; i<text.length(); i++) {
-			if (text.charAt(i) == '“')
-				newText.append("\"");
-			else if (text.charAt(i) == '”')
-				newText.append("\"");
-			else if (text.charAt(i) == '‘')
-				newText.append("'");
-			else if (text.charAt(i) == '’')
-				newText.append("'");
-			else if (text.charAt(i) == '<')
-				newText.append("&lt;");
-			else if (text.charAt(i) == '>')
-				newText.append("&gt;");
-			else if (text.charAt(i) == '&')
-				newText.append("&amp;");
-			else if (text.charAt(i) == '"')
-				newText.append(" ");
-			else
-				newText.append(text.charAt(i));
-		}
-		
-		return newText.toString();
-	}
-
 }

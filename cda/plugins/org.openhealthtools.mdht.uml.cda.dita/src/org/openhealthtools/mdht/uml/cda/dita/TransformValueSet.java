@@ -9,6 +9,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
@@ -75,7 +76,7 @@ public class TransformValueSet extends TransformAbstract {
 		if (valueSetVersion != null) {
 			writer.print("[OID <tt>" + valueSetVersion.getIdentifier() + "</tt>");
 			if (codeSystemEnum != null) {
-				writer.print(" from code system: " + fixNonXMLCharacters(codeSystemEnum.getName()));
+				writer.print(" from code system: " + CDAModelUtil.fixNonXMLCharacters(codeSystemEnum.getName()));
 			}
 			writer.print("]");
 		}
@@ -121,13 +122,13 @@ public class TransformValueSet extends TransformAbstract {
 		ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 		if (valueSetVersion != null) {
 			writer.println("<p>OID: " + valueSetVersion.getIdentifier() + "</p>");
-			writer.println("<p>Name: " + fixNonXMLCharacters(valueSetVersion.getFullName()) + "</p>");
+			writer.println("<p>Name: " + CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getFullName()) + "</p>");
 			if (valueSetVersion.getCodeSystem() != null) {
 				writer.println("<p>Code System: " + valueSetVersion.getCodeSystem().getIdentifier() + "</p>");
-				writer.println("<p>Code System Name: " + fixNonXMLCharacters(valueSetVersion.getCodeSystem().getBase_Enumeration().getName()) + "</p>");
+				writer.println("<p>Code System Name: " + CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getCodeSystem().getBase_Enumeration().getName()) + "</p>");
 			}
 			if (valueSetVersion.getDefinition() != null) {
-				writer.println("<p>" + fixNonXMLCharacters(valueSetVersion.getDefinition()) + "</p>");
+				writer.println("<p>" + CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getDefinition()) + "</p>");
 			}
 		}
 
@@ -141,7 +142,7 @@ public class TransformValueSet extends TransformAbstract {
 				writer.print("<row>");
 				writer.print("<entry>" + literal.getName() + "</entry>");
 				if (valueSetCode != null) {
-					writer.print("<entry>" + fixNonXMLCharacters(valueSetCode.getConceptName()) + "</entry>");
+					writer.print("<entry>" + CDAModelUtil.fixNonXMLCharacters(valueSetCode.getConceptName()) + "</entry>");
 					if (valueSetCode.getCodeSystem() != null) {
 						writer.print("<entry>" + valueSetCode.getCodeSystem().getIdentifier() + "</entry>");
 						writer.print("<entry>" + valueSetCode.getCodeSystem().getBase_Enumeration().getName() + "</entry>");
