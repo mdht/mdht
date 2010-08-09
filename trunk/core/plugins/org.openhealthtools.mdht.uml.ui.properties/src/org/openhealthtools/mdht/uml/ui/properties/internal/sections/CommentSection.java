@@ -136,13 +136,14 @@ public class CommentSection extends AbstractModelerPropertySection {
 	private String removeNonXMLCharacters(String text) {
 		StringBuffer newText = new StringBuffer();
 		for (int i=0; i<text.length(); i++) {
-			if (text.charAt(i) == '“')
+			// test for unicode characters from copy/paste of MS Word text
+			if (text.charAt(i) == '\u201D')			// right double quote
 				newText.append("\"");
-			else if (text.charAt(i) == '”')
+			else if (text.charAt(i) == '\u201C')	// left double quote
 				newText.append("\"");
-			else if (text.charAt(i) == '‘')
+			else if (text.charAt(i) == '\u2019')	// right single quote
 				newText.append("'");
-			else if (text.charAt(i) == '’')
+			else if (text.charAt(i) == '\u2018')	// left single quote
 				newText.append("'");
 			else
 				newText.append(text.charAt(i));
