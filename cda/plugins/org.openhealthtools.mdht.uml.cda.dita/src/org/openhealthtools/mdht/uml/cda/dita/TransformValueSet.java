@@ -147,6 +147,10 @@ public class TransformValueSet extends TransformAbstract {
 						writer.print("<entry>" + valueSetCode.getCodeSystem().getIdentifier() + "</entry>");
 						writer.print("<entry>" + valueSetCode.getCodeSystem().getBase_Enumeration().getName() + "</entry>");
 					}
+					else {
+						writer.print("<entry></entry>");
+						writer.print("<entry></entry>");
+					}
 				}
 				writer.println("</row>");
 			}
