@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -54,6 +53,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryAct;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
 
 public class InstanceGenerator {
 
@@ -172,6 +175,26 @@ public class InstanceGenerator {
 						EObject type = createInstance((Class)property.getType(), --levels);
 						addChild(eObject, type);
 					}
+				}
+			}
+
+			// if not specified, set a reasonable default value for classCode and moodCode
+			if (eObject instanceof Act) {
+				Act act = (Act)eObject;
+				if (!act.isSetClassCode()) {
+					act.setClassCode(x_ActClassDocumentEntryAct.ACT);
+				}
+				if (!act.isSetMoodCode()) {
+					act.setMoodCode(x_DocumentActMood.EVN);
+				}
+			}
+			else if (eObject instanceof Observation) {
+				Observation observation = (Observation)eObject;
+				if (!observation.isSetClassCode()) {
+					observation.setClassCode(ActClassObservation.OBS);
+				}
+				if (!observation.isSetMoodCode()) {
+					observation.setMoodCode(x_ActMoodDocumentObservation.EVN);
 				}
 			}
 		}
