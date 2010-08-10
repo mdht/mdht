@@ -119,7 +119,17 @@
 			<action label="%removeValidationMessages.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.RemoveValidationMessagesAction"
 				menubarPath="cdatools/edit" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignValidationMessageAction">
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.removeValidationMessagesAction">
+			</action>
+			<action label="%generateSampleInstance.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.GenerateSampleInstanceAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.generateSampleInstanceAction">
+			</action>
+			<action label="%assignConformanceRuleIds.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignConformanceRuleIdsAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignConformanceRuleIdsAction">
 			</action>
 			<action label="%openTemplateEditor.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
@@ -150,6 +160,11 @@
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.RemoveValidationMessagesAction"
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignValidationMessageAction">
+			</action>
+			<action label="%assignConformanceRuleIds.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignConformanceRuleIdsAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignConformanceRuleIdsAction">
 			</action>
 		</objectContribution>
 		
