@@ -14,6 +14,7 @@
 package org.openhealthtools.mdht.uml.cda.core.util;
 
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -342,8 +343,9 @@ public class CDAModelUtil {
 		
 		message.append(getMultiplicityString(property)).append(" ");
 
+		String elementName = getCDAElementName(property);
 		message.append(markup?"<tt>":"");
-		message.append(property.getName());
+		message.append(elementName);
 		message.append(markup?"</tt>":"");
 
 		Class endType = (property.getType() instanceof Class) 
@@ -398,40 +400,9 @@ public class CDAModelUtil {
 			typeCodeDisplay = getLiteralValueLabel(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE, profileEnum);
 		}
 
-		Class cdaSourceClass = getCDAClass(property.getClass_());
+		String elementName = getCDAElementName(property);
 		Class endType = (property.getType() instanceof Class) 
 				? (Class)property.getType() : null;
-		Class cdaTargetClass = endType != null ? getCDAClass(endType) : null;
-		
-		//TODO this is incomplete determination of XML element name
-		String elementName = property.getName();
-		if (cdaSourceClass == null) {
-			elementName = property.getName();
-		}
-		else if ("ClinicalDocument".equals(cdaSourceClass.getName()) 
-				&& (CDAModelUtil.isSection(cdaTargetClass) || CDAModelUtil.isClinicalStatement(cdaTargetClass))) {
-			elementName = "component";
-		}
-		else if (CDAModelUtil.isSection(cdaSourceClass) 
-				&& (CDAModelUtil.isSection(cdaTargetClass))) {
-			elementName = "component";
-		} 
-		else if (CDAModelUtil.isSection(cdaSourceClass) 
-				&& (CDAModelUtil.isClinicalStatement(cdaTargetClass) || CDAModelUtil.isEntry(cdaTargetClass))) {
-			elementName = "entry";
-		} 
-		else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-			elementName = "component";
-		} 
-		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-			elementName = "entryRelationship";
-		} 
-		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && "ParticipantRole".equals(cdaTargetClass.getName())) {
-			elementName = "participant";
-		} 
-		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && "AssignedEntity".equals(cdaTargetClass.getName())) {
-			elementName = "performer";
-		}
 
 		String ruleId = getConformanceRuleIds(association);
 		if (ruleId.length() > 0) {
@@ -607,7 +578,7 @@ public class CDAModelUtil {
 			message.append(vocab);
 		}
 		else if (valueSetConstraint != null) {
-			String vocab = computeValueSetMessage(property, markup);
+			String vocab = computeValueSetMessage(property, markup, xrefSource);
 			message.append(vocab);
 		}
 		else if (vocabSpecification != null) {
@@ -699,7 +670,7 @@ public class CDAModelUtil {
 		return message.toString();
 	}
 
-	private static String computeValueSetMessage(Property property, boolean markup) {
+	private static String computeValueSetMessage(Property property, boolean markup, Package xrefSource) {
 		Stereotype valueSetConstraintStereotype = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 		ValueSetConstraint valueSetConstraint = (ValueSetConstraint) property.getStereotypeApplication(valueSetConstraintStereotype);
@@ -913,7 +884,7 @@ public class CDAModelUtil {
 		}
 		return href;
 	}
-	
+
 	protected static boolean isSamePackage(Element first, Element second) {
 		return first.getNearestPackage().equals(second.getNearestPackage());
 	}
@@ -932,6 +903,45 @@ public class CDAModelUtil {
 		return navigableEnd;
 	}
 
+	public static String getCDAElementName(Property property) {
+		Class cdaSourceClass = getCDAClass(property.getClass_());
+		Class endType = (property.getType() instanceof Class) 
+				? (Class)property.getType() : null;
+		Class cdaTargetClass = endType != null ? getCDAClass(endType) : null;
+		
+		//TODO this is incomplete determination of XML element name
+		String elementName = property.getName();
+		if (cdaSourceClass == null) {
+			elementName = property.getName();
+		}
+		else if ("ClinicalDocument".equals(cdaSourceClass.getName()) 
+				&& (CDAModelUtil.isSection(cdaTargetClass) || CDAModelUtil.isClinicalStatement(cdaTargetClass))) {
+			elementName = "component";
+		}
+		else if (CDAModelUtil.isSection(cdaSourceClass) 
+				&& (CDAModelUtil.isSection(cdaTargetClass))) {
+			elementName = "component";
+		} 
+		else if (CDAModelUtil.isSection(cdaSourceClass) 
+				&& (CDAModelUtil.isClinicalStatement(cdaTargetClass) || CDAModelUtil.isEntry(cdaTargetClass))) {
+			elementName = "entry";
+		} 
+		else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+			elementName = "component";
+		} 
+		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+			elementName = "entryRelationship";
+		} 
+		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && "ParticipantRole".equals(cdaTargetClass.getName())) {
+			elementName = "participant";
+		} 
+		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && "AssignedEntity".equals(cdaTargetClass.getName())) {
+			elementName = "performer";
+		}
+
+		return elementName;
+	}
+	
 	public static String getMultiplicityString(Property property) {
 		String lower = Integer.toString(property.getLower());
 		String upper = property.getUpper()==-1 ? "*" : Integer.toString(property.getUpper());
@@ -1071,6 +1081,22 @@ public class CDAModelUtil {
 		
 		return message;
 	}
+
+	/**
+	 * Returns a list conformance rule IDs.
+	 */
+	public static List<String> getConformanceRuleIdList(Element element) {
+		List<String> ruleIds = new ArrayList<String>();
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		if (validationSupport != null) {
+			Validation validation = (Validation) element.getStereotypeApplication(validationSupport);
+			for (String ruleId : validation.getRuleId()) {
+				ruleIds.add(ruleId);
+			}
+		}
+		
+		return ruleIds;
+	}
 	
 	/**
 	 * Returns a comma separated list of conformance rule IDs, or an empty string if no IDs.
@@ -1128,6 +1154,15 @@ public class CDAModelUtil {
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(constrainedElement, ICDAProfileConstants.VALIDATION);
 		if (validationSupport != null) {
 			constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE, message);
+		}
+	}
+
+	public static void setValidationRuleId(Element constrainedElement, String ruleId) {
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(constrainedElement, ICDAProfileConstants.VALIDATION);
+		if (validationSupport != null) {
+			List<String> ruleIds = new ArrayList<String>();
+			ruleIds.add(ruleId);
+			constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_RULE_ID, ruleIds);
 		}
 	}
 	
