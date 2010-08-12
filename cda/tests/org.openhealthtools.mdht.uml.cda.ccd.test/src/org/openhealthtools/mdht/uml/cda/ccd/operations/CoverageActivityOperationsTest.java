@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +22,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryAct;
@@ -28,7 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
+@SuppressWarnings({ "nls", "serial" })
 public class CoverageActivityOperationsTest extends
 		StructuralAttributeValidationTest {
 
@@ -45,7 +49,7 @@ public class CoverageActivityOperationsTest extends
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(COVERAGE_ACTIVITY_TEMPLATE_ID) {
 
@@ -100,7 +104,7 @@ public class CoverageActivityOperationsTest extends
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createCoverageActivity();
@@ -127,6 +131,67 @@ public class CoverageActivityOperationsTest extends
 				&& CoverageActivityOperations.validateCoverageActivityMoodCode(
 						(CoverageActivity) eObjectToValidate, diagnostician,
 						map);
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidateCoverageActivitySequenceNumber() {
+		// This is not fully implemented.
+		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(ca);
+
+		boolean isValid = CoverageActivityOperations
+				.validateCoverageActivitySequenceNumber(ca, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidateCoverageActivityPolicyActivity() {
+		// This is not fully implemented.
+		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(ca);
+
+		boolean isValid = CoverageActivityOperations
+				.validateCoverageActivityPolicyActivity(ca, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidateCoverageActivityInformationSource() {
+		// This is not fully implemented.
+		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(ca);
+
+		boolean isValid = CoverageActivityOperations
+				.validateCoverageActivityInformationSource(ca, diagnostician,
+						map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidateCoverageActivityCode() {
+		// This is not fully implemented.
+		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(ca);
+
+		boolean isValid = CoverageActivityOperations
+				.validateCoverageActivityCode(ca, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
 } // CoverageActivityOperationsTest
