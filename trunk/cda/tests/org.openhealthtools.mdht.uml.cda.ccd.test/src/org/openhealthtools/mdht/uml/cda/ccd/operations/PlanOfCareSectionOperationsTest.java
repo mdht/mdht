@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,8 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
@@ -37,192 +41,188 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareSectionOperations
-				.validatePlanOfCareSectionTemplateId(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionTemplateId(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+			},
+
+			// Title
+			// -------------------------------------------------------------
+			new TitleCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionTitle(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionCode(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+			},
+
+			// Text
+			// -------------------------------------------------------------
+			new TextCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionText(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+			},
+
+			// Entry Act
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionPlanOfCareActivityAct(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setAct(CCDFactory.eINSTANCE
+							.createPlanOfCareActivityAct());
+					retValue.add(entry);
+
+					return retValue;
+				}
+			},
+
+			// Entry Encounter
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionPlanOfCareActivityEncounter(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setEncounter(CCDFactory.eINSTANCE
+							.createPlanOfCareActivityEncounter());
+					retValue.add(entry);
+					return retValue;
+				}
+			},
+
+			// Entry Observation
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionPlanOfCareActivityObservation(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setObservation(CCDFactory.eINSTANCE
+							.createPlanOfCareActivityObservation());
+					retValue.add(entry);
+					return retValue;
+				}
+			},
+
+			// Entry SubstanceAdministration
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setSubstanceAdministration(CCDFactory.eINSTANCE
+							.createPlanOfCareActivitySubstanceAdministration());
+					retValue.add(entry);
+					return retValue;
+				}
+			},
+
+			// Entry Supply
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest,
+						final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareSectionOperations
+							.validatePlanOfCareSectionPlanOfCareActivitySupply(
+									(PlanOfCareSection) objectToTest,
+									diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setSupply(CCDFactory.eINSTANCE
+							.createPlanOfCareActivitySupply());
+					retValue.add(entry);
+					return retValue;
+				}
 			}
-
-		},
-
-		// Title
-		// -------------------------------------------------------------
-		new TitleCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareSectionOperations
-				.validatePlanOfCareSectionTitle(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map);
-			}
-
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareSectionOperations
-				.validatePlanOfCareSectionCode(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Text
-		// -------------------------------------------------------------
-		new TextCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareSectionOperations
-				.validatePlanOfCareSectionText(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map);
-			}
-
-		},
-
-		// Entry Act
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareSectionOperations
-				.validatePlanOfCareSectionPlanOfCareActivityAct(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setAct(CCDFactory.eINSTANCE
-						.createPlanOfCareActivityAct());
-				retValue.add(entry);
-
-				return retValue;
-			}
-		},
-
-		// Entry Encounter
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return
-				PlanOfCareSectionOperations
-				.validatePlanOfCareSectionPlanOfCareActivityEncounter(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map)
-						;
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setEncounter(CCDFactory.eINSTANCE.createPlanOfCareActivityEncounter());
-				retValue.add(entry);
-				return retValue;
-			}
-		},
-
-		// Entry Observation
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return
-				PlanOfCareSectionOperations
-				.validatePlanOfCareSectionPlanOfCareActivityObservation(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map)
-						;
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setObservation(CCDFactory.eINSTANCE.createPlanOfCareActivityObservation());
-				retValue.add(entry);
-				return retValue;
-			}
-		},
-
-		// Entry SubstanceAdministration
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return
-				PlanOfCareSectionOperations
-				.validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map)
-						;
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setSubstanceAdministration(CCDFactory.eINSTANCE.createPlanOfCareActivitySubstanceAdministration());
-				retValue.add(entry);
-				return retValue;
-			}
-		},
-
-		// Entry Supply
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return
-				PlanOfCareSectionOperations
-				.validatePlanOfCareSectionPlanOfCareActivitySupply(
-						(PlanOfCareSection) objectToTest,
-						diagnostician, map)
-						;
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setSupply(CCDFactory.eINSTANCE.createPlanOfCareActivitySupply());
-				retValue.add(entry);
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -233,6 +233,22 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 		final List<CDATestCase> retValue = super.getTestCases();
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidatePlanOfCareSectionPlanOfCareActivityProcedure() {
+		// This is not fully implemented.
+		final PlanOfCareSection sa = (PlanOfCareSection) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(sa);
+
+		boolean isValid = PlanOfCareSectionOperations
+				.validatePlanOfCareSectionPlanOfCareActivityProcedure(sa,
+						diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
 	@Override
