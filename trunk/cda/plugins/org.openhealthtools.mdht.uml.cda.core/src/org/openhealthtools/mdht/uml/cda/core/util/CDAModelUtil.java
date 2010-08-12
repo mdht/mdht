@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
@@ -432,44 +433,46 @@ public class CDAModelUtil {
 		message.append(elementName);
 		message.append(markup?"</tt>":"");
 		
-		message.append(", such that it");
-		message.append(markup?"<ol>":"");
-		
-		if (typeCode != null) {
-			message.append(markup?"\n<li>":" ");
-			message.append("has @typeCode=\"");
-			message.append(typeCode).append("\" ");
-			message.append(markup?"<i>":"");
-			message.append(typeCodeDisplay);
-			message.append(markup?"</i>":"");
-			message.append(markup?"</li>":", and");
-		}
-
-		if (endType != null) {
-			message.append(markup?"\n<li>":" ");
-			message.append("contains ");
-
-			String prefix = !isSamePackage(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
-			String xref = computeXref(xrefSource, endType);
-			boolean showXref = markup && (xref != null);
-			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
+		if (typeCode != null || endType != null) {
+			message.append(", such that it");
+			message.append(markup?"<ol>":"");
 			
-			message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-			message.append(prefix).append(UMLUtil.splitName(endType));
-			message.append(showXref?"</xref>":"");
-			
-			String templateId = getTemplateId(endType);
-			if (templateId != null) {
-				message.append(" (templateId: ");
-				message.append(markup?"<tt>":"");
-				message.append(templateId);
-				message.append(markup?"</tt>":"");
-				message.append(")");
+			if (typeCode != null) {
+				message.append(markup?"\n<li>":" ");
+				message.append("has @typeCode=\"");
+				message.append(typeCode).append("\" ");
+				message.append(markup?"<i>":"");
+				message.append(typeCodeDisplay);
+				message.append(markup?"</i>":"");
+				message.append(markup?"</li>":", and");
 			}
+	
+			if (endType != null) {
+				message.append(markup?"\n<li>":" ");
+				message.append("contains ");
+	
+				String prefix = !isSamePackage(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+				String xref = computeXref(xrefSource, endType);
+				boolean showXref = markup && (xref != null);
+				String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
+				
+				message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
+				message.append(prefix).append(UMLUtil.splitName(endType));
+				message.append(showXref?"</xref>":"");
+				
+				String templateId = getTemplateId(endType);
+				if (templateId != null) {
+					message.append(" (templateId: ");
+					message.append(markup?"<tt>":"");
+					message.append(templateId);
+					message.append(markup?"</tt>":"");
+					message.append(")");
+				}
+				message.append(markup?"</li>":"");
+			}
+	
+			message.append(markup?"</ol>":"");
 		}
-
-		message.append(markup?"</li>":"");
-		message.append(markup?"</ol>":"");
 
 		// include comment text only in markup output
 		if (markup && association.getOwnedComments().size() > 0) {
@@ -492,7 +495,6 @@ public class CDAModelUtil {
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
 		if (property.getType() == null) {
 			System.out.println("Property has null type: " + property.getQualifiedName());
-			return "";
 		}
 		if (property.getAssociation() != null && property.isNavigable()) {
 			return computeAssociationConformanceMessage(property, markup, xrefSource);
@@ -680,6 +682,11 @@ public class CDAModelUtil {
 		String name = null;
 		String version = null;
 		BindingKind binding = null;
+		
+		String xref = null;
+		String xrefFormat = "";
+		boolean showXref = false;
+		
 		if (valueSetConstraint != null) {
 			if (valueSetConstraint.getReference() != null) {
 				ValueSetVersion valueSetVersion = valueSetConstraint.getReference();
@@ -687,6 +694,10 @@ public class CDAModelUtil {
 				name = valueSetVersion.getBase_Enumeration().getName();
 				version = valueSetVersion.getVersion();
 				binding = valueSetVersion.getBinding();
+
+				xref = computeTerminologyXref(property.getClass_(), valueSetVersion.getBase_Enumeration());
+				showXref = markup && (xref != null);
+				xrefFormat = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 			}
 			else {
 				id = valueSetConstraint.getIdentifier();
@@ -707,7 +718,10 @@ public class CDAModelUtil {
 			message.append(" ").append(id);
 		}
 		if (name != null) {
-			message.append(" ").append(name);
+			message.append(" ");
+			message.append(showXref ? "<xref " + xrefFormat + "href=\"" + xref + "\">" : "");
+			message.append(name);
+			message.append(showXref?"</xref>":"");
 		}
 
 		message.append(" ").append(binding.getName().toUpperCase());
@@ -885,8 +899,28 @@ public class CDAModelUtil {
 		return href;
 	}
 
+	protected static String computeTerminologyXref(Class source, Enumeration target) {
+		String href = null;
+		if (isSameProject(source, target)) {
+			href="../../terminology/" + validFileName(target.getName()) + ".dita";
+		}
+		return href;
+	}
+
 	protected static boolean isSamePackage(Element first, Element second) {
-		return first.getNearestPackage().equals(second.getNearestPackage());
+		if (first == null || second == null)
+			return false;
+		else
+			return first.getNearestPackage().equals(second.getNearestPackage());
+	}
+
+	protected static boolean isSameProject(Element first, Element second) {
+		// get Resource, compare base path except for file name
+		// TODO also strip folder within project
+		URI firstURI = first.eResource().getURI();
+		URI secondURI = second.eResource().getURI();
+
+		return firstURI.trimSegments(1).equals(secondURI.trimSegments(1));
 	}
 
 	public static Property getNavigableEnd(Association association) {
@@ -1225,6 +1259,22 @@ public class CDAModelUtil {
 		}
 		
 		return newText.toString();
+	}
+
+	public static String validFileName(String fileName) {
+		StringBuffer validName = new StringBuffer();
+		for (int i=0; i<fileName.length(); i++) {
+			if (fileName.charAt(i) == '/')
+				validName.append(" ");
+			else if (fileName.charAt(i) == '\\')
+				validName.append(" ");
+			else if (fileName.charAt(i) == '?')
+				validName.append("");
+			else
+				validName.append(fileName.charAt(i));
+		}
+		
+		return validName.toString();
 	}
 
 }
