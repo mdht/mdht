@@ -208,7 +208,7 @@ StructuralAttributeValidationTest {
 		.createDefaultDiagnostic(ro);
 
 		boolean isValid = ResultOrganizerOperations
-		.validateResultOrganizerResultObservation(ro, diagnostician,
+		.validateResultOrganizerComponentElement(ro, diagnostician,
 				map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
@@ -217,7 +217,7 @@ StructuralAttributeValidationTest {
 //		ro.getComponents().add(CDAFactory.eINSTANCE.createComponent4());
 
 		isValid = ResultOrganizerOperations
-		.validateResultOrganizerResultObservation(ro, diagnostician,
+		.validateResultOrganizerComponentElement(ro, diagnostician,
 				map);
 		assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 	}

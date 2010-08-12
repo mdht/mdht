@@ -12,12 +12,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation;
 
@@ -57,6 +61,21 @@ public class EncounterLocationOperationsTest extends CCDValidationTest {
 		return retValue;
 	}
 
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidateEncounterLocationTypeCode() {
+		// This is not fully implemented.
+		final EncounterLocation el = (EncounterLocation) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(el);
+
+		boolean isValid = EncounterLocationOperations
+				.validateEncounterLocationTypeCode(el, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
+	}
+	
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createEncounterLocation();

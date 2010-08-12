@@ -12,12 +12,16 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
 
@@ -39,7 +43,7 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 	private static final String OBSERVATION_VALUE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.3";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(SEVERITY_OBSERVATION_TEMPLATE_ID) {
 
@@ -107,6 +111,36 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 		final List<CDATestCase> retValue = super.getTestCases();
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidateSeverityObservationClassCode() {
+		// This is not fully implemented.
+		final SeverityObservation so = (SeverityObservation) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(so);
+
+		boolean isValid = SeverityObservationOperations
+				.validateSeverityObservationClassCode(so, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidateSeverityObservationMoodCode() {
+		// This is not fully implemented.
+		final SeverityObservation so = (SeverityObservation) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(so);
+
+		boolean isValid = SeverityObservationOperations
+				.validateSeverityObservationMoodCode(so, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
 	@Override

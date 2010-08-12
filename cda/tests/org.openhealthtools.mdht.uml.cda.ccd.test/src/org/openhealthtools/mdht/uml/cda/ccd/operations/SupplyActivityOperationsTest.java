@@ -43,7 +43,7 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(SUPPLY_ACTIVITY_TEMPLATE_ID) {
 
@@ -159,6 +159,37 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 				.validateSupplyActivityMedicationStatusObservation(sa,
 						diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testSupplyActivityEffectiveTime() {
+		// This is not fully implemented.
+		final SupplyActivity sa = (SupplyActivity) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(sa);
+
+		boolean isValid = SupplyActivityOperations
+				.validateSupplyActivityEffectiveTime(sa, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testSupplyActivityFullfillmentInstruction() {
+		// This is not fully implemented.
+		final SupplyActivity sa = (SupplyActivity) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(sa);
+
+		boolean isValid = SupplyActivityOperations
+				.validateSupplyActivityFulfillmentInstruction(sa,
+						diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
 } // SupplyActivityOperationsTest

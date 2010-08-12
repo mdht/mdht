@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -20,10 +22,14 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
 
 /**
  * This class is a JUnit4 test case.
@@ -37,7 +43,7 @@ public class PurposeSectionOperationsTest extends CCDValidationTest {
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(PURPOSE_SECTION_TEMPLATE_ID) {
 
@@ -104,6 +110,22 @@ public class PurposeSectionOperationsTest extends CCDValidationTest {
 			}
 
 	}; // TEST_CASE_ARRAY
+
+	/**
+	 * 
+	 */
+	@Test
+	public void testValidatePurposeSectionText() {
+		// This is not fully implemented.
+		final PurposeSection ps = (PurposeSection) getObjectToTest();
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
+				.createDefaultDiagnostic(ps);
+
+		boolean isValid = PurposeSectionOperations.validatePurposeSectionText(
+				ps, diagnostician, map);
+		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
+
+	}
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
