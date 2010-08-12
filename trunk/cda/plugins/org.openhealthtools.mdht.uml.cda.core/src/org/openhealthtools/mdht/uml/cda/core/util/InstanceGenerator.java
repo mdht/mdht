@@ -162,15 +162,17 @@ public class InstanceGenerator {
 			
 			List<Property> conformanceRules = getAllConformanceRules(umlClass);
 			for (Property property : conformanceRules) {
-				EClass typeEClass = getEClass(property.getType());
-				if (typeEClass != null && typeEClass.getEPackage().getName().equals("datatypes")) {
-					setDatatypeValue(property, eObject, typeEClass);
+				if (property.getType() != null) {
+					EClass typeEClass = getEClass(property.getType());
+					if (typeEClass != null && typeEClass.getEPackage().getName().equals("datatypes")) {
+						setDatatypeValue(property, eObject, typeEClass);
+					}
 				}
 			}
 			if (levels > 0) {
 				// for now, only include inherited associations from same model, to exclude overridden
 				for (Property property : conformanceRules) {
-					if (property.getAssociation() != null
+					if (property.getType() != null && property.getAssociation() != null
 							&& UMLUtil.getTopPackage(property).equals(UMLUtil.getTopPackage(umlClass))) {
 						EObject type = createInstance((Class)property.getType(), --levels);
 						addChild(eObject, type);
