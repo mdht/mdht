@@ -39,20 +39,4 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return transformerOptions.getDeletedElementList().contains(element);
 	}
 
-	protected String validFileName(String fileName) {
-		StringBuffer validName = new StringBuffer();
-		for (int i=0; i<fileName.length(); i++) {
-			if (fileName.charAt(i) == '/')
-				validName.append(" ");
-			else if (fileName.charAt(i) == '\\')
-				validName.append(" ");
-			else if (fileName.charAt(i) == '?')
-				validName.append("");
-			else
-				validName.append(fileName.charAt(i));
-		}
-		
-		return validName.toString();
-	}
-
 }
