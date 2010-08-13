@@ -28,6 +28,7 @@ import org.junit.runners.Suite;
 	GeneralHeaderConstraintsOperationsTest.class,
 	GeneralStatusSectionOperationsTest.class,
 	HistoryAndPhysicalOperationsTest.class,
+	HistoryOfPresentIllnessOperationsTest.class,
 	LevelOneConformanceOperationsTest.class,
 	LevelTwoConformanceOperationsTest.class,
 	LevelThreeConformanceOperationsTest.class,
@@ -39,6 +40,7 @@ import org.junit.runners.Suite;
 	ReasonForVisitAndChiefComplaintSectionOperationsTest.class,
 	ReasonForVisitSectionConsultOperationsTest.class,
 	ReasonForVisitSectionOperationsTest.class,
+	ReviewOfSystemsSectionIHEOperationsTest.class,
 	ReviewOfSystemsSectionOperationsTest.class,
 	VitalSignsSectionOperationsTest.class })
 	public class AllCDTOperationsTests {
