@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTest;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
@@ -75,6 +76,11 @@ public class TuberculosisFollowUpProgressNoteOperationsTest extends
 	 */
 	@Test
 	public void testValidateTuberculosisFollowUpProgressNotePatientNames() {
+		TuberculosisFollowUpProgressNote objectToTest = (TuberculosisFollowUpProgressNote) getObjectToTest();
+		TuberculosisFollowUpProgressNoteOperations
+				.validateTuberculosisFollowUpProgressNotePatientNames(
+						objectToTest, Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -85,6 +91,11 @@ public class TuberculosisFollowUpProgressNoteOperationsTest extends
 	 */
 	@Test
 	public void testValidateTuberculosisFollowUpProgressNoteTBResultsSection() {
+		TuberculosisFollowUpProgressNote objectToTest = (TuberculosisFollowUpProgressNote) getObjectToTest();
+		TuberculosisFollowUpProgressNoteOperations
+				.validateTuberculosisFollowUpProgressNoteTBResultsSection(
+						objectToTest, Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 

@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultOrganizerOperationsTest;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
@@ -91,6 +92,10 @@ public class TBResultOrganizerOperationsTest extends
 	 */
 	@Test
 	public void testValidateTBResultOrganizerTBResultObservation() {
+		TBResultOrganizer objectToTest = (TBResultOrganizer) getObjectToTest();
+		TBResultOrganizerOperations.validateTBResultOrganizerTBResultObservation(
+				objectToTest, Diagnostician.INSTANCE
+						.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
