@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
@@ -38,7 +39,7 @@ public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-			// Template ID
+	// Template ID
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
@@ -91,6 +92,10 @@ public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 	 */
 	@Test
 	public void testValidatePatientDataSectionText() {
+		PatientDataSection objectToTest = (PatientDataSection) getObjectToTest();
+		PatientDataSectionOperations.validatePatientDataSectionText(
+				objectToTest, Diagnostician.INSTANCE
+						.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -101,6 +106,10 @@ public class PatientDataSectionOperationsTest extends SectionOperationsTest {
 	 */
 	@Test
 	public void testValidatePatientDataSectionTitle() {
+		PatientDataSection objectToTest = (PatientDataSection) getObjectToTest();
+		PatientDataSectionOperations.validatePatientDataSectionTitle(
+				objectToTest, Diagnostician.INSTANCE
+						.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 

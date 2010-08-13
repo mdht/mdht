@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
 import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSectionNCR;
@@ -73,6 +74,11 @@ public class PatientDataSectionNCROperationsTest extends
 	 */
 	@Test
 	public void testValidatePatientDataSectionNCREncountersSection() {
+		PatientDataSectionNCR objectToTest = (PatientDataSectionNCR) getObjectToTest();
+		PatientDataSectionNCROperations
+				.validatePatientDataSectionNCREncountersSection(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -83,6 +89,11 @@ public class PatientDataSectionNCROperationsTest extends
 	 */
 	@Test
 	public void testValidatePatientDataSectionNCRAcuityDataSection() {
+		PatientDataSectionNCR objectToTest = (PatientDataSectionNCR) getObjectToTest();
+		PatientDataSectionNCROperations
+				.validatePatientDataSectionNCRAcuityDataSection(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -93,6 +104,11 @@ public class PatientDataSectionNCROperationsTest extends
 	 */
 	@Test
 	public void testValidatePatientDataSectionNCRBirthWeight() {
+		PatientDataSectionNCR objectToTest = (PatientDataSectionNCR) getObjectToTest();
+		PatientDataSectionNCROperations
+				.validatePatientDataSectionNCRBirthWeight(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
