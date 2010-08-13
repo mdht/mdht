@@ -21,13 +21,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses( {
-	ActOperationsTest.class,
-	ActRelationshipOperationsTest.class,
-	EntityOperationsTest.class,
-	InfrastructureRootOperationsTest.class,
-	ParticipationOperationsTest.class,
-	RoleLinkOperationsTest.class,
-	RoleOperationsTest.class
+	// Nothing.  All the tests are in abstract classes.
 })
 
 public class AllRIMOperationsTests {
