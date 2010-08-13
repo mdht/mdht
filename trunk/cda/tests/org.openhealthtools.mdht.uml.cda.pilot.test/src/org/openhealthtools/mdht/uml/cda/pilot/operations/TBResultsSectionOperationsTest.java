@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultsSectionOperationsTest;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
@@ -118,6 +119,10 @@ public class TBResultsSectionOperationsTest extends
 	 */
 	@Test
 	public void testValidateTBResultsSectionTBResultOrganizer() {
+		TBResultsSection objectToTest = (TBResultsSection) getObjectToTest();
+		TBResultsSectionOperations.validateTBResultsSectionTBResultOrganizer(
+				objectToTest, Diagnostician.INSTANCE
+						.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -128,6 +133,10 @@ public class TBResultsSectionOperationsTest extends
 	 */
 	@Test
 	public void testValidateTBResultsSectionTBResultObservation() {
+		TBResultsSection objectToTest = (TBResultsSection) getObjectToTest();
+		TBResultsSectionOperations.validateTBResultsSectionTBResultObservation(
+				objectToTest, Diagnostician.INSTANCE
+						.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -138,6 +147,10 @@ public class TBResultsSectionOperationsTest extends
 	 */
 	@Test
 	public void testValidateResultsSectionCodeTBResultsSection() {
+		TBResultsSection objectToTest = (TBResultsSection) getObjectToTest();
+		TBResultsSectionOperations.validateResultsSectionCode(
+				objectToTest, Diagnostician.INSTANCE
+						.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
