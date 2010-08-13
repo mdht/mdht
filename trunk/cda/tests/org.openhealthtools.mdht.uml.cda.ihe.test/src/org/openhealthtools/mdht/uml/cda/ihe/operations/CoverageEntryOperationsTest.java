@@ -50,7 +50,6 @@ public class CoverageEntryOperationsTest extends CoverageActivityOperationsTest 
 		// unmodifiable so a sub-class can't append their test cases.
 		final List<CDATestCase> retValue = super.getTestCases();
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		retValue.addAll(super.getTestCases());
 		return retValue;
 	}
 
