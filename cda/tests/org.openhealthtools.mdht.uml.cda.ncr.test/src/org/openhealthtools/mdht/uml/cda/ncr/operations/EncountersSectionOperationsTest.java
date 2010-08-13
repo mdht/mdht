@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
@@ -36,7 +37,7 @@ public class EncountersSectionOperationsTest
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.17.2.2";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-			// Template ID
+	// Template ID
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
@@ -101,6 +102,10 @@ public class EncountersSectionOperationsTest
 	 */
 	@Test
 	public void testValidateNCREncountersSectionText() {
+		EncountersSection objectToTest = (EncountersSection) getObjectToTest();
+		EncountersSectionOperations.validateNCREncountersSectionText(
+				objectToTest, Diagnostician.INSTANCE
+						.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -111,6 +116,11 @@ public class EncountersSectionOperationsTest
 	 */
 	@Test
 	public void testValidateNCREncountersSectionNeonatalICUEncounterActivity() {
+		EncountersSection objectToTest = (EncountersSection) getObjectToTest();
+		EncountersSectionOperations
+				.validateNCREncountersSectionNeonatalICUEncounterActivity(
+						objectToTest, Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 

@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperationsTest;
 import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
@@ -107,6 +108,11 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 	 */
 	@Test
 	public void testValidateBirthWeightClassCode() {
+		BirthWeight objectToTest = (BirthWeight) getObjectToTest();
+		BirthWeightOperations
+				.validateBirthWeightClassCode(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -117,6 +123,11 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 	 */
 	@Test
 	public void testValidateBirthWeightMoodCode() {
+		BirthWeight objectToTest = (BirthWeight) getObjectToTest();
+		BirthWeightOperations
+				.validateBirthWeightMoodCode(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -127,6 +138,11 @@ public class BirthWeightOperationsTest extends ResultObservationOperationsTest {
 	 */
 	@Test
 	public void testValidateBirthWeightValue() {
+		BirthWeight objectToTest = (BirthWeight) getObjectToTest();
+		BirthWeightOperations
+				.validateBirthWeightValue(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 

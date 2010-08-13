@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalCareReport;
@@ -74,6 +75,11 @@ public class NeonatalCareReportOperationsTest extends
 	 */
 	@Test
 	public void testValidateNeonatalCareReportPatientDataSectionNCR() {
+		NeonatalCareReport objectToTest = (NeonatalCareReport) getObjectToTest();
+		NeonatalCareReportOperations
+				.validateNeonatalCareReportPatientDataSectionNCR(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 

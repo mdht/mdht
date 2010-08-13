@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersActivityOperationsTest;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
@@ -40,7 +41,7 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.5.4";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-			// Template ID
+	// Template ID
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
@@ -120,6 +121,11 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 	 */
 	@Test
 	public void testValidateNeonatalICUEncounterActivityLocation() {
+		NeonatalICUEncounterActivity objectToTest = (NeonatalICUEncounterActivity) getObjectToTest();
+		NeonatalICUEncounterActivityOperations
+				.validateNeonatalICUEncounterActivityLocation(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -130,6 +136,11 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 	 */
 	@Test
 	public void testValidateNeonatalICUEncounterActivityClassCode() {
+		NeonatalICUEncounterActivity objectToTest = (NeonatalICUEncounterActivity) getObjectToTest();
+		NeonatalICUEncounterActivityOperations
+				.validateNeonatalICUEncounterActivityClassCode(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -140,6 +151,11 @@ public class NeonatalICUEncounterActivityOperationsTest extends
 	 */
 	@Test
 	public void testValidateNeonatalICUEncounterActivityMoodCode() {
+		NeonatalICUEncounterActivity objectToTest = (NeonatalICUEncounterActivity) getObjectToTest();
+		NeonatalICUEncounterActivityOperations
+				.validateNeonatalICUEncounterActivityMoodCode(objectToTest,
+						Diagnostician.INSTANCE
+								.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
