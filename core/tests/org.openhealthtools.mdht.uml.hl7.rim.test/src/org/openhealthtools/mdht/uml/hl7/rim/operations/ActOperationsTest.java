@@ -14,12 +14,17 @@ package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import static org.junit.Assert.fail;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.Enumerator;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
 
 /**
  * This class is a JUnit 4 test case.
  */
-@SuppressWarnings("nls")
+@SuppressWarnings("unused")
 public abstract class ActOperationsTest extends
 		InfrastructureRootOperationsTest {
 
@@ -30,7 +35,9 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetClassCode() {
-		fail("Not yet implemented");
+		Act act = (Act)getObjectToTest();
+		Enumerator obj =  act.getClassCode();
+		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
 	/**
@@ -40,7 +47,9 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetMoodCode() {
-		fail("Not yet implemented");
+		Act act = (Act)getObjectToTest();
+		Enumerator obj =  act.getMoodCode();
+		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
 	/**
@@ -50,7 +59,9 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetNegationInd() {
-		fail("Not yet implemented");
+		Act act = (Act)getObjectToTest();
+		Boolean obj =  act.getNegationInd();
+		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
 	/**
@@ -60,7 +71,9 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetParticipations() {
-		fail("Not yet implemented");
+		Act act = (Act)getObjectToTest();
+		EList<Participation> obj =  act.getParticipations();
+		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
 	/**
@@ -70,7 +83,9 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetOutboundRelationships() {
-		fail("Not yet implemented");
+		Act act = (Act)getObjectToTest();
+		EList<ActRelationship> obj =  act.getOutboundRelationships();
+		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
 	/**
@@ -80,7 +95,9 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetInboundRelationships() {
-		fail("Not yet implemented");
+		Act act = (Act)getObjectToTest();
+		EList<ActRelationship> obj =  act.getInboundRelationships();
+		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
 } // ActOperationsTest

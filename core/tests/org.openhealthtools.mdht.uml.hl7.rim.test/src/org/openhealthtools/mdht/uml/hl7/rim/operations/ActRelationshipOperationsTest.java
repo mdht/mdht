@@ -14,12 +14,15 @@ package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import static org.junit.Assert.*;
 
+import org.eclipse.emf.common.util.Enumerator;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.hl7.rim.Act;
+import org.openhealthtools.mdht.uml.hl7.rim.ActRelationship;
 
 /**
  * This class is a JUnit 4 test case.
  */
-@SuppressWarnings("nls")
+@SuppressWarnings( { "unused", "nls" })
 public abstract class ActRelationshipOperationsTest extends
 		InfrastructureRootOperationsTest {
 
@@ -30,6 +33,8 @@ public abstract class ActRelationshipOperationsTest extends
 	 */
 	@Test
 	public void testGetTypeCode() {
+		ActRelationship ar = (ActRelationship) getObjectToTest();
+		Enumerator obj = ar.getTypeCode();
 		fail("Not yet implemented");
 	}
 
@@ -40,6 +45,8 @@ public abstract class ActRelationshipOperationsTest extends
 	 */
 	@Test
 	public void testGetTarget() {
+		ActRelationship ar = (ActRelationship) getObjectToTest();
+		Act obj = ar.getTarget();
 		fail("Not yet implemented");
 	}
 
@@ -50,6 +57,8 @@ public abstract class ActRelationshipOperationsTest extends
 	 */
 	@Test
 	public void testGetSource() {
+		ActRelationship ar = (ActRelationship) getObjectToTest();
+		Act obj = ar.getSource();
 		fail("Not yet implemented");
 	}
 

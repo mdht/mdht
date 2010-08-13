@@ -14,12 +14,18 @@ package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import static org.junit.Assert.*;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.Enumerator;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.hl7.rim.Entity;
+import org.openhealthtools.mdht.uml.hl7.rim.Participation;
+import org.openhealthtools.mdht.uml.hl7.rim.Role;
+import org.openhealthtools.mdht.uml.hl7.rim.RoleLink;
 
 /**
  * This class is a JUnit 4 test case.
  */
-@SuppressWarnings("nls")
+@SuppressWarnings( { "unused", "nls" })
 public abstract class RoleOperationsTest extends
 		InfrastructureRootOperationsTest {
 
@@ -30,6 +36,8 @@ public abstract class RoleOperationsTest extends
 	 */
 	@Test
 	public void testGetClassCode() {
+		Role role = (Role) getObjectToTest();
+		Enumerator obj = role.getClassCode();
 		fail("Not yet implemented");
 	}
 
@@ -40,6 +48,8 @@ public abstract class RoleOperationsTest extends
 	 */
 	@Test
 	public void testGetPlayer() {
+		Role role = (Role) getObjectToTest();
+		Entity obj = role.getPlayer();
 		fail("Not yet implemented");
 	}
 
@@ -50,6 +60,8 @@ public abstract class RoleOperationsTest extends
 	 */
 	@Test
 	public void testGetScoper() {
+		Role role = (Role) getObjectToTest();
+		Entity obj = role.getScoper();
 		fail("Not yet implemented");
 	}
 
@@ -60,6 +72,8 @@ public abstract class RoleOperationsTest extends
 	 */
 	@Test
 	public void testGetParticipations() {
+		Role role = (Role) getObjectToTest();
+		EList<Participation> obj = role.getParticipations();
 		fail("Not yet implemented");
 	}
 
@@ -70,6 +84,8 @@ public abstract class RoleOperationsTest extends
 	 */
 	@Test
 	public void testGetOutboundLinks() {
+		Role role = (Role) getObjectToTest();
+		EList<RoleLink> obj = role.getOutboundLinks();
 		fail("Not yet implemented");
 	}
 
@@ -80,6 +96,8 @@ public abstract class RoleOperationsTest extends
 	 */
 	@Test
 	public void testGetInboundLinks() {
+		Role role = (Role) getObjectToTest();
+		EList<RoleLink> obj = role.getInboundLinks();
 		fail("Not yet implemented");
 	}
 
