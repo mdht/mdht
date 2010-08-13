@@ -48,7 +48,6 @@ public abstract class ClinicalStatementOperationsTest extends CDAValidationTest 
 	@SuppressWarnings("null")
 	@Test
 	public void testGetEntryRelationshipTargetsClinicalStatementX_ActRelationshipEntryRelationshipObject() {
-		fail("Not yet implemented");
 		final ClinicalStatement cs = (ClinicalStatement) getObjectToTest();
 		x_ActRelationshipEntryRelationship typeCode = x_ActRelationshipEntryRelationship.CAUS;
 		final EList<ClinicalStatement> result = ClinicalStatementOperations
@@ -56,7 +55,7 @@ public abstract class ClinicalStatementOperationsTest extends CDAValidationTest 
 
 		assertTrue(result != null);
 		assertTrue(result.size() != 0);
-
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -67,15 +66,13 @@ public abstract class ClinicalStatementOperationsTest extends CDAValidationTest 
 	@SuppressWarnings("null")
 	@Test
 	public void testGetEntryRelationshipTargetsClinicalStatementObject() {
-
-		fail("Not yet implemented");
 		final ClinicalStatement cs = (ClinicalStatement) getObjectToTest();
 		final EList<ClinicalStatement> result = ClinicalStatementOperations
 				.getEntryRelationshipTargets(cs, cs);
 
 		assertTrue(result != null);
 		assertTrue(result.size() != 0);
-
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -86,7 +83,7 @@ public abstract class ClinicalStatementOperationsTest extends CDAValidationTest 
 	@Test(expected = IllegalArgumentException.class)
 	public void testGetEntryRelationshipTargetsClinicalStatementIllegalArgumentException() {
 		final ClinicalStatement cs = (ClinicalStatement) getObjectToTest();
-		// The "CAUS" argument was choosen at random.
+		// The "CAUS" argument was chosen at random.
 		ClinicalStatementOperations.getEntryRelationshipTargets(cs,
 				x_ActRelationshipEntryRelationship.CAUS, cs);
 	}
