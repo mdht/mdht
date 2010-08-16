@@ -272,19 +272,6 @@ public class BuildCDA4CDTExample {
 		DocumentBuilder exampleCDA4CDTBuilder = new DocumentBuilder() {
 
 			@Override
-			public ArrayBuilder<CS> getRealmCodeBuilder() {
-				return new ArrayBuilder<CS>() {
-					@Override
-					public ArrayList<CS> construct() {
-						ArrayList<CS> realmCodes = new ArrayList<CS>();
-						realmCodes.add(DatatypesFactory.eINSTANCE.createCS("US"));
-						return super.construct();
-					}
-
-				};
-			}
-
-			@Override
 			public Builder<InfrastructureRootTypeId> getDocumentTypeBuilder() {
 				return new Builder<InfrastructureRootTypeId>() {
 
