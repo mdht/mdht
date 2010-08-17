@@ -5,7 +5,9 @@
 <shortdesc conref="generated/_TBResultsSection.dita#classId/shortdesc"></shortdesc>
 <prolog conref="generated/_TBResultsSection.dita#classId/prolog"></prolog>
 <body>
-<p>The tuberculosis results section represents the name of the laboratory tests, the date that the specimens for the laboratory tests were taken from the subject of the case report, and the date that the tests were performed on the specimen. It represents the result of the laboratory tests and observation ranges and susceptibility results. In addition, it captures the name of organization where the specimens were collected.</p>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_TBResultsSection.dita#classId/description">
+</section>
 
 <ol audience="standards" conref="generated/_TBResultsSection.dita#classId/conformance">
 <li></li>
@@ -15,6 +17,8 @@
 </ol>
 <fig>
 <title>TB Results Section example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
 <codeblock conref="generated/_TBResultsSection.dita#classId/example">
 </codeblock>
 </fig>

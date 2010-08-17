@@ -30,14 +30,18 @@
 
 <div><p>[ClinicalDocument: templateId <tt>2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3</tt>]</p>
 
+
+<div class="section">
 <p>The CDA for Tuberculosis Follow Up Progress Note constrains CDA to express the data elements identified by the CRSWg as specific to a follow-up report of tuberculosis. Tuberculosis (TB) is a contagious and potentially life-threatening infectious disease caused by a bacterium called Mycobacterium tuberculosis. The tuberculosis bacteria are spread from person to person through the air.</p>
+
+</div>
 
 
 <ol>
 <li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>component</tt> such that it<ol type="a">
-<li><strong>SHALL</strong> contain [1..1] <a href="TBResultsSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.15.2.6]">TB Results Section</a> (templateId: <tt>2.16.840.1.113883.10.20.15.2.6</tt>)</li>
+<li><strong>SHALL</strong> contain [1..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="TBResultsSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.15.2.6]">TB Results Section</a> (templateId: <tt>2.16.840.1.113883.10.20.15.2.6</tt>)</li>
 </ol>
 </li>
 
@@ -47,6 +51,8 @@
 
 
 <div class="fignone"><span class="figcap">Figure 1. Tuberculosis Follow Up Progress Note example</span>
+
+
 
 <pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;

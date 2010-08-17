@@ -18,5 +18,9 @@
 		<!-- classes.ditamap is generated from the model -->
 		<topicref format="ditamap" href="../classes/classes.ditamap" navtitle="Other Classes"/>
 	</chapter>
+	<chapter href="ValueSets.dita" navtitle="VALUE SETS" type="topic">
+		<!-- valueset.ditamap is generated from the model -->
+		<topicref format="ditamap" href="../terminology/valueset.ditamap" navtitle="Value Sets"/>
+	</chapter>
 
 </bookmap>

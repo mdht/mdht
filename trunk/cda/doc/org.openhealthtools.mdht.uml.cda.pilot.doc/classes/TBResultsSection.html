@@ -30,16 +30,20 @@
 
 <div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.15.2.6</tt>]</p>
 
+
+<div class="section">
 <p>The tuberculosis results section represents the name of the laboratory tests, the date that the specimens for the laboratory tests were taken from the subject of the case report, and the date that the tests were performed on the specimen. It represents the result of the laboratory tests and observation ranges and susceptibility results. In addition, it captures the name of organization where the specimens were collected.</p>
+
+</div>
 
 
 <ol>
 <li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</a> template (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li>
 
-<li><strong>MAY</strong> contain [0..*] <tt>entry</tt> such that it<ol type="a">
-<li><strong>SHALL</strong> contain [1..1] @typeCode="DRIV" <em>DRIV (is derived from)</em></li>
+<li><strong>MAY</strong> contain [0..*] <tt>entry</tt>, such that it<ol type="a">
+<li>has @typeCode="DRIV" <em>DRIV (is derived from)</em></li>
 
-<li><strong>SHALL</strong> contain [1..1] <a href="TBResultOrganizer.html" title="[Organizer: templateId 2.16.840.1.113883.10.20.15.3.21]">TB Result Organizer</a> (templateId: <tt>2.16.840.1.113883.10.20.15.3.21</tt>)</li>
+<li>contains <a href="TBResultOrganizer.html" title="[Organizer: templateId 2.16.840.1.113883.10.20.15.3.21]">TB Result Organizer</a> (templateId: <tt>2.16.840.1.113883.10.20.15.3.21</tt>)</li>
 </ol>
 </li>
 
@@ -49,10 +53,10 @@
 
 <li><strong>SHALL</strong> contain [1..1] <tt>title</tt> = "Relevant diagnostic tests and/or laboratory data"</li>
 
-<li><strong>MAY</strong> contain [0..*] <tt>entry</tt> such that it<ol type="a">
-<li><strong>SHALL</strong> contain [1..1] @typeCode="DRIV" <em>DRIV (is derived from)</em></li>
+<li><strong>MAY</strong> contain [0..*] <tt>entry</tt>, such that it<ol type="a">
+<li>has @typeCode="DRIV" <em>DRIV (is derived from)</em></li>
 
-<li><strong>SHALL</strong> contain [1..1] <a href="TBResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.15.3.13]">TB Result Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.15.3.13</tt>)</li>
+<li>contains <a href="TBResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.15.3.13]">TB Result Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.15.3.13</tt>)</li>
 </ol>
 </li>
 
@@ -60,6 +64,8 @@
 
 
 <div class="fignone"><span class="figcap">Figure 1. TB Results Section example</span>
+
+
 
 <pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
@@ -75,7 +81,7 @@
             &lt;organizer moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.15.3.21" assigningAuthorityName="PILOT TB Result Organizer"/&gt;
-              &lt;id root="79d4f586-1641-43cb-b65d-8f0772ce34ac"/&gt;
+              &lt;id root="9e26a1ae-c327-4033-8a47-3c6d53d8115f"/&gt;
               &lt;code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/&gt;
               &lt;statusCode/&gt;
             &lt;/organizer&gt;
@@ -84,7 +90,7 @@
             &lt;observation classCode="OBS" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="PILOT TB Result Observation"/&gt;
-              &lt;id root="e83e311e-d3ec-41a6-9b9a-79431fdf7f0a"/&gt;
+              &lt;id root="af1370e2-a85b-4abc-8c78-b7657e30a2d4"/&gt;
               &lt;code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/&gt;
               &lt;statusCode code="completed"/&gt;
               &lt;effectiveTime&gt;

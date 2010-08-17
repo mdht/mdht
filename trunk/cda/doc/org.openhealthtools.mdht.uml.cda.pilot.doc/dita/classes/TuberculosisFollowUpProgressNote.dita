@@ -5,7 +5,9 @@
 <shortdesc conref="generated/_TuberculosisFollowUpProgressNote.dita#classId/shortdesc"></shortdesc>
 <prolog conref="generated/_TuberculosisFollowUpProgressNote.dita#classId/prolog"></prolog>
 <body>
-<p>The CDA for Tuberculosis Follow Up Progress Note constrains CDA to express the data elements identified by the CRSWg as specific to a follow-up report of tuberculosis. Tuberculosis (TB) is a contagious and potentially life-threatening infectious disease caused by a bacterium called Mycobacterium tuberculosis. The tuberculosis bacteria are spread from person to person through the air.</p>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_TuberculosisFollowUpProgressNote.dita#classId/description">
+</section>
 
 <ol audience="standards" conref="generated/_TuberculosisFollowUpProgressNote.dita#classId/conformance">
 <li></li>
@@ -15,6 +17,8 @@
 </ol>
 <fig>
 <title>Tuberculosis Follow Up Progress Note example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
 <codeblock conref="generated/_TuberculosisFollowUpProgressNote.dita#classId/example">
 </codeblock>
 </fig>

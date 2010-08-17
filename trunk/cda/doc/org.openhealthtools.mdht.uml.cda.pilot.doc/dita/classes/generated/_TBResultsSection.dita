@@ -8,17 +8,20 @@
 <resourceid id="2.16.840.1.113883.10.20.15.2.6"/>
 </prolog>
 <body>
+<section id="description">
+<p>The tuberculosis results section represents the name of the laboratory tests, the date that the specimens for the laboratory tests were taken from the subject of the case report, and the date that the tests were performed on the specimen. It represents the result of the laboratory tests and observation ranges and susceptibility results. In addition, it captures the name of organization where the specimens were collected.</p>
+</section>
 <ol id="conformance">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li>
-<li><b>MAY</b> contain [0..*] <tt>entry</tt> such that it<ol>
-<li><b>SHALL</b> contain [1..1] @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
-<li><b>SHALL</b> contain [1..1] <xref href="../TBResultOrganizer.dita">TB Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.21</tt>)</li></ol></li>
+<li><b>MAY</b> contain [0..*] <tt>entry</tt>, such that it<ol>
+<li>has @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
+<li>contains <xref href="../TBResultOrganizer.dita">TB Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.21</tt>)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt> = "Relevant diagnostic tests and/or laboratory data"</li>
-<li><b>MAY</b> contain [0..*] <tt>entry</tt> such that it<ol>
-<li><b>SHALL</b> contain [1..1] @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
-<li><b>SHALL</b> contain [1..1] <xref href="../TBResultObservation.dita">TB Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.13</tt>)</li></ol></li>
+<li><b>MAY</b> contain [0..*] <tt>entry</tt>, such that it<ol>
+<li>has @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
+<li>contains <xref href="../TBResultObservation.dita">TB Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.13</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
@@ -27,15 +30,15 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li>
 <li>[TBPN] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[TBPN] <b>SHALL</b> contain [1..1] <tt>title</tt> = "Relevant diagnostic tests and/or laboratory data"</li>
-<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt> such that it<ol>
-<li><b>SHALL</b> contain [1..1] <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultOrganizer.html">CCD Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultOrganizer.html">CCD Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li></ol></li>
 <li>[TBPN] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
-<li>[TBPN] <b>MAY</b> contain [0..*] <tt>entry</tt> such that it<ol>
-<li><b>SHALL</b> contain [1..1] @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
-<li><b>SHALL</b> contain [1..1] <xref href="../TBResultOrganizer.dita">TB Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.21</tt>)</li></ol></li>
-<li>[TBPN] <b>MAY</b> contain [0..*] <tt>entry</tt> such that it<ol>
-<li><b>SHALL</b> contain [1..1] @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
-<li><b>SHALL</b> contain [1..1] <xref href="../TBResultObservation.dita">TB Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.13</tt>)</li></ol></li>
+<li>[TBPN] <b>MAY</b> contain [0..*] <tt>entry</tt>, such that it<ol>
+<li>has @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
+<li>contains <xref href="../TBResultOrganizer.dita">TB Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.21</tt>)</li></ol></li>
+<li>[TBPN] <b>MAY</b> contain [0..*] <tt>entry</tt>, such that it<ol>
+<li>has @typeCode="DRIV" <i>DRIV (is derived from)</i></li>
+<li>contains <xref href="../TBResultObservation.dita">TB Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.3.13</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'results'.</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -52,7 +55,7 @@
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.15.3.21" assigningAuthorityName="PILOT TB Result Organizer"/>
-              <id root="79d4f586-1641-43cb-b65d-8f0772ce34ac"/>
+              <id root="9e26a1ae-c327-4033-8a47-3c6d53d8115f"/>
               <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
               <statusCode/>
             </organizer>
@@ -61,7 +64,7 @@
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
               <templateId root="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="PILOT TB Result Observation"/>
-              <id root="e83e311e-d3ec-41a6-9b9a-79431fdf7f0a"/>
+              <id root="af1370e2-a85b-4abc-8c78-b7657e30a2d4"/>
               <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
               <statusCode code="completed"/>
               <effectiveTime>
