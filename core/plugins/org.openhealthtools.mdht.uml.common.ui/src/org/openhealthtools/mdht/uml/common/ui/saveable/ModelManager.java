@@ -13,11 +13,11 @@
 package org.openhealthtools.mdht.uml.common.ui.saveable;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Vector;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -57,11 +57,11 @@ public class ModelManager {
 
 	private Map<URI,ModelDocument> uriToDocumentMap = new HashMap<URI,ModelDocument>();
 
-	private Collection<Resource> changedResources = new ArrayList<Resource>();
+	private Collection<Resource> changedResources = new Vector<Resource>();
 
-	private Collection<Resource> removedResources = new ArrayList<Resource>();
+	private Collection<Resource> removedResources = new Vector<Resource>();
 
-	private Collection<Resource> savedResources = new ArrayList<Resource>();
+	private Collection<Resource> savedResources = new Vector<Resource>();
 
 	private Shell shell;
 
