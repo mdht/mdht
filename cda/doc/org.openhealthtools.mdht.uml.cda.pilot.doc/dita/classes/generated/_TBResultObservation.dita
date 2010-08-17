@@ -8,10 +8,13 @@
 <resourceid id="2.16.840.1.113883.10.20.15.3.13"/>
 </prolog>
 <body>
+<section id="description">
+<p>This clinical statement represents the name of the laboratory test, the date that the specimen for the laboratory test was taken from the subject of the case report, the date that the laboratory test was performed on the specimen, and the result of the laboratory test. If applicable, it may capture the physical body location from where the specimen for the lab report was taken from the subject. In addition, it captures the name of organization where the specimen was collected. This tuberculosis result observation also contains a susceptibility clinical statement.</p>
+</section>
 <ol id="conformance">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultObservation.html">CCD Result Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
-<li><b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) STATIC 1</li>
 <li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 </ol>
 <ol id="aggregate">
@@ -25,7 +28,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul></li>
 <li>[TBPN] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li>[TBPN] <b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC</li>
+<li>[TBPN] <b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) STATIC 1</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>methodCode</tt><ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul></li>
 <li>[CCD] <b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt><ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>value</tt></li>
@@ -46,7 +49,7 @@
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
               <templateId root="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="PILOT TB Result Observation"/>
-              <id root="be05bc88-0c34-4794-83b5-80c371191272"/>
+              <id root="69ea4254-1d28-4a31-8db5-9838121d3a34"/>
               <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
               <statusCode code="completed"/>
               <effectiveTime>

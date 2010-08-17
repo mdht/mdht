@@ -8,18 +8,21 @@
 <resourceid id="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3"/>
 </prolog>
 <body>
+<section id="description">
+<p>The CDA for Tuberculosis Follow Up Progress Note constrains CDA to express the data elements identified by the CRSWg as specific to a follow-up report of tuberculosis. Tuberculosis (TB) is a contagious and potentially life-threatening infectious disease caused by a bacterium called Mycobacterium tuberculosis. The tuberculosis bacteria are spread from person to person through the air.</p>
+</section>
 <ol id="conformance">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
-<li><b>SHALL</b> contain [1..1] <tt>component</tt> such that it<ol>
-<li><b>SHALL</b> contain [1..1] <xref href="../TBResultsSection.dita">TB Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.2.6</tt>)</li></ol></li>
+<li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../TBResultsSection.dita">TB Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.2.6</tt>)</li></ol></li>
 <li><b>SHALL</b> satisfy: There can be any number of patient names, but at least one of them must include a given and family name.</li>
 </ol>
 <ol id="aggregate">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
-<li>[TBPN] <b>SHALL</b> contain [1..1] <tt>component</tt> such that it<ol>
-<li><b>SHALL</b> contain [1..1] <xref href="../TBResultsSection.dita">TB Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.2.6</tt>)</li></ol></li>
+<li>[TBPN] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../TBResultsSection.dita">TB Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.15.2.6</tt>)</li></ol></li>
 <li>[TBPN] <b>SHALL</b> satisfy: There can be any number of patient names, but at least one of them must include a given and family name.</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>

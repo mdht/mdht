@@ -30,7 +30,11 @@
 
 <div><p>[Observation: templateId <tt>2.16.840.1.113883.10.20.15.3.13</tt>]</p>
 
+
+<div class="section">
 <p>This clinical statement represents the name of the laboratory test, the date that the specimen for the laboratory test was taken from the subject of the case report, the date that the laboratory test was performed on the specimen, and the result of the laboratory test. If applicable, it may capture the physical body location from where the specimen for the lab report was taken from the subject. In addition, it captures the name of organization where the specimen was collected. This tuberculosis result observation also contains a susceptibility clinical statement.</p>
+
+</div>
 
 
 <ol>
@@ -38,7 +42,7 @@
 
 <li><strong>SHALL</strong> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt>, which <strong>SHALL</strong> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC</li>
+<li><strong>SHALL</strong> contain [1..1] <tt>code</tt>, which <strong>SHALL</strong> be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) STATIC 1</li>
 
 <li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 
@@ -46,6 +50,8 @@
 
 
 <div class="fignone"><span class="figcap">Figure 1. TB Result Observation example</span>
+
+
 
 <pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
@@ -57,7 +63,7 @@
             &lt;observation classCode="OBS" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="PILOT TB Result Observation"/&gt;
-              &lt;id root="be05bc88-0c34-4794-83b5-80c371191272"/&gt;
+              &lt;id root="69ea4254-1d28-4a31-8db5-9838121d3a34"/&gt;
               &lt;code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/&gt;
               &lt;statusCode code="completed"/&gt;
               &lt;effectiveTime&gt;

@@ -5,7 +5,9 @@
 <shortdesc conref="generated/_TBResultOrganizer.dita#classId/shortdesc"></shortdesc>
 <prolog conref="generated/_TBResultOrganizer.dita#classId/prolog"></prolog>
 <body>
-<p>The tuberculosis result organizer identifies an observation set, contained within the result organizer as a set of result observations. It contains information applicable to all of the contained result observations. It is particularly useful to group a number of tests, such as culture results, that are performed on a common specimen.</p>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_TBResultOrganizer.dita#classId/description">
+</section>
 
 <ol audience="standards" conref="generated/_TBResultOrganizer.dita#classId/conformance">
 <li></li>
@@ -15,6 +17,8 @@
 </ol>
 <fig>
 <title>TB Result Organizer example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
 <codeblock conref="generated/_TBResultOrganizer.dita#classId/example">
 </codeblock>
 </fig>
