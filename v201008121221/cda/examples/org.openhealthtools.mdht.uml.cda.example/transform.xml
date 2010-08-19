@@ -1,0 +1,21 @@
+<!--
+ Copyright (c) 2009 IBM Corporation, David A Carlson, and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+-->
+<project name="CDA Model Transformation" basedir="." default="all">
+	<property name="modelName" value="example" />
+	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda" />
+
+	<macrodef name="convertEcorePaths">
+		<attribute name="filePath" />
+		<sequential>
+			<!-- must include a replace statement for each imported template model. -->
+			<replace file="@{filePath}" token="/ccd.uml" value="/ccd_Ecore.uml" />
+		</sequential>
+	</macrodef>
+
+	<import file="${cdaPluginPath}/transform-common.xml" />
+</project>

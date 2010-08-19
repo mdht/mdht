@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <perspective
+           class="org.openhealthtools.mdht.uml.ui.perspective.PerspectiveFactory"
+           id="org.openhealthtools.mdht.uml.ui.perspective"
+           name="%Perspective_name">
+      </perspective>
+   </extension>
+  
+   <extension point = "org.eclipse.ui.editors">
+     <editor
+          class="org.openhealthtools.mdht.uml.ui.editors.UMLTableEditor"
+          contributorClass="org.openhealthtools.mdht.uml.ui.editors.UMLTableActionBarContributor"
+          default="true"
+          extensions="uml,xmi"
+          icon="icons/full/eview16/uml.gif"
+          id="org.openhealthtools.mdht.uml.ui.UMLTableEditorID"
+          name="%UMLTableEditor_label">
+     </editor>
+   </extension>  
+  
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml.Element">
+         <menu
+               label="%openWith_label"
+               path="group.openWith"
+               id="openWith">
+            <separator name="ext"/>
+         </menu>
+         <visibility>
+             <or>
+               <objectClass name="org.eclipse.uml2.uml.Package"/>
+               <objectClass name="org.eclipse.uml2.uml.Classifier"/>
+             </or>
+         </visibility>
+         <action
+               label="%UMLTableEditor_label"
+               class="org.openhealthtools.mdht.uml.ui.actions.OpenUMLTableEditorAction"
+               menubarPath="openWith/ext"
+               enablesFor="+"
+               id="org.openhealthtools.mdht.uml.ui.actions.OpenUMLTableEditorAction">
+         </action>
+      </objectContribution>
+   </extension>
+  
+  <!--
+  <extension point="org.eclipse.ui.commands">
+    <category name="%category.model.name" 
+    	description="%category.model.description" 
+    	id="org.openhealthtools.mdht.uml.ui.category.model" />
+    	
+    <command
+      name="%_UI_Menu_OpenType_label"
+      description="%_UI_Menu_OpenType_description"
+      categoryId="org.openhealthtools.mdht.uml.ui.category.model"
+      id="org.openhealthtools.mdht.uml.ui.OpenElementCommand" />  
+  </extension>
+  
+  <extension
+      point="org.eclipse.ui.bindings">
+    <key
+      commandId="org.openhealthtools.mdht.uml.ui.OpenElementCommand"
+      sequence="M1+M2+T"
+      schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" />
+  </extension>
+  -->
+
+   <!--
+     - Add UML popup menu
+     -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml">
+         <visibility>
+            <objectState name="umlType" value="Element"/>
+         </visibility>
+         <menu
+               label="%addUML.label"
+               path="group.new"
+               id="mdht.addUML">
+            <separator name="propertyGroup"/>
+            <separator name="classifierGroup"/>
+            <separator name="packageGroup"/>
+            <separator name="constraintGroup"/>
+            <separator name="commentGroup"/>
+         </menu>
+      </objectContribution>
+   </extension>
+   
+   <!-- UML Package menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.package">
+         <visibility>
+            <objectState name="umlType" value="Package"/>
+         </visibility>
+         <!--
+         <action
+               label="%addUMLPackage.label"
+               icon="icons/full/obj16/Package.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLPackageAction"
+               menubarPath="mdht.addUML/packageGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.package">
+         </action>
+         -->
+         <action
+               label="%addUMLEnumeration.label"
+               icon="icons/full/obj16/Enumeration.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLEnumerationAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.enumeration">
+         </action>
+         <action
+               label="%addUMLClass.label"
+               icon="icons/full/obj16/Class.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLClassAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.class">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <!-- UML Classifier menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.classifier">
+         <visibility>
+            <objectState name="umlType" value="Class"/>
+         </visibility>
+         <action
+               label="%addUMLOperation.label"
+               icon="icons/full/obj16/Operation.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddOperationAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.operation">
+         </action>
+         <action
+               label="%addUMLAssociation.label"
+               icon="icons/full/obj16/Association_navigable.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLAssociationAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.association">
+         </action>
+         <action
+               label="%addUMLAttribute.label"
+               icon="icons/full/obj16/Property.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLAttributeAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.attribute">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <!-- UML Operation menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.operation">
+         <visibility>
+            <objectState name="umlType" value="Operation"/>
+         </visibility>
+         <action
+               label="%addUMLPostCondition.label"
+               icon="icons/full/obj16/Constraint.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddPostConditionAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.postCondition">
+         </action>
+         <action
+               label="%addUMLPreCondition.label"
+               icon="icons/full/obj16/Constraint.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddPreConditionAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.preCondition">
+         </action>
+         <action
+               label="%addUMLBodyCondition.label"
+               icon="icons/full/obj16/Constraint.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddBodyConditionAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.bodyCondition">
+         </action>
+         <action
+               label="%addUMLReturnParameter.label"
+               icon="icons/full/obj16/Parameter_return.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddReturnParameterAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.returnParameter">
+         </action>
+         <action
+               label="%addUMLInputParameter.label"
+               icon="icons/full/obj16/Parameter_in.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddInputParameterAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.inputParameter">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.classifier">
+         <visibility>
+            <objectState name="umlType" value="Enumeration"/>
+         </visibility>
+         <action
+               label="%addUMLEnumerationLiteral.label"
+               icon="icons/full/obj16/EnumerationLiteral.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLEnumerationLiteralAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.enumerationLiteral">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <!-- UML Constraint menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.constraint">
+         <visibility>
+            <objectState name="umlType" value="Element"/>
+         </visibility>
+         <action
+               label="%addUMLConstraint.label"
+               icon="icons/full/obj16/Constraint.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLConstraintAction"
+               menubarPath="mdht.addUML/constraintGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.constraint">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <!-- Profile and Stereotype actions -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.umlExtension">
+         <visibility>
+            <objectState name="umlType" value="Element"/>
+         </visibility>
+         <menu
+               label="%_UI_UMLExtensionsMenu_label"
+               path="additions"
+               id="mdht.umlExtension">
+            <separator name="elementGroup"/>
+            <separator name="packageGroup"/>
+         </menu>
+      </objectContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.umlExtension.package">
+          <visibility>
+             <objectState name="umlType" value="Package"/>
+          </visibility>
+	      <action
+	         label="%_UI_UnapplyProfileAction_label"
+	         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyProfileAction"
+	         menubarPath="mdht.umlExtension/packageGroup"
+	         enablesFor="1"
+	         id="org.openhealthtools.mdht.uml.ui.editor.UnapplyProfileActionID">
+	      </action>
+	      <action
+	         label="%_UI_ApplyProfileAction_label"
+	         class="org.openhealthtools.mdht.uml.ui.actions.ApplyProfileAction"
+	         menubarPath="mdht.umlExtension/packageGroup"
+	         enablesFor="1"
+	         id="org.openhealthtools.mdht.uml.ui.editor.ApplyProfileActionID">
+	      </action>
+      </objectContribution>
+   </extension>
+         
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.umlExtension.element">
+          <visibility>
+             <objectState name="umlType" value="Element"/>
+          </visibility>
+	      <action
+	         label="%_UI_UnapplyStereotypeAction_label"
+	         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyStereotypeAction"
+	         menubarPath="mdht.umlExtension/elementGroup"
+	         enablesFor="1"
+	         id="org.openhealthtools.mdht.uml.ui.editor.UnapplyStereotypeActionID">
+	      </action>
+	      <action
+	         label="%_UI_ApplyStereotypeAction_label"
+	         class="org.openhealthtools.mdht.uml.ui.actions.ApplyStereotypeAction"
+	         menubarPath="mdht.umlExtension/elementGroup"
+	         enablesFor="1"
+	         id="org.openhealthtools.mdht.uml.ui.editor.ApplyStereotypeActionID">
+	      </action>
+      </objectContribution>
+   </extension>
+    
+  <extension
+     point="org.eclipse.ui.editorActions">
+    <editorContribution
+       targetID="org.openhealthtools.mdht.uml.ui.UMLTableEditorID"
+       id="org.openhealthtools.mdht.uml.ui.UMLTableEditorContributionID">
+      <menu
+         label="%_UI_PackageMenu_label"
+         path="org.openhealthtools.mdht.uml.ui.umlMenuID/additions"
+         id="org.openhealthtools.mdht.uml.ui.editor.PackageMenuID">
+        <separator name="additions"/>
+      </menu>
+      <action
+         label="%_UI_UnapplyProfileAction_label"
+         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyProfileAction"
+         menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.PackageMenuID/additions"
+         enablesFor="1"
+         id="org.openhealthtools.mdht.uml.ui.editor.UnapplyProfileActionID">
+        <enablement>
+          <objectState name="umlType" value="Package"/>
+        </enablement>
+      </action>
+      <action
+         label="%_UI_ApplyProfileAction_label"
+         class="org.openhealthtools.mdht.uml.ui.actions.ApplyProfileAction"
+         menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.PackageMenuID/additions"
+         enablesFor="1"
+         id="org.openhealthtools.mdht.uml.ui.editor.ApplyProfileActionID">
+        <enablement>
+          <objectState name="umlType" value="Package"/>
+        </enablement>
+      </action>
+      <menu
+         label="%_UI_ElementMenu_label"
+         path="org.openhealthtools.mdht.uml.ui.umlMenuID/additions"
+         id="org.openhealthtools.mdht.uml.ui.editor.ElementMenuID">
+        <separator name="additions"/>
+      </menu>
+      <action
+         label="%_UI_UnapplyStereotypeAction_label"
+         class="org.openhealthtools.mdht.uml.ui.actions.UnapplyStereotypeAction"
+         menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.ElementMenuID/additions"
+         enablesFor="1"
+         id="org.openhealthtools.mdht.uml.ui.editor.UnapplyStereotypeActionID">
+        <enablement>
+          <objectState name="umlType" value="Element"/>
+        </enablement>
+      </action>
+      <action
+         label="%_UI_ApplyStereotypeAction_label"
+         class="org.openhealthtools.mdht.uml.ui.actions.ApplyStereotypeAction"
+         menubarPath="org.openhealthtools.mdht.uml.ui.umlMenuID/org.openhealthtools.mdht.uml.ui.editor.ElementMenuID/additions"
+         enablesFor="1"
+         id="org.openhealthtools.mdht.uml.ui.editor.ApplyStereotypeActionID">
+        <enablement>
+          <objectState name="umlType" value="Element"/>
+        </enablement>
+      </action>
+    </editorContribution>
+  </extension>
+</plugin>

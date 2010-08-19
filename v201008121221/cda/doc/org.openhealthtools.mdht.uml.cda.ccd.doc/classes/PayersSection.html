@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Payers Section"/>
+<meta name="abstract" content="[Section: templateId 2.16.840.1.113883.10.20.1.9]"/>
+<meta name="description" content="[Section: templateId 2.16.840.1.113883.10.20.1.9]"/>
+<meta name="DC.Coverage" content="Section"/>
+<meta name="DC.Relation" scheme="URI" content="../SectionTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Payers Section</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Payers Section</h1>
+
+
+
+<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.1.9</tt>]</p>
+
+<p>
+    <em>Payers</em> contains data on the patient's payers, whether a 'third party' insurance,
+    self-pay, other payer or guarantor, or some combination of payers, and is used to define which entity is the
+    responsible fiduciary for the financial aspects of a patient's care.
+</p>
+
+<p>
+    Each unique
+    instance of a payer and all the pertinent data needed to contact, bill to, and collect from that payer should be
+    included. Authorization information that can be used to define pertinent referral, authorization tracking number,
+    procedure, therapy, intervention, device, or similar authorizations for the patient or provider, or both should be
+    included. At a minimum, the patient's pertinent current payment sources should be listed.
+</p>
+
+<p>
+    The CCD
+    represents the sources of payment as a coverage act, which identifies all of the insurance policies or government or
+    other programs that cover some or all of the patient's healthcare expenses. The policies or programs are sequenced by
+    order of preference. Each policy or program identifies the covered party with respect to the payer, so that the
+    identifiers can be recorded.
+</p>
+
+
+<ol>
+<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <em>Payment sources</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>title</tt></li>
+
+<li><strong>SHOULD</strong> contain [1..*] <tt>entry</tt> such that it<ol type="a">
+<li><strong>SHALL</strong> contain [1..1] <a href="CoverageActivity.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.20]">Coverage Activity</a> (templateId: <tt>2.16.840.1.113883.10.20.1.20</tt>)</li>
+</ol>
+</li>
+
+</ol>
+
+<div class="fignone"><span class="figcap">Figure 1. Payers Section example</span>
+
+<pre class="codeblock">TODO: XML document snippet</pre>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../SectionTemplates.html">SECTION TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="entryconcept" xml:lang="en-us">
+<title>Entry Stereotype</title>
+<conbody><p>The Entry Stereotype is applied to the UML Association model element and is used to indicate that a Section has a required Entry or a required clinical statement. There stereotype is also used to specify an optional type code.</p></conbody>
+</concept>

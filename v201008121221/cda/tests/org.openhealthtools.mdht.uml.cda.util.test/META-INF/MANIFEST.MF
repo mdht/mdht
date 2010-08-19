@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.openhealthtools.mdht.uml.cda.util.test
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.util.test;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-Vendor: Open Health Tools
+Fragment-Host: org.openhealthtools.mdht.uml.cda;bundle-version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.junit4
