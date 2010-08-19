@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.team.svn.core.svnnature">
+<project reference="1.0.1,https://mdht.projects.openhealthtools.org/svn/mdht/trunk/cda/examples/org.openhealthtools.mdht.cda.documentevent.processor,org.openhealthtools.mdht.cda.documentevent.processor,c08b95dff83c001f1918cb540b14530b;https://mdht.projects.openhealthtools.org/svn/mdht;https://mdht.projects.openhealthtools.org/svn/mdht;branches;tags;trunk;true;d2ad734f-166c-0410-b8fe-fe8d3035ea49;https://mdht.projects.openhealthtools.org/svn/mdht;;false;;;22"/>
+<project reference="1.0.1,https://mdht.projects.openhealthtools.org/svn/mdht/trunk/cda/examples/org.openhealthtools.mdht.uml.cda.example.java,org.openhealthtools.mdht.uml.cda.example.java,c08b95dff83c001f1918cb540b14530b;https://mdht.projects.openhealthtools.org/svn/mdht;https://mdht.projects.openhealthtools.org/svn/mdht;branches;tags;trunk;true;d2ad734f-166c-0410-b8fe-fe8d3035ea49;https://mdht.projects.openhealthtools.org/svn/mdht;;false;;;22"/>
+</provider>
+</psf>

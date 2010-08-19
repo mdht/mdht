@@ -1,0 +1,10 @@
+History & Physical
+-----------------------------------
+* work on CONF-HP-6 thru 9, global constraints based on element name
+
+* continue with CONF-HP-31 and beyond
+
+
+Consultation Note
+-----------------------------------
+* 

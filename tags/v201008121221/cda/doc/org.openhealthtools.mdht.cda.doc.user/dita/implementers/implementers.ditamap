@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/map.dtd">
+<map id="implementers_top" title="CDA Tools Implementers Guide">
+	<topicref format="dita" href="concepts/c_Implementers.dita" navtitle="Standards Implementers" type="concept">
+		<topicref format="dita" href="concepts/c_Model_Driven_Development.dita" navtitle="Model-Driven Development Process Overview" type="concept"/>
+		<topicref format="dita" href="concepts/c_UML_Profile_for_CDA.dita" navtitle="UML Profile for CDA" type="concept">
+			<topicref format="dita" href="concepts/c_CDA_Template_Stereotype.dita" navtitle="CDA Template Stereotype" type="concept"/>
+			<topicref format="dita" href="concepts/c_Codegen_Support_Stereotype.dita" navtitle="Code Generation Support Stereotype" type="concept"/>
+			<topicref format="dita" href="concepts/c_Vocabulary_Specification_Stereotype.dita" navtitle="Vocabulary Specification Stereotype" type="concept"/>
+			<topicref format="dita" href="concepts/c_Entry_Stereotype.dita" navtitle="Entry Stereotype" type="concept"/>
+			<topicref format="dita" href="concepts/c_Entry_Relationship_Stereotype.dita" navtitle="Entry Relationship Stereotype" type="concept"/>
+			<topicref format="dita" href="concepts/c_Null_Flavor_Stereotype.dita" navtitle="Null Flavor Stereotype" type="concept"/>
+			<topicref format="dita" href="concepts/c_Text_Value_Stereotype.dita" navtitle="Text Value Stereotype" type="concept"/>
+		</topicref>
+		<topicref format="dita" href="concepts/c_Model_to_Model_Transformation.dita" navtitle="Model-to-Model Transformation" type="concept">
+			<topicref format="dita" href="tasks/t_Invoke_Model_to_Model.dita" navtitle="Invoke the Model-to-Model Transformation via Ant" type="task"/>
+			<topicref format="dita" href="concepts/c_Generated_Constraints.dita" navtitle="Generated OCL Constraints" type="concept">
+				<topicref format="dita" href="concepts/c_Generated_Template_Constraints.dita" navtitle="Generated Template Constraint" type="concept"/>
+				<topicref format="dita" href="concepts/c_Generated_Property_Constraints.dita" navtitle="Generated Property Constraints" type="concept"/>
+				<topicref format="dita" href="concepts/c_Generated_Vocabulary_Constraints.dita" navtitle="Generated Property Constraints" type="concept"/>
+			</topicref>
+		</topicref>
+		<topicref format="dita" href="concepts/c_Runtime_API.dita" navtitle="Runtime API" type="concept">
+			<topicref format="dita" href="tasks/t_Code_Generation.dita" navtitle="Code Generation" type="task"/>
+			<topicref format="dita" href="concepts/c_Serialization.dita" navtitle="Producing an XML instance (serialization)" type="concept"/>
+			<topicref format="dita" href="concepts/c_Deserialization.dita" navtitle="Consuming an XML instance (deserialization)" type="concept"/>
+			<topicref format="dita" href="concepts/c_Validation.dita" navtitle="Validation" type="concept"/>
+		</topicref>
+	</topicref>
+</map>

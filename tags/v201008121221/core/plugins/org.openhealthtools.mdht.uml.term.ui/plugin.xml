@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2010 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.openhealthtools.mdht.uml.common.notation">
+      <provider profileURI="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml"
+      		 class="org.openhealthtools.mdht.uml.term.ui.util.TermAnnotationProvider"/>
+   </extension>
+   
+   
+      <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="org.openhealthtools.mdht.uml.term.ui.import"
+             nameFilter="*.uml"
+            >
+         <menu
+               label="OHT Model Tools"
+               path="additions"
+               id="org.openhealthtools.mdht.uml.term.ui.import.menu">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Import from PHIN VADS"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.ImportTerminologyAction"
+               menubarPath="org.openhealthtools.mdht.uml.term.ui.import.menu/group1"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.term.ui.import">
+         </action>
+      </objectContribution>
+   </extension>
+   
+   
+</plugin>

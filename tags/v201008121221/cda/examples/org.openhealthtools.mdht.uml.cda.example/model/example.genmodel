@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.example/src"
+    editDirectory="/org.openhealthtools.mdht.uml.cda.example.edit/src" editorDirectory="/org.openhealthtools.mdht.uml.cda.example.editor/src"
+    modelPluginID="org.openhealthtools.mdht.uml.cda.example" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Example" modelPluginClass="ExamplePlugin"
+    editPluginClass="org.openhealthtools.mdht.uml.cda.example.provider.ExampleEditPlugin"
+    editorPluginClass="org.openhealthtools.mdht.uml.cda.example.presentation.ExampleEditorPlugin"
+    testSuiteClass="org.openhealthtools.mdht.uml.cda.example.tests.ExampleAllTests"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.genmodel#//ccd ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    pluralizedGetters="true" invariantPrefix="validate">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>example_Ecore.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Example" basePackage="org.openhealthtools.mdht.uml.cda"
+      disposableProviderFactory="true" ecorePackage="example.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.example.operations">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MyDocument">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyDocument/MyDocumentTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocumentTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocumentTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyDocument/MyDocumentMySection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocumentMySection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocumentMySection/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MyActivity">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivityTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivityClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivityMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityMoodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivityCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivityStatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityStatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivityStatusCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MySection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySectionTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySectionCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySectionTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionTitle/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySectionMyActivity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionMyActivity/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySectionMyActivity/context"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

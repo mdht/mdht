@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="umlprofileforcdaconcept" xml:lang="en-us"> 
+  <title>UML Profile for CDA</title> 
+  <conbody>
+	 <p>A UML profile is a generic extension mechanism supported by most UML
+		modeling tools used to refine or customize a UML model. Profiles are applied to
+		UML models and contain stereotypes. Stereotypes are applied to individual model
+		elements and contain properties. Properties allow the modeler to specify
+		additional information or metadata directly in the model. Metadata specified in
+		stereotype properties is used in the model-to-model transformation to generate
+		OCL constraints and attach various annotations that are used downstream during
+		code generation and at runtime.
+	 </p><image href="../images/Profile.png"
+	 id="image_81BFADA71F0247E59C35A1F0C515BB36" placement="break"/>
+  </conbody> 
+</concept>

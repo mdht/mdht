@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <notation:Diagram type="PapyrusUMLClassDiagram" name="MyDocument" measurementUnit="Pixel">
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="example.uml#_wDMM0GEHEd6bFO5yxRh3Nw"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="133" y="320" width="128" height="112"/>
+    </children>
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_Ze7UsGESEd69D7zx7EkLMA"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="132" y="159"/>
+    </children>
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="example.uml#_Ucv9baX0Ed6JRdOhEffuGA"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="503" y="328"/>
+    </children>
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="515" y="152"/>
+    </children>
+    <children xsi:type="notation:Shape" type="Text" fontName="Microsoft Sans Serif" fontHeight="26" description="MyDocument UML Class Diagram" fillColor="0" transparency="0" lineColor="0">
+      <children xsi:type="notation:BasicDecorationNode" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xsi:type="notation:BasicDecorationNode" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <element xsi:nil="true"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="20" y="28" width="567" height="65"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle"/>
+    <element href="example.uml#_qQyD8jxVEd6JwqSGecoePg"/>
+    <edges xsi:type="notation:Connector" type="4002" source="/0/@children.0" target="/0/@children.1" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="6007">
+        <layoutConstraint xsi:type="notation:Location" y="40"/>
+      </children>
+      <styles xsi:type="notation:FontStyle" fontName="Microsoft Sans Serif" fontHeight="8"/>
+      <element href="example.uml#_ZyMtMKX2Ed6JRdOhEffuGA"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+    </edges>
+    <edges xsi:type="notation:Connector" type="4001" source="/0/@children.2" target="/0/@children.0" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="6001">
+        <layoutConstraint xsi:type="notation:Location" y="-20"/>
+      </children>
+      <children xsi:type="notation:DecorationNode" type="6002">
+        <layoutConstraint xsi:type="notation:Location" y="20"/>
+      </children>
+      <children xsi:type="notation:DecorationNode" visible="false" type="6003">
+        <layoutConstraint xsi:type="notation:Location" y="-20"/>
+      </children>
+      <children xsi:type="notation:DecorationNode" visible="false" type="6005">
+        <layoutConstraint xsi:type="notation:Location" x="32" y="24"/>
+      </children>
+      <styles xsi:type="notation:FontStyle" fontName="Microsoft Sans Serif" fontHeight="8"/>
+      <element href="example.uml#_v0rX0KX0Ed6JRdOhEffuGA"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" points="[-33, 35, 320, -57]$[-35, 38, 318, -54]$[-303, 83, 50, -9]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.22,0.51)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.98,0.55)"/>
+    </edges>
+    <edges xsi:type="notation:Connector" type="4002" source="/0/@children.2" target="/0/@children.3" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="6007">
+        <layoutConstraint xsi:type="notation:Location" y="40"/>
+      </children>
+      <styles xsi:type="notation:FontStyle" fontName="Microsoft Sans Serif" fontHeight="8"/>
+      <element href="example.uml#_Ucv9b6X0Ed6JRdOhEffuGA"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, -64, 60]$[64, -60, 0, 0]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.66,0.0)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+    </edges>
+  </notation:Diagram>
+  <notation:Diagram type="PapyrusUMLClassDiagram" name="MyActivity" measurementUnit="Pixel">
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <children type="3012">
+          <element href="example.uml#_Ucv9Z6X0Ed6JRdOhEffuGA"/>
+          <layoutConstraint xsi:type="notation:Location" x="76" y="10"/>
+        </children>
+        <children type="3012">
+          <element href="example.uml#_Ucv9aaX0Ed6JRdOhEffuGA"/>
+          <layoutConstraint xsi:type="notation:Location" x="61" y="29"/>
+        </children>
+        <children type="3012">
+          <element href="example.uml#_Ucv9a6X0Ed6JRdOhEffuGA"/>
+          <layoutConstraint xsi:type="notation:Location" x="64" y="43"/>
+        </children>
+        <children type="3012">
+          <element href="example.uml#_Ucv9bKX0Ed6JRdOhEffuGA"/>
+          <layoutConstraint xsi:type="notation:Location" x="59" y="50"/>
+        </children>
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="example.uml#_Ucv9YKX0Ed6JRdOhEffuGA"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="406" y="268" width="130" height="133"/>
+    </children>
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <children type="3012">
+          <element href="example.uml#_Ucv9caX0Ed6JRdOhEffuGA"/>
+          <layoutConstraint xsi:type="notation:Location" x="23"/>
+        </children>
+        <children type="3012">
+          <element href="example.uml#_Ucv9cKX0Ed6JRdOhEffuGA"/>
+          <layoutConstraint xsi:type="notation:Location" x="41" y="21"/>
+        </children>
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="example.uml#_Ucv9baX0Ed6JRdOhEffuGA"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="119" y="272" width="144" height="138"/>
+    </children>
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="120" y="130"/>
+    </children>
+    <children xsi:type="notation:Shape" type="2008" fontName="Microsoft Sans Serif" fontHeight="8" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="5029"/>
+      <children xsi:type="notation:BasicCompartment" type="7017">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7018">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:BasicCompartment" type="7019">
+        <styles xsi:type="notation:SortingStyle"/>
+        <styles xsi:type="notation:FilteringStyle"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <styles xsi:type="notation:HintedDiagramLinkStyle"/>
+      <element href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GgvgUDxbEd6JwqSGecoePg"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="412" y="128"/>
+    </children>
+    <children xsi:type="notation:Shape" type="Text" fontName="Microsoft Sans Serif" fontHeight="26" description="MyActivity UML Class Diagram" fillColor="0" transparency="0" lineColor="0">
+      <children xsi:type="notation:BasicDecorationNode" type="DiagramName">
+        <element xsi:nil="true"/>
+      </children>
+      <children xsi:type="notation:BasicDecorationNode" type="Description">
+        <element xsi:nil="true"/>
+      </children>
+      <element xsi:nil="true"/>
+      <layoutConstraint xsi:type="notation:Bounds" x="66" y="23" width="584" height="76"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle"/>
+    <element href="example.uml#_qQyD8jxVEd6JwqSGecoePg"/>
+    <edges xsi:type="notation:Connector" type="4002" source="/1/@children.1" target="/1/@children.2" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="6007">
+        <layoutConstraint xsi:type="notation:Location" y="40"/>
+      </children>
+      <styles xsi:type="notation:FontStyle" fontName="Microsoft Sans Serif" fontHeight="8"/>
+      <element href="example.uml#_Ucv9b6X0Ed6JRdOhEffuGA"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.3680555555555556,0.007246376811594203)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+    </edges>
+    <edges xsi:type="notation:Connector" type="4002" source="/1/@children.0" target="/1/@children.3" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="6007">
+        <layoutConstraint xsi:type="notation:Location" y="40"/>
+      </children>
+      <styles xsi:type="notation:FontStyle" fontName="Microsoft Sans Serif" fontHeight="8"/>
+      <element href="example.uml#_Pl-JwKX2Ed6JRdOhEffuGA"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 29, 40]$[-29, -40, 0, 0]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.4230769230769231,0.007518796992481203)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+    </edges>
+    <edges xsi:type="notation:Connector" type="4001" source="/1/@children.0" target="/1/@children.1" lineColor="0">
+      <children xsi:type="notation:DecorationNode" type="6001">
+        <layoutConstraint xsi:type="notation:Location" y="-20"/>
+      </children>
+      <children xsi:type="notation:DecorationNode" type="6002">
+        <layoutConstraint xsi:type="notation:Location" y="20"/>
+      </children>
+      <children xsi:type="notation:DecorationNode" visible="false" type="6003">
+        <layoutConstraint xsi:type="notation:Location" y="-20"/>
+      </children>
+      <children xsi:type="notation:DecorationNode" visible="false" type="6005">
+        <layoutConstraint xsi:type="notation:Location" y="20"/>
+      </children>
+      <styles xsi:type="notation:FontStyle" fontName="Microsoft Sans Serif" fontHeight="8"/>
+      <element href="example.uml#_Ucv9daX0Ed6JRdOhEffuGA"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" points="[-33, 52, 237, -52]$[-36, 57, 234, -47]$[-220, 93, 50, -11]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.0,0.51)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.94,0.51)"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

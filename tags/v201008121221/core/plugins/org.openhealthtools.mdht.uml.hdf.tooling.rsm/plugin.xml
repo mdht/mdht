@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+  Copyright (c) 2006, 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+
+<!--
+   <extension
+         id="RIM UMLProfiles"
+         name="RIM UMLProfiles"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="RIM"
+            plugin="org.openhealthtools.mdht.uml.hdf.tooling.rsm"
+            path="profiles">
+      </pathmap>
+   </extension>
+   
+   <extension
+         id="RIM UMLProfiles"
+         name="RIM UMLProfiles"
+         point="com.ibm.xtools.uml.msl.UMLProfiles">
+      <UMLProfile
+            id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.RIM"
+            name="RIM"
+            path="pathmap://RIM/RIM.epx"
+            required="false"
+            visible="true">
+      </UMLProfile>
+   </extension>
+-->
+   <extension
+         id="RIM ElementTypes"
+         name="RIM ElementTypes"
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.ActClass"
+               name="%_UI_ElementType__Act__Class_name"
+               edithelperadvice="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.ActClassEditHelperAdvice"
+               kind="com.ibm.xtools.uml.type.IStereotypedElementType">
+            <param
+                  name="stereotype"
+                  value="RIM::Act"/>
+            <specializes id="com.ibm.xtools.uml.class"/>
+            <matcher class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.ActClassMatcher"/>
+         </specializationType>
+      </metamodel>
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.EntityClass"
+               name="%_UI_ElementType__Entity__Class_name"
+               edithelperadvice="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.EntityClassEditHelperAdvice"
+               kind="com.ibm.xtools.uml.type.IStereotypedElementType">
+            <param
+                  name="stereotype"
+                  value="RIM::Entity"/>
+            <specializes id="com.ibm.xtools.uml.class"/>
+            <matcher class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.EntityClassMatcher"/>
+         </specializationType>
+      </metamodel>
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.RoleClass"
+               name="%_UI_ElementType__Role__Class_name"
+               edithelperadvice="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.RoleClassEditHelperAdvice"
+               kind="com.ibm.xtools.uml.type.IStereotypedElementType">
+            <param
+                  name="stereotype"
+                  value="RIM::Role"/>
+            <specializes id="com.ibm.xtools.uml.class"/>
+            <matcher class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.RoleClassMatcher"/>
+         </specializationType>
+      </metamodel>
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.RoleLinkClass"
+               name="%_UI_ElementType__RoleLink__Class_name"
+               edithelperadvice="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.RoleLinkClassEditHelperAdvice"
+               kind="com.ibm.xtools.uml.type.IStereotypedElementType">
+            <param
+                  name="stereotype"
+                  value="RIM::RoleLink"/>
+            <specializes id="com.ibm.xtools.uml.class"/>
+            <matcher class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.RoleLinkClassMatcher"/>
+         </specializationType>
+      </metamodel>
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.ActRelationshipClass"
+               name="%_UI_ElementType__ActRelationship__Class_name"
+               edithelperadvice="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.ActRelationshipClassEditHelperAdvice"
+               kind="com.ibm.xtools.uml.type.IStereotypedElementType">
+            <param
+                  name="stereotype"
+                  value="RIM::ActRelationship"/>
+            <specializes id="com.ibm.xtools.uml.class"/>
+            <matcher class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.ActRelationshipClassMatcher"/>
+         </specializationType>
+      </metamodel>
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.ParticipationClass"
+               name="%_UI_ElementType__Participation__Class_name"
+               edithelperadvice="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.ParticipationClassEditHelperAdvice"
+               kind="com.ibm.xtools.uml.type.IStereotypedElementType">
+            <param
+                  name="stereotype"
+                  value="RIM::Participation"/>
+            <specializes id="com.ibm.xtools.uml.class"/>
+            <matcher class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.ParticipationClassMatcher"/>
+         </specializationType>
+      </metamodel>
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <specializationType
+               id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.LanguageCommunication"
+               name="%_UI_ElementType__LanguageCommunication__Class_name"
+               edithelperadvice="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.LanguageCommunicationClassEditHelperAdvice"
+               kind="com.ibm.xtools.uml.type.IStereotypedElementType">
+            <param
+                  name="stereotype"
+                  value="RIM::LanguageCommunication"/>
+            <specializes id="com.ibm.xtools.uml.class"/>
+            <matcher class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.LanguageCommunicationClassMatcher"/>
+         </specializationType>
+      </metamodel>
+      <metamodel
+             nsURI="http://www.eclipse.org/uml2/2.1.0/UML">
+         <adviceBinding
+            id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.applyProfileAdvice"
+            typeId="com.ibm.xtools.uml.package"
+            class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers.RIMApplyProfileAdvice"
+            inheritance="all">
+         </adviceBinding>
+      </metamodel>
+   </extension>
+
+   <extension id="DefaultEditPartEditPolicyProvider" point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.providers.RIMEditPolicyProvider">
+         <Priority name="High">
+         </Priority>             
+      </editpolicyProvider>
+   </extension>
+   
+   <extension
+         point="org.eclipse.emf.transaction.listeners">
+      <listener
+            class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.utils.RIMResourceSetListener">
+         <editingDomain
+               id="org.eclipse.gmf.runtime.emf.core.compatibility.MSLEditingDomain">
+         </editingDomain>
+      </listener>
+   </extension>
+
+   <extension
+         id="RIM ElementTypeBindings"
+         name="RIM ElementTypeBindings"
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding context="com.ibm.xtools.uml.type.context">
+         <elementType ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.ActClass"/>
+         <elementType ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.EntityClass"/>
+         <elementType ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.RoleClass"/>
+         <elementType ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.RoleLinkClass"/>
+         <elementType ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.ActRelationshipClass"/>
+         <elementType ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.ParticipationClass"/>
+         <elementType ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.LanguageCommunicationClass"/>
+         <advice ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.applyProfileAdvice"/>
+      </binding>
+   </extension>
+
+
+   <extension
+         id="RIM PaletteProviders"
+         name="RIM PaletteProviders"
+         point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
+      <paletteProvider class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.palette.RIMPaletteProvider">
+         <Priority name="Medium"/>
+         <editor id="ModelerDiagramEditor"/>
+         <content>
+            <method
+                  name="getDiagram().getType()"
+                  value="Class, Freeform"/>
+         </content>
+      </paletteProvider>
+   </extension>
+
+   <extension
+         id="RIM DefaultViewProviders"
+         name="RIM DefaultViewProviders"
+         point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+      <viewProvider class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.providers.RIMDefaultViewProvider">
+         <Priority name="High"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge"/>
+      </viewProvider>
+   </extension>
+
+   <extension
+         id="RIM ModelingAssistantProviders"
+         name="RIM ModelingAssistantProviders"
+         point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+      <modelingAssistantProvider class="org.openhealthtools.mdht.uml.hdf.tooling.rsm.providers.RIMModelingAssistant">
+         <Priority name="Medium"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension
+         id="RIM Activities"
+         name="RIM Activities"
+         point="org.eclipse.ui.activities">
+      <category
+            id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.activities.category"
+            name="%_UI_ActivityCategoryName"
+            description="%_UI_ActivityCategoryDescription">
+      </category>
+      <defaultEnablement id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.activity" />
+      <defaultEnablement id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.uireduction.activity" />
+   </extension>
+   
+   <extension
+         id="RIM EditingCapabilities"
+         name="RIM EditingCapabilities"
+         point="com.ibm.xtools.common.ui.reduction.editingCapabilities">
+      <activity
+            match="equals"
+            ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.uireduction.activity">
+      </activity>
+   </extension>
+
+   <extension
+         id="RIM Activities"
+         name="RIM Activities"
+         point="org.eclipse.ui.activities">
+      <activity
+            id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.uireduction.activity"
+            name="%_UI_Activity_uiReduction_name"
+            description="%_UI_Activity_uiReduction_description">
+      </activity>
+      <activityPatternBinding
+            activityId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.uireduction.activity"
+            pattern="org\.openhealthtools\.modeling\.hdf\.rim\.tooling/.*[^org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.templates.RIMModel].*">
+      </activityPatternBinding>
+      <activityRequirementBinding
+            activityId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.uireduction.activity"
+            requiredActivityId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.activity">
+      </activityRequirementBinding>
+      <categoryActivityBinding
+            activityId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.uireduction.activity"
+            categoryId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.activities.category">
+      </categoryActivityBinding>
+   </extension>
+
+   <extension
+         id="RIM Activities"
+         name="RIM Activities"
+         point="org.eclipse.ui.activities">
+      <activity
+            id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.activity"
+            name="%_UI_Activity_template_name"
+            description="%_UI_Activity_template_description">
+      </activity>
+      <activityPatternBinding
+            activityId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.activity"
+            pattern="org\.openhealthtools\.modeling\.hdf\.rim\.tooling/org\.openhealthtools\.modeling\.hdf\.rim\.tooling\.core\.templates\.RIMModel">
+      </activityPatternBinding>
+      <categoryActivityBinding
+            activityId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.activity"
+            categoryId="org.openhealthtools.mdht.uml.hdf.tooling.rsm.activities.category">
+      </categoryActivityBinding>
+   </extension>
+
+   <extension
+         id="RIM NewModelWizard"
+         name="RIM NewModelWizard"
+         point="com.ibm.xtools.common.ui.wizards.newModelWizard">
+      <templateDirectory
+            path="templates"
+            handler="org.openhealthtools.mdht.uml.hdf.tooling.rsm.wizards.RIMTemplateModelHandler">
+      </templateDirectory>
+      <category
+            id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.category"
+            label="%_UI_NewModelWizard_CategoryName">
+      </category>
+      <templateCategoryBinding
+            categoryRef="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.category">
+         <template
+               match="equals"
+               ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.templates.RIMModel">
+         </template>
+      </templateCategoryBinding>
+      <activityTemplateBinding
+            required="true">
+         <template
+               match="equals"
+               ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.templates.RIMModel">
+         </template>
+         <activity
+               match="equals"
+               ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.uireduction.activity">
+         </activity>
+      </activityTemplateBinding>
+      <activityTemplateBinding
+            required="false">
+         <template
+               match="equals"
+               ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.templates.RIMModel">
+         </template>
+         <activity
+               match="equals"
+               ref="com.ibm.xtools.activities.umlBBFreeFormDiagram">
+         </activity>
+         <activity
+               match="equals"
+               ref="com.ibm.xtools.activities.umlBBClassDiagram">
+         </activity>        
+      </activityTemplateBinding>
+
+      <templateConfigurationPageGroup
+            afterRef=".*"
+            afterMatch="pattern"
+            class="com.ibm.xtools.common.ui.wizards.pagegroups.ActivitiesTemplateConfigurationPageGroup"
+            id="org.openhealthtools.mdht.uml.hdf.tooling.rsm.wizards.pagegroups.ActivitiesTemplateConfigurationPageGroup">
+         <template
+               ref="org.openhealthtools.mdht.uml.hdf.tooling.rsm.core.templates.RIMModel"
+               match="equals"/>
+      </templateConfigurationPageGroup>
+   </extension>
+</plugin>

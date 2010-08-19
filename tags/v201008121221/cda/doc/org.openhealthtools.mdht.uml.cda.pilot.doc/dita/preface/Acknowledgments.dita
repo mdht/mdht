@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>Acknowledgments</title>
+	<body>
+		<p>TODO: Add acknowledgments specific to this project team.</p>
+		<p>We acknowledge the foundational work on HL7 Version 3 and
+			the Reference Information Model (RIM), the HL7 domain committees,
+			especially Patient Care, and the work done on Clinical Document
+			Architecture (CDA) itself.</p>
+		<p>We also acknowledge the collaborative effort of the American
+			Society for Standards and Materials (ASTM) and HL7, which produced
+			the Continuity of Care Document (CCD). All these efforts were
+			critical ingredients to the development of this Draft Standard for
+			Trial Use (DSTU), and the degree to which the DSTU reflects these
+			efforts will foster interoperability across the spectrum of health
+			care.</p>
+		<p>SNOMED CT&#174; is the registered trademark of the International Health
+			Terminology Standard Development Organization (IHTSDO). LOINC&#174; is a
+			registered United States trademark of Regenstrief Institute, Inc.</p>
+	</body>
+</topic>

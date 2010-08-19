@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.hl7.datatypes/src"
+    modelPluginID="org.openhealthtools.mdht.uml.hl7.datatypes" modelName="Datatypes"
+    modelPluginClass="DatatypesPlugin" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
+    pluralizedGetters="true" invariantPrefix="validate">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>datatypes.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Datatypes" basePackage="org.openhealthtools.mdht.uml.hl7"
+      disposableProviderFactory="true" ecorePackage="datatypes.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.hl7.datatypes.operations">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="datatypes.ecore#//BinaryDataEncoding">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="datatypes.ecore#//BinaryDataEncoding/B64"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="datatypes.ecore#//BinaryDataEncoding/TXT"/>
+    </genEnums>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//ANY">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ANY/nullFlavor"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//BIN">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//BIN/representation"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ED">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/mixed"
+          pluralizationException="true"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//ED/reference"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//ED/thumbnail"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/mediaType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/language"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/compression"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/integrityCheck"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/integrityCheckAlgorithm"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/addText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ED/addText/text"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/getText"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//TEL">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//TEL/useablePeriod"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//TEL/use"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//URL">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//URL/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//SXCM_TS">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SXCM_TS/operator"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//TS">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//TS/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//QTY"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ST"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CD">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CD/originalText"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CD/qualifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CD/translation"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/code"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/codeSystem"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/codeSystemName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/codeSystemVersion"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CD/displayName"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CR">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CR/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CR/value"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CR/inverted"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CV"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CE"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//II">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/root"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/extension"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/assigningAuthorityName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/displayable"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//BL">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//BL/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//BN">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//BN/nullFlavor">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//BN/nullFlavor/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//BN/nullFlavor/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//AD">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//AD/useablePeriod"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//AD/use"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//AD/isNotOrdered"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/delimiter.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/country.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/state.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/county.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/city.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/postalCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/streetAddressLine.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/houseNumber.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/houseNumberNumeric.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/direction.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/streetName.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/streetNameBase.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/streetNameType.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/additionalLocator.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/unitID.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/unitType.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/careOf.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/censusTract.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/deliveryAddressLine.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/deliveryInstallationType.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/deliveryInstallationArea.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/deliveryInstallationQualifier.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/deliveryMode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/deliveryModeIdentifier.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/buildingNumberSuffix.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/postBox.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//AD/precinct.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EAttribute datatypes.ecore#//AD/part"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//AD/mixed"
+          pluralizationException="true"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/delimiter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/delimiter/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/delimiter/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/country">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/country/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/country/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/state">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/state/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/state/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/county">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/county/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/county/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/city">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/city/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/city/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/postalCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/postalCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/postalCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/streetAddressLine">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetAddressLine/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetAddressLine/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/houseNumber">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/houseNumber/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/houseNumber/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/houseNumberNumeric">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/houseNumberNumeric/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/houseNumberNumeric/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/direction">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/direction/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/direction/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/streetName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetName/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/streetNameBase">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetNameBase/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetNameBase/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/streetNameType">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetNameType/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/streetNameType/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/additionalLocator">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/additionalLocator/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/additionalLocator/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/unitID">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/unitID/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/unitID/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/unitType">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/unitType/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/unitType/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/careOf">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/careOf/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/careOf/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/censusTract">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/censusTract/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/censusTract/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/deliveryAddressLine">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryAddressLine/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryAddressLine/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/deliveryInstallationType">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryInstallationType/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryInstallationType/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/deliveryInstallationArea">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryInstallationArea/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryInstallationArea/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/deliveryInstallationQualifier">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryInstallationQualifier/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryInstallationQualifier/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/deliveryMode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryMode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryMode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/deliveryModeIdentifier">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryModeIdentifier/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/deliveryModeIdentifier/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/buildingNumberSuffix">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/buildingNumberSuffix/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/buildingNumberSuffix/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/postBox">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/postBox/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/postBox/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/precinct">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/precinct/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/precinct/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDelimiter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDelimiter/delimiter"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addCountry">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addCountry/country"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addState">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addState/state"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addCounty">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addCounty/county"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addCity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addCity/city"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addPostalCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addPostalCode/postalCode"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addStreetAddressLine">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addStreetAddressLine/streetAddressLine"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addHouseNumber">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addHouseNumber/houseNumber"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addHouseNumberNumeric">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addHouseNumberNumeric/houseNumberNumeric"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDirection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDirection/direction"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addStreetName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addStreetName/streetName"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addStreetNameBase">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addStreetNameBase/streetNameBase"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addStreetNameType">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addStreetNameType/streetNameType"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addAdditionalLocator">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addAdditionalLocator/additionalLocator"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addUnitID">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addUnitID/unitID"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addUnitType">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addUnitType/unitType"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addCareOf">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addCareOf/careOf"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addCensusTract">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addCensusTract/censusTract"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDeliveryAddressLine">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDeliveryAddressLine/deliveryAddressLine"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDeliveryInstallationType">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDeliveryInstallationType/deliveryInstallationType"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDeliveryInstallationArea">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDeliveryInstallationArea/deliveryInstallationArea"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDeliveryInstallationQualifier">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDeliveryInstallationQualifier/deliveryInstallationQualifier"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDeliveryMode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDeliveryMode/deliveryMode"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addDeliveryModeIdentifier">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addDeliveryModeIdentifier/deliveryModeIdentifier"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addBuildingNumberSuffix">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addBuildingNumberSuffix/buildingNumberSuffix"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addPostBox">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addPostBox/postBox"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addPrecinct">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addPrecinct/precinct"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/addText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/addText/text"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/getText"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ADXP">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ADXP/partType"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EN">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//EN/use"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//EN/validTime"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//EN/delimiter.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//EN/family.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//EN/given.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//EN/prefix.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference datatypes.ecore#//EN/suffix.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EAttribute datatypes.ecore#//EN/part"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//EN/mixed"
+          pluralizationException="true"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/delimiter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/delimiter/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/delimiter/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/family">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/family/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/family/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/given">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/given/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/given/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/prefix">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/prefix/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/prefix/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/suffix">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/suffix/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/suffix/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/addDelimiter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/addDelimiter/delimiter"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/addFamily">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/addFamily/family"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/addGiven">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/addGiven/given"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/addPrefix">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/addPrefix/prefix"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/addSuffix">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/addSuffix/suffix"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/addText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/addText/text"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/getText"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVL_TS">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_TS/low"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_TS/center"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_TS/high"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_TS/width"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVXB_TS">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//IVXB_TS/inclusive"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//PQ">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PQ/value"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PQ/unit"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//PQ/translation"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//PQR">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PQR/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ENXP">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ENXP/partType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ENXP/qualifier"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ON">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ON/invariant">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ON/invariant/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ON/invariant/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//PN">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//PN/invariant">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//PN/invariant/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//PN/invariant/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//TN">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//TN/invariant">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//TN/invariant/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//TN/invariant/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//INT">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//INT/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//REAL">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//REAL/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CS"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CO"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//SC">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SC/code"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SC/codeSystem"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SC/codeSystemName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SC/codeSystemVersion"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SC/displayName"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//RTO_QTY_QTY">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_QTY_QTY/numerator"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_QTY_QTY/denominator"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//MO">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//MO/value"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//MO/currency"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//RTO"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//SXCM_INT">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SXCM_INT/operator"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVXB_INT">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//IVXB_INT/inclusive"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVL_INT">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_INT/low"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_INT/center"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_INT/high"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_INT/width"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVXB_PQ">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//IVXB_PQ/inclusive"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//SXCM_PQ">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SXCM_PQ/operator"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVL_PQ">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_PQ/low"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_PQ/center"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_PQ/high"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_PQ/width"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//RTO_PQ_PQ">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_PQ_PQ/numerator"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_PQ_PQ/denominator"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//PIVL_TS">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//PIVL_TS/phase"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//PIVL_TS/period"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PIVL_TS/alignment"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PIVL_TS/institutionSpecified"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EIVL_event">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/init"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EIVL_TS">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//EIVL_TS/event"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//EIVL_TS/offset"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
