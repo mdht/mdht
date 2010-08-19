@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.hl7.rim/src"
+    modelPluginID="org.openhealthtools.mdht.uml.hl7.rim" modelName="RIM" modelPluginClass="RIMPlugin"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
+    pluralizedGetters="true" invariantPrefix="validate">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>rim.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="RIM" basePackage="org.openhealthtools.mdht.uml.hl7"
+      disposableProviderFactory="true" ecorePackage="rim.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.hl7.rim.operations">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Act">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getClassCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getMoodCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getNegationInd"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getParticipations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getOutboundRelationships"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getInboundRelationships"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//InfrastructureRoot">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getRealmCodes"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getTypeId"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getTemplateIds"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getNullFlavor"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Participation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getRole"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Role">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getClassCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getPlayer"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getScoper"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getParticipations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getOutboundLinks"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getInboundLinks"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Entity">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getClassCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getDeterminerCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getPlayedRoles"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getScopedRoles"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RoleLink">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getTarget"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getSource"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//ActRelationship">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getTypeCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getTarget"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getSource"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

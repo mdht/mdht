@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<map id="org.openhealthtools.mdht.cda.doc.user"><title>MDHT CDA Tools User Guide</title>
+	<topicref format="dita" href="c_Introduction.dita" navtitle="Introduction" scope="local" type="concept"/>
+	<topicref format="ditamap" href="standards/standards.ditamap" navtitle="Standards Developers and Users" />
+	<topicref format="ditamap" href="implementers/implementers.ditamap" navtitle="Implementers" />
+</map>

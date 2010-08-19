@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_436D9FA0ACD24FEEAEDE1125DD50E506"> 
+  <title>Review CDA templates</title> 
+  <shortdesc>The MDHT UML Editor provides a simplified approach to browsing and
+	 editing UML models that is especially well suited to CDA template design. 
+  </shortdesc> 
+  <conbody> 
+	 <p>The MDHT project provides an open source UML editing solution that may
+		be used alone, or integrated into other complete UML modeling solutions. With
+		only minor differences in the way a table editor is opened, the same solution
+		described below is available within Rational Software Modeler (RSM) and Eclipse
+		Papyrus. Other Eclipse-based UML tools also may be compatible, but have not
+		been tested. 
+	 </p> 
+	 <p>There are several key features in this MDHT UML Editor: 
+	 </p> 
+	 <ul id="ul_4D3D47F0BA8C4F2B9A808A6C8E193662"> 
+		<li id="li_E5A17C6C203F4712BEE8ADDB572A5DF9">A tree navigator view of UML
+		  content in the Project Explorer. 
+		</li> 
+		<li id="li_2928E2C7EF314BEABF10C312F13E4443">A spreadsheet-like table
+		  where model content may be viewed and edited. 
+		</li> 
+		<li id="li_68012A5615D9425BAA7B1F6542A81F32">Properties view tabs for
+		  easy access to most common UML model value. 
+		</li> 
+		<li id="li_4013C05061E84D2AB44B2FE664F46440">Template Constraint Dialog
+		  for adding attribute constraints. 
+		</li> 
+		<li id="li_E66FB1D69C87477389BA7941CB272EF4">Model validation with error
+		  markers (limited scope in this milestone). 
+		</li> 
+	 </ul> 
+	 <p>This editing solution only supports UML classes and enumerations, the
+		typical content of a UML class diagram, but without the diagram. Many analysts
+		and developers of CDA templates and message structures use Excel spreadsheets
+		for analysis. This table editor provides similar functionality, with the
+		significant benefit that the underlying content is saved as a valid UML 2.1
+		model. This model may be input directly into Java code generation or reporting
+		tools that are based on UML. And the model may be enhanced with class diagrams
+		using other full-featured and commercial UML modeling tools. 
+	 </p> 
+  </conbody>
+</concept>

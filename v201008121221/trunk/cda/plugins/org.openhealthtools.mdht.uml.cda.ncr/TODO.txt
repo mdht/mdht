@@ -1,0 +1,9 @@
+Birth weight (p. 48)
+	- value @unit 
+	
+Neonatal ICU encounter (p. 35)
+	- id constraint
+	- participant act relationship?  no stereotype for this
+	
+Neonatal ICU location (p. 71)
+	- participantRole

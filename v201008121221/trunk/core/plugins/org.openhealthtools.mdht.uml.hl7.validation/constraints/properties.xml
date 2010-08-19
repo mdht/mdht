@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?emf-validation
+	version="1.0"
+	nl="constraints/properties" ?>
+
+<includedConstraints>
+   <constraints categories="org.openhealthtools.mdht.uml.hl7.validation/correctness">
+      <constraint id="properties.propertyMultiplicity"
+            lang="Java"
+            class="org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Properties"
+            severity="ERROR"
+            mode="Live"
+            name="%propertyMultiplicity.name"
+            statusCode="1">
+         <!-- When multiplicity is change via UI, both upper and lower are set.
+         	This will test both, but only fires once for both changes. -->
+         <target class="LiteralInteger">
+            <event name="Set"/>
+         </target>
+         <!-- Causes duplicate constraint execution if enabled for upper bound.
+         <target class="LiteralUnlimitedNatural">
+            <event name="Set"/>
+         </target>
+         -->
+         <description>%propertyMultiplicity.description</description>
+         <message>%propertyMultiplicity.message</message>
+      </constraint>
+      <constraint id="properties.validPropertyType"
+            lang="Java"
+            class="org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Properties"
+            severity="ERROR"
+            mode="Live"
+            name="%validPropertyType.name"
+            statusCode="1">
+         <target class="Property">
+            <event name="Set">
+              <feature name="type"/>
+            </event>
+         </target>
+         <description>%validPropertyType.description</description>
+         <message>%validPropertyType.message</message>
+      </constraint>
+   </constraints>
+
+   <constraints categories="org.openhealthtools.mdht.uml.hl7.validation/completeness">
+      <constraint id="properties.missingType"
+            lang="Java"
+            class="org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Properties"
+            severity="WARNING"
+            mode="Batch"
+            name="%missingType.name"
+            statusCode="2">
+         <target class="Property"/>
+         <description>%missingType.description</description>
+         <message>%missingType.message</message>
+      </constraint>
+   </constraints>
+   
+     <constraints categories="org.openhealthtools.mdht.uml.hl7.validation/completeness">
+      <constraint id="properties.abstractDataType"
+            lang="Java"
+            class="org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Properties"
+            severity="WARNING"
+            mode="Batch"
+            name="%abstractDataType.name"
+            statusCode="2">
+         <target class="Property"/>
+         <description>%abstractDataType.description</description>
+         <message>%abstractDataType.message</message>
+      </constraint>
+   </constraints>
+   
+   
+</includedConstraints>

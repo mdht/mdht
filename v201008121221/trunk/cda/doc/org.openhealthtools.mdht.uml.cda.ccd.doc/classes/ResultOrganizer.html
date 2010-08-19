@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Result Organizer"/>
+<meta name="abstract" content="[Organizer: templateId 2.16.840.1.113883.10.20.1.32]"/>
+<meta name="description" content="[Organizer: templateId 2.16.840.1.113883.10.20.1.32]"/>
+<meta name="DC.Coverage" content="Organizer"/>
+<meta name="DC.Relation" scheme="URI" content="../ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Result Organizer</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Result Organizer</h1>
+
+
+
+<div><p>[Organizer: templateId <tt>2.16.840.1.113883.10.20.1.32</tt>]</p>
+
+<p>
+    The result organizer identifies an observation set, contained with the result organizer
+    as a set of result observations. It contains information applicable to all of the contained result
+    observations.
+</p>
+
+<p>
+    Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where
+    there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR
+    Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),
+    analogous to the HL7 Version 2 OBX Observation/Result Segment.
+</p>
+
+
+<ol>
+<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</a></li>
+
+<li><strong>SHALL</strong> contain [1..*] <tt>component</tt> such that it<ol type="a">
+<li><strong>SHALL</strong> contain [1..1] <a href="ResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.31]">Result Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li>
+</ol>
+</li>
+
+<li><strong>SHOULD</strong> contain [1..*] <tt>component</tt> such that it<ol type="a">
+<li><strong>SHALL</strong> contain [1..1] <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</a></li>
+</ol>
+</li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+
+<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>code</tt></li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt></li>
+
+<li><strong>SHOULD</strong> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</li>
+
+<li><strong>SHOULD</strong> satisfy: Contains one or more Specimen if the specimen isn't inherent in code value.</li>
+
+<li><strong>SHALL</strong> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code</li>
+
+<li><strong>SHALL</strong> satisfy: Contains one or more component</li>
+
+<li><strong>MAY</strong> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</li>
+
+<li><strong>MAY</strong> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section.</li>
+
+<li><strong>SHALL</strong> satisfy: Contains one or more sources of information.</li>
+
+</ol>
+
+<div class="fignone"><span class="figcap">Figure 1. Result Organizer example</span>
+
+<pre class="codeblock">TODO: XML document snippet</pre>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="implementersconcept" xml:lang="en-us">
+<title>Standards Implementers</title>
+<conbody><p>The main role of the standards implementer is to generate a runtime API from the template model and write applications that leverage the generated code (e.g. EMR adapters). These applications may consiste of CDA content producers, CDA content consumers, and CDA content validators.</p></conbody>
+</concept>

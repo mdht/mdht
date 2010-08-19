@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_BF0033088D4A46149B2A3075A8025E2C"> 
+  <title>Create a new Implementation Guide</title> 
+  <shortdesc>Create a project for a new implementation guide model. 
+  </shortdesc> 
+  <taskbody> 
+	 <context id="context_664A985212B34E90ABC7A343E44A99E4"> 
+		<p><b>NOTE: we will work on replacing this process with a Wizard in the
+			 next milestone.</b>
+		</p>
+		<p>The best way to create a new project is to copy the provided example
+		  project and run the 
+		  <filepath>refactor.xml</filepath> Ant script to rename it. This can be
+		  accomplished by following these steps. 
+		</p> 
+	 </context> 
+	 <steps id="steps_45339D40C6E84155B22A8233B6F0BD00"> 
+		<step id="step_766AB5962A3844D093395F12C182521E"> 
+		  <cmd>Download and disconnect the example project from the MDHT SVN
+			 repository 
+		  </cmd> 
+		  <substeps id="substeps_5394692F851D497D9DDDE98C914E4D7C"> 
+			 <substep id="substep_19CBFFAE855C4B0D9E1218682D0D2575"> 
+				<cmd>Check out 
+				  <tt>cda/example/org.openhealthtools.mdht.uml.cda.example</tt>.
+				  Please check out a new unmodified project, don't start with an example you have
+				  changed. 
+				</cmd> 
+			 </substep> 
+			 <substep id="substep_1304813B75DB41ED8C655C1A08A4037C"> 
+				<cmd>Right-click on this new project and select 
+				  <menucascade><uicontrol>Team</uicontrol><uicontrol>Disconnect</uicontrol></menucascade>,
+				  and select the option: 'Also delete SVN meta-information from file system' 
+				</cmd> 
+			 </substep> 
+		  </substeps> 
+		</step> 
+		<step id="step_71D3E8187C5A4F15B4235123147C526A"> 
+		  <cmd>Rename the project. Right-click on the new project and select 
+			 <menucascade><uicontrol>Refactor</uicontrol><uicontrol>Rename</uicontrol></menucascade>.
+			 For example, enter the new project name 'org.openhealthtools.mdht.uml.cda.ncr'.
+			 
+		  </cmd> 
+		</step> 
+		<step id="step_F20A63796D07445789C10636B3291D9E"> 
+		  <cmd>Edit and run the 
+			 <filepath>refactor.xml</filepath> script. 
+		  </cmd> 
+		  <substeps id="substeps_FDB6ECBFA901460BBE62DBCE9041A0DE"> 
+			 <substep id="substep_2CCF496745A446B2B4FAF47A64CACEEA"> 
+				<cmd>Open the refactor.xml script in the Ant or text editor. 
+				</cmd> 
+			 </substep> 
+			 <substep id="substep_C36C7A747C6141C5B8D2CCAE0B3DA815"> 
+				<cmd>Change the property values for the following properties:
+				  basePackage (e.g. org.openhealthtools.mdht.uml.cda), packageName (e.g. ncr),
+				  prefix (NCR), and nsURI (e.g. http://www.openhealthtools.org/mdht/uml/cda/ncr).
+				  
+				</cmd> 
+			 </substep> 
+			 <substep id="substep_21C28D4B09CE420BBFD2D30D46A0D974"> 
+				<cmd>Run the 
+				  <filepath>refactor.xml</filepath> script as an Ant build. Make
+				  sure to run in the same JRE as the workpace. 
+				</cmd> 
+			 </substep> 
+		  </substeps> 
+		</step> 
+	 </steps> 
+  </taskbody>
+</task>
