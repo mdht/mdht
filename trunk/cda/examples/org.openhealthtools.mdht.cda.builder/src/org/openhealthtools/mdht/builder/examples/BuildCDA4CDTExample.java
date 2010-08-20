@@ -157,10 +157,10 @@ public class BuildCDA4CDTExample {
 			patient.setMaritalStatusCode(DatatypesFactory.eINSTANCE.createCE("S", "2.16.840.1.113883.5.2", "HL7 MaritalStatus", "Never Married"));
 
 			patient.setReligiousAffiliationCode(BuilderUtil.RomanCatholicAffiliationCode);
+			
+			patient.setRaceCode(DatatypesFactory.eINSTANCE.createCE("2113-9", "2.16.840.1.113883.5.104", "HL7 Race", "Irish"));
 
-			patient.setRaceCode(DatatypesFactory.eINSTANCE.createCE("S", "2.16.840.1.113883.5.2", "HL7 MaritalStatus", "Never Married"));
-
-			patient.setEthnicGroupCode(DatatypesFactory.eINSTANCE.createCE("S", "2.16.840.1.113883.5.2", "HL7 MaritalStatus", "Never Married"));
+			patient.setEthnicGroupCode(DatatypesFactory.eINSTANCE.createCE("2186-5", "2.16.840.1.113883.5.50", "HL7 Ethnicity", "Not Hispanic or Latino"));
 
 			Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
 
@@ -192,7 +192,7 @@ public class BuildCDA4CDTExample {
 
 			birthplaceAddress.addCity("Jacksonville");
 
-			birthplaceAddress.addState("FLA");
+			birthplaceAddress.addState("Florida");
 
 			place.setAddr(birthplaceAddress);
 
