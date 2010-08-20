@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: org.openhealthtools.mdht.cda.builder
+Bundle-SymbolicName: org.openhealthtools.mdht.cda.builder.hibernate
 Bundle-ManifestVersion: 2
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -11,10 +11,12 @@ Require-Bundle: org.eclipse.ui,
  org.openhealthtools.mdht.uml.cda.ccd;visibility:=reexport,
  org.openhealthtools.mdht.uml.cda;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
- org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport
+ org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport,
+ org.apache.commons.logging;bundle-version="1.1.1",
+ org.eclipse.emf.teneo.hibernate.mapper;bundle-version="1.1.2",
+ org.hibernate;bundle-version="3.3.2",
+ org.eclipse.emf.teneo.hibernate;bundle-version="1.1.2",
+ org.eclipse.emf.teneo.hibernate.eclipse;bundle-version="1.1.2",
+ com.mysql.jdbc;bundle-version="5.1.7",
+ org.openhealthtools.mdht.cda.builder;bundle-version="0.0.0"
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.builder.cda,
- org.openhealthtools.mdht.builder.cda.helpers,
- org.openhealthtools.mdht.builder.ccd,
- org.openhealthtools.mdht.builder.ccd.helpers,
- org.openhealthtools.mdht.builder.hitsp
