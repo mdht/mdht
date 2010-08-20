@@ -1,6 +1,0 @@
-hibernate.connection.username=root
-hibernate.connection.password=ubuntu09
-hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
-hibernate.connection.url=jdbc\:mysql\://127.0.0.1\:3306/mydatabase
-hibernate.connection.driver_class=com.mysql.jdbc.Driver
-
