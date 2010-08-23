@@ -119,39 +119,39 @@
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" message="TBPN Tuberculosis Follow Up Progress Note SHALL contain the template identifier 2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3" assigningAuthorityName="HL7"/>
+  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3" assigningAuthorityName="HL7"/>
   <CDA:CodegenSupport xmi:id="_THvvwJmzEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="pilot" nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot" packageName="pilot" prefix="TBPN" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" message="TBPN TB Result Organizer SHALL contain the template identifier 2.16.840.1.113883.10.20.15.3.21" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.15.3.21" assigningAuthorityName="HL7"/>
+  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.15.3.21" assigningAuthorityName="HL7"/>
   <Default:Documentation xmi:id="_Uc5uYaX0Ed6JRdOhEffuGA" base_Comment="_Ucv9YaX0Ed6JRdOhEffuGA"/>
   <CDA_1:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" message="My activity @classCode SHALL be 'ACT' 2.16.840.1.113883.5.6 ActClass STATIC."/>
   <CDA_1:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" message="My Activity @moodCode SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC."/>
   <CDA_1:VocabSpecification xmi:id="_Uc5uZqX0Ed6JRdOhEffuGA" message="My Activity SHALL contain exactly one Act / code, with a value of '23745001' 'Documentation procedure' 2.16.840.1.113883.6.96 SNOMED CT STATIC." code="23745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Documentation procedure"/>
   <CDA_1:VocabSpecification xmi:id="_Uc5uZ6X0Ed6JRdOhEffuGA" message="My Activity SHALL contain exactly one Act / statusCode. The value for 'Act / statusCode' in a My Activity SHALL be 'completed' 2.16.840.1.113883.5.14 ActStatus STATIC." code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
-  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" message="TBPN TB Results Section SHALL contain the template identifier 2.16.840.1.113883.10.20.15.2.6" base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.15.2.6" assigningAuthorityName="HL7"/>
+  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.15.2.6" assigningAuthorityName="HL7"/>
   <Default:Documentation xmi:id="_Uc5uaqX0Ed6JRdOhEffuGA" base_Comment="_Ucv9bqX0Ed6JRdOhEffuGA"/>
   <CDA_1:VocabSpecification xmi:id="_Uc5ua6X0Ed6JRdOhEffuGA" message="The value for My Activity code SHALL be 48764-5' 'Summary purpose' 2.16.840.1.113883.6.1 LOINC STATIC." code="48764-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summary purpose"/>
-  <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="TBPN Tuberculosis Follow Up Progress Note SHALL contain [1..1] component such that it, SHALL contain [1..1] TB Results Section (templateId: 2.16.840.1.113883.10.20.15.2.6)" base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
+  <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
   <CDA_1:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="My Section SHALL contain a title."/>
-  <CDA:CDATemplate xmi:id="_QfGwAAxmEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.15.3.13" base_Class="_DQh14AxmEd-gR9nJK3sp7g" templateId="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="HL7"/>
+  <CDA:CDATemplate xmi:id="_QfGwAAxmEd-gR9nJK3sp7g" base_Class="_DQh14AxmEd-gR9nJK3sp7g" templateId="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="HL7"/>
   <CDA:PropertyValidation xmi:id="_vozL4AxmEd-gR9nJK3sp7g" base_Property="_v0rX0aX0Ed6JRdOhEffuGA"/>
-  <CDA:TextValue xmi:id="_UvMPsAxnEd-gR9nJK3sp7g" message="TBPN TB Results Section SHALL contain [1..1] title = &quot;Relevant diagnostic tests and/or laboratory data&quot;" base_Property="_UvLoowxnEd-gR9nJK3sp7g" value="Relevant diagnostic tests and/or laboratory data"/>
-  <CDA:PropertyValidation xmi:id="_Ipga0AxoEd-gR9nJK3sp7g" message="TBPN TB Results Section SHALL contain [1..1] text" base_Property="_UvLooAxnEd-gR9nJK3sp7g"/>
-  <CDA:AssociationValidation xmi:id="_oKv0AAxoEd-gR9nJK3sp7g" message="TBPN TB Result Organizer SHALL contain [1..1] component such that it, SHALL contain [1..1] TB Result Observation (templateId: 2.16.840.1.113883.10.20.15.3.13)" base_Association="_i8BFUQxoEd-gR9nJK3sp7g"/>
-  <CDA:ConstraintValidation xmi:id="_m7trsAyBEd-gR9nJK3sp7g" message="TBPN Tuberculosis Follow Up Progress Note SHALL satisfy: There can be any number of patient names, but at least one of them must include a given and family name." base_Constraint="_3Z2mAAxpEd-gR9nJK3sp7g"/>
-  <CDA:PropertyValidation xmi:id="_apnb8A0FEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_Kd5ioA0CEd-gR9nJK3sp7g"/>
-  <CDA:Entry xmi:id="_4AAqAA0MEd-gR9nJK3sp7g" message="TBPN TB Results Section MAY contain [0..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] TB Result Organizer (templateId: 2.16.840.1.113883.10.20.15.3.21)" severity="INFO" base_Association="_Ucv9daX0Ed6JRdOhEffuGA" typeCode="DRIV"/>
-  <CDA:Entry xmi:id="_6JrFMA0MEd-gR9nJK3sp7g" message="TBPN TB Results Section MAY contain [0..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] TB Result Observation (templateId: 2.16.840.1.113883.10.20.15.3.13)" severity="INFO" base_Association="_bg5NAAxnEd-gR9nJK3sp7g" typeCode="DRIV"/>
+  <CDA:TextValue xmi:id="_UvMPsAxnEd-gR9nJK3sp7g" base_Property="_UvLoowxnEd-gR9nJK3sp7g" value="Relevant diagnostic tests and/or laboratory data"/>
+  <CDA:PropertyValidation xmi:id="_Ipga0AxoEd-gR9nJK3sp7g" base_Property="_UvLooAxnEd-gR9nJK3sp7g"/>
+  <CDA:AssociationValidation xmi:id="_oKv0AAxoEd-gR9nJK3sp7g" base_Association="_i8BFUQxoEd-gR9nJK3sp7g"/>
+  <CDA:ConstraintValidation xmi:id="_m7trsAyBEd-gR9nJK3sp7g" base_Constraint="_3Z2mAAxpEd-gR9nJK3sp7g"/>
+  <CDA:PropertyValidation xmi:id="_apnb8A0FEd-gR9nJK3sp7g" base_Property="_Kd5ioA0CEd-gR9nJK3sp7g"/>
+  <CDA:Entry xmi:id="_4AAqAA0MEd-gR9nJK3sp7g" severity="INFO" base_Association="_Ucv9daX0Ed6JRdOhEffuGA" typeCode="DRIV"/>
+  <CDA:Entry xmi:id="_6JrFMA0MEd-gR9nJK3sp7g" severity="INFO" base_Association="_bg5NAAxnEd-gR9nJK3sp7g" typeCode="DRIV"/>
   <CDA:TextValue xmi:id="_xCH_8A0OEd-gR9nJK3sp7g" message="TBPN Tuberculosis Follow Up Progress Note SHALL contain [1..1] title = &quot;Tuberculosis Follow Up Progress Note&quot;" value="Tuberculosis Follow Up Progress Note"/>
-  <CDA:ValueSetConstraint xmi:id="_oFQOkCfIEd-d5bLPJUHlDg" base_Property="_gGPLAAxoEd-gR9nJK3sp7g" message="TBPN TB Result Organizer SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC">
+  <CDA:ValueSetConstraint xmi:id="_oFQOkCfIEd-d5bLPJUHlDg" base_Property="_gGPLAAxoEd-gR9nJK3sp7g">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/phcr.uml#_qtKRkCvREd-YuK1P6utw_g"/>
   </CDA:ValueSetConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_oFSDwCfIEd-d5bLPJUHlDg" code="30954-2" displayName="Relevant diagnostic tests and/or laboratory data" base_Property="_UvJMYAxnEd-gR9nJK3sp7g" message="TBPN TB Results Section SHALL contain [1..1] code/@code = &quot;30954-2&quot; Relevant diagnostic tests and/or laboratory data (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+  <CDA:CodeSystemConstraint xmi:id="_oFSDwCfIEd-d5bLPJUHlDg" code="30954-2" displayName="Relevant diagnostic tests and/or laboratory data" base_Property="_UvJMYAxnEd-gR9nJK3sp7g">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:ValueSetConstraint xmi:id="_oFUgACfIEd-d5bLPJUHlDg" base_Property="_FZsh0AxmEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC">
+  <CDA:ValueSetConstraint xmi:id="_oFUgACfIEd-d5bLPJUHlDg" base_Property="_FZsh0AxmEd-gR9nJK3sp7g">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/phcr.uml#_qtKRkCvREd-YuK1P6utw_g"/>
   </CDA:ValueSetConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_oFVuICfIEd-d5bLPJUHlDg" code="completed" base_Property="_FZvlIAxmEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)">
+  <CDA:CodeSystemConstraint xmi:id="_oFVuICfIEd-d5bLPJUHlDg" code="completed" base_Property="_FZvlIAxmEd-gR9nJK3sp7g">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
 </xmi:XMI>
