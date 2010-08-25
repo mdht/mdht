@@ -10040,20 +10040,20 @@
   <Ecore:EReference xmi:id="_Lf0Tcp71Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="__NGc00xvEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="_Lf-EcJ71Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="__NGc1kxvEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="_PnbCAJ71Ed6BCKDGgDgllw" xmlName="addr" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_DBIXAEoeEd6c3qsAxlFHaQ"/>
-  <Ecore:EReference xmi:id="_PnbCAZ71Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="__A5zUUceEd6besF9iFIJkQ"/>
+  <Ecore:EReference xmi:id="_PnbCAZ71Ed6BCKDGgDgllw" xmlName="assignedPerson" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="__A5zUUceEd6besF9iFIJkQ"/>
   <Ecore:EReference xmi:id="_PnkzAJ71Ed6BCKDGgDgllw" xmlName="code" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_CDS1wEoeEd6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_PnkzAZ71Ed6BCKDGgDgllw" xmlName="id" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_9JenIEodEd6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_PnkzAp71Ed6BCKDGgDgllw" xmlName="realmCode" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fPWRUExwEd6h-an5IXo-DA"/>
-  <Ecore:EReference xmi:id="_PnkzA571Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_EsyYEUcfEd6besF9iFIJkQ"/>
+  <Ecore:EReference xmi:id="_PnkzA571Ed6BCKDGgDgllw" xmlName="representedOrganization" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_EsyYEUcfEd6besF9iFIJkQ"/>
   <Ecore:EReference xmi:id="_Pnt88J71Ed6BCKDGgDgllw" xmlName="telecom" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_D01r4EoeEd6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_Pnt88Z71Ed6BCKDGgDgllw" xmlName="templateId" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fPWRVkxwEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="_Pnt88p71Ed6BCKDGgDgllw" xmlName="typeId" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fPWRWUxwEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="_WWW_MJ71Ed6BCKDGgDgllw" xmlName="addr" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_-czawEoeEd6c3qsAxlFHaQ"/>
-  <Ecore:EReference xmi:id="_WWgwMJ71Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_3pHXUUcnEd6besF9iFIJkQ"/>
+  <Ecore:EReference xmi:id="_WWgwMJ71Ed6BCKDGgDgllw" xmlName="associatedPerson" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_3pHXUUcnEd6besF9iFIJkQ"/>
   <Ecore:EReference xmi:id="_WWgwMZ71Ed6BCKDGgDgllw" xmlName="code" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_9XNrsEoeEd6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_WWgwMp71Ed6BCKDGgDgllw" xmlName="id" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_8KBf0EoeEd6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_WWgwM571Ed6BCKDGgDgllw" xmlName="realmCode" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fPgCUExwEd6h-an5IXo-DA"/>
-  <Ecore:EReference xmi:id="_WWgwNJ71Ed6BCKDGgDgllw" xmlNamespace="##targetNamespace" base_Property="_3AIrwUcnEd6besF9iFIJkQ"/>
+  <Ecore:EReference xmi:id="_WWgwNJ71Ed6BCKDGgDgllw" xmlName="scopingOrganization" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_3AIrwUcnEd6besF9iFIJkQ"/>
   <Ecore:EReference xmi:id="_WWqhMJ71Ed6BCKDGgDgllw" xmlName="telecom" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="__ZTfQEoeEd6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_WWqhMZ71Ed6BCKDGgDgllw" xmlName="templateId" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fPgCVkxwEd6h-an5IXo-DA"/>
   <Ecore:EReference xmi:id="_WWqhMp71Ed6BCKDGgDgllw" xmlName="typeId" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_fPgCWUxwEd6h-an5IXo-DA"/>

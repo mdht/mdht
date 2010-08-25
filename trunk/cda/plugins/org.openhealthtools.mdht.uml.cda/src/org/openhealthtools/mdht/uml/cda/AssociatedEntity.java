@@ -228,7 +228,7 @@ public interface AssociatedEntity extends Role {
 	 * @see #setAssociatedPerson(Person)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_AssociatedPerson()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='associatedPerson' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	Person getAssociatedPerson();
@@ -255,7 +255,7 @@ public interface AssociatedEntity extends Role {
 	 * @see #setScopingOrganization(Organization)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_ScopingOrganization()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='scopingOrganization' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	Organization getScopingOrganization();
