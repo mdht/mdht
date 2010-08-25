@@ -228,7 +228,7 @@ public interface AssignedEntity extends Role {
 	 * @see #setAssignedPerson(Person)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_AssignedPerson()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='assignedPerson' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	Person getAssignedPerson();
@@ -255,7 +255,7 @@ public interface AssignedEntity extends Role {
 	 * @return the value of the '<em>Represented Organization</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_RepresentedOrganization()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='representedOrganization' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<Organization> getRepresentedOrganizations();
