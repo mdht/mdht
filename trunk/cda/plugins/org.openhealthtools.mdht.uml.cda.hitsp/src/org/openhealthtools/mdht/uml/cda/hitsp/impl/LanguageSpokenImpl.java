@@ -59,6 +59,24 @@ public class LanguageSpokenImpl extends LanguageCommunicationImpl implements Lan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateLanguageSpokenModeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return LanguageSpokenOperations.validateLanguageSpokenModeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLanguageSpokenProficiencyLevelCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return LanguageSpokenOperations.validateLanguageSpokenProficiencyLevelCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LanguageSpoken init() {
     		CDAUtil.init(this);
     		return this;

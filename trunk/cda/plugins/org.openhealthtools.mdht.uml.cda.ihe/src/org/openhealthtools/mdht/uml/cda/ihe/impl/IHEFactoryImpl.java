@@ -37,7 +37,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterActivity;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -185,6 +187,8 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.PAYER_ENTRY: return createPayerEntry();
 			case IHEPackage.PHR_EXTRACT: return createPHRExtract();
 			case IHEPackage.PHR_UPDATE: return createPHRUpdate();
+			case IHEPackage.ENCOUNTER_ACTIVITY: return createEncounterActivity();
+			case IHEPackage.ENCOUNTER_PLAN_OF_CARE: return createEncounterPlanOfCare();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -789,6 +793,26 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public PHRUpdate createPHRUpdate() {
 		PHRUpdateImpl phrUpdate = new PHRUpdateImpl();
 		return phrUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncounterActivity createEncounterActivity() {
+		EncounterActivityImpl encounterActivity = new EncounterActivityImpl();
+		return encounterActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncounterPlanOfCare createEncounterPlanOfCare() {
+		EncounterPlanOfCareImpl encounterPlanOfCare = new EncounterPlanOfCareImpl();
+		return encounterPlanOfCare;
 	}
 
 	/**

@@ -41,7 +41,10 @@ import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterActivity;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -738,12 +741,60 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID = 80;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter History Section Encounter Entry' of 'Encounter History Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_ENCOUNTER_ENTRY = 81;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Template Id' of 'Encounter Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_TEMPLATE_ID = 82;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Class Code' of 'Encounter Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_CLASS_CODE = 83;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Code' of 'Encounter Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_CODE = 84;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Id' of 'Encounter Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_ID = 85;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Text' of 'Encounter Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_TEXT = 86;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Devices Section Template Id' of 'Medical Devices Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_DEVICES_SECTION__MEDICAL_DEVICES_SECTION_TEMPLATE_ID = 81;
+	public static final int MEDICAL_DEVICES_SECTION__MEDICAL_DEVICES_SECTION_TEMPLATE_ID = 87;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Language Communication Template Id' of 'Language Communication'.
@@ -751,7 +802,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LANGUAGE_COMMUNICATION__IHE_LANGUAGE_COMMUNICATION_TEMPLATE_ID = 82;
+	public static final int LANGUAGE_COMMUNICATION__IHE_LANGUAGE_COMMUNICATION_TEMPLATE_ID = 88;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Problem Concern Entry' of 'Medical Summary'.
@@ -759,7 +810,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY = 83;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY = 89;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Allergy Concern Entry' of 'Medical Summary'.
@@ -767,7 +818,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY = 84;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY = 90;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Medications' of 'Medical Summary'.
@@ -775,7 +826,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_MEDICATIONS = 85;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_MEDICATIONS = 91;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Template Id' of 'Medical Summary'.
@@ -783,7 +834,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_TEMPLATE_ID = 86;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_TEMPLATE_ID = 92;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Medical Summary'.
@@ -791,7 +842,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE = 87;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE = 93;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Template Id' of 'Discharge Summary'.
@@ -799,7 +850,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_TEMPLATE_ID = 88;
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_TEMPLATE_ID = 94;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Active Problems Section' of 'Discharge Summary'.
@@ -807,7 +858,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 89;
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 95;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Discharge Summary'.
@@ -815,7 +866,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__MEDICAL_SUMMARY_CODE = 90;
+	public static final int DISCHARGE_SUMMARY__MEDICAL_SUMMARY_CODE = 96;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Entry Template Id' of 'Coverage Entry'.
@@ -831,7 +882,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HEALTHCARE_PROVIDERS_PHARMACIES__HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID = 91;
+	public static final int HEALTHCARE_PROVIDERS_PHARMACIES__HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID = 97;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunization Template Id' of 'Immunization'.
@@ -847,7 +898,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBSERVATION_REQUEST_ENTRY__OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID = 92;
+	public static final int OBSERVATION_REQUEST_ENTRY__OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID = 98;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Product Entry Template Id' of 'Product Entry'.
@@ -855,7 +906,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PRODUCT_ENTRY__PRODUCT_ENTRY_TEMPLATE_ID = 93;
+	public static final int PRODUCT_ENTRY__PRODUCT_ENTRY_TEMPLATE_ID = 99;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Entry Procedure Activity Procedure Template Id' of 'Procedure Entry Procedure Activity Procedure'.
@@ -863,7 +914,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 94;
+	public static final int PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 100;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Entry Plan Of Care Activity Procedure Template Id' of 'Procedure Entry Plan Of Care Activity Procedure'.
@@ -871,7 +922,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 95;
+	public static final int PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 101;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Template Id' of 'Comment'.
@@ -879,7 +930,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_TEMPLATE_ID = 96;
+	public static final int COMMENT__COMMENT_TEMPLATE_ID = 102;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Class Code' of 'Comment'.
@@ -887,7 +938,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_CLASS_CODE = 97;
+	public static final int COMMENT__COMMENT_CLASS_CODE = 103;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Code' of 'Comment'.
@@ -895,7 +946,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_CODE = 98;
+	public static final int COMMENT__COMMENT_CODE = 104;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Mood Code' of 'Comment'.
@@ -903,7 +954,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_MOOD_CODE = 99;
+	public static final int COMMENT__COMMENT_MOOD_CODE = 105;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Status Code' of 'Comment'.
@@ -911,7 +962,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_STATUS_CODE = 100;
+	public static final int COMMENT__COMMENT_STATUS_CODE = 106;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Text' of 'Comment'.
@@ -919,7 +970,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_TEXT = 101;
+	public static final int COMMENT__COMMENT_TEXT = 107;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Template Id' of 'Payer Entry'.
@@ -927,7 +978,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYER_ENTRY__POLICY_ACTIVITY_TEMPLATE_ID = 102;
+	public static final int PAYER_ENTRY__POLICY_ACTIVITY_TEMPLATE_ID = 108;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate PHR Extract Template Id' of 'PHR Extract'.
@@ -935,7 +986,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHR_EXTRACT__PHR_EXTRACT_TEMPLATE_ID = 103;
+	public static final int PHR_EXTRACT__PHR_EXTRACT_TEMPLATE_ID = 109;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate PHR Update Template Id' of 'PHR Update'.
@@ -943,7 +994,31 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHR_UPDATE__PHR_UPDATE_TEMPLATE_ID = 104;
+	public static final int PHR_UPDATE__PHR_UPDATE_TEMPLATE_ID = 110;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Activity Template Id' of 'Encounter Activity'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_ACTIVITY__ENCOUNTERS_ACTIVITY_TEMPLATE_ID = 111;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Plan Of Care Mood Code Value' of 'Encounter Plan Of Care'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_PLAN_OF_CARE__ENCOUNTER_PLAN_OF_CARE_MOOD_CODE_VALUE = 112;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Encounter Template Id' of 'Encounter Plan Of Care'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENCOUNTER_PLAN_OF_CARE__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID = 113;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -951,7 +1026,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 104;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 113;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1112,6 +1187,8 @@ public class IHEValidator extends EObjectValidator {
 				return validateSocialHistorySection((SocialHistorySection)value, diagnostics, context);
 			case IHEPackage.ENCOUNTER_HISTORY_SECTION:
 				return validateEncounterHistorySection((EncounterHistorySection)value, diagnostics, context);
+			case IHEPackage.ENCOUNTER_ENTRY:
+				return validateEncounterEntry((EncounterEntry)value, diagnostics, context);
 			case IHEPackage.MEDICAL_DEVICES_SECTION:
 				return validateMedicalDevicesSection((MedicalDevicesSection)value, diagnostics, context);
 			case IHEPackage.LANGUAGE_COMMUNICATION:
@@ -1140,6 +1217,10 @@ public class IHEValidator extends EObjectValidator {
 				return validatePHRExtract((PHRExtract)value, diagnostics, context);
 			case IHEPackage.PHR_UPDATE:
 				return validatePHRUpdate((PHRUpdate)value, diagnostics, context);
+			case IHEPackage.ENCOUNTER_ACTIVITY:
+				return validateEncounterActivity((EncounterActivity)value, diagnostics, context);
+			case IHEPackage.ENCOUNTER_PLAN_OF_CARE:
+				return validateEncounterPlanOfCare((EncounterPlanOfCare)value, diagnostics, context);
 			case IHEPackage.IHE_REGISTRY_DELEGATE:
 				return validateIHERegistryDelegate((IHERegistryDelegate)value, diagnostics, context);
 			default:
@@ -2982,6 +3063,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionCode(encounterHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionTitle(encounterHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEncounterHistorySection_validateEncounterHistorySectionTemplateId(encounterHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterHistorySection_validateEncounterHistorySectionEncounterEntry(encounterHistorySection, diagnostics, context);
 		return result;
 	}
 
@@ -2993,6 +3075,87 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateEncounterHistorySection_validateEncounterHistorySectionTemplateId(EncounterHistorySection encounterHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return encounterHistorySection.validateEncounterHistorySectionTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateEncounterHistorySectionEncounterEntry constraint of '<em>Encounter History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterHistorySection_validateEncounterHistorySectionEncounterEntry(EncounterHistorySection encounterHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterHistorySection.validateEncounterHistorySectionEncounterEntry(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterEntry(EncounterEntry encounterEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryTemplateId(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryClassCode(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryCode(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryId(encounterEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryText(encounterEntry, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateEncounterEntryTemplateId constraint of '<em>Encounter Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterEntry_validateEncounterEntryTemplateId(EncounterEntry encounterEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterEntry.validateEncounterEntryTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateEncounterEntryClassCode constraint of '<em>Encounter Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterEntry_validateEncounterEntryClassCode(EncounterEntry encounterEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterEntry.validateEncounterEntryClassCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateEncounterEntryCode constraint of '<em>Encounter Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterEntry_validateEncounterEntryCode(EncounterEntry encounterEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterEntry.validateEncounterEntryCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateEncounterEntryId constraint of '<em>Encounter Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterEntry_validateEncounterEntryId(EncounterEntry encounterEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterEntry.validateEncounterEntryId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateEncounterEntryText constraint of '<em>Encounter Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterEntry_validateEncounterEntryText(EncounterEntry encounterEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterEntry.validateEncounterEntryText(diagnostics, context);
 	}
 
 	/**
@@ -3680,6 +3843,126 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validatePHRUpdate_validatePHRUpdateTemplateId(PHRUpdate phrUpdate, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return phrUpdate.validatePHRUpdateTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterActivity(EncounterActivity encounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryTemplateId(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryClassCode(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryCode(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryId(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryText(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterActivity_validateEncountersActivityTemplateId(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityClassCode(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityMoodCode(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityId(encounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityEffectiveTime(encounterActivity, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateEncountersActivityTemplateId constraint of '<em>Encounter Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterActivity_validateEncountersActivityTemplateId(EncounterActivity encounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateEncountersActivityTemplateId", getObjectLabel(encounterActivity, context) },
+						 new Object[] { encounterActivity },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateEncountersActivity_validateEncountersActivityTemplateId(encounterActivity, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterPlanOfCare(EncounterPlanOfCare encounterPlanOfCare, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryTemplateId(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryClassCode(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryCode(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryId(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterEntry_validateEncounterEntryText(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareActivityEncounter_validatePlanOfCareActivityEncounterMoodCodeValue(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterPlanOfCare_validatePlanOfCareActivityEncounterTemplateId(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareActivityEncounter_validatePlanOfCareActivityEncounterId(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareActivityEncounter_validatePlanOfCareActivityEncounterMoodCode(encounterPlanOfCare, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterPlanOfCare_validateEncounterPlanOfCareMoodCodeValue(encounterPlanOfCare, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateEncounterPlanOfCareMoodCodeValue constraint of '<em>Encounter Plan Of Care</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterPlanOfCare_validateEncounterPlanOfCareMoodCodeValue(EncounterPlanOfCare encounterPlanOfCare, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterPlanOfCare.validateEncounterPlanOfCareMoodCodeValue(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareActivityEncounterTemplateId constraint of '<em>Encounter Plan Of Care</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncounterPlanOfCare_validatePlanOfCareActivityEncounterTemplateId(EncounterPlanOfCare encounterPlanOfCare, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validatePlanOfCareActivityEncounterTemplateId", getObjectLabel(encounterPlanOfCare, context) },
+						 new Object[] { encounterPlanOfCare },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validatePlanOfCareActivityEncounter_validatePlanOfCareActivityEncounterTemplateId(encounterPlanOfCare, diagnostics, context);
 	}
 
 	/**

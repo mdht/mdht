@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Encounter;
 import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
@@ -52,6 +53,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection;
@@ -114,16 +116,17 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.ADVANCE_DIRECTIVES_SECTION: return createAdvanceDirectivesSection();
 			case HITSPPackage.ALLERGIES_REACTIONS_SECTION: return createAllergiesReactionsSection();
 			case HITSPPackage.ENCOUNTERS_SECTION: return createEncountersSection();
+			case HITSPPackage.ENCOUNTER: return createEncounter();
 			case HITSPPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
 			case HITSPPackage.IMMUNIZATION: return createImmunization();
 			case HITSPPackage.PAYERS_SECTION: return createPayersSection();
+			case HITSPPackage.SURGERIES_SECTION: return createSurgeriesSection();
 			case HITSPPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
 			case HITSPPackage.VITAL_SIGN: return createVitalSign();
 			case HITSPPackage.HISTORY_OF_PAST_ILLNESS_SECTION: return createHistoryOfPastIllnessSection();
 			case HITSPPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
 			case HITSPPackage.REASON_FOR_REFERRAL_SECTION: return createReasonForReferralSection();
 			case HITSPPackage.HISTORY_OF_PRESENT_ILLNESS: return createHistoryOfPresentIllness();
-			case HITSPPackage.SURGERIES_SECTION: return createSurgeriesSection();
 			case HITSPPackage.FUNCTIONAL_STATUS_SECTION: return createFunctionalStatusSection();
 			case HITSPPackage.HOSPITAL_ADMISSION_DIAGNOSIS_SECTION: return createHospitalAdmissionDiagnosisSection();
 			case HITSPPackage.DISCHARGE_DIAGNOSIS_SECTION: return createDischargeDiagnosisSection();
@@ -149,6 +152,7 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.MEDICATION_TAPERED_DOSE: return createMedicationTaperedDose();
 			case HITSPPackage.MEDICATION_CONDITIONAL_DOSE: return createMedicationConditionalDose();
 			case HITSPPackage.MEDICATION_COMBINATION_MEDICATION: return createMedicationCombinationMedication();
+			case HITSPPackage.PROCEDURE: return createProcedure();
 			case HITSPPackage.HITSP_REGISTRY_DELEGATE: return createHITSPRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -593,6 +597,26 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public MedicationCombinationMedication createMedicationCombinationMedication() {
 		MedicationCombinationMedicationImpl medicationCombinationMedication = new MedicationCombinationMedicationImpl();
 		return medicationCombinationMedication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Procedure createProcedure() {
+		ProcedureImpl procedure = new ProcedureImpl();
+		return procedure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Encounter createEncounter() {
+		EncounterImpl encounter = new EncounterImpl();
+		return encounter;
 	}
 
 	/**

@@ -528,6 +528,10 @@ life, hobbies, and risky habits.</body>
       <generalization xmi:id="_vuzKIMiiEd6mWrHPmrIIfQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_rJDcIHDAEd6eItyqb1FoWg"/>
       </generalization>
+      <ownedAttribute xmi:id="_6bP7cKsPEd-yFfcbpgNFIA" name="encounterEntry" type="_z__aIKsNEd-yFfcbpgNFIA" association="_6bQigKsPEd-yFfcbpgNFIA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7_QE0KsPEd-yFfcbpgNFIA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7_Qr4KsPEd-yFfcbpgNFIA" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tqabEMijEd6mWrHPmrIIfQ" name="MedicalDevicesSection">
       <ownedComment xmi:id="_1yJXMMijEd6mWrHPmrIIfQ" annotatedElement="_tqabEMijEd6mWrHPmrIIfQ">
@@ -668,6 +672,59 @@ life, hobbies, and risky habits.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_-P-6IJvhEd-L4qx175J3dg" name="PHRUpdate">
       <generalization xmi:id="_-P_hMJvhEd-L4qx175J3dg" general="_fp-n0DOvEd-5f4Yngl7nkw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_j6rjcKsNEd-yFfcbpgNFIA" name="EncounterActivity">
+      <generalization xmi:id="_5BDgQKsNEd-yFfcbpgNFIA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_mO8KEHJWEd6cacuAk5qrhg"/>
+      </generalization>
+      <generalization xmi:id="_j6sKgKsNEd-yFfcbpgNFIA" general="_z__aIKsNEd-yFfcbpgNFIA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pVIZ8KsNEd-yFfcbpgNFIA" name="EncounterPlanOfCare">
+      <ownedRule xmi:id="_zt8HMKsVEd-yFfcbpgNFIA" name="moodCodeValue">
+        <constrainedElement xmi:type="uml:Property" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_F3vCcDHmEd-saqiXO4OYhQ"/>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zt8HMasVEd-yFfcbpgNFIA">
+          <language>OCL</language>
+          <body>self.moodCode = vocab::x_DocumentEncounterMood::ARQ&#xD;&#xA;  or self.moodCode = vocab::x_DocumentEncounterMood::PRMS</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_882AYKsNEd-yFfcbpgNFIA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_EGZnsDHmEd-saqiXO4OYhQ"/>
+      </generalization>
+      <generalization xmi:id="_pVIZ8asNEd-yFfcbpgNFIA" general="_z__aIKsNEd-yFfcbpgNFIA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_z__aIKsNEd-yFfcbpgNFIA" name="EncounterEntry" isAbstract="true">
+      <generalization xmi:id="_JWwpwKsWEd-yFfcbpgNFIA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_AAXtEEbvEd6besF9iFIJkQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_qx6x8KsWEd-yFfcbpgNFIA" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYEDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_n4VYQEb9Ed6besF9iFIJkQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_sdBo4KsWEd-yFfcbpgNFIA" value="ENC"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_IhgnUKsXEd-yFfcbpgNFIA" name="code" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_GrtG0KsYEd-yFfcbpgNFIA">
+          <body>Developers should take care to check that rational combinations of encounter.code and encounter.moodCode are used , but this profile does not restrict any combination.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IhgnUasXEd-yFfcbpgNFIA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IhgnUqsXEd-yFfcbpgNFIA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_F_EFwEo0Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_IhgnU6sXEd-yFfcbpgNFIA" name="id" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J4oLQKsXEd-yFfcbpgNFIA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J4oyUKsXEd-yFfcbpgNFIA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_DKBLQEo0Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zhWKwKsXEd-yFfcbpgNFIA" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0rtFEKsXEd-yFfcbpgNFIA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0rtFEasXEd-yFfcbpgNFIA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_H4XJsEo0Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_6bQigKsPEd-yFfcbpgNFIA" memberEnd="_6bP7cKsPEd-yFfcbpgNFIA _6bQigasPEd-yFfcbpgNFIA">
+      <ownedEnd xmi:id="_6bQigasPEd-yFfcbpgNFIA" type="_tY30kMiiEd6mWrHPmrIIfQ" association="_6bQigKsPEd-yFfcbpgNFIA"/>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -918,4 +975,13 @@ life, hobbies, and risky habits.</body>
   <CDA:ConformsTo xmi:id="_LkvQkJvpEd-nMfCxM8hlxg" base_Generalization="_6ANuEJvhEd-L4qx175J3dg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_MdIRIJvpEd-nMfCxM8hlxg" base_Generalization="_-P_hMJvhEd-L4qx175J3dg" requiresParentId="true"/>
   <CDA:PropertyValidation xmi:id="_O4u6cJv1Ed-IotBrVd7ICA" base_Property="_fwsLEUvdEd-GNbUQBie2ig"/>
+  <CDA:CDATemplate xmi:id="_SDC-EKsOEd-yFfcbpgNFIA" base_Class="_z__aIKsNEd-yFfcbpgNFIA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+  <CDA:CDATemplate xmi:id="_hzU_8KsOEd-yFfcbpgNFIA" base_Class="_j6rjcKsNEd-yFfcbpgNFIA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.14" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_oVOmsKsOEd-yFfcbpgNFIA" base_Class="_pVIZ8KsNEd-yFfcbpgNFIA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.14" contextDependent="true"/>
+  <CDA:AssociationValidation xmi:id="_GTAMkKsQEd-yFfcbpgNFIA" base_Association="_6bQigKsPEd-yFfcbpgNFIA"/>
+  <CDA:PropertyValidation xmi:id="_tfJ0QKsWEd-yFfcbpgNFIA" base_Property="_qx6x8KsWEd-yFfcbpgNFIA"/>
+  <CDA:PropertyValidation xmi:id="_KJuiUKsXEd-yFfcbpgNFIA" base_Property="_IhgnU6sXEd-yFfcbpgNFIA"/>
+  <CDA:PropertyValidation xmi:id="_Xa1zEKsXEd-yFfcbpgNFIA" severity="WARNING" base_Property="_IhgnUKsXEd-yFfcbpgNFIA"/>
+  <CDA:CodeSystemConstraint xmi:id="_i76CgKsXEd-yFfcbpgNFIA" identifier="2.16.840.1.113883.5.4" name="ActEncounterCode" base_Property="_IhgnUKsXEd-yFfcbpgNFIA"/>
+  <CDA:TextValue xmi:id="_1EmGMKsXEd-yFfcbpgNFIA" base_Property="_zhWKwKsXEd-yFfcbpgNFIA"/>
 </xmi:XMI>

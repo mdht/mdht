@@ -422,6 +422,24 @@ public interface HITSPFactory extends EFactory {
 	MedicationCombinationMedication createMedicationCombinationMedication();
 
 	/**
+	 * Returns a new object of class '<em>Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure</em>'.
+	 * @generated
+	 */
+	Procedure createProcedure();
+
+	/**
+	 * Returns a new object of class '<em>Encounter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encounter</em>'.
+	 * @generated
+	 */
+	Encounter createEncounter();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

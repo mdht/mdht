@@ -9,7 +9,9 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.hitsp.Encounter;
 import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.EncountersSectionOperations;
@@ -52,6 +54,24 @@ public class EncountersSectionImpl extends EncounterHistorySectionImpl implement
 	 */
 	public boolean validateHITSPEncountersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EncountersSectionOperations.validateHITSPEncountersSectionTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHITSPEncountersSectionEncounter(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.validateHITSPEncountersSectionEncounter(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Encounter> getHITSPEncounterEntries() {
+		return EncountersSectionOperations.getHITSPEncounterEntries(this);
 	}
 
 	/**
