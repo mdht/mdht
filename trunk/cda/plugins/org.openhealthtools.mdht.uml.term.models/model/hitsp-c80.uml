@@ -461,6 +461,17 @@
       <ownedLiteral xmi:id="_dktFAKDqEd-dVeaMP0XXQw" name="suspended"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dkykkKDqEd-dVeaMP0XXQw" name="Vaccines administered (CVX)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_yh8VUKrtEd-yFfcbpgNFIA" name="Language"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_3kRpAKypEd-9I53ewETPWA" name="EncounterType">
+      <ownedComment xmi:id="_CPM6oKyqEd-9I53ewETPWA">
+        <body>This is used to identify medical services and procedures furnished by physicians and other healthcare professionals.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_iXnBgKyqEd-9I53ewETPWA" name="Admission Type (NUBC)">
+      <ownedComment xmi:id="_tU2yMKyqEd-9I53ewETPWA">
+        <body>A code indicating the priority of the admission (e.g., Emergency, Urgent, Elective, et cetera).</body>
+      </ownedComment>
+    </packagedElement>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -994,4 +1005,9 @@
   <term:ValueSetCode xmi:id="_dlHUtqDqEd-dVeaMP0XXQw" conceptName="Oxygen saturation:SFr:Pt:BldC:Qn:Oximetry" usageNote="LOINC" base_EnumerationLiteral="_dlHUtaDqEd-dVeaMP0XXQw"/>
   <term:ValueSetCode xmi:id="_dlH7waDqEd-dVeaMP0XXQw" conceptName="Breaths:NRat:Pt:Respiratory system:Qn:" usageNote="LOINC" base_EnumerationLiteral="_dlH7wKDqEd-dVeaMP0XXQw"/>
   <term:ValueSetCode xmi:id="_dlH7w6DqEd-dVeaMP0XXQw" conceptName="Body weight:Mass:Pt:^Patient:Qn:Measured" usageNote="LOINC" base_EnumerationLiteral="_dlH7wqDqEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_yh-KgKrtEd-yFfcbpgNFIA" identifier="2.16.840.1.113883.1.11.11526" version="200609" fullName="Language" source="The Internet Society" url="http://www.ietf.org/rfc/rfc4646.txt" definition="The value set is defined by Internet RFC 4646 (replacing RFC 3066). Please see ISO 639 language code set maintained by Library of Congress for enumeration of language codes and Frequently Asked Questions." effectiveDate="20081218" type="Intensional" binding="Dynamic" base_Enumeration="_yh8VUKrtEd-yFfcbpgNFIA"/>
+  <term:ValueSetVersion xmi:id="_3n6L0KypEd-9I53ewETPWA" identifier="2.16.840.1.113883.3.88.12.80.32" version="20081218" fullName="Encounter Type" source="HITSP" definition="This value set includes only the codes of the Current Procedure and Terminology designated for Evaluation and Management (99200 – 99299)." effectiveDate="20081218" type="Intensional" binding="Dynamic" base_Enumeration="_3kRpAKypEd-9I53ewETPWA">
+    <codeSystem href="CodeSystems.uml#_KsN1ICF_Ed-M3adQxwHq4g"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_iXoPoKyqEd-9I53ewETPWA" identifier="2.16.840.1.113883.3.88.12.80.33" fullName="Admission Type" source="National Uniform Billing Committee (NUBC)" url="www.nubc.org" definition="See (UB-04/NUBC CURRENT UB DATA SPECIFICATIONS MANUAL) UB-04 FL14." base_Enumeration="_iXnBgKyqEd-9I53ewETPWA"/>
 </xmi:XMI>
