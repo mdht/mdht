@@ -572,6 +572,24 @@ public interface IHEFactory extends EFactory {
 	PHRUpdate createPHRUpdate();
 
 	/**
+	 * Returns a new object of class '<em>Encounter Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encounter Activity</em>'.
+	 * @generated
+	 */
+	EncounterActivity createEncounterActivity();
+
+	/**
+	 * Returns a new object of class '<em>Encounter Plan Of Care</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encounter Plan Of Care</em>'.
+	 * @generated
+	 */
+	EncounterPlanOfCare createEncounterPlanOfCare();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

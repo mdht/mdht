@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PatientSummaryOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -263,6 +264,15 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePatientSummarySurgeriesSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientSummaryOperations.validatePatientSummarySurgeriesSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemListSection createProblemListSection() {
 		return PatientSummaryOperations.createProblemListSection(this);
 	}
@@ -337,6 +347,15 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 */
 	public MedicationsSection getHITSPMedicationsSection() {
 		return PatientSummaryOperations.getHITSPMedicationsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurgeriesSection getSurgeriesSection() {
+		return PatientSummaryOperations.getSurgeriesSection(this);
 	}
 
 	/**

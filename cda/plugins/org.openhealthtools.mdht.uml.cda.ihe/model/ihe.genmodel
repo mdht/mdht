@@ -438,6 +438,33 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterHistorySection/EncounterHistorySectionTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterHistorySection/EncounterHistorySectionTemplateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterHistorySection/EncounterHistorySectionEncounterEntry">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterHistorySection/EncounterHistorySectionEncounterEntry/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterHistorySection/EncounterHistorySectionEncounterEntry/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterHistorySection/getEncounterEntries"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ihe.ecore#//EncounterEntry">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterEntry/EncounterEntryTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterEntry/EncounterEntryClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterEntry/EncounterEntryCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterEntry/EncounterEntryId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterEntry/EncounterEntryText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterEntry/EncounterEntryText/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//MedicalDevicesSection">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicalDevicesSection/MedicalDevicesSectionTemplateId">
@@ -552,6 +579,13 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PHRUpdate/PHRUpdateTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PHRUpdate/PHRUpdateTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PHRUpdate/PHRUpdateTemplateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//EncounterActivity"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//EncounterPlanOfCare">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//EncounterPlanOfCare/EncounterPlanOfCareMoodCodeValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterPlanOfCare/EncounterPlanOfCareMoodCodeValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterPlanOfCare/EncounterPlanOfCareMoodCodeValue/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//IHERegistryDelegate"/>
