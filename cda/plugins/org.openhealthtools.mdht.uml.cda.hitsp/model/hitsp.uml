@@ -531,7 +531,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
       <ownedRule xmi:id="_MvIF0KrsEd-yFfcbpgNFIA" name="usesLanguageCommunication" constrainedElement="_MdoNoDuEEd-B8KE6Jx0UNQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_SEDjIKrsEd-yFfcbpgNFIA">
           <language>Analysis</language>
-          <body>Languages spoken shall be recorded using the &lt;languageCommunication> infrastructure class associated with the patient. The &lt;languageCommunication> element describes the primary and secondary languages of communication for a person.</body>
+          <body>Languages spoken shall be recorded using the &amp;lt;languageCommunication&amp;gt; infrastructure class associated with the patient. The &amp;lt;languageCommunication&amp;gt; element describes the primary and secondary languages of communication for a person.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_lhW-cKruEd-yFfcbpgNFIA" name="signLanguage" constrainedElement="_MdoNoDuEEd-B8KE6Jx0UNQ">
