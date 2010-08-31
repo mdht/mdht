@@ -1247,13 +1247,16 @@ public class CDAModelUtil {
 			else if (text.charAt(i) == '\u2018')	// left single quote
 				newText.append("'");
 			
-			// other invalid characters in XML
-			else if (text.charAt(i) == '<')
-				newText.append("&lt;");
-			else if (text.charAt(i) == '>')
-				newText.append("&gt;");
-			else if (text.charAt(i) == '&')
-				newText.append("&amp;");
+			// this won't allow markup in comments
+//			else if (text.charAt(i) == '<')
+//				newText.append("&lt;");
+//			else if (text.charAt(i) == '>')
+//				newText.append("&gt;");
+			
+			// can't include this or escaped characters don't render, e.g. &amp;
+//			else if (text.charAt(i) == '&')
+//				newText.append("&amp;");
+			
 			else
 				newText.append(text.charAt(i));
 		}
