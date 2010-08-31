@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Encounter Location - conformance rules</title>
+<shortdesc id="shortdesc">[Participant2: templateId <tt>2.16.840.1.113883.10.20.1.45</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Participant2</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.45"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Participant2.html">CDA Participant2</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@typeCode</tt> = "LOC"</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Participation.html">RIM Participation</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Participant2.html">CDA Participant2</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@typeCode</tt> = "LOC"</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>

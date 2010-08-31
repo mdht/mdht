@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Vital Signs Organizer - conformance rules</title>
+<shortdesc id="shortdesc">[Organizer: templateId <tt>2.16.840.1.113883.10.20.1.35</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Organizer</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.35"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref href="../ResultOrganizer.dita">Result Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
+<li><b>SHALL</b> satisfy: Contains one or more sources of information.</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</xref></li>
+<li>Conforms to <xref href="../ResultOrganizer.dita">Result Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref></li></ol></li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt></li>
+<li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Contains one or more Specimen if the specimen isn't inherent in code value.</li>
+<li>[CCD] <b>SHALL</b> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more component</li>
+<li>[CCD] <b>MAY</b> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</li>
+<li>[CCD] <b>MAY</b> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section.</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information.</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information.</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <organizer moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
+              <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
+              <id root="dd7cee82-21e9-455f-bae6-c1a2e7a118ea"/>
+              <code/>
+              <statusCode/>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
+                  <id root="08fc50ee-d589-4cd6-b4c5-a0825ad1b588"/>
+                  <code/>
+                  <statusCode/>
+                  <effectiveTime>
+                    <low value="1972"/>
+                    <high value="2008"/>
+                  </effectiveTime>
+                  <interpretationCode/>
+                  <methodCode/>
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

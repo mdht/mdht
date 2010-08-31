@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Plan Of Care Activity Substance Administration - conformance rules</title>
+<shortdesc id="shortdesc">[SubstanceAdministration: templateId <tt>2.16.840.1.113883.10.20.1.25</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>SubstanceAdministration</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.25"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref></li>
+<li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
+<li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li><b>SHALL</b> satisfy: <codeblock>self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
+  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>SHALL</b> satisfy: <codeblock>self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
+  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <substanceAdministration classCode="SBADM">
+              <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              <id root="3a9fb476-5734-4bd9-a7ca-d5e970ae356f"/>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

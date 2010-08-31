@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Procedure Activity - conformance rules</title>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li><b>SHALL</b> contain [1..1] <tt>moodCode</tt>, where its data type is ActMood</li>
+<li><b>SHALL</b> contain [1..*] <tt>id</tt>, where its data type is II</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.1.11.20.15 ProcedureStatusCode STATIC 20061017), where its data type is CS</li>
+<li><b>SHOULD</b> contain [0..1] <tt>effectiveTime</tt>, where its data type is IVL_TS</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt>, where its data type is CD</li>
+</ol>
+<ol id="aggregate">
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>moodCode</tt>, where its data type is ActMood</li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt>, where its data type is II</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.1.11.20.15 ProcedureStatusCode STATIC 20061017), where its data type is CS</li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>effectiveTime</tt>, where its data type is IVL_TS</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt>, where its data type is CD</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>
