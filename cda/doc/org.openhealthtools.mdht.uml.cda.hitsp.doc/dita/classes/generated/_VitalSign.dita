@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Vital Sign - conformance rules</title>
+<shortdesc id="shortdesc">[Observation: templateId <tt>2.16.840.1.113883.3.88.11.83.14</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Observation</category></metadata>
+<resourceid id="2.16.840.1.113883.3.88.11.83.14"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/VitalSignObservation.html">IHE Vital Sign Observation</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.2</tt>)</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.3.88.12.80.62 Vital Sign Result Value Set STATIC 1</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/SimpleObservation.html">IHE Simple Observation</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13</tt>)</li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultObservation.html">CCD Result Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/VitalSignObservation.html">IHE Vital Sign Observation</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.2</tt>)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt></li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul></li>
+<li>[HITSP] <b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.3.88.12.80.62 Vital Sign Result Value Set STATIC 1</li>
+<li>[IHE] <b>MAY</b> contain [0..*] <tt>methodCode</tt></li>
+<li>[IHE] <b>MAY</b> contain [0..*] <tt>interpretationCode</tt></li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>value</tt>, where its data type is PQ</li>
+<li>[IHE] <b>MAY</b> contain [0..*] <tt>targetSiteCode</tt></li>
+<li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12).</li>
+<li>[CCD] <b>SHALL</b> satisfy: The methodCode SHALL NOT conflict with the method inherent in code</li>
+<li>[CCD] <b>SHALL</b> satisfy: Where value is a physical quantity, the unit of measure SHALL be expressed using a valid Unified Code for Units of Measure (UCUM) expression.</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Contain one or more referenceRange to show the normal range of values for the observation result</li>
+<li>[CCD] <b>SHALL</b> satisfy: SHALL NOT contain referenceRange / observationRange / code, as this attribute is not used by the HL7 Clinical Statement or Lab Committee models.</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information.</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE Simple Observation"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2" assigningAuthorityName="IHE Vital Sign Observation"/>
+              <templateId root="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP Vital Sign"/>
+              <id root="4954bfa6-7c76-4cdb-88ba-f14aff6262fb"/>
+              <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="1972"/>
+                <high value="2008"/>
+              </effectiveTime>
+              <value xsi:type="PQ"/>
+              <interpretationCode/>
+              <methodCode/>
+              <targetSiteCode/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>
