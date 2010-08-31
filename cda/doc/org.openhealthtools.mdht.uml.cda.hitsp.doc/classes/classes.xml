@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?NLS TYPE="org.eclipse.help.toc"?>
-<toc label="Other Classes" topic="HealthcareProvider.html">
-   <topic label="Healthcare Provider" href="HealthcareProvider.html"/>
-   <topic label="Language Spoken" href="LanguageSpoken.html"/>
-   <topic label="Procedure" href="Procedure.html"/>
-</toc>
