@@ -57,21 +57,29 @@ public class Main {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		Main main = new Main();
-		
-		PatientSummary patientSummary = main.createPatientSummary();
+		PatientSummary patientSummary = createPatientSummary();
 		
 		ActiveProblemsSection problemList = patientSummary.createProblemListSection();
-		main.fillProblemList(problemList);
+		fillProblemList(problemList);
 		
-		patientSummary.addSection(main.createAllergiesSection());
-		patientSummary.addSection(main.createMedicationsSection());
+		patientSummary.addSection(createAllergiesSection());
+		patientSummary.addSection(createMedicationsSection());
+
+		System.out.println("***** Generate Patient Summary *****");
+		save(patientSummary);
+		System.out.println("\n\n***** Validate generated Patient Summary *****");
+		validate(patientSummary);
+
+		System.out.println("\n***** Validate minimal NIST sample *****");
+		ClinicalDocument minimalSample = CDAUtil.load(new FileInputStream("samples/CCD_HITSP_C32v2.5_Minimal_WithEntries_Valid.xml"));
+		validate(minimalSample);
 		
-		main.save(patientSummary);
-		main.validate(patientSummary);
+		System.out.println("\n***** Validate complete NIST sample *****");
+		ClinicalDocument completeSample = CDAUtil.load(new FileInputStream("samples/HITSP_C32v2.5_Rev6_16Sections_Entries_MinimalErrors.xml"));
+		validate(completeSample);
 	}
 	
-	public PatientSummary createPatientSummary() {
+	public static PatientSummary createPatientSummary() {
 		PatientSummary doc = HITSPFactory.eINSTANCE.createPatientSummary().init();
 
 		II id = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72", 
@@ -140,7 +148,7 @@ public class Main {
 		return doc;
 	}
 	
-	public void fillProblemList(ActiveProblemsSection problemList) {
+	public static void fillProblemList(ActiveProblemsSection problemList) {
 		Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
 		problemList.addAct(condition);
 		condition.getIds().add(DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"));
@@ -167,13 +175,13 @@ public class Main {
 		healthStatus.getValues().add(healthStatusValue);
 	}
 
-	public Section createAllergiesSection() {
+	public static Section createAllergiesSection() {
 		Section section = CDAFactory.eINSTANCE.createSection();
 		
 		return section;
 	}
 
-	public MedicationsSection createMedicationsSection() {
+	public static MedicationsSection createMedicationsSection() {
 		MedicationsSection section = IHEFactory.eINSTANCE.createMedicationsSection().init();
 		section.setTitle(DatatypesFactory.eINSTANCE.createST("Medications"));
 
@@ -185,11 +193,11 @@ public class Main {
 		return section;
 	}
 
-	public void save(ClinicalDocument clinicalDocument) throws Exception {
+	public static void save(ClinicalDocument clinicalDocument) throws Exception {
 		CDAUtil.save(clinicalDocument, System.out);
 	}
 	
-	public void validate(ClinicalDocument clinicalDocument) throws Exception {
+	public static void validate(ClinicalDocument clinicalDocument) throws Exception {
 		boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
@@ -199,10 +207,10 @@ public class Main {
 			public void handleWarning(Diagnostic diagnostic) {
 				System.out.println("WARNING: " + diagnostic.getMessage());
 			}
-			@Override
-			public void handleInfo(Diagnostic diagnostic) {
-				System.out.println("INFO: " + diagnostic.getMessage());
-			}
+//			@Override
+//			public void handleInfo(Diagnostic diagnostic) {
+//				System.out.println("INFO: " + diagnostic.getMessage());
+//			}
 		});
 		
 		if (valid) {
@@ -210,13 +218,6 @@ public class Main {
 		} else {
 			System.out.println("Document is invalid");
 		}
-	}
-
-	public void validateSampleC32() throws Exception {
-		ClinicalDocument sampleDoc = CDAUtil.load(new FileInputStream("resources/SampleC32Document.xml"));
-		System.out.println(sampleDoc);
-		
-		validate(sampleDoc);
 	}
 	
 }
