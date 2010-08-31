@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Discharge Summary - conformance rules</title>
+<shortdesc id="shortdesc">[ClinicalDocument: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.1.4</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>ClinicalDocument</category></metadata>
+<resourceid id="1.3.6.1.4.1.19376.1.5.3.1.1.4"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref href="../MedicalSummary.dita">Medical Summary</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.2</tt>)</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../ActiveProblemsSection.dita">Active Problems Section</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.6</tt>)</li></ol></li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.cdt.doc/classes/GeneralHeaderConstraints.html">CDT General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li>Conforms to <xref href="../MedicalDocument.dita">Medical Document</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.1</tt>)</li>
+<li>Conforms to <xref href="../MedicalSummary.dita">Medical Summary</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.2</tt>)</li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>confidentialityCode</tt></li>
+<li>[CDT] <b>CONF-HP-23: </b><b>SHALL</b> contain [1..1] <tt>effectiveTime</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt></li>
+<li>[CDT] <b>CONF-HP-24: </b><b>SHALL</b> contain [1..1] <tt>languageCode</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>realmCode</tt><tt>/@code</tt> = "US" </li>
+<li>[CDT] <b>CONF-HP-22: </b><b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt></li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../ActiveProblemsSection.dita">Active Problems Section</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.6</tt>)</li></ol></li>
+<li>[CDT] <b>CONF-HP-16: </b><b>SHALL</b> satisfy: The extension attribute of the typeId element SHALL be POCD_HD000040.</li>
+<li>[CDT] <b>CONF-HP-17: </b><b>SHALL</b> satisfy: The ClinicalDocument/id element SHALL be present. The ClinicalDocument/id/@root attribute SHALL be a syntactically correct UUID or OID.</li>
+<li>[CDT] <b>CONF-HP-18: </b><b>SHALL</b> satisfy: UUIDs SHALL be represented in the form XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXX, where each X is a character from the set [A-Fa-f0-9].</li>
+<li>[CDT] <b>CONF-HP-19: </b><b>SHALL</b> satisfy: OIDs SHALL be represented in dotted decimal notation, where each decimal number is either 0, or starts with a nonzero digit. More formally, an OID SHALL be in the form ([0-2])(.([1-9][0-9]*|0))+.</li>
+<li>[CDT] <b>CONF-HP-20: </b><b>SHALL</b> satisfy: OIDs SHALL be no more than 64 characters in length.</li>
+<li>[CDT] <b>CONF-HP-25: </b><b>SHALL</b> satisfy: languageCode SHALL be in the form nn, or nn-CC.</li>
+<li>[CDT] <b>CONF-HP-26: </b><b>SHALL</b> satisfy: The nn portion of languageCode SHALL be a legal ISO-639-1 language code in lowercase.</li>
+<li>[CDT] <b>CONF-HP-27: </b><b>SHALL</b> satisfy: The CC portion languageCode, if present, SHALL be an ISO-3166 country code in uppercase.</li>
+<li>[CDT] <b>CONF-HP-28: </b><b>SHALL</b> satisfy: Both setId and versionNumber SHALL be present or both SHALL be absent.</li>
+<li>[CDT] <b>CONF-HP-29: </b><b>SHALL</b> satisfy: The @extension and/or @root of setId and id SHALL be different when both are present.</li>
+<li>[CDT] <b>CONF-HP-30: </b><b>SHALL</b> satisfy: A copyTime element SHALL NOT be present.</li>
+<li>[IHE] <b>SHALL</b> satisfy: <codeblock>self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ihe::ProblemConcernEntry)))</codeblock></li>
+<li>[IHE] <b>SHALL</b> satisfy: <codeblock>self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ihe::AllergyIntoleranceConcern)))</codeblock></li>
+<li>[IHE] <b>SHALL</b> satisfy: <codeblock>self.getSections()->exists(sect : cda::Section | sect.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.oclIsKindOf(ihe::Medication)))</codeblock></li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <realmCode code="US"/>
+  <templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE Medical Document"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.2" assigningAuthorityName="IHE Medical Summary"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.4" assigningAuthorityName="IHE Discharge Summary"/>
+  <id root="6352d48d-217f-4f31-a5f8-bd5aa9fe6109"/>
+  <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+  <title/>
+  <effectiveTime/>
+  <confidentialityCode/>
+  <languageCode/>
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.11" assigningAuthorityName="CCD Problem Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6" assigningAuthorityName="IHE Active Problems Section"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
+          <title>Problem list</title>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>
