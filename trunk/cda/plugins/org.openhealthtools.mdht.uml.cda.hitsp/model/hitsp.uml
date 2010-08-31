@@ -482,9 +482,9 @@
       </generalization>
       <ownedAttribute xmi:id="_lkLxoBvjEd-yI6xBTkJSNw" name="effectiveTime" visibility="private" aggregation="composite">
         <ownedComment xmi:id="_tM2MIBvjEd-yI6xBTkJSNw" annotatedElement="_lkLxoBvjEd-yI6xBTkJSNw">
-          <body>The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &lt;low> element of the &lt;effectiveTime> element when known. The resolution data shall be recorded in the &lt;high> element of the &lt;effectiveTime> element when known. These dates represent the clinically effective time span over which the problem existed.&#xD;
+          <body>The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &amp;lt;low&amp;gt; element of the &amp;lt;effectiveTime&amp;gt; element when known. The resolution data shall be recorded in the &amp;lt;high&amp;gt; element of the &amp;lt;effectiveTime&amp;gt; element when known. These dates represent the clinically effective time span over which the problem existed.&#xD;
 &#xD;
-If the problem is known to be resolved, but the date of resolution is not known, then the &lt;high> element shall be present, and the nullFlavor attribute shall be set to 'UNK'. Therefore, the existence of an &lt;high> element within a problem does indicate that the problem has been resolved.</body>
+If the problem is known to be resolved, but the date of resolution is not known, then the &amp;lt;high&amp;gt; element shall be present, and the nullFlavor attribute shall be set to 'UNK'. Therefore, the existence of an &amp;lt;high&amp;gt; element within a problem does indicate that the problem has been resolved.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lkLxoRvjEd-yI6xBTkJSNw" value="1"/>
