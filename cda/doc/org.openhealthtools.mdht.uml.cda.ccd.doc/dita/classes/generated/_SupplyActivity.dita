@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Supply Activity - conformance rules</title>
+<shortdesc id="shortdesc">[Supply: templateId <tt>2.16.840.1.113883.10.20.1.34</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Supply</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.34"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
+<li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li><b>SHOULD</b> contain [1..1] <tt>statusCode</tt></li>
+<li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>contains <xref href="../MedicationStatusObservation.dita">Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
+<li><b>MAY</b> contain [0..*] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
+<li>contains <xref href="../FulfillmentInstruction.dita">Fulfillment Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.43</tt>)</li></ol></li>
+<li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt></li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>statusCode</tt></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>contains <xref href="../MedicationStatusObservation.dita">Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
+<li>[CCD] <b>MAY</b> contain [0..*] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
+<li>contains <xref href="../FulfillmentInstruction.dita">Fulfillment Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.43</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt></li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <supply classCode="SPLY">
+              <templateId root="2.16.840.1.113883.10.20.1.34" assigningAuthorityName="CCD Supply Activity"/>
+              <id root="05a463aa-38c0-40cc-a206-5d640c8b6f50"/>
+              <statusCode/>
+              <effectiveTime/>
+            </supply>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

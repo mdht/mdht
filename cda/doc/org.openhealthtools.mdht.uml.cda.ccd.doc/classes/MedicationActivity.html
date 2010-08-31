@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Medication Activity"/>
+<meta name="abstract" content="[SubstanceAdministration: templateId 2.16.840.1.113883.10.20.1.24]"/>
+<meta name="description" content="[SubstanceAdministration: templateId 2.16.840.1.113883.10.20.1.24]"/>
+<meta name="DC.Coverage" content="SubstanceAdministration"/>
+<meta name="DC.Relation" scheme="URI" content="../content/ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Medication Activity</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Medication Activity</h1>
+
+
+
+<div><p>[SubstanceAdministration: templateId <tt>2.16.840.1.113883.10.20.1.24</tt>]</p>
+
+
+<div class="section">
+<p>
+    A medication activity is used to describe what is administered whereas a supply activity is used to
+    describe what has been dispensed.
+</p>
+
+</div>
+
+
+<ol>
+<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</a></li>
+
+<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+
+<li><strong>SHOULD</strong> contain [0..1] <tt>statusCode</tt></li>
+
+<li><strong>MAY</strong> contain [0..1] <tt>entryRelationship</tt>, such that it<ol type="a">
+<li>contains <a href="MedicationSeriesNumberObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.46]">Medication Series Number Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.46</tt>)</li>
+</ol>
+</li>
+
+<li><strong>MAY</strong> contain [0..1] <tt>entryRelationship</tt>, such that it<ol type="a">
+<li>contains <a href="MedicationStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.47]">Medication Status Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li>
+</ol>
+</li>
+
+<li><strong>MAY</strong> contain [0..*] <tt>entryRelationship</tt>, such that it<ol type="a">
+<li>has @typeCode="SUBJ" <em>SUBJ (has subject)</em></li>
+
+<li>contains <a href="PatientInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.49]">Patient Instruction</a> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>)</li>
+</ol>
+</li>
+
+<li><strong>SHALL</strong> satisfy: <pre class="codeblock">self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </pre>
+</li>
+
+</ol>
+
+
+<div class="fignone"><span class="figcap">Figure 1. Medication Activity example</span>
+
+
+
+<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
+  &lt;component&gt;
+    &lt;structuredBody&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;entry&gt;
+            &lt;substanceAdministration classCode="SBADM"&gt;
+              &lt;templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/&gt;
+              &lt;id root="0fa0b990-eea0-48d5-b225-6f1325dc75f4"/&gt;
+              &lt;statusCode/&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.46" assigningAuthorityName="CCD Medication Series Number Observation"/&gt;
+                  &lt;code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose number"/&gt;
+                  &lt;statusCode/&gt;
+                  &lt;value xsi:type="INT"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.47" assigningAuthorityName="CCD Medication Status Observation"/&gt;
+                  &lt;code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CE"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+            &lt;/substanceAdministration&gt;
+          &lt;/entry&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+    &lt;/structuredBody&gt;
+  &lt;/component&gt;
+&lt;/ClinicalDocument&gt;</pre>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>
