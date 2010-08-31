@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Other Classes">
+<topicref href="HealthcareProvidersPharmacies.dita" type="topic" />
+<topicref href="LanguageCommunication.dita" type="topic" />
+<topicref href="ProcedureEntry.dita" type="topic" />
+<topicref href="ProductEntry.dita" type="topic" />
+</map>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Medical Document</title>
+<shortdesc conref="generated/_MedicalDocument.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_MedicalDocument.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_MedicalDocument.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_MedicalDocument.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_MedicalDocument.dita#classId/aggregate">
+<li></li>
+</ol>
+<fig>
+<title>Medical Document example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_MedicalDocument.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>

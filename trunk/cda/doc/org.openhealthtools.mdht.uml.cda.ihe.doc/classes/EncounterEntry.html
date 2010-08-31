@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Encounter Entry"/>
+<meta name="abstract" content="[Encounter: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.14]"/>
+<meta name="description" content="[Encounter: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.14]"/>
+<meta name="DC.Coverage" content="Encounter"/>
+<meta name="DC.Relation" scheme="URI" content="../content/ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Encounter Entry</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Encounter Entry</h1>
+
+
+
+<div><p>[Encounter: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>]</p>
+
+
+<div class="section">
+</div>
+
+
+<ol>
+<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</a></li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
+
+<li><strong>SHOULD</strong> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.4 ActEncounterCode STATIC)<ul><li>Developers should take care to check that rational combinations of encounter.code and encounter.moodCode are used , but this profile does not restrict any combination.</li>
+</ul>
+</li>
+
+<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>text</tt></li>
+
+</ol>
+
+
+<div class="fignone"><span class="figcap">Figure 1. Encounter Entry example</span>
+
+
+
+<pre class="codeblock"/>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

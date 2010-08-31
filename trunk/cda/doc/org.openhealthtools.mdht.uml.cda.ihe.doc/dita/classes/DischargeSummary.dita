@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Discharge Summary</title>
+<shortdesc conref="generated/_DischargeSummary.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_DischargeSummary.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_DischargeSummary.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_DischargeSummary.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_DischargeSummary.dita#classId/aggregate">
+<li></li>
+</ol>
+<fig>
+<title>Discharge Summary example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_DischargeSummary.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>
