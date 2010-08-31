@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Healthcare Provider - conformance rules</title>
+<shortdesc id="shortdesc">[Performer1: templateId <tt>2.16.840.1.113883.3.88.11.83.4</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Performer1</category></metadata>
+<resourceid id="2.16.840.1.113883.3.88.11.83.4"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/HealthcareProvidersPharmacies.html">IHE Healthcare Providers Pharmacies</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.3</tt>)</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Participation.html">RIM Participation</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer1.html">CDA Performer1</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/HealthcareProvidersPharmacies.html">IHE Healthcare Providers Pharmacies</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.3</tt>)</li>
+<li></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>
