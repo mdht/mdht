@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Reason For Visit Section</title>
+<shortdesc conref="generated/_ReasonForVisitSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_ReasonForVisitSection.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_ReasonForVisitSection.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_ReasonForVisitSection.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_ReasonForVisitSection.dita#classId/aggregate">
+<li></li>
+</ol>
+<fig>
+<title>Reason For Visit Section example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_ReasonForVisitSection.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>
