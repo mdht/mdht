@@ -7,7 +7,7 @@
 		<booktitlealt>(U.S. Realm)</booktitlealt>
 		<booktitlealt><image href="images/hl7_logo.gif"/></booktitlealt>
 		<booktitlealt>DRAFT: FOR DEVELOPMENT USE ONLY</booktitlealt>
-		<booktitlealt audience="developer">(Developer Documentation)</booktitlealt>
+		<booktitlealt audience="developer">(Consolidated Developer Documentation)</booktitlealt>
 	</booktitle>
 	<bookmeta>
 		<bookid><booknumber></booknumber>
