@@ -76,7 +76,7 @@ wherever these general header constraints are applied.</body>
           <language>Analysis</language>
           <language>OCL</language>
           <body>The @extension and/or @root of setId and id SHALL be different when both are present.</body>
-          <body>(not self.setId.oclIsUndefined() and not self.id.oclIsUndefined())&#xD;&#xA;   implies (self.setId.root != self.id.root or self.setId.extension != self.id.extension)</body>
+          <body>(not self.setId.oclIsUndefined() and not self.id.oclIsUndefined())&#xD;&#xA;   implies (self.setId.root &lt;> self.id.root or self.setId.extension &lt;> self.id.extension)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_GI9PIHPuEd-9_cvcE5QEwg" name="copyTimeNotPresent" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
