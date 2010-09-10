@@ -23,7 +23,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -882,15 +881,15 @@ public class CDAUtil {
 
 	private static List<Section> getSections(Section section) {
 		List<Section> sections = new ArrayList<Section>();
-		Stack<Section> stack = new Stack<Section>();
-		stack.push(section);	// root
-		while (!stack.isEmpty()) {
-			Section sect = stack.pop();
+		Queue<Section> queue = new LinkedList<Section>();
+		queue.add(section);	// root
+		while (!queue.isEmpty()) {
+			Section sect = queue.remove();
 			sections.add(sect);	// visit
 			for (Component5 component : sect.getComponents()) {	// process successors
 				Section child = component.getSection();
 				if (child != null) {
-					stack.push(child);
+					queue.add(child);
 				}
 			}
 		}
@@ -953,24 +952,24 @@ public class CDAUtil {
 
 	private static List<EObject> getClinicalStatements(EObject clinicalStatement) {
 		List<EObject> clinicalStatements = new ArrayList<EObject>();
-		Stack<EObject> stack = new Stack<EObject>();
-		stack.push(clinicalStatement);	// root
-		while (!stack.isEmpty()) {
-			EObject stmt = stack.pop();
+		Queue<EObject> queue = new LinkedList<EObject>();
+		queue.add(clinicalStatement);	// root
+		while (!queue.isEmpty()) {
+			EObject stmt = queue.remove();
 			clinicalStatements.add(stmt);	// visit
 			if (stmt instanceof Organizer) {
 				Organizer organizer = (Organizer) stmt;
 				for (Component4 component : organizer.getComponents()) {	// process successors
 					EObject child = getClinicalStatement(component);
 					if (child != null) {
-						stack.push(child);
+						queue.add(child);
 					}
 				}
 			} else {
 				for (EntryRelationship entryRelationship : getEntryRelationships(stmt)) {	// process successors
 					EObject child = getClinicalStatement(entryRelationship);
 					if (child != null) {
-						stack.push(child);
+						queue.add(child);
 					}
 				}
 			}
@@ -1136,13 +1135,13 @@ public class CDAUtil {
 	// get all objects in the document (closure)
 	public static List<EObject> getAllEObjects(ClinicalDocument clinicalDocument) {
 		List<EObject> allEObjects = new ArrayList<EObject>();
-		Stack<EObject> stack = new Stack<EObject>();
-		stack.push(clinicalDocument);	// root
-		while (!stack.isEmpty()) {
-			EObject eObject = stack.pop();
+		Queue<EObject> queue = new LinkedList<EObject>();
+		queue.add(clinicalDocument);	// root
+		while (!queue.isEmpty()) {
+			EObject eObject = queue.remove();
 			allEObjects.add(eObject);	// visit
 			for (EObject child : eObject.eContents()) {	// process successors
-				stack.push(child);
+				queue.add(child);
 			}
 		}
 		return allEObjects;
