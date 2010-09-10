@@ -17,6 +17,7 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,8 +27,14 @@ import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.xml.namespace.NamespaceContext;
+import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathFactory;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -46,6 +53,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.xmi.DOMHandler;
+import org.eclipse.emf.ecore.xmi.DOMHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.ocl.ecore.Constraint;
@@ -78,6 +86,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 public class CDAUtil {
@@ -104,7 +114,7 @@ public class CDAUtil {
 		return load(doc, handler);
 	}
 
-	private static ClinicalDocument load(Document doc, LoadHandler handler) throws Exception {
+	public static ClinicalDocument load(Document doc, LoadHandler handler) throws Exception {
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
 		if (handler != null) {
@@ -297,6 +307,163 @@ public class CDAUtil {
 		return (Section) object;
 	}
 
+	/**
+	 * 
+	 * @param source a Clinical Statement
+	 * @param typeCode If typeCode is null, then all relationships are matched.
+	 * @param targetClass EClass of relationship target. If null, then all target types are returned.
+	 * @return list of Clinical Statements
+	 */
+	public static  EList<ClinicalStatement> getEntryRelationshipTargets(ClinicalStatement source, x_ActRelationshipEntryRelationship typeCode, EClass targetClass) {
+		List<ClinicalStatement> targets = new ArrayList<ClinicalStatement>();
+		
+		// test children
+		for (EntryRelationship rel : CDAUtil.getEntryRelationships(source)) {
+			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
+			ClinicalStatement target = (ClinicalStatement) CDAUtil.getClinicalStatement(rel);
+			if (target != null && isReference(target)) {
+				// resolve 'id' referenced elements
+				ClinicalStatement element = resolveReference(target);
+				if (element != null)
+					target = element;
+			}
+			if ((Boolean.FALSE == rel.getInversionInd() || null == rel.getInversionInd())
+					&& typeCodeMatch && target != null 
+					&& (targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
+				targets.add(target);
+			}
+		}
+		
+		// test container with inversionInd="true"
+		if (source.eContainer() instanceof EntryRelationship) {
+			EntryRelationship rel = (EntryRelationship) source.eContainer();
+			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
+			if (Boolean.TRUE == rel.getInversionInd() && typeCodeMatch
+					&& rel.eContainer() instanceof ClinicalStatement
+					&& (targetClass == null || targetClass.isSuperTypeOf(rel.eContainer().eClass()))) {
+				targets.add((ClinicalStatement)rel.eContainer());
+			}
+		}
+		
+		return new BasicEList.UnmodifiableEList<ClinicalStatement>(targets.size(), targets.toArray());
+	}
+
+	/**
+	 * 
+	 * @param source a Section
+	 * @param typeCode If typeCode is null, then all relationships are matched.
+	 * @param targetClass EClass of relationship target. If null, then all target types are returned.
+	 * @return list of Clinical Statements
+	 */
+	public static  EList<ClinicalStatement> getEntryTargets(Section source, x_ActRelationshipEntry typeCode, EClass targetClass) {
+		List<ClinicalStatement> targets = new ArrayList<ClinicalStatement>();
+		
+		// test children
+		for (Entry rel : source.getEntries()) {
+			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
+			ClinicalStatement target = (ClinicalStatement) CDAUtil.getClinicalStatement(rel);
+			if (target != null && isReference(target)) {
+				// resolve 'id' referenced elements
+				ClinicalStatement element = resolveReference(target);
+				if (element != null)
+					target = element;
+			}
+			if (typeCodeMatch && target != null 
+					&& (targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
+				targets.add(target);
+			}
+		}
+		
+		return new BasicEList.UnmodifiableEList<ClinicalStatement>(targets.size(), targets.toArray());
+	}
+	
+	/**
+	 * A CDA element may be reference if it has an 'id' child, but no 'templateId'.
+	 */
+	public static boolean isReference(EObject element) {
+		EObject id = getChildElement(element, "id");
+		EObject templateId = getChildElement(element, "templateId");
+		
+		return templateId == null && id instanceof II && ((II)id).getRoot() != null;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private static EObject getChildElement(EObject eObject, String name) {
+		Object result = null;
+
+		EStructuralFeature feature = eObject.eClass().getEStructuralFeature(name);
+		if (feature != null) {
+			if (feature.isMany()) {
+				List<Object> list = (List<Object>) eObject.eGet(feature);
+				if (list.size() > 0) {
+					result = list.get(0);
+				}
+			} else {
+				result = eObject.eGet(feature);
+			}
+		}
+		
+		return (result instanceof EObject) ? (EObject) result : null;
+	}
+	
+	private static class ReferenceFilter implements Filter<EObject> {
+		private II id;
+		public ReferenceFilter(II id) {
+			this.id = id;
+		}
+		
+		public boolean accept(EObject item) {
+			EObject itemId = getChildElement(item, "id");
+			EObject templateId = getChildElement(item, "templateId");
+
+			if (itemId instanceof II && templateId != null &&
+					id.equals((II)itemId)) {
+				return true;
+			}
+			return false;
+		}
+	}
+	
+	/**
+	 * Return the referenced element, or null if 'element' argument is not a reference
+	 * or referenced id is not found.
+	 */
+	public static EObject resolveReference(EObject element) {
+		if (!isReference(element)) {
+			return null;
+		}
+		final II id = (II) getChildElement(element, "id");
+
+		EObject target = null;
+		ClinicalDocument clinicalDocument = getClinicalDocument(element);
+		if (clinicalDocument != null) {
+			Query query = new Query(clinicalDocument);
+			target = query.getEObject(EObject.class, new ReferenceFilter(id));
+		}
+		
+		return target;
+	}
+
+	/**
+	 * Return the referenced clinical statement, or null if 'element' argument is not a reference
+	 * or referenced id is not found.
+	 */
+	public static ClinicalStatement resolveReference(ClinicalStatement element) {
+		if (!isReference(element)) {
+			return null;
+		}
+		final II id = (II) getChildElement(element, "id");
+
+		ClinicalStatement target = null;
+		ClinicalDocument clinicalDocument = getClinicalDocument(element);
+		if (clinicalDocument != null) {
+			Query query = new Query(clinicalDocument);
+			target = (ClinicalStatement) query.getClinicalStatement(EObject.class, new ReferenceFilter(id));
+		}
+		
+		return target;
+	}
+	
 	// annotation processing to populate runtime instance
 	public static void init(EObject eObject) {
 		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
@@ -772,163 +939,6 @@ public class CDAUtil {
 		}
 		return allClinicalStatements;
 	}
-
-	/**
-	 * 
-	 * @param source a Clinical Statement
-	 * @param typeCode If typeCode is null, then all relationships are matched.
-	 * @param targetClass EClass of relationship target. If null, then all target types are returned.
-	 * @return list of Clinical Statements
-	 */
-	public static  EList<ClinicalStatement> getEntryRelationshipTargets(ClinicalStatement source, x_ActRelationshipEntryRelationship typeCode, EClass targetClass) {
-		List<ClinicalStatement> targets = new ArrayList<ClinicalStatement>();
-		
-		// test children
-		for (EntryRelationship rel : CDAUtil.getEntryRelationships(source)) {
-			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
-			ClinicalStatement target = (ClinicalStatement) CDAUtil.getClinicalStatement(rel);
-			if (target != null && isReference(target)) {
-				// resolve 'id' referenced elements
-				ClinicalStatement element = resolveReference(target);
-				if (element != null)
-					target = element;
-			}
-			if ((Boolean.FALSE == rel.getInversionInd() || null == rel.getInversionInd())
-					&& typeCodeMatch && target != null 
-					&& (targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
-				targets.add(target);
-			}
-		}
-		
-		// test container with inversionInd="true"
-		if (source.eContainer() instanceof EntryRelationship) {
-			EntryRelationship rel = (EntryRelationship) source.eContainer();
-			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
-			if (Boolean.TRUE == rel.getInversionInd() && typeCodeMatch
-					&& rel.eContainer() instanceof ClinicalStatement
-					&& (targetClass == null || targetClass.isSuperTypeOf(rel.eContainer().eClass()))) {
-				targets.add((ClinicalStatement)rel.eContainer());
-			}
-		}
-		
-		return new BasicEList.UnmodifiableEList<ClinicalStatement>(targets.size(), targets.toArray());
-	}
-
-	/**
-	 * 
-	 * @param source a Section
-	 * @param typeCode If typeCode is null, then all relationships are matched.
-	 * @param targetClass EClass of relationship target. If null, then all target types are returned.
-	 * @return list of Clinical Statements
-	 */
-	public static  EList<ClinicalStatement> getEntryTargets(Section source, x_ActRelationshipEntry typeCode, EClass targetClass) {
-		List<ClinicalStatement> targets = new ArrayList<ClinicalStatement>();
-		
-		// test children
-		for (Entry rel : source.getEntries()) {
-			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
-			ClinicalStatement target = (ClinicalStatement) CDAUtil.getClinicalStatement(rel);
-			if (target != null && isReference(target)) {
-				// resolve 'id' referenced elements
-				ClinicalStatement element = resolveReference(target);
-				if (element != null)
-					target = element;
-			}
-			if (typeCodeMatch && target != null 
-					&& (targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
-				targets.add(target);
-			}
-		}
-		
-		return new BasicEList.UnmodifiableEList<ClinicalStatement>(targets.size(), targets.toArray());
-	}
-	
-	/**
-	 * A CDA element may be reference if it has an 'id' child, but no 'templateId'.
-	 */
-	public static boolean isReference(EObject element) {
-		EObject id = getChildElement(element, "id");
-		EObject templateId = getChildElement(element, "templateId");
-		
-		return templateId == null && id instanceof II && ((II)id).getRoot() != null;
-	}
-	
-	@SuppressWarnings("unchecked")
-	private static EObject getChildElement(EObject eObject, String name) {
-		Object result = null;
-
-		EStructuralFeature feature = eObject.eClass().getEStructuralFeature(name);
-		if (feature != null) {
-			if (feature.isMany()) {
-				List<Object> list = (List<Object>) eObject.eGet(feature);
-				if (list.size() > 0) {
-					result = list.get(0);
-				}
-			} else {
-				result = eObject.eGet(feature);
-			}
-		}
-		
-		return (result instanceof EObject) ? (EObject) result : null;
-	}
-	
-	private static class ReferenceFilter implements Filter<EObject> {
-		private II id;
-		public ReferenceFilter(II id) {
-			this.id = id;
-		}
-		
-		public boolean accept(EObject item) {
-			EObject itemId = getChildElement(item, "id");
-			EObject templateId = getChildElement(item, "templateId");
-
-			if (itemId instanceof II && templateId != null &&
-					id.equals((II)itemId)) {
-				return true;
-			}
-			return false;
-		}
-	}
-	
-	/**
-	 * Return the referenced element, or null if 'element' argument is not a reference
-	 * or referenced id is not found.
-	 */
-	public static EObject resolveReference(EObject element) {
-		if (!isReference(element)) {
-			return null;
-		}
-		final II id = (II) getChildElement(element, "id");
-
-		EObject target = null;
-		ClinicalDocument clinicalDocument = getClinicalDocument(element);
-		if (clinicalDocument != null) {
-			Query query = new Query(clinicalDocument);
-			target = query.getEObject(EObject.class, new ReferenceFilter(id));
-		}
-		
-		return target;
-	}
-
-	/**
-	 * Return the referenced clinical statement, or null if 'element' argument is not a reference
-	 * or referenced id is not found.
-	 */
-	public static ClinicalStatement resolveReference(ClinicalStatement element) {
-		if (!isReference(element)) {
-			return null;
-		}
-		final II id = (II) getChildElement(element, "id");
-
-		ClinicalStatement target = null;
-		ClinicalDocument clinicalDocument = getClinicalDocument(element);
-		if (clinicalDocument != null) {
-			Query query = new Query(clinicalDocument);
-			target = (ClinicalStatement) query.getClinicalStatement(EObject.class, new ReferenceFilter(id));
-		}
-		
-		return target;
-	}
 	
 	private static List<EObject> getClinicalStatements(Section section) {
 		List<EObject> clinicalStatements = new ArrayList<EObject>();
@@ -1138,6 +1148,158 @@ public class CDAUtil {
 		return allEObjects;
 	}
 	// END: Experimental Query/Filter operations
+	
+	public class CDAXPath {
+		private ClinicalDocument clinicalDocument = null;
+		private Document document = null;
+		private DocumentRoot documentRoot = null;	
+		private Map<Node, Object> nodeToObject = null;
+		private Map<Object, Node> objectToNode = null;
+		private XPath xpath = null;
+		
+		public CDAXPath(ClinicalDocument clinicalDocument) throws Exception {
+			this.clinicalDocument = clinicalDocument;
+			nodeToObject = new HashMap<Node, Object>();
+			objectToNode = new HashMap<Object, Node>();
+			document = CDAUtil.save(clinicalDocument, new DOMHandler() {
+				public DOMHelper getDOMHelper() {
+					return null;
+				}
+				public void recordValues(Node node, EObject container, EStructuralFeature feature, Object value) {
+					if (value != null) {
+						nodeToObject.put(node, value);
+						objectToNode.put(value, node);
+					}
+				}
+			});
+			documentRoot = (DocumentRoot) clinicalDocument.eContainer();
+			nodeToObject.put(document, documentRoot);
+			objectToNode.put(documentRoot, document);
+			xpath = XPathFactory.newInstance().newXPath();
+			xpath.setNamespaceContext(new NamespaceContext() {
+				public String getNamespaceURI(String prefix) {
+					if ("cda".equals(prefix)) {
+						return "urn:hl7-org:v3";
+					} else if ("sdtc".equals(prefix)) {
+						return "urn:hl7-org:sdtc";
+					} else if ("xsi".equals(prefix)) {
+						return "http://www.w3.org/2001/XMLSchema-instance";
+					}
+					return null;
+				}
+				public String getPrefix(String namespaceURI) {
+					if ("urn:hl7-org:v3".equals(namespaceURI)) {
+						return "cda";
+					} else if ("urn:hl7-org:sdtc".equals(namespaceURI)) {
+						return "sdtc";
+					} else if ("http://www.w3.org/2001/XMLSchema-instance".equals(namespaceURI)) {
+						return "xsi";
+					}
+					return null;
+				}
+				public Iterator<String> getPrefixes(String namespaceURI) {
+					return null;
+				}
+			});
+		}
+		
+		public Object evaluate(Node item, String expr, QName returnType) throws Exception {
+			XPathExpression expression = xpath.compile(expr);
+			return expression.evaluate(item, returnType);
+		}
+		
+		public <T> T evaluate(Object item, String expr, Class<T> clazz) throws Exception {
+			QName returnType = null;
+			if (clazz.equals(Double.class)) {
+				returnType = XPathConstants.NUMBER;
+			} else if (clazz.equals(String.class)) {
+				returnType = XPathConstants.STRING;
+			} else if (clazz.equals(Boolean.class)){
+				returnType = XPathConstants.BOOLEAN;
+			} else if (clazz.equals(NodeList.class)){
+				returnType = XPathConstants.NODESET;
+			} else if (clazz.equals(Node.class)) {
+				returnType = XPathConstants.NODE;
+			}
+			return returnType != null ? clazz.cast(evaluate(getNode(item), expr, returnType)) : null;
+		}
+		
+		public <T> T evaluate(String expr, Class<T> clazz) throws Exception {
+			return evaluate(documentRoot, expr, clazz);
+		}
+		
+		public Object evaluate(String expr, QName returnType) throws Exception {
+			return evaluate(document, expr, returnType);
+		}
+		
+		public ClinicalDocument getClinicalDocument() {
+			return clinicalDocument;
+		}
+		
+		public Document getDocument() {
+			return document;
+		}
+		
+		public DocumentRoot getDocumentRoot() {
+			return documentRoot;
+		}
+		
+		public Node getNode(Object object) {
+			return objectToNode.get(object);
+		}
+		
+		public Object getObject(Node node) {
+			return nodeToObject.get(node);
+		}
+		
+		public List<Node> selectNodes(Node item, String expr) throws Exception {
+			List<Node> result = new ArrayList<Node>();
+			NodeList nodeList = (NodeList) evaluate(item, expr, XPathConstants.NODESET);
+			if (nodeList != null) {
+				for (int i = 0; i < nodeList.getLength(); i++) {
+					result.add(nodeList.item(i));
+				}
+			}
+			return result;
+		}
+		
+		public <T extends EObject> List<T> selectNodes(Object item, String expr, Class<T> clazz) throws Exception {
+			List<T> result = new ArrayList<T>();
+			for (Node node : selectNodes(getNode(item), expr)) {
+				Object object = getObject(node);
+				if (clazz.isInstance(object)) {
+					result.add(clazz.cast(object));
+				}
+			}
+			return result;
+		}
+		
+		public List<Node> selectNodes(String expr) throws Exception {
+			return selectNodes(document, expr);
+		}
+		
+		public <T extends EObject> List<T> selectNodes(String expr, Class<T> clazz) throws Exception {
+			return selectNodes(documentRoot, expr, clazz);
+		}
+		
+		public Node selectSingleNode(Node item, String expr) throws Exception {
+			List<Node> result = selectNodes(item, expr);
+			return !result.isEmpty() ? result.get(0) : null;
+		}
+		
+		public <T extends EObject> T selectSingleNode(Object item, String expr, Class<T> clazz) throws Exception {
+			List<T> result = selectNodes(item, expr, clazz);
+			return !result.isEmpty() ? result.get(0) : null;
+		}
+		
+		public Node selectSingleNode(String expr) throws Exception {
+			return selectSingleNode(document, expr);
+		}
+		
+		public <T extends EObject> T selectSingleNode(String expr, Class<T> clazz) throws Exception {
+			return selectSingleNode(documentRoot, expr, clazz);
+		}
+	}
 	
 	public static void loadPackages() {
 		CDAPackageLoader.loadPackages();
