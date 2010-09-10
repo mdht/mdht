@@ -1149,7 +1149,8 @@ public class CDAUtil {
 	}
 	// END: Experimental Query/Filter operations
 	
-	public class CDAXPath {
+	// BEGIN: CDA XPath Support
+	public static class CDAXPath {
 		private ClinicalDocument clinicalDocument = null;
 		private Document document = null;
 		private DocumentRoot documentRoot = null;	
@@ -1300,6 +1301,7 @@ public class CDAUtil {
 			return selectSingleNode(documentRoot, expr, clazz);
 		}
 	}
+	// END: CDA XPath Support
 	
 	public static void loadPackages() {
 		CDAPackageLoader.loadPackages();
