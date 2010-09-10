@@ -405,13 +405,13 @@ public class CDAUtil {
 		return (result instanceof EObject) ? (EObject) result : null;
 	}
 	
-	private static class ReferenceFilter implements Filter<EObject> {
+	private static class ReferenceFilter<T extends EObject> implements Filter<T> {
 		private II id;
 		public ReferenceFilter(II id) {
 			this.id = id;
 		}
 		
-		public boolean accept(EObject item) {
+		public boolean accept(T item) {
 			EObject itemId = getChildElement(item, "id");
 			EObject templateId = getChildElement(item, "templateId");
 
@@ -437,7 +437,7 @@ public class CDAUtil {
 		ClinicalDocument clinicalDocument = getClinicalDocument(element);
 		if (clinicalDocument != null) {
 			Query query = new Query(clinicalDocument);
-			target = query.getEObject(EObject.class, new ReferenceFilter(id));
+			target = query.getEObject(EObject.class, new ReferenceFilter<EObject>(id));
 		}
 		
 		return target;
@@ -457,7 +457,7 @@ public class CDAUtil {
 		ClinicalDocument clinicalDocument = getClinicalDocument(element);
 		if (clinicalDocument != null) {
 			Query query = new Query(clinicalDocument);
-			target = (ClinicalStatement) query.getClinicalStatement(EObject.class, new ReferenceFilter(id));
+			target = query.getClinicalStatement(ClinicalStatement.class, new ReferenceFilter<ClinicalStatement>(id));
 		}
 		
 		return target;
@@ -688,7 +688,7 @@ public class CDAUtil {
 	public static class Query {
 		private ClinicalDocument clinicalDocument = null;
 		private List<Section> allSections = null;
-		private List<EObject> allClinicalStatements = null;
+		private List<ClinicalStatement> allClinicalStatements = null;
 		private List<EObject> allEObjects = null;
 
 		public Query(ClinicalDocument clinicalDocument) {
@@ -738,19 +738,19 @@ public class CDAUtil {
 		}
 
 		// get first clinical statement that conform to clazz and is accepted by filter
-		public <T extends EObject> T getClinicalStatement(Class<T> clazz, Filter<T> filter) {
+		public <T extends ClinicalStatement> T getClinicalStatement(Class<T> clazz, Filter<T> filter) {
 			List<T> clinicalStatements = getClinicalStatements(clazz, filter);
 			return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 		}
 
 		// get first clinical statement that conform to clazz
-		public <T extends EObject> T getClinicalStatement(Class<T> clazz) {
+		public <T extends ClinicalStatement> T getClinicalStatement(Class<T> clazz) {
 			List<T> clinicalStatements = getClinicalStatements(clazz);
 			return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 		}
 
 		// get clinical statements that conform to clazz and are accepted by filter
-		public <T extends EObject> List<T> getClinicalStatements(Class<T> clazz, Filter<T> filter) {
+		public <T extends ClinicalStatement> List<T> getClinicalStatements(Class<T> clazz, Filter<T> filter) {
 			List<T> clinicalStatements = new ArrayList<T>();
 			for (T clinicalStatement : getClinicalStatements(clazz)) {
 				if (filter.accept(clinicalStatement)) {
@@ -761,7 +761,7 @@ public class CDAUtil {
 		}
 
 		// get clinical statements that conform to clazz
-		public <T extends EObject> List<T> getClinicalStatements(Class<T> clazz) {
+		public <T extends ClinicalStatement> List<T> getClinicalStatements(Class<T> clazz) {
 			List<T> clinicalStatements = new ArrayList<T>();
 			for (EObject clinicalStatement : getAllClinicalStatements()) {
 				if (clazz.isInstance(clinicalStatement)) {
@@ -772,7 +772,7 @@ public class CDAUtil {
 		}
 
 		// get all clinical statements in the document (closure)
-		public List<EObject> getAllClinicalStatements() {
+		public List<ClinicalStatement> getAllClinicalStatements() {
 			if (allClinicalStatements == null) {
 				allClinicalStatements = CDAUtil.getAllClinicalStatements(clinicalDocument);
 			}
@@ -879,6 +879,7 @@ public class CDAUtil {
 		return getSections(section);
 	}
 
+	// iterative breadth-first traversal using queue
 	private static List<Section> getSections(Section section) {
 		List<Section> sections = new ArrayList<Section>();
 		Queue<Section> queue = new LinkedList<Section>();
@@ -897,19 +898,19 @@ public class CDAUtil {
 	}
 
 	// get first clinical statement that conforms to clazz and is accepted by filter
-	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+	public static <T extends ClinicalStatement> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz, filter);
 		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 	}
 
 	// get first clinical statement that conforms to clazz
-	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz) {
+	public static <T extends ClinicalStatement> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz);
 		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 	}
 
 	// get clinical statements that conform to clazz and are accepted by filter
-	public static <T extends EObject> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+	public static <T extends ClinicalStatement> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> clinicalStatements = new ArrayList<T>();
 		for (T clinicalStatement : getClinicalStatements(clinicalDocument, clazz)) {
 			if (filter.accept(clinicalStatement)) {
@@ -920,7 +921,7 @@ public class CDAUtil {
 	}
 
 	// get clinical statements that conform to clazz
-	public static <T extends EObject> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
+	public static <T extends ClinicalStatement> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		List<T> clinicalStatements = new ArrayList<T>();
 		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
 			if (clazz.isInstance(clinicalStatement)) {
@@ -931,18 +932,18 @@ public class CDAUtil {
 	}
 
 	// get all clinical statements in the document (closure)
-	public static List<EObject> getAllClinicalStatements(ClinicalDocument clinicalDocument) {
-		List<EObject> allClinicalStatements = new ArrayList<EObject>();
+	public static List<ClinicalStatement> getAllClinicalStatements(ClinicalDocument clinicalDocument) {
+		List<ClinicalStatement> allClinicalStatements = new ArrayList<ClinicalStatement>();
 		for (Section section : getAllSections(clinicalDocument)) {
 			allClinicalStatements.addAll(getClinicalStatements(section));
 		}
 		return allClinicalStatements;
 	}
 	
-	private static List<EObject> getClinicalStatements(Section section) {
-		List<EObject> clinicalStatements = new ArrayList<EObject>();
+	private static List<ClinicalStatement> getClinicalStatements(Section section) {
+		List<ClinicalStatement> clinicalStatements = new ArrayList<ClinicalStatement>();
 		for (Entry entry : section.getEntries()) {
-			EObject clinicalStatement = getClinicalStatement(entry);
+			ClinicalStatement clinicalStatement = getClinicalStatement(entry);
 			if (clinicalStatement != null) {
 				clinicalStatements.addAll(getClinicalStatements(clinicalStatement));
 			}
@@ -950,24 +951,25 @@ public class CDAUtil {
 		return clinicalStatements;
 	}
 
-	private static List<EObject> getClinicalStatements(EObject clinicalStatement) {
-		List<EObject> clinicalStatements = new ArrayList<EObject>();
-		Queue<EObject> queue = new LinkedList<EObject>();
+	// iterative breadth-first traversal using queue
+	private static List<ClinicalStatement> getClinicalStatements(ClinicalStatement clinicalStatement) {
+		List<ClinicalStatement> clinicalStatements = new ArrayList<ClinicalStatement>();
+		Queue<ClinicalStatement> queue = new LinkedList<ClinicalStatement>();
 		queue.add(clinicalStatement);	// root
 		while (!queue.isEmpty()) {
-			EObject stmt = queue.remove();
+			ClinicalStatement stmt = queue.remove();
 			clinicalStatements.add(stmt);	// visit
 			if (stmt instanceof Organizer) {
 				Organizer organizer = (Organizer) stmt;
 				for (Component4 component : organizer.getComponents()) {	// process successors
-					EObject child = getClinicalStatement(component);
+					ClinicalStatement child = getClinicalStatement(component);
 					if (child != null) {
 						queue.add(child);
 					}
 				}
 			} else {
 				for (EntryRelationship entryRelationship : getEntryRelationships(stmt)) {	// process successors
-					EObject child = getClinicalStatement(entryRelationship);
+					ClinicalStatement child = getClinicalStatement(entryRelationship);
 					if (child != null) {
 						queue.add(child);
 					}
@@ -977,7 +979,7 @@ public class CDAUtil {
 		return clinicalStatements;
 	}
 
-	private static List<EntryRelationship> getEntryRelationships(EObject clinicalStatement) {
+	private static List<EntryRelationship> getEntryRelationships(ClinicalStatement clinicalStatement) {
 		if (clinicalStatement instanceof Act) {
 			return ((Act) clinicalStatement).getEntryRelationships();
 		}
@@ -1005,7 +1007,7 @@ public class CDAUtil {
 		return Collections.<EntryRelationship>emptyList();
 	}
 
-	private static EObject getClinicalStatement(Entry entry) {
+	private static ClinicalStatement getClinicalStatement(Entry entry) {
 		if (entry.getAct() != null) {
 			return entry.getAct();
 		}
@@ -1036,7 +1038,7 @@ public class CDAUtil {
 		return null;
 	}
 
-	private static EObject getClinicalStatement(EntryRelationship entryRelationship) {
+	private static ClinicalStatement getClinicalStatement(EntryRelationship entryRelationship) {
 		if (entryRelationship.getAct() != null) {
 			return entryRelationship.getAct();
 		}
@@ -1067,7 +1069,7 @@ public class CDAUtil {
 		return null;
 	}
 
-	private static EObject getClinicalStatement(Component4 component) {
+	private static ClinicalStatement getClinicalStatement(Component4 component) {
 		if (component.getAct() != null) {
 			return component.getAct();
 		}
@@ -1133,6 +1135,7 @@ public class CDAUtil {
 	}
 
 	// get all objects in the document (closure)
+	// iterative breadth-first traversal using queue
 	public static List<EObject> getAllEObjects(ClinicalDocument clinicalDocument) {
 		List<EObject> allEObjects = new ArrayList<EObject>();
 		Queue<EObject> queue = new LinkedList<EObject>();
