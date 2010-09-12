@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 
 public class BuildPatient extends Builder<Patient> {
 
-	String givenName;
+	String[] givenNames;
 
 	String familyName;
 
@@ -34,7 +34,17 @@ public class BuildPatient extends Builder<Patient> {
 
 	public BuildPatient(String givenName, String familyName, String suffix, String dob, String gender) {
 		super();
-		this.givenName = givenName;
+		this.givenNames = new String[] { givenName };
+		this.familyName = familyName;
+		this.suffix = suffix;
+		this.dob = dob;
+		this.gender = gender;
+	}
+
+	
+	public BuildPatient(String[] givenNames, String familyName, String suffix, String dob, String gender) {
+		super();
+		this.givenNames = givenNames;
 		this.familyName = familyName;
 		this.suffix = suffix;
 		this.dob = dob;
@@ -48,7 +58,11 @@ public class BuildPatient extends Builder<Patient> {
 
 		PN name = DatatypesFactory.eINSTANCE.createPN();
 
-		name.addGiven(givenName).addFamily(familyName).addSuffix(suffix);
+		for (String givenName: givenNames) {
+			name.addGiven(givenName);	
+		}
+		
+		name.addFamily(familyName).addSuffix(suffix);
 
 		patient.getNames().add(name);
 

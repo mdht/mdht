@@ -68,7 +68,7 @@ public class BuildPatienSummaryExample {
 					condition.getIds().add(DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"));
 
 					IVL_TS effectiveTime = DatatypesFactory.eINSTANCE.createIVL_TS();
-					effectiveTime.setLow(BuilderUtil.TS_UNK);
+					effectiveTime.setLow(BuilderUtil.getTS_UNK());
 					condition.setEffectiveTime(effectiveTime);
 
 					ConditionEntry problemEntry = condition.createConditionEntry();
@@ -76,7 +76,7 @@ public class BuildPatienSummaryExample {
 					problemEntry.setCode(DatatypesFactory.eINSTANCE.createCD("64572001", "2.16.840.1.113883.6.96", "SNOMED-CT", "Condition"));
 					problemEntry.getValues().add(DatatypesFactory.eINSTANCE.createCD("233604007", "2.16.840.1.113883.6.96", "SNOMED-CT", "Pneumonia"));
 					effectiveTime = DatatypesFactory.eINSTANCE.createIVL_TS("199701", null);
-					effectiveTime.setHigh(BuilderUtil.TS_UNK);
+					effectiveTime.setHigh(BuilderUtil.getTS_UNK());
 					problemEntry.setEffectiveTime(effectiveTime);
 
 					ProblemHealthStatusObservation healthStatus = CCDFactory.eINSTANCE.createProblemHealthStatusObservation().init();
@@ -199,10 +199,10 @@ public class BuildPatienSummaryExample {
 				return new ResultsSectionBuilderExample();
 			}
 
-			@Override
-			public ProblemSectionBuilder getProblemSectionBuilder() {
-				return new ProblemSectionBuilderExample();
-			}
+//			@Override
+//			public ProblemSectionBuilder getProblemSectionBuilder() {
+//				return new ProblemSectionBuilderExample();
+//			}
 
 			@Override
 			public Builder<II> getDocumentIdBuilder() {
