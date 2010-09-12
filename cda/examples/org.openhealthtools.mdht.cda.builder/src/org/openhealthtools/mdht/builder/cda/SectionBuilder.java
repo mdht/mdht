@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ObservationMedia;
@@ -35,6 +36,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 public class SectionBuilder {
 
@@ -58,9 +61,9 @@ public class SectionBuilder {
 		return new ArrayBuilder<Organizer>();
 	}
 
-	public ArrayList<Organizer> buildOrganizers() {
-		return null;
-	}
+//	public ArrayList<Organizer> buildOrganizers() {
+//		return null;
+//	}
 
 	public ArrayBuilder<Procedure> getProcedureBuilder() {
 		return new ArrayBuilder<Procedure>();
@@ -126,6 +129,11 @@ public class SectionBuilder {
 		return new Builder<InfrastructureRootTypeId>();
 	}
 
+	public ArrayBuilder<Entry> getEntryBuilder() {
+		return new ArrayBuilder<Entry>(); 
+	}
+
+	
 	protected void construct(Section section) {
 
 		section.setClassCode(getSectionClassCodeBuilder().construct());
@@ -194,6 +202,9 @@ public class SectionBuilder {
 
 		for (SubstanceAdministration substanceAdministration : getSubstanceAdministrationBuilder().construct()) {
 
+			
+			substanceAdministration.setMoodCode(x_DocumentSubstanceMood.EVN);
+			
 			section.addSubstanceAdministration(substanceAdministration);
 
 		}
@@ -203,8 +214,27 @@ public class SectionBuilder {
 			section.addSupply(supply);
 
 		}
+		
+		for (Entry entry : getEntryBuilder().construct())
+		{
+			section.getEntries().add(entry );
+		}
+		
+		
+		for (Procedure procedure : getProcedureBuilder().construct())
+		{
+			procedure.setClassCode(ActClass.PROC);
+			
+			procedure.setMoodCode(x_DocumentProcedureMood.EVN);
+			
+			section.addProcedure(procedure);
+		}
+		
+		
+		
 
 	}
+
 
 	public ArrayList<Section> constructSections() {
 

@@ -13,9 +13,14 @@
  package org.openhealthtools.mdht.builder.ccd;
 
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
+import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.cda.GenericSectionBuilder;
+import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.Entry;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
@@ -35,11 +40,26 @@ import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
 
 public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.DocumentBuilder {
 
 	public static class ProblemSectionBuilder extends GenericSectionBuilder<ProblemSection> {
 
+		
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Problems Section");
+		}
+		
 		public ArrayBuilder<ProblemAct> getProblemActBuilder() {
 			return new ArrayBuilder<ProblemAct>();
 		}
@@ -47,7 +67,17 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 		@Override
 		protected void construct(ProblemSection problemSection) {
 			for (Act act : getProblemActBuilder().construct()) {
-				problemSection.addAct(act);
+				Entry entry = CDAFactory.eINSTANCE.createEntry();
+				
+				entry.setTypeCode(x_ActRelationshipEntry.DRIV);
+				
+				entry.setAct(act);
+				
+				problemSection.getEntries().add(entry);
+//				
+//				problemSection.addAct(act);
+				
+//				act.gete
 			}
 		}
 
@@ -59,6 +89,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	}
 
 	public static class EncountersSectionBuilder extends GenericSectionBuilder<EncountersSection> {
+		
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Encounters Section");
+		}
 
 		@Override
 		protected EncountersSection createSection() {
@@ -70,6 +110,17 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class FamilyHistorySectionBuilder extends GenericSectionBuilder<FamilyHistorySection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Family History Section");
+		}
+
+		
+		@Override
 		protected FamilyHistorySection createSection() {
 			return CCDFactory.eINSTANCE.createFamilyHistorySection().init();
 		}
@@ -77,6 +128,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	}
 
 	public static class FunctionalStatusSectionBuilder extends GenericSectionBuilder<FunctionalStatusSection> {
+
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Functional Status Section");
+		}
 
 		@Override
 		protected FunctionalStatusSection createSection() {
@@ -88,6 +149,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class ImmunizationsSectionBuilder extends GenericSectionBuilder<ImmunizationsSection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Immunizations Section");
+		}
+
+		@Override
 		protected ImmunizationsSection createSection() {
 			return CCDFactory.eINSTANCE.createImmunizationsSection().init();
 		}
@@ -95,6 +166,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	}
 
 	public static class MedicalEquipmentSectionBuilder extends GenericSectionBuilder<MedicalEquipmentSection> {
+
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Medical Equipment Section");
+		}
 
 		@Override
 		protected MedicalEquipmentSection createSection() {
@@ -106,6 +187,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class MedicationsSectionBuilder extends GenericSectionBuilder<MedicationsSection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Medications Section");
+		}
+
+		@Override
 		protected MedicationsSection createSection() {
 			return CCDFactory.eINSTANCE.createMedicationsSection().init();
 		}
@@ -115,13 +206,33 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class PayersSectionBuilder extends GenericSectionBuilder<PayersSection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Payers Section");
+		}
+
+		@Override
 		protected PayersSection createSection() {
-			return CCDFactory.eINSTANCE.createPayersSection().init();
+			return HITSPFactory.eINSTANCE.createPayersSection().init();
 		}
 
 	}
 
 	public static class PlanOfCareSectionBuilder extends GenericSectionBuilder<PlanOfCareSection> {
+
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Plan of Care Section");
+		}
 
 		@Override
 		protected PlanOfCareSection createSection() {
@@ -133,6 +244,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class ProcedureSectionBuilder extends GenericSectionBuilder<ProceduresSection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Procedure Section");
+		}
+
+		@Override
 		protected ProceduresSection createSection() {
 			return CCDFactory.eINSTANCE.createProceduresSection().init();
 		}
@@ -142,13 +263,35 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class PurposeSectionBuilder extends GenericSectionBuilder<PurposeSection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Purpose Section");
+		}
+
+		@Override
 		protected PurposeSection createSection() {
 			return CCDFactory.eINSTANCE.createPurposeSection().init();
 		}
+		
 
+		
 	}
 
 	public static class ResultsSectionBuilder extends GenericSectionBuilder<ResultsSection> {
+
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Results Section");
+		}
 
 		@Override
 		protected ResultsSection createSection() {
@@ -160,6 +303,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class SocialHistorySectionBuilder extends GenericSectionBuilder<SocialHistorySection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Social History Section");
+		}
+
+		@Override
 		protected SocialHistorySection createSection() {
 			return CCDFactory.eINSTANCE.createSocialHistorySection().init();
 		}
@@ -167,6 +320,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	}
 
 	public static class VitalSignsSectionBuilder extends GenericSectionBuilder<VitalSignsSection> {
+
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Vital Signs Section");
+		}
 
 		@Override
 		protected VitalSignsSection createSection() {
@@ -178,6 +341,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public static class AlertsSectionBuilder extends GenericSectionBuilder<AlertsSection> {
 
 		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Alertis Section");
+		}
+
+		@Override
 		protected AlertsSection createSection() {
 			return CCDFactory.eINSTANCE.createAlertsSection().init();
 		}
@@ -185,6 +358,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	}
 
 	public static class AdvanceDirectivesSectionBuilder extends GenericSectionBuilder<AdvanceDirectivesSection> {
+
+		@Override
+		public Builder<StrucDocText> getSectionTextBuilder() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		}
+
+		@Override
+		public Builder<ST> getSectionTitleBuilder() {
+			return new BuilderUtil.BuildST("Advance Directives Section");
+		}
 
 		@Override
 		protected AdvanceDirectivesSection createSection() {
@@ -252,6 +435,10 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public AdvanceDirectivesSectionBuilder getAdvanceDirectivesSectionBuilder() {
 		return null;
 	}
+	
+	public EncountersSectionBuilder getEncountersSectionBuilder() {
+		return null;
+	}
 
 	@Override
 	protected void construct(ClinicalDocument clinicalDocument) {
@@ -285,6 +472,9 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 		appendSectionBuilder(getAlertsSectionBuilder());
 
 		appendSectionBuilder(getAdvanceDirectivesSectionBuilder());
+		
+		appendSectionBuilder(getEncountersSectionBuilder());
+		
 
 		super.construct(clinicalDocument);
 	}

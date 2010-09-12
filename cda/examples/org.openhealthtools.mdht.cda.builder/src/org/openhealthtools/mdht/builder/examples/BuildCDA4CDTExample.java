@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
 import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Organization;
+import org.openhealthtools.mdht.uml.cda.Participant1;
 import org.openhealthtools.mdht.uml.cda.Patient;
 import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.Person;
@@ -253,7 +254,7 @@ public class BuildCDA4CDTExample {
 
 			AD authorAddresss = DatatypesFactory.eINSTANCE.createAD();
 
-			authorAddresss.addText("Guardian Address");
+			authorAddresss.addText("SeeAddressComponentsAbove");
 
 			assignedAuthor.getAddrs().add(authorAddresss);
 
@@ -342,7 +343,7 @@ public class BuildCDA4CDTExample {
 
 			@Override
 			public ArrayBuilder<Author> getAuthorBuilder() {
-				return new BuildAuthor("AuthorName");
+				return new CDA4CDTBuildAuthor();
 			}
 
 			@Override
@@ -374,6 +375,7 @@ public class BuildCDA4CDTExample {
 
 				};
 			}
+	
 
 		};
 

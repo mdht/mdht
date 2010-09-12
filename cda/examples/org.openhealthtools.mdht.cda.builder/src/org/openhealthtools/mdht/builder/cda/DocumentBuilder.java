@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.builder.cda;
 
 import java.util.ArrayList;
 
+import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Authenticator;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.Authorization;
@@ -22,24 +23,162 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Custodian;
 import org.openhealthtools.mdht.uml.cda.DataEnterer;
 import org.openhealthtools.mdht.uml.cda.DocumentationOf;
+import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.Entity;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.InFulfillmentOf;
 import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.InformationRecipient;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.LegalAuthenticator;
+import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Participant1;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.Patient;
 import org.openhealthtools.mdht.uml.cda.PatientRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
+import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 public class DocumentBuilder {
+	
+	
 
+	
+
+	public static  final  void addID (SubstanceAdministration substanceAdministration,String root,String extension)
+	{
+		substanceAdministration.getIds().add(DatatypesFactory.eINSTANCE.createII(root, extension));
+	}
+
+	
+	public static  final  void addID (Encounter encounter,String root)
+	{
+		encounter.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+	
+	public static  final  void addID (Supply supply,String root)
+	{
+		supply.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+	
+	
+	
+
+	
+	public static  final  void addID (Organizer organizer,String root)
+	{
+		organizer.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+
+	public static  final  void addID (SubstanceAdministration substanceAdministration,String root)
+	{
+		substanceAdministration.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+
+	
+	public static  final  void addID (Entity entity,String root,String extension)
+	{
+		entity.getIds().add(DatatypesFactory.eINSTANCE.createII(root, extension));
+	}
+
+	public static  final  void addID (Entity entity,String root)
+	{
+		entity.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+
+	
+	public static  final  void addID (ParticipantRole participantRole,String root,String extension)
+	{
+		participantRole.getIds().add(DatatypesFactory.eINSTANCE.createII(root, extension));
+	}
+
+	public static  final  void addID (ParticipantRole participantRole,String root)
+	{
+		participantRole.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+
+	
+	public static  final  void addID (Procedure procedure,String root,String extension)
+	{
+		procedure.getIds().add(DatatypesFactory.eINSTANCE.createII(root, extension));
+	}
+
+	public static  final  void addID (Procedure procedure,String root)
+	{
+		procedure.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+
+	public static  final  void addID (Observation observation,String root,String extension)
+	{
+		observation.getIds().add(DatatypesFactory.eINSTANCE.createII(root, extension));
+	}
+
+	public static  final  void addID (Observation observation,String root)
+	{
+		observation.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+	
+	public static  final  void addID (Act act,String root,String extension)
+	{
+		act.getIds().add(DatatypesFactory.eINSTANCE.createII(root, extension));
+	}
+
+	public static  final  void addID (Act act,String root)
+	{
+		act.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
+
+	 public static final void addObservation(Observation target,Observation source,x_ActRelationshipEntryRelationship typecode)
+		{
+			EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+			
+			entryRelationship.setTypeCode(typecode);
+
+			entryRelationship.setObservation(source);
+			
+			target.getEntryRelationships().add(entryRelationship);
+			
+		}
+	 
+	 public static final void addAct(Observation target,Act act,x_ActRelationshipEntryRelationship typecode)
+		{
+			EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+			
+			entryRelationship.setTypeCode(typecode);
+
+			entryRelationship.setAct(act);
+			
+			target.getEntryRelationships().add(entryRelationship);
+			
+		}
+	 
+	 public static final void addObservation(Act act,Observation observation,x_ActRelationshipEntryRelationship typecode)
+		{
+			EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+			
+			entryRelationship.setTypeCode(typecode);
+
+			entryRelationship.setObservation(observation);
+			
+			act.getEntryRelationships().add(entryRelationship);
+			
+		}
+	 
+	 
+	 
+	 
 	ArrayList<SectionBuilder> sectionBuilders = new ArrayList<SectionBuilder>();
 
 	protected void appendSectionBuilder(SectionBuilder sectionBuilder) {
