@@ -215,7 +215,13 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 			if (codeSystemConstraint.getReference() != null) {
 				CodeSystemVersion codeSystemVersion = codeSystemConstraint.getReference();
 				id = codeSystemVersion.getIdentifier();
-				name = codeSystemVersion.getBase_Enumeration().getName();
+				
+				if (codeSystemVersion.getBase_Enumeration() != null) {
+					name = codeSystemVersion.getBase_Enumeration().getName();
+				} else 
+				{
+					name = "Error:No Base Enumeration";
+				}
 				version = codeSystemVersion.getVersion();
 			}
 			else {
