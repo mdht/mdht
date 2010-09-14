@@ -237,6 +237,7 @@ public class TransformAssociation extends TransformAbstract {
 		}
 		operationName += ((sourceProperty.getUpper() == 1) ? capitalize(sourceProperty.getName()) : capitalize(pluralize(sourceProperty.getName())));
 		Operation operation = sourceClass.createOwnedOperation(operationName, null, null, constraintTarget);
+		operation.setIsQuery(true);	// make this a query method
 		operation.setUpper(sourceProperty.getUpper());
 		
 		// create body constraint for "getter" operation
