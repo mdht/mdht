@@ -46,7 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
 
 /**
- * BuildHITSPC32V25Example is an example implementation of the MDHT
+ * C32Example is an example implementation of the MDHT
  * DocumentBuilder based on the GOF BuilderPattern. see
  * http://en.wikipedia.org/wiki/Builder_pattern
  * 
@@ -56,8 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
  * the document while ignoring others.
  * 
  * 
- * This example duplicates the content distributed as part of NIST CDT test
- * suite
+ * This example uses C32DocumentBuilder which creates the minimum structures to create valid (no errors) C32 V2.5
  * 
  */
 public class C32Example {
