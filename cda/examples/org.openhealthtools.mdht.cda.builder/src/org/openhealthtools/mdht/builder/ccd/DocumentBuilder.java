@@ -347,7 +347,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 
 		@Override
 		public Builder<ST> getSectionTitleBuilder() {
-			return new BuilderUtil.BuildST("Alertis Section");
+			return new BuilderUtil.BuildST("Alerts Section");
 		}
 
 		@Override
