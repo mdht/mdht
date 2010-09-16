@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.builder.examples;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
@@ -60,7 +59,6 @@ import org.openhealthtools.mdht.uml.cda.ReferenceRange;
 import org.openhealthtools.mdht.uml.cda.RelatedSubject;
 import org.openhealthtools.mdht.uml.cda.SDTCPatient;
 import org.openhealthtools.mdht.uml.cda.ServiceEvent;
-import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.cda.SubjectPerson;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
@@ -71,7 +69,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
 import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
@@ -92,26 +89,21 @@ import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
-import org.openhealthtools.mdht.uml.cda.hitsp.Comment;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.Immunization;
-import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
-import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
-import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
@@ -133,7 +125,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
@@ -153,7 +144,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
-import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
@@ -237,7 +227,7 @@ public class BuildHITSPC32V25Example {
 
 			LanguageSpoken languageSpoken = HITSPFactory.eINSTANCE.createLanguageSpoken().init();
 
-			languageSpoken.setModeCode(DatatypesFactory.eINSTANCE.createCE("EWR", "2.16.840.1.113883.1.11.12249"));
+			languageSpoken.setModeCode(DatatypesFactory.eINSTANCE.createCE("EWR", "2.16.840.1.113883.5.60"));
 			
 			
 			languageSpoken.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("en-US"));
@@ -776,153 +766,153 @@ public class BuildHITSPC32V25Example {
 							@Override
 							public ArrayList<Entry> construct() {
 								ArrayList<Entry> entries = new ArrayList<Entry>();
-
-								Entry entry = CDAFactory.eINSTANCE.createEntry();
-
-								
-								entry.setTypeCode(x_ActRelationshipEntry.DRIV);
-
-								CoverageEntry coverageEntry = IHEFactory.eINSTANCE.createCoverageEntry().init();
-
-								coverageEntry.getIds().add(DatatypesFactory.eINSTANCE.createII("9e676a50-7aac-11db-9fe1-0800200c9a66"));
-								
-								EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
-
-								entryRelationship.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
-
-								InsuranceProvider insuranceProvider = HITSPFactory.eINSTANCE.createInsuranceProvider().init();
-								
-								insuranceProvider.getIds().add(DatatypesFactory.eINSTANCE.createII("3e676a50-7aac-11db-9fe1-0800200c9a66", "Group or Contract Number"));
-
-								entryRelationship.setAct(insuranceProvider);
-
-								Performer2 performer = CDAFactory.eINSTANCE.createPerformer2();
-
-								performer.setTypeCode(ParticipationPhysicalPerformer.PRF);
-
-								AssignedEntity assignedEntity = CDAFactory.eINSTANCE.createAssignedEntity();
-
-								assignedEntity.getIds().add(DatatypesFactory.eINSTANCE.createII("329fcdf0-7ab3-11db-9fe1-0800200c9a66"));
-
-								assignedEntity.setCode(DatatypesFactory.eINSTANCE.createCE("PAYOR", "2.16.840.1.113883.5.110", "HL7 RoleClassRelationship", ""));
-
-								assignedEntity.getAddrs().add(BuilderUtil.AD_UNK);
-
-								assignedEntity.getTelecoms().add(BuilderUtil.TEL_UNK);
-
-								Organization organization = CDAFactory.eINSTANCE.createOrganization();
-
-								ON name = DatatypesFactory.eINSTANCE.createON();
-
-								name.addText("Good Health Insurance");
-
-								organization.getNames().add(name);
-
-								assignedEntity.getRepresentedOrganizations().add(organization);
-
-								SDTCPatient patient = CDAFactory.eINSTANCE.createSDTCPatient();
-
-								patient.setId(DatatypesFactory.eINSTANCE.createII("PatientIdAsKnownToPayor"));
-
-								assignedEntity.setSDTCPatient(patient);
-
-								performer.setAssignedEntity(assignedEntity);
-
-								insuranceProvider.getPerformers().add(performer);
-
-								// Add Patients Moms Participation
-								Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
-
-								participant.setTypeCode(ParticipationType.HLD);
-
-								ParticipantRole participantRole = CDAFactory.eINSTANCE.createParticipantRole();
-
-								participantRole.getIds().add(DatatypesFactory.eINSTANCE.createII("PayorAuthorityID", "SubscriberIDAsKnownToPayor"));
-
-								participantRole.setPlayingEntity(BuilderUtil.buildPlayingEntity("Patients Mom"));
-
-								participantRole.getPlayingEntity().setSDTCBirthTime(DatatypesFactory.eINSTANCE.createTS());
-
-								participant.setParticipantRole(participantRole);
-
-								insuranceProvider.getParticipants().add(participant);
-
-								// Add Patient Self Participation
-								participant = CDAFactory.eINSTANCE.createParticipant2();
-
-								participant.setTypeCode(ParticipationType.COV);
-
-								participantRole = CDAFactory.eINSTANCE.createParticipantRole();
-
-								participantRole.setClassCode(RoleClassRoot.PAT);
-
-								participantRole.getIds().add(DatatypesFactory.eINSTANCE.createII("14d4a520-7aae-11db-9fe1-0800200c9a66ID", "1138345"));
-
-								participantRole.setCode(DatatypesFactory.eINSTANCE.createCE("SELF", "2.16.840.1.113883.5.111", "", "SELF"));
-
-								participantRole.setPlayingEntity(BuilderUtil.buildPlayingEntity("Self"));
-
-								participantRole.getPlayingEntity().setSDTCBirthTime(DatatypesFactory.eINSTANCE.createTS());
-
-								participant.setParticipantRole(participantRole);
-
-								insuranceProvider.getParticipants().add(participant);
-
-								// Add Authorization
-								EntryRelationship authorizationRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
-
-								AuthorizationActivity authorizationActivity = CCDFactory.eINSTANCE.createAuthorizationActivity().init();
-
-								authorizationActivity.getIds().add(DatatypesFactory.eINSTANCE.createII("f4dce790-8328-11db-9fe1-0800200c9a66"));
-
-								authorizationActivity.setCode(BuilderUtil.CD_NA);
-
-								EntryRelationship subject = CDAFactory.eINSTANCE.createEntryRelationship();
-
-								subject.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-
-								Procedure procedure = CDAFactory.eINSTANCE.createProcedure();
-
-								procedure.setClassCode(ActClass.PROC);
-								
-								procedure.setMoodCode(x_DocumentProcedureMood.PRMS);
-
-								procedure.setCode(DatatypesFactory.eINSTANCE.createCD("73761001", "2.16.840.1.113883.6.96", "", "Colonoscopy"));
-
-								subject.setProcedure(procedure);
-
-								authorizationActivity.getEntryRelationships().add(subject);
-
-								authorizationRelationship.setAct(authorizationActivity);
-
-								insuranceProvider.getEntryRelationships().add(authorizationRelationship);
-
-								// Add Referral
-								EntryRelationship referal = CDAFactory.eINSTANCE.createEntryRelationship();
-
-								Act act = CDAFactory.eINSTANCE.createAct();
-
-								act.setClassCode(x_ActClassDocumentEntryAct.ACT);
-
-								act.setMoodCode(x_DocumentActMood.DEF);
-
-								act.getIds().add(DatatypesFactory.eINSTANCE.createII("f4dce790-8328-11db-9fe1-0800200c9a66"));
-
-								act.setCode(BuilderUtil.CD_UNK);
-
-								act.setText(DatatypesFactory.eINSTANCE.createED("Health Plan Name<reference value=\"PntrToHealthPlanNameInSectionText\"/>"));
-
-								act.setStatusCode(DatatypesFactory.eINSTANCE.createCS("active"));
-
-								referal.setAct(act);
-
-								insuranceProvider.getEntryRelationships().add(referal);
-
-								coverageEntry.getEntryRelationships().add(entryRelationship);
-
-								entry.setAct(coverageEntry);
-
-								entries.add(entry);
+//
+//								Entry entry = CDAFactory.eINSTANCE.createEntry();
+//
+//								
+//								entry.setTypeCode(x_ActRelationshipEntry.DRIV);
+//
+//								CoverageEntry coverageEntry = IHEFactory.eINSTANCE.createCoverageEntry().init();
+//
+//								coverageEntry.getIds().add(DatatypesFactory.eINSTANCE.createII("9e676a50-7aac-11db-9fe1-0800200c9a66"));
+//								
+//								EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+//
+//								entryRelationship.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+//
+//								InsuranceProvider insuranceProvider = HITSPFactory.eINSTANCE.createInsuranceProvider().init();
+//								
+//								insuranceProvider.getIds().add(DatatypesFactory.eINSTANCE.createII("3e676a50-7aac-11db-9fe1-0800200c9a66", "Group or Contract Number"));
+//
+//								entryRelationship.setAct(insuranceProvider);
+//
+//								Performer2 performer = CDAFactory.eINSTANCE.createPerformer2();
+//
+//								performer.setTypeCode(ParticipationPhysicalPerformer.PRF);
+//
+//								AssignedEntity assignedEntity = CDAFactory.eINSTANCE.createAssignedEntity();
+//
+//								assignedEntity.getIds().add(DatatypesFactory.eINSTANCE.createII("329fcdf0-7ab3-11db-9fe1-0800200c9a66"));
+//
+//								assignedEntity.setCode(DatatypesFactory.eINSTANCE.createCE("PAYOR", "2.16.840.1.113883.5.110", "HL7 RoleClassRelationship", ""));
+//
+//								assignedEntity.getAddrs().add(BuilderUtil.AD_UNK);
+//
+//								assignedEntity.getTelecoms().add(BuilderUtil.TEL_UNK);
+//
+//								Organization organization = CDAFactory.eINSTANCE.createOrganization();
+//
+//								ON name = DatatypesFactory.eINSTANCE.createON();
+//
+//								name.addText("Good Health Insurance");
+//
+//								organization.getNames().add(name);
+//
+//								assignedEntity.getRepresentedOrganizations().add(organization);
+//
+//								SDTCPatient patient = CDAFactory.eINSTANCE.createSDTCPatient();
+//
+//								patient.setId(DatatypesFactory.eINSTANCE.createII("PatientIdAsKnownToPayor"));
+//
+//								assignedEntity.setSDTCPatient(patient);
+//
+//								performer.setAssignedEntity(assignedEntity);
+//
+//								insuranceProvider.getPerformers().add(performer);
+//
+//								// Add Patients Moms Participation
+//								Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
+//
+//								participant.setTypeCode(ParticipationType.HLD);
+//
+//								ParticipantRole participantRole = CDAFactory.eINSTANCE.createParticipantRole();
+//
+//								participantRole.getIds().add(DatatypesFactory.eINSTANCE.createII("PayorAuthorityID", "SubscriberIDAsKnownToPayor"));
+//
+//								participantRole.setPlayingEntity(BuilderUtil.buildPlayingEntity("Patients Mom"));
+//
+//								participantRole.getPlayingEntity().setSDTCBirthTime(DatatypesFactory.eINSTANCE.createTS());
+//
+//								participant.setParticipantRole(participantRole);
+//
+//								insuranceProvider.getParticipants().add(participant);
+//
+//								// Add Patient Self Participation
+//								participant = CDAFactory.eINSTANCE.createParticipant2();
+//
+//								participant.setTypeCode(ParticipationType.COV);
+//
+//								participantRole = CDAFactory.eINSTANCE.createParticipantRole();
+//
+//								participantRole.setClassCode(RoleClassRoot.PAT);
+//
+//								participantRole.getIds().add(DatatypesFactory.eINSTANCE.createII("14d4a520-7aae-11db-9fe1-0800200c9a66ID", "1138345"));
+//
+//								participantRole.setCode(DatatypesFactory.eINSTANCE.createCE("SELF", "2.16.840.1.113883.5.111", "", "SELF"));
+//
+//								participantRole.setPlayingEntity(BuilderUtil.buildPlayingEntity("Self"));
+//
+//								participantRole.getPlayingEntity().setSDTCBirthTime(DatatypesFactory.eINSTANCE.createTS());
+//
+//								participant.setParticipantRole(participantRole);
+//
+//								insuranceProvider.getParticipants().add(participant);
+//
+//								// Add Authorization
+//								EntryRelationship authorizationRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+//
+//								AuthorizationActivity authorizationActivity = CCDFactory.eINSTANCE.createAuthorizationActivity().init();
+//
+//								authorizationActivity.getIds().add(DatatypesFactory.eINSTANCE.createII("f4dce790-8328-11db-9fe1-0800200c9a66"));
+//
+//								authorizationActivity.setCode(BuilderUtil.CD_NA);
+//
+//								EntryRelationship subject = CDAFactory.eINSTANCE.createEntryRelationship();
+//
+//								subject.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+//
+//								Procedure procedure = CDAFactory.eINSTANCE.createProcedure();
+//
+//								procedure.setClassCode(ActClass.PROC);
+//								
+//								procedure.setMoodCode(x_DocumentProcedureMood.PRMS);
+//
+//								procedure.setCode(DatatypesFactory.eINSTANCE.createCD("73761001", "2.16.840.1.113883.6.96", "", "Colonoscopy"));
+//
+//								subject.setProcedure(procedure);
+//
+//								authorizationActivity.getEntryRelationships().add(subject);
+//
+//								authorizationRelationship.setAct(authorizationActivity);
+//
+//								insuranceProvider.getEntryRelationships().add(authorizationRelationship);
+//
+//								// Add Referral
+//								EntryRelationship referal = CDAFactory.eINSTANCE.createEntryRelationship();
+//
+//								Act act = CDAFactory.eINSTANCE.createAct();
+//
+//								act.setClassCode(x_ActClassDocumentEntryAct.ACT);
+//
+//								act.setMoodCode(x_DocumentActMood.DEF);
+//
+//								act.getIds().add(DatatypesFactory.eINSTANCE.createII("f4dce790-8328-11db-9fe1-0800200c9a66"));
+//
+//								act.setCode(BuilderUtil.CD_UNK);
+//
+//								act.setText(DatatypesFactory.eINSTANCE.createED("Health Plan Name<reference value=\"PntrToHealthPlanNameInSectionText\"/>"));
+//
+//								act.setStatusCode(DatatypesFactory.eINSTANCE.createCS("active"));
+//
+//								referal.setAct(act);
+//
+//								insuranceProvider.getEntryRelationships().add(referal);
+//
+//								coverageEntry.getEntryRelationships().add(entryRelationship);
+//
+//								entry.setAct(coverageEntry);
+//
+//								entries.add(entry);
 
 								return entries;
 							}
@@ -1026,6 +1016,16 @@ public class BuildHITSPC32V25Example {
 								alertObservation.setText(DatatypesFactory.eINSTANCE.createED("<reference value=\"PtrToValueInSectionText\"/>"));
 
 								alertObservation.getParticipants().add(buildDrugParticipation("70618", "Penicillin"));
+								
+								
+								Reference reference = CDAFactory.eINSTANCE.createReference();
+								
+								reference.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("zzzzzzzzzzzzzzzzzzzzzz"));
+								
+								reference.setTypeCode(x_ActRelationshipExternalReference.XCRPT);
+								
+								alertObservation.getReferences().add(reference);
+								
 
 								EntryRelationship hives = CDAFactory.eINSTANCE.createEntryRelationship();
 
@@ -1358,11 +1358,11 @@ public class BuildHITSPC32V25Example {
 
 								episodeObservation.getValues().add(cd);
 
-								Act act = CDAFactory.eINSTANCE.createAct();
-
-								act.setClassCode(x_ActClassDocumentEntryAct.ACT);
-
-								act.setMoodCode(x_DocumentActMood.EVN);
+								Act act =CCDFactory.eINSTANCE.createProblemAct().init();
+//
+//								act.setClassCode(x_ActClassDocumentEntryAct.ACT);
+//
+//								act.setMoodCode(x_DocumentActMood.EVN);
 
 								addID(act, "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7");
 
@@ -1831,13 +1831,13 @@ public class BuildHITSPC32V25Example {
 
 								patientInstruction.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
 
-								Comment comment = HITSPFactory.eINSTANCE.createComment().init();
+								org.openhealthtools.mdht.uml.cda.ihe.Comment comment = IHEFactory.eINSTANCE.createComment().init();
+								
+//								comment.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.10.20.1.40"));
 
-								comment.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.10.20.1.40"));
+//								comment.setCode(DatatypesFactory.eINSTANCE.createCD("48767-8", "LOINC", "2.16.840.1.113883.6.1", "comment"));
 
-								comment.setCode(DatatypesFactory.eINSTANCE.createCD("48767-8", "LOINC", "2.16.840.1.113883.6.1", "comment"));
-
-								comment.getCode().setOriginalText(DatatypesFactory.eINSTANCE.createED("Reference goes on text element rather than here."));
+								comment.getCode().setOriginalText(DatatypesFactory.eINSTANCE.createED("ccccccccccccccccccccccccccccccccccccccc Reference goes on text element rather than here."));
 
 								comment.setText(DatatypesFactory.eINSTANCE
 										.createED("This is the only formal \"Free Text comment\" in this document! Note that ALL such comments must appear in the narrative text of the parent Section and be referenced by the following pointer to it."));
@@ -2476,7 +2476,7 @@ public class BuildHITSPC32V25Example {
 
 								familyhistoryobservation.setCode(BuilderUtil.buildSNOMEDCT("55607006", "Problem"));
 
-								familyhistoryobservation.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
+//								familyhistoryobservation.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
 
 								familyhistoryobservation.getValues().add(BuilderUtil.buildSNOMEDCT("22298006"));
 
@@ -2590,28 +2590,28 @@ public class BuildHITSPC32V25Example {
 
 							@Override
 							public ArrayList<Observation> construct() {
-
+//
 								ArrayList<Observation> observations = new ArrayList<Observation>();
-
-								SocialHistoryObservation observation = CCDFactory.eINSTANCE.createSocialHistoryObservation().init();
-
-								observation.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("1.3.6.1.4.1.19376.1.5.3.1.4.13.4"));
-								observation.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.88.11.83.19"));
-
-								addID(observation, "9b56c25d-9104-45ee-9fa4-e0f3afaa01c1");
-
-								observation.setCode(BuilderUtil.buildSNOMEDCT("230056004", "Cigarette smoking"));
-
-								observation.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
-
-								observation.setEffectiveTime(BuilderUtil.buildIVL_TS("1947", "1972"));
-
-								ST st = DatatypesFactory.eINSTANCE.createST("1 pack per day");
-
-								observation.getValues().add(st);
-
-								observations.add(observation);
-
+//
+////								SocialHistoryObservation observation = HITSPFactory.eINSTANCE.createSocialHistoryObservation().init();
+//
+////								observation.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("1.3.6.1.4.1.19376.1.5.3.1.4.13.4"));
+////								observation.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.88.11.83.19"));
+//
+//								addID(observation, "9b56c25d-9104-45ee-9fa4-e0f3afaa01c1");
+//
+//								observation.setCode(BuilderUtil.buildSNOMEDCT("230056004", "Cigarette smoking"));
+//
+//								observation.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
+//
+//								observation.setEffectiveTime(BuilderUtil.buildIVL_TS("1947", "1972"));
+//
+//								ST st = DatatypesFactory.eINSTANCE.createST("1 pack per day");
+//
+//								observation.getValues().add(st);
+//
+//								observations.add(observation);
+//
 								return observations;
 
 							}
@@ -2638,6 +2638,8 @@ public class BuildHITSPC32V25Example {
 								PlanOfCareActivityObservation observation = CCDFactory.eINSTANCE.createPlanOfCareActivityObservation().init();
 								
 								observation.setClassCode(ActClassObservation.OBS);
+								
+								observation.setMoodCode(x_ActMoodDocumentObservation.INT);
 								
 								addID(observation, "9a6d1bac-17d3-4195-89a4-1121bc809b4a");
 								

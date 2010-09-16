@@ -20,7 +20,9 @@ import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.Authorization;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.Custodian;
+import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
 import org.openhealthtools.mdht.uml.cda.DataEnterer;
 import org.openhealthtools.mdht.uml.cda.DocumentationOf;
 import org.openhealthtools.mdht.uml.cda.Encounter;
@@ -75,6 +77,11 @@ public class DocumentBuilder {
 	
 	
 	
+	
+	public static  final  void addID (CustodianOrganization custodianOrganization,String root)
+	{
+		custodianOrganization.getIds().add(DatatypesFactory.eINSTANCE.createII(root));
+	}
 
 	
 	public static  final  void addID (Organizer organizer,String root)
@@ -264,6 +271,12 @@ public class DocumentBuilder {
 	public Builder<INT> getDocumentVersionBuilder() {
 		return new Builder<INT>();
 	}
+	
+	
+	public Builder<Component2> getComponentBuider()
+	{
+		return new Builder<Component2>(); 
+	}
 
 	protected void construct(ClinicalDocument clinicalDocument) {
 
@@ -338,6 +351,9 @@ public class DocumentBuilder {
 		for (InFulfillmentOf inFulfillmentOf : getInFulfillmentOfBuilder().construct()) {
 			clinicalDocument.getInFulfillmentOfs().add(inFulfillmentOf);
 		}
+		
+		clinicalDocument.setComponent(getComponentBuider().construct());
+		
 
 		appendSectionBuilder(getSectionBuilder());
 

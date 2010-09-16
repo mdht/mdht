@@ -42,107 +42,91 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder {
 
-	
-	public static class ProblemSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ProblemSectionBuilder
-	{
+	public static class ProblemSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ProblemSectionBuilder {
 
-	
-		
 		@Override
 		protected ProblemSection createSection() {
 			return HITSPFactory.eINSTANCE.createProblemListSection().init();
 		}
-		
-		
-	}
-	public static class AdvanceDirectivesSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.AdvanceDirectivesSectionBuilder
-	{
 
-	
+	}
+
+	public static class AdvanceDirectivesSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.AdvanceDirectivesSectionBuilder {
 
 		protected AdvanceDirectivesSection createSection() {
 			return HITSPFactory.eINSTANCE.createAdvanceDirectivesSection().init();
 		}
-		
+
 	};
-	
+
 	public static class EncoutersSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.EncountersSectionBuilder {
-		
-	
+
 		@Override
 		protected EncountersSection createSection() {
 			return HITSPFactory.eINSTANCE.createEncountersSection().init();
 		}
 
 	};
-	
-	public static class ProcedureSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ProcedureSectionBuilder
-	{
 
-	
+	public static class ProcedureSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ProcedureSectionBuilder {
+
 		@Override
-		protected ProceduresSection createSection() {			
+		protected ProceduresSection createSection() {
 			return super.createSection();
 		}
-		
+
 	}
-	
-	public static class SurgeriesSectionBuilder extends GenericSectionBuilder<SurgeriesSection>
-	{
+
+	public static class SurgeriesSectionBuilder extends GenericSectionBuilder<SurgeriesSection> {
 
 		@Override
 		public Builder<StrucDocText> getSectionTextBuilder() {
 			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
 		}
 
-	
 		@Override
 		public Builder<ST> getSectionTitleBuilder() {
 			return new BuilderUtil.BuildST("Diagnostic Section");
 		}
-		
+
 		@Override
 		protected SurgeriesSection createSection() {
 			return HITSPFactory.eINSTANCE.createSurgeriesSection().init();
 		}
-		
+
 	}
 
-	
 	public static class DiagnosticResultsSectionBuilder extends GenericSectionBuilder<DiagnosticResultsSection> {
 
 		@Override
 		public Builder<ST> getSectionTitleBuilder() {
 			return new BuilderUtil.BuildST("Diagnostic Section");
 		}
-		
+
 		@Override
 		public Builder<StrucDocText> getSectionTextBuilder() {
 			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
 		}
-		
+
 		@Override
 		protected DiagnosticResultsSection createSection() {
 			return HITSPFactory.eINSTANCE.createDiagnosticResultsSection().init();
 		}
 
 	};
-	
-	
-	
+
 	public static class AllergiesReactionSectionBuilder extends GenericSectionBuilder<AllergiesReactionsSection> {
 
 		@Override
 		public Builder<ST> getSectionTitleBuilder() {
 			return new BuilderUtil.BuildST("Allergies Section");
 		}
-		
-		
+
 		@Override
 		public Builder<StrucDocText> getSectionTextBuilder() {
 			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
 		}
-		
+
 		@Override
 		protected AllergiesReactionsSection createSection() {
 			return HITSPFactory.eINSTANCE.createAllergiesReactionsSection().init();
@@ -156,81 +140,72 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 		public Builder<ST> getSectionTitleBuilder() {
 			return new BuilderUtil.BuildST("Problem List Section");
 		}
-		
+
 		@Override
 		public Builder<StrucDocText> getSectionTextBuilder() {
 			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
 		}
-		
+
 		@Override
 		protected ProblemListSection createSection() {
 			return HITSPFactory.eINSTANCE.createProblemListSection().init();
 		}
 
 	}
-	
-	public static class ImmunizationsSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ImmunizationsSectionBuilder
-	{
 
-	
-		
+	public static class ImmunizationsSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ImmunizationsSectionBuilder {
+
 		@Override
 		protected ImmunizationsSection createSection() {
 			return HITSPFactory.eINSTANCE.createImmunizationsSection().init();
 		}
-		
+
 	}
-	
-	public static class VitalSignsSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.VitalSignsSectionBuilder
-	{
-		
+
+	public static class VitalSignsSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.VitalSignsSectionBuilder {
+
 		@Override
 		protected VitalSignsSection createSection() {
 			return HITSPFactory.eINSTANCE.createVitalSignsSection().init();
 		}
-		
+
 	}
 
-	public static class FunctionalStatusSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FunctionalStatusSectionBuilder
-	{
-	
+	public static class FunctionalStatusSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FunctionalStatusSectionBuilder {
+
 		@Override
 		protected FunctionalStatusSection createSection() {
 			return HITSPFactory.eINSTANCE.createFunctionalStatusSection().init();
 		}
-		
+
 	}
-	
-	
-	public static class FamilyHistorySectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FamilyHistorySectionBuilder
-	{
-		
+
+	public static class FamilyHistorySectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FamilyHistorySectionBuilder {
+
 		@Override
 		protected FamilyHistorySection createSection() {
 			return HITSPFactory.eINSTANCE.createFamilyHistorySection().init();
 		}
-		
+
 	}
-	
-	public static class PlanOfCareSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.PlanOfCareSectionBuilder
-	{
-		
+
+	public static class PlanOfCareSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.PlanOfCareSectionBuilder {
+
 		@Override
 		protected PlanOfCareSection createSection() {
 			return HITSPFactory.eINSTANCE.createPlanOfCareSection().init();
 		}
 	}
-	
-	public static class MedicalEquipmentSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.MedicalEquipmentSectionBuilder
-	{
-		
-		
+
+	public static class MedicalEquipmentSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.MedicalEquipmentSectionBuilder {
+
 		@Override
 		protected MedicalEquipmentSection createSection() {
 			return HITSPFactory.eINSTANCE.createMedicalEquipmentSection().init();
 		}
-		
+
 	}
+
 	public AllergiesReactionSectionBuilder getAllergiesReactionSectionBuilder() {
 		return null;
 	}
@@ -253,11 +228,11 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 		appendSectionBuilder(getAllergiesReactionSectionBuilder());
 
 		appendSectionBuilder(getProblemListSectionBuilder());
-		
+
 		appendSectionBuilder(getDiagnosticResultsSectionBuilder());
 
 		appendSectionBuilder(getEncoutersSectionBuilder());
-		
+
 		appendSectionBuilder(getSurgeriesSectionBuilder());
 
 		construct(clinicalDocument);
@@ -266,16 +241,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public  SurgeriesSectionBuilder getSurgeriesSectionBuilder() {
+	public SurgeriesSectionBuilder getSurgeriesSectionBuilder() {
 		return null;
 	}
 
-	public  DiagnosticResultsSectionBuilder getDiagnosticResultsSectionBuilder() {
-			return null;
+	public DiagnosticResultsSectionBuilder getDiagnosticResultsSectionBuilder() {
+		return null;
 	}
 
 	public EncoutersSectionBuilder getEncoutersSectionBuilder() {
-			return null;
+		return null;
 	}
 
 }

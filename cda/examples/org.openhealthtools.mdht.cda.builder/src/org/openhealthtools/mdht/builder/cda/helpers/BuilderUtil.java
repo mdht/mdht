@@ -90,7 +90,13 @@ public class BuilderUtil {
 
 	}
 	
+	public static final String DATE_FORMAT_NOW = "yyyyMMdd";
+	
+	public static final SimpleDateFormat TSDF = new SimpleDateFormat(DATE_FORMAT_NOW);
+	
 	public static class BuildEffectiveTime extends Builder<TS> {
+		
+		String format = DATE_FORMAT_NOW;
 
 		public BuildEffectiveTime(Calendar cal) {
 			super();
@@ -102,15 +108,18 @@ public class BuilderUtil {
 			this.cal = Calendar.getInstance();
 			;
 		}
-
-		public static final String DATE_FORMAT_NOW = "yyyyMMdd";
+		
+		public BuildEffectiveTime(String format) {
+			super();
+			this.cal = Calendar.getInstance();
+			this.format = format;
+		}
 
 		Calendar cal = null;
 
-		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
-
 		@Override
 		public TS construct() {
+			SimpleDateFormat sdf = new SimpleDateFormat(format);
 			return DatatypesFactory.eINSTANCE.createTS(sdf.format(cal.getTime()));
 		}
 
