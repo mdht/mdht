@@ -64,9 +64,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
- * C32Example is an example implementation of the MDHT
- * DocumentBuilder based on the GOF BuilderPattern. see
- * http://en.wikipedia.org/wiki/Builder_pattern
+ * C32AdvanceDirectiveExample is an example implementation of the MDHT DocumentBuilder based on
+ * the GOF BuilderPattern. see http://en.wikipedia.org/wiki/Builder_pattern
  * 
  * The DocumentBuilder orchestrates the various CDA Builder components in order
  * to build a complete CDA document. The DocumentBuilder provides default
@@ -74,11 +73,11 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * the document while ignoring others.
  * 
  * 
- * This example uses C32DocumentBuilder which creates the minimum structures to create valid (no errors) C32 V2.5
+ * This example uses C32AdvanceDirectiveExample which creates the minimum structures to
+ * create valid (no errors) C32 V2.5 for a C32 including a Advance Directives Section 
  * 
  */
 public class C32AdvanceDirectiveExample {
-
 
 	public static void main(String[] args) {
 
@@ -89,39 +88,32 @@ public class C32AdvanceDirectiveExample {
 
 			@Override
 			public AdvanceDirectivesSectionBuilder getAdvanceDirectivesSectionBuilder() {
-				return new AdvanceDirectivesSectionBuilder ()
-				{
+				return new AdvanceDirectivesSectionBuilder() {
 
-
-
-					
-					
-					
 					@Override
 					public ArrayBuilder<Observation> getObservationBuilder() {
-						return new ArrayBuilder<Observation>()
-						{
+						return new ArrayBuilder<Observation>() {
 
 							@Override
 							public ArrayList<Observation> construct() {
-								ArrayList<Observation> observations = new ArrayList<Observation> ();
+								ArrayList<Observation> observations = new ArrayList<Observation>();
 
 								AdvanceDirectiveObservation observation = CCDFactory.eINSTANCE.createAdvanceDirectiveObservation().init();
-								
+
 								/*
-								 * TODO Add this template to HITSP
+								 * TODO Add this template to HITSP UML Model
 								 */
-								
+
 								observation.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.88.11.83.12"));
-								
+
 								observation.setText(DatatypesFactory.eINSTANCE.createED("Required Text"));
-					
+
 								observation.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
 
 								observation.setCode(BuilderUtil.buildSNOMEDCT("304251008", "Resuscitation"));
-								
+
 								observation.getCode().setOriginalText(DatatypesFactory.eINSTANCE.createED("Required Text"));
-								
+
 								IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
 
 								IVXB_TS l = DatatypesFactory.eINSTANCE.createIVXB_TS();
@@ -129,69 +121,64 @@ public class C32AdvanceDirectiveExample {
 
 								IVXB_TS h = DatatypesFactory.eINSTANCE.createIVXB_TS();
 								h.setNullFlavor(NullFlavor.UNK);
-								
+
 								ts.setLow(l);
-								
+
 								ts.setHigh(h);
 
 								observation.setEffectiveTime(ts);
-								
-								Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();								
+
+								Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
 
 								participant.setTypeCode(ParticipationType.CST);
-								
+
 								ParticipantRole role = CDAFactory.eINSTANCE.createParticipantRole();
-								
+
 								role.setClassCode(RoleClassRoot.AGNT);
-								
+
 								PlayingEntity entity = CDAFactory.eINSTANCE.createPlayingEntity();
-								
+
 								PN pn = DatatypesFactory.eINSTANCE.createPN();
-								
-								
+
 								entity.getNames().add(pn);
-								
-								role.setPlayingEntity(entity );
-								
-								participant.setParticipantRole(role );
-								
+
+								role.setPlayingEntity(entity);
+
+								participant.setParticipantRole(role);
+
 								observation.getParticipants().add(participant);
-								
+
 								AdvanceDirectiveStatusObservation statusObservation = CCDFactory.eINSTANCE.createAdvanceDirectiveStatusObservation().init();
 
 								statusObservation.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
-								
+
 								statusObservation.getValues().add(DatatypesFactory.eINSTANCE.createCE());
-								
+
 								EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
-								
+
 								entryRelationship.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-								
+
 								entryRelationship.setObservation(statusObservation);
-								
+
 								observation.getEntryRelationships().add(entryRelationship);
-								
+
 								observations.add(observation);
 
 								return observations;
 							}
-							
+
 						};
 					}
-					
-					
+
 				};
-				
+
 			}
-
-
 
 		};
 
 		try {
-			
+
 			System.out.println(java.util.UUID.randomUUID().toString());
-			
 
 			System.out.println("Start");
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
