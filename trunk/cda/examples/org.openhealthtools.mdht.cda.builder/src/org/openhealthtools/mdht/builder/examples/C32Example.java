@@ -13,37 +13,16 @@
 package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.Calendar;
 
-import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
-import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
-import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
-import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
-import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Component2;
-import org.openhealthtools.mdht.uml.cda.Custodian;
-import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
-import org.openhealthtools.mdht.uml.cda.DocumentationOf;
-import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.NonXMLBody;
-import org.openhealthtools.mdht.uml.cda.Patient;
-import org.openhealthtools.mdht.uml.cda.PatientRole;
-import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
-import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
-import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
 
 /**
  * C32Example is an example implementation of the MDHT
