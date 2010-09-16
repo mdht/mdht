@@ -1,0 +1,75 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Sean Muir.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ * Sean Muir (JKM Software) - initial API and implementation
+ *
+ * $Id$
+ *******************************************************************************/
+package org.openhealthtools.mdht.builder.examples;
+
+import java.io.FileOutputStream;
+
+import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.AlertsSectionBuilder;
+import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+
+/**
+ * C32Example is an example implementation of the MDHT
+ * DocumentBuilder based on the GOF BuilderPattern. see
+ * http://en.wikipedia.org/wiki/Builder_pattern
+ * 
+ * The DocumentBuilder orchestrates the various CDA Builder components in order
+ * to build a complete CDA document. The DocumentBuilder provides default
+ * behavior requiring only the need to override the builder you need to created
+ * the document while ignoring others.
+ * 
+ * 
+ * This example uses C32DocumentBuilder which creates the minimum structures to create valid (no errors) C32 V2.5
+ * 
+ */
+public class C32AlertsExample {
+
+
+	public static void main(String[] args) {
+
+		/*
+		 * Define and override various builders
+		 */
+		DocumentBuilder c32AlertsExample = new C32DocumentBuilder() {
+
+			@Override
+			public AlertsSectionBuilder getAlertsSectionBuilder() {
+
+				return new AlertsSectionBuilder()
+				{
+					
+				};
+			}
+
+	
+
+		};
+
+		try {
+			
+			System.out.println(java.util.UUID.randomUUID().toString());
+			
+
+			System.out.println("Start");
+			ClinicalDocument clinicalDocument = c32AlertsExample.buildDocument();
+			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Alerts.xml"));
+			System.out.println("Done");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}
