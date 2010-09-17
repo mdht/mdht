@@ -13,10 +13,14 @@
 package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -47,6 +51,8 @@ public class C32FunctionalStatusExample {
 			public FunctionalStatusSectionBuilder getFunctionalStatusSectionBuilder() {
 				return new FunctionalStatusSectionBuilder()
 				{
+
+			
 					
 				};
 			}
