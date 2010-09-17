@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
@@ -308,7 +309,7 @@ public class BuilderUtil {
 		}
 
 		@Override
-		public ArrayList<II> construct() {
+		public List<II> construct() {
 			ArrayList<II> templates = new ArrayList<II>();
 
 			templates.add(new BuildII(root).construct());

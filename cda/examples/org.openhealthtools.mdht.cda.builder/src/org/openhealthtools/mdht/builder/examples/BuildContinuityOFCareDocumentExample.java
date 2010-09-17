@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.builder.examples;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.ccd.DocumentBuilder;
 import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
@@ -52,7 +53,7 @@ public class BuildContinuityOFCareDocumentExample {
 						return new ArrayBuilder<Organizer>() {
 
 							@Override
-							public ArrayList<Organizer> construct() {
+							public List<Organizer> construct() {
 
 								ArrayList<Organizer> organizers = new ArrayList<Organizer>();
 
@@ -82,7 +83,7 @@ public class BuildContinuityOFCareDocumentExample {
 						return new ArrayBuilder<Observation>() {
 
 							@Override
-							public ArrayList<Observation> construct() {
+							public List<Observation> construct() {
 
 								ArrayList<Observation> observations = new ArrayList<Observation>();
 
@@ -109,7 +110,7 @@ public class BuildContinuityOFCareDocumentExample {
 						return new ArrayBuilder<ProblemAct>() {
 
 							@Override
-							public ArrayList<ProblemAct> construct() {
+							public List<ProblemAct> construct() {
 
 								ArrayList<ProblemAct> problemActs = new ArrayList<ProblemAct>();
 

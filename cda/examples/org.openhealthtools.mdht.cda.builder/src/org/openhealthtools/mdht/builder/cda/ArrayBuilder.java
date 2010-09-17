@@ -13,10 +13,11 @@
 package org.openhealthtools.mdht.builder.cda;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArrayBuilder<BuildPart> {
 
-	public ArrayList<BuildPart> construct() {
+	public List <BuildPart> construct() {
 		return new ArrayList<BuildPart>();
 	}
 

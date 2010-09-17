@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
@@ -56,7 +57,7 @@ public class C32EncountersExample {
 						return new ArrayBuilder<Encounter>() {
 
 							@Override
-							public ArrayList<Encounter> construct() {
+							public List<Encounter> construct() {
 								ArrayList<Encounter> encounters = new ArrayList<Encounter>();
 
 								EncountersActivity encountersActivity = CCDFactory.eINSTANCE.createEncountersActivity().init();

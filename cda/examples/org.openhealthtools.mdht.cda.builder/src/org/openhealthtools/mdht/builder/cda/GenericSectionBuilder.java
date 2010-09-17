@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.builder.cda;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openhealthtools.mdht.uml.cda.Section;
 
@@ -24,7 +25,7 @@ public abstract class GenericSectionBuilder<SectionComponent> extends SectionBui
 	abstract protected SectionComponent createSection();
 
 	@Override
-	public ArrayList<Section> constructSections() {
+	public List<Section> constructSections() {
 
 		ArrayList<Section> sections = new ArrayList<Section>();
 

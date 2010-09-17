@@ -2,6 +2,7 @@ package org.openhealthtools.mdht.builder.hitsp;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
@@ -105,7 +106,7 @@ public class C32DocumentBuilder extends DocumentBuilder {
 
 		return new ArrayBuilder<Author>() {
 			@Override
-			public ArrayList<Author> construct() {
+			public List<Author> construct() {
 				ArrayList<Author> authors = new ArrayList<Author>();
 
 				Author author = CDAFactory.eINSTANCE.createAuthor();
@@ -201,7 +202,7 @@ public class C32DocumentBuilder extends DocumentBuilder {
 		return new ArrayBuilder<DocumentationOf>() {
 
 			@Override
-			public ArrayList<DocumentationOf> construct() {
+			public List<DocumentationOf> construct() {
 
 				ArrayList<DocumentationOf> documentationOfs = new ArrayList<DocumentationOf>();
 
