@@ -141,7 +141,7 @@ public class C32EAdaptorExample {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 			
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Adaptor.xml"));
 			
 			System.out.println("Completed C32 Document Build Example");
 
