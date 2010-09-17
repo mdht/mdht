@@ -2665,11 +2665,11 @@ public class BuildHITSPC32V25Example {
 		try {
 
 			
-			System.out.println("Start");
+			System.out.println("Start C32 Document Build Example");
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 // 
 			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/c32.xml"));
-			System.out.println("Done");
+			System.out.println("Completed C32 Document Build Example");
 //			boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 //				@Override
 //				public void handleError(Diagnostic diagnostic) {

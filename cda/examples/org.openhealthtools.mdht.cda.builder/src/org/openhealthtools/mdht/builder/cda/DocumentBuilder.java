@@ -14,6 +14,8 @@ package org.openhealthtools.mdht.builder.cda;
 
 import java.util.ArrayList;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Authenticator;
 import org.openhealthtools.mdht.uml.cda.Author;
@@ -277,7 +279,16 @@ public class DocumentBuilder {
 	{
 		return new Builder<Component2>(); 
 	}
+	
+	public ArrayBuilder<Adapter> getAdaptersBuilder() {
+		return new ArrayBuilder<Adapter>();
+	}
 
+//	public Builder<EContentAdapter> getEContentAdapterBuider()
+//	{
+//		return new Builder<EContentAdapter>(); 
+//	}
+	
 	protected void construct(ClinicalDocument clinicalDocument) {
 
 		clinicalDocument.setTypeId(getDocumentTypeBuilder().construct());
@@ -396,6 +407,11 @@ public class DocumentBuilder {
 	public ClinicalDocument buildDocument() {
 
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
+	
+		//  Add hook to have eadapters added to build - this needs to be called in each buildDocument versus part of the construct to make sure all notifications are received
+		for (Adapter adapter : getAdaptersBuilder().construct()) {
+			clinicalDocument.eAdapters().add(adapter);
+		}
 
 		construct(clinicalDocument);
 
