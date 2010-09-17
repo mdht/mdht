@@ -59,13 +59,13 @@ public class C32AlertsExample {
 
 		try {
 			
-			System.out.println(java.util.UUID.randomUUID().toString());
+			
 			
 
-			System.out.println("Start");
+			System.out.println("Start C32 Document Build Example");
 			ClinicalDocument clinicalDocument = c32AlertsExample.buildDocument();
 			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Alerts.xml"));
-			System.out.println("Done");
+			System.out.println("Completed C32 Document Build Example");
 
 		} catch (Exception e) {
 			e.printStackTrace();

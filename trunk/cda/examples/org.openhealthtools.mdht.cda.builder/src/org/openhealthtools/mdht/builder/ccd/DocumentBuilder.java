@@ -12,6 +12,7 @@
  *******************************************************************************/
  package org.openhealthtools.mdht.builder.ccd;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.cda.GenericSectionBuilder;
@@ -74,10 +75,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 				entry.setAct(act);
 				
 				problemSection.getEntries().add(entry);
-//				
-//				problemSection.addAct(act);
-				
-//				act.gete
+
 			}
 		}
 
@@ -483,32 +481,11 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.cda.Docume
 	public ClinicalDocument buildDocument() {
 
 		ContinuityOfCareDocument clinicalDocument = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
+		
+		for (Adapter adapter : getAdaptersBuilder().construct()) {
+			clinicalDocument.eAdapters().add(adapter);
+		}
 
-		// appendSectionBuilder(getProblemSectionBuilder());
-		//
-		// appendSectionBuilder(getFamilyHistorySectionBuilder());
-		//
-		// appendSectionBuilder(getFunctionalStatusSectionBuilder());
-		//
-		// appendSectionBuilder(getImmunizationsSectionBuilder());
-		//
-		// appendSectionBuilder(getMedicalEquipmentSectionBuilder());
-		//
-		// appendSectionBuilder(getMedicationsSectionBuilder());
-		//
-		// appendSectionBuilder(getPayersSectionBuilder());
-		//
-		// appendSectionBuilder(getPlanOfCareSectionBuilder());
-		//
-		// appendSectionBuilder(getProcedureSectionBuilder());
-		//
-		// appendSectionBuilder(getPurposeSectionBuilder());
-		//
-		// appendSectionBuilder(getResultsSectionBuilder());
-		//
-		// appendSectionBuilder(getSocialHistorySectionBuilder());
-		//
-		// appendSectionBuilder(getVitalSignsSectionBuilder());
 
 		construct(clinicalDocument);
 

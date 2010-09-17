@@ -12,6 +12,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.builder.hitsp;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FunctionalStatusSectionBuilder;
 import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.MedicalEquipmentSectionBuilder;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
@@ -225,6 +230,14 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 		PatientSummary clinicalDocument = HITSPFactory.eINSTANCE.createPatientSummary().init();
 
+		for (Adapter adapter : getAdaptersBuilder().construct()) {
+			clinicalDocument.eAdapters().add(adapter);
+		}
+
+		
+
+		
+		
 		appendSectionBuilder(getAllergiesReactionSectionBuilder());
 
 		appendSectionBuilder(getProblemListSectionBuilder());
