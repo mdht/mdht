@@ -32,9 +32,8 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
- * C32Example is an example implementation of the MDHT
- * DocumentBuilder based on the GOF BuilderPattern. see
- * http://en.wikipedia.org/wiki/Builder_pattern
+ * C32Example is an example implementation of the MDHT DocumentBuilder based on
+ * the GOF BuilderPattern. see http://en.wikipedia.org/wiki/Builder_pattern
  * 
  * The DocumentBuilder orchestrates the various CDA Builder components in order
  * to build a complete CDA document. The DocumentBuilder provides default
@@ -42,15 +41,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * the document while ignoring others.
  * 
  * 
- * This example uses C32DocumentBuilder which creates the minimum structures to create valid (no errors) C32 V2.5
+ * This example uses C32DocumentBuilder which creates the minimum structures to
+ * create valid (no errors) C32 V2.5
  * 
  */
 
-
-
-
 public class C32EAdaptorExample {
-
 
 	public static void main(String[] args) {
 
@@ -58,57 +54,46 @@ public class C32EAdaptorExample {
 		 * Define and override various builders
 		 */
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
-			
-			
-			
 
 			@Override
 			public ArrayBuilder<Adapter> getAdaptersBuilder() {
-				
-				return new ArrayBuilder<Adapter> ()
-				{
+
+				return new ArrayBuilder<Adapter>() {
 
 					@Override
 					public List<Adapter> construct() {
-						
+
 						ArrayList<Adapter> adapters = new ArrayList<Adapter>();
-						
-						
-						EContentAdapter ca = new EContentAdapter()
-						{
-						
+
+						EContentAdapter ca = new EContentAdapter() {
+
 							@Override
-							public void notifyChanged(Notification notification) {				
-								
+							public void notifyChanged(Notification notification) {
+
 								super.notifyChanged(notification);
-								
-								
-								if (notification.getEventType() ==  1)
-								{
-									if (notification.getFeature() instanceof EReference )
-									{
-										EReference  eReference = (EReference)notification.getFeature();
+
+								if (notification.getEventType() == 1) {
+									if (notification.getFeature() instanceof EReference) {
+										EReference eReference = (EReference) notification.getFeature();
 										System.out.println("Settting " + eReference.getName());
-									}								
+									}
 								}
-						
-								if (notification.getEventType() ==  3)
-								{									
-									if (notification.getFeature() instanceof EReference )
-									{						
-										EReference  eReference = (EReference)notification.getFeature();
+
+								if (notification.getEventType() == 3) {
+									if (notification.getFeature() instanceof EReference) {
+										EReference eReference = (EReference) notification.getFeature();
 										System.out.println("Adding " + eReference.getName());
 									}
-								}				
+								}
 							}
-							
+
 						};
 
 						adapters.add(ca);
-						
+
 						return adapters;
 					}
-					
+
 				};
 			}
 
@@ -140,9 +125,9 @@ public class C32EAdaptorExample {
 			System.out.println("Start C32 Document Build Example");
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
-			
+
 			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Adaptor.xml"));
-			
+
 			System.out.println("Completed C32 Document Build Example");
 
 		} catch (Exception e) {

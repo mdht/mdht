@@ -215,8 +215,6 @@ public class BuildAllSectionsExample {
 					public Builder<ST> getSectionTitleBuilder() {
 						return new BuilderUtil.BuildST("Vital Signs Section");
 					}
-					
-					
 
 				};
 			}

@@ -34,9 +34,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
- * C32Example is an example implementation of the MDHT
- * DocumentBuilder based on the GOF BuilderPattern. see
- * http://en.wikipedia.org/wiki/Builder_pattern
+ * C32Example is an example implementation of the MDHT DocumentBuilder based on
+ * the GOF BuilderPattern. see http://en.wikipedia.org/wiki/Builder_pattern
  * 
  * The DocumentBuilder orchestrates the various CDA Builder components in order
  * to build a complete CDA document. The DocumentBuilder provides default
@@ -44,13 +43,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * the document while ignoring others.
  * 
  * 
- * This example uses C32DocumentBuilder which creates the minimum structures to create valid (no errors) C32 V2.5
+ * This example uses C32DocumentBuilder which creates the minimum structures to
+ * create valid (no errors) C32 V2.5
  * 
  */
 
-
 public class C32ImmunizationsExample {
-
 
 	public static void main(String[] args) {
 
@@ -58,62 +56,60 @@ public class C32ImmunizationsExample {
 		 * Define and override various builders
 		 */
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
-			
-			
+
 			@Override
 			public ImmunizationsSectionBuilder getImmunizationsSectionBuilder() {
 				return new ImmunizationsSectionBuilder() {
 
-			@Override
-			public ArrayBuilder<SubstanceAdministration> getSubstanceAdministrationBuilder() {
-				return new ArrayBuilder<SubstanceAdministration>() {
-
 					@Override
-					public List<SubstanceAdministration> construct() {
+					public ArrayBuilder<SubstanceAdministration> getSubstanceAdministrationBuilder() {
+						return new ArrayBuilder<SubstanceAdministration>() {
 
-						ArrayList<SubstanceAdministration> immunizations = new ArrayList<SubstanceAdministration>();
-						
+							@Override
+							public List<SubstanceAdministration> construct() {
 
-						Immunization immunization = HITSPFactory.eINSTANCE.createImmunization().init();
+								ArrayList<SubstanceAdministration> immunizations = new ArrayList<SubstanceAdministration>();
 
-						immunization.setNegationInd(false);
-						
-						immunization.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
-						
-						immunization.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
-						
-						SXCM_TS effectiveTime = DatatypesFactory.eINSTANCE.createSXCM_TS();
-						
-						effectiveTime.setNullFlavor(NullFlavor.UNK);
-						
-						immunization.getEffectiveTimes().add(effectiveTime);
-						
-						immunization.setCode(DatatypesFactory.eINSTANCE.createCD("IMMUNIZ", "2.16.840.1.113883.5.4", "ActCode", ""));
-						
-						Consumable consumable = CDAFactory.eINSTANCE.createConsumable();
-						
-						Product product = IHEFactory.eINSTANCE.createProductEntry().init();
+								Immunization immunization = HITSPFactory.eINSTANCE.createImmunization().init();
 
-						Material material = CDAFactory.eINSTANCE.createMaterial();
+								immunization.setNegationInd(false);
 
-						material.setCode(DatatypesFactory.eINSTANCE.createCE());
+								immunization.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
 
-						material.getCode().setOriginalText(DatatypesFactory.eINSTANCE.createED("Required Text"));
+								immunization.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
 
-//						material.getCode().getTranslations().add(BuilderUtil.createCDCCVXCE(translationCode));
+								SXCM_TS effectiveTime = DatatypesFactory.eINSTANCE.createSXCM_TS();
 
-						product.setManufacturedMaterial(material);
+								effectiveTime.setNullFlavor(NullFlavor.UNK);
 
-						consumable.setManufacturedProduct(product);
-						
-						immunization.setConsumable(consumable);
-						
-						immunizations.add(immunization);
-						
-						return immunizations;
+								immunization.getEffectiveTimes().add(effectiveTime);
+
+								immunization.setCode(DatatypesFactory.eINSTANCE.createCD("IMMUNIZ", "2.16.840.1.113883.5.4", "ActCode", ""));
+
+								Consumable consumable = CDAFactory.eINSTANCE.createConsumable();
+
+								Product product = IHEFactory.eINSTANCE.createProductEntry().init();
+
+								Material material = CDAFactory.eINSTANCE.createMaterial();
+
+								material.setCode(DatatypesFactory.eINSTANCE.createCE());
+
+								material.getCode().setOriginalText(DatatypesFactory.eINSTANCE.createED("Required Text"));
+
+								// material.getCode().getTranslations().add(BuilderUtil.createCDCCVXCE(translationCode));
+
+								product.setManufacturedMaterial(material);
+
+								consumable.setManufacturedProduct(product);
+
+								immunization.setConsumable(consumable);
+
+								immunizations.add(immunization);
+
+								return immunizations;
+							}
+						};
 					}
-				};
-			}
 
 				};
 			}
@@ -125,9 +121,9 @@ public class C32ImmunizationsExample {
 			System.out.println("Start C32 Document Build Example");
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
-			
+
 			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Immunizations.xml"));
-			
+
 			System.out.println("Completed C32 Document Build Example");
 
 		} catch (Exception e) {

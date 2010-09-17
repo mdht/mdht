@@ -41,8 +41,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
- * C32AdvanceDirectiveExample is an example implementation of the MDHT DocumentBuilder based on
- * the GOF BuilderPattern. see http://en.wikipedia.org/wiki/Builder_pattern
+ * C32AdvanceDirectiveExample is an example implementation of the MDHT
+ * DocumentBuilder based on the GOF BuilderPattern. see
+ * http://en.wikipedia.org/wiki/Builder_pattern
  * 
  * The DocumentBuilder orchestrates the various CDA Builder components in order
  * to build a complete CDA document. The DocumentBuilder provides default
@@ -50,8 +51,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * the document while ignoring others.
  * 
  * 
- * This example uses C32AdvanceDirectiveExample which creates the minimum structures to
- * create valid (no errors) C32 V2.5 for a C32 including a Advance Directives Section 
+ * This example uses C32AdvanceDirectiveExample which creates the minimum
+ * structures to create valid (no errors) C32 V2.5 for a C32 including a Advance
+ * Directives Section
  * 
  */
 public class C32AdvanceDirectiveExample {
@@ -154,8 +156,6 @@ public class C32AdvanceDirectiveExample {
 		};
 
 		try {
-
-			
 
 			System.out.println("Start C32 Document Build Example");
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();

@@ -33,7 +33,8 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  * create valid (no errors) C32 V2.5
  * 
  */
-public class C32FunctionalStatusExample {
+
+public class C32MedicalEquipmentExample {
 
 	public static void main(String[] args) {
 
@@ -43,9 +44,9 @@ public class C32FunctionalStatusExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public FunctionalStatusSectionBuilder getFunctionalStatusSectionBuilder() {
-				return new FunctionalStatusSectionBuilder() {
+			public MedicalEquipmentSectionBuilder getMedicalEquipmentSectionBuilder() {
 
+				return new MedicalEquipmentSectionBuilder() {
 				};
 			}
 
@@ -54,8 +55,11 @@ public class C32FunctionalStatusExample {
 		try {
 
 			System.out.println("Start C32 Document Build Example");
+
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32FunctionalStatus.xml"));
+
+			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32MedicalEquipment.xml"));
+
 			System.out.println("Completed C32 Document Build Example");
 
 		} catch (Exception e) {

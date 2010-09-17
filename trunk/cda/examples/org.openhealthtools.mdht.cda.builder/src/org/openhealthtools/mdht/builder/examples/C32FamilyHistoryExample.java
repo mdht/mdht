@@ -20,9 +20,8 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
- * C32Example is an example implementation of the MDHT
- * DocumentBuilder based on the GOF BuilderPattern. see
- * http://en.wikipedia.org/wiki/Builder_pattern
+ * C32Example is an example implementation of the MDHT DocumentBuilder based on
+ * the GOF BuilderPattern. see http://en.wikipedia.org/wiki/Builder_pattern
  * 
  * The DocumentBuilder orchestrates the various CDA Builder components in order
  * to build a complete CDA document. The DocumentBuilder provides default
@@ -30,11 +29,11 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  * the document while ignoring others.
  * 
  * 
- * This example uses C32DocumentBuilder which creates the minimum structures to create valid (no errors) C32 V2.5
+ * This example uses C32DocumentBuilder which creates the minimum structures to
+ * create valid (no errors) C32 V2.5
  * 
  */
 public class C32FamilyHistoryExample {
-
 
 	public static void main(String[] args) {
 
@@ -45,20 +44,14 @@ public class C32FamilyHistoryExample {
 
 			@Override
 			public FamilyHistorySectionBuilder getFamilyHistorySectionBuilder() {
-				return new FamilyHistorySectionBuilder ()
-				{
-					
+				return new FamilyHistorySectionBuilder() {
+
 				};
 			}
-
-	
 
 		};
 
 		try {
-			
-			
-			
 
 			System.out.println("Start C32 Document Build Example");
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
