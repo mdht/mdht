@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.builder.cda.helpers;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
@@ -79,7 +80,7 @@ public class BuildAuthor extends ArrayBuilder<Author> {
 	}
 
 	@Override
-	public ArrayList<Author> construct() {
+	public List<Author> construct() {
 		ArrayList<Author> authors = new ArrayList<Author>();
 
 		Author author = CDAFactory.eINSTANCE.createAuthor();

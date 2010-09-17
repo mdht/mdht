@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.builder.examples;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
@@ -39,7 +40,7 @@ public class BuildClinicalDocumentExample {
 	public static class BuildActs extends ArrayBuilder<Act> {
 
 		@Override
-		public ArrayList<Act> construct() {
+		public List<Act> construct() {
 
 			ArrayList<Act> acts = new ArrayList<Act>();
 

@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.builder.cda;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
@@ -61,7 +62,7 @@ public class SectionBuilder {
 		return new ArrayBuilder<Organizer>();
 	}
 
-//	public ArrayList<Organizer> buildOrganizers() {
+//	public List<Organizer> buildOrganizers() {
 //		return null;
 //	}
 
@@ -236,7 +237,7 @@ public class SectionBuilder {
 	}
 
 
-	public ArrayList<Section> constructSections() {
+	public List<Section> constructSections() {
 
 		ArrayList<Section> sections = new ArrayList<Section>();
 

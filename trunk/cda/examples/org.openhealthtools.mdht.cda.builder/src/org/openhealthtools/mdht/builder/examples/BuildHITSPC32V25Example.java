@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
@@ -246,7 +247,7 @@ public class BuildHITSPC32V25Example {
 	public static class HITSPC32BuildAuthor extends ArrayBuilder<Author> {
 
 		@Override
-		public ArrayList<Author> construct() {
+		public List<Author> construct() {
 			ArrayList<Author> authors = new ArrayList<Author>();
 
 			Author author = CDAFactory.eINSTANCE.createAuthor();
@@ -319,7 +320,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Organizer>() {
 
 							@Override
-							public ArrayList<Organizer> construct() {
+							public List<Organizer> construct() {
 								ArrayList<Organizer> organizers = new ArrayList<Organizer>();
 
 								ResultOrganizer resultOrganizer = CCDFactory.eINSTANCE.createResultOrganizer().init();
@@ -405,7 +406,7 @@ public class BuildHITSPC32V25Example {
 					return new ArrayBuilder<Encounter>() {
 
 						@Override
-						public ArrayList<Encounter> construct() {
+						public List<Encounter> construct() {
 							ArrayList<Encounter> encounters = new ArrayList<Encounter>();
 
 							EncountersActivity encountersActivity = CCDFactory.eINSTANCE.createEncountersActivity().init();
@@ -574,7 +575,7 @@ public class BuildHITSPC32V25Example {
 				return new ArrayBuilder<Participant1>() {
 
 					@Override
-					public ArrayList<Participant1> construct() {
+					public List<Participant1> construct() {
 						ArrayList<Participant1> participants = new ArrayList<Participant1>();
 
 						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
@@ -673,7 +674,7 @@ public class BuildHITSPC32V25Example {
 				return new ArrayBuilder<DocumentationOf>() {
 
 					@Override
-					public ArrayList<DocumentationOf> construct() {
+					public List<DocumentationOf> construct() {
 
 						ArrayList<DocumentationOf> documentationOfs = new ArrayList<DocumentationOf>();
 
@@ -711,7 +712,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Entry>() {
 
 							@Override
-							public ArrayList<Entry> construct() {
+							public List<Entry> construct() {
 								ArrayList<Entry> entries = new ArrayList<Entry>();
 
 								Entry entry = CDAFactory.eINSTANCE.createEntry();
@@ -764,7 +765,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Entry>() {
 
 							@Override
-							public ArrayList<Entry> construct() {
+							public List<Entry> construct() {
 								ArrayList<Entry> entries = new ArrayList<Entry>();
 //
 //								Entry entry = CDAFactory.eINSTANCE.createEntry();
@@ -989,7 +990,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Entry>() {
 
 							@Override
-							public ArrayList<Entry> construct() {
+							public List<Entry> construct() {
 								ArrayList<Entry> entries = new ArrayList<Entry>();
 
 								// Add Penicillin/Hives Alert
@@ -1235,7 +1236,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<ProblemAct>() {
 
 							@Override
-							public ArrayList<ProblemAct> construct() {
+							public List<ProblemAct> construct() {
 								ArrayList<ProblemAct> problemActs = new ArrayList<ProblemAct>();
 
 								// New ProblemAct
@@ -1461,7 +1462,7 @@ public class BuildHITSPC32V25Example {
 						{
 
 							@Override
-							public ArrayList<Procedure> construct() {
+							public List<Procedure> construct() {
 								ArrayList<Procedure> procedures = new ArrayList<Procedure>();
 
 								ProcedureEntryProcedureActivityProcedure pepap = IHEFactory.eINSTANCE.createProcedureEntryProcedureActivityProcedure().init();
@@ -1652,7 +1653,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<SubstanceAdministration>() {
 
 							@Override
-							public ArrayList<SubstanceAdministration> construct() {
+							public List<SubstanceAdministration> construct() {
 								ArrayList<SubstanceAdministration> medications = new ArrayList<SubstanceAdministration>();
 
 								NormalDose dose = IHEFactory.eINSTANCE.createNormalDose().init();
@@ -2016,7 +2017,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Observation>() {
 
 							@Override
-							public ArrayList<Observation> construct() {
+							public List<Observation> construct() {
 								ArrayList<Observation> observations = new ArrayList<Observation>();
 
 								AdvanceDirectiveObservation observation = CCDFactory.eINSTANCE.createAdvanceDirectiveObservation().init();
@@ -2143,7 +2144,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<SubstanceAdministration>() {
 
 							@Override
-							public ArrayList<SubstanceAdministration> construct() {
+							public List<SubstanceAdministration> construct() {
 
 								ArrayList<SubstanceAdministration> immunizations = new ArrayList<SubstanceAdministration>();
 
@@ -2301,7 +2302,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Organizer>() {
 
 							@Override
-							public ArrayList<Organizer> construct() {
+							public List<Organizer> construct() {
 
 								ArrayList<Organizer> organizers = new ArrayList<Organizer>();
 
@@ -2389,7 +2390,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Act>() {
 
 							@Override
-							public ArrayList<Act> construct() {
+							public List<Act> construct() {
 								ArrayList<Act> acts = new ArrayList<Act>();
 
 								ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
@@ -2433,7 +2434,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Organizer>() {
 
 							@Override
-							public ArrayList<Organizer> construct() {
+							public List<Organizer> construct() {
 								ArrayList<Organizer> organizers = new ArrayList<Organizer>();
 
 								FamilyHistoryOrganizer organizer = CCDFactory.eINSTANCE.createFamilyHistoryOrganizer().init();
@@ -2543,7 +2544,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Supply>() {
 
 							@Override
-							public ArrayList<Supply> construct() {
+							public List<Supply> construct() {
 								ArrayList<Supply> supplies = new ArrayList<Supply>();
 								SupplyActivity supply = CCDFactory.eINSTANCE.createSupplyActivity().init();
 
@@ -2589,7 +2590,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Observation>() {
 
 							@Override
-							public ArrayList<Observation> construct() {
+							public List<Observation> construct() {
 //
 								ArrayList<Observation> observations = new ArrayList<Observation>();
 //
@@ -2631,7 +2632,7 @@ public class BuildHITSPC32V25Example {
 						return new ArrayBuilder<Observation>() {
 
 							@Override
-							public ArrayList<Observation> construct() {
+							public List<Observation> construct() {
 
 								ArrayList<Observation> observations = new ArrayList<Observation>();
 								

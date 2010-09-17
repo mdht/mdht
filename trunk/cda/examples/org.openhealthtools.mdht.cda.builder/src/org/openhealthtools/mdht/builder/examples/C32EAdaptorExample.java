@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -68,7 +69,7 @@ public class C32EAdaptorExample {
 				{
 
 					@Override
-					public ArrayList<Adapter> construct() {
+					public List<Adapter> construct() {
 						
 						ArrayList<Adapter> adapters = new ArrayList<Adapter>();
 						

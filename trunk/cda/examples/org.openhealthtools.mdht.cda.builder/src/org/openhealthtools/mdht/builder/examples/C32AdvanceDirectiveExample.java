@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
@@ -71,7 +72,7 @@ public class C32AdvanceDirectiveExample {
 						return new ArrayBuilder<Observation>() {
 
 							@Override
-							public ArrayList<Observation> construct() {
+							public List<Observation> construct() {
 								ArrayList<Observation> observations = new ArrayList<Observation>();
 
 								AdvanceDirectiveObservation observation = CCDFactory.eINSTANCE.createAdvanceDirectiveObservation().init();
