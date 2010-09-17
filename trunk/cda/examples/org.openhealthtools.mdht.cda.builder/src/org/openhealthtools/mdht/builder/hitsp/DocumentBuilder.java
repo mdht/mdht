@@ -13,16 +13,8 @@
 package org.openhealthtools.mdht.builder.hitsp;
 
 import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.util.EContentAdapter;
-import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FunctionalStatusSectionBuilder;
-import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.MedicalEquipmentSectionBuilder;
-import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.cda.GenericSectionBuilder;
-import org.openhealthtools.mdht.builder.cda.SectionBuilder;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
@@ -33,7 +25,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;

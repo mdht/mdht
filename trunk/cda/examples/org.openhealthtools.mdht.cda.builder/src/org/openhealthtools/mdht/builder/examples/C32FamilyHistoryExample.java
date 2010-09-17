@@ -14,16 +14,10 @@ package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
 
-import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FamilyHistorySectionBuilder;
-import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
-import org.openhealthtools.mdht.uml.cda.Component2;
-import org.openhealthtools.mdht.uml.cda.NonXMLBody;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * C32Example is an example implementation of the MDHT
