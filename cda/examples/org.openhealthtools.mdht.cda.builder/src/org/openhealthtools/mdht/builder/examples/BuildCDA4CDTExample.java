@@ -61,14 +61,15 @@ import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
  * the document while ignoring others.
  * 
  * 
- * This example duplicates the content distributed as part of NIST CDT test suite
+ * This example duplicates the content distributed as part of NIST CDT test
+ * suite
  * 
  */
 public class BuildCDA4CDTExample {
 
 	/**
 	 * Define a Patient Role Builder
-	 *
+	 * 
 	 */
 	public static class CDA4CDTPatientRoleBuilder extends Builder<PatientRole> {
 
@@ -142,7 +143,7 @@ public class BuildCDA4CDTExample {
 
 	/**
 	 * Extend BuildPatient utility implementation
-	 *
+	 * 
 	 */
 	public static class CDA4CDTPatientBuilder extends BuildPatient {
 
@@ -157,7 +158,7 @@ public class BuildCDA4CDTExample {
 			patient.setMaritalStatusCode(DatatypesFactory.eINSTANCE.createCE("S", "2.16.840.1.113883.5.2", "HL7 MaritalStatus", "Never Married"));
 
 			patient.setReligiousAffiliationCode(BuilderUtil.RomanCatholicAffiliationCode);
-			
+
 			patient.setRaceCode(DatatypesFactory.eINSTANCE.createCE("2113-9", "2.16.840.1.113883.5.104", "HL7 Race", "Irish"));
 
 			patient.setEthnicGroupCode(DatatypesFactory.eINSTANCE.createCE("2186-5", "2.16.840.1.113883.5.50", "HL7 Ethnicity", "Not Hispanic or Latino"));
@@ -207,7 +208,7 @@ public class BuildCDA4CDTExample {
 
 	/**
 	 * Define Author Builder
-	 *
+	 * 
 	 */
 	public static class CDA4CDTBuildAuthor extends ArrayBuilder<Author> {
 
@@ -374,7 +375,6 @@ public class BuildCDA4CDTExample {
 
 				};
 			}
-	
 
 		};
 

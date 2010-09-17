@@ -83,8 +83,6 @@ public class C32EncountersExample {
 		};
 
 		try {
-			
-			
 
 			System.out.println("Start C32 Document Build Example");
 

@@ -200,10 +200,10 @@ public class BuildPatienSummaryExample {
 				return new ResultsSectionBuilderExample();
 			}
 
-//			@Override
-//			public ProblemSectionBuilder getProblemSectionBuilder() {
-//				return new ProblemSectionBuilderExample();
-//			}
+			// @Override
+			// public ProblemSectionBuilder getProblemSectionBuilder() {
+			// return new ProblemSectionBuilderExample();
+			// }
 
 			@Override
 			public Builder<II> getDocumentIdBuilder() {
