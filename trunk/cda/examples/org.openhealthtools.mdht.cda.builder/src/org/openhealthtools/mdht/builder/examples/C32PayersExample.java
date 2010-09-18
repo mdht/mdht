@@ -14,8 +14,6 @@ package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
 
-import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.MedicationsSectionBuilder;
-import org.openhealthtools.mdht.builder.ccd.DocumentBuilder.PayersSectionBuilder;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
