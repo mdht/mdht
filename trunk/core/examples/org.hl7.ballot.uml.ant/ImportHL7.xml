@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="HL7 Models and Schemas" basedir="." default="importDatatypes">
+
+
+	<taskdef name="hl7modeling"
+		classname="org.openhealthtools.mdht.uml.hl7.ant.taskdefs.HL7ModelingTask" />
+
+	<property name="mifSource"
+		value="/usr/hl7/ballots/HL7Sep2010Ballot/html/processable/MIF2-Lite" />
+	
+	<property name="hl7cmetumlmodel" value="${basedir}/CMET.emx" />
+	
+
+	<target name="init">
+
+		<available file="${hl7cmetumlmodel}" property="cmet.present"/>
+
+		
+	</target>
+	
+	<target name="importHL7Domain">
+
+		<echo message="Importing ${hl7domain}" />
+		
+		<record name="hl7import.log" action="start"/>
+
+
+		 <delete file="${basedir}/${hl7umlmodel}" />
+
+		<echo message="Importing D-MIM (Domain Information Model)" />
+		
+		<hl7modeling model="${basedir}/${hl7umlmodel}">
+
+			<model file="${hl7cmetumlmodel}" />
+
+			<importMIF2>
+				<fileset dir="${mifSource}" includes="${hl7domainfilter}_DM*" />
+			</importMIF2>
+
+		</hl7modeling>
+		
+
+		<echo message="HMD (Hierarchical Message Descriptor)" />
+
+		<hl7modeling model="${basedir}/${hl7umlmodel}">
+
+				<model file="${hl7cmetumlmodel}" />
+
+				<importMIF2>
+					<fileset dir="${mifSource}" includes="${hl7domainfilter}_HD*" />
+				</importMIF2>
+
+			</hl7modeling>
+
+		
+		<echo message="Message Type" />
+
+			<hl7modeling model="${basedir}/${hl7umlmodel}">
+
+					<model file="${hl7cmetumlmodel}" />
+
+					<importMIF2>
+						<fileset dir="${mifSource}" includes="${hl7domainfilter}_MT*" />
+					</importMIF2>
+
+				</hl7modeling>
+
+		
+		<antcall target="refresh" />
+		
+		<record name="hl7import.log" action="stop"/>
+
+	</target>
+
+	<target name="importDatatypes" depends="init" description="Import MIF to UML.">
+
+		<delete file="${datatypemodel}" />
+
+		<hl7modeling model="${datatypemodel}">
+			<importMIF2 UsePackageTitle="true">
+				<fileset dir="${mifSource}" includes="DEFN=UV=DT=2.0.coremif" />
+			</importMIF2>
+		</hl7modeling>
+
+	</target>
+
+	<target name="importRIM" depends="init" description="Import MIF to UML.">
+
+		<delete file="${rimmodel}" />
+
+		<hl7modeling model="${rimmodel}">
+			<importMIF2>
+				<fileset dir="${mifSource}" includes="DEFN=UV=RIM=0224.coremif" />
+			</importMIF2>
+		</hl7modeling>
+
+	</target>
+
+	<target name="importCMETs" unless="cmet.present" depends="init" description="Import all CMETs.">
+	
+		<hl7modeling model="${hl7cmetumlmodel}">
+			<importMIF2>
+				<fileset dir="${mifSource}" includes="COCT_*" />
+			</importMIF2>
+		</hl7modeling>
+
+		<antcall target="refresh" />
+
+	</target>
+
+	<target name="Accounting and Billing Domain" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Accounting and Billing" />
+			<param name="hl7umlmodel" value="Accounting and Billing.emx" />
+			<param name="hl7domainfilter" value="FIAB" />
+		</antcall>
+	</target>
+
+	<target name="Patient Administration Domain" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Patient Administration" />
+			<param name="hl7umlmodel" value="PatientAdministration.emx" />
+			<param name="hl7domainfilter" value="PRPA" />
+		</antcall>
+	</target>
+
+	<target name="Clinical Statement Domain" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Clinical Statement" />
+			<param name="hl7umlmodel" value="ClinicalStatement.emx" />
+			<param name="hl7domainfilter" value="COCS" />
+		</antcall>
+	</target>
+
+	<target name="Common Message Element Types" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Common Message Element Types" />
+			<param name="hl7umlmodel" value="CommonMessageElementTypes.emx" />
+			<param name="hl7domainfilter" value="COMT" />
+		</antcall>
+	</target>
+
+	<target name="Claims and Reimbursement" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Claims and Reimbursement" />
+			<param name="hl7umlmodel" value="ClaimsAndReimbursement.emx" />
+			<param name="hl7domainfilter" value="FICR" />
+		</antcall>
+	</target>
+
+	<target name="Blood Tissue and Organ" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Blood, Tissue and Organ" />
+			<param name="hl7umlmodel" value="BloodTissueOrgan.emx" />
+			<param name="hl7domainfilter" value="POBB" />
+		</antcall>
+	</target>
+
+	<target name="Point of Care Devices" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Point of Care Devices" />
+			<param name="hl7umlmodel" value="PointofCareDevices.emx" />
+			<param name="hl7domainfilter" value="POCD" />
+		</antcall>
+	</target>
+
+	<target name="Clinical Genomics" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Clinical Genomics" />
+			<param name="hl7umlmodel" value="ClinicalGenomics.emx" />
+			<param name="hl7domainfilter" value="POCG" />
+		</antcall>
+	</target>
+
+	<target name="Immunization" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Immunization" />
+			<param name="hl7umlmodel" value="Immunization.emx" />
+			<param name="hl7domainfilter" value="POIZ" />
+		</antcall>
+	</target>
+
+	<target name="Laboratory" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Laboratory" />
+			<param name="hl7umlmodel" value="Laboratory.emx" />
+			<param name="hl7domainfilter" value="POLB" />
+		</antcall>
+	</target>
+
+	<target name="Medication" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Medication" />
+			<param name="hl7umlmodel" value="Medication.emx" />
+			<param name="hl7domainfilter" value="POME" />
+		</antcall>
+	</target>
+
+	<target name="Observations" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Observations" />
+			<param name="hl7umlmodel" value="Observations.emx" />
+			<param name="hl7domainfilter" value="POOB" />
+		</antcall>
+	</target>
+
+	<target name="Orders" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Orders" />
+			<param name="hl7umlmodel" value="Orders.emx" />
+			<param name="hl7domainfilter" value="POOR" />
+		</antcall>
+	</target>
+
+	<target name="RegulatedProductSubmissions" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Regulated Product Submissions" />
+			<param name="hl7umlmodel" value="RegulatedProductSubmissions.emx" />
+			<param name="hl7domainfilter" value="PORP" />
+		</antcall>
+	</target>
+
+	<target name="Public Health Reporting" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Public Health Reporting" />
+			<param name="hl7umlmodel" value="PublicHealthReporting.emx" />
+			<param name="hl7domainfilter" value="PORR" />
+		</antcall>
+	</target>
+
+	<target name="Regulated Studies" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Regulated Studies" />
+			<param name="hl7umlmodel" value="RegulatedStudies.emx" />
+			<param name="hl7domainfilter" value="PORT" />
+		</antcall>
+	</target>
+
+	<target name="Pharmacy" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Pharmacy" />
+			<param name="hl7umlmodel" value="Pharmacy.emx" />
+			<param name="hl7domainfilter" value="PORX" />
+		</antcall>
+	</target>
+
+	<target name="Specimen" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Specimen" />
+			<param name="hl7umlmodel" value="Specimen.emx" />
+			<param name="hl7domainfilter" value="POSP" />
+		</antcall>
+	</target>
+
+	<target name="Therapeutic Devices" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Therapeutic Devices" />
+			<param name="hl7umlmodel" value="TherapeuticDevices.emx" />
+			<param name="hl7domainfilter" value="POTD" />
+		</antcall>
+	</target>
+
+	<target name="Personnel Management" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Personnel Management" />
+			<param name="hl7umlmodel" value="PersonnelManagement.emx" />
+			<param name="hl7domainfilter" value="PRPM" />
+		</antcall>
+	</target>
+
+	<target name="Registries" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Registries" />
+			<param name="hl7umlmodel" value="Registries.emx" />
+			<param name="hl7domainfilter" value="PRRG" />
+		</antcall>
+	</target>
+
+	<target name="Scheduling" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Scheduling" />
+			<param name="hl7umlmodel" value="Scheduling.emx" />
+			<param name="hl7domainfilter" value="PRSC" />
+		</antcall>
+	</target>
+
+	<target name="Query" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Query" />
+			<param name="hl7umlmodel" value="Query.emx" />
+			<param name="hl7domainfilter" value="QUCR" />
+		</antcall>
+	</target> 
+
+	<target name="Medical Records" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Medical Records" />
+			<param name="hl7umlmodel" value="MedicalRecords.emx" />
+			<param name="hl7domainfilter" value="RCMR" />
+		</antcall>
+	</target>
+
+	<target name="Clinical Decision Support" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Clinical Decision Support" />
+			<param name="hl7umlmodel" value="Clinical Decision Support.emx" />
+			<param name="hl7domainfilter" value="REDS" />
+		</antcall>
+	</target>
+
+	<target name="Care Provision" depends="importCMETs">
+		<antcall target="importHL7Domain">
+			<param name="hl7domain" value="Care Provision" />
+			<param name="hl7umlmodel" value="CareProvision.emx" />
+			<param name="hl7domainfilter" value="REPC" />
+		</antcall>
+	</target>
+
+	<target name="refresh" depends="init" if="eclipse.running"
+		description="Refresh this folder.">
+		<eclipse.convertPath fileSystemPath="${basedir}"
+			property="resourcePath" />
+		<eclipse.refreshLocal resource="${resourcePath}"
+			depth="infinite" />
+	</target>
+
+
+	<target name="Import Ballot">
+
+		
+		<antcall target="Accounting and Billing Domain" />
+
+		<antcall target="Patient Administration Domain" />
+
+		<antcall target="Clinical Statement Domain" />
+
+		<antcall target="Common Message Element Types" />
+
+		<antcall target="Claims and Reimbursement" />
+
+		<antcall target="Blood Tissue and Organ" />
+
+		<antcall target="Point of Care Devices" />
+
+		<antcall target="Clinical Genomics" />
+
+		<antcall target="Immunization" /> 
+
+		<antcall target="Laboratory" />
+
+		<antcall target="Medication" />
+
+		<antcall target="Observations" />
+
+		<antcall target="Orders" /> 
+
+		<antcall target="RegulatedProductSubmissions" />
+
+		<antcall target="Public Health Reporting" />
+
+		<antcall target="Regulated Studies" />
+
+		<antcall target="Pharmacy" />
+
+		<antcall target="Specimen" />
+
+		<antcall target="Therapeutic Devices" /> 
+
+		<antcall target="Personnel Management" />
+
+		<antcall target="Registries" />
+
+		<antcall target="Scheduling" /> 
+
+		<antcall target="Query" /> 
+
+		<antcall target="Medical Records" /> 
+
+		<antcall target="Clinical Decision Support" />
+
+		<antcall target="Care Provision" />
+
+
+	</target>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</project>
