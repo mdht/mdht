@@ -163,6 +163,14 @@ public class UML2ExtendedAdapterFactory extends
 		return dependencyItemProvider;
 	}
 
+	public Adapter createElementImportAdapter() {
+		if (elementImportItemProvider == null) {
+			elementImportItemProvider = new ElementImportExtItemProvider(this);
+		}
+
+		return elementImportItemProvider;
+	}
+
 	/* (non-Javadoc)
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createEnumerationAdapter()
 	 */
