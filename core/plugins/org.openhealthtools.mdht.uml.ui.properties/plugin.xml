@@ -58,6 +58,12 @@
     <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
           <propertySection tab="property.tab.GeneralPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ElementImportSection" 
+	 	     id="property.section.uml2.ElementImportSection">
+	            <input type="org.eclipse.uml2.uml.ElementImport"/>
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.GeneralPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.NamedElementSection" 
 	 	     id="property.section.uml2.NamedElementSection">
 	            <input type="org.eclipse.uml2.uml.NamedElement"/>
