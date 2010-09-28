@@ -113,6 +113,22 @@
          </action>
          -->
          <action
+               label="%addUMLElementImport.label"
+               icon="icons/full/obj16/ElementImport.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddElementImportAction"
+               menubarPath="mdht.addUML/packageGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.elementImport">
+         </action>
+         <action
+               label="%addUMLPackageImport.label"
+               icon="icons/full/obj16/PackageImport.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddPackageImportAction"
+               menubarPath="mdht.addUML/packageGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.packageImport">
+         </action>
+         <action
                label="%addUMLEnumeration.label"
                icon="icons/full/obj16/Enumeration.gif"
                class="org.openhealthtools.mdht.uml.ui.actions.AddUMLEnumerationAction"

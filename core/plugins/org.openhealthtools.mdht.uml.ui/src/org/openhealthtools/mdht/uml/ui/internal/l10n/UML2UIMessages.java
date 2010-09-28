@@ -27,6 +27,8 @@ public class UML2UIMessages extends NLS {
 	// ==============================================================================
 
 	public static String AddUMLPackage_operation_title;
+	public static String AddUMLPackageImport_operation_title;
+	public static String AddUMLElementImport_operation_title;
 	public static String AddUMLPackage_default_name;
 	public static String AddUMLClass_operation_title;
 	public static String AddUMLClass_default_name;
@@ -56,7 +58,11 @@ public class UML2UIMessages extends NLS {
 
 	public static String TargetSelectionDialog_title;
 	public static String TargetSelectionDialog_message;
-	
+	public static String PackageImportSelectionDialog_title;
+	public static String PackageImportSelectionDialog_message;
+	public static String ElementImportSelectionDialog_title;
+	public static String ElementImportSelectionDialog_message;
+
 	public static String _UI_UMLEditor_menu;
 	public static String _UI_ApplyProfileActionCommand_label;
 	public static String _UI_ApplyStereotypeActionCommand_label;
