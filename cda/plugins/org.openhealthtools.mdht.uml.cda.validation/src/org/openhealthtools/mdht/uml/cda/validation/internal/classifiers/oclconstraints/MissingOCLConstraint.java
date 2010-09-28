@@ -59,8 +59,6 @@ public class MissingOCLConstraint extends AbstractModelConstraint implements CDA
 
 				for (String language : oe.getLanguages()) {
 
-					// System.out.println(language);
-
 					if ("OCL".equalsIgnoreCase(language)) {
 						ocl = oe.getBodies().get(languageCtr);
 
@@ -72,9 +70,9 @@ public class MissingOCLConstraint extends AbstractModelConstraint implements CDA
 
 					languageCtr++;
 				}
-				System.out.println("analysis " + analysis);
+
 				if (analysis != null) {
-					System.out.println("ocl " + ocl);
+
 					if (ocl == null || ocl.trim().length() == 0) {
 						result = context.createFailureStatus(new Object[] { constraint.getName() });
 					}
