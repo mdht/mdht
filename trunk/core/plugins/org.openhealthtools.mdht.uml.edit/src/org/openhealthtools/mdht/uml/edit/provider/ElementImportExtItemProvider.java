@@ -19,22 +19,21 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
-import org.eclipse.uml2.uml.PackageImport;
-import org.eclipse.uml2.uml.edit.providers.PackageImportItemProvider;
-import org.eclipse.uml2.uml.edit.providers.PackageItemProvider;
+import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.edit.providers.ElementImportItemProvider;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
  *
  * @version $Id: $
  */
-public class PackageImportExtItemProvider extends PackageImportItemProvider
+public class ElementImportExtItemProvider extends ElementImportItemProvider
 	implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
 	 */
-	public PackageImportExtItemProvider(AdapterFactory adapterFactory) {
+	public ElementImportExtItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,12 +42,12 @@ public class PackageImportExtItemProvider extends PackageImportItemProvider
 	}
 
 	public String getText(Object object) {
-		PackageImport pkgImport = (PackageImport) object;
+		ElementImport elementImport = (ElementImport) object;
 		StringBuffer label = new StringBuffer();
 		label.append("(");
 		try {
-		if (pkgImport.getImportedPackage() != null)
-			label.append(pkgImport.getImportedPackage().getName());
+		if (elementImport.getImportedElement() != null)
+			label.append(elementImport.getImportedElement().getName());
 		} catch (Exception e) {
 			
 		}
@@ -61,14 +60,11 @@ public class PackageImportExtItemProvider extends PackageImportItemProvider
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	public Collection<Object> getChildren(Object object) {
-		PackageImport pkgImport = (PackageImport) object;
+		ElementImport elementImport = (ElementImport) object;
 		List<Object> children = new ArrayList<Object>();
+
+		children.addAll(elementImport.getOwnedComments());
 		
-		if (pkgImport.getImportedPackage() != null) {
-			PackageItemProvider provider = (PackageItemProvider) 
-					((UML2ExtendedAdapterFactory)this.adapterFactory).createPackageAdapter();
-			children.addAll(provider.getChildren(pkgImport.getImportedPackage()));
-		}
 		return children;
 	}
 
@@ -94,11 +90,6 @@ public class PackageImportExtItemProvider extends PackageImportItemProvider
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
-//		PackageImport pkgImport = (PackageImport) element;
-//		
-//		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
-//			
-//		}
 		return false;
 	}
 
@@ -106,11 +97,6 @@ public class PackageImportExtItemProvider extends PackageImportItemProvider
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
-//		PackageImport pkgImport = (PackageImport) element;
-//		
-//		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
-//			
-//		}
 		return null;
 	}
 

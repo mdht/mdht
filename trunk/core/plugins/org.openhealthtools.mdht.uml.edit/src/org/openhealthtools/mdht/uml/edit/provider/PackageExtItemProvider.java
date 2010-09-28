@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.edit.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -67,19 +66,18 @@ public class PackageExtItemProvider extends PackageItemProvider
 	/* (non-Javadoc)
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
-	public Collection getChildren(Object object) {
+	public Collection<Object> getChildren(Object object) {
 		Package pkg = (Package) object;
-		List children = new ArrayList();
+		List<Object> children = new ArrayList<Object>();
 		children.addAll(pkg.getOwnedComments());
 		children.addAll(pkg.getOwnedRules());
 		
-		List sortedPackages = new ArrayList(pkg.getNestedPackages());
+		List<Package> sortedPackages = new ArrayList<Package>(pkg.getNestedPackages());
 		Collections.sort(sortedPackages, new NamedElementComparator());
 		children.addAll(sortedPackages);
 		
-		List sortedTypes = new ArrayList();
-		for (Iterator members = pkg.getOwnedTypes().iterator(); members.hasNext();) {
-			Type type = (Type) members.next();
+		List<Type> sortedTypes = new ArrayList<Type>();
+		for (Type type : pkg.getOwnedTypes()) {
 			if (type instanceof org.eclipse.uml2.uml.Class 
 					|| type instanceof Interface
 					|| type instanceof DataType)
@@ -98,6 +96,7 @@ public class PackageExtItemProvider extends PackageItemProvider
 //		children.addAll(sortedAssociations);
 
 		children.addAll(pkg.getPackageImports());
+		children.addAll(pkg.getElementImports());
 		children.addAll(pkg.getClientDependencies());
 		
 		return children;
