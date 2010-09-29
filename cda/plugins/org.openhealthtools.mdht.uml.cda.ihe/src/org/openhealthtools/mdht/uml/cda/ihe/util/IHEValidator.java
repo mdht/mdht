@@ -57,6 +57,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ihe.Immunization;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection;
 import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
@@ -1021,12 +1022,20 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ENCOUNTER_PLAN_OF_CARE__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID = 113;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Intake Output Section Template Id' of 'Intake Output Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int INTAKE_OUTPUT_SECTION__INTAKE_OUTPUT_SECTION_TEMPLATE_ID = 114;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 113;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 114;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1221,6 +1230,8 @@ public class IHEValidator extends EObjectValidator {
 				return validateEncounterActivity((EncounterActivity)value, diagnostics, context);
 			case IHEPackage.ENCOUNTER_PLAN_OF_CARE:
 				return validateEncounterPlanOfCare((EncounterPlanOfCare)value, diagnostics, context);
+			case IHEPackage.INTAKE_OUTPUT_SECTION:
+				return validateIntakeOutputSection((IntakeOutputSection)value, diagnostics, context);
 			case IHEPackage.IHE_REGISTRY_DELEGATE:
 				return validateIHERegistryDelegate((IHERegistryDelegate)value, diagnostics, context);
 			default:
@@ -3963,6 +3974,33 @@ public class IHEValidator extends EObjectValidator {
 			return false;
 		}
 		return ccdValidator.validatePlanOfCareActivityEncounter_validatePlanOfCareActivityEncounterTemplateId(encounterPlanOfCare, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIntakeOutputSection(IntakeOutputSection intakeOutputSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(intakeOutputSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(intakeOutputSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(intakeOutputSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(intakeOutputSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(intakeOutputSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(intakeOutputSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(intakeOutputSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIntakeOutputSection_validateIntakeOutputSectionTemplateId(intakeOutputSection, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateIntakeOutputSectionTemplateId constraint of '<em>Intake Output Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIntakeOutputSection_validateIntakeOutputSectionTemplateId(IntakeOutputSection intakeOutputSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return intakeOutputSection.validateIntakeOutputSectionTemplateId(diagnostics, context);
 	}
 
 	/**
