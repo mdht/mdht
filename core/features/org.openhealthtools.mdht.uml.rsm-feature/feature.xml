@@ -22,7 +22,8 @@
    </url>
 
    <requires>
-      <import feature="org.openhealthtools.mdht.uml" version="0.5.0" match="greaterOrEqual"/>
+   <import feature="org.openhealthtools.mdht.uml.hdf" version="0.7.0" match="greaterOrEqual"/>
+      <import feature="org.openhealthtools.mdht.uml" version="0.7.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
