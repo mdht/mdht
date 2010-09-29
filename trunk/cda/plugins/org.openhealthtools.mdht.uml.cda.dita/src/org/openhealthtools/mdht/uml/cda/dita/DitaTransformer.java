@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
@@ -61,11 +62,16 @@ public class DitaTransformer {
 					Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = iterator.next();
+				if (child instanceof ElementImport) {
+					child = ((ElementImport)child).getImportedElement();
+				}
 
-				transformPackage.doSwitch(child);
-				transformClass.doSwitch(child);
-				transformClassProperties.doSwitch(child);
-				transformValueSet.doSwitch(child);
+				if (child != null) {
+					transformPackage.doSwitch(child);
+					transformClass.doSwitch(child);
+					transformClassProperties.doSwitch(child);
+					transformValueSet.doSwitch(child);
+				}
 			}
 		}
 		catch (IndexOutOfBoundsException e) {
