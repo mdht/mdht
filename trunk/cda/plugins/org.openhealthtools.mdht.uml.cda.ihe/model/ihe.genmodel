@@ -588,6 +588,12 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//EncounterPlanOfCare/EncounterPlanOfCareMoodCodeValue/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//IntakeOutputSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//IntakeOutputSection/IntakeOutputSectionTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//IntakeOutputSection/IntakeOutputSectionTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//IntakeOutputSection/IntakeOutputSectionTemplateId/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//IHERegistryDelegate"/>
   </genPackages>
 </genmodel:GenModel>

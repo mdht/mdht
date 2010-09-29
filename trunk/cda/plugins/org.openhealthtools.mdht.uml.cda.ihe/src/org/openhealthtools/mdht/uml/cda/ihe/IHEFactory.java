@@ -590,6 +590,15 @@ public interface IHEFactory extends EFactory {
 	EncounterPlanOfCare createEncounterPlanOfCare();
 
 	/**
+	 * Returns a new object of class '<em>Intake Output Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Intake Output Section</em>'.
+	 * @generated
+	 */
+	IntakeOutputSection createIntakeOutputSection();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

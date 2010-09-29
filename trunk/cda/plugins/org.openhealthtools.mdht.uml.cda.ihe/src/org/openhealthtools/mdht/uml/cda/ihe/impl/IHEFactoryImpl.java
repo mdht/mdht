@@ -52,6 +52,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ihe.Immunization;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection;
 import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
@@ -189,6 +190,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.PHR_UPDATE: return createPHRUpdate();
 			case IHEPackage.ENCOUNTER_ACTIVITY: return createEncounterActivity();
 			case IHEPackage.ENCOUNTER_PLAN_OF_CARE: return createEncounterPlanOfCare();
+			case IHEPackage.INTAKE_OUTPUT_SECTION: return createIntakeOutputSection();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -813,6 +815,16 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public EncounterPlanOfCare createEncounterPlanOfCare() {
 		EncounterPlanOfCareImpl encounterPlanOfCare = new EncounterPlanOfCareImpl();
 		return encounterPlanOfCare;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntakeOutputSection createIntakeOutputSection() {
+		IntakeOutputSectionImpl intakeOutputSection = new IntakeOutputSectionImpl();
+		return intakeOutputSection;
 	}
 
 	/**

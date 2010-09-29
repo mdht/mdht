@@ -79,6 +79,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ihe.Immunization;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection;
 import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
@@ -853,6 +854,15 @@ public class IHESwitch<T> {
 				if (result == null) result = caseClinicalStatement(encounterPlanOfCare);
 				if (result == null) result = caseAct(encounterPlanOfCare);
 				if (result == null) result = caseInfrastructureRoot(encounterPlanOfCare);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.INTAKE_OUTPUT_SECTION: {
+				IntakeOutputSection intakeOutputSection = (IntakeOutputSection)theEObject;
+				T result = caseIntakeOutputSection(intakeOutputSection);
+				if (result == null) result = caseSection(intakeOutputSection);
+				if (result == null) result = caseAct(intakeOutputSection);
+				if (result == null) result = caseInfrastructureRoot(intakeOutputSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1824,6 +1834,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseEncounterPlanOfCare(EncounterPlanOfCare object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Intake Output Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Intake Output Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntakeOutputSection(IntakeOutputSection object) {
 		return null;
 	}
 

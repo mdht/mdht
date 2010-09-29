@@ -57,6 +57,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ihe.Immunization;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection;
 import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
@@ -544,6 +545,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	private EClass encounterPlanOfCareEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass intakeOutputSectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1206,6 +1214,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIntakeOutputSection() {
+		return intakeOutputSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIHERegistryDelegate() {
 		return iheRegistryDelegateEClass;
 	}
@@ -1366,6 +1383,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		encounterPlanOfCareEClass = createEClass(ENCOUNTER_PLAN_OF_CARE);
 
+		intakeOutputSectionEClass = createEClass(INTAKE_OUTPUT_SECTION);
+
 		iheRegistryDelegateEClass = createEClass(IHE_REGISTRY_DELEGATE);
 	}
 
@@ -1471,6 +1490,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		encounterActivityEClass.getESuperTypes().add(theCCDPackage.getEncountersActivity());
 		encounterPlanOfCareEClass.getESuperTypes().add(this.getEncounterEntry());
 		encounterPlanOfCareEClass.getESuperTypes().add(theCCDPackage.getPlanOfCareActivityEncounter());
+		intakeOutputSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		iheRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -2572,6 +2592,17 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(intakeOutputSectionEClass, IntakeOutputSection.class, "IntakeOutputSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(intakeOutputSectionEClass, ecorePackage.getEBoolean(), "validateIntakeOutputSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(iheRegistryDelegateEClass, IHERegistryDelegate.class, "IHERegistryDelegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
@@ -3125,7 +3156,14 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "contextDependent", "true",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.14",
 			 "constraints.validation.error", "PlanOfCareActivityEncounterTemplateId EncounterPlanOfCareMoodCodeValue"
-		   });					
+		   });							
+		addAnnotation
+		  (intakeOutputSectionEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.20.2.3",
+			 "constraints.validation.error", "IntakeOutputSectionTemplateId"
+		   });				
 	}
 
 	/**
@@ -3165,7 +3203,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																									
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																														
 	}
 
 	/**
@@ -3205,7 +3243,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (encounterPlanOfCareEClass, 
 		   source, 
 		   new String[] {
-		   });				
+		   });									
 	}
 
 } //IHEPackageImpl

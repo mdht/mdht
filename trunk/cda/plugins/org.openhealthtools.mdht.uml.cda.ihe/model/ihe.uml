@@ -726,6 +726,11 @@ life, hobbies, and risky habits.</body>
     <packagedElement xmi:type="uml:Association" xmi:id="_6bQigKsPEd-yFfcbpgNFIA" memberEnd="_6bP7cKsPEd-yFfcbpgNFIA _6bQigasPEd-yFfcbpgNFIA">
       <ownedEnd xmi:id="_6bQigasPEd-yFfcbpgNFIA" type="_tY30kMiiEd6mWrHPmrIIfQ" association="_6bQigKsPEd-yFfcbpgNFIA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5GSkEMwTEd-iJaPtkyVyKg" name="IntakeOutputSection">
+      <generalization xmi:id="_5GSkEcwTEd-iJaPtkyVyKg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -984,4 +989,5 @@ life, hobbies, and risky habits.</body>
   <CDA:PropertyValidation xmi:id="_Xa1zEKsXEd-yFfcbpgNFIA" severity="WARNING" base_Property="_IhgnUKsXEd-yFfcbpgNFIA"/>
   <CDA:CodeSystemConstraint xmi:id="_i76CgKsXEd-yFfcbpgNFIA" identifier="2.16.840.1.113883.5.4" name="ActEncounterCode" base_Property="_IhgnUKsXEd-yFfcbpgNFIA"/>
   <CDA:TextValue xmi:id="_1EmGMKsXEd-yFfcbpgNFIA" base_Property="_zhWKwKsXEd-yFfcbpgNFIA"/>
+  <CDA:CDATemplate xmi:id="_AbOxUMwUEd-iJaPtkyVyKg" base_Class="_5GSkEMwTEd-iJaPtkyVyKg" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.20.2.3" assigningAuthorityName="IHE PCC"/>
 </xmi:XMI>
