@@ -21,11 +21,11 @@
       <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates"/>
    </url>
 
-   <requires>
-      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.uml2" version="3.0.0" match="greaterOrEqual"/>
+  <requires>
+      <import plugin="org.eclipse.core.runtime" version="3.4.2" match="greaterOrEqual"/>
+      <import feature="org.eclipse.uml2" version="2.2.2" match="greaterOrEqual"/>
    </requires>
-
+ 
    <plugin
          id="org.openhealthtools.mdht.uml.common"
          download-size="0"
