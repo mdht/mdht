@@ -22,6 +22,16 @@
      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature>
 
+  <feature url="features/org.openhealthtools.mdht.test_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.test" version="0.7.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
+   </feature>
+
+  <feature url="features/org.openhealthtools.mdht.test.source_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.test.source" version="0.7.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
+   </feature>
+
+
+
 <!-- MDHT CDA MODELS Features  -->
   <feature url="features/org.openhealthtools.mdht.uml.cda.models_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models" version="0.7.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
@@ -41,6 +51,12 @@
       <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
    </feature>
 
+<!--
+   <feature url="features/org.openhealthtools.mdht.uml.cda.papyrus_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.papyrus" version="0.7.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.hdf.basic.cat"/>    
+     <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
+   </feature>
+-->
 
 <!-- MDHT CDA Categories -->
    <category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA for Implementation Guide Modeling"/>
@@ -50,5 +66,7 @@
    <category-def name="org.openhealthtools.mdht.uml.hdf.basic.cat" label="MDHT RIM for UML Modeling"/>
 
    <category-def name="org.openhealthtools.mdht.uml.hdf.rsm.cat" label="MDHT RIM for RSM UML Modeling"/>
+
+
 
 </site>
