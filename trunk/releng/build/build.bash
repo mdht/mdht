@@ -4,19 +4,48 @@
 # default configuration file is ./config_build.sh, unless another file is 
 # specified in command-line. Available config variables:
 
+usage()
+{
+cat << EOF
+usage: $0 options
+
+mdht build script
+
+OPTIONS:
+   -h Show this message
+   -u SVN User Name (Required)
+   -p SVN Password (Required)
+   -t Build Target (...)
+   -f Configfile
+
+EOF
+}
+
 clear
 
 vflag=off
 configfilename=
 
-while getopts "t:f" optionName; do
+svnuser=
+svnpasswd=
+
+while getopts "t:f:u:p:" optionName; do
 case "$optionName" in
   t)  MDHT_COMPONENT="$OPTARG";;
   f)  configfilename="$OPTARG";;
-[?])  "usage: $0 [-t target] [-f configfile ]"
+  p)  svnpasswd="$OPTARG";;
+  u)  svnuser="$OPTARG";;
+  
+[?])  usage
 	  exit 1;;
 esac
 done
+
+if [[ -z $svnuser ]] || [[ -z $svnpasswd ]] 
+then
+     usage
+     exit 1
+fi
 
 if [ -z $configfilename ]; then
   . ./build_config.bash
@@ -99,12 +128,13 @@ echo MDHT_BUILDTARGET=$MDHT_BUILDTARGET
 
 echo "********************************************************************"
 
-echo Building : $JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Dmdhtcomponent=$MDHT_COMPONENT
 
-$JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER  -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Dmdhtcomponent=$MDHT_COMPONENT
+
+echo Building : $JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -Dsvnuser=$svnuser -Dsvnpasswd=********* -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Dmdhtcomponent=$MDHT_COMPONENT -DjavacDebugInfo=true 
+
+$JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -Dsvnuser=$svnuser -Dsvnpasswd=$svnpasswd -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER  -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Dmdhtcomponent=$MDHT_COMPONENT -DjavacDebugInfo=true
 
 echo Building : $JAVA_HOME/java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -DbuildType=$MDHT_BUILDTARGET
 
 $JAVA_HOME/java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -Drepodir=$MDHT_REPODIRECTORY
-
 

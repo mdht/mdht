@@ -33,7 +33,9 @@
 		<property file="${buildDirectory}/label.properties" />
 	</target>
 
-	<target name="create.label.properties" unless="label.properties.exists">
+	<target name="create.label.properties" >
+
+
 		<mkdir dir="${buildDirectory}" />
 		<tstamp/>
 		<property name="date" value="${DSTAMP}" />
