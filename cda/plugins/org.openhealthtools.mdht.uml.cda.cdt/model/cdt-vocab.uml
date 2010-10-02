@@ -11,6 +11,7 @@
       </ownedComment>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_XKjcgGj5Ed-tUpkWYQgJlQ" name="HPDocumentType"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_npnkkMvhEd-hi-1hHmWxvw" name="ProgressNoteDocumentTypeCode"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -25,6 +26,9 @@
     <codeSystem href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_ywdZ4Gg7Ed-ilOLYnIx0jA"/>
   </term:ValueSetVersion>
   <term:ValueSetVersion xmi:id="_XKjcgWj5Ed-tUpkWYQgJlQ" identifier="2.16.840.1.113883.1.11.20.22" source="Health Level Seven (HL7)" definition="Valid codes are those whose scale is DOC and whose type of service is some variation of History and Physical." type="Intensional" binding="Dynamic" base_Enumeration="_XKjcgGj5Ed-tUpkWYQgJlQ">
+    <codeSystem href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_nuh5wMvhEd-hi-1hHmWxvw" identifier="2.16.840.1.113883.11.20.8.1" fullName="Progress Note Document Type Code" source="HL7" definition="This value set includes the preferred code and pre-coordinated LOINC codes that have the scale DOC (document) and a 'component' referring to &quot;subsequent evaluation notes&quot;.  Although these pre-coordinated LOINC codes are available for use, we recommend the preferred code (11506-3  Progress Note). When these pre-coordinated codes are used, any coded values describing the author or performer of the service act or the practice setting must be consistent with the LOINC document type. Note: &quot;Subsequent evaluation note&quot; is equivalent to Progress Note." binding="Dynamic" base_Enumeration="_npnkkMvhEd-hi-1hHmWxvw">
     <codeSystem href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </term:ValueSetVersion>
 </xmi:XMI>

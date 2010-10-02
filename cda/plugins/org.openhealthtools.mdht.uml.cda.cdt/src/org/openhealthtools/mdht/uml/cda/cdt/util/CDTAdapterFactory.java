@@ -15,10 +15,13 @@ import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote;
 import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
@@ -28,16 +31,19 @@ import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
+import org.openhealthtools.mdht.uml.cda.cdt.ObjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ProgressNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitAndChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
+import org.openhealthtools.mdht.uml.cda.cdt.SubjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -189,6 +195,30 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseReasonForVisitAndChiefComplaintSection(ReasonForVisitAndChiefComplaintSection object) {
 				return createReasonForVisitAndChiefComplaintSectionAdapter();
+			}
+			@Override
+			public Adapter caseProgressNote(ProgressNote object) {
+				return createProgressNoteAdapter();
+			}
+			@Override
+			public Adapter caseAssessmentAndPlanSectionProcNote(AssessmentAndPlanSectionProcNote object) {
+				return createAssessmentAndPlanSectionProcNoteAdapter();
+			}
+			@Override
+			public Adapter caseAssessmentSectionProcNote(AssessmentSectionProcNote object) {
+				return createAssessmentSectionProcNoteAdapter();
+			}
+			@Override
+			public Adapter caseChiefComplaintSectionProcNote(ChiefComplaintSectionProcNote object) {
+				return createChiefComplaintSectionProcNoteAdapter();
+			}
+			@Override
+			public Adapter caseObjectiveSection(ObjectiveSection object) {
+				return createObjectiveSectionAdapter();
+			}
+			@Override
+			public Adapter caseSubjectiveSection(SubjectiveSection object) {
+				return createSubjectiveSectionAdapter();
 			}
 			@Override
 			public Adapter caseCDTRegistryDelegate(CDTRegistryDelegate object) {
@@ -529,6 +559,90 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReasonForVisitAndChiefComplaintSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.ProgressNote <em>Progress Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.ProgressNote
+	 * @generated
+	 */
+	public Adapter createProgressNoteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSectionProcNote <em>Assessment And Plan Section Proc Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSectionProcNote
+	 * @generated
+	 */
+	public Adapter createAssessmentAndPlanSectionProcNoteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.AssessmentSectionProcNote <em>Assessment Section Proc Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.AssessmentSectionProcNote
+	 * @generated
+	 */
+	public Adapter createAssessmentSectionProcNoteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSectionProcNote <em>Chief Complaint Section Proc Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSectionProcNote
+	 * @generated
+	 */
+	public Adapter createChiefComplaintSectionProcNoteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.ObjectiveSection <em>Objective Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.ObjectiveSection
+	 * @generated
+	 */
+	public Adapter createObjectiveSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.SubjectiveSection <em>Subjective Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.SubjectiveSection
+	 * @generated
+	 */
+	public Adapter createSubjectiveSectionAdapter() {
 		return null;
 	}
 

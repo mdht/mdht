@@ -164,7 +164,7 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getAlertsSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getSocialHistorySection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getFamilyHistorySection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getReviewOfSystemsSectionIHE"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getReviewOfSystemsSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getPhysicalExaminationSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getVitalSignsSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/getGeneralStatusSection"/>
@@ -184,9 +184,9 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//PastMedicalHistorySection">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionClinicalStatements">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionClinicalStatements/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionClinicalStatements/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionHasClinicalStatements">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionHasClinicalStatements/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionHasClinicalStatements/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//PastMedicalHistorySection/PastMedicalHistorySectionTemplateId/diagnostics"/>
@@ -316,10 +316,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ConsultationNote/ConsultationNoteDiagnosticFindings/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getHistoryOfPresentIllness"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getPhysicalExaminationSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getPhysicalExamination"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getProblemSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getProceduresSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getPastMedicalHistorySectionConsult"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getPastMedicalHistorySection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getImmunizationsSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getMedicationsSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ConsultationNote/getAlertsSection"/>
@@ -441,6 +441,175 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ReasonForVisitAndChiefComplaintSection/ReasonForVisitAndChiefComplaintSectionCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ReasonForVisitAndChiefComplaintSection/ReasonForVisitAndChiefComplaintSectionCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ReasonForVisitAndChiefComplaintSection/ReasonForVisitAndChiefComplaintSectionCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//ProgressNote">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteAssessmentAndPlan">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteAssessmentAndPlan/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteAssessmentAndPlan/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteBothAssessmentAndPlan">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteBothAssessmentAndPlan/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteBothAssessmentAndPlan/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEvent">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEvent/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEvent/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEventCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEventCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEventCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEventEffectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEventEffectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasServiceEventEffectiveTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasComponentOfElement">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasComponentOfElement/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasComponentOfElement/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterEffectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterEffectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterEffectiveTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterEffectiveTimeLow">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterEffectiveTimeLow/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterEffectiveTimeLow/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterFacilityId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterFacilityId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteHasEncompassingEncounterFacilityId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteAlertsSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteAlertsSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteAlertsSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteChiefComplaintSectionProcNote">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteChiefComplaintSectionProcNote/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteChiefComplaintSectionProcNote/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteMedicationsSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteMedicationsSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteMedicationsSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteObjectiveSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteObjectiveSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteObjectiveSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNotePhysicalExaminationSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNotePhysicalExaminationSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNotePhysicalExaminationSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteProblemSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteProblemSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteProblemSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteResultsSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteResultsSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteResultsSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteVitalSignsSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteVitalSignsSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteVitalSignsSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteReviewOfSystemsSectionIHE">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteReviewOfSystemsSectionIHE/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteReviewOfSystemsSectionIHE/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/ProgressNoteSubjectiveSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteSubjectiveSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ProgressNote/ProgressNoteSubjectiveSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getAssessmentAndPlanSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getAssessmentSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getPlanSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getAlertsSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getChiefComplaintSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getMedicationsSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getObjectiveSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getPhysicalExaminationSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getProblemSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getResultsSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getVitalSignsSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getReviewOfSystemsSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ProgressNote/getSubjectiveSection"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//AssessmentAndPlanSectionProcNote">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//AssessmentAndPlanSectionProcNote/AssessmentAndPlanSectionProcNoteTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentAndPlanSectionProcNote/AssessmentAndPlanSectionProcNoteTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentAndPlanSectionProcNote/AssessmentAndPlanSectionProcNoteTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//AssessmentAndPlanSectionProcNote/AssessmentAndPlanSectionProcNoteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentAndPlanSectionProcNote/AssessmentAndPlanSectionProcNoteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentAndPlanSectionProcNote/AssessmentAndPlanSectionProcNoteCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//AssessmentSectionProcNote">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//AssessmentSectionProcNote/AssessmentSectionProcNoteTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentSectionProcNote/AssessmentSectionProcNoteTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentSectionProcNote/AssessmentSectionProcNoteTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//AssessmentSectionProcNote/AssessmentSectionProcNoteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentSectionProcNote/AssessmentSectionProcNoteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//AssessmentSectionProcNote/AssessmentSectionProcNoteCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//ChiefComplaintSectionProcNote">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ChiefComplaintSectionProcNote/ChiefComplaintSectionProcNoteTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ChiefComplaintSectionProcNote/ChiefComplaintSectionProcNoteTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ChiefComplaintSectionProcNote/ChiefComplaintSectionProcNoteTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ChiefComplaintSectionProcNote/ChiefComplaintSectionProcNoteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ChiefComplaintSectionProcNote/ChiefComplaintSectionProcNoteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ChiefComplaintSectionProcNote/ChiefComplaintSectionProcNoteCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//ObjectiveSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ObjectiveSection/ObjectiveSectionHasClinicalStatements">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionHasClinicalStatements/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionHasClinicalStatements/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ObjectiveSection/ObjectiveSectionTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ObjectiveSection/ObjectiveSectionCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ObjectiveSection/ObjectiveSectionText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//ObjectiveSection/ObjectiveSectionTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ObjectiveSection/ObjectiveSectionTitle/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//SubjectiveSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//SubjectiveSection/SubjectiveSectionHasClinicalStatements">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionHasClinicalStatements/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionHasClinicalStatements/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//SubjectiveSection/SubjectiveSectionTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//SubjectiveSection/SubjectiveSectionCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//SubjectiveSection/SubjectiveSectionText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//SubjectiveSection/SubjectiveSectionTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//SubjectiveSection/SubjectiveSectionTitle/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//CDTRegistryDelegate"/>

@@ -15,11 +15,14 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPlugin;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote;
 import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
@@ -29,16 +32,19 @@ import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
+import org.openhealthtools.mdht.uml.cda.cdt.ObjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ProgressNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitAndChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
+import org.openhealthtools.mdht.uml.cda.cdt.SubjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 
 /**
@@ -226,6 +232,14 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_CODE = 35;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Has Clinical Statements' of 'Past Medical History Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_HAS_CLINICAL_STATEMENTS = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical History Of Present Illness' of 'History And Physical'.
@@ -588,6 +602,310 @@ public class CDTValidator extends EObjectValidator {
 	public static final int REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION__REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_CODE = 92;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Assessment And Plan' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_ASSESSMENT_AND_PLAN = 93;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Both Assessment And Plan' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_BOTH_ASSESSMENT_AND_PLAN = 94;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Service Event' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT = 95;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Service Event Code' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT_CODE = 96;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Service Event Effective Time' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT_EFFECTIVE_TIME = 97;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Component Of Element' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_COMPONENT_OF_ELEMENT = 98;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Id' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_ID = 99;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Effective Time' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_EFFECTIVE_TIME = 100;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Effective Time Low' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_EFFECTIVE_TIME_LOW = 101;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Facility Id' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_FACILITY_ID = 102;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Alerts Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_ALERTS_SECTION = 103;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Chief Complaint Section Proc Note' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_CHIEF_COMPLAINT_SECTION_PROC_NOTE = 104;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Medications Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_MEDICATIONS_SECTION = 105;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Objective Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_OBJECTIVE_SECTION = 106;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Physical Examination Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_PHYSICAL_EXAMINATION_SECTION = 107;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Problem Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_PROBLEM_SECTION = 108;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Results Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_RESULTS_SECTION = 109;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Vital Signs Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_VITAL_SIGNS_SECTION = 110;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Review Of Systems Section IHE' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_REVIEW_OF_SYSTEMS_SECTION_IHE = 111;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Subjective Section' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_SUBJECTIVE_SECTION = 112;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Template Id' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 113;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'Progress Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROGRESS_NOTE__GENERAL_HEADER_CONSTRAINTS_CODE = 114;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Proc Note Template Id' of 'Assessment And Plan Section Proc Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE__ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_TEMPLATE_ID = 115;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Proc Note Code' of 'Assessment And Plan Section Proc Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE__ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_CODE = 116;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment Section Proc Note Template Id' of 'Assessment Section Proc Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ASSESSMENT_SECTION_PROC_NOTE__ASSESSMENT_SECTION_PROC_NOTE_TEMPLATE_ID = 117;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment Section Proc Note Code' of 'Assessment Section Proc Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ASSESSMENT_SECTION_PROC_NOTE__ASSESSMENT_SECTION_PROC_NOTE_CODE = 118;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Proc Note Template Id' of 'Chief Complaint Section Proc Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CHIEF_COMPLAINT_SECTION_PROC_NOTE__CHIEF_COMPLAINT_SECTION_PROC_NOTE_TEMPLATE_ID = 119;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Proc Note Code' of 'Chief Complaint Section Proc Note'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CHIEF_COMPLAINT_SECTION_PROC_NOTE__CHIEF_COMPLAINT_SECTION_PROC_NOTE_CODE = 120;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Has Clinical Statements' of 'Objective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_HAS_CLINICAL_STATEMENTS = 121;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Template Id' of 'Objective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TEMPLATE_ID = 122;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Code' of 'Objective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_CODE = 123;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Text' of 'Objective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TEXT = 124;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Title' of 'Objective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TITLE = 125;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Has Clinical Statements' of 'Subjective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_HAS_CLINICAL_STATEMENTS = 126;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Template Id' of 'Subjective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TEMPLATE_ID = 127;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Code' of 'Subjective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_CODE = 128;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Text' of 'Subjective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TEXT = 129;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Title' of 'Subjective Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TITLE = 130;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Consult Template Id' of 'Past Medical History Section Consult'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,14 +944,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public static final int PHYSICAL_EXAMINATION_SECTION__PHYSICAL_EXAMINATION_SECTION_CODE = 43;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Clinical Statements' of 'Past Medical History Section'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_CLINICAL_STATEMENTS = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Template Id' of 'Past Medical History Section'.
@@ -809,7 +1119,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 92;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 130;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -904,6 +1214,18 @@ public class CDTValidator extends EObjectValidator {
 				return validateChiefComplaintSection((ChiefComplaintSection)value, diagnostics, context);
 			case CDTPackage.REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION:
 				return validateReasonForVisitAndChiefComplaintSection((ReasonForVisitAndChiefComplaintSection)value, diagnostics, context);
+			case CDTPackage.PROGRESS_NOTE:
+				return validateProgressNote((ProgressNote)value, diagnostics, context);
+			case CDTPackage.ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE:
+				return validateAssessmentAndPlanSectionProcNote((AssessmentAndPlanSectionProcNote)value, diagnostics, context);
+			case CDTPackage.ASSESSMENT_SECTION_PROC_NOTE:
+				return validateAssessmentSectionProcNote((AssessmentSectionProcNote)value, diagnostics, context);
+			case CDTPackage.CHIEF_COMPLAINT_SECTION_PROC_NOTE:
+				return validateChiefComplaintSectionProcNote((ChiefComplaintSectionProcNote)value, diagnostics, context);
+			case CDTPackage.OBJECTIVE_SECTION:
+				return validateObjectiveSection((ObjectiveSection)value, diagnostics, context);
+			case CDTPackage.SUBJECTIVE_SECTION:
+				return validateSubjectiveSection((SubjectiveSection)value, diagnostics, context);
 			case CDTPackage.CDT_REGISTRY_DELEGATE:
 				return validateCDTRegistryDelegate((CDTRegistryDelegate)value, diagnostics, context);
 			default:
@@ -1860,6 +2182,569 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateProgressNote(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeIdExtension(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateGeneralHeaderConstraintsTemplateId(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateGeneralHeaderConstraintsCode(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsConfidentialityCode(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsId(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLanguageCode(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRealmCode(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTitle(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeId(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteAssessmentAndPlan(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteBothAssessmentAndPlan(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasServiceEvent(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasServiceEventCode(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasServiceEventEffectiveTime(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasComponentOfElement(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasEncompassingEncounterId(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasEncompassingEncounterEffectiveTime(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasEncompassingEncounterEffectiveTimeLow(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteHasEncompassingEncounterFacilityId(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteAlertsSection(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteChiefComplaintSectionProcNote(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteMedicationsSection(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteObjectiveSection(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNotePhysicalExaminationSection(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteProblemSection(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteResultsSection(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteVitalSignsSection(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteReviewOfSystemsSectionIHE(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgressNote_validateProgressNoteSubjectiveSection(progressNote, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateProgressNoteAssessmentAndPlan constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteAssessmentAndPlan(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteAssessmentAndPlan(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteBothAssessmentAndPlan constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteBothAssessmentAndPlan(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteBothAssessmentAndPlan(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasServiceEvent constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasServiceEvent(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasServiceEvent(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasServiceEventCode constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasServiceEventCode(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasServiceEventCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasServiceEventEffectiveTime constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasServiceEventEffectiveTime(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasServiceEventEffectiveTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasComponentOfElement constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasComponentOfElement(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasComponentOfElement(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasEncompassingEncounterId constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasEncompassingEncounterId(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasEncompassingEncounterId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasEncompassingEncounterEffectiveTime constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasEncompassingEncounterEffectiveTime(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasEncompassingEncounterEffectiveTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasEncompassingEncounterEffectiveTimeLow constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasEncompassingEncounterEffectiveTimeLow(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasEncompassingEncounterEffectiveTimeLow(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteHasEncompassingEncounterFacilityId constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteHasEncompassingEncounterFacilityId(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteHasEncompassingEncounterFacilityId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteAlertsSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteAlertsSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteAlertsSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteChiefComplaintSectionProcNote constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteChiefComplaintSectionProcNote(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteChiefComplaintSectionProcNote(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteMedicationsSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteMedicationsSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteMedicationsSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteObjectiveSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteObjectiveSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteObjectiveSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNotePhysicalExaminationSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNotePhysicalExaminationSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNotePhysicalExaminationSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteProblemSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteProblemSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteProblemSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteResultsSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteResultsSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteResultsSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteVitalSignsSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteVitalSignsSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteVitalSignsSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteReviewOfSystemsSectionIHE constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteReviewOfSystemsSectionIHE(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteReviewOfSystemsSectionIHE(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProgressNoteSubjectiveSection constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateProgressNoteSubjectiveSection(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return progressNote.validateProgressNoteSubjectiveSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsTemplateId constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateGeneralHeaderConstraintsTemplateId(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateGeneralHeaderConstraintsTemplateId", getObjectLabel(progressNote, context) },
+						 new Object[] { progressNote },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(progressNote, diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsCode constraint of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgressNote_validateGeneralHeaderConstraintsCode(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateGeneralHeaderConstraintsCode", getObjectLabel(progressNote, context) },
+						 new Object[] { progressNote },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(progressNote, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssessmentAndPlanSectionProcNote(AssessmentAndPlanSectionProcNote assessmentAndPlanSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssessmentAndPlanSectionProcNote_validateAssessmentAndPlanSectionProcNoteTemplateId(assessmentAndPlanSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssessmentAndPlanSectionProcNote_validateAssessmentAndPlanSectionProcNoteCode(assessmentAndPlanSectionProcNote, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateAssessmentAndPlanSectionProcNoteTemplateId constraint of '<em>Assessment And Plan Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssessmentAndPlanSectionProcNote_validateAssessmentAndPlanSectionProcNoteTemplateId(AssessmentAndPlanSectionProcNote assessmentAndPlanSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assessmentAndPlanSectionProcNote.validateAssessmentAndPlanSectionProcNoteTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateAssessmentAndPlanSectionProcNoteCode constraint of '<em>Assessment And Plan Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssessmentAndPlanSectionProcNote_validateAssessmentAndPlanSectionProcNoteCode(AssessmentAndPlanSectionProcNote assessmentAndPlanSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assessmentAndPlanSectionProcNote.validateAssessmentAndPlanSectionProcNoteCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssessmentSectionProcNote(AssessmentSectionProcNote assessmentSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssessmentSectionProcNote_validateAssessmentSectionProcNoteTemplateId(assessmentSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssessmentSectionProcNote_validateAssessmentSectionProcNoteCode(assessmentSectionProcNote, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateAssessmentSectionProcNoteTemplateId constraint of '<em>Assessment Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssessmentSectionProcNote_validateAssessmentSectionProcNoteTemplateId(AssessmentSectionProcNote assessmentSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assessmentSectionProcNote.validateAssessmentSectionProcNoteTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateAssessmentSectionProcNoteCode constraint of '<em>Assessment Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssessmentSectionProcNote_validateAssessmentSectionProcNoteCode(AssessmentSectionProcNote assessmentSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assessmentSectionProcNote.validateAssessmentSectionProcNoteCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChiefComplaintSectionProcNote(ChiefComplaintSectionProcNote chiefComplaintSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateChiefComplaintSectionProcNote_validateChiefComplaintSectionProcNoteTemplateId(chiefComplaintSectionProcNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateChiefComplaintSectionProcNote_validateChiefComplaintSectionProcNoteCode(chiefComplaintSectionProcNote, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateChiefComplaintSectionProcNoteTemplateId constraint of '<em>Chief Complaint Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChiefComplaintSectionProcNote_validateChiefComplaintSectionProcNoteTemplateId(ChiefComplaintSectionProcNote chiefComplaintSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return chiefComplaintSectionProcNote.validateChiefComplaintSectionProcNoteTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateChiefComplaintSectionProcNoteCode constraint of '<em>Chief Complaint Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChiefComplaintSectionProcNote_validateChiefComplaintSectionProcNoteCode(ChiefComplaintSectionProcNote chiefComplaintSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return chiefComplaintSectionProcNote.validateChiefComplaintSectionProcNoteCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectiveSection(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateObjectiveSection_validateObjectiveSectionHasClinicalStatements(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateObjectiveSection_validateObjectiveSectionTemplateId(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateObjectiveSection_validateObjectiveSectionCode(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateObjectiveSection_validateObjectiveSectionText(objectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateObjectiveSection_validateObjectiveSectionTitle(objectiveSection, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateObjectiveSectionHasClinicalStatements constraint of '<em>Objective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectiveSection_validateObjectiveSectionHasClinicalStatements(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return objectiveSection.validateObjectiveSectionHasClinicalStatements(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateObjectiveSectionTemplateId constraint of '<em>Objective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectiveSection_validateObjectiveSectionTemplateId(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return objectiveSection.validateObjectiveSectionTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateObjectiveSectionCode constraint of '<em>Objective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectiveSection_validateObjectiveSectionCode(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return objectiveSection.validateObjectiveSectionCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateObjectiveSectionText constraint of '<em>Objective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectiveSection_validateObjectiveSectionText(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return objectiveSection.validateObjectiveSectionText(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateObjectiveSectionTitle constraint of '<em>Objective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectiveSection_validateObjectiveSectionTitle(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return objectiveSection.validateObjectiveSectionTitle(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubjectiveSection(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSubjectiveSection_validateSubjectiveSectionHasClinicalStatements(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSubjectiveSection_validateSubjectiveSectionTemplateId(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSubjectiveSection_validateSubjectiveSectionCode(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSubjectiveSection_validateSubjectiveSectionText(subjectiveSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSubjectiveSection_validateSubjectiveSectionTitle(subjectiveSection, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateSubjectiveSectionHasClinicalStatements constraint of '<em>Subjective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubjectiveSection_validateSubjectiveSectionHasClinicalStatements(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return subjectiveSection.validateSubjectiveSectionHasClinicalStatements(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateSubjectiveSectionTemplateId constraint of '<em>Subjective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubjectiveSection_validateSubjectiveSectionTemplateId(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return subjectiveSection.validateSubjectiveSectionTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateSubjectiveSectionCode constraint of '<em>Subjective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubjectiveSection_validateSubjectiveSectionCode(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return subjectiveSection.validateSubjectiveSectionCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateSubjectiveSectionText constraint of '<em>Subjective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubjectiveSection_validateSubjectiveSectionText(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return subjectiveSection.validateSubjectiveSectionText(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateSubjectiveSectionTitle constraint of '<em>Subjective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubjectiveSection_validateSubjectiveSectionTitle(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return subjectiveSection.validateSubjectiveSectionTitle(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateHistoryOfPresentIllness(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validate_EveryMultiplicityConforms(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(historyOfPresentIllness, diagnostics, context);
@@ -2109,7 +2994,7 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(pastMedicalHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePastMedicalHistorySection_validatePastMedicalHistorySectionClinicalStatements(pastMedicalHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePastMedicalHistorySection_validatePastMedicalHistorySectionHasClinicalStatements(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePastMedicalHistorySection_validatePastMedicalHistorySectionTemplateId(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePastMedicalHistorySection_validatePastMedicalHistorySectionCode(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePastMedicalHistorySection_validatePastMedicalHistorySectionText(pastMedicalHistorySection, diagnostics, context);
@@ -2117,13 +3002,13 @@ public class CDTValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validatePastMedicalHistorySectionClinicalStatements constraint of '<em>Past Medical History Section</em>'.
+	 * Validates the validatePastMedicalHistorySectionHasClinicalStatements constraint of '<em>Past Medical History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePastMedicalHistorySection_validatePastMedicalHistorySectionClinicalStatements(PastMedicalHistorySection pastMedicalHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return pastMedicalHistorySection.validatePastMedicalHistorySectionClinicalStatements(diagnostics, context);
+	public boolean validatePastMedicalHistorySection_validatePastMedicalHistorySectionHasClinicalStatements(PastMedicalHistorySection pastMedicalHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return pastMedicalHistorySection.validatePastMedicalHistorySectionHasClinicalStatements(diagnostics, context);
 	}
 
 	/**

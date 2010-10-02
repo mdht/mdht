@@ -12,11 +12,14 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote;
 import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
@@ -26,16 +29,19 @@ import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
+import org.openhealthtools.mdht.uml.cda.cdt.ObjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ProgressNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitAndChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
+import org.openhealthtools.mdht.uml.cda.cdt.SubjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 
 /**
@@ -105,6 +111,12 @@ public class CDTFactoryImpl extends EFactoryImpl implements CDTFactory {
 			case CDTPackage.REASON_FOR_VISIT_SECTION: return createReasonForVisitSection();
 			case CDTPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
 			case CDTPackage.REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION: return createReasonForVisitAndChiefComplaintSection();
+			case CDTPackage.PROGRESS_NOTE: return createProgressNote();
+			case CDTPackage.ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE: return createAssessmentAndPlanSectionProcNote();
+			case CDTPackage.ASSESSMENT_SECTION_PROC_NOTE: return createAssessmentSectionProcNote();
+			case CDTPackage.CHIEF_COMPLAINT_SECTION_PROC_NOTE: return createChiefComplaintSectionProcNote();
+			case CDTPackage.OBJECTIVE_SECTION: return createObjectiveSection();
+			case CDTPackage.SUBJECTIVE_SECTION: return createSubjectiveSection();
 			case CDTPackage.CDT_REGISTRY_DELEGATE: return createCDTRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -199,6 +211,66 @@ public class CDTFactoryImpl extends EFactoryImpl implements CDTFactory {
 	public ReasonForVisitAndChiefComplaintSection createReasonForVisitAndChiefComplaintSection() {
 		ReasonForVisitAndChiefComplaintSectionImpl reasonForVisitAndChiefComplaintSection = new ReasonForVisitAndChiefComplaintSectionImpl();
 		return reasonForVisitAndChiefComplaintSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProgressNote createProgressNote() {
+		ProgressNoteImpl progressNote = new ProgressNoteImpl();
+		return progressNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssessmentAndPlanSectionProcNote createAssessmentAndPlanSectionProcNote() {
+		AssessmentAndPlanSectionProcNoteImpl assessmentAndPlanSectionProcNote = new AssessmentAndPlanSectionProcNoteImpl();
+		return assessmentAndPlanSectionProcNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssessmentSectionProcNote createAssessmentSectionProcNote() {
+		AssessmentSectionProcNoteImpl assessmentSectionProcNote = new AssessmentSectionProcNoteImpl();
+		return assessmentSectionProcNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChiefComplaintSectionProcNote createChiefComplaintSectionProcNote() {
+		ChiefComplaintSectionProcNoteImpl chiefComplaintSectionProcNote = new ChiefComplaintSectionProcNoteImpl();
+		return chiefComplaintSectionProcNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ObjectiveSection createObjectiveSection() {
+		ObjectiveSectionImpl objectiveSection = new ObjectiveSectionImpl();
+		return objectiveSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubjectiveSection createSubjectiveSection() {
+		SubjectiveSectionImpl subjectiveSection = new SubjectiveSectionImpl();
+		return subjectiveSection;
 	}
 
 	/**

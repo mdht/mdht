@@ -107,6 +107,60 @@ public interface CDTFactory extends EFactory {
 	ReasonForVisitAndChiefComplaintSection createReasonForVisitAndChiefComplaintSection();
 
 	/**
+	 * Returns a new object of class '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Progress Note</em>'.
+	 * @generated
+	 */
+	ProgressNote createProgressNote();
+
+	/**
+	 * Returns a new object of class '<em>Assessment And Plan Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assessment And Plan Section Proc Note</em>'.
+	 * @generated
+	 */
+	AssessmentAndPlanSectionProcNote createAssessmentAndPlanSectionProcNote();
+
+	/**
+	 * Returns a new object of class '<em>Assessment Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assessment Section Proc Note</em>'.
+	 * @generated
+	 */
+	AssessmentSectionProcNote createAssessmentSectionProcNote();
+
+	/**
+	 * Returns a new object of class '<em>Chief Complaint Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Chief Complaint Section Proc Note</em>'.
+	 * @generated
+	 */
+	ChiefComplaintSectionProcNote createChiefComplaintSectionProcNote();
+
+	/**
+	 * Returns a new object of class '<em>Objective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Objective Section</em>'.
+	 * @generated
+	 */
+	ObjectiveSection createObjectiveSection();
+
+	/**
+	 * Returns a new object of class '<em>Subjective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Subjective Section</em>'.
+	 * @generated
+	 */
+	SubjectiveSection createSubjectiveSection();
+
+	/**
 	 * Returns a new object of class '<em>History Of Present Illness</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

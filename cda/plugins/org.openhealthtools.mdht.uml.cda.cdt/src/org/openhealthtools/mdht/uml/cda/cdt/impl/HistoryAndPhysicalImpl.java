@@ -289,8 +289,8 @@ public class HistoryAndPhysicalImpl extends GeneralHeaderConstraintsImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReviewOfSystemsSectionIHE getReviewOfSystemsSectionIHE() {
-		return HistoryAndPhysicalOperations.getReviewOfSystemsSectionIHE(this);
+	public ReviewOfSystemsSectionIHE getReviewOfSystemsSection() {
+		return HistoryAndPhysicalOperations.getReviewOfSystemsSection(this);
 	}
 
 	/**

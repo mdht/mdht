@@ -67,7 +67,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.util.CDTValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getAlertsSection() <em>Get Alerts Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getSocialHistorySection() <em>Get Social History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getFamilyHistorySection() <em>Get Family History Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getReviewOfSystemsSectionIHE() <em>Get Review Of Systems Section IHE</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getReviewOfSystemsSection() <em>Get Review Of Systems Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getPhysicalExaminationSection() <em>Get Physical Examination Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getVitalSignsSection() <em>Get Vital Signs Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical#getGeneralStatusSection() <em>Get General Status Section</em>}</li>
@@ -1438,24 +1438,24 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getReviewOfSystemsSectionIHE(HistoryAndPhysical) <em>Get Review Of Systems Section IHE</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getReviewOfSystemsSection(HistoryAndPhysical) <em>Get Review Of Systems Section</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReviewOfSystemsSectionIHE(HistoryAndPhysical)
+	 * @see #getReviewOfSystemsSection(HistoryAndPhysical)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_REVIEW_OF_SYSTEMS_SECTION_IHE__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSectionIHE))->asSequence()->first().oclAsType(cdt::ReviewOfSystemsSectionIHE)";
+	protected static final String GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSectionIHE))->asSequence()->first().oclAsType(cdt::ReviewOfSystemsSectionIHE)";
 
 	/**
-	 * The cached OCL query for the '{@link #getReviewOfSystemsSectionIHE(HistoryAndPhysical) <em>Get Review Of Systems Section IHE</em>}' query operation.
+	 * The cached OCL query for the '{@link #getReviewOfSystemsSection(HistoryAndPhysical) <em>Get Review Of Systems Section</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReviewOfSystemsSectionIHE(HistoryAndPhysical)
+	 * @see #getReviewOfSystemsSection(HistoryAndPhysical)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_REVIEW_OF_SYSTEMS_SECTION_IHE__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1466,18 +1466,18 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  ReviewOfSystemsSectionIHE getReviewOfSystemsSectionIHE(HistoryAndPhysical historyAndPhysical) {
-		if (GET_REVIEW_OF_SYSTEMS_SECTION_IHE__EOCL_QRY == null) {
+	public static  ReviewOfSystemsSectionIHE getReviewOfSystemsSection(HistoryAndPhysical historyAndPhysical) {
+		if (GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(58));
 			try {
-				GET_REVIEW_OF_SYSTEMS_SECTION_IHE__EOCL_QRY = helper.createQuery(GET_REVIEW_OF_SYSTEMS_SECTION_IHE__EOCL_EXP);
+				GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY = helper.createQuery(GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_REVIEW_OF_SYSTEMS_SECTION_IHE__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY);
 		return (ReviewOfSystemsSectionIHE) query.evaluate(historyAndPhysical);
 	}
 
