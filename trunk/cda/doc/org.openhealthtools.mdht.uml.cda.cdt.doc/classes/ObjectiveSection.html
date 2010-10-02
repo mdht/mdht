@@ -7,16 +7,16 @@
 <meta name="copyright" content="(C) Copyright 2005"/>
 <meta name="DC.rights.owner" content="(C) Copyright 2005"/>
 <meta name="DC.Type" content="topic"/>
-<meta name="DC.Title" content="History Of Present Illness"/>
-<meta name="abstract" content="[Section: templateId 1.3.6.1.4.1.19376.1.5.3.1.3.4]"/>
-<meta name="description" content="[Section: templateId 1.3.6.1.4.1.19376.1.5.3.1.3.4]"/>
+<meta name="DC.Title" content="Objective Section"/>
+<meta name="abstract" content="[Section: templateId 2.16.840.1.113883.10.20.21.2.1]"/>
+<meta name="description" content="[Section: templateId 2.16.840.1.113883.10.20.21.2.1]"/>
 <meta name="DC.Coverage" content="Section"/>
 <meta name="DC.Relation" scheme="URI" content="../content/SectionTemplates.html"/>
 <meta name="DC.Format" content="XHTML"/>
 <meta name="DC.Identifier" content="classId"/>
 <meta name="DC.Language" content="en-us"/>
 <link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
-<title>History Of Present Illness</title>
+<title>Objective Section</title>
 </head>
 <body id="classId"><a name="classId"><!-- --></a>
 <div>
@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">History Of Present Illness</h1>
+<h1 class="topictitle1">Objective Section</h1>
 
 
 
-<div><p>[Section: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.3.4</tt>]</p>
+<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.21.2.1</tt>]</p>
 
 
 <div class="section">
-<p>Conforms to IHE PCC template.</p>
+<p>The Objective section contains directly observed and/or quantifiable data about the patient. It includes important and relevant positive and negative test results, and physical findings.</p>
 
 </div>
 
@@ -40,12 +40,18 @@
 <ol>
 <li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10164-2" <em>HISTORY OF PRESENT ILLNESS</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><strong>CONF-PRGN-25: </strong><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "OBJEC-X" <em>OBJECTIVE DATA</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+
+<li><strong>CONF-PRGN-15: </strong><strong>SHALL</strong> contain [1..1] <tt>text</tt></li>
+
+<li><strong>CONF-PRGN-14: </strong><strong>SHALL</strong> contain [1..1] <tt>title</tt></li>
+
+<li><strong>CONF-PRGN-15: </strong><strong>SHOULD</strong> satisfy: Contains clinical statements.</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. History Of Present Illness example</span>
+<div class="fignone"><span class="figcap">Figure 1. Objective Section example</span>
 
 
 
@@ -55,9 +61,9 @@
     &lt;structuredBody&gt;
       &lt;component&gt;
         &lt;section&gt;
-          &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.4" assigningAuthorityName="IHE History Of Present Illness"/&gt;
-          &lt;code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PRESENT ILLNESS"/&gt;
-          &lt;title&gt;HISTORY OF PRESENT ILLNESS&lt;/title&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.21.2.1" assigningAuthorityName="CDT Objective Section"/&gt;
+          &lt;code code="OBJEC-X" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="OBJECTIVE DATA"/&gt;
+          &lt;title&gt;OBJECTIVE DATA&lt;/title&gt;
         &lt;/section&gt;
       &lt;/component&gt;
     &lt;/structuredBody&gt;
