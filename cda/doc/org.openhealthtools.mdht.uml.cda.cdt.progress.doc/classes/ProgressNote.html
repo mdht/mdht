@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Progress Note"/>
+<meta name="abstract" content="[ClinicalDocument: templateId 2.16.840.1.113883.10.20.21.1]"/>
+<meta name="description" content="[ClinicalDocument: templateId 2.16.840.1.113883.10.20.21.1]"/>
+<meta name="DC.Coverage" content="ClinicalDocument"/>
+<meta name="DC.Relation" scheme="URI" content="../content/DocumentTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Progress Note</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Progress Note</h1>
+
+
+
+<div><p>[ClinicalDocument: templateId <tt>2.16.840.1.113883.10.20.21.1</tt>]</p>
+
+
+<div class="section">
+<p>A Progress Note documents a patient's clinical status during a hospitalization or outpatient visit.</p>
+
+<p>Taber's  medical dictionary defines a Progress Note as "An ongoing record of a patient's illness and treatment. Physicians, nurses, consultants, and therapists record their notes concerning the progress or lack of progress made by the patient between the time of the previous note and the most recent note."</p>
+
+<p>Mosby's  medical dictionary defines a Progress Note as "Notes made by a nurse, physician, social worker, physical therapist, and other health care professionals that describe the patient's condition and the treatment given or planned."</p>
+
+</div>
+
+
+<ol>
+<li>Conforms to <a href="GeneralHeaderConstraints.html" title="[ClinicalDocument: templateId 2.16.840.1.113883.10.20.3]">General Header Constraints</a> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
+
+<li><strong>CONF-PRGN-3: </strong><strong>SHALL</strong> contain [1..1] <tt>code</tt>, which <strong>SHALL</strong> be selected from ValueSet 2.16.840.1.113883.11.20.8.1 <a href="../terminology/ProgressNoteDocumentTypeCode.html" title="[OID 2.16.840.1.113883.11.20.8.1 from code system: LOINC]">ProgressNoteDocumentTypeCode</a> DYNAMIC</li>
+
+<li>Contains [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="AssessmentAndPlanSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.14]">Assessment And Plan Section Proc Note</a> (templateId: <tt>2.16.840.1.113883.10.20.18.2.14</tt>)</li>
+</ol>
+</li>
+
+<li>Contains [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="AssessmentSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.13]">Assessment Section Proc Note</a> (templateId: <tt>2.16.840.1.113883.10.20.18.2.13</tt>)</li>
+</ol>
+</li>
+
+<li>Contains [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-21: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-22: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="ChiefComplaintSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.16]">Chief Complaint Section Proc Note</a> (templateId: <tt>2.16.840.1.113883.10.20.18.2.16</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-23: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-24: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="ObjectiveSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.21.2.1]">Objective Section</a> (templateId: <tt>2.16.840.1.113883.10.20.21.2.1</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-26: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="PhysicalExaminationSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.10]">Physical Examination Section</a> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-27: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-28: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-29: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="VitalSignsSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.4]">Vital Signs Section</a> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-30: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="ReviewOfSystemsSectionIHE.html" title="[Section: templateId 1.3.6.1.4.1.19376.1.5.3.1.3.18]">Review Of Systems Section IHE</a> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PRGN-31: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
+<li>contains <a href="SubjectiveSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.21.2.2]">Subjective Section</a> (templateId: <tt>2.16.840.1.113883.10.20.21.2.2</tt>)</li>
+</ol>
+</li>
+
+<li><strong>CONF-PN-45: </strong><strong>SHALL</strong> satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections.</li>
+
+<li><strong>CONF-PN-44: </strong><strong>SHALL</strong> satisfy: When Assessment section or Plan section is included, then both sections SHALL be included.</li>
+
+<li><strong>CONF-PRGN-4: </strong><strong>SHOULD</strong> satisfy: Contains a serviceEvent element.</li>
+
+<li><strong>CONF-PRGN-5: </strong><strong>SHALL</strong> satisfy: The documentationOf/serviceEvent/code SHALL be 371532007 Progress Report 2.16.840.1.113883.6.96 SNOMED CT STATIC.</li>
+
+<li><strong>CONF-PRGN-6: </strong><strong>SHOULD</strong> satisfy: The serviceEvent/effectiveTime element SHOULD be present with effectiveTime/low element and SHALL include effectiveTime/high element if a width element is not present. The serviceEvent/effectiveTime element SHALLL be accurate to the day, and MAY be accurate to the second.</li>
+
+<li><strong>CONF-PRGN-7: </strong><strong>SHALL</strong> satisfy: Contains componentOf element.</li>
+
+<li><strong>CONF-PRGN-8: </strong><strong>SHALL</strong> satisfy: The encompassingEncounter has an 'id' element.</li>
+
+<li><strong>CONF-PRGN-9: </strong><strong>SHALL</strong> satisfy: The encompassingEncounter has an effectiveTime element.</li>
+
+<li><strong>CONF-PRGN-10: </strong><strong>SHALL</strong> satisfy: The encompassingEncounter has an effectiveTime/low element.</li>
+
+<li><strong>CONF-PRGN-11: </strong><strong>SHOULD</strong> satisfy: The encompassingEncounter element has an encompassingEncounter/location/healthCareFacility/id element.</li>
+
+</ol>
+
+
+<div class="fignone"><span class="figcap">Figure 1. Progress Note example</span>
+
+
+
+<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
+  &lt;realmCode code="US"/&gt;
+  &lt;templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/&gt;
+  &lt;templateId root="2.16.840.1.113883.10.20.21.1" assigningAuthorityName="CDT Progress Note"/&gt;
+  &lt;id root="563317d3-8acc-446d-8f0a-fc86c617441a"/&gt;
+  &lt;code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/&gt;
+  &lt;title/&gt;
+  &lt;effectiveTime/&gt;
+  &lt;confidentialityCode/&gt;
+  &lt;languageCode/&gt;
+  &lt;component&gt;
+    &lt;structuredBody&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.18.2.14" assigningAuthorityName="CDT Assessment And Plan Section Proc Note"/&gt;
+          &lt;code code="51847-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ASSESSMENT AND PLAN"/&gt;
+          &lt;title&gt;ASSESSMENT AND PLAN&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.18.2.13" assigningAuthorityName="CDT Assessment Section Proc Note"/&gt;
+          &lt;code code="51848-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ASSESSMENT"/&gt;
+          &lt;title&gt;ASSESSMENT&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.1.10" assigningAuthorityName="CCD Plan Of Care Section"/&gt;
+          &lt;code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Treatment plan"/&gt;
+          &lt;title&gt;Treatment plan&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.1.2" assigningAuthorityName="CCD Alerts Section"/&gt;
+          &lt;code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/&gt;
+          &lt;title&gt;Allergies, adverse reactions, alerts&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.18.2.16" assigningAuthorityName="CDT Chief Complaint Section Proc Note"/&gt;
+          &lt;code code="10154-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CHIEF COMPLAINT"/&gt;
+          &lt;title&gt;CHIEF COMPLAINT&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.1.8" assigningAuthorityName="CCD Medications Section"/&gt;
+          &lt;code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use"/&gt;
+          &lt;title&gt;History of medication use&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.21.2.1" assigningAuthorityName="CDT Objective Section"/&gt;
+          &lt;code code="OBJEC-X" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="OBJECTIVE DATA"/&gt;
+          &lt;title&gt;OBJECTIVE DATA&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.2.10" assigningAuthorityName="CDT Physical Examination Section"/&gt;
+          &lt;code code="29545-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PHYSICAL FINDINGS"/&gt;
+          &lt;title&gt;PHYSICAL FINDINGS&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.1.11" assigningAuthorityName="CCD Problem Section"/&gt;
+          &lt;code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/&gt;
+          &lt;title&gt;Problem list&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.1.14" assigningAuthorityName="CCD Results Section"/&gt;
+          &lt;code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/&gt;
+          &lt;title&gt;Relevant diagnostic tests and/or laboratory data&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.2.4" assigningAuthorityName="CDT Vital Signs Section"/&gt;
+          &lt;code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="VITAL SIGNS"/&gt;
+          &lt;title&gt;VITAL SIGNS&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.18" assigningAuthorityName="IHE Review Of Systems Section"/&gt;
+          &lt;code code="10187-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REVIEW OF SYSTEMS"/&gt;
+          &lt;title&gt;REVIEW OF SYSTEMS&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.21.2.2" assigningAuthorityName="CDT Subjective Section"/&gt;
+          &lt;code code="SUBJ-X" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SUBJECTIVE DATA"/&gt;
+          &lt;title&gt;SUBJECTIVE DATA&lt;/title&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+    &lt;/structuredBody&gt;
+  &lt;/component&gt;
+&lt;/ClinicalDocument&gt;</pre>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/DocumentTemplates.html">DOCUMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>
