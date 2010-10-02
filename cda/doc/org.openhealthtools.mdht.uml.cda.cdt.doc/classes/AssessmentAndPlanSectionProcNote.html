@@ -7,16 +7,16 @@
 <meta name="copyright" content="(C) Copyright 2005"/>
 <meta name="DC.rights.owner" content="(C) Copyright 2005"/>
 <meta name="DC.Type" content="topic"/>
-<meta name="DC.Title" content="Assessment Section"/>
-<meta name="abstract" content="[Section: templateId 2.16.840.1.113883.10.20.2.7]"/>
-<meta name="description" content="[Section: templateId 2.16.840.1.113883.10.20.2.7]"/>
+<meta name="DC.Title" content="Assessment And Plan Section Proc Note"/>
+<meta name="abstract" content="[Section: templateId 2.16.840.1.113883.10.20.18.2.14]"/>
+<meta name="description" content="[Section: templateId 2.16.840.1.113883.10.20.18.2.14]"/>
 <meta name="DC.Coverage" content="Section"/>
 <meta name="DC.Relation" scheme="URI" content="../content/SectionTemplates.html"/>
 <meta name="DC.Format" content="XHTML"/>
 <meta name="DC.Identifier" content="classId"/>
 <meta name="DC.Language" content="en-us"/>
 <link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
-<title>Assessment Section</title>
+<title>Assessment And Plan Section Proc Note</title>
 </head>
 <body id="classId"><a name="classId"><!-- --></a>
 <div>
@@ -24,15 +24,17 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Assessment Section</h1>
+<h1 class="topictitle1">Assessment And Plan Section Proc Note</h1>
 
 
 
-<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.2.7</tt>]</p>
+<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.18.2.14</tt>]</p>
 
 
 <div class="section">
 <p>The Assessment section (also called impression or diagnoses) represents the clinician's conclusions and working assumptions that will guide treatment of the patient. The assessment formulates a specific plan or set of recommendations. The assessment may be a list of specific disease entities or a narrative block.</p>
+
+<p>The Plan section contains data that defines pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed unless constrained due to privacy issues. The plan may also contain information about ongoing care of the patient and information regarding goals and clinical reminders. Clinical reminders are placed here to provide prompts for disease prevention and management, patient safety, and health-care quality improvements, including widely accepted performance measures. The plan may also indicate that patient education was given or will be provided.</p>
 
 </div>
 
@@ -40,12 +42,12 @@
 <ol>
 <li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li><strong>CONF-HP-91: </strong><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "51848-0" <em>Assessment</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><strong>CONF-PN-46: </strong><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "51847-2" <em>ASSESSMENT AND PLAN</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Assessment Section example</span>
+<div class="fignone"><span class="figcap">Figure 1. Assessment And Plan Section Proc Note example</span>
 
 
 
@@ -55,9 +57,9 @@
     &lt;structuredBody&gt;
       &lt;component&gt;
         &lt;section&gt;
-          &lt;templateId root="2.16.840.1.113883.10.20.2.7"/&gt;
-          &lt;code code="51848-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Assessment"/&gt;
-          &lt;title&gt;Assessment&lt;/title&gt;
+          &lt;templateId root="2.16.840.1.113883.10.20.18.2.14" assigningAuthorityName="CDT Assessment And Plan Section Proc Note"/&gt;
+          &lt;code code="51847-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ASSESSMENT AND PLAN"/&gt;
+          &lt;title&gt;ASSESSMENT AND PLAN&lt;/title&gt;
         &lt;/section&gt;
       &lt;/component&gt;
     &lt;/structuredBody&gt;

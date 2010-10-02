@@ -5,4 +5,6 @@
    <topic label="HP Document Type" href="HPDocumentType.html"/>
    <topic label="Personal Relationship Role Type"
           href="PersonalRelationshipRoleType.html"/>
+   <topic label="Progress Note Document Type Code"
+          href="ProgressNoteDocumentTypeCode.html"/>
 </toc>

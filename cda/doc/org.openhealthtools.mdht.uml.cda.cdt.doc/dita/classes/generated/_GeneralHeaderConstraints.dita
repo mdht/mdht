@@ -63,7 +63,7 @@ wherever these general header constraints are applied.</p>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
   <realmCode code="US"/>
   <templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/>
-  <id root="86f1f1b2-359f-4b50-8c83-1baa88e76d94"/>
+  <id root="8f7cc158-226a-40b0-8dc8-a6fe8543393b"/>
   <code/>
   <title/>
   <effectiveTime/>
