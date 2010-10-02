@@ -50,8 +50,8 @@ public class PastMedicalHistorySectionImpl extends SectionImpl implements PastMe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePastMedicalHistorySectionClinicalStatements(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PastMedicalHistorySectionOperations.validatePastMedicalHistorySectionClinicalStatements(this, diagnostics, context);
+	public boolean validatePastMedicalHistorySectionHasClinicalStatements(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PastMedicalHistorySectionOperations.validatePastMedicalHistorySectionHasClinicalStatements(this, diagnostics, context);
 	}
 
 	/**

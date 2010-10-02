@@ -1,0 +1,505 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
+<!--
+	Title: Progress Note sample report
+	Original Filename: Progress_Note_Development_Sample.xml
+	Version: 1.0
+	Revision History: 
+	07/28/2010 bam created 
+	
+	Specification: HL7 CDAR2_IG_PROGNOTE_R1_BALLOT_2010SEP
+	
+	This sample document was created by Alschuler Associates, LLC, 
+	on behalf of the HL7 Structured Documents Working Group and the
+	Health Story Project
+	
+	For more information on Health Story please see 
+	www.healthstory.com
+	For more information on the "HL7 Implementation Guide for CDA 
+	Release 2: Progress Note" see www.hl7.org, Structured Documents
+	Working Group
+-->
+
+
+<!-- (CONF-HP-2) Namespace Requirement  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+
+	<!--
+********************************************************
+  CDA Header
+********************************************************
+	-->
+
+	<!--(CONF HP-15) Requires US-realm  -->
+	<realmCode code="US"/>
+	<!--(CONF HP-16) Requires typeId of  root="2.16.840.1.113883.1.3" and extension="POCD_HD000040"-->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+
+	<!--(CONF PRGN-1) Conforms to the common header -->
+	<templateId root="2.16.840.1.113883.10.20.3"/>
+
+	<!-- (CONF PRGN-2) Conforms to the Progress Note-->
+	<templateId root="2.16.840.1.113883.10.20.21.1"/>
+
+	<!--(CONF HP-17-20) Requires id element and synatically correct UUID or OID  -->
+	<!-- IHE requires id  -->
+	<id extension="999021" root="2.16.840.1.113883.19"/>
+
+	<!--(CONF HP-21) Requires code element specifying type of document -->
+	<!--(CONF PRGN-3) Requires document type code for Progress Note-->
+	<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="11506-3"
+		displayName="Progress Note"/>
+
+	<!--(CONF HP-22) Requires a title element specifying local name of  document -->
+	<title>Progress Note</title>
+
+	<!--(CONF HP-23) Requires effectiveTime be present precise to the second -->
+	<effectiveTime value="20050303171504+0500"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+
+	<!--(CONF HP-24-27) Requires languageCode be present in appropraite format-->
+	<languageCode code="en-US"/>
+
+	<!--(CONF HP-28-29) Requires presence/absence of both setId and versionNumber -->
+	<setId extension="111199021" root="2.16.840.1.113883.19"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<!--(CONF HP-31) Requires at lease one patientRole -->
+		<patientRole>
+			<id extension="12345" root="2.16.840.1.113883.19.5"/>
+			<!--(CONF-HP-7)Requires addr/telecom elements for patientRole, assignedAuthor, assignedEntity[not(parent::dataEnterer)] and associatedEntity -->
+			<addr>
+				<streetAddressLine>17 Daws Rd.</streetAddressLine>
+				<city>Blue Bell</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(781)555-1212" use="HP"/>
+			<patient>
+				<!--(CONF-HP-6) Requires a name element for patient, guardianPerson, assignedPerson, maintainingPerson, relatedPerson, intendedRecipient/informationRecipient, associatedPerson, and relatedSubject/subject patient,  -->
+				<name>
+					<given>Adam</given>
+					<family>Everyman</family>
+				</name>
+
+				<!--(CONF HP-33) Requires administrativeGenderCode be present and nullFlavor if unknown  -->
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<!--(CONF HP-32) Requires birthTime-->
+				<birthTime value="19541125"/>
+				<guardian>
+					<id extension="23456" root="2.16.840.1.113883.19.5"/>
+					<addr>
+						<streetAddressLine>17 Daws Rd.</streetAddressLine>
+						<city>Blue Bell</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>USA</country>
+					</addr>
+					<!--(CONF-HP-12) Requires telecom number to match pattern  tel:\+?[-0-9().]+-->
+					<!--(CONF-HP-13) Requires telecom number to contain at lease one digit after visual separators removed-->
+					<!--(CONF-HP-13) Requires telecom number to contain approriate nullFlavor if unknown-->
+					<telecom value="tel:(555)555-2004" use="HP"/>
+					<guardianPerson>
+						<name>
+							<given>Ralph</given>
+							<family>Relative</family>
+						</name>
+					</guardianPerson>
+				</guardian>
+			</patient>
+			<providerOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<!--(CONF-HP-9) Requires a name, addr and telecom for guardianOrganization, providerOrganization, wholeOrganization, representedOrganization, representedCustodianOrganization, receivedOrganization, scopingOrganization and serviceProviderOrganization -->
+				<name>Good Health Clinic</name>
+				<telecom value="tel:(555)555-1212" use="WP"/>
+				<addr>
+					<streetAddressLine>21 North Ave</streetAddressLine>
+					<city>Burlington</city>
+					<state>MA</state>
+					<postalCode>01803</postalCode>
+					<country>USA</country>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<!--(CONF HP-37) Requires time element for author representing the start time of the author's participation in creation of the document-->
+		<time value="20050329224411+0500"/>
+		<assignedAuthor>
+			<!--(CONF HP-38) Requires id-->
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<addr>
+				<streetAddressLine>21 North Ave</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>01803</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(555)555-1002" use="WP"/>
+			<!--(CONF HP-39) Requires assignedPerson or assignedAuthoringDevice-->
+			<assignedPerson>
+				<name>
+					<given>Henry</given>
+					<family>Seven</family>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<!--CDA R2 Requires presence of a custodian -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>Good Health Clinic</name>
+				<telecom value="tel:(555)555-1212" use="WP"/>
+				<addr>
+					<streetAddressLine>21 North Ave</streetAddressLine>
+					<city>Burlington</city>
+					<state>MA</state>
+					<postalCode>01803</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20050329224411+0500"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<addr>
+				<streetAddressLine>21 North Ave</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>01803</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(555)555-1002" use="WP"/>
+			<!--(CONF HP-51) Requires assignedPerson-->
+			<assignedPerson>
+				<name>
+					<given>Henry</given>
+					<family>Seven</family>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+	<documentationOf>
+		<!--(CONF PRGN-4) SHOULD include serviceEvent element-->
+		<serviceEvent classCode="ENC">
+			<!--(CONF PRGN-5) Requires Progress Report codeserviceEvent element-->	
+			<code code="371532007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Progress Report"></code>
+			<!--(CONF-HP-11) If present, requires effectiveTime to be precise to year asOrganizationPartOf/effectiveTime, asMaintainedEntity/effectiveTime, relatedEntity/effectiveTime, serviceEvent/effectiveTime, ClinicalDocument/participant/time, serviceEvent/performer/time and encounterParticipant/time-->
+			<!--(CONF PRGN-6) SHOULD include effectiveTime  element-->
+			<effectiveTime>
+				<low value="200503291200"/>
+				<high value="200503291400"/>
+			</effectiveTime>			
+			<performer typeCode="PRF">
+				<functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+				<time>
+					<low value="1998"/>
+					<high value="2005"/>
+				</time>
+				<assignedEntity>
+					<id extension="1" root="2.16.840.1.113883.19"/>
+					<code code="59058001" codeSystem="2.16.840.1.113883.6.96"
+						codeSystemName="SNOMED CT" displayName="General Physician"/>
+					<addr>
+						<streetAddressLine>21 North Ave</streetAddressLine>
+						<city>Burlington</city>
+						<state>MA</state>
+						<postalCode>01803</postalCode>
+						<country>USA</country>
+					</addr>
+					<telecom value="tel:(999)555-1212"/>
+					<assignedPerson>
+						<name>
+							<prefix>Dr.</prefix>
+							<given>Henry</given>
+							<family>Seven</family>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<!--(CONF PRGN-7) Requires componentOf -->
+	<componentOf>
+		<encompassingEncounter>
+			<!--(CONF PRGN-8) Requires encounter id-->
+			<id extension="9937012" root="2.16.840.1.113883.19"/>
+			<code codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" code="99213"
+				displayName="Evaluation and Management"/>
+			<!--(CONF-HP-10) If present, requires effectiveTime to be precise to day at  ClinicalDocument/effectiveTime, author/time, dataEnterer/time, legalAuthenticator/time, authenticator/time and encompassingEncounter/effectiveTime  -->
+			<!--(CONF PRGN-9/10) Requires effectiveTime low element-->
+			<effectiveTime>
+				<low value="20050329"/>
+				<high value="20050329"/>
+			</effectiveTime>
+			<location>
+				<healthCareFacility>
+					<!--(CONF PRGN-11) SHOULD include location id element-->
+					<id root="2.16.840.1.113883.19" extension="223322"/>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+<!-- ********************************************************
+CDA Body
+******************************************************** -->
+	<component>
+		<structuredBody>
+
+<!-- **********************************************
+Required Sections
+**********************************************-->
+<!--************************************* 
+Assessment & Plan Section 
+************************************* -->
+			<component>
+				<section>
+					<!--  <templateId root="2.16.840.1.113883.10.20.18.14" /> -->
+					<templateId root="2.16.840.1.113883.10.20.18.2.14" />
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="51847-2" displayName="ASSESSMENT AND PLAN" />
+					<title>ASSESSMENT AND PLAN</title>
+					<text>
+						<list listType="ordered">
+							<item> Sigmoid diverticulosis, moderate. High fiber diet</item>
+							<item> Internal hemorrhoids. Treat conservatively with Canasa
+								suppositories </item>
+							<item> Colon polyp, 6mm, ascending colon, removed by snare. Patient to
+								call for results </item>
+						</list>
+					</text>
+				</section>
+			</component>
+<!-- *************************************************
+Optional Sections
+*************************************************-->
+<!-- *************************************************
+Allergies Section
+*************************************************-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.2"/>
+					<code code="48765-2" codeSystem="2.16.840.1.113883.6.1"
+						displayName="ALLERGIES, ADVERSE REACTIONS, ALERTS"/>
+					<title>ALLERGIES AND ADVERSE REACTIONS</title>
+					<text>
+						<list listType="ordered">
+							<item>Levaquin</item>
+							<item>Lorazepam</item>
+							<item>Peanuts</item>
+						</list>
+					</text>
+				</section>
+			</component>
+<!-- *************************************************
+Chief Compaint Section
+*************************************************-->
+			
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.18.2.16"/>
+					<code	code="10154-3" codeSystem="2.16.840.1.113883.6.1" 
+						codeSystemName="LOINC" 
+						displayName="CHIEF COMPLAINT"/>
+					<title> CHIEF COMPLAINT</title>
+					<text>
+						Back Pain
+					</text>
+				</section>
+			</component>
+<!-- *************************************************
+Medication Sections
+*************************************************-->
+			<!--Note: this simple coding of medications reflects what we might expect to see 
+				in a dictated note. For a complete sample of medications encoding, see CCD  -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<code codeSystem="2.16.840.1.113883.6.1" 
+						codeSystemName="LOINC" 
+						code="10160-0" 
+						displayName="HISTORY OF MEDICATION USE"/>
+					<title>CURRENT MEDICATION HISTORY</title>
+					<text>
+						<list listType="ordered">
+							<item><content ID="m1">Lisinopril 5 mg</content> 1 tablet once a day
+							</item>
+							<item><content ID="m2">Atenolol 25 mg</content> 1 tablet once a day
+							</item>
+						</list>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code codeSystem="2.16.840.1.113883.6.88" 
+											codeSystemName="RxNorm" 
+											code="203644" 
+											displayName="LISINOPRIL (PRINIVIL)--PO 5MG TAB">
+											<originalText>
+												<reference value="#m1"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code codeSystem="2.16.840.1.113883.6.88"
+											codeSystemName="RxNorm"
+											code="197380" displayName="ATENOLOL--PO 25MG TAB">
+											<originalText>
+												<reference value="#m2"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+<!-- *************************************************
+Objective Section
+*************************************************--> 				
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.21.2.1"/>
+					<code	code=" OBJEC-X " codeSystem="2.16.840.1.113883.6.1" 
+						codeSystemName="LOINC" 
+						displayName=" OBJECTIVE DATA "/>
+					<title>OBJECTIVE DATA</title>
+					<text>
+					<list listType="ordered">
+						<item>Chest: clear to ausc. No rales, normal breath sounds</item>
+						<item>Heart: RR, PMI in normal location and no heave or evidence of
+							cardiomegaly,normal heart sounds, no murm or gallop</item>
+					</list>
+					</text>
+				</section>
+			</component>
+<!-- *************************************************
+Physical Examination Section
+*************************************************-->	
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.2.10"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" 
+						code="29545-1" displayName="PHYSICAL FINDINGS"/>
+					<title>PHYSICAL EXAMINATION</title>
+					<text> 
+						<paragraph>All normal to examination.</paragraph>
+					</text>  
+				</section>
+			</component>
+<!-- *************************************************
+Problems Section
+*************************************************-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<code	code="11450-4" codeSystem="2.16.840.1.113883.6.1" 
+						codeSystemName="LOINC" 
+						displayName="PROBLEMS"/>
+					<title>PROBLEMS</title>
+					<text>
+					<list listType="ordered">
+						<item>Asthma: Active</item>
+						<item>Pneumonia: Resolved in March 2000 </item>
+					  </list>
+					</text>
+				</section>
+			</component>
+<!-- *************************************************
+Results Section
+*************************************************-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.14"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" 
+						code="30954-2" 
+						displayName="RELEVANT DIAGNOSTIC TESTS AND/OR LABORATORY DATA"/>
+					<title>RESULTS</title>
+					<text>
+						<table>
+							<tbody>
+								<tr><td colspan="1">LABORATORY INFORMATION</td><td colspan="1">RESULTS</td></tr>
+								<tr><td>Sodium</td><td>138</td></tr>		
+								<tr><td>CL (98-106 meq/l)</td><td>102</td></tr>
+								<tr><td>HCO3 (18-23 meq/l)</td><td>35</td></tr>
+								<tr><td colspan="2">ELECTROCARDIOGRAM (EKG) INFORMATION</td></tr>
+								<tr><td>EKG</td><td>Sinus rhythm without acute changes.</td></tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+<!-- ************************************
+Vital Signs
+************************************ -->	
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.2.4"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="8716-3" displayName="VITAL SIGNS"/>
+					<title>VITAL SIGNS</title>
+					<text>
+						<paragraph>Heart Rate: 78, Respiratory Rate: 12, Temp (degF): 96.7, Oxygen Sat (%): 100.</paragraph>
+						<paragraph>Non-invasive Blood Pressure: Systolic: 107, Diastolic: 51 Mean: 64.</paragraph>
+					</text>
+				</section>
+			</component>
+			
+<!-- *************************************************
+Review of Systems
+*************************************************-->
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.18"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="10187-3"
+						displayName="REVIEW OF SYSTEMS"/>
+					<title>REVIEW OF SYSTEMS</title>
+					<text>
+						<paragraph>Patient denies recent history of fever or malaise. Positive for
+							weakness and shortness of breath. One episode of melena. No recent
+							headaches. Positive for osteoarthritis in hips, knees and hands.
+						</paragraph>
+					</text>
+				</section>
+			</component>
+<!-- ************************************
+Subjective
+************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.21.2.2"/>
+					<code code="SUBJ-X" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="SUBJECTIVE DATA"/>
+					<title>SUBJECTIVE DATA</title>
+
+					<text>
+					I have used the peripheral nerve stimulator in my back for 5 days. While
+						using it I found that I was able to do physical activity without pain.
+						However, afterwards for one day, I would feel pain but then it would go
+						away. I also noticed that I didn’t have to take the Vicodin as much. I took
+						2 less Vicodin per day and 2 less tramadol everyday. I have not laid in my
+						bed in a year and a half. I sleep in a recliner. 
+					
+					</text>
+
+				</section>
+			</component>
+
+		</structuredBody>
+	</component>
+</ClinicalDocument>

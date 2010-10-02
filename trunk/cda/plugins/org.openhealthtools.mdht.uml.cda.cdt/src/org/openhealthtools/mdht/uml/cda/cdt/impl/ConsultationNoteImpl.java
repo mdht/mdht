@@ -217,8 +217,8 @@ public class ConsultationNoteImpl extends GeneralHeaderConstraintsImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PhysicalExaminationSection getPhysicalExaminationSection() {
-		return ConsultationNoteOperations.getPhysicalExaminationSection(this);
+	public PhysicalExaminationSection getPhysicalExamination() {
+		return ConsultationNoteOperations.getPhysicalExamination(this);
 	}
 
 	/**
@@ -244,8 +244,8 @@ public class ConsultationNoteImpl extends GeneralHeaderConstraintsImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PastMedicalHistorySectionConsult getPastMedicalHistorySectionConsult() {
-		return ConsultationNoteOperations.getPastMedicalHistorySectionConsult(this);
+	public PastMedicalHistorySectionConsult getPastMedicalHistorySection() {
+		return ConsultationNoteOperations.getPastMedicalHistorySection(this);
 	}
 
 	/**

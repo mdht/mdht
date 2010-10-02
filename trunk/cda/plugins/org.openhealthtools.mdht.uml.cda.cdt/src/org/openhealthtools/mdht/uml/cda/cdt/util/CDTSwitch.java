@@ -15,10 +15,13 @@ import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSection;
+import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote;
 import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
@@ -28,16 +31,19 @@ import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
+import org.openhealthtools.mdht.uml.cda.cdt.ObjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ProgressNote;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitAndChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
+import org.openhealthtools.mdht.uml.cda.cdt.SubjectiveSection;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -329,6 +335,61 @@ public class CDTSwitch<T> {
 				if (result == null) result = caseSection(reasonForVisitAndChiefComplaintSection);
 				if (result == null) result = caseAct(reasonForVisitAndChiefComplaintSection);
 				if (result == null) result = caseInfrastructureRoot(reasonForVisitAndChiefComplaintSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.PROGRESS_NOTE: {
+				ProgressNote progressNote = (ProgressNote)theEObject;
+				T result = caseProgressNote(progressNote);
+				if (result == null) result = caseGeneralHeaderConstraints(progressNote);
+				if (result == null) result = caseClinicalDocument(progressNote);
+				if (result == null) result = caseAct(progressNote);
+				if (result == null) result = caseInfrastructureRoot(progressNote);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE: {
+				AssessmentAndPlanSectionProcNote assessmentAndPlanSectionProcNote = (AssessmentAndPlanSectionProcNote)theEObject;
+				T result = caseAssessmentAndPlanSectionProcNote(assessmentAndPlanSectionProcNote);
+				if (result == null) result = caseSection(assessmentAndPlanSectionProcNote);
+				if (result == null) result = caseAct(assessmentAndPlanSectionProcNote);
+				if (result == null) result = caseInfrastructureRoot(assessmentAndPlanSectionProcNote);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.ASSESSMENT_SECTION_PROC_NOTE: {
+				AssessmentSectionProcNote assessmentSectionProcNote = (AssessmentSectionProcNote)theEObject;
+				T result = caseAssessmentSectionProcNote(assessmentSectionProcNote);
+				if (result == null) result = caseSection(assessmentSectionProcNote);
+				if (result == null) result = caseAct(assessmentSectionProcNote);
+				if (result == null) result = caseInfrastructureRoot(assessmentSectionProcNote);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.CHIEF_COMPLAINT_SECTION_PROC_NOTE: {
+				ChiefComplaintSectionProcNote chiefComplaintSectionProcNote = (ChiefComplaintSectionProcNote)theEObject;
+				T result = caseChiefComplaintSectionProcNote(chiefComplaintSectionProcNote);
+				if (result == null) result = caseSection(chiefComplaintSectionProcNote);
+				if (result == null) result = caseAct(chiefComplaintSectionProcNote);
+				if (result == null) result = caseInfrastructureRoot(chiefComplaintSectionProcNote);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.OBJECTIVE_SECTION: {
+				ObjectiveSection objectiveSection = (ObjectiveSection)theEObject;
+				T result = caseObjectiveSection(objectiveSection);
+				if (result == null) result = caseSection(objectiveSection);
+				if (result == null) result = caseAct(objectiveSection);
+				if (result == null) result = caseInfrastructureRoot(objectiveSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDTPackage.SUBJECTIVE_SECTION: {
+				SubjectiveSection subjectiveSection = (SubjectiveSection)theEObject;
+				T result = caseSubjectiveSection(subjectiveSection);
+				if (result == null) result = caseSection(subjectiveSection);
+				if (result == null) result = caseAct(subjectiveSection);
+				if (result == null) result = caseInfrastructureRoot(subjectiveSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -655,6 +716,96 @@ public class CDTSwitch<T> {
 	 * @generated
 	 */
 	public T caseReasonForVisitAndChiefComplaintSection(ReasonForVisitAndChiefComplaintSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Progress Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Progress Note</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProgressNote(ProgressNote object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assessment And Plan Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assessment And Plan Section Proc Note</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssessmentAndPlanSectionProcNote(AssessmentAndPlanSectionProcNote object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assessment Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assessment Section Proc Note</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssessmentSectionProcNote(AssessmentSectionProcNote object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Chief Complaint Section Proc Note</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Chief Complaint Section Proc Note</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChiefComplaintSectionProcNote(ChiefComplaintSectionProcNote object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Objective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Objective Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObjectiveSection(ObjectiveSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Subjective Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Subjective Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSubjectiveSection(SubjectiveSection object) {
 		return null;
 	}
 

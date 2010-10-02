@@ -198,7 +198,7 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * (not self.setId.oclIsUndefined() and not self.id.oclIsUndefined())
-	 *    implies (self.setId.root != self.id.root or self.setId.extension != self.id.extension)
+	 *    implies (self.setId.root <> self.id.root or self.setId.extension <> self.id.extension)
 	 * @param generalHeaderConstraints The receiving '<em><b>General Header Constraints</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

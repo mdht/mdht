@@ -54,11 +54,11 @@ public interface GeneralHeaderConstraints extends ClinicalDocument {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * (not self.setId.oclIsUndefined() and not self.id.oclIsUndefined())
-	 *    implies (self.setId.root != self.id.root or self.setId.extension != self.id.extension)
+	 *    implies (self.setId.root <> self.id.root or self.setId.extension <> self.id.extension)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(not self.setId.oclIsUndefined() and not self.id.oclIsUndefined())\r\n   implies (self.setId.root != self.id.root or self.setId.extension != self.id.extension)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(not self.setId.oclIsUndefined() and not self.id.oclIsUndefined())\r\n   implies (self.setId.root <> self.id.root or self.setId.extension <> self.id.extension)'"
 	 * @generated
 	 */
 	boolean validateGeneralHeaderConstraintsSetIdAndIdAreUnique(DiagnosticChain diagnostics, Map<Object, Object> context);

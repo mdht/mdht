@@ -354,7 +354,7 @@ public interface HistoryAndPhysical extends GeneralHeaderConstraints {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSectionIHE))->asSequence()->first().oclAsType(cdt::ReviewOfSystemsSectionIHE)'"
 	 * @generated
 	 */
-	ReviewOfSystemsSectionIHE getReviewOfSystemsSectionIHE();
+	ReviewOfSystemsSectionIHE getReviewOfSystemsSection();
 
 	/**
 	 * <!-- begin-user-doc -->

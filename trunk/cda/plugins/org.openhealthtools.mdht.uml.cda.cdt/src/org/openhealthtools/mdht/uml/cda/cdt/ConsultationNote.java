@@ -249,7 +249,7 @@ public interface ConsultationNote extends GeneralHeaderConstraints {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))->asSequence()->first().oclAsType(cdt::PhysicalExaminationSection)'"
 	 * @generated
 	 */
-	PhysicalExaminationSection getPhysicalExaminationSection();
+	PhysicalExaminationSection getPhysicalExamination();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,7 +285,7 @@ public interface ConsultationNote extends GeneralHeaderConstraints {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))->asSequence()->first().oclAsType(cdt::PastMedicalHistorySectionConsult)'"
 	 * @generated
 	 */
-	PastMedicalHistorySectionConsult getPastMedicalHistorySectionConsult();
+	PastMedicalHistorySectionConsult getPastMedicalHistorySection();
 
 	/**
 	 * <!-- begin-user-doc -->

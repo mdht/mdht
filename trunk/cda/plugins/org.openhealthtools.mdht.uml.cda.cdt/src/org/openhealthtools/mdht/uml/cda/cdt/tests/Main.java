@@ -56,6 +56,10 @@ public class Main {
 		System.out.println("\n***** Validate sample Consultation Note *****");
 		ClinicalDocument sampleConsultNote = CDAUtil.load(new FileInputStream("samples/Consults.Sample.xml"));
 		validate(sampleConsultNote);
+		
+		System.out.println("\n***** Validate sample Progress Note *****");
+		ClinicalDocument sampleProgressNote = CDAUtil.load(new FileInputStream("samples/Progress_Note.xml"));
+		validate(sampleProgressNote);
 	}
 	
 	private static void save(ClinicalDocument clinicalDocument) throws Exception {

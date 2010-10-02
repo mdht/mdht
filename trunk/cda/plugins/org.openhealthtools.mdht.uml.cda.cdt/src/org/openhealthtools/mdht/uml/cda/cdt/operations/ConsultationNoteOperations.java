@@ -59,10 +59,10 @@ import org.openhealthtools.mdht.uml.cda.cdt.util.CDTValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNoteGeneralStatusSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note General Status Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNoteDiagnosticFindings(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Diagnostic Findings</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getHistoryOfPresentIllness() <em>Get History Of Present Illness</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getPhysicalExaminationSection() <em>Get Physical Examination Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getPhysicalExamination() <em>Get Physical Examination</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getProblemSection() <em>Get Problem Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getProceduresSection() <em>Get Procedures Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getPastMedicalHistorySectionConsult() <em>Get Past Medical History Section Consult</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getPastMedicalHistorySection() <em>Get Past Medical History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getImmunizationsSection() <em>Get Immunizations Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getMedicationsSection() <em>Get Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#getAlertsSection() <em>Get Alerts Section</em>}</li>
@@ -1030,24 +1030,24 @@ public class ConsultationNoteOperations extends GeneralHeaderConstraintsOperatio
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getPhysicalExaminationSection(ConsultationNote) <em>Get Physical Examination Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getPhysicalExamination(ConsultationNote) <em>Get Physical Examination</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPhysicalExaminationSection(ConsultationNote)
+	 * @see #getPhysicalExamination(ConsultationNote)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PHYSICAL_EXAMINATION_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))->asSequence()->first().oclAsType(cdt::PhysicalExaminationSection)";
+	protected static final String GET_PHYSICAL_EXAMINATION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))->asSequence()->first().oclAsType(cdt::PhysicalExaminationSection)";
 
 	/**
-	 * The cached OCL query for the '{@link #getPhysicalExaminationSection(ConsultationNote) <em>Get Physical Examination Section</em>}' query operation.
+	 * The cached OCL query for the '{@link #getPhysicalExamination(ConsultationNote) <em>Get Physical Examination</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPhysicalExaminationSection(ConsultationNote)
+	 * @see #getPhysicalExamination(ConsultationNote)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_PHYSICAL_EXAMINATION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1058,18 +1058,18 @@ public class ConsultationNoteOperations extends GeneralHeaderConstraintsOperatio
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  PhysicalExaminationSection getPhysicalExaminationSection(ConsultationNote consultationNote) {
-		if (GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY == null) {
+	public static  PhysicalExaminationSection getPhysicalExamination(ConsultationNote consultationNote) {
+		if (GET_PHYSICAL_EXAMINATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDTPackage.Literals.CONSULTATION_NOTE, CDTPackage.Literals.CONSULTATION_NOTE.getEAllOperations().get(50));
 			try {
-				GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY = helper.createQuery(GET_PHYSICAL_EXAMINATION_SECTION__EOCL_EXP);
+				GET_PHYSICAL_EXAMINATION__EOCL_QRY = helper.createQuery(GET_PHYSICAL_EXAMINATION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_PHYSICAL_EXAMINATION__EOCL_QRY);
 		return (PhysicalExaminationSection) query.evaluate(consultationNote);
 	}
 
@@ -1162,24 +1162,24 @@ public class ConsultationNoteOperations extends GeneralHeaderConstraintsOperatio
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getPastMedicalHistorySectionConsult(ConsultationNote) <em>Get Past Medical History Section Consult</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getPastMedicalHistorySection(ConsultationNote) <em>Get Past Medical History Section</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPastMedicalHistorySectionConsult(ConsultationNote)
+	 * @see #getPastMedicalHistorySection(ConsultationNote)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PAST_MEDICAL_HISTORY_SECTION_CONSULT__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))->asSequence()->first().oclAsType(cdt::PastMedicalHistorySectionConsult)";
+	protected static final String GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_EXP = "self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))->asSequence()->first().oclAsType(cdt::PastMedicalHistorySectionConsult)";
 
 	/**
-	 * The cached OCL query for the '{@link #getPastMedicalHistorySectionConsult(ConsultationNote) <em>Get Past Medical History Section Consult</em>}' query operation.
+	 * The cached OCL query for the '{@link #getPastMedicalHistorySection(ConsultationNote) <em>Get Past Medical History Section</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPastMedicalHistorySectionConsult(ConsultationNote)
+	 * @see #getPastMedicalHistorySection(ConsultationNote)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PAST_MEDICAL_HISTORY_SECTION_CONSULT__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1190,18 +1190,18 @@ public class ConsultationNoteOperations extends GeneralHeaderConstraintsOperatio
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  PastMedicalHistorySectionConsult getPastMedicalHistorySectionConsult(ConsultationNote consultationNote) {
-		if (GET_PAST_MEDICAL_HISTORY_SECTION_CONSULT__EOCL_QRY == null) {
+	public static  PastMedicalHistorySectionConsult getPastMedicalHistorySection(ConsultationNote consultationNote) {
+		if (GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDTPackage.Literals.CONSULTATION_NOTE, CDTPackage.Literals.CONSULTATION_NOTE.getEAllOperations().get(53));
 			try {
-				GET_PAST_MEDICAL_HISTORY_SECTION_CONSULT__EOCL_QRY = helper.createQuery(GET_PAST_MEDICAL_HISTORY_SECTION_CONSULT__EOCL_EXP);
+				GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_QRY = helper.createQuery(GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PAST_MEDICAL_HISTORY_SECTION_CONSULT__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_QRY);
 		return (PastMedicalHistorySectionConsult) query.evaluate(consultationNote);
 	}
 
