@@ -35,11 +35,11 @@ public class ONOperationsTest extends ENOperationsTest {
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
 	@Test
-	public final void testNull() {
+	public final void testConstructor() {
 		@SuppressWarnings("unused")
 		ONOperations obj = new ONOperations();
 		assertTrue(true);
-	} // testNull
+	} // testConstructor
 	
 	/**
 	 * Test method for

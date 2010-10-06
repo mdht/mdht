@@ -52,10 +52,10 @@ public class ENOperationsTest extends DatatypesValidationOperationsText {
 		 */
 		@SuppressWarnings("unused")
 		@Test
-		public final void testNull() {
+		public final void testConstructor() {
 			ENOperations obj = new ENOperations();
 			assertTrue(true);
-		} // testNull
+		} // testConstructor
 		
 		@Override
 		@SuppressWarnings("unchecked")
