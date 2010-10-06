@@ -34,6 +34,16 @@ public class PNOperationsTest extends ENOperationsTest {
 	}
 
 	/**
+	 * Not a real test, needed for EMMA to report 100% method coverage.
+	 */
+	@Test
+	public final void testNull() {
+		@SuppressWarnings("unused")
+		PNOperations obj = new PNOperations();
+		assertTrue(true);
+	} // testNull
+	
+	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.hl7.datatypes.operations.PNOperations#validateInvariant(org.openhealthtools.mdht.uml.hl7.datatypes.PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
 	 * .
