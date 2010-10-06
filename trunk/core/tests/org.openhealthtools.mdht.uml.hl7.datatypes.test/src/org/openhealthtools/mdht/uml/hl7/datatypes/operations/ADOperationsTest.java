@@ -53,10 +53,10 @@ public class ADOperationsTest extends DatatypesValidationOperationsText {
 		 */
 		@SuppressWarnings("unused")
 		@Test
-		public final void testNull() {
+		public final void testConstructor() {
 			ADOperations obj = new ADOperations();
 			assertTrue(true);
-		} // testNull
+		} // testConstructor
 		
 		@Override
 		@SuppressWarnings("unchecked")

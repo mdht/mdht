@@ -37,11 +37,11 @@ public class PNOperationsTest extends ENOperationsTest {
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
 	@Test
-	public final void testNull() {
+	public final void testConstructor() {
 		@SuppressWarnings("unused")
 		PNOperations obj = new PNOperations();
 		assertTrue(true);
-	} // testNull
+	} // testConstructor
 	
 	/**
 	 * Test method for
