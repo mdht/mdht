@@ -16,20 +16,21 @@ import junit.framework.JUnit4TestAdapter;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+
 /**
  * This class represents a suite of Junit 4 test cases for HL7 Datatypes.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses( { ADOperationsTest.class, BNOperationsTest.class,
-	EDOperationsTest.class, ENOperationsTest.class, ONOperationsTest.class,
-	PNOperationsTest.class, TNOperationsTest.class })
-	public class ALLDatatypeOperationsTests {
-	
+@Suite.SuiteClasses({ ADOperationsTest.class, BNOperationsTest.class,
+		EDOperationsTest.class, EIVL_eventOperationsTest.class,
+		ENOperationsTest.class, ONOperationsTest.class, PNOperationsTest.class,
+		TNOperationsTest.class })
+public class ALLDatatypeOperationsTests {
+
 	/**
 	 * @return JUnit3 test
 	 */
-	public static junit.framework.Test suite() { 
-	    return new JUnit4TestAdapter(ALLDatatypeOperationsTests.class); 
+	public static junit.framework.Test suite() {
+		return new JUnit4TestAdapter(ALLDatatypeOperationsTests.class);
 	}
-	// Nothing
 } // ALLDatatypeOperationsTests
