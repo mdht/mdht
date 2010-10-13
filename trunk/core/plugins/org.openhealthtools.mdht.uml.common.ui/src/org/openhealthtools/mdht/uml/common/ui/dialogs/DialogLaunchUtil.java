@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -25,7 +26,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
@@ -79,20 +80,34 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement( Class[] filter, Model model, Shell shell ) {
-		return chooseElement(filter, model, shell,
+	public static NamedElement chooseElement( Class[] filter, Package umlPackage, Shell shell ) {
+		return chooseElement(filter, umlPackage, shell,
 				Messages.ElementSelectionDialog_title,
 				Messages.ElementSelectionDialog_message);
 	}
 
-	/**
-	 * 
-	 */
-	public static NamedElement chooseElement( Class[] filter, Model model, 
+	public static NamedElement chooseElement( Class[] filter, Package umlPackage, 
 			Shell shell, String title, String message) {
-		List typeList = new ArrayList();
+		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
-			typeList.addAll(ModelSearch.findAllOf(model, filter[i]));
+			typeList.addAll(ModelSearch.findAllOf(umlPackage, filter[i]));
+		}
+
+		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
+		dialog.setTitle(title);
+		dialog.setMessage(message);
+
+		if (dialog.open() == Window.OK) {
+			return (NamedElement) dialog.getFirstResult();
+		}
+		return null;
+	}
+
+	public static NamedElement chooseElement( Class[] filter, Resource resource, 
+			Shell shell, String title, String message) {
+		List<Element> typeList = new ArrayList<Element>();
+		for (int i = 0; i < filter.length; i++) {
+			typeList.addAll(ModelSearch.findAllOf(resource, filter[i]));
 		}
 
 		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
@@ -110,7 +125,7 @@ public class DialogLaunchUtil {
 	 */
 	public static NamedElement chooseElement( Class[] filter, ResourceSet resourceSet, 
 			Shell shell, String title, String message) {
-		List typeList = new ArrayList();
+		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
 			typeList.addAll(ModelSearch.findAllOf(resourceSet, filter[i]));
 		}
@@ -136,7 +151,7 @@ public class DialogLaunchUtil {
 		if (message == null) {
 			message = Messages.ElementSelectionDialog_message;
 		}
-		List typeList = ModelSearch.findAllOf(resourceSet, filter);
+		List<Element> typeList = ModelSearch.findAllOf(resourceSet, filter);
 
 		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
 		dialog.setTitle(title);
