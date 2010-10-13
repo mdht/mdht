@@ -813,8 +813,10 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			super(UML2UIMessages.BaseTypeFilter_title, Action.AS_CHECK_BOX);
 			setImageDescriptor(imageDescriptor);
 			setToolTipText(UML2UIMessages.BaseTypeFilter_tooltip);
-			
-			UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+
+			if (UML2UIPlugin.getImageDescriptor(imageKey) == null) {
+				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+			}
 		}
 		
 		public void run() {
@@ -854,8 +856,10 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			super(UML2UIMessages.ContainerFilter_title, Action.AS_CHECK_BOX);
 			setImageDescriptor(imageDescriptor);
 			setToolTipText(UML2UIMessages.ContainerFilter_tooltip);
-			
-			UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+
+			if (UML2UIPlugin.getImageDescriptor(imageKey) == null) {
+				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+			}
 		}
 		
 		public void run() {
@@ -895,7 +899,9 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			setImageDescriptor(imageDescriptor);
 			setToolTipText(UML2UIMessages.ContainerFilter_tooltip);
 			
-			UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+			if (UML2UIPlugin.getImageDescriptor(imageKey) == null) {
+				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+			}
 		}
 
 		// TODO need to listen for selection events
