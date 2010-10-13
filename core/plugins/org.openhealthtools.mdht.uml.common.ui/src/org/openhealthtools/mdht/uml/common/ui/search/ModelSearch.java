@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
@@ -41,8 +40,8 @@ public class ModelSearch {
 	 */
 	private ModelSearch() { }
 
-	public static List findStereotypeApplications(ResourceSet resourceSet, Stereotype stereotype) {
-		List elementList = new ArrayList();
+	public static List<EObject> findStereotypeApplications(ResourceSet resourceSet, Stereotype stereotype) {
+		List<EObject> elementList = new ArrayList<EObject>();
 		for (Resource resource : resourceSet.getResources()) {
 			String uri = resource.getURI().toString();
 			if (uri.equals(UMLResource.UML_METAMODEL_URI)
@@ -69,7 +68,7 @@ public class ModelSearch {
 	
 	public static List<Element> findAllOf(ResourceSet resourceSet, IElementFilter filter) {
 		List<Element> elementList = new ArrayList<Element>();
-		TreeIterator iterator = EcoreUtil.getAllContents(resourceSet.getResources());
+		TreeIterator<EObject> iterator = EcoreUtil.getAllContents(resourceSet.getResources());
 
 		while (iterator != null && iterator.hasNext()) {
 			Object element = iterator.next();
@@ -88,23 +87,23 @@ public class ModelSearch {
 				iterator.prune();
 			}
 			
-			else if (Model.class.isInstance(element)) {
-//				if ("uml2".equals(((Model)element).getQualifiedName()))
+			else if (Package.class.isInstance(element)) {
+//				if ("uml2".equals(((Package)element).getQualifiedName()))
 //					iterator.prune();
 				if (UMLResource.UML_METAMODEL_URI.equals(
-						((Model)element).eResource().getURI().toString()))
+						((Package)element).eResource().getURI().toString()))
 					iterator.prune();
 				else if (UMLResource.ECORE_METAMODEL_URI.equals(
-						((Model)element).eResource().getURI().toString()))
+						((Package)element).eResource().getURI().toString()))
 					iterator.prune();
 //				else if (UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-//						((Model)element).eResource().getURI().toString()))
+//						((Package)element).eResource().getURI().toString()))
 //					iterator.prune();
 //				else if (UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-//						((Model)element).eResource().getURI().toString()))
+//						((Package)element).eResource().getURI().toString()))
 //					iterator.prune();
 //				else if (UMLResource.JAVA_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-//						((Model)element).eResource().getURI().toString()))
+//						((Package)element).eResource().getURI().toString()))
 //					iterator.prune();
 				
 			}
@@ -122,15 +121,31 @@ public class ModelSearch {
 	}
 	
 	//TODO include source object in params, also test Classifier::conformsTo
-	public static List findAllOf(Model model, Class type) {
-		List elementList = new ArrayList();
-		TreeIterator iterator = model.eAllContents();
+	public static List<Element> findAllOf(Package umlPackage, Class type) {
+		List<Element> elementList = new ArrayList<Element>();
+		TreeIterator<EObject> iterator = umlPackage.eAllContents();
 
 		while (iterator != null && iterator.hasNext()) {
-			Object element = iterator.next();
-			//if (type.isInstance(element)) {
-			if (type == element.getClass()) {
-				elementList.add(element);
+			EObject element = iterator.next();
+			if (type.isInstance(element) && element instanceof Element) {
+				elementList.add((Element)element);
+			}
+			else if (!Package.class.isInstance(element)) {
+				iterator.prune();
+			}
+		}
+		
+		return elementList;
+	}
+
+	public static List<Element> findAllOf(Resource resource, Class type) {
+		List<Element> elementList = new ArrayList<Element>();
+		TreeIterator<EObject> iterator = EcoreUtil.getAllContents(resource, true);
+
+		while (iterator != null && iterator.hasNext()) {
+			EObject element = iterator.next();
+			if (type.isInstance(element) && element instanceof Element) {
+				elementList.add((Element)element);
 			}
 			else if (!Package.class.isInstance(element)) {
 				iterator.prune();
@@ -140,9 +155,9 @@ public class ModelSearch {
 		return elementList;
 	}
 	
-	public static List findAllOf(ResourceSet resourceSet, Class type) {
-		List elementList = new ArrayList();
-		TreeIterator iterator = EcoreUtil.getAllContents(resourceSet.getResources());
+	public static List<Element> findAllOf(ResourceSet resourceSet, Class type) {
+		List<Element> elementList = new ArrayList<Element>();
+		TreeIterator<Object> iterator = EcoreUtil.getAllContents(resourceSet.getResources(), true);
 
 		while (iterator != null && iterator.hasNext()) {
 			Object element = iterator.next();
@@ -161,29 +176,29 @@ public class ModelSearch {
 				iterator.prune();
 			}
 			
-			else if (Model.class.isInstance(element)) {
-//				if ("uml2".equals(((Model)element).getQualifiedName()))
+			else if (Package.class.isInstance(element)) {
+//				if ("uml2".equals(((Package)element).getQualifiedName()))
 //					iterator.prune();
 				if (UMLResource.UML_METAMODEL_URI.equals(
-						((Model)element).eResource().getURI().toString()))
+						((Package)element).eResource().getURI().toString()))
 					iterator.prune();
 				else if (UMLResource.ECORE_METAMODEL_URI.equals(
-						((Model)element).eResource().getURI().toString()))
+						((Package)element).eResource().getURI().toString()))
 					iterator.prune();
 //				else if (UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-//						((Model)element).eResource().getURI().toString()))
+//						((Package)element).eResource().getURI().toString()))
 //					iterator.prune();
 //				else if (UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-//						((Model)element).eResource().getURI().toString()))
+//						((Package)element).eResource().getURI().toString()))
 //					iterator.prune();
 //				else if (UMLResource.JAVA_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-//						((Model)element).eResource().getURI().toString()))
+//						((Package)element).eResource().getURI().toString()))
 //					iterator.prune();
 				
 			}
 
-			else if (type.isInstance(element)) {
-				elementList.add(element);
+			else if (type.isInstance(element) && element instanceof Element) {
+				elementList.add((Element)element);
 			}
 			else if (!Package.class.isInstance(element)) {
 				iterator.prune();
