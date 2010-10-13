@@ -63,6 +63,18 @@ public class UML2UIMessages extends NLS {
 	public static String ElementImportSelectionDialog_title;
 	public static String ElementImportSelectionDialog_message;
 
+	public static String BaseTypeFilter_title;
+	public static String BaseTypeFilter_tooltip;
+	public static String BaseTypeFilter_message;
+
+	public static String ContainerFilter_title;
+	public static String ContainerFilter_menu;
+	public static String ContainerFilter_tooltip;
+	public static String ContainerFilter_message;
+
+	public static String RemoveFilter_title;
+	public static String RemoveFilter_tooltip;
+	
 	public static String _UI_UMLEditor_menu;
 	public static String _UI_ApplyProfileActionCommand_label;
 	public static String _UI_ApplyStereotypeActionCommand_label;
