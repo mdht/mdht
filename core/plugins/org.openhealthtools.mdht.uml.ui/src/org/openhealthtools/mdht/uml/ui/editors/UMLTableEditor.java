@@ -12,7 +12,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.editors;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.commands.operations.IOperationHistory;
@@ -26,6 +28,7 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -51,9 +54,13 @@ import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.emf.workspace.ResourceUndoContext;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ComboBoxCellEditor;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -78,6 +85,7 @@ import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -98,6 +106,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.Saveable;
 import org.eclipse.ui.ide.IGotoMarker;
+import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.ui.views.contentoutline.ContentOutline;
@@ -107,10 +116,15 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
+import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelDocument;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelManager;
@@ -121,6 +135,8 @@ import org.openhealthtools.mdht.uml.common.ui.util.TreeCursor;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.SimpleListNotifier;
 import org.openhealthtools.mdht.uml.edit.provider.UML2ExtendedAdapterFactory;
+import org.openhealthtools.mdht.uml.ui.internal.UML2UIPlugin;
+import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 import org.openhealthtools.mdht.uml.ui.navigator.DecoratorAdapterFactoryLabelProvider;
 import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 import org.openhealthtools.mdht.uml.ui.navigator.actions.EditCommandsFactory;
@@ -138,7 +154,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	
 	private TransactionalEditingDomain editingDomain;
 	
-	private IStructuredSelection initialSelection = null;
+	private IStructuredSelection viewSelection = null;
 
 	private Resource resource = null;
 	private ResourceSetListener dirtyResourceListener = null;
@@ -150,10 +166,12 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	private EditCommandsFactory editCommandsFactory = new EditCommandsFactory();
 
 	/** This is the one adapter factory used for providing views of the model. */
-	protected UML2ExtendedAdapterFactory adapterFactory;
-	protected AdapterFactoryContentProvider myAdapterFactoryContentProvider;
-	
-	protected TreeViewer treeViewerWithColumns;
+	private UML2ExtendedAdapterFactory adapterFactory;
+	private AdapterFactoryContentProvider adapterFactoryContentProvider;
+	private ILabelProvider adapterFactoryLabelProvider;
+
+	private ViewerPane viewerPane;
+	private TreeViewer treeViewerWithColumns;
 	
 	private TreeCursor cursor;
 
@@ -207,7 +225,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 				for (int i = 0; i < values.length; i++) {
 					if (selection[i].getData() instanceof Element) {
 						values[i] = new UMLDomainNavigatorItem((Element) selection[i].getData(), null, 
-								myAdapterFactoryContentProvider);
+								adapterFactoryContentProvider);
 						//values[i] = selection[i].getData();
 					}
 					else {
@@ -343,8 +361,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	protected void handleChangedResources() {
 		if (!isDirty()) {
 			treeViewerWithColumns.refresh();
-			initialSelection = new StructuredSelection(resource.getContents().get(0));
-			getSite().getSelectionProvider().setSelection(initialSelection);
+			setDefaultSelection();
 
 			if (AdapterFactoryEditingDomain.isStale(getSite().getSelectionProvider().getSelection())) {
 				getSite().getSelectionProvider().setSelection(StructuredSelection.EMPTY);
@@ -366,7 +383,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		ModelManager.getManager().manage(editingDomain);
 
 		adapterFactory = new UML2ExtendedAdapterFactory();
-		myAdapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
+		adapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
 
 		getOperationHistory().addOperationHistoryListener(historyListener);
 
@@ -424,12 +441,12 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 
 			try {
 				resource = editingDomain.getResourceSet().getResource(resourceURI, true);
-				if (!resource.getContents().isEmpty())
-					initialSelection = new StructuredSelection(resource.getContents().get(0));
+				setDefaultSelection();
 				
 			} catch (Exception e) {
 				//TODO display errors, see sample UMLEditor init()
 				resource = editingDomain.getResourceSet().getResource(resourceURI, false);
+				setDefaultSelection();
 			}
 		}
 		
@@ -481,7 +498,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	 * 
 	 */
 	public void dispose() {
-		myAdapterFactoryContentProvider.dispose();
+		adapterFactoryContentProvider.dispose();
 		adapterFactory.dispose();
 		
 		getSite().getPage().removePartListener(partListener);
@@ -504,9 +521,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		super.dispose();
 	}
 
-	public void createPartControl(Composite parent) {
-		ViewerPane viewerPane = new ViewerPane(getSite().getPage(),
-				UMLTableEditor.this) {
+	public void createPartControl(Composite parent) {	
+		viewerPane = new ViewerPane(getSite().getPage(), UMLTableEditor.this) {
 			public Viewer createViewer(Composite composite) {
 				// using SWT.FULL_SELECTION is critical for finding tree 
 				// selections in columns > 0
@@ -538,6 +554,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			}
 		};
 		viewerPane.createControl(parent);
+
+		contributeToToolBar(viewerPane.getToolBarManager());
 
 		treeViewerWithColumns = (TreeViewer) viewerPane.getViewer();
 		treeViewerWithColumns.setAutoExpandLevel(2);
@@ -579,7 +597,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		column = new TreeColumn(tree, SWT.NONE);
 		column.setText("Annotation");
 		column.setResizable(true);
-		column.setWidth(150);
+		column.setWidth(175);
 
 		column = new TreeColumn(tree, SWT.NONE);
 		column.setText("Value");
@@ -594,10 +612,10 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 				IUMLTableProperties.VISIBILITY_PROPERTY,
 				IUMLTableProperties.ANNOTATION_PROPERTY,
 				IUMLTableProperties.DEFAULT_VALUE_PROPERTY });
-		treeViewerWithColumns.setContentProvider(myAdapterFactoryContentProvider);
+		treeViewerWithColumns.setContentProvider(adapterFactoryContentProvider);
 		
-		ILabelProvider labelProvider = new DecoratorAdapterFactoryLabelProvider(adapterFactory);
-		treeViewerWithColumns.setLabelProvider(labelProvider);
+		adapterFactoryLabelProvider = new DecoratorAdapterFactoryLabelProvider(adapterFactory);
+		treeViewerWithColumns.setLabelProvider(adapterFactoryLabelProvider);
 
 		treeViewerWithColumns.setCellModifier(new AdapterFactoryCellModifier(
 				adapterFactory));
@@ -713,12 +731,257 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		});
 
 		getEditorSite().setSelectionProvider(new SelectionProvider(tree));
-		if (initialSelection != null) {
-			getSite().getSelectionProvider().setSelection(initialSelection);
-		}
+		updateViewContents();
+		treeViewerWithColumns.setSelection(viewSelection);
+
+		// set to 1 level expansion after initial display
+		treeViewerWithColumns.setAutoExpandLevel(1);
 
 		createContextMenuFor(treeViewerWithColumns.getControl(), treeViewerWithColumns, treeViewerWithColumns);
 		createContextMenuFor(cursor, getEditorSite().getSelectionProvider(), treeViewerWithColumns);
+	}
+	
+	private void updateViewContents() {
+		if (viewSelection != null && getSite().getSelectionProvider() != null) {
+			getSite().getSelectionProvider().setSelection(viewSelection);
+		}
+	}
+	
+	private void setDefaultSelection() {
+		if (resource != null && !resource.getContents().isEmpty()) {
+			viewSelection = new StructuredSelection(resource.getContents().get(0));
+			updateViewContents();
+			selectReveal(viewSelection);
+		}
+	}
+	
+	private void computeBaseTypeFilterSelection() {
+		if (baseTypeFilter == null) {
+			return;
+		}
+
+		final List<Class> contents = new ArrayList<Class>();
+
+		UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
+			public Object caseClass(Class classifier) {
+				List<Classifier> allParents = new ArrayList<Classifier>(classifier.allParents());
+				allParents.add(classifier);
+				if (allParents.contains(baseTypeFilter)) {
+					contents.add(classifier);
+				}
+				return classifier;
+			}
+
+			public Object casePackage(Package pkg) {
+				for (NamedElement namedElement : pkg.getOwnedMembers()) {
+					doSwitch(namedElement);
+				}
+				return pkg;
+			}
+		};
+		umlSwitch.doSwitch(resource.getContents().get(0));
+		
+		viewSelection = new StructuredSelection(contents);
+		updateViewContents();
+	}
+
+	private void computeContainerFilterSelection() {
+		if (containerFilter == null) {
+			return;
+		}
+		
+		List<Class> contents = new ArrayList<Class>();
+		contents.add(containerFilter);
+		
+		for (Property property : containerFilter.getAllAttributes()) {
+			// include only those classes that are in this editor's resource
+			if (property.getType() instanceof Class && resource.equals(property.getType().eResource())) {
+				contents.add((Class)property.getType());
+			}
+		}
+		
+		viewSelection = new StructuredSelection(contents);
+		updateViewContents();
+		selectReveal(new StructuredSelection(containerFilter));
+	}
+	
+	private class BaseTypeFilterAction extends Action {
+		String imageKey = "icons/full/eview16/filter_basetype.gif";
+		ImageDescriptor imageDescriptor = UML2UIPlugin.getImageDescriptor(imageKey);
+		
+		protected BaseTypeFilterAction() {
+			super(UML2UIMessages.BaseTypeFilter_title, Action.AS_CHECK_BOX);
+			setImageDescriptor(imageDescriptor);
+			setToolTipText(UML2UIMessages.BaseTypeFilter_tooltip);
+			
+			UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+		}
+		
+		public void run() {
+			// prompt for base class
+			Class baseType = (Class) DialogLaunchUtil.chooseElement(
+					new java.lang.Class[] { Class.class }, resource.getResourceSet(), getSite().getShell(),
+					UML2UIMessages.BaseTypeFilter_title,
+					UML2UIMessages.BaseTypeFilter_message);
+
+			if (baseType != null) {
+				baseTypeFilter = baseType;
+				computeBaseTypeFilterSelection();
+			}
+			
+			if (baseTypeFilter != null) {
+				this.setChecked(true);
+				containerFilterAction.setChecked(false);
+				containerFilter = null;
+				
+				// use icon for Base Type action to show which filter is applied
+				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
+				viewerPane.setTitle(baseType.getQualifiedName(), filterImage);
+			}
+			else {
+				this.setChecked(false);
+			}
+		}
+	};
+	private Action baseTypeFilterAction = new BaseTypeFilterAction();
+	private Class baseTypeFilter = null;
+
+	private class ContainerFilterAction extends Action {
+		String imageKey = "icons/full/eview16/filter_container.gif";
+		ImageDescriptor imageDescriptor = UML2UIPlugin.getImageDescriptor(imageKey);
+		
+		protected ContainerFilterAction() {
+			super(UML2UIMessages.ContainerFilter_title, Action.AS_CHECK_BOX);
+			setImageDescriptor(imageDescriptor);
+			setToolTipText(UML2UIMessages.ContainerFilter_tooltip);
+			
+			UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+		}
+		
+		public void run() {
+			Class containerType = (Class) DialogLaunchUtil.chooseElement(
+					new java.lang.Class[] { Class.class }, resource, getSite().getShell(),
+					UML2UIMessages.ContainerFilter_title,
+					UML2UIMessages.ContainerFilter_message);
+
+			if (containerType != null) {
+				containerFilter = containerType;
+				computeContainerFilterSelection();
+			}
+			
+			if (containerFilter != null) {
+				this.setChecked(true);
+				baseTypeFilterAction.setChecked(false);
+				baseTypeFilter = null;
+				
+				// use icon for Container action to show which filter is applied
+				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
+				viewerPane.setTitle(containerType.getQualifiedName(), filterImage);
+			}
+			else {
+				this.setChecked(false);
+			}
+		}
+	};
+	private Action containerFilterAction = new ContainerFilterAction();
+	private Class containerFilter = null;
+
+	private class ContainerFilterMenuAction extends Action {
+		String imageKey = "icons/full/eview16/filter_container.gif";
+		ImageDescriptor imageDescriptor = UML2UIPlugin.getImageDescriptor(imageKey);
+		
+		protected ContainerFilterMenuAction() {
+			super(UML2UIMessages.ContainerFilter_menu, Action.AS_PUSH_BUTTON);
+			setImageDescriptor(imageDescriptor);
+			setToolTipText(UML2UIMessages.ContainerFilter_tooltip);
+			
+			UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+		}
+
+		// TODO need to listen for selection events
+		public void selectionChanged(IAction action, ISelection selection) {
+			
+		}
+		
+		public void run() {
+			// action enabled only when exactly one Class is selected
+			ISelection selection = getSite().getSelectionProvider().getSelection();
+			Class containerType = null;
+			
+			if (((IStructuredSelection)selection).size() == 1) {
+				Object element = ((IStructuredSelection)selection).getFirstElement();
+				if (element instanceof IAdaptable) {
+					element = ((IAdaptable)element).getAdapter(Element.class);
+				}
+				if (element instanceof Class) {
+					containerType = (Class)element;
+				}
+			}
+
+			if (containerType != null) {
+				containerFilter = containerType;
+				computeContainerFilterSelection();
+			}
+			
+			if (containerFilter != null) {
+				containerFilterAction.setChecked(true);
+				baseTypeFilterAction.setChecked(false);
+				baseTypeFilter = null;
+				
+				// use icon for Container action to show which filter is applied
+				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
+				viewerPane.setTitle(containerType.getQualifiedName(), filterImage);
+			}
+			else {
+				containerFilterAction.setChecked(false);
+			}
+		}
+	};
+	private Action containerFilterMenuAction = new ContainerFilterMenuAction();
+	
+	private Action removeFiltersAction = new RemoveFilterAction();
+	
+	private class RemoveFilterAction extends Action {
+		protected RemoveFilterAction() {
+			super(UML2UIMessages.RemoveFilter_title, Action.AS_PUSH_BUTTON);
+			setImageDescriptor(UML2UIPlugin.getImageDescriptor("icons/full/eview16/remove.gif"));
+			setToolTipText(UML2UIMessages.RemoveFilter_tooltip);
+		}
+
+		public void run() {
+				baseTypeFilter = null;
+				containerFilter = null;
+				baseTypeFilterAction.setChecked(false);
+				containerFilterAction.setChecked(false);
+				viewerPane.setTitle(null);
+
+				setDefaultSelection();
+		}
+	};
+	
+	private void updateMenuActions(ISelection selection) {
+		if (((IStructuredSelection)selection).size() == 1) {
+			Object element = ((IStructuredSelection)selection).getFirstElement();
+			if (element instanceof IAdaptable) {
+				element = ((IAdaptable)element).getAdapter(Element.class);
+			}
+			if (element instanceof Class) {
+				containerFilterMenuAction.setEnabled(true);
+			}
+		}
+		containerFilterMenuAction.setEnabled(false);
+	}
+	
+	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		//TODO add new class toolbar action
+		
+		toolBarManager.add(baseTypeFilterAction);
+		toolBarManager.add(containerFilterAction);
+		toolBarManager.add(removeFiltersAction);
+		
+//		toolBarManager.add(new Separator());
+		
+		toolBarManager.update(true);
 	}
 
 	public void setFocus() {
@@ -818,12 +1081,14 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	 */
 	public void menuAboutToShow(IMenuManager menuManager) {
 		((IMenuListener)getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
+
+		menuManager.appendToGroup(ICommonMenuConstants.GROUP_GOTO, containerFilterMenuAction);
 	}
 
 	/**
 	 * This is how the framework determines which interfaces we implement.
 	 */
-	public Object getAdapter(Class key) {
+	public Object getAdapter(java.lang.Class key) {
 		
 		if (key == IPropertySheetPage.class) {
 			return new TabbedPropertySheetPage(this);
