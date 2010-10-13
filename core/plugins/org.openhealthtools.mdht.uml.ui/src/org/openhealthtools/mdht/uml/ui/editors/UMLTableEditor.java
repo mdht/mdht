@@ -814,7 +814,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			setImageDescriptor(imageDescriptor);
 			setToolTipText(UML2UIMessages.BaseTypeFilter_tooltip);
 
-			if (UML2UIPlugin.getImageDescriptor(imageKey) == null) {
+			if (UML2UIPlugin.getDefault().getImageRegistry().getDescriptor(imageKey) == null) {
 				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
 			}
 		}
@@ -857,7 +857,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			setImageDescriptor(imageDescriptor);
 			setToolTipText(UML2UIMessages.ContainerFilter_tooltip);
 
-			if (UML2UIPlugin.getImageDescriptor(imageKey) == null) {
+			if (UML2UIPlugin.getDefault().getImageRegistry().getDescriptor(imageKey) == null) {
 				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
 			}
 		}
@@ -898,8 +898,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			super(UML2UIMessages.ContainerFilter_menu, Action.AS_PUSH_BUTTON);
 			setImageDescriptor(imageDescriptor);
 			setToolTipText(UML2UIMessages.ContainerFilter_tooltip);
-			
-			if (UML2UIPlugin.getImageDescriptor(imageKey) == null) {
+
+			if (UML2UIPlugin.getDefault().getImageRegistry().getDescriptor(imageKey) == null) {
 				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
 			}
 		}
