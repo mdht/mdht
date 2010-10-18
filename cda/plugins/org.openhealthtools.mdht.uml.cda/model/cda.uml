@@ -2080,8 +2080,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_detJUErfEd6FXKclYGEDCw" name="id" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eA-v8UrfEd6FXKclYGEDCw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eA-v8ErfEd6FXKclYGEDCw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VOhQsNrTEd-7hplaRhyxug" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VOhQsdrTEd-7hplaRhyxug" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_4PkOUEALEd6wZe6nFLrjsw" name="addr" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_v0zRUD5yEd6cla2oXsPtlA"/>
