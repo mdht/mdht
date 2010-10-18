@@ -18,6 +18,7 @@ import java.util.HashMap;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
+import org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.cdaconstraints.InvalidCDARedefinitionConstraint;
 
 /**
  * 
@@ -27,6 +28,7 @@ public class Classes extends AbstractModelConstraint {
 
 	private static void initialize() {
 
+		InvalidCDARedefinitionConstraint.register();
 	}
 
 	private static HashMap<String, AbstractModelConstraint> constraints = new HashMap<String, AbstractModelConstraint>();

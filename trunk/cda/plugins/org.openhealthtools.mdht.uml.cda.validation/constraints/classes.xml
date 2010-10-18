@@ -7,7 +7,22 @@
 <includedConstraints>
 	<constraints categories="org.openhealthtools.mdht.uml.cda.validation/correctness">
 
-	
+
+
+
+		<constraint id="classes.invalidRedefinition" lang="Java"
+
+			class="org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.Classes"
+			severity="ERROR" mode="Batch" name="%invalidRedefinition.name"
+			statusCode="2">
+			<target class="Constraint" />
+			<description>%invalidRedefinition.description
+			</description>
+			<message>%invalidRedefinition.message
+			</message>
+		</constraint>
+
+
 	</constraints>
 
 	<constraints categories="org.openhealthtools.mdht.uml.cda.validation/completeness">
