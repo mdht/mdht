@@ -9,8 +9,6 @@
 
 <plugin>
 
-asdddddddddddddddddddfffffufuffufufufufufufufufufufufufufufufufufufuufufuf
-
 	<!-- - Constraint Context -->
 	<extension point="org.eclipse.emf.validation.constraintBindings">
 		<clientContext
