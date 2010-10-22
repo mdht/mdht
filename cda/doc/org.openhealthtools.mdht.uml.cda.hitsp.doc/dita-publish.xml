@@ -77,4 +77,19 @@
 		
 		<delete dir="temp"/>
 	</target>
+
+	<target name="xhtml" depends="integrate">
+		<property name="xhtml.output" value="${basedir}/xhtml" />
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="xhtml" />
+			<property name="args.input" value="${ditaFilePath}/${modelName}-web.ditamap" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="output.dir" value="${xhtml.output}" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+		</ant>
+		
+		<delete dir="temp"/>
+	</target>
 </project>
