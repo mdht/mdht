@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  
+ 
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="org.openhealthtools.mdht.uml.cda.wizards.actionSet"
+            label="CDA Project Wizards"
+            visible="true">
+         <menu
+               id="org.openhealthtools.mdht.uml.cda.wizards.menu"
+               label="CDA Project Wizards &amp;Menu">
+            <separator
+                  name="cdaWizardsGroup">
+            </separator>
+         </menu>
+         <action
+               class="org.openhealthtools.mdht.uml.cda.wizards.actions.NewCDAModelAction"
+               id="org.openhealthtools.mdht.uml.cda.wizards.newcdamodel"
+               label="&amp;Create New CDA Model"
+               menubarPath="org.openhealthtools.mdht.uml.cda.wizards.menu/cdaWizardsGroup"
+               toolbarPath="cdaWizardsGroup"
+               tooltip="Create New CDA Model Project">
+         </action>
+      </actionSet>
+   </extension>
+  
+   <extension
+         point="org.eclipse.ui.menus">
+   </extension>         
+
+</plugin>
