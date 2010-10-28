@@ -71,7 +71,7 @@ public class NewCDAModelWizard extends Wizard {
 
 	
 
-	@Override
+	
 	public IWizardPage getNextPage(IWizardPage page) {
 		return super.getNextPage(page);
 	}
@@ -107,7 +107,7 @@ public class NewCDAModelWizard extends Wizard {
 	   
 
 	   
-	@Override
+	
 	public boolean performFinish() {
 		
 		
@@ -134,134 +134,134 @@ public class NewCDAModelWizard extends Wizard {
 		
 		IPluginContentWizard contentWizard = new IPluginContentWizard() {
 
-			@Override
+			
 			public void addPages() {
 
 			}
 
-			@Override
+			
 			public boolean canFinish() {
 
 				return false;
 			}
 
-			@Override
+			
 			public void createPageControls(Composite pageContainer) {
 
 			}
 
-			@Override
+			
 			public void dispose() {
 
 			}
 
-			@Override
+			
 			public IWizardContainer getContainer() {
 
 				return null;
 			}
 
-			@Override
+			
 			public Image getDefaultPageImage() {
 
 				return null;
 			}
 
-			@Override
+			
 			public IDialogSettings getDialogSettings() {
 
 				return null;
 			}
 
-			@Override
+			
 			public IWizardPage getNextPage(IWizardPage page) {
 
 				return null;
 			}
 
-			@Override
+			
 			public IWizardPage getPage(String pageName) {
 
 				return null;
 			}
 
-			@Override
+			
 			public int getPageCount() {
 
 				return 0;
 			}
 
-			@Override
+			
 			public IWizardPage[] getPages() {
 
 				return null;
 			}
 
-			@Override
+			
 			public IWizardPage getPreviousPage(IWizardPage page) {
 
 				return null;
 			}
 
-			@Override
+			
 			public IWizardPage getStartingPage() {
 
 				return null;
 			}
 
-			@Override
+			
 			public RGB getTitleBarColor() {
 
 				return null;
 			}
 
-			@Override
+			
 			public String getWindowTitle() {
 
 				return null;
 			}
 
-			@Override
+			
 			public boolean isHelpAvailable() {
 
 				return false;
 			}
 
-			@Override
+			
 			public boolean needsPreviousAndNextButtons() {
 
 				return false;
 			}
 
-			@Override
+			
 			public boolean needsProgressMonitor() {
 
 				return false;
 			}
 
-			@Override
+			
 			public boolean performCancel() {
 
 				return false;
 			}
 
-			@Override
+			
 			public boolean performFinish() {
 
 				return false;
 			}
 
-			@Override
+			
 			public void setContainer(IWizardContainer wizardContainer) {
 
 			}
 
-			@Override
+			
 			public void init(IFieldData data) {
 
 			}
 
-			@Override
+			
 			public IPluginReference[] getDependencies(String schemaVersion) {
 
 				// currently simple sort keeps manifest readable - might need to
@@ -269,7 +269,7 @@ public class NewCDAModelWizard extends Wizard {
 
 				Comparator<IPluginReference> c = new Comparator<IPluginReference>() {
 
-					@Override
+					
 					public int compare(IPluginReference arg0, IPluginReference arg1) {
 						return arg0.getId().compareTo(arg1.getId());
 					}
@@ -290,13 +290,13 @@ public class NewCDAModelWizard extends Wizard {
 
 			}
 
-			@Override
+			
 			public String[] getNewFiles() {
 
 				return new String[] { "plugin.properties" };
 			}
 
-			@Override
+			
 			public boolean performFinish(IProject project, IPluginModelBase model, IProgressMonitor monitor) {
 
 				return false;
@@ -317,19 +317,19 @@ public class NewCDAModelWizard extends Wizard {
 
 		IProjectProvider fProjectProvider = new IProjectProvider() {
 
-			@Override
+			
 			public IProject getProject() {
 
 				return project;
 			}
 
-			@Override
+			
 			public String getProjectName() {
 
 				return name;
 			}
 
-			@Override
+			
 			public IPath getLocationPath() {
 
 				return project.getFullPath();

@@ -58,7 +58,7 @@ public class NewCDAModelPage extends WizardPage {
 		return combo.getText();
 	}
 
-	@Override
+	
 	public boolean canFlipToNextPage() {
 		return modelName.getText().length() > 0;
 	}
@@ -103,7 +103,7 @@ public class NewCDAModelPage extends WizardPage {
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 	 */
 
-	@Override
+	
 	public void createControl(Composite parent) {
 
 		Composite composite = new Composite(parent, SWT.NONE);
@@ -165,7 +165,7 @@ public class NewCDAModelPage extends WizardPage {
 
 		ModifyListener listener = new ModifyListener() {
 
-			@Override
+			
 			public void modifyText(ModifyEvent e) {
 				
 				basePackage.setText("org.openhealthtools.mdht.cda");
