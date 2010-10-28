@@ -71,22 +71,6 @@ public class NewCDAModelPage extends WizardPage {
 	}
 	
 	
-	/*
-	 * 				
-	 * 			codegenSupport.setBasePackage("org.openhealthtools.mdht.uml.cda");
-								
-				codegenSupport.setNsURI("http://www.openhealthtools.org/mdht/uml/cda/"+newCDATemplatePage.getModelName().toLowerCase());
-			
-				codegenSupport.setNsPrefix(newCDATemplatePage.getModelName().toLowerCase());
-				
-				codegenSupport.setPackageName(newCDATemplatePage.getModelName().toLowerCase());
-
-				codegenSupport.setPrefix(newCDATemplatePage.getModelName());
-	
-				clonePackage.setName(newCDATemplatePage.getModelName().toLowerCase());
-
-	 */
-	
 	
 	Text basePackage;
 
