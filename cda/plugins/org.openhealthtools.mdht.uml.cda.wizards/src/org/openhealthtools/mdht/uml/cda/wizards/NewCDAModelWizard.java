@@ -15,12 +15,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IExtension;
@@ -28,8 +30,11 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -42,7 +47,11 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.ManifestElement;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.IPluginReference;
-import org.eclipse.pde.internal.core.project.PDEProject;
+import org.eclipse.pde.core.plugin.PluginRegistry;
+import org.eclipse.pde.internal.core.ICoreConstants;
+import org.eclipse.pde.internal.core.PDECore;
+import org.eclipse.pde.internal.core.PDEManager;
+//import org.eclipse.pde.internal.core.project.PDEProject;
 import org.eclipse.pde.internal.ui.wizards.IProjectProvider;
 import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.pde.internal.ui.wizards.plugin.PluginFieldData;
@@ -65,6 +74,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
+import org.osgi.service.prefs.BackingStoreException;
 
 @SuppressWarnings("restriction")
 public class NewCDAModelWizard extends Wizard {
@@ -339,19 +349,26 @@ public class NewCDAModelWizard extends Wizard {
 
 		try {
 			
+			System.out.println("create new project");
 			// Use pde internal functionality to create plugin 
 			getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
 
+			System.out.println("create new plugin.xml");
 			createPluginXML(project);
 
+			System.out.println("create new manifest");
 			createManifest(project);
 
+			System.out.println("create new model folder");
 			createFolder(project, "model");
 
+			System.out.println("create new uml model");
 			createUMLModel(project);
 
+			System.out.println("create new transformation");
 			createTransformation(project);
 
+			System.out.println("create new plugin properties");
 			createPluginProperties(project);
 
 		} catch (InvocationTargetException e) {
@@ -389,7 +406,7 @@ public class NewCDAModelWizard extends Wizard {
 
 			IPath filePath = new Path("model/" + newCDATemplatePage.getModelName().toLowerCase() + ".uml");
 
-			IFile file = PDEProject.getBundleRelativeFile(project, filePath);
+			IFile file = getBundleRelativeFile(project, filePath);
 
 			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 
@@ -540,7 +557,7 @@ public class NewCDAModelWizard extends Wizard {
 
 		try {
 			
-			IFile pluginXml = PDEProject.getPluginXml(project);
+			IFile pluginXml = getPluginXml(project);
 
 			StringWriter swriter = new StringWriter();
 
@@ -580,7 +597,7 @@ public class NewCDAModelWizard extends Wizard {
 
 		try {
 			
-			IFile manifest = PDEProject.getManifest(project);
+			IFile manifest = getManifest(project);
 
 			StringWriter swriter = new StringWriter();
 
@@ -611,7 +628,7 @@ public class NewCDAModelWizard extends Wizard {
 
 	void createFolder(IProject project,String name) {
 		try {
-			IFolder folder = PDEProject.getBundleRelativeFolder(project, new Path(name));
+			IFolder folder = getBundleRelativeFolder(project, new Path(name));
 			folder.create(true, false, null);
 		} catch (CoreException e) {
 			
@@ -625,7 +642,7 @@ public class NewCDAModelWizard extends Wizard {
 
 			IPath filePath = new Path(name);				
 		
-			IFile file = PDEProject.getBundleRelativeFile(project, filePath);
+			IFile file = getBundleRelativeFile(project, filePath);
 			
 			file.create(contents, true, null);
 		
@@ -699,11 +716,9 @@ public class NewCDAModelWizard extends Wizard {
 										
 										// Add model plugin required bundles to the plugin
 										Object header =  bundle.getHeaders().get(Constants.REQUIRE_BUNDLE);
-										System.out.println("Adding dependency " + bundle.getSymbolicName());						
 										try {
 											for (ManifestElement manifestElement : ManifestElement.parseHeader(Constants.REQUIRE_BUNDLE, (String) header))
 											{
-												System.out.println(" " + manifestElement.getValue());
 												references.put(manifestElement.getValue() ,new PluginReference(manifestElement.getValue(),null,0));
 											}
 										} catch (BundleException e1) {
@@ -747,6 +762,104 @@ public class NewCDAModelWizard extends Wizard {
 	
 	}
 
+
+	/*
+	 * The following code is from helios build and included to support galileo 
+	 */
+	
+	/*******************************************************************************
+	 * Copyright (c) 2010 IBM Corporation and others.
+	 * All rights reserved. This program and the accompanying materials
+	 * are made available under the terms of the Eclipse Public License v1.0
+	 * which accompanies this distribution, and is available at
+	 * http://www.eclipse.org/legal/epl-v10.html
+	 *
+	 * Contributors:
+	 *     IBM Corporation - initial API and implementation
+	 *******************************************************************************/
+	
+	/**
+	 * Utility class to resolve plug-in and bundle files relative to a project 
+	 * specific bundle root location.
+	 * 
+	 * @since 3.6
+	 */
+
+	
+	/**
+	 * Preference key for the project relative bundle root path
+	 */
+	public static final String BUNDLE_ROOT_PATH = "BUNDLE_ROOT_PATH"; //$NON-NLS-1$
+
+	/**
+	 * Returns the container in the specified project that corresponds to the
+	 * root of bundle related artifacts. May return the project itself
+	 * or a folder within the project.
+	 * 
+	 * @param project project
+	 * @return container corresponding to the bundle root
+	 */
+	public static IContainer getBundleRoot(IProject project) {
+		ProjectScope scope = new ProjectScope(project);
+		IEclipsePreferences node = scope.getNode(PDECore.PLUGIN_ID);
+		if (node != null) {
+			String string = node.get(BUNDLE_ROOT_PATH, null);
+			if (string != null) {
+				IPath path = Path.fromPortableString(string);
+				return project.getFolder(path);
+			}
+		}
+		return project;
+	}
+
+
+
+	/**
+	 * Returns the resource in the specified project corresponding to its
+	 * <code>MANIFEST.MF</code> file.
+	 * 
+	 * @param project project
+	 * @return <code>MANIFEST.MF</code> file that may or may not exist
+	 */
+	public static IFile getManifest(IProject project) {
+		return getBundleRelativeFile(project, ICoreConstants.MANIFEST_PATH);
+	}
+
+
+
+	/**
+	 * Returns the resource in the specified project corresponding to its
+	 * <code>plugin.xml</code>file.
+	 * 
+	 * @param project project
+	 * @return <code>plugin.xml</code> file that may or may not exist
+	 */
+	public static IFile getPluginXml(IProject project) {
+		return getBundleRelativeFile(project, ICoreConstants.PLUGIN_PATH);
+	}
+
+
+	/**
+	 * Returns a file relative to the bundle root of the specified project.
+	 * 
+	 * @param project project
+	 * @param path bundle root relative path
+	 * @return file that may or may not exist
+	 */
+	public static IFile getBundleRelativeFile(IProject project, IPath path) {
+		return getBundleRoot(project).getFile(path);
+	}
+
+	/**
+	 * Returns a folder relative to the bundle root of the specified project.
+	 * 
+	 * @param project project
+	 * @param path bundle root relative path
+	 * @return folder that may or may not exist
+	 */
+	public static IFolder getBundleRelativeFolder(IProject project, IPath path) {
+		return getBundleRoot(project).getFolder(path);
+	}
 
 
 	
