@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -363,6 +364,8 @@ public class NewCDAModelWizard extends Wizard {
 			createTransformation(project);
 
 			createPluginProperties(project);
+			
+			createReadME( project);
 
 		} catch (InvocationTargetException e) {
 			
@@ -425,6 +428,7 @@ public class NewCDAModelWizard extends Wizard {
 				
 				codegenSupport.setBase_Namespace(clonePackage);
 				
+//				newCDATemplatePage.get
 				codegenSupport.setBasePackage("org.openhealthtools.mdht.uml.cda");
 //				newCDATemplatePage.getN
 //				newCDATemplatePage.get
@@ -507,6 +511,7 @@ public class NewCDAModelWizard extends Wizard {
 			writer.flush();
 
 			swriter.close();
+			
 
 			InputStream is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
 
@@ -585,6 +590,85 @@ public class NewCDAModelWizard extends Wizard {
 
 	}
 	
+	void createReadME(IProject project)
+	{
+		
+		StringWriter swriter = new StringWriter();
+
+		PrintWriter writer = new PrintWriter(swriter);
+
+		writer.println("In order to properly generate the corresponding Java Library,"); 
+		writer.println("the following steps are need to be taken"); 
+		writer.println("");
+		writer.println("Generate for the First Time");
+		writer.println("1) Run transform.xml to create ecore uml model"); 
+		writer.println("	a) Right Click on transform.xml"); 
+		writer.println("	b) Select Run As.."); 
+		writer.println("	c) Use Option 2, Ant Build.."); 
+		writer.println("	d) Select JRE Tab"); 
+		writer.println("	e) Select 'Run in the same JRE as the Workspace' radio button"); 
+		writer.println("	f) Hit Run Button"); 
+		writer.println("");	
+		writer.println("2) Create EMF GenModel");	
+		writer.println("    a) Right Click on "+newCDATemplatePage.getModelName().toLowerCase() +"_ECore.uml");	
+		writer.println("	b) Select New/Other..");	
+		writer.println("	c) Browse to Eclipse Modeling Framework");	
+		writer.println("	d) Select EMF Generator Model Wizard");	
+		writer.println("	e) Hit Next on EMF Generator Page");	
+		writer.println("	f) Hit Next on Select a Model Importer");	
+		writer.println("	g) On UML Process Page");	
+		writer.println("		g.1) Press 'Process All' option");	
+		writer.println("		g.2) Set 'Derived Features' to Ignore");	
+		writer.println("		g.3) Set 'Camel Case Names' to Ignore");	
+		writer.println("		g.4) Press Load Button");	
+		writer.println("		g.5) Hit Next");	
+		writer.println("	h) On UML Package Selection Page");
+		writer.println("		h.1) First Select all models Referenced Models List (Bottom of Dialog)");	 
+		writer.println("		h.2) Select Model in Packages (Top of Dialog)");
+		writer.println("		h.2) Hit Finish");
+		writer.println("		h.4) EMF Genmodel should open");	
+		writer.println("");	
+		writer.println("3) Configure EMF GenModel");	
+		writer.println("	a) Set Invariant Prefix property to 'validate' on "+newCDATemplatePage.getModelName().toLowerCase() +"_ECore");	
+		writer.println("	b) Set Operations Package property to org.openhealthtools.mdht.uml.cda"+newCDATemplatePage.getModelName().toLowerCase() +".operations");
+		writer.println("");
+		writer.println("4) Generate Source Code");
+		writer.println("	a) Right Click on "+newCDATemplatePage.getModelName().toLowerCase() +"_ECore");			
+		writer.println("	a) Select 'Generate Model Code'");
+		writer.println("");
+		writer.println("ReGenerate After Changes to the Model");
+		writer.println("1) Run transform.xml to create ecore uml model"); 
+		writer.println("	a) Right Click on transform.xml"); 
+		writer.println("	b) Select Run As.."); 
+		writer.println("	c) Use Option 2, Ant Build.."); 
+		writer.println("	d) Select JRE Tab"); 
+		writer.println("	e) Select 'Run in the same JRE as the Workspace' radio button"); 
+		writer.println("	f) Hit Run Button"); 
+		writer.println("2) Reload EMF GenModel");	
+		writer.println("    a) Right Click on "+newCDATemplatePage.getModelName().toLowerCase() +"_ECore.genmodel");
+		writer.println("	b) Select Reload.."); 
+		writer.println("	c) Hit Next  'Select a Model Importer Page'");	
+		writer.println("	c) Hit Next 'Uml Import Page'");	
+		writer.println("	c) Hit Finish on 'Package Selection Page'");
+		
+		InputStream is;
+		try {
+			is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
+			createFile(project, "codegeneration.readme", is);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	
+				
+			
+
+			
+			
+			
+	}
+	
 	
 	void createManifest(IProject project) {
 
@@ -619,17 +703,19 @@ public class NewCDAModelWizard extends Wizard {
 	}
 	
 
-	void createFolder(IProject project,String name) {
+	IFolder createFolder(IProject project,String name) {
 		try {
 			IFolder folder = getBundleRelativeFolder(project, new Path(name));
 			folder.create(true, false, null);
+			return folder;
 		} catch (CoreException e) {
 			
 			e.printStackTrace();
 		}
+		return null;
 	}
 
-	void createFile(IProject project,String name,InputStream contents) {
+	IFile createFile(IProject project,String name,InputStream contents) {
 		
 		try{
 
@@ -637,7 +723,11 @@ public class NewCDAModelWizard extends Wizard {
 		
 			IFile file = getBundleRelativeFile(project, filePath);
 			
+	
+			
 			file.create(contents, true, null);
+			
+			return file;
 		
 	} catch (CoreException e) {
 		
@@ -645,6 +735,7 @@ public class NewCDAModelWizard extends Wizard {
 	} 
 
 
+	return null;
 	}
 
 
