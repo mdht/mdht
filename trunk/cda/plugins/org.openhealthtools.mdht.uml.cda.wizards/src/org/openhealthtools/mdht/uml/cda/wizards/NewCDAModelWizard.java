@@ -349,26 +349,19 @@ public class NewCDAModelWizard extends Wizard {
 
 		try {
 			
-			System.out.println("create new project");
 			// Use pde internal functionality to create plugin 
 			getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
 
-			System.out.println("create new plugin.xml");
 			createPluginXML(project);
 
-			System.out.println("create new manifest");
 			createManifest(project);
 
-			System.out.println("create new model folder");
 			createFolder(project, "model");
 
-			System.out.println("create new uml model");
 			createUMLModel(project);
 
-			System.out.println("create new transformation");
 			createTransformation(project);
 
-			System.out.println("create new plugin properties");
 			createPluginProperties(project);
 
 		} catch (InvocationTargetException e) {
