@@ -20,16 +20,10 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EContentAdapter;
-import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
-import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
-import org.openhealthtools.mdht.uml.cda.Component2;
-import org.openhealthtools.mdht.uml.cda.NonXMLBody;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * C32Example is an example implementation of the MDHT DocumentBuilder based on

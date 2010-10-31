@@ -12,42 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.builder.examples;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.ProblemSectionDirector;
-import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.ResultsSectionDirector;
-import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
-import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
-import org.openhealthtools.mdht.builder.cda.Builder;
-import org.openhealthtools.mdht.builder.cda.helpers.BuildAuthor;
-import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder.ProblemListSectionDirector;
-import org.openhealthtools.mdht.uml.cda.Act;
-import org.openhealthtools.mdht.uml.cda.Author;
-import org.openhealthtools.mdht.uml.cda.Observation;
-import org.openhealthtools.mdht.uml.cda.Organizer;
-import org.openhealthtools.mdht.uml.cda.Patient;
-import org.openhealthtools.mdht.uml.cda.PatientRole;
-import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
-import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
-import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
-import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 
 public class BuildPatienSummaryExample {
 //

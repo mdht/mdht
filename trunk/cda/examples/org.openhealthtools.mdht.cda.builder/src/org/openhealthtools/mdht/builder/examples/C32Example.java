@@ -13,7 +13,7 @@
 package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
-import org.openhealthtools.mdht.builder.cda.Builder;
+
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;

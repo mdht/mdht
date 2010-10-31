@@ -17,8 +17,6 @@ import java.util.List;
 
 import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder;
 import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
-import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
-import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.cda.helpers.BuildAuthor;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.uml.cda.Author;
