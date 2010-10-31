@@ -307,7 +307,9 @@ public class ClinicalDocumentBuilder {
 		if (patient != null) {
 			PatientRole patientRole = buildPatientRole();
 			patientRole.setPatient(patient);
-			clinicalDocument.getPatientRoles().add(patientRole);
+		
+			
+//			clinicalDocument.getPatientRoles().add(patientRole);
 		}
 
 		for (CS realmCode : buildRealmCodes()) {
