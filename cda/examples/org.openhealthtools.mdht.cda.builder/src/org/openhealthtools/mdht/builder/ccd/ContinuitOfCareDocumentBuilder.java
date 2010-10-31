@@ -16,7 +16,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
-import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.cda.GenericSectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.uml.cda.Act;

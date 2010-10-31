@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.builder.examples;
 
-import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.cda.SectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
