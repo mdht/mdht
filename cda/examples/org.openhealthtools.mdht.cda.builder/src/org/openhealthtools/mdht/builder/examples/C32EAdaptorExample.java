@@ -56,12 +56,7 @@ public class C32EAdaptorExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public ArrayBuilder<Adapter> getAdaptersBuilder() {
-
-				return new ArrayBuilder<Adapter>() {
-
-					@Override
-					public List<Adapter> construct() {
+			public List<Adapter> buildAdapters() {
 
 						ArrayList<Adapter> adapters = new ArrayList<Adapter>();
 
@@ -92,31 +87,24 @@ public class C32EAdaptorExample {
 						adapters.add(ca);
 
 						return adapters;
-					}
-
-				};
+				
 			}
 
-			@Override
-			public Builder<Component2> getComponentBuider() {
-				return new Builder<Component2>() {
-
-					@Override
-					public Component2 construct() {
-						Component2 c = CDAFactory.eINSTANCE.createComponent2();
-
-						NonXMLBody nonXMLBody = CDAFactory.eINSTANCE.createNonXMLBody();
-
-						nonXMLBody.setText(DatatypesFactory.eINSTANCE.createED());
-
-						c.setNonXMLBody(nonXMLBody);
-
-						return c;
-
-					}
-
-				};
-			}
+//			@Override
+//			public Component2 buildComponent() {
+//			
+//
+//						Component2 c = CDAFactory.eINSTANCE.createComponent2();
+//
+//						NonXMLBody nonXMLBody = CDAFactory.eINSTANCE.createNonXMLBody();
+//
+//						nonXMLBody.setText(DatatypesFactory.eINSTANCE.createED());
+//
+//						c.setNonXMLBody(nonXMLBody);
+//
+//						return c;
+//
+//			}
 
 		};
 
@@ -126,7 +114,7 @@ public class C32EAdaptorExample {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Adaptor.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32Adaptor.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

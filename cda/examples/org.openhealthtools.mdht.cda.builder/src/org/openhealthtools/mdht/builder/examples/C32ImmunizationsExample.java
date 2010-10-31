@@ -58,16 +58,12 @@ public class C32ImmunizationsExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public ImmunizationsSectionBuilder getImmunizationsSectionBuilder() {
-				return new ImmunizationsSectionBuilder() {
+			public ImmunizationsSectionDirector getImmunizationsSectionDirector() {
+				return new ImmunizationsSectionDirector() {
 
 					@Override
-					public ArrayBuilder<SubstanceAdministration> getSubstanceAdministrationBuilder() {
-						return new ArrayBuilder<SubstanceAdministration>() {
-
-							@Override
-							public List<SubstanceAdministration> construct() {
-
+					public List<SubstanceAdministration> buildSubstanceAdministrations() {
+						
 								ArrayList<SubstanceAdministration> immunizations = new ArrayList<SubstanceAdministration>();
 
 								Immunization immunization = HITSPFactory.eINSTANCE.createImmunization().init();
@@ -107,8 +103,7 @@ public class C32ImmunizationsExample {
 								immunizations.add(immunization);
 
 								return immunizations;
-							}
-						};
+						
 					}
 
 				};
@@ -122,7 +117,7 @@ public class C32ImmunizationsExample {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Immunizations.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32Immunizations.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

@@ -13,7 +13,7 @@
 package org.openhealthtools.mdht.builder.examples;
 
 import org.openhealthtools.mdht.builder.cda.Builder;
-import org.openhealthtools.mdht.builder.cda.SectionBuilder;
+import org.openhealthtools.mdht.builder.cda.SectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -26,233 +26,233 @@ public class BuildAllSectionsExample {
 		DocumentBuilder exampleClinicalDocumentBuilder = new DocumentBuilder() {
 
 			@Override
-			public AllergiesReactionSectionBuilder getAllergiesReactionSectionBuilder() {
-				return new AllergiesReactionSectionBuilder() {
+			public AllergiesReactionSectionDirector getAllergiesReactionSectionDirector() {
+				return new AllergiesReactionSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Allergies Reaction Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Allergies Reaction Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public ProblemListSectionBuilder getProblemListSectionBuilder() {
+			public ProblemListSectionDirector getProblemListSectionDirector() {
 
-				return new ProblemListSectionBuilder() {
+				return new ProblemListSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Problem List Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Problem List Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public ProblemSectionBuilder getProblemSectionBuilder() {
+			public ProblemSectionDirector getProblemSectionDirector() {
 
-				return new ProblemSectionBuilder() {
+				return new ProblemSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Problem Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Problem Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public FamilyHistorySectionBuilder getFamilyHistorySectionBuilder() {
+			public FamilyHistorySectionDirector getFamilyHistorySectionDirector() {
 
-				return new FamilyHistorySectionBuilder() {
+				return new FamilyHistorySectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Family History Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Family History Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public FunctionalStatusSectionBuilder getFunctionalStatusSectionBuilder() {
+			public FunctionalStatusSectionDirector getFunctionalStatusSectionDirector() {
 
-				return new FunctionalStatusSectionBuilder() {
+				return new FunctionalStatusSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Functional Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Functional Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public ImmunizationsSectionBuilder getImmunizationsSectionBuilder() {
+			public ImmunizationsSectionDirector getImmunizationsSectionDirector() {
 
-				return new ImmunizationsSectionBuilder() {
+				return new ImmunizationsSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Immunizations Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Immunizations Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public MedicalEquipmentSectionBuilder getMedicalEquipmentSectionBuilder() {
+			public MedicalEquipmentSectionDirector getMedicalEquipmentSectionDirector() {
 
-				return new MedicalEquipmentSectionBuilder() {
+				return new MedicalEquipmentSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Medical Equipment Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Medical Equipment Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public MedicationsSectionBuilder getMedicationsSectionBuilder() {
+			public MedicationsSectionDirector getMedicationsSectionDirector() {
 
-				return new MedicationsSectionBuilder() {
+				return new MedicationsSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Medications Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Medications Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public PayersSectionBuilder getPayersSectionBuilder() {
+			public PayersSectionDirector getPayersSectionDirector() {
 
-				return new PayersSectionBuilder() {
+				return new PayersSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Payers Section Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Payers Section Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public PlanOfCareSectionBuilder getPlanOfCareSectionBuilder() {
+			public PlanOfCareSectionDirector getPlanOfCareSectionDirector() {
 
-				return new PlanOfCareSectionBuilder() {
+				return new PlanOfCareSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Plan Of Care Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Plan Of Care Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public ProcedureSectionBuilder getProcedureSectionBuilder() {
+			public ProcedureSectionDirector getProcedureSectionDirector() {
 
-				return new ProcedureSectionBuilder() {
+				return new ProcedureSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Procedure Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Procedure Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public PurposeSectionBuilder getPurposeSectionBuilder() {
+			public PurposeSectionDirector getPurposeSectionDirector() {
 
-				return new PurposeSectionBuilder() {
+				return new PurposeSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Purpose Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Purpose Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public ResultsSectionBuilder getResultsSectionBuilder() {
+			public ResultsSectionDirector getResultsSectionDirector() {
 
-				return new ResultsSectionBuilder() {
+				return new ResultsSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Results Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Results Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public SocialHistorySectionBuilder getSocialHistorySectionBuilder() {
+			public SocialHistorySectionDirector getSocialHistorySectionDirector() {
 
-				return new SocialHistorySectionBuilder() {
+				return new SocialHistorySectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Social History Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Social History Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public VitalSignsSectionBuilder getVitalSignsSectionBuilder() {
+			public VitalSignsSectionDirector getVitalSignsSectionDirector() {
 
-				return new VitalSignsSectionBuilder() {
+				return new VitalSignsSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Vital Signs Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Vital Signs Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public AlertsSectionBuilder getAlertsSectionBuilder() {
+			public AlertsSectionDirector getAlertsSectionDirector() {
 
-				return new AlertsSectionBuilder() {
+				return new AlertsSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Alerts Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Alerts Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public AdvanceDirectivesSectionBuilder getAdvanceDirectivesSectionBuilder() {
+			public AdvanceDirectivesSectionDirector getAdvanceDirectivesSectionDirector() {
 
-				return new AdvanceDirectivesSectionBuilder() {
+				return new AdvanceDirectivesSectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Advance Directives Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Advance Directives Section").construct();
 					}
 
 				};
 			}
 
 			@Override
-			public SectionBuilder getSectionBuilder() {
+			public SectionDirector getSectionDirector() {
 
-				return new SectionBuilder() {
+				return new SectionDirector() {
 
 					@Override
-					public Builder<ST> getSectionTitleBuilder() {
-						return new BuilderUtil.BuildST("Generic Section");
+					public ST buildSectionTitle() {
+						return new BuilderUtil.BuildST("Generic Section").construct();
 					}
 
 				};

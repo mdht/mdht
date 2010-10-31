@@ -44,8 +44,8 @@ public class C32PlanOfCareExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public PlanOfCareSectionBuilder getPlanOfCareSectionBuilder() {
-				return new PlanOfCareSectionBuilder()
+			public PlanOfCareSectionDirector getPlanOfCareSectionDirector() {
+				return new PlanOfCareSectionDirector()
 				{
 					
 				};
@@ -64,7 +64,7 @@ public class C32PlanOfCareExample {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32PlanOfCare.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32PlanOfCare.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

@@ -14,7 +14,7 @@ package org.openhealthtools.mdht.builder.hitsp;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.openhealthtools.mdht.builder.cda.Builder;
-import org.openhealthtools.mdht.builder.cda.GenericSectionBuilder;
+import org.openhealthtools.mdht.builder.cda.GenericSectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
@@ -36,9 +36,9 @@ import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
-public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder {
+public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder {
 
-	public static class ProblemSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ProblemSectionBuilder {
+	public static class ProblemSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.ProblemSectionDirector {
 
 		@Override
 		protected ProblemSection createSection() {
@@ -47,7 +47,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class AdvanceDirectivesSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.AdvanceDirectivesSectionBuilder {
+	public static class AdvanceDirectivesSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.AdvanceDirectivesSectionDirector {
 
 		protected AdvanceDirectivesSection createSection() {
 			return HITSPFactory.eINSTANCE.createAdvanceDirectivesSection().init();
@@ -55,7 +55,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	};
 
-	public static class EncoutersSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.EncountersSectionBuilder {
+	public static class EncoutersSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.EncountersSectionDirector {
 
 		@Override
 		protected EncountersSection createSection() {
@@ -64,7 +64,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	};
 
-	public static class ProcedureSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ProcedureSectionBuilder {
+	public static class ProcedureSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.ProcedureSectionDirector {
 
 		@Override
 		protected ProceduresSection createSection() {
@@ -73,16 +73,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class SurgeriesSectionBuilder extends GenericSectionBuilder<SurgeriesSection> {
+	public static class SurgeriesSectionDirector extends GenericSectionDirector<SurgeriesSection> {
 
 		@Override
-		public Builder<StrucDocText> getSectionTextBuilder() {
-			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		public StrucDocText buildSectionText() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT").construct();
 		}
 
 		@Override
-		public Builder<ST> getSectionTitleBuilder() {
-			return new BuilderUtil.BuildST("Diagnostic Section");
+		public ST buildSectionTitle() {
+			return new BuilderUtil.BuildST("Diagnostic Section").construct();
 		}
 
 		@Override
@@ -92,16 +92,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class DiagnosticResultsSectionBuilder extends GenericSectionBuilder<DiagnosticResultsSection> {
+	public static class DiagnosticResultsSectionDirector extends GenericSectionDirector<DiagnosticResultsSection> {
 
 		@Override
-		public Builder<ST> getSectionTitleBuilder() {
-			return new BuilderUtil.BuildST("Diagnostic Section");
+		public ST buildSectionTitle() {
+			return new BuilderUtil.BuildST("Diagnostic Section").construct();
 		}
 
 		@Override
-		public Builder<StrucDocText> getSectionTextBuilder() {
-			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		public StrucDocText buildSectionText() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT").construct();
 		}
 
 		@Override
@@ -111,16 +111,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	};
 
-	public static class AllergiesReactionSectionBuilder extends GenericSectionBuilder<AllergiesReactionsSection> {
+	public static class AllergiesReactionSectionDirector extends GenericSectionDirector<AllergiesReactionsSection> {
 
 		@Override
-		public Builder<ST> getSectionTitleBuilder() {
-			return new BuilderUtil.BuildST("Allergies Section");
+		public ST buildSectionTitle() {
+			return new BuilderUtil.BuildST("Allergies Section").construct();
 		}
 
 		@Override
-		public Builder<StrucDocText> getSectionTextBuilder() {
-			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		public StrucDocText buildSectionText() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT").construct();
 		}
 
 		@Override
@@ -130,16 +130,16 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class ProblemListSectionBuilder extends GenericSectionBuilder<ProblemListSection> {
+	public static class ProblemListSectionDirector extends GenericSectionDirector<ProblemListSection> {
 
 		@Override
-		public Builder<ST> getSectionTitleBuilder() {
-			return new BuilderUtil.BuildST("Problem List Section");
+		public ST buildSectionTitle() {
+			return new BuilderUtil.BuildST("Problem List Section").construct();
 		}
 
 		@Override
-		public Builder<StrucDocText> getSectionTextBuilder() {
-			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT");
+		public StrucDocText buildSectionText() {
+			return new BuilderUtil.BuildStrucDocText("DISPLAY TEXT OF CONTENT").construct();
 		}
 
 		@Override
@@ -149,7 +149,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class ImmunizationsSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.ImmunizationsSectionBuilder {
+	public static class ImmunizationsSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.ImmunizationsSectionDirector {
 
 		@Override
 		protected ImmunizationsSection createSection() {
@@ -158,7 +158,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class VitalSignsSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.VitalSignsSectionBuilder {
+	public static class VitalSignsSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.VitalSignsSectionDirector {
 
 		@Override
 		protected VitalSignsSection createSection() {
@@ -167,7 +167,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class FunctionalStatusSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FunctionalStatusSectionBuilder {
+	public static class FunctionalStatusSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.FunctionalStatusSectionDirector {
 
 		@Override
 		protected FunctionalStatusSection createSection() {
@@ -176,7 +176,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class FamilyHistorySectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.FamilyHistorySectionBuilder {
+	public static class FamilyHistorySectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.FamilyHistorySectionDirector {
 
 		@Override
 		protected FamilyHistorySection createSection() {
@@ -185,7 +185,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public static class PlanOfCareSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.PlanOfCareSectionBuilder {
+	public static class PlanOfCareSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.PlanOfCareSectionDirector {
 
 		@Override
 		protected PlanOfCareSection createSection() {
@@ -193,7 +193,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 		}
 	}
 
-	public static class MedicalEquipmentSectionBuilder extends org.openhealthtools.mdht.builder.ccd.DocumentBuilder.MedicalEquipmentSectionBuilder {
+	public static class MedicalEquipmentSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.MedicalEquipmentSectionDirector {
 
 		@Override
 		protected MedicalEquipmentSection createSection() {
@@ -202,11 +202,11 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public AllergiesReactionSectionBuilder getAllergiesReactionSectionBuilder() {
+	public AllergiesReactionSectionDirector getAllergiesReactionSectionDirector() {
 		return null;
 	}
 
-	public ProblemListSectionBuilder getProblemListSectionBuilder() {
+	public ProblemListSectionDirector getProblemListSectionDirector() {
 		return null;
 	}
 
@@ -221,7 +221,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 		PatientSummary clinicalDocument = HITSPFactory.eINSTANCE.createPatientSummary().init();
 
-		for (Adapter adapter : getAdaptersBuilder().construct()) {
+		for (Adapter adapter : buildAdapters()) {
 			clinicalDocument.eAdapters().add(adapter);
 		}
 
@@ -229,15 +229,15 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 		
 		
-		appendSectionBuilder(getAllergiesReactionSectionBuilder());
+		appendSectionBuilder(getAllergiesReactionSectionDirector());
 
-		appendSectionBuilder(getProblemListSectionBuilder());
+		appendSectionBuilder(getProblemListSectionDirector());
 
-		appendSectionBuilder(getDiagnosticResultsSectionBuilder());
+		appendSectionBuilder(getDiagnosticResultsSection());
 
-		appendSectionBuilder(getEncoutersSectionBuilder());
+		appendSectionBuilder(getEncoutersSection());
 
-		appendSectionBuilder(getSurgeriesSectionBuilder());
+		appendSectionBuilder(getSurgeriesSection());
 
 		construct(clinicalDocument);
 
@@ -245,15 +245,15 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Docume
 
 	}
 
-	public SurgeriesSectionBuilder getSurgeriesSectionBuilder() {
+	public SurgeriesSectionDirector getSurgeriesSection() {
 		return null;
 	}
 
-	public DiagnosticResultsSectionBuilder getDiagnosticResultsSectionBuilder() {
+	public DiagnosticResultsSectionDirector getDiagnosticResultsSection() {
 		return null;
 	}
 
-	public EncoutersSectionBuilder getEncoutersSectionBuilder() {
+	public EncoutersSectionDirector getEncoutersSection() {
 		return null;
 	}
 

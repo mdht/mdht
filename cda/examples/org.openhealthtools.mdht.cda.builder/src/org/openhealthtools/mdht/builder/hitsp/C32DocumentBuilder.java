@@ -34,229 +34,168 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 public class C32DocumentBuilder extends DocumentBuilder {
 
 	@Override
-	public Builder<CE> getDocumentCodeBuilder() {
-		return new BuilderUtil.BuildCE("34133-9", "2.16.840.1.113883.6.1", "LOINC", "Summarization of episode note");
+	public CE buildDocumentCode() {
+		return new BuilderUtil.BuildCE("34133-9", "2.16.840.1.113883.6.1", "LOINC", "Summarization of episode note").construct();
 	}
 
 	@Override
-	public Builder<CE> getDocumentConfidentialityCodeBuilder() {
-		return new Builder<CE>() {
-			@Override
-			public CE construct() {
-				return DatatypesFactory.eINSTANCE.createCE();
-			}
-
-		};
+	public CE buildDocumentConfidentialityCode() {
+		return new BuilderUtil.BuildCE("", "", "", "").construct();
 	}
 
 	@Override
-	public Builder<II> getDocumentIdBuilder() {
-		return new Builder<II>() {
-			@Override
-			public II construct() {
-				return DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString());
-			}
-
-		};
+	public II buildDocumentId() {
+		return DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString());
 	}
 
 	@Override
-	public Builder<InfrastructureRootTypeId> getDocumentTypeBuilder() {
-		return new Builder<InfrastructureRootTypeId>() {
+	public InfrastructureRootTypeId buildDocumentType() {
 
-			@Override
-			public InfrastructureRootTypeId construct() {
+		InfrastructureRootTypeId infrastructureRootTypeId = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
 
-				InfrastructureRootTypeId infrastructureRootTypeId = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+		infrastructureRootTypeId.setRoot("2.16.840.1.113883.1.3");
 
-				infrastructureRootTypeId.setRoot("2.16.840.1.113883.1.3");
+		infrastructureRootTypeId.setExtension("POCD_HD000040");
 
-				infrastructureRootTypeId.setExtension("POCD_HD000040");
-
-				return infrastructureRootTypeId;
-			}
-
-		};
+		return infrastructureRootTypeId;
 	}
 
 	@Override
-	public Builder<ST> getDocumentTitleBuilder() {
-		return new Builder<ST>() {
-
-			@Override
-			public ST construct() {
-				return DatatypesFactory.eINSTANCE.createST();
-			}
-
-		};
+	public ST buildDocumentTitle() {
+		return DatatypesFactory.eINSTANCE.createST();
 	}
 
 	@Override
-	public Builder<TS> getDocumentEffectiveTimeBuilder() {
-		return new BuilderUtil.BuildEffectiveTime("yyyyMMddkkmmssZ");
+	public TS buildDocumentEffectiveTime() {
+		return new BuilderUtil.BuildEffectiveTime("yyyyMMddkkmmssZ").construct();
 	}
 
 	@Override
-	public Builder<CS> getDocumentLanguageCode() {
-		return new BuilderUtil.BuildCS("nn-CC");
+	public CS buildDocumentLanguageCode() {
+		return new BuilderUtil.BuildCS("nn-CC").construct();
 	}
 
 	@Override
-	public ArrayBuilder<Author> getAuthorBuilder() {
+	public List<Author> buildAuthors() {
 
-		return new ArrayBuilder<Author>() {
-			@Override
-			public List<Author> construct() {
-				ArrayList<Author> authors = new ArrayList<Author>();
+		ArrayList<Author> authors = new ArrayList<Author>();
 
-				Author author = CDAFactory.eINSTANCE.createAuthor();
+		Author author = CDAFactory.eINSTANCE.createAuthor();
 
-				author.setTime(new BuilderUtil.BuildEffectiveTime().construct());
+		author.setTime(new BuilderUtil.BuildEffectiveTime().construct());
 
-				AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
+		AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
 
-				assignedAuthor.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
-				
-				assignedAuthor.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-				
-				assignedAuthor.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
-				
-				Person person = CDAFactory.eINSTANCE.createPerson();
-				
-				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
-				
-				assignedAuthor.setAssignedPerson(person);
-				
+		assignedAuthor.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
 
-				author.setAssignedAuthor(assignedAuthor);
+		assignedAuthor.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 
-				authors.add(author);
+		assignedAuthor.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
 
-				return authors;
-			}
-		};
-	}
-	
-	
+		Person person = CDAFactory.eINSTANCE.createPerson();
 
-	@Override
-	public Builder<PatientRole> getPatientRoleBuilder() {
-	return new Builder<PatientRole> ()
-	{
+		person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
 
-		@Override
-		public PatientRole construct() {
-			PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
-			
-			patientRole.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
-			
-			AD ad = DatatypesFactory.eINSTANCE.createAD();
-			
-			ad.setNullFlavor(NullFlavor.UNK);
-			
-			patientRole.getAddrs().add(ad);
-			
-			patientRole.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
-			
-			return patientRole;
-		}
-		
-	};
+		assignedAuthor.setAssignedPerson(person);
+
+		author.setAssignedAuthor(assignedAuthor);
+
+		authors.add(author);
+
+		return authors;
 	}
 
 	@Override
-	public Builder<Patient> getPatientBuilder() {
+	public PatientRole buildPatientRole() {
 
-		return new Builder<Patient>() {
+		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
 
-			@Override
-			public Patient construct() {
+		patientRole.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
 
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
+		AD ad = DatatypesFactory.eINSTANCE.createAD();
 
-				CE administrativeGenderCode = DatatypesFactory.eINSTANCE.createCE("UN", "2.16.840.1.113883.5.1");
-				
-				patient.setAdministrativeGenderCode(administrativeGenderCode);
-				
-				PN pn = DatatypesFactory.eINSTANCE.createPN();
-				
-				pn.setNullFlavor(NullFlavor.UNK);
-				
-				patient.getNames().add(pn);
-				
-				TS ts = DatatypesFactory.eINSTANCE.createTS();
-				
-				ts.setNullFlavor(NullFlavor.UNK);
-				
-				patient.setBirthTime(ts);
+		ad.setNullFlavor(NullFlavor.UNK);
 
-				return patient;
+		patientRole.getAddrs().add(ad);
 
-			}
+		patientRole.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
 
-		};
+		return patientRole;
+
 	}
 
 	@Override
-	public ArrayBuilder<DocumentationOf> getDocumentationOfBuilder() {
-		return new ArrayBuilder<DocumentationOf>() {
+	public Patient buildPatient() {
 
-			@Override
-			public List<DocumentationOf> construct() {
+		Patient patient = CDAFactory.eINSTANCE.createPatient();
 
-				ArrayList<DocumentationOf> documentationOfs = new ArrayList<DocumentationOf>();
+		CE administrativeGenderCode = DatatypesFactory.eINSTANCE.createCE("UN", "2.16.840.1.113883.5.1");
 
-				DocumentationOf documentationOf = CDAFactory.eINSTANCE.createDocumentationOf();
+		patient.setAdministrativeGenderCode(administrativeGenderCode);
 
-				ServiceEvent serviceEvent = CDAFactory.eINSTANCE.createServiceEvent();
+		PN pn = DatatypesFactory.eINSTANCE.createPN();
 
-				serviceEvent.setClassCode(ActClassRoot.PCPR);
+		pn.setNullFlavor(NullFlavor.UNK);
 
-				String effectiveTime = BuilderUtil.TSDF.format(Calendar.getInstance().getTime());
+		patient.getNames().add(pn);
 
-				serviceEvent.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS(effectiveTime, effectiveTime));
+		TS ts = DatatypesFactory.eINSTANCE.createTS();
 
-				documentationOf.setServiceEvent(serviceEvent);
+		ts.setNullFlavor(NullFlavor.UNK);
 
-				documentationOfs.add(documentationOf);
+		patient.setBirthTime(ts);
 
-				return documentationOfs;
-			}
+		return patient;
 
-		};
 	}
 
-	public Builder<Custodian> getCustodianBuilder() {
+	@Override
+	public List<DocumentationOf> buildDocumentationsOf() {
 
-		return new Builder<Custodian>() {
+		ArrayList<DocumentationOf> documentationOfs = new ArrayList<DocumentationOf>();
 
-			@Override
-			public Custodian construct() {
+		DocumentationOf documentationOf = CDAFactory.eINSTANCE.createDocumentationOf();
 
-				Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+		ServiceEvent serviceEvent = CDAFactory.eINSTANCE.createServiceEvent();
 
-				AssignedCustodian assignedCustodian = CDAFactory.eINSTANCE.createAssignedCustodian();
+		serviceEvent.setClassCode(ActClassRoot.PCPR);
 
-				custodian.setAssignedCustodian(assignedCustodian);
+		String effectiveTime = BuilderUtil.TSDF.format(Calendar.getInstance().getTime());
 
-				CustodianOrganization custodianOrganization = CDAFactory.eINSTANCE.createCustodianOrganization();
+		serviceEvent.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS(effectiveTime, effectiveTime));
 
-				custodianOrganization.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
+		documentationOf.setServiceEvent(serviceEvent);
 
-				ON on = DatatypesFactory.eINSTANCE.createON();
+		documentationOfs.add(documentationOf);
 
-				custodianOrganization.setName(on);
-				
-				custodianOrganization.setAddr(DatatypesFactory.eINSTANCE.createAD());
-				
-				custodianOrganization.setTelecom(DatatypesFactory.eINSTANCE.createTEL());
-				
-				assignedCustodian.setRepresentedCustodianOrganization(custodianOrganization);
+		return documentationOfs;
 
-				return custodian;
-			}
+	}
 
-		};
+	public Custodian buildCustodian() {
+
+		Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+
+		AssignedCustodian assignedCustodian = CDAFactory.eINSTANCE.createAssignedCustodian();
+
+		custodian.setAssignedCustodian(assignedCustodian);
+
+		CustodianOrganization custodianOrganization = CDAFactory.eINSTANCE.createCustodianOrganization();
+
+		custodianOrganization.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
+
+		ON on = DatatypesFactory.eINSTANCE.createON();
+
+		custodianOrganization.setName(on);
+
+		custodianOrganization.setAddr(DatatypesFactory.eINSTANCE.createAD());
+
+		custodianOrganization.setTelecom(DatatypesFactory.eINSTANCE.createTEL());
+
+		assignedCustodian.setRepresentedCustodianOrganization(custodianOrganization);
+
+		return custodian;
+
 	}
 
 }

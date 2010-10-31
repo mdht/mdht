@@ -44,8 +44,8 @@ public class C32MedicationsExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public MedicationsSectionBuilder getMedicationsSectionBuilder() {
-				return new MedicationsSectionBuilder()
+			public MedicationsSectionDirector getMedicationsSectionDirector() {
+				return new MedicationsSectionDirector()
 				{
 					
 				};
@@ -61,7 +61,7 @@ public class C32MedicationsExample {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Medications.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32Medications.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

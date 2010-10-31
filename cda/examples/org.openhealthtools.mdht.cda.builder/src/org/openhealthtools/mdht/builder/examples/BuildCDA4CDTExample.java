@@ -273,107 +273,94 @@ public class BuildCDA4CDTExample {
 		DocumentBuilder exampleCDA4CDTBuilder = new DocumentBuilder() {
 
 			@Override
-			public Builder<InfrastructureRootTypeId> getDocumentTypeBuilder() {
-				return new Builder<InfrastructureRootTypeId>() {
+			public InfrastructureRootTypeId buildDocumentType() {
 
-					@Override
-					public InfrastructureRootTypeId construct() {
+				InfrastructureRootTypeId infrastructureRootTypeId = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
 
-						InfrastructureRootTypeId infrastructureRootTypeId = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+				infrastructureRootTypeId.setRoot("2.16.840.1.113883.1.3");
 
-						infrastructureRootTypeId.setRoot("2.16.840.1.113883.1.3");
+				infrastructureRootTypeId.setExtension("POCD_HD000040");
 
-						infrastructureRootTypeId.setExtension("POCD_HD000040");
+				return infrastructureRootTypeId;
 
-						return infrastructureRootTypeId;
-					}
-
-				};
 			}
 
 			@Override
-			public Builder<II> getDocumentIdBuilder() {
-				return new BuilderUtil.BuildII("2.16.840.1.113883.3.72", "CDA4CDT_RepresentativeContent", "NIST Healthcare Project");
+			public II buildDocumentId() {
+				return new BuilderUtil.BuildII("2.16.840.1.113883.3.72", "CDA4CDT_RepresentativeContent", "NIST Healthcare Project").construct();
 			}
 
 			@Override
-			public Builder<CE> getDocumentCodeBuilder() {
-				return new BuilderUtil.BuildCE("34117-2", "2.16.840.1.113883.6.1", "LOINC", "History and Physical");
+			public CE buildDocumentCode() {
+				return new BuilderUtil.BuildCE("34117-2", "2.16.840.1.113883.6.1", "LOINC", "History and Physical").construct();
 			}
 
 			@Override
-			public Builder<ST> getDocumentTitleBuilder() {
-				return new BuilderUtil.BuildST("Personal History and Physical");
+			public ST buildDocumentTitle() {
+				return new BuilderUtil.BuildST("Personal History and Physical").construct();
 			}
 
 			@Override
-			public Builder<TS> getDocumentEffectiveTimeBuilder() {
-				return new BuilderUtil.BuildEffectiveTime();
+			public TS buildDocumentEffectiveTime() {
+				return new BuilderUtil.BuildEffectiveTime().construct();
 			}
 
 			@Override
-			public Builder<CE> getDocumentConfidentialityCodeBuilder() {
-				return new BuilderUtil.BuildCE("N", "2.16.840.1.113883.5.25", "HL7 Confidentiality", "normal");
+			public CE buildDocumentConfidentialityCode() {
+				return new BuilderUtil.BuildCE("N", "2.16.840.1.113883.5.25", "HL7 Confidentiality", "normal").construct();
 			}
 
 			@Override
-			public Builder<CS> getDocumentLanguageCode() {
-				return new BuilderUtil.BuildCS("en-US");
+			public CS buildDocumentLanguageCode() {
+				return new BuilderUtil.BuildCS("en-US").construct();
 			}
 
 			@Override
-			public Builder<II> getDocumentSetIdBuilder() {
-				return new BuilderUtil.BuildII("2.16.840.1.113883.3.72", "CDA4CDT_RepresentativeContent_AllVersions");
+			public II buildDocumentSetId() {
+				return new BuilderUtil.BuildII("2.16.840.1.113883.3.72", "CDA4CDT_RepresentativeContent_AllVersions").construct();
 			}
 
 			@Override
-			public Builder<INT> getDocumentVersionBuilder() {
-				return BuilderUtil.BuilderVersion;
+			public INT buildDocumentVersion() {
+				return BuilderUtil.BuilderVersion.construct();
 			}
 
 			@Override
-			public Builder<PatientRole> getPatientRoleBuilder() {
-				return new CDA4CDTPatientRoleBuilder();
+			public PatientRole buildPatientRole() {
+				return new CDA4CDTPatientRoleBuilder().construct();
 			}
 
 			@Override
-			public Builder<Patient> getPatientBuilder() {
-				return new CDA4CDTPatientBuilder("PatientFirstName", "PatientLastName", "", "19971123", "M");
+			public Patient buildPatient() {
+				return new CDA4CDTPatientBuilder("PatientFirstName", "PatientLastName", "", "19971123", "M").construct();
 			}
 
 			@Override
-			public ArrayBuilder<Author> getAuthorBuilder() {
-				return new CDA4CDTBuildAuthor();
+			public List<Author> buildAuthors() {
+				return new CDA4CDTBuildAuthor().construct();
 			}
 
 			@Override
-			public Builder<Custodian> getCustodianBuilder() {
+			public Custodian buildCustodian() {
 
-				return new Builder<Custodian>() {
+				Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
 
-					@Override
-					public Custodian construct() {
+				AssignedCustodian assignedCustodian = CDAFactory.eINSTANCE.createAssignedCustodian();
 
-						Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+				custodian.setAssignedCustodian(assignedCustodian);
 
-						AssignedCustodian assignedCustodian = CDAFactory.eINSTANCE.createAssignedCustodian();
+				CustodianOrganization custodianOrganization = CDAFactory.eINSTANCE.createCustodianOrganization();
 
-						custodian.setAssignedCustodian(assignedCustodian);
+				ON on = DatatypesFactory.eINSTANCE.createON();
 
-						CustodianOrganization custodianOrganization = CDAFactory.eINSTANCE.createCustodianOrganization();
+				on.addText("NIST Healthcare Testing Laboratory");
 
-						ON on = DatatypesFactory.eINSTANCE.createON();
+				custodianOrganization.setName(on);
 
-						on.addText("NIST Healthcare Testing Laboratory");
+				assignedCustodian.setRepresentedCustodianOrganization(custodianOrganization);
 
-						custodianOrganization.setName(on);
+				return custodian;
 
-						assignedCustodian.setRepresentedCustodianOrganization(custodianOrganization);
-
-						return custodian;
-					}
-
-				};
 			}
 
 		};

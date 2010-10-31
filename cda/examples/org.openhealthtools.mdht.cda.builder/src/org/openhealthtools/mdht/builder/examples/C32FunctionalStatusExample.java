@@ -43,8 +43,8 @@ public class C32FunctionalStatusExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public FunctionalStatusSectionBuilder getFunctionalStatusSectionBuilder() {
-				return new FunctionalStatusSectionBuilder() {
+			public FunctionalStatusSectionDirector getFunctionalStatusSectionDirector() {
+				return new FunctionalStatusSectionDirector() {
 
 				};
 			}
@@ -55,7 +55,7 @@ public class C32FunctionalStatusExample {
 
 			System.out.println("Start C32 Document Build Example");
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32FunctionalStatus.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32FunctionalStatus.xml"));
 			System.out.println("Completed C32 Document Build Example");
 
 		} catch (Exception e) {
