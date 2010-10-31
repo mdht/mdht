@@ -18,7 +18,8 @@ import java.util.List;
 public class ArrayBuilder<BuildPart> {
 
 	public List <BuildPart> construct() {
-		return new ArrayList<BuildPart>();
+		final List<BuildPart> parts = new ArrayList<BuildPart>();
+		return parts;
 	}
 
 }

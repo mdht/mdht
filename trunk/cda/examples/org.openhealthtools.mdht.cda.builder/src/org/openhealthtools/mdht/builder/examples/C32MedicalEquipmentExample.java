@@ -44,9 +44,9 @@ public class C32MedicalEquipmentExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public MedicalEquipmentSectionBuilder getMedicalEquipmentSectionBuilder() {
+			public MedicalEquipmentSectionDirector getMedicalEquipmentSectionDirector() {
 
-				return new MedicalEquipmentSectionBuilder() {
+				return new MedicalEquipmentSectionDirector() {
 				};
 			}
 
@@ -58,7 +58,7 @@ public class C32MedicalEquipmentExample {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32MedicalEquipment.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32MedicalEquipment.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

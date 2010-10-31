@@ -17,7 +17,7 @@ import java.util.List;
 
 import org.openhealthtools.mdht.uml.cda.Section;
 
-public abstract class GenericSectionBuilder<SectionComponent> extends SectionBuilder {
+public abstract class GenericSectionDirector<SectionComponent> extends SectionDirector {
 
 	protected void construct(SectionComponent section) {
 	}

@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.builder.cda;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.openhealthtools.mdht.uml.cda.Act;
@@ -53,7 +54,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
-public class DocumentBuilder {
+public class ClinicalDocumentBuilder {
 	
 	
 
@@ -186,187 +187,177 @@ public class DocumentBuilder {
 	 
 	 
 	 
-	ArrayList<SectionBuilder> sectionBuilders = new ArrayList<SectionBuilder>();
+	ArrayList<SectionDirector> sectionBuilders = new ArrayList<SectionDirector>();
 
-	protected void appendSectionBuilder(SectionBuilder sectionBuilder) {
+	protected void appendSectionBuilder(SectionDirector sectionBuilder) {
 		if (sectionBuilder != null) {
 			sectionBuilders.add(sectionBuilder);
 		}
 	}
 
-	public SectionBuilder getSectionBuilder() {
+	public SectionDirector getSectionDirector() {
 		return null;
 	}
 
-	public Builder<PatientRole> getPatientRoleBuilder() {
-		return new Builder<PatientRole>() {
-			@Override
-			public PatientRole construct() {
-				return CDAFactory.eINSTANCE.createPatientRole();
-			}
-
-		};
+	public PatientRole buildPatientRole() {
+		return CDAFactory.eINSTANCE.createPatientRole();
 	}
 
-	public Builder<Patient> getPatientBuilder() {
-		return new Builder<Patient>();
+	public Patient buildPatient() {
+		return null;
 	}
 
-	public ArrayBuilder<Author> getAuthorBuilder() {
-		return new ArrayBuilder<Author>();
+	public List<Author> buildAuthors() {
+		return new ArrayBuilder<Author>().construct();
 	}
 
-	public ArrayBuilder<Authenticator> getAuthenticatorBuilder() {
-		return new ArrayBuilder<Authenticator>();
+	public List<Authenticator> buildAuthenticators() {
+		return new ArrayBuilder<Authenticator>().construct();
 	}
 
-	public ArrayBuilder<Authorization> getAuthorizationBuilder() {
-		return new ArrayBuilder<Authorization>();
+	public List<Authorization> buildAuthorizations() {
+		return new ArrayBuilder<Authorization>().construct();
 	}
 
-	public ArrayBuilder<Participant1> getParticipantBuilder() {
-		return new ArrayBuilder<Participant1>();
+	public List<Participant1> buildParticipants() {
+		return new ArrayBuilder<Participant1>().construct();
 	}
 
-	public ArrayBuilder<InformationRecipient> getInformationRecipientBuilder() {
-		return new ArrayBuilder<InformationRecipient>();
+	public List<InformationRecipient> buildInformationRecipients() {
+		return new ArrayBuilder<InformationRecipient>().construct();
 	}
 
-	public ArrayBuilder<DocumentationOf> getDocumentationOfBuilder() {
-		return new ArrayBuilder<DocumentationOf>();
+	public List<DocumentationOf> buildDocumentationsOf() {
+		return new ArrayBuilder<DocumentationOf>().construct();
 	}
 
-	public ArrayBuilder<InFulfillmentOf> getInFulfillmentOfBuilder() {
-		return new ArrayBuilder<InFulfillmentOf>();
+	public List<InFulfillmentOf> buildInFulfillmentsOf() {
+		return new ArrayBuilder<InFulfillmentOf>().construct();
 	}
 
-	public Builder<Custodian> getCustodianBuilder() {
-		return new Builder<Custodian>();
+	public Custodian buildCustodian() {
+		return null;
 	}
 
-	public ArrayBuilder<Informant12> getInformantBuilder() {
-		return new ArrayBuilder<Informant12>();
+	public List<Informant12> buildInformants() {
+		return new ArrayBuilder<Informant12>().construct();
 	}
 
-	public ArrayBuilder<CS> getRealmCodeBuilder() {
-		return new ArrayBuilder<CS>();
+	public List<CS> buildRealmCodes() {
+		return new ArrayBuilder<CS>().construct();
 	}
 
-	public Builder<DataEnterer> getDataEntererBuilder() {
-		return new Builder<DataEnterer>();
+	public DataEnterer buildDataEnterer() {
+		return null;
 	}
 
-	public Builder<LegalAuthenticator> getLegalAuthenticatorBuilder() {
-		return new Builder<LegalAuthenticator>();
+	public LegalAuthenticator buildLegalAuthenticator() {
+		return null;
 	}
 
-	public Builder<CS> getDocumentLanguageCode() {
-		return new Builder<CS>();
+	public CS buildDocumentLanguageCode() {
+		return null;
 	}
 
-	public Builder<II> getDocumentSetIdBuilder() {
-		return new Builder<II>();
+	public II buildDocumentSetId() {
+		return null;
 	}
 
-	public Builder<INT> getDocumentVersionBuilder() {
-		return new Builder<INT>();
+	public INT buildDocumentVersion() {
+		return null;
 	}
 	
 	
-	public Builder<Component2> getComponentBuider()
+	public Component2 buildComponentBuider()
 	{
-		return new Builder<Component2>(); 
+		return null; 
 	}
 	
-	public ArrayBuilder<Adapter> getAdaptersBuilder() {
-		return new ArrayBuilder<Adapter>();
+	public List<Adapter> buildAdapters() {
+		return new ArrayBuilder<Adapter>().construct();
 	}
 
-//	public Builder<EContentAdapter> getEContentAdapterBuider()
-//	{
-//		return new Builder<EContentAdapter>(); 
-//	}
-	
+
 	protected void construct(ClinicalDocument clinicalDocument) {
 
-		clinicalDocument.setTypeId(getDocumentTypeBuilder().construct());
+		clinicalDocument.setTypeId(buildDocumentType());
 
-		clinicalDocument.setId(getDocumentIdBuilder().construct());
+		clinicalDocument.setId(buildDocumentId());
 
-		for (II templateId : getDocumentTemplateIdBuilder().construct()) {
+		for (II templateId : buildDocumentTemplateIds()) {
 			clinicalDocument.getTemplateIds().add(templateId);
 		}
 
-		clinicalDocument.setCode(getDocumentCodeBuilder().construct());
+		clinicalDocument.setCode(buildDocumentCode());
 
-		clinicalDocument.setTitle(getDocumentTitleBuilder().construct());
+		clinicalDocument.setTitle(buildDocumentTitle());
 
-		clinicalDocument.setEffectiveTime(getDocumentEffectiveTimeBuilder().construct());
+		clinicalDocument.setEffectiveTime(buildDocumentEffectiveTime());
 
-		clinicalDocument.setConfidentialityCode(getDocumentConfidentialityCodeBuilder().construct());
+		clinicalDocument.setConfidentialityCode(buildDocumentConfidentialityCode());
 
-		clinicalDocument.setLanguageCode(getDocumentLanguageCode().construct());
+		clinicalDocument.setLanguageCode(buildDocumentLanguageCode());
 
-		clinicalDocument.setSetId(getDocumentSetIdBuilder().construct());
+		clinicalDocument.setSetId(buildDocumentSetId());
 
-		clinicalDocument.setVersionNumber(getDocumentVersionBuilder().construct());
+		clinicalDocument.setVersionNumber(buildDocumentVersion());
 
-		Patient patient = getPatientBuilder().construct();
+		Patient patient = buildPatient();
 
 		if (patient != null) {
-			PatientRole patientRole = getPatientRoleBuilder().construct();
+			PatientRole patientRole = buildPatientRole();
 			patientRole.setPatient(patient);
-			clinicalDocument.addPatientRole(patientRole);
+			clinicalDocument.getPatientRoles().add(patientRole);
 		}
 
-		for (CS realmCode : getRealmCodeBuilder().construct()) {
+		for (CS realmCode : buildRealmCodes()) {
 			clinicalDocument.getRealmCodes().add(realmCode);
 		}
 
-		for (Author author : getAuthorBuilder().construct()) {
+		for (Author author : buildAuthors()) {
 			clinicalDocument.getAuthors().add(author);
 		}
 
-		clinicalDocument.setCustodian(getCustodianBuilder().construct());
+		clinicalDocument.setCustodian(buildCustodian());
 
-		for (Authenticator authenticator : getAuthenticatorBuilder().construct()) {
+		for (Authenticator authenticator : buildAuthenticators()) {
 			clinicalDocument.getAuthenticators().add(authenticator);
 		}
 
-		for (Authorization authorization : getAuthorizationBuilder().construct()) {
+		for (Authorization authorization : buildAuthorizations()) {
 			clinicalDocument.getAuthorizations().add(authorization);
 		}
 
-		for (Participant1 participant : getParticipantBuilder().construct()) {
+		for (Participant1 participant : buildParticipants()) {
 			clinicalDocument.getParticipants().add(participant);
 		}
 
-		clinicalDocument.setDataEnterer(getDataEntererBuilder().construct());
+		clinicalDocument.setDataEnterer(buildDataEnterer());
 
-		for (Informant12 informant : getInformantBuilder().construct()) {
+		for (Informant12 informant : buildInformants()) {
 			clinicalDocument.getInformants().add(informant);
 		}
 
-		for (InformationRecipient informationRecipient : getInformationRecipientBuilder().construct()) {
+		for (InformationRecipient informationRecipient : buildInformationRecipients()) {
 			clinicalDocument.getInformationRecipients().add(informationRecipient);
 		}
 
-		for (DocumentationOf documentationOf : getDocumentationOfBuilder().construct()) {
+		for (DocumentationOf documentationOf : buildDocumentationsOf()) {
 			clinicalDocument.getDocumentationOfs().add(documentationOf);
 		}
 
-		clinicalDocument.setLegalAuthenticator(getLegalAuthenticatorBuilder().construct());
+		clinicalDocument.setLegalAuthenticator(buildLegalAuthenticator());
 
-		for (InFulfillmentOf inFulfillmentOf : getInFulfillmentOfBuilder().construct()) {
+		for (InFulfillmentOf inFulfillmentOf : buildInFulfillmentsOf()) {
 			clinicalDocument.getInFulfillmentOfs().add(inFulfillmentOf);
 		}
 		
-		clinicalDocument.setComponent(getComponentBuider().construct());
+		clinicalDocument.setComponent(buildComponentBuider());
 		
 
-		appendSectionBuilder(getSectionBuilder());
+		appendSectionBuilder(getSectionDirector());
 
-		for (SectionBuilder sectionBuilder : sectionBuilders) {
+		for (SectionDirector sectionBuilder : sectionBuilders) {
 			for (Section section : sectionBuilder.constructSections()) {
 				clinicalDocument.addSection(section);
 			}
@@ -374,32 +365,32 @@ public class DocumentBuilder {
 
 	}
 
-	public Builder<InfrastructureRootTypeId> getDocumentTypeBuilder() {
-		return new Builder<InfrastructureRootTypeId>();
+	public InfrastructureRootTypeId buildDocumentType() {
+		return null;
 	}
 
-	public Builder<II> getDocumentIdBuilder() {
-		return new Builder<II>();
+	public II buildDocumentId() {
+		return null;
 	}
 
-	public Builder<CE> getDocumentCodeBuilder() {
-		return new Builder<CE>();
+	public CE buildDocumentCode() {
+		return null;
 	}
 
-	public Builder<ST> getDocumentTitleBuilder() {
-		return new Builder<ST>();
+	public ST buildDocumentTitle() {
+		return null;
 	}
 
-	public Builder<TS> getDocumentEffectiveTimeBuilder() {
-		return new Builder<TS>();
+	public TS buildDocumentEffectiveTime() {
+		return null;
 	}
 
-	public Builder<CE> getDocumentConfidentialityCodeBuilder() {
-		return new Builder<CE>();
+	public CE buildDocumentConfidentialityCode() {
+		return null;
 	}
 
-	public ArrayBuilder<II> getDocumentTemplateIdBuilder() {
-		return new ArrayBuilder<II>();
+	public List<II> buildDocumentTemplateIds() {
+		return new ArrayBuilder<II>().construct();
 	}
 
 	public ClinicalDocument buildDocument() {
@@ -407,7 +398,7 @@ public class DocumentBuilder {
 		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
 	
 		//  Add hook to have eadapters added to build - this needs to be called in each buildDocument versus part of the construct to make sure all notifications are received
-		for (Adapter adapter : getAdaptersBuilder().construct()) {
+		for (Adapter adapter : buildAdapters()) {
 			clinicalDocument.eAdapters().add(adapter);
 		}
 

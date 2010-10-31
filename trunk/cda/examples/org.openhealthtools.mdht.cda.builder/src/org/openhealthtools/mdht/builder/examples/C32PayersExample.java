@@ -44,8 +44,8 @@ public class C32PayersExample {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public PayersSectionBuilder getPayersSectionBuilder() {
-				return new PayersSectionBuilder()
+			public PayersSectionDirector getPayersSectionDirector() {
+				return new PayersSectionDirector()
 				{
 					
 				};
@@ -63,7 +63,7 @@ public class C32PayersExample {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Payers.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32Payers.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

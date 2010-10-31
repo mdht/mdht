@@ -50,31 +50,27 @@ public class C32EncountersExample {
 		DocumentBuilder c32EncountersExample = new C32DocumentBuilder() {
 
 			@Override
-			public EncoutersSectionBuilder getEncoutersSectionBuilder() {
-				return new EncoutersSectionBuilder() {
+			public EncoutersSectionDirector getEncoutersSection() {
+				return new EncoutersSectionDirector() {
 
-					public ArrayBuilder<Encounter> getEncounterBuilder() {
-						return new ArrayBuilder<Encounter>() {
+					public List<Encounter> buildEncounters() {
 
-							@Override
-							public List<Encounter> construct() {
-								ArrayList<Encounter> encounters = new ArrayList<Encounter>();
+						ArrayList<Encounter> encounters = new ArrayList<Encounter>();
 
-								EncountersActivity encountersActivity = CCDFactory.eINSTANCE.createEncountersActivity().init();
+						EncountersActivity encountersActivity = CCDFactory.eINSTANCE.createEncountersActivity().init();
 
-								encountersActivity.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.88.11.83.16"));
+						encountersActivity.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.88.11.83.16"));
 
-								encountersActivity.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("1.3.6.1.4.1.19376.1.5.3.1.4.14"));
+						encountersActivity.getTemplateIds().add(DatatypesFactory.eINSTANCE.createII("1.3.6.1.4.1.19376.1.5.3.1.4.14"));
 
-								encountersActivity.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
+						encountersActivity.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
 
-								encountersActivity.setText(DatatypesFactory.eINSTANCE.createED("Required Text"));
+						encountersActivity.setText(DatatypesFactory.eINSTANCE.createED("Required Text"));
 
-								encounters.add(encountersActivity);
+						encounters.add(encountersActivity);
 
-								return encounters;
-							}
-						};
+						return encounters;
+
 					}
 
 				};
@@ -88,7 +84,7 @@ public class C32EncountersExample {
 
 			ClinicalDocument clinicalDocument = c32EncountersExample.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Encounters.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32Encounters.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

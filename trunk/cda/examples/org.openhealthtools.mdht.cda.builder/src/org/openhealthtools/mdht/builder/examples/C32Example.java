@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
-
 import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
@@ -49,11 +48,8 @@ public class C32Example {
 		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
-			public Builder<Component2> getComponentBuider() {
-				return new Builder<Component2>() {
-
-					@Override
-					public Component2 construct() {
+			public Component2 buildComponentBuider() {
+				
 						Component2 c = CDAFactory.eINSTANCE.createComponent2();
 
 						NonXMLBody nonXMLBody = CDAFactory.eINSTANCE.createNonXMLBody();
@@ -64,9 +60,7 @@ public class C32Example {
 
 						return c;
 
-					}
-
-				};
+				
 			}
 
 		};
@@ -77,7 +71,7 @@ public class C32Example {
 
 			ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32.xml"));
 
 			System.out.println("Completed C32 Document Build Example");
 

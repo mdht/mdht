@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.builder.examples;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.openhealthtools.mdht.builder.ccd.DocumentBuilder;
+import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder;
 import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
@@ -41,19 +41,17 @@ public class BuildContinuityOFCareDocumentExample {
 
 	public static void main(String[] args) {
 
-		DocumentBuilder exampleClinicalDocumentBuilder = new DocumentBuilder() {
+		ContinuitOfCareDocumentBuilder exampleClinicalDocumentBuilder = new ContinuitOfCareDocumentBuilder() {
+			
+			
+			
 
 			@Override
-			public ResultsSectionBuilder getResultsSectionBuilder() {
-				return new ResultsSectionBuilder() {
+			public ResultsSectionDirector getResultsSectionDirector() {
+				return new ResultsSectionDirector() {
 
 					@Override
-					public ArrayBuilder<Organizer> getOrganizerBuilder() {
-
-						return new ArrayBuilder<Organizer>() {
-
-							@Override
-							public List<Organizer> construct() {
+					public List<Organizer> buildOrganizers() {
 
 								ArrayList<Organizer> organizers = new ArrayList<Organizer>();
 
@@ -66,24 +64,17 @@ public class BuildContinuityOFCareDocumentExample {
 								organizers.add(resultOrganizer);
 
 								return organizers;
-							}
-
-						};
 					}
 
 				};
 			}
 
 			@Override
-			public ProblemSectionBuilder getProblemSectionBuilder() {
-				return new ProblemSectionBuilder() {
+			public ProblemSectionDirector getProblemSectionDirector() {
+				return new ProblemSectionDirector() {
 
 					@Override
-					public ArrayBuilder<Observation> getObservationBuilder() {
-						return new ArrayBuilder<Observation>() {
-
-							@Override
-							public List<Observation> construct() {
+					public List<Observation> buildObservations() {
 
 								ArrayList<Observation> observations = new ArrayList<Observation>();
 
@@ -100,17 +91,10 @@ public class BuildContinuityOFCareDocumentExample {
 								observations.add(episodeObservation);
 
 								return observations;
-							}
-
-						};
 					}
 
 					@Override
-					public ArrayBuilder<ProblemAct> getProblemActBuilder() {
-						return new ArrayBuilder<ProblemAct>() {
-
-							@Override
-							public List<ProblemAct> construct() {
+					public List<ProblemAct> buildProblemActs() {
 
 								ArrayList<ProblemAct> problemActs = new ArrayList<ProblemAct>();
 
@@ -123,32 +107,29 @@ public class BuildContinuityOFCareDocumentExample {
 								problemActs.add(problemAct);
 
 								return problemActs;
-							}
-
-						};
 					}
 
 				};
 			}
 
 			@Override
-			public Builder<II> getDocumentIdBuilder() {
-				return new BuilderUtil.BuildII("2.16.840.1.113883.19.4", "c266");
+			public II buildDocumentId() {
+				return new BuilderUtil.BuildII("2.16.840.1.113883.19.4", "c266").construct();
 			}
 
 			@Override
-			public Builder<TS> getDocumentEffectiveTimeBuilder() {
-				return new BuilderUtil.BuildEffectiveTime();
+			public TS buildDocumentEffectiveTime() {
+				return new BuilderUtil.BuildEffectiveTime().construct();
 			}
 
 			@Override
-			public ArrayBuilder<Author> getAuthorBuilder() {
-				return new BuildAuthor("Bob", "Dolin", "MD");
+			public List<Author> buildAuthors() {
+				return new BuildAuthor("Bob", "Dolin", "MD").construct();
 			}
 
 			@Override
-			public Builder<Patient> getPatientBuilder() {
-				return new BuildPatient("Henry", "Levin", "7th", "19320924", "M");
+			public Patient buildPatient() {
+				return new BuildPatient("Henry", "Levin", "7th", "19320924", "M").construct();
 			}
 
 		};

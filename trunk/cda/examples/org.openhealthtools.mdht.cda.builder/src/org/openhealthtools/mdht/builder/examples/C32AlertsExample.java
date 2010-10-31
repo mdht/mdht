@@ -43,9 +43,9 @@ public class C32AlertsExample {
 		DocumentBuilder c32AlertsExample = new C32DocumentBuilder() {
 
 			@Override
-			public AlertsSectionBuilder getAlertsSectionBuilder() {
+			public AlertsSectionDirector getAlertsSectionDirector() {
 
-				return new AlertsSectionBuilder() {
+				return new AlertsSectionDirector() {
 
 				};
 			}
@@ -56,7 +56,7 @@ public class C32AlertsExample {
 
 			System.out.println("Start C32 Document Build Example");
 			ClinicalDocument clinicalDocument = c32AlertsExample.buildDocument();
-			CDAUtil.save(clinicalDocument, new FileOutputStream("/home/eclipse/heliosworkspaceG/org.openhealthtools.mdht.cda.builder/resource/ExampleC32Alerts.xml"));
+			CDAUtil.save(clinicalDocument, new FileOutputStream("ExampleC32Alerts.xml"));
 			System.out.println("Completed C32 Document Build Example");
 
 		} catch (Exception e) {
