@@ -2,7 +2,6 @@ package wizardtemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder.AllergiesReactionSectionDirector;
@@ -15,10 +14,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 public class C32Example {
-	
-	
-
-	
 
 	public static class C32AllergiesReactionSectionDirector extends AllergiesReactionSectionDirector {
 
