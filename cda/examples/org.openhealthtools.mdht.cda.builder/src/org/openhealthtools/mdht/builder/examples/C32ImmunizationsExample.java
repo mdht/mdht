@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Consumable;
@@ -54,7 +54,7 @@ public class C32ImmunizationsExample {
 		/*
 		 * Define and override various builders
 		 */
-		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
+		PatientSummaryBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
 			public ImmunizationsSectionDirector getImmunizationsSectionDirector() {

@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.builder.examples;
 import java.io.FileOutputStream;
 
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -40,7 +40,7 @@ public class C32AlertsExample {
 		/*
 		 * Define and override various builders
 		 */
-		DocumentBuilder c32AlertsExample = new C32DocumentBuilder() {
+		PatientSummaryBuilder c32AlertsExample = new C32DocumentBuilder() {
 
 			@Override
 			public AlertsSectionDirector getAlertsSectionDirector() {

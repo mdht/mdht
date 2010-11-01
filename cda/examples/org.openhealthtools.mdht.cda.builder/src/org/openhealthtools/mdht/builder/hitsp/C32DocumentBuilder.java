@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
-public class C32DocumentBuilder extends DocumentBuilder {
+public class C32DocumentBuilder extends PatientSummaryBuilder {
 
 	@Override
 	public CE buildDocumentCode() {

@@ -14,7 +14,7 @@ package org.openhealthtools.mdht.builder.examples;
 
 import org.openhealthtools.mdht.builder.cda.SectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
@@ -22,7 +22,7 @@ public class BuildAllSectionsExample {
 
 	public static void main(String[] args) {
 
-		DocumentBuilder exampleClinicalDocumentBuilder = new DocumentBuilder() {
+		PatientSummaryBuilder exampleClinicalDocumentBuilder = new PatientSummaryBuilder() {
 
 			@Override
 			public AllergiesReactionSectionDirector getAllergiesReactionSectionDirector() {
