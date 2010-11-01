@@ -19,11 +19,31 @@
          <action
                class="org.openhealthtools.mdht.uml.cda.wizards.actions.NewCDAModelAction"
                id="org.openhealthtools.mdht.uml.cda.wizards.newcdamodel"
-               label="&amp;Create New CDA Model"
+               label="&amp;Create Hello CDA World, Model Project"
                menubarPath="org.openhealthtools.mdht.uml.cda.wizards.menu/cdaWizardsGroup"
-               toolbarPath="cdaWizardsGroup"
-               tooltip="Create New CDA Model Project">
+           
+               tooltip="Create New CDA, Model Project">
          </action>
+         
+         <action
+               class="org.openhealthtools.mdht.uml.cda.wizards.actions.NewCDAJavaProjectAction"
+               id="org.openhealthtools.mdht.uml.cda.wizards.newjavaproject"
+               label="&amp;Create Hello CDA World, Java Project"
+               menubarPath="org.openhealthtools.mdht.uml.cda.wizards.menu/cdaWizardsGroup"
+             
+               tooltip="Create Hello CDA World, Java Project">
+         </action>
+         
+         
+         <action
+               class="org.openhealthtools.mdht.uml.cda.wizards.actions.NewC32ProjectAction"
+               id="org.openhealthtools.mdht.uml.cda.wizards.newc32project"
+               label="&amp;Create Hello CDA World, C32 Builder Java Project"
+               menubarPath="org.openhealthtools.mdht.uml.cda.wizards.menu/cdaWizardsGroup"
+            
+               tooltip="Create Hello CDA World, C32 Java Project">
+         </action>
+         
       </actionSet>
    </extension>
   

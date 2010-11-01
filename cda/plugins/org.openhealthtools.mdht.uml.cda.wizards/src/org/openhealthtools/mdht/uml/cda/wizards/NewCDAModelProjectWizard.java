@@ -31,10 +31,8 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -48,11 +46,8 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.ManifestElement;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.IPluginReference;
-import org.eclipse.pde.core.plugin.PluginRegistry;
 import org.eclipse.pde.internal.core.ICoreConstants;
 import org.eclipse.pde.internal.core.PDECore;
-import org.eclipse.pde.internal.core.PDEManager;
-//import org.eclipse.pde.internal.core.project.PDEProject;
 import org.eclipse.pde.internal.ui.wizards.IProjectProvider;
 import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.pde.internal.ui.wizards.plugin.PluginFieldData;
@@ -75,10 +70,9 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
-import org.osgi.service.prefs.BackingStoreException;
 
 @SuppressWarnings("restriction")
-public class NewCDAModelWizard extends Wizard {
+public class NewCDAModelProjectWizard extends CDAWizard {
 
 	
 
@@ -122,13 +116,13 @@ public class NewCDAModelWizard extends Wizard {
 	public boolean performFinish() {
 		
 		
-		final String name = newProjectPage.getProjectName();
+		name = newProjectPage.getProjectName();
 				
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		
 		IWorkspaceRoot root = workspace.getRoot();
 		
-		final IProject project = root.getProject(name);
+		project = root.getProject(name);
 		
 		try {
 			
@@ -142,211 +136,7 @@ public class NewCDAModelWizard extends Wizard {
 			e.printStackTrace();
 		}
 		
-		
-		IPluginContentWizard contentWizard = new IPluginContentWizard() {
 
-			
-			public void addPages() {
-
-			}
-
-			
-			public boolean canFinish() {
-
-				return false;
-			}
-
-			
-			public void createPageControls(Composite pageContainer) {
-
-			}
-
-			
-			public void dispose() {
-
-			}
-
-			
-			public IWizardContainer getContainer() {
-
-				return null;
-			}
-
-			
-			public Image getDefaultPageImage() {
-
-				return null;
-			}
-
-			
-			public IDialogSettings getDialogSettings() {
-
-				return null;
-			}
-
-			
-			public IWizardPage getNextPage(IWizardPage page) {
-
-				return null;
-			}
-
-			
-			public IWizardPage getPage(String pageName) {
-
-				return null;
-			}
-
-			
-			public int getPageCount() {
-
-				return 0;
-			}
-
-			
-			public IWizardPage[] getPages() {
-
-				return null;
-			}
-
-			
-			public IWizardPage getPreviousPage(IWizardPage page) {
-
-				return null;
-			}
-
-			
-			public IWizardPage getStartingPage() {
-
-				return null;
-			}
-
-			
-			public RGB getTitleBarColor() {
-
-				return null;
-			}
-
-			
-			public String getWindowTitle() {
-
-				return null;
-			}
-
-			
-			public boolean isHelpAvailable() {
-
-				return false;
-			}
-
-			
-			public boolean needsPreviousAndNextButtons() {
-
-				return false;
-			}
-
-			
-			public boolean needsProgressMonitor() {
-
-				return false;
-			}
-
-			
-			public boolean performCancel() {
-
-				return false;
-			}
-
-			
-			public boolean performFinish() {
-
-				return false;
-			}
-
-			
-			public void setContainer(IWizardContainer wizardContainer) {
-
-			}
-
-			
-			public void init(IFieldData data) {
-
-			}
-
-			
-			public IPluginReference[] getDependencies(String schemaVersion) {
-
-				// currently simple sort keeps manifest readable - might need to
-				// have more complex logic - SWM
-
-				Comparator<IPluginReference> c = new Comparator<IPluginReference>() {
-
-					
-					public int compare(IPluginReference arg0, IPluginReference arg1) {
-						return arg0.getId().compareTo(arg1.getId());
-					}
-
-				};
-
-				List<IPluginReference> list = new ArrayList<IPluginReference>();
-
-				list.addAll(references.values());
-
-				Collections.sort(list, c);
-
-				IPluginReference[] results = new IPluginReference[list.size()];
-
-				list.toArray(results);
-
-				return results;
-
-			}
-
-			
-			public String[] getNewFiles() {
-
-				return new String[] { "plugin.properties" };
-			}
-
-			
-			public boolean performFinish(IProject project, IPluginModelBase model, IProgressMonitor monitor) {
-
-				return false;
-			}
-
-		};
-
-		PluginFieldData fPluginData = new PluginFieldData();
-		fPluginData.setDoGenerateClass(false);
-		fPluginData.setEnableAPITooling(false);
-		fPluginData.setClassname(newCDATemplatePage.getModelName());
-		fPluginData.setSourceFolderName("src");
-		fPluginData.setOutputFolderName("bin");
-		fPluginData.setUIPlugin(false);
-		fPluginData.setHasBundleStructure(true);
-		fPluginData.setTargetVersion("3.5");
-		fPluginData.setExecutionEnvironment("J2SE-1.5");
-
-		IProjectProvider fProjectProvider = new IProjectProvider() {
-
-			
-			public IProject getProject() {
-
-				return project;
-			}
-
-			
-			public String getProjectName() {
-
-				return name;
-			}
-
-			
-			public IPath getLocationPath() {
-
-				return project.getFullPath();
-			}
-
-		};
 
 		try {
 			
@@ -428,10 +218,8 @@ public class NewCDAModelWizard extends Wizard {
 				
 				codegenSupport.setBase_Namespace(clonePackage);
 				
-//				newCDATemplatePage.get
 				codegenSupport.setBasePackage("org.openhealthtools.mdht.uml.cda");
-//				newCDATemplatePage.getN
-//				newCDATemplatePage.get
+
 				codegenSupport.setNsURI("http://www.openhealthtools.org/mdht/uml/cda/"+newCDATemplatePage.getModelName().toLowerCase());
 			
 				codegenSupport.setNsPrefix(newCDATemplatePage.getModelName().toLowerCase());
@@ -630,7 +418,7 @@ public class NewCDAModelWizard extends Wizard {
 		writer.println("");	
 		writer.println("3) Configure EMF GenModel");	
 		writer.println("	a) Set Invariant Prefix property to 'validate' on "+newCDATemplatePage.getModelName().toLowerCase() +"_ECore");	
-		writer.println("	b) Set Operations Package property to org.openhealthtools.mdht.uml.cda"+newCDATemplatePage.getModelName().toLowerCase() +".operations");
+		writer.println("	b) Set Operations Package property to org.openhealthtools.mdht.uml.cda."+newCDATemplatePage.getModelName().toLowerCase() +".operations");
 		writer.println("");
 		writer.println("4) Generate Source Code");
 		writer.println("	a) Right Click on "+newCDATemplatePage.getModelName().toLowerCase() +"_ECore");			
@@ -656,7 +444,6 @@ public class NewCDAModelWizard extends Wizard {
 			is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
 			createFile(project, "codegeneration.readme", is);
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -702,249 +489,6 @@ public class NewCDAModelWizard extends Wizard {
 
 	}
 	
-
-	IFolder createFolder(IProject project,String name) {
-		try {
-			IFolder folder = getBundleRelativeFolder(project, new Path(name));
-			folder.create(true, false, null);
-			return folder;
-		} catch (CoreException e) {
-			
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	IFile createFile(IProject project,String name,InputStream contents) {
-		
-		try{
-
-			IPath filePath = new Path(name);				
-		
-			IFile file = getBundleRelativeFile(project, filePath);
-			
-	
-			
-			file.create(contents, true, null);
-			
-			return file;
-		
-	} catch (CoreException e) {
-		
-		e.printStackTrace();
-	} 
-
-
-	return null;
-	}
-
-
-	
-	HashMap<String, Package> cdaPackages = new HashMap<String, Package>();
-	
-	HashMap<String, Type> cdaDocuments= new HashMap<String, Type>();
-	
-	HashMap<String,PluginReference> references = new HashMap<String,PluginReference> (); 
-	
-	
-	Type clinicalDocument=null;
-	
-	
-	
-	@SuppressWarnings("unchecked")
-	void loadCDAModels()
-	{
-		ResourceSet resourceSet = new ResourceSetImpl();
-		
-		IExtensionRegistry registry = Platform.getExtensionRegistry();
-
-		// Get all emf ecore plugins
-		IExtensionPoint point = registry.getExtensionPoint("org.eclipse.emf.ecore.generated_package");
-		
-		if (point != null) {
-		
-			for (IExtension extension : point.getExtensions()) {
-
-				Bundle bundle = Platform.getBundle(extension.getContributor().getName());
-				
-				if (bundle != null) {
-
-					// Get the uml files with the bundle
-					Enumeration<URL> umlFiles = bundle.findEntries("model", "*.uml", true);
-
-					if (umlFiles != null) {
-
-
-						
-						while (umlFiles.hasMoreElements()) {
-							
-							java.net.URL umlFileURL = (java.net.URL) umlFiles.nextElement();
-							
-							// filter out cda uml_ecore models 
-							if (!umlFileURL.getFile().contains("_Ecore")) {
-								
-								URI foo = URI.createPlatformPluginURI(extension.getContributor().getName() + umlFileURL.getPath(), false);
-								
-								PackageableElement foo2 = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(foo, true).getContents(),UMLPackage.eINSTANCE.getPackageableElement());
-								
-								if (foo2 instanceof Package) {
-									
-									Package p = (Package) foo2;
-									// bit of hack checking to see if the package is call cda or CDA Profile applied
-									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {
-										
-										cdaPackages.put(p.getQualifiedName(), p);
-										
-										// Add model plugin to required bundles
-										references.put(bundle.getSymbolicName(),new PluginReference(bundle.getSymbolicName(),null,0));
-										
-										// Add model plugin required bundles to the plugin
-										Object header =  bundle.getHeaders().get(Constants.REQUIRE_BUNDLE);
-										try {
-											for (ManifestElement manifestElement : ManifestElement.parseHeader(Constants.REQUIRE_BUNDLE, (String) header))
-											{
-												references.put(manifestElement.getValue() ,new PluginReference(manifestElement.getValue(),null,0));
-											}
-										} catch (BundleException e1) {
-											
-											e1.printStackTrace();
-										}
-									}
-								}
-
-							}
-						}
-					}
-
-				}
-			}
-		}
-
-		
-	Package cdaPackage = cdaPackages.get("cda");
-	
-	// make sure the package is available
-	if (cdaPackage != null)
-	{
-		clinicalDocument=	cdaPackage.getOwnedType("ClinicalDocument");
-		for (Package ps : cdaPackages.values())
-		{
-			
-			for (Type type : ps.getOwnedTypes())
-			{
-				if (type.conformsTo(clinicalDocument))
-				{
-					cdaDocuments.put(type.getQualifiedName(), type);
-				}
-			}
-			
-		}
-
-	}
-		
-	
-	
-	}
-
-
-	/*
-	 * The following code is from helios build and included to support galileo 
-	 */
-	
-	/*******************************************************************************
-	 * Copyright (c) 2010 IBM Corporation and others.
-	 * All rights reserved. This program and the accompanying materials
-	 * are made available under the terms of the Eclipse Public License v1.0
-	 * which accompanies this distribution, and is available at
-	 * http://www.eclipse.org/legal/epl-v10.html
-	 *
-	 * Contributors:
-	 *     IBM Corporation - initial API and implementation
-	 *******************************************************************************/
-	
-	/**
-	 * Utility class to resolve plug-in and bundle files relative to a project 
-	 * specific bundle root location.
-	 * 
-	 * @since 3.6
-	 */
-
-	
-	/**
-	 * Preference key for the project relative bundle root path
-	 */
-	public static final String BUNDLE_ROOT_PATH = "BUNDLE_ROOT_PATH"; //$NON-NLS-1$
-
-	/**
-	 * Returns the container in the specified project that corresponds to the
-	 * root of bundle related artifacts. May return the project itself
-	 * or a folder within the project.
-	 * 
-	 * @param project project
-	 * @return container corresponding to the bundle root
-	 */
-	public static IContainer getBundleRoot(IProject project) {
-		ProjectScope scope = new ProjectScope(project);
-		IEclipsePreferences node = scope.getNode(PDECore.PLUGIN_ID);
-		if (node != null) {
-			String string = node.get(BUNDLE_ROOT_PATH, null);
-			if (string != null) {
-				IPath path = Path.fromPortableString(string);
-				return project.getFolder(path);
-			}
-		}
-		return project;
-	}
-
-
-
-	/**
-	 * Returns the resource in the specified project corresponding to its
-	 * <code>MANIFEST.MF</code> file.
-	 * 
-	 * @param project project
-	 * @return <code>MANIFEST.MF</code> file that may or may not exist
-	 */
-	public static IFile getManifest(IProject project) {
-		return getBundleRelativeFile(project, ICoreConstants.MANIFEST_PATH);
-	}
-
-
-
-	/**
-	 * Returns the resource in the specified project corresponding to its
-	 * <code>plugin.xml</code>file.
-	 * 
-	 * @param project project
-	 * @return <code>plugin.xml</code> file that may or may not exist
-	 */
-	public static IFile getPluginXml(IProject project) {
-		return getBundleRelativeFile(project, ICoreConstants.PLUGIN_PATH);
-	}
-
-
-	/**
-	 * Returns a file relative to the bundle root of the specified project.
-	 * 
-	 * @param project project
-	 * @param path bundle root relative path
-	 * @return file that may or may not exist
-	 */
-	public static IFile getBundleRelativeFile(IProject project, IPath path) {
-		return getBundleRoot(project).getFile(path);
-	}
-
-	/**
-	 * Returns a folder relative to the bundle root of the specified project.
-	 * 
-	 * @param project project
-	 * @param path bundle root relative path
-	 * @return folder that may or may not exist
-	 */
-	public static IFolder getBundleRelativeFolder(IProject project, IPath path) {
-		return getBundleRoot(project).getFolder(path);
-	}
-
 
 	
 }
