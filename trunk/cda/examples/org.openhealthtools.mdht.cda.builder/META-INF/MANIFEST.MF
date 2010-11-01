@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: org.openhealthtools.mdht.cda.builder
+Bundle-SymbolicName: org.openhealthtools.mdht.builder.cda
 Bundle-ManifestVersion: 2
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
