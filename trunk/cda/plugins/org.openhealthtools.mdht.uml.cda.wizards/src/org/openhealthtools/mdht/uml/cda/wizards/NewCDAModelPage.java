@@ -100,7 +100,7 @@ public class NewCDAModelPage extends WizardPage {
 		
 		setControl(composite);
 		
-		new Label(composite, SWT.NONE).setText("Organization ");
+		new Label(composite, SWT.NONE).setText("Implementation Guide Namespace ");
 		
 		modelName = new Text(composite, SWT.NONE);
 		modelName.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
@@ -110,7 +110,7 @@ public class NewCDAModelPage extends WizardPage {
 		cdaDocumentName = new Text(composite, SWT.NONE);
 		cdaDocumentName.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
-		new Label(composite, SWT.NONE).setText("Document Conformance ");
+		new Label(composite, SWT.NONE).setText("CDA Document Conformance Reference ");
 
 		combo = new org.eclipse.swt.widgets.Combo(composite, SWT.DROP_DOWN | SWT.READ_ONLY);
 
