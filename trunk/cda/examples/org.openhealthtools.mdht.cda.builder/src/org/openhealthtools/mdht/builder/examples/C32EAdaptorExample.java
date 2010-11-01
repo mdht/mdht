@@ -21,7 +21,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -47,7 +47,7 @@ public class C32EAdaptorExample {
 		/*
 		 * Define and override various builders
 		 */
-		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
+		PatientSummaryBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
 			public List<Adapter> buildAdapters() {

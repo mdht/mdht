@@ -15,9 +15,17 @@ package org.openhealthtools.mdht.builder.hitsp;
 import org.eclipse.emf.common.notify.Adapter;
 import org.openhealthtools.mdht.builder.cda.GenericSectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
@@ -26,16 +34,105 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
-public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder {
+public class PatientSummaryBuilder extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder {
+	
+	public static String RXNORM= "2.16.840.1.113883.6.88"; // RxNorm
+	public static String SNOMEDCT =	"2.16.840.1.113883.6.96"; // SNOMED Controlled Terminology
+	public static String HL7ACTCODE = "2.16.840.1.113883.5.4"; // HL7 ActCode vocabulary
+	
+	
+	static public EntryRelationship createActiveStatus() {
+
+		EntryRelationship status = CDAFactory.eINSTANCE.createEntryRelationship();
+
+		status.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+
+		AlertStatusObservation observationStatus = CCDFactory.eINSTANCE.createAlertStatusObservation().init();
+
+		observationStatus.getValues().add(DatatypesFactory.eINSTANCE.createCE("55561003", SNOMEDCT, "", "Active"));
+
+		status.setObservation(observationStatus);
+
+		return status;
+
+	}
+	
+	static public AllergyDrugSensitivity createActiveAllergyDrugSensitivity(CE drug, CD[] reactions) {
+
+		AllergyDrugSensitivity allergyDrugSensitivity = HITSPFactory.eINSTANCE.createAllergyDrugSensitivity().init();
+
+		AlertObservation alertObservation = CCDFactory.eINSTANCE.createAlertObservation().init();
+
+		allergyDrugSensitivity.addObservation(alertObservation);
+
+		Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
+
+		participant.setTypeCode(ParticipationType.CSM);
+
+		ParticipantRole participantRole = CDAFactory.eINSTANCE.createParticipantRole();
+
+		participantRole.setClassCode(RoleClassRoot.MANU);
+
+		PlayingEntity playingEntity = CDAFactory.eINSTANCE.createPlayingEntity();
+
+		PN pn = DatatypesFactory.eINSTANCE.createPN();
+
+		pn.addText(drug.getDisplayName());
+
+		playingEntity.getNames().add(pn);
+
+		participantRole.setPlayingEntity(playingEntity);
+
+		participantRole.getPlayingEntity().setClassCode(EntityClassRoot.MMAT);
+
+		participantRole.getPlayingEntity().setCode(drug);
+
+		participant.setParticipantRole(participantRole);
+
+		alertObservation.getParticipants().add(participant);
+
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+
+		entryRelationship.setTypeCode(x_ActRelationshipEntryRelationship.MFST);
+
+		entryRelationship.setInversionInd(true);
+
+		ReactionObservation reactionObservations = CCDFactory.eINSTANCE.createReactionObservation().init();
+
+		reactionObservations.setCode(DatatypesFactory.eINSTANCE.createCD("ASSERTION", HL7ACTCODE, "", ""));
+		
+		for (CD reaction : reactions)
+		{
+			reactionObservations.getValues().add(reaction);			
+		}
+
+		entryRelationship.setObservation(reactionObservations);
+
+		alertObservation.getEntryRelationships().add(entryRelationship);
+
+		alertObservation.getEntryRelationships().add(createActiveStatus());
+
+		return allergyDrugSensitivity;
+	}
 
 	public static class ProblemSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.ProblemSectionDirector {
 
@@ -223,11 +320,7 @@ public class DocumentBuilder extends org.openhealthtools.mdht.builder.ccd.Contin
 		for (Adapter adapter : buildAdapters()) {
 			clinicalDocument.eAdapters().add(adapter);
 		}
-
-		
-
-		
-		
+	
 		appendSectionBuilder(getAllergiesReactionSectionDirector());
 
 		appendSectionBuilder(getProblemListSectionDirector());

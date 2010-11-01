@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
@@ -46,7 +46,7 @@ public class C32EncountersExample {
 		/*
 		 * Define and override various builders
 		 */
-		DocumentBuilder c32EncountersExample = new C32DocumentBuilder() {
+		PatientSummaryBuilder c32EncountersExample = new C32DocumentBuilder() {
 
 			@Override
 			public EncoutersSectionDirector getEncoutersSection() {

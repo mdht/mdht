@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.builder.examples;
 import java.io.FileOutputStream;
 
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -40,7 +40,7 @@ public class C32FamilyHistoryExample {
 		/*
 		 * Define and override various builders
 		 */
-		DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
+		PatientSummaryBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 			@Override
 			public FamilyHistorySectionDirector getFamilyHistorySectionDirector() {

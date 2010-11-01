@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
 import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
+import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
 import org.openhealthtools.mdht.uml.cda.Author;
@@ -270,7 +270,7 @@ public class BuildCDA4CDTExample {
 		/*
 		 * Define and override various builders
 		 */
-		DocumentBuilder exampleCDA4CDTBuilder = new DocumentBuilder() {
+		PatientSummaryBuilder exampleCDA4CDTBuilder = new PatientSummaryBuilder() {
 
 			@Override
 			public InfrastructureRootTypeId buildDocumentType() {
