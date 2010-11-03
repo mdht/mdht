@@ -163,4 +163,5 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 		return CCDFactory.eINSTANCE.createSeverityObservation().init();
 	}
 
+	
 } // SeverityObservationOperationsTest
