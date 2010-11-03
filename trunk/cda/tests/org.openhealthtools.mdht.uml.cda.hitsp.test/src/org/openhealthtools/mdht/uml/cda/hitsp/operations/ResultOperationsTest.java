@@ -98,7 +98,7 @@ public class ResultOperationsTest extends ResultObservationOperationsTest {
 	 */
 	@SuppressWarnings("unused")
 	@Test
-	public final void testConstructor() {
+	public void testConstructor() {
 		ResultOperations obj = new ResultOperations();
 		assertTrue(true);
 	} // testConstructor
