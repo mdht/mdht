@@ -39,7 +39,7 @@ public class SurgeriesSectionOperationsTest extends
 	 */
 	@SuppressWarnings("unused")
 	@Test
-	public final void testConstructor() {
+	public void testConstructor() {
 		SurgeriesSectionOperations obj = new SurgeriesSectionOperations();
 		assertTrue(true);
 	} // testConstructor

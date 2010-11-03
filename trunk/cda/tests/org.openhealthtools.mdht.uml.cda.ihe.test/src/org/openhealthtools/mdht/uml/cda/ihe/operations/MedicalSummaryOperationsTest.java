@@ -12,6 +12,7 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.Arrays;
@@ -72,6 +73,18 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 		return IHEFactory.eINSTANCE.createMedicalSummary().init();
 	}
 
+	/**
+	 * Not a real test, needed for EMMA to report 100% method coverage.
+	 */
+	@Override
+	@SuppressWarnings("unused")
+	@Test
+	public void testConstructor() {
+		MedicalSummaryOperations obj = new MedicalSummaryOperations();
+		assertTrue(true);
+	} // testConstructor
+
+	
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalSummaryOperations#validateMedicalSummaryProblemConcernEntry(org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
