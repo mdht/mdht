@@ -42,9 +42,11 @@ public interface ICDAProfileConstants {
 	 * Association Stereotype and Properties, may be used with AssociationValidation.
 	 */
 	public static final String ACT_RELATIONSHIP = "ActRelationship";
+	public static final String ACT_RELATIONSHIP_ASSOCIATION_TYPE = "associationType";
 	public static final String ACT_RELATIONSHIP_TYPE_CODE = "typeCode";
 	
 	public static final String PARTICIPATION = "Participation";
+	public static final String PARTICIPATION_ASSOCIATION_TYPE = "associationType";
 	public static final String PARTICIPATION_TYPE_CODE = "typeCode";
 	
 	/*

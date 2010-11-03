@@ -683,8 +683,17 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActRelationship_TypeCode() {
+	public EReference getActRelationship_AssociationType() {
 		return (EReference)actRelationshipEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActRelationship_TypeCode() {
+		return (EReference)actRelationshipEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -710,8 +719,17 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getParticipation_TypeCode() {
+	public EReference getParticipation_AssociationType() {
 		return (EReference)participationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParticipation_TypeCode() {
+		return (EReference)participationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -840,10 +858,12 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		actRelationshipEClass = createEClass(ACT_RELATIONSHIP);
 		createEReference(actRelationshipEClass, ACT_RELATIONSHIP__BASE_ASSOCIATION);
+		createEReference(actRelationshipEClass, ACT_RELATIONSHIP__ASSOCIATION_TYPE);
 		createEReference(actRelationshipEClass, ACT_RELATIONSHIP__TYPE_CODE);
 
 		participationEClass = createEClass(PARTICIPATION);
 		createEReference(participationEClass, PARTICIPATION__BASE_ASSOCIATION);
+		createEReference(participationEClass, PARTICIPATION__ASSOCIATION_TYPE);
 		createEReference(participationEClass, PARTICIPATION__TYPE_CODE);
 
 		// Create enums
@@ -966,10 +986,12 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		initEClass(actRelationshipEClass, ActRelationship.class, "ActRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActRelationship_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 1, 1, ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActRelationship_AssociationType(), theUMLPackage.getClass_(), null, "associationType", null, 0, 1, ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getActRelationship_TypeCode(), theUMLPackage.getEnumerationLiteral(), null, "typeCode", null, 0, 1, ActRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(participationEClass, Participation.class, "Participation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParticipation_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 1, 1, Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getParticipation_AssociationType(), theUMLPackage.getClass_(), null, "associationType", null, 0, 1, Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getParticipation_TypeCode(), theUMLPackage.getEnumerationLiteral(), null, "typeCode", null, 0, 1, Participation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
