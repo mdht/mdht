@@ -43,6 +43,7 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
+	@Override
 	@SuppressWarnings("unused")
 	@Test
 	public final void testConstructor() {
