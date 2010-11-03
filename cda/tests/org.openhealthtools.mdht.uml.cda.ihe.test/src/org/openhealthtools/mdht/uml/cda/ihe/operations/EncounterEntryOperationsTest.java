@@ -18,11 +18,22 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.operations.EncounterOperationsTest;
 
 /**
- * This class 
+ * This class is a JUnit test case.
  */
 @SuppressWarnings("nls")
 public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 
+	/**
+	 * Not a real test, needed for EMMA to report 100% method coverage.
+	 */
+	@Override
+	@SuppressWarnings("unused")
+	@Test
+	public void testConstructor() {
+		EncounterEntryOperations obj = new EncounterEntryOperations();
+		assertTrue(true);
+	} // testConstructor
+	
 	/**
 	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryTemplateId(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
 	 */
