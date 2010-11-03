@@ -228,14 +228,4 @@ public class ConsultationNoteOperationsTest extends
 		fail("Not yet implemented");
 	}
 
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.ConsultationNoteOperations#validateConsultationNoteResultsSection(org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateConsultationNoteResultsSection() {
-		fail("Not yet implemented");
-	}
-
 } // ConsultationNoteOperationsTest
