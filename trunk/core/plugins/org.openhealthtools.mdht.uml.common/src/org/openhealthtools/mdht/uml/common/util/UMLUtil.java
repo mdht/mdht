@@ -235,6 +235,9 @@ public class UMLUtil {
 	 * @return a Package
 	 */
 	public static Package getTopPackage(Package pkg) {
+		if (pkg.eIsProxy())
+			return null;
+		
 		EList<Package> allOwningPackages = pkg.allOwningPackages();
 		int size = allOwningPackages.size();
 
@@ -247,13 +250,16 @@ public class UMLUtil {
 	 * @return a Package
 	 */
 	public static Package getTopPackage(Element element) {
-		return getTopPackage(element.getNearestPackage());
+		return element.eIsProxy() ? null : getTopPackage(element.getNearestPackage());
 	}
 
 	/**
 	 * Get nearest UML namespace containing this model element.
 	 */
 	public static Namespace getNearestNamespace(Element element) {
+		if (element.eIsProxy())
+			return null;
+		
 		EObject eObject = element;
 		while (!(eObject instanceof Namespace))
 			eObject = eObject.eContainer();
@@ -290,7 +296,7 @@ public class UMLUtil {
 	}
 
 	public static String getPackageQualifiedName(NamedElement namedElement) {
-		if (namedElement.getName() == null)
+		if (namedElement.eIsProxy() || namedElement.getName() == null)
 			return null;
 		
 		StringBuffer qname = new StringBuffer(namedElement.getName());
