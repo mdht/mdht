@@ -40,7 +40,7 @@ public class SocialHistorySectionOperationsTest
 	@Override
 	@SuppressWarnings("unused")
 	@Test
-	public final void testConstructor() {
+	public void testConstructor() {
 		SocialHistorySectionOperations obj = new SocialHistorySectionOperations();
 		assertTrue(true);
 	} // testConstructor
