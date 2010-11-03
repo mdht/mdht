@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
@@ -134,4 +137,14 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 		return CCDFactory.eINSTANCE.createFunctionalStatusSection().init();
 	}
 
+	/**
+	 * Not a real test, needed for EMMA to report 100% method coverage.
+	 */
+	@SuppressWarnings("unused")
+	@Test
+	public final void testConstructor() {
+		FunctionalStatusSectionOperations obj = new FunctionalStatusSectionOperations();
+		assertTrue(true);
+	} // testConstructor
+	
 } // FunctionalStatusSectionOperationsTest
