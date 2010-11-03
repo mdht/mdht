@@ -108,7 +108,7 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 	 */
 	@SuppressWarnings("unused")
 	@Test
-	public final void testConstructor() {
+	public void testConstructor() {
 		EncountersSectionOperations obj = new EncountersSectionOperations();
 		assertTrue(true);
 	} // testConstructor

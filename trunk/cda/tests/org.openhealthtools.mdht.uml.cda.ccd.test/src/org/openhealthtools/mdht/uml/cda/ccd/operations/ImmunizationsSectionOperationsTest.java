@@ -156,7 +156,7 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 	 */
 	@SuppressWarnings("unused")
 	@Test
-	public final void testConstructor() {
+	public void testConstructor() {
 		ImmunizationsSectionOperations obj = new ImmunizationsSectionOperations();
 		assertTrue(true);
 	} // testConstructor

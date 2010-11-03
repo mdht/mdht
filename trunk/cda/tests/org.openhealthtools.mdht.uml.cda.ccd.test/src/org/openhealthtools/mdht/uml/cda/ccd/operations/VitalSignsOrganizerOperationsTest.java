@@ -40,7 +40,7 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 	 */
 	@SuppressWarnings("unused")
 	@Test
-	public final void testConstructor() {
+	public void testConstructor() {
 		VitalSignsOrganizerOperations obj = new VitalSignsOrganizerOperations();
 		assertTrue(true);
 	} // testConstructor
