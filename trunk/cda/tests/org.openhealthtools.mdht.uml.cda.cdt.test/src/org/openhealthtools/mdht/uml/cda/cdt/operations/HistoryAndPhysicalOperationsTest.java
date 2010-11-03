@@ -179,11 +179,11 @@ public class HistoryAndPhysicalOperationsTest extends
 
 	/**
 	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.HistoryAndPhysicalOperations#validateHistoryAndPhysicalReviewOfSystemsSection(org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.HistoryAndPhysicalOperations#validateHistoryAndPhysicalReviewOfSystemsSectionIHE(org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
 	 * .
 	 */
 	@Test
-	public void testValidateHistoryAndPhysicalReviewOfSystemsSection() {
+	public void testValidateHistoryAndPhysicalReviewOfSystemsSectionIHE() {
 		fail("Not yet implemented");
 	}
 
@@ -214,16 +214,6 @@ public class HistoryAndPhysicalOperationsTest extends
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalGeneralStatusSection() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.HistoryAndPhysicalOperations#validateHistoryAndPhysicalResultsSection(org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateHistoryAndPhysicalResultsSection() {
 		fail("Not yet implemented");
 	}
 

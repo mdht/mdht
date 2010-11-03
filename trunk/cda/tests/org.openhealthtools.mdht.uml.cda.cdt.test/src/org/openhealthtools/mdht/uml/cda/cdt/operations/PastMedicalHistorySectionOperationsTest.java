@@ -104,11 +104,11 @@ public class PastMedicalHistorySectionOperationsTest extends
 
 	/**
 	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.PastMedicalHistorySectionOperations#validatePastMedicalHistorySectionClinicalStatements(org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * {@link org.openhealthtools.mdht.uml.cda.cdt.operations.PastMedicalHistorySectionOperations#validatePastMedicalHistorySectionHasClinicalStatements(org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
 	 * .
 	 */
 	@Test
-	public void testValidatePastMedicalHistorySectionClinicalStatements() {
+	public void testValidatePastMedicalHistorySectionHasClinicalStatements() {
 		fail("Not yet implemented");
 	}
 
