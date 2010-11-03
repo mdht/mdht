@@ -12,12 +12,15 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest.CodeCCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
@@ -82,4 +85,14 @@ public class PhysicalExaminationSectionOperationsTest extends
 		return CDTFactory.eINSTANCE.createPhysicalExaminationSection();
 	}
 
+	/**
+	 * Not a real test, needed for EMMA to report 100% method coverage.
+	 */
+	@SuppressWarnings("unused")
+	@Test
+	public void testConstructor() {
+		PhysicalExaminationSectionOperations obj = new PhysicalExaminationSectionOperations();
+		assertTrue(true);
+	} // testConstructor
+	
 } // PhysicalExaminationSectionOperationsTest
