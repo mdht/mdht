@@ -1240,13 +1240,22 @@ public interface CDAPackage extends EPackage {
 	int ACT_RELATIONSHIP__BASE_ASSOCIATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Association Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACT_RELATIONSHIP__ASSOCIATION_TYPE = 1;
+
+	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACT_RELATIONSHIP__TYPE_CODE = 1;
+	int ACT_RELATIONSHIP__TYPE_CODE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Act Relationship</em>' class.
@@ -1255,7 +1264,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACT_RELATIONSHIP_FEATURE_COUNT = 2;
+	int ACT_RELATIONSHIP_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl <em>Participation</em>}' class.
@@ -1277,13 +1286,22 @@ public interface CDAPackage extends EPackage {
 	int PARTICIPATION__BASE_ASSOCIATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Association Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTICIPATION__ASSOCIATION_TYPE = 1;
+
+	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPATION__TYPE_CODE = 1;
+	int PARTICIPATION__TYPE_CODE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Participation</em>' class.
@@ -1292,7 +1310,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPATION_FEATURE_COUNT = 2;
+	int PARTICIPATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind <em>Severity Kind</em>}' enum.
@@ -1825,6 +1843,17 @@ public interface CDAPackage extends EPackage {
 	EReference getActRelationship_Base_Association();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getAssociationType <em>Association Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Association Type</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getAssociationType()
+	 * @see #getActRelationship()
+	 * @generated
+	 */
+	EReference getActRelationship_AssociationType();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship#getTypeCode <em>Type Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1855,6 +1884,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getParticipation_Base_Association();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType <em>Association Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Association Type</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType()
+	 * @see #getParticipation()
+	 * @generated
+	 */
+	EReference getParticipation_AssociationType();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getTypeCode <em>Type Code</em>}'.
@@ -2332,6 +2372,14 @@ public interface CDAPackage extends EPackage {
 		EReference ACT_RELATIONSHIP__BASE_ASSOCIATION = eINSTANCE.getActRelationship_Base_Association();
 
 		/**
+		 * The meta object literal for the '<em><b>Association Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT_RELATIONSHIP__ASSOCIATION_TYPE = eINSTANCE.getActRelationship_AssociationType();
+
+		/**
 		 * The meta object literal for the '<em><b>Type Code</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2356,6 +2404,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARTICIPATION__BASE_ASSOCIATION = eINSTANCE.getParticipation_Base_Association();
+
+		/**
+		 * The meta object literal for the '<em><b>Association Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPATION__ASSOCIATION_TYPE = eINSTANCE.getParticipation_AssociationType();
 
 		/**
 		 * The meta object literal for the '<em><b>Type Code</b></em>' reference feature.

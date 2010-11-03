@@ -126,12 +126,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ActRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associationType" ordered="false"
+        eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeCode" ordered="false"
         eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//EnumerationLiteral"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Participation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associationType" ordered="false"
+        eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeCode" ordered="false"
         eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//EnumerationLiteral"/>
   </eClassifiers>

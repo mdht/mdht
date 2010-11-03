@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getBase_Association <em>Base Association</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType <em>Association Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getTypeCode <em>Type Code</em>}</li>
  * </ul>
  * </p>
@@ -53,6 +54,32 @@ public interface Participation extends EObject {
 	 * @generated
 	 */
 	void setBase_Association(Association value);
+
+	/**
+	 * Returns the value of the '<em><b>Association Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Association Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Association Type</em>' reference.
+	 * @see #setAssociationType(org.eclipse.uml2.uml.Class)
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getParticipation_AssociationType()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	org.eclipse.uml2.uml.Class getAssociationType();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Participation#getAssociationType <em>Association Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Association Type</em>' reference.
+	 * @see #getAssociationType()
+	 * @generated
+	 */
+	void setAssociationType(org.eclipse.uml2.uml.Class value);
 
 	/**
 	 * Returns the value of the '<em><b>Type Code</b></em>' reference.

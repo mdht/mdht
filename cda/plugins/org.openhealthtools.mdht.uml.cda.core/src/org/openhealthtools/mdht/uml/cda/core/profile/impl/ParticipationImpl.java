@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getBase_Association <em>Base Association</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getAssociationType <em>Association Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ParticipationImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
  * </p>
@@ -40,6 +41,16 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	 * @ordered
 	 */
 	protected Association base_Association;
+
+	/**
+	 * The cached value of the '{@link #getAssociationType() <em>Association Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociationType()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.eclipse.uml2.uml.Class associationType;
 
 	/**
 	 * The cached value of the '{@link #getTypeCode() <em>Type Code</em>}' reference.
@@ -113,6 +124,44 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public org.eclipse.uml2.uml.Class getAssociationType() {
+		if (associationType != null && associationType.eIsProxy()) {
+			InternalEObject oldAssociationType = (InternalEObject)associationType;
+			associationType = (org.eclipse.uml2.uml.Class)eResolveProxy(oldAssociationType);
+			if (associationType != oldAssociationType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType, associationType));
+			}
+		}
+		return associationType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.eclipse.uml2.uml.Class basicGetAssociationType() {
+		return associationType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAssociationType(org.eclipse.uml2.uml.Class newAssociationType) {
+		org.eclipse.uml2.uml.Class oldAssociationType = associationType;
+		associationType = newAssociationType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARTICIPATION__ASSOCIATION_TYPE, oldAssociationType, associationType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EnumerationLiteral getTypeCode() {
 		if (typeCode != null && typeCode.eIsProxy()) {
 			InternalEObject oldTypeCode = (InternalEObject)typeCode;
@@ -157,6 +206,9 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 			case CDAPackage.PARTICIPATION__BASE_ASSOCIATION:
 				if (resolve) return getBase_Association();
 				return basicGetBase_Association();
+			case CDAPackage.PARTICIPATION__ASSOCIATION_TYPE:
+				if (resolve) return getAssociationType();
+				return basicGetAssociationType();
 			case CDAPackage.PARTICIPATION__TYPE_CODE:
 				if (resolve) return getTypeCode();
 				return basicGetTypeCode();
@@ -174,6 +226,9 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 		switch (featureID) {
 			case CDAPackage.PARTICIPATION__BASE_ASSOCIATION:
 				setBase_Association((Association)newValue);
+				return;
+			case CDAPackage.PARTICIPATION__ASSOCIATION_TYPE:
+				setAssociationType((org.eclipse.uml2.uml.Class)newValue);
 				return;
 			case CDAPackage.PARTICIPATION__TYPE_CODE:
 				setTypeCode((EnumerationLiteral)newValue);
@@ -193,6 +248,9 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 			case CDAPackage.PARTICIPATION__BASE_ASSOCIATION:
 				setBase_Association((Association)null);
 				return;
+			case CDAPackage.PARTICIPATION__ASSOCIATION_TYPE:
+				setAssociationType((org.eclipse.uml2.uml.Class)null);
+				return;
 			case CDAPackage.PARTICIPATION__TYPE_CODE:
 				setTypeCode((EnumerationLiteral)null);
 				return;
@@ -210,6 +268,8 @@ public class ParticipationImpl extends EObjectImpl implements Participation {
 		switch (featureID) {
 			case CDAPackage.PARTICIPATION__BASE_ASSOCIATION:
 				return base_Association != null;
+			case CDAPackage.PARTICIPATION__ASSOCIATION_TYPE:
+				return associationType != null;
 			case CDAPackage.PARTICIPATION__TYPE_CODE:
 				return typeCode != null;
 		}
