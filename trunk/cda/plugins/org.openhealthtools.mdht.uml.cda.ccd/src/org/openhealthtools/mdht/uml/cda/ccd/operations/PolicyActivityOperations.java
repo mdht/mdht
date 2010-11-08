@@ -49,7 +49,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityPolicySubscriber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Policy Subscriber</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getPayerEntity() <em>Get Payer Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getCoveredParty() <em>Get Covered Party</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getPolicySubscriber() <em>Get Policy Subscriber</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getSubscriber() <em>Get Subscriber</em>}</li>
  * </ul>
  * </p>
  *
@@ -1019,24 +1019,24 @@ public class PolicyActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getPolicySubscriber(PolicyActivity) <em>Get Policy Subscriber</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getSubscriber(PolicyActivity) <em>Get Subscriber</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPolicySubscriber(PolicyActivity)
+	 * @see #getSubscriber(PolicyActivity)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_POLICY_SUBSCRIBER__EOCL_EXP = "self.getParticipantRoles()->select(participantRole : cda::ParticipantRole | not participantRole.oclIsUndefined() and participantRole.oclIsKindOf(cda::ParticipantRole))->asSequence()->first().oclAsType(cda::ParticipantRole)";
+	protected static final String GET_SUBSCRIBER__EOCL_EXP = "self.getParticipantRoles()->select(participantRole : cda::ParticipantRole | not participantRole.oclIsUndefined() and participantRole.oclIsKindOf(cda::ParticipantRole))->asSequence()->first().oclAsType(cda::ParticipantRole)";
 
 	/**
-	 * The cached OCL query for the '{@link #getPolicySubscriber(PolicyActivity) <em>Get Policy Subscriber</em>}' query operation.
+	 * The cached OCL query for the '{@link #getSubscriber(PolicyActivity) <em>Get Subscriber</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPolicySubscriber(PolicyActivity)
+	 * @see #getSubscriber(PolicyActivity)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_POLICY_SUBSCRIBER__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_SUBSCRIBER__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1047,18 +1047,18 @@ public class PolicyActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  ParticipantRole getPolicySubscriber(PolicyActivity policyActivity) {
-		if (GET_POLICY_SUBSCRIBER__EOCL_QRY == null) {
+	public static  ParticipantRole getSubscriber(PolicyActivity policyActivity) {
+		if (GET_SUBSCRIBER__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CCDPackage.Literals.POLICY_ACTIVITY, CCDPackage.Literals.POLICY_ACTIVITY.getEAllOperations().get(60));
 			try {
-				GET_POLICY_SUBSCRIBER__EOCL_QRY = helper.createQuery(GET_POLICY_SUBSCRIBER__EOCL_EXP);
+				GET_SUBSCRIBER__EOCL_QRY = helper.createQuery(GET_SUBSCRIBER__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_POLICY_SUBSCRIBER__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_SUBSCRIBER__EOCL_QRY);
 		return (ParticipantRole) query.evaluate(policyActivity);
 	}
 

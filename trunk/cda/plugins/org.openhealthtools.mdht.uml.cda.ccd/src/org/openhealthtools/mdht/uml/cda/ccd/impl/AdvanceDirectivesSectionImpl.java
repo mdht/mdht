@@ -88,8 +88,8 @@ public class AdvanceDirectivesSectionImpl extends SectionImpl implements Advance
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AdvanceDirectiveObservation> getAdvanceDirectiveObservations() {
-		return AdvanceDirectivesSectionOperations.getAdvanceDirectiveObservations(this);
+	public EList<AdvanceDirectiveObservation> getObservationss() {
+		return AdvanceDirectivesSectionOperations.getObservationss(this);
 	}
 
 	/**

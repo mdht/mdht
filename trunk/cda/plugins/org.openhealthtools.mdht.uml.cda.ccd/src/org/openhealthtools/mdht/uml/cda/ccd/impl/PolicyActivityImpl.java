@@ -205,8 +205,8 @@ public class PolicyActivityImpl extends ActImpl implements PolicyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParticipantRole getPolicySubscriber() {
-		return PolicyActivityOperations.getPolicySubscriber(this);
+	public ParticipantRole getSubscriber() {
+		return PolicyActivityOperations.getSubscriber(this);
 	}
 
 	/**

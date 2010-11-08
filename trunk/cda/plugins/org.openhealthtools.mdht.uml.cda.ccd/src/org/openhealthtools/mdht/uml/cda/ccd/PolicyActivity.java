@@ -258,7 +258,7 @@ public interface PolicyActivity extends Act {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getParticipantRoles()->select(participantRole : cda::ParticipantRole | not participantRole.oclIsUndefined() and participantRole.oclIsKindOf(cda::ParticipantRole))->asSequence()->first().oclAsType(cda::ParticipantRole)'"
 	 * @generated
 	 */
-	ParticipantRole getPolicySubscriber();
+	ParticipantRole getSubscriber();
 
 	/**
 	 * <!-- begin-user-doc -->

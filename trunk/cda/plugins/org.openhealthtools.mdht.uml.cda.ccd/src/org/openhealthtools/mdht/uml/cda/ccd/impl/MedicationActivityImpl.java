@@ -63,6 +63,33 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateMedicationActivityHasDoseQuantityOrRateQuantity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityHasDoseQuantityOrRateQuantity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationActivityHasConsents(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityHasConsents(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationActivityInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityInformationSource(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationActivityOperations.validateMedicationActivityTemplateId(this, diagnostics, context);
 	}
@@ -83,6 +110,33 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 */
 	public boolean validateMedicationActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationActivityOperations.validateMedicationActivityStatusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationActivityMaxDoseQuantity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityMaxDoseQuantity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationActivityRouteCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityRouteCode(this, diagnostics, context);
 	}
 
 	/**

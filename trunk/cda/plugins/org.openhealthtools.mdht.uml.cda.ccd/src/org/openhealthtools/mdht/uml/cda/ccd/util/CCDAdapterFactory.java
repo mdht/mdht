@@ -161,6 +161,34 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createMedicationsSectionAdapter();
 			}
 			@Override
+			public Adapter caseMedicationActivity(MedicationActivity object) {
+				return createMedicationActivityAdapter();
+			}
+			@Override
+			public Adapter caseMedicationSeriesNumberObservation(MedicationSeriesNumberObservation object) {
+				return createMedicationSeriesNumberObservationAdapter();
+			}
+			@Override
+			public Adapter caseMedicationStatusObservation(MedicationStatusObservation object) {
+				return createMedicationStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseStatusObservation(StatusObservation object) {
+				return createStatusObservationAdapter();
+			}
+			@Override
+			public Adapter casePatientInstruction(PatientInstruction object) {
+				return createPatientInstructionAdapter();
+			}
+			@Override
+			public Adapter caseSupplyActivity(SupplyActivity object) {
+				return createSupplyActivityAdapter();
+			}
+			@Override
+			public Adapter caseFulfillmentInstruction(FulfillmentInstruction object) {
+				return createFulfillmentInstructionAdapter();
+			}
+			@Override
 			public Adapter caseContinuityOfCareDocument(ContinuityOfCareDocument object) {
 				return createContinuityOfCareDocumentAdapter();
 			}
@@ -297,10 +325,6 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createProblemStatusObservationAdapter();
 			}
 			@Override
-			public Adapter caseStatusObservation(StatusObservation object) {
-				return createStatusObservationAdapter();
-			}
-			@Override
 			public Adapter caseProblemHealthStatusObservation(ProblemHealthStatusObservation object) {
 				return createProblemHealthStatusObservationAdapter();
 			}
@@ -327,30 +351,6 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEncountersActivity(EncountersActivity object) {
 				return createEncountersActivityAdapter();
-			}
-			@Override
-			public Adapter caseMedicationActivity(MedicationActivity object) {
-				return createMedicationActivityAdapter();
-			}
-			@Override
-			public Adapter caseMedicationSeriesNumberObservation(MedicationSeriesNumberObservation object) {
-				return createMedicationSeriesNumberObservationAdapter();
-			}
-			@Override
-			public Adapter caseMedicationStatusObservation(MedicationStatusObservation object) {
-				return createMedicationStatusObservationAdapter();
-			}
-			@Override
-			public Adapter casePatientInstruction(PatientInstruction object) {
-				return createPatientInstructionAdapter();
-			}
-			@Override
-			public Adapter caseSupplyActivity(SupplyActivity object) {
-				return createSupplyActivityAdapter();
-			}
-			@Override
-			public Adapter caseFulfillmentInstruction(FulfillmentInstruction object) {
-				return createFulfillmentInstructionAdapter();
 			}
 			@Override
 			public Adapter caseAlertObservation(AlertObservation object) {
@@ -449,20 +449,28 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createSectionAdapter();
 			}
 			@Override
-			public Adapter caseClinicalDocument(ClinicalDocument object) {
-				return createClinicalDocumentAdapter();
-			}
-			@Override
 			public Adapter caseClinicalStatement(ClinicalStatement object) {
 				return createClinicalStatementAdapter();
+			}
+			@Override
+			public Adapter caseSubstanceAdministration(SubstanceAdministration object) {
+				return createSubstanceAdministrationAdapter();
+			}
+			@Override
+			public Adapter caseObservation(Observation object) {
+				return createObservationAdapter();
 			}
 			@Override
 			public Adapter caseCDA_Act(org.openhealthtools.mdht.uml.cda.Act object) {
 				return createCDA_ActAdapter();
 			}
 			@Override
-			public Adapter caseObservation(Observation object) {
-				return createObservationAdapter();
+			public Adapter caseSupply(Supply object) {
+				return createSupplyAdapter();
+			}
+			@Override
+			public Adapter caseClinicalDocument(ClinicalDocument object) {
+				return createClinicalDocumentAdapter();
 			}
 			@Override
 			public Adapter caseOrganizer(Organizer object) {
@@ -475,14 +483,6 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseProcedure(Procedure object) {
 				return createProcedureAdapter();
-			}
-			@Override
-			public Adapter caseSubstanceAdministration(SubstanceAdministration object) {
-				return createSubstanceAdministrationAdapter();
-			}
-			@Override
-			public Adapter caseSupply(Supply object) {
-				return createSupplyAdapter();
 			}
 			@Override
 			public Adapter caseParticipation(Participation object) {

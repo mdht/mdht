@@ -11,6 +11,9 @@ Completion of CCD constraints
 * Completion with conf IDs
  - through CONF-68
  
+ 
+* Medications
+ - completed CONF-298 thru CONF-326
 
  Issues
  ------------------------------------------

@@ -42,8 +42,8 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemHealthStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Health Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Age Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemStatusObservation() <em>Get Problem Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemHealthStatusObservation() <em>Get Problem Health Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemStatus() <em>Get Problem Status</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemHealthStatus() <em>Get Problem Health Status</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getAgeObservation() <em>Get Age Observation</em>}</li>
  * </ul>
  * </p>
@@ -590,24 +590,24 @@ public class ProblemObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getProblemStatusObservation(ProblemObservation) <em>Get Problem Status Observation</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getProblemStatus(ProblemObservation) <em>Get Problem Status</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProblemStatusObservation(ProblemObservation)
+	 * @see #getProblemStatus(ProblemObservation)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PROBLEM_STATUS_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemStatusObservation))->asSequence()->first().oclAsType(ccd::ProblemStatusObservation)";
+	protected static final String GET_PROBLEM_STATUS__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemStatusObservation))->asSequence()->first().oclAsType(ccd::ProblemStatusObservation)";
 
 	/**
-	 * The cached OCL query for the '{@link #getProblemStatusObservation(ProblemObservation) <em>Get Problem Status Observation</em>}' query operation.
+	 * The cached OCL query for the '{@link #getProblemStatus(ProblemObservation) <em>Get Problem Status</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProblemStatusObservation(ProblemObservation)
+	 * @see #getProblemStatus(ProblemObservation)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_PROBLEM_STATUS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -618,40 +618,40 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  ProblemStatusObservation getProblemStatusObservation(ProblemObservation problemObservation) {
-		if (GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY == null) {
+	public static  ProblemStatusObservation getProblemStatus(ProblemObservation problemObservation) {
+		if (GET_PROBLEM_STATUS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(52));
 			try {
-				GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_PROBLEM_STATUS_OBSERVATION__EOCL_EXP);
+				GET_PROBLEM_STATUS__EOCL_QRY = helper.createQuery(GET_PROBLEM_STATUS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_PROBLEM_STATUS__EOCL_QRY);
 		return (ProblemStatusObservation) query.evaluate(problemObservation);
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getProblemHealthStatusObservation(ProblemObservation) <em>Get Problem Health Status Observation</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getProblemHealthStatus(ProblemObservation) <em>Get Problem Health Status</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProblemHealthStatusObservation(ProblemObservation)
+	 * @see #getProblemHealthStatus(ProblemObservation)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemHealthStatusObservation))->asSequence()->first().oclAsType(ccd::ProblemHealthStatusObservation)";
+	protected static final String GET_PROBLEM_HEALTH_STATUS__EOCL_EXP = "self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemHealthStatusObservation))->asSequence()->first().oclAsType(ccd::ProblemHealthStatusObservation)";
 
 	/**
-	 * The cached OCL query for the '{@link #getProblemHealthStatusObservation(ProblemObservation) <em>Get Problem Health Status Observation</em>}' query operation.
+	 * The cached OCL query for the '{@link #getProblemHealthStatus(ProblemObservation) <em>Get Problem Health Status</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProblemHealthStatusObservation(ProblemObservation)
+	 * @see #getProblemHealthStatus(ProblemObservation)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_PROBLEM_HEALTH_STATUS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -662,18 +662,18 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  ProblemHealthStatusObservation getProblemHealthStatusObservation(ProblemObservation problemObservation) {
-		if (GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_QRY == null) {
+	public static  ProblemHealthStatusObservation getProblemHealthStatus(ProblemObservation problemObservation) {
+		if (GET_PROBLEM_HEALTH_STATUS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CCDPackage.Literals.PROBLEM_OBSERVATION, CCDPackage.Literals.PROBLEM_OBSERVATION.getEAllOperations().get(53));
 			try {
-				GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_EXP);
+				GET_PROBLEM_HEALTH_STATUS__EOCL_QRY = helper.createQuery(GET_PROBLEM_HEALTH_STATUS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PROBLEM_HEALTH_STATUS_OBSERVATION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_PROBLEM_HEALTH_STATUS__EOCL_QRY);
 		return (ProblemHealthStatusObservation) query.evaluate(problemObservation);
 	}
 
