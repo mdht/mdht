@@ -18,15 +18,12 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- *     A medication activity is used to describe what is administered whereas a supply activity is used to
- *     describe what has been dispensed.
- * </p>
+ * A medication activity is used to describe what is administered whereas a supply activity is used to describe what has been dispensed.
  * <!-- end-model-doc -->
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.error='MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityId' constraints.validation.warning='MedicationActivityStatusCode' constraints.validation.info='MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.error='MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityInformationSource MedicationActivityId' routeCode.codeSystem='2.16.840.1.113883.5.112' routeCode.codeSystemName='HL7 RouteOfAdministration' constraints.validation.warning='MedicationActivityHasDoseQuantityOrRateQuantity MedicationActivityStatusCode MedicationActivityEffectiveTime MedicationActivityRouteCode' constraints.validation.info='MedicationActivityHasConsents MedicationActivityMaxDoseQuantity MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction'"
  * @generated
  */
 public interface MedicationActivity extends SubstanceAdministration {
@@ -42,6 +39,52 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @generated
 	 */
 	boolean validateMedicationActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityHasDoseQuantityOrRateQuantity(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getClinicalDocument().authorization->exists(auth : cda::Authorization | 
+	 *    not auth.oclIsUndefined() and not auth.consent.oclIsUndefined())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getClinicalDocument().authorization->exists(auth : cda::Authorization | \r\n   not auth.oclIsUndefined() and not auth.consent.oclIsUndefined())'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityHasConsents(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.informant->isEmpty() 
+	 * or not self.getSection().informant->isEmpty()
+	 * or not self.getClinicalDocument().informant->isEmpty()
+	 * or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+	 * or (self.entryRelationship->exists(rel : cda::EntryRelationship | 
+	 *    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+	 *    and rel.observation.code.code = '48766-0'))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.informant->isEmpty() \r\nor not self.getSection().informant->isEmpty()\r\nor not self.getClinicalDocument().informant->isEmpty()\r\nor self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)\r\nor (self.entryRelationship->exists(rel : cda::EntryRelationship | \r\n   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR\r\n   and rel.observation.code.code = \'48766-0\'))'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,6 +124,47 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @generated
 	 */
 	boolean validateMedicationActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.effectiveTime->isEmpty()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.effectiveTime->isEmpty()'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.maxDoseQuantity.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.maxDoseQuantity.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityMaxDoseQuantity(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.routeCode.oclIsUndefined() and self.routeCode.oclIsKindOf(datatypes::CE) and 
+	 * let value : datatypes::CE = self.routeCode.oclAsType(datatypes::CE) in (
+	 * value.codeSystem = '2.16.840.1.113883.5.112')
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.routeCode.oclIsUndefined() and self.routeCode.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.routeCode.oclAsType(datatypes::CE) in (\r\nvalue.codeSystem = \'2.16.840.1.113883.5.112\')'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityRouteCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

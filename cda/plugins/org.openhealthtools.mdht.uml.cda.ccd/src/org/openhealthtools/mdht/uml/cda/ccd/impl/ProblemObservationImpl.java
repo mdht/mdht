@@ -140,8 +140,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProblemStatusObservation getProblemStatusObservation() {
-		return ProblemObservationOperations.getProblemStatusObservation(this);
+	public ProblemStatusObservation getProblemStatus() {
+		return ProblemObservationOperations.getProblemStatus(this);
 	}
 
 	/**
@@ -149,8 +149,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProblemHealthStatusObservation getProblemHealthStatusObservation() {
-		return ProblemObservationOperations.getProblemHealthStatusObservation(this);
+	public ProblemHealthStatusObservation getProblemHealthStatus() {
+		return ProblemObservationOperations.getProblemHealthStatus(this);
 	}
 
 	/**

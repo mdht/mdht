@@ -163,7 +163,7 @@ public interface ProblemObservation extends Observation {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemStatusObservation))->asSequence()->first().oclAsType(ccd::ProblemStatusObservation)'"
 	 * @generated
 	 */
-	ProblemStatusObservation getProblemStatusObservation();
+	ProblemStatusObservation getProblemStatus();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface ProblemObservation extends Observation {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemHealthStatusObservation))->asSequence()->first().oclAsType(ccd::ProblemHealthStatusObservation)'"
 	 * @generated
 	 */
-	ProblemHealthStatusObservation getProblemHealthStatusObservation();
+	ProblemHealthStatusObservation getProblemHealthStatus();
 
 	/**
 	 * <!-- begin-user-doc -->

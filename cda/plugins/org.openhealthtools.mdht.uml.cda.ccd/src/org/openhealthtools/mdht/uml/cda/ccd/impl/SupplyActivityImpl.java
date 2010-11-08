@@ -53,6 +53,51 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateSupplyActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityMoodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityHasAuthor(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityHasAuthor(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityHasPerformer(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityHasPerformer(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityHasParticipantLocation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityHasParticipantLocation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityInformationSource(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateSupplyActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return SupplyActivityOperations.validateSupplyActivityTemplateId(this, diagnostics, context);
 	}
@@ -82,6 +127,24 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 */
 	public boolean validateSupplyActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return SupplyActivityOperations.validateSupplyActivityEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityQuantity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityQuantity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityRepeatNumber(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityRepeatNumber(this, diagnostics, context);
 	}
 
 	/**

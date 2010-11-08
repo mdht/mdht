@@ -183,6 +183,77 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.MEDICATION_ACTIVITY: {
+				MedicationActivity medicationActivity = (MedicationActivity)theEObject;
+				T result = caseMedicationActivity(medicationActivity);
+				if (result == null) result = caseSubstanceAdministration(medicationActivity);
+				if (result == null) result = caseClinicalStatement(medicationActivity);
+				if (result == null) result = caseAct(medicationActivity);
+				if (result == null) result = caseInfrastructureRoot(medicationActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.MEDICATION_SERIES_NUMBER_OBSERVATION: {
+				MedicationSeriesNumberObservation medicationSeriesNumberObservation = (MedicationSeriesNumberObservation)theEObject;
+				T result = caseMedicationSeriesNumberObservation(medicationSeriesNumberObservation);
+				if (result == null) result = caseObservation(medicationSeriesNumberObservation);
+				if (result == null) result = caseClinicalStatement(medicationSeriesNumberObservation);
+				if (result == null) result = caseAct(medicationSeriesNumberObservation);
+				if (result == null) result = caseInfrastructureRoot(medicationSeriesNumberObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.MEDICATION_STATUS_OBSERVATION: {
+				MedicationStatusObservation medicationStatusObservation = (MedicationStatusObservation)theEObject;
+				T result = caseMedicationStatusObservation(medicationStatusObservation);
+				if (result == null) result = caseStatusObservation(medicationStatusObservation);
+				if (result == null) result = caseObservation(medicationStatusObservation);
+				if (result == null) result = caseClinicalStatement(medicationStatusObservation);
+				if (result == null) result = caseAct(medicationStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(medicationStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.STATUS_OBSERVATION: {
+				StatusObservation statusObservation = (StatusObservation)theEObject;
+				T result = caseStatusObservation(statusObservation);
+				if (result == null) result = caseObservation(statusObservation);
+				if (result == null) result = caseClinicalStatement(statusObservation);
+				if (result == null) result = caseAct(statusObservation);
+				if (result == null) result = caseInfrastructureRoot(statusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PATIENT_INSTRUCTION: {
+				PatientInstruction patientInstruction = (PatientInstruction)theEObject;
+				T result = casePatientInstruction(patientInstruction);
+				if (result == null) result = caseCDA_Act(patientInstruction);
+				if (result == null) result = caseClinicalStatement(patientInstruction);
+				if (result == null) result = caseAct(patientInstruction);
+				if (result == null) result = caseInfrastructureRoot(patientInstruction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.SUPPLY_ACTIVITY: {
+				SupplyActivity supplyActivity = (SupplyActivity)theEObject;
+				T result = caseSupplyActivity(supplyActivity);
+				if (result == null) result = caseSupply(supplyActivity);
+				if (result == null) result = caseClinicalStatement(supplyActivity);
+				if (result == null) result = caseAct(supplyActivity);
+				if (result == null) result = caseInfrastructureRoot(supplyActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.FULFILLMENT_INSTRUCTION: {
+				FulfillmentInstruction fulfillmentInstruction = (FulfillmentInstruction)theEObject;
+				T result = caseFulfillmentInstruction(fulfillmentInstruction);
+				if (result == null) result = caseCDA_Act(fulfillmentInstruction);
+				if (result == null) result = caseClinicalStatement(fulfillmentInstruction);
+				if (result == null) result = caseAct(fulfillmentInstruction);
+				if (result == null) result = caseInfrastructureRoot(fulfillmentInstruction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: {
 				ContinuityOfCareDocument continuityOfCareDocument = (ContinuityOfCareDocument)theEObject;
 				T result = caseContinuityOfCareDocument(continuityOfCareDocument);
@@ -511,16 +582,6 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.STATUS_OBSERVATION: {
-				StatusObservation statusObservation = (StatusObservation)theEObject;
-				T result = caseStatusObservation(statusObservation);
-				if (result == null) result = caseObservation(statusObservation);
-				if (result == null) result = caseClinicalStatement(statusObservation);
-				if (result == null) result = caseAct(statusObservation);
-				if (result == null) result = caseInfrastructureRoot(statusObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION: {
 				ProblemHealthStatusObservation problemHealthStatusObservation = (ProblemHealthStatusObservation)theEObject;
 				T result = caseProblemHealthStatusObservation(problemHealthStatusObservation);
@@ -588,67 +649,6 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseClinicalStatement(encountersActivity);
 				if (result == null) result = caseAct(encountersActivity);
 				if (result == null) result = caseInfrastructureRoot(encountersActivity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.MEDICATION_ACTIVITY: {
-				MedicationActivity medicationActivity = (MedicationActivity)theEObject;
-				T result = caseMedicationActivity(medicationActivity);
-				if (result == null) result = caseSubstanceAdministration(medicationActivity);
-				if (result == null) result = caseClinicalStatement(medicationActivity);
-				if (result == null) result = caseAct(medicationActivity);
-				if (result == null) result = caseInfrastructureRoot(medicationActivity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.MEDICATION_SERIES_NUMBER_OBSERVATION: {
-				MedicationSeriesNumberObservation medicationSeriesNumberObservation = (MedicationSeriesNumberObservation)theEObject;
-				T result = caseMedicationSeriesNumberObservation(medicationSeriesNumberObservation);
-				if (result == null) result = caseObservation(medicationSeriesNumberObservation);
-				if (result == null) result = caseClinicalStatement(medicationSeriesNumberObservation);
-				if (result == null) result = caseAct(medicationSeriesNumberObservation);
-				if (result == null) result = caseInfrastructureRoot(medicationSeriesNumberObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.MEDICATION_STATUS_OBSERVATION: {
-				MedicationStatusObservation medicationStatusObservation = (MedicationStatusObservation)theEObject;
-				T result = caseMedicationStatusObservation(medicationStatusObservation);
-				if (result == null) result = caseStatusObservation(medicationStatusObservation);
-				if (result == null) result = caseObservation(medicationStatusObservation);
-				if (result == null) result = caseClinicalStatement(medicationStatusObservation);
-				if (result == null) result = caseAct(medicationStatusObservation);
-				if (result == null) result = caseInfrastructureRoot(medicationStatusObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.PATIENT_INSTRUCTION: {
-				PatientInstruction patientInstruction = (PatientInstruction)theEObject;
-				T result = casePatientInstruction(patientInstruction);
-				if (result == null) result = caseCDA_Act(patientInstruction);
-				if (result == null) result = caseClinicalStatement(patientInstruction);
-				if (result == null) result = caseAct(patientInstruction);
-				if (result == null) result = caseInfrastructureRoot(patientInstruction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.SUPPLY_ACTIVITY: {
-				SupplyActivity supplyActivity = (SupplyActivity)theEObject;
-				T result = caseSupplyActivity(supplyActivity);
-				if (result == null) result = caseSupply(supplyActivity);
-				if (result == null) result = caseClinicalStatement(supplyActivity);
-				if (result == null) result = caseAct(supplyActivity);
-				if (result == null) result = caseInfrastructureRoot(supplyActivity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.FULFILLMENT_INSTRUCTION: {
-				FulfillmentInstruction fulfillmentInstruction = (FulfillmentInstruction)theEObject;
-				T result = caseFulfillmentInstruction(fulfillmentInstruction);
-				if (result == null) result = caseCDA_Act(fulfillmentInstruction);
-				if (result == null) result = caseClinicalStatement(fulfillmentInstruction);
-				if (result == null) result = caseAct(fulfillmentInstruction);
-				if (result == null) result = caseInfrastructureRoot(fulfillmentInstruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
