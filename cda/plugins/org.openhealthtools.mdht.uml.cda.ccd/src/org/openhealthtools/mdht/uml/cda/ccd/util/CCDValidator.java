@@ -2915,7 +2915,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationsSection, diagnostics, context);
@@ -2988,7 +2987,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(continuityOfCareDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuityOfCareDocument, diagnostics, context);
@@ -3303,7 +3301,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(problemAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemAct, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(problemAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(problemAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemAct, diagnostics, context);
@@ -3453,7 +3450,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemObservation, diagnostics, context);
@@ -3570,7 +3566,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(problemSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(problemSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(problemSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemSection, diagnostics, context);
@@ -3643,7 +3638,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemStatusObservation, diagnostics, context);
@@ -3697,7 +3691,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(statusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(statusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(statusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(statusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(statusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(statusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(statusObservation, diagnostics, context);
@@ -3792,7 +3785,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemHealthStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemHealthStatusObservation, diagnostics, context);
@@ -3875,7 +3867,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(episodeObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(episodeObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(episodeObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(episodeObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(episodeObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(episodeObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(episodeObservation, diagnostics, context);
@@ -3981,7 +3972,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(patientAwareness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(patientAwareness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(patientAwareness, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(patientAwareness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(patientAwareness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(patientAwareness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(patientAwareness, diagnostics, context);
@@ -4043,7 +4033,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(familyHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(familyHistorySection, diagnostics, context);
@@ -4094,7 +4083,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(familyHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(familyHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(familyHistoryObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(familyHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(familyHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(familyHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(familyHistoryObservation, diagnostics, context);
@@ -4145,7 +4133,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(familyHistoryOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(familyHistoryOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(familyHistoryOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(familyHistoryOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(familyHistoryOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(familyHistoryOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(familyHistoryOrganizer, diagnostics, context);
@@ -4185,7 +4172,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(resultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(resultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(resultOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(resultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(resultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(resultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resultOrganizer, diagnostics, context);
@@ -4291,7 +4277,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(resultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(resultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(resultObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(resultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(resultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(resultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resultObservation, diagnostics, context);
@@ -4441,7 +4426,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(socialHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(socialHistorySection, diagnostics, context);
@@ -4492,7 +4476,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(socialHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(socialHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(socialHistoryObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(socialHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(socialHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(socialHistoryObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(socialHistoryObservation, diagnostics, context);
@@ -4521,7 +4504,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(encountersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encountersSection, diagnostics, context);
@@ -4572,7 +4554,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(immunizationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(immunizationsSection, diagnostics, context);
@@ -4645,7 +4626,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(encountersActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(encountersActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(encountersActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(encountersActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(encountersActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(encountersActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encountersActivity, diagnostics, context);
@@ -4718,7 +4698,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(medicationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(medicationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationActivity, diagnostics, context);
@@ -4879,7 +4858,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(supplyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(supplyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(supplyActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(supplyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(supplyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(supplyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(supplyActivity, diagnostics, context);
@@ -5040,7 +5018,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(alertsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(alertsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(alertsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(alertsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(alertsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(alertsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(alertsSection, diagnostics, context);
@@ -5113,7 +5090,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(alertObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(alertObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(alertObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(alertObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(alertObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(alertObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(alertObservation, diagnostics, context);
@@ -5230,7 +5206,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(reactionObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reactionObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reactionObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(reactionObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reactionObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(reactionObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reactionObservation, diagnostics, context);
@@ -5303,7 +5278,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(severityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(severityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(severityObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(severityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(severityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(severityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(severityObservation, diagnostics, context);
@@ -5387,7 +5361,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(alertStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(alertStatusObservation, diagnostics, context);
@@ -5441,7 +5414,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(causeOfDeathObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(causeOfDeathObservation, diagnostics, context);
@@ -5491,7 +5463,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(resultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(resultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(resultsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(resultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(resultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(resultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resultsSection, diagnostics, context);
@@ -5564,7 +5535,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(medicationSeriesNumberObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationSeriesNumberObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationSeriesNumberObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(medicationSeriesNumberObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationSeriesNumberObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationSeriesNumberObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationSeriesNumberObservation, diagnostics, context);
@@ -5626,7 +5596,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationStatusObservation, diagnostics, context);
@@ -5680,7 +5649,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(encounterLocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(encounterLocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(encounterLocation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(encounterLocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(encounterLocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(encounterLocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encounterLocation, diagnostics, context);
@@ -5720,7 +5688,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(product, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(product, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(product, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(product, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(product, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(product, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(product, diagnostics, context);
@@ -5750,7 +5717,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(proceduresSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(proceduresSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(proceduresSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(proceduresSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(proceduresSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(proceduresSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(proceduresSection, diagnostics, context);
@@ -5801,7 +5767,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareSection, diagnostics, context);
@@ -5938,7 +5903,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsSection, diagnostics, context);
@@ -6011,7 +5975,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicalEquipmentSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicalEquipmentSection, diagnostics, context);
@@ -6062,7 +6025,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(functionalStatusSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(functionalStatusSection, diagnostics, context);
@@ -6124,7 +6086,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(advanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(advanceDirectivesSection, diagnostics, context);
@@ -6186,7 +6147,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(payersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(payersSection, diagnostics, context);
@@ -6259,7 +6219,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(purposeSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(purposeSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(purposeSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(purposeSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(purposeSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(purposeSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(purposeSection, diagnostics, context);
@@ -6332,7 +6291,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(purposeActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(purposeActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(purposeActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(purposeActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(purposeActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(purposeActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(purposeActivity, diagnostics, context);
@@ -6427,7 +6385,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsOrganizer, diagnostics, context);
@@ -6493,7 +6450,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(advanceDirectiveObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(advanceDirectiveObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(advanceDirectiveObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(advanceDirectiveObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(advanceDirectiveObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(advanceDirectiveObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(advanceDirectiveObservation, diagnostics, context);
@@ -6577,7 +6533,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(advanceDirectiveStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(advanceDirectiveStatusObservation, diagnostics, context);
@@ -6631,7 +6586,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(advanceDirectiveVerification, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(advanceDirectiveVerification, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(advanceDirectiveVerification, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(advanceDirectiveVerification, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(advanceDirectiveVerification, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(advanceDirectiveVerification, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(advanceDirectiveVerification, diagnostics, context);
@@ -6682,7 +6636,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(coverageActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coverageActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coverageActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coverageActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coverageActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(coverageActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coverageActivity, diagnostics, context);
@@ -6799,7 +6752,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(policyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(policyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(policyActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(policyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(policyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(policyActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(policyActivity, diagnostics, context);
@@ -6982,7 +6934,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(payerEntity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(payerEntity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(payerEntity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(payerEntity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(payerEntity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(payerEntity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(payerEntity, diagnostics, context);
@@ -7011,7 +6962,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(coveredParty, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coveredParty, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coveredParty, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coveredParty, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coveredParty, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(coveredParty, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coveredParty, diagnostics, context);
@@ -7052,7 +7002,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(policySubscriber, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(policySubscriber, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(policySubscriber, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(policySubscriber, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(policySubscriber, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(policySubscriber, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(policySubscriber, diagnostics, context);
@@ -7082,7 +7031,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(authorizationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(authorizationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(authorizationActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(authorizationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(authorizationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(authorizationActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(authorizationActivity, diagnostics, context);
@@ -7144,7 +7092,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(planOfCareActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareActivityAct, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(planOfCareActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareActivityAct, diagnostics, context);
@@ -7215,7 +7162,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(patientInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(patientInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(patientInstruction, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(patientInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(patientInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(patientInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(patientInstruction, diagnostics, context);
@@ -7255,7 +7201,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(fulfillmentInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fulfillmentInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fulfillmentInstruction, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fulfillmentInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fulfillmentInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(fulfillmentInstruction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fulfillmentInstruction, diagnostics, context);
@@ -7295,7 +7240,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(functionalStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(functionalStatusObservation, diagnostics, context);
@@ -7349,7 +7293,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(productInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(productInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(productInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(productInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(productInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(productInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(productInstance, diagnostics, context);
@@ -7390,7 +7333,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(ageObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ageObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ageObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ageObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ageObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(ageObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ageObservation, diagnostics, context);
@@ -7474,7 +7416,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(planOfCareActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareActivityObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(planOfCareActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareActivityObservation, diagnostics, context);
@@ -7536,7 +7477,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(planOfCareActivityEncounter, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareActivityEncounter, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareActivityEncounter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(planOfCareActivityEncounter, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareActivityEncounter, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareActivityEncounter, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareActivityEncounter, diagnostics, context);
@@ -7598,7 +7538,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(planOfCareActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareActivityProcedure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(planOfCareActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareActivityProcedure, diagnostics, context);
@@ -7660,7 +7599,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(planOfCareActivitySubstanceAdministration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareActivitySubstanceAdministration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareActivitySubstanceAdministration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(planOfCareActivitySubstanceAdministration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareActivitySubstanceAdministration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareActivitySubstanceAdministration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareActivitySubstanceAdministration, diagnostics, context);
@@ -7722,7 +7660,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(planOfCareActivitySupply, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareActivitySupply, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareActivitySupply, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(planOfCareActivitySupply, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareActivitySupply, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareActivitySupply, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareActivitySupply, diagnostics, context);
@@ -7784,7 +7721,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(procedureActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(procedureActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(procedureActivityAct, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(procedureActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(procedureActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(procedureActivityAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(procedureActivityAct, diagnostics, context);
@@ -7813,7 +7749,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(procedureActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(procedureActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(procedureActivityObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(procedureActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(procedureActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(procedureActivityObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(procedureActivityObservation, diagnostics, context);
@@ -7842,7 +7777,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(procedureActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(procedureActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(procedureActivityProcedure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(procedureActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(procedureActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(procedureActivityProcedure, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(procedureActivityProcedure, diagnostics, context);
@@ -7871,7 +7805,6 @@ public class CCDValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(coveragePlanDescription, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coveragePlanDescription, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coveragePlanDescription, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coveragePlanDescription, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coveragePlanDescription, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(coveragePlanDescription, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coveragePlanDescription, diagnostics, context);
