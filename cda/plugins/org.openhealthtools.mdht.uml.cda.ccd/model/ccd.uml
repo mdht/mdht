@@ -844,14 +844,15 @@ This section is optional, however it is strongly recommended that it be present 
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_W6aMoHfTEd6ZeOKq_2_a9g" name="MedicationActivity">
       <ownedComment xmi:id="_0hxWQIjuEd66cKocspyVOg" annotatedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
-        <body>A medication activity is used to describe what is administered whereas a supply activity is used to describe what has been dispensed.</body>
+        <body>&lt;p>A medication activity is used to describe what is administered whereas a supply activity is used to describe what has been dispensed.&lt;/p>&#xD;
+&lt;p>An indication describes the rationale for a medication activity. The indication can be an existing problem or can be a criterion that if met would warrant the activity. Criteria are typically associated with PRN (from the Latin &quot;pro re nata&quot;, meaning &quot;as needed&quot;) medications (e.g. &quot;give Medication X as needed for nausea&quot;).&lt;/p></body>
       </ownedComment>
       <ownedRule xmi:id="_yqHDEI5qEd6x-qh9FleSiA" name="moodCode" constrainedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_yqHDEY5qEd6x-qh9FleSiA">
           <language>OCL</language>
           <language>Analysis</language>
           <body>self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </body>
-          <body>Value for moodCode is “EVN” or “INT” 2.16.840.1.113883.5.1001 ActMood STATIC</body>
+          <body>Value for moodCode is &quot;EVN&quot; or &quot;INT&quot; 2.16.840.1.113883.5.1001 ActMood STATIC</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_7aYTEOedEd-aaJELhEID-A" name="hasDoseQuantityOrRateQuantity" constrainedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
@@ -878,6 +879,36 @@ This section is optional, however it is strongly recommended that it be present 
           <body>not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_a-4ucOuKEd-HcKrkbxroPA" name="hasPreconditionCriterion" constrainedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
+        <ownedComment xmi:id="_DxJxoOuMEd-HcKrkbxroPA">
+          <body>Indicates that the medication is administered only when the associated (coded or free text) criteria are met.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iYA4IOuKEd-HcKrkbxroPA">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains one or more precondition / Criterion, to indicate that the medication is administered only when the associated (coded or free text) criteria are met.</body>
+          <body>self.precondition->exists(precondition : cda::Precondition | not precondition.criterion.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_SUUgIOuMEd-HcKrkbxroPA" name="hasReason" constrainedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
+        <ownedComment xmi:id="_d4HTcOuMEd-HcKrkbxroPA">
+          <body>The target of the relationship represents the indication for the activity.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_WUi0UOuMEd-HcKrkbxroPA">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains one or more entryRelationship, where the value for @typeCode is &quot;RSON&quot; &quot;Has reason&quot; 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</body>
+          <body>self.entryRelationship->exists(entryRel : cda::EntryRelationship | entryRel.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="__SV8oOuOEd-HcKrkbxroPA" name="hasReasonProblem" constrainedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_O7D98OuPEd-HcKrkbxroPA">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>entryRelationship / @typeCode=&quot;RSON&quot; in a medication activity has a target of problem act, problem observation, or some other clinical statement.</body>
+          <body>self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)->forAll(target : &#xD;&#xD;&#xA;cda::ClinicalStatement | not target.oclIsUndefined() and &#xD;&#xA;  (target.oclIsKindOf(ccd::ProblemAct) or target.oclIsKindOf(ccd::ProblemObservation)))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_sAvQsHfUEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_nazskEbuEd6besF9iFIJkQ"/>
       </generalization>
@@ -900,8 +931,8 @@ This section is optional, however it is strongly recommended that it be present 
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CIhxwIjtEd66cKocspyVOg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_JSM-UMKBEd6-XpBv2uxYrQ" name="patientInstruction" visibility="private" type="_F9_RAMKAEd6-XpBv2uxYrQ" association="_JSLJIMKBEd6-XpBv2uxYrQ">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JSNlYcKBEd6-XpBv2uxYrQ" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JSNlYMKBEd6-XpBv2uxYrQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1sgfQOuYEd-HcKrkbxroPA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1sgfQeuYEd-HcKrkbxroPA" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_w93GUOecEd-aaJELhEID-A" name="effectiveTime" visibility="private" aggregation="composite">
         <ownedComment xmi:id="_9feMwOecEd-aaJELhEID-A">
@@ -938,7 +969,7 @@ This section is optional, however it is strongly recommended that it be present 
           <language>OCL</language>
           <language>Analysis</language>
           <body>self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </body>
-          <body>Value for moodCode is “EVN” or “INT” 2.16.840.1.113883.5.1001 ActMood STATIC</body>
+          <body>Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_BmvqAOtUEd-aaJELhEID-A" name="hasAuthor" constrainedElement="_dAAnAHfVEd6ZeOKq_2_a9g">
@@ -970,7 +1001,7 @@ This section is optional, however it is strongly recommended that it be present 
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_4cVeAOtVEd-aaJELhEID-A">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>Contains exactly one participant / @typeCode = “LOC”.</body>
+          <body>Contains exactly one participant / @typeCode = &quot;LOC&quot;.</body>
           <body>self.participant->one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::LOC)</body>
         </specification>
       </ownedRule>
@@ -1660,7 +1691,7 @@ This section is optional, however it is strongly recommended that it be present 
       <ownedAttribute xmi:id="_XhrYwMJVEd6-XpBv2uxYrQ" name="title" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_YpUjAMJlEd6-XpBv2uxYrQ" name="observations" visibility="private" type="_mEuuUMJcEd6-XpBv2uxYrQ" association="_YpRfsMJlEd6-XpBv2uxYrQ">
+      <ownedAttribute xmi:id="_YpUjAMJlEd6-XpBv2uxYrQ" name="advanceDirectiveObservation" visibility="private" type="_mEuuUMJcEd6-XpBv2uxYrQ" association="_YpRfsMJlEd6-XpBv2uxYrQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YpW_QcJlEd6-XpBv2uxYrQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YpW_QMJlEd6-XpBv2uxYrQ" value="1"/>
       </ownedAttribute>
@@ -1892,7 +1923,7 @@ This section is optional, however it is strongly recommended that it be present 
       <ownedAttribute xmi:id="_Jg8IQMJdEd6-XpBv2uxYrQ" name="code" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_aBd6UMJoEd6-XpBv2uxYrQ" name="verifications" visibility="private" type="_KIDxoMJoEd6-XpBv2uxYrQ" association="_aBcFIMJoEd6-XpBv2uxYrQ">
+      <ownedAttribute xmi:id="_aBd6UMJoEd6-XpBv2uxYrQ" name="advanceDirectiveVerification" visibility="private" type="_KIDxoMJoEd6-XpBv2uxYrQ" association="_aBcFIMJoEd6-XpBv2uxYrQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aBfIcMJoEd6-XpBv2uxYrQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aBehYMJoEd6-XpBv2uxYrQ" value="1"/>
       </ownedAttribute>
@@ -2751,7 +2782,9 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:CDATemplate xmi:id="_UkqmgMKAEd6-XpBv2uxYrQ" base_Class="_IuPLEMKAEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.43" assigningAuthorityName="CCD"/>
   <CDA:PropertyValidation xmi:id="_tLXPcMKAEd6-XpBv2uxYrQ" base_Property="_gV9qUMKAEd6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_zYankMKAEd6-XpBv2uxYrQ" base_Property="_hbmcsMKAEd6-XpBv2uxYrQ"/>
-  <CDA:EntryRelationship xmi:id="_VtD8gMKBEd6-XpBv2uxYrQ" severity="INFO" base_Association="_JSLJIMKBEd6-XpBv2uxYrQ" typeCode="SUBJ"/>
+  <CDA:EntryRelationship xmi:id="_VtD8gMKBEd6-XpBv2uxYrQ" severity="INFO" base_Association="_JSLJIMKBEd6-XpBv2uxYrQ" typeCode="SUBJ">
+    <ruleId>CONF-330</ruleId>
+  </CDA:EntryRelationship>
   <Default:Documentation xmi:id="_lM_OMMKBEd6-XpBv2uxYrQ" base_Comment="_lM8K4MKBEd6-XpBv2uxYrQ"/>
   <Default:Documentation xmi:id="_rCfpAMKBEd6-XpBv2uxYrQ" base_Comment="_rCdz0MKBEd6-XpBv2uxYrQ"/>
   <CDA:EntryRelationship xmi:id="_sFmr0MKBEd6-XpBv2uxYrQ" severity="INFO" base_Association="_Q0aykMKBEd6-XpBv2uxYrQ" typeCode="SUBJ"/>
@@ -3245,4 +3278,16 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_h-39AOtWEd-aaJELhEID-A" base_Constraint="_gPNWMOtWEd-aaJELhEID-A">
     <ruleId>CONF-326</ruleId>
   </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_i4OCMOuKEd-HcKrkbxroPA" severity="INFO" base_Constraint="_a-4ucOuKEd-HcKrkbxroPA">
+    <ruleId>CONF-327</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_YhnI0OuMEd-HcKrkbxroPA" severity="INFO" base_Constraint="_SUUgIOuMEd-HcKrkbxroPA">
+    <ruleId>CONF-328</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_BXbZ0OuPEd-HcKrkbxroPA" base_Constraint="__SV8oOuOEd-HcKrkbxroPA">
+    <ruleId>CONF-329</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConformsTo xmi:id="_LgP4YOuZEd-HcKrkbxroPA" base_Generalization="_MqSJ4MKAEd6-XpBv2uxYrQ">
+    <ruleId>CONF-331</ruleId>
+  </CDA:ConformsTo>
 </xmi:XMI>

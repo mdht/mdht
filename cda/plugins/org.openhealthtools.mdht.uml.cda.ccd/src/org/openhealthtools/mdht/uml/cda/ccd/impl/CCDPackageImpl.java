@@ -1661,6 +1661,33 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(medicationActivityEClass, ecorePackage.getEBoolean(), "validateMedicationActivityHasPreconditionCriterion", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(medicationActivityEClass, ecorePackage.getEBoolean(), "validateMedicationActivityHasReason", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(medicationActivityEClass, ecorePackage.getEBoolean(), "validateMedicationActivityHasReasonProblem", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(medicationActivityEClass, ecorePackage.getEBoolean(), "validateMedicationActivityTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -3476,7 +3503,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(advanceDirectivesSectionEClass, this.getAdvanceDirectiveObservation(), "getObservationss", 1, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(advanceDirectivesSectionEClass, this.getAdvanceDirectiveObservation(), "getAdvanceDirectiveObservations", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(advanceDirectiveObservationEClass, AdvanceDirectiveObservation.class, "AdvanceDirectiveObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4662,7 +4689,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																												
+		String source = "duplicates";																																																																																																																								
 		addAnnotation
 		  (medicationStatusObservationEClass, 
 		   source, 
@@ -4736,12 +4763,12 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.24",
-			 "constraints.validation.error", "MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityInformationSource MedicationActivityId",
+			 "constraints.validation.error", "MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityInformationSource MedicationActivityHasReasonProblem MedicationActivityId",
 			 "routeCode.codeSystem", "2.16.840.1.113883.5.112",
 			 "routeCode.codeSystemName", "HL7 RouteOfAdministration",
 			 "constraints.validation.warning", "MedicationActivityHasDoseQuantityOrRateQuantity MedicationActivityStatusCode MedicationActivityEffectiveTime MedicationActivityRouteCode",
-			 "constraints.validation.info", "MedicationActivityHasConsents MedicationActivityMaxDoseQuantity MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction"
-		   });																																																													
+			 "constraints.validation.info", "MedicationActivityHasConsents MedicationActivityHasPreconditionCriterion MedicationActivityHasReason MedicationActivityMaxDoseQuantity MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction"
+		   });																																																																									
 		addAnnotation
 		  (medicationSeriesNumberObservationEClass, 
 		   source, 

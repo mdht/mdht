@@ -87,7 +87,7 @@ public interface AdvanceDirectivesSection extends Section {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::AdvanceDirectiveObservation)).oclAsType(ccd::AdvanceDirectiveObservation)'"
 	 * @generated
 	 */
-	EList<AdvanceDirectiveObservation> getObservationss();
+	EList<AdvanceDirectiveObservation> getAdvanceDirectiveObservations();
 
 	/**
 	 * <!-- begin-user-doc -->
