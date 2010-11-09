@@ -18,12 +18,13 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A medication activity is used to describe what is administered whereas a supply activity is used to describe what has been dispensed.
+ * <p>A medication activity is used to describe what is administered whereas a supply activity is used to describe what has been dispensed.</p>
+ * <p>An indication describes the rationale for a medication activity. The indication can be an existing problem or can be a criterion that if met would warrant the activity. Criteria are typically associated with PRN (from the Latin "pro re nata", meaning "as needed") medications (e.g. "give Medication X as needed for nausea").</p>
  * <!-- end-model-doc -->
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.error='MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityInformationSource MedicationActivityId' routeCode.codeSystem='2.16.840.1.113883.5.112' routeCode.codeSystemName='HL7 RouteOfAdministration' constraints.validation.warning='MedicationActivityHasDoseQuantityOrRateQuantity MedicationActivityStatusCode MedicationActivityEffectiveTime MedicationActivityRouteCode' constraints.validation.info='MedicationActivityHasConsents MedicationActivityMaxDoseQuantity MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.error='MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityInformationSource MedicationActivityHasReasonProblem MedicationActivityId' routeCode.codeSystem='2.16.840.1.113883.5.112' routeCode.codeSystemName='HL7 RouteOfAdministration' constraints.validation.warning='MedicationActivityHasDoseQuantityOrRateQuantity MedicationActivityStatusCode MedicationActivityEffectiveTime MedicationActivityRouteCode' constraints.validation.info='MedicationActivityHasConsents MedicationActivityHasPreconditionCriterion MedicationActivityHasReason MedicationActivityMaxDoseQuantity MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction'"
  * @generated
  */
 public interface MedicationActivity extends SubstanceAdministration {
@@ -85,6 +86,48 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @generated
 	 */
 	boolean validateMedicationActivityInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.precondition->exists(precondition : cda::Precondition | not precondition.criterion.oclIsUndefined())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.precondition->exists(precondition : cda::Precondition | not precondition.criterion.oclIsUndefined())'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityHasPreconditionCriterion(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->exists(entryRel : cda::EntryRelationship | entryRel.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRel : cda::EntryRelationship | entryRel.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityHasReason(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)->forAll(target : 
+	 * 
+	 * cda::ClinicalStatement | not target.oclIsUndefined() and 
+	 *   (target.oclIsKindOf(ccd::ProblemAct) or target.oclIsKindOf(ccd::ProblemObservation)))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)->forAll(target : \r\r\ncda::ClinicalStatement | not target.oclIsUndefined() and \r\n  (target.oclIsKindOf(ccd::ProblemAct) or target.oclIsKindOf(ccd::ProblemObservation)))'"
+	 * @generated
+	 */
+	boolean validateMedicationActivityHasReasonProblem(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

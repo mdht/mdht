@@ -68,6 +68,18 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityInformationSource/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityInformationSource/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivityHasPreconditionCriterion">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasPreconditionCriterion/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasPreconditionCriterion/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivityHasReason">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasReason/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasReason/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivityHasReasonProblem">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasReasonProblem/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasReasonProblem/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivityTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityTemplateId/context"/>
@@ -912,7 +924,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//AdvanceDirectivesSection/AdvanceDirectivesSectionAdvanceDirectiveObservation/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//AdvanceDirectivesSection/AdvanceDirectivesSectionAdvanceDirectiveObservation/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//AdvanceDirectivesSection/getObservationss"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//AdvanceDirectivesSection/getAdvanceDirectiveObservations"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//AdvanceDirectiveObservation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//AdvanceDirectiveObservation/AdvanceDirectiveObservationTemplateId">
