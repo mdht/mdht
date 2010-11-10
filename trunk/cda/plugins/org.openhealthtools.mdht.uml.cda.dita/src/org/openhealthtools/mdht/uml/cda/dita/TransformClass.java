@@ -92,6 +92,7 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<li></li>");
 		writer.println("</ol>");
 
+		writer.println("<p></p>"); // need a blank line before example code block
 		writer.println("<fig>");
 		writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
 		writer.println("<!-- TODO: insert custom instance example here -->");
