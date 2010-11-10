@@ -128,6 +128,7 @@
                enablesFor="1"
                id="mdht.actions.addUML.packageImport">
          </action>
+         
          <action
                label="%addUMLEnumeration.label"
                icon="icons/full/obj16/Enumeration.gif"
@@ -155,6 +156,15 @@
          <visibility>
             <objectState name="umlType" value="Class"/>
          </visibility>
+         <action
+               label="%addUMLGeneralization.label"
+               icon="icons/full/obj16/Generalization.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddGeneralizationAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.generalization">
+         </action>
+         
          <action
                label="%addUMLOperation.label"
                icon="icons/full/obj16/Operation.gif"
@@ -251,11 +261,11 @@
       </objectContribution>
    </extension>
          
-   <!-- UML Constraint menu items -->
+   <!-- UML Constraint and Comment menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
             objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
-            id="mdht.objectContribution.uml.constraint">
+            id="mdht.objectContribution.uml.element">
          <visibility>
             <objectState name="umlType" value="Element"/>
          </visibility>
@@ -266,6 +276,14 @@
                menubarPath="mdht.addUML/constraintGroup"
                enablesFor="1"
                id="mdht.actions.addUML.constraint">
+         </action>
+         <action
+               label="%addUMLComment.label"
+               icon="icons/full/obj16/Comment.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddCommentAction"
+               menubarPath="mdht.addUML/commentGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.comment">
          </action>
       </objectContribution>
    </extension>
