@@ -16,7 +16,9 @@ package org.openhealthtools.mdht.uml.cda.core.util;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -802,47 +804,72 @@ public class CDAModelUtil {
 
 	public static String computeConformanceMessage(Constraint constraint, boolean markup) {
 		StringBuffer message = new StringBuffer();
-
-		String body = null;
-		boolean isOCL = false;
+		String analysisBody = null;
+		Map<String,String> langBodyMap = new HashMap<String,String>();
+		
 		ValueSpecification spec = constraint.getSpecification();
 		if (spec instanceof OpaqueExpression) {
 			for (int i=0; i<((OpaqueExpression) spec).getLanguages().size(); i++) {
 				String lang = ((OpaqueExpression) spec).getLanguages().get(i);
-				isOCL = "OCL".equals(lang);
-				body = ((OpaqueExpression) spec).getBodies().get(i);
+				String body = ((OpaqueExpression) spec).getBodies().get(i);
 
-				// use Analysis if assigned, else first language available
 				if ("Analysis".equals(lang)) {
-					break;
+					analysisBody = body;
+				}
+				else {
+					langBodyMap.put(lang, body);
 				}
 			}
 		}
-		
-		if (body != null) {
-			String ruleId = getConformanceRuleIds(constraint);
-			if (ruleId.length() > 0) {
-				message.append(markup?"<b>":"");
-				message.append(ruleId + ": ");
-				message.append(markup?"</b>":"");
-			}
-			
-			if (!markup) {
-				message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
-			}
-			
-			String keyword = getValidationKeyword(constraint);
-			if (keyword == null) {
-				keyword = "SHALL";
-			}
+
+		String ruleId = getConformanceRuleIds(constraint);
+		if (ruleId.length() > 0) {
 			message.append(markup?"<b>":"");
-			message.append(keyword);
+			message.append(ruleId + ": ");
 			message.append(markup?"</b>":"");
-			
-			message.append(" satisfy: ");
-			message.append(isOCL&&markup?"<codeblock>":"");
-			message.append(body);
-			message.append(isOCL&&markup?"</codeblock>":"");
+		}
+		
+		if (!markup) {
+			message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
+		}
+		
+		String keyword = getValidationKeyword(constraint);
+		if (keyword == null) {
+			keyword = "SHALL";
+		}
+		message.append(markup?"<b>":"");
+		message.append(keyword);
+		message.append(markup?"</b>":"");
+		message.append(" satisfy: ");
+		
+		if (analysisBody == null) {
+			message.append(constraint.getName());
+		}
+		else {
+			message.append(escapeMarkupCharacters(analysisBody));
+		}
+
+		// include comment text only in markup output
+		if (markup && constraint.getOwnedComments().size() > 0) {
+			message.append("<ul>");
+			for (Comment comment : constraint.getOwnedComments()) {
+				message.append("<li>");
+				message.append(fixNonXMLCharacters(comment.getBody()));
+				message.append("</li>");
+			}
+			message.append("</ul>");
+		}
+		
+		if (markup && langBodyMap.size()>0) {
+			message.append("<ul>");
+			for (String lang : langBodyMap.keySet()) {
+				message.append("<li>");
+				message.append("<codeblock>[" + lang + "]: ");
+				message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
+				message.append("</codeblock>");
+				message.append("</li>");
+			}
+			message.append("</ul>");
 		}
 		
 		if (!markup) {
@@ -858,7 +885,7 @@ public class CDAModelUtil {
 				}
 			}
 		}
-		
+
 		return message.toString();
 	}
 	
@@ -1252,6 +1279,30 @@ public class CDAModelUtil {
 //				newText.append("&lt;");
 //			else if (text.charAt(i) == '>')
 //				newText.append("&gt;");
+			
+			// can't include this or escaped characters don't render, e.g. &amp;
+//			else if (text.charAt(i) == '&')
+//				newText.append("&amp;");
+			
+			else
+				newText.append(text.charAt(i));
+		}
+		
+		return newText.toString();
+	}
+
+	public static String escapeMarkupCharacters(String text) {
+		if (text == null) {
+			return null;
+		}
+		text = fixNonXMLCharacters(text);
+		
+		StringBuffer newText = new StringBuffer();
+		for (int i=0; i<text.length(); i++) {
+			if (text.charAt(i) == '<')
+				newText.append("&lt;");
+			else if (text.charAt(i) == '>')
+				newText.append("&gt;");
 			
 			// can't include this or escaped characters don't render, e.g. &amp;
 //			else if (text.charAt(i) == '&')
