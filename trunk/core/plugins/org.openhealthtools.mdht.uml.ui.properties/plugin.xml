@@ -96,7 +96,7 @@
           <propertySection tab="property.tab.DocumentationPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.CommentSection" 
 	 	     id="property.section.uml2.CommentSection">
-	            <input type="org.eclipse.uml2.uml.NamedElement"/>
+	            <input type="org.eclipse.uml2.uml.Element"/>
 	      </propertySection>
 	      
 		 <propertySection tab="property.tab.AdvancedPropertySection" 

@@ -47,7 +47,11 @@ public class UML2UIMessages extends NLS {
 	public static String AddUMLPreConditionConstraint_default_name;
 	public static String AddUMLPostConditionConstraint_operation_title;
 	public static String AddUMLPostConditionConstraint_default_name;
-	
+
+	public static String AddUMLComment_operation_title;
+	public static String AddUMLComment_default_name;
+	public static String AddUMLGeneralization_operation_title;
+	public static String AddUMLGeneralization_default_name;
 	public static String AddUMLConstraint_operation_title;
 	public static String AddUMLConstraint_default_name;
 	public static String AddUMLEnumeration_operation_title;
@@ -58,6 +62,8 @@ public class UML2UIMessages extends NLS {
 
 	public static String TargetSelectionDialog_title;
 	public static String TargetSelectionDialog_message;
+	public static String GeneralizationSelectionDialog_title;
+	public static String GeneralizationSelectionDialog_message;
 	public static String PackageImportSelectionDialog_title;
 	public static String PackageImportSelectionDialog_message;
 	public static String ElementImportSelectionDialog_title;

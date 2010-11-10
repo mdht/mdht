@@ -12,8 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
-import java.util.Iterator;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -45,7 +43,6 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 
 
@@ -56,7 +53,7 @@ import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
  */
 public class CommentSection extends AbstractModelerPropertySection {
 
-	private NamedElement namedElement;
+	private Element umlElement;
 
 	private Text bodyText;
 	private boolean bodyModified = false;
@@ -86,27 +83,36 @@ public class CommentSection extends AbstractModelerPropertySection {
 		
 		try {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
+				TransactionUtil.getEditingDomain(umlElement);
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (bodyModified) {
 						bodyModified = false;
 						String commentText = removeNonXMLCharacters(bodyText.getText().trim());
+						
 						Comment comment = null;
-						for (Iterator<Comment> iter = namedElement.getOwnedComments().iterator(); iter.hasNext();) {
-							comment = (Comment) iter.next();
-							break;
+						if (umlElement instanceof Comment) {
+							comment = (Comment)umlElement;
 						}
+						else {
+							// get first comment
+							for (Comment c : umlElement.getOwnedComments()) {
+								comment = c;
+								break;
+							}
+						}
+						
 						if (comment != null && commentText.length() == 0) {
 							comment.destroy();
+							comment = null;
 							return Status.OK_STATUS;
 						}
 						if (commentText.length() == 0) {
 							return Status.CANCEL_STATUS;
 						}
 						if (comment == null) {
-							comment = namedElement.createOwnedComment();
+							comment = umlElement.createOwnedComment();
 						}
 						
 						this.setLabel("Set Comment Text");
@@ -179,10 +185,10 @@ public class CommentSection extends AbstractModelerPropertySection {
 	}
 
 	protected boolean isReadOnly() {
-		if (namedElement != null) {
+		if (umlElement != null) {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
+				TransactionUtil.getEditingDomain(umlElement);
+			if (editingDomain != null && editingDomain.isReadOnly(umlElement.eResource())) {
 				return true;
 			}
 		}
@@ -211,8 +217,8 @@ public class CommentSection extends AbstractModelerPropertySection {
 		if (element instanceof View) {
 			element = ((View)element).getElement();
 		}
-		Assert.isTrue(element instanceof NamedElement);
-		this.namedElement = (NamedElement) element;
+		Assert.isTrue(element instanceof Element);
+		this.umlElement = (Element) element;
 	}
 
 	public void dispose() {
@@ -221,11 +227,24 @@ public class CommentSection extends AbstractModelerPropertySection {
 	}
 
 	public void refresh() {
-		String commentText = "";
-		for (Iterator<Comment> iter = namedElement.getOwnedComments().iterator(); iter.hasNext();) {
-			Comment comment = (Comment) iter.next();
+		Comment comment = null;
+		if (umlElement instanceof Comment) {
+			comment = (Comment)umlElement;
+		}
+		else {
+			// get first comment
+			for (Comment c : umlElement.getOwnedComments()) {
+				comment = c;
+				break;
+			}
+		}
+
+		String commentText = null;
+		if (comment != null) {
 			commentText = comment.getBody();
-			break;
+		}
+		if (commentText == null) {
+			commentText = "";
 		}
 		
 		bodyText.removeModifyListener(modifyListener);
