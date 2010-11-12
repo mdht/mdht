@@ -14,9 +14,10 @@ package org.openhealthtools.mdht.uml.cda.ui.filters;
 
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 /**
- * Selects an object if it is a UML Property that is an HL7 Attribute.
+ * Selects an object if it is a UML Property that is a CDA Attribute.
  */
 public class AttributeFilter extends CDAFilter {
 
@@ -25,7 +26,8 @@ public class AttributeFilter extends CDAFilter {
 		Element element = getElement(object);
 		
 		if (element instanceof Property) {
-			return ((Property)element).getAssociation() == null;
+			return ((Property)element).getAssociation() == null
+				&& CDAModelUtil.getCDAClass(((Property)element).getClass_()) != null;
 		}
 		return false;
 	}

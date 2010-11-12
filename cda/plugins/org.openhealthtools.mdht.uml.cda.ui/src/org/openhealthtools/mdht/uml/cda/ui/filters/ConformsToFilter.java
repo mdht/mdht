@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2010 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,44 +12,21 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
-import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 /**
- * Selects an object if it is a UML Class or Package with 
- * HL7Template stereotype applied.
+ * Selects an object if it is an association applicable to <<ActRelationship>> stereotype.
  */
-public class ValidationFilter extends CDAFilter {
+public class ConformsToFilter extends CDAFilter {
 	
 	public boolean select(Object object) {
-		Element element = null;
-		if (object instanceof Element)
-			element = (Element) object;
-		else if (object instanceof IAdaptable) {
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
-		}
-		
+		Element element = getElement(object);
+
 		Class templateClass = null;
-		if (element instanceof Class) {
-			templateClass = (Class) element;
-		}
-		else if (element instanceof Property) {
-			templateClass = ((Property)element).getClass_();
-		}
-		else if (element instanceof Association) {
-			templateClass = ((Association)element).getMemberEnds().get(0).getClass_();
-		}
-		else if (element instanceof Constraint
-				&& ((Constraint)element).getContext() instanceof Class) {
-			templateClass = (Class) ((Constraint)element).getContext();
-		}
-		else if (element instanceof Generalization
+		if (element instanceof Generalization
 				&& ((Generalization)element).getSpecific() instanceof Class) {
 			templateClass = (Class) ((Generalization)element).getSpecific();
 		}
@@ -57,7 +34,8 @@ public class ValidationFilter extends CDAFilter {
 		if (templateClass != null && CDAModelUtil.getCDAClass(templateClass) != null) {
 			return true;
 		}
+
 		return false;
 	}
-
+	
 }
