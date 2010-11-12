@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
@@ -27,6 +28,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAResource;
@@ -62,7 +64,17 @@ public class CDAProfileUtil {
 		}
 		return textValue;
 	}
-	
+
+	public static ConformsTo getConformsTo(Generalization generalization) {
+		ConformsTo conformsTo = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				generalization, ICDAProfileConstants.CONFORMS_TO);
+		if (stereotype != null) {
+			conformsTo = (ConformsTo) generalization.getStereotypeApplication(stereotype);
+		}
+		return conformsTo;
+	}
+
 	/**
 	 * Load CDA profile into provided resource set and return Profile.
 	 */
