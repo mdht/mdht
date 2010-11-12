@@ -92,6 +92,22 @@
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
 	 	     id="property.section.cda.TextValueSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ActRelationshipSection" 
+	 	     id="property.section.cda.ActRelationshipSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ActRelationshipFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ParticipationSection" 
+	 	     id="property.section.cda.ParticipationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ParticipationFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.GeneralizationSection"
+             id="property.section.cda.GeneralizationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ConformsToFilter"/>
+             
+          <!-- deprecated -->
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntrySection" 
 	 	     id="property.section.cda.EntrySection"
