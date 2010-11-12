@@ -53,7 +53,6 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 public class CDAModelUtil {
 
-	public static final String RIM_PACKAGE_NAME = "rim";
 	public static final String CDA_PACKAGE_NAME = "cda";
 
 	/** This base URL may be set from preferences or Ant task options. */
@@ -285,7 +284,7 @@ public class CDAModelUtil {
 	public static String computeGeneralizationConformanceMessage(Class general, boolean markup, Package xrefSource) {
 		StringBuffer message = new StringBuffer();
 
-		String prefix = !isSamePackage(xrefSource, general) ? getModelPrefix(general)+" " : "";
+		String prefix = !isSameModel(xrefSource, general) ? getModelPrefix(general)+" " : "";
 		String xref = computeXref(xrefSource, general);
 		boolean showXref = markup && (xref != null);
 		String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -357,7 +356,7 @@ public class CDAModelUtil {
 		if (endType != null) {
 			message.append(", where its type is ");
 			
-			String prefix = !isSamePackage(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+			String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
 			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -453,7 +452,7 @@ public class CDAModelUtil {
 				message.append(markup?"\n<li>":" ");
 				message.append("contains ");
 	
-				String prefix = !isSamePackage(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+				String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
 				String xref = computeXref(xrefSource, endType);
 				boolean showXref = markup && (xref != null);
 				String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -593,8 +592,9 @@ public class CDAModelUtil {
 		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
 		Property redefinedProperty = redefinedProperties.isEmpty() ? null : redefinedProperties.get(0);
 		
-		if (redefinedProperty == null || (!isXMLAttribute(property)
-				&& (property.getType() != redefinedProperty.getType()))) {
+		if (property.getType() != null && (redefinedProperty == null || 
+				(!isXMLAttribute(property)
+				&& (property.getType() != redefinedProperty.getType())))) {
 			message.append(", where its data type is ").append(property.getType().getName());
 		}
 		
@@ -891,7 +891,7 @@ public class CDAModelUtil {
 	
 	protected static String computeXref(Element source, Class target) {
 		String href = null;
-		if (isSamePackage(source, target)) {
+		if (isSameModel(source, target)) {
 			href="../" + target.getName() + ".dita";
 		}
 		else {
@@ -902,7 +902,7 @@ public class CDAModelUtil {
 			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.ccd.doc/classes/ProblemAct.html
 			
 			String packageName = target.getNearestPackage().getName();
-			if (RIM_PACKAGE_NAME.equals(packageName)) {
+			if (RIMModelUtil.RIM_PACKAGE_NAME.equals(packageName)) {
 				basePackage = "org.openhealthtools.mdht.uml.hl7.rim";
 			}
 			else if (CDA_PACKAGE_NAME.equals(packageName)) {
@@ -934,11 +934,11 @@ public class CDAModelUtil {
 		return href;
 	}
 
-	protected static boolean isSamePackage(Element first, Element second) {
+	protected static boolean isSameModel(Element first, Element second) {
 		if (first == null || second == null)
 			return false;
 		else
-			return first.getNearestPackage().equals(second.getNearestPackage());
+			return UMLUtil.getTopPackage(first).equals(UMLUtil.getTopPackage(second));
 	}
 
 	protected static boolean isSameProject(Element first, Element second) {
@@ -1045,7 +1045,7 @@ public class CDAModelUtil {
 		else if (CDA_PACKAGE_NAME.equals(model.getName())) {
 			prefix = "CDA";
 		}
-		else if (RIM_PACKAGE_NAME.equals(model.getName())) {
+		else if (RIMModelUtil.RIM_PACKAGE_NAME.equals(model.getName())) {
 			prefix = "RIM";
 		}
 		
