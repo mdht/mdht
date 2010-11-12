@@ -60,7 +60,6 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -76,7 +75,7 @@ import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
  */
 public class ValidationSection extends AbstractModelerPropertySection {
 
-	private NamedElement namedElement;
+	private Element modelElement;
 
 	private CCombo severityCombo;
 	private boolean severityModified = false;
@@ -125,22 +124,22 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		
 		try {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
+				TransactionUtil.getEditingDomain(modelElement);
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							namedElement, ICDAProfileConstants.VALIDATION);
+							modelElement, ICDAProfileConstants.VALIDATION);
 
 					Enumeration severityKind = null;
-					Profile cdaProfile = CDAProfileUtil.getCDAProfile(namedElement.eResource().getResourceSet());
+					Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
 					if (cdaProfile != null) {
 						severityKind = (Enumeration)
 								cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
 					}
 					
 					if (stereotype == null) {
-						stereotype = applyValidationStereotype(namedElement);
+						stereotype = applyValidationStereotype(modelElement);
 					}
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
@@ -152,12 +151,12 @@ public class ValidationSection extends AbstractModelerPropertySection {
 						if (severityKind != null) {
 							if (severityCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
-								namedElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, null);
+								modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, null);
 							}
 							else {
 								EnumerationLiteral literal = (EnumerationLiteral) severityKind.getOwnedLiterals()
 									.get(severityCombo.getSelectionIndex() - 1);
-								namedElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, literal);
+								modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, literal);
 							}
 						}
 					}
@@ -165,7 +164,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 						ruleIdModified = false;
 						this.setLabel("Set Validation Rule ID");
 
-						Validation validation = (Validation) namedElement.getStereotypeApplication(stereotype);
+						Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
 						validation.getRuleId().clear();
 						
 						String value = ruleIdText.getText().trim();
@@ -179,7 +178,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 						this.setLabel("Set Validation Message");
 
 						String value = messageText.getText().trim();
-						namedElement.setValue(stereotype, 
+						modelElement.setValue(stereotype, 
 								ICDAProfileConstants.VALIDATION_MESSAGE,
 								value.length()>0 ? value : null);
 					}
@@ -335,10 +334,10 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	}
 
 	protected boolean isReadOnly() {
-		if (namedElement != null) {
+		if (modelElement != null) {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
+				TransactionUtil.getEditingDomain(modelElement);
+			if (editingDomain != null && editingDomain.isReadOnly(modelElement.eResource())) {
 				return true;
 			}
 		}
@@ -364,8 +363,8 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
-		Assert.isTrue(element instanceof NamedElement);
-		this.namedElement = (NamedElement) element;
+		Assert.isTrue(element instanceof Element);
+		this.modelElement = (Element) element;
 	}
 
 	public void dispose() {
@@ -375,23 +374,23 @@ public class ValidationSection extends AbstractModelerPropertySection {
 
 	public void refresh() {
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				namedElement, ICDAProfileConstants.VALIDATION);
+				modelElement, ICDAProfileConstants.VALIDATION);
 
 		Enumeration severityKind = null;
-		Profile cdaProfile = CDAProfileUtil.getCDAProfile(namedElement.eResource().getResourceSet());
+		Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
 		if (cdaProfile != null) {
 			severityKind = (Enumeration)
 					cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
 		}
 		
-		String computedMessage = CDAModelUtil.computeConformanceMessage(namedElement, false);
+		String computedMessage = CDAModelUtil.computeConformanceMessage(modelElement, false);
 		messageDisplay.setText(computedMessage != null ? computedMessage : "");
 
 		messageText.removeModifyListener(modifyListener);
 		messageText.removeKeyListener(keyListener);
 		messageText.removeFocusListener(focusListener);
 		if (stereotype != null) {
-			String message = (String) namedElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_MESSAGE);
+			String message = (String) modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_MESSAGE);
 			messageText.setText(message!=null ? message : "");
 		}
 		else {
@@ -406,11 +405,11 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		ruleIdText.removeFocusListener(focusListener);
 		Object ruleIds = null;
 		if (stereotype != null) {
-			ruleIds = namedElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
+			ruleIds = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
 		}
 		if (ruleIds != null) {
 			StringBuffer ruleIdDisplay = new StringBuffer();
-			Validation validation = (Validation) namedElement.getStereotypeApplication(stereotype);
+			Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
 			for (String ruleId : validation.getRuleId()) {
 				if (ruleIdDisplay.length() > 0)
 					ruleIdDisplay.append(", ");
@@ -427,7 +426,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 
 		severityCombo.select(0);
 		if (stereotype != null) {
-			Object value = namedElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
+			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
 			String severity = null;
 			if (value instanceof EnumerationLiteral) {
 				severity = ((EnumerationLiteral)value).getName();
@@ -472,7 +471,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && namedElement.eResource() != null)
+					if (!isDisposed() && modelElement.eResource() != null)
 						refresh();
 				}
 			});
