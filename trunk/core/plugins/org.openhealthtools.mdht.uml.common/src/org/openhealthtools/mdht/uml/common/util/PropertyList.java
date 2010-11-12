@@ -20,29 +20,34 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
 
-public class AttributeList {
+public class PropertyList {
 
 	private Class clazz;
 	private List<Property> attributes;
+	private List<Property> associationEnds;
 	
-	private boolean isOmitAssociations = true;
+	private boolean isOmitAssociations = false;
 	private boolean isAllSuperclasses = true;
 	private boolean isSorted = true;
 	
-	public AttributeList(Class clazz) {
+	public PropertyList(Class clazz) {
 		this.clazz = clazz;
 	}
 	
 	public List<Property> getAttributes() {
 		if (attributes == null) {
-			fillAttributeList();
-		}
-
-		if (isSorted) {
-			Collections.sort(attributes, new NamedElementComparator());
+			fillPropertyLists();
 		}
 		
 		return attributes;
+	}
+
+	public List<Property> getAssociationEnds() {
+		if (associationEnds == null) {
+			fillPropertyLists();
+		}
+		
+		return associationEnds;
 	}
 
 	public Property getForName(String name) {
@@ -52,24 +57,56 @@ public class AttributeList {
 					return property;
 				}
 			}
+			for (Property property : getAssociationEnds()) {
+				if (name.equals(property.getName())) {
+					return property;
+				}
+			}
 		}
 		
 		return null;
 	}
 	
-	private void fillAttributeList() {
+	private void fillPropertyLists() {
 		attributes = new ArrayList<Property>();
-		addAttributes(clazz);
+		associationEnds = new ArrayList<Property>();
+		
+		addProperties(clazz);
+		
+		if (isSorted) {
+			Collections.sort(attributes, new NamedElementComparator());
+			Collections.sort(associationEnds, new NamedElementComparator());
+		}
 	}
 	
-	private void addAttributes(Class aClass) {
+	private void addProperties(Class aClass) {
 		for (Property property : aClass.getOwnedAttributes()) {
-			if (isOmitAssociations && property.getAssociation() != null) {
+			if (property.getAssociation() != null) {
+				if (isOmitAssociations) {
+					continue;
+				}
+
+				// TODO design a way to generalize this using a filter parameter
+//				// omit association properties from base CDA model
+//				if (CDAModelUtil.CDA_PACKAGE_NAME.equals(
+//						UMLUtil.getTopPackage(aClass).getName())) {
+//					continue;
+//				}
+			}
+			
+			// filter some CDA attributes
+			if ("templateId".equals(property.getName())) {
 				continue;
 			}
+			
 			// skip implicit redefinitions
 			if (getForName(property.getName()) == null) {
-				attributes.add(property);
+				if (property.getAssociation() == null) {
+					attributes.add(property);
+				}
+				else {
+					associationEnds.add(property);
+				}
 			}
 			
 			//TODO skip explicit redefinitions
@@ -79,7 +116,7 @@ public class AttributeList {
 		if (isAllSuperclasses) {
 			for (Classifier general : aClass.getGenerals()) {
 				if (general instanceof Class)
-					addAttributes((Class)general);
+					addProperties((Class)general);
 			}
 		}
 	}

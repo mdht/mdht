@@ -20,7 +20,7 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.common.util.AttributeList;
+import org.openhealthtools.mdht.uml.common.util.PropertyList;
 
 public class SubclassEditorViewContentProvider extends AdapterFactoryContentProvider {
 
@@ -54,7 +54,7 @@ public class SubclassEditorViewContentProvider extends AdapterFactoryContentProv
 		if (parentElement instanceof Class) {
 			// TODO if cloned, then set isAllSuperclases=false
 			// add attributes, owned and inherited
-			AttributeList attrList = new AttributeList((Class) parentElement);
+			PropertyList attrList = new PropertyList((Class) parentElement);
 			children.addAll(attrList.getAttributes());
 
 //			List<DirectedRelationship>specializations = 
