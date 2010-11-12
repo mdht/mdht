@@ -64,6 +64,15 @@ public class MedicationImpl extends org.openhealthtools.mdht.uml.cda.ihe.impl.Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateHITSPMedicationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationOperations.validateHITSPMedicationEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Medication init() {
     		CDAUtil.init(this);
     		return this;

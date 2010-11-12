@@ -1477,6 +1477,9 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//CoveragePlanDescription/CoveragePlanDescriptionMoodCode/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//SupportParticipant"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ccd.ecore#//Support"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//SupportGuardian"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//CCDRegistryDelegate"/>
   </genPackages>
 </genmodel:GenModel>

@@ -48,6 +48,7 @@ public class HITSPRegistryDelegateOperations {
 		EClass result = null;
 		if (context instanceof Element) {
 			Element element = (Element) context;
+			String localName = element.getLocalName();
 			if ("2.16.840.1.113883.3.88.11.83.8".equals(templateId)) {
 				List<String> templateIds = getTemplateIds(element);
 				if (templateIds.contains("1.3.6.1.4.1.19376.1.5.3.1.4.7.1")) {
@@ -68,6 +69,14 @@ public class HITSPRegistryDelegateOperations {
 				} else {
 					// no dose information
 					result = HITSPPackage.Literals.MEDICATION;
+				}
+			}
+			else if ("2.16.840.1.113883.3.88.11.83.3".equals(templateId)) {
+				// Support
+				if ("guardian".equals(localName)) {
+					result = HITSPPackage.Literals.SUPPORT_GUARDIAN;
+				} else if ("participant".equals(localName)) {
+					result = HITSPPackage.Literals.SUPPORT_PARTICIPANT;
 				}
 			}
 		}

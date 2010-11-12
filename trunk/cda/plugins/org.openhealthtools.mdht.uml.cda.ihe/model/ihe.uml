@@ -107,6 +107,10 @@ prescription list. It shall include entries for medications as described in the 
       <generalization xmi:id="_KxUI4Hq9Ed68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_OvmR4HfUEd6ZeOKq_2_a9g"/>
       </generalization>
+      <ownedAttribute xmi:id="_M0Ho4Ow6Ed-HcKrkbxroPA" name="medication" type="_sFGZUHGfEd6bf47ZOcft4w" association="_M0IP8Ow6Ed-HcKrkbxroPA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Pfnl0Ow6Ed-HcKrkbxroPA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Pfnl0ew6Ed-HcKrkbxroPA" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_pOtQsHrDEd68l9lQ-TLEBQ" name="AllergyIntoleranceConcern">
       <eAnnotations xmi:id="_wqbysnrUEd68l9lQ-TLEBQ" source="uml2.alias">
@@ -731,6 +735,137 @@ life, hobbies, and risky habits.</body>
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_M0IP8Ow6Ed-HcKrkbxroPA" memberEnd="_M0Ho4Ow6Ed-HcKrkbxroPA _M0IP8ew6Ed-HcKrkbxroPA">
+      <ownedEnd xmi:id="_M0IP8ew6Ed-HcKrkbxroPA" type="_8YbB4HomEd6WAZ28-5wkSg" association="_M0IP8Ow6Ed-HcKrkbxroPA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_e2pkwOw7Ed-HcKrkbxroPA" name="SupplyEntry">
+      <generalization xmi:id="_e2pkwew7Ed-HcKrkbxroPA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_dAAnAHfVEd6ZeOKq_2_a9g"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oidBAO0SEd-dJvThfIiQuA" name="PregnancyHistorySection">
+      <ownedComment xmi:id="_1w7NcO0SEd-dJvThfIiQuA">
+        <body>The pregnancy history section contains coded entries describing the patient history of pregnancies.</body>
+      </ownedComment>
+      <generalization xmi:id="_oihScO0SEd-dJvThfIiQuA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_pAIbgO0SEd-dJvThfIiQuA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pAIbge0SEd-dJvThfIiQuA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pAIbgu0SEd-dJvThfIiQuA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9lgCcErmEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JhIsgO2rEd-dJvThfIiQuA" name="pregnancyObservation" type="_0UCcoO2qEd-dJvThfIiQuA" association="_JhJ6oO2rEd-dJvThfIiQuA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MUJmsO2rEd-dJvThfIiQuA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MUJmse2rEd-dJvThfIiQuA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0UCcoO2qEd-dJvThfIiQuA" name="PregnancyObservation">
+      <ownedComment xmi:id="_fcqvsO2rEd-dJvThfIiQuA">
+        <body>A pregnancy observation is a Simple Observation that uses a specific vocabulary to record observations about a patient's current or historical pregnancies.</body>
+      </ownedComment>
+      <generalization xmi:id="_0UDDsO2qEd-dJvThfIiQuA" general="_dLvb0K4NEd6_ioDelDcPPg"/>
+      <ownedAttribute xmi:id="_EnAp8O2tEd-dJvThfIiQuA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_WEYp4Eo8Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EnBRAO2tEd-dJvThfIiQuA" name="interpretationCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NGv2YO2tEd-dJvThfIiQuA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NGwdcO2tEd-dJvThfIiQuA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_zHXmAEo-Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EnB4EO2tEd-dJvThfIiQuA" name="methodCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OGvTwO2tEd-dJvThfIiQuA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OGv60O2tEd-dJvThfIiQuA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_1jr3cEo-Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EnDGMO2tEd-dJvThfIiQuA" name="repeatNumber" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_wDsPEEo9Ed6c3qsAxlFHaQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O0fKkO2tEd-dJvThfIiQuA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O0fKke2tEd-dJvThfIiQuA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_jQmhoEo-Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EnDtQO2tEd-dJvThfIiQuA" name="targetSiteCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PpVH4O2tEd-dJvThfIiQuA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PpVH4e2tEd-dJvThfIiQuA"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_339AIEo-Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EnEUUO2tEd-dJvThfIiQuA" name="value" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_UIHx8O2uEd-dJvThfIiQuA">
+          <body>The value of the observation shall be recording using a data type appropriate to the coded observation according to the table provided by IHE PCC specification.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#__I8BwDxZEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H5g8gO2tEd-dJvThfIiQuA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H5hjkO2tEd-dJvThfIiQuA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_tRpv0Eo-Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_JhJ6oO2rEd-dJvThfIiQuA" memberEnd="_JhIsgO2rEd-dJvThfIiQuA _JhKhsO2rEd-dJvThfIiQuA">
+      <ownedEnd xmi:id="_JhKhsO2rEd-dJvThfIiQuA" type="_oidBAO0SEd-dJvThfIiQuA" association="_JhJ6oO2rEd-dJvThfIiQuA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_w9-SYO3vEd-dJvThfIiQuA" name="PatientContact" isAbstract="true">
+      <generalization xmi:id="_w9-5cO3vEd-dJvThfIiQuA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_eyg4QO3TEd-dJvThfIiQuA"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_NaTwIO3wEd-dJvThfIiQuA" name="PatientContactGuardian">
+      <generalization xmi:id="_NaUXMO3wEd-dJvThfIiQuA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_abHaMO3TEd-dJvThfIiQuA"/>
+      </generalization>
+      <generalization xmi:id="_RnW_YO3wEd-dJvThfIiQuA" general="_w9-SYO3vEd-dJvThfIiQuA"/>
+      <ownedAttribute xmi:id="_SkeKoO5uEd-70KBGpEgX1Q" name="addr" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_v0zRUD5yEd6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SkeKoe5uEd-70KBGpEgX1Q" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SkeKou5uEd-70KBGpEgX1Q"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_r_LfgEo3Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Skgm4O5uEd-70KBGpEgX1Q" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zE2iEDcEd6xYZuu1VKCVw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b5vQ4O5uEd-70KBGpEgX1Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b5xtIO5uEd-70KBGpEgX1Q" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_2xi14Eo3Ed6c3qsAxlFHaQ"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Skgm4-5uEd-70KBGpEgX1Q" name="GUAR">
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zE2iEDcEd6xYZuu1VKCVw"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zE2kUDcEd6xYZuu1VKCVw"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_SkhN8O5uEd-70KBGpEgX1Q" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SkhN8e5uEd-70KBGpEgX1Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SkhN8u5uEd-70KBGpEgX1Q"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_pgeocEo3Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Skh1AO5uEd-70KBGpEgX1Q" name="telecom" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_22o_kD52Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Skh1Ae5uEd-70KBGpEgX1Q" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Skh1Au5uEd-70KBGpEgX1Q"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_vEd1cEo3Ed6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZY0wkO3wEd-dJvThfIiQuA" name="PatientContactParticipant">
+      <generalization xmi:id="_ZY1XoO3wEd-dJvThfIiQuA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_WE95UO3TEd-dJvThfIiQuA"/>
+      </generalization>
+      <generalization xmi:id="_bzhRYO3wEd-dJvThfIiQuA" general="_w9-SYO3vEd-dJvThfIiQuA"/>
+      <ownedAttribute xmi:id="_VmdU8O5uEd-70KBGpEgX1Q" name="time" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_iIfSIO5uEd-70KBGpEgX1Q">
+          <body>Indicates the time of the participation.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VmdU8e5uEd-70KBGpEgX1Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VmdU8u5uEd-70KBGpEgX1Q"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_VDhXoErdEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Vmd8AO5uEd-70KBGpEgX1Q" name="typeCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BekDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bmsJsErdEd6FXKclYGEDCw"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_mHdpIO5uEd-70KBGpEgX1Q" value="IND"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -990,4 +1125,27 @@ life, hobbies, and risky habits.</body>
   <CDA:CodeSystemConstraint xmi:id="_i76CgKsXEd-yFfcbpgNFIA" identifier="2.16.840.1.113883.5.4" name="ActEncounterCode" base_Property="_IhgnUKsXEd-yFfcbpgNFIA"/>
   <CDA:TextValue xmi:id="_1EmGMKsXEd-yFfcbpgNFIA" base_Property="_zhWKwKsXEd-yFfcbpgNFIA"/>
   <CDA:CDATemplate xmi:id="_AbOxUMwUEd-iJaPtkyVyKg" base_Class="_5GSkEMwTEd-iJaPtkyVyKg" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.20.2.3" assigningAuthorityName="IHE PCC"/>
+  <CDA:AssociationValidation xmi:id="_P8yqAOw6Ed-HcKrkbxroPA" base_Association="_M0IP8Ow6Ed-HcKrkbxroPA"/>
+  <CDA:CDATemplate xmi:id="_hDTpkOw7Ed-HcKrkbxroPA" base_Class="_e2pkwOw7Ed-HcKrkbxroPA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+  <CDA:CDATemplate xmi:id="_qO57wO0SEd-dJvThfIiQuA" base_Class="_oidBAO0SEd-dJvThfIiQuA" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.4"/>
+  <CDA:CodeSystemConstraint xmi:id="_uaw4MO0SEd-dJvThfIiQuA" code="10162-6" displayName="HISTORY OF PREGNANCIES" base_Property="_pAIbgO0SEd-dJvThfIiQuA">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CDATemplate xmi:id="_Bo9PUO2rEd-dJvThfIiQuA" base_Class="_0UCcoO2qEd-dJvThfIiQuA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+  <CDA:AssociationValidation xmi:id="_KamrIO2rEd-dJvThfIiQuA" base_Association="_JhJ6oO2rEd-dJvThfIiQuA"/>
+  <CDA:PropertyValidation xmi:id="_Fj_2oO2tEd-dJvThfIiQuA" base_Property="_EnAp8O2tEd-dJvThfIiQuA"/>
+  <CDA:PropertyValidation xmi:id="_GcPGMO2tEd-dJvThfIiQuA" base_Property="_EnEUUO2tEd-dJvThfIiQuA"/>
+  <CDA:PropertyValidation xmi:id="_RLlk0O2tEd-dJvThfIiQuA" base_Property="_EnDtQO2tEd-dJvThfIiQuA"/>
+  <CDA:PropertyValidation xmi:id="_R1T3QO2tEd-dJvThfIiQuA" base_Property="_EnDGMO2tEd-dJvThfIiQuA"/>
+  <CDA:PropertyValidation xmi:id="_SYGbQO2tEd-dJvThfIiQuA" base_Property="_EnB4EO2tEd-dJvThfIiQuA"/>
+  <CDA:PropertyValidation xmi:id="_TFDn4O2tEd-dJvThfIiQuA" base_Property="_EnBRAO2tEd-dJvThfIiQuA"/>
+  <CDA:CDATemplate xmi:id="_Pcg4cO3wEd-dJvThfIiQuA" base_Class="_NaTwIO3wEd-dJvThfIiQuA" templateId="1.3.6.1.4.1.19376.1.5.3.1.2.4" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_cw_mQO3wEd-dJvThfIiQuA" base_Class="_ZY0wkO3wEd-dJvThfIiQuA" templateId="1.3.6.1.4.1.19376.1.5.3.1.2.4" contextDependent="true"/>
+  <CDA:PropertyValidation xmi:id="_XomL0O5uEd-70KBGpEgX1Q" base_Property="_Skgm4O5uEd-70KBGpEgX1Q"/>
+  <CDA:PropertyValidation xmi:id="_ekBs4O5uEd-70KBGpEgX1Q" severity="INFO" base_Property="_VmdU8O5uEd-70KBGpEgX1Q"/>
+  <CDA:PropertyValidation xmi:id="_kRjQYO5uEd-70KBGpEgX1Q" base_Property="_Vmd8AO5uEd-70KBGpEgX1Q"/>
+  <CDA:PropertyValidation xmi:id="_yZVqcO5uEd-70KBGpEgX1Q" base_Property="_SkhN8O5uEd-70KBGpEgX1Q"/>
+  <CDA:CodeSystemConstraint xmi:id="_y7KlIO5uEd-70KBGpEgX1Q" identifier="2.16.840.1.113883.5.111" name="RoleCode" base_Property="_SkhN8O5uEd-70KBGpEgX1Q"/>
+  <CDA:PropertyValidation xmi:id="_4CiHkO5uEd-70KBGpEgX1Q" severity="WARNING" base_Property="_SkeKoO5uEd-70KBGpEgX1Q"/>
+  <CDA:PropertyValidation xmi:id="_4f-4kO5uEd-70KBGpEgX1Q" severity="WARNING" base_Property="_Skh1AO5uEd-70KBGpEgX1Q"/>
 </xmi:XMI>

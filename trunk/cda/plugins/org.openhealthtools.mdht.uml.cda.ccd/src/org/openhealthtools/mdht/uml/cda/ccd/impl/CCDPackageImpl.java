@@ -89,6 +89,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.Support;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportGuardian;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
@@ -568,6 +571,27 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	private EClass coveragePlanDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass supportParticipantEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass supportEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass supportGuardianEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1271,6 +1295,33 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSupportParticipant() {
+		return supportParticipantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSupport() {
+		return supportEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSupportGuardian() {
+		return supportGuardianEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCCDRegistryDelegate() {
 		return ccdRegistryDelegateEClass;
 	}
@@ -1459,6 +1510,12 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 
 		coveragePlanDescriptionEClass = createEClass(COVERAGE_PLAN_DESCRIPTION);
 
+		supportParticipantEClass = createEClass(SUPPORT_PARTICIPANT);
+
+		supportEClass = createEClass(SUPPORT);
+
+		supportGuardianEClass = createEClass(SUPPORT_GUARDIAN);
+
 		ccdRegistryDelegateEClass = createEClass(CCD_REGISTRY_DELEGATE);
 	}
 
@@ -1569,6 +1626,10 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		coveredPartyEClass.getESuperTypes().add(theCDAPackage.getParticipantRole());
 		policySubscriberEClass.getESuperTypes().add(theCDAPackage.getParticipantRole());
 		coveragePlanDescriptionEClass.getESuperTypes().add(theCDAPackage.getAct());
+		supportParticipantEClass.getESuperTypes().add(theCDAPackage.getParticipant1());
+		supportParticipantEClass.getESuperTypes().add(this.getSupport());
+		supportGuardianEClass.getESuperTypes().add(theCDAPackage.getGuardian());
+		supportGuardianEClass.getESuperTypes().add(this.getSupport());
 		ccdRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -4669,6 +4730,12 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(supportParticipantEClass, SupportParticipant.class, "SupportParticipant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(supportEClass, Support.class, "Support", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(supportGuardianEClass, SupportGuardian.class, "SupportGuardian", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(ccdRegistryDelegateEClass, CCDRegistryDelegate.class, "CCDRegistryDelegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

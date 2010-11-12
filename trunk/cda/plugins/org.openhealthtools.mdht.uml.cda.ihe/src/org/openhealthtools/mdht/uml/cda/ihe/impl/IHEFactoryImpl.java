@@ -64,10 +64,14 @@ import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PHRExtract;
 import org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate;
+import org.openhealthtools.mdht.uml.cda.ihe.PatientContactGuardian;
+import org.openhealthtools.mdht.uml.cda.ihe.PatientContactParticipant;
 import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
@@ -78,6 +82,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
+import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
@@ -191,6 +196,11 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.ENCOUNTER_ACTIVITY: return createEncounterActivity();
 			case IHEPackage.ENCOUNTER_PLAN_OF_CARE: return createEncounterPlanOfCare();
 			case IHEPackage.INTAKE_OUTPUT_SECTION: return createIntakeOutputSection();
+			case IHEPackage.SUPPLY_ENTRY: return createSupplyEntry();
+			case IHEPackage.PREGNANCY_HISTORY_SECTION: return createPregnancyHistorySection();
+			case IHEPackage.PREGNANCY_OBSERVATION: return createPregnancyObservation();
+			case IHEPackage.PATIENT_CONTACT_GUARDIAN: return createPatientContactGuardian();
+			case IHEPackage.PATIENT_CONTACT_PARTICIPANT: return createPatientContactParticipant();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -825,6 +835,56 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public IntakeOutputSection createIntakeOutputSection() {
 		IntakeOutputSectionImpl intakeOutputSection = new IntakeOutputSectionImpl();
 		return intakeOutputSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupplyEntry createSupplyEntry() {
+		SupplyEntryImpl supplyEntry = new SupplyEntryImpl();
+		return supplyEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PregnancyHistorySection createPregnancyHistorySection() {
+		PregnancyHistorySectionImpl pregnancyHistorySection = new PregnancyHistorySectionImpl();
+		return pregnancyHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PregnancyObservation createPregnancyObservation() {
+		PregnancyObservationImpl pregnancyObservation = new PregnancyObservationImpl();
+		return pregnancyObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatientContactGuardian createPatientContactGuardian() {
+		PatientContactGuardianImpl patientContactGuardian = new PatientContactGuardianImpl();
+		return patientContactGuardian;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatientContactParticipant createPatientContactParticipant() {
+		PatientContactParticipantImpl patientContactParticipant = new PatientContactParticipantImpl();
+		return patientContactParticipant;
 	}
 
 	/**

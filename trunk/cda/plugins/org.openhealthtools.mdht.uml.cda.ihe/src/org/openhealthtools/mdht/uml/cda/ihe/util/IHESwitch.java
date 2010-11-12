@@ -13,14 +13,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.Participant1;
 import org.openhealthtools.mdht.uml.cda.Performer1;
 import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
@@ -43,6 +46,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.Support;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportGuardian;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
@@ -91,10 +98,15 @@ import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PHRExtract;
 import org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate;
+import org.openhealthtools.mdht.uml.cda.ihe.PatientContact;
+import org.openhealthtools.mdht.uml.cda.ihe.PatientContactGuardian;
+import org.openhealthtools.mdht.uml.cda.ihe.PatientContactParticipant;
 import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
@@ -106,6 +118,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
+import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
@@ -863,6 +876,68 @@ public class IHESwitch<T> {
 				if (result == null) result = caseSection(intakeOutputSection);
 				if (result == null) result = caseAct(intakeOutputSection);
 				if (result == null) result = caseInfrastructureRoot(intakeOutputSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.SUPPLY_ENTRY: {
+				SupplyEntry supplyEntry = (SupplyEntry)theEObject;
+				T result = caseSupplyEntry(supplyEntry);
+				if (result == null) result = caseSupplyActivity(supplyEntry);
+				if (result == null) result = caseSupply(supplyEntry);
+				if (result == null) result = caseClinicalStatement(supplyEntry);
+				if (result == null) result = caseAct(supplyEntry);
+				if (result == null) result = caseInfrastructureRoot(supplyEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PREGNANCY_HISTORY_SECTION: {
+				PregnancyHistorySection pregnancyHistorySection = (PregnancyHistorySection)theEObject;
+				T result = casePregnancyHistorySection(pregnancyHistorySection);
+				if (result == null) result = caseSection(pregnancyHistorySection);
+				if (result == null) result = caseAct(pregnancyHistorySection);
+				if (result == null) result = caseInfrastructureRoot(pregnancyHistorySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PREGNANCY_OBSERVATION: {
+				PregnancyObservation pregnancyObservation = (PregnancyObservation)theEObject;
+				T result = casePregnancyObservation(pregnancyObservation);
+				if (result == null) result = caseSimpleObservation(pregnancyObservation);
+				if (result == null) result = caseObservation(pregnancyObservation);
+				if (result == null) result = caseClinicalStatement(pregnancyObservation);
+				if (result == null) result = caseAct(pregnancyObservation);
+				if (result == null) result = caseInfrastructureRoot(pregnancyObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PATIENT_CONTACT: {
+				PatientContact patientContact = (PatientContact)theEObject;
+				T result = casePatientContact(patientContact);
+				if (result == null) result = caseSupport(patientContact);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PATIENT_CONTACT_GUARDIAN: {
+				PatientContactGuardian patientContactGuardian = (PatientContactGuardian)theEObject;
+				T result = casePatientContactGuardian(patientContactGuardian);
+				if (result == null) result = caseSupportGuardian(patientContactGuardian);
+				if (result == null) result = casePatientContact(patientContactGuardian);
+				if (result == null) result = caseGuardian(patientContactGuardian);
+				if (result == null) result = caseSupport(patientContactGuardian);
+				if (result == null) result = caseRole(patientContactGuardian);
+				if (result == null) result = caseInfrastructureRoot(patientContactGuardian);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PATIENT_CONTACT_PARTICIPANT: {
+				PatientContactParticipant patientContactParticipant = (PatientContactParticipant)theEObject;
+				T result = casePatientContactParticipant(patientContactParticipant);
+				if (result == null) result = caseSupportParticipant(patientContactParticipant);
+				if (result == null) result = casePatientContact(patientContactParticipant);
+				if (result == null) result = caseParticipant1(patientContactParticipant);
+				if (result == null) result = caseSupport(patientContactParticipant);
+				if (result == null) result = caseParticipation(patientContactParticipant);
+				if (result == null) result = caseInfrastructureRoot(patientContactParticipant);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1853,6 +1928,96 @@ public class IHESwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supply Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supply Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupplyEntry(SupplyEntry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pregnancy History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pregnancy History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePregnancyHistorySection(PregnancyHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pregnancy Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pregnancy Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePregnancyObservation(PregnancyObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Patient Contact</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Patient Contact</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatientContact(PatientContact object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Patient Contact Guardian</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Patient Contact Guardian</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatientContactGuardian(PatientContactGuardian object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Patient Contact Participant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Patient Contact Participant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatientContactParticipant(PatientContactParticipant object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2554,6 +2719,111 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T casePlanOfCareActivityEncounter(PlanOfCareActivityEncounter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supply</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupply(Supply object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupplyActivity(SupplyActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Support</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Support</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupport(Support object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Guardian</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Guardian</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGuardian(Guardian object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Support Guardian</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Support Guardian</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupportGuardian(SupportGuardian object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participant1</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participant1</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParticipant1(Participant1 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Support Participant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Support Participant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupportParticipant(SupportParticipant object) {
 		return null;
 	}
 

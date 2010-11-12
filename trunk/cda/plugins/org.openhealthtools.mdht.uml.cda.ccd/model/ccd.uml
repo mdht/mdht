@@ -2586,6 +2586,24 @@ Authorizations are represented using an act subordinate to the policy or program
       </ownedComment>
       <ownedEnd xmi:id="_1481YeeeEd-aaJELhEID-A" type="_W6aMoHfTEd6ZeOKq_2_a9g" association="_1481YOeeEd-aaJELhEID-A"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WE95UO3TEd-dJvThfIiQuA" name="SupportParticipant">
+      <generalization xmi:id="_WE-gYO3TEd-dJvThfIiQuA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_4_GbMEcZEd6besF9iFIJkQ"/>
+      </generalization>
+      <generalization xmi:id="_q5BXEO3TEd-dJvThfIiQuA" general="_eyg4QO3TEd-dJvThfIiQuA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_abHaMO3TEd-dJvThfIiQuA" name="SupportGuardian">
+      <generalization xmi:id="_abIBQO3TEd-dJvThfIiQuA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_liVJMEcIEd6besF9iFIJkQ"/>
+      </generalization>
+      <generalization xmi:id="_snMwIO3TEd-dJvThfIiQuA" general="_eyg4QO3TEd-dJvThfIiQuA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eyg4QO3TEd-dJvThfIiQuA" name="Support" isAbstract="true">
+      <ownedComment xmi:id="_I-0tAO3UEd-dJvThfIiQuA">
+        <body>&lt;p>Represents the patient's sources of support such as immediate family, relatives, and guardian at the time the summarization is generated. Support information also includes next of kin, caregivers, and support organizations. At a minimum, key support contacts relative to healthcare decisions, including next of kin, should be included.&lt;/p>&#xD;
+&lt;p>CDA R2 represents a patient's guardian with the CDA Header Guardian class. Other Supporters are represented as participant participations in the CDA Header.&lt;/p></body>
+      </ownedComment>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -2780,10 +2798,13 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:PropertyValidation xmi:id="_nMalxMJ1Ed6-XpBv2uxYrQ" base_Property="_nMZ-tcJ1Ed6-XpBv2uxYrQ"/>
   <CDA:CDATemplate xmi:id="_R3XSwMKAEd6-XpBv2uxYrQ" base_Class="_F9_RAMKAEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.49" assigningAuthorityName="CCD"/>
   <CDA:CDATemplate xmi:id="_UkqmgMKAEd6-XpBv2uxYrQ" base_Class="_IuPLEMKAEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.43" assigningAuthorityName="CCD"/>
-  <CDA:PropertyValidation xmi:id="_tLXPcMKAEd6-XpBv2uxYrQ" base_Property="_gV9qUMKAEd6-XpBv2uxYrQ"/>
+  <CDA:PropertyValidation xmi:id="_tLXPcMKAEd6-XpBv2uxYrQ" base_Property="_gV9qUMKAEd6-XpBv2uxYrQ">
+    <ruleId>CONF-332</ruleId>
+  </CDA:PropertyValidation>
   <CDA:PropertyValidation xmi:id="_zYankMKAEd6-XpBv2uxYrQ" base_Property="_hbmcsMKAEd6-XpBv2uxYrQ"/>
   <CDA:EntryRelationship xmi:id="_VtD8gMKBEd6-XpBv2uxYrQ" severity="INFO" base_Association="_JSLJIMKBEd6-XpBv2uxYrQ" typeCode="SUBJ">
     <ruleId>CONF-330</ruleId>
+    <ruleId>CONF-333</ruleId>
   </CDA:EntryRelationship>
   <Default:Documentation xmi:id="_lM_OMMKBEd6-XpBv2uxYrQ" base_Comment="_lM8K4MKBEd6-XpBv2uxYrQ"/>
   <Default:Documentation xmi:id="_rCfpAMKBEd6-XpBv2uxYrQ" base_Comment="_rCdz0MKBEd6-XpBv2uxYrQ"/>

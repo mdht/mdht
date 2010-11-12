@@ -599,6 +599,51 @@ public interface IHEFactory extends EFactory {
 	IntakeOutputSection createIntakeOutputSection();
 
 	/**
+	 * Returns a new object of class '<em>Supply Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Supply Entry</em>'.
+	 * @generated
+	 */
+	SupplyEntry createSupplyEntry();
+
+	/**
+	 * Returns a new object of class '<em>Pregnancy History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pregnancy History Section</em>'.
+	 * @generated
+	 */
+	PregnancyHistorySection createPregnancyHistorySection();
+
+	/**
+	 * Returns a new object of class '<em>Pregnancy Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pregnancy Observation</em>'.
+	 * @generated
+	 */
+	PregnancyObservation createPregnancyObservation();
+
+	/**
+	 * Returns a new object of class '<em>Patient Contact Guardian</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Patient Contact Guardian</em>'.
+	 * @generated
+	 */
+	PatientContactGuardian createPatientContactGuardian();
+
+	/**
+	 * Returns a new object of class '<em>Patient Contact Participant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Patient Contact Participant</em>'.
+	 * @generated
+	 */
+	PatientContactParticipant createPatientContactParticipant();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

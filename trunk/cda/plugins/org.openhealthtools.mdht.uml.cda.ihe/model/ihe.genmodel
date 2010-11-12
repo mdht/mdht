@@ -8,7 +8,7 @@
     editPluginClass="org.openhealthtools.mdht.uml.cda.ihe.provider.IHEEditPlugin"
     editorPluginClass="org.openhealthtools.mdht.uml.cda.ihe.presentation.IHEEditorPlugin"
     testSuiteClass="org.openhealthtools.mdht.uml.cda.ihe.tests.IHEAllTests" importerID="org.eclipse.uml2.uml.ecore.importer"
-    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.genmodel#//ccd ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda platform:/plugin/org.openhealthtools.mdht.uml.cda.cdt/model/cdt.genmodel#//cdt ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
+    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.5" usedGenPackages="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.genmodel#//ccd ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda platform:/plugin/org.openhealthtools.mdht.uml.cda.cdt/model/cdt.genmodel#//cdt ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.genmodel#//rim ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
     pluralizedGetters="true" invariantPrefix="validate">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
@@ -121,6 +121,11 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/IHEMedicationsSectionTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/IHEMedicationsSectionTemplateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicationsSection/IHEMedicationsSectionMedication">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/IHEMedicationsSectionMedication/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/IHEMedicationsSectionMedication/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicationsSection/getMedications"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//AllergyIntoleranceConcern">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//AllergyIntoleranceConcern/AllergyIntoleranceConcernTemplateId">
@@ -592,6 +597,85 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//IntakeOutputSection/IntakeOutputSectionTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//IntakeOutputSection/IntakeOutputSectionTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//IntakeOutputSection/IntakeOutputSectionTemplateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//SupplyEntry"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//PregnancyHistorySection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionPregnancyObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionPregnancyObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyHistorySection/PregnancyHistorySectionPregnancyObservation/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyHistorySection/getPregnancyObservations"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//PregnancyObservation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyObservation/PregnancyObservationCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyObservation/PregnancyObservationInterpretationCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationInterpretationCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationInterpretationCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyObservation/PregnancyObservationMethodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationMethodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationMethodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyObservation/PregnancyObservationRepeatNumber">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationRepeatNumber/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationRepeatNumber/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyObservation/PregnancyObservationTargetSiteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationTargetSiteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationTargetSiteCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PregnancyObservation/PregnancyObservationValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PregnancyObservation/PregnancyObservationValue/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ihe.ecore#//PatientContact"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//PatientContactGuardian">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactGuardian/PatientContactGuardianTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactGuardian/PatientContactGuardianAddr">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianAddr/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianAddr/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactGuardian/PatientContactGuardianClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactGuardian/PatientContactGuardianCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactGuardian/PatientContactGuardianTelecom">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianTelecom/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactGuardian/PatientContactGuardianTelecom/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//PatientContactParticipant">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTypeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTypeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTypeCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//IHERegistryDelegate"/>

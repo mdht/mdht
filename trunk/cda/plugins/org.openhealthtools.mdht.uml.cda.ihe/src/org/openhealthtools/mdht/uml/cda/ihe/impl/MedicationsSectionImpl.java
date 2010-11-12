@@ -15,8 +15,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -57,6 +59,24 @@ public class MedicationsSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd
 	 */
 	public boolean validateIHEMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationsSectionOperations.validateIHEMedicationsSectionTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIHEMedicationsSectionMedication(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationsSectionOperations.validateIHEMedicationsSectionMedication(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Medication> getMedications() {
+		return MedicationsSectionOperations.getMedications(this);
 	}
 
 	/**

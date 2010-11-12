@@ -431,6 +431,33 @@ public interface HITSPFactory extends EFactory {
 	Procedure createProcedure();
 
 	/**
+	 * Returns a new object of class '<em>Support</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Support</em>'.
+	 * @generated
+	 */
+	Support createSupport();
+
+	/**
+	 * Returns a new object of class '<em>Support Guardian</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Support Guardian</em>'.
+	 * @generated
+	 */
+	SupportGuardian createSupportGuardian();
+
+	/**
+	 * Returns a new object of class '<em>Support Participant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Support Participant</em>'.
+	 * @generated
+	 */
+	SupportParticipant createSupportParticipant();
+
+	/**
 	 * Returns a new object of class '<em>Encounter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
