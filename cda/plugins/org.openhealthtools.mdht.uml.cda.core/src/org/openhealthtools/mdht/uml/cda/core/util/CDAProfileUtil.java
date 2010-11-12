@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
@@ -25,11 +26,33 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
+import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAResource;
 
 public class CDAProfileUtil {
 
+	public static ActRelationship getActRelationship(Association association) {
+		ActRelationship actRelationship = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				association, ICDAProfileConstants.ACT_RELATIONSHIP);
+		if (stereotype != null) {
+			actRelationship = (ActRelationship) association.getStereotypeApplication(stereotype);
+		}
+		return actRelationship;
+	}
+
+	public static Participation getParticipation(Association association) {
+		Participation participation = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				association, ICDAProfileConstants.PARTICIPATION);
+		if (stereotype != null) {
+			participation = (Participation) association.getStereotypeApplication(stereotype);
+		}
+		return participation;
+	}
+	
 	public static TextValue getTextValue(Property property) {
 		TextValue textValue = null;
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
