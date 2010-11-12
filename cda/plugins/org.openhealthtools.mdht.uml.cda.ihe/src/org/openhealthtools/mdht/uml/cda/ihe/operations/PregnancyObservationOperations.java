@@ -440,7 +440,7 @@ public class PregnancyObservationOperations extends SimpleObservationOperations 
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PREGNANCY_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("SimpleObservationTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "SimpleObservationTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(pregnancyObservation, context) }),
 						 new Object [] { pregnancyObservation }));
 			}
 			return false;

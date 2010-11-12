@@ -16,7 +16,6 @@ import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PolicyActivityOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
@@ -93,7 +92,7 @@ public class PayerEntryOperations extends PolicyActivityOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PAYER_ENTRY__POLICY_ACTIVITY_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("PolicyActivityTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PolicyActivityTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(payerEntry, context) }),
 						 new Object [] { payerEntry }));
 			}
 			return false;

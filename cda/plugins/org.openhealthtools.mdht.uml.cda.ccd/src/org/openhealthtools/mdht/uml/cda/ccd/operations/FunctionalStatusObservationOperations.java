@@ -15,7 +15,6 @@ import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 
@@ -92,7 +91,7 @@ public class FunctionalStatusObservationOperations extends StatusObservationOper
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.FUNCTIONAL_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("StatusObservationTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "StatusObservationTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(functionalStatusObservation, context) }),
 						 new Object [] { functionalStatusObservation }));
 			}
 			return false;

@@ -16,7 +16,6 @@ import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.SupplyActivityOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
@@ -93,7 +92,7 @@ public class SupplyEntryOperations extends SupplyActivityOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.SUPPLY_ENTRY__SUPPLY_ACTIVITY_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("SupplyActivityTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "SupplyActivityTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(supplyEntry, context) }),
 						 new Object [] { supplyEntry }));
 			}
 			return false;

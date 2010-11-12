@@ -1984,7 +1984,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="MedicationTaperedDose" eSuperTypes="#//Medication ../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//TaperedDose">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="null"/>
-      <details key="constraints.validation.error" value="HITSPMedicationTemplateId"/>
+      <details key="constraints.validation.error" value="MedicationTaperedDoseTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="HITSPMedicationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

@@ -15,7 +15,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getSupplyEntry()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7.3' constraints.validation.error='SupplyActivityTemplateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7.3' constraints.validation.error='SupplyEntryTemplateId'"
  * @generated
  */
 public interface SupplyEntry extends SupplyActivity {

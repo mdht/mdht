@@ -2293,7 +2293,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "null",
-			 "constraints.validation.error", "HITSPMedicationTemplateId"
+			 "constraints.validation.error", "MedicationTaperedDoseTemplateId"
 		   });			
 		addAnnotation
 		  (procedureEClass, 

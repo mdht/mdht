@@ -93,7 +93,7 @@ public class EncounterPlanOfCareOperations extends EncounterEntryOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ENCOUNTER_PLAN_OF_CARE__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("PlanOfCareActivityEncounterTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PlanOfCareActivityEncounterTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(encounterPlanOfCare, context) }),
 						 new Object [] { encounterPlanOfCare }));
 			}
 			return false;

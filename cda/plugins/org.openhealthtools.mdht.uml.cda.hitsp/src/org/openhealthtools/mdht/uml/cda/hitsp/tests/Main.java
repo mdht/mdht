@@ -203,10 +203,10 @@ public class Main {
 			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
 			}
-			@Override
-			public void handleWarning(Diagnostic diagnostic) {
-				System.out.println("WARNING: " + diagnostic.getMessage());
-			}
+//			@Override
+//			public void handleWarning(Diagnostic diagnostic) {
+//				System.out.println("WARNING: " + diagnostic.getMessage());
+//			}
 //			@Override
 //			public void handleInfo(Diagnostic diagnostic) {
 //				System.out.println("INFO: " + diagnostic.getMessage());

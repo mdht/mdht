@@ -15,7 +15,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getPayerEntry()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.18' constraints.validation.error='PolicyActivityTemplateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.18' constraints.validation.error='PayerEntryTemplateId'"
  * @generated
  */
 public interface PayerEntry extends PolicyActivity {
