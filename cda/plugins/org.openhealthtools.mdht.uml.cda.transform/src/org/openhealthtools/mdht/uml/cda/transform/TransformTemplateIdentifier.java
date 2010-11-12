@@ -60,7 +60,8 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		if (message == null) {
 			message = "The template identifier for " + umlClass.getName() + " must be " + templateId + ".";
 		}
-		addValidationError(umlClass, constraintName, message);
+//		addValidationError(umlClass, constraintName, message);
+		addValidationError(umlClass, createConstraintName(umlClass, "TemplateId"), message);
 	}
 
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
