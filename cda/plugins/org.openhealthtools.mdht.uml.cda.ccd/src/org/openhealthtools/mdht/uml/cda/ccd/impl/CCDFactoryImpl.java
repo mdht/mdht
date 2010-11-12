@@ -87,6 +87,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportGuardian;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 
@@ -203,6 +205,8 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.COVERED_PARTY: return createCoveredParty();
 			case CCDPackage.POLICY_SUBSCRIBER: return createPolicySubscriber();
 			case CCDPackage.COVERAGE_PLAN_DESCRIPTION: return createCoveragePlanDescription();
+			case CCDPackage.SUPPORT_PARTICIPANT: return createSupportParticipant();
+			case CCDPackage.SUPPORT_GUARDIAN: return createSupportGuardian();
 			case CCDPackage.CCD_REGISTRY_DELEGATE: return createCCDRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -877,6 +881,26 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public CoveragePlanDescription createCoveragePlanDescription() {
 		CoveragePlanDescriptionImpl coveragePlanDescription = new CoveragePlanDescriptionImpl();
 		return coveragePlanDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupportParticipant createSupportParticipant() {
+		SupportParticipantImpl supportParticipant = new SupportParticipantImpl();
+		return supportParticipant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupportGuardian createSupportGuardian() {
+		SupportGuardianImpl supportGuardian = new SupportGuardianImpl();
+		return supportGuardian;
 	}
 
 	/**

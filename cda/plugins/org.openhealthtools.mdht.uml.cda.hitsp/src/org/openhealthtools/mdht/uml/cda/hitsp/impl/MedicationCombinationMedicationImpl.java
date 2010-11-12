@@ -59,6 +59,15 @@ public class MedicationCombinationMedicationImpl extends CombinationMedicationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateHITSPMedicationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationOperations.validateHITSPMedicationEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MedicationCombinationMedication init() {
     		CDAUtil.init(this);
     		return this;

@@ -20,15 +20,19 @@ import org.openhealthtools.mdht.uml.cda.ccd.impl.ContinuityOfCareDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PatientSummaryOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -273,6 +277,42 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePatientSummaryPlanOfCareSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientSummaryOperations.validatePatientSummaryPlanOfCareSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePatientSummaryPregnancyHistorySection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientSummaryOperations.validatePatientSummaryPregnancyHistorySection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePatientSummaryVitalSignsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientSummaryOperations.validatePatientSummaryVitalSignsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePatientSummaryDiagnosticResultsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientSummaryOperations.validatePatientSummaryDiagnosticResultsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemListSection createProblemListSection() {
 		return PatientSummaryOperations.createProblemListSection(this);
 	}
@@ -356,6 +396,42 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 */
 	public SurgeriesSection getSurgeriesSection() {
 		return PatientSummaryOperations.getSurgeriesSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareSection getHITSPPlanOfCareSection() {
+		return PatientSummaryOperations.getHITSPPlanOfCareSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PregnancyHistorySection getPregnancyHistorySection() {
+		return PatientSummaryOperations.getPregnancyHistorySection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsSection getHITSPVitalSignsSection() {
+		return PatientSummaryOperations.getHITSPVitalSignsSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiagnosticResultsSection getDiagnosticResultsSection() {
+		return PatientSummaryOperations.getDiagnosticResultsSection(this);
 	}
 
 	/**

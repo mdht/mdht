@@ -635,6 +635,24 @@ public interface CCDFactory extends EFactory {
 	CoveragePlanDescription createCoveragePlanDescription();
 
 	/**
+	 * Returns a new object of class '<em>Support Participant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Support Participant</em>'.
+	 * @generated
+	 */
+	SupportParticipant createSupportParticipant();
+
+	/**
+	 * Returns a new object of class '<em>Support Guardian</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Support Guardian</em>'.
+	 * @generated
+	 */
+	SupportGuardian createSupportGuardian();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

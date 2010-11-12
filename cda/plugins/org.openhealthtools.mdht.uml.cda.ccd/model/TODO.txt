@@ -13,11 +13,12 @@ Completion of CCD constraints
  
  
 * Medications
- - completed CONF-298 thru CONF-326
+ - completed CONF-298 thru CONF-333
 
  Issues
  ------------------------------------------
- * 
+ * an association MAY be present, but if present SHALL have specific typeCode.
+ 	See MedicationActivity, rules 330 and 333
  
 Conformance rules not included
 -------------------------------------------

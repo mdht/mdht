@@ -8300,5 +8300,8 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SupportParticipant" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Participant1 #//Support"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Support" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SupportGuardian" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Guardian #//Support"/>
   <eClassifiers xsi:type="ecore:EClass" name="CCDRegistryDelegate" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//RegistryDelegate"/>
 </ecore:EPackage>

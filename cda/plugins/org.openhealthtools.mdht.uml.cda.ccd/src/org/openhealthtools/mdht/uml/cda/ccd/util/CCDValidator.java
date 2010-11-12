@@ -83,6 +83,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.Support;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportGuardian;
+import org.openhealthtools.mdht.uml.cda.ccd.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
@@ -2922,6 +2925,12 @@ public class CCDValidator extends EObjectValidator {
 				return validatePolicySubscriber((PolicySubscriber)value, diagnostics, context);
 			case CCDPackage.COVERAGE_PLAN_DESCRIPTION:
 				return validateCoveragePlanDescription((CoveragePlanDescription)value, diagnostics, context);
+			case CCDPackage.SUPPORT_PARTICIPANT:
+				return validateSupportParticipant((SupportParticipant)value, diagnostics, context);
+			case CCDPackage.SUPPORT:
+				return validateSupport((Support)value, diagnostics, context);
+			case CCDPackage.SUPPORT_GUARDIAN:
+				return validateSupportGuardian((SupportGuardian)value, diagnostics, context);
 			case CCDPackage.CCD_REGISTRY_DELEGATE:
 				return validateCCDRegistryDelegate((CCDRegistryDelegate)value, diagnostics, context);
 			default:
@@ -7900,6 +7909,42 @@ public class CCDValidator extends EObjectValidator {
 	 */
 	public boolean validateCoveragePlanDescription_validateCoveragePlanDescriptionMoodCode(CoveragePlanDescription coveragePlanDescription, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return coveragePlanDescription.validateCoveragePlanDescriptionMoodCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupportParticipant(SupportParticipant supportParticipant, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(supportParticipant, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupport(Support support, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(support, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupportGuardian(SupportGuardian supportGuardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(supportGuardian, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(supportGuardian, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(supportGuardian, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(supportGuardian, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(supportGuardian, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(supportGuardian, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(supportGuardian, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(supportGuardian, diagnostics, context);
+		if (result || diagnostics != null) result &= cdaValidator.validateGuardian_validateGuardianChoice(supportGuardian, diagnostics, context);
+		return result;
 	}
 
 	/**
