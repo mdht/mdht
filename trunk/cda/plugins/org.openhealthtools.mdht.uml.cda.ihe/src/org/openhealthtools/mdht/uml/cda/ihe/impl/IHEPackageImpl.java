@@ -3425,7 +3425,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.18",
-			 "constraints.validation.error", "PolicyActivityTemplateId"
+			 "constraints.validation.error", "PayerEntryTemplateId"
 		   });			
 		addAnnotation
 		  (phrExtractEClass, 
@@ -3447,7 +3447,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "contextDependent", "true",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.14",
-			 "constraints.validation.error", "EncountersActivityTemplateId"
+			 "constraints.validation.error", "EncounterActivityTemplateId"
 		   });			
 		addAnnotation
 		  (encounterPlanOfCareEClass, 
@@ -3455,7 +3455,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "contextDependent", "true",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.14",
-			 "constraints.validation.error", "PlanOfCareActivityEncounterTemplateId EncounterPlanOfCareMoodCodeValue"
+			 "constraints.validation.error", "EncounterPlanOfCareTemplateId EncounterPlanOfCareMoodCodeValue"
 		   });							
 		addAnnotation
 		  (intakeOutputSectionEClass, 
@@ -3469,7 +3469,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7.3",
-			 "constraints.validation.error", "SupplyActivityTemplateId"
+			 "constraints.validation.error", "SupplyEntryTemplateId"
 		   });			
 		addAnnotation
 		  (pregnancyHistorySectionEClass, 
@@ -3487,7 +3487,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13.5",
-			 "constraints.validation.error", "SimpleObservationTemplateId PregnancyObservationCode PregnancyObservationInterpretationCode PregnancyObservationMethodCode PregnancyObservationRepeatNumber PregnancyObservationTargetSiteCode PregnancyObservationValue"
+			 "constraints.validation.error", "PregnancyObservationTemplateId PregnancyObservationCode PregnancyObservationInterpretationCode PregnancyObservationMethodCode PregnancyObservationRepeatNumber PregnancyObservationTargetSiteCode PregnancyObservationValue"
 		   });																											
 		addAnnotation
 		  (patientContactGuardianEClass, 

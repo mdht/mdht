@@ -3027,7 +3027,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="PayerEntry" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//PolicyActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.18"/>
-      <details key="constraints.validation.error" value="PolicyActivityTemplateId"/>
+      <details key="constraints.validation.error" value="PayerEntryTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="PolicyActivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -3115,7 +3115,7 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
-      <details key="constraints.validation.error" value="EncountersActivityTemplateId"/>
+      <details key="constraints.validation.error" value="EncounterActivityTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="EncountersActivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -3147,7 +3147,7 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
-      <details key="constraints.validation.error" value="PlanOfCareActivityEncounterTemplateId EncounterPlanOfCareMoodCodeValue"/>
+      <details key="constraints.validation.error" value="EncounterPlanOfCareTemplateId EncounterPlanOfCareMoodCodeValue"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="PlanOfCareActivityEncounterTemplateId"
@@ -3229,7 +3229,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SupplyEntry" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//SupplyActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
-      <details key="constraints.validation.error" value="SupplyActivityTemplateId"/>
+      <details key="constraints.validation.error" value="SupplyEntryTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="SupplyActivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -3345,7 +3345,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="PregnancyObservation" eSuperTypes="#//SimpleObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
-      <details key="constraints.validation.error" value="SimpleObservationTemplateId PregnancyObservationCode PregnancyObservationInterpretationCode PregnancyObservationMethodCode PregnancyObservationRepeatNumber PregnancyObservationTargetSiteCode PregnancyObservationValue"/>
+      <details key="constraints.validation.error" value="PregnancyObservationTemplateId PregnancyObservationCode PregnancyObservationInterpretationCode PregnancyObservationMethodCode PregnancyObservationRepeatNumber PregnancyObservationTargetSiteCode PregnancyObservationValue"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="SimpleObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

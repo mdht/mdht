@@ -156,7 +156,7 @@ public class VitalSignsOrganizerOperations extends ResultOrganizerOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("ResultOrganizerTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ResultOrganizerTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(vitalSignsOrganizer, context) }),
 						 new Object [] { vitalSignsOrganizer }));
 			}
 			return false;

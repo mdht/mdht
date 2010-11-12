@@ -4854,7 +4854,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.47",
-			 "constraints.validation.error", "StatusObservationTemplateId"
+			 "constraints.validation.error", "MedicationStatusObservationTemplateId"
 		   });			
 		addAnnotation
 		  (statusObservationEClass, 
@@ -5127,7 +5127,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.35",
-			 "constraints.validation.error", "ResultOrganizerTemplateId VitalSignsOrganizerInformationSource"
+			 "constraints.validation.error", "VitalSignsOrganizerTemplateId VitalSignsOrganizerInformationSource"
 		   });								
 		addAnnotation
 		  (medicalEquipmentSectionEClass, 
@@ -5255,7 +5255,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.50",
-			 "constraints.validation.error", "StatusObservationTemplateId"
+			 "constraints.validation.error", "ProblemStatusObservationTemplateId"
 		   });			
 		addAnnotation
 		  (problemHealthStatusObservationEClass, 
@@ -5264,7 +5264,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.51",
 			 "code.displayName", "Health status",
-			 "constraints.validation.error", "StatusObservationTemplateId StatusObservationCode",
+			 "constraints.validation.error", "ProblemHealthStatusObservationTemplateId StatusObservationCode",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "11323-3"
 		   });			
@@ -5339,7 +5339,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.39",
-			 "constraints.validation.error", "StatusObservationTemplateId"
+			 "constraints.validation.error", "AlertStatusObservationTemplateId"
 		   });			
 		addAnnotation
 		  (reactionObservationEClass, 
@@ -5371,7 +5371,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.42",
-			 "constraints.validation.error", "FamilyHistoryObservationTemplateId"
+			 "constraints.validation.error", "CauseOfDeathObservationTemplateId"
 		   });			
 		addAnnotation
 		  (encounterLocationEClass, 
@@ -5393,7 +5393,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.37",
-			 "constraints.validation.error", "StatusObservationTemplateId"
+			 "constraints.validation.error", "AdvanceDirectiveStatusObservationTemplateId"
 		   });			
 		addAnnotation
 		  (advanceDirectiveVerificationEClass, 
@@ -5424,7 +5424,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.44",
-			 "constraints.validation.error", "StatusObservationTemplateId"
+			 "constraints.validation.error", "FunctionalStatusObservationTemplateId"
 		   });			
 		addAnnotation
 		  (productInstanceEClass, 

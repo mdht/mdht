@@ -58,6 +58,18 @@
 			</representedOrganization>
 		</assignedAuthor>
 	</author>
+	
+	<!-- Dave: Copied from CCD sample -->
+	<informant>
+		<assignedEntity>
+			<id nullFlavor="NI"/>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>Good Health Clinic</name>
+			</representedOrganization>
+		</assignedEntity>
+	</informant>
+	
 	<custodian>
 		<assignedCustodian>
 			<representedCustodianOrganization>

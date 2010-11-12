@@ -646,7 +646,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="MedicationStatusObservation" eSuperTypes="#//StatusObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.47"/>
-      <details key="constraints.validation.error" value="StatusObservationTemplateId"/>
+      <details key="constraints.validation.error" value="MedicationStatusObservationTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="StatusObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -4775,7 +4775,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="VitalSignsOrganizer" eSuperTypes="#//ResultOrganizer">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.35"/>
-      <details key="constraints.validation.error" value="ResultOrganizerTemplateId VitalSignsOrganizerInformationSource"/>
+      <details key="constraints.validation.error" value="VitalSignsOrganizerTemplateId VitalSignsOrganizerInformationSource"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="ResultOrganizerTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -6512,7 +6512,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProblemStatusObservation" eSuperTypes="#//StatusObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.50"/>
-      <details key="constraints.validation.error" value="StatusObservationTemplateId"/>
+      <details key="constraints.validation.error" value="ProblemStatusObservationTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="StatusObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -6545,7 +6545,7 @@
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.51"/>
       <details key="code.displayName" value="Health status"/>
-      <details key="constraints.validation.error" value="StatusObservationTemplateId StatusObservationCode"/>
+      <details key="constraints.validation.error" value="ProblemHealthStatusObservationTemplateId StatusObservationCode"/>
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="11323-3"/>
     </eAnnotations>
@@ -7337,7 +7337,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AlertStatusObservation" eSuperTypes="#//StatusObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.39"/>
-      <details key="constraints.validation.error" value="StatusObservationTemplateId"/>
+      <details key="constraints.validation.error" value="AlertStatusObservationTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="StatusObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -7641,7 +7641,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="CauseOfDeathObservation" eSuperTypes="#//FamilyHistoryObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.42"/>
-      <details key="constraints.validation.error" value="FamilyHistoryObservationTemplateId"/>
+      <details key="constraints.validation.error" value="CauseOfDeathObservationTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="FamilyHistoryObservationTemplateId"
@@ -7752,7 +7752,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AdvanceDirectiveStatusObservation" eSuperTypes="#//StatusObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.37"/>
-      <details key="constraints.validation.error" value="StatusObservationTemplateId"/>
+      <details key="constraints.validation.error" value="AdvanceDirectiveStatusObservationTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="StatusObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -7958,7 +7958,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="FunctionalStatusObservation" eSuperTypes="#//StatusObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.44"/>
-      <details key="constraints.validation.error" value="StatusObservationTemplateId"/>
+      <details key="constraints.validation.error" value="FunctionalStatusObservationTemplateId"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="StatusObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
