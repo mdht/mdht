@@ -58,6 +58,9 @@ public class Activator extends AbstractUIPlugin {
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
+		
+//		plugin.getStateLocation();
+		
 		return plugin;
 	}
 
