@@ -95,9 +95,58 @@ Content Module.</body>
         <body>This content module describes the general structure for a medication. All medication administration acts will be derived&#xD;
 from this content module.</body>
       </ownedComment>
+      <ownedRule xmi:id="_EggUcO7NEd-iKq5sSX9U2w" name="consumableName">
+        <ownedComment xmi:id="_EggUce7NEd-iKq5sSX9U2w">
+          <body>The name of the substance or product. This should be sufficient for a provider to identify the kind of medication. It may be a trade name or a generic name. This information is required in all medication entries. If the name of the medication is unknown, the type, purpose or other description may be supplied. The name should not include packaging, strength or dosing information. Note: Due to restrictions of the CDA schema, there is no way to explicitly link the name to the narrative text.</body>
+        </ownedComment>
+        <constrainedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.hitsp/model/hitsp.uml#_IjIO0DxbEd6JwqSGecoePg"/>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_EggUcu7NEd-iKq5sSX9U2w">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains the consumable name. If the name of the medication is unknown, the type, purpose or other description may be supplied.</body>
+          <body>not self.consumable.manufacturedProduct.manufacturedLabeledDrug.name.oclIsUndefined()&#xD;&#xA;   or not self.consumable.manufacturedProduct.manufacturedMaterial.name.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_zZRrcHq8Ed68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_W6aMoHfTEd6ZeOKq_2_a9g"/>
       </generalization>
+      <ownedAttribute xmi:id="_qvyvcO7MEd-iKq5sSX9U2w" name="approachSiteCode" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_qvyvce7MEd-iKq5sSX9U2w">
+          <body>The site where the medication is administered, usually used with IV or topical drugs.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qvyvcu7MEd-iKq5sSX9U2w" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qvyvc-7MEd-iKq5sSX9U2w"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ATlKkErtEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_sPm8YO7MEd-iKq5sSX9U2w" name="doseQuantity" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_sPm8Ye7MEd-iKq5sSX9U2w">
+          <body>The amount of the medication given. This should be in some known and measurable unit, such as grams, milligrams, et cetera. It may be measured in &quot;administration&quot; units (such as tablets or each), for medications where the strength is relevant. In this case, only the unit count is specified , no units are specified. It may be a range.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_1VHHUErrEd6FXKclYGEDCw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sPm8Yu7MEd-iKq5sSX9U2w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sPm8Y-7MEd-iKq5sSX9U2w"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_D1VaEErtEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tteokO7MEd-iKq5sSX9U2w" name="rateQuantity" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_tteoke7MEd-iKq5sSX9U2w">
+          <body>The rate is a measurement of how fast the dose is given to the patient over time (e.g., .5 liter / 1 hr), and is often used with IV drugs.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_1VHHUErrEd6FXKclYGEDCw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tteoku7MEd-iKq5sSX9U2w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tteok-7MEd-iKq5sSX9U2w"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_GsU1UErtEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_vMQTsO7MEd-iKq5sSX9U2w" name="routeCode" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_vMQTse7MEd-iKq5sSX9U2w">
+          <body>The route is a coded value, and indicates how the medication is received by the patient (by mouth, intravenously, topically, et cetera).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vMQTsu7MEd-iKq5sSX9U2w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vMQTs-7MEd-iKq5sSX9U2w" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9hNwoErsEd6FXKclYGEDCw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_w93tY-ecEd-aaJELhEID-A"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_8YbB4HomEd6WAZ28-5wkSg" name="MedicationsSection">
       <ownedComment xmi:id="_cNkOgHonEd6WAZ28-5wkSg" annotatedElement="_8YbB4HomEd6WAZ28-5wkSg">
@@ -210,23 +259,38 @@ associated adverse reactions suffered by the patient.</body>
       <ownedAttribute xmi:id="_8nmwUK4OEd6_ioDelDcPPg" name="code" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_R9GuQK4PEd6_ioDelDcPPg" name="value" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_3mPzYD59Ed6cla2oXsPtlA"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_Lb-7oK60Ed6_ioDelDcPPg" name="interpretationCode" visibility="private">
+        <ownedComment xmi:id="_refXkO7DEd-iKq5sSX9U2w">
+          <body>The interpretation code may be present to provide an interpretation of the vital signs measure (e.g., High, Normal, Low, et cetera).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iE8FgK60Ed6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iE7ecK60Ed6_ioDelDcPPg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Pwh6AK60Ed6_ioDelDcPPg" name="methodCode" visibility="private">
+        <ownedComment xmi:id="_uyyZ4O7DEd-iKq5sSX9U2w">
+          <body>The method code element may be present to indicate the method used to obtain the measure. Note that method used is distinct from, but possibly related to the target site.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dHWKIa60Ed6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dHWKIK60Ed6_ioDelDcPPg"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_8bjOQO7GEd-iKq5sSX9U2w" name="statusCode" visibility="private">
+        <ownedComment xmi:id="_8bjOQe7GEd-iKq5sSX9U2w">
+          <body>The observations have all been completed.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_RF7msK60Ed6_ioDelDcPPg" name="targetSiteCode" visibility="private">
+        <ownedComment xmi:id="_zLOZwO7DEd-iKq5sSX9U2w">
+          <body>The target site of the measure may be identified in the targetSiteCode element (e.g., Left arm [blood pressure], oral [temperature], et cetera).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ldOP8a60Ed6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ldOP8K60Ed6_ioDelDcPPg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_R9GuQK4PEd6_ioDelDcPPg" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_3mPzYD59Ed6cla2oXsPtlA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dLvb0K4NEd6_ioDelDcPPg" name="SimpleObservation" isAbstract="true">
@@ -252,20 +316,31 @@ ASTM/HL7 Continuity of Care Document).</body>
       <generalization xmi:id="_j3GZMK4QEd6_ioDelDcPPg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_wN4O0K3zEd6_ioDelDcPPg"/>
       </generalization>
+      <ownedAttribute xmi:id="_iZtH4O7EEd-iKq5sSX9U2w" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOnw0DcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_NjnHQEb9Ed6besF9iFIJkQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_nCXVEO7EEd-iKq5sSX9U2w" value="CLUSTER"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_wV3xkK4REd6_ioDelDcPPg" name="code" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_t6rFAK4SEd6_ioDelDcPPg" name="effectiveTime" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_4oi-EO7DEd-iKq5sSX9U2w">
+          <body>The effective time element shall be present to indicate when the measurement was taken.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t6rFAa4SEd6_ioDelDcPPg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t6rFAq4SEd6_ioDelDcPPg" value="1"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_NhFHgK4SEd6_ioDelDcPPg" name="statusCode" visibility="private">
+        <ownedComment xmi:id="_8HtMkO7DEd-iKq5sSX9U2w">
+          <body>The observations have all been completed.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_WBtEwK4SEd6_ioDelDcPPg" name="vitalSignObservation" visibility="private" type="_LriUcK4NEd6_ioDelDcPPg" association="_WBrPkK4SEd6_ioDelDcPPg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WBtr0a4SEd6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WBtr0K4SEd6_ioDelDcPPg" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_t6rFAK4SEd6_ioDelDcPPg" name="effectiveTime" visibility="private" aggregation="composite">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t6rFAa4SEd6_ioDelDcPPg" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t6rFAq4SEd6_ioDelDcPPg" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_IFpHoK4UEd6_ioDelDcPPg" name="author" visibility="private" association="_IFnScK4UEd6_ioDelDcPPg">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ChEisEcEEd6besF9iFIJkQ"/>
@@ -1148,4 +1223,10 @@ life, hobbies, and risky habits.</body>
   <CDA:CodeSystemConstraint xmi:id="_y7KlIO5uEd-70KBGpEgX1Q" identifier="2.16.840.1.113883.5.111" name="RoleCode" base_Property="_SkhN8O5uEd-70KBGpEgX1Q"/>
   <CDA:PropertyValidation xmi:id="_4CiHkO5uEd-70KBGpEgX1Q" severity="WARNING" base_Property="_SkeKoO5uEd-70KBGpEgX1Q"/>
   <CDA:PropertyValidation xmi:id="_4f-4kO5uEd-70KBGpEgX1Q" severity="WARNING" base_Property="_Skh1AO5uEd-70KBGpEgX1Q"/>
+  <CDA:PropertyValidation xmi:id="_ny294O7EEd-iKq5sSX9U2w" base_Property="_iZtH4O7EEd-iKq5sSX9U2w"/>
+  <CDA:PropertyValidation xmi:id="_3_898O7MEd-iKq5sSX9U2w" severity="INFO" base_Property="_qvyvcO7MEd-iKq5sSX9U2w"/>
+  <CDA:PropertyValidation xmi:id="_4f8FkO7MEd-iKq5sSX9U2w" severity="WARNING" base_Property="_sPm8YO7MEd-iKq5sSX9U2w"/>
+  <CDA:PropertyValidation xmi:id="_5JAQsO7MEd-iKq5sSX9U2w" severity="WARNING" base_Property="_tteokO7MEd-iKq5sSX9U2w"/>
+  <CDA:PropertyValidation xmi:id="_5h_YcO7MEd-iKq5sSX9U2w" severity="WARNING" base_Property="_vMQTsO7MEd-iKq5sSX9U2w"/>
+  <CDA:ConstraintValidation xmi:id="_GTptEO7NEd-iKq5sSX9U2w" base_Constraint="_EggUcO7NEd-iKq5sSX9U2w"/>
 </xmi:XMI>

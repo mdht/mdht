@@ -77,6 +77,16 @@
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_u37zEErsEd6FXKclYGEDCw"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_w93GUOecEd-aaJELhEID-A"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_uHDtme7JEd-iKq5sSX9U2w" name="routeCode" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_CnP0IO7KEd-iKq5sSX9U2w">
+          <body>The route is a coded value, and indicates how the medication is received by the patient (by mouth, intravenously, topically, et cetera).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uHDtmu7JEd-iKq5sSX9U2w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uHDtm-7JEd-iKq5sSX9U2w" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9hNwoErsEd6FXKclYGEDCw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_w93tY-ecEd-aaJELhEID-A"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="Condition">
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
@@ -1072,4 +1082,13 @@ If the problem is known to be resolved, but the date of resolution is not known,
   </CDA:AssociationValidation>
   <CDA:ConformsTo xmi:id="_l04kAO5xEd-70KBGpEgX1Q" base_Generalization="_ci5qcO3xEd-dJvThfIiQuA" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_n_KqQO5xEd-70KBGpEgX1Q" base_Generalization="_VWfuIO3xEd-dJvThfIiQuA" requiresParentId="true"/>
+  <CDA:PropertyValidation xmi:id="_uHDtnO7JEd-iKq5sSX9U2w" severity="WARNING" base_Property="_uHDtme7JEd-iKq5sSX9U2w">
+    <ruleId>CONF-309</ruleId>
+    <ruleId>CONF-310</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_uHDtne7JEd-iKq5sSX9U2w" identifier="2.16.840.1.113883.5.112" name="HL7 RouteOfAdministration" binding="Dynamic" base_Property="_uHDtme7JEd-iKq5sSX9U2w"/>
+  <CDA:PropertyValidation xmi:id="_ysSzUO7JEd-iKq5sSX9U2w" severity="INFO"/>
+  <CDA:PropertyValidation xmi:id="_4GWBMO7JEd-iKq5sSX9U2w" severity="WARNING"/>
+  <CDA:PropertyValidation xmi:id="_-h_2AO7JEd-iKq5sSX9U2w" severity="WARNING"/>
+  <CDA:ConstraintValidation xmi:id="_VlY5IO7KEd-iKq5sSX9U2w"/>
 </xmi:XMI>

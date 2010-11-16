@@ -236,12 +236,52 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PROBLEM_ENTRY__PROBLEM_ENTRY_VALUE = 15;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Consumable Name' of 'Medication'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICATION__MEDICATION_CONSUMABLE_NAME = 16;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Template Id' of 'Medication'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATION__MEDICATION_TEMPLATE_ID = 16;
+	public static final int MEDICATION__MEDICATION_TEMPLATE_ID = 17;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Approach Site Code' of 'Medication'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICATION__MEDICATION_APPROACH_SITE_CODE = 18;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Dose Quantity' of 'Medication'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICATION__MEDICATION_DOSE_QUANTITY = 19;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Rate Quantity' of 'Medication'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICATION__MEDICATION_RATE_QUANTITY = 20;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Route Code' of 'Medication'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICATION__MEDICATION_ROUTE_CODE = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Medications Section Template Id' of 'Medications Section'.
@@ -249,7 +289,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATIONS_SECTION__IHE_MEDICATIONS_SECTION_TEMPLATE_ID = 17;
+	public static final int MEDICATIONS_SECTION__IHE_MEDICATIONS_SECTION_TEMPLATE_ID = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Medications Section Medication' of 'Medications Section'.
@@ -257,7 +297,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATIONS_SECTION__IHE_MEDICATIONS_SECTION_MEDICATION = 18;
+	public static final int MEDICATIONS_SECTION__IHE_MEDICATIONS_SECTION_MEDICATION = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Allergy Intolerance Concern Template Id' of 'Allergy Intolerance Concern'.
@@ -265,7 +305,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALLERGY_INTOLERANCE_CONCERN__ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID = 19;
+	public static final int ALLERGY_INTOLERANCE_CONCERN__ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Allergy Intolerance Template Id' of 'Allergy Intolerance'.
@@ -273,7 +313,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALLERGY_INTOLERANCE__ALLERGY_INTOLERANCE_TEMPLATE_ID = 20;
+	public static final int ALLERGY_INTOLERANCE__ALLERGY_INTOLERANCE_TEMPLATE_ID = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Allergies Reactions Section Template Id' of 'Allergies Reactions Section'.
@@ -281,7 +321,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALLERGIES_REACTIONS_SECTION__ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = 21;
+	public static final int ALLERGIES_REACTIONS_SECTION__ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Normal Dose Template Id' of 'Normal Dose'.
@@ -289,7 +329,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NORMAL_DOSE__NORMAL_DOSE_TEMPLATE_ID = 22;
+	public static final int NORMAL_DOSE__NORMAL_DOSE_TEMPLATE_ID = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Tapered Dose Template Id' of 'Tapered Dose'.
@@ -297,7 +337,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TAPERED_DOSE__TAPERED_DOSE_TEMPLATE_ID = 23;
+	public static final int TAPERED_DOSE__TAPERED_DOSE_TEMPLATE_ID = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Split Dose Template Id' of 'Split Dose'.
@@ -305,7 +345,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SPLIT_DOSE__SPLIT_DOSE_TEMPLATE_ID = 24;
+	public static final int SPLIT_DOSE__SPLIT_DOSE_TEMPLATE_ID = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Conditional Dose Template Id' of 'Conditional Dose'.
@@ -313,7 +353,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONDITIONAL_DOSE__CONDITIONAL_DOSE_TEMPLATE_ID = 25;
+	public static final int CONDITIONAL_DOSE__CONDITIONAL_DOSE_TEMPLATE_ID = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Combination Medication Template Id' of 'Combination Medication'.
@@ -321,7 +361,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMBINATION_MEDICATION__COMBINATION_MEDICATION_TEMPLATE_ID = 26;
+	public static final int COMBINATION_MEDICATION__COMBINATION_MEDICATION_TEMPLATE_ID = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Section Template Id' of 'Vital Signs Section'.
@@ -329,7 +369,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__IHE_VITAL_SIGNS_SECTION_TEMPLATE_ID = 27;
+	public static final int VITAL_SIGNS_SECTION__IHE_VITAL_SIGNS_SECTION_TEMPLATE_ID = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Vital Signs Section Template Id' of 'Coded Vital Signs Section'.
@@ -337,7 +377,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID = 28;
+	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Vital Signs Section Vital Signs Organizer' of 'Coded Vital Signs Section'.
@@ -345,7 +385,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 29;
+	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Template Id' of 'Vital Sign Observation'.
@@ -353,7 +393,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TEMPLATE_ID = 35;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TEMPLATE_ID = 41;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Value' of 'Vital Sign Observation'.
@@ -361,7 +401,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_VALUE = 36;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_VALUE = 45;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Interpretation Code' of 'Vital Sign Observation'.
@@ -369,7 +409,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_INTERPRETATION_CODE = 37;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_INTERPRETATION_CODE = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Method Code' of 'Vital Sign Observation'.
@@ -377,7 +417,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_METHOD_CODE = 38;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_METHOD_CODE = 43;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Target Site Code' of 'Vital Sign Observation'.
@@ -385,7 +425,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TARGET_SITE_CODE = 39;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TARGET_SITE_CODE = 44;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Code' of 'Vital Sign Observation'.
@@ -393,7 +433,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__RESULT_OBSERVATION_CODE = 40;
+	public static final int VITAL_SIGN_OBSERVATION__RESULT_OBSERVATION_CODE = 46;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Template Id' of 'Simple Observation'.
@@ -401,7 +441,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID = 41;
+	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID = 47;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Id' of 'Simple Observation'.
@@ -409,7 +449,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_ID = 42;
+	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_ID = 48;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Status Code' of 'Simple Observation'.
@@ -417,7 +457,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_STATUS_CODE = 43;
+	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_STATUS_CODE = 49;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Template Id' of 'Vital Signs Organizer'.
@@ -425,7 +465,15 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 30;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 35;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Class Code' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_CLASS_CODE = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Effective Time' of 'Vital Signs Organizer'.
@@ -433,7 +481,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 31;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Vital Sign Observation' of 'Vital Signs Organizer'.
@@ -441,7 +489,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 32;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 38;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Code' of 'Vital Signs Organizer'.
@@ -449,7 +497,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_CODE = 33;
+	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_CODE = 39;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Status Code' of 'Vital Signs Organizer'.
@@ -457,7 +505,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_STATUS_CODE = 34;
+	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_STATUS_CODE = 40;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Payers Section Template Id' of 'Payers Section'.
@@ -465,7 +513,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__IHE_PAYERS_SECTION_TEMPLATE_ID = 44;
+	public static final int PAYERS_SECTION__IHE_PAYERS_SECTION_TEMPLATE_ID = 50;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Payers Section Coverage Entry' of 'Payers Section'.
@@ -473,7 +521,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__IHE_PAYERS_SECTION_COVERAGE_ENTRY = 45;
+	public static final int PAYERS_SECTION__IHE_PAYERS_SECTION_COVERAGE_ENTRY = 51;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Past Illness Section Template Id' of 'History Of Past Illness Section'.
@@ -481,7 +529,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID = 47;
+	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID = 53;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Past Illness Section Code' of 'History Of Past Illness Section'.
@@ -489,7 +537,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_CODE = 48;
+	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_CODE = 54;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Template Id' of 'Chief Complaint Section'.
@@ -497,7 +545,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 49;
+	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 55;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Code' of 'Chief Complaint Section'.
@@ -505,7 +553,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_CODE = 50;
+	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_CODE = 56;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Referral Section Template Id' of 'Reason For Referral Section'.
@@ -513,7 +561,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 51;
+	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 57;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Referral Section Code' of 'Reason For Referral Section'.
@@ -521,7 +569,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_CODE = 52;
+	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_CODE = 58;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Present Illness Template Id' of 'History Of Present Illness'.
@@ -529,7 +577,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 53;
+	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 59;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Present Illness Code' of 'History Of Present Illness'.
@@ -537,7 +585,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_CODE = 54;
+	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_CODE = 60;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Surgeries Section Template Id' of 'Surgeries Section'.
@@ -545,7 +593,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SURGERIES_SECTION__SURGERIES_SECTION_TEMPLATE_ID = 55;
+	public static final int SURGERIES_SECTION__SURGERIES_SECTION_TEMPLATE_ID = 61;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Surgeries Section Template Id' of 'Coded Surgeries Section'.
@@ -553,7 +601,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CODED_SURGERIES_SECTION__CODED_SURGERIES_SECTION_TEMPLATE_ID = 56;
+	public static final int CODED_SURGERIES_SECTION__CODED_SURGERIES_SECTION_TEMPLATE_ID = 62;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Admission Diagnosis Section Template Id' of 'Hospital Admission Diagnosis Section'.
@@ -561,7 +609,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID = 57;
+	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID = 63;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Admission Diagnosis Section Code' of 'Hospital Admission Diagnosis Section'.
@@ -569,7 +617,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_CODE = 58;
+	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_CODE = 64;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Diagnosis Section Template Id' of 'Discharge Diagnosis Section'.
@@ -577,7 +625,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_DIAGNOSIS_SECTION__DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID = 59;
+	public static final int DISCHARGE_DIAGNOSIS_SECTION__DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID = 65;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Diagnosis Section Code' of 'Discharge Diagnosis Section'.
@@ -585,7 +633,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_DIAGNOSIS_SECTION__DISCHARGE_DIAGNOSIS_SECTION_CODE = 60;
+	public static final int DISCHARGE_DIAGNOSIS_SECTION__DISCHARGE_DIAGNOSIS_SECTION_CODE = 66;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Admission Medication History Section Template Id' of 'Admission Medication History Section'.
@@ -593,7 +641,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = 61;
+	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = 67;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Admission Medication History Section Code' of 'Admission Medication History Section'.
@@ -601,7 +649,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__ADMISSION_MEDICATION_HISTORY_SECTION_CODE = 62;
+	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__ADMISSION_MEDICATION_HISTORY_SECTION_CODE = 68;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Discharge Medications Section Template Id' of 'Hospital Discharge Medications Section'.
@@ -609,7 +657,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID = 63;
+	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID = 69;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Discharge Medications Section Code' of 'Hospital Discharge Medications Section'.
@@ -617,7 +665,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_CODE = 64;
+	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_CODE = 70;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Advance Directives Section Template Id' of 'Coded Advance Directives Section'.
@@ -625,7 +673,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CODED_ADVANCE_DIRECTIVES_SECTION__CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 65;
+	public static final int CODED_ADVANCE_DIRECTIVES_SECTION__CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 71;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Advance Directives Section Template Id' of 'Advance Directives Section'.
@@ -633,7 +681,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 66;
+	public static final int ADVANCE_DIRECTIVES_SECTION__IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 72;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Exam Narrative Section Template Id' of 'Physical Exam Narrative Section'.
@@ -641,7 +689,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID = 67;
+	public static final int PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID = 73;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Exam Narrative Section Code' of 'Physical Exam Narrative Section'.
@@ -649,7 +697,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_CODE = 68;
+	public static final int PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_CODE = 74;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Exam Section Template Id' of 'Physical Exam Section'.
@@ -657,7 +705,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHYSICAL_EXAM_SECTION__PHYSICAL_EXAM_SECTION_TEMPLATE_ID = 69;
+	public static final int PHYSICAL_EXAM_SECTION__PHYSICAL_EXAM_SECTION_TEMPLATE_ID = 75;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section Template Id' of 'Review Of Systems Section'.
@@ -665,7 +713,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 70;
+	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 76;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section Code' of 'Review Of Systems Section'.
@@ -673,7 +721,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_CODE = 71;
+	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_CODE = 77;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Course Section Template Id' of 'Hospital Course Section'.
@@ -681,7 +729,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_COURSE_SECTION__HOSPITAL_COURSE_SECTION_TEMPLATE_ID = 72;
+	public static final int HOSPITAL_COURSE_SECTION__HOSPITAL_COURSE_SECTION_TEMPLATE_ID = 78;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Course Section Code' of 'Hospital Course Section'.
@@ -689,7 +737,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_COURSE_SECTION__HOSPITAL_COURSE_SECTION_CODE = 73;
+	public static final int HOSPITAL_COURSE_SECTION__HOSPITAL_COURSE_SECTION_CODE = 79;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Results Section Template Id' of 'Coded Results Section'.
@@ -697,7 +745,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_TEMPLATE_ID = 74;
+	public static final int CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_TEMPLATE_ID = 80;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Results Section Code' of 'Coded Results Section'.
@@ -705,7 +753,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_CODE = 75;
+	public static final int CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_CODE = 81;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Template Id' of 'Assessment And Plan Section'.
@@ -713,7 +761,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 76;
+	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 82;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Code' of 'Assessment And Plan Section'.
@@ -721,7 +769,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_CODE = 77;
+	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_CODE = 83;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Care Plan Section Template Id' of 'Care Plan Section'.
@@ -729,7 +777,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CARE_PLAN_SECTION__CARE_PLAN_SECTION_TEMPLATE_ID = 78;
+	public static final int CARE_PLAN_SECTION__CARE_PLAN_SECTION_TEMPLATE_ID = 84;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family Medical History Section Template Id' of 'Family Medical History Section'.
@@ -737,7 +785,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FAMILY_MEDICAL_HISTORY_SECTION__FAMILY_MEDICAL_HISTORY_SECTION_TEMPLATE_ID = 79;
+	public static final int FAMILY_MEDICAL_HISTORY_SECTION__FAMILY_MEDICAL_HISTORY_SECTION_TEMPLATE_ID = 85;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Social History Section Template Id' of 'Social History Section'.
@@ -745,7 +793,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SOCIAL_HISTORY_SECTION__IHE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 80;
+	public static final int SOCIAL_HISTORY_SECTION__IHE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 86;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter History Section Template Id' of 'Encounter History Section'.
@@ -753,7 +801,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID = 81;
+	public static final int ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID = 87;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter History Section Encounter Entry' of 'Encounter History Section'.
@@ -761,7 +809,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_ENCOUNTER_ENTRY = 82;
+	public static final int ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_ENCOUNTER_ENTRY = 88;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Template Id' of 'Encounter Entry'.
@@ -769,7 +817,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_TEMPLATE_ID = 83;
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_TEMPLATE_ID = 89;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Class Code' of 'Encounter Entry'.
@@ -777,7 +825,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_CLASS_CODE = 84;
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_CLASS_CODE = 90;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Code' of 'Encounter Entry'.
@@ -785,7 +833,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_CODE = 85;
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_CODE = 91;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Id' of 'Encounter Entry'.
@@ -793,7 +841,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_ID = 86;
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_ID = 92;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Entry Text' of 'Encounter Entry'.
@@ -801,7 +849,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_TEXT = 87;
+	public static final int ENCOUNTER_ENTRY__ENCOUNTER_ENTRY_TEXT = 93;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Devices Section Template Id' of 'Medical Devices Section'.
@@ -809,7 +857,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_DEVICES_SECTION__MEDICAL_DEVICES_SECTION_TEMPLATE_ID = 88;
+	public static final int MEDICAL_DEVICES_SECTION__MEDICAL_DEVICES_SECTION_TEMPLATE_ID = 94;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Language Communication Template Id' of 'Language Communication'.
@@ -817,7 +865,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LANGUAGE_COMMUNICATION__IHE_LANGUAGE_COMMUNICATION_TEMPLATE_ID = 89;
+	public static final int LANGUAGE_COMMUNICATION__IHE_LANGUAGE_COMMUNICATION_TEMPLATE_ID = 95;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Problem Concern Entry' of 'Medical Summary'.
@@ -825,7 +873,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY = 90;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY = 96;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Allergy Concern Entry' of 'Medical Summary'.
@@ -833,7 +881,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY = 91;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY = 97;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Medications' of 'Medical Summary'.
@@ -841,7 +889,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_MEDICATIONS = 92;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_MEDICATIONS = 98;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Template Id' of 'Medical Summary'.
@@ -849,7 +897,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_TEMPLATE_ID = 93;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_TEMPLATE_ID = 99;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Medical Summary'.
@@ -857,7 +905,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE = 94;
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE = 100;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Template Id' of 'Discharge Summary'.
@@ -865,7 +913,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_TEMPLATE_ID = 95;
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_TEMPLATE_ID = 101;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Active Problems Section' of 'Discharge Summary'.
@@ -873,7 +921,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 96;
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 102;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Discharge Summary'.
@@ -881,7 +929,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__MEDICAL_SUMMARY_CODE = 97;
+	public static final int DISCHARGE_SUMMARY__MEDICAL_SUMMARY_CODE = 103;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Entry Template Id' of 'Coverage Entry'.
@@ -889,7 +937,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ENTRY__COVERAGE_ENTRY_TEMPLATE_ID = 46;
+	public static final int COVERAGE_ENTRY__COVERAGE_ENTRY_TEMPLATE_ID = 52;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Healthcare Providers Pharmacies Template Id' of 'Healthcare Providers Pharmacies'.
@@ -897,7 +945,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HEALTHCARE_PROVIDERS_PHARMACIES__HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID = 98;
+	public static final int HEALTHCARE_PROVIDERS_PHARMACIES__HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID = 104;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunization Template Id' of 'Immunization'.
@@ -913,7 +961,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBSERVATION_REQUEST_ENTRY__OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID = 99;
+	public static final int OBSERVATION_REQUEST_ENTRY__OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID = 105;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Product Entry Template Id' of 'Product Entry'.
@@ -921,7 +969,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PRODUCT_ENTRY__PRODUCT_ENTRY_TEMPLATE_ID = 100;
+	public static final int PRODUCT_ENTRY__PRODUCT_ENTRY_TEMPLATE_ID = 106;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Entry Procedure Activity Procedure Template Id' of 'Procedure Entry Procedure Activity Procedure'.
@@ -929,7 +977,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 101;
+	public static final int PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 107;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Entry Plan Of Care Activity Procedure Template Id' of 'Procedure Entry Plan Of Care Activity Procedure'.
@@ -937,7 +985,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 102;
+	public static final int PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 108;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Template Id' of 'Comment'.
@@ -945,7 +993,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_TEMPLATE_ID = 103;
+	public static final int COMMENT__COMMENT_TEMPLATE_ID = 109;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Class Code' of 'Comment'.
@@ -953,7 +1001,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_CLASS_CODE = 104;
+	public static final int COMMENT__COMMENT_CLASS_CODE = 110;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Code' of 'Comment'.
@@ -961,7 +1009,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_CODE = 105;
+	public static final int COMMENT__COMMENT_CODE = 111;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Mood Code' of 'Comment'.
@@ -969,7 +1017,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_MOOD_CODE = 106;
+	public static final int COMMENT__COMMENT_MOOD_CODE = 112;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Status Code' of 'Comment'.
@@ -977,7 +1025,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_STATUS_CODE = 107;
+	public static final int COMMENT__COMMENT_STATUS_CODE = 113;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Text' of 'Comment'.
@@ -985,7 +1033,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMMENT__COMMENT_TEXT = 108;
+	public static final int COMMENT__COMMENT_TEXT = 114;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Template Id' of 'Payer Entry'.
@@ -993,7 +1041,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYER_ENTRY__POLICY_ACTIVITY_TEMPLATE_ID = 109;
+	public static final int PAYER_ENTRY__POLICY_ACTIVITY_TEMPLATE_ID = 115;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate PHR Extract Template Id' of 'PHR Extract'.
@@ -1001,7 +1049,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHR_EXTRACT__PHR_EXTRACT_TEMPLATE_ID = 110;
+	public static final int PHR_EXTRACT__PHR_EXTRACT_TEMPLATE_ID = 116;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate PHR Update Template Id' of 'PHR Update'.
@@ -1009,7 +1057,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHR_UPDATE__PHR_UPDATE_TEMPLATE_ID = 111;
+	public static final int PHR_UPDATE__PHR_UPDATE_TEMPLATE_ID = 117;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Activity Template Id' of 'Encounter Activity'.
@@ -1017,7 +1065,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_ACTIVITY__ENCOUNTERS_ACTIVITY_TEMPLATE_ID = 112;
+	public static final int ENCOUNTER_ACTIVITY__ENCOUNTERS_ACTIVITY_TEMPLATE_ID = 118;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Plan Of Care Mood Code Value' of 'Encounter Plan Of Care'.
@@ -1025,7 +1073,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_PLAN_OF_CARE__ENCOUNTER_PLAN_OF_CARE_MOOD_CODE_VALUE = 113;
+	public static final int ENCOUNTER_PLAN_OF_CARE__ENCOUNTER_PLAN_OF_CARE_MOOD_CODE_VALUE = 119;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Encounter Template Id' of 'Encounter Plan Of Care'.
@@ -1033,7 +1081,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTER_PLAN_OF_CARE__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID = 114;
+	public static final int ENCOUNTER_PLAN_OF_CARE__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID = 120;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Intake Output Section Template Id' of 'Intake Output Section'.
@@ -1041,7 +1089,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int INTAKE_OUTPUT_SECTION__INTAKE_OUTPUT_SECTION_TEMPLATE_ID = 115;
+	public static final int INTAKE_OUTPUT_SECTION__INTAKE_OUTPUT_SECTION_TEMPLATE_ID = 121;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Supply Activity Template Id' of 'Supply Entry'.
@@ -1049,7 +1097,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUPPLY_ENTRY__SUPPLY_ACTIVITY_TEMPLATE_ID = 116;
+	public static final int SUPPLY_ENTRY__SUPPLY_ACTIVITY_TEMPLATE_ID = 122;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy History Section Template Id' of 'Pregnancy History Section'.
@@ -1057,7 +1105,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_HISTORY_SECTION__PREGNANCY_HISTORY_SECTION_TEMPLATE_ID = 117;
+	public static final int PREGNANCY_HISTORY_SECTION__PREGNANCY_HISTORY_SECTION_TEMPLATE_ID = 123;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy History Section Code' of 'Pregnancy History Section'.
@@ -1065,7 +1113,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_HISTORY_SECTION__PREGNANCY_HISTORY_SECTION_CODE = 118;
+	public static final int PREGNANCY_HISTORY_SECTION__PREGNANCY_HISTORY_SECTION_CODE = 124;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy History Section Pregnancy Observation' of 'Pregnancy History Section'.
@@ -1073,7 +1121,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_HISTORY_SECTION__PREGNANCY_HISTORY_SECTION_PREGNANCY_OBSERVATION = 119;
+	public static final int PREGNANCY_HISTORY_SECTION__PREGNANCY_HISTORY_SECTION_PREGNANCY_OBSERVATION = 125;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy Observation Code' of 'Pregnancy Observation'.
@@ -1081,7 +1129,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_CODE = 120;
+	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_CODE = 126;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy Observation Interpretation Code' of 'Pregnancy Observation'.
@@ -1089,7 +1137,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_INTERPRETATION_CODE = 121;
+	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_INTERPRETATION_CODE = 127;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy Observation Method Code' of 'Pregnancy Observation'.
@@ -1097,7 +1145,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_METHOD_CODE = 122;
+	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_METHOD_CODE = 128;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy Observation Repeat Number' of 'Pregnancy Observation'.
@@ -1105,7 +1153,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_REPEAT_NUMBER = 123;
+	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_REPEAT_NUMBER = 129;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy Observation Target Site Code' of 'Pregnancy Observation'.
@@ -1113,7 +1161,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_TARGET_SITE_CODE = 124;
+	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_TARGET_SITE_CODE = 130;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Pregnancy Observation Value' of 'Pregnancy Observation'.
@@ -1121,7 +1169,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_VALUE = 125;
+	public static final int PREGNANCY_OBSERVATION__PREGNANCY_OBSERVATION_VALUE = 131;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Template Id' of 'Pregnancy Observation'.
@@ -1129,7 +1177,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PREGNANCY_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID = 126;
+	public static final int PREGNANCY_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID = 132;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Guardian Template Id' of 'Patient Contact Guardian'.
@@ -1137,7 +1185,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_TEMPLATE_ID = 127;
+	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_TEMPLATE_ID = 133;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Guardian Addr' of 'Patient Contact Guardian'.
@@ -1145,7 +1193,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_ADDR = 128;
+	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_ADDR = 134;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Guardian Class Code' of 'Patient Contact Guardian'.
@@ -1153,7 +1201,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_CLASS_CODE = 129;
+	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_CLASS_CODE = 135;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Guardian Code' of 'Patient Contact Guardian'.
@@ -1161,7 +1209,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_CODE = 130;
+	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_CODE = 136;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Guardian Telecom' of 'Patient Contact Guardian'.
@@ -1169,7 +1217,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_TELECOM = 131;
+	public static final int PATIENT_CONTACT_GUARDIAN__PATIENT_CONTACT_GUARDIAN_TELECOM = 137;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Participant Template Id' of 'Patient Contact Participant'.
@@ -1177,7 +1225,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_PARTICIPANT__PATIENT_CONTACT_PARTICIPANT_TEMPLATE_ID = 132;
+	public static final int PATIENT_CONTACT_PARTICIPANT__PATIENT_CONTACT_PARTICIPANT_TEMPLATE_ID = 138;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Participant Time' of 'Patient Contact Participant'.
@@ -1185,7 +1233,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_PARTICIPANT__PATIENT_CONTACT_PARTICIPANT_TIME = 133;
+	public static final int PATIENT_CONTACT_PARTICIPANT__PATIENT_CONTACT_PARTICIPANT_TIME = 139;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Contact Participant Type Code' of 'Patient Contact Participant'.
@@ -1193,7 +1241,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_CONTACT_PARTICIPANT__PATIENT_CONTACT_PARTICIPANT_TYPE_CODE = 134;
+	public static final int PATIENT_CONTACT_PARTICIPANT__PATIENT_CONTACT_PARTICIPANT_TYPE_CODE = 140;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -1201,7 +1249,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 134;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 140;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1778,8 +1826,23 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationConsumableName(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationApproachSiteCode(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationDoseQuantity(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRateQuantity(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRouteCode(medication, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validateMedicationConsumableName constraint of '<em>Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedication_validateMedicationConsumableName(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medication.validateMedicationConsumableName(diagnostics, context);
 	}
 
 	/**
@@ -1790,6 +1853,46 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateMedication_validateMedicationTemplateId(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return medication.validateMedicationTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicationApproachSiteCode constraint of '<em>Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedication_validateMedicationApproachSiteCode(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medication.validateMedicationApproachSiteCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicationDoseQuantity constraint of '<em>Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedication_validateMedicationDoseQuantity(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medication.validateMedicationDoseQuantity(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicationRateQuantity constraint of '<em>Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedication_validateMedicationRateQuantity(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medication.validateMedicationRateQuantity(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicationRouteCode constraint of '<em>Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedication_validateMedicationRouteCode(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medication.validateMedicationRouteCode(diagnostics, context);
 	}
 
 	/**
@@ -1981,7 +2084,12 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(normalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(normalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationConsumableName(normalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationApproachSiteCode(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationDoseQuantity(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRateQuantity(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRouteCode(normalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNormalDose_validateNormalDoseTemplateId(normalDose, diagnostics, context);
 		return result;
 	}
@@ -2026,7 +2134,12 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationConsumableName(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationApproachSiteCode(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationDoseQuantity(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRateQuantity(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRouteCode(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTaperedDose_validateTaperedDoseTemplateId(taperedDose, diagnostics, context);
 		return result;
 	}
@@ -2071,7 +2184,12 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(splitDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(splitDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationConsumableName(splitDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationApproachSiteCode(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationDoseQuantity(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRateQuantity(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRouteCode(splitDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSplitDose_validateSplitDoseTemplateId(splitDose, diagnostics, context);
 		return result;
 	}
@@ -2116,7 +2234,12 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(conditionalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(conditionalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationConsumableName(conditionalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationApproachSiteCode(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationDoseQuantity(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRateQuantity(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRouteCode(conditionalDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConditionalDose_validateConditionalDoseTemplateId(conditionalDose, diagnostics, context);
 		return result;
 	}
@@ -2161,7 +2284,12 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationConsumableName(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationApproachSiteCode(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationDoseQuantity(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRateQuantity(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationRouteCode(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCombinationMedication_validateCombinationMedicationTemplateId(combinationMedication, diagnostics, context);
 		return result;
 	}
@@ -2284,10 +2412,10 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateSimpleObservation_validateSimpleObservationId(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSimpleObservation_validateSimpleObservationStatusCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationTemplateId(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationValue(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationInterpretationCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationMethodCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationTargetSiteCode(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationValue(vitalSignObservation, diagnostics, context);
 		return result;
 	}
 
@@ -2444,6 +2572,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerResultObservation(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsOrganizer_validateVitalSignsOrganizerInformationSource(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerClassCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerEffectiveTime(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerVitalSignObservation(vitalSignsOrganizer, diagnostics, context);
 		return result;
@@ -2457,6 +2586,16 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerTemplateId(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateIHEVitalSignsOrganizerClassCode constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerClassCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerClassCode(diagnostics, context);
 	}
 
 	/**

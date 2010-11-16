@@ -111,9 +111,29 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//Medication">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//Medication/MedicationConsumableName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationConsumableName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationConsumableName/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//Medication/MedicationTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//Medication/MedicationApproachSiteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationApproachSiteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationApproachSiteCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//Medication/MedicationDoseQuantity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationDoseQuantity/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationDoseQuantity/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//Medication/MedicationRateQuantity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationRateQuantity/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationRateQuantity/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//Medication/MedicationRouteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationRouteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Medication/MedicationRouteCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//MedicationsSection">
@@ -197,6 +217,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerTemplateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerClassCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerEffectiveTime">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerEffectiveTime/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerEffectiveTime/context"/>
@@ -212,10 +236,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignObservation/VitalSignObservationValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationValue/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignObservation/VitalSignObservationInterpretationCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationInterpretationCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationInterpretationCode/context"/>
@@ -227,6 +247,10 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignObservation/VitalSignObservationTargetSiteCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationTargetSiteCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationTargetSiteCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignObservation/VitalSignObservationValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationValue/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ihe.ecore#//SimpleObservation">

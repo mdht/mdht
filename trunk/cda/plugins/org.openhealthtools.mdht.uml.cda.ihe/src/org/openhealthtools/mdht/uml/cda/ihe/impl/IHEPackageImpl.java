@@ -1775,7 +1775,52 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		initEClass(medicationEClass, Medication.class, "Medication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(medicationEClass, ecorePackage.getEBoolean(), "validateMedicationConsumableName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(medicationEClass, ecorePackage.getEBoolean(), "validateMedicationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(medicationEClass, ecorePackage.getEBoolean(), "validateMedicationApproachSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(medicationEClass, ecorePackage.getEBoolean(), "validateMedicationDoseQuantity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(medicationEClass, ecorePackage.getEBoolean(), "validateMedicationRateQuantity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(medicationEClass, ecorePackage.getEBoolean(), "validateMedicationRouteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1938,6 +1983,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateIHEVitalSignsOrganizerClassCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateIHEVitalSignsOrganizerEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -1969,15 +2023,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vitalSignObservationEClass, ecorePackage.getEBoolean(), "validateVitalSignObservationValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(vitalSignObservationEClass, ecorePackage.getEBoolean(), "validateVitalSignObservationInterpretationCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -1997,6 +2042,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(vitalSignObservationEClass, ecorePackage.getEBoolean(), "validateVitalSignObservationTargetSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignObservationEClass, ecorePackage.getEBoolean(), "validateVitalSignObservationValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2996,8 +3050,10 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7",
-			 "constraints.validation.error", "MedicationTemplateId"
-		   });							
+			 "constraints.validation.error", "MedicationTemplateId MedicationConsumableName",
+			 "constraints.validation.warning", "MedicationDoseQuantity MedicationRateQuantity MedicationRouteCode",
+			 "constraints.validation.info", "MedicationApproachSiteCode"
+		   });																											
 		addAnnotation
 		  (medicationsSectionEClass, 
 		   source, 
@@ -3083,10 +3139,11 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.96",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13.1",
 			 "code.displayName", "Vital signs",
-			 "constraints.validation.error", "IHEVitalSignsOrganizerTemplateId ResultOrganizerCode ResultOrganizerStatusCode IHEVitalSignsOrganizerEffectiveTime IHEVitalSignsOrganizerVitalSignObservation",
+			 "constraints.validation.error", "IHEVitalSignsOrganizerTemplateId IHEVitalSignsOrganizerClassCode ResultOrganizerCode IHEVitalSignsOrganizerEffectiveTime ResultOrganizerStatusCode IHEVitalSignsOrganizerVitalSignObservation",
 			 "code.codeSystemName", "SNOMEDCT",
+			 "classCode", "CLUSTER",
 			 "code.code", "46680005"
-		   });																	
+		   });																					
 		addAnnotation
 		  (vitalSignObservationEClass, 
 		   source, 
@@ -3532,7 +3589,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Problem Concern Entry", null
-		   });																																													
+		   });																																																																	
 		addAnnotation
 		  (allergyIntoleranceConcernEClass, 
 		   source, 
@@ -3550,7 +3607,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
 	}
 
 	/**
@@ -3560,12 +3617,12 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																																																																					
+		String source = "duplicates";																																																																																																																																																																																									
 		addAnnotation
 		  (vitalSignsOrganizerEClass, 
 		   source, 
 		   new String[] {
-		   });																	
+		   });																					
 		addAnnotation
 		  (vitalSignObservationEClass, 
 		   source, 

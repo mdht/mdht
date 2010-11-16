@@ -46,6 +46,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Medication/HITSPMedicationEffectiveTime/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Medication/HITSPMedicationEffectiveTime/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Medication/HITSPMedicationRouteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Medication/HITSPMedicationRouteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Medication/HITSPMedicationRouteCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//Condition">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/ConditionTemplateId">
