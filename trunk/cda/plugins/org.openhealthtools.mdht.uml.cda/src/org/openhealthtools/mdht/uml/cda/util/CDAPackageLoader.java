@@ -13,7 +13,10 @@
 package org.openhealthtools.mdht.uml.cda.util;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.StringTokenizer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -62,7 +65,9 @@ public class CDAPackageLoader {
 			StringTokenizer st = new StringTokenizer(JAVA_CLASSPATH, PATH_SEPARATOR);
 
 			while (st.hasMoreTokens()) {
+
 				String path = st.nextToken();
+
 				if (path.endsWith(".jar") || (path.endsWith(".zip"))) {
 					try {
 						processModelPlugin(new ZipFile(path));
@@ -71,6 +76,18 @@ public class CDAPackageLoader {
 						// If there is an issue loading the plugin jar - we let
 						// normal processing continue
 					}
+				} else if (path.endsWith("/bin"))
+				{
+					
+					String pluginPath = path.replaceAll("/bin", "/plugin.xml");
+
+					try {
+						FileInputStream pluginInputSteam = new FileInputStream(pluginPath);
+						processPluginXML(pluginInputSteam);
+					} catch (Exception e) {
+					
+					}
+					
 				}
 			}
 			packagesLoaded = true;
@@ -117,43 +134,48 @@ public class CDAPackageLoader {
 		// if it has a plugin xml
 		if (pluginEntry != null) {
 
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			processPluginXML(zipFile.getInputStream(pluginEntry));
+			
+		}
+	}
 	
-			factory.setNamespaceAware(true);
-			
-			DocumentBuilder builder;
-			
-			Document doc = null;
-			
-			XPathExpression expr = null;
-			
-			builder = factory.newDocumentBuilder();
-			
-			doc = builder.parse(new InputSource(zipFile.getInputStream(pluginEntry)));
+	private static void processPluginXML(InputStream pluginStream) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException, NoSuchFieldException
+	{
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		
+		factory.setNamespaceAware(true);
+		
+		DocumentBuilder builder;
+		
+		Document doc = null;
+		
+		XPathExpression expr = null;
+		
+		builder = factory.newDocumentBuilder();
+		
+		doc = builder.parse(new InputSource(pluginStream)); //zipFile.getInputStream(pluginEntry)));
 
-			XPathFactory xFactory = XPathFactory.newInstance();
-			
-			XPath xpath = xFactory.newXPath();
+		XPathFactory xFactory = XPathFactory.newInstance();
+		
+		XPath xpath = xFactory.newXPath();
 
-			expr = xpath.compile("//plugin/extension[@point='org.eclipse.emf.ecore.generated_package']/package");
+		expr = xpath.compile("//plugin/extension[@point='org.eclipse.emf.ecore.generated_package']/package");
 
-			Object result = expr.evaluate(doc, XPathConstants.NODESET);
+		Object result = expr.evaluate(doc, XPathConstants.NODESET);
 
-			NodeList nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
+		NodeList nodes = (NodeList) result;
+		for (int i = 0; i < nodes.getLength(); i++) {
 
-				String packageClass = nodes.item(i).getAttributes().getNamedItem("class").getNodeValue();
+			String packageClass = nodes.item(i).getAttributes().getNamedItem("class").getNodeValue();
 
-				// initializes the CDA package
-				System.out.println("Create " + packageClass);
-				if (packageClass != null) {
-					Class<?> c = Class.forName(packageClass);
-					c.getDeclaredField("eINSTANCE");
-				}
-
+			// initializes the CDA package
+			if (packageClass != null) {
+				Class<?> c = Class.forName(packageClass);
+				c.getDeclaredField("eINSTANCE");
 			}
 
 		}
 	}
+	
 
 }
