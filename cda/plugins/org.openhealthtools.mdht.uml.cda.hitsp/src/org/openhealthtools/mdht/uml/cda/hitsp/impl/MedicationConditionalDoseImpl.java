@@ -68,6 +68,15 @@ public class MedicationConditionalDoseImpl extends ConditionalDoseImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateHITSPMedicationRouteCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationOperations.validateHITSPMedicationRouteCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MedicationConditionalDose init() {
     		CDAUtil.init(this);
     		return this;
