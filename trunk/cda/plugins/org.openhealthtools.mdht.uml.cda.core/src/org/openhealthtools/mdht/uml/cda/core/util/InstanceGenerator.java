@@ -530,7 +530,9 @@ public class InstanceGenerator {
 							}
 						}
 					}
-				} catch (Exception e) {}
+				}
+				catch (java.lang.NoClassDefFoundError e1) {}
+				catch (Exception e2) {}
 			}
 		}
 
