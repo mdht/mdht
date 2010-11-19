@@ -9859,6 +9859,295 @@ public interface HITSPPackage extends EPackage {
 	int SUPPORT_PARTICIPANT_FEATURE_COUNT = IHEPackage.PATIENT_CONTACT_PARTICIPANT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.UnstructuredDocumentImpl <em>Unstructured Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.UnstructuredDocumentImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getUnstructuredDocument()
+	 * @generated
+	 */
+	int UNSTRUCTURED_DOCUMENT = 50;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__REALM_CODE = IHEPackage.MEDICAL_DOCUMENT__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__TYPE_ID = IHEPackage.MEDICAL_DOCUMENT__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__TEMPLATE_ID = IHEPackage.MEDICAL_DOCUMENT__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__ID = IHEPackage.MEDICAL_DOCUMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__CODE = IHEPackage.MEDICAL_DOCUMENT__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__TITLE = IHEPackage.MEDICAL_DOCUMENT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__EFFECTIVE_TIME = IHEPackage.MEDICAL_DOCUMENT__EFFECTIVE_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__CONFIDENTIALITY_CODE = IHEPackage.MEDICAL_DOCUMENT__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__LANGUAGE_CODE = IHEPackage.MEDICAL_DOCUMENT__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__SET_ID = IHEPackage.MEDICAL_DOCUMENT__SET_ID;
+
+	/**
+	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__VERSION_NUMBER = IHEPackage.MEDICAL_DOCUMENT__VERSION_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__COPY_TIME = IHEPackage.MEDICAL_DOCUMENT__COPY_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__RECORD_TARGET = IHEPackage.MEDICAL_DOCUMENT__RECORD_TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__AUTHOR = IHEPackage.MEDICAL_DOCUMENT__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__DATA_ENTERER = IHEPackage.MEDICAL_DOCUMENT__DATA_ENTERER;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__INFORMANT = IHEPackage.MEDICAL_DOCUMENT__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__CUSTODIAN = IHEPackage.MEDICAL_DOCUMENT__CUSTODIAN;
+
+	/**
+	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__INFORMATION_RECIPIENT = IHEPackage.MEDICAL_DOCUMENT__INFORMATION_RECIPIENT;
+
+	/**
+	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__LEGAL_AUTHENTICATOR = IHEPackage.MEDICAL_DOCUMENT__LEGAL_AUTHENTICATOR;
+
+	/**
+	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__AUTHENTICATOR = IHEPackage.MEDICAL_DOCUMENT__AUTHENTICATOR;
+
+	/**
+	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__PARTICIPANT = IHEPackage.MEDICAL_DOCUMENT__PARTICIPANT;
+
+	/**
+	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__IN_FULFILLMENT_OF = IHEPackage.MEDICAL_DOCUMENT__IN_FULFILLMENT_OF;
+
+	/**
+	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__DOCUMENTATION_OF = IHEPackage.MEDICAL_DOCUMENT__DOCUMENTATION_OF;
+
+	/**
+	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__RELATED_DOCUMENT = IHEPackage.MEDICAL_DOCUMENT__RELATED_DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__AUTHORIZATION = IHEPackage.MEDICAL_DOCUMENT__AUTHORIZATION;
+
+	/**
+	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__COMPONENT_OF = IHEPackage.MEDICAL_DOCUMENT__COMPONENT_OF;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__COMPONENT = IHEPackage.MEDICAL_DOCUMENT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__NULL_FLAVOR = IHEPackage.MEDICAL_DOCUMENT__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__CLASS_CODE = IHEPackage.MEDICAL_DOCUMENT__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT__MOOD_CODE = IHEPackage.MEDICAL_DOCUMENT__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Unstructured Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSTRUCTURED_DOCUMENT_FEATURE_COUNT = IHEPackage.MEDICAL_DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPRegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9866,7 +10155,7 @@ public interface HITSPPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getHITSPRegistryDelegate()
 	 * @generated
 	 */
-	int HITSP_REGISTRY_DELEGATE = 50;
+	int HITSP_REGISTRY_DELEGATE = 51;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -10357,6 +10646,16 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSupportParticipant();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument <em>Unstructured Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unstructured Document</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument
+	 * @generated
+	 */
+	EClass getUnstructuredDocument();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.Encounter <em>Encounter</em>}'.
@@ -10889,6 +11188,16 @@ public interface HITSPPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SUPPORT_PARTICIPANT = eINSTANCE.getSupportParticipant();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.UnstructuredDocumentImpl <em>Unstructured Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.UnstructuredDocumentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getUnstructuredDocument()
+		 * @generated
+		 */
+		EClass UNSTRUCTURED_DOCUMENT = eINSTANCE.getUnstructuredDocument();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.EncounterImpl <em>Encounter</em>}' class.

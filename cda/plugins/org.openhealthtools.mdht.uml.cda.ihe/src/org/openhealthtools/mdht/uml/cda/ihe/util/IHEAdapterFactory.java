@@ -115,6 +115,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -468,6 +469,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePatientContactParticipant(PatientContactParticipant object) {
 				return createPatientContactParticipantAdapter();
+			}
+			@Override
+			public Adapter caseScannedDocument(ScannedDocument object) {
+				return createScannedDocumentAdapter();
 			}
 			@Override
 			public Adapter caseIHERegistryDelegate(IHERegistryDelegate object) {
@@ -1700,6 +1705,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPatientContactParticipantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument <em>Scanned Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument
+	 * @generated
+	 */
+	public Adapter createScannedDocumentAdapter() {
 		return null;
 	}
 

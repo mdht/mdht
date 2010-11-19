@@ -429,6 +429,16 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//SupportParticipant/HITSPSupportParticipantTemplateId/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//UnstructuredDocument">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentNoStructuredData">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentNoStructuredData/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentNoStructuredData/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentOnePatientPerDocument">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentOnePatientPerDocument/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentOnePatientPerDocument/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//HITSPRegistryDelegate"/>
   </genPackages>
 </genmodel:GenModel>

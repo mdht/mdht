@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryAllergyConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Allergy Concern Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryMedications(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Medications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -276,26 +276,26 @@ public class MedicalSummaryOperations extends MedicalDocumentOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateMedicalSummaryCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateGeneralHeaderConstraintsCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateMedicalSummaryCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateGeneralHeaderConstraintsCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
+	protected static final String VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in ("+
 "value.codeSystem = '2.16.840.1.113883.6.1')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateMedicalSummaryCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateGeneralHeaderConstraintsCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateMedicalSummaryCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateGeneralHeaderConstraintsCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,25 +310,25 @@ public class MedicalSummaryOperations extends MedicalDocumentOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateMedicalSummaryCode(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateGeneralHeaderConstraintsCode(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.MEDICAL_SUMMARY);
 			try {
-				VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_MEDICAL_SUMMARY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalSummary)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalSummary)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
-						 IHEValidator.MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE,
-						 IHEPlugin.INSTANCE.getString("MedicalSummaryCode"),
+						 IHEValidator.MEDICAL_SUMMARY__GENERAL_HEADER_CONSTRAINTS_CODE,
+						 IHEPlugin.INSTANCE.getString("GeneralHeaderConstraintsCode"),
 						 new Object [] { medicalSummary }));
 			}
 			return false;

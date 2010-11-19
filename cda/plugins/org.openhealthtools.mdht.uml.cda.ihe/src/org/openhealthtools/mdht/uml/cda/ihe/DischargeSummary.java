@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getDischargeSummary()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.4' constraints.validation.error='DischargeSummaryTemplateId MedicalSummaryCode DischargeSummaryActiveProblemsSection' code.codeSystemName='LOINC'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.4' constraints.validation.error='DischargeSummaryTemplateId GeneralHeaderConstraintsCode DischargeSummaryActiveProblemsSection' code.codeSystemName='LOINC'"
  * @generated
  */
 public interface DischargeSummary extends MedicalSummary {

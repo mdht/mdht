@@ -818,6 +818,30 @@ If the problem is known to be resolved, but the date of resolution is not known,
     <packagedElement xmi:type="uml:Association" xmi:id="_b8Z1se3yEd-dJvThfIiQuA" memberEnd="_b8ZOoO3yEd-dJvThfIiQuA _b8acwO3yEd-dJvThfIiQuA">
       <ownedEnd xmi:id="_b8acwO3yEd-dJvThfIiQuA" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_b8Z1se3yEd-dJvThfIiQuA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__8-JUPG1Ed-FxO0PukiqhA" name="UnstructuredDocument">
+      <ownedRule xmi:id="_8u1IUPM0Ed-FxO0PukiqhA" name="noStructuredData" constrainedElement="__8-JUPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_98cK8PM0Ed-FxO0PukiqhA">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>This construct should not be used when the data are structured.</body>
+          <body>self.getSections()->isEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_EbnN0PM1Ed-FxO0PukiqhA" name="onePatientPerDocument" constrainedElement="__8-JUPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_JhDdoPM1Ed-FxO0PukiqhA">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Each document pertains to one and only one patient.</body>
+          <body>self.recordTarget->one(record : cda::RecordTarget | not record.patientRole.oclIsUndefined() and not record.patientRole.patient.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="__8-JUfG1Ed-FxO0PukiqhA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_g76sEPG1Ed-FxO0PukiqhA"/>
+      </generalization>
+      <generalization xmi:id="_CcbOUPG2Ed-FxO0PukiqhA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wDMM0GEHEd6bFO5yxRh3Nw"/>
+      </generalization>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -965,7 +989,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
     <ruleId>C83-[DE-8-CDA-2]</ruleId>
   </CDA:ConformsTo>
   <CDA:ConformsTo xmi:id="_rGJ9gFF6Ed-Lud-5SYZhMw" base_Generalization="_0EOJQKRmEd6t_4WfM070fA" requiresParentId="true"/>
-  <CDA:ConformsTo xmi:id="_rGJ9gVF6Ed-Lud-5SYZhMw" base_Generalization="_na8Y0EmfEd-v4PAJSUtbvQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGJ9gVF6Ed-Lud-5SYZhMw" base_Generalization="_na8Y0EmfEd-v4PAJSUtbvQ"/>
   <CDA:ConformsTo xmi:id="_rGKkkFF6Ed-Lud-5SYZhMw" base_Generalization="_VeaIMK7HEd6_ioDelDcPPg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGLLoFF6Ed-Lud-5SYZhMw" base_Generalization="_g9_UcK7IEd6_ioDelDcPPg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGLysFF6Ed-Lud-5SYZhMw" base_Generalization="_1sbqcMfXEd6VjLXh4DcWSg" requiresParentId="true"/>
@@ -1091,4 +1115,6 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:PropertyValidation xmi:id="_4GWBMO7JEd-iKq5sSX9U2w" severity="WARNING"/>
   <CDA:PropertyValidation xmi:id="_-h_2AO7JEd-iKq5sSX9U2w" severity="WARNING"/>
   <CDA:ConstraintValidation xmi:id="_VlY5IO7KEd-iKq5sSX9U2w"/>
+  <CDA:ConstraintValidation xmi:id="_CTiuEPM1Ed-FxO0PukiqhA" severity="WARNING" base_Constraint="_8u1IUPM0Ed-FxO0PukiqhA"/>
+  <CDA:ConstraintValidation xmi:id="_FTuhkPM1Ed-FxO0PukiqhA" base_Constraint="_EbnN0PM1Ed-FxO0PukiqhA"/>
 </xmi:XMI>

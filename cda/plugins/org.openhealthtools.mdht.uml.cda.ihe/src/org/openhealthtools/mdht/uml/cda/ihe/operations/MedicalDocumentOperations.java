@@ -20,11 +20,11 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.openhealthtools.mdht.uml.cda.cdt.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
-import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
  *
  * @generated
  */
-public class MedicalDocumentOperations extends ClinicalDocumentOperations {
+public class MedicalDocumentOperations extends GeneralHeaderConstraintsOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

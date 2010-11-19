@@ -86,6 +86,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -900,12 +901,12 @@ public class IHEValidator extends EObjectValidator {
 	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_TEMPLATE_ID = 99;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Medical Summary'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'Medical Summary'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE = 100;
+	public static final int MEDICAL_SUMMARY__GENERAL_HEADER_CONSTRAINTS_CODE = 100;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Template Id' of 'Discharge Summary'.
@@ -924,12 +925,12 @@ public class IHEValidator extends EObjectValidator {
 	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 102;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Discharge Summary'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'Discharge Summary'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__MEDICAL_SUMMARY_CODE = 103;
+	public static final int DISCHARGE_SUMMARY__GENERAL_HEADER_CONSTRAINTS_CODE = 103;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Entry Template Id' of 'Coverage Entry'.
@@ -1244,12 +1245,100 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PATIENT_CONTACT_PARTICIPANT__PATIENT_CONTACT_PARTICIPANT_TYPE_CODE = 140;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Type Id Extension' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TYPE_ID_EXTENSION = 141;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document One Or Two Record Target' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_ONE_OR_TWO_RECORD_TARGET = 142;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Has Assigned Author' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_HAS_ASSIGNED_AUTHOR = 143;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Template Id' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TEMPLATE_ID = 144;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Code' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_CODE = 145;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Confidentiality Code' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_CONFIDENTIALITY_CODE = 146;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Effective Time' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_EFFECTIVE_TIME = 147;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Id' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_ID = 148;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Language Code' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_LANGUAGE_CODE = 149;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Title' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TITLE = 150;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Type Id' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TYPE_ID = 151;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 140;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 151;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1458,6 +1547,8 @@ public class IHEValidator extends EObjectValidator {
 				return validatePatientContactGuardian((PatientContactGuardian)value, diagnostics, context);
 			case IHEPackage.PATIENT_CONTACT_PARTICIPANT:
 				return validatePatientContactParticipant((PatientContactParticipant)value, diagnostics, context);
+			case IHEPackage.SCANNED_DOCUMENT:
+				return validateScannedDocument((ScannedDocument)value, diagnostics, context);
 			case IHEPackage.IHE_REGISTRY_DELEGATE:
 				return validateIHERegistryDelegate((IHERegistryDelegate)value, diagnostics, context);
 			default:
@@ -3677,7 +3768,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(medicalSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(medicalSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(medicalSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateGeneralHeaderConstraintsCode(medicalSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsConfidentialityCode(medicalSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(medicalSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsId(medicalSummary, diagnostics, context);
@@ -3690,7 +3781,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(medicalSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryMedications(medicalSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryTemplateId(medicalSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryCode(medicalSummary, diagnostics, context);
 		return result;
 	}
 
@@ -3735,13 +3825,32 @@ public class IHEValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateMedicalSummaryCode constraint of '<em>Medical Summary</em>'.
+	 * Validates the validateGeneralHeaderConstraintsCode constraint of '<em>Medical Summary</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicalSummary_validateMedicalSummaryCode(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicalSummary.validateMedicalSummaryCode(diagnostics, context);
+	public boolean validateMedicalSummary_validateGeneralHeaderConstraintsCode(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateGeneralHeaderConstraintsCode", getObjectLabel(medicalSummary, context) },
+						 new Object[] { medicalSummary },
+						 context));
+			}
+			return false;
+		}
+		return cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(medicalSummary, diagnostics, context);
 	}
 
 	/**
@@ -3763,7 +3872,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(dischargeSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeSummary_validateGeneralHeaderConstraintsCode(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsConfidentialityCode(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsId(dischargeSummary, diagnostics, context);
@@ -3776,7 +3885,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryMedications(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryTemplateId(dischargeSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDischargeSummary_validateMedicalSummaryCode(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryTemplateId(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryActiveProblemsSection(dischargeSummary, diagnostics, context);
 		return result;
@@ -3803,12 +3911,12 @@ public class IHEValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateMedicalSummaryCode constraint of '<em>Discharge Summary</em>'.
+	 * Validates the validateGeneralHeaderConstraintsCode constraint of '<em>Discharge Summary</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDischargeSummary_validateMedicalSummaryCode(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDischargeSummary_validateGeneralHeaderConstraintsCode(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO override the constraint, if desired
 		// -> uncomment the scaffolding
 		// -> specify the condition that violates the constraint
@@ -3822,13 +3930,13 @@ public class IHEValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateMedicalSummaryCode", getObjectLabel(dischargeSummary, context) },
+						 new Object[] { "validateGeneralHeaderConstraintsCode", getObjectLabel(dischargeSummary, context) },
 						 new Object[] { dischargeSummary },
 						 context));
 			}
 			return false;
 		}
-		return validateMedicalSummary_validateMedicalSummaryCode(dischargeSummary, diagnostics, context);
+		return validateMedicalSummary_validateGeneralHeaderConstraintsCode(dischargeSummary, diagnostics, context);
 	}
 
 	/**
@@ -4235,7 +4343,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(phrExtract, diagnostics, context);
-		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(phrExtract, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateGeneralHeaderConstraintsCode(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsConfidentialityCode(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsId(phrExtract, diagnostics, context);
@@ -4248,7 +4356,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryMedications(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryTemplateId(phrExtract, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryCode(phrExtract, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePHRExtract_validatePHRExtractTemplateId(phrExtract, diagnostics, context);
 		return result;
 	}
@@ -4282,7 +4389,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(phrUpdate, diagnostics, context);
-		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(phrUpdate, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateGeneralHeaderConstraintsCode(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsConfidentialityCode(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsId(phrUpdate, diagnostics, context);
@@ -4295,7 +4402,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryMedications(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryTemplateId(phrUpdate, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryCode(phrUpdate, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePHRUpdate_validatePHRUpdateTemplateId(phrUpdate, diagnostics, context);
 		return result;
 	}
@@ -4814,6 +4920,144 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validatePatientContactParticipant_validatePatientContactParticipantTypeCode(PatientContactParticipant patientContactParticipant, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return patientContactParticipant.validatePatientContactParticipantTypeCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(scannedDocument, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentTypeIdExtension(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentOneOrTwoRecordTarget(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasAssignedAuthor(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentTemplateId(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentCode(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentConfidentialityCode(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentEffectiveTime(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentId(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentLanguageCode(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentTitle(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentTypeId(scannedDocument, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateScannedDocumentTypeIdExtension constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentTypeIdExtension(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentTypeIdExtension(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentOneOrTwoRecordTarget constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentOneOrTwoRecordTarget(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentOneOrTwoRecordTarget(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentHasAssignedAuthor constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentHasAssignedAuthor(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentHasAssignedAuthor(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentTemplateId constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentTemplateId(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentCode constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentCode(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentConfidentialityCode constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentConfidentialityCode(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentConfidentialityCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentEffectiveTime constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentEffectiveTime(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentEffectiveTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentId constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentId(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentLanguageCode constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentLanguageCode(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentLanguageCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentTitle constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentTitle(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentTitle(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentTypeId constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentTypeId(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentTypeId(diagnostics, context);
 	}
 
 	/**

@@ -81,6 +81,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Support;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportGuardian;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
@@ -109,6 +110,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
@@ -373,6 +375,10 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSupportParticipant(SupportParticipant object) {
 				return createSupportParticipantAdapter();
+			}
+			@Override
+			public Adapter caseUnstructuredDocument(UnstructuredDocument object) {
+				return createUnstructuredDocumentAdapter();
 			}
 			@Override
 			public Adapter caseHITSPRegistryDelegate(HITSPRegistryDelegate object) {
@@ -757,6 +763,10 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePatientContactParticipant(PatientContactParticipant object) {
 				return createPatientContactParticipantAdapter();
+			}
+			@Override
+			public Adapter caseScannedDocument(ScannedDocument object) {
+				return createScannedDocumentAdapter();
 			}
 			@Override
 			public Adapter caseRegistryDelegate(RegistryDelegate object) {
@@ -1479,6 +1489,20 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSupportParticipantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument <em>Unstructured Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument
+	 * @generated
+	 */
+	public Adapter createUnstructuredDocumentAdapter() {
 		return null;
 	}
 
@@ -2823,6 +2847,20 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPatientContactParticipantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument <em>Scanned Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument
+	 * @generated
+	 */
+	public Adapter createScannedDocumentAdapter() {
 		return null;
 	}
 
