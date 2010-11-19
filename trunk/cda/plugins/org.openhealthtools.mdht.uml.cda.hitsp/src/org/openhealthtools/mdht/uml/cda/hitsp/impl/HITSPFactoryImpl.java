@@ -62,6 +62,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Support;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportGuardian;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 
@@ -159,6 +160,7 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.SUPPORT: return createSupport();
 			case HITSPPackage.SUPPORT_GUARDIAN: return createSupportGuardian();
 			case HITSPPackage.SUPPORT_PARTICIPANT: return createSupportParticipant();
+			case HITSPPackage.UNSTRUCTURED_DOCUMENT: return createUnstructuredDocument();
 			case HITSPPackage.HITSP_REGISTRY_DELEGATE: return createHITSPRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -643,6 +645,16 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public SupportParticipant createSupportParticipant() {
 		SupportParticipantImpl supportParticipant = new SupportParticipantImpl();
 		return supportParticipant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnstructuredDocument createUnstructuredDocument() {
+		UnstructuredDocumentImpl unstructuredDocument = new UnstructuredDocumentImpl();
+		return unstructuredDocument;
 	}
 
 	/**

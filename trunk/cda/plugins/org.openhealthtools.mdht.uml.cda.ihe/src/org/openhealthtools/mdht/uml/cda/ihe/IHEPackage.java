@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -1430,7 +1431,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__REALM_CODE = CDAPackage.CLINICAL_DOCUMENT__REALM_CODE;
+	int MEDICAL_DOCUMENT__REALM_CODE = CDTPackage.GENERAL_HEADER_CONSTRAINTS__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1439,7 +1440,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__TYPE_ID = CDAPackage.CLINICAL_DOCUMENT__TYPE_ID;
+	int MEDICAL_DOCUMENT__TYPE_ID = CDTPackage.GENERAL_HEADER_CONSTRAINTS__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1448,7 +1449,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__TEMPLATE_ID = CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID;
+	int MEDICAL_DOCUMENT__TEMPLATE_ID = CDTPackage.GENERAL_HEADER_CONSTRAINTS__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -1457,7 +1458,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__ID = CDAPackage.CLINICAL_DOCUMENT__ID;
+	int MEDICAL_DOCUMENT__ID = CDTPackage.GENERAL_HEADER_CONSTRAINTS__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1466,7 +1467,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__CODE = CDAPackage.CLINICAL_DOCUMENT__CODE;
+	int MEDICAL_DOCUMENT__CODE = CDTPackage.GENERAL_HEADER_CONSTRAINTS__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -1475,7 +1476,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__TITLE = CDAPackage.CLINICAL_DOCUMENT__TITLE;
+	int MEDICAL_DOCUMENT__TITLE = CDTPackage.GENERAL_HEADER_CONSTRAINTS__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1484,7 +1485,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__EFFECTIVE_TIME = CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME;
+	int MEDICAL_DOCUMENT__EFFECTIVE_TIME = CDTPackage.GENERAL_HEADER_CONSTRAINTS__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -1493,7 +1494,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__CONFIDENTIALITY_CODE = CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE;
+	int MEDICAL_DOCUMENT__CONFIDENTIALITY_CODE = CDTPackage.GENERAL_HEADER_CONSTRAINTS__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -1502,7 +1503,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__LANGUAGE_CODE = CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE;
+	int MEDICAL_DOCUMENT__LANGUAGE_CODE = CDTPackage.GENERAL_HEADER_CONSTRAINTS__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -1511,7 +1512,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__SET_ID = CDAPackage.CLINICAL_DOCUMENT__SET_ID;
+	int MEDICAL_DOCUMENT__SET_ID = CDTPackage.GENERAL_HEADER_CONSTRAINTS__SET_ID;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -1520,7 +1521,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__VERSION_NUMBER = CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER;
+	int MEDICAL_DOCUMENT__VERSION_NUMBER = CDTPackage.GENERAL_HEADER_CONSTRAINTS__VERSION_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
@@ -1529,7 +1530,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__COPY_TIME = CDAPackage.CLINICAL_DOCUMENT__COPY_TIME;
+	int MEDICAL_DOCUMENT__COPY_TIME = CDTPackage.GENERAL_HEADER_CONSTRAINTS__COPY_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
@@ -1538,7 +1539,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__RECORD_TARGET = CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET;
+	int MEDICAL_DOCUMENT__RECORD_TARGET = CDTPackage.GENERAL_HEADER_CONSTRAINTS__RECORD_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1547,7 +1548,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__AUTHOR = CDAPackage.CLINICAL_DOCUMENT__AUTHOR;
+	int MEDICAL_DOCUMENT__AUTHOR = CDTPackage.GENERAL_HEADER_CONSTRAINTS__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
@@ -1556,7 +1557,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__DATA_ENTERER = CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER;
+	int MEDICAL_DOCUMENT__DATA_ENTERER = CDTPackage.GENERAL_HEADER_CONSTRAINTS__DATA_ENTERER;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1565,7 +1566,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__INFORMANT = CDAPackage.CLINICAL_DOCUMENT__INFORMANT;
+	int MEDICAL_DOCUMENT__INFORMANT = CDTPackage.GENERAL_HEADER_CONSTRAINTS__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
@@ -1574,7 +1575,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__CUSTODIAN = CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN;
+	int MEDICAL_DOCUMENT__CUSTODIAN = CDTPackage.GENERAL_HEADER_CONSTRAINTS__CUSTODIAN;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
@@ -1583,7 +1584,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__INFORMATION_RECIPIENT = CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT;
+	int MEDICAL_DOCUMENT__INFORMATION_RECIPIENT = CDTPackage.GENERAL_HEADER_CONSTRAINTS__INFORMATION_RECIPIENT;
 
 	/**
 	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -1592,7 +1593,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__LEGAL_AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR;
+	int MEDICAL_DOCUMENT__LEGAL_AUTHENTICATOR = CDTPackage.GENERAL_HEADER_CONSTRAINTS__LEGAL_AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
@@ -1601,7 +1602,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR;
+	int MEDICAL_DOCUMENT__AUTHENTICATOR = CDTPackage.GENERAL_HEADER_CONSTRAINTS__AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -1610,7 +1611,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__PARTICIPANT = CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT;
+	int MEDICAL_DOCUMENT__PARTICIPANT = CDTPackage.GENERAL_HEADER_CONSTRAINTS__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -1619,7 +1620,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__IN_FULFILLMENT_OF = CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF;
+	int MEDICAL_DOCUMENT__IN_FULFILLMENT_OF = CDTPackage.GENERAL_HEADER_CONSTRAINTS__IN_FULFILLMENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -1628,7 +1629,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__DOCUMENTATION_OF = CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF;
+	int MEDICAL_DOCUMENT__DOCUMENTATION_OF = CDTPackage.GENERAL_HEADER_CONSTRAINTS__DOCUMENTATION_OF;
 
 	/**
 	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
@@ -1637,7 +1638,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__RELATED_DOCUMENT = CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT;
+	int MEDICAL_DOCUMENT__RELATED_DOCUMENT = CDTPackage.GENERAL_HEADER_CONSTRAINTS__RELATED_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
@@ -1646,7 +1647,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__AUTHORIZATION = CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION;
+	int MEDICAL_DOCUMENT__AUTHORIZATION = CDTPackage.GENERAL_HEADER_CONSTRAINTS__AUTHORIZATION;
 
 	/**
 	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
@@ -1655,7 +1656,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__COMPONENT_OF = CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF;
+	int MEDICAL_DOCUMENT__COMPONENT_OF = CDTPackage.GENERAL_HEADER_CONSTRAINTS__COMPONENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -1664,7 +1665,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__COMPONENT = CDAPackage.CLINICAL_DOCUMENT__COMPONENT;
+	int MEDICAL_DOCUMENT__COMPONENT = CDTPackage.GENERAL_HEADER_CONSTRAINTS__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1673,7 +1674,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__NULL_FLAVOR = CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR;
+	int MEDICAL_DOCUMENT__NULL_FLAVOR = CDTPackage.GENERAL_HEADER_CONSTRAINTS__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1682,7 +1683,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__CLASS_CODE = CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE;
+	int MEDICAL_DOCUMENT__CLASS_CODE = CDTPackage.GENERAL_HEADER_CONSTRAINTS__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1691,7 +1692,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT__MOOD_CODE = CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE;
+	int MEDICAL_DOCUMENT__MOOD_CODE = CDTPackage.GENERAL_HEADER_CONSTRAINTS__MOOD_CODE;
 
 	/**
 	 * The number of structural features of the '<em>Medical Document</em>' class.
@@ -1700,7 +1701,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICAL_DOCUMENT_FEATURE_COUNT = CDAPackage.CLINICAL_DOCUMENT_FEATURE_COUNT + 0;
+	int MEDICAL_DOCUMENT_FEATURE_COUNT = CDTPackage.GENERAL_HEADER_CONSTRAINTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -14709,6 +14710,295 @@ public interface IHEPackage extends EPackage {
 	int PATIENT_CONTACT_PARTICIPANT_FEATURE_COUNT = CCDPackage.SUPPORT_PARTICIPANT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScannedDocumentImpl <em>Scanned Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScannedDocumentImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScannedDocument()
+	 * @generated
+	 */
+	int SCANNED_DOCUMENT = 71;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__REALM_CODE = CDAPackage.CLINICAL_DOCUMENT__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__TYPE_ID = CDAPackage.CLINICAL_DOCUMENT__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__TEMPLATE_ID = CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__ID = CDAPackage.CLINICAL_DOCUMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__CODE = CDAPackage.CLINICAL_DOCUMENT__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__TITLE = CDAPackage.CLINICAL_DOCUMENT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__EFFECTIVE_TIME = CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__CONFIDENTIALITY_CODE = CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__LANGUAGE_CODE = CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__SET_ID = CDAPackage.CLINICAL_DOCUMENT__SET_ID;
+
+	/**
+	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__VERSION_NUMBER = CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__COPY_TIME = CDAPackage.CLINICAL_DOCUMENT__COPY_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__RECORD_TARGET = CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__AUTHOR = CDAPackage.CLINICAL_DOCUMENT__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__DATA_ENTERER = CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__INFORMANT = CDAPackage.CLINICAL_DOCUMENT__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__CUSTODIAN = CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN;
+
+	/**
+	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__INFORMATION_RECIPIENT = CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT;
+
+	/**
+	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__LEGAL_AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR;
+
+	/**
+	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR;
+
+	/**
+	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__PARTICIPANT = CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT;
+
+	/**
+	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__IN_FULFILLMENT_OF = CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF;
+
+	/**
+	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__DOCUMENTATION_OF = CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF;
+
+	/**
+	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__RELATED_DOCUMENT = CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT;
+
+	/**
+	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__AUTHORIZATION = CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION;
+
+	/**
+	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__COMPONENT_OF = CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__COMPONENT = CDAPackage.CLINICAL_DOCUMENT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__NULL_FLAVOR = CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__CLASS_CODE = CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT__MOOD_CODE = CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Scanned Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNED_DOCUMENT_FEATURE_COUNT = CDAPackage.CLINICAL_DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14716,7 +15006,7 @@ public interface IHEPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getIHERegistryDelegate()
 	 * @generated
 	 */
-	int IHE_REGISTRY_DELEGATE = 71;
+	int IHE_REGISTRY_DELEGATE = 72;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -15437,6 +15727,16 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPatientContactParticipant();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument <em>Scanned Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scanned Document</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument
+	 * @generated
+	 */
+	EClass getScannedDocument();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate <em>Registry Delegate</em>}'.
@@ -16179,6 +16479,16 @@ public interface IHEPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PATIENT_CONTACT_PARTICIPANT = eINSTANCE.getPatientContactParticipant();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScannedDocumentImpl <em>Scanned Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScannedDocumentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScannedDocument()
+		 * @generated
+		 */
+		EClass SCANNED_DOCUMENT = eINSTANCE.getScannedDocument();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.

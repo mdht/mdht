@@ -66,6 +66,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Support;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportGuardian;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
@@ -642,6 +643,22 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int SUPPORT_PARTICIPANT__HITSP_SUPPORT_PARTICIPANT_TEMPLATE_ID = 73;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Unstructured Document No Structured Data' of 'Unstructured Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int UNSTRUCTURED_DOCUMENT__UNSTRUCTURED_DOCUMENT_NO_STRUCTURED_DATA = 74;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Unstructured Document One Patient Per Document' of 'Unstructured Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int UNSTRUCTURED_DOCUMENT__UNSTRUCTURED_DOCUMENT_ONE_PATIENT_PER_DOCUMENT = 75;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Encounter Template Id' of 'Encounter'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -687,7 +704,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 73;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 75;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -863,6 +880,8 @@ public class HITSPValidator extends EObjectValidator {
 				return validateSupportGuardian((SupportGuardian)value, diagnostics, context);
 			case HITSPPackage.SUPPORT_PARTICIPANT:
 				return validateSupportParticipant((SupportParticipant)value, diagnostics, context);
+			case HITSPPackage.UNSTRUCTURED_DOCUMENT:
+				return validateUnstructuredDocument((UnstructuredDocument)value, diagnostics, context);
 			case HITSPPackage.HITSP_REGISTRY_DELEGATE:
 				return validateHITSPRegistryDelegate((HITSPRegistryDelegate)value, diagnostics, context);
 			default:
@@ -2887,6 +2906,70 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateSupportParticipant_validateHITSPSupportParticipantTemplateId(SupportParticipant supportParticipant, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return supportParticipant.validateHITSPSupportParticipantTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUnstructuredDocument(UnstructuredDocument unstructuredDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(unstructuredDocument, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeIdExtension(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsConfidentialityCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLanguageCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRealmCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTitle(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedicalDocument_validateMedicalDocumentTemplateId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTypeIdExtension(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentOneOrTwoRecordTarget(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasAssignedAuthor(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentConfidentialityCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentEffectiveTime(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentLanguageCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTitle(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTypeId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUnstructuredDocument_validateUnstructuredDocumentNoStructuredData(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUnstructuredDocument_validateUnstructuredDocumentOnePatientPerDocument(unstructuredDocument, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateUnstructuredDocumentNoStructuredData constraint of '<em>Unstructured Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUnstructuredDocument_validateUnstructuredDocumentNoStructuredData(UnstructuredDocument unstructuredDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return unstructuredDocument.validateUnstructuredDocumentNoStructuredData(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateUnstructuredDocumentOnePatientPerDocument constraint of '<em>Unstructured Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUnstructuredDocument_validateUnstructuredDocumentOnePatientPerDocument(UnstructuredDocument unstructuredDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return unstructuredDocument.validateUnstructuredDocumentOnePatientPerDocument(diagnostics, context);
 	}
 
 	/**

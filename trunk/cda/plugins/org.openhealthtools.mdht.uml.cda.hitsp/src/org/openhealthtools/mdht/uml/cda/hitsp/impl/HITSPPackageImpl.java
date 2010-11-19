@@ -65,6 +65,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Support;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportGuardian;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
@@ -412,6 +413,13 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	private EClass supportParticipantEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unstructuredDocumentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -944,6 +952,15 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUnstructuredDocument() {
+		return unstructuredDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEncounter() {
 		return encounterEClass;
 	}
@@ -1094,6 +1111,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 
 		supportParticipantEClass = createEClass(SUPPORT_PARTICIPANT);
 
+		unstructuredDocumentEClass = createEClass(UNSTRUCTURED_DOCUMENT);
+
 		hitspRegistryDelegateEClass = createEClass(HITSP_REGISTRY_DELEGATE);
 	}
 
@@ -1189,6 +1208,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		supportGuardianEClass.getESuperTypes().add(this.getSupport());
 		supportParticipantEClass.getESuperTypes().add(theIHEPackage.getPatientContactParticipant());
 		supportParticipantEClass.getESuperTypes().add(this.getSupport());
+		unstructuredDocumentEClass.getESuperTypes().add(theIHEPackage.getMedicalDocument());
+		unstructuredDocumentEClass.getESuperTypes().add(theIHEPackage.getScannedDocument());
 		hitspRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -1971,6 +1992,26 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(unstructuredDocumentEClass, UnstructuredDocument.class, "UnstructuredDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(unstructuredDocumentEClass, ecorePackage.getEBoolean(), "validateUnstructuredDocumentNoStructuredData", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(unstructuredDocumentEClass, ecorePackage.getEBoolean(), "validateUnstructuredDocumentOnePatientPerDocument", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(hitspRegistryDelegateEClass, HITSPRegistryDelegate.class, "HITSPRegistryDelegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
@@ -2329,7 +2370,14 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.3.88.11.83.3",
 			 "constraints.validation.error", "HITSPSupportParticipantTemplateId"
-		   });				
+		   });						
+		addAnnotation
+		  (unstructuredDocumentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints.validation.error", "UnstructuredDocumentOnePatientPerDocument",
+			 "constraints.validation.warning", "UnstructuredDocumentNoStructuredData"
+		   });								
 	}
 
 	/**
@@ -2346,7 +2394,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																							
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																
 	}
 
 	/**
@@ -2366,7 +2414,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (medicationTaperedDoseEClass, 
 		   source, 
 		   new String[] {
-		   });																			
+		   });																												
 	}
 
 } //HITSPPackageImpl

@@ -80,6 +80,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
@@ -201,6 +202,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.PREGNANCY_OBSERVATION: return createPregnancyObservation();
 			case IHEPackage.PATIENT_CONTACT_GUARDIAN: return createPatientContactGuardian();
 			case IHEPackage.PATIENT_CONTACT_PARTICIPANT: return createPatientContactParticipant();
+			case IHEPackage.SCANNED_DOCUMENT: return createScannedDocument();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -885,6 +887,16 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public PatientContactParticipant createPatientContactParticipant() {
 		PatientContactParticipantImpl patientContactParticipant = new PatientContactParticipantImpl();
 		return patientContactParticipant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScannedDocument createScannedDocument() {
+		ScannedDocumentImpl scannedDocument = new ScannedDocumentImpl();
+		return scannedDocument;
 	}
 
 	/**

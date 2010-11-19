@@ -49,7 +49,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
-public class Main {
+public class TestPatientSummary {
 	public static final IVXB_TS TS_UNK = DatatypesFactory.eINSTANCE.createIVXB_TS();
 	
 	{

@@ -115,6 +115,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -938,6 +939,15 @@ public class IHESwitch<T> {
 				if (result == null) result = caseSupport(patientContactParticipant);
 				if (result == null) result = caseParticipation(patientContactParticipant);
 				if (result == null) result = caseInfrastructureRoot(patientContactParticipant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.SCANNED_DOCUMENT: {
+				ScannedDocument scannedDocument = (ScannedDocument)theEObject;
+				T result = caseScannedDocument(scannedDocument);
+				if (result == null) result = caseClinicalDocument(scannedDocument);
+				if (result == null) result = caseAct(scannedDocument);
+				if (result == null) result = caseInfrastructureRoot(scannedDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2014,6 +2024,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T casePatientContactParticipant(PatientContactParticipant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scanned Document</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScannedDocument(ScannedDocument object) {
 		return null;
 	}
 

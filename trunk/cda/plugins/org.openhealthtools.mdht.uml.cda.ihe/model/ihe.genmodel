@@ -524,10 +524,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicalSummary/MedicalSummaryTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicalSummary/MedicalSummaryTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicalSummary/MedicalSummaryCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicalSummary/MedicalSummaryCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicalSummary/MedicalSummaryCode/context"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//DischargeSummary">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//DischargeSummary/DischargeSummaryTemplateId">
@@ -700,6 +696,52 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTypeCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTypeCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//PatientContactParticipant/PatientContactParticipantTypeCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ScannedDocument">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentTypeIdExtension">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTypeIdExtension/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTypeIdExtension/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentOneOrTwoRecordTarget">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentOneOrTwoRecordTarget/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentOneOrTwoRecordTarget/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasAssignedAuthor">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasAssignedAuthor/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasAssignedAuthor/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentConfidentialityCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentConfidentialityCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentConfidentialityCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentEffectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentEffectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentEffectiveTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentLanguageCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentLanguageCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentLanguageCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTitle/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentTypeId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTypeId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTypeId/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//IHERegistryDelegate"/>

@@ -85,8 +85,9 @@ public class MedicalSummaryImpl extends MedicalDocumentImpl implements MedicalSu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicalSummaryCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicalSummaryOperations.validateMedicalSummaryCode(this, diagnostics, context);
+	@Override
+	public boolean validateGeneralHeaderConstraintsCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalSummaryOperations.validateGeneralHeaderConstraintsCode(this, diagnostics, context);
 	}
 
 	/**

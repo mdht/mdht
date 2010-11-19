@@ -644,6 +644,15 @@ public interface IHEFactory extends EFactory {
 	PatientContactParticipant createPatientContactParticipant();
 
 	/**
+	 * Returns a new object of class '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scanned Document</em>'.
+	 * @generated
+	 */
+	ScannedDocument createScannedDocument();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

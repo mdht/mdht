@@ -78,8 +78,8 @@ public class DischargeSummaryImpl extends MedicalSummaryImpl implements Discharg
 	 * @generated
 	 */
 	@Override
-	public boolean validateMedicalSummaryCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DischargeSummaryOperations.validateMedicalSummaryCode(this, diagnostics, context);
+	public boolean validateGeneralHeaderConstraintsCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DischargeSummaryOperations.validateGeneralHeaderConstraintsCode(this, diagnostics, context);
 	}
 
 	/**

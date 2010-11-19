@@ -81,6 +81,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Support;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportGuardian;
 import org.openhealthtools.mdht.uml.cda.hitsp.SupportParticipant;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
@@ -109,6 +110,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
@@ -752,6 +754,18 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseCCD_Support(supportParticipant);
 				if (result == null) result = caseParticipation(supportParticipant);
 				if (result == null) result = caseInfrastructureRoot(supportParticipant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.UNSTRUCTURED_DOCUMENT: {
+				UnstructuredDocument unstructuredDocument = (UnstructuredDocument)theEObject;
+				T result = caseUnstructuredDocument(unstructuredDocument);
+				if (result == null) result = caseMedicalDocument(unstructuredDocument);
+				if (result == null) result = caseScannedDocument(unstructuredDocument);
+				if (result == null) result = caseGeneralHeaderConstraints(unstructuredDocument);
+				if (result == null) result = caseClinicalDocument(unstructuredDocument);
+				if (result == null) result = caseAct(unstructuredDocument);
+				if (result == null) result = caseInfrastructureRoot(unstructuredDocument);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1513,6 +1527,21 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseSupportParticipant(SupportParticipant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unstructured Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unstructured Document</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUnstructuredDocument(UnstructuredDocument object) {
 		return null;
 	}
 
@@ -2953,6 +2982,21 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T casePatientContactParticipant(PatientContactParticipant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scanned Document</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScannedDocument(ScannedDocument object) {
 		return null;
 	}
 

@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 
 /**
@@ -28,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.1' constraints.validation.error='MedicalDocumentTemplateId'"
  * @generated
  */
-public interface MedicalDocument extends ClinicalDocument, GeneralHeaderConstraints {
+public interface MedicalDocument extends GeneralHeaderConstraints {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
