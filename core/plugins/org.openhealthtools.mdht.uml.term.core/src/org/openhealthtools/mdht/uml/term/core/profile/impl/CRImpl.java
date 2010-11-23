@@ -230,7 +230,7 @@ public class CRImpl extends EObjectImpl implements CR {
 			case TermPackage.CR__VALUE:
 				return getValue();
 			case TermPackage.CR__INVERTED:
-				return isInverted() ? Boolean.TRUE : Boolean.FALSE;
+				return isInverted();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,7 +250,7 @@ public class CRImpl extends EObjectImpl implements CR {
 				setValue((CD)newValue);
 				return;
 			case TermPackage.CR__INVERTED:
-				setInverted(((Boolean)newValue).booleanValue());
+				setInverted((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

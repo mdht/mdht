@@ -33,7 +33,7 @@ public class ValueSetConstraintUtil {
 				&& valueSetConstraint.getReference().getCodeSystem() != null) {
 			CodeSystemVersion codeSystem = valueSetConstraint.getReference().getCodeSystem();
 			String id = codeSystem.getIdentifier();
-			String name = codeSystem.getBase_Enumeration().getName();
+			String name = codeSystem.getEnumerationName();
 //			String version = codeSystem.getVersion();
 
 			if (id != null && id.length() > 0) {

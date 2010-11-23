@@ -744,6 +744,43 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getEnumerationName() {
+		if (base_Enumeration != null) {
+			return base_Enumeration.getName();
+		} else {
+			return "";
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setEnumerationName(String name) {
+		if (base_Enumeration != null) {
+			base_Enumeration.setName(name);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getEnumerationQualifiedName() {
+		if (base_Enumeration != null) {
+			return base_Enumeration.getQualifiedName();
+		} else {
+			return "";
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

@@ -230,6 +230,21 @@
       <ownedAttribute xmi:id="_PxH_sSCeEd-qXIhUbGWC6A" name="base_Enumeration" association="_PxDHMCCeEd-qXIhUbGWC6A">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Enumeration"/>
       </ownedAttribute>
+      <ownedOperation xmi:id="_6GXckPY6Ed-TF5RAp8cKDw" name="getEnumerationName">
+        <ownedParameter xmi:id="_-V2UwPY6Ed-TF5RAp8cKDw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="__4ucwPY6Ed-TF5RAp8cKDw" name="setEnumerationName">
+        <ownedParameter xmi:id="_Dq5t4PY7Ed-TF5RAp8cKDw" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_alUeYPY_Ed-TF5RAp8cKDw" name="getEnumerationQualifiedName">
+        <ownedParameter xmi:id="_alUeYfY_Ed-TF5RAp8cKDw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
       <icon xmi:id="_ERONYCugEd-B64Fk_ickIA" location="../icons/full/ovr16/CodeSystem.gif"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_e9b84BzwEd-WH9Qw4coEMg" name="ValueSetVersion">
@@ -306,6 +321,21 @@
       <ownedAttribute xmi:id="_RPn-ACCeEd-qXIhUbGWC6A" name="base_Enumeration" association="_RPnW8CCeEd-qXIhUbGWC6A">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Enumeration"/>
       </ownedAttribute>
+      <ownedOperation xmi:id="_HemB8PY7Ed-TF5RAp8cKDw" name="getEnumerationName">
+        <ownedParameter xmi:id="_HemB8fY7Ed-TF5RAp8cKDw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_HempAPY7Ed-TF5RAp8cKDw" name="setEnumerationName">
+        <ownedParameter xmi:id="_HempAfY7Ed-TF5RAp8cKDw" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_V4dtsPY_Ed-TF5RAp8cKDw" name="getEnumerationQualifiedName">
+        <ownedParameter xmi:id="_V4dtsfY_Ed-TF5RAp8cKDw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
       <icon xmi:id="_J-FCgCugEd-B64Fk_ickIA" location="../icons/full/ovr16/ValueSet.gif"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_sfEHIBz2Ed-_DcMhO5t7TQ" name="ValueSetCode">
