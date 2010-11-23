@@ -50,8 +50,8 @@ public class ScannedDocumentImpl extends ClinicalDocumentImpl implements Scanned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateScannedDocumentTypeIdExtension(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ScannedDocumentOperations.validateScannedDocumentTypeIdExtension(this, diagnostics, context);
+	public boolean validateScannedDocumentTypeIdFixed(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentTypeIdFixed(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ScannedDocumentImpl extends ClinicalDocumentImpl implements Scanned
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateScannedDocumentOneOrTwoRecordTarget(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ScannedDocumentOperations.validateScannedDocumentOneOrTwoRecordTarget(this, diagnostics, context);
+	public boolean validateScannedDocumentHasOneRecordTarget(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasOneRecordTarget(this, diagnostics, context);
 	}
 
 	/**
@@ -70,6 +70,24 @@ public class ScannedDocumentImpl extends ClinicalDocumentImpl implements Scanned
 	 */
 	public boolean validateScannedDocumentHasAssignedAuthor(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ScannedDocumentOperations.validateScannedDocumentHasAssignedAuthor(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentPatientRoleId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentPatientRoleId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasPatientRoleAddress(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasPatientRoleAddress(this, diagnostics, context);
 	}
 
 	/**

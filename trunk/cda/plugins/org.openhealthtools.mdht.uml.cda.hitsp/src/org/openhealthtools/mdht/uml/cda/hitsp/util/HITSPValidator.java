@@ -2936,9 +2936,11 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTitle(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeId(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateMedicalDocument_validateMedicalDocumentTemplateId(unstructuredDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTypeIdExtension(unstructuredDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentOneOrTwoRecordTarget(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTypeIdFixed(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasOneRecordTarget(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasAssignedAuthor(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentPatientRoleId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasPatientRoleAddress(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentCode(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentConfidentialityCode(unstructuredDocument, diagnostics, context);

@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getScannedDocument()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.2.20' constraints.validation.error='ScannedDocumentTemplateId ScannedDocumentTypeIdExtension ScannedDocumentOneOrTwoRecordTarget ScannedDocumentHasAssignedAuthor ScannedDocumentCode ScannedDocumentConfidentialityCode ScannedDocumentEffectiveTime ScannedDocumentId ScannedDocumentLanguageCode ScannedDocumentTypeId' constraints.validation.warning='ScannedDocumentTitle'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.2.20' constraints.validation.error='ScannedDocumentTemplateId ScannedDocumentTypeIdFixed ScannedDocumentHasOneRecordTarget ScannedDocumentHasAssignedAuthor ScannedDocumentPatientRoleId ScannedDocumentHasPatientRoleAddress ScannedDocumentCode ScannedDocumentConfidentialityCode ScannedDocumentEffectiveTime ScannedDocumentId ScannedDocumentLanguageCode ScannedDocumentTypeId' constraints.validation.warning='ScannedDocumentTitle'"
  * @generated
  */
 public interface ScannedDocument extends ClinicalDocument {
@@ -26,27 +26,27 @@ public interface ScannedDocument extends ClinicalDocument {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.typeId.extension = 'POCD_HD000040'
+	 * self.typeId.root = '2.16.840.1.113883.1.3' and self.typeId.extension = 'POCD_HD000040'
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.typeId.extension = \'POCD_HD000040\''"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.typeId.root = \'2.16.840.1.113883.1.3\' and self.typeId.extension = \'POCD_HD000040\''"
 	 * @generated
 	 */
-	boolean validateScannedDocumentTypeIdExtension(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateScannedDocumentTypeIdFixed(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.recordTarget->size() = 1 or self.recordTarget->size() =2
+	 * self.recordTarget->size() = 1
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget->size() = 1 or self.recordTarget->size() =2'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget->size() = 1'"
 	 * @generated
 	 */
-	boolean validateScannedDocumentOneOrTwoRecordTarget(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateScannedDocumentHasOneRecordTarget(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,6 +61,36 @@ public interface ScannedDocument extends ClinicalDocument {
 	 * @generated
 	 */
 	boolean validateScannedDocumentHasAssignedAuthor(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.recordTarget->forAll(target : cda::RecordTarget | not target.patientRole.oclIsUndefined()
+	 *    and target.patientRole.id->forAll(roleId : datatypes::II | not roleId.root.oclIsUndefined()
+	 *    and not roleId.extension.oclIsUndefined()))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget->forAll(target : cda::RecordTarget | not target.patientRole.oclIsUndefined()\r\n   and target.patientRole.id->forAll(roleId : datatypes::II | not roleId.root.oclIsUndefined()\r\n   and not roleId.extension.oclIsUndefined()))'"
+	 * @generated
+	 */
+	boolean validateScannedDocumentPatientRoleId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.recordTarget->exists(target : cda::RecordTarget | not target.patientRole.oclIsUndefined()
+	 *    and target.patientRole.addr->exists(address : datatypes::AD | address.country->exists(c : datatypes::ADXP |
+	 *    not c.oclIsUndefined() and c.getText().size() > 0)))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget->exists(target : cda::RecordTarget | not target.patientRole.oclIsUndefined()\r\n   and target.patientRole.addr->exists(address : datatypes::AD | address.country->exists(c : datatypes::ADXP |\r\n   not c.oclIsUndefined() and c.getText().size() > 0)))'"
+	 * @generated
+	 */
+	boolean validateScannedDocumentHasPatientRoleAddress(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

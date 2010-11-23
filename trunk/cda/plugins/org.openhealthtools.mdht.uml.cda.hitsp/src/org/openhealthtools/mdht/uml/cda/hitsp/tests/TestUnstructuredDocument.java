@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import java.io.FileInputStream;
+import java.util.UUID;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
@@ -23,11 +24,16 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Custodian;
 import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
 import org.openhealthtools.mdht.uml.cda.Organization;
+import org.openhealthtools.mdht.uml.cda.Patient;
+import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.Person;
+import org.openhealthtools.mdht.uml.cda.RecordTarget;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -61,8 +67,11 @@ public class TestUnstructuredDocument {
 		UnstructuredDocument doc = HITSPFactory.eINSTANCE.createUnstructuredDocument().init();
 		addDocumentAuthor(doc);
 		addDocumentCustodian(doc);
+		addPatient(doc);
+		// adding second patient should produce validation error
+//		addPatient(doc);
 
-		II id = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72");
+		II id = DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString());
 		doc.setId(id);
 		
 		CE code = DatatypesFactory.eINSTANCE.createCE("34133-9", "2.16.840.1.113883.6.1", 
@@ -85,6 +94,24 @@ public class TestUnstructuredDocument {
 		
 		return doc;
 	}
+	
+	public static void addPatient(ClinicalDocument doc) {
+		RecordTarget target = CDAFactory.eINSTANCE.createRecordTarget();
+		PatientRole patientRole =  CDAFactory.eINSTANCE.createPatientRole();
+		Patient patient = CDAFactory.eINSTANCE.createPatient();
+		doc.getRecordTargets().add(target);
+		target.setPatientRole(patientRole);
+		patientRole.setPatient(patient);
+
+		II id = DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString());
+		patientRole.getIds().add(id);
+		
+		AD addr = DatatypesFactory.eINSTANCE.createAD();
+//		ADXP country = DatatypesFactory.eINSTANCE.createADXP(null, "US");
+		ADXP country = DatatypesFactory.eINSTANCE.createADXP();
+		addr.getCountries().add(country);
+		patientRole.getAddrs().add(addr);
+	}
 
 	public static void addDocumentAuthor(ClinicalDocument doc) {
 		Author author = CDAFactory.eINSTANCE.createAuthor();
@@ -93,7 +120,7 @@ public class TestUnstructuredDocument {
 		//assignedAuthor
 		AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
 		author.setAssignedAuthor(assignedAuthor);
-		assignedAuthor.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72.5.2", "LJG"));
+		assignedAuthor.getIds().add(DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString()));
 		//assignedPerson
 		Person person = CDAFactory.eINSTANCE.createPerson();
 		assignedAuthor.setAssignedPerson(person);
@@ -103,7 +130,7 @@ public class TestUnstructuredDocument {
 		//representedOrganization
 		Organization organization = CDAFactory.eINSTANCE.createOrganization();
 		assignedAuthor.setRepresentedOrganization(organization);
-		II orgId = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72");
+		II orgId = DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString());
 		organization.getIds().add(orgId);
 		ON on = DatatypesFactory.eINSTANCE.createON();
 		on.addText("MDHT Test Suite");
@@ -119,7 +146,7 @@ public class TestUnstructuredDocument {
 		//representedOrganization
 		CustodianOrganization custodianOrganization = CDAFactory.eINSTANCE.createCustodianOrganization();
 		assignedCustodian.setRepresentedCustodianOrganization(custodianOrganization);
-		II custodianId = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72.5");
+		II custodianId = DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString());
 		custodianOrganization.getIds().add(custodianId);
 		ON custodianName = DatatypesFactory.eINSTANCE.createON();
 		custodianName.addText("MDHT Test Suite");

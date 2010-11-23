@@ -824,7 +824,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
           <language>Analysis</language>
           <language>OCL</language>
           <body>This construct should not be used when the data are structured.</body>
-          <body>self.getSections()->isEmpty()</body>
+          <body>self.component.structuredBody.oclIsUndefined()</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_EbnN0PM1Ed-FxO0PukiqhA" name="onePatientPerDocument" constrainedElement="__8-JUPG1Ed-FxO0PukiqhA">

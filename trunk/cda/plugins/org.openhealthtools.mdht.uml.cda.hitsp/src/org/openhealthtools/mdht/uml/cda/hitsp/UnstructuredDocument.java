@@ -27,11 +27,11 @@ public interface UnstructuredDocument extends MedicalDocument, ScannedDocument {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSections()->isEmpty()
+	 * self.component.structuredBody.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->isEmpty()'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.structuredBody.oclIsUndefined()'"
 	 * @generated
 	 */
 	boolean validateUnstructuredDocumentNoStructuredData(DiagnosticChain diagnostics, Map<Object, Object> context);
