@@ -37,7 +37,7 @@ public class CodeSystemConstraintUtil {
 		
 		if (codeSystemConstraint.getReference() != null) {
 			id = codeSystemConstraint.getReference().getIdentifier();
-			name = codeSystemConstraint.getReference().getBase_Enumeration().getName();
+			name = codeSystemConstraint.getReference().getEnumerationName();
 //			version = codeSystemConstraint.getReference().getVersion();
 		}
 		

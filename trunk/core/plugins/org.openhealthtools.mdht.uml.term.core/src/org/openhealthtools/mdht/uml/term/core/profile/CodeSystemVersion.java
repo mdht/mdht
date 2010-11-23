@@ -299,4 +299,28 @@ public interface CodeSystemVersion extends EObject {
 	 */
 	void setBase_Enumeration(Enumeration value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getEnumerationName();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model nameRequired="true" nameOrdered="false"
+	 * @generated
+	 */
+	void setEnumerationName(String name);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getEnumerationQualifiedName();
+
 } // CodeSystemVersion

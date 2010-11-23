@@ -98,6 +98,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/statusDate"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//CodeSystemVersion/base_Enumeration"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//CodeSystemVersion/getEnumerationName"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//CodeSystemVersion/setEnumerationName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="profile.ecore#//CodeSystemVersion/setEnumerationName/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//CodeSystemVersion/getEnumerationQualifiedName"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSetConstraint">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -128,6 +133,11 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetVersion/codeSystem"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetVersion/base_Enumeration"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//ValueSetVersion/getEnumerationName"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//ValueSetVersion/setEnumerationName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="profile.ecore#//ValueSetVersion/setEnumerationName/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//ValueSetVersion/getEnumerationQualifiedName"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSetCode">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetCode/conceptName"/>
