@@ -495,11 +495,8 @@ public class ValueSetCodeSection extends AbstractModelerPropertySection {
     		}
     	}
 		
-		Enumeration codeSystemEnum = null;
 		if (codeSystemVersion != null) {
-			String defaultString = isDefaultCodeSystem ? "(default) " : "";
-			codeSystemEnum = (Enumeration) codeSystemVersion.getBase_Enumeration();
-			codeSystemRefLabel.setText(defaultString + codeSystemEnum.getQualifiedName());
+			codeSystemRefLabel.setText((isDefaultCodeSystem ? "(default) " : "") + codeSystemVersion.getEnumerationQualifiedName());
 			codeSystemRefLabel.layout();
 		}
 		else {
