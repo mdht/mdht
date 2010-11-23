@@ -627,7 +627,7 @@ public class CDAModelUtil {
 			if (codeSystemConstraint.getReference() != null) {
 				CodeSystemVersion codeSystemVersion = codeSystemConstraint.getReference();
 				id = codeSystemVersion.getIdentifier();
-				name = codeSystemVersion.getBase_Enumeration().getName();
+				name = codeSystemVersion.getEnumerationName();
 				version = codeSystemVersion.getVersion();
 			}
 			else {
@@ -693,11 +693,13 @@ public class CDAModelUtil {
 			if (valueSetConstraint.getReference() != null) {
 				ValueSetVersion valueSetVersion = valueSetConstraint.getReference();
 				id = valueSetVersion.getIdentifier();
-				name = valueSetVersion.getBase_Enumeration().getName();
+				name = valueSetVersion.getEnumerationName();
 				version = valueSetVersion.getVersion();
 				binding = valueSetVersion.getBinding();
 
-				xref = computeTerminologyXref(property.getClass_(), valueSetVersion.getBase_Enumeration());
+				if (valueSetVersion.getBase_Enumeration() != null) {
+					xref = computeTerminologyXref(property.getClass_(), valueSetVersion.getBase_Enumeration());
+				}
 				showXref = markup && (xref != null);
 				xrefFormat = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 			}
