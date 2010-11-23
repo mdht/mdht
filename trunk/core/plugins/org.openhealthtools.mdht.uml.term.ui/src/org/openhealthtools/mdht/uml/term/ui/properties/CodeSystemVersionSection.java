@@ -158,7 +158,8 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 						this.setLabel("Set CodeSystem Name");
 						String value = nameText.getText().trim();
 						// set the Enumeration name
-						codeSystemVersion.getBase_Enumeration().setName(value.length()>0 ? value : null);
+						
+						codeSystemVersion.setEnumerationName(value.length() > 0 ? value : null);
 						
 					}
 					else if (fullNameModified) {
@@ -432,8 +433,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
 		if (codeSystemVersion != null) {
-			String name = codeSystemVersion.getBase_Enumeration().getName();
-			nameText.setText(name!=null ? name : "");
+			nameText.setText(codeSystemVersion.getEnumerationName());
 		}
 		else {
 			nameText.setText("");
