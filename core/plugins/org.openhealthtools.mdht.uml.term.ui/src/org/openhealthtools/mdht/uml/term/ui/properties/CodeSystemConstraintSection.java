@@ -580,13 +580,12 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		Enumeration referenceEnum = null;
 		if (codeSystemConstraint != null && codeSystemConstraint.getReference() != null) {
 			codeSystem = codeSystemConstraint.getReference();
-			referenceEnum = (Enumeration) codeSystem.getBase_Enumeration();
-			codeSystemRefLabel.setText(referenceEnum.getQualifiedName());
-			codeSystemRefLabel.layout();
-		}
-		else {
+			codeSystemRefLabel.setText(codeSystem.getEnumerationQualifiedName());
+		} else {
 			codeSystemRefLabel.setText("");
 		}
+		
+		codeSystemRefLabel.layout();
 
 		idText.removeModifyListener(modifyListener);
 		idText.removeKeyListener(keyListener);
@@ -606,7 +605,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
 		if (codeSystemConstraint != null) {
-			String name = codeSystem==null ? codeSystemConstraint.getName() : codeSystem.getBase_Enumeration().getName();
+			String name = codeSystem==null ? codeSystemConstraint.getName() : codeSystem.getEnumerationName();
 			nameText.setText(name!=null ? name : "");
 		}
 		else {
