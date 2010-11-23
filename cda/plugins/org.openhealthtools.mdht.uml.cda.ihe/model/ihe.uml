@@ -942,22 +942,25 @@ life, hobbies, and risky habits.</body>
       <ownedComment xmi:id="_1D_gsPHNEd-FxO0PukiqhA">
         <body>A variety of legacy paper, film, electronic and scanner outputted formats are used to store and exchange clinical documents. These formats are not designed for healthcare documentation, and furthermore, do not have a uniform mechanism to store healthcare metadata associated with the documents, including patient identifiers, demographics, encounter, order or service information. The association of structured, healthcare metadata with this kind of document is important to maintain the integrity of the patient health record as managed by the source system. It is necessary to provide a mechanism that allows such source metadata to be stored with the document.</body>
       </ownedComment>
-      <ownedRule xmi:id="_qOv4oPHREd-FxO0PukiqhA" name="typeIdExtension">
+      <ownedRule xmi:id="_qOv4oPHREd-FxO0PukiqhA" name="typeIdFixed">
         <constrainedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.cdt/model/cdt.uml#_MwGRIGeLEd-ilOLYnIx0jA"/>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_qOv4ofHREd-FxO0PukiqhA">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>The extension attribute of the typeId element SHALL be POCD_HD000040.</body>
-          <body>self.typeId.extension = 'POCD_HD000040'</body>
+          <body>The typeId root is 2.16.840.1.113883.1.3 and extension is POCD_HD000040.</body>
+          <body>self.typeId.root = '2.16.840.1.113883.1.3' and self.typeId.extension = 'POCD_HD000040'</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Q58-IPHSEd-FxO0PukiqhA" name="oneOrTwoRecordTarget">
+      <ownedRule xmi:id="_Q58-IPHSEd-FxO0PukiqhA" name="hasOneRecordTarget">
+        <ownedComment xmi:id="_kk8bsPQ7Ed-e-dANbnDT2A">
+          <body>Contains identifying information about the patient concerned in the original content. In many cases this will have to be supplied by the operator.</body>
+        </ownedComment>
         <constrainedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_Ze7UsGESEd69D7zx7EkLMA"/>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Q58-IfHSEd-FxO0PukiqhA">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>Contains one or two recordTarget</body>
-          <body>self.recordTarget->size() = 1 or self.recordTarget->size() =2</body>
+          <body>Contains exactly one recordTarget.</body>
+          <body>self.recordTarget->size() = 1</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_UHB-IPHSEd-FxO0PukiqhA" name="hasAssignedAuthor">
@@ -967,6 +970,25 @@ life, hobbies, and risky habits.</body>
           <language>OCL</language>
           <body>Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization</body>
           <body>self.author->exists(author : cda::Author | not author.assignedAuthor.assignedPerson.oclIsUndefined() &#xD;&#xA;   or not author.assignedAuthor.representedOrganization.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_rIXFYPQ7Ed-e-dANbnDT2A" name="patientRoleId" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_uoxREPQ7Ed-e-dANbnDT2A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>recordTarget/patientRole/id element includes both the root and the extension attributes.</body>
+          <body>self.recordTarget->forAll(target : cda::RecordTarget | not target.patientRole.oclIsUndefined()&#xD;&#xA;   and target.patientRole.id->forAll(roleId : datatypes::II | not roleId.root.oclIsUndefined()&#xD;&#xA;   and not roleId.extension.oclIsUndefined()))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_rBwRoPQ8Ed-e-dANbnDT2A" name="hasPatientRoleAddress" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <ownedComment xmi:id="_TdgHsPQ9Ed-e-dANbnDT2A">
+          <body>The addr element has an unbounded upper limit on occurrences. It can, and should, be replicated to include additional addresses for a patient, each minimally specified by the country sub element.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_4b8l4PQ8Ed-e-dANbnDT2A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>At least one recordTarget/patientRole/addr element includes at least the country subelement.</body>
+          <body>self.recordTarget->exists(target : cda::RecordTarget | not target.patientRole.oclIsUndefined()&#xD;&#xA;   and target.patientRole.addr->exists(address : datatypes::AD | address.country->exists(c : datatypes::ADXP |&#xD;&#xA;   not c.oclIsUndefined() and c.getText().size() > 0)))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_g76sEfG1Ed-FxO0PukiqhA">
@@ -1328,4 +1350,6 @@ life, hobbies, and risky habits.</body>
   <CDA:ConstraintValidation xmi:id="_rUXc4PHREd-FxO0PukiqhA" base_Constraint="_qOv4oPHREd-FxO0PukiqhA"/>
   <CDA:ConstraintValidation xmi:id="_XdF7APHSEd-FxO0PukiqhA" base_Constraint="_Q58-IPHSEd-FxO0PukiqhA"/>
   <CDA:ConstraintValidation xmi:id="_X9J7IPHSEd-FxO0PukiqhA" base_Constraint="_UHB-IPHSEd-FxO0PukiqhA"/>
+  <CDA:ConstraintValidation xmi:id="_u_8a8PQ7Ed-e-dANbnDT2A" base_Constraint="_rIXFYPQ7Ed-e-dANbnDT2A"/>
+  <CDA:ConstraintValidation xmi:id="_40GAIPQ8Ed-e-dANbnDT2A" base_Constraint="_rBwRoPQ8Ed-e-dANbnDT2A"/>
 </xmi:XMI>
