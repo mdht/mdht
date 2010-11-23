@@ -523,7 +523,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		if (valueSetConstraint != null && valueSetConstraint.getReference() != null) {
 			valueSet = valueSetConstraint.getReference();
 			referenceEnum = (Enumeration) valueSet.getBase_Enumeration();
-			valueSetRefLabel.setText(referenceEnum.getQualifiedName());
+			valueSetRefLabel.setText(valueSet.getEnumerationQualifiedName() );
 			valueSetRefLabel.layout();
 		}
 		else {
@@ -548,7 +548,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
 		if (valueSetConstraint != null) {
-			String name = valueSet==null ? valueSetConstraint.getName() : valueSet.getBase_Enumeration().getName();
+			String name = valueSet==null ? valueSetConstraint.getName() : valueSet.getEnumerationName();
 			nameText.setText(name!=null ? name : "");
 		}
 		else {
