@@ -23,12 +23,15 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -45,6 +48,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
@@ -52,7 +56,9 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
@@ -62,6 +68,8 @@ import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
  */
 public class ConstraintSection extends AbstractModelerPropertySection {
 
+	protected static final OCL EOCL_ENV = OCL.newInstance();
+	
 	private Constraint constraint;
 	
 	private String[] languages = {"Analysis", "OCL", "XPath"};
@@ -101,9 +109,67 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		}
 	};
 	
+	private void validateOCL() {
+
+		EPackage ePackage = null;
+
+		OCL.Helper helper = EOCL_ENV.createOCLHelper();
+
+		String ocl = bodyText.getText().trim();
+
+		for (org.eclipse.uml2.uml.Package p : constraint.allOwningPackages()) {
+
+			if (p.getAppliedStereotype("CDA::CodegenSupport") != null) {
+
+				Stereotype s = p.getAppliedStereotype("CDA::CodegenSupport");
+
+				String nsuri = (String) p.getValue(s, "nsURI");
+
+				if (EPackage.Registry.INSTANCE.containsKey(nsuri)) {
+
+					ePackage = EPackage.Registry.INSTANCE.getEPackage(nsuri);
+					break;
+				}
+
+			}
+
+		}
+
+		if (constraint.getOwner() instanceof NamedElement) {
+
+			String name = ((NamedElement) constraint.getOwner()).getName();
+
+			if ((ePackage != null) && (ePackage.getEClassifier(name) != null)) {
+
+				helper.setContext(ePackage.getEClassifier(name));
+
+				try {
+
+					helper.createInvariant(ocl);
+
+				} catch (ParserException pe) {
+
+					Shell shell = new Shell();
+					MessageBox messageBox = new MessageBox(shell, SWT.ICON_WARNING);
+					messageBox.setText("OCL Error ");
+					messageBox.setMessage(pe.getMessage());
+					messageBox.open();
+
+				}
+
+			}
+		}
+
+	}
+	
 	private void modifyFields() {
 		if (!(bodyModified || languageModified)) {
 			return;
+		}
+		
+		
+		if (languageCombo.getSelectionIndex() == 1) {
+			validateOCL();
 		}
 		
 		try {
@@ -174,11 +240,13 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		}
 	}
 	
+	 
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-        Shell shell = new Shell();
+		 Shell shell = new Shell();
+		
         GC gc = new GC(shell);
         gc.setFont(shell.getFont());
         Point point = gc.textExtent("");//$NON-NLS-1$
