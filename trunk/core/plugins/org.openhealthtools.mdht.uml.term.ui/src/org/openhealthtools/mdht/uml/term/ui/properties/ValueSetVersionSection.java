@@ -196,7 +196,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 						this.setLabel("Set ValueSet Name");
 						String value = nameText.getText().trim();
 						// set the Enumeration name
-						valueSetVersion.getBase_Enumeration().setName(value.length()>0 ? value : null);
+						valueSetVersion.setEnumerationName(value.length()>0 ? value : null);
 						
 					}
 					else if (fullNameModified) {
@@ -710,11 +710,9 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
     	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 		
 		CodeSystemVersion codeSystem = null;
-		Enumeration codeSystemEnum = null;
 		if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null) {
-			codeSystem = valueSetVersion.getCodeSystem();
-			codeSystemEnum = (Enumeration) codeSystem.getBase_Enumeration();
-			codeSystemRefLabel.setText(codeSystemEnum.getQualifiedName());
+			codeSystem = valueSetVersion.getCodeSystem();			
+			codeSystemRefLabel.setText(codeSystem.getEnumerationQualifiedName());
 			codeSystemRefLabel.layout();
 		}
 		else {
@@ -739,7 +737,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
-			String name = valueSetVersion.getBase_Enumeration().getName();
+			String name = valueSetVersion.getEnumerationName();
 			nameText.setText(name!=null ? name : "");
 		}
 		else {
