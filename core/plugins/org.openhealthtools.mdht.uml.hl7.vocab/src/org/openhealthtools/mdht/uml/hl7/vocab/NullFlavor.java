@@ -36,7 +36,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ASKU(0, "ASKU", "ASKU"),
+	ASKU(0, "ASKU", "ASKU", "Asked but Unknown"),
 
 	/**
 	 * The '<em><b>MSK</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MSK(1, "MSK", "MSK"),
+	MSK(1, "MSK", "MSK", "Masked"),
 
 	/**
 	 * The '<em><b>NA</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NA(2, "NA", "NA"),
+	NA(2, "NA", "NA", "Not Applicable"),
 
 	/**
 	 * The '<em><b>NASK</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NASK(3, "NASK", "NASK"),
+	NASK(3, "NASK", "NASK", "Not Asked"),
 
 	/**
 	 * The '<em><b>NAV</b></em>' literal object.
@@ -76,7 +76,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NAV(4, "NAV", "NAV"),
+	NAV(4, "NAV", "NAV", "Temporarily Unavailable"),
 
 	/**
 	 * The '<em><b>NI</b></em>' literal object.
@@ -86,7 +86,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NI(5, "NI", "NI"),
+	NI(5, "NI", "NI", "No Information"),
 
 	/**
 	 * The '<em><b>NINF</b></em>' literal object.
@@ -96,7 +96,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NINF(6, "NINF", "NINF"),
+	NINF(6, "NINF", "NINF", "Negative Infinity"),
 
 	/**
 	 * The '<em><b>OTH</b></em>' literal object.
@@ -106,7 +106,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OTH(7, "OTH", "OTH"),
+	OTH(7, "OTH", "OTH", "Other"),
 
 	/**
 	 * The '<em><b>PINF</b></em>' literal object.
@@ -116,7 +116,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PINF(8, "PINF", "PINF"),
+	PINF(8, "PINF", "PINF", "Positive Infinity"),
 
 	/**
 	 * The '<em><b>QS</b></em>' literal object.
@@ -126,7 +126,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	QS(9, "QS", "QS"),
+	QS(9, "QS", "QS", "Sufficient Quantity"),
 
 	/**
 	 * The '<em><b>TRC</b></em>' literal object.
@@ -136,7 +136,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TRC(10, "TRC", "TRC"),
+	TRC(10, "TRC", "TRC", "Trace"),
 
 	/**
 	 * The '<em><b>UNC</b></em>' literal object.
@@ -146,7 +146,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNC(11, "UNC", "UNC"),
+	UNC(11, "UNC", "UNC", "Un-encoded"),
 
 	/**
 	 * The '<em><b>UNK</b></em>' literal object.
@@ -156,7 +156,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNK(12, "UNK", "UNK");
+	UNK(12, "UNK", "UNK", "Unknown");
 
 	/**
 	 * The '<em><b>ASKU</b></em>' literal value.
@@ -461,6 +461,8 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 */
 	private final String literal;
+	
+	private final String description;
 
 	/**
 	 * Only this class can construct instances.
@@ -468,10 +470,11 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private NullFlavor(int value, String name, String literal) {
+	private NullFlavor(int value, String name, String literal, String description) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
+		this.description = description;
 	}
 
 	/**
@@ -499,6 +502,10 @@ public enum NullFlavor implements Enumerator {
 	 */
 	public String getLiteral() {
 	  return literal;
+	}
+	
+	public String getDescription() {
+		return description;
 	}
 
 	/**
