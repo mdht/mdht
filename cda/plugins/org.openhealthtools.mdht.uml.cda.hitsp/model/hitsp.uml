@@ -1117,4 +1117,5 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:ConstraintValidation xmi:id="_VlY5IO7KEd-iKq5sSX9U2w"/>
   <CDA:ConstraintValidation xmi:id="_CTiuEPM1Ed-FxO0PukiqhA" severity="WARNING" base_Constraint="_8u1IUPM0Ed-FxO0PukiqhA"/>
   <CDA:ConstraintValidation xmi:id="_FTuhkPM1Ed-FxO0PukiqhA" base_Constraint="_EbnN0PM1Ed-FxO0PukiqhA"/>
+  <CDA:CDATemplate xmi:id="_cxLtwPdXEd-aZohBEt6atA" base_Class="__8-JUPG1Ed-FxO0PukiqhA" templateId="2.16.840.1.113883.3.88.11.62.1"/>
 </xmi:XMI>

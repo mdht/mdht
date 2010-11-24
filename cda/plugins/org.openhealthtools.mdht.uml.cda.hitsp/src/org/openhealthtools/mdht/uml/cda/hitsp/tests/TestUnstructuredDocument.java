@@ -18,7 +18,7 @@ import java.util.UUID;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
-import org.openhealthtools.mdht.uml.cda.Author;
+import org.openhealthtools.mdht.uml.cda.AuthoringDevice;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Custodian;
@@ -30,6 +30,9 @@ import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RecordTarget;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
@@ -42,6 +45,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 public class TestUnstructuredDocument {
@@ -65,7 +69,8 @@ public class TestUnstructuredDocument {
 
 	public static UnstructuredDocument createUnstructuredDocuments() {
 		UnstructuredDocument doc = HITSPFactory.eINSTANCE.createUnstructuredDocument().init();
-		addDocumentAuthor(doc);
+		addOriginalAuthor(doc);
+		addScanningDevice(doc);
 		addDocumentCustodian(doc);
 		addPatient(doc);
 		// adding second patient should produce validation error
@@ -107,14 +112,13 @@ public class TestUnstructuredDocument {
 		patientRole.getIds().add(id);
 		
 		AD addr = DatatypesFactory.eINSTANCE.createAD();
-//		ADXP country = DatatypesFactory.eINSTANCE.createADXP(null, "US");
-		ADXP country = DatatypesFactory.eINSTANCE.createADXP();
+		ADXP country = DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CNT, "US");
 		addr.getCountries().add(country);
 		patientRole.getAddrs().add(addr);
 	}
 
-	public static void addDocumentAuthor(ClinicalDocument doc) {
-		Author author = CDAFactory.eINSTANCE.createAuthor();
+	public static void addOriginalAuthor(ClinicalDocument doc) {
+		ScanOriginalAuthor author = IHEFactory.eINSTANCE.createScanOriginalAuthor().init();
 		doc.getAuthors().add(author);
 		author.setTime(DatatypesFactory.eINSTANCE.createTS("20070916130000"));
 		//assignedAuthor
@@ -127,13 +131,41 @@ public class TestUnstructuredDocument {
 		PN pn = DatatypesFactory.eINSTANCE.createPN();
 		pn.addGiven("John").addFamily("Doe");
 		person.getNames().add(pn);
+		
 		//representedOrganization
 		Organization organization = CDAFactory.eINSTANCE.createOrganization();
 		assignedAuthor.setRepresentedOrganization(organization);
 		II orgId = DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString());
 		organization.getIds().add(orgId);
 		ON on = DatatypesFactory.eINSTANCE.createON();
-		on.addText("MDHT Test Suite");
+		on.addText("Happy Valley Hospital");
+		organization.getNames().add(on);
+		organization.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL("+1-800-555-1212"));
+	}
+
+	public static void addScanningDevice(ClinicalDocument doc) {
+		ScanningDevice scanningDevice = IHEFactory.eINSTANCE.createScanningDevice().init();
+		doc.getAuthors().add(scanningDevice);
+		
+		// should produce error when time is != document.effectiveTime
+//		scanningDevice.setTime(DatatypesFactory.eINSTANCE.createTS("20070916130000"));
+		scanningDevice.setTime(DatatypesFactory.eINSTANCE.createTS("20071204103022-0500"));
+		
+		//assignedAuthor
+		AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
+		scanningDevice.setAssignedAuthor(assignedAuthor);
+		assignedAuthor.getIds().add(DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString()));
+		//assignedAuthoringDevice
+		AuthoringDevice assignedDevice = CDAFactory.eINSTANCE.createAuthoringDevice();
+		assignedAuthor.setAssignedAuthoringDevice(assignedDevice);
+
+		//representedOrganization
+		Organization organization = CDAFactory.eINSTANCE.createOrganization();
+		assignedAuthor.setRepresentedOrganization(organization);
+		II orgId = DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString());
+		organization.getIds().add(orgId);
+		ON on = DatatypesFactory.eINSTANCE.createON();
+		on.addText("Happy Valley Hospital");
 		organization.getNames().add(on);
 		organization.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL("+1-800-555-1212"));
 	}

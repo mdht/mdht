@@ -659,6 +659,14 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int UNSTRUCTURED_DOCUMENT__UNSTRUCTURED_DOCUMENT_ONE_PATIENT_PER_DOCUMENT = 75;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Template Id' of 'Unstructured Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int UNSTRUCTURED_DOCUMENT__SCANNED_DOCUMENT_TEMPLATE_ID = 76;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Encounter Template Id' of 'Encounter'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -704,7 +712,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 75;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 76;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -2941,7 +2949,12 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasAssignedAuthor(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentPatientRoleId(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasPatientRoleAddress(unstructuredDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasPatientName(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasPatientGenderCode(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasPatientBirthYear(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasOriginalAuthor(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasScanningDevice(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUnstructuredDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentCode(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentConfidentialityCode(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentEffectiveTime(unstructuredDocument, diagnostics, context);
@@ -2972,6 +2985,35 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateUnstructuredDocument_validateUnstructuredDocumentOnePatientPerDocument(UnstructuredDocument unstructuredDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return unstructuredDocument.validateUnstructuredDocumentOnePatientPerDocument(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentTemplateId constraint of '<em>Unstructured Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUnstructuredDocument_validateScannedDocumentTemplateId(UnstructuredDocument unstructuredDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateScannedDocumentTemplateId", getObjectLabel(unstructuredDocument, context) },
+						 new Object[] { unstructuredDocument },
+						 context));
+			}
+			return false;
+		}
+		return iheValidator.validateScannedDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
 	}
 
 	/**

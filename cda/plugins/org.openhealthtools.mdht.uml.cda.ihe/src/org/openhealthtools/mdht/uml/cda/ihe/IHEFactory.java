@@ -653,6 +653,24 @@ public interface IHEFactory extends EFactory {
 	ScannedDocument createScannedDocument();
 
 	/**
+	 * Returns a new object of class '<em>Scan Original Author</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scan Original Author</em>'.
+	 * @generated
+	 */
+	ScanOriginalAuthor createScanOriginalAuthor();
+
+	/**
+	 * Returns a new object of class '<em>Scanning Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scanning Device</em>'.
+	 * @generated
+	 */
+	ScanningDevice createScanningDevice();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

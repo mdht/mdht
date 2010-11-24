@@ -86,7 +86,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -608,6 +610,20 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	private EClass scannedDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass scanOriginalAuthorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass scanningDeviceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1342,6 +1358,24 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getScanOriginalAuthor() {
+		return scanOriginalAuthorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getScanningDevice() {
+		return scanningDeviceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIHERegistryDelegate() {
 		return iheRegistryDelegateEClass;
 	}
@@ -1518,6 +1552,10 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		scannedDocumentEClass = createEClass(SCANNED_DOCUMENT);
 
+		scanOriginalAuthorEClass = createEClass(SCAN_ORIGINAL_AUTHOR);
+
+		scanningDeviceEClass = createEClass(SCANNING_DEVICE);
+
 		iheRegistryDelegateEClass = createEClass(IHE_REGISTRY_DELEGATE);
 	}
 
@@ -1632,6 +1670,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		patientContactParticipantEClass.getESuperTypes().add(theCCDPackage.getSupportParticipant());
 		patientContactParticipantEClass.getESuperTypes().add(this.getPatientContact());
 		scannedDocumentEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
+		scanOriginalAuthorEClass.getESuperTypes().add(theCDAPackage.getAuthor());
+		scanningDeviceEClass.getESuperTypes().add(theCDAPackage.getAuthor());
 		iheRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -3014,6 +3054,51 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(scannedDocumentEClass, ecorePackage.getEBoolean(), "validateScannedDocumentHasPatientName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scannedDocumentEClass, ecorePackage.getEBoolean(), "validateScannedDocumentHasPatientGenderCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scannedDocumentEClass, ecorePackage.getEBoolean(), "validateScannedDocumentHasPatientBirthYear", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scannedDocumentEClass, ecorePackage.getEBoolean(), "validateScannedDocumentHasOriginalAuthor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scannedDocumentEClass, ecorePackage.getEBoolean(), "validateScannedDocumentHasScanningDevice", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(scannedDocumentEClass, ecorePackage.getEBoolean(), "validateScannedDocumentTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -3078,6 +3163,73 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(scannedDocumentEClass, ecorePackage.getEBoolean(), "validateScannedDocumentTypeId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(scanOriginalAuthorEClass, ScanOriginalAuthor.class, "ScanOriginalAuthor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(scanOriginalAuthorEClass, ecorePackage.getEBoolean(), "validateScanOriginalAuthorHasAssignedAuthorId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scanOriginalAuthorEClass, ecorePackage.getEBoolean(), "validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scanOriginalAuthorEClass, ecorePackage.getEBoolean(), "validateScanOriginalAuthorTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(scanningDeviceEClass, ScanningDevice.class, "ScanningDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(scanningDeviceEClass, ecorePackage.getEBoolean(), "validateScanningDeviceTimeEqualsDocumentEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scanningDeviceEClass, ecorePackage.getEBoolean(), "validateScanningDeviceHasAssignedAuthorId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scanningDeviceEClass, ecorePackage.getEBoolean(), "validateScanningDeviceHasAssignedAuthoringDeviceCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(scanningDeviceEClass, ecorePackage.getEBoolean(), "validateScanningDeviceTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -3702,9 +3854,24 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.2.20",
-			 "constraints.validation.error", "ScannedDocumentTemplateId ScannedDocumentTypeIdFixed ScannedDocumentHasOneRecordTarget ScannedDocumentHasAssignedAuthor ScannedDocumentPatientRoleId ScannedDocumentHasPatientRoleAddress ScannedDocumentCode ScannedDocumentConfidentialityCode ScannedDocumentEffectiveTime ScannedDocumentId ScannedDocumentLanguageCode ScannedDocumentTypeId",
-			 "constraints.validation.warning", "ScannedDocumentTitle"
-		   });																																																				
+			 "constraints.validation.error", "ScannedDocumentTemplateId ScannedDocumentTypeIdFixed ScannedDocumentHasOneRecordTarget ScannedDocumentHasAssignedAuthor ScannedDocumentPatientRoleId ScannedDocumentHasPatientRoleAddress ScannedDocumentHasPatientName ScannedDocumentHasPatientGenderCode ScannedDocumentHasPatientBirthYear ScannedDocumentHasScanningDevice ScannedDocumentCode ScannedDocumentConfidentialityCode ScannedDocumentEffectiveTime ScannedDocumentId ScannedDocumentLanguageCode ScannedDocumentTypeId",
+			 "constraints.validation.warning", "ScannedDocumentHasOriginalAuthor ScannedDocumentTitle"
+		   });																																																																										
+		addAnnotation
+		  (scanOriginalAuthorEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.2.20.1",
+			 "constraints.validation.error", "ScanOriginalAuthorTemplateId",
+			 "constraints.validation.warning", "ScanOriginalAuthorHasAssignedAuthorId ScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId"
+		   });														
+		addAnnotation
+		  (scanningDeviceEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.2.20.2",
+			 "constraints.validation.error", "ScanningDeviceTemplateId ScanningDeviceTimeEqualsDocumentEffectiveTime ScanningDeviceHasAssignedAuthorId ScanningDeviceHasAssignedAuthoringDeviceCode"
+		   });																
 	}
 
 	/**
@@ -3744,7 +3911,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			
 	}
 
 	/**
@@ -3799,7 +3966,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (pregnancyObservationEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																															
+		   });																																																																																																																																																																	
 	}
 
 } //IHEPackageImpl

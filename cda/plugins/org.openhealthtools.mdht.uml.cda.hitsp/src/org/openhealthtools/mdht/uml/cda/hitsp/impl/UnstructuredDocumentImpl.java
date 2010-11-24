@@ -96,8 +96,53 @@ public class UnstructuredDocumentImpl extends MedicalDocumentImpl implements Uns
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateScannedDocumentHasPatientName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasPatientName(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasPatientGenderCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasPatientGenderCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasPatientBirthYear(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasPatientBirthYear(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasOriginalAuthor(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasOriginalAuthor(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasScanningDevice(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasScanningDevice(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateScannedDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ScannedDocumentOperations.validateScannedDocumentTemplateId(this, diagnostics, context);
+		return UnstructuredDocumentOperations.validateScannedDocumentTemplateId(this, diagnostics, context);
 	}
 
 	/**

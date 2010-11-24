@@ -14999,6 +14999,206 @@ public interface IHEPackage extends EPackage {
 	int SCANNED_DOCUMENT_FEATURE_COUNT = CDAPackage.CLINICAL_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScanOriginalAuthorImpl <em>Scan Original Author</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScanOriginalAuthorImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScanOriginalAuthor()
+	 * @generated
+	 */
+	int SCAN_ORIGINAL_AUTHOR = 72;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__REALM_CODE = CDAPackage.AUTHOR__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__TYPE_ID = CDAPackage.AUTHOR__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__TEMPLATE_ID = CDAPackage.AUTHOR__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Function Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__FUNCTION_CODE = CDAPackage.AUTHOR__FUNCTION_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__TIME = CDAPackage.AUTHOR__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Assigned Author</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__ASSIGNED_AUTHOR = CDAPackage.AUTHOR__ASSIGNED_AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__NULL_FLAVOR = CDAPackage.AUTHOR__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__TYPE_CODE = CDAPackage.AUTHOR__TYPE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR__CONTEXT_CONTROL_CODE = CDAPackage.AUTHOR__CONTEXT_CONTROL_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Scan Original Author</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_ORIGINAL_AUTHOR_FEATURE_COUNT = CDAPackage.AUTHOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScanningDeviceImpl <em>Scanning Device</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScanningDeviceImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScanningDevice()
+	 * @generated
+	 */
+	int SCANNING_DEVICE = 73;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__REALM_CODE = CDAPackage.AUTHOR__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__TYPE_ID = CDAPackage.AUTHOR__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__TEMPLATE_ID = CDAPackage.AUTHOR__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Function Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__FUNCTION_CODE = CDAPackage.AUTHOR__FUNCTION_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__TIME = CDAPackage.AUTHOR__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Assigned Author</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__ASSIGNED_AUTHOR = CDAPackage.AUTHOR__ASSIGNED_AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__NULL_FLAVOR = CDAPackage.AUTHOR__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__TYPE_CODE = CDAPackage.AUTHOR__TYPE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE__CONTEXT_CONTROL_CODE = CDAPackage.AUTHOR__CONTEXT_CONTROL_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Scanning Device</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_DEVICE_FEATURE_COUNT = CDAPackage.AUTHOR_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15006,7 +15206,7 @@ public interface IHEPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getIHERegistryDelegate()
 	 * @generated
 	 */
-	int IHE_REGISTRY_DELEGATE = 72;
+	int IHE_REGISTRY_DELEGATE = 74;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -15737,6 +15937,26 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getScannedDocument();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor <em>Scan Original Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scan Original Author</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor
+	 * @generated
+	 */
+	EClass getScanOriginalAuthor();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice <em>Scanning Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scanning Device</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice
+	 * @generated
+	 */
+	EClass getScanningDevice();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate <em>Registry Delegate</em>}'.
@@ -16489,6 +16709,26 @@ public interface IHEPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SCANNED_DOCUMENT = eINSTANCE.getScannedDocument();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScanOriginalAuthorImpl <em>Scan Original Author</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScanOriginalAuthorImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScanOriginalAuthor()
+		 * @generated
+		 */
+		EClass SCAN_ORIGINAL_AUTHOR = eINSTANCE.getScanOriginalAuthor();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScanningDeviceImpl <em>Scanning Device</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScanningDeviceImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScanningDevice()
+		 * @generated
+		 */
+		EClass SCANNING_DEVICE = eINSTANCE.getScanningDevice();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.

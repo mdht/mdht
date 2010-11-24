@@ -719,6 +719,26 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientRoleAddress/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientRoleAddress/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientName/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientGenderCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientGenderCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientGenderCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientBirthYear">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientBirthYear/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasPatientBirthYear/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasOriginalAuthor">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasOriginalAuthor/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasOriginalAuthor/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasScanningDevice">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasScanningDevice/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasScanningDevice/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId/context"/>
@@ -750,6 +770,38 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentTypeId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTypeId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTypeId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ScanOriginalAuthor">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorHasAssignedAuthorId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorHasAssignedAuthorId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorHasAssignedAuthorId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanOriginalAuthor/ScanOriginalAuthorTemplateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ScanningDevice">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScanningDevice/ScanningDeviceTimeEqualsDocumentEffectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceTimeEqualsDocumentEffectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceTimeEqualsDocumentEffectiveTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScanningDevice/ScanningDeviceHasAssignedAuthorId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceHasAssignedAuthorId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceHasAssignedAuthorId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScanningDevice/ScanningDeviceHasAssignedAuthoringDeviceCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceHasAssignedAuthoringDeviceCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceHasAssignedAuthoringDeviceCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScanningDevice/ScanningDeviceTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScanningDevice/ScanningDeviceTemplateId/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//IHERegistryDelegate"/>

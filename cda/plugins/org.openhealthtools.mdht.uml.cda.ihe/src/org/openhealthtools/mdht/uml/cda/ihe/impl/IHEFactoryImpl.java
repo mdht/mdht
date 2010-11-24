@@ -80,7 +80,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
@@ -203,6 +205,8 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.PATIENT_CONTACT_GUARDIAN: return createPatientContactGuardian();
 			case IHEPackage.PATIENT_CONTACT_PARTICIPANT: return createPatientContactParticipant();
 			case IHEPackage.SCANNED_DOCUMENT: return createScannedDocument();
+			case IHEPackage.SCAN_ORIGINAL_AUTHOR: return createScanOriginalAuthor();
+			case IHEPackage.SCANNING_DEVICE: return createScanningDevice();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -897,6 +901,26 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public ScannedDocument createScannedDocument() {
 		ScannedDocumentImpl scannedDocument = new ScannedDocumentImpl();
 		return scannedDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScanOriginalAuthor createScanOriginalAuthor() {
+		ScanOriginalAuthorImpl scanOriginalAuthor = new ScanOriginalAuthorImpl();
+		return scanOriginalAuthor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScanningDevice createScanningDevice() {
+		ScanningDeviceImpl scanningDevice = new ScanningDeviceImpl();
+		return scanningDevice;
 	}
 
 	/**

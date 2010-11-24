@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Encounter;
@@ -115,7 +116,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -475,6 +478,14 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createScannedDocumentAdapter();
 			}
 			@Override
+			public Adapter caseScanOriginalAuthor(ScanOriginalAuthor object) {
+				return createScanOriginalAuthorAdapter();
+			}
+			@Override
+			public Adapter caseScanningDevice(ScanningDevice object) {
+				return createScanningDeviceAdapter();
+			}
+			@Override
 			public Adapter caseIHERegistryDelegate(IHERegistryDelegate object) {
 				return createIHERegistryDelegateAdapter();
 			}
@@ -689,6 +700,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSupportParticipant(SupportParticipant object) {
 				return createSupportParticipantAdapter();
+			}
+			@Override
+			public Adapter caseAuthor(Author object) {
+				return createAuthorAdapter();
 			}
 			@Override
 			public Adapter caseRegistryDelegate(RegistryDelegate object) {
@@ -1723,6 +1738,34 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor <em>Scan Original Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor
+	 * @generated
+	 */
+	public Adapter createScanOriginalAuthorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice <em>Scanning Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice
+	 * @generated
+	 */
+	public Adapter createScanningDeviceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate <em>Registry Delegate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -2475,6 +2518,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSupportParticipantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.Author <em>Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.Author
+	 * @generated
+	 */
+	public Adapter createAuthorAdapter() {
 		return null;
 	}
 
