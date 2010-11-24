@@ -86,7 +86,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -1285,12 +1287,52 @@ public class IHEValidator extends EObjectValidator {
 	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_HAS_PATIENT_ROLE_ADDRESS = 145;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Has Patient Name' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_HAS_PATIENT_NAME = 146;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Has Patient Gender Code' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_HAS_PATIENT_GENDER_CODE = 147;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Has Patient Birth Year' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_HAS_PATIENT_BIRTH_YEAR = 148;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Has Original Author' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_HAS_ORIGINAL_AUTHOR = 149;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Has Scanning Device' of 'Scanned Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_HAS_SCANNING_DEVICE = 150;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Template Id' of 'Scanned Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TEMPLATE_ID = 146;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TEMPLATE_ID = 151;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Code' of 'Scanned Document'.
@@ -1298,7 +1340,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_CODE = 147;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_CODE = 152;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Confidentiality Code' of 'Scanned Document'.
@@ -1306,7 +1348,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_CONFIDENTIALITY_CODE = 148;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_CONFIDENTIALITY_CODE = 153;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Effective Time' of 'Scanned Document'.
@@ -1314,7 +1356,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_EFFECTIVE_TIME = 149;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_EFFECTIVE_TIME = 154;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Id' of 'Scanned Document'.
@@ -1322,7 +1364,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_ID = 150;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_ID = 155;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Language Code' of 'Scanned Document'.
@@ -1330,7 +1372,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_LANGUAGE_CODE = 151;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_LANGUAGE_CODE = 156;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Title' of 'Scanned Document'.
@@ -1338,7 +1380,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TITLE = 152;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TITLE = 157;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanned Document Type Id' of 'Scanned Document'.
@@ -1346,7 +1388,63 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TYPE_ID = 153;
+	public static final int SCANNED_DOCUMENT__SCANNED_DOCUMENT_TYPE_ID = 158;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scan Original Author Has Assigned Author Id' of 'Scan Original Author'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCAN_ORIGINAL_AUTHOR__SCAN_ORIGINAL_AUTHOR_HAS_ASSIGNED_AUTHOR_ID = 159;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scan Original Author Has Assigned Author Represented Organization Id' of 'Scan Original Author'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCAN_ORIGINAL_AUTHOR__SCAN_ORIGINAL_AUTHOR_HAS_ASSIGNED_AUTHOR_REPRESENTED_ORGANIZATION_ID = 160;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scan Original Author Template Id' of 'Scan Original Author'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCAN_ORIGINAL_AUTHOR__SCAN_ORIGINAL_AUTHOR_TEMPLATE_ID = 161;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanning Device Time Equals Document Effective Time' of 'Scanning Device'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNING_DEVICE__SCANNING_DEVICE_TIME_EQUALS_DOCUMENT_EFFECTIVE_TIME = 162;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanning Device Has Assigned Author Id' of 'Scanning Device'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNING_DEVICE__SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_ID = 163;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanning Device Has Assigned Authoring Device Code' of 'Scanning Device'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNING_DEVICE__SCANNING_DEVICE_HAS_ASSIGNED_AUTHORING_DEVICE_CODE = 164;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Scanning Device Template Id' of 'Scanning Device'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SCANNING_DEVICE__SCANNING_DEVICE_TEMPLATE_ID = 165;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -1354,7 +1452,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 153;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 165;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1565,6 +1663,10 @@ public class IHEValidator extends EObjectValidator {
 				return validatePatientContactParticipant((PatientContactParticipant)value, diagnostics, context);
 			case IHEPackage.SCANNED_DOCUMENT:
 				return validateScannedDocument((ScannedDocument)value, diagnostics, context);
+			case IHEPackage.SCAN_ORIGINAL_AUTHOR:
+				return validateScanOriginalAuthor((ScanOriginalAuthor)value, diagnostics, context);
+			case IHEPackage.SCANNING_DEVICE:
+				return validateScanningDevice((ScanningDevice)value, diagnostics, context);
 			case IHEPackage.IHE_REGISTRY_DELEGATE:
 				return validateIHERegistryDelegate((IHERegistryDelegate)value, diagnostics, context);
 			default:
@@ -4957,6 +5059,11 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasAssignedAuthor(scannedDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentPatientRoleId(scannedDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasPatientRoleAddress(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasPatientName(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasPatientGenderCode(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasPatientBirthYear(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasOriginalAuthor(scannedDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentHasScanningDevice(scannedDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentTemplateId(scannedDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentCode(scannedDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateScannedDocument_validateScannedDocumentConfidentialityCode(scannedDocument, diagnostics, context);
@@ -5016,6 +5123,56 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateScannedDocument_validateScannedDocumentHasPatientRoleAddress(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return scannedDocument.validateScannedDocumentHasPatientRoleAddress(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentHasPatientName constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentHasPatientName(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentHasPatientName(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentHasPatientGenderCode constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentHasPatientGenderCode(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentHasPatientGenderCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentHasPatientBirthYear constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentHasPatientBirthYear(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentHasPatientBirthYear(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentHasOriginalAuthor constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentHasOriginalAuthor(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentHasOriginalAuthor(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScannedDocumentHasScanningDevice constraint of '<em>Scanned Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocument_validateScannedDocumentHasScanningDevice(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scannedDocument.validateScannedDocumentHasScanningDevice(diagnostics, context);
 	}
 
 	/**
@@ -5096,6 +5253,117 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateScannedDocument_validateScannedDocumentTypeId(ScannedDocument scannedDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return scannedDocument.validateScannedDocumentTypeId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanOriginalAuthor(ScanOriginalAuthor scanOriginalAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(scanOriginalAuthor, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScanOriginalAuthor_validateScanOriginalAuthorHasAssignedAuthorId(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScanOriginalAuthor_validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId(scanOriginalAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScanOriginalAuthor_validateScanOriginalAuthorTemplateId(scanOriginalAuthor, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateScanOriginalAuthorHasAssignedAuthorId constraint of '<em>Scan Original Author</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanOriginalAuthor_validateScanOriginalAuthorHasAssignedAuthorId(ScanOriginalAuthor scanOriginalAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scanOriginalAuthor.validateScanOriginalAuthorHasAssignedAuthorId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId constraint of '<em>Scan Original Author</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanOriginalAuthor_validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId(ScanOriginalAuthor scanOriginalAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scanOriginalAuthor.validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScanOriginalAuthorTemplateId constraint of '<em>Scan Original Author</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanOriginalAuthor_validateScanOriginalAuthorTemplateId(ScanOriginalAuthor scanOriginalAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scanOriginalAuthor.validateScanOriginalAuthorTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanningDevice(ScanningDevice scanningDevice, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(scanningDevice, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScanningDevice_validateScanningDeviceTimeEqualsDocumentEffectiveTime(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScanningDevice_validateScanningDeviceHasAssignedAuthorId(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScanningDevice_validateScanningDeviceHasAssignedAuthoringDeviceCode(scanningDevice, diagnostics, context);
+		if (result || diagnostics != null) result &= validateScanningDevice_validateScanningDeviceTemplateId(scanningDevice, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateScanningDeviceTimeEqualsDocumentEffectiveTime constraint of '<em>Scanning Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanningDevice_validateScanningDeviceTimeEqualsDocumentEffectiveTime(ScanningDevice scanningDevice, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scanningDevice.validateScanningDeviceTimeEqualsDocumentEffectiveTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScanningDeviceHasAssignedAuthorId constraint of '<em>Scanning Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanningDevice_validateScanningDeviceHasAssignedAuthorId(ScanningDevice scanningDevice, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scanningDevice.validateScanningDeviceHasAssignedAuthorId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScanningDeviceHasAssignedAuthoringDeviceCode constraint of '<em>Scanning Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanningDevice_validateScanningDeviceHasAssignedAuthoringDeviceCode(ScanningDevice scanningDevice, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scanningDevice.validateScanningDeviceHasAssignedAuthoringDeviceCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateScanningDeviceTemplateId constraint of '<em>Scanning Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanningDevice_validateScanningDeviceTemplateId(ScanningDevice scanningDevice, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return scanningDevice.validateScanningDeviceTemplateId(diagnostics, context);
 	}
 
 	/**

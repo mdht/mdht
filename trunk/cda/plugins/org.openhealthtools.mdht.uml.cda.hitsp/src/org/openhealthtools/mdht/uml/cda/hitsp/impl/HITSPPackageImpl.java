@@ -2375,9 +2375,10 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (unstructuredDocumentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints.validation.error", "UnstructuredDocumentOnePatientPerDocument",
+			 "templateId.root", "2.16.840.1.113883.3.88.11.62.1",
+			 "constraints.validation.error", "UnstructuredDocumentTemplateId UnstructuredDocumentOnePatientPerDocument",
 			 "constraints.validation.warning", "UnstructuredDocumentNoStructuredData"
-		   });								
+		   });									
 	}
 
 	/**
@@ -2394,7 +2395,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																	
 	}
 
 	/**
@@ -2414,7 +2415,12 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (medicationTaperedDoseEClass, 
 		   source, 
 		   new String[] {
-		   });																												
+		   });																						
+		addAnnotation
+		  (unstructuredDocumentEClass, 
+		   source, 
+		   new String[] {
+		   });								
 	}
 
 } //HITSPPackageImpl

@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Encounter;
@@ -115,7 +116,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -948,6 +951,24 @@ public class IHESwitch<T> {
 				if (result == null) result = caseClinicalDocument(scannedDocument);
 				if (result == null) result = caseAct(scannedDocument);
 				if (result == null) result = caseInfrastructureRoot(scannedDocument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.SCAN_ORIGINAL_AUTHOR: {
+				ScanOriginalAuthor scanOriginalAuthor = (ScanOriginalAuthor)theEObject;
+				T result = caseScanOriginalAuthor(scanOriginalAuthor);
+				if (result == null) result = caseAuthor(scanOriginalAuthor);
+				if (result == null) result = caseParticipation(scanOriginalAuthor);
+				if (result == null) result = caseInfrastructureRoot(scanOriginalAuthor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.SCANNING_DEVICE: {
+				ScanningDevice scanningDevice = (ScanningDevice)theEObject;
+				T result = caseScanningDevice(scanningDevice);
+				if (result == null) result = caseAuthor(scanningDevice);
+				if (result == null) result = caseParticipation(scanningDevice);
+				if (result == null) result = caseInfrastructureRoot(scanningDevice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2043,6 +2064,36 @@ public class IHESwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scan Original Author</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scan Original Author</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScanOriginalAuthor(ScanOriginalAuthor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scanning Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scanning Device</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScanningDevice(ScanningDevice object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2849,6 +2900,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseSupportParticipant(SupportParticipant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Author</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Author</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAuthor(Author object) {
 		return null;
 	}
 
