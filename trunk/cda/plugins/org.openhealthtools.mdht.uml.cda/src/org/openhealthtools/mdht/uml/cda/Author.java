@@ -359,4 +359,12 @@ public interface Author extends Participation {
 	 */
 	boolean isSetContextControlCode();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	ClinicalDocument getClinicalDocument();
+
 } // Author

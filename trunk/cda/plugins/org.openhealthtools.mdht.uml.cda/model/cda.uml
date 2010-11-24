@@ -5461,6 +5461,9 @@
           <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yenN0DcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedOperation xmi:id="_tXwsMPdcEd-aZohBEt6atA" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_tXwsMfdcEd-aZohBEt6atA" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IIL8MEcEEd6besF9iFIJkQ" name="AuthoringDevice">
       <generalization xmi:id="_jmNcAIYxEd-9YcrCLsHEiw">
