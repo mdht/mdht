@@ -60,7 +60,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 		if (codeSystemConstraint != null) {
 			if (codeSystemConstraint.getReference() != null) {
 				codeSystem = codeSystemConstraint.getReference().getIdentifier();
-				codeSystemName = codeSystemConstraint.getReference().getBase_Enumeration().getName();
+				codeSystemName = codeSystemConstraint.getReference().getEnumerationName();
 //				codeSystemVersion = codeSystemConstraint.getReference().getVersion();
 			}
 			else {
@@ -80,7 +80,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 					&& valueSetConstraint.getReference().getCodeSystem() != null) {
 				CodeSystemVersion codeSystemDef = valueSetConstraint.getReference().getCodeSystem();
 				codeSystem = codeSystemDef.getIdentifier();
-				codeSystemName = codeSystemDef.getBase_Enumeration().getName();
+				codeSystemName = codeSystemDef.getEnumerationName();
 //				codeSystemVersion = codeSystemDef.getVersion();
 			}
 
