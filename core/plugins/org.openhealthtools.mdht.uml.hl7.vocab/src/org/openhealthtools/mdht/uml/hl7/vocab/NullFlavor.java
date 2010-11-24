@@ -33,7 +33,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ASKU_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	ASKU(0, "ASKU", "ASKU", "Asked but Unknown"),
@@ -43,7 +43,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #MSK_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	MSK(1, "MSK", "MSK", "Masked"),
@@ -53,7 +53,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NA_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	NA(2, "NA", "NA", "Not Applicable"),
@@ -63,7 +63,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NASK_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	NASK(3, "NASK", "NASK", "Not Asked"),
@@ -73,7 +73,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NAV_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	NAV(4, "NAV", "NAV", "Temporarily Unavailable"),
@@ -83,7 +83,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NI_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	NI(5, "NI", "NI", "No Information"),
@@ -93,7 +93,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NINF_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	NINF(6, "NINF", "NINF", "Negative Infinity"),
@@ -103,7 +103,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #OTH_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	OTH(7, "OTH", "OTH", "Other"),
@@ -113,7 +113,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #PINF_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	PINF(8, "PINF", "PINF", "Positive Infinity"),
@@ -123,7 +123,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #QS_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	QS(9, "QS", "QS", "Sufficient Quantity"),
@@ -133,7 +133,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #TRC_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	TRC(10, "TRC", "TRC", "Trace"),
@@ -143,7 +143,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #UNC_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	UNC(11, "UNC", "UNC", "Un-encoded"),
@@ -153,7 +153,7 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #UNK_VALUE
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	UNK(12, "UNK", "UNK", "Unknown");
@@ -468,7 +468,7 @@ public enum NullFlavor implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	private NullFlavor(int value, String name, String literal, String description) {
 		this.value = value;
