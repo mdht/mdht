@@ -2954,6 +2954,9 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasPatientBirthYear(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasOriginalAuthor(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasScanningDevice(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasScanDataEnterer(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasRepresentedCustodianOrganizationName(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasRepresentedCustodianOrganizationAddr(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnstructuredDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentCode(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentConfidentialityCode(unstructuredDocument, diagnostics, context);

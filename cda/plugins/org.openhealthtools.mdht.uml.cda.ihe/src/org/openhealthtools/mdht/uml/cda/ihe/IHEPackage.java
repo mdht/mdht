@@ -15199,6 +15199,97 @@ public interface IHEPackage extends EPackage {
 	int SCANNING_DEVICE_FEATURE_COUNT = CDAPackage.AUTHOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScanDataEntererImpl <em>Scan Data Enterer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScanDataEntererImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScanDataEnterer()
+	 * @generated
+	 */
+	int SCAN_DATA_ENTERER = 74;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__REALM_CODE = CDAPackage.DATA_ENTERER__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__TYPE_ID = CDAPackage.DATA_ENTERER__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__TEMPLATE_ID = CDAPackage.DATA_ENTERER__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__TIME = CDAPackage.DATA_ENTERER__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__ASSIGNED_ENTITY = CDAPackage.DATA_ENTERER__ASSIGNED_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__NULL_FLAVOR = CDAPackage.DATA_ENTERER__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__TYPE_CODE = CDAPackage.DATA_ENTERER__TYPE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER__CONTEXT_CONTROL_CODE = CDAPackage.DATA_ENTERER__CONTEXT_CONTROL_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Scan Data Enterer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_DATA_ENTERER_FEATURE_COUNT = CDAPackage.DATA_ENTERER_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15206,7 +15297,7 @@ public interface IHEPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getIHERegistryDelegate()
 	 * @generated
 	 */
-	int IHE_REGISTRY_DELEGATE = 74;
+	int IHE_REGISTRY_DELEGATE = 75;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -15957,6 +16048,16 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getScanningDevice();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer <em>Scan Data Enterer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scan Data Enterer</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer
+	 * @generated
+	 */
+	EClass getScanDataEnterer();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate <em>Registry Delegate</em>}'.
@@ -16729,6 +16830,16 @@ public interface IHEPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SCANNING_DEVICE = eINSTANCE.getScanningDevice();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ScanDataEntererImpl <em>Scan Data Enterer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ScanDataEntererImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getScanDataEnterer()
+		 * @generated
+		 */
+		EClass SCAN_DATA_ENTERER = eINSTANCE.getScanDataEnterer();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.

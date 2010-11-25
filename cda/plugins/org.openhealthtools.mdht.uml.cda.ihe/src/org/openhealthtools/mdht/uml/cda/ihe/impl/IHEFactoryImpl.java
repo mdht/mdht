@@ -80,6 +80,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
@@ -207,6 +208,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.SCANNED_DOCUMENT: return createScannedDocument();
 			case IHEPackage.SCAN_ORIGINAL_AUTHOR: return createScanOriginalAuthor();
 			case IHEPackage.SCANNING_DEVICE: return createScanningDevice();
+			case IHEPackage.SCAN_DATA_ENTERER: return createScanDataEnterer();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -921,6 +923,16 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public ScanningDevice createScanningDevice() {
 		ScanningDeviceImpl scanningDevice = new ScanningDeviceImpl();
 		return scanningDevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScanDataEnterer createScanDataEnterer() {
+		ScanDataEntererImpl scanDataEnterer = new ScanDataEntererImpl();
+		return scanDataEnterer;
 	}
 
 	/**

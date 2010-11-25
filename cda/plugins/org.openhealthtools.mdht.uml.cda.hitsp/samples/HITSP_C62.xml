@@ -62,7 +62,7 @@
 				<id/>
 				<name/>
 				<telecom/>
-				<addr/>
+				<addr><country>US</country></addr>
 			</representedCustodianOrganization>
 		</assignedCustodian>
 	</custodian>

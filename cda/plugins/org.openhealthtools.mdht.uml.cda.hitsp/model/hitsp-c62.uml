@@ -12,4 +12,13 @@
   <elementImport xmi:id="_Mr5hkPZtEd-e-dANbnDT2A">
     <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.cdt/model/cdt.uml#_MwGRIGeLEd-ilOLYnIx0jA"/>
   </elementImport>
+  <elementImport xmi:id="_rvRlQPd5Ed-I-P0qO6j1fA">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_DVyVoPdQEd-aZohBEt6atA"/>
+  </elementImport>
+  <elementImport xmi:id="_tD7rEPd5Ed-I-P0qO6j1fA">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_QUckcPdQEd-aZohBEt6atA"/>
+  </elementImport>
+  <elementImport xmi:id="_ucpxgPd5Ed-I-P0qO6j1fA">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_f-SDcPd5Ed-I-P0qO6j1fA"/>
+  </elementImport>
 </uml:Package>
