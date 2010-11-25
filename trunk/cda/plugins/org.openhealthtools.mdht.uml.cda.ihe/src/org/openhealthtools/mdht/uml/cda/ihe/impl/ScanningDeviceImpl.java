@@ -77,6 +77,33 @@ public class ScanningDeviceImpl extends AuthorImpl implements ScanningDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateScanningDeviceHasDeviceManufacturerModelName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScanningDeviceOperations.validateScanningDeviceHasDeviceManufacturerModelName(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanningDeviceHasDeviceSoftwareName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScanningDeviceOperations.validateScanningDeviceHasDeviceSoftwareName(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScanningDeviceHasAssignedAuthorRepresentedOrganizationId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScanningDeviceOperations.validateScanningDeviceHasAssignedAuthorRepresentedOrganizationId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateScanningDeviceTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ScanningDeviceOperations.validateScanningDeviceTemplateId(this, diagnostics, context);
 	}

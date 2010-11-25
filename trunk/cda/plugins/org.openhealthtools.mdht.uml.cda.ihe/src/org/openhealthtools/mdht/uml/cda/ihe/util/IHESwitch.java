@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
+import org.openhealthtools.mdht.uml.cda.DataEnterer;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
@@ -116,6 +117,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProce
 import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
@@ -969,6 +971,15 @@ public class IHESwitch<T> {
 				if (result == null) result = caseAuthor(scanningDevice);
 				if (result == null) result = caseParticipation(scanningDevice);
 				if (result == null) result = caseInfrastructureRoot(scanningDevice);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.SCAN_DATA_ENTERER: {
+				ScanDataEnterer scanDataEnterer = (ScanDataEnterer)theEObject;
+				T result = caseScanDataEnterer(scanDataEnterer);
+				if (result == null) result = caseDataEnterer(scanDataEnterer);
+				if (result == null) result = caseParticipation(scanDataEnterer);
+				if (result == null) result = caseInfrastructureRoot(scanDataEnterer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2094,6 +2105,21 @@ public class IHESwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scan Data Enterer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scan Data Enterer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScanDataEnterer(ScanDataEnterer object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2915,6 +2941,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseAuthor(Author object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Enterer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Enterer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataEnterer(DataEnterer object) {
 		return null;
 	}
 

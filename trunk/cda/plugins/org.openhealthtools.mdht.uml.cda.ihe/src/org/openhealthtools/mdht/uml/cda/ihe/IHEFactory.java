@@ -671,6 +671,15 @@ public interface IHEFactory extends EFactory {
 	ScanningDevice createScanningDevice();
 
 	/**
+	 * Returns a new object of class '<em>Scan Data Enterer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scan Data Enterer</em>'.
+	 * @generated
+	 */
+	ScanDataEnterer createScanDataEnterer();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

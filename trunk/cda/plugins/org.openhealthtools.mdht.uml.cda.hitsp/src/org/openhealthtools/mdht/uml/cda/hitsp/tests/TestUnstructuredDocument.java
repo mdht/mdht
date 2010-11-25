@@ -44,6 +44,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SC;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -158,6 +159,8 @@ public class TestUnstructuredDocument {
 		//assignedAuthoringDevice
 		AuthoringDevice assignedDevice = CDAFactory.eINSTANCE.createAuthoringDevice();
 		assignedAuthor.setAssignedAuthoringDevice(assignedDevice);
+		assignedDevice.setManufacturerModelName((SC)DatatypesFactory.eINSTANCE.createSC().addText("Nikon"));
+		assignedDevice.setSoftwareName((SC)DatatypesFactory.eINSTANCE.createSC().addText("HewlettPackard"));
 
 		//representedOrganization
 		Organization organization = CDAFactory.eINSTANCE.createOrganization();
@@ -184,7 +187,11 @@ public class TestUnstructuredDocument {
 		custodianName.addText("MDHT Test Suite");
 		custodianOrganization.setName(custodianName);
 		custodianOrganization.setTelecom(DatatypesFactory.eINSTANCE.createTEL("+1-800-555-1212"));
-		custodianOrganization.setAddr(DatatypesFactory.eINSTANCE.createAD());
+
+		AD addr = DatatypesFactory.eINSTANCE.createAD();
+		ADXP country = DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CNT, "US");
+		addr.getCountries().add(country);
+		custodianOrganization.setAddr(addr);
 	}
 	
 	public static void save(ClinicalDocument clinicalDocument) throws Exception {

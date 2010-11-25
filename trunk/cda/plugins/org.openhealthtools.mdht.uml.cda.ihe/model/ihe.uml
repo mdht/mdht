@@ -1019,7 +1019,7 @@ life, hobbies, and risky habits.</body>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_sEkKgPdSEd-aZohBEt6atA">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>Contains original author of this scanned document.</body>
+          <body>Contains author of type ScanOriginalAuthor to represent original author of this scanned document.</body>
           <body>self.author->exists(author : cda::Author | not author.oclIsUndefined() and author.oclIsKindOf(ihe::ScanOriginalAuthor))</body>
         </specification>
       </ownedRule>
@@ -1027,8 +1027,32 @@ life, hobbies, and risky habits.</body>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Cf5IEfdTEd-aZohBEt6atA">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>Contains author element to represent the scanning device and software used to produce the scanned content.</body>
+          <body>Contains author element of type ScanningDevice to represent the scanning device and software used to produce the scanned content.</body>
           <body>self.author->exists(author : cda::Author | not author.oclIsUndefined() and author.oclIsKindOf(ihe::ScanningDevice))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_dZPSkPgjEd-pooc0RA29Vg" name="hasScanDataEnterer" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_dZPSkfgjEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains ScanDataEnterer element to represent the scanner operator who produced the scanned content.</body>
+          <body>not self.dataEnterer.oclIsUndefined() and self.dataEnterer.oclIsKindOf(ihe::ScanDataEnterer)</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_lbQIkPggEd-pooc0RA29Vg" name="hasRepresentedCustodianOrganizationName" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zJ-iYPggEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>custodian/assignedCustodian/representedCustodianOrganization/name is present.</body>
+          <body>not self.custodian.assignedCustodian.representedCustodianOrganization.name.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_AQGrIPghEd-pooc0RA29Vg" name="hasRepresentedCustodianOrganizationAddr" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_AQGrIfghEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>custodian/assignedCustodian/representedCustodianOrganization/addr is present and includes at least the country sub element.</body>
+          <body>not self.custodian.assignedCustodian.representedCustodianOrganization.addr.oclIsUndefined()&#xD;&#xA;   and self.custodian.assignedCustodian.representedCustodianOrganization.addr.country->exists(c : datatypes::ADXP |&#xD;&#xA;      not c.oclIsUndefined() and c.getText().size() > 0)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_g76sEfG1Ed-FxO0PukiqhA">
@@ -1090,13 +1114,17 @@ life, hobbies, and risky habits.</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQnGofHNEd-FxO0PukiqhA" value="1"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_fQZaNkxwEd6h-an5IXo-DA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_kBL1APd1Ed-aZohBEt6atA" name="originalAuthor" type="_DVyVoPdQEd-aZohBEt6atA" association="_kBNDIfd1Ed-aZohBEt6atA">
+      <ownedAttribute xmi:id="_kBL1APd1Ed-aZohBEt6atA" name="scanOriginalAuthor" type="_DVyVoPdQEd-aZohBEt6atA" association="_kBNDIfd1Ed-aZohBEt6atA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q7BaoPd1Ed-aZohBEt6atA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q7Baofd1Ed-aZohBEt6atA" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_lpNiwPd1Ed-aZohBEt6atA" name="scanningDevice" type="_QUckcPdQEd-aZohBEt6atA" association="_lpOJ0fd1Ed-aZohBEt6atA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r_hkkPd1Ed-aZohBEt6atA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r_iLoPd1Ed-aZohBEt6atA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_u-VR4PffEd-I-P0qO6j1fA" name="scanDataEnterer" type="_f-SDcPd5Ed-I-P0qO6j1fA" association="_u-WgAPffEd-I-P0qO6j1fA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1vif8PffEd-I-P0qO6j1fA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1vif8fffEd-I-P0qO6j1fA" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_DVyVoPdQEd-aZohBEt6atA" name="ScanOriginalAuthor">
@@ -1154,8 +1182,38 @@ life, hobbies, and risky habits.</body>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_d5NG8PdxEd-aZohBEt6atA">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>The assignedAuthor/assignedAuthoringDevice/code element shall be present. The values set here are taken from appropriate DICOM vocabulary. The value of code@codeSystem shall be set to &quot;1.2.840.10008.2.16.4&quot;. The value of code@code shall be set to &quot;CAPTURE&quot; for PDF scanned content and &quot;WSD&quot; for plaintext. The value of code@displayName shall be set to &quot;Image Capture&quot; for PDF scanned content and &quot;Workstation&quot; for plaintext.</body>
+          <body>The assignedAuthor/assignedAuthoringDevice/code element is present. The values set here are taken from appropriate DICOM vocabulary. The value of code@codeSystem shall be set to &quot;1.2.840.10008.2.16.4&quot;. The value of code@code shall be set to &quot;CAPTURE&quot; for PDF scanned content and &quot;WSD&quot; for plaintext. The value of code@displayName shall be set to &quot;Image Capture&quot; for PDF scanned content and &quot;Workstation&quot; for plaintext.</body>
           <body>-- does not test value of code or displayName&#xD;&#xA;self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_h7xNIPgkEd-pooc0RA29Vg" name="hasDeviceManufacturerModelName" constrainedElement="_QUckcPdQEd-aZohBEt6atA">
+        <ownedComment xmi:id="_D_ApAPglEd-pooc0RA29Vg">
+          <body>The mixed content shall contain string information that specifies the scanner product name and model number. From this information, features like bit depth and resolution can be inferred. In the case of virtually scanned documents (for example, print to PDF), the manufactureModelName referenced here refers to the makers of the technology that was used to produce the embedded content.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_sU2g0PgkEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The assignedAuthor/assignedAuthoringDevice/manufacturerModelName element is present.</body>
+          <body>not self.assignedAuthor.assignedAuthoringDevice.manufacturerModelName.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_KL4a8PglEd-pooc0RA29Vg" name="hasDeviceSoftwareName" constrainedElement="_QUckcPdQEd-aZohBEt6atA">
+        <ownedComment xmi:id="_KL4a8fglEd-pooc0RA29Vg">
+          <body>The mixed content shall contain string information that specifies the scanning software name and version. In the case of virtually scanned documents, the softwareName referenced here refers to the technology that was used to produce the embedded content.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_KL4a8vglEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The assignedAuthor/assignedAuthoringDevice/softwareName element is present.</body>
+          <body>not self.assignedAuthor.assignedAuthoringDevice.softwareName.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_jhFvsPglEd-pooc0RA29Vg" name="hasAssignedAuthorRepresentedOrganizationId" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_jhFvsfglEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The assignedAuthor/representedOrganization/id element is present. The root attribute shall be set to the oid of the scanning facility.</body>
+          <body>self.assignedAuthor.representedOrganization.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_QUdLgPdQEd-aZohBEt6atA">
@@ -1174,6 +1232,42 @@ life, hobbies, and risky habits.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_lpOJ0fd1Ed-aZohBEt6atA" memberEnd="_lpNiwPd1Ed-aZohBEt6atA _lpOJ0vd1Ed-aZohBEt6atA">
       <ownedEnd xmi:id="_lpOJ0vd1Ed-aZohBEt6atA" type="_g76sEPG1Ed-FxO0PukiqhA" association="_lpOJ0fd1Ed-aZohBEt6atA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_f-SDcPd5Ed-I-P0qO6j1fA" name="ScanDataEnterer">
+      <ownedComment xmi:id="_kFq9EPgdEd-pooc0RA29Vg">
+        <body>Represents the scanner operator who produced the scanned content.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_HoyQQPgeEd-pooc0RA29Vg" name="timeEqualsDocumentEffectiveTime" constrainedElement="_DVyVoPdQEd-aZohBEt6atA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_HoyQQfgeEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The time shall be equal to that of ClinicalDocument/effectiveTime. At a minimum, the time shall be precise to the day and shall include the time zone offset from GMT.</body>
+          <body>self.time.value = self.getClinicalDocument().effectiveTime.value</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_qWiowPgeEd-pooc0RA29Vg" name="hasAssignedEntityId" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_qWiowfgeEd-pooc0RA29Vg">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The assignedEntity/id element has both the root and the extension attributes. The root shall be the oid of the scanning facility and the extension shall be an appropriately assigned, facility unique id of the operator.</body>
+          <body>self.assignedEntity.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined() and not ident.extension.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_f-dpoPd5Ed-I-P0qO6j1fA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_twqZYEcEEd6besF9iFIJkQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="__J6mgPgdEd-pooc0RA29Vg" name="time" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_AGzskPgeEd-pooc0RA29Vg">
+          <body>Denotes the time at which the original content was scanned.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_4ysYYD59Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BAu-MPgeEd-pooc0RA29Vg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BAvlQPgeEd-pooc0RA29Vg" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_JXv1oEowEd6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_u-WgAPffEd-I-P0qO6j1fA" memberEnd="_u-VR4PffEd-I-P0qO6j1fA _u-WgAfffEd-I-P0qO6j1fA">
+      <ownedEnd xmi:id="_u-WgAfffEd-I-P0qO6j1fA" type="_g76sEPG1Ed-FxO0PukiqhA" association="_u-WgAPffEd-I-P0qO6j1fA"/>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -1493,4 +1587,15 @@ life, hobbies, and risky habits.</body>
   <CDA:ConstraintValidation xmi:id="_noHcQPdxEd-aZohBEt6atA" base_Constraint="_VLMN8PdxEd-aZohBEt6atA"/>
   <CDA:AssociationValidation xmi:id="_nphNoPd1Ed-aZohBEt6atA" severity="WARNING" base_Association="_kBNDIfd1Ed-aZohBEt6atA"/>
   <CDA:AssociationValidation xmi:id="_u-EZUPd1Ed-aZohBEt6atA" base_Association="_lpOJ0fd1Ed-aZohBEt6atA"/>
+  <CDA:CDATemplate xmi:id="_nmVZ8Pd5Ed-I-P0qO6j1fA" base_Class="_f-SDcPd5Ed-I-P0qO6j1fA" templateId="1.3.6.1.4.1.19376.1.2.20.3"/>
+  <CDA:AssociationValidation xmi:id="_2jPNwPffEd-I-P0qO6j1fA" base_Association="_u-WgAPffEd-I-P0qO6j1fA"/>
+  <CDA:PropertyValidation xmi:id="_BcefAPgeEd-pooc0RA29Vg" base_Property="__J6mgPgdEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_LOZFAPgeEd-pooc0RA29Vg" base_Constraint="_HoyQQPgeEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_K6ussPgfEd-pooc0RA29Vg" base_Constraint="_qWiowPgeEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_rXLUcPggEd-pooc0RA29Vg" base_Constraint="_lbQIkPggEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_BihVQPghEd-pooc0RA29Vg" base_Constraint="_AQGrIPghEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_kha2MPgjEd-pooc0RA29Vg" base_Constraint="_dZPSkPgjEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_lSkw4PgkEd-pooc0RA29Vg" base_Constraint="_h7xNIPgkEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_VZRgcPglEd-pooc0RA29Vg" base_Constraint="_KL4a8PglEd-pooc0RA29Vg"/>
+  <CDA:ConstraintValidation xmi:id="_Bz2jkPgmEd-pooc0RA29Vg" base_Constraint="_jhFvsPglEd-pooc0RA29Vg"/>
 </xmi:XMI>
