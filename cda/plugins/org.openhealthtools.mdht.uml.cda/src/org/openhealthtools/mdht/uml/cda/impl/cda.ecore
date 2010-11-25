@@ -1129,6 +1129,7 @@
         defaultValueLiteral="MNT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataEnterer" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">

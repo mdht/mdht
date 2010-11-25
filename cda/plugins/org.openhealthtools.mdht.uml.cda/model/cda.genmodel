@@ -407,6 +407,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/typeCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/contextControlCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//DataEnterer/getClinicalDocument"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//AssignedEntity">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
