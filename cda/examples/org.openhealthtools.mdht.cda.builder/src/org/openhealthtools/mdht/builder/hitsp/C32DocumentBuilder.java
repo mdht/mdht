@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.MedicationsSectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
@@ -30,6 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 public class C32DocumentBuilder extends PatientSummaryBuilder {
+
 
 	@Override
 	public CE buildDocumentCode() {

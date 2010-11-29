@@ -12,16 +12,24 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.builder.hitsp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
+import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.MedicationsSectionDirector;
+import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
 import org.openhealthtools.mdht.builder.cda.GenericSectionDirector;
 import org.openhealthtools.mdht.builder.cda.helpers.BuilderUtil;
+import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.PlayingEntity;
+import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
@@ -31,6 +39,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
@@ -43,6 +52,8 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -52,6 +63,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 public class PatientSummaryBuilder extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder {
 	
@@ -297,6 +309,43 @@ public class PatientSummaryBuilder extends org.openhealthtools.mdht.builder.ccd.
 		}
 
 	}
+	
+	public static class MedicationsSectionDirector extends org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.MedicationsSectionDirector {
+
+		@Override
+		protected MedicationsSection createSection() {
+			return IHEFactory.eINSTANCE.createMedicationsSection().init();
+		}
+
+		
+		public List<Medication> buildMedications() {
+			return new ArrayBuilder<Medication>().construct();
+		}
+
+
+		@Override
+		public List<SubstanceAdministration> buildSubstanceAdministrations() {
+			
+			List<SubstanceAdministration> medications = new ArrayList<SubstanceAdministration>();
+			
+			for (Medication medication : buildMedications()) {
+
+				medications.add(medication);
+
+			}			
+			return medications;
+		}
+		
+		
+	}
+	
+	
+
+//	@Override
+//	public MedicationsSectionDirector getMedicationsSectionDirector() {
+//		// TODO Auto-generated method stub
+//		return super.getMedicationsSectionDirector();
+//	}
 
 	public AllergiesReactionSectionDirector getAllergiesReactionSectionDirector() {
 		return null;
