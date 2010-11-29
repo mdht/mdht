@@ -13,15 +13,20 @@
 package org.openhealthtools.mdht.builder.examples;
 
 import java.io.FileOutputStream;
+import java.util.List;
 
+import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.MedicationsSectionDirector;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
 import org.openhealthtools.mdht.builder.hitsp.PatientSummaryBuilder;
+import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.NonXMLBody;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * C32Example is an example implementation of the MDHT DocumentBuilder based on
@@ -46,6 +51,26 @@ public class C32Example {
 		 * Define and override various builders
 		 */
 		PatientSummaryBuilder exampleHITSPC32 = new C32DocumentBuilder() {
+
+			@Override
+			public MedicationsSectionDirector getMedicationsSectionDirector() {
+				return new MedicationsSectionDirector()
+				{
+		
+					@Override
+					public ST buildSectionTitle() {
+						// TODO Auto-generated method stub
+						return super.buildSectionTitle();
+					}
+
+					@Override
+					public List<Act> buildActs() {
+						// TODO Auto-generated method stub
+						return super.buildActs();
+					}
+					
+				};
+			}
 
 			@Override
 			public Component2 buildComponentBuider() {
