@@ -107,14 +107,12 @@ public class Validator extends AbstractNestedValidator {
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, uri + " " + path.toOSString() + " " + lock.toOSString());
 
-			System.out.println(activeProject.getName());
-
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, activeProject.getName());
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
 
 			workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, true);
-
+			
 			File validationFile = path.toFile();
 
 			validationFile.delete();
