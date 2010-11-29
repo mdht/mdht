@@ -168,6 +168,51 @@ public class UnstructuredDocumentImpl extends MedicalDocumentImpl implements Uns
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateScannedDocumentLegalAuthenticatorAssignedEntityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentLegalAuthenticatorAssignedEntityId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasNonXMLBody(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasNonXMLBody(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasNonXMLBodyBinaryText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasNonXMLBodyBinaryText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasNonXMLBodyTextMediaType(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasNonXMLBodyTextMediaType(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScannedDocumentHasNonXMLBodyTextRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ScannedDocumentOperations.validateScannedDocumentHasNonXMLBodyTextRepresentation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateScannedDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return UnstructuredDocumentOperations.validateScannedDocumentTemplateId(this, diagnostics, context);
 	}

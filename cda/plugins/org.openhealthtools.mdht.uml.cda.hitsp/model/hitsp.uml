@@ -819,6 +819,9 @@ If the problem is known to be resolved, but the date of resolution is not known,
       <ownedEnd xmi:id="_b8acwO3yEd-dJvThfIiQuA" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_b8Z1se3yEd-dJvThfIiQuA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__8-JUPG1Ed-FxO0PukiqhA" name="UnstructuredDocument">
+      <ownedComment xmi:id="_DisjoPgpEd-pooc0RA29Vg">
+        <body>&lt;b>IMPORTANT NOTE:&lt;/b> &lt;i>The HITSP C62 specification does not include a templateId for this doument type. The id 2.16.840.1.113883.3.88.11.62.1 is included in this model to support instance validation, but we are designing a solution to allow removal of this Id.&lt;/i></body>
+      </ownedComment>
       <ownedRule xmi:id="_8u1IUPM0Ed-FxO0PukiqhA" name="noStructuredData" constrainedElement="__8-JUPG1Ed-FxO0PukiqhA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_98cK8PM0Ed-FxO0PukiqhA">
           <language>Analysis</language>

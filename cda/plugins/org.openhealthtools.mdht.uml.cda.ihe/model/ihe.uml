@@ -1055,6 +1055,58 @@ life, hobbies, and risky habits.</body>
           <body>not self.custodian.assignedCustodian.representedCustodianOrganization.addr.oclIsUndefined()&#xD;&#xA;   and self.custodian.assignedCustodian.representedCustodianOrganization.addr.country->exists(c : datatypes::ADXP |&#xD;&#xA;      not c.oclIsUndefined() and c.getText().size() > 0)</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_tuvG0PtDEd-xzOM2yZqLUw" name="legalAuthenticatorAssignedEntityId" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zGWrwPtDEd-xzOM2yZqLUw">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The legalAuthenticator/assignedEntity/id element if known shall include both the root and the extension attributes.</body>
+          <body>self.legalAuthenticator.assignedEntity.id->size() > 0 implies (&#xD;&#xA;   self.legalAuthenticator.assignedEntity.id->forAll(ident : datatypes::II |&#xD;&#xA;      not ident.root.oclIsUndefined() and not ident.extension.oclIsUndefined()))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_qW_5gPtEEd-xzOM2yZqLUw" name="hasNonXMLBody" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <ownedComment xmi:id="_4FAhoPtEEd-xzOM2yZqLUw">
+          <body>Used to wrap the scanned content. The nonXMLBody element is guaranteed to be unique; thus the x-path to recover the scanned content is essentially fixed.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_xSS3sPtEEd-xzOM2yZqLUw">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The component/nonXMLBody is present.</body>
+          <body>not self.component.nonXMLBody.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_dViY4PtFEd-xzOM2yZqLUw" name="scannedContentLanguage" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ljIscPtFEd-xzOM2yZqLUw">
+          <language>Analysis</language>
+          <body>If the human-readable language of the scanned content is different than that of the wrapper (specified in ClinicalDocument/languageCode), then ClinicalDocument/component/nonXMLBody/languageCode shall be present. Attribute code@code shall be present. Attribute code@codeSystem shall be IETF (Internet Engineering Task Force) RFC 3066 in accordance with the HL7 CDA R2 documentation.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ImYSsPvIEd-GKY_8ySda1g" name="hasNonXMLBodyBinaryText" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_WQIF4PvIEd-GKY_8ySda1g">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The component/nonXMLBody/text element is present and encoded using xs:base64Binary encoding. Its #CDATA will contain the scanned content.</body>
+          <body>not self.component.nonXMLBody.text.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_djygwPvIEd-GKY_8ySda1g" name="hasNonXMLBodyTextMediaType" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iaz6EPvIEd-GKY_8ySda1g">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The component/nonXMLBody/text@mediaType is “application/pdf” for PDF, or “text/plain” for plaintext.</body>
+          <body>self.component.nonXMLBody.text.mediaType = 'application/pdf' or self.component.nonXMLBody.text.mediaType = 'text/plain'</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_qO9y4PvIEd-GKY_8ySda1g" name="hasNonXMLBodyTextRepresentation" constrainedElement="_g76sEPG1Ed-FxO0PukiqhA">
+        <ownedComment xmi:id="_8OnZ4PvJEd-GKY_8ySda1g">
+          <body>The @representation for both PDF and plaintext scanned content will be &quot;B64&quot;, because this profile requires the base-64 encoding of both formats.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_t8tP8PvIEd-GKY_8ySda1g">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The component/nonXMLBody/text@representation is B64.</body>
+          <body>self.component.nonXMLBody.text.representation = datatypes::BinaryDataEncoding::B64</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_g76sEfG1Ed-FxO0PukiqhA">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
       </generalization>
@@ -1125,6 +1177,14 @@ life, hobbies, and risky habits.</body>
       <ownedAttribute xmi:id="_u-VR4PffEd-I-P0qO6j1fA" name="scanDataEnterer" type="_f-SDcPd5Ed-I-P0qO6j1fA" association="_u-WgAPffEd-I-P0qO6j1fA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1vif8PffEd-I-P0qO6j1fA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1vif8fffEd-I-P0qO6j1fA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_doJdwPtDEd-xzOM2yZqLUw" name="legalAuthenticator" association="_donX0PtDEd-xzOM2yZqLUw">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_fcTWYEcZEd6besF9iFIJkQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_domwwPtDEd-xzOM2yZqLUw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eE0WMPtEEd-xzOM2yZqLUw" name="documentationOf" association="_eE09QftEEd-xzOM2yZqLUw">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_1fhigEcEEd6besF9iFIJkQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eE09QPtEEd-xzOM2yZqLUw"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_DVyVoPdQEd-aZohBEt6atA" name="ScanOriginalAuthor">
@@ -1268,6 +1328,18 @@ life, hobbies, and risky habits.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_u-WgAPffEd-I-P0qO6j1fA" memberEnd="_u-VR4PffEd-I-P0qO6j1fA _u-WgAfffEd-I-P0qO6j1fA">
       <ownedEnd xmi:id="_u-WgAfffEd-I-P0qO6j1fA" type="_g76sEPG1Ed-FxO0PukiqhA" association="_u-WgAPffEd-I-P0qO6j1fA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_donX0PtDEd-xzOM2yZqLUw" memberEnd="_doJdwPtDEd-xzOM2yZqLUw _donX0ftDEd-xzOM2yZqLUw">
+      <ownedComment xmi:id="_oeUWEPtDEd-xzOM2yZqLUw">
+        <body>Context is left up to the scanning facility to refine in accordance with local policies.</body>
+      </ownedComment>
+      <ownedEnd xmi:id="_donX0ftDEd-xzOM2yZqLUw" type="_g76sEPG1Ed-FxO0PukiqhA" association="_donX0PtDEd-xzOM2yZqLUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eE09QftEEd-xzOM2yZqLUw" memberEnd="_eE0WMPtEEd-xzOM2yZqLUw _eE09QvtEEd-xzOM2yZqLUw">
+      <ownedComment xmi:id="_iP4ocPtEEd-xzOM2yZqLUw">
+        <body>Used to encode the date/time range of the original content. If the original content is representative of a single point in time then the endpoints of the date/time range shall be the same. Information regarding this date/time range shall be included, if it is known. In many cases this will have to be supplied by the operator.</body>
+      </ownedComment>
+      <ownedEnd xmi:id="_eE09QvtEEd-xzOM2yZqLUw" type="_g76sEPG1Ed-FxO0PukiqhA" association="_eE09QftEEd-xzOM2yZqLUw"/>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -1598,4 +1670,12 @@ life, hobbies, and risky habits.</body>
   <CDA:ConstraintValidation xmi:id="_lSkw4PgkEd-pooc0RA29Vg" base_Constraint="_h7xNIPgkEd-pooc0RA29Vg"/>
   <CDA:ConstraintValidation xmi:id="_VZRgcPglEd-pooc0RA29Vg" base_Constraint="_KL4a8PglEd-pooc0RA29Vg"/>
   <CDA:ConstraintValidation xmi:id="_Bz2jkPgmEd-pooc0RA29Vg" base_Constraint="_jhFvsPglEd-pooc0RA29Vg"/>
+  <CDA:AssociationValidation xmi:id="_inYX4PtDEd-xzOM2yZqLUw" severity="INFO" base_Association="_donX0PtDEd-xzOM2yZqLUw"/>
+  <CDA:ConstraintValidation xmi:id="_zf_TwPtDEd-xzOM2yZqLUw" base_Constraint="_tuvG0PtDEd-xzOM2yZqLUw"/>
+  <CDA:AssociationValidation xmi:id="_fM7NwPtEEd-xzOM2yZqLUw" severity="INFO" base_Association="_eE09QftEEd-xzOM2yZqLUw"/>
+  <CDA:ConstraintValidation xmi:id="_xp4RQPtEEd-xzOM2yZqLUw" base_Constraint="_qW_5gPtEEd-xzOM2yZqLUw"/>
+  <CDA:ConstraintValidation xmi:id="_l-73oPtFEd-xzOM2yZqLUw" base_Constraint="_dViY4PtFEd-xzOM2yZqLUw"/>
+  <CDA:ConstraintValidation xmi:id="_K40PYPvIEd-GKY_8ySda1g" base_Constraint="_ImYSsPvIEd-GKY_8ySda1g"/>
+  <CDA:ConstraintValidation xmi:id="_i1H3gPvIEd-GKY_8ySda1g" base_Constraint="_djygwPvIEd-GKY_8ySda1g"/>
+  <CDA:ConstraintValidation xmi:id="_uP9jIPvIEd-GKY_8ySda1g" base_Constraint="_qO9y4PvIEd-GKY_8ySda1g"/>
 </xmi:XMI>

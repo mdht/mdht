@@ -751,6 +751,26 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasRepresentedCustodianOrganizationAddr/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasRepresentedCustodianOrganizationAddr/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentLegalAuthenticatorAssignedEntityId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentLegalAuthenticatorAssignedEntityId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentLegalAuthenticatorAssignedEntityId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBody">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBody/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBody/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyBinaryText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyBinaryText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyBinaryText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyTextMediaType">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyTextMediaType/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyTextMediaType/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyTextRepresentation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyTextRepresentation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentHasNonXMLBodyTextRepresentation/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ScannedDocument/ScannedDocumentTemplateId/context"/>
