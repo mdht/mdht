@@ -2957,6 +2957,11 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasScanDataEnterer(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasRepresentedCustodianOrganizationName(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasRepresentedCustodianOrganizationAddr(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentLegalAuthenticatorAssignedEntityId(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasNonXMLBody(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasNonXMLBodyBinaryText(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasNonXMLBodyTextMediaType(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentHasNonXMLBodyTextRepresentation(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnstructuredDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentCode(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateScannedDocument_validateScannedDocumentConfidentialityCode(unstructuredDocument, diagnostics, context);
