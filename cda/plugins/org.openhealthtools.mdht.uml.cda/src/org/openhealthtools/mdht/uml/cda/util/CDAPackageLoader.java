@@ -57,9 +57,14 @@ public class CDAPackageLoader {
 	protected static final void loadPackages() {
 
 		if (!packagesLoaded) {
+			
 			final String PATH_SEPARATOR = System.getProperty("path.separator");
 
 			final String JAVA_CLASSPATH = System.getProperty("java.class.path");
+						
+			final String BIN = "bin";
+			
+			final String PLUGINXML = "plugin.xml";
 
 			StringTokenizer st = new StringTokenizer(JAVA_CLASSPATH, PATH_SEPARATOR);
 
@@ -75,10 +80,10 @@ public class CDAPackageLoader {
 						// If there is an issue loading the plugin jar - we let
 						// normal processing continue
 					}
-				} else if (path.endsWith("/bin"))
+				} else if (path.endsWith(BIN))
 				{
 					
-					String pluginPath = path.replaceAll("/bin", "/plugin.xml");
+					String pluginPath = path.substring(0, path.lastIndexOf(BIN)) + PLUGINXML;
 
 					try {
 						FileInputStream pluginInputSteam = new FileInputStream(pluginPath);
