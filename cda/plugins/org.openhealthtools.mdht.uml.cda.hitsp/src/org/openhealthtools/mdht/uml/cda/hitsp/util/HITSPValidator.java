@@ -47,6 +47,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationCombinationMedication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationConditionalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationNormalDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationSplitDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose;
@@ -547,12 +548,20 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int RESULT__RESULT_EFFECTIVE_TIME = 62;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Language Spoken No Proficiency Level Code' of 'Language Spoken'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int LANGUAGE_SPOKEN__LANGUAGE_SPOKEN_NO_PROFICIENCY_LEVEL_CODE = 63;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Language Spoken Template Id' of 'Language Spoken'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LANGUAGE_SPOKEN__LANGUAGE_SPOKEN_TEMPLATE_ID = 63;
+	public static final int LANGUAGE_SPOKEN__LANGUAGE_SPOKEN_TEMPLATE_ID = 64;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Language Spoken Mode Code' of 'Language Spoken'.
@@ -560,15 +569,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LANGUAGE_SPOKEN__LANGUAGE_SPOKEN_MODE_CODE = 64;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Language Spoken Proficiency Level Code' of 'Language Spoken'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int LANGUAGE_SPOKEN__LANGUAGE_SPOKEN_PROFICIENCY_LEVEL_CODE = 65;
+	public static final int LANGUAGE_SPOKEN__LANGUAGE_SPOKEN_MODE_CODE = 65;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Insurance Provider Template Id' of 'Insurance Provider'.
@@ -667,6 +668,14 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int UNSTRUCTURED_DOCUMENT__SCANNED_DOCUMENT_TEMPLATE_ID = 76;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Information Template Id' of 'Medication Information'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICATION_INFORMATION__MEDICATION_INFORMATION_TEMPLATE_ID = 77;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Encounter Template Id' of 'Encounter'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -712,7 +721,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 76;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 77;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -890,6 +899,8 @@ public class HITSPValidator extends EObjectValidator {
 				return validateSupportParticipant((SupportParticipant)value, diagnostics, context);
 			case HITSPPackage.UNSTRUCTURED_DOCUMENT:
 				return validateUnstructuredDocument((UnstructuredDocument)value, diagnostics, context);
+			case HITSPPackage.MEDICATION_INFORMATION:
+				return validateMedicationInformation((MedicationInformation)value, diagnostics, context);
 			case HITSPPackage.HITSP_REGISTRY_DELEGATE:
 				return validateHITSPRegistryDelegate((HITSPRegistryDelegate)value, diagnostics, context);
 			default:
@@ -2377,10 +2388,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(languageSpoken, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(languageSpoken, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateLanguageCommunication_validateIHELanguageCommunicationTemplateId(languageSpoken, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLanguageSpoken_validateLanguageSpokenNoProficiencyLevelCode(languageSpoken, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLanguageSpoken_validateLanguageSpokenTemplateId(languageSpoken, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLanguageSpoken_validateLanguageSpokenModeCode(languageSpoken, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLanguageSpoken_validateLanguageSpokenProficiencyLevelCode(languageSpoken, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validateLanguageSpokenNoProficiencyLevelCode constraint of '<em>Language Spoken</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLanguageSpoken_validateLanguageSpokenNoProficiencyLevelCode(LanguageSpoken languageSpoken, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return languageSpoken.validateLanguageSpokenNoProficiencyLevelCode(diagnostics, context);
 	}
 
 	/**
@@ -2401,16 +2422,6 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateLanguageSpoken_validateLanguageSpokenModeCode(LanguageSpoken languageSpoken, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return languageSpoken.validateLanguageSpokenModeCode(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateLanguageSpokenProficiencyLevelCode constraint of '<em>Language Spoken</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLanguageSpoken_validateLanguageSpokenProficiencyLevelCode(LanguageSpoken languageSpoken, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return languageSpoken.validateLanguageSpokenProficiencyLevelCode(diagnostics, context);
 	}
 
 	/**
@@ -3022,6 +3033,37 @@ public class HITSPValidator extends EObjectValidator {
 			return false;
 		}
 		return iheValidator.validateScannedDocument_validateScannedDocumentTemplateId(unstructuredDocument, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationInformation(MedicationInformation medicationInformation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(medicationInformation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= cdaValidator.validateManufacturedProduct_validateManufacturedDrugOrOtherMaterial(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProduct_validateProductTemplateId(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateProductEntry_validateProductEntryTemplateId(medicationInformation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationInformation_validateMedicationInformationTemplateId(medicationInformation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateMedicationInformationTemplateId constraint of '<em>Medication Information</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationInformation_validateMedicationInformationTemplateId(MedicationInformation medicationInformation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationInformation.validateMedicationInformationTemplateId(diagnostics, context);
 	}
 
 	/**

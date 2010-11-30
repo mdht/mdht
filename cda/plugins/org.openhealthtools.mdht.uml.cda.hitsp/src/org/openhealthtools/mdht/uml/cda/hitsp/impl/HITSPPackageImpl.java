@@ -46,6 +46,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationCombinationMedication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationConditionalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationNormalDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationSplitDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose;
@@ -420,6 +421,13 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	private EClass unstructuredDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass medicationInformationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -961,6 +969,15 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMedicationInformation() {
+		return medicationInformationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEncounter() {
 		return encounterEClass;
 	}
@@ -1113,6 +1130,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 
 		unstructuredDocumentEClass = createEClass(UNSTRUCTURED_DOCUMENT);
 
+		medicationInformationEClass = createEClass(MEDICATION_INFORMATION);
+
 		hitspRegistryDelegateEClass = createEClass(HITSP_REGISTRY_DELEGATE);
 	}
 
@@ -1210,6 +1229,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		supportParticipantEClass.getESuperTypes().add(this.getSupport());
 		unstructuredDocumentEClass.getESuperTypes().add(theIHEPackage.getMedicalDocument());
 		unstructuredDocumentEClass.getESuperTypes().add(theIHEPackage.getScannedDocument());
+		medicationInformationEClass.getESuperTypes().add(theIHEPackage.getProductEntry());
 		hitspRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -1878,6 +1898,15 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 
 		initEClass(languageSpokenEClass, LanguageSpoken.class, "LanguageSpoken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(languageSpokenEClass, ecorePackage.getEBoolean(), "validateLanguageSpokenNoProficiencyLevelCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(languageSpokenEClass, ecorePackage.getEBoolean(), "validateLanguageSpokenTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -1888,15 +1917,6 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(languageSpokenEClass, ecorePackage.getEBoolean(), "validateLanguageSpokenModeCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(languageSpokenEClass, ecorePackage.getEBoolean(), "validateLanguageSpokenProficiencyLevelCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2004,6 +2024,17 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(unstructuredDocumentEClass, ecorePackage.getEBoolean(), "validateUnstructuredDocumentOnePatientPerDocument", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(medicationInformationEClass, MedicationInformation.class, "MedicationInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(medicationInformationEClass, ecorePackage.getEBoolean(), "validateMedicationInformationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2315,7 +2346,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.3.88.11.83.2",
 			 "constraints.validation.error", "LanguageSpokenTemplateId LanguageSpokenModeCode",
-			 "constraints.validation.warning", "LanguageSpokenProficiencyLevelCode",
+			 "constraints.validation.warning", "LanguageSpokenNoProficiencyLevelCode",
 			 "modeCode.codeSystem", "2.16.840.1.113883.5.60",
 			 "modeCode.codeSystemName", "LanguageAbilityMode"
 		   });														
@@ -2378,7 +2409,14 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 			 "templateId.root", "2.16.840.1.113883.3.88.11.62.1",
 			 "constraints.validation.error", "UnstructuredDocumentTemplateId UnstructuredDocumentOnePatientPerDocument",
 			 "constraints.validation.warning", "UnstructuredDocumentNoStructuredData"
-		   });									
+		   });											
+		addAnnotation
+		  (medicationInformationEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.8.2",
+			 "constraints.validation.error", "MedicationInformationTemplateId"
+		   });				
 	}
 
 	/**
@@ -2395,7 +2433,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																	
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																						
 	}
 
 	/**
@@ -2420,7 +2458,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (unstructuredDocumentEClass, 
 		   source, 
 		   new String[] {
-		   });								
+		   });													
 	}
 
 } //HITSPPackageImpl

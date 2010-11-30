@@ -10148,6 +10148,106 @@ public interface HITSPPackage extends EPackage {
 	int UNSTRUCTURED_DOCUMENT_FEATURE_COUNT = IHEPackage.MEDICAL_DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicationInformationImpl <em>Medication Information</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicationInformationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getMedicationInformation()
+	 * @generated
+	 */
+	int MEDICATION_INFORMATION = 51;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__REALM_CODE = IHEPackage.PRODUCT_ENTRY__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__TYPE_ID = IHEPackage.PRODUCT_ENTRY__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__TEMPLATE_ID = IHEPackage.PRODUCT_ENTRY__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__ID = IHEPackage.PRODUCT_ENTRY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Manufactured Labeled Drug</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__MANUFACTURED_LABELED_DRUG = IHEPackage.PRODUCT_ENTRY__MANUFACTURED_LABELED_DRUG;
+
+	/**
+	 * The feature id for the '<em><b>Manufactured Material</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__MANUFACTURED_MATERIAL = IHEPackage.PRODUCT_ENTRY__MANUFACTURED_MATERIAL;
+
+	/**
+	 * The feature id for the '<em><b>Manufacturer Organization</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__MANUFACTURER_ORGANIZATION = IHEPackage.PRODUCT_ENTRY__MANUFACTURER_ORGANIZATION;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__NULL_FLAVOR = IHEPackage.PRODUCT_ENTRY__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION__CLASS_CODE = IHEPackage.PRODUCT_ENTRY__CLASS_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Medication Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_INFORMATION_FEATURE_COUNT = IHEPackage.PRODUCT_ENTRY_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPRegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10155,7 +10255,7 @@ public interface HITSPPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getHITSPRegistryDelegate()
 	 * @generated
 	 */
-	int HITSP_REGISTRY_DELEGATE = 51;
+	int HITSP_REGISTRY_DELEGATE = 52;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -10656,6 +10756,16 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUnstructuredDocument();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation <em>Medication Information</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Medication Information</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation
+	 * @generated
+	 */
+	EClass getMedicationInformation();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.Encounter <em>Encounter</em>}'.
@@ -11198,6 +11308,16 @@ public interface HITSPPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UNSTRUCTURED_DOCUMENT = eINSTANCE.getUnstructuredDocument();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicationInformationImpl <em>Medication Information</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicationInformationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getMedicationInformation()
+		 * @generated
+		 */
+		EClass MEDICATION_INFORMATION = eINSTANCE.getMedicationInformation();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.EncounterImpl <em>Encounter</em>}' class.

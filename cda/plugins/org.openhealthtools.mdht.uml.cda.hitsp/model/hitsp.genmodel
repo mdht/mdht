@@ -370,6 +370,10 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//LanguageSpoken">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//LanguageSpoken/LanguageSpokenNoProficiencyLevelCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenNoProficiencyLevelCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenNoProficiencyLevelCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//LanguageSpoken/LanguageSpokenTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenTemplateId/context"/>
@@ -377,10 +381,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//LanguageSpoken/LanguageSpokenModeCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenModeCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenModeCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//LanguageSpoken/LanguageSpokenProficiencyLevelCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenProficiencyLevelCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//LanguageSpoken/LanguageSpokenProficiencyLevelCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//InsuranceProvider">
@@ -437,6 +437,12 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentOnePatientPerDocument">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentOnePatientPerDocument/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//UnstructuredDocument/UnstructuredDocumentOnePatientPerDocument/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationInformation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//MedicationInformation/MedicationInformationTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//MedicationInformation/MedicationInformationTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//MedicationInformation/MedicationInformationTemplateId/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//HITSPRegistryDelegate"/>

@@ -50,6 +50,15 @@ public class LanguageSpokenImpl extends LanguageCommunicationImpl implements Lan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateLanguageSpokenNoProficiencyLevelCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return LanguageSpokenOperations.validateLanguageSpokenNoProficiencyLevelCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateLanguageSpokenTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return LanguageSpokenOperations.validateLanguageSpokenTemplateId(this, diagnostics, context);
 	}
@@ -61,15 +70,6 @@ public class LanguageSpokenImpl extends LanguageCommunicationImpl implements Lan
 	 */
 	public boolean validateLanguageSpokenModeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return LanguageSpokenOperations.validateLanguageSpokenModeCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLanguageSpokenProficiencyLevelCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return LanguageSpokenOperations.validateLanguageSpokenProficiencyLevelCode(this, diagnostics, context);
 	}
 
 	/**
