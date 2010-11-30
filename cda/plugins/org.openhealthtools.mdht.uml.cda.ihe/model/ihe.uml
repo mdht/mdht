@@ -1235,7 +1235,7 @@ life, hobbies, and risky habits.</body>
           <language>Analysis</language>
           <language>OCL</language>
           <body>The assignedAuthor/id element shall be at least the root oid of the scanning device.</body>
-          <body>-- does not test device root oid&#xD;&#xA;self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())</body>
+          <body>self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_VLMN8PdxEd-aZohBEt6atA" name="hasAssignedAuthoringDeviceCode" constrainedElement="_QUckcPdQEd-aZohBEt6atA">
@@ -1243,7 +1243,7 @@ life, hobbies, and risky habits.</body>
           <language>Analysis</language>
           <language>OCL</language>
           <body>The assignedAuthor/assignedAuthoringDevice/code element is present. The values set here are taken from appropriate DICOM vocabulary. The value of code@codeSystem shall be set to &quot;1.2.840.10008.2.16.4&quot;. The value of code@code shall be set to &quot;CAPTURE&quot; for PDF scanned content and &quot;WSD&quot; for plaintext. The value of code@displayName shall be set to &quot;Image Capture&quot; for PDF scanned content and &quot;Workstation&quot; for plaintext.</body>
-          <body>-- does not test value of code or displayName&#xD;&#xA;self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()</body>
+          <body>self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_h7xNIPgkEd-pooc0RA29Vg" name="hasDeviceManufacturerModelName" constrainedElement="_QUckcPdQEd-aZohBEt6atA">

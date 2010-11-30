@@ -124,8 +124,7 @@ public class ScanningDeviceOperations extends AuthorOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "-- does not test device root oid"+
-"self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())";
+	protected static final String VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateScanningDeviceHasAssignedAuthorId(ScanningDevice, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanning Device Has Assigned Author Id</em>}' invariant operation.
@@ -141,7 +140,6 @@ public class ScanningDeviceOperations extends AuthorOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * -- does not test device root oid
 	 * self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())
 	 * @param scanningDevice The receiving '<em><b>Scanning Device</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
@@ -183,8 +181,7 @@ public class ScanningDeviceOperations extends AuthorOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHORING_DEVICE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "-- does not test value of code or displayName"+
-"self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'"+
+	protected static final String VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHORING_DEVICE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'"+
 "   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()"+
 "   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()";
 
@@ -202,7 +199,6 @@ public class ScanningDeviceOperations extends AuthorOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * -- does not test value of code or displayName
 	 * self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'
 	 *    and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()
 	 *    and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()
