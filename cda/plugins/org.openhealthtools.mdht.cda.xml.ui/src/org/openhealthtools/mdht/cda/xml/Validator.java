@@ -141,7 +141,7 @@ public class Validator extends AbstractNestedValidator {
 
 		CDAValidationReport valreport = new CDAValidationReport(uri);
 
-		while (!done && doneCtr++ < 50) {
+		while (!done && doneCtr++ < 500) {
 			try {
 
 				Thread.sleep(100);
@@ -265,6 +265,8 @@ public class Validator extends AbstractNestedValidator {
 
 	public static void parse(CDAValidationReport valreport, String cdauri, IPath filePath) {
 
+		final String DELIMITER = "~";
+		
 		try {
 
 			BufferedReader br = new BufferedReader(new FileReader(filePath.toFile()));
@@ -276,7 +278,7 @@ public class Validator extends AbstractNestedValidator {
 			int diagnosticColumn;
 
 			while ((strLine = br.readLine()) != null) {
-				String diagnostic[] = strLine.split(",");
+				String diagnostic[] = strLine.split(DELIMITER);
 
 				diagnosticLine = Integer.valueOf(diagnostic[1]);
 
