@@ -4522,10 +4522,10 @@
     </eOperations>
     <eOperations name="ScanningDeviceHasAssignedAuthorId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="-- does not test device root oid&#xD;&#xA;self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())"/>
+        <details key="body" value="self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="-- does not test device root oid&#xD;&#xA;self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())"/>
+        <details key="documentation" value="self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4544,10 +4544,10 @@
     </eOperations>
     <eOperations name="ScanningDeviceHasAssignedAuthoringDeviceCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="-- does not test value of code or displayName&#xD;&#xA;self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()"/>
+        <details key="body" value="self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="-- does not test value of code or displayName&#xD;&#xA;self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()"/>
+        <details key="documentation" value="self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()&#xD;&#xA;   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

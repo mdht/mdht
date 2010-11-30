@@ -39,12 +39,11 @@ public interface ScanningDevice extends Author {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * -- does not test device root oid
 	 * self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='-- does not test device root oid\r\nself.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.assignedAuthor.id->forAll(ident : datatypes::II | not ident.root.oclIsUndefined())'"
 	 * @generated
 	 */
 	boolean validateScanningDeviceHasAssignedAuthorId(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -53,14 +52,13 @@ public interface ScanningDevice extends Author {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * -- does not test value of code or displayName
 	 * self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = '1.2.840.10008.2.16.4'
 	 *    and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()
 	 *    and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='-- does not test value of code or displayName\r\nself.assignedAuthor.assignedAuthoringDevice.code.codeSystem = \'1.2.840.10008.2.16.4\'\r\n   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()\r\n   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.assignedAuthor.assignedAuthoringDevice.code.codeSystem = \'1.2.840.10008.2.16.4\'\r\n   and not self.assignedAuthor.assignedAuthoringDevice.code.code.oclIsUndefined()\r\n   and not self.assignedAuthor.assignedAuthoringDevice.code.displayName.oclIsUndefined()'"
 	 * @generated
 	 */
 	boolean validateScanningDeviceHasAssignedAuthoringDeviceCode(DiagnosticChain diagnostics, Map<Object, Object> context);
