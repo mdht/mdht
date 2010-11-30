@@ -47,6 +47,8 @@ public class Validate {
 	public static void main(String[] args) {
 		
 
+		final String DELIMITER = "~";
+		
 		ClinicalDocument clinicalDocument;
 		
 		CDAUtil.loadPackages();
@@ -89,9 +91,9 @@ public class Validate {
 
 						try {
 							if (eld != null) {
-								out.write("error" + "," + eld.line + "," + eld.column + "," + diagnostic.getMessage() + "\n");
+								out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
 							} else {
-								out.write("error" + "," + 0 + "," + 0 + "," + diagnostic.getMessage() + "(" + path + ")" + "\n");
+								out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
 							}
 
 						} catch (IOException e) {
@@ -116,9 +118,9 @@ public class Validate {
 
 						try {
 							if (eld != null) {
-								out.write("warning" + "," + eld.line + "," + eld.column + "," + diagnostic.getMessage() + "\n");
+								out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
 							} else {
-								out.write("warning" + "," + 0 + "," + 0 + "," + diagnostic.getMessage() + "(" + path + ")" + "\n");
+								out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
 							}
 						} catch (IOException e) {
 							e.printStackTrace();
