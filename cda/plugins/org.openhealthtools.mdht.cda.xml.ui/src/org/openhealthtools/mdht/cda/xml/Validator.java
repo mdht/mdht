@@ -105,7 +105,9 @@ public class Validator extends AbstractNestedValidator {
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.internal.validate.Validate");
 
-			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, uri + " " + path.toOSString() + " " + lock.toOSString());
+			String validateArguments = String.format(" \"%s\" \"%s\" \"%s\" ", uri , path.toOSString() , lock.toOSString());
+			
+			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, validateArguments); // uri + " " + path.toOSString() + " " + lock.toOSString());
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, activeProject.getName());
 
