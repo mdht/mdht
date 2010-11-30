@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" href="CCD.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd">
+	<!-- 
+    ********************************************************
+    CDA Header
+    ********************************************************
+    -->
+    <!-- HITSP C32 V2.5:  Add realmCode -->
+    <realmCode code="US"/>
+	<!-- Following template is HL7 CDA Release 2 -->
+	<!-- POCD_HD000040 is for Lab.Report.Clinical.Document -->
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="HL7/CDT Header" />
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE/PCC" />
+	<templateId root="1.3.6.1.4.1.19376.1.2.20" assigningAuthorityName="IHE/XDS-SD" />
+	<templateId root="2.16.840.1.113883.3.88.11.62.1" assigningAuthorityName="HITSP C62" />
+	<!-- CDA Document Identifer, id=VA OID, extension=system-generated -->
+	<id extension="4ca19ce2-9279-4d98-9e75-615cddf9a21e" root="2.16.840.1.113883.4.349"/>
+	<!-- CDA Document Code -->
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1" displayName="Summarization of Episode Note"/>
+	<!-- CDA Document Title -->
+	<title>Department of Veterans Affairs Summarization of Episode Note</title>
+	<!-- 1.01 DOCUMENT TIMESTAMP, REQUIRED -->
+	<effectiveTime value="20101020135056-0500"/>
+	<!-- CDA Confiedntiality Code -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- CDA DOCUMENT LANGUAGE -->
+	<languageCode code="en-US"/>
+	<!-- 
+	********************************************************
+	PERSON INFORMATION CONTENT MODULE, REQUIRED
+	********************************************************
+	-->
+    <recordTarget>
+        <patientRole>
+			<!-- 1.02 PERSON ID, REQUIRED, id=VA OID, extension=GUID -->
+            <id extension="1012581676V377802" root="2.16.840.1.113883.4.349"/>
+			<!--  1.03 PERSON ADDRESS-HOME PERMANENT, REQUIRED -->
+            <addr use="HP">
+                <streetAddressLine>1234 Howard's St.</streetAddressLine>
+                <city>LA JOLLA</city>
+                <state>CA</state>
+                <postalCode>92038</postalCode>
+            </addr>
+			<!-- 1.04 PERSON PHONE/EMAIL/URL, REQUIRED -->
+            <telecom use="HP" value="tel:+1-760-222-5555"/>
+            <patient>
+				<!--  1.05 PERSON NAME LEGAL, REQUIRED -->
+                <name use="L">
+                    
+                    <given>CHDRONE</given>
+                    <family>CHDRZZZTESTPATIENT</family>
+                    
+                </name>
+				<!--  1.05 PERSON NAME Alias Name, Optional -->
+                <name use="P">
+                    
+                    <given nullFlavor="UNK"/>
+                    <family nullFlavor="UNK"/>
+                    
+                </name>
+				<!-- HITSP C32 V2.5: 1.06 GENDER, REQUIRED AND REQUIRED Terminology -->
+				<!-- HITSP C32 V2.5: When Vista value is M, F, send as HL7AdminGenderCode  -->
+				<!-- HITSP C32 V2.5: When Vista value is "Unknown", send as genderCode nullFlavor=UNK"  -->
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGenderCode" displayName="Male">
+					<originalText>MALE^M</originalText>
+				</administrativeGenderCode>
+				<!-- 1.07 PERSON DATE OF BIRTH, REQUIRED -->
+                <birthTime value="19600303"/>
+				<!--  1.08 MARITAL STATUS, Optional-R2 -->
+				<!-- VLER SEG 1B:  Send as HL7 MaritalStatus  -->
+				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode" displayName="Married">
+					<originalText>MARRIED^M</originalText>
+				</maritalStatusCode>
+				<!--  1.09 RELIGIOUS AFFILIATION, Optional, Removed b/c data not yet available via VA VIstA RPCs-->
+				<!--  1.10 RACE, Optional -->
+				<!--  1.10 RACE as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+                <raceCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+                    
+                </raceCode>
+				<!-- 1.11 ETHNICITY, Optional -->
+				<!-- 1.11 ETHNICITY as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+                <ethnicGroupCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+                    
+                </ethnicGroupCode>
+				<!-- 
+				********************************************************
+				LANGUAGE SPOKEN CONTENT MODULE
+				********************************************************
+				-->
+                <languageCommunication>
+                    <templateId root="2.16.840.1.113883.3.88.11.32.2"/>
+					<!--  2.01 LANGUAGE, REQUIRED, languageCode as nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <languageCode nullFlavor="UNK"/>
+                </languageCommunication>
+            </patient>
+        </patientRole>
+    </recordTarget>
+	<!-- 
+	********************************************************
+	INFORMATION SOURCE CONTENT MODULE, REQUIRED
+	********************************************************
+	-->
+	<!-- AUTHOR SECTION (REQUIRED) OF INFORMATION SOURCE CONTENT MODULE -->
+	<author>
+		<!-- 10.01 AUTHOR TIME (=Document Creation Date), REQUIRED -->
+		<time value="20101020135056-0500"/>
+		<assignedAuthor>
+			<!-- 10.02 AUTHOR ID (VA OID) (authorOID), REQUIIRED -->
+			<id root="2.16.840.1.113883.4.349"/>
+			<!-- HITSP C32 V2.5:  Assigned Author Address Required, but VA VistA data not yet available -->
+			<addr/>
+			<!-- HITSP C32 V2.5:  Assigned Author  Telecom Required, but VA VistA data not yet available -->
+			<telecom/>
+			<!-- 10.02 AUTHOR NAME REQUIRED -->
+			<!-- HITSP C32 V2.5:  C83  assignedPerson/Author Name REQUIRED but provided as representedOrganization-->
+			<assignedPerson>
+				<name/>
+			</assignedPerson>
+			<!-- 10.02 AUTHOR NAME REQUIRED as representedOrganization-->
+			<representedOrganization>
+				<!-- 10.02 AUTHORING DEVICE ORGANIZATION OID (VA OID) (deviceOrgOID), REQUIIRED -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- 10.02 AUTHORING DEVICE ORGANIZATION NAME (deviceOrgName), REQUIIRED -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:  Assigned Author  Telecom Required, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:  Assigned Author Address Required, but VA VistA data not yet available -->
+				<addr/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- INFORMATION SOURCE SECTION (OPTIONAL)OF INFORMATION SOURCE CONTENT MODULE -->
+	<!-- 10.06 INFORMATION SOURCE AS AN ORGANIZATION, REQUIRED -->
+	<informant>
+		<assignedEntity>
+			<id nullFlavor="NI"/>
+			<!-- HITSP C32 V2.5:   Address Required for informant/assignedEntity, but VA VistA data not yet available -->
+			<addr/>
+			<!-- HITSP C32 V2.5:    Telecom Required for informant/assignedEntity, but VA VistA data not yet available -->
+			<telecom/>
+			<!-- HITSP C32 V2.5:  assignedPerson Required for informant/assignedEntity, but VA VistA data not yet available -->
+			<assignedPerson>
+				<!-- HITSP C32 V2.5:  Name Required for informant/assignedEntity/assignedPerson -->
+				<name>Department of Veterans Affairs</name>
+			</assignedPerson>
+			<representedOrganization>
+				<!-- 10.06 INFORMATION SOURCE ORGANIZATION OID (VA OID) (sourceOrgOID), REQUIRED -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- 10.06 INFORMATION SOURCE ORGANIZATION NAME (sourceOrgName), REQUIRED -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+				<addr/>
+			</representedOrganization>
+		</assignedEntity>
+	</informant>
+	<!-- 
+	********************************************************
+	CCD CDA R2 CUSTODIAN AS AN ORGANIZATION, REQUIRED
+	********************************************************
+	-->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- CCD CDA R2 CUSTODIAN OID (VA) (custodianOID) -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- CCD CDA R2 CUSTODIAN NAME (custodianName) -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+				<addr/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+    <!-- 
+	********************************************************
+	CCD CDA R2 LEGAL AUTHENTICATOR AS AN ORGANIZATION, REQUIRED
+	********************************************************
+	-->
+	<legalAuthenticator>
+		<!-- CCD CDA R2 TIME OF AUTHENTICATION -->
+		<time value="20101020135056-0500"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id nullFlavor="NI"/>
+			<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+			<addr/>
+			<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+			<telecom/>
+			<!-- HITSP C32 V2.5:   assigned Person Required for legalAuthenticator/assignedEntity  -->
+			<assignedPerson>
+				<name>Department of Veterans Affairs</name>
+			</assignedPerson>
+			<representedOrganization>
+				<!-- CCD CDA R2 LEGAL AUTHENTICATOR OID (VA)  -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- CCD CDA R2 LEGAL AUTHENTICATOR NAME (authenticatorName) -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+				<addr/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<!-- 
+    ********************************************************
+    SUPPORT CONTENT MODULE, REQUIRED
+    ********************************************************
+    -->
+    <participant typeCode="IND"> <!-- participant block repeated for NOK and ECON -->
+        <templateId root="2.16.840.1.113883.3.88.11.32.3"/>
+        <!-- HITSP C32 V2.5:    IHE Support Template -->
+		<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+		<!--  3.01 DATE, REQUIRED -->
+		<!--  3.01 DATE date as nullFlavor b/c data not yet available via VA VistA RPCs -->
+        <time nullFlavor="UNK"/>
+		<!--  3.02 CONTACT TYPE, REQUIRED, classCode value determined by VistA value in contactType -->
+        <associatedEntity classCode="NOK">
+			<!--  3.03 CONTACT RELATIONSHIP as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+            <code code="UNK" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode">
+                <originalText>mother</originalText>
+            </code>
+			<!--  3.04 CONTACT Addresss, Home Permanent, Optional-R2 -->
+            <addr use="HP">
+                <streetAddressLine>1234 Howard St.</streetAddressLine>
+                <city>LA JOLLA</city>
+                <state>CALIFORNIA</state>
+                <postalCode>92038</postalCode>
+            </addr>
+            <!-- HITSP C32 V2.5:    Telecom Required for assignedEntity  -->
+			<telecom/>
+			<!--  3.05 CONTACT PHONE/EMAIL/URL, Optional-R2,  Removed b/c data not yet available via VA VistA RPCs -->
+            <associatedPerson>
+				<!-- 3.06 CONTACT NAME, REQUIRED -->
+                <name>
+                    
+                    <given>MOM</given>
+                    <family>CHDRZZZTESTPATIENT</family>
+                    
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+	<!-- 
+	********************************************************
+	CCD CDA R2 DOCUMENTATION OF MODULE - QUERY META DATA, Optional 
+	********************************************************
+	-->
+    <documentationOf>
+        <serviceEvent classCode="PCPR">
+            <effectiveTime>
+				<!-- QUERY META DATA, SERVICE START TIME, Optional -->
+                <low value="19000101000000-0600"/>
+				<!-- QUERY META DATA, SERVICE STOP TIME, Optional -->
+                <high value="20101020135056-0500"/>
+            </effectiveTime>
+            <!-- 
+			********************************************************
+			HEALTHCARE PROVIDER MODULE, OPTIONAL
+			********************************************************
+			-->
+            <performer typeCode="PRF">
+                    <!-- Provider Template Id  -->
+                    <templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+                    <!-- 4.02-PROVIDER ROLE CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.03-PROVIDER ROLE FREE TEXT, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.01-DATE RANGE, Required, nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <time>
+                         <high nullFlavor="UNK"/>
+                    </time>
+				    <assignedEntity>
+				        <!-- Provider ID from Problems Module (7.05Treating Provider ID) -->
+				        <id extension="provider1" root="2.16.840.1.113883.4.349"/>
+				        <!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+						<addr/>
+						<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+						<telecom/>
+						<assignedPerson>
+							<name>INLOES,SONJA</name>
+						</assignedPerson>
+				    </assignedEntity>
+			</performer><performer typeCode="PRF">
+                    <!-- Provider Template Id  -->
+                    <templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+                    <!-- 4.02-PROVIDER ROLE CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.03-PROVIDER ROLE FREE TEXT, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.01-DATE RANGE, Required, nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <time>
+                         <high nullFlavor="UNK"/>
+                    </time>
+				    <assignedEntity>
+				        <!-- Provider ID from Problems Module (7.05Treating Provider ID) -->
+				        <id extension="provider2" root="2.16.840.1.113883.4.349"/>
+				        <!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+						<addr/>
+						<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+						<telecom/>
+						<assignedPerson>
+							<name>INLOES,SONJA</name>
+						</assignedPerson>
+				    </assignedEntity>
+			</performer><performer typeCode="PRF">
+                    <!-- Provider Template Id  -->
+                    <templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+                    <!-- 4.02-PROVIDER ROLE CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.03-PROVIDER ROLE FREE TEXT, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.01-DATE RANGE, Required, nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <time>
+                         <high nullFlavor="UNK"/>
+                    </time>
+				    <assignedEntity>
+				        <!-- Provider ID from Problems Module (7.05Treating Provider ID) -->
+				        <id extension="provider3" root="2.16.840.1.113883.4.349"/>
+				        <!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+						<addr/>
+						<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+						<telecom/>
+						<assignedPerson>
+							<name>HASHEMZADEH,DARIOUSH</name>
+						</assignedPerson>
+				    </assignedEntity>
+			</performer><performer typeCode="PRF">
+                    <!-- Provider Template Id  -->
+                    <templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+                    <!-- 4.02-PROVIDER ROLE CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.03-PROVIDER ROLE FREE TEXT, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.01-DATE RANGE, Required, nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <time>
+                         <high nullFlavor="UNK"/>
+                    </time>
+				    <assignedEntity>
+				        <!-- Provider ID from Problems Module (7.05Treating Provider ID) -->
+				        <id extension="provider4" root="2.16.840.1.113883.4.349"/>
+				        <!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+						<addr/>
+						<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+						<telecom/>
+						<assignedPerson>
+							<name>HASHEMZADEH,DARIOUSH</name>
+						</assignedPerson>
+				    </assignedEntity>
+			</performer><performer typeCode="PRF">
+                    <!-- Provider Template Id  -->
+                    <templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+                    <!-- 4.02-PROVIDER ROLE CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.03-PROVIDER ROLE FREE TEXT, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.01-DATE RANGE, Required, nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <time>
+                         <high nullFlavor="UNK"/>
+                    </time>
+				    <assignedEntity>
+				        <!-- Provider ID from Problems Module (7.05Treating Provider ID) -->
+				        <id extension="provider5" root="2.16.840.1.113883.4.349"/>
+				        <!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+						<addr/>
+						<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+						<telecom/>
+						<assignedPerson>
+							<name>HASHEMZADEH,DARIOUSH</name>
+						</assignedPerson>
+				    </assignedEntity>
+			</performer>
+        </serviceEvent>
+    </documentationOf>
+    <!-- 
+	********************************************************
+	CDA BODY
+	********************************************************
+	-->	
+    <component>
+        <nonXMLBody>
+			  <text mediaType="text/plain" representation="B64">TEXT FROM VA TIU NOTE, ABCDEFG ABCDEFG ABCDEFG</text>
+		</nonXMLBody>
+	</component>
+</ClinicalDocument>

@@ -43,6 +43,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationCombinationMedication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationConditionalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationNormalDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationSplitDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose;
@@ -161,6 +162,7 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.SUPPORT_GUARDIAN: return createSupportGuardian();
 			case HITSPPackage.SUPPORT_PARTICIPANT: return createSupportParticipant();
 			case HITSPPackage.UNSTRUCTURED_DOCUMENT: return createUnstructuredDocument();
+			case HITSPPackage.MEDICATION_INFORMATION: return createMedicationInformation();
 			case HITSPPackage.HITSP_REGISTRY_DELEGATE: return createHITSPRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -655,6 +657,16 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public UnstructuredDocument createUnstructuredDocument() {
 		UnstructuredDocumentImpl unstructuredDocument = new UnstructuredDocumentImpl();
 		return unstructuredDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationInformation createMedicationInformation() {
+		MedicationInformationImpl medicationInformation = new MedicationInformationImpl();
+		return medicationInformation;
 	}
 
 	/**
