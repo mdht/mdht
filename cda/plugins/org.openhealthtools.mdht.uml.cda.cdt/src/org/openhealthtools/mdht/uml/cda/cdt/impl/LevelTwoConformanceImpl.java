@@ -50,8 +50,8 @@ public class LevelTwoConformanceImpl extends LevelOneConformanceImpl implements 
 	 * @generated
 	 */
 	@Override
-	public boolean validateGeneralHeaderConstraintsTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return LevelTwoConformanceOperations.validateGeneralHeaderConstraintsTemplateId(this, diagnostics, context);
+	public boolean validateLevelOneConformanceTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return LevelTwoConformanceOperations.validateLevelOneConformanceTemplateId(this, diagnostics, context);
 	}
 
 	/**

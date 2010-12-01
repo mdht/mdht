@@ -37,56 +37,50 @@ wherever these general header constraints are applied.</body>
           <body>self.copyTime.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OZ7QwM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OZ7Qwc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BI7kYP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BI7kYf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.3')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_ObqWIM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsCode" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ObqWIc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BLrWYP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsCode" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BLr9cP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_ObsLUM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsConfidentialityCode" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ObsLUc2IEd-vXaTiMV1__g">
-          <language>OCL</language>
-          <body>not self.confidentialityCode.oclIsUndefined()</body>
-        </specification>
-      </ownedRule>
-      <ownedRule xmi:id="_ObtZcM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsEffectiveTime" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ObtZcc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BLtyoP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsEffectiveTime" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BLtyof1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.effectiveTime.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_ObunkM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsId" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Obunkc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BLvn0P1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsId" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BLvn0f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.id.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_ObwcwM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsLanguageCode" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Obwcwc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BLw18P1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsLanguageCode" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BLxdAP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.languageCode.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oby5AM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsRealmCode" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oby5Ac2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BL6m8P1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsRealmCode" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BL6m8f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.realmCode->size() = 1 and self.realmCode->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = element.oclAsType(datatypes::CS) in &#xD;&#xA;value.code = 'US')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ob0uMM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTitle" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ob0uMc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BL9DMP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsTitle" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BL9qQP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.title.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ob2jYM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTypeId" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ob2jYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BL_fcP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsTypeId" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BL_fcf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.typeId.oclIsUndefined()</body>
         </specification>
@@ -120,263 +114,263 @@ wherever these general header constraints are applied.</body>
           <body>let reasonExists : Boolean = self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection)) in&#xD;&#xA;  let complaintExists : Boolean = self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection))&#xD;&#xA;    in (reasonExists or complaintExists) implies (reasonExists and complaintExists)</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ob3xgc2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ob4YkM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BMB7sP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BMB7sf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OdaCkM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsCode" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OdaCkc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BOCG0P1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsCode" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BOCt4P1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.6.1' and not value.code.oclIsUndefined())</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhhGgM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalHistoryOfPresentIllness" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhhGgc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BR1owP1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalHistoryOfPresentIllness" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR1owf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::HistoryOfPresentIllness))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhjiwM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalPastMedicalHistorySection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ohjiwc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BR3d8f1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalPastMedicalHistorySection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR3d8v1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhlX9M2IEd-vXaTiMV1__g" name="HistoryAndPhysicalMedicationsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhlX9c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BR5TI_1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalMedicationsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR56MP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhobQM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalAlertsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhobQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BR7vYP1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalAlertsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR7vYf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhqQcM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalSocialHistorySection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhqQcc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BR-LoP1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalSocialHistorySection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR-Lof1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::SocialHistorySection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhsssM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalFamilyHistorySection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ohsssc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSAA0_1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalFamilyHistorySection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSAA1P1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FamilyHistorySection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhvI8M2IEd-vXaTiMV1__g" name="HistoryAndPhysicalReviewOfSystemsSectionIHE" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhvI8c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSCdEP1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalReviewOfSystemsSectionIHE" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSCdEf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSectionIHE))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ohw-IM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalPhysicalExaminationSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ohw-Ic2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSESQf1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalPhysicalExaminationSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSESQv1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhzaYM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalVitalSignsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhzaYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSGHc_1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalVitalSignsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSGugP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::VitalSignsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oh12oM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalGeneralStatusSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh12oc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSH8pP1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalGeneralStatusSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSIjsP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::GeneralStatusSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oh3r1c2IEd-vXaTiMV1__g" name="HistoryAndPhysicalDiagnosticFindings" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh3r1s2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSKY4P1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalDiagnosticFindings" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSKY4f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oh6IEM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalProblemSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh6IEc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSMOEP1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalProblemSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSMOEf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oh9LYM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalProceduresSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh9LYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSOqUP1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalProceduresSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSOqUf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProceduresSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oh_noM2IEd-vXaTiMV1__g" name="HistoryAndPhysicalImmunizationsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh_noc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSQfgv1iEd-9y7w_HH-hnA" name="HistoryAndPhysicalImmunizationsSection" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSQfg_1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ImmunizationsSection))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_XtmggWeLEd-ilOLYnIx0jA" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
-      <ownedOperation xmi:id="_Ohi7sM2IEd-vXaTiMV1__g" name="getHistoryOfPresentIllness" isQuery="true" bodyCondition="_Ohi7s82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ohi7s82IEd-vXaTiMV1__g" name="body" constrainedElement="_Ohi7sM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ohi7tM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BR224P1iEd-9y7w_HH-hnA" name="getHistoryOfPresentIllness" isQuery="true" bodyCondition="_BR224_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BR224_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BR224P1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR3d8P1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::HistoryOfPresentIllness))->asSequence()->first().oclAsType(cdt::HistoryOfPresentIllness)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ohi7sc2IEd-vXaTiMV1__g" type="_g_KRcGm6Ed-lxvPE33eETg" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ohi7ss2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BR224f1iEd-9y7w_HH-hnA" type="_g_KRcGm6Ed-lxvPE33eETg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BR224v1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Ohkw4M2IEd-vXaTiMV1__g" name="getPastMedicalHistorySection" isQuery="true" bodyCondition="_OhlX8s2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OhlX8s2IEd-vXaTiMV1__g" name="body" constrainedElement="_Ohkw4M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhlX882IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BR4sEP1iEd-9y7w_HH-hnA" name="getPastMedicalHistorySection" isQuery="true" bodyCondition="_BR5TIf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BR5TIf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BR4sEP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR5TIv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))->asSequence()->first().oclAsType(cdt::PastMedicalHistorySection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OhlX8M2IEd-vXaTiMV1__g" type="_KSTmQGjOEd-tUpkWYQgJlQ" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OhlX8c2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BR4sEf1iEd-9y7w_HH-hnA" type="_KSTmQGjOEd-tUpkWYQgJlQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BR5TIP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Ohn0MM2IEd-vXaTiMV1__g" name="getMedicationsSection" isQuery="true" bodyCondition="_Ohn0M82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ohn0M82IEd-vXaTiMV1__g" name="body" constrainedElement="_Ohn0MM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ohn0NM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BR7IUP1iEd-9y7w_HH-hnA" name="getMedicationsSection" isQuery="true" bodyCondition="_BR7IU_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BR7IU_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BR7IUP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR7IVP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))->asSequence()->first().oclAsType(ccd::MedicationsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ohn0Mc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BR7IUf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_OvmR4HfUEd6ZeOKq_2_a9g"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ohn0Ms2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BR7IUv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OhppYM2IEd-vXaTiMV1__g" name="getAlertsSection" isQuery="true" bodyCondition="_OhppY82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OhppY82IEd-vXaTiMV1__g" name="body" constrainedElement="_OhppYM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhppZM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BR9kkP1iEd-9y7w_HH-hnA" name="getAlertsSection" isQuery="true" bodyCondition="_BR9kk_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BR9kk_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BR9kkP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BR9klP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))->asSequence()->first().oclAsType(ccd::AlertsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OhppYc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BR9kkf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_PgsSAHrREd68l9lQ-TLEBQ"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OhppYs2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BR9kkv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OhsFoM2IEd-vXaTiMV1__g" name="getSocialHistorySection" isQuery="true" bodyCondition="_OhsFo82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OhsFo82IEd-vXaTiMV1__g" name="body" constrainedElement="_OhsFoM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhsFpM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BR_ZwP1iEd-9y7w_HH-hnA" name="getSocialHistorySection" isQuery="true" bodyCondition="_BSAA0f1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSAA0f1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BR_ZwP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSAA0v1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::SocialHistorySection))->asSequence()->first().oclAsType(ccd::SocialHistorySection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OhsFoc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BR_Zwf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_UOVM0HDAEd6eItyqb1FoWg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OhsFos2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSAA0P1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Ohuh4M2IEd-vXaTiMV1__g" name="getFamilyHistorySection" isQuery="true" bodyCondition="_Ohuh482IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ohuh482IEd-vXaTiMV1__g" name="body" constrainedElement="_Ohuh4M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ohuh5M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSB2AP1iEd-9y7w_HH-hnA" name="getFamilyHistorySection" isQuery="true" bodyCondition="_BSB2A_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSB2A_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSB2AP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSB2BP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FamilyHistorySection))->asSequence()->first().oclAsType(ccd::FamilyHistorySection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ohuh4c2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BSB2Af1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_5ET7oGwWEd6q29qQGU-SBA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ohuh4s2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSB2Av1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OhwXEM2IEd-vXaTiMV1__g" name="getReviewOfSystemsSection" isQuery="true" bodyCondition="_OhwXE82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OhwXE82IEd-vXaTiMV1__g" name="body" constrainedElement="_OhwXEM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhwXFM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSDrMP1iEd-9y7w_HH-hnA" name="getReviewOfSystemsSection" isQuery="true" bodyCondition="_BSDrM_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSDrM_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSDrMP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSESQP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSectionIHE))->asSequence()->first().oclAsType(cdt::ReviewOfSystemsSectionIHE)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OhwXEc2IEd-vXaTiMV1__g" type="_3j9eUJvyEd-IotBrVd7ICA" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OhwXEs2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BSDrMf1iEd-9y7w_HH-hnA" type="_3j9eUJvyEd-IotBrVd7ICA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSDrMv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OhyMQM2IEd-vXaTiMV1__g" name="getPhysicalExaminationSection" isQuery="true" bodyCondition="_OhyzUc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OhyzUc2IEd-vXaTiMV1__g" name="body" constrainedElement="_OhyMQM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhyzUs2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSFgYP1iEd-9y7w_HH-hnA" name="getPhysicalExaminationSection" isQuery="true" bodyCondition="_BSGHcf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSGHcf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSFgYP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSGHcv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))->asSequence()->first().oclAsType(cdt::PhysicalExaminationSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OhyMQc2IEd-vXaTiMV1__g" type="_yN6rgGhREd-ilOLYnIx0jA" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OhyzUM2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BSFgYf1iEd-9y7w_HH-hnA" type="_yN6rgGhREd-ilOLYnIx0jA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSGHcP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oh0ogM2IEd-vXaTiMV1__g" name="getVitalSignsSection" isQuery="true" bodyCondition="_Oh1Pks2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oh1Pks2IEd-vXaTiMV1__g" name="body" constrainedElement="_Oh0ogM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh1Pk82IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSHVkP1iEd-9y7w_HH-hnA" name="getVitalSignsSection" isQuery="true" bodyCondition="_BSH8ov1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSH8ov1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSHVkP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSH8o_1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::VitalSignsSection))->asSequence()->first().oclAsType(cdt::VitalSignsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oh1PkM2IEd-vXaTiMV1__g" type="_hnvnYGjpEd-tUpkWYQgJlQ" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oh1Pkc2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BSH8oP1iEd-9y7w_HH-hnA" type="_hnvnYGjpEd-tUpkWYQgJlQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSH8of1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oh3r0M2IEd-vXaTiMV1__g" name="getGeneralStatusSection" isQuery="true" bodyCondition="_Oh3r082IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oh3r082IEd-vXaTiMV1__g" name="body" constrainedElement="_Oh3r0M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh3r1M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSJx0P1iEd-9y7w_HH-hnA" name="getGeneralStatusSection" isQuery="true" bodyCondition="_BSJx0_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSJx0_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSJx0P1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSJx1P1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::GeneralStatusSection))->asSequence()->first().oclAsType(cdt::GeneralStatusSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oh3r0c2IEd-vXaTiMV1__g" type="_Y_l8QGjdEd-tUpkWYQgJlQ" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oh3r0s2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BSJx0f1iEd-9y7w_HH-hnA" type="_Y_l8QGjdEd-tUpkWYQgJlQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSJx0v1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oh5hAM2IEd-vXaTiMV1__g" name="getDiagnosticFindings" isQuery="true" bodyCondition="_Oh5hA82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oh5hA82IEd-vXaTiMV1__g" name="body" constrainedElement="_Oh5hAM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh5hBM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSLnAP1iEd-9y7w_HH-hnA" name="getDiagnosticFindings" isQuery="true" bodyCondition="_BSLnA_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSLnA_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSLnAP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSLnBP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))->asSequence()->first().oclAsType(ccd::ResultsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oh5hAc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BSLnAf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_7TVToIiAEd66cKocspyVOg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oh5hAs2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSLnAv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oh79QM2IEd-vXaTiMV1__g" name="getProblemSection" isQuery="true" bodyCondition="_Oh8kUc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oh8kUc2IEd-vXaTiMV1__g" name="body" constrainedElement="_Oh79QM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh8kUs2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSNcMP1iEd-9y7w_HH-hnA" name="getProblemSection" isQuery="true" bodyCondition="_BSODQv1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSODQv1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSNcMP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSODQ_1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))->asSequence()->first().oclAsType(ccd::ProblemSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oh79Qc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BSODQP1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_vjPMEGaGEd6Hk_bPOfEjYA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oh8kUM2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSODQf1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oh_AkM2IEd-vXaTiMV1__g" name="getProceduresSection" isQuery="true" bodyCondition="_Oh_Ak82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oh_Ak82IEd-vXaTiMV1__g" name="body" constrainedElement="_Oh_AkM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oh_AlM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSP4cP1iEd-9y7w_HH-hnA" name="getProceduresSection" isQuery="true" bodyCondition="_BSQfgP1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSQfgP1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSP4cP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSQfgf1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProceduresSection))->asSequence()->first().oclAsType(ccd::ProceduresSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oh_Akc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BSP4cf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_p_LEwIjvEd66cKocspyVOg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oh_Aks2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSP4cv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OiA1wM2IEd-vXaTiMV1__g" name="getImmunizationsSection" isQuery="true" bodyCondition="_OiBc0s2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OiBc0s2IEd-vXaTiMV1__g" name="body" constrainedElement="_OiA1wM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OiBc082IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BSSUsP1iEd-9y7w_HH-hnA" name="getImmunizationsSection" isQuery="true" bodyCondition="_BSSUs_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BSSUs_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BSSUsP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSSUtP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ImmunizationsSection))->asSequence()->first().oclAsType(ccd::ImmunizationsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OiBc0M2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BSSUsf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_CinbMHDPEd6eItyqb1FoWg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OiBc0c2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSSUsv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -387,276 +381,276 @@ wherever these general header constraints are applied.</body>
           <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))&#xD;&#xA;   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OddF4M2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OddF4c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BOFxMP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BOGYQP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.4')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Od6_8M2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsCode" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Od6_8c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BOMe4P1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsCode" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BOMe4f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.6.1' and not value.code.oclIsUndefined())</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Of4u0M2IEd-vXaTiMV1__g" name="ConsultationNoteHistoryOfPresentIllness" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Of5V4M2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQUl0P1iEd-9y7w_HH-hnA" name="ConsultationNoteHistoryOfPresentIllness" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQUl0f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::HistoryOfPresentIllness))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgBRsM2IEd-vXaTiMV1__g" name="ConsultationNotePhysicalExaminationSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgB4wM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQdvwP1iEd-9y7w_HH-hnA" name="ConsultationNotePhysicalExaminationSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQdvwf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgEVAM2IEd-vXaTiMV1__g" name="ConsultationNoteProblemSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgEVAc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQgMAP1iEd-9y7w_HH-hnA" name="ConsultationNoteProblemSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQgMAf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgGxQM2IEd-vXaTiMV1__g" name="ConsultationNoteProceduresSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgGxQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQiBMf1iEd-9y7w_HH-hnA" name="ConsultationNoteProceduresSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQioQP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProceduresSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgRJUM2IEd-vXaTiMV1__g" name="ConsultationNotePastMedicalHistorySectionConsult" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgRwYM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQsZQP1iEd-9y7w_HH-hnA" name="ConsultationNotePastMedicalHistorySectionConsult" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQsZQf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgUMoM2IEd-vXaTiMV1__g" name="ConsultationNoteImmunizationsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgUMoc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQu1gP1iEd-9y7w_HH-hnA" name="ConsultationNoteImmunizationsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQu1gf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ImmunizationsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgWo4M2IEd-vXaTiMV1__g" name="ConsultationNoteMedicationsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgWo4c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQxRwP1iEd-9y7w_HH-hnA" name="ConsultationNoteMedicationsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQxRwf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgZsMM2IEd-vXaTiMV1__g" name="ConsultationNoteAlertsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgZsMc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQ0VEP1iEd-9y7w_HH-hnA" name="ConsultationNoteAlertsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ0VEf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgcIcM2IEd-vXaTiMV1__g" name="ConsultationNoteSocialHistorySection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgcIcc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQ2xUP1iEd-9y7w_HH-hnA" name="ConsultationNoteSocialHistorySection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ2xUf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::SocialHistorySection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgfLwM2IEd-vXaTiMV1__g" name="ConsultationNoteFamilyHistorySection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgfLwc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQ4mgP1iEd-9y7w_HH-hnA" name="ConsultationNoteFamilyHistorySection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ4mgf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FamilyHistorySection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgmggM2IEd-vXaTiMV1__g" name="ConsultationNoteReviewOfSystemsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ogmggc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQ_7QP1iEd-9y7w_HH-hnA" name="ConsultationNoteReviewOfSystemsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRAiUP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ogo8wM2IEd-vXaTiMV1__g" name="ConsultationNoteVitalSignsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ogo8wc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRCXgP1iEd-9y7w_HH-hnA" name="ConsultationNoteVitalSignsSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRCXgf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::VitalSignsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgxfoM2IEd-vXaTiMV1__g" name="ConsultationNoteGeneralStatusSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ogxfoc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRJFMP1iEd-9y7w_HH-hnA" name="ConsultationNoteGeneralStatusSection" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRJFMf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::GeneralStatusSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Og1xEM2IEd-vXaTiMV1__g" name="ConsultationNoteDiagnosticFindings" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Og1xEc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRNWoP1iEd-9y7w_HH-hnA" name="ConsultationNoteDiagnosticFindings" constrainedElement="_f4_NkGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRNWof1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_f4_0oGeLEd-ilOLYnIx0jA" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
-      <ownedOperation xmi:id="_Of6kAM2IEd-vXaTiMV1__g" name="getHistoryOfPresentIllness" isQuery="true" bodyCondition="_Of6kA82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Of6kA82IEd-vXaTiMV1__g" name="body" constrainedElement="_Of6kAM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Of7LEM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQXpIP1iEd-9y7w_HH-hnA" name="getHistoryOfPresentIllness" isQuery="true" bodyCondition="_BQY3QP1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQY3QP1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQXpIP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQY3Qf1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::HistoryOfPresentIllness))->asSequence()->first().oclAsType(cdt::HistoryOfPresentIllness)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Of6kAc2IEd-vXaTiMV1__g" type="_g_KRcGm6Ed-lxvPE33eETg" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Of6kAs2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BQXpIf1iEd-9y7w_HH-hnA" type="_g_KRcGm6Ed-lxvPE33eETg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQYQMP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgDG4M2IEd-vXaTiMV1__g" name="getPhysicalExamination" isQuery="true" bodyCondition="_OgDG482IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgDG482IEd-vXaTiMV1__g" name="body" constrainedElement="_OgDG4M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgDt8M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQe94P1iEd-9y7w_HH-hnA" name="getPhysicalExamination" isQuery="true" bodyCondition="_BQfk8P1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQfk8P1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQe94P1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQfk8f1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))->asSequence()->first().oclAsType(cdt::PhysicalExaminationSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgDG4c2IEd-vXaTiMV1__g" type="_yN6rgGhREd-ilOLYnIx0jA" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgDG4s2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BQe94f1iEd-9y7w_HH-hnA" type="_yN6rgGhREd-ilOLYnIx0jA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQe94v1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgGKMM2IEd-vXaTiMV1__g" name="getProblemSection" isQuery="true" bodyCondition="_OgGKM82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgGKM82IEd-vXaTiMV1__g" name="body" constrainedElement="_OgGKMM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgGKNM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQhaIP1iEd-9y7w_HH-hnA" name="getProblemSection" isQuery="true" bodyCondition="_BQhaI_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQhaI_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQhaIP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQiBMP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))->asSequence()->first().oclAsType(ccd::ProblemSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgGKMc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BQhaIf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_vjPMEGaGEd6Hk_bPOfEjYA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgGKMs2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQhaIv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgH_YM2IEd-vXaTiMV1__g" name="getProceduresSection" isQuery="true" bodyCondition="_OgImcs2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgImcs2IEd-vXaTiMV1__g" name="body" constrainedElement="_OgH_YM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgImc82IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQj2YP1iEd-9y7w_HH-hnA" name="getProceduresSection" isQuery="true" bodyCondition="_BQj2Y_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQj2Y_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQj2YP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQj2ZP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProceduresSection))->asSequence()->first().oclAsType(ccd::ProceduresSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgImcM2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BQj2Yf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_p_LEwIjvEd66cKocspyVOg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgImcc2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQj2Yv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgS-gM2IEd-vXaTiMV1__g" name="getPastMedicalHistorySection" isQuery="true" bodyCondition="_OgS-g82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgS-g82IEd-vXaTiMV1__g" name="body" constrainedElement="_OgS-gM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgTlkM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQtnYP1iEd-9y7w_HH-hnA" name="getPastMedicalHistorySection" isQuery="true" bodyCondition="_BQuOcf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQuOcf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQtnYP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQuOcv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))->asSequence()->first().oclAsType(cdt::PastMedicalHistorySectionConsult)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgS-gc2IEd-vXaTiMV1__g" type="_z2nc0GoAEd-d2MaU_RNQsA" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgS-gs2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BQtnYf1iEd-9y7w_HH-hnA" type="_z2nc0GoAEd-d2MaU_RNQsA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQuOcP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgWB0M2IEd-vXaTiMV1__g" name="getImmunizationsSection" isQuery="true" bodyCondition="_OgWB082IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgWB082IEd-vXaTiMV1__g" name="body" constrainedElement="_OgWB0M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgWB1M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQwqsP1iEd-9y7w_HH-hnA" name="getImmunizationsSection" isQuery="true" bodyCondition="_BQwqs_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQwqs_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQwqsP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQwqtP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ImmunizationsSection))->asSequence()->first().oclAsType(ccd::ImmunizationsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgWB0c2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BQwqsf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_CinbMHDPEd6eItyqb1FoWg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgWB0s2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQwqsv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgYeEM2IEd-vXaTiMV1__g" name="getMedicationsSection" isQuery="true" bodyCondition="_OgZFIc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgZFIc2IEd-vXaTiMV1__g" name="body" constrainedElement="_OgYeEM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgZFIs2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQzG8P1iEd-9y7w_HH-hnA" name="getMedicationsSection" isQuery="true" bodyCondition="_BQzuAf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQzuAf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQzG8P1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQzuAv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))->asSequence()->first().oclAsType(ccd::MedicationsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgYeEc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BQzG8f1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_OvmR4HfUEd6ZeOKq_2_a9g"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgZFIM2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQzuAP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgbhYM2IEd-vXaTiMV1__g" name="getAlertsSection" isQuery="true" bodyCondition="_OgbhY82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgbhY82IEd-vXaTiMV1__g" name="body" constrainedElement="_OgbhYM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgbhZM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQ1jMP1iEd-9y7w_HH-hnA" name="getAlertsSection" isQuery="true" bodyCondition="_BQ2KQf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQ2KQf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQ1jMP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ2KQv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))->asSequence()->first().oclAsType(ccd::AlertsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgbhYc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BQ1jMf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_PgsSAHrREd68l9lQ-TLEBQ"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgbhYs2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQ2KQP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgeksM2IEd-vXaTiMV1__g" name="getSocialHistorySection" isQuery="true" bodyCondition="_Ogeks82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ogeks82IEd-vXaTiMV1__g" name="body" constrainedElement="_OgeksM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgektM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQ3_cP1iEd-9y7w_HH-hnA" name="getSocialHistorySection" isQuery="true" bodyCondition="_BQ3_c_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQ3_c_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQ3_cP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ3_dP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::SocialHistorySection))->asSequence()->first().oclAsType(ccd::SocialHistorySection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ogeksc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BQ3_cf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_UOVM0HDAEd6eItyqb1FoWg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ogekss2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQ3_cv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OghA8M2IEd-vXaTiMV1__g" name="getFamilyHistorySection" isQuery="true" bodyCondition="_OghA882IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OghA882IEd-vXaTiMV1__g" name="body" constrainedElement="_OghA8M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OghA9M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BQ6bsP1iEd-9y7w_HH-hnA" name="getFamilyHistorySection" isQuery="true" bodyCondition="_BQ6bs_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BQ6bs_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BQ6bsP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ7CwP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FamilyHistorySection))->asSequence()->first().oclAsType(ccd::FamilyHistorySection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OghA8c2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BQ6bsf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_5ET7oGwWEd6q29qQGU-SBA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OghA8s2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BQ6bsv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgoVsM2IEd-vXaTiMV1__g" name="getReviewOfSystemsSection" isQuery="true" bodyCondition="_OgoVs82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgoVs82IEd-vXaTiMV1__g" name="body" constrainedElement="_OgoVsM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgoVtM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BRBwcP1iEd-9y7w_HH-hnA" name="getReviewOfSystemsSection" isQuery="true" bodyCondition="_BRBwc_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BRBwc_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BRBwcP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRBwdP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSection))->asSequence()->first().oclAsType(cdt::ReviewOfSystemsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OgoVsc2IEd-vXaTiMV1__g" type="_fo5sMGjVEd-tUpkWYQgJlQ" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgoVss2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BRBwcf1iEd-9y7w_HH-hnA" type="_fo5sMGjVEd-tUpkWYQgJlQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BRBwcv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Ogqx8M2IEd-vXaTiMV1__g" name="getVitalSignsSection" isQuery="true" bodyCondition="_Ogqx882IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ogqx882IEd-vXaTiMV1__g" name="body" constrainedElement="_Ogqx8M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgrZAM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BRDloP1iEd-9y7w_HH-hnA" name="getVitalSignsSection" isQuery="true" bodyCondition="_BREMsf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BREMsf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BRDloP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BREMsv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::VitalSignsSection))->asSequence()->first().oclAsType(ccd::VitalSignsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ogqx8c2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BRDlof1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_GKpeMKPaEd6t_4WfM070fA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ogqx8s2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BREMsP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OgytwM2IEd-vXaTiMV1__g" name="getGeneralStatusSection" isQuery="true" bodyCondition="_OgzU0M2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OgzU0M2IEd-vXaTiMV1__g" name="body" constrainedElement="_OgytwM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgzU0c2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BRKTUP1iEd-9y7w_HH-hnA" name="getGeneralStatusSection" isQuery="true" bodyCondition="_BRK6Yf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BRK6Yf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BRKTUP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRK6Yv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::GeneralStatusSection))->asSequence()->first().oclAsType(cdt::GeneralStatusSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ogytwc2IEd-vXaTiMV1__g" type="_Y_l8QGjdEd-tUpkWYQgJlQ" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ogytws2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BRKTUf1iEd-9y7w_HH-hnA" type="_Y_l8QGjdEd-tUpkWYQgJlQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BRK6YP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Og2_MM2IEd-vXaTiMV1__g" name="getDiagnosticFindings" isQuery="true" bodyCondition="_Og3mQc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Og3mQc2IEd-vXaTiMV1__g" name="body" constrainedElement="_Og2_MM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Og3mQs2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BROkwP1iEd-9y7w_HH-hnA" name="getDiagnosticFindings" isQuery="true" bodyCondition="_BROkw_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BROkw_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BROkwP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRPL0P1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))->asSequence()->first().oclAsType(ccd::ResultsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Og2_Mc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BROkwf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_7TVToIiAEd66cKocspyVOg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Og3mQM2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BROkwv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_A0ab0GhHEd-ilOLYnIx0jA" name="ReasonForReferralSection">
-      <ownedRule xmi:id="_Od-DQM2IEd-vXaTiMV1__g" name="ReasonForReferralSectionTemplateId" constrainedElement="_A0ab0GhHEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Od-DQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BOPiMP1iEd-9y7w_HH-hnA" name="ReasonForReferralSectionTemplateId" constrainedElement="_A0ab0GhHEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BOQJQP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.4.8')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OfnpEM2IEd-vXaTiMV1__g" name="ReasonForReferralSectionCode" constrainedElement="_A0ab0GhHEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OfnpEc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQHKcP1iEd-9y7w_HH-hnA" name="ReasonForReferralSectionCode" constrainedElement="_A0ab0GhHEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQHKcf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '42349-1' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -666,14 +660,14 @@ wherever these general header constraints are applied.</body>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_HwZ9kGhHEd-ilOLYnIx0jA" name="ReasonForVisitSectionConsult">
-      <ownedRule xmi:id="_OfqFUM2IEd-vXaTiMV1__g" name="ReasonForVisitSectionConsultTemplateId" constrainedElement="_HwZ9kGhHEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OfqFUc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQI_oP1iEd-9y7w_HH-hnA" name="ReasonForVisitSectionConsultTemplateId" constrainedElement="_HwZ9kGhHEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQJmsP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.4.8')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OftIoM2IEd-vXaTiMV1__g" name="ReasonForVisitSectionConsultCode" constrainedElement="_HwZ9kGhHEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OftIoc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQMC8P1iEd-9y7w_HH-hnA" name="ReasonForVisitSectionConsultCode" constrainedElement="_HwZ9kGhHEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQMC8f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '29299-5' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -683,17 +677,19 @@ wherever these general header constraints are applied.</body>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_MUy_sGhQEd-ilOLYnIx0jA" name="LevelOneConformance">
-      <ownedRule xmi:id="_OfwL8c2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_MUy_sGhQEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OfwL8s2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQN4IP1iEd-9y7w_HH-hnA" name="LevelOneConformanceTemplateId" constrainedElement="_MUy_sGhQEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQN4If1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.10')</body>
         </specification>
       </ownedRule>
-      <generalization xmi:id="_MUy_sWhQEd-ilOLYnIx0jA" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
+      <generalization xmi:id="_MUy_sWhQEd-ilOLYnIx0jA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
+      </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Uvc30GhQEd-ilOLYnIx0jA" name="LevelTwoConformance">
-      <ownedRule xmi:id="_OfzPQM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_Uvc30GhQEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OfzPQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQPtUf1iEd-9y7w_HH-hnA" name="LevelOneConformanceTemplateId" constrainedElement="_Uvc30GhQEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQQUYP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.20')</body>
         </specification>
@@ -701,8 +697,8 @@ wherever these general header constraints are applied.</body>
       <generalization xmi:id="_Uvc30WhQEd-ilOLYnIx0jA" general="_MUy_sGhQEd-ilOLYnIx0jA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_a-udgGhQEd-ilOLYnIx0jA" name="LevelThreeConformance">
-      <ownedRule xmi:id="_Of25oM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_a-udgGhQEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Of25oc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQSJkP1iEd-9y7w_HH-hnA" name="LevelOneConformanceTemplateId" constrainedElement="_a-udgGhQEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQSJkf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.30')</body>
         </specification>
@@ -739,14 +735,14 @@ included when pertinent.&lt;/p>&#xD;
 General Status, and those listed in Appendix D: List of Additional Physical&#xD;
 Examination Subsections.&lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_Of7LEc2IEd-vXaTiMV1__g" name="PhysicalExaminationSectionTemplateId" constrainedElement="_yN6rgGhREd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Of7LEs2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQY3Qv1iEd-9y7w_HH-hnA" name="PhysicalExaminationSectionTemplateId" constrainedElement="_yN6rgGhREd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQY3Q_1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.10')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Of-1cM2IEd-vXaTiMV1__g" name="PhysicalExaminationSectionCode" constrainedElement="_yN6rgGhREd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Of-1cc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQb6kP1iEd-9y7w_HH-hnA" name="PhysicalExaminationSectionCode" constrainedElement="_yN6rgGhREd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQb6kf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '29545-1' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -772,20 +768,20 @@ for CDA entries cited in the respective sections.</body>
           <body>not self.entry->isEmpty()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgImdM2IEd-vXaTiMV1__g" name="PastMedicalHistorySectionTemplateId" constrainedElement="_KSTmQGjOEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgImdc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQkdcP1iEd-9y7w_HH-hnA" name="PastMedicalHistorySectionTemplateId" constrainedElement="_KSTmQGjOEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQkdcf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.9')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgM34M2IEd-vXaTiMV1__g" name="PastMedicalHistorySectionCode" constrainedElement="_KSTmQGjOEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgM34c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQoH0P1iEd-9y7w_HH-hnA" name="PastMedicalHistorySectionCode" constrainedElement="_KSTmQGjOEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQoH0f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11348-0' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgPUIM2IEd-vXaTiMV1__g" name="PastMedicalHistorySectionText" constrainedElement="_KSTmQGjOEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgPUIc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQp9AP1iEd-9y7w_HH-hnA" name="PastMedicalHistorySectionText" constrainedElement="_KSTmQGjOEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQp9Af1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
@@ -803,14 +799,14 @@ potentially large number of pertinent negatives, e.g., symptoms that the patient
 specifically asked if they had experienced or were currently experiencing, but had&#xD;
 denied experiencing.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OghoAM2IEd-vXaTiMV1__g" name="ReviewOfSystemsSectionTemplateId" constrainedElement="_fo5sMGjVEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OghoAc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQ7Cwf1iEd-9y7w_HH-hnA" name="ReviewOfSystemsSectionTemplateId" constrainedElement="_fo5sMGjVEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ7Cwv1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.4.10')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgkEQM2IEd-vXaTiMV1__g" name="ReviewOfSystemsSectionCode" constrainedElement="_fo5sMGjVEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgkEQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BQ-GEP1iEd-9y7w_HH-hnA" name="ReviewOfSystemsSectionCode" constrainedElement="_fo5sMGjVEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BQ-GEf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10187-3' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -829,14 +825,14 @@ mobility, personal hygiene, evidence of distress, and voice quality and speech. 
 observations may be nested under this heading or directly under the Physical Exam&#xD;
 heading.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OgrZAc2IEd-vXaTiMV1__g" name="GeneralStatusSectionTemplateId" constrainedElement="_Y_l8QGjdEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgrZAs2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BREMs_1iEd-9y7w_HH-hnA" name="GeneralStatusSectionTemplateId" constrainedElement="_Y_l8QGjdEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BREMtP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.5')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OgvDYM2IEd-vXaTiMV1__g" name="GeneralStatusSectionCode" constrainedElement="_Y_l8QGjdEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OgvDYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRHQAP1iEd-9y7w_HH-hnA" name="GeneralStatusSectionCode" constrainedElement="_Y_l8QGjdEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRHQAf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10210-3' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -873,8 +869,8 @@ granular information about component observations made during the performance of
 procedure, such as where a gastroenterologist reports the size of a polyp observed&#xD;
 during a colonoscopy.&lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_Ogz74M2IEd-vXaTiMV1__g" name="DiagnosticFindingsTitle" constrainedElement="_UpiQEGjfEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ogz74c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRLhcP1iEd-9y7w_HH-hnA" name="DiagnosticFindingsTitle" constrainedElement="_UpiQEGjfEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRLhcf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.title.oclIsUndefined()</body>
         </specification>
@@ -897,26 +893,26 @@ under Physical Exam.</body>
           <body>not self.entry->isEmpty()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Og3mQ82IEd-vXaTiMV1__g" name="VitalSignsSectionTemplateId" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Og4NUM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRPL0f1iEd-9y7w_HH-hnA" name="VitalSignsSectionTemplateId" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRPL0v1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.4')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Og8ewM2IEd-vXaTiMV1__g" name="VitalSignsSectionCode" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Og8ewc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRTdQP1iEd-9y7w_HH-hnA" name="VitalSignsSectionCode" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRTdQf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '8716-3' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Og_iEM2IEd-vXaTiMV1__g" name="VitalSignsSectionText" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Og_iEc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRVScP1iEd-9y7w_HH-hnA" name="VitalSignsSectionText" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRVScf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhBXQM2IEd-vXaTiMV1__g" name="VitalSignsSectionVitalSignsOrganizer" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhBXQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRXHoP1iEd-9y7w_HH-hnA" name="VitalSignsSectionVitalSignsOrganizer" constrainedElement="_hnvnYGjpEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRXHof1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.entry->one(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::VitalSignsOrganizer))</body>
         </specification>
@@ -924,16 +920,16 @@ under Physical Exam.</body>
       <generalization xmi:id="_hnwOcGjpEd-tUpkWYQgJlQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
-      <ownedOperation xmi:id="_OhDMcM2IEd-vXaTiMV1__g" name="getVitalSignsOrganizer" isQuery="true" bodyCondition="_OhDzgc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OhDzgc2IEd-vXaTiMV1__g" name="body" constrainedElement="_OhDMcM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhDzgs2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BRYVwP1iEd-9y7w_HH-hnA" name="getVitalSignsOrganizer" isQuery="true" bodyCondition="_BRY80P1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BRY80P1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BRYVwP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRY80f1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getOrganizers()->select(organizer : cda::Organizer | not organizer.oclIsUndefined() and organizer.oclIsKindOf(ccd::VitalSignsOrganizer))->asSequence()->first().oclAsType(ccd::VitalSignsOrganizer)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OhDMcc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BRYVwf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_wN4O0K3zEd6_ioDelDcPPg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OhDzgM2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BRYVwv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -941,14 +937,14 @@ under Physical Exam.</body>
       <ownedComment xmi:id="_t3bGUM1wEd-vXaTiMV1__g">
         <body>The Assessment section (also called impression or diagnoses) represents the clinician's conclusions and working assumptions that will guide treatment of the patient. The assessment formulates a specific plan or set of recommendations. The assessment may be a list of specific disease entities or a narrative block.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OhDzg82IEd-vXaTiMV1__g" name="AssessmentSectionTemplateId" constrainedElement="_IvsBUGjsEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhEakM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRY80v1iEd-9y7w_HH-hnA" name="AssessmentSectionTemplateId" constrainedElement="_IvsBUGjsEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRY80_1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhHd4M2IEd-vXaTiMV1__g" name="AssessmentSectionCode" constrainedElement="_IvsBUGjsEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhHd4c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRcAIP1iEd-9y7w_HH-hnA" name="AssessmentSectionCode" constrainedElement="_IvsBUGjsEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRcAIf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '51848-0' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -961,14 +957,14 @@ under Physical Exam.</body>
       <ownedComment xmi:id="_yXcU4M1wEd-vXaTiMV1__g">
         <body>The Plan section contains data that defines pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed unless constrained due to privacy issues. The plan may also contain information about ongoing care of the patient and information regarding goals and clinical reminders. Clinical reminders are placed here to provide prompts for disease prevention and management, patient safety, and health-care quality improvements, including widely accepted performance measures. The plan may also indicate that patient education was given or will be provided.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OhJTEM2IEd-vXaTiMV1__g" name="PlanSectionTemplateId" constrainedElement="_a1dT4GjsEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhJTEc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRd1UP1iEd-9y7w_HH-hnA" name="PlanSectionTemplateId" constrainedElement="_a1dT4GjsEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRd1Uf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhMWYM2IEd-vXaTiMV1__g" name="PlanSectionCode" constrainedElement="_a1dT4GjsEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhMWYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRg4oP1iEd-9y7w_HH-hnA" name="PlanSectionCode" constrainedElement="_a1dT4GjsEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRg4of1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '18776-5' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -982,14 +978,14 @@ under Physical Exam.</body>
         <body>&lt;p>The Assessment section (also called impression or diagnoses) represents the clinician's conclusions and working assumptions that will guide treatment of the patient. The assessment formulates a specific plan or set of recommendations. The assessment may be a list of specific disease entities or a narrative block.&lt;/p>&#xD;
 &lt;p>The Plan section contains data that defines pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed unless constrained due to privacy issues. The plan may also contain information about ongoing care of the patient and information regarding goals and clinical reminders. Clinical reminders are placed here to provide prompts for disease prevention and management, patient safety, and health-care quality improvements, including widely accepted performance measures. The plan may also indicate that patient education was given or will be provided.&lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_OhNkgM2IEd-vXaTiMV1__g" name="AssessmentAndPlanSectionTemplateId" constrainedElement="_ikbxwGjsEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhNkgc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRit0P1iEd-9y7w_HH-hnA" name="AssessmentAndPlanSectionTemplateId" constrainedElement="_ikbxwGjsEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRit0f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhQn0M2IEd-vXaTiMV1__g" name="AssessmentAndPlanSectionCode" constrainedElement="_ikbxwGjsEd-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhQn0c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRlKEP1iEd-9y7w_HH-hnA" name="AssessmentAndPlanSectionCode" constrainedElement="_ikbxwGjsEd-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRlxIP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '51847-2' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -999,14 +995,14 @@ under Physical Exam.</body>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iwL_sGj1Ed-tUpkWYQgJlQ" name="ReasonForVisitSection">
-      <ownedRule xmi:id="_OhSdAM2IEd-vXaTiMV1__g" name="ReasonForVisitSectionTemplateId" constrainedElement="_iwL_sGj1Ed-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhSdAc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRm_QP1iEd-9y7w_HH-hnA" name="ReasonForVisitSectionTemplateId" constrainedElement="_iwL_sGj1Ed-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRnmUP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.8')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhU5QM2IEd-vXaTiMV1__g" name="ReasonForVisitSectionCode" constrainedElement="_iwL_sGj1Ed-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhU5Qc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRqCkP1iEd-9y7w_HH-hnA" name="ReasonForVisitSectionCode" constrainedElement="_iwL_sGj1Ed-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRqCkf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '29299-5' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1016,14 +1012,14 @@ under Physical Exam.</body>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_o-ulkGj1Ed-tUpkWYQgJlQ" name="ChiefComplaintSection">
-      <ownedRule xmi:id="_OhXVgM2IEd-vXaTiMV1__g" name="ChiefComplaintSectionTemplateId" constrainedElement="_o-ulkGj1Ed-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhXVgc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRr3wP1iEd-9y7w_HH-hnA" name="ChiefComplaintSectionTemplateId" constrainedElement="_o-ulkGj1Ed-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRr3wf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.8')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OhaY0M2IEd-vXaTiMV1__g" name="ChiefComplaintSectionCode" constrainedElement="_o-ulkGj1Ed-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhaY0c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRu7EP1iEd-9y7w_HH-hnA" name="ChiefComplaintSectionCode" constrainedElement="_o-ulkGj1Ed-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRu7Ef1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10154-3' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1033,14 +1029,14 @@ under Physical Exam.</body>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_vEmXoGj1Ed-tUpkWYQgJlQ" name="ReasonForVisitAndChiefComplaintSection">
-      <ownedRule xmi:id="_OhcOAM2IEd-vXaTiMV1__g" name="ReasonForVisitAndChiefComplaintSectionTemplateId" constrainedElement="_vEmXoGj1Ed-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhcOAc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRwwQP1iEd-9y7w_HH-hnA" name="ReasonForVisitAndChiefComplaintSectionTemplateId" constrainedElement="_vEmXoGj1Ed-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRwwQf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.8')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OheqQM2IEd-vXaTiMV1__g" name="ReasonForVisitAndChiefComplaintSectionCode" constrainedElement="_vEmXoGj1Ed-tUpkWYQgJlQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OheqQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BRzzkP1iEd-9y7w_HH-hnA" name="ReasonForVisitAndChiefComplaintSectionCode" constrainedElement="_vEmXoGj1Ed-tUpkWYQgJlQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BRzzkf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '46239-0' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1053,14 +1049,14 @@ under Physical Exam.</body>
       <ownedComment xmi:id="_lAIwEJvtEd-IotBrVd7ICA">
         <body>Conforms to IHE PCC template.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OiBc1M2IEd-vXaTiMV1__g" name="HistoryOfPresentIllnessTemplateId" constrainedElement="_g_KRcGm6Ed-lxvPE33eETg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OiBc1c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSS7wP1iEd-9y7w_HH-hnA" name="HistoryOfPresentIllnessTemplateId" constrainedElement="_g_KRcGm6Ed-lxvPE33eETg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSS7wf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.4')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OiEgIM2IEd-vXaTiMV1__g" name="HistoryOfPresentIllnessCode" constrainedElement="_g_KRcGm6Ed-lxvPE33eETg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OiEgIc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BSXNMP1iEd-9y7w_HH-hnA" name="HistoryOfPresentIllnessCode" constrainedElement="_g_KRcGm6Ed-lxvPE33eETg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSXNMf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10164-2' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1080,20 +1076,20 @@ problems can be recorded in a standalone Problems section or in a nested Problem
 section. Wherever used, procedures and problems should conform to the CCD template&#xD;
 for CDA entries cited in the respective sections.</body>
       </ownedComment>
-      <ownedRule xmi:id="_Oi94AM2IEd-vXaTiMV1__g" name="PastMedicalHistorySectionConsultTemplateId" constrainedElement="_z2nc0GoAEd-d2MaU_RNQsA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oi94Ac2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUQDkP1iEd-9y7w_HH-hnA" name="PastMedicalHistorySectionConsultTemplateId" constrainedElement="_z2nc0GoAEd-d2MaU_RNQsA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUQqoP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.4.9')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjAUQM2IEd-vXaTiMV1__g" name="PastMedicalHistorySectionConsultCode" constrainedElement="_z2nc0GoAEd-d2MaU_RNQsA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjAUQc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUTG4P1iEd-9y7w_HH-hnA" name="PastMedicalHistorySectionConsultCode" constrainedElement="_z2nc0GoAEd-d2MaU_RNQsA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUTG4f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11348-0' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjCJcM2IEd-vXaTiMV1__g" name="PastMedicalHistorySectionConsultText" constrainedElement="_z2nc0GoAEd-d2MaU_RNQsA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjCJcc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUVjIP1iEd-9y7w_HH-hnA" name="PastMedicalHistorySectionConsultText" constrainedElement="_z2nc0GoAEd-d2MaU_RNQsA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUVjIf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
@@ -1111,14 +1107,14 @@ potentially large number of pertinent negatives, e.g., symptoms that the patient
 specifically asked if they had experienced or were currently experiencing, but had&#xD;
 denied experiencing.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OjDXkM2IEd-vXaTiMV1__g" name="ReviewOfSystemsSectionIHETemplateId" constrainedElement="_3j9eUJvyEd-IotBrVd7ICA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjDXkc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUWxQP1iEd-9y7w_HH-hnA" name="ReviewOfSystemsSectionIHETemplateId" constrainedElement="_3j9eUJvyEd-IotBrVd7ICA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUWxQf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.18')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjFz0M2IEd-vXaTiMV1__g" name="ReviewOfSystemsSectionIHECode" constrainedElement="_3j9eUJvyEd-IotBrVd7ICA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjGa4M2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUZNgP1iEd-9y7w_HH-hnA" name="ReviewOfSystemsSectionIHECode" constrainedElement="_3j9eUJvyEd-IotBrVd7ICA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUZNgf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10187-3' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1208,225 +1204,225 @@ denied experiencing.</body>
           <body>self.componentOf.encompassingEncounter.location.healthCareFacility.id->notEmpty()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjIQEc2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjIQEs2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUbpwP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsTemplateId" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUbpwf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.21.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjVEYM2IEd-vXaTiMV1__g" name="GeneralHeaderConstraintsCode" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjVEYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUoeEP1iEd-9y7w_HH-hnA" name="GeneralHeaderConstraintsCode" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUoeEf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.6.1' and not value.code.oclIsUndefined())</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjZV0M2IEd-vXaTiMV1__g" name="ProgressNoteAlertsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjZV0c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUt9oP1iEd-9y7w_HH-hnA" name="ProgressNoteAlertsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUt9of1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjgDgM2IEd-vXaTiMV1__g" name="ProgressNoteChiefComplaintSectionProcNote" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjgDgc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BU15cP1iEd-9y7w_HH-hnA" name="ProgressNoteChiefComplaintSectionProcNote" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BU15cf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSectionProcNote))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ojh4sM2IEd-vXaTiMV1__g" name="ProgressNoteMedicationsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ojh4sc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BU4VsP1iEd-9y7w_HH-hnA" name="ProgressNoteMedicationsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BU4Vsf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjutAM2IEd-vXaTiMV1__g" name="ProgressNoteObjectiveSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjutAc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVD74P1iEd-9y7w_HH-hnA" name="ProgressNoteObjectiveSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVD74f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ObjectiveSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjwiMM2IEd-vXaTiMV1__g" name="ProgressNotePhysicalExaminationSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjwiMc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVFxEP1iEd-9y7w_HH-hnA" name="ProgressNotePhysicalExaminationSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVFxEf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjyXYM2IEd-vXaTiMV1__g" name="ProgressNoteProblemSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjyXYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVHmQ_1iEd-9y7w_HH-hnA" name="ProgressNoteProblemSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVINUP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oj1asM2IEd-vXaTiMV1__g" name="ProgressNoteResultsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj1asc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVKpkP1iEd-9y7w_HH-hnA" name="ProgressNoteResultsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVKpkf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oj328c2IEd-vXaTiMV1__g" name="ProgressNoteVitalSignsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj328s2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVMewf1iEd-9y7w_HH-hnA" name="ProgressNoteVitalSignsSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVMewv1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::VitalSignsSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oj6TMs2IEd-vXaTiMV1__g" name="ProgressNoteReviewOfSystemsSectionIHE" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj66QM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVOT8v1iEd-9y7w_HH-hnA" name="ProgressNoteReviewOfSystemsSectionIHE" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVOT8_1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSectionIHE))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OkI8sM2IEd-vXaTiMV1__g" name="ProgressNoteSubjectiveSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkI8sc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVZ6IP1iEd-9y7w_HH-hnA" name="ProgressNoteSubjectiveSection" constrainedElement="_Xijk8MviEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVZ6If1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.getAllSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::SubjectiveSection))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_Cr9UEMvjEd-hi-1hHmWxvw" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
-      <ownedOperation xmi:id="_OjXgoM2IEd-vXaTiMV1__g" name="getAssessmentAndPlanSection" isQuery="true" bodyCondition="_OjYHsc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OjYHsc2IEd-vXaTiMV1__g" name="body" constrainedElement="_OjXgoM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjYHss2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BUsIcP1iEd-9y7w_HH-hnA" name="getAssessmentAndPlanSection" isQuery="true" bodyCondition="_BUsIc_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BUsIc_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BUsIcP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUsIdP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSectionProcNote))->asSequence()->first().oclAsType(cdt::AssessmentAndPlanSectionProcNote)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OjXgoc2IEd-vXaTiMV1__g" type="_SMDJgMzCEd-RYrNQjqkPtg" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OjYHsM2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BUsIcf1iEd-9y7w_HH-hnA" type="_SMDJgMzCEd-RYrNQjqkPtg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BUsIcv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OjYHs82IEd-vXaTiMV1__g" name="getAssessmentSection" isQuery="true" bodyCondition="_OjYHts2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OjYHts2IEd-vXaTiMV1__g" name="body" constrainedElement="_OjYHs82IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjYHt82IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BUsvgP1iEd-9y7w_HH-hnA" name="getAssessmentSection" isQuery="true" bodyCondition="_BUsvg_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BUsvg_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BUsvgP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUsvhP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSectionProcNote))->asSequence()->first().oclAsType(cdt::AssessmentSectionProcNote)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OjYHtM2IEd-vXaTiMV1__g" type="_Yt8JMMzCEd-RYrNQjqkPtg" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OjYHtc2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BUsvgf1iEd-9y7w_HH-hnA" type="_Yt8JMMzCEd-RYrNQjqkPtg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BUsvgv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OjYuwM2IEd-vXaTiMV1__g" name="getPlanSection" isQuery="true" bodyCondition="_OjYuw82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OjYuw82IEd-vXaTiMV1__g" name="body" constrainedElement="_OjYuwM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjYuxM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BUtWkP1iEd-9y7w_HH-hnA" name="getPlanSection" isQuery="true" bodyCondition="_BUtWk_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BUtWk_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BUtWkP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUtWlP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PlanOfCareSection))->asSequence()->first().oclAsType(ccd::PlanOfCareSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OjYuwc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BUtWkf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_o9nLAKPTEd6t_4WfM070fA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OjYuws2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BUtWkv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Ojaj8M2IEd-vXaTiMV1__g" name="getAlertsSection" isQuery="true" bodyCondition="_Ojaj882IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ojaj882IEd-vXaTiMV1__g" name="body" constrainedElement="_Ojaj8M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ojaj9M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BUvy0P1iEd-9y7w_HH-hnA" name="getAlertsSection" isQuery="true" bodyCondition="_BUvy0_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BUvy0_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BUvy0P1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUvy1P1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))->asSequence()->first().oclAsType(ccd::AlertsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ojaj8c2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BUvy0f1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_PgsSAHrREd68l9lQ-TLEBQ"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ojaj8s2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BUvy0v1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OjhRoM2IEd-vXaTiMV1__g" name="getChiefComplaintSection" isQuery="true" bodyCondition="_OjhRo82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OjhRo82IEd-vXaTiMV1__g" name="body" constrainedElement="_OjhRoM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjhRpM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BU3uoP1iEd-9y7w_HH-hnA" name="getChiefComplaintSection" isQuery="true" bodyCondition="_BU3uo_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BU3uo_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BU3uoP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BU3upP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSectionProcNote))->asSequence()->first().oclAsType(cdt::ChiefComplaintSectionProcNote)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OjhRoc2IEd-vXaTiMV1__g" type="_uRytQMvzEd-hi-1hHmWxvw" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OjhRos2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BU3uof1iEd-9y7w_HH-hnA" type="_uRytQMvzEd-hi-1hHmWxvw" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BU3uov1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OjjG0M2IEd-vXaTiMV1__g" name="getMedicationsSection" isQuery="true" bodyCondition="_Ojjt4c2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ojjt4c2IEd-vXaTiMV1__g" name="body" constrainedElement="_OjjG0M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ojjt4s2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BU5j0P1iEd-9y7w_HH-hnA" name="getMedicationsSection" isQuery="true" bodyCondition="_BU6K4v1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BU6K4v1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BU5j0P1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BU6K4_1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))->asSequence()->first().oclAsType(ccd::MedicationsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OjjG0c2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BU6K4P1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_OvmR4HfUEd6ZeOKq_2_a9g"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ojjt4M2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BU6K4f1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Ojv7IM2IEd-vXaTiMV1__g" name="getObjectiveSection" isQuery="true" bodyCondition="_Ojv7I82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Ojv7I82IEd-vXaTiMV1__g" name="body" constrainedElement="_Ojv7IM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ojv7JM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BVFKAP1iEd-9y7w_HH-hnA" name="getObjectiveSection" isQuery="true" bodyCondition="_BVFKA_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BVFKA_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BVFKAP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVFKBP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ObjectiveSection))->asSequence()->first().oclAsType(cdt::ObjectiveSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Ojv7Ic2IEd-vXaTiMV1__g" type="_qVRtAMv2Ed-hi-1hHmWxvw" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ojv7Is2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BVFKAf1iEd-9y7w_HH-hnA" type="_qVRtAMv2Ed-hi-1hHmWxvw" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BVFKAv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OjxwUM2IEd-vXaTiMV1__g" name="getPhysicalExaminationSection" isQuery="true" bodyCondition="_OjxwU82IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OjxwU82IEd-vXaTiMV1__g" name="body" constrainedElement="_OjxwUM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjxwVM2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BVG_MP1iEd-9y7w_HH-hnA" name="getPhysicalExaminationSection" isQuery="true" bodyCondition="_BVHmQf1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BVHmQf1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BVG_MP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVHmQv1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PhysicalExaminationSection))->asSequence()->first().oclAsType(cdt::PhysicalExaminationSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OjxwUc2IEd-vXaTiMV1__g" type="_yN6rgGhREd-ilOLYnIx0jA" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OjxwUs2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BVG_Mf1iEd-9y7w_HH-hnA" type="_yN6rgGhREd-ilOLYnIx0jA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BVHmQP1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oj0MkM2IEd-vXaTiMV1__g" name="getProblemSection" isQuery="true" bodyCondition="_Oj0zoc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oj0zoc2IEd-vXaTiMV1__g" name="body" constrainedElement="_Oj0MkM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj0zos2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BVKCgP1iEd-9y7w_HH-hnA" name="getProblemSection" isQuery="true" bodyCondition="_BVKCg_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BVKCg_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BVKCgP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVKChP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))->asSequence()->first().oclAsType(ccd::ProblemSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oj0Mkc2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BVKCgf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_vjPMEGaGEd6Hk_bPOfEjYA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oj0zoM2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BVKCgv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oj3P4M2IEd-vXaTiMV1__g" name="getResultsSection" isQuery="true" bodyCondition="_Oj3P482IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oj3P482IEd-vXaTiMV1__g" name="body" constrainedElement="_Oj3P4M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj328M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BVL3sP1iEd-9y7w_HH-hnA" name="getResultsSection" isQuery="true" bodyCondition="_BVL3s_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BVL3s_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BVL3sP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVMewP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))->asSequence()->first().oclAsType(ccd::ResultsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oj3P4c2IEd-vXaTiMV1__g" direction="return">
+        <ownedParameter xmi:id="_BVL3sf1iEd-9y7w_HH-hnA" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_7TVToIiAEd66cKocspyVOg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oj3P4s2IEd-vXaTiMV1__g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BVL3sv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oj5sIM2IEd-vXaTiMV1__g" name="getVitalSignsSection" isQuery="true" bodyCondition="_Oj6TMM2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oj6TMM2IEd-vXaTiMV1__g" name="body" constrainedElement="_Oj5sIM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj6TMc2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BVNs4P1iEd-9y7w_HH-hnA" name="getVitalSignsSection" isQuery="true" bodyCondition="_BVOT8P1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BVOT8P1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BVNs4P1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVOT8f1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::VitalSignsSection))->asSequence()->first().oclAsType(cdt::VitalSignsSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oj5sIc2IEd-vXaTiMV1__g" type="_hnvnYGjpEd-tUpkWYQgJlQ" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oj5sIs2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BVNs4f1iEd-9y7w_HH-hnA" type="_hnvnYGjpEd-tUpkWYQgJlQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BVNs4v1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Oj8IYM2IEd-vXaTiMV1__g" name="getReviewOfSystemsSection" isQuery="true" bodyCondition="_Oj8vcc2IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_Oj8vcc2IEd-vXaTiMV1__g" name="body" constrainedElement="_Oj8IYM2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj8vcs2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BVQJIP1iEd-9y7w_HH-hnA" name="getReviewOfSystemsSection" isQuery="true" bodyCondition="_BVQJI_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BVQJI_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BVQJIP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVQJJP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReviewOfSystemsSectionIHE))->asSequence()->first().oclAsType(cdt::ReviewOfSystemsSectionIHE)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_Oj8IYc2IEd-vXaTiMV1__g" type="_3j9eUJvyEd-IotBrVd7ICA" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oj8vcM2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BVQJIf1iEd-9y7w_HH-hnA" type="_3j9eUJvyEd-IotBrVd7ICA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BVQJIv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_OkKx4M2IEd-vXaTiMV1__g" name="getSubjectiveSection" isQuery="true" bodyCondition="_OkKx482IEd-vXaTiMV1__g">
-        <ownedRule xmi:id="_OkKx482IEd-vXaTiMV1__g" name="body" constrainedElement="_OkKx4M2IEd-vXaTiMV1__g">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkKx5M2IEd-vXaTiMV1__g">
+      <ownedOperation xmi:id="_BVbvUP1iEd-9y7w_HH-hnA" name="getSubjectiveSection" isQuery="true" bodyCondition="_BVbvU_1iEd-9y7w_HH-hnA">
+        <ownedRule xmi:id="_BVbvU_1iEd-9y7w_HH-hnA" name="body" constrainedElement="_BVbvUP1iEd-9y7w_HH-hnA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVbvVP1iEd-9y7w_HH-hnA">
             <language>OCL</language>
             <body>self.getAllSections()->select(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::SubjectiveSection))->asSequence()->first().oclAsType(cdt::SubjectiveSection)</body>
           </specification>
         </ownedRule>
-        <ownedParameter xmi:id="_OkKx4c2IEd-vXaTiMV1__g" type="_W3syoMv5Ed-hi-1hHmWxvw" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OkKx4s2IEd-vXaTiMV1__g" value="1"/>
+        <ownedParameter xmi:id="_BVbvUf1iEd-9y7w_HH-hnA" type="_W3syoMv5Ed-hi-1hHmWxvw" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BVbvUv1iEd-9y7w_HH-hnA" value="1"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -1434,14 +1430,14 @@ denied experiencing.</body>
       <ownedComment xmi:id="_HT1OYMv0Ed-hi-1hHmWxvw">
         <body>The Chief Complaint section records the patient's chief complaint (the patient's own description). The Chief Complaint section may be a subsection of the Medical History section.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OjbLAM2IEd-vXaTiMV1__g" name="ChiefComplaintSectionProcNoteTemplateId" constrainedElement="_uRytQMvzEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjbLAc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUwZ4P1iEd-9y7w_HH-hnA" name="ChiefComplaintSectionProcNoteTemplateId" constrainedElement="_uRytQMvzEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BUwZ4f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.18.2.16')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjeOUM2IEd-vXaTiMV1__g" name="ChiefComplaintSectionProcNoteCode" constrainedElement="_uRytQMvzEd-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjeOUc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BUzdMP1iEd-9y7w_HH-hnA" name="ChiefComplaintSectionProcNoteCode" constrainedElement="_uRytQMvzEd-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BU0EQP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10154-3' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1460,26 +1456,26 @@ denied experiencing.</body>
           <body>not self.entry->isEmpty()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ojjt482IEd-vXaTiMV1__g" name="ObjectiveSectionTemplateId" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ojjt5M2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BU6K5P1iEd-9y7w_HH-hnA" name="ObjectiveSectionTemplateId" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BU6K5f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.21.2.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Ojn_UM2IEd-vXaTiMV1__g" name="ObjectiveSectionCode" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjomYM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BU-cUP1iEd-9y7w_HH-hnA" name="ObjectiveSectionCode" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BU-cUf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = 'OBJEC-X' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjqbkM2IEd-vXaTiMV1__g" name="ObjectiveSectionText" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ojqbkc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVARgP1iEd-9y7w_HH-hnA" name="ObjectiveSectionText" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVARgf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OjsQwM2IEd-vXaTiMV1__g" name="ObjectiveSectionTitle" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OjsQwc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVCGsP1iEd-9y7w_HH-hnA" name="ObjectiveSectionTitle" constrainedElement="_qVRtAMv2Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVCGsf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.title.oclIsUndefined()</body>
         </specification>
@@ -1498,26 +1494,26 @@ denied experiencing.</body>
           <body>not self.entry->isEmpty()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Oj8vc82IEd-vXaTiMV1__g" name="SubjectiveSectionTemplateId" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Oj9WgM2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVQJJf1iEd-9y7w_HH-hnA" name="SubjectiveSectionTemplateId" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVQwMP1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.21.2.2')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OkCPAM2IEd-vXaTiMV1__g" name="SubjectiveSectionCode" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkCPAc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVUakP1iEd-9y7w_HH-hnA" name="SubjectiveSectionCode" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVUakf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = 'SUBJ-X' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OkFSUM2IEd-vXaTiMV1__g" name="SubjectiveSectionText" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkFSUc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVW20P1iEd-9y7w_HH-hnA" name="SubjectiveSectionText" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVW20f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OkGgcM2IEd-vXaTiMV1__g" name="SubjectiveSectionTitle" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkGgcc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVYsAP1iEd-9y7w_HH-hnA" name="SubjectiveSectionTitle" constrainedElement="_W3syoMv5Ed-hi-1hHmWxvw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVYsAf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.title.oclIsUndefined()</body>
         </specification>
@@ -1531,14 +1527,14 @@ denied experiencing.</body>
         <body>&lt;p>The Assessment section (also called impression or diagnoses) represents the clinician's conclusions and working assumptions that will guide treatment of the patient. The assessment formulates a specific plan or set of recommendations. The assessment may be a list of specific disease entities or a narrative block.&lt;/p>&#xD;
 &lt;p>The Plan section contains data that defines pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed unless constrained due to privacy issues. The plan may also contain information about ongoing care of the patient and information regarding goals and clinical reminders. Clinical reminders are placed here to provide prompts for disease prevention and management, patient safety, and health-care quality improvements, including widely accepted performance measures. The plan may also indicate that patient education was given or will be provided.&lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_OkLY8M2IEd-vXaTiMV1__g" name="AssessmentAndPlanSectionProcNoteTemplateId" constrainedElement="_SMDJgMzCEd-RYrNQjqkPtg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkLY8c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVcWYP1iEd-9y7w_HH-hnA" name="AssessmentAndPlanSectionProcNoteTemplateId" constrainedElement="_SMDJgMzCEd-RYrNQjqkPtg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVcWYf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.18.2.14')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OkPqYM2IEd-vXaTiMV1__g" name="AssessmentAndPlanSectionProcNoteCode" constrainedElement="_SMDJgMzCEd-RYrNQjqkPtg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkPqYc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVgAwP1iEd-9y7w_HH-hnA" name="AssessmentAndPlanSectionProcNoteCode" constrainedElement="_SMDJgMzCEd-RYrNQjqkPtg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVgAwf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '51847-2' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1551,14 +1547,14 @@ denied experiencing.</body>
       <ownedComment xmi:id="_uSiVAM1wEd-vXaTiMV1__g">
         <body>The Assessment section (also called impression or diagnoses) represents the clinician's conclusions and working assumptions that will guide treatment of the patient. The assessment formulates a specific plan or set of recommendations. The assessment may be a list of specific disease entities or a narrative block.</body>
       </ownedComment>
-      <ownedRule xmi:id="_OkSGoM2IEd-vXaTiMV1__g" name="AssessmentSectionProcNoteTemplateId" constrainedElement="_Yt8JMMzCEd-RYrNQjqkPtg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkSGoc2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVh18P1iEd-9y7w_HH-hnA" name="AssessmentSectionProcNoteTemplateId" constrainedElement="_Yt8JMMzCEd-RYrNQjqkPtg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVh18f1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.18.2.13')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_OkVJ8M2IEd-vXaTiMV1__g" name="AssessmentSectionProcNoteCode" constrainedElement="_Yt8JMMzCEd-RYrNQjqkPtg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_OkVJ8c2IEd-vXaTiMV1__g">
+      <ownedRule xmi:id="_BVk5QP1iEd-9y7w_HH-hnA" name="AssessmentSectionProcNoteCode" constrainedElement="_Yt8JMMzCEd-RYrNQjqkPtg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BVk5Qf1iEd-9y7w_HH-hnA">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '51848-0' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
@@ -1567,8 +1563,8 @@ denied experiencing.</body>
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_OfklwM2IEd-vXaTiMV1__g" name="CDTRegistryDelegate" clientDependency="_Ofklwc2IEd-vXaTiMV1__g">
-      <interfaceRealization xmi:id="_Ofklwc2IEd-vXaTiMV1__g" client="_OfklwM2IEd-vXaTiMV1__g">
+    <packagedElement xmi:type="uml:Class" xmi:id="_BPxMMP1iEd-9y7w_HH-hnA" name="CDTRegistryDelegate" clientDependency="_BQEHIP1iEd-9y7w_HH-hnA">
+      <interfaceRealization xmi:id="_BQEHIP1iEd-9y7w_HH-hnA" client="_BPxMMP1iEd-9y7w_HH-hnA">
         <supplier xmi:type="uml:Interface" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_M9TsYBgbEd-f6JfqlBX7nQ"/>
         <contract href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_M9TsYBgbEd-f6JfqlBX7nQ"/>
       </interfaceRealization>
@@ -1585,8 +1581,8 @@ denied experiencing.</body>
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
-    <profileApplication xmi:id="_OUAO8M2IEd-vXaTiMV1__g">
-      <eAnnotations xmi:id="_OUAO8c2IEd-vXaTiMV1__g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_BAbIoP1iEd-9y7w_HH-hnA">
+      <eAnnotations xmi:id="_BAuDkP1iEd-9y7w_HH-hnA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
@@ -1737,99 +1733,98 @@ denied experiencing.</body>
     <ruleId>CONF-PN-46</ruleId>
   </CDA:ClassValidation>
   <CDA:CDATemplate xmi:id="_1BXikMzCEd-RYrNQjqkPtg" base_Class="_SMDJgMzCEd-RYrNQjqkPtg" templateId="2.16.840.1.113883.10.20.18.2.14"/>
-  <Ecore:EPackage xmi:id="_OW3VsM2IEd-vXaTiMV1__g" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="cdt" nsPrefix="cdt" nsURI="http://www.openhealthtools.org/mdht/uml/cda/cdt" basePackage="org.openhealthtools.mdht.uml.cda" prefix="CDT">
+  <Ecore:EPackage xmi:id="_BFOJEP1iEd-9y7w_HH-hnA" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="cdt" nsPrefix="cdt" nsURI="http://www.openhealthtools.org/mdht/uml/cda/cdt" basePackage="org.openhealthtools.mdht.uml.cda" prefix="CDT">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation registryDelegate='CDTRegistryDelegate'</annotation>
   </Ecore:EPackage>
-  <Ecore:EClass xmi:id="_OZ730M2IEd-vXaTiMV1__g" base_Class="_MwGRIGeLEd-ilOLYnIx0jA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.3' constraints.validation.error='GeneralHeaderConstraintsTemplateId GeneralHeaderConstraintsTypeIdExtension GeneralHeaderConstraintsSetIdAndVersionNumber GeneralHeaderConstraintsSetIdAndIdAreUnique GeneralHeaderConstraintsCopyTimeNotPresent GeneralHeaderConstraintsCode GeneralHeaderConstraintsConfidentialityCode GeneralHeaderConstraintsEffectiveTime GeneralHeaderConstraintsId GeneralHeaderConstraintsLanguageCode GeneralHeaderConstraintsRealmCode GeneralHeaderConstraintsTitle GeneralHeaderConstraintsTypeId' realmCode.code='US'</annotation>
+  <Ecore:EClass xmi:id="_BJaFgP1iEd-9y7w_HH-hnA" base_Class="_MwGRIGeLEd-ilOLYnIx0jA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.3' constraints.validation.error='GeneralHeaderConstraintsTemplateId GeneralHeaderConstraintsTypeIdExtension GeneralHeaderConstraintsSetIdAndVersionNumber GeneralHeaderConstraintsSetIdAndIdAreUnique GeneralHeaderConstraintsCopyTimeNotPresent GeneralHeaderConstraintsCode GeneralHeaderConstraintsEffectiveTime GeneralHeaderConstraintsId GeneralHeaderConstraintsLanguageCode GeneralHeaderConstraintsRealmCode GeneralHeaderConstraintsTitle GeneralHeaderConstraintsTypeId' realmCode.code='US'</annotation>
   </Ecore:EClass>
-  <CDA:ConformsTo xmi:id="_Ob3xgM2IEd-vXaTiMV1__g" base_Generalization="_XtmggWeLEd-ilOLYnIx0jA"/>
-  <Ecore:EClass xmi:id="_Ob4_oM2IEd-vXaTiMV1__g" base_Class="_XtmggGeLEd-ilOLYnIx0jA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2' constraints.validation.error='GeneralHeaderConstraintsTemplateId HistoryAndPhysicalAssessmentAndPlan HistoryAndPhysicalBothAssessmentAndPlan HistoryAndPhysicalReasonForVisitAndChiefComplaint HistoryAndPhysicalBothReasonForVisitAndChiefComplaint GeneralHeaderConstraintsCode HistoryAndPhysicalHistoryOfPresentIllness HistoryAndPhysicalPastMedicalHistorySection HistoryAndPhysicalMedicationsSection HistoryAndPhysicalAlertsSection HistoryAndPhysicalSocialHistorySection HistoryAndPhysicalFamilyHistorySection HistoryAndPhysicalReviewOfSystemsSectionIHE HistoryAndPhysicalPhysicalExaminationSection HistoryAndPhysicalVitalSignsSection HistoryAndPhysicalGeneralStatusSection HistoryAndPhysicalDiagnosticFindings' code.codeSystemName='LOINC' constraints.validation.info='HistoryAndPhysicalProblemSection HistoryAndPhysicalProceduresSection HistoryAndPhysicalImmunizationsSection'</annotation>
+  <CDA:ConformsTo xmi:id="_BMBUoP1iEd-9y7w_HH-hnA" base_Generalization="_XtmggWeLEd-ilOLYnIx0jA"/>
+  <Ecore:EClass xmi:id="_BMCiwP1iEd-9y7w_HH-hnA" base_Class="_XtmggGeLEd-ilOLYnIx0jA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2' constraints.validation.error='HistoryAndPhysicalTemplateId HistoryAndPhysicalAssessmentAndPlan HistoryAndPhysicalBothAssessmentAndPlan HistoryAndPhysicalReasonForVisitAndChiefComplaint HistoryAndPhysicalBothReasonForVisitAndChiefComplaint GeneralHeaderConstraintsCode HistoryAndPhysicalHistoryOfPresentIllness HistoryAndPhysicalPastMedicalHistorySection HistoryAndPhysicalMedicationsSection HistoryAndPhysicalAlertsSection HistoryAndPhysicalSocialHistorySection HistoryAndPhysicalFamilyHistorySection HistoryAndPhysicalReviewOfSystemsSectionIHE HistoryAndPhysicalPhysicalExaminationSection HistoryAndPhysicalVitalSignsSection HistoryAndPhysicalGeneralStatusSection HistoryAndPhysicalDiagnosticFindings' code.codeSystemName='LOINC' constraints.validation.info='HistoryAndPhysicalProblemSection HistoryAndPhysicalProceduresSection HistoryAndPhysicalImmunizationsSection'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Odds8M2IEd-vXaTiMV1__g" base_Class="_f4_NkGeLEd-ilOLYnIx0jA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.4' constraints.validation.error='GeneralHeaderConstraintsTemplateId ConsultationNoteReferralOrVisit GeneralHeaderConstraintsCode ConsultationNoteHistoryOfPresentIllness ConsultationNotePhysicalExaminationSection' code.codeSystemName='LOINC' constraints.validation.info='ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySectionConsult ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteDiagnosticFindings'</annotation>
+  <Ecore:EClass xmi:id="_BOG_UP1iEd-9y7w_HH-hnA" base_Class="_f4_NkGeLEd-ilOLYnIx0jA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.4' constraints.validation.error='ConsultationNoteTemplateId ConsultationNoteReferralOrVisit GeneralHeaderConstraintsCode ConsultationNoteHistoryOfPresentIllness ConsultationNotePhysicalExaminationSection' code.codeSystemName='LOINC' constraints.validation.info='ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySectionConsult ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteDiagnosticFindings'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Od-qUM2IEd-vXaTiMV1__g" base_Class="_A0ab0GhHEd-ilOLYnIx0jA">
+  <Ecore:EClass xmi:id="_BOQwUP1iEd-9y7w_HH-hnA" base_Class="_A0ab0GhHEd-ilOLYnIx0jA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.4.8' code.displayName='REASON FOR REFERRAL' constraints.validation.error='ReasonForReferralSectionTemplateId ReasonForReferralSectionCode' code.codeSystemName='LOINC' code.code='42349-1'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OfqsYM2IEd-vXaTiMV1__g" base_Class="_HwZ9kGhHEd-ilOLYnIx0jA">
+  <Ecore:EClass xmi:id="_BQKNwP1iEd-9y7w_HH-hnA" base_Class="_HwZ9kGhHEd-ilOLYnIx0jA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.4.8' code.displayName='REASON FOR VISIT' constraints.validation.error='ReasonForVisitSectionConsultTemplateId ReasonForVisitSectionConsultCode' code.codeSystemName='LOINC' code.code='29299-5'</annotation>
   </Ecore:EClass>
-  <CDA:ConformsTo xmi:id="_OfwL8M2IEd-vXaTiMV1__g" base_Generalization="_MUy_sWhQEd-ilOLYnIx0jA"/>
-  <Ecore:EClass xmi:id="_OfxaEM2IEd-vXaTiMV1__g" base_Class="_MUy_sGhQEd-ilOLYnIx0jA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.10' constraints.validation.error='GeneralHeaderConstraintsTemplateId'</annotation>
+  <Ecore:EClass xmi:id="_BQPGQP1iEd-9y7w_HH-hnA" base_Class="_MUy_sGhQEd-ilOLYnIx0jA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.10' constraints.validation.error='LevelOneConformanceTemplateId'</annotation>
   </Ecore:EClass>
-  <CDA:ConformsTo xmi:id="_OfyoMM2IEd-vXaTiMV1__g" base_Generalization="_Uvc30WhQEd-ilOLYnIx0jA"/>
-  <Ecore:EClass xmi:id="_Of0dYM2IEd-vXaTiMV1__g" base_Class="_Uvc30GhQEd-ilOLYnIx0jA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.20' constraints.validation.error='GeneralHeaderConstraintsTemplateId'</annotation>
+  <CDA:ConformsTo xmi:id="_BQPtUP1iEd-9y7w_HH-hnA" base_Generalization="_Uvc30WhQEd-ilOLYnIx0jA"/>
+  <Ecore:EClass xmi:id="_BQQ7cP1iEd-9y7w_HH-hnA" base_Class="_Uvc30GhQEd-ilOLYnIx0jA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.20' constraints.validation.error='LevelTwoConformanceTemplateId'</annotation>
   </Ecore:EClass>
-  <CDA:ConformsTo xmi:id="_Of1rgM2IEd-vXaTiMV1__g" base_Generalization="_a-udgWhQEd-ilOLYnIx0jA"/>
-  <Ecore:EClass xmi:id="_Of4HwM2IEd-vXaTiMV1__g" base_Class="_a-udgGhQEd-ilOLYnIx0jA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.30' constraints.validation.error='GeneralHeaderConstraintsTemplateId'</annotation>
+  <CDA:ConformsTo xmi:id="_BQRigP1iEd-9y7w_HH-hnA" base_Generalization="_a-udgWhQEd-ilOLYnIx0jA"/>
+  <Ecore:EClass xmi:id="_BQTXsP1iEd-9y7w_HH-hnA" base_Class="_a-udgGhQEd-ilOLYnIx0jA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.30' constraints.validation.error='LevelThreeConformanceTemplateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Of8ZMM2IEd-vXaTiMV1__g" base_Class="_yN6rgGhREd-ilOLYnIx0jA">
+  <Ecore:EClass xmi:id="_BQaFYP1iEd-9y7w_HH-hnA" base_Class="_yN6rgGhREd-ilOLYnIx0jA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.10' code.displayName='PHYSICAL FINDINGS' constraints.validation.error='PhysicalExaminationSectionTemplateId PhysicalExaminationSectionCode' code.codeSystemName='LOINC' code.code='29545-1'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OgJNgM2IEd-vXaTiMV1__g" base_Class="_KSTmQGjOEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BQlEgP1iEd-9y7w_HH-hnA" base_Class="_KSTmQGjOEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' code.displayName='HISTORY OF PAST ILLNESS' templateId.root='2.16.840.1.113883.10.20.2.9' constraints.validation.error='PastMedicalHistorySectionTemplateId PastMedicalHistorySectionCode PastMedicalHistorySectionText' code.codeSystemName='LOINC' constraints.validation.warning='PastMedicalHistorySectionHasClinicalStatements' code.code='11348-0'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OgiPEM2IEd-vXaTiMV1__g" base_Class="_fo5sMGjVEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BQ7p0P1iEd-9y7w_HH-hnA" base_Class="_fo5sMGjVEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.4.10' code.displayName='REVIEW OF SYSTEMS' constraints.validation.error='ReviewOfSystemsSectionTemplateId ReviewOfSystemsSectionCode' code.codeSystemName='LOINC' code.code='10187-3'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OgsnIM2IEd-vXaTiMV1__g" base_Class="_Y_l8QGjdEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRFa0P1iEd-9y7w_HH-hnA" base_Class="_Y_l8QGjdEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.5' code.displayName='GENERAL STATUS, PHYSICAL FINDINGS' constraints.validation.error='GeneralStatusSectionTemplateId GeneralStatusSectionCode' code.codeSystemName='LOINC' code.code='10210-3'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Og1KAM2IEd-vXaTiMV1__g" base_Class="_UpiQEGjfEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRMvkP1iEd-9y7w_HH-hnA" base_Class="_UpiQEGjfEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='DiagnosticFindingsTitle'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Og40YM2IEd-vXaTiMV1__g" base_Class="_hnvnYGjpEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRQZ8P1iEd-9y7w_HH-hnA" base_Class="_hnvnYGjpEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.4' code.displayName='VITAL SIGNS' constraints.validation.error='VitalSignsSectionTemplateId VitalSignsSectionCode VitalSignsSectionText' code.codeSystemName='LOINC' constraints.validation.warning='VitalSignsSectionClinicalStatements VitalSignsSectionVitalSignsOrganizer' code.code='8716-3'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OhFBoM2IEd-vXaTiMV1__g" base_Class="_IvsBUGjsEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRaK8P1iEd-9y7w_HH-hnA" base_Class="_IvsBUGjsEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.7' code.displayName='Assessment' constraints.validation.error='AssessmentSectionTemplateId AssessmentSectionCode' code.codeSystemName='LOINC' code.code='51848-0'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OhJ6IM2IEd-vXaTiMV1__g" base_Class="_a1dT4GjsEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRecYP1iEd-9y7w_HH-hnA" base_Class="_a1dT4GjsEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.7' code.displayName='Plan' constraints.validation.error='PlanSectionTemplateId PlanSectionCode' code.codeSystemName='LOINC' code.code='18776-5'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OhOyoM2IEd-vXaTiMV1__g" base_Class="_ikbxwGjsEd-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRjU4P1iEd-9y7w_HH-hnA" base_Class="_ikbxwGjsEd-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.7' code.displayName='Assessment + Plan' constraints.validation.error='AssessmentAndPlanSectionTemplateId AssessmentAndPlanSectionCode' code.codeSystemName='LOINC' code.code='51847-2'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OhTEEM2IEd-vXaTiMV1__g" base_Class="_iwL_sGj1Ed-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRoNYP1iEd-9y7w_HH-hnA" base_Class="_iwL_sGj1Ed-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.8' code.displayName='Reason for visit' constraints.validation.error='ReasonForVisitSectionTemplateId ReasonForVisitSectionCode' code.codeSystemName='LOINC' code.code='29299-5'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OhYjoM2IEd-vXaTiMV1__g" base_Class="_o-ulkGj1Ed-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRtF4P1iEd-9y7w_HH-hnA" base_Class="_o-ulkGj1Ed-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.8' code.displayName='Chief complaint' constraints.validation.error='ChiefComplaintSectionTemplateId ChiefComplaintSectionCode' code.codeSystemName='LOINC' code.code='10154-3'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Ohc1EM2IEd-vXaTiMV1__g" base_Class="_vEmXoGj1Ed-tUpkWYQgJlQ">
+  <Ecore:EClass xmi:id="_BRx-YP1iEd-9y7w_HH-hnA" base_Class="_vEmXoGj1Ed-tUpkWYQgJlQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2.8' code.displayName='Reason for visit + Chief complaint' constraints.validation.error='ReasonForVisitAndChiefComplaintSectionTemplateId ReasonForVisitAndChiefComplaintSectionCode' code.codeSystemName='LOINC' code.code='46239-0'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OiCD4M2IEd-vXaTiMV1__g" base_Class="_g_KRcGm6Ed-lxvPE33eETg">
+  <Ecore:EClass xmi:id="_BSTi0P1iEd-9y7w_HH-hnA" base_Class="_g_KRcGm6Ed-lxvPE33eETg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.4' code.displayName='HISTORY OF PRESENT ILLNESS' constraints.validation.error='HistoryOfPresentIllnessTemplateId HistoryOfPresentIllnessCode' code.codeSystemName='LOINC' code.code='10164-2'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Oi-fEM2IEd-vXaTiMV1__g" base_Class="_z2nc0GoAEd-d2MaU_RNQsA">
+  <Ecore:EClass xmi:id="_BURRsP1iEd-9y7w_HH-hnA" base_Class="_z2nc0GoAEd-d2MaU_RNQsA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' code.displayName='HISTORY OF PAST ILLNESS' templateId.root='2.16.840.1.113883.10.20.4.9' constraints.validation.error='PastMedicalHistorySectionConsultTemplateId PastMedicalHistorySectionConsultCode PastMedicalHistorySectionConsultText' code.codeSystemName='LOINC' code.code='11348-0'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OjD-oM2IEd-vXaTiMV1__g" base_Class="_3j9eUJvyEd-IotBrVd7ICA">
+  <Ecore:EClass xmi:id="_BUXYUP1iEd-9y7w_HH-hnA" base_Class="_3j9eUJvyEd-IotBrVd7ICA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.18' code.displayName='REVIEW OF SYSTEMS' constraints.validation.error='ReviewOfSystemsSectionIHETemplateId ReviewOfSystemsSectionIHECode' code.codeSystemName='LOINC' code.code='10187-3'</annotation>
   </Ecore:EClass>
-  <CDA:ConformsTo xmi:id="_OjIQEM2IEd-vXaTiMV1__g" base_Generalization="_Cr9UEMvjEd-hi-1hHmWxvw"/>
-  <Ecore:EClass xmi:id="_OjI3IM2IEd-vXaTiMV1__g" base_Class="_Xijk8MviEd-hi-1hHmWxvw">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.21.1' constraints.validation.error='GeneralHeaderConstraintsTemplateId ProgressNoteAssessmentAndPlan ProgressNoteBothAssessmentAndPlan ProgressNoteHasServiceEventCode ProgressNoteHasComponentOfElement ProgressNoteHasEncompassingEncounterId ProgressNoteHasEncompassingEncounterEffectiveTime ProgressNoteHasEncompassingEncounterEffectiveTimeLow GeneralHeaderConstraintsCode' code.codeSystemName='LOINC' constraints.validation.warning='ProgressNoteHasServiceEvent ProgressNoteHasServiceEventEffectiveTime ProgressNoteHasEncompassingEncounterFacilityId' constraints.validation.info='ProgressNoteAlertsSection ProgressNoteChiefComplaintSectionProcNote ProgressNoteMedicationsSection ProgressNoteObjectiveSection ProgressNotePhysicalExaminationSection ProgressNoteProblemSection ProgressNoteResultsSection ProgressNoteVitalSignsSection ProgressNoteReviewOfSystemsSectionIHE ProgressNoteSubjectiveSection'</annotation>
+  <CDA:ConformsTo xmi:id="_BUbCsP1iEd-9y7w_HH-hnA" base_Generalization="_Cr9UEMvjEd-hi-1hHmWxvw"/>
+  <Ecore:EClass xmi:id="_BUcQ0P1iEd-9y7w_HH-hnA" base_Class="_Xijk8MviEd-hi-1hHmWxvw">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.21.1' constraints.validation.error='ProgressNoteTemplateId ProgressNoteAssessmentAndPlan ProgressNoteBothAssessmentAndPlan ProgressNoteHasServiceEventCode ProgressNoteHasComponentOfElement ProgressNoteHasEncompassingEncounterId ProgressNoteHasEncompassingEncounterEffectiveTime ProgressNoteHasEncompassingEncounterEffectiveTimeLow GeneralHeaderConstraintsCode' code.codeSystemName='LOINC' constraints.validation.warning='ProgressNoteHasServiceEvent ProgressNoteHasServiceEventEffectiveTime ProgressNoteHasEncompassingEncounterFacilityId' constraints.validation.info='ProgressNoteAlertsSection ProgressNoteChiefComplaintSectionProcNote ProgressNoteMedicationsSection ProgressNoteObjectiveSection ProgressNotePhysicalExaminationSection ProgressNoteProblemSection ProgressNoteResultsSection ProgressNoteVitalSignsSection ProgressNoteReviewOfSystemsSectionIHE ProgressNoteSubjectiveSection'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OjbyEM2IEd-vXaTiMV1__g" base_Class="_uRytQMvzEd-hi-1hHmWxvw">
+  <Ecore:EClass xmi:id="_BUxA8P1iEd-9y7w_HH-hnA" base_Class="_uRytQMvzEd-hi-1hHmWxvw">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.18.2.16' code.displayName='CHIEF COMPLAINT' constraints.validation.error='ChiefComplaintSectionProcNoteTemplateId ChiefComplaintSectionProcNoteCode' code.codeSystemName='LOINC' code.code='10154-3'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OjkU8M2IEd-vXaTiMV1__g" base_Class="_qVRtAMv2Ed-hi-1hHmWxvw">
+  <Ecore:EClass xmi:id="_BU7ZAP1iEd-9y7w_HH-hnA" base_Class="_qVRtAMv2Ed-hi-1hHmWxvw">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.21.2.1' code.displayName='OBJECTIVE DATA' constraints.validation.error='ObjectiveSectionTemplateId ObjectiveSectionCode ObjectiveSectionText ObjectiveSectionTitle' code.codeSystemName='LOINC' constraints.validation.warning='ObjectiveSectionHasClinicalStatements' code.code='OBJEC-X'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_Oj99kM2IEd-vXaTiMV1__g" base_Class="_W3syoMv5Ed-hi-1hHmWxvw">
+  <Ecore:EClass xmi:id="_BVRXQP1iEd-9y7w_HH-hnA" base_Class="_W3syoMv5Ed-hi-1hHmWxvw">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.21.2.2' code.displayName='SUBJECTIVE DATA' constraints.validation.error='SubjectiveSectionTemplateId SubjectiveSectionCode SubjectiveSectionText SubjectiveSectionTitle' code.codeSystemName='LOINC' constraints.validation.warning='SubjectiveSectionHasClinicalStatements' code.code='SUBJ-X'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OkMnEM2IEd-vXaTiMV1__g" base_Class="_SMDJgMzCEd-RYrNQjqkPtg">
+  <Ecore:EClass xmi:id="_BVdkgP1iEd-9y7w_HH-hnA" base_Class="_SMDJgMzCEd-RYrNQjqkPtg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.18.2.14' code.displayName='ASSESSMENT AND PLAN' constraints.validation.error='AssessmentAndPlanSectionProcNoteTemplateId AssessmentAndPlanSectionProcNoteCode' code.codeSystemName='LOINC' code.code='51847-2'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_OkTUwM2IEd-vXaTiMV1__g" base_Class="_Yt8JMMzCEd-RYrNQjqkPtg">
+  <Ecore:EClass xmi:id="_BVidAP1iEd-9y7w_HH-hnA" base_Class="_Yt8JMMzCEd-RYrNQjqkPtg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.18.2.13' code.displayName='ASSESSMENT' constraints.validation.error='AssessmentSectionProcNoteTemplateId AssessmentSectionProcNoteCode' code.codeSystemName='LOINC' code.code='51848-0'</annotation>
   </Ecore:EClass>
 </xmi:XMI>
