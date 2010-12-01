@@ -13,48 +13,90 @@
 documents defined for general exchange. The template defined here should be reused&#xD;
 wherever these general header constraints are applied.</body>
       </ownedComment>
+      <ownedRule xmi:id="_M7vtkPzSEd-9y7w_HH-hnA" name="personHasName" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_TkEscPzSEd-9y7w_HH-hnA">
+          <language>Analysis</language>
+          <body>All patient, guardianPerson, assignedPerson, maintainingPerson, relatedPerson, intendedRecipient/informationRecipient, associatedPerson, and relatedSubject/subject elements have a name.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_1NhIQPzSEd-9y7w_HH-hnA" name="rolesShallHaveAddrAndTelecom" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_7JhzsPzSEd-9y7w_HH-hnA">
+          <language>Analysis</language>
+          <body>All patientRole, assignedAuthor, assignedEntity[not(parent::dataEnterer)] and associatedEntity elements have an addr and telecom element.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_l6XR0PzTEd-9y7w_HH-hnA" name="rolesShouldHaveAddrAndTelecom" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_rI-EsPzTEd-9y7w_HH-hnA">
+          <language>Analysis</language>
+          <body>All guardian, dataEnterer/assignedEntity, relatedEntity, intendedRecipient, relatedSubject and participantRole elements have an addr and telecom element.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_1AAdAP1cEd-9y7w_HH-hnA" name="organizationsHaveContactInfo" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <ownedComment xmi:id="_dpU1AP1dEd-9y7w_HH-hnA">
+          <body>When name, address, or telecom information is unknown and where these elements are&#xD;
+required to be present, as with CDA conformance if the information is unknown, these&#xD;
+elements will be represented using an appropriate value for the nullFlavor attribute on&#xD;
+the element. Legal values according to this specification come from the HL7 NullFlavor&#xD;
+vocabulary.</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_-gR5YP1cEd-9y7w_HH-hnA">
+          <language>Analysis</language>
+          <body>All guardianOrganization, providerOrganization, wholeOrganization, representedOrganization, representedCustodianOrganization, receivedOrganization, scopingOrganization and serviceProviderOrganization elements have name, addr and telecom elements.</body>
+        </specification>
+      </ownedRule>
       <ownedRule xmi:id="_zKrYkHMvEd-9_cvcE5QEwg" name="typeIdExtension" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_3np6MHMvEd-9_cvcE5QEwg">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>The extension attribute of the typeId element SHALL be POCD_HD000040.</body>
+          <body>The extension attribute of the typeId element is POCD_HD000040.</body>
           <body>self.typeId.extension = 'POCD_HD000040'</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_DHSw0HMxEd-9_cvcE5QEwg" name="idRootFormat" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_I855UHMxEd-9_cvcE5QEwg">
           <language>Analysis</language>
-          <body>The ClinicalDocument/id element SHALL be present. The ClinicalDocument/id/@root attribute SHALL be a syntactically correct UUID or OID.</body>
+          <body>The id/@root attribute is a syntactically correct UUID or OID.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_OvdGwHMxEd-9_cvcE5QEwg" name="uuidFormat" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_RMYcMHMxEd-9_cvcE5QEwg">
           <language>Analysis</language>
-          <body>UUIDs SHALL be represented in the form XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXX, where each X is a character from the set [A-Fa-f0-9].</body>
+          <body>UUIDs are represented in the form XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXX, where each X is a character from the set [A-Fa-f0-9].</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_U7S98HMxEd-9_cvcE5QEwg" name="oidFormat" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <ownedComment xmi:id="_HnX5YP1gEd-9y7w_HH-hnA">
+          <body>&lt;p>Organizations that wish to use OIDs should properly register their OID root and ensure&#xD;
+uniqueness of the OID roots used in identifiers. A large number of mechanisms exist&#xD;
+for obtaining OID roots for free or for a reasonable fee. HL7 maintains an OID registry&#xD;
+page from which organizations may request an OID root under the HL7 OID root. This&#xD;
+page can be accessed at: http://www.hl7.org/oid.&lt;/p>&#xD;
+&lt;p>Another useful resource lists the many ways to obtain a registered OID Root for free or&#xD;
+a small fee anywhere in the world and is located at:&#xD;
+http://www.dclunie.com/medical-image-faq/html/part8.html#UIDRegistration. &lt;/p>&#xD;
+&lt;p>The manner in which the OID root is obtained is not constrained by this DSTU.&lt;/p></body>
+        </ownedComment>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_ZFE2wHMxEd-9_cvcE5QEwg">
           <language>Analysis</language>
-          <body>OIDs SHALL be represented in dotted decimal notation, where each decimal number is either 0, or starts with a nonzero digit. More formally, an OID SHALL be in the form ([0-2])(.([1-9][0-9]*|0))+.</body>
+          <body>OIDs are represented in dotted decimal notation, where each decimal number is either 0, or starts with a nonzero digit. More formally, an OID SHALL be in the form ([0-2])(.([1-9][0-9]*|0))+.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_cubjEHMxEd-9_cvcE5QEwg" name="oidLength" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_ezDGMHMxEd-9_cvcE5QEwg">
           <language>Analysis</language>
-          <body>OIDs SHALL be no more than 64 characters in length.</body>
+          <body>OIDs are no more than 64 characters in length.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_vaVCcHPqEd-9_cvcE5QEwg" name="languageCodeForm" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_0QybEHPqEd-9_cvcE5QEwg">
           <language>Analysis</language>
-          <body>languageCode SHALL be in the form nn, or nn-CC.</body>
+          <body>languageCode has the form nn, or nn-CC.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_70rDQHPqEd-9_cvcE5QEwg" name="languageCodeLanguage" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_FbZs8HPrEd-9_cvcE5QEwg">
           <language>Analysis</language>
-          <body>The nn portion of languageCode SHALL be a legal ISO-639-1 language code in lowercase.</body>
+          <body>The nn portion of languageCode is a legal ISO-639-1 language code in lowercase.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_-dxzgHPqEd-9_cvcE5QEwg" name="languageCodeCountry" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
@@ -91,16 +133,31 @@ wherever these general header constraints are applied.</body>
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_LByJgGkdEd-lxvPE33eETg" name="code" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_XrZ9sP1gEd-9y7w_HH-hnA">
+          <body>Specifies the type of the clinical document.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LByJgWkdEd-lxvPE33eETg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LByJgmkdEd-lxvPE33eETg" value="1"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jS4QEAIEd6wZe6nFLrjsw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_pwbIcGkaEd-lxvPE33eETg" name="confidentialityCode" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_bOiQwP1hEd-9y7w_HH-hnA">
+          <body>Specifies the confidentiality assigned to the document. This specification provides no further guidance beyond CDA R2&#xD;
+on documents with respect to the vocabulary used for confidentialityCode, nor&#xD;
+treatment or implementation of confidentiality.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ccMDcEAKEd6wZe6nFLrjsw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_pwvRgGkaEd-lxvPE33eETg" name="effectiveTime" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_IBLrEP1hEd-9y7w_HH-hnA">
+          <body>Specifies the creation time of the document. All documents&#xD;
+authored by direct input to a computer system should record an effectiveTime that is&#xD;
+precise to the second. When authored in other ways, for example, by filling out a&#xD;
+paper form that is then transferred into an EHR system, the precision of&#xD;
+effectiveTime may be less than to the second.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_4ysYYD59Ed6cla2oXsPtlA"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_JqFEwEAJEd6wZe6nFLrjsw"/>
       </ownedAttribute>
@@ -123,6 +180,13 @@ wherever these general header constraints are applied.</body>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_fQPpMExwEd6h-an5IXo-DA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_TUol8GkcEd-lxvPE33eETg" name="title" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_bpI-kP1gEd-9y7w_HH-hnA">
+          <body>Specifies the local name used for the document.&#xD;
+Note that the title does not need to be the same as the display name provided with the&#xD;
+document type code. For example, the display name provided by LOINC&amp;#174; as an aid in&#xD;
+debugging may be &quot;HISTORY AND PHYSICAL.&quot; The title can be localized, as appropriate&#xD;
+(see the figure above).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U7TBwGkcEd-lxvPE33eETg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U7To0GkcEd-lxvPE33eETg" value="1"/>
@@ -364,7 +428,9 @@ wherever these general header constraints are applied.</body>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_MUy_sGhQEd-ilOLYnIx0jA" name="LevelOneConformance">
-      <generalization xmi:id="_MUy_sWhQEd-ilOLYnIx0jA" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
+      <generalization xmi:id="_MUy_sWhQEd-ilOLYnIx0jA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
+      </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Uvc30GhQEd-ilOLYnIx0jA" name="LevelTwoConformance">
       <generalization xmi:id="_Uvc30WhQEd-ilOLYnIx0jA" general="_MUy_sGhQEd-ilOLYnIx0jA"/>
@@ -1427,9 +1493,15 @@ denied experiencing.</body>
   <CDA:PropertyValidation xmi:id="_IQ190GkbEd-lxvPE33eETg" base_Property="_pwvRgGkaEd-lxvPE33eETg">
     <ruleId>CONF-HP-23</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_IwlN0GkbEd-lxvPE33eETg" base_Property="_pwv4kGkaEd-lxvPE33eETg"/>
-  <CDA:PropertyValidation xmi:id="_KS2R0GkbEd-lxvPE33eETg" base_Property="_pwxGsGkaEd-lxvPE33eETg"/>
-  <CDA:CodeSystemConstraint xmi:id="_37ylgGkbEd-lxvPE33eETg" code="US" base_Property="_pwwfo2kaEd-lxvPE33eETg"/>
+  <CDA:PropertyValidation xmi:id="_IwlN0GkbEd-lxvPE33eETg" base_Property="_pwv4kGkaEd-lxvPE33eETg">
+    <ruleId>CONF-HP-17</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_KS2R0GkbEd-lxvPE33eETg" base_Property="_pwxGsGkaEd-lxvPE33eETg">
+    <ruleId>CONF-HP-16</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:CodeSystemConstraint xmi:id="_37ylgGkbEd-lxvPE33eETg" code="US" base_Property="_pwwfo2kaEd-lxvPE33eETg">
+    <ruleId>CONF-HP-15</ruleId>
+  </CDA:CodeSystemConstraint>
   <CDA:TextValue xmi:id="_UDeB4GkcEd-lxvPE33eETg" base_Property="_TUol8GkcEd-lxvPE33eETg">
     <ruleId>CONF-HP-22</ruleId>
   </CDA:TextValue>
@@ -1439,7 +1511,6 @@ denied experiencing.</body>
   <CDA:PropertyValidation xmi:id="_B5zdoGmnEd-lxvPE33eETg" base_Property="_LByJgGkdEd-lxvPE33eETg">
     <ruleId>CONF-HP-21</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_C4SfIGmnEd-lxvPE33eETg" base_Property="_pwbIcGkaEd-lxvPE33eETg"/>
   <CDA:CDATemplate xmi:id="_4ACwUGoAEd-d2MaU_RNQsA" base_Class="_z2nc0GoAEd-d2MaU_RNQsA" templateId="2.16.840.1.113883.10.20.4.9"/>
   <CDA:CodeSystemConstraint xmi:id="_FvTVoGoBEd-d2MaU_RNQsA" code="11348-0" displayName="HISTORY OF PAST ILLNESS" base_Property="_z2nc1WoAEd-d2MaU_RNQsA">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
@@ -1621,4 +1692,16 @@ denied experiencing.</body>
   <CDA:CodeSystemConstraint xmi:id="_L4r4kMzDEd-RYrNQjqkPtg" code="51847-2" displayName="ASSESSMENT AND PLAN" base_Property="_SMDJgszCEd-RYrNQjqkPtg">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
+  <CDA:ConstraintValidation xmi:id="_T-YC0PzSEd-9y7w_HH-hnA" base_Constraint="_M7vtkPzSEd-9y7w_HH-hnA">
+    <ruleId>CONF-HP-6</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_7qfywPzSEd-9y7w_HH-hnA" base_Constraint="_1NhIQPzSEd-9y7w_HH-hnA">
+    <ruleId>CONF-HP-7</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_rjdBQPzTEd-9y7w_HH-hnA" severity="WARNING" base_Constraint="_l6XR0PzTEd-9y7w_HH-hnA">
+    <ruleId>CONF-HP-8</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_BtmxAP1dEd-9y7w_HH-hnA" base_Constraint="_1AAdAP1cEd-9y7w_HH-hnA">
+    <ruleId>CONF-HP-9</ruleId>
+  </CDA:ConstraintValidation>
 </xmi:XMI>

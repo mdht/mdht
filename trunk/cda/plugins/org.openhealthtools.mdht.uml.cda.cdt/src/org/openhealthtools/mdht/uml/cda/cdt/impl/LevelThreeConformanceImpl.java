@@ -50,8 +50,8 @@ public class LevelThreeConformanceImpl extends LevelTwoConformanceImpl implement
 	 * @generated
 	 */
 	@Override
-	public boolean validateGeneralHeaderConstraintsTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return LevelThreeConformanceOperations.validateGeneralHeaderConstraintsTemplateId(this, diagnostics, context);
+	public boolean validateLevelOneConformanceTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return LevelThreeConformanceOperations.validateLevelOneConformanceTemplateId(this, diagnostics, context);
 	}
 
 	/**
