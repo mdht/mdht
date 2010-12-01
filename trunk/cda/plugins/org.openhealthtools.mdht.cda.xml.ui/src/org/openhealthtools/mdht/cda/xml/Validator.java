@@ -26,12 +26,16 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.DebugPlugin;
+import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
+import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.wst.validation.ValidationResult;
 import org.eclipse.wst.validation.ValidationState;
 import org.eclipse.wst.validation.internal.provisional.core.IMessage;
@@ -64,7 +68,7 @@ public class Validator extends AbstractNestedValidator {
 
 	}
 
-	private static final String VALIDATIONS = "validations.txt";
+//	private static final String VALIDATIONS = "validations.txt";
 
 	public ValidationReport validate(String uri, InputStream inputstream, NestedValidatorContext context, ValidationResult result)
 
@@ -72,6 +76,7 @@ public class Validator extends AbstractNestedValidator {
 
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 
+		
 		IProject activeProject = null;
 
 		URI cdaDocumentURI = URI.createURI(uri);
@@ -89,9 +94,9 @@ public class Validator extends AbstractNestedValidator {
 			}
 		}
 
-		IPath path = Activator.getDefault().getStateLocation().append(VALIDATIONS);
-
-		IPath lock = Activator.getDefault().getStateLocation().append("lock");
+		IPath validationsPath = Activator.getDefault().getStateLocation().append(cdaDocumentURI.segment(cdaDocumentURI.segmentCount()-1)+"validations");
+		
+		ILaunch launch = null;
 
 		/*
 		 * Using the launch manager, run the validator in the cda plugin and parse the results and add to the problems view 
@@ -105,57 +110,44 @@ public class Validator extends AbstractNestedValidator {
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.internal.validate.Validate");
 
-			String validateArguments = String.format(" \"%s\" \"%s\" \"%s\" ", uri , path.toOSString() , lock.toOSString());
+			String validateArguments = String.format(" \"%s\" \"%s\"  ", uri , validationsPath.toOSString() );
 			
-			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, validateArguments); // uri + " " + path.toOSString() + " " + lock.toOSString());
+			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, validateArguments);
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, activeProject.getName());
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
-
-			workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, true);
 			
-			File validationFile = path.toFile();
+			workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, true);
+			
+			workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, false);
+			
+			File validationFile = validationsPath.toFile();
 
 			validationFile.delete();
 
-			lock.toFile().createNewFile();
-
-			workingCopy.launch(ILaunchManager.RUN_MODE, null);
+			launch = workingCopy.launch(ILaunchManager.RUN_MODE, null);
 
 		} catch (CoreException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} 
 
-		}
-
-		FilenameFilter validationFilter = new FilenameFilter() {
-			public boolean accept(File dir, String name) {
-				return name.equals("lock");
-			}
-		};
-
-		boolean done = false;
-		int doneCtr = 0;
+		boolean terminated = false;
 
 		CDAValidationReport valreport = new CDAValidationReport(uri);
 
-		while (!done && doneCtr++ < 500) {
+		while (!terminated) {
+			for (IProcess process : launch.getProcesses()) {
+				terminated = process.isTerminated();
+			}
 			try {
-
 				Thread.sleep(100);
-
-				String[] files = Activator.getDefault().getStateLocation().toFile().list(validationFilter);
-				if (files != null && files.length == 0) {
-					parse(valreport, uri, Activator.getDefault().getStateLocation().append(VALIDATIONS));
-					done = true;
-				}
-
 			} catch (InterruptedException e) {
-				done = true;
+				terminated = true;
 			}
 		}
+
+		parse(valreport, uri,validationsPath );
 
 		return valreport;
 
@@ -300,7 +292,7 @@ public class Validator extends AbstractNestedValidator {
 		catch (Exception e)
 
 		{
-
+			valreport.addError(e.getMessage(), 0, 0, cdauri);
 		}
 
 	}
