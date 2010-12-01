@@ -39,7 +39,6 @@ import org.xml.sax.helpers.XMLReaderFactory;
  *  Step 1 Index XML Instance 
  *  Step 2 Validation Instance
  *  Step 3 write results to temp file
- *  Step 4 Delete lock file - currently the cda xml ui plugin validate is running in the background - poor mans named semaphore
  *
  */
 public class Validate {
@@ -131,10 +130,6 @@ public class Validate {
 
 				out.flush();
 				out.close();
-				
-				File lockFile = new File(args[2]);
-				
-				lockFile.delete();
 
 			}
 
