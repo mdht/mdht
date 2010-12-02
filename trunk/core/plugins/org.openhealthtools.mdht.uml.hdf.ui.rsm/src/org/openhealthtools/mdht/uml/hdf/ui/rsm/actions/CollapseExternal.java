@@ -43,10 +43,10 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.hdf.ui.rsm.internal.Logger;
 
-import com.ibm.xtools.umlnotation.UMLParentDisplay;
-import com.ibm.xtools.umlnotation.UMLShapeStyle;
-import com.ibm.xtools.umlnotation.UmlnotationFactory;
-import com.ibm.xtools.umlnotation.UmlnotationPackage;
+//import com.ibm.xtools.umlnotation.UMLParentDisplay;
+//import com.ibm.xtools.umlnotation.UMLShapeStyle;
+//import com.ibm.xtools.umlnotation.UmlnotationFactory;
+//import com.ibm.xtools.umlnotation.UmlnotationPackage;
 
 public class CollapseExternal implements IObjectActionDelegate {
 
@@ -190,15 +190,15 @@ public class CollapseExternal implements IObjectActionDelegate {
 	}
 	
 	private void setParentNameStyle(View view, boolean showParentName) {
-		UMLShapeStyle style = (UMLShapeStyle) view.getStyle(UmlnotationPackage.Literals.UML_SHAPE_STYLE);
-		if (style == null) {
-			style = UmlnotationFactory.eINSTANCE.createUMLShapeStyle();
-			view.getStyles().add(style);
-		}
-		if (showParentName)
-			style.setShowParent(UMLParentDisplay.NAME_LITERAL);
-		else
-			style.setShowParent(UMLParentDisplay.NONE_LITERAL);
+//		UMLShapeStyle style = (UMLShapeStyle) view.getStyle(UmlnotationPackage.Literals.UML_SHAPE_STYLE);
+//		if (style == null) {
+//			style = UmlnotationFactory.eINSTANCE.createUMLShapeStyle();
+//			view.getStyles().add(style);
+//		}
+//		if (showParentName)
+//			style.setShowParent(UMLParentDisplay.NAME_LITERAL);
+//		else
+//			style.setShowParent(UMLParentDisplay.NONE_LITERAL);
 	}
 
 	/**
