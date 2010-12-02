@@ -12,13 +12,12 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.validate;
 
-
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -30,30 +29,30 @@ import org.openhealthtools.mdht.uml.cda.DocumentRoot;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
- * Simple main validate routine used by the workspace xml instance validation in the cda xml ui plugin
+ * Simple main validate routine used by the workspace xml instance validation in
+ * the cda xml ui plugin
  * 
- *  Step 1 Index XML Instance 
- *  Step 2 Validation Instance
- *  Step 3 write results to temp file
- *
+ * Step 1 Index XML Instance Step 2 Validation Instance Step 3 write results to
+ * temp file
+ * 
  */
 public class Validate {
 
 	public static void main(String[] args) {
-		
 
 		final String DELIMITER = "~";
-		
+
 		ClinicalDocument clinicalDocument;
-		
+
 		CDAUtil.loadPackages();
-			
+
 		try {
-			
+
 			URI cdaURI = URI.createURI(args[0]);
 
 			if (cdaURI.isFile()) {
@@ -63,7 +62,9 @@ public class Validate {
 				inputSource.setEncoding("UTF-8");
 
 				OutputStream fout = new FileOutputStream(args[1]);
+
 				OutputStream bout = new BufferedOutputStream(fout);
+
 				final OutputStreamWriter out = new OutputStreamWriter(bout);
 
 				XMLReader parser = XMLReaderFactory.createXMLReader();
@@ -73,60 +74,95 @@ public class Validate {
 
 				parser.setContentHandler(xpathIndexer);
 
-				parser.parse(cdaURI.path());
+				try {
 
-				clinicalDocument = CDAUtil.load(inputSource);
+					parser.parse(cdaURI.path());
 
-				CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+					clinicalDocument = CDAUtil.load(inputSource);
 
-					public void handleError(Diagnostic diagnostic) {
+					CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 
-						String path = "";
-						if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
-							path = getPath((EObject) diagnostic.getData().get(0));
-						}
+						public void handleError(Diagnostic diagnostic) {
 
-						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
-
-						try {
-							if (eld != null) {
-								out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
-							} else {
-								out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
+							String path = "";
+							if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
+								path = getPath((EObject) diagnostic.getData().get(0));
 							}
 
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
+							XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
 
-					}
+							try {
+								if (eld != null) {
+									out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
+								} else {
+									out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
+								}
 
-					public void handleInfo(Diagnostic diagnostic) {
-
-					}
-
-					public void handleWarning(Diagnostic diagnostic) {
-						
-						String path = "";
-						if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
-							path = getPath((EObject) diagnostic.getData().get(0));
-
-						}
-
-						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
-
-						try {
-							if (eld != null) {
-								out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
-							} else {
-								out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
+							} catch (IOException e) {
+								e.printStackTrace();
 							}
-						} catch (IOException e) {
-							e.printStackTrace();
+
+						}
+
+						public void handleInfo(Diagnostic diagnostic) {
+
+						}
+
+						public void handleWarning(Diagnostic diagnostic) {
+
+							String path = "";
+							if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
+								path = getPath((EObject) diagnostic.getData().get(0));
+
+							}
+
+							XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
+
+							try {
+								if (eld != null) {
+									out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
+								} else {
+									out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
+								}
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+
+					});
+				}
+
+				catch (SAXParseException spe) {
+					// Do not process because XML validation will highlight
+					// issue
+				} catch (Throwable t) {
+
+					List<Throwable> list = new ArrayList<Throwable>();
+
+					Throwable throwable = t;
+					while (throwable != null && list.contains(throwable) == false) {
+						list.add(throwable);
+						throwable = throwable.getCause();
+					}
+
+					String rootMessage = list.get(list.size() - 1).getMessage();
+
+					XPathIndexer.ElementLocationData eld = null;
+					for (String value : rootMessage.split("'")) {
+
+						eld = xpathIndexer.getAttributeLocationByValue(value);
+						if (eld != null) {
+							break;
 						}
 					}
 
-				});
+					if (eld != null) {
+						out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + "CDA document load error : " + rootMessage + "\n");
+					} else {
+						out.write("error" + DELIMITER + 1 + DELIMITER + 1 + DELIMITER + "CDA document load error : " + rootMessage + "\n");
+					}
+
+				}
 
 				out.flush();
 				out.close();
@@ -134,8 +170,6 @@ public class Validate {
 			}
 
 		} catch (Exception e1) {
-		
-			e1.printStackTrace();
 		}
 
 	}
@@ -157,8 +191,5 @@ public class Validate {
 		}
 		return path;
 	}
-	
-	
-
 
 }

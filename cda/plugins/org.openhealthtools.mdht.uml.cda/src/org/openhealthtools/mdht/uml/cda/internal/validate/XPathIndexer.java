@@ -103,6 +103,7 @@ public class XPathIndexer implements ContentHandler {
 	 */
 	public HashMap<String, ElementLocationData> xpathLocations = new HashMap<String, ElementLocationData>();
 	
+	public HashMap<String, ElementLocationData> xpathAttributes = new HashMap<String, ElementLocationData>();
 	
 	/*
 	 * SAX Locator
@@ -142,6 +143,8 @@ public class XPathIndexer implements ContentHandler {
 	}
 
 	public void characters(char[] text, int start, int length) throws SAXException {
+	
+		
 	}
 
 	public void ignorableWhitespace(char[] text, int start, int length) throws SAXException {
@@ -158,7 +161,19 @@ public class XPathIndexer implements ContentHandler {
 		
 		currentXMLElement = new ElementEntry(name, index, currentXMLElement);
 		
-		xpathLocations.put(getXPathFromEntry(currentXMLElement).toUpperCase(), new ElementLocationData(locator.getLineNumber(), locator.getColumnNumber()));
+		ElementLocationData location = new ElementLocationData(locator.getLineNumber(), locator.getColumnNumber());
+		
+		xpathLocations.put(getXPathFromEntry(currentXMLElement).toUpperCase(),location);
+		
+		for (int actr = 0; actr < attrs.getLength(); actr++) {
+
+			if (!xpathAttributes.containsKey(attrs.getValue(actr))) {
+				xpathAttributes.put(attrs.getValue(actr), location);
+			}
+
+		}
+		
+		
 	}
 
 	private String getXPathFromEntry(ElementEntry elementEntry) {
@@ -208,6 +223,16 @@ public class XPathIndexer implements ContentHandler {
 		
 		if (xpathLocations.containsKey(upperXPath )) {
 			elementLocationData = xpathLocations.get(upperXPath);
+		}
+		return elementLocationData;
+	}
+	
+public ElementLocationData getAttributeLocationByValue(String value) {
+		
+		ElementLocationData elementLocationData = null;
+		
+		if (xpathAttributes.containsKey(value)) {
+			elementLocationData = xpathAttributes.get(value);
 		}
 		return elementLocationData;
 	}
