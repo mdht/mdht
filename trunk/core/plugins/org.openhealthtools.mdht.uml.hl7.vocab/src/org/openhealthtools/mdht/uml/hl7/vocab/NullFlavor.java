@@ -33,130 +33,130 @@ public enum NullFlavor implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ASKU_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	ASKU(0, "ASKU", "ASKU", "Asked but Unknown"),
+	ASKU(0, "ASKU", "ASKU"),
 
 	/**
 	 * The '<em><b>MSK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #MSK_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	MSK(1, "MSK", "MSK", "Masked"),
+	MSK(1, "MSK", "MSK"),
 
 	/**
 	 * The '<em><b>NA</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NA_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	NA(2, "NA", "NA", "Not Applicable"),
+	NA(2, "NA", "NA"),
 
 	/**
 	 * The '<em><b>NASK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NASK_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	NASK(3, "NASK", "NASK", "Not Asked"),
+	NASK(3, "NASK", "NASK"),
 
 	/**
 	 * The '<em><b>NAV</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NAV_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	NAV(4, "NAV", "NAV", "Temporarily Unavailable"),
+	NAV(4, "NAV", "NAV"),
 
 	/**
 	 * The '<em><b>NI</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NI_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	NI(5, "NI", "NI", "No Information"),
+	NI(5, "NI", "NI"),
 
 	/**
 	 * The '<em><b>NINF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NINF_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	NINF(6, "NINF", "NINF", "Negative Infinity"),
+	NINF(6, "NINF", "NINF"),
 
 	/**
 	 * The '<em><b>OTH</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #OTH_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	OTH(7, "OTH", "OTH", "Other"),
+	OTH(7, "OTH", "OTH"),
 
 	/**
 	 * The '<em><b>PINF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #PINF_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	PINF(8, "PINF", "PINF", "Positive Infinity"),
+	PINF(8, "PINF", "PINF"),
 
 	/**
 	 * The '<em><b>QS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #QS_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	QS(9, "QS", "QS", "Sufficient Quantity"),
+	QS(9, "QS", "QS"),
 
 	/**
 	 * The '<em><b>TRC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #TRC_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	TRC(10, "TRC", "TRC", "Trace"),
+	TRC(10, "TRC", "TRC"),
 
 	/**
 	 * The '<em><b>UNC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #UNC_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	UNC(11, "UNC", "UNC", "Un-encoded"),
+	UNC(11, "UNC", "UNC"),
 
 	/**
 	 * The '<em><b>UNK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #UNK_VALUE
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	UNK(12, "UNK", "UNK", "Unknown");
+	UNK(12, "UNK", "UNK");
 
 	/**
 	 * The '<em><b>ASKU</b></em>' literal value.
@@ -461,20 +461,17 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 */
 	private final String literal;
-	
-	private final String description;
 
 	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	private NullFlavor(int value, String name, String literal, String description) {
+	private NullFlavor(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
-		this.description = description;
 	}
 
 	/**
@@ -502,10 +499,6 @@ public enum NullFlavor implements Enumerator {
 	 */
 	public String getLiteral() {
 	  return literal;
-	}
-	
-	public String getDescription() {
-		return description;
 	}
 
 	/**
