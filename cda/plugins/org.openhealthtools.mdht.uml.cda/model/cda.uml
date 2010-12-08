@@ -5279,10 +5279,6 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EltvMUoeEd6c3qsAxlFHaQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EltvMEoeEd6c3qsAxlFHaQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_dXaowHfeEd-OZ-5CAiSgsw" name="sDTCPatient" visibility="private" type="_vKSC4HfdEd-OZ-5CAiSgsw" aggregation="composite">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gIlv4HfeEd-OZ-5CAiSgsw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gIlv4XfeEd-OZ-5CAiSgsw"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="__A5zUUceEd6besF9iFIJkQ" name="assignedPerson" visibility="private" type="_Je2yMEcaEd6besF9iFIJkQ" aggregation="composite" association="__A5zUEceEd6besF9iFIJkQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__A5zU0ceEd6besF9iFIJkQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__A5zUkceEd6besF9iFIJkQ"/>
@@ -5290,6 +5286,10 @@
       <ownedAttribute xmi:id="_EsyYEUcfEd6besF9iFIJkQ" name="representedOrganization" visibility="private" type="_zjKW8EcZEd6besF9iFIJkQ" aggregation="composite" association="_EsyYEEcfEd6besF9iFIJkQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EsyYE0cfEd6besF9iFIJkQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EsyYEkcfEd6besF9iFIJkQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dXaowHfeEd-OZ-5CAiSgsw" name="sDTCPatient" visibility="private" type="_vKSC4HfdEd-OZ-5CAiSgsw" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gIlv4HfeEd-OZ-5CAiSgsw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gIlv4XfeEd-OZ-5CAiSgsw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fPWRU0xwEd6h-an5IXo-DA" name="nullFlavor" visibility="private">
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>
@@ -5344,10 +5344,6 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AVNG0UofEd6c3qsAxlFHaQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AVNG0EofEd6c3qsAxlFHaQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_dKVZkHffEd-OZ-5CAiSgsw" name="sDTCPatient" visibility="private" type="_vKSC4HfdEd-OZ-5CAiSgsw" aggregation="composite">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fWGtkHffEd-OZ-5CAiSgsw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fWGtkXffEd-OZ-5CAiSgsw"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_3pHXUUcnEd6besF9iFIJkQ" name="associatedPerson" visibility="private" type="_Je2yMEcaEd6besF9iFIJkQ" aggregation="composite" association="_3pHXUEcnEd6besF9iFIJkQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3pHXU0cnEd6besF9iFIJkQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3pHXUkcnEd6besF9iFIJkQ"/>
@@ -5355,6 +5351,10 @@
       <ownedAttribute xmi:id="_3AIrwUcnEd6besF9iFIJkQ" name="scopingOrganization" visibility="private" type="_zjKW8EcZEd6besF9iFIJkQ" aggregation="composite" association="_3AIrwEcnEd6besF9iFIJkQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3AIrw0cnEd6besF9iFIJkQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3AIrwkcnEd6besF9iFIJkQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dKVZkHffEd-OZ-5CAiSgsw" name="sDTCPatient" visibility="private" type="_vKSC4HfdEd-OZ-5CAiSgsw" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fWGtkHffEd-OZ-5CAiSgsw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fWGtkXffEd-OZ-5CAiSgsw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fPgCU0xwEd6h-an5IXo-DA" name="nullFlavor" visibility="private">
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>
@@ -8256,13 +8256,13 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qk9LgUrmEd6FXKclYGEDCw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qk9LgErmEd6FXKclYGEDCw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_LAN9EHfgEd-OZ-5CAiSgsw" name="sDTCPatient" visibility="private" type="_vKSC4HfdEd-OZ-5CAiSgsw" aggregation="composite">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MxUuUHfgEd-OZ-5CAiSgsw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MxUuUXfgEd-OZ-5CAiSgsw"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_RIw28UcnEd6besF9iFIJkQ" name="relatedPerson" visibility="private" type="_Je2yMEcaEd6besF9iFIJkQ" aggregation="composite" association="_RIw28EcnEd6besF9iFIJkQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RIw280cnEd6besF9iFIJkQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RIw28kcnEd6besF9iFIJkQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_LAN9EHfgEd-OZ-5CAiSgsw" name="sDTCPatient" visibility="private" type="_vKSC4HfdEd-OZ-5CAiSgsw" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MxUuUHfgEd-OZ-5CAiSgsw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MxUuUXfgEd-OZ-5CAiSgsw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fS7J20xwEd6h-an5IXo-DA" name="nullFlavor" visibility="private">
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>

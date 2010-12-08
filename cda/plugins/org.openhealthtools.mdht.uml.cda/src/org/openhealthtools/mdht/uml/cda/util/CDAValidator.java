@@ -508,7 +508,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGuardian(Guardian guardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(guardian, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(guardian, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(guardian, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(guardian, diagnostics, context);
@@ -599,7 +598,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssignedAuthor(AssignedAuthor assignedAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(assignedAuthor, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assignedAuthor, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assignedAuthor, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assignedAuthor, diagnostics, context);
@@ -672,7 +670,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateInformant12(Informant12 informant12, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(informant12, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(informant12, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(informant12, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(informant12, diagnostics, context);
@@ -925,7 +922,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComponent2(Component2 component2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(component2, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(component2, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(component2, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(component2, diagnostics, context);
@@ -1025,7 +1021,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEntry(Entry entry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(entry, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(entry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(entry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(entry, diagnostics, context);
@@ -1116,7 +1111,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateParticipantRole(ParticipantRole participantRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(participantRole, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(participantRole, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(participantRole, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(participantRole, diagnostics, context);
@@ -1162,7 +1156,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEntryRelationship(EntryRelationship entryRelationship, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(entryRelationship, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(entryRelationship, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(entryRelationship, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(entryRelationship, diagnostics, context);
@@ -1199,7 +1192,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReference(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(reference, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reference, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reference, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reference, diagnostics, context);
@@ -1326,7 +1318,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComponent4(Component4 component4, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(component4, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(component4, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(component4, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(component4, diagnostics, context);
@@ -1399,7 +1390,6 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateManufacturedProduct(ManufacturedProduct manufacturedProduct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(manufacturedProduct, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(manufacturedProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(manufacturedProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(manufacturedProduct, diagnostics, context);

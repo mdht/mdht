@@ -51,8 +51,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getEffectiveTime <em>Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getRelatedPerson <em>Related Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getClassCode <em>Class Code</em>}</li>
  * </ul>
@@ -132,16 +132,6 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 	protected IVL_TS effectiveTime;
 
 	/**
-	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSDTCPatient()
-	 * @generated
-	 * @ordered
-	 */
-	protected SDTCPatient sDTCPatient;
-
-	/**
 	 * The cached value of the '{@link #getRelatedPerson() <em>Related Person</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,6 +140,16 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 	 * @ordered
 	 */
 	protected Person relatedPerson;
+
+	/**
+	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCPatient()
+	 * @generated
+	 * @ordered
+	 */
+	protected SDTCPatient sDTCPatient;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -605,10 +605,10 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return basicSetEffectiveTime(null, msgs);
-			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
-				return basicSetSDTCPatient(null, msgs);
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				return basicSetRelatedPerson(null, msgs);
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				return basicSetSDTCPatient(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -635,10 +635,10 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 				return getTelecoms();
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return getEffectiveTime();
-			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
-				return getSDTCPatient();
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				return getRelatedPerson();
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				return getSDTCPatient();
 			case CDAPackage.RELATED_ENTITY__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.RELATED_ENTITY__CLASS_CODE:
@@ -681,11 +681,11 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				setEffectiveTime((IVL_TS)newValue);
 				return;
-			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)newValue);
-				return;
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				setRelatedPerson((Person)newValue);
+				return;
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)newValue);
 				return;
 			case CDAPackage.RELATED_ENTITY__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -726,11 +726,11 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				setEffectiveTime((IVL_TS)null);
 				return;
-			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)null);
-				return;
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				setRelatedPerson((Person)null);
+				return;
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)null);
 				return;
 			case CDAPackage.RELATED_ENTITY__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -764,10 +764,10 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 				return telecoms != null && !telecoms.isEmpty();
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return effectiveTime != null;
-			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
-				return sDTCPatient != null;
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				return relatedPerson != null;
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				return sDTCPatient != null;
 			case CDAPackage.RELATED_ENTITY__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.RELATED_ENTITY__CLASS_CODE:

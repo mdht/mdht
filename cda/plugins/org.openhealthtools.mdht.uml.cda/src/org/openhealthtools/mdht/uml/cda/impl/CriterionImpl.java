@@ -183,7 +183,7 @@ public class CriterionImpl extends ActImpl implements Criterion {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActMood MOOD_CODE_EDEFAULT = ActMood.EVNCRT;
+	protected static final ActMood MOOD_CODE_EDEFAULT = ActMood.APT;
 
 	/**
 	 * The cached value of the '{@link #getMoodCode() <em>Mood Code</em>}' attribute.
