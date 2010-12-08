@@ -38,8 +38,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getEffectiveTime <em>Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getRelatedPerson <em>Related Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getClassCode <em>Class Code</em>}</li>
  * </ul>

@@ -51,9 +51,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getTelecoms <em>Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getAssignedPerson <em>Assigned Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getRepresentedOrganizations <em>Represented Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getClassCode <em>Class Code</em>}</li>
  * </ul>
@@ -133,16 +133,6 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	protected EList<TEL> telecoms;
 
 	/**
-	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSDTCPatient()
-	 * @generated
-	 * @ordered
-	 */
-	protected SDTCPatient sDTCPatient;
-
-	/**
 	 * The cached value of the '{@link #getAssignedPerson() <em>Assigned Person</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +151,16 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 * @ordered
 	 */
 	protected EList<Organization> representedOrganizations;
+
+	/**
+	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCPatient()
+	 * @generated
+	 * @ordered
+	 */
+	protected SDTCPatient sDTCPatient;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -597,12 +597,12 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
-			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
-				return basicSetSDTCPatient(null, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				return basicSetAssignedPerson(null, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
 				return ((InternalEList<?>)getRepresentedOrganizations()).basicRemove(otherEnd, msgs);
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				return basicSetSDTCPatient(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -629,12 +629,12 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 				return getAddrs();
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				return getTelecoms();
-			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
-				return getSDTCPatient();
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				return getAssignedPerson();
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
 				return getRepresentedOrganizations();
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				return getSDTCPatient();
 			case CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.ASSIGNED_ENTITY__CLASS_CODE:
@@ -678,15 +678,15 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 				getTelecoms().clear();
 				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
-			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)newValue);
-				return;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				setAssignedPerson((Person)newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
 				getRepresentedOrganizations().clear();
 				getRepresentedOrganizations().addAll((Collection<? extends Organization>)newValue);
+				return;
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -727,14 +727,14 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				getTelecoms().clear();
 				return;
-			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)null);
-				return;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				setAssignedPerson((Person)null);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
 				getRepresentedOrganizations().clear();
+				return;
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)null);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -768,12 +768,12 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				return telecoms != null && !telecoms.isEmpty();
-			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
-				return sDTCPatient != null;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				return assignedPerson != null;
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
 				return representedOrganizations != null && !representedOrganizations.isEmpty();
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				return sDTCPatient != null;
 			case CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.ASSIGNED_ENTITY__CLASS_CODE:

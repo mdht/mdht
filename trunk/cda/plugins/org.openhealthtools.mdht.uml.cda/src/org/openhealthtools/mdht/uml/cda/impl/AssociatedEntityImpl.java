@@ -51,9 +51,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssociative;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getTelecoms <em>Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getAssociatedPerson <em>Associated Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getScopingOrganization <em>Scoping Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl#getClassCode <em>Class Code</em>}</li>
  * </ul>
@@ -133,16 +133,6 @@ public class AssociatedEntityImpl extends RoleImpl implements AssociatedEntity {
 	protected EList<TEL> telecoms;
 
 	/**
-	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSDTCPatient()
-	 * @generated
-	 * @ordered
-	 */
-	protected SDTCPatient sDTCPatient;
-
-	/**
 	 * The cached value of the '{@link #getAssociatedPerson() <em>Associated Person</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +151,16 @@ public class AssociatedEntityImpl extends RoleImpl implements AssociatedEntity {
 	 * @ordered
 	 */
 	protected Organization scopingOrganization;
+
+	/**
+	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCPatient()
+	 * @generated
+	 * @ordered
+	 */
+	protected SDTCPatient sDTCPatient;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -628,12 +628,12 @@ public class AssociatedEntityImpl extends RoleImpl implements AssociatedEntity {
 				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSOCIATED_ENTITY__TELECOM:
 				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
-			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
-				return basicSetSDTCPatient(null, msgs);
 			case CDAPackage.ASSOCIATED_ENTITY__ASSOCIATED_PERSON:
 				return basicSetAssociatedPerson(null, msgs);
 			case CDAPackage.ASSOCIATED_ENTITY__SCOPING_ORGANIZATION:
 				return basicSetScopingOrganization(null, msgs);
+			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
+				return basicSetSDTCPatient(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -660,12 +660,12 @@ public class AssociatedEntityImpl extends RoleImpl implements AssociatedEntity {
 				return getAddrs();
 			case CDAPackage.ASSOCIATED_ENTITY__TELECOM:
 				return getTelecoms();
-			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
-				return getSDTCPatient();
 			case CDAPackage.ASSOCIATED_ENTITY__ASSOCIATED_PERSON:
 				return getAssociatedPerson();
 			case CDAPackage.ASSOCIATED_ENTITY__SCOPING_ORGANIZATION:
 				return getScopingOrganization();
+			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
+				return getSDTCPatient();
 			case CDAPackage.ASSOCIATED_ENTITY__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.ASSOCIATED_ENTITY__CLASS_CODE:
@@ -709,14 +709,14 @@ public class AssociatedEntityImpl extends RoleImpl implements AssociatedEntity {
 				getTelecoms().clear();
 				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
-			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)newValue);
-				return;
 			case CDAPackage.ASSOCIATED_ENTITY__ASSOCIATED_PERSON:
 				setAssociatedPerson((Person)newValue);
 				return;
 			case CDAPackage.ASSOCIATED_ENTITY__SCOPING_ORGANIZATION:
 				setScopingOrganization((Organization)newValue);
+				return;
+			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)newValue);
 				return;
 			case CDAPackage.ASSOCIATED_ENTITY__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -757,14 +757,14 @@ public class AssociatedEntityImpl extends RoleImpl implements AssociatedEntity {
 			case CDAPackage.ASSOCIATED_ENTITY__TELECOM:
 				getTelecoms().clear();
 				return;
-			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)null);
-				return;
 			case CDAPackage.ASSOCIATED_ENTITY__ASSOCIATED_PERSON:
 				setAssociatedPerson((Person)null);
 				return;
 			case CDAPackage.ASSOCIATED_ENTITY__SCOPING_ORGANIZATION:
 				setScopingOrganization((Organization)null);
+				return;
+			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)null);
 				return;
 			case CDAPackage.ASSOCIATED_ENTITY__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -798,12 +798,12 @@ public class AssociatedEntityImpl extends RoleImpl implements AssociatedEntity {
 				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.ASSOCIATED_ENTITY__TELECOM:
 				return telecoms != null && !telecoms.isEmpty();
-			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
-				return sDTCPatient != null;
 			case CDAPackage.ASSOCIATED_ENTITY__ASSOCIATED_PERSON:
 				return associatedPerson != null;
 			case CDAPackage.ASSOCIATED_ENTITY__SCOPING_ORGANIZATION:
 				return scopingOrganization != null;
+			case CDAPackage.ASSOCIATED_ENTITY__SDTC_PATIENT:
+				return sDTCPatient != null;
 			case CDAPackage.ASSOCIATED_ENTITY__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.ASSOCIATED_ENTITY__CLASS_CODE:

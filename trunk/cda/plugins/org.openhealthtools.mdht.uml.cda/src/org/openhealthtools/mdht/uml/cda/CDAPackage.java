@@ -2093,22 +2093,13 @@ public interface CDAPackage extends EPackage {
 	int ASSIGNED_ENTITY__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Person</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__ASSIGNED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 8;
+	int ASSIGNED_ENTITY__ASSIGNED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Represented Organization</b></em>' containment reference list.
@@ -2117,7 +2108,16 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 9;
+	int ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2339,22 +2339,22 @@ public interface CDAPackage extends EPackage {
 	int RELATED_ENTITY__EFFECTIVE_TIME = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Related Person</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__RELATED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 8;
+	int RELATED_ENTITY__RELATED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3185,22 +3185,13 @@ public interface CDAPackage extends EPackage {
 	int ASSOCIATED_ENTITY__TELECOM = RIMPackage.ROLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Associated Person</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__ASSOCIATED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 8;
+	int ASSOCIATED_ENTITY__ASSOCIATED_PERSON = RIMPackage.ROLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Scoping Organization</b></em>' containment reference.
@@ -3209,7 +3200,16 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__SCOPING_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 9;
+	int ASSOCIATED_ENTITY__SCOPING_ORGANIZATION = RIMPackage.ROLE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATED_ENTITY__SDTC_PATIENT = RIMPackage.ROLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.

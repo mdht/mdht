@@ -37,9 +37,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssociative;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTelecoms <em>Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getAssociatedPerson <em>Associated Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getScopingOrganization <em>Scoping Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getClassCode <em>Class Code</em>}</li>
  * </ul>

@@ -2638,7 +2638,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getAssignedEntity_SDTCPatient() {
-        return (EReference)getAssignedEntity().getEStructuralFeatures().get(7);
+        return (EReference)getAssignedEntity().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2647,7 +2647,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getAssignedEntity_AssignedPerson() {
-        return (EReference)getAssignedEntity().getEStructuralFeatures().get(8);
+        return (EReference)getAssignedEntity().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2656,7 +2656,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getAssignedEntity_RepresentedOrganization() {
-        return (EReference)getAssignedEntity().getEStructuralFeatures().get(9);
+        return (EReference)getAssignedEntity().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2863,7 +2863,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getRelatedEntity_SDTCPatient() {
-        return (EReference)getRelatedEntity().getEStructuralFeatures().get(7);
+        return (EReference)getRelatedEntity().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2872,7 +2872,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getRelatedEntity_RelatedPerson() {
-        return (EReference)getRelatedEntity().getEStructuralFeatures().get(8);
+        return (EReference)getRelatedEntity().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3646,7 +3646,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getAssociatedEntity_SDTCPatient() {
-        return (EReference)getAssociatedEntity().getEStructuralFeatures().get(7);
+        return (EReference)getAssociatedEntity().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -3655,7 +3655,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getAssociatedEntity_AssociatedPerson() {
-        return (EReference)getAssociatedEntity().getEStructuralFeatures().get(8);
+        return (EReference)getAssociatedEntity().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3664,7 +3664,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getAssociatedEntity_ScopingOrganization() {
-        return (EReference)getAssociatedEntity().getEStructuralFeatures().get(9);
+        return (EReference)getAssociatedEntity().getEStructuralFeatures().get(8);
 	}
 
 	/**
