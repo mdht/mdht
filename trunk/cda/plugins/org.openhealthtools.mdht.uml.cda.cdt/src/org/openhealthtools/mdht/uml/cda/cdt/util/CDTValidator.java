@@ -1231,7 +1231,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGeneralHeaderConstraints(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(generalHeaderConstraints, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(generalHeaderConstraints, diagnostics, context);
@@ -1380,7 +1379,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateHistoryAndPhysical(HistoryAndPhysical historyAndPhysical, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(historyAndPhysical, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(historyAndPhysical, diagnostics, context);
@@ -1665,7 +1663,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConsultationNote(ConsultationNote consultationNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(consultationNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(consultationNote, diagnostics, context);
@@ -1917,7 +1914,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLevelThreeConformance(LevelThreeConformance levelThreeConformance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(levelThreeConformance, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(levelThreeConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(levelThreeConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(levelThreeConformance, diagnostics, context);
@@ -1964,7 +1960,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForReferralSection(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(reasonForReferralSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForReferralSection, diagnostics, context);
@@ -2003,7 +1998,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForVisitSectionConsult(ReasonForVisitSectionConsult reasonForVisitSectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(reasonForVisitSectionConsult, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForVisitSectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForVisitSectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForVisitSectionConsult, diagnostics, context);
@@ -2042,7 +2036,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForVisitSection(ReasonForVisitSection reasonForVisitSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(reasonForVisitSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForVisitSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForVisitSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForVisitSection, diagnostics, context);
@@ -2081,7 +2074,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateChiefComplaintSection(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(chiefComplaintSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(chiefComplaintSection, diagnostics, context);
@@ -2120,7 +2112,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForVisitAndChiefComplaintSection(ReasonForVisitAndChiefComplaintSection reasonForVisitAndChiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(reasonForVisitAndChiefComplaintSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForVisitAndChiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForVisitAndChiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForVisitAndChiefComplaintSection, diagnostics, context);
@@ -2159,7 +2150,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProgressNote(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(progressNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(progressNote, diagnostics, context);
@@ -2466,7 +2456,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentAndPlanSectionProcNote(AssessmentAndPlanSectionProcNote assessmentAndPlanSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(assessmentAndPlanSectionProcNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentAndPlanSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentAndPlanSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentAndPlanSectionProcNote, diagnostics, context);
@@ -2505,7 +2494,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentSectionProcNote(AssessmentSectionProcNote assessmentSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(assessmentSectionProcNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentSectionProcNote, diagnostics, context);
@@ -2544,7 +2532,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateChiefComplaintSectionProcNote(ChiefComplaintSectionProcNote chiefComplaintSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(chiefComplaintSectionProcNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(chiefComplaintSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(chiefComplaintSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(chiefComplaintSectionProcNote, diagnostics, context);
@@ -2583,7 +2570,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateObjectiveSection(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(objectiveSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(objectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(objectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(objectiveSection, diagnostics, context);
@@ -2655,7 +2641,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSubjectiveSection(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(subjectiveSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(subjectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(subjectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(subjectiveSection, diagnostics, context);
@@ -2727,7 +2712,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateHistoryOfPresentIllness(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(historyOfPresentIllness, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(historyOfPresentIllness, diagnostics, context);
@@ -2766,7 +2750,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePastMedicalHistorySectionConsult(PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(pastMedicalHistorySectionConsult, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(pastMedicalHistorySectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pastMedicalHistorySectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pastMedicalHistorySectionConsult, diagnostics, context);
@@ -2816,7 +2799,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLevelOneConformance(LevelOneConformance levelOneConformance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(levelOneConformance, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(levelOneConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(levelOneConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(levelOneConformance, diagnostics, context);
@@ -2844,7 +2826,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLevelTwoConformance(LevelTwoConformance levelTwoConformance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(levelTwoConformance, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(levelTwoConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(levelTwoConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(levelTwoConformance, diagnostics, context);
@@ -2891,7 +2872,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePhysicalExaminationSection(PhysicalExaminationSection physicalExaminationSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(physicalExaminationSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(physicalExaminationSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(physicalExaminationSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(physicalExaminationSection, diagnostics, context);
@@ -2930,7 +2910,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePastMedicalHistorySection(PastMedicalHistorySection pastMedicalHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(pastMedicalHistorySection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pastMedicalHistorySection, diagnostics, context);
@@ -2991,7 +2970,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReviewOfSystemsSectionIHE(ReviewOfSystemsSectionIHE reviewOfSystemsSectionIHE, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(reviewOfSystemsSectionIHE, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reviewOfSystemsSectionIHE, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reviewOfSystemsSectionIHE, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reviewOfSystemsSectionIHE, diagnostics, context);
@@ -3030,7 +3008,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReviewOfSystemsSection(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(reviewOfSystemsSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reviewOfSystemsSection, diagnostics, context);
@@ -3069,7 +3046,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGeneralStatusSection(GeneralStatusSection generalStatusSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(generalStatusSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(generalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(generalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(generalStatusSection, diagnostics, context);
@@ -3108,7 +3084,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDiagnosticFindings(DiagnosticFindings diagnosticFindings, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(diagnosticFindings, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(diagnosticFindings, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(diagnosticFindings, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(diagnosticFindings, diagnostics, context);
@@ -3141,7 +3116,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateVitalSignsSection(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(vitalSignsSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vitalSignsSection, diagnostics, context);
@@ -3213,7 +3187,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentSection(AssessmentSection assessmentSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(assessmentSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentSection, diagnostics, context);
@@ -3252,7 +3225,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePlanSection(PlanSection planSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(planSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(planSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planSection, diagnostics, context);
@@ -3291,7 +3263,6 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentAndPlanSection(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(assessmentAndPlanSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentAndPlanSection, diagnostics, context);

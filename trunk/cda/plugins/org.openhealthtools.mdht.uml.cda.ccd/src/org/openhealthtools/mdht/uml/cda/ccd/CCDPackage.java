@@ -14588,15 +14588,6 @@ public interface CCDPackage extends EPackage {
 	int PAYER_ENTITY__TELECOM = CDAPackage.ASSIGNED_ENTITY__TELECOM;
 
 	/**
-	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYER_ENTITY__SDTC_PATIENT = CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Person</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14613,6 +14604,15 @@ public interface CCDPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAYER_ENTITY__REPRESENTED_ORGANIZATION = CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTITY__SDTC_PATIENT = CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
