@@ -86,6 +86,123 @@ public class GeneralHeaderConstraintsImpl extends ClinicalDocumentImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateGeneralHeaderConstraintsHasRecordTargetPatientRole(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasRecordTargetPatientRole(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasPatientBirthTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasPatientBirthTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasAdministrativeGenderCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasAdministrativeGenderCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasProviderOrganization(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasProviderOrganization(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasAuthorTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasAuthorTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasAssignedAuthorId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasAssignedAuthorId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasDataEntererTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasDataEntererTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasInformant(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasInformant(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateGeneralHeaderConstraintsTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTemplateId(this, diagnostics, context);
 	}
@@ -151,6 +268,15 @@ public class GeneralHeaderConstraintsImpl extends ClinicalDocumentImpl implement
 	 */
 	public boolean validateGeneralHeaderConstraintsTypeId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTypeId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean testPersonHasName() {
+		return GeneralHeaderConstraintsOperations.testPersonHasName(this);
 	}
 
 	/**

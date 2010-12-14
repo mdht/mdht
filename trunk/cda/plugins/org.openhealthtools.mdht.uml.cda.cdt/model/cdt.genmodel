@@ -48,6 +48,58 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsCopyTimeNotPresent/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsCopyTimeNotPresent/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasRecordTargetPatientRole">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasRecordTargetPatientRole/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasRecordTargetPatientRole/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasPatientBirthTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasPatientBirthTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasPatientBirthTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAdministrativeGenderCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAdministrativeGenderCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAdministrativeGenderCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasProviderOrganization">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasProviderOrganization/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasProviderOrganization/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAuthorTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAuthorTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAuthorTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAssignedAuthorId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAssignedAuthorId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAssignedAuthorId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasDataEntererAssignedPerson">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasDataEntererAssignedPerson/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasDataEntererAssignedPerson/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasDataEntererTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasDataEntererTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasDataEntererTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasInformant">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasInformant/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasInformant/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsAuthenticatorHasAssignedPerson">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsAuthenticatorHasAssignedPerson/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsAuthenticatorHasAssignedPerson/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTemplateId/context"/>
@@ -80,6 +132,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/testPersonHasName"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//HistoryAndPhysical">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalAssessmentAndPlan">
