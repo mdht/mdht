@@ -42,13 +42,17 @@ a small fee anywhere in the world and is located at:&lt;/p>&#xD;
       <ownedRule xmi:id="_M7vtkPzSEd-9y7w_HH-hnA" name="personHasName" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_TkEscPzSEd-9y7w_HH-hnA">
           <language>Analysis</language>
+          <language>OCL</language>
           <body>All patient, guardianPerson, assignedPerson, maintainingPerson, relatedPerson, intendedRecipient/informationRecipient, associatedPerson, and relatedSubject/subject elements have a name.</body>
+          <body>self.testPersonHasName()</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_1NhIQPzSEd-9y7w_HH-hnA" name="rolesShallHaveAddrAndTelecom" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_7JhzsPzSEd-9y7w_HH-hnA">
           <language>Analysis</language>
+          <language>OCL</language>
           <body>All patientRole, assignedAuthor, assignedEntity[not(parent::dataEnterer)] and associatedEntity elements have an addr and telecom element.</body>
+          <body>self.recordTarget->select(currentRecordTarget : cda::RecordTarget | currentRecordTarget.patientRole.addr->isEmpty() or currentRecordTarget.patientRole.telecom->isEmpty() )->isEmpty() and&#xD;&#xA;&#xD;&#xA;  self.author->select(currentAuthor : cda::Author| currentAuthor.assignedAuthor.addr->isEmpty() or currentAuthor.assignedAuthor.telecom->isEmpty() )->isEmpty() and&#xD;&#xA;&#xD;&#xA;  self.participant->select(currentParticipant : cda::Participant1| currentParticipant.associatedEntity.addr->isEmpty() or currentParticipant.associatedEntity.telecom->isEmpty() )->isEmpty() and &#xD;&#xA;&#xD;&#xA;  self.informant->select(currentInformant : cda::Informant12 | currentInformant.assignedEntity.addr->isEmpty() or currentInformant.assignedEntity.telecom->isEmpty() )->isEmpty() and&#xD;&#xA;&#xD;&#xA;  self.legalAuthenticator->select(currentLegalAuthenticator : cda::LegalAuthenticator | currentLegalAuthenticator.assignedEntity.addr->isEmpty() or currentLegalAuthenticator.assignedEntity.telecom->isEmpty()  )->isEmpty() and &#xD;&#xA;&#xD;&#xA;  self.authenticator->select( currentAuthenticator : cda::Authenticator |  currentAuthenticator.assignedEntity->select(currentAssignedEntity : cda::AssignedEntity | currentAssignedEntity.addr->isEmpty() or currentAssignedEntity.telecom->isEmpty() )->notEmpty()   )->isEmpty()</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_l6XR0PzTEd-9y7w_HH-hnA" name="rolesShouldHaveAddrAndTelecom" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">

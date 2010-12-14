@@ -32,6 +32,14 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="CDT" basePackage="org.openhealthtools.mdht.uml.cda"
       disposableProviderFactory="true" ecorePackage="cdt.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.cdt.operations">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//GeneralHeaderConstraints">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsPersonHasName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsPersonHasName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsPersonHasName/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeIdExtension">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeIdExtension/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeIdExtension/context"/>

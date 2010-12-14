@@ -1119,6 +1119,8 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentAdvanceDirectivesSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPayersSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPurposeSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsPersonHasName(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeIdExtension(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(patientSummary, diagnostics, context);
@@ -2953,6 +2955,8 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsPersonHasName(unstructuredDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeIdExtension(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(unstructuredDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(unstructuredDocument, diagnostics, context);

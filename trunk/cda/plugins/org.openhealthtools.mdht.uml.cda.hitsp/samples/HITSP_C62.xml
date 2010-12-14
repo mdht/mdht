@@ -68,6 +68,13 @@
 		<time value="20091110130945" />
 		<assignedAuthor>
 			<id root="1.3.6.4.1.4.1.2835.2.1234" />
+			<addr>
+				<streetAddressLine />
+				<city />
+				<state />
+				<country>US</country>
+			</addr>
+			<telecom />
 			<assignedAuthoringDevice>
 				<code code="CAPTURE" displayName="Image Capture" codeSystem="1.2.840.10008.2.16.4" />
 				<manufacturerModelName>Some scanner name and model</manufacturerModelName>
@@ -85,6 +92,13 @@
 		<time value="20091110130945" />
 		<assignedEntity>
 			<id extension="22222222" root="1.3.5.35.1.4436.7" />
+			<addr>
+				<streetAddressLine />
+				<city />
+				<state />
+				<country>US</country>
+			</addr>
+			<telecom />
 			<assignedPerson>
 				<name>
 					<prefix>Mrs.</prefix>
@@ -111,6 +125,13 @@
 		<signatureCode code="S" />
 		<assignedEntity>
 			<id extension="11111111" root="1.3.5.35.1.4436.7" />
+			<addr>
+				<streetAddressLine />
+				<city />
+				<state />
+				<country>US</country>
+			</addr>
+			<telecom />
 			<assignedPerson>
 				<name>
 					<prefix>Dr.</prefix>
