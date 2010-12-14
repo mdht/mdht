@@ -50,6 +50,24 @@ public class GeneralHeaderConstraintsImpl extends ClinicalDocumentImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateGeneralHeaderConstraintsPersonHasName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsPersonHasName(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateGeneralHeaderConstraintsTypeIdExtension(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTypeIdExtension(this, diagnostics, context);
 	}
