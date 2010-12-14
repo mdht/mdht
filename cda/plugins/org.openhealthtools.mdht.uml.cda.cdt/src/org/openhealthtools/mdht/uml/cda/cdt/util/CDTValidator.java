@@ -106,12 +106,116 @@ public class CDTValidator extends EObjectValidator {
 	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_COPY_TIME_NOT_PRESENT = 4;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Record Target Patient Role' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_RECORD_TARGET_PATIENT_ROLE = 5;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Patient Birth Time' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_PATIENT_BIRTH_TIME = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Administrative Gender Code' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_ADMINISTRATIVE_GENDER_CODE = 7;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Provider Organization' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_PROVIDER_ORGANIZATION = 8;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Author Time' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_AUTHOR_TIME = 9;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Assigned Author Id' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_ASSIGNED_AUTHOR_ID = 10;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Assigned Author Person Or Device' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_ASSIGNED_AUTHOR_PERSON_OR_DEVICE = 11;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Data Enterer Assigned Person' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_DATA_ENTERER_ASSIGNED_PERSON = 12;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Data Enterer Time' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_DATA_ENTERER_TIME = 13;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Informant' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_INFORMANT = 14;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Has Informant Assigned Person Or Related Person' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_HAS_INFORMANT_ASSIGNED_PERSON_OR_RELATED_PERSON = 15;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Legal Authenticator Has Assigned Person' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_LEGAL_AUTHENTICATOR_HAS_ASSIGNED_PERSON = 16;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Authenticator Has Assigned Person' of 'General Header Constraints'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_AUTHENTICATOR_HAS_ASSIGNED_PERSON = 17;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Template Id' of 'General Header Constraints'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 5;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'General Header Constraints'.
@@ -119,7 +223,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_CODE = 6;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_CODE = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Effective Time' of 'General Header Constraints'.
@@ -127,7 +231,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_EFFECTIVE_TIME = 7;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_EFFECTIVE_TIME = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Id' of 'General Header Constraints'.
@@ -135,7 +239,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ID = 8;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ID = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Language Code' of 'General Header Constraints'.
@@ -143,7 +247,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_LANGUAGE_CODE = 9;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_LANGUAGE_CODE = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Realm Code' of 'General Header Constraints'.
@@ -151,7 +255,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_REALM_CODE = 10;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_REALM_CODE = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Title' of 'General Header Constraints'.
@@ -159,7 +263,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_TITLE = 11;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_TITLE = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Type Id' of 'General Header Constraints'.
@@ -167,7 +271,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_TYPE_ID = 12;
+	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_TYPE_ID = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Assessment And Plan' of 'History And Physical'.
@@ -175,7 +279,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_ASSESSMENT_AND_PLAN = 13;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_ASSESSMENT_AND_PLAN = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Both Assessment And Plan' of 'History And Physical'.
@@ -183,7 +287,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_ASSESSMENT_AND_PLAN = 14;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_ASSESSMENT_AND_PLAN = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Reason For Visit And Chief Complaint' of 'History And Physical'.
@@ -191,7 +295,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT = 15;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Both Reason For Visit And Chief Complaint' of 'History And Physical'.
@@ -199,7 +303,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT = 16;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'History And Physical'.
@@ -207,7 +311,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__GENERAL_HEADER_CONSTRAINTS_CODE = 32;
+	public static final int HISTORY_AND_PHYSICAL__GENERAL_HEADER_CONSTRAINTS_CODE = 45;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Present Illness Template Id' of 'History Of Present Illness'.
@@ -215,7 +319,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 33;
+	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 46;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Present Illness Code' of 'History Of Present Illness'.
@@ -223,7 +327,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_CODE = 34;
+	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_CODE = 47;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Has Clinical Statements' of 'Past Medical History Section'.
@@ -231,7 +335,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_HAS_CLINICAL_STATEMENTS = 35;
+	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_HAS_CLINICAL_STATEMENTS = 48;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical History Of Present Illness' of 'History And Physical'.
@@ -239,7 +343,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_HISTORY_OF_PRESENT_ILLNESS = 17;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_HISTORY_OF_PRESENT_ILLNESS = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Past Medical History Section' of 'History And Physical'.
@@ -247,7 +351,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PAST_MEDICAL_HISTORY_SECTION = 18;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PAST_MEDICAL_HISTORY_SECTION = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Medications Section' of 'History And Physical'.
@@ -255,7 +359,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_MEDICATIONS_SECTION = 19;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_MEDICATIONS_SECTION = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Alerts Section' of 'History And Physical'.
@@ -263,7 +367,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_ALERTS_SECTION = 20;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_ALERTS_SECTION = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Social History Section' of 'History And Physical'.
@@ -271,7 +375,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_SOCIAL_HISTORY_SECTION = 21;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_SOCIAL_HISTORY_SECTION = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Family History Section' of 'History And Physical'.
@@ -279,7 +383,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_FAMILY_HISTORY_SECTION = 22;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_FAMILY_HISTORY_SECTION = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Review Of Systems Section IHE' of 'History And Physical'.
@@ -287,7 +391,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_REVIEW_OF_SYSTEMS_SECTION_IHE = 23;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_REVIEW_OF_SYSTEMS_SECTION_IHE = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Physical Examination Section' of 'History And Physical'.
@@ -295,7 +399,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PHYSICAL_EXAMINATION_SECTION = 24;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PHYSICAL_EXAMINATION_SECTION = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Vital Signs Section' of 'History And Physical'.
@@ -303,7 +407,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_VITAL_SIGNS_SECTION = 25;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_VITAL_SIGNS_SECTION = 38;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical General Status Section' of 'History And Physical'.
@@ -311,7 +415,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_GENERAL_STATUS_SECTION = 26;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_GENERAL_STATUS_SECTION = 39;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Diagnostic Findings' of 'History And Physical'.
@@ -319,7 +423,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_DIAGNOSTIC_FINDINGS = 27;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_DIAGNOSTIC_FINDINGS = 40;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Problem Section' of 'History And Physical'.
@@ -327,7 +431,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PROBLEM_SECTION = 28;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PROBLEM_SECTION = 41;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Procedures Section' of 'History And Physical'.
@@ -335,7 +439,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PROCEDURES_SECTION = 29;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_PROCEDURES_SECTION = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Immunizations Section' of 'History And Physical'.
@@ -343,7 +447,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_IMMUNIZATIONS_SECTION = 30;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_IMMUNIZATIONS_SECTION = 43;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Template Id' of 'History And Physical'.
@@ -351,7 +455,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 31;
+	public static final int HISTORY_AND_PHYSICAL__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 44;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Referral Or Visit' of 'Consultation Note'.
@@ -359,7 +463,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_REFERRAL_OR_VISIT = 50;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_REFERRAL_OR_VISIT = 63;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'Consultation Note'.
@@ -367,7 +471,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__GENERAL_HEADER_CONSTRAINTS_CODE = 66;
+	public static final int CONSULTATION_NOTE__GENERAL_HEADER_CONSTRAINTS_CODE = 79;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note History Of Present Illness' of 'Consultation Note'.
@@ -375,7 +479,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_HISTORY_OF_PRESENT_ILLNESS = 51;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_HISTORY_OF_PRESENT_ILLNESS = 64;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Physical Examination Section' of 'Consultation Note'.
@@ -383,7 +487,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PHYSICAL_EXAMINATION_SECTION = 52;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PHYSICAL_EXAMINATION_SECTION = 65;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Problem Section' of 'Consultation Note'.
@@ -391,7 +495,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PROBLEM_SECTION = 53;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PROBLEM_SECTION = 66;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Procedures Section' of 'Consultation Note'.
@@ -399,7 +503,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PROCEDURES_SECTION = 54;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PROCEDURES_SECTION = 67;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Past Medical History Section Consult' of 'Consultation Note'.
@@ -407,7 +511,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT = 55;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT = 68;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Immunizations Section' of 'Consultation Note'.
@@ -415,7 +519,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_IMMUNIZATIONS_SECTION = 56;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_IMMUNIZATIONS_SECTION = 69;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Medications Section' of 'Consultation Note'.
@@ -423,7 +527,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_MEDICATIONS_SECTION = 57;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_MEDICATIONS_SECTION = 70;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Alerts Section' of 'Consultation Note'.
@@ -431,7 +535,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_ALERTS_SECTION = 58;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_ALERTS_SECTION = 71;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Social History Section' of 'Consultation Note'.
@@ -439,7 +543,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_SOCIAL_HISTORY_SECTION = 59;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_SOCIAL_HISTORY_SECTION = 72;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Family History Section' of 'Consultation Note'.
@@ -447,7 +551,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_FAMILY_HISTORY_SECTION = 60;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_FAMILY_HISTORY_SECTION = 73;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Review Of Systems Section' of 'Consultation Note'.
@@ -455,7 +559,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_REVIEW_OF_SYSTEMS_SECTION = 61;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_REVIEW_OF_SYSTEMS_SECTION = 74;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Vital Signs Section' of 'Consultation Note'.
@@ -463,7 +567,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_VITAL_SIGNS_SECTION = 62;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_VITAL_SIGNS_SECTION = 75;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note General Status Section' of 'Consultation Note'.
@@ -471,7 +575,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_GENERAL_STATUS_SECTION = 63;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_GENERAL_STATUS_SECTION = 76;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Diagnostic Findings' of 'Consultation Note'.
@@ -479,7 +583,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_DIAGNOSTIC_FINDINGS = 64;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_DIAGNOSTIC_FINDINGS = 77;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Template Id' of 'Consultation Note'.
@@ -487,7 +591,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 65;
+	public static final int CONSULTATION_NOTE__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 78;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Referral Section Template Id' of 'Reason For Referral Section'.
@@ -495,7 +599,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 72;
+	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 85;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Referral Section Code' of 'Reason For Referral Section'.
@@ -503,7 +607,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_CODE = 73;
+	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_CODE = 86;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Visit Section Consult Template Id' of 'Reason For Visit Section Consult'.
@@ -511,7 +615,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_VISIT_SECTION_CONSULT__REASON_FOR_VISIT_SECTION_CONSULT_TEMPLATE_ID = 74;
+	public static final int REASON_FOR_VISIT_SECTION_CONSULT__REASON_FOR_VISIT_SECTION_CONSULT_TEMPLATE_ID = 87;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Visit Section Consult Code' of 'Reason For Visit Section Consult'.
@@ -519,7 +623,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_VISIT_SECTION_CONSULT__REASON_FOR_VISIT_SECTION_CONSULT_CODE = 75;
+	public static final int REASON_FOR_VISIT_SECTION_CONSULT__REASON_FOR_VISIT_SECTION_CONSULT_CODE = 88;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Level One Conformance Template Id' of 'Level One Conformance'.
@@ -527,7 +631,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LEVEL_ONE_CONFORMANCE__LEVEL_ONE_CONFORMANCE_TEMPLATE_ID = 76;
+	public static final int LEVEL_ONE_CONFORMANCE__LEVEL_ONE_CONFORMANCE_TEMPLATE_ID = 89;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Level One Conformance Template Id' of 'Level Two Conformance'.
@@ -535,7 +639,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LEVEL_TWO_CONFORMANCE__LEVEL_ONE_CONFORMANCE_TEMPLATE_ID = 77;
+	public static final int LEVEL_TWO_CONFORMANCE__LEVEL_ONE_CONFORMANCE_TEMPLATE_ID = 90;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Level One Conformance Template Id' of 'Level Three Conformance'.
@@ -543,7 +647,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LEVEL_THREE_CONFORMANCE__LEVEL_ONE_CONFORMANCE_TEMPLATE_ID = 78;
+	public static final int LEVEL_THREE_CONFORMANCE__LEVEL_ONE_CONFORMANCE_TEMPLATE_ID = 91;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Visit Section Template Id' of 'Reason For Visit Section'.
@@ -551,7 +655,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_VISIT_SECTION__REASON_FOR_VISIT_SECTION_TEMPLATE_ID = 86;
+	public static final int REASON_FOR_VISIT_SECTION__REASON_FOR_VISIT_SECTION_TEMPLATE_ID = 99;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Visit Section Code' of 'Reason For Visit Section'.
@@ -559,7 +663,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_VISIT_SECTION__REASON_FOR_VISIT_SECTION_CODE = 87;
+	public static final int REASON_FOR_VISIT_SECTION__REASON_FOR_VISIT_SECTION_CODE = 100;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Template Id' of 'Chief Complaint Section'.
@@ -567,7 +671,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 88;
+	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 101;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Code' of 'Chief Complaint Section'.
@@ -575,7 +679,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_CODE = 89;
+	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_CODE = 102;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Visit And Chief Complaint Section Template Id' of 'Reason For Visit And Chief Complaint Section'.
@@ -583,7 +687,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION__REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 90;
+	public static final int REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION__REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 103;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Visit And Chief Complaint Section Code' of 'Reason For Visit And Chief Complaint Section'.
@@ -591,7 +695,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION__REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_CODE = 91;
+	public static final int REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION__REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_CODE = 104;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Assessment And Plan' of 'Progress Note'.
@@ -599,7 +703,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_ASSESSMENT_AND_PLAN = 92;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_ASSESSMENT_AND_PLAN = 105;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Both Assessment And Plan' of 'Progress Note'.
@@ -607,7 +711,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_BOTH_ASSESSMENT_AND_PLAN = 93;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_BOTH_ASSESSMENT_AND_PLAN = 106;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Service Event' of 'Progress Note'.
@@ -615,7 +719,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT = 94;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT = 107;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Service Event Code' of 'Progress Note'.
@@ -623,7 +727,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT_CODE = 95;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT_CODE = 108;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Service Event Effective Time' of 'Progress Note'.
@@ -631,7 +735,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT_EFFECTIVE_TIME = 96;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_SERVICE_EVENT_EFFECTIVE_TIME = 109;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Component Of Element' of 'Progress Note'.
@@ -639,7 +743,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_COMPONENT_OF_ELEMENT = 97;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_COMPONENT_OF_ELEMENT = 110;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Id' of 'Progress Note'.
@@ -647,7 +751,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_ID = 98;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_ID = 111;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Effective Time' of 'Progress Note'.
@@ -655,7 +759,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_EFFECTIVE_TIME = 99;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_EFFECTIVE_TIME = 112;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Effective Time Low' of 'Progress Note'.
@@ -663,7 +767,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_EFFECTIVE_TIME_LOW = 100;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_EFFECTIVE_TIME_LOW = 113;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Has Encompassing Encounter Facility Id' of 'Progress Note'.
@@ -671,7 +775,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_FACILITY_ID = 101;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_HAS_ENCOMPASSING_ENCOUNTER_FACILITY_ID = 114;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Alerts Section' of 'Progress Note'.
@@ -679,7 +783,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_ALERTS_SECTION = 102;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_ALERTS_SECTION = 115;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Chief Complaint Section Proc Note' of 'Progress Note'.
@@ -687,7 +791,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_CHIEF_COMPLAINT_SECTION_PROC_NOTE = 103;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_CHIEF_COMPLAINT_SECTION_PROC_NOTE = 116;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Medications Section' of 'Progress Note'.
@@ -695,7 +799,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_MEDICATIONS_SECTION = 104;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_MEDICATIONS_SECTION = 117;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Objective Section' of 'Progress Note'.
@@ -703,7 +807,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_OBJECTIVE_SECTION = 105;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_OBJECTIVE_SECTION = 118;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Physical Examination Section' of 'Progress Note'.
@@ -711,7 +815,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_PHYSICAL_EXAMINATION_SECTION = 106;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_PHYSICAL_EXAMINATION_SECTION = 119;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Problem Section' of 'Progress Note'.
@@ -719,7 +823,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_PROBLEM_SECTION = 107;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_PROBLEM_SECTION = 120;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Results Section' of 'Progress Note'.
@@ -727,7 +831,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_RESULTS_SECTION = 108;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_RESULTS_SECTION = 121;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Vital Signs Section' of 'Progress Note'.
@@ -735,7 +839,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_VITAL_SIGNS_SECTION = 109;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_VITAL_SIGNS_SECTION = 122;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Review Of Systems Section IHE' of 'Progress Note'.
@@ -743,7 +847,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_REVIEW_OF_SYSTEMS_SECTION_IHE = 110;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_REVIEW_OF_SYSTEMS_SECTION_IHE = 123;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Progress Note Subjective Section' of 'Progress Note'.
@@ -751,7 +855,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__PROGRESS_NOTE_SUBJECTIVE_SECTION = 111;
+	public static final int PROGRESS_NOTE__PROGRESS_NOTE_SUBJECTIVE_SECTION = 124;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Template Id' of 'Progress Note'.
@@ -759,7 +863,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 112;
+	public static final int PROGRESS_NOTE__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 125;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'Progress Note'.
@@ -767,7 +871,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROGRESS_NOTE__GENERAL_HEADER_CONSTRAINTS_CODE = 113;
+	public static final int PROGRESS_NOTE__GENERAL_HEADER_CONSTRAINTS_CODE = 126;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Proc Note Template Id' of 'Assessment And Plan Section Proc Note'.
@@ -775,7 +879,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE__ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_TEMPLATE_ID = 114;
+	public static final int ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE__ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_TEMPLATE_ID = 127;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Proc Note Code' of 'Assessment And Plan Section Proc Note'.
@@ -783,7 +887,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE__ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_CODE = 115;
+	public static final int ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE__ASSESSMENT_AND_PLAN_SECTION_PROC_NOTE_CODE = 128;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment Section Proc Note Template Id' of 'Assessment Section Proc Note'.
@@ -791,7 +895,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_SECTION_PROC_NOTE__ASSESSMENT_SECTION_PROC_NOTE_TEMPLATE_ID = 116;
+	public static final int ASSESSMENT_SECTION_PROC_NOTE__ASSESSMENT_SECTION_PROC_NOTE_TEMPLATE_ID = 129;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment Section Proc Note Code' of 'Assessment Section Proc Note'.
@@ -799,7 +903,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_SECTION_PROC_NOTE__ASSESSMENT_SECTION_PROC_NOTE_CODE = 117;
+	public static final int ASSESSMENT_SECTION_PROC_NOTE__ASSESSMENT_SECTION_PROC_NOTE_CODE = 130;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Proc Note Template Id' of 'Chief Complaint Section Proc Note'.
@@ -807,7 +911,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION_PROC_NOTE__CHIEF_COMPLAINT_SECTION_PROC_NOTE_TEMPLATE_ID = 118;
+	public static final int CHIEF_COMPLAINT_SECTION_PROC_NOTE__CHIEF_COMPLAINT_SECTION_PROC_NOTE_TEMPLATE_ID = 131;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Proc Note Code' of 'Chief Complaint Section Proc Note'.
@@ -815,7 +919,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION_PROC_NOTE__CHIEF_COMPLAINT_SECTION_PROC_NOTE_CODE = 119;
+	public static final int CHIEF_COMPLAINT_SECTION_PROC_NOTE__CHIEF_COMPLAINT_SECTION_PROC_NOTE_CODE = 132;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Has Clinical Statements' of 'Objective Section'.
@@ -823,7 +927,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_HAS_CLINICAL_STATEMENTS = 120;
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_HAS_CLINICAL_STATEMENTS = 133;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Template Id' of 'Objective Section'.
@@ -831,7 +935,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TEMPLATE_ID = 121;
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TEMPLATE_ID = 134;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Code' of 'Objective Section'.
@@ -839,7 +943,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_CODE = 122;
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_CODE = 135;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Text' of 'Objective Section'.
@@ -847,7 +951,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TEXT = 123;
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TEXT = 136;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Objective Section Title' of 'Objective Section'.
@@ -855,7 +959,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TITLE = 124;
+	public static final int OBJECTIVE_SECTION__OBJECTIVE_SECTION_TITLE = 137;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Has Clinical Statements' of 'Subjective Section'.
@@ -863,7 +967,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_HAS_CLINICAL_STATEMENTS = 125;
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_HAS_CLINICAL_STATEMENTS = 138;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Template Id' of 'Subjective Section'.
@@ -871,7 +975,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TEMPLATE_ID = 126;
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TEMPLATE_ID = 139;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Code' of 'Subjective Section'.
@@ -879,7 +983,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_CODE = 127;
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_CODE = 140;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Text' of 'Subjective Section'.
@@ -887,7 +991,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TEXT = 128;
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TEXT = 141;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Subjective Section Title' of 'Subjective Section'.
@@ -895,7 +999,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TITLE = 129;
+	public static final int SUBJECTIVE_SECTION__SUBJECTIVE_SECTION_TITLE = 142;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Consult Template Id' of 'Past Medical History Section Consult'.
@@ -903,7 +1007,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEMPLATE_ID = 67;
+	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEMPLATE_ID = 80;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Consult Code' of 'Past Medical History Section Consult'.
@@ -911,7 +1015,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_CODE = 68;
+	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_CODE = 81;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Consult Text' of 'Past Medical History Section Consult'.
@@ -919,7 +1023,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEXT = 69;
+	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEXT = 82;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Examination Section Template Id' of 'Physical Examination Section'.
@@ -927,7 +1031,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHYSICAL_EXAMINATION_SECTION__PHYSICAL_EXAMINATION_SECTION_TEMPLATE_ID = 41;
+	public static final int PHYSICAL_EXAMINATION_SECTION__PHYSICAL_EXAMINATION_SECTION_TEMPLATE_ID = 54;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Examination Section Code' of 'Physical Examination Section'.
@@ -935,7 +1039,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHYSICAL_EXAMINATION_SECTION__PHYSICAL_EXAMINATION_SECTION_CODE = 42;
+	public static final int PHYSICAL_EXAMINATION_SECTION__PHYSICAL_EXAMINATION_SECTION_CODE = 55;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Template Id' of 'Past Medical History Section'.
@@ -943,7 +1047,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_TEMPLATE_ID = 36;
+	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_TEMPLATE_ID = 49;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Code' of 'Past Medical History Section'.
@@ -951,7 +1055,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_CODE = 37;
+	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_CODE = 50;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Text' of 'Past Medical History Section'.
@@ -959,7 +1063,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_TEXT = 38;
+	public static final int PAST_MEDICAL_HISTORY_SECTION__PAST_MEDICAL_HISTORY_SECTION_TEXT = 51;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section IHE Template Id' of 'Review Of Systems Section IHE'.
@@ -967,7 +1071,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION_IHE__REVIEW_OF_SYSTEMS_SECTION_IHE_TEMPLATE_ID = 39;
+	public static final int REVIEW_OF_SYSTEMS_SECTION_IHE__REVIEW_OF_SYSTEMS_SECTION_IHE_TEMPLATE_ID = 52;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section IHE Code' of 'Review Of Systems Section IHE'.
@@ -975,7 +1079,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION_IHE__REVIEW_OF_SYSTEMS_SECTION_IHE_CODE = 40;
+	public static final int REVIEW_OF_SYSTEMS_SECTION_IHE__REVIEW_OF_SYSTEMS_SECTION_IHE_CODE = 53;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section Template Id' of 'Review Of Systems Section'.
@@ -983,7 +1087,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 70;
+	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 83;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section Code' of 'Review Of Systems Section'.
@@ -991,7 +1095,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_CODE = 71;
+	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_CODE = 84;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Status Section Template Id' of 'General Status Section'.
@@ -999,7 +1103,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_STATUS_SECTION__GENERAL_STATUS_SECTION_TEMPLATE_ID = 48;
+	public static final int GENERAL_STATUS_SECTION__GENERAL_STATUS_SECTION_TEMPLATE_ID = 61;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Status Section Code' of 'General Status Section'.
@@ -1007,7 +1111,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GENERAL_STATUS_SECTION__GENERAL_STATUS_SECTION_CODE = 49;
+	public static final int GENERAL_STATUS_SECTION__GENERAL_STATUS_SECTION_CODE = 62;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Diagnostic Findings Title' of 'Diagnostic Findings'.
@@ -1015,7 +1119,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DIAGNOSTIC_FINDINGS__DIAGNOSTIC_FINDINGS_TITLE = 79;
+	public static final int DIAGNOSTIC_FINDINGS__DIAGNOSTIC_FINDINGS_TITLE = 92;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Clinical Statements' of 'Vital Signs Section'.
@@ -1023,7 +1127,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CLINICAL_STATEMENTS = 43;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CLINICAL_STATEMENTS = 56;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Template Id' of 'Vital Signs Section'.
@@ -1031,7 +1135,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 44;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 57;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Code' of 'Vital Signs Section'.
@@ -1039,7 +1143,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CODE = 45;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CODE = 58;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Text' of 'Vital Signs Section'.
@@ -1047,7 +1151,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEXT = 46;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEXT = 59;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Vital Signs Organizer' of 'Vital Signs Section'.
@@ -1055,7 +1159,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 47;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 60;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment Section Template Id' of 'Assessment Section'.
@@ -1063,7 +1167,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_SECTION__ASSESSMENT_SECTION_TEMPLATE_ID = 80;
+	public static final int ASSESSMENT_SECTION__ASSESSMENT_SECTION_TEMPLATE_ID = 93;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment Section Code' of 'Assessment Section'.
@@ -1071,7 +1175,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_SECTION__ASSESSMENT_SECTION_CODE = 81;
+	public static final int ASSESSMENT_SECTION__ASSESSMENT_SECTION_CODE = 94;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Section Template Id' of 'Plan Section'.
@@ -1079,7 +1183,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_SECTION__PLAN_SECTION_TEMPLATE_ID = 82;
+	public static final int PLAN_SECTION__PLAN_SECTION_TEMPLATE_ID = 95;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Section Code' of 'Plan Section'.
@@ -1087,7 +1191,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_SECTION__PLAN_SECTION_CODE = 83;
+	public static final int PLAN_SECTION__PLAN_SECTION_CODE = 96;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Template Id' of 'Assessment And Plan Section'.
@@ -1095,7 +1199,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 84;
+	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 97;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Code' of 'Assessment And Plan Section'.
@@ -1103,7 +1207,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_CODE = 85;
+	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_CODE = 98;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -1111,7 +1215,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 129;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 142;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1231,6 +1335,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGeneralHeaderConstraints(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(generalHeaderConstraints, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(generalHeaderConstraints, diagnostics, context);
@@ -1242,6 +1347,19 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasRecordTargetPatientRole(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasPatientBirthTime(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAdministrativeGenderCode(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasProviderOrganization(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAuthorTime(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorId(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererTime(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformant(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(generalHeaderConstraints, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(generalHeaderConstraints, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(generalHeaderConstraints, diagnostics, context);
@@ -1291,6 +1409,136 @@ public class CDTValidator extends EObjectValidator {
 	 */
 	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return generalHeaderConstraints.validateGeneralHeaderConstraintsCopyTimeNotPresent(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasRecordTargetPatientRole constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasRecordTargetPatientRole(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasRecordTargetPatientRole(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasPatientBirthTime constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasPatientBirthTime(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasPatientBirthTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasAdministrativeGenderCode constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAdministrativeGenderCode(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasAdministrativeGenderCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasProviderOrganization constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasProviderOrganization(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasProviderOrganization(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasAuthorTime constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAuthorTime(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasAuthorTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasAssignedAuthorId constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorId(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasAssignedAuthorId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasDataEntererAssignedPerson constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasDataEntererTime constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererTime(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasDataEntererTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasInformant constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformant(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasInformant(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson constraint of '<em>General Header Constraints</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return generalHeaderConstraints.validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(diagnostics, context);
 	}
 
 	/**
@@ -1379,6 +1627,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateHistoryAndPhysical(HistoryAndPhysical historyAndPhysical, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(historyAndPhysical, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(historyAndPhysical, diagnostics, context);
@@ -1390,6 +1639,19 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasRecordTargetPatientRole(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasPatientBirthTime(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAdministrativeGenderCode(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasProviderOrganization(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAuthorTime(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorId(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererTime(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformant(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateGeneralHeaderConstraintsTemplateId(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateGeneralHeaderConstraintsCode(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(historyAndPhysical, diagnostics, context);
@@ -1663,6 +1925,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConsultationNote(ConsultationNote consultationNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(consultationNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(consultationNote, diagnostics, context);
@@ -1674,6 +1937,19 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasRecordTargetPatientRole(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasPatientBirthTime(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAdministrativeGenderCode(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasProviderOrganization(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAuthorTime(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorId(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererTime(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformant(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConsultationNote_validateGeneralHeaderConstraintsTemplateId(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConsultationNote_validateGeneralHeaderConstraintsCode(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(consultationNote, diagnostics, context);
@@ -1914,6 +2190,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLevelThreeConformance(LevelThreeConformance levelThreeConformance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(levelThreeConformance, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(levelThreeConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(levelThreeConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(levelThreeConformance, diagnostics, context);
@@ -1960,6 +2237,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForReferralSection(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reasonForReferralSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForReferralSection, diagnostics, context);
@@ -1998,6 +2276,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForVisitSectionConsult(ReasonForVisitSectionConsult reasonForVisitSectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reasonForVisitSectionConsult, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForVisitSectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForVisitSectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForVisitSectionConsult, diagnostics, context);
@@ -2036,6 +2315,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForVisitSection(ReasonForVisitSection reasonForVisitSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reasonForVisitSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForVisitSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForVisitSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForVisitSection, diagnostics, context);
@@ -2074,6 +2354,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateChiefComplaintSection(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(chiefComplaintSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(chiefComplaintSection, diagnostics, context);
@@ -2112,6 +2393,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReasonForVisitAndChiefComplaintSection(ReasonForVisitAndChiefComplaintSection reasonForVisitAndChiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reasonForVisitAndChiefComplaintSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reasonForVisitAndChiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reasonForVisitAndChiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reasonForVisitAndChiefComplaintSection, diagnostics, context);
@@ -2150,6 +2432,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProgressNote(ProgressNote progressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(progressNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(progressNote, diagnostics, context);
@@ -2161,6 +2444,19 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasRecordTargetPatientRole(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasPatientBirthTime(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAdministrativeGenderCode(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasProviderOrganization(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAuthorTime(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorId(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasAssignedAuthorPersonOrDevice(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererAssignedPerson(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasDataEntererTime(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformant(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(progressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProgressNote_validateGeneralHeaderConstraintsTemplateId(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProgressNote_validateGeneralHeaderConstraintsCode(progressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(progressNote, diagnostics, context);
@@ -2456,6 +2752,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentAndPlanSectionProcNote(AssessmentAndPlanSectionProcNote assessmentAndPlanSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(assessmentAndPlanSectionProcNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentAndPlanSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentAndPlanSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentAndPlanSectionProcNote, diagnostics, context);
@@ -2494,6 +2791,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentSectionProcNote(AssessmentSectionProcNote assessmentSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(assessmentSectionProcNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentSectionProcNote, diagnostics, context);
@@ -2532,6 +2830,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateChiefComplaintSectionProcNote(ChiefComplaintSectionProcNote chiefComplaintSectionProcNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(chiefComplaintSectionProcNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(chiefComplaintSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(chiefComplaintSectionProcNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(chiefComplaintSectionProcNote, diagnostics, context);
@@ -2570,6 +2869,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateObjectiveSection(ObjectiveSection objectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(objectiveSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(objectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(objectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(objectiveSection, diagnostics, context);
@@ -2641,6 +2941,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSubjectiveSection(SubjectiveSection subjectiveSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(subjectiveSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(subjectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(subjectiveSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(subjectiveSection, diagnostics, context);
@@ -2712,6 +3013,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateHistoryOfPresentIllness(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(historyOfPresentIllness, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(historyOfPresentIllness, diagnostics, context);
@@ -2750,6 +3052,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePastMedicalHistorySectionConsult(PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(pastMedicalHistorySectionConsult, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(pastMedicalHistorySectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pastMedicalHistorySectionConsult, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pastMedicalHistorySectionConsult, diagnostics, context);
@@ -2799,6 +3102,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLevelOneConformance(LevelOneConformance levelOneConformance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(levelOneConformance, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(levelOneConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(levelOneConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(levelOneConformance, diagnostics, context);
@@ -2826,6 +3130,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLevelTwoConformance(LevelTwoConformance levelTwoConformance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(levelTwoConformance, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(levelTwoConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(levelTwoConformance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(levelTwoConformance, diagnostics, context);
@@ -2872,6 +3177,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePhysicalExaminationSection(PhysicalExaminationSection physicalExaminationSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(physicalExaminationSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(physicalExaminationSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(physicalExaminationSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(physicalExaminationSection, diagnostics, context);
@@ -2910,6 +3216,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePastMedicalHistorySection(PastMedicalHistorySection pastMedicalHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(pastMedicalHistorySection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pastMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pastMedicalHistorySection, diagnostics, context);
@@ -2970,6 +3277,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReviewOfSystemsSectionIHE(ReviewOfSystemsSectionIHE reviewOfSystemsSectionIHE, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reviewOfSystemsSectionIHE, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reviewOfSystemsSectionIHE, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reviewOfSystemsSectionIHE, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reviewOfSystemsSectionIHE, diagnostics, context);
@@ -3008,6 +3316,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReviewOfSystemsSection(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reviewOfSystemsSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reviewOfSystemsSection, diagnostics, context);
@@ -3046,6 +3355,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGeneralStatusSection(GeneralStatusSection generalStatusSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(generalStatusSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(generalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(generalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(generalStatusSection, diagnostics, context);
@@ -3084,6 +3394,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDiagnosticFindings(DiagnosticFindings diagnosticFindings, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(diagnosticFindings, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(diagnosticFindings, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(diagnosticFindings, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(diagnosticFindings, diagnostics, context);
@@ -3116,6 +3427,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateVitalSignsSection(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(vitalSignsSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vitalSignsSection, diagnostics, context);
@@ -3187,6 +3499,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentSection(AssessmentSection assessmentSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(assessmentSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentSection, diagnostics, context);
@@ -3225,6 +3538,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePlanSection(PlanSection planSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(planSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(planSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planSection, diagnostics, context);
@@ -3263,6 +3577,7 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssessmentAndPlanSection(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(assessmentAndPlanSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assessmentAndPlanSection, diagnostics, context);
