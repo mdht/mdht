@@ -2220,6 +2220,19 @@
           <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoOBkDcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedOperation xmi:id="_AIedoAfOEeCxDqb09A9nZA" name="getIds" bodyCondition="_FF29oAfOEeCxDqb09A9nZA">
+        <ownedRule xmi:id="_FF29oAfOEeCxDqb09A9nZA" name="body" constrainedElement="_AIedoAfOEeCxDqb09A9nZA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_KEYGEAfOEeCxDqb09A9nZA">
+            <language>OCL</language>
+            <body>Bag { self.id }</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_B_vhQAfOEeCxDqb09A9nZA" name="return" direction="return">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CxsioAfOEeCxDqb09A9nZA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CxsioQfOEeCxDqb09A9nZA"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_oZGE4EALEd6wZe6nFLrjsw" memberEnd="_oZP14EALEd6wZe6nFLrjsw _oZP140ALEd6wZe6nFLrjsw">
       <ownedEnd xmi:id="_oZP140ALEd6wZe6nFLrjsw" name="" visibility="private" type="_OApKcEALEd6wZe6nFLrjsw" association="_oZGE4EALEd6wZe6nFLrjsw">
@@ -5985,6 +5998,45 @@
           <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoOBkDcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedOperation xmi:id="_ck73MAfOEeCxDqb09A9nZA" name="getNames" bodyCondition="_mvql0AfOEeCxDqb09A9nZA">
+        <ownedRule xmi:id="_mvql0AfOEeCxDqb09A9nZA" name="body" constrainedElement="_ck73MAfOEeCxDqb09A9nZA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_syUEwAfOEeCxDqb09A9nZA">
+            <language>OCL</language>
+            <body>Bag { self.name }</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_d-_aYAfOEeCxDqb09A9nZA" name="return" direction="return">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_wfRKoD5yEd6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hewF0AfOEeCxDqb09A9nZA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hewF0QfOEeCxDqb09A9nZA"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vH3m4AfOEeCxDqb09A9nZA" name="getTelecoms" bodyCondition="_vH3m4QfOEeCxDqb09A9nZA">
+        <ownedRule xmi:id="_vH3m4QfOEeCxDqb09A9nZA" name="body" constrainedElement="_vH3m4AfOEeCxDqb09A9nZA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_vH3m4gfOEeCxDqb09A9nZA">
+            <language>OCL</language>
+            <body>Bag { self.telecom }</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_vH3m4wfOEeCxDqb09A9nZA" name="return" direction="return">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_22o_kD52Ed6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vH3m5AfOEeCxDqb09A9nZA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vH3m5QfOEeCxDqb09A9nZA"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_6jVkoAfOEeCxDqb09A9nZA" name="getAddrs" bodyCondition="_6jVkoQfOEeCxDqb09A9nZA">
+        <ownedRule xmi:id="_6jVkoQfOEeCxDqb09A9nZA" name="body" constrainedElement="_6jVkoAfOEeCxDqb09A9nZA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_6jVkogfOEeCxDqb09A9nZA">
+            <language>OCL</language>
+            <body>Bag { self.addr }</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_6jVkowfOEeCxDqb09A9nZA" name="return" direction="return">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_v0zRUD5yEd6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6jVkpAfOEeCxDqb09A9nZA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6jVkpQfOEeCxDqb09A9nZA"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_twqZYEcEEd6besF9iFIJkQ" name="DataEnterer">
       <generalization xmi:id="_dUUcoIYwEd-kaPURbz5lmQ">
@@ -8008,6 +8060,32 @@
           <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoOBkDcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedOperation xmi:id="_TXeMoAfPEeCxDqb09A9nZA" name="getNames" bodyCondition="_TXeMoQfPEeCxDqb09A9nZA">
+        <ownedRule xmi:id="_TXeMoQfPEeCxDqb09A9nZA" name="body" constrainedElement="_TXeMoAfPEeCxDqb09A9nZA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_TXeMogfPEeCxDqb09A9nZA">
+            <language>OCL</language>
+            <body>Bag { self.name }</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_TXeMowfPEeCxDqb09A9nZA" name="return" direction="return">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_wfRKoD5yEd6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TXeMpAfPEeCxDqb09A9nZA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TXeMpQfPEeCxDqb09A9nZA"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_WLX3oAfPEeCxDqb09A9nZA" name="getAddrs" bodyCondition="_WLX3oQfPEeCxDqb09A9nZA">
+        <ownedRule xmi:id="_WLX3oQfPEeCxDqb09A9nZA" name="body" constrainedElement="_WLX3oAfPEeCxDqb09A9nZA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_WLX3ogfPEeCxDqb09A9nZA">
+            <language>OCL</language>
+            <body>Bag { self.addr }</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_WLX3owfPEeCxDqb09A9nZA" name="return" direction="return">
+          <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_v0zRUD5yEd6cla2oXsPtlA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WLX3pAfPEeCxDqb09A9nZA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WLX3pQfPEeCxDqb09A9nZA"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Lr9i8EcaEd6besF9iFIJkQ" name="PlayingEntity">
       <generalization xmi:id="_0hTLgIYuEd-kaPURbz5lmQ">

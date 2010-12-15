@@ -195,7 +195,7 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActMood MOOD_CODE_EDEFAULT = ActMood.APT;
+	protected static final ActMood MOOD_CODE_EDEFAULT = ActMood.EVNCRT;
 
 	/**
 	 * The cached value of the '{@link #getMoodCode() <em>Mood Code</em>}' attribute.

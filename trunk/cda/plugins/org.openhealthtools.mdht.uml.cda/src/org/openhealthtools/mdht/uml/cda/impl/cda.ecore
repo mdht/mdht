@@ -336,6 +336,7 @@
         defaultValueLiteral="PAT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Patient" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
+    <eOperations name="getIds" ordered="false" upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -801,6 +802,8 @@
         defaultValueLiteral="BIRTHPL" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
+    <eOperations name="getNames" ordered="false" upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//EN"/>
+    <eOperations name="getAddrs" ordered="false" upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//AD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -1500,6 +1503,9 @@
         defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustodianOrganization" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Entity">
+    <eOperations name="getNames" ordered="false" upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//EN"/>
+    <eOperations name="getTelecoms" ordered="false" upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//TEL"/>
+    <eOperations name="getAddrs" ordered="false" upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//AD"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">

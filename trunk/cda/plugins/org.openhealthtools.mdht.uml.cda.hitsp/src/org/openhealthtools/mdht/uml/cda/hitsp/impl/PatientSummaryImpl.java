@@ -313,15 +313,6 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean testPersonHasName() {
-		return GeneralHeaderConstraintsOperations.testPersonHasName(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateMedicalDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicalDocumentOperations.validateMedicalDocumentTemplateId(this, diagnostics, context);
 	}

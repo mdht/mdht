@@ -43,16 +43,20 @@ a small fee anywhere in the world and is located at:&lt;/p>&#xD;
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_TkEscPzSEd-9y7w_HH-hnA">
           <language>Analysis</language>
           <language>OCL</language>
+          <language>XPath</language>
           <body>All patient, guardianPerson, assignedPerson, maintainingPerson, relatedPerson, intendedRecipient/informationRecipient, associatedPerson, and relatedSubject/subject elements have a name.</body>
-          <body>self.testPersonHasName()</body>
+          <body>-- implemented in Java using XPath selector</body>
+          <body>*[self::cda:patient or self::cda:guardianPerson or self::cda:assignedPerson&#xD;&#xA;   or self::cda:maintainingPerson or self::cda:relatedPerson or self::cda:associatedPerson&#xD;&#xA;   or self::cda:intendedRecipient/cda:informationRecipient or self::cda:relatedSubject/cda:subject]</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_1NhIQPzSEd-9y7w_HH-hnA" name="rolesShallHaveAddrAndTelecom" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_7JhzsPzSEd-9y7w_HH-hnA">
           <language>Analysis</language>
           <language>OCL</language>
+          <language>XPath</language>
           <body>All patientRole, assignedAuthor, assignedEntity[not(parent::dataEnterer)] and associatedEntity elements have an addr and telecom element.</body>
-          <body>self.recordTarget->select(currentRecordTarget : cda::RecordTarget | currentRecordTarget.patientRole.addr->isEmpty() or currentRecordTarget.patientRole.telecom->isEmpty() )->isEmpty() and&#xD;&#xA;&#xD;&#xA;  self.author->select(currentAuthor : cda::Author| currentAuthor.assignedAuthor.addr->isEmpty() or currentAuthor.assignedAuthor.telecom->isEmpty() )->isEmpty() and&#xD;&#xA;&#xD;&#xA;  self.participant->select(currentParticipant : cda::Participant1| currentParticipant.associatedEntity.addr->isEmpty() or currentParticipant.associatedEntity.telecom->isEmpty() )->isEmpty() and &#xD;&#xA;&#xD;&#xA;  self.informant->select(currentInformant : cda::Informant12 | currentInformant.assignedEntity.addr->isEmpty() or currentInformant.assignedEntity.telecom->isEmpty() )->isEmpty() and&#xD;&#xA;&#xD;&#xA;  self.legalAuthenticator->select(currentLegalAuthenticator : cda::LegalAuthenticator | currentLegalAuthenticator.assignedEntity.addr->isEmpty() or currentLegalAuthenticator.assignedEntity.telecom->isEmpty()  )->isEmpty() and &#xD;&#xA;&#xD;&#xA;  self.authenticator->select( currentAuthenticator : cda::Authenticator |  currentAuthenticator.assignedEntity->select(currentAssignedEntity : cda::AssignedEntity | currentAssignedEntity.addr->isEmpty() or currentAssignedEntity.telecom->isEmpty() )->notEmpty()   )->isEmpty()</body>
+          <body>-- implemented in Java using XPath selector</body>
+          <body>*[self::cda:patientRole or self::cda:assignedAuthor or self::cda:assignedEntity[not(parent::cda:dataEnterer)]  or self::cda:associatedEntity]</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_l6XR0PzTEd-9y7w_HH-hnA" name="rolesShouldHaveAddrAndTelecom" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
@@ -521,11 +525,6 @@ content, essentially acting as a version identifier.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GWwqQAcdEeC15aCUY_wo_g" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GWwqQQcdEeC15aCUY_wo_g"/>
       </ownedAttribute>
-      <ownedOperation xmi:id="_PILnIAceEeC15aCUY_wo_g" name="testPersonHasName" isQuery="true">
-        <ownedParameter xmi:id="_SgDh4AceEeC15aCUY_wo_g" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_XtmggGeLEd-ilOLYnIx0jA" name="HistoryAndPhysical">
       <ownedRule xmi:id="_Mq2uAGj6Ed-tUpkWYQgJlQ" name="codeTranslation" constrainedElement="_wZajoGgzEd-ilOLYnIx0jA">

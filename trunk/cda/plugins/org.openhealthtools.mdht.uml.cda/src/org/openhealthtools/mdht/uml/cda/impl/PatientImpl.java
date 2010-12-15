@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.Patient;
+import org.openhealthtools.mdht.uml.cda.operations.PatientOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -920,6 +921,15 @@ public class PatientImpl extends EntityImpl implements Patient {
 	 */
 	public boolean isSetDeterminerCode() {
 		return determinerCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<II> getIds() {
+		return PatientOperations.getIds(this);
 	}
 
 	/**

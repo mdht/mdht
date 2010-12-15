@@ -293,15 +293,6 @@ public class GeneralHeaderConstraintsImpl extends ClinicalDocumentImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean testPersonHasName() {
-		return GeneralHeaderConstraintsOperations.testPersonHasName(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public GeneralHeaderConstraints init() {
     		CDAUtil.init(this);
     		return this;

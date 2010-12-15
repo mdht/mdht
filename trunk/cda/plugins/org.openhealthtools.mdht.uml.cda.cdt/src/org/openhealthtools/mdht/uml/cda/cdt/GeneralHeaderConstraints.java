@@ -26,11 +26,11 @@ public interface GeneralHeaderConstraints extends ClinicalDocument {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.testPersonHasName()
+	 * -- implemented in Java using XPath selector
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.testPersonHasName()'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='-- implemented in Java using XPath selector'"
 	 * @generated
 	 */
 	boolean validateGeneralHeaderConstraintsPersonHasName(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -39,21 +39,11 @@ public interface GeneralHeaderConstraints extends ClinicalDocument {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.recordTarget->select(currentRecordTarget : cda::RecordTarget | currentRecordTarget.patientRole.addr->isEmpty() or currentRecordTarget.patientRole.telecom->isEmpty() )->isEmpty() and
-	 * 
-	 *   self.author->select(currentAuthor : cda::Author| currentAuthor.assignedAuthor.addr->isEmpty() or currentAuthor.assignedAuthor.telecom->isEmpty() )->isEmpty() and
-	 * 
-	 *   self.participant->select(currentParticipant : cda::Participant1| currentParticipant.associatedEntity.addr->isEmpty() or currentParticipant.associatedEntity.telecom->isEmpty() )->isEmpty() and 
-	 * 
-	 *   self.informant->select(currentInformant : cda::Informant12 | currentInformant.assignedEntity.addr->isEmpty() or currentInformant.assignedEntity.telecom->isEmpty() )->isEmpty() and
-	 * 
-	 *   self.legalAuthenticator->select(currentLegalAuthenticator : cda::LegalAuthenticator | currentLegalAuthenticator.assignedEntity.addr->isEmpty() or currentLegalAuthenticator.assignedEntity.telecom->isEmpty()  )->isEmpty() and 
-	 * 
-	 *   self.authenticator->select( currentAuthenticator : cda::Authenticator |  currentAuthenticator.assignedEntity->select(currentAssignedEntity : cda::AssignedEntity | currentAssignedEntity.addr->isEmpty() or currentAssignedEntity.telecom->isEmpty() )->notEmpty()   )->isEmpty()
+	 * -- implemented in Java using XPath selector
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget->select(currentRecordTarget : cda::RecordTarget | currentRecordTarget.patientRole.addr->isEmpty() or currentRecordTarget.patientRole.telecom->isEmpty() )->isEmpty() and\r\n\r\n  self.author->select(currentAuthor : cda::Author| currentAuthor.assignedAuthor.addr->isEmpty() or currentAuthor.assignedAuthor.telecom->isEmpty() )->isEmpty() and\r\n\r\n  self.participant->select(currentParticipant : cda::Participant1| currentParticipant.associatedEntity.addr->isEmpty() or currentParticipant.associatedEntity.telecom->isEmpty() )->isEmpty() and \r\n\r\n  self.informant->select(currentInformant : cda::Informant12 | currentInformant.assignedEntity.addr->isEmpty() or currentInformant.assignedEntity.telecom->isEmpty() )->isEmpty() and\r\n\r\n  self.legalAuthenticator->select(currentLegalAuthenticator : cda::LegalAuthenticator | currentLegalAuthenticator.assignedEntity.addr->isEmpty() or currentLegalAuthenticator.assignedEntity.telecom->isEmpty()  )->isEmpty() and \r\n\r\n  self.authenticator->select( currentAuthenticator : cda::Authenticator |  currentAuthenticator.assignedEntity->select(currentAssignedEntity : cda::AssignedEntity | currentAssignedEntity.addr->isEmpty() or currentAssignedEntity.telecom->isEmpty() )->notEmpty()   )->isEmpty()'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='-- implemented in Java using XPath selector'"
 	 * @generated
 	 */
 	boolean validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -393,14 +383,6 @@ public interface GeneralHeaderConstraints extends ClinicalDocument {
 	 * @generated
 	 */
 	boolean validateGeneralHeaderConstraintsTypeId(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	boolean testPersonHasName();
 
 	/**
 	 * <!-- begin-user-doc -->

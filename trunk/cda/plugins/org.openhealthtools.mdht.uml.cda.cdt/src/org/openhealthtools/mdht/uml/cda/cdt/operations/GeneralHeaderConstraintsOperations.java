@@ -6,6 +6,7 @@
  */
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -14,11 +15,21 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.AssociatedEntity;
+import org.openhealthtools.mdht.uml.cda.IntendedRecipient;
+import org.openhealthtools.mdht.uml.cda.Patient;
+import org.openhealthtools.mdht.uml.cda.PatientRole;
+import org.openhealthtools.mdht.uml.cda.Person;
+import org.openhealthtools.mdht.uml.cda.RelatedSubject;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPlugin;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.cdt.util.CDTValidator;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,7 +66,6 @@ import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRealmCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTypeId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints#testPersonHasName() <em>Test Person Has Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,7 +89,7 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.testPersonHasName()";
+	protected static final String VALIDATE_GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "-- implemented in Java using XPath selector";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateGeneralHeaderConstraintsPersonHasName(GeneralHeaderConstraints, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Person Has Name</em>}' invariant operation.
@@ -100,31 +110,47 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  boolean validateGeneralHeaderConstraintsPersonHasName(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDTPackage.Literals.GENERAL_HEADER_CONSTRAINTS);
-			try {
-				VALIDATE_GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+		/* All patient, guardianPerson, assignedPerson, maintainingPerson, relatedPerson, 
+		 * intendedRecipient/informationRecipient, associatedPerson, and relatedSubject/subject 
+		 * elements have a name.
+		 */
+		try {
+			boolean hasErrors = false;
+			CDAUtil.CDAXPath cdaXPath = new CDAUtil.CDAXPath(generalHeaderConstraints);
+			
+			String xpath = "//*[self::cda:patient or self::cda:guardianPerson or self::cda:assignedPerson"
+	            + " or self::cda:maintainingPerson or self::cda:relatedPerson or self::cda:associatedPerson"
+            	+ " or self::cda:intendedRecipient/cda:informationRecipient or self::cda:relatedSubject/cda:subject]";
+			List<InfrastructureRoot> nodes = cdaXPath.selectNodes(xpath, InfrastructureRoot.class);
+			
+			for (InfrastructureRoot node : nodes) {
+				if ((node instanceof Person && ((Person)node).getNames().isEmpty())
+						|| (node instanceof Patient && ((Patient)node).getNames().isEmpty())
+						|| (node instanceof IntendedRecipient && ((IntendedRecipient)node).getInformationRecipient().getNames().isEmpty())
+						|| (node instanceof RelatedSubject && ((RelatedSubject)node).getSubject().getNames().isEmpty())) {
+					hasErrors = true;
+					if (diagnostics != null) {
+						diagnostics.add
+							(new BasicDiagnostic
+								(Diagnostic.ERROR,
+								 CDTValidator.DIAGNOSTIC_SOURCE,
+								 CDTValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME,
+								 CDTPlugin.INSTANCE.getString("GeneralHeaderConstraintsPersonHasName"),
+								 new Object [] { node }));
+					}
+				}
 			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+
+			if (hasErrors) {
+				return false;
 			}
+		} catch (Exception e) {
+			throw new UnsupportedOperationException(e.getLocalizedMessage());
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(generalHeaderConstraints)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDTValidator.DIAGNOSTIC_SOURCE,
-						 CDTValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_PERSON_HAS_NAME,
-						 CDTPlugin.INSTANCE.getString("GeneralHeaderConstraintsPersonHasName"),
-						 new Object [] { generalHeaderConstraints }));
-			}
-			return false;
-		}
+		
 		return true;
 	}
 
@@ -136,12 +162,7 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.recordTarget->select(currentRecordTarget : cda::RecordTarget | currentRecordTarget.patientRole.addr->isEmpty() or currentRecordTarget.patientRole.telecom->isEmpty() )->isEmpty() and"+
-"  self.author->select(currentAuthor : cda::Author| currentAuthor.assignedAuthor.addr->isEmpty() or currentAuthor.assignedAuthor.telecom->isEmpty() )->isEmpty() and"+
-"  self.participant->select(currentParticipant : cda::Participant1| currentParticipant.associatedEntity.addr->isEmpty() or currentParticipant.associatedEntity.telecom->isEmpty() )->isEmpty() and "+
-"  self.informant->select(currentInformant : cda::Informant12 | currentInformant.assignedEntity.addr->isEmpty() or currentInformant.assignedEntity.telecom->isEmpty() )->isEmpty() and"+
-"  self.legalAuthenticator->select(currentLegalAuthenticator : cda::LegalAuthenticator | currentLegalAuthenticator.assignedEntity.addr->isEmpty() or currentLegalAuthenticator.assignedEntity.telecom->isEmpty()  )->isEmpty() and "+
-"  self.authenticator->select( currentAuthenticator : cda::Authenticator |  currentAuthenticator.assignedEntity->select(currentAssignedEntity : cda::AssignedEntity | currentAssignedEntity.addr->isEmpty() or currentAssignedEntity.telecom->isEmpty() )->notEmpty()   )->isEmpty()";
+	protected static final String VALIDATE_GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "-- implemented in Java using XPath selector";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(GeneralHeaderConstraints, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Roles Shall Have Addr And Telecom</em>}' invariant operation.
@@ -157,46 +178,49 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.recordTarget->select(currentRecordTarget : cda::RecordTarget | currentRecordTarget.patientRole.addr->isEmpty() or currentRecordTarget.patientRole.telecom->isEmpty() )->isEmpty() and
-	 * 
-	 *   self.author->select(currentAuthor : cda::Author| currentAuthor.assignedAuthor.addr->isEmpty() or currentAuthor.assignedAuthor.telecom->isEmpty() )->isEmpty() and
-	 * 
-	 *   self.participant->select(currentParticipant : cda::Participant1| currentParticipant.associatedEntity.addr->isEmpty() or currentParticipant.associatedEntity.telecom->isEmpty() )->isEmpty() and 
-	 * 
-	 *   self.informant->select(currentInformant : cda::Informant12 | currentInformant.assignedEntity.addr->isEmpty() or currentInformant.assignedEntity.telecom->isEmpty() )->isEmpty() and
-	 * 
-	 *   self.legalAuthenticator->select(currentLegalAuthenticator : cda::LegalAuthenticator | currentLegalAuthenticator.assignedEntity.addr->isEmpty() or currentLegalAuthenticator.assignedEntity.telecom->isEmpty()  )->isEmpty() and 
-	 * 
-	 *   self.authenticator->select( currentAuthenticator : cda::Authenticator |  currentAuthenticator.assignedEntity->select(currentAssignedEntity : cda::AssignedEntity | currentAssignedEntity.addr->isEmpty() or currentAssignedEntity.telecom->isEmpty() )->notEmpty()   )->isEmpty()
+	 * -- implemented in Java using XPath selector
 	 * @param generalHeaderConstraints The receiving '<em><b>General Header Constraints</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  boolean validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(GeneralHeaderConstraints generalHeaderConstraints, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDTPackage.Literals.GENERAL_HEADER_CONSTRAINTS);
-			try {
-				VALIDATE_GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+		/* All patientRole, assignedAuthor, assignedEntity[not(parent::dataEnterer)] 
+		 * and associatedEntity elements have an addr and telecom element.
+		 */
+		try {
+			boolean hasErrors = false;
+			CDAUtil.CDAXPath cdaXPath = new CDAUtil.CDAXPath(generalHeaderConstraints);
+			
+			String xpath = "//*[self::cda:patientRole or self::cda:assignedAuthor or self::cda:assignedEntity[not(parent::cda:dataEnterer)] or self::cda:associatedEntity]";
+			List<InfrastructureRoot> nodes = cdaXPath.selectNodes(xpath, InfrastructureRoot.class);
+			
+			for (InfrastructureRoot node : nodes) {
+				if ((node instanceof PatientRole && (((PatientRole)node).getAddrs().isEmpty() || ((PatientRole)node).getTelecoms().isEmpty()))
+						|| (node instanceof AssignedAuthor && (((AssignedAuthor)node).getAddrs().isEmpty() || ((AssignedAuthor)node).getTelecoms().isEmpty()))
+						|| (node instanceof AssignedEntity && (((AssignedEntity)node).getAddrs().isEmpty() || ((AssignedEntity)node).getTelecoms().isEmpty()))
+						|| (node instanceof AssociatedEntity && (((AssociatedEntity)node).getAddrs().isEmpty() || ((AssociatedEntity)node).getTelecoms().isEmpty()))) {
+					hasErrors = true;
+					if (diagnostics != null) {
+						diagnostics.add
+							(new BasicDiagnostic
+								(Diagnostic.ERROR,
+								 CDTValidator.DIAGNOSTIC_SOURCE,
+								 CDTValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
+								 CDTPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
+								 new Object [] { node }));
+					}
+				}
 			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			
+			if (hasErrors) {
+				return false;
 			}
+		} catch (Exception e) {
+			throw new UnsupportedOperationException(e.getLocalizedMessage());
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(generalHeaderConstraints)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDTValidator.DIAGNOSTIC_SOURCE,
-						 CDTValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
-						 CDTPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
-						 new Object [] { generalHeaderConstraints }));
-			}
-			return false;
-		}
+		
 		return true;
 	}
 
@@ -1644,17 +1668,6 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 			}
 			return false;
 		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public static  boolean testPersonHasName(GeneralHeaderConstraints generalHeaderConstraints) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		return true;
 	}
 

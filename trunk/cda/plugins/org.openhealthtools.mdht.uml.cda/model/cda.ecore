@@ -385,6 +385,14 @@
         defaultValueLiteral="PAT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Patient" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
+    <eOperations name="getIds" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//II">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Bag { self.id }"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="Bag { self.id }"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"
         containment="true">
@@ -863,6 +871,22 @@
         defaultValueLiteral="BIRTHPL" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
+    <eOperations name="getNames" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//EN">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Bag { self.name }"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="Bag { self.name }"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getAddrs" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//AD">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Bag { self.addr }"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="Bag { self.addr }"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"
         containment="true">
@@ -1588,6 +1612,30 @@
         defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustodianOrganization" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
+    <eOperations name="getNames" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//EN">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Bag { self.name }"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="Bag { self.name }"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getTelecoms" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//TEL">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Bag { self.telecom }"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="Bag { self.telecom }"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getAddrs" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//AD">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Bag { self.addr }"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="Bag { self.addr }"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"
         containment="true">

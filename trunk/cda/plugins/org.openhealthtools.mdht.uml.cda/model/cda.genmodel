@@ -185,6 +185,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/classCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/determinerCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Patient/getIds"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Guardian">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -296,6 +297,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/classCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/determinerCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Place/getNames"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Place/getAddrs"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//LanguageCommunication">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -520,6 +523,9 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/classCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/determinerCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/getNames"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/getTelecoms"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/getAddrs"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//InformationRecipient">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

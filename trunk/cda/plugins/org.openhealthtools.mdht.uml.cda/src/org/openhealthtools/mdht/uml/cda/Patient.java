@@ -575,4 +575,16 @@ public interface Patient extends Entity {
 	 */
 	boolean isSetDeterminerCode();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Bag { self.id }
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.id }'"
+	 * @generated
+	 */
+	EList<II> getIds();
+
 } // Patient
