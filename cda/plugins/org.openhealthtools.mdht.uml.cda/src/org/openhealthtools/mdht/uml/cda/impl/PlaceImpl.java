@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Place;
+import org.openhealthtools.mdht.uml.cda.operations.PlaceOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
@@ -500,6 +501,24 @@ public class PlaceImpl extends EntityImpl implements Place {
 	 */
 	public boolean isSetDeterminerCode() {
 		return determinerCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EN> getNames() {
+		return PlaceOperations.getNames(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AD> getAddrs() {
+		return PlaceOperations.getAddrs(this);
 	}
 
 	/**

@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
@@ -377,5 +378,41 @@ public interface CustodianOrganization extends Entity {
 	 * @generated
 	 */
 	boolean isSetDeterminerCode();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Bag { self.name }
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.name }'"
+	 * @generated
+	 */
+	EList<EN> getNames();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Bag { self.telecom }
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.telecom }'"
+	 * @generated
+	 */
+	EList<TEL> getTelecoms();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Bag { self.addr }
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.addr }'"
+	 * @generated
+	 */
+	EList<AD> getAddrs();
 
 } // CustodianOrganization

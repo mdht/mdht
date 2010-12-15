@@ -331,4 +331,28 @@ public interface Place extends Entity {
 	 */
 	boolean isSetDeterminerCode();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Bag { self.name }
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.name }'"
+	 * @generated
+	 */
+	EList<EN> getNames();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Bag { self.addr }
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag { self.addr }'"
+	 * @generated
+	 */
+	EList<AD> getAddrs();
+
 } // Place

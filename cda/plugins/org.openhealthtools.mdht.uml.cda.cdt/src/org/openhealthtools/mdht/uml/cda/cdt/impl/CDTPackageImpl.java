@@ -1006,8 +1006,6 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(generalHeaderConstraintsEClass, ecorePackage.getEBoolean(), "testPersonHasName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		initEClass(historyAndPhysicalEClass, HistoryAndPhysical.class, "HistoryAndPhysical", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(historyAndPhysicalEClass, ecorePackage.getEBoolean(), "validateHistoryAndPhysicalAssessmentAndPlan", 0, 1, IS_UNIQUE, IS_ORDERED);
