@@ -43,12 +43,14 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.xmi.DOMHandler;
@@ -1304,6 +1306,36 @@ public class CDAUtil {
 		}
 	}
 	// END: CDA XPath Support
+	
+	public static String getPath(EObject eObject) {
+		String path = "";
+		while (eObject != null && !(eObject instanceof DocumentRoot)) {
+			EStructuralFeature feature = eObject.eContainingFeature();
+			EObject container = eObject.eContainer();
+			Object value = container.eGet(feature);
+			if (feature.isMany()) {
+				List<?> list = (List<?>) value;
+				int index = list.indexOf(eObject) + 1;
+				if (index > 1) {
+					path = "/" + getName(feature) + "[" + index + "]" + path;
+				} else {
+					path = "/" + getName(feature) + path;
+				}
+			} else {
+				path = "/" + getName(feature) + path;
+			}
+			eObject = eObject.eContainer();
+		}
+		return path;
+	}
+	
+	public static String getName(ENamedElement eNamedElement) {
+		String result = EcoreUtil.getAnnotation(eNamedElement, ExtendedMetaData.ANNOTATION_URI, "name");
+		if (result != null) {
+			return result;
+		}
+		return eNamedElement.getName();
+	}
 	
 	public static void loadPackages() {
 		CDAPackageLoader.loadPackages();
