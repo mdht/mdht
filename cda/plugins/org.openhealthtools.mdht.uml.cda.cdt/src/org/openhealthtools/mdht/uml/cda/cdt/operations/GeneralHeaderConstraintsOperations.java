@@ -351,7 +351,8 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 			CDAUtil.CDAXPath cdaXPath =  CDAUtil.createCDAXPath(generalHeaderConstraints);
 			
 			
-			String xpath = "//*[self::cda:guardianOrganization or self::cda:providerOrganization or self::cda:wholeOrganization or self::cda:representedOrganization or self::cda:representedCustodianOrganization or self::cda:receivedOrganization or self::cda:scopingOrganization or self::cda:serviceProviderOrganization]";
+			String xpath = "//*[ //cda:guardianOrganization | //cda:providerOrganization | //cda:wholeOrganization | //cda:representedOrganization | //cda:representedCustodianOrganization | //cda:receivedOrganization| //cda:scopingOrganization | //cda:serviceProviderOrganization]";
+
 			List<Organization> nodes = cdaXPath.selectNodes(xpath, Organization.class);
 			
 			for (Organization node : nodes) {
@@ -378,28 +379,6 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 			throw new UnsupportedOperationException(e.getLocalizedMessage());
 		}
 		
-//		if (VALIDATE_GENERAL_HEADER_CONSTRAINTS_ORGANIZATIONS_HAVE_CONTACT_INFO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-//			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-//			helper.setContext(CDTPackage.Literals.GENERAL_HEADER_CONSTRAINTS);
-//			try {
-//				VALIDATE_GENERAL_HEADER_CONSTRAINTS_ORGANIZATIONS_HAVE_CONTACT_INFO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GENERAL_HEADER_CONSTRAINTS_ORGANIZATIONS_HAVE_CONTACT_INFO__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-//			}
-//			catch (ParserException pe) {
-//				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-//			}
-//		}
-//		if (!EOCL_ENV.createQuery(VALIDATE_GENERAL_HEADER_CONSTRAINTS_ORGANIZATIONS_HAVE_CONTACT_INFO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(generalHeaderConstraints)) {
-//			if (diagnostics != null) {
-//				diagnostics.add
-//					(new BasicDiagnostic
-//						(Diagnostic.ERROR,
-//						 CDTValidator.DIAGNOSTIC_SOURCE,
-//						 CDTValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ORGANIZATIONS_HAVE_CONTACT_INFO,
-//						 CDTPlugin.INSTANCE.getString("GeneralHeaderConstraintsOrganizationsHaveContactInfo"),
-//						 new Object [] { generalHeaderConstraints }));
-//			}
-//			return false;
-//		}
 		return true;
 	}
 
