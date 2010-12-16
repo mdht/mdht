@@ -1154,6 +1154,20 @@ public class CDAUtil {
 	// END: Experimental Query/Filter operations
 	
 	// BEGIN: CDA XPath Support
+	private static Map<ClinicalDocument, CDAXPath> cache = new HashMap<ClinicalDocument, CDAXPath>();
+	
+	// factory method to create CDAXPath instances using cache
+	public CDAXPath createCDAXPath(ClinicalDocument clinicalDocument) {
+		CDAXPath xpath = cache.get(clinicalDocument);
+		if (xpath == null) {
+			try {
+				xpath = new CDAXPath(clinicalDocument);
+				cache.put(clinicalDocument, xpath);
+			} catch (Exception e) {}
+		}
+		return xpath;
+	}
+	
 	public static class CDAXPath {
 		private ClinicalDocument clinicalDocument = null;
 		private Document document = null;
