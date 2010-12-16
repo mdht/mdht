@@ -1157,7 +1157,7 @@ public class CDAUtil {
 	private static Map<ClinicalDocument, CDAXPath> cache = new HashMap<ClinicalDocument, CDAXPath>();
 	
 	// factory method to create CDAXPath instances using cache
-	public CDAXPath createCDAXPath(ClinicalDocument clinicalDocument) {
+	public static CDAXPath createCDAXPath(ClinicalDocument clinicalDocument) {
 		CDAXPath xpath = cache.get(clinicalDocument);
 		if (xpath == null) {
 			try {
