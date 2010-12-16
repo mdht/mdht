@@ -62,7 +62,11 @@ a small fee anywhere in the world and is located at:&lt;/p>&#xD;
       <ownedRule xmi:id="_l6XR0PzTEd-9y7w_HH-hnA" name="rolesShouldHaveAddrAndTelecom" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_rI-EsPzTEd-9y7w_HH-hnA">
           <language>Analysis</language>
+          <language>OCL</language>
+          <language>XPath</language>
           <body>All guardian, dataEnterer/assignedEntity, relatedEntity, intendedRecipient, relatedSubject and participantRole elements have an addr and telecom element.</body>
+          <body>-- implemented in Java using XPath selector</body>
+          <body>*[self::cda:guardian or self::cda:assignedEntity[parent::cda:dataEnterer] or self::cda:relatedEntity or self::cda:intendedRecipient or self::cda:relatedSubject or self::cda:participantRole]</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_1AAdAP1cEd-9y7w_HH-hnA" name="organizationsHaveContactInfo" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
@@ -75,19 +79,29 @@ vocabulary.</body>
         </ownedComment>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_-gR5YP1cEd-9y7w_HH-hnA">
           <language>Analysis</language>
+          <language>XPath</language>
+          <language>OCL</language>
           <body>All guardianOrganization, providerOrganization, wholeOrganization, representedOrganization, representedCustodianOrganization, receivedOrganization, scopingOrganization and serviceProviderOrganization elements have name, addr and telecom elements.</body>
+          <body>*[self::cda:guardianOrganization or self::cda:providerOrganization or self::cda:wholeOrganization or self::cda:representedOrganization or self::cda:representedCustodianOrganization or self::cda:receivedOrganization or self::cda:scopingOrganization or self::cda:serviceProviderOrganization]</body>
+          <body>-- implemented in Java using XPath selector</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_K2Cq4AbOEeC15aCUY_wo_g" name="timePreciseToDay" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_XA2a4AbOEeC15aCUY_wo_g">
           <language>Analysis</language>
+          <language>XPath</language>
+          <language>OCL</language>
           <body>Times or time intervals found in the ClinicalDocument/effectiveTime,&#xD;&#xA;author/time, dataEnterer/time, legalAuthenticator/time, authenticator/time and&#xD;&#xA;encompassingEncounter/effectiveTime elements SHALL be precise to the day, SHALL&#xD;&#xA;include a time zone if more precise than to the day, and SHOULD be precise to the&#xD;&#xA;second.</body>
+          <body>/cda:ClinicalDocument/cda:effectiveTime | //cda:author/cda:time | //cda:dataEnterer/cda:time | //cda:encompassingEncounter/cda:effectiveTime</body>
+          <body>-- implemented in Java using XPath selector</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_L1gj0AbOEeC15aCUY_wo_g" name="timePreciseToYear" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_kI_84AbOEeC15aCUY_wo_g">
           <language>Analysis</language>
+          <language>OCL</language>
           <body>Times or time intervals found in the asOrganizationPartOf/effectiveTime,&#xD;&#xA;asMaintainedEntity/effectiveTime, relatedEntity/effectiveTime,&#xD;&#xA;serviceEvent/effectiveTime, ClinicalDocument/participant/time,&#xD;&#xA;serviceEvent/performer/time and encounterParticipant/time SHALL be precise at&#xD;&#xA;least to the year, SHOULD be precise to the day, and MAY omit time zone.</body>
+          <body>-- implemented in Java using XPath selector</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_Js8_EAbSEeC15aCUY_wo_g" name="telephoneMatchesRegex" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
@@ -105,13 +119,21 @@ separators.</body>
         </ownedComment>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_fwiLAAbSEeC15aCUY_wo_g">
           <language>Analysis</language>
+          <language>OCL</language>
+          <language>XPath</language>
           <body>Telephone numbers match the regular expression pattern tel:\+?[-0-9().]+</body>
+          <body>-- implemented in Java using XPath selector</body>
+          <body>//*[self::cda:telecom]</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_NXxD8AbSEeC15aCUY_wo_g" name="hasTelephoneDialingDigits" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_kCqHgAbSEeC15aCUY_wo_g">
           <language>Analysis</language>
+          <language>OCL</language>
+          <language>XPath</language>
           <body>At least one dialing digit is present in the phone number after visual separators are removed.</body>
+          <body>-- implemented in Java using XPath selector</body>
+          <body>//*[self::cda:telecom]</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_OP-eUAbSEeC15aCUY_wo_g" name="unknownTelephoneUsesNullFlavor" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
@@ -124,7 +146,11 @@ address element within this DSTU.</body>
         </ownedComment>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_16oOoAbSEeC15aCUY_wo_g">
           <language>Analysis</language>
+          <language>OCL</language>
+          <language>XPath</language>
           <body>If the telephone number is unknown it is represented using the appropriate flavor of null.</body>
+          <body>-- implemented in Java using XPath selector</body>
+          <body>//*[self::cda:telecom]</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_zKrYkHMvEd-9_cvcE5QEwg" name="typeIdExtension" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
@@ -417,6 +443,16 @@ will be set to PROV.</body>
           <language>OCL</language>
           <body>The assignedEntity/assignedPerson element SHALL be present in an authenticator element.</body>
           <body>self.authenticator->forAll(auth : cda::Authenticator | auth.assignedEntity->forAll(entity : cda::AssignedEntity |&#xD;&#xA;   not entity.assignedPerson.oclIsUndefined()))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_mEGlYAlEEeCb3JSiaNKEKA" name="timePreciseToSecond" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_mEGlYQlEEeCb3JSiaNKEKA">
+          <language>Analysis</language>
+          <language>XPath</language>
+          <language>OCL</language>
+          <body>Times or time intervals found in the ClinicalDocument/effectiveTime,&#xD;&#xA;author/time, dataEnterer/time, legalAuthenticator/time, authenticator/time and&#xD;&#xA;encompassingEncounter/effectiveTime elements SHALL be precise to the day, SHALL&#xD;&#xA;include a time zone if more precise than to the day, and SHOULD be precise to the&#xD;&#xA;second.</body>
+          <body>/cda:ClinicalDocument/cda:effectiveTime | //cda:author/cda:time | //cda:dataEnterer/cda:time | //cda:encompassingEncounter/cda:effectiveTime</body>
+          <body>-- implemented in Java using XPath selector</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_MwujQGeLEd-ilOLYnIx0jA">
@@ -2180,5 +2216,8 @@ document may come from sources or contain information that the author cannot val
   </CDA:ConstraintValidation>
   <CDA:ConstraintValidation xmi:id="_MACm8AcdEeC15aCUY_wo_g" base_Constraint="_nEC1QAccEeC15aCUY_wo_g">
     <ruleId>CONF-HP-52</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_uAnwAAlEEeCb3JSiaNKEKA" severity="WARNING" base_Constraint="_mEGlYAlEEeCb3JSiaNKEKA">
+    <ruleId>CONF-HP-10</ruleId>
   </CDA:ConstraintValidation>
 </xmi:XMI>
