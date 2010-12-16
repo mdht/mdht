@@ -14,6 +14,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
+import org.openhealthtools.mdht.uml.cda.cdt.*;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentAndPlanSectionProcNote;
 import org.openhealthtools.mdht.uml.cda.cdt.AssessmentSection;

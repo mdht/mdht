@@ -1205,7 +1205,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  HistoryOfPresentIllness getHistoryOfPresentIllness(HistoryAndPhysical historyAndPhysical) {
 		if (GET_HISTORY_OF_PRESENT_ILLNESS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(66));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(74));
 			try {
 				GET_HISTORY_OF_PRESENT_ILLNESS__EOCL_QRY = helper.createQuery(GET_HISTORY_OF_PRESENT_ILLNESS__EOCL_EXP);
 			}
@@ -1249,7 +1249,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  PastMedicalHistorySection getPastMedicalHistorySection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(67));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(75));
 			try {
 				GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_QRY = helper.createQuery(GET_PAST_MEDICAL_HISTORY_SECTION__EOCL_EXP);
 			}
@@ -1293,7 +1293,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  MedicationsSection getMedicationsSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_MEDICATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(68));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(76));
 			try {
 				GET_MEDICATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_MEDICATIONS_SECTION__EOCL_EXP);
 			}
@@ -1337,7 +1337,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  AlertsSection getAlertsSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_ALERTS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(69));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(77));
 			try {
 				GET_ALERTS_SECTION__EOCL_QRY = helper.createQuery(GET_ALERTS_SECTION__EOCL_EXP);
 			}
@@ -1381,7 +1381,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  SocialHistorySection getSocialHistorySection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_SOCIAL_HISTORY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(70));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(78));
 			try {
 				GET_SOCIAL_HISTORY_SECTION__EOCL_QRY = helper.createQuery(GET_SOCIAL_HISTORY_SECTION__EOCL_EXP);
 			}
@@ -1425,7 +1425,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  FamilyHistorySection getFamilyHistorySection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_FAMILY_HISTORY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(71));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(79));
 			try {
 				GET_FAMILY_HISTORY_SECTION__EOCL_QRY = helper.createQuery(GET_FAMILY_HISTORY_SECTION__EOCL_EXP);
 			}
@@ -1469,7 +1469,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  ReviewOfSystemsSectionIHE getReviewOfSystemsSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(72));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(80));
 			try {
 				GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY = helper.createQuery(GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_EXP);
 			}
@@ -1513,7 +1513,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  PhysicalExaminationSection getPhysicalExaminationSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(73));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(81));
 			try {
 				GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY = helper.createQuery(GET_PHYSICAL_EXAMINATION_SECTION__EOCL_EXP);
 			}
@@ -1557,7 +1557,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  VitalSignsSection getVitalSignsSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_VITAL_SIGNS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(74));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(82));
 			try {
 				GET_VITAL_SIGNS_SECTION__EOCL_QRY = helper.createQuery(GET_VITAL_SIGNS_SECTION__EOCL_EXP);
 			}
@@ -1601,7 +1601,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  GeneralStatusSection getGeneralStatusSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_GENERAL_STATUS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(75));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(83));
 			try {
 				GET_GENERAL_STATUS_SECTION__EOCL_QRY = helper.createQuery(GET_GENERAL_STATUS_SECTION__EOCL_EXP);
 			}
@@ -1645,7 +1645,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  ResultsSection getDiagnosticFindings(HistoryAndPhysical historyAndPhysical) {
 		if (GET_DIAGNOSTIC_FINDINGS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(76));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(84));
 			try {
 				GET_DIAGNOSTIC_FINDINGS__EOCL_QRY = helper.createQuery(GET_DIAGNOSTIC_FINDINGS__EOCL_EXP);
 			}
@@ -1689,7 +1689,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  ProblemSection getProblemSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_PROBLEM_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(77));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(85));
 			try {
 				GET_PROBLEM_SECTION__EOCL_QRY = helper.createQuery(GET_PROBLEM_SECTION__EOCL_EXP);
 			}
@@ -1733,7 +1733,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  ProceduresSection getProceduresSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_PROCEDURES_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(78));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(86));
 			try {
 				GET_PROCEDURES_SECTION__EOCL_QRY = helper.createQuery(GET_PROCEDURES_SECTION__EOCL_EXP);
 			}
@@ -1777,7 +1777,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	public static  ImmunizationsSection getImmunizationsSection(HistoryAndPhysical historyAndPhysical) {
 		if (GET_IMMUNIZATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(79));
+			helper.setOperationContext(CDTPackage.Literals.HISTORY_AND_PHYSICAL, CDTPackage.Literals.HISTORY_AND_PHYSICAL.getEAllOperations().get(87));
 			try {
 				GET_IMMUNIZATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_IMMUNIZATIONS_SECTION__EOCL_EXP);
 			}
