@@ -12,12 +12,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
+import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Section;
-import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
-import org.openhealthtools.mdht.uml.cda.example.MyActivity;
 import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MyObservation;
 import org.openhealthtools.mdht.uml.cda.example.MySection;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -99,21 +100,10 @@ public class ExampleSwitch<T> {
 			case ExamplePackage.MY_DOCUMENT: {
 				MyDocument myDocument = (MyDocument)theEObject;
 				T result = caseMyDocument(myDocument);
-				if (result == null) result = caseContinuityOfCareDocument(myDocument);
+				if (result == null) result = caseGeneralHeaderConstraints(myDocument);
 				if (result == null) result = caseClinicalDocument(myDocument);
 				if (result == null) result = caseAct(myDocument);
 				if (result == null) result = caseInfrastructureRoot(myDocument);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExamplePackage.MY_ACTIVITY: {
-				MyActivity myActivity = (MyActivity)theEObject;
-				T result = caseMyActivity(myActivity);
-				if (result == null) result = caseProblemAct(myActivity);
-				if (result == null) result = caseCDA_Act(myActivity);
-				if (result == null) result = caseClinicalStatement(myActivity);
-				if (result == null) result = caseAct(myActivity);
-				if (result == null) result = caseInfrastructureRoot(myActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,6 +113,17 @@ public class ExampleSwitch<T> {
 				if (result == null) result = caseSection(mySection);
 				if (result == null) result = caseAct(mySection);
 				if (result == null) result = caseInfrastructureRoot(mySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExamplePackage.MY_OBSERVATION: {
+				MyObservation myObservation = (MyObservation)theEObject;
+				T result = caseMyObservation(myObservation);
+				if (result == null) result = caseProblemObservation(myObservation);
+				if (result == null) result = caseObservation(myObservation);
+				if (result == null) result = caseClinicalStatement(myObservation);
+				if (result == null) result = caseAct(myObservation);
+				if (result == null) result = caseInfrastructureRoot(myObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,21 +147,6 @@ public class ExampleSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>My Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>My Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMyActivity(MyActivity object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>My Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -172,6 +158,21 @@ public class ExampleSwitch<T> {
 	 * @generated
 	 */
 	public T caseMySection(MySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>My Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>My Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMyObservation(MyObservation object) {
 		return null;
 	}
 
@@ -221,17 +222,17 @@ public class ExampleSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>General Header Constraints</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>General Header Constraints</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContinuityOfCareDocument(ContinuityOfCareDocument object) {
+	public T caseGeneralHeaderConstraints(GeneralHeaderConstraints object) {
 		return null;
 	}
 
@@ -251,32 +252,32 @@ public class ExampleSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Act</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Observation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCDA_Act(org.openhealthtools.mdht.uml.cda.Act object) {
+	public T caseObservation(Observation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problem Act</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problem Act</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProblemAct(ProblemAct object) {
+	public T caseProblemObservation(ProblemObservation object) {
 		return null;
 	}
 

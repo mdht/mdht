@@ -10,9 +10,10 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.ccd.impl.ContinuityOfCareDocumentImpl;
+import org.openhealthtools.mdht.uml.cda.cdt.impl.GeneralHeaderConstraintsImpl;
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
 import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MySection;
 import org.openhealthtools.mdht.uml.cda.example.operations.MyDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -25,7 +26,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class MyDocumentImpl extends ContinuityOfCareDocumentImpl implements MyDocument {
+public class MyDocumentImpl extends GeneralHeaderConstraintsImpl implements MyDocument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,8 +51,8 @@ public class MyDocumentImpl extends ContinuityOfCareDocumentImpl implements MyDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyDocumentOperations.validateMyDocumentTemplateId(this, diagnostics, context);
+	public boolean validateMyDocumentMySection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyDocumentOperations.validateMyDocumentMySection(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +60,18 @@ public class MyDocumentImpl extends ContinuityOfCareDocumentImpl implements MyDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyDocumentMySection(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyDocumentOperations.validateMyDocumentMySection(this, diagnostics, context);
+	public MySection getMySection() {
+		return MyDocumentOperations.getMySection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateGeneralHeaderConstraintsTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyDocumentOperations.validateGeneralHeaderConstraintsTemplateId(this, diagnostics, context);
 	}
 
 	/**

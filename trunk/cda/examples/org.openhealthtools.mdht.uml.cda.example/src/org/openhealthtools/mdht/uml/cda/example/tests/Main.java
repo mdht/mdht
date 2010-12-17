@@ -15,8 +15,8 @@ package org.openhealthtools.mdht.uml.cda.example.tests;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.example.ExampleFactory;
-import org.openhealthtools.mdht.uml.cda.example.MyActivity;
 import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MyObservation;
 import org.openhealthtools.mdht.uml.cda.example.MySection;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -25,10 +25,10 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		MyDocument clinicalDocument = ExampleFactory.eINSTANCE.createMyDocument().init();
 		MySection section = ExampleFactory.eINSTANCE.createMySection().init();
-		MyActivity act = ExampleFactory.eINSTANCE.createMyActivity().init();
+		MyObservation obs = ExampleFactory.eINSTANCE.createMyObservation().init();
 		
 		clinicalDocument.addSection(section);
-		section.addAct(act);
+		section.addObservation(obs);
 		
 		save(clinicalDocument);
 		validate(clinicalDocument);

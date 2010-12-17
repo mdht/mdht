@@ -14,6 +14,7 @@
 		<sequential>
 			<!-- must include a replace statement for each imported template model. -->
 			<replace file="@{filePath}" token="/ccd.uml" value="/ccd_Ecore.uml" />
+			<replace file="@{filePath}" token="/cdt.uml" value="/cdt_Ecore.uml" />
 		</sequential>
 	</macrodef>
 

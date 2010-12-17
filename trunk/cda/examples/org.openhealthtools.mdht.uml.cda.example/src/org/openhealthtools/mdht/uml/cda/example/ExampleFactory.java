@@ -35,15 +35,6 @@ public interface ExampleFactory extends EFactory {
 	MyDocument createMyDocument();
 
 	/**
-	 * Returns a new object of class '<em>My Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>My Activity</em>'.
-	 * @generated
-	 */
-	MyActivity createMyActivity();
-
-	/**
 	 * Returns a new object of class '<em>My Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,6 +42,15 @@ public interface ExampleFactory extends EFactory {
 	 * @generated
 	 */
 	MySection createMySection();
+
+	/**
+	 * Returns a new object of class '<em>My Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>My Observation</em>'.
+	 * @generated
+	 */
+	MyObservation createMyObservation();
 
 	/**
 	 * Returns the package supported by this factory.
