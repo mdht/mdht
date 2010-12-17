@@ -9,8 +9,10 @@ package org.openhealthtools.mdht.uml.cda.example.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
+import org.openhealthtools.mdht.uml.cda.example.MyObservation;
 import org.openhealthtools.mdht.uml.cda.example.MySection;
 import org.openhealthtools.mdht.uml.cda.example.operations.MySectionOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
@@ -77,8 +79,17 @@ public class MySectionImpl extends SectionImpl implements MySection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMySectionMyActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MySectionOperations.validateMySectionMyActivity(this, diagnostics, context);
+	public boolean validateMySectionMyObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MySectionOperations.validateMySectionMyObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MyObservation> getMyObservations() {
+		return MySectionOperations.getMyObservations(this);
 	}
 
 	/**

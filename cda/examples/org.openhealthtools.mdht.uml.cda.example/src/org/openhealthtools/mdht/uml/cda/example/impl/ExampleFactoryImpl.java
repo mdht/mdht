@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.openhealthtools.mdht.uml.cda.example.ExampleFactory;
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
-import org.openhealthtools.mdht.uml.cda.example.MyActivity;
 import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MyObservation;
 import org.openhealthtools.mdht.uml.cda.example.MySection;
 
 /**
@@ -62,8 +62,8 @@ public class ExampleFactoryImpl extends EFactoryImpl implements ExampleFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ExamplePackage.MY_DOCUMENT: return createMyDocument();
-			case ExamplePackage.MY_ACTIVITY: return createMyActivity();
 			case ExamplePackage.MY_SECTION: return createMySection();
+			case ExamplePackage.MY_OBSERVATION: return createMyObservation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,9 +84,9 @@ public class ExampleFactoryImpl extends EFactoryImpl implements ExampleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MyActivity createMyActivity() {
-		MyActivityImpl myActivity = new MyActivityImpl();
-		return myActivity;
+	public MySection createMySection() {
+		MySectionImpl mySection = new MySectionImpl();
+		return mySection;
 	}
 
 	/**
@@ -94,9 +94,9 @@ public class ExampleFactoryImpl extends EFactoryImpl implements ExampleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MySection createMySection() {
-		MySectionImpl mySection = new MySectionImpl();
-		return mySection;
+	public MyObservation createMyObservation() {
+		MyObservationImpl myObservation = new MyObservationImpl();
+		return myObservation;
 	}
 
 	/**

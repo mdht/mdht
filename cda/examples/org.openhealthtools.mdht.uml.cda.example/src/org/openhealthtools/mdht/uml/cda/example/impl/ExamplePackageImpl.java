@@ -14,10 +14,11 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.example.ExampleFactory;
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
-import org.openhealthtools.mdht.uml.cda.example.MyActivity;
 import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MyObservation;
 import org.openhealthtools.mdht.uml.cda.example.MySection;
 import org.openhealthtools.mdht.uml.cda.example.util.ExampleValidator;
 
@@ -40,14 +41,14 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass myActivityEClass = null;
+	private EClass mySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass mySectionEClass = null;
+	private EClass myObservationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -96,7 +97,7 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		CCDPackage.eINSTANCE.eClass();
+		CDTPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theExamplePackage.createPackageContents();
@@ -136,8 +137,8 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMyActivity() {
-		return myActivityEClass;
+	public EClass getMySection() {
+		return mySectionEClass;
 	}
 
 	/**
@@ -145,8 +146,8 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMySection() {
-		return mySectionEClass;
+	public EClass getMyObservation() {
+		return myObservationEClass;
 	}
 
 	/**
@@ -179,9 +180,9 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		// Create classes and their features
 		myDocumentEClass = createEClass(MY_DOCUMENT);
 
-		myActivityEClass = createEClass(MY_ACTIVITY);
-
 		mySectionEClass = createEClass(MY_SECTION);
+
+		myObservationEClass = createEClass(MY_OBSERVATION);
 	}
 
 	/**
@@ -208,22 +209,23 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CCDPackage theCCDPackage = (CCDPackage)EPackage.Registry.INSTANCE.getEPackage(CCDPackage.eNS_URI);
+		CDTPackage theCDTPackage = (CDTPackage)EPackage.Registry.INSTANCE.getEPackage(CDTPackage.eNS_URI);
 		CDAPackage theCDAPackage = (CDAPackage)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI);
+		CCDPackage theCCDPackage = (CCDPackage)EPackage.Registry.INSTANCE.getEPackage(CCDPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		myDocumentEClass.getESuperTypes().add(theCCDPackage.getContinuityOfCareDocument());
-		myActivityEClass.getESuperTypes().add(theCCDPackage.getProblemAct());
+		myDocumentEClass.getESuperTypes().add(theCDTPackage.getGeneralHeaderConstraints());
 		mySectionEClass.getESuperTypes().add(theCDAPackage.getSection());
+		myObservationEClass.getESuperTypes().add(theCCDPackage.getProblemObservation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(myDocumentEClass, MyDocument.class, "MyDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(myDocumentEClass, ecorePackage.getEBoolean(), "validateMyDocumentTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(myDocumentEClass, ecorePackage.getEBoolean(), "validateMyDocumentMySection", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -232,61 +234,7 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(myDocumentEClass, ecorePackage.getEBoolean(), "validateMyDocumentMySection", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(myActivityEClass, MyActivity.class, "MyActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(myActivityEClass, ecorePackage.getEBoolean(), "validateMyActivityTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(myActivityEClass, ecorePackage.getEBoolean(), "validateMyActivityClassCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(myActivityEClass, ecorePackage.getEBoolean(), "validateMyActivityMoodCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(myActivityEClass, ecorePackage.getEBoolean(), "validateMyActivityCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(myActivityEClass, ecorePackage.getEBoolean(), "validateMyActivityStatusCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(myDocumentEClass, this.getMySection(), "getMySection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(mySectionEClass, MySection.class, "MySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -317,7 +265,56 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(mySectionEClass, ecorePackage.getEBoolean(), "validateMySectionMyActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(mySectionEClass, ecorePackage.getEBoolean(), "validateMySectionMyObservation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(mySectionEClass, this.getMyObservation(), "getMyObservations", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(myObservationEClass, MyObservation.class, "MyObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationClassCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateProblemObservationCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationTargetSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -330,26 +327,10 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
-		addAnnotation
-		  (myDocumentEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																	
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -359,42 +340,58 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 	 * @generated
 	 */
 	protected void createAnnotationAnnotations() {
-		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";			
+		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";		
 		addAnnotation
 		  (myDocumentEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.2.3.4",
 			 "constraints.validation.error", "MyDocumentTemplateId MyDocumentMySection"
-		   });											
-		addAnnotation
-		  (myActivityEClass, 
-		   source, 
-		   new String[] {
-			 "statusCode.code", "completed",
-			 "code.codeSystem", "2.16.840.1.113883.6.96",
-			 "templateId.root", "1.2.3.4.2",
-			 "code.displayName", "Documentation procedure",
-			 "constraints.validation.error", "MyActivityTemplateId MyActivityClassCode MyActivityMoodCode MyActivityCode MyActivityStatusCode",
-			 "code.codeSystemName", "SNOMEDCT",
-			 "classCode", "ACT",
-			 "code.code", "23745001",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "moodCode", "EVN",
-			 "statusCode.codeSystemName", "ActStatus"
-		   });																							
+		   });									
 		addAnnotation
 		  (mySectionEClass, 
 		   source, 
 		   new String[] {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "1.2.3.4.1",
-			 "code.displayName", "Summary purpose",
-			 "constraints.validation.error", "MySectionTemplateId MySectionCode MySectionTitle",
+			 "code.displayName", "Summary Purpose",
+			 "constraints.validation.error", "MySectionTemplateId MySectionCode MySectionTitle MySectionMyObservation",
 			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.warning", "MySectionMyActivity",
 			 "code.code", "48764-5"
-		   });																
+		   });																					
+		addAnnotation
+		  (myObservationEClass, 
+		   source, 
+		   new String[] {
+			 "value.codeSystemName", "SNOMEDCT",
+			 "code.codeSystem", "2.16.840.1.113883.6.96",
+			 "templateId.root", "1.2.3.4.2",
+			 "constraints.validation.error", "MyObservationTemplateId MyObservationClassCode ProblemObservationCode MyObservationEffectiveTime MyObservationValue",
+			 "code.codeSystemName", "SNOMEDCT",
+			 "classCode", "OBS",
+			 "constraints.validation.info", "MyObservationTargetSiteCode",
+			 "value.codeSystem", "2.16.840.1.113883.6.96"
+		   });																					
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates";			
+		addAnnotation
+		  (myDocumentEClass, 
+		   source, 
+		   new String[] {
+		   });																													
+		addAnnotation
+		  (myObservationEClass, 
+		   source, 
+		   new String[] {
+		   });																				
 	}
 
 } //ExamplePackageImpl
