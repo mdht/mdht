@@ -642,15 +642,13 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 			
 			String xpath = "//*[self::cda:telecom]";
 			
-			Pattern pattern = Pattern.compile(".\\d+."); 
+			Pattern pattern = Pattern.compile("^.*(?=.*[0-9]).*$"); 
 
 			
 			List<TEL> tels = cdaXPath.selectNodes(xpath, TEL.class);
 			
 			for (TEL tel : tels) {
-
-				
-				if (tel.getValue() != null && !tel.getValue().startsWith("tel:") ) {
+				if (tel.getValue() != null && tel.getValue().length()>0 && tel.getValue().startsWith("tel:") ) {
 					if (!pattern.matcher(tel.getValue()).matches()) {
 						hasErrors = true;
 						if (diagnostics != null) {
@@ -668,7 +666,7 @@ public class GeneralHeaderConstraintsOperations extends ClinicalDocumentOperatio
 			if (hasErrors) {
 				return false;
 			}
-		} catch (Exception e) {
+		} catch (Exception e) {			
 			throw new UnsupportedOperationException(e.getLocalizedMessage());
 		} 
 		
