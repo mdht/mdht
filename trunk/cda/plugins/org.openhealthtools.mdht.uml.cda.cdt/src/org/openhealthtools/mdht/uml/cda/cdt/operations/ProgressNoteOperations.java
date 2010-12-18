@@ -1278,7 +1278,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  AssessmentAndPlanSectionProcNote getAssessmentAndPlanSection(ProgressNote progressNote) {
 		if (GET_ASSESSMENT_AND_PLAN_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(76));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(77));
 			try {
 				GET_ASSESSMENT_AND_PLAN_SECTION__EOCL_QRY = helper.createQuery(GET_ASSESSMENT_AND_PLAN_SECTION__EOCL_EXP);
 			}
@@ -1322,7 +1322,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  AssessmentSectionProcNote getAssessmentSection(ProgressNote progressNote) {
 		if (GET_ASSESSMENT_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(77));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(78));
 			try {
 				GET_ASSESSMENT_SECTION__EOCL_QRY = helper.createQuery(GET_ASSESSMENT_SECTION__EOCL_EXP);
 			}
@@ -1366,7 +1366,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  PlanOfCareSection getPlanSection(ProgressNote progressNote) {
 		if (GET_PLAN_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(78));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(79));
 			try {
 				GET_PLAN_SECTION__EOCL_QRY = helper.createQuery(GET_PLAN_SECTION__EOCL_EXP);
 			}
@@ -1410,7 +1410,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  AlertsSection getAlertsSection(ProgressNote progressNote) {
 		if (GET_ALERTS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(79));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(80));
 			try {
 				GET_ALERTS_SECTION__EOCL_QRY = helper.createQuery(GET_ALERTS_SECTION__EOCL_EXP);
 			}
@@ -1454,7 +1454,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  ChiefComplaintSectionProcNote getChiefComplaintSection(ProgressNote progressNote) {
 		if (GET_CHIEF_COMPLAINT_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(80));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(81));
 			try {
 				GET_CHIEF_COMPLAINT_SECTION__EOCL_QRY = helper.createQuery(GET_CHIEF_COMPLAINT_SECTION__EOCL_EXP);
 			}
@@ -1498,7 +1498,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  MedicationsSection getMedicationsSection(ProgressNote progressNote) {
 		if (GET_MEDICATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(81));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(82));
 			try {
 				GET_MEDICATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_MEDICATIONS_SECTION__EOCL_EXP);
 			}
@@ -1542,7 +1542,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  ObjectiveSection getObjectiveSection(ProgressNote progressNote) {
 		if (GET_OBJECTIVE_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(82));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(83));
 			try {
 				GET_OBJECTIVE_SECTION__EOCL_QRY = helper.createQuery(GET_OBJECTIVE_SECTION__EOCL_EXP);
 			}
@@ -1586,7 +1586,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  PhysicalExaminationSection getPhysicalExaminationSection(ProgressNote progressNote) {
 		if (GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(83));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(84));
 			try {
 				GET_PHYSICAL_EXAMINATION_SECTION__EOCL_QRY = helper.createQuery(GET_PHYSICAL_EXAMINATION_SECTION__EOCL_EXP);
 			}
@@ -1630,7 +1630,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  ProblemSection getProblemSection(ProgressNote progressNote) {
 		if (GET_PROBLEM_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(84));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(85));
 			try {
 				GET_PROBLEM_SECTION__EOCL_QRY = helper.createQuery(GET_PROBLEM_SECTION__EOCL_EXP);
 			}
@@ -1674,7 +1674,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  ResultsSection getResultsSection(ProgressNote progressNote) {
 		if (GET_RESULTS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(85));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(86));
 			try {
 				GET_RESULTS_SECTION__EOCL_QRY = helper.createQuery(GET_RESULTS_SECTION__EOCL_EXP);
 			}
@@ -1718,7 +1718,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  VitalSignsSection getVitalSignsSection(ProgressNote progressNote) {
 		if (GET_VITAL_SIGNS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(86));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(87));
 			try {
 				GET_VITAL_SIGNS_SECTION__EOCL_QRY = helper.createQuery(GET_VITAL_SIGNS_SECTION__EOCL_EXP);
 			}
@@ -1762,7 +1762,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  ReviewOfSystemsSectionIHE getReviewOfSystemsSection(ProgressNote progressNote) {
 		if (GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(87));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(88));
 			try {
 				GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_QRY = helper.createQuery(GET_REVIEW_OF_SYSTEMS_SECTION__EOCL_EXP);
 			}
@@ -1806,7 +1806,7 @@ public class ProgressNoteOperations extends GeneralHeaderConstraintsOperations {
 	public static  SubjectiveSection getSubjectiveSection(ProgressNote progressNote) {
 		if (GET_SUBJECTIVE_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(88));
+			helper.setOperationContext(CDTPackage.Literals.PROGRESS_NOTE, CDTPackage.Literals.PROGRESS_NOTE.getEAllOperations().get(89));
 			try {
 				GET_SUBJECTIVE_SECTION__EOCL_QRY = helper.createQuery(GET_SUBJECTIVE_SECTION__EOCL_EXP);
 			}
