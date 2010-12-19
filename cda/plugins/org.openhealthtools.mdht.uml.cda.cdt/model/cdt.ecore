@@ -236,10 +236,10 @@
     </eOperations>
     <eOperations name="GeneralHeaderConstraintsOidLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="datatypes::II.allInstances()->select(currentII : datatypes::II | (not currentII.root.oclIsUndefined()) and currentII.root.size() > 64 )"/>
+        <details key="body" value="self.id->select((not id.root.oclIsUndefined()) and id.root.size() > 64 )"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="datatypes::II.allInstances()->select(currentII : datatypes::II | (not currentII.root.oclIsUndefined()) and currentII.root.size() > 64 )"/>
+        <details key="documentation" value="self.id->select((not id.root.oclIsUndefined()) and id.root.size() > 64 )"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

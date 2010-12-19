@@ -195,14 +195,11 @@ http://www.dclunie.com/medical-image-faq/html/part8.html#UIDRegistration. &lt;/p
           <body>OIDs are limited by this specification to no more than 64 characters in length for&#xD;
 compatibility with other standards and Implementation Guides.</body>
         </ownedComment>
-        <ownedComment xmi:id="_Elr5QArCEeCwBNYG-xgRvA">
-          <body>Implemented as OCL Query versus Constraint</body>
-        </ownedComment>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_ezDGMHMxEd-9_cvcE5QEwg">
           <language>Analysis</language>
           <language>OCL</language>
           <body>OIDs are no more than 64 characters in length.</body>
-          <body>datatypes::II.allInstances()->select(currentII : datatypes::II | (not currentII.root.oclIsUndefined()) and currentII.root.size() > 64 )</body>
+          <body>self.id->select((not id.root.oclIsUndefined()) and id.root.size() > 64 )</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_vaVCcHPqEd-9_cvcE5QEwg" name="languageCodeForm" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
