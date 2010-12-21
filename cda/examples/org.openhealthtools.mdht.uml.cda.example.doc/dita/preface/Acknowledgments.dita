@@ -4,13 +4,9 @@
 <topic id="topicId" xml:lang="en-us">
 	<title>Acknowledgments</title>
 	<body>
-		<p>This document contains an example of healthcare standards and specifications publication
-			generated from UML models, using the OHT Model Driven Health Tools (MDHT). Some portions of this
-			document may not be publicly available but are included for demonstration purposes only,
-			therefore this version of the document is to be treated as CONFIDENTIAL by the project
-			participants.</p>
-
-		<p>This demonstration document contains informtion from the following sources:</p>
+		<p>This document contains an example of healthcare standards and specifications published
+			from UML models, using the OHT Model Driven Health Tools (MDHT). This demonstration 
+			document contains information from the following sources:</p>
 
 		<p>&#169;2010 ANSI. This material may be copied without permission from ANSI only if and to the
 			extent that the text is not altered in any fashion and ANSI’s copyright is clearly noted.</p>
