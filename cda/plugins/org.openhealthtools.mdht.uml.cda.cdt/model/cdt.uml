@@ -101,7 +101,7 @@ vocabulary.</body>
           <language>Analysis</language>
           <language>OCL</language>
           <body>Times or time intervals found in the asOrganizationPartOf/effectiveTime,&#xD;&#xA;asMaintainedEntity/effectiveTime, relatedEntity/effectiveTime,&#xD;&#xA;serviceEvent/effectiveTime, ClinicalDocument/participant/time,&#xD;&#xA;serviceEvent/performer/time and encounterParticipant/time SHALL be precise at&#xD;&#xA;least to the year, SHOULD be precise to the day, and MAY omit time zone.</body>
-          <body>-- implemented in Java using XPath selector</body>
+          <body>cda::OrganizationPartOf::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject)-> union(  cda::MaintainedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union( cda::RelatedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::RelatedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::RelatedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::ServiceEvent::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::EncounterParticipant::allInstances()->select( time.oclIsUndefined()).oclAsType( ecore::EObject))->union(self.participant->select( time.oclIsUndefined()).oclAsType( ecore::EObject))->union(cda::OrganizationPartOf::allInstances().effectiveTime->union(cda::MaintainedEntity::allInstances().effectiveTime)->union( cda::RelatedEntity::allInstances().effectiveTime)->union(cda::RelatedEntity::allInstances().effectiveTime)->union(cda::RelatedEntity::allInstances().effectiveTime)->union(cda::ServiceEvent::allInstances().effectiveTime)->union(cda::EncounterParticipant::allInstances().time)->union(self.participant.time)->select(current : datatypes::IVL_TS  |  ((not current.low.oclIsUndefined()) and (current.low.value.oclIsUndefined() or current.low.value.size() &lt; 4)) or ((not current.center.oclIsUndefined()) and (current.center.value.oclIsUndefined() or current.center.value.size() &lt; 4)) or ((not current.high.oclIsUndefined()) and (current.high.value.oclIsUndefined() or current.high.value.size() &lt; 4)) or (current.low.oclIsUndefined() and current.center.oclIsUndefined() and current.high.oclIsUndefined()) ).oclAsType( ecore::EObject))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_Js8_EAbSEeC15aCUY_wo_g" name="telephoneMatchesRegex" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
@@ -448,6 +448,9 @@ will be set to PROV.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_mEGlYAlEEeCb3JSiaNKEKA" name="timePreciseToSecond" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <ownedComment xmi:id="_JLX78Ax4EeCbT6kkmQhJPQ">
+          <body>Should portion of CON-HP-10 constraitn</body>
+        </ownedComment>
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_mEGlYQlEEeCb3JSiaNKEKA">
           <language>Analysis</language>
           <language>XPath</language>
@@ -455,6 +458,17 @@ will be set to PROV.</body>
           <body>Times or time intervals found in the ClinicalDocument/effectiveTime,&#xD;&#xA;author/time, dataEnterer/time, legalAuthenticator/time, authenticator/time and&#xD;&#xA;encompassingEncounter/effectiveTime elements SHALL be precise to the day, SHALL&#xD;&#xA;include a time zone if more precise than to the day, and SHOULD be precise to the&#xD;&#xA;second.</body>
           <body>/cda:ClinicalDocument/cda:effectiveTime | //cda:author/cda:time | //cda:dataEnterer/cda:time | //cda:encompassingEncounter/cda:effectiveTime</body>
           <body>-- implemented in Java using XPath selector</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_0XI4AAx3EeCbT6kkmQhJPQ" name="timePreciseToYearAndDay" constrainedElement="_MwGRIGeLEd-ilOLYnIx0jA">
+        <ownedComment xmi:id="_PSJF4Ax4EeCbT6kkmQhJPQ">
+          <body>Should portion of CON-HP-11 constraitn</body>
+        </ownedComment>
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ETtpcAx4EeCbT6kkmQhJPQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Times or time intervals found in the asOrganizationPartOf/effectiveTime,&#xD;&#xA;asMaintainedEntity/effectiveTime, relatedEntity/effectiveTime,&#xD;&#xA;serviceEvent/effectiveTime, ClinicalDocument/participant/time,&#xD;&#xA;serviceEvent/performer/time and encounterParticipant/time SHALL be precise at&#xD;&#xA;least to the year, SHOULD be precise to the day, and MAY omit time zone.</body>
+          <body>cda::OrganizationPartOf::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject)-> union(  cda::MaintainedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union( cda::RelatedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::RelatedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::RelatedEntity::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::ServiceEvent::allInstances()->select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )->union(cda::EncounterParticipant::allInstances()->select( time.oclIsUndefined()).oclAsType( ecore::EObject))->union(self.participant->select( time.oclIsUndefined()).oclAsType( ecore::EObject))->union(cda::OrganizationPartOf::allInstances().effectiveTime->union(cda::MaintainedEntity::allInstances().effectiveTime)->union( cda::RelatedEntity::allInstances().effectiveTime)->union(cda::RelatedEntity::allInstances().effectiveTime)->union(cda::RelatedEntity::allInstances().effectiveTime)->union(cda::ServiceEvent::allInstances().effectiveTime)->union(cda::EncounterParticipant::allInstances().time)->union(self.participant.time)->select(current : datatypes::IVL_TS  |  ((not current.low.oclIsUndefined()) and (current.low.value.oclIsUndefined() or current.low.value.size() &lt; 8)) or ((not current.center.oclIsUndefined()) and (current.center.value.oclIsUndefined() or current.center.value.size() &lt; 8)) or ((not current.high.oclIsUndefined()) and (current.high.value.oclIsUndefined() or current.high.value.size() &lt; 8)) or (current.low.oclIsUndefined() and current.center.oclIsUndefined() and current.high.oclIsUndefined()) ).oclAsType( ecore::EObject))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_MwujQGeLEd-ilOLYnIx0jA">
@@ -2221,5 +2235,11 @@ document may come from sources or contain information that the author cannot val
   </CDA:ConstraintValidation>
   <CDA:ConstraintValidation xmi:id="_uAnwAAlEEeCb3JSiaNKEKA" severity="WARNING" base_Constraint="_mEGlYAlEEeCb3JSiaNKEKA">
     <ruleId>CONF-HP-10</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_i5ANMAx3EeCbT6kkmQhJPQ" severity="WARNING">
+    <ruleId>CONF-HP-11</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="__QdK8Ax3EeCbT6kkmQhJPQ" severity="WARNING" base_Constraint="_0XI4AAx3EeCbT6kkmQhJPQ">
+    <ruleId>CONF-HP-11</ruleId>
   </CDA:ConstraintValidation>
 </xmi:XMI>
