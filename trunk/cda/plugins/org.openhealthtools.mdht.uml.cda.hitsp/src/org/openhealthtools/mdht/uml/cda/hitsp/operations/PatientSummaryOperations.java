@@ -877,7 +877,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  AdvanceDirectivesSection getHITSPAdvanceDirectivesSection(PatientSummary patientSummary) {
 		if (GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(116));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(117));
 			try {
 				GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_ADVANCE_DIRECTIVES_SECTION__EOCL_EXP);
 			}
@@ -920,7 +920,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  AllergiesReactionsSection getAllergiesReactionsSection(PatientSummary patientSummary) {
 		if (GET_ALLERGIES_REACTIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(117));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(118));
 			try {
 				GET_ALLERGIES_REACTIONS_SECTION__EOCL_QRY = helper.createQuery(GET_ALLERGIES_REACTIONS_SECTION__EOCL_EXP);
 			}
@@ -963,7 +963,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  ProblemListSection getProblemListSection(PatientSummary patientSummary) {
 		if (GET_PROBLEM_LIST_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(118));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(119));
 			try {
 				GET_PROBLEM_LIST_SECTION__EOCL_QRY = helper.createQuery(GET_PROBLEM_LIST_SECTION__EOCL_EXP);
 			}
@@ -1006,7 +1006,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  EncountersSection getHITSPEncountersSection(PatientSummary patientSummary) {
 		if (GET_HITSP_ENCOUNTERS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(119));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(120));
 			try {
 				GET_HITSP_ENCOUNTERS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_ENCOUNTERS_SECTION__EOCL_EXP);
 			}
@@ -1049,7 +1049,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  ImmunizationsSection getHITSPImmunizationsSection(PatientSummary patientSummary) {
 		if (GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(120));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(121));
 			try {
 				GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_IMMUNIZATIONS_SECTION__EOCL_EXP);
 			}
@@ -1092,7 +1092,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  PayersSection getHITSPPayersSection(PatientSummary patientSummary) {
 		if (GET_HITSP_PAYERS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(121));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(122));
 			try {
 				GET_HITSP_PAYERS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_PAYERS_SECTION__EOCL_EXP);
 			}
@@ -1135,7 +1135,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  MedicationsSection getHITSPMedicationsSection(PatientSummary patientSummary) {
 		if (GET_HITSP_MEDICATIONS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(122));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(123));
 			try {
 				GET_HITSP_MEDICATIONS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_MEDICATIONS_SECTION__EOCL_EXP);
 			}
@@ -1178,7 +1178,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  SurgeriesSection getSurgeriesSection(PatientSummary patientSummary) {
 		if (GET_SURGERIES_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(123));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(124));
 			try {
 				GET_SURGERIES_SECTION__EOCL_QRY = helper.createQuery(GET_SURGERIES_SECTION__EOCL_EXP);
 			}
@@ -1221,7 +1221,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  PlanOfCareSection getHITSPPlanOfCareSection(PatientSummary patientSummary) {
 		if (GET_HITSP_PLAN_OF_CARE_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(124));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(125));
 			try {
 				GET_HITSP_PLAN_OF_CARE_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_PLAN_OF_CARE_SECTION__EOCL_EXP);
 			}
@@ -1264,7 +1264,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  PregnancyHistorySection getPregnancyHistorySection(PatientSummary patientSummary) {
 		if (GET_PREGNANCY_HISTORY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(125));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(126));
 			try {
 				GET_PREGNANCY_HISTORY_SECTION__EOCL_QRY = helper.createQuery(GET_PREGNANCY_HISTORY_SECTION__EOCL_EXP);
 			}
@@ -1307,7 +1307,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  VitalSignsSection getHITSPVitalSignsSection(PatientSummary patientSummary) {
 		if (GET_HITSP_VITAL_SIGNS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(126));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(127));
 			try {
 				GET_HITSP_VITAL_SIGNS_SECTION__EOCL_QRY = helper.createQuery(GET_HITSP_VITAL_SIGNS_SECTION__EOCL_EXP);
 			}
@@ -1350,7 +1350,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	public static  DiagnosticResultsSection getDiagnosticResultsSection(PatientSummary patientSummary) {
 		if (GET_DIAGNOSTIC_RESULTS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(127));
+			helper.setOperationContext(HITSPPackage.Literals.PATIENT_SUMMARY, HITSPPackage.Literals.PATIENT_SUMMARY.getEAllOperations().get(128));
 			try {
 				GET_DIAGNOSTIC_RESULTS_SECTION__EOCL_QRY = helper.createQuery(GET_DIAGNOSTIC_RESULTS_SECTION__EOCL_EXP);
 			}
