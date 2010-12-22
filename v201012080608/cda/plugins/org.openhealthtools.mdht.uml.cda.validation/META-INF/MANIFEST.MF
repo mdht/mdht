@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.validation;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-Activator: org.openhealthtools.mdht.uml.cda.validation.internal.Activator
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
+ org.eclipse.ui,
+ org.eclipse.emf.validation,
+ org.eclipse.uml2.uml,
+ org.eclipse.ocl.ecore;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

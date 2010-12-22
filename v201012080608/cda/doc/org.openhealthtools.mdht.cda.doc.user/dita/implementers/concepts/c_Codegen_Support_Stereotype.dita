@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="codegensupportconcept" xml:lang="en-us">
+<title>Code Generation Support Stereotype</title>
+<conbody><p>The code generation support stereotype is applied to the UML Package model element and is used to specify parameters used during EMF code generation.
+</p></conbody>
+</concept>

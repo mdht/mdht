@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Level One Conformance - conformance rules</title>
+<shortdesc id="shortdesc">[ClinicalDocument: templateId <tt>2.16.840.1.113883.10.20.10</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>ClinicalDocument</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.10"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref href="../GeneralHeaderConstraints.dita">General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li>Conforms to <xref href="../GeneralHeaderConstraints.dita">General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
+<li>[CDT] <b>CONF-HP-21: </b><b>SHALL</b> contain [1..1] <tt>code</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>confidentialityCode</tt></li>
+<li>[CDT] <b>CONF-HP-23: </b><b>SHALL</b> contain [1..1] <tt>effectiveTime</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt></li>
+<li>[CDT] <b>CONF-HP-24: </b><b>SHALL</b> contain [1..1] <tt>languageCode</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>realmCode</tt><tt>/@code</tt> = "US" </li>
+<li>[CDT] <b>CONF-HP-22: </b><b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt></li>
+<li>[CDT] <b>CONF-HP-16: </b><b>SHALL</b> satisfy: The extension attribute of the typeId element SHALL be POCD_HD000040.</li>
+<li>[CDT] <b>CONF-HP-17: </b><b>SHALL</b> satisfy: The ClinicalDocument/id element SHALL be present. The ClinicalDocument/id/@root attribute SHALL be a syntactically correct UUID or OID.</li>
+<li>[CDT] <b>CONF-HP-18: </b><b>SHALL</b> satisfy: UUIDs SHALL be represented in the form XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXX, where each X is a character from the set [A-Fa-f0-9].</li>
+<li>[CDT] <b>CONF-HP-19: </b><b>SHALL</b> satisfy: OIDs SHALL be represented in dotted decimal notation, where each decimal number is either 0, or starts with a nonzero digit. More formally, an OID SHALL be in the form ([0-2])(.([1-9][0-9]*|0))+.</li>
+<li>[CDT] <b>CONF-HP-20: </b><b>SHALL</b> satisfy: OIDs SHALL be no more than 64 characters in length.</li>
+<li>[CDT] <b>CONF-HP-25: </b><b>SHALL</b> satisfy: languageCode SHALL be in the form nn, or nn-CC.</li>
+<li>[CDT] <b>CONF-HP-26: </b><b>SHALL</b> satisfy: The nn portion of languageCode SHALL be a legal ISO-639-1 language code in lowercase.</li>
+<li>[CDT] <b>CONF-HP-27: </b><b>SHALL</b> satisfy: The CC portion languageCode, if present, SHALL be an ISO-3166 country code in uppercase.</li>
+<li>[CDT] <b>CONF-HP-28: </b><b>SHALL</b> satisfy: Both setId and versionNumber SHALL be present or both SHALL be absent.</li>
+<li>[CDT] <b>CONF-HP-29: </b><b>SHALL</b> satisfy: The @extension and/or @root of setId and id SHALL be different when both are present.</li>
+<li>[CDT] <b>CONF-HP-30: </b><b>SHALL</b> satisfy: A copyTime element SHALL NOT be present.</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <realmCode code="US"/>
+  <templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/>
+  <templateId root="2.16.840.1.113883.10.20.10" assigningAuthorityName="CDT Level One Conformance"/>
+  <id root="daa2d9b6-52cc-45f9-8540-9562b0411193"/>
+  <code/>
+  <title/>
+  <effectiveTime/>
+  <confidentialityCode/>
+  <languageCode/>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

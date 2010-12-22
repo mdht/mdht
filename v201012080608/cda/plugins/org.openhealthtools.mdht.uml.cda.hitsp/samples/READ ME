@@ -1,0 +1,21 @@
+This folder contains multiple C32 v2.5 documents, beginning with a minimally valid CDA/R2 document (Rev0) that does not contain a C32 template Id. Next we add a C32 template Id and gradually build up more complex C32 documents.
+
+Rev1_No_Errors
+Contains a single C32 document level template Id and all other content required by that template Id, i.e. mostly header content. Note that there is no section content because C32 does not require specific sections; instead, C32 defines 11 optional sections that might be used in a C32 v2.5 summary document.
+
+Rev2_No_Warnings
+Adds header content that eliminates warnings when validated against the NIST C32 v2.5 validator. No sections are specifically recommended so there is still no section content. A number of XML elements are required to be present, but there are no rules in C32 to require that those elements contain meaningful content.
+
+Rev3_EntryErrorsOnly
+Adds the 11 optional sections defined in C32 v2.5, but does NOT add entries for those sections. Each section carries the appropriate template Id identified by HITSP C83. When validated, this document returns no section errors; instead, it returns errors indicating that certain sections SHALL contain entries with specific content.
+
+Rev4_Entries_MinimalErrors
+Adds entries to the 11 sections and eliminates nearly all entry errors. A small number of errors remain because of typos in the specs or conflicts between IHE versus HITSP requirements.
+
+Rev5_Entries_MinimalWarnings
+Attempts to remove all warnings from validation reports. This introduces more complexity to the document that may or may not be useful in all situations. Some warnings are intentionally left unresolved to emphasize that they are superfluous. Other warnings remain because of inherent conflicts between IHE versus HITSP recommendations on which code sets to use for specific purposes.
+
+Rev6_16Sections_MinimalErrors
+Adds another 5 sections from C83 that may play a role in a summary document. These sections are not listed in C32 v2.5 but are not prohibited in any way. Each section carries the appropriate C83 template Id and the NIST C32 v2.5 validator checks the C83 rules for these sections.
+
+All of the above documents can be transformed into a human readable output by using the WebViewLayout_CDA transform. This transform depends on header content and the content of the <text> element in each component section. At present the <text> element of each section is not checked for consistency with its subordinate entries so there may be unintentional inconsistencies between a section and its entries, and thus potential inconsistencies between the human readable output and entry content.

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Medication Series Number Observation"/>
+<meta name="abstract" content="[Observation: templateId 2.16.840.1.113883.10.20.1.46]"/>
+<meta name="description" content="[Observation: templateId 2.16.840.1.113883.10.20.1.46]"/>
+<meta name="DC.Coverage" content="Observation"/>
+<meta name="DC.Relation" scheme="URI" content="../content/ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Medication Series Number Observation</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Medication Series Number Observation</h1>
+
+
+
+<div><p>[Observation: templateId <tt>2.16.840.1.113883.10.20.1.46</tt>]</p>
+
+
+<div class="section">
+<p>
+    The medication series number observation can be used to indicate which in a series of administrations a
+    particular administration represents (e.g. "hepatitis B vaccine number 2 was administered on Feb 07, 2004).
+</p>
+
+</div>
+
+
+<ol>
+<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
+
+<li>Contains [1..1] <tt>@classCode</tt> = "OBS"</li>
+
+<li>Contains [1..1] <tt>@moodCode</tt> = "EVN"</li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt></li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30973-2" <em>Dose number</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>value</tt>, where its data type is INT</li>
+
+</ol>
+
+
+<div class="fignone"><span class="figcap">Figure 1. Medication Series Number Observation example</span>
+
+
+
+<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
+  &lt;component&gt;
+    &lt;structuredBody&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;entry&gt;
+            &lt;observation classCode="OBS" moodCode="EVN"&gt;
+              &lt;templateId root="2.16.840.1.113883.10.20.1.46" assigningAuthorityName="CCD Medication Series Number Observation"/&gt;
+              &lt;code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose number"/&gt;
+              &lt;statusCode/&gt;
+              &lt;value xsi:type="INT"/&gt;
+            &lt;/observation&gt;
+          &lt;/entry&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+    &lt;/structuredBody&gt;
+  &lt;/component&gt;
+&lt;/ClinicalDocument&gt;</pre>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

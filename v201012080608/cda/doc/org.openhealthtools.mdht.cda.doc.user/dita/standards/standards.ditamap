@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<map id="map_08CBDC569B5246C790103592F82726DD"><title>Standards Developers and Users</title>
+	<topicref format="dita" href="topics/c_Standards_Developers_and_Users.dita" navtitle="Standards Developers and Users" scope="local" type="concept">
+		<topicref format="dita" href="topics/c_Review_CDA_templates.dita" navtitle="Review CDA templates" scope="local" type="concept">
+			<topicref format="dita" href="topics/t_Open_a_model.dita" navtitle="Open a model" scope="local" type="task"/>
+			<topicref format="dita" href="topics/c_Using_the_UML_Table_Editor.dita" navtitle="Using the MDHT UML Editor" scope="local" type="concept"/>
+		</topicref>
+		<topicref format="dita" href="topics/t_Create_a_new_template.dita" navtitle="Create a new template" scope="local" type="task"/>
+		<topicref format="dita" href="topics/c_Add_template_constraints.dita" navtitle="Add template constraints" scope="local" type="concept">
+			<topicref format="dita" href="topics/t_Change_attribute_list.dita" navtitle="Change attribute list" scope="local" type="task"/>
+			<topicref format="dita" href="topics/c_Attribute_constraint.dita" navtitle="Attribute constraints" scope="local" type="concept">
+				<topicref format="dita" href="topics/t_Multiplicity_constraint.dita" navtitle="Multiplicity constraint" scope="local" type="task"/>
+				<topicref format="dita" href="topics/t_Data_type_constraint.dita" navtitle="Data type constraint" scope="local" type="task"/>
+				<topicref format="dita" href="topics/t_Fixed_structural_code_value.dita" navtitle="Fixed structural code value" scope="local" type="task"/>
+				<topicref format="dita" href="topics/t_Vocabulary_constraint.dita" navtitle="Vocabulary constraint" scope="local" type="task"/>
+				<topicref format="dita" href="topics/t_Text_value_constraint.dita" navtitle="Text value constraint" scope="local" type="task"/>
+			</topicref>
+			<topicref format="dita" href="topics/c_Association_constraint.dita" navtitle="Association constraints" scope="local" type="concept">
+				<topicref format="dita" href="topics/t_Create_a_new_association.dita" navtitle="Create a new association" scope="local" type="task"/>
+				<topicref format="dita" href="topics/t_Type_code_constraint.dita" navtitle="Association type code constraint" scope="local" type="task"/>
+			</topicref>
+			<topicref format="dita" href="topics/c_Other_general_constraint.dita" navtitle="Other general constraints" scope="local" type="concept">
+				<topicref format="dita" href="topics/t_Analysis_language_constraint.dita" navtitle="Analysis language constraint" scope="local" type="task"/>
+				<topicref format="dita" href="topics/t_OCL_language_constraint.dita" navtitle="OCL language constraint" scope="local" type="task"/>
+			</topicref>
+			<topicref format="dita" href="topics/c_Severity_and_message.dita" navtitle="Severity and message" scope="local" type="concept"/>
+		</topicref>
+		<topicref format="dita" href="topics/c_Publish_an_IG.dita" navtitle="Publish an Implementation Guide" scope="local" type="concept"/>
+		<topicref format="dita" href="topics/t_Create_a_new_Implementation_Guide.dita" navtitle="Create a new Implementation Guide" scope="local" type="task"/>
+	</topicref>
+</map>

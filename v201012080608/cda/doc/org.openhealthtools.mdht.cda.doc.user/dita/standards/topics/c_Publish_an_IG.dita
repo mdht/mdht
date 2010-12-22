@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_C55BC396657446B697ACC15CE03CF767"> 
+  <title>Publish an Implementation Guide</title> 
+  <shortdesc>Publish an implementation guide document from a UML model
+	 containing CDA template definitions.
+  </shortdesc> 
+  <conbody>
+	 <p>This is still work-in-progress, however excellent progress has been made
+		using the DITA XML standard for technical documentation as a vehicle for
+		publishing implementation guides. The current proof-of-concept tooling can
+		publish guides in both PDF and the Eclipse Help format. The on-line help format
+		is a promising new approach for publishing and sharing CDA template
+		specifications. The following screen shot illustrates an example.
+	 </p>
+	 <p><image placement="break" id="image_498A66643378408985F769D37BCE7F98"
+		href="../images/PublishedIG.png"></image>
+	 </p>
+  </conbody>
+</concept>

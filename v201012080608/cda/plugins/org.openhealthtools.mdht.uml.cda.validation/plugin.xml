@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<!-- Copyright (c) 2010 Sean Muir All rights reserved. This 
+	program and the accompanying materials are made available under the terms 
+	of the Eclipse Public License v1.0 which accompanies this distribution, and 
+	is available at http://www.eclipse.org/legal/epl-v10.html Contributors: David 
+	A Carlson - initial API and implementation $Id$ -->
+
+<plugin>
+
+	<!-- - Constraint Context -->
+	<extension point="org.eclipse.emf.validation.constraintBindings">
+		<clientContext
+			id="org.openhealthtools.mdht.uml.cda.validation.clientContext">
+			<selector
+				class="org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.ValidationDelegateClientSelector" />
+		</clientContext>
+		<binding context="org.openhealthtools.mdht.uml.cda.validation.clientContext"
+			category="org.openhealthtools.mdht.uml.cda.validation" />
+	</extension>
+
+	<!-- - Constraint Definitions -->
+	<extension point="org.eclipse.emf.validation.constraintProviders">
+		<category name="%category.name" id="org.openhealthtools.mdht.uml.cda.validation">
+			<category id="correctness" name="%category.correctness.name">
+				%category.correctness.description
+         </category>
+			<category id="completeness" name="%category.completeness.name">
+				%category.completeness.description
+         </category>
+			%category.description
+		</category>
+
+		<constraintProvider cache="true">
+			<package namespaceUri="http://www.eclipse.org/uml2/2.0.0/UML" />
+			<package namespaceUri="http://www.eclipse.org/uml2/2.1.0/UML" />			
+			<package namespaceUri="http://www.eclipse.org/uml2/3.0.0/UML" /> 
+			
+			<constraints>
+				<include path="constraints/associations.xml" />
+				<include path="constraints/classes.xml" />
+				<include path="constraints/ocl.xml" />
+			</constraints>
+		</constraintProvider>
+
+		
+		
+	</extension>
+
+</plugin>

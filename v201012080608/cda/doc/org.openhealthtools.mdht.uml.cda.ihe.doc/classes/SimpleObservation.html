@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Simple Observation"/>
+<meta name="abstract" content="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.13]"/>
+<meta name="description" content="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.13]"/>
+<meta name="DC.Coverage" content="Observation"/>
+<meta name="DC.Relation" scheme="URI" content="../content/ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Simple Observation</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Simple Observation</h1>
+
+
+
+<div><p>[Observation: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13</tt>]</p>
+
+
+<div class="section">
+<p>The simple observation entry is meant to be an abstract representation of many of the observations used in this
+specification. It can be made concrete by the specification of a few additional constraints, namely the vocabulary used for
+codes, and the value representation. A simple observation may also inherit constraints from other specifications (e.g.,
+ASTM/HL7 Continuity of Care Document).</p>
+
+</div>
+
+
+<ol>
+<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
+
+<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+
+<li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+
+</ol>
+
+
+<div class="fignone"><span class="figcap">Figure 1. Simple Observation example</span>
+
+
+
+<pre class="codeblock"/>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

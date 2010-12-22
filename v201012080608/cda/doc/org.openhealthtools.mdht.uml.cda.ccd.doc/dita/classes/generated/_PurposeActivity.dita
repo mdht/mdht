@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Purpose Activity - conformance rules</title>
+<shortdesc id="shortdesc">[Act: templateId <tt>2.16.840.1.113883.10.20.1.30</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Act</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.30"/>
+</prolog>
+<body>
+<section id="description">
+<p>
+    CCD represents the ASTM CCR &lt;Purpose&gt; object as a relationship between two classes -- the source
+    represents the act of creating a summary document, the target is the reason for creating the document, and the
+    relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,
+    and it may represent an order, an event, etc.
+</p>
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>CONF-21: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
+<li><b>CONF-22: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li><b>CONF-25: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
+<li><b>CONF-23, CONF-24: </b><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li><b>CONF-26: </b><b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.</li>
+<li><b>CONF-27: </b><b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li>[CCD] <b>CONF-21: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
+<li>[CCD] <b>CONF-22: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CCD] <b>CONF-25: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
+<li>[CCD] <b>CONF-23, CONF-24: </b><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li>[CCD] <b>CONF-26: </b><b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.</li>
+<li>[CCD] <b>CONF-27: </b><b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.30" assigningAuthorityName="CCD Purpose Activity"/>
+              <code code="23745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Documentation procedure"/>
+              <statusCode code="completed"/>
+            </act>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

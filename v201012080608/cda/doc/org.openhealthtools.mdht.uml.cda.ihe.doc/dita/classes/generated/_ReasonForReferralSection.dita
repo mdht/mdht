@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Reason For Referral Section - conformance rules</title>
+<shortdesc id="shortdesc">[Section: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.3.1</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Section</category></metadata>
+<resourceid id="1.3.6.1.4.1.19376.1.5.3.1.3.1"/>
+</prolog>
+<body>
+<section id="description">
+<p>The reason for referral section shall contain a narrative description of the reason that the patient is being referred.</p>
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "42349-1" <i>REASON FOR REFERRAL</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "42349-1" <i>REASON FOR REFERRAL</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.1" assigningAuthorityName="IHE Reason For Referral Section"/>
+          <code code="42349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REASON FOR REFERRAL"/>
+          <title>REASON FOR REFERRAL</title>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

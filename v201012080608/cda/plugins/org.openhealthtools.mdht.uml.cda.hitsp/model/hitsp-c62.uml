@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_8zRcAPZsEd-e-dANbnDT2A" name="HITSP C62 Unstructured Document">
+  <elementImport xmi:id="_JSeHoPZtEd-e-dANbnDT2A">
+    <importedElement xmi:type="uml:Class" href="hitsp.uml#__8-JUPG1Ed-FxO0PukiqhA"/>
+  </elementImport>
+  <elementImport xmi:id="_Kix48PZtEd-e-dANbnDT2A">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_g76sEPG1Ed-FxO0PukiqhA"/>
+  </elementImport>
+  <elementImport xmi:id="_PNtXAPZtEd-e-dANbnDT2A">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wDMM0GEHEd6bFO5yxRh3Nw"/>
+  </elementImport>
+  <elementImport xmi:id="_Mr5hkPZtEd-e-dANbnDT2A">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.cdt/model/cdt.uml#_MwGRIGeLEd-ilOLYnIx0jA"/>
+  </elementImport>
+  <elementImport xmi:id="_rvRlQPd5Ed-I-P0qO6j1fA">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_DVyVoPdQEd-aZohBEt6atA"/>
+  </elementImport>
+  <elementImport xmi:id="_tD7rEPd5Ed-I-P0qO6j1fA">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_QUckcPdQEd-aZohBEt6atA"/>
+  </elementImport>
+  <elementImport xmi:id="_ucpxgPd5Ed-I-P0qO6j1fA">
+    <importedElement xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_f-SDcPd5Ed-I-P0qO6j1fA"/>
+  </elementImport>
+</uml:Package>

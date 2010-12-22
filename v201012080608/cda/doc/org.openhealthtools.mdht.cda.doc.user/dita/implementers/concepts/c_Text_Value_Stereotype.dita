@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="textvalueconcept" xml:lang="en-us">
+<title>Text Value Stereotype</title>
+<conbody><p>The Text Value Stereotype is applied to the UML Property model element and is used for attributes that are constrained to a default or fixed text value (e.g. Section.title)</p></conbody>
+</concept>

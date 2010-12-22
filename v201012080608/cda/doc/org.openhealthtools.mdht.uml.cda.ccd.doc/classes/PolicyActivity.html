@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Policy Activity"/>
+<meta name="abstract" content="[Act: templateId 2.16.840.1.113883.10.20.1.26]"/>
+<meta name="description" content="[Act: templateId 2.16.840.1.113883.10.20.1.26]"/>
+<meta name="DC.Coverage" content="Act"/>
+<meta name="DC.Relation" scheme="URI" content="../content/ClinicalStatementTemplates.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="classId"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="../css/commonltr.css"/>
+<title>Policy Activity</title>
+</head>
+<body id="classId"><a name="classId"><!-- --></a>
+<div>
+	<p><b>Development Only.</b> The Normative content for these specifications
+	may be found on the HL7, IHE, and HITSP web sites.</p>
+</div>
+
+<h1 class="topictitle1">Policy Activity</h1>
+
+
+
+<div><p>[Act: templateId <tt>2.16.840.1.113883.10.20.1.26</tt>]</p>
+
+
+<div class="section">
+<p>A policy activity represents the policy or program providing the coverage. The person for whom payment is being provided (i.e. the patient) is the covered party. The subscriber of the policy or program is represented as a participant that is the holder the coverage. The payer is represented as the performer of the policy activity.</p>
+
+</div>
+
+
+<ol>
+<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+
+<li><strong>CONF-49: </strong><strong>SHALL</strong> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
+
+<li><strong>CONF-50: </strong><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+
+<li><strong>CONF-51: </strong><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+
+<li><strong>CONF-52, CONF-53: </strong><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+
+<li><strong>CONF-54, CONF-55: </strong><strong>SHOULD</strong> contain [1..1] <tt>code</tt>, which <strong>SHOULD</strong> be selected from ValueSet 2.16.840.1.113883.1.11.19832 ActCoverageType DYNAMIC</li>
+
+<li><strong>CONF-56: </strong><strong>SHALL</strong> contain [1..1] <tt>performer</tt>, such that it<ol type="a">
+<li>contains <a href="PayerEntity.html" title="[AssignedEntity: templateId null]">Payer Entity</a></li>
+</ol>
+</li>
+
+<li><strong>CONF-58: </strong><strong>SHALL</strong> contain [1..1] <tt>participant</tt>, such that it<ol type="a">
+<li>contains <a href="CoveredParty.html" title="[ParticipantRole: templateId null]">Covered Party</a></li>
+</ol>
+</li>
+
+<li><strong>CONF-63: </strong><strong>MAY</strong> contain [1..1] <tt>participant</tt>, such that it<ol type="a">
+<li>contains <a href="PolicySubscriber.html" title="[ParticipantRole: templateId null]">Policy Subscriber</a></li>
+</ol>
+</li>
+
+<li><strong>CONF-56: </strong><strong>SHALL</strong> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer.</li>
+
+<li><strong>CONF-58: </strong><strong>SHALL</strong> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party.</li>
+
+<li><strong>CONF-61: </strong><strong>MAY</strong> satisfy: The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC.</li>
+
+<li><strong>CONF-62: </strong><strong>MAY</strong> satisfy: A covered party in a policy activity MAY contain exactly one participant / time, to represent the time period over which the patient is covered.</li>
+
+<li><strong>CONF-63: </strong><strong>MAY</strong> satisfy: A policy activity MAY contain exactly one participant [@typeCode='HLD'], representing the subscriber.</li>
+
+<li><strong>CONF-65: </strong><strong>MAY</strong> satisfy: A subscriber in a policy activity MAY contain exactly one participant / time, to represent the time period for which the subscriber is enrolled.</li>
+
+<li><strong>CONF-66: </strong><strong>SHALL</strong> satisfy: The value for entryRelationship / @typeCode in a policy activity SHALL be 'REFR' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</li>
+
+<li><strong>CONF-67: </strong><strong>SHALL</strong> satisfy: The target of a policy activity with entryRelationship / @typeCode='REFR' SHALL be an Authorization Activity or an Act, with Act [@classCode = 'ACT'] and Act [@moodCode = 'DEF'], representing a description of the coverage plan.</li>
+
+</ol>
+
+
+<div class="fignone"><span class="figcap">Figure 1. Policy Activity example</span>
+
+
+
+<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
+  &lt;component&gt;
+    &lt;structuredBody&gt;
+      &lt;component&gt;
+        &lt;section&gt;
+          &lt;entry&gt;
+            &lt;act classCode="ACT" moodCode="EVN"&gt;
+              &lt;templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/&gt;
+              &lt;id root="021439da-d151-4a58-8981-6a029ee75164"/&gt;
+              &lt;code/&gt;
+              &lt;statusCode code="completed"/&gt;
+              &lt;performer&gt;
+                &lt;assignedEntity&gt;
+                  &lt;templateId assigningAuthorityName="CCD Payer Entity"/&gt;
+                  &lt;id root="593cc913-0530-4210-89ec-8a8a92458cc6"/&gt;
+                &lt;/assignedEntity&gt;
+              &lt;/performer&gt;
+              &lt;participant&gt;
+                &lt;participantRole&gt;
+                  &lt;templateId assigningAuthorityName="CCD Covered Party"/&gt;
+                  &lt;id root="e3f1281b-e7c7-4448-96d8-c6e1e88d26b2"/&gt;
+                  &lt;code/&gt;
+                &lt;/participantRole&gt;
+              &lt;/participant&gt;
+              &lt;participant&gt;
+                &lt;participantRole&gt;
+                  &lt;templateId assigningAuthorityName="CCD Policy Subscriber"/&gt;
+                  &lt;id root="baa35ae0-9a4e-4e60-a002-0ba900219fad"/&gt;
+                &lt;/participantRole&gt;
+              &lt;/participant&gt;
+            &lt;/act&gt;
+          &lt;/entry&gt;
+        &lt;/section&gt;
+      &lt;/component&gt;
+    &lt;/structuredBody&gt;
+  &lt;/component&gt;
+&lt;/ClinicalDocument&gt;</pre>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+</div>
+</div>
+
+</body>
+</html>

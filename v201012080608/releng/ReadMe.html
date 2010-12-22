@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+
+
+
+
+<title>OpenHealthTools: Model Driven Health Tools Release Engineering Guide</title>
+
+
+
+<link rel="stylesheet" type="text/css"
+	href="http://static.sourceforge.net/css/phoneix/style.php?secure=0&amp;20080417-1657"
+	media="all" />
+	
+<link rel="stylesheet" type="text/css"
+	href="http://static.sourceforge.net/css/phoneix/ads.php?secure=0&amp;20080417-1657"
+	media="all" />
+	
+<link rel="stylesheet" type="text/css"
+	href="http://static.sourceforge.net/css/phoneix/project.php?secure=0&amp;20080417-1657"
+	media="all" />
+		
+<link rel="stylesheet" type="text/css"
+	href="http://static.sourceforge.net/css/phoneix/table.php?secure=0&amp;20080417-1657"
+	media="all" />
+	
+<link rel="stylesheet" type="text/css"
+	href="http://static.sourceforge.net/css/phoneix/forms.css?secure=0&amp;20080417-1657"
+	media="all" />
+	
+<link rel="stylesheet" type="text/css"
+	href="http://static.sourceforge.net/css/phoneix/droppy.php?secure=0&amp;20080417-1657"
+	media="all" />
+	
+<link rel="stylesheet" type="text/css"
+	href="http://static.sourceforge.net/css/phoneix/print.css?secure=0&amp;20080417-1657"
+	media="print" />
+
+
+<style type="text/css"> /* <![CDATA[ */
+@import "/branding/css/tigris.css";
+
+@import "/branding/css/inst.css";
+/* ]]> */
+</style>
+<link rel="stylesheet" type="text/css" href="/branding/css/print.css"
+	media="print" />
+<script src="/branding/scripts/tigris.js" type="text/javascript"></script>
+
+
+
+<script src="/branding/scripts/alm.js" type="text/javascript"></script>
+
+<style type="text/css">
+/* <![CDATA[ */
+@import "/branding/css/alm.css";
+/* ]]> */
+</style>
+
+
+
+
+</head>
+<body>
+
+<div id="doc3" class="yui-t6 docman">
+
+<div id="hd">
+<div class="yui-gf">
+<div class="yui-u first">
+<h1><a href="http://www.openhealthtools.org/index.htm" title="">OpenHealthTools.org</a></h1>
+
+<ul class="jump">
+	<li><a href="#content">Jump to main content</a></li>
+	<li><a href="#projectnav">Jump to project navigation</a></li>
+	<li><a href="/project/showfiles.php?group_id=181297#downloads">Jump
+	to downloads for Subversion pde-build plugin</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<div id="bd"><!-- begin content --> <a name="projectnav"></a>
+<div class="yui-gf title">
+<div class="yui-u first">
+<h1><a href="https://mdht.projects.openhealthtools.org/">Modeling
+MDT</a></h1>
+</div>
+
+<div class="subset">
+<ul>
+
+</ul>
+&nbsp;</div>
+<div style="clear: both;"></div>
+
+
+<a name="content"></a>
+
+<h4 class="titlebar">Modeling MDT org.openhealthtools.uml-build
+plugin: Release Engineering Guide </h4>
+
+<div><!-- DOCMANAGER DOCUMENT START -->
+<hr />
+<h1>Release Engineering Guide - Deprecated </h1>
+<p>This document describes the process for using the automated build
+for this project. It uses the Eclipse Release engineering framework
+(releng) to perform this task.</p>
+<h3>Basic steps</h3>
+<ol>
+	<li>Fetch the eclipse base builder from eclipse CVS repository</li>
+	<li>Download and unzip the subversion pde build plugin</li>
+	<li>Fetch the openhealthtools-pde-build builder from SVN</li>
+	<li>Start build</li>
+</ol>
+<hr />
+<h3>Build Instructions</h3>
+<ol>
+	<li><b>Create a new folder for the build (e.g. releng) and CD
+	to this directory.</b></li>
+
+	<li><b>Fetch the eclipse base builder from eclipse CVS
+	repository</b></li>
+	<p>Fetch the eclipse base builder using the following command</p>
+	<code>cvs -d<nobr> <wbr></wbr></nobr>:pserver:anonymous@dev.eclipse.org:/cvsroot/eclip<nobr>s<wbr></wbr></nobr>e
+	export -r HEAD org.eclipse.releng.basebuilder</code>
+	<li><b>Download the subversion pde build plugin from the
+	sourceforge.net svn-pde-build project</b></li>
+	<p>Download the <a
+		href="https://sourceforge.net/projects/svn-pde-build/">svn-pde-build</a>
+	zip file from the sourceforge web site.</p>
+
+	<p>Extract the svn-pde-build zip file over the
+	org.eclipse.releng.basebuilder directory.</p>
+	<li><b>Fetch the svn-pde-build builder from SVN</b></li>
+	<p></p>
+	
+	<code>
+	svn export https://mdht.projects.openhealthtools.org/svn/mdht/trunk/releng
+	</code>
+	
+	
+	<li><b>Start build</b></li>
+
+	<p>CD to the builder directory created by the svn export and start
+	the build with the following command.</p>
+	<code>java  -cp ../org.eclipse.releng.basebuilder/plugins/org.eclipse.equinox.launcher.jar org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile bui
+ld.xml -Dcomponent=openhealthtools-mdht-pde-build</code>
+	<p>The results of the build will be in the directory
+	...releng\mdht</p>
+</ol>
+<!-- sf.net/safe_html --> <!-- DOCMANAGER DOCUMENT END --></div>
+
+
+</div>
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Patient Summary - conformance rules</title>
+<shortdesc id="shortdesc">[ClinicalDocument: templateId <tt>2.16.840.1.113883.3.88.11.32.1</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>ClinicalDocument</category></metadata>
+<resourceid id="2.16.840.1.113883.3.88.11.32.1"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/MedicalDocument.html">IHE Medical Document</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.1</tt>)</li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ContinuityOfCareDocument.html">CCD Continuity Of Care Document</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1</tt>)</li>
+<li><b>C32-[CT1-1]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../AdvanceDirectivesSection.dita">Advance Directives Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.116</tt>)</li></ol></li>
+<li><b>C32-[CT1-2]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../AllergiesReactionsSection.dita">Allergies Reactions Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.102</tt>)</li></ol></li>
+<li><b>C32-[CT1-3]: </b><b>MAY</b> contain [0..*] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../Comment.dita">Comment</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.11</tt>)</li></ol></li>
+<li><b>C32-[CT1-4]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../ProblemListSection.dita">Problem List Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.103</tt>)</li></ol></li>
+<li><b>C32-[CT1-5]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../EncountersSection.dita">Encounters Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.127</tt>)</li></ol></li>
+<li><b>C32-[CT1-7]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../ImmunizationsSection.dita">Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.117</tt>)</li></ol></li>
+<li><b>C32-[CT1-9]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../PayersSection.dita">Payers Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.101</tt>)</li></ol></li>
+<li><b>C32-[CT1-11]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.112</tt>)</li></ol></li>
+<li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../SurgeriesSection.dita">Surgeries Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.108</tt>)</li></ol></li>
+<li><b>C32-[CT1-6]: </b><b>MAY</b> satisfy: Contains 0..* HealthcareProvider in cda:documentationOf/cda:serviceEvent/cda:performer</li>
+<li><b>C32-[CT1-8]: </b><b>SHALL</b> satisfy: Contains 0..* InformationSource in ancestor-or-self::./cda:author[1]</li>
+<li><b>C32-[CT1-10]: </b><b>SHOULD</b> satisfy: Contains 0..* LanguageSpoken in cda:recordTarget/cda:patientRole/cda:patient/cda:languageCommunication</li>
+<li><b>C32-[CT1-12]: </b><b>SHALL</b> satisfy: Contains 1..1 Person Information in cda:recordTarget/cda:patientRole</li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ContinuityOfCareDocument.html">CCD Continuity Of Care Document</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1</tt>)</li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.cdt.doc/classes/GeneralHeaderConstraints.html">CDT General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/MedicalDocument.html">IHE Medical Document</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.1</tt>)</li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FamilyHistorySection.html">CCD Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SocialHistorySection.html">CCD Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
+<li>[HITSP] <b>C32-[CT1-11]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.112</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProceduresSection.html">CCD Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
+<li>[HITSP] <b>C32-[CT1-5]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../EncountersSection.dita">Encounters Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.127</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
+<li>[HITSP] <b>C32-[CT1-7]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../ImmunizationsSection.dita">Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.117</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsSection.html">CCD Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicalEquipmentSection.html">CCD Medical Equipment Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.7</tt>)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FunctionalStatusSection.html">CCD Functional Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li></ol></li>
+<li>[HITSP] <b>C32-[CT1-1]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../AdvanceDirectivesSection.dita">Advance Directives Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.116</tt>)</li></ol></li>
+<li>[HITSP] <b>C32-[CT1-9]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../PayersSection.dita">Payers Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.101</tt>)</li></ol></li>
+<li>[CDT] <b>CONF-HP-21: </b><b>SHALL</b> contain [1..1] <tt>code</tt></li>
+<li>[CDT] <b>CONF-HP-24: </b><b>SHALL</b> contain [1..1] <tt>languageCode</tt></li>
+<li>[CCD] <b>CONF-15: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PurposeSection.html">CCD Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>)</li></ol></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>confidentialityCode</tt></li>
+<li>[CDT] <b>CONF-HP-23: </b><b>SHALL</b> contain [1..1] <tt>effectiveTime</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>realmCode</tt><tt>/@code</tt> = "US" </li>
+<li>[CDT] <b>CONF-HP-22: </b><b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt></li>
+<li>[HITSP] <b>C32-[CT1-2]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../AllergiesReactionsSection.dita">Allergies Reactions Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.102</tt>)</li></ol></li>
+<li>[HITSP] <b>C32-[CT1-3]: </b><b>MAY</b> contain [0..*] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../Comment.dita">Comment</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.11</tt>)</li></ol></li>
+<li>[HITSP] <b>C32-[CT1-4]: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../ProblemListSection.dita">Problem List Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.103</tt>)</li></ol></li>
+<li>[HITSP] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>contains <xref href="../SurgeriesSection.dita">Surgeries Section</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.108</tt>)</li></ol></li>
+<li>[CCD] <b>CONF-2: </b><b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent</li>
+<li>[CCD] <b>CONF-3: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR'</li>
+<li>[CCD] <b>CONF-4: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high</li>
+<li>[CCD] <b>CONF-6: </b><b>SHALL</b> satisfy: languageCode has the form nn, or nn-CC. The nn portion SHALL be an ISO-639-1 language code in lower case. The CC portion, if present, SHALL be an ISO-3166 country code in upper case</li>
+<li>[CCD] <b>CONF-8: </b><b>SHALL</b> satisfy: SHALL NOT contain templateId / @extension</li>
+<li>[CCD] <b>CONF-9: </b><b>SHALL</b> satisfy: effectiveTime is expressed with precision to include seconds</li>
+<li>[CCD] <b>CONF-10: </b><b>SHALL</b> satisfy: effectiveTime includes an explicit time zone offset</li>
+<li>[CCD] <b>CONF-11: </b><b>SHALL</b> satisfy: Contains one or two recordTarget</li>
+<li>[CCD] <b>CONF-12: </b><b>SHOULD</b> satisfy: Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization</li>
+<li>[CCD] <b>CONF-13: </b><b>SHALL</b> satisfy: If author has an associated representedOrganization with no assignedPerson or assignedAuthoringDevice, then the value for author / assignedAuthor / id / @NullFlavor SHALL be 'NA'</li>
+<li>[CCD] <b>CONF-14: </b><b>MAY</b> satisfy: Contains one or more informationRecipient</li>
+<li>[CCD] <b>CONF-28: </b><b>MAY</b> satisfy: The value for component / structuredBody / component / section / entry / @typeCode MAY be 'DRIV' "is derived from" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate that the CDA Narrative Block is fully derived from the structured entries.</li>
+<li>[CCD] <b>CONF-29: </b><b>SHOULD</b> satisfy: A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &lt;content&gt;).</li>
+<li>[CDT] <b>CONF-HP-16: </b><b>SHALL</b> satisfy: The extension attribute of the typeId element SHALL be POCD_HD000040.</li>
+<li>[CDT] <b>CONF-HP-17: </b><b>SHALL</b> satisfy: The ClinicalDocument/id element SHALL be present. The ClinicalDocument/id/@root attribute SHALL be a syntactically correct UUID or OID.</li>
+<li>[CDT] <b>CONF-HP-18: </b><b>SHALL</b> satisfy: UUIDs SHALL be represented in the form XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXX, where each X is a character from the set [A-Fa-f0-9].</li>
+<li>[CDT] <b>CONF-HP-19: </b><b>SHALL</b> satisfy: OIDs SHALL be represented in dotted decimal notation, where each decimal number is either 0, or starts with a nonzero digit. More formally, an OID SHALL be in the form ([0-2])(.([1-9][0-9]*|0))+.</li>
+<li>[CDT] <b>CONF-HP-20: </b><b>SHALL</b> satisfy: OIDs SHALL be no more than 64 characters in length.</li>
+<li>[CDT] <b>CONF-HP-25: </b><b>SHALL</b> satisfy: languageCode SHALL be in the form nn, or nn-CC.</li>
+<li>[CDT] <b>CONF-HP-26: </b><b>SHALL</b> satisfy: The nn portion of languageCode SHALL be a legal ISO-639-1 language code in lowercase.</li>
+<li>[CDT] <b>CONF-HP-27: </b><b>SHALL</b> satisfy: The CC portion languageCode, if present, SHALL be an ISO-3166 country code in uppercase.</li>
+<li>[CDT] <b>CONF-HP-28: </b><b>SHALL</b> satisfy: Both setId and versionNumber SHALL be present or both SHALL be absent.</li>
+<li>[CDT] <b>CONF-HP-29: </b><b>SHALL</b> satisfy: The @extension and/or @root of setId and id SHALL be different when both are present.</li>
+<li>[CDT] <b>CONF-HP-30: </b><b>SHALL</b> satisfy: A copyTime element SHALL NOT be present.</li>
+<li>[HITSP] <b>C32-[CT1-6]: </b><b>MAY</b> satisfy: Contains 0..* HealthcareProvider in cda:documentationOf/cda:serviceEvent/cda:performer</li>
+<li>[HITSP] <b>C32-[CT1-8]: </b><b>SHALL</b> satisfy: Contains 0..* InformationSource in ancestor-or-self::./cda:author[1]</li>
+<li>[HITSP] <b>C32-[CT1-10]: </b><b>SHOULD</b> satisfy: Contains 0..* LanguageSpoken in cda:recordTarget/cda:patientRole/cda:patient/cda:languageCommunication</li>
+<li>[HITSP] <b>C32-[CT1-12]: </b><b>SHALL</b> satisfy: Contains 1..1 Person Information in cda:recordTarget/cda:patientRole</li>
+</ol>
+<codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <realmCode code="US"/>
+  <templateId root="2.16.840.1.113883.10.20.1" assigningAuthorityName="CCD Continuity Of Care Document"/>
+  <templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE Medical Document"/>
+  <templateId root="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP Patient Summary"/>
+  <id root="13a912a3-1493-4d63-ba26-b6c8934002de"/>
+  <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of episode note"/>
+  <title/>
+  <effectiveTime/>
+  <confidentialityCode/>
+  <languageCode/>
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.1" assigningAuthorityName="CCD Advance Directives Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.34" assigningAuthorityName="IHE Advance Directives Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.35" assigningAuthorityName="IHE Coded Advance Directives Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.116" assigningAuthorityName="HITSP Advance Directives Section"/>
+          <code code="42348-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Advance directives"/>
+          <title>Advance directives</title>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.2" assigningAuthorityName="CCD Alerts Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13" assigningAuthorityName="IHE Allergies Reactions Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.102" assigningAuthorityName="HITSP Allergies Reactions Section"/>
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+          <title>Allergies, adverse reactions, alerts</title>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.11" assigningAuthorityName="CCD Problem Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6" assigningAuthorityName="IHE Active Problems Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.103" assigningAuthorityName="HITSP Problem List Section"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
+          <title>Problem list</title>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.3" assigningAuthorityName="CCD Encounters Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3" assigningAuthorityName="IHE Encounter History Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.127" assigningAuthorityName="HITSP Encounters Section"/>
+          <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of encounters"/>
+          <title>History of encounters</title>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.6" assigningAuthorityName="CCD Immunizations Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23" assigningAuthorityName="IHE Immunizations Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.117" assigningAuthorityName="HITSP Immunizations Section"/>
+          <code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of immunizations"/>
+          <title>History of immunizations</title>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.9" assigningAuthorityName="CCD Payers Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7" assigningAuthorityName="IHE Payers Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.101" assigningAuthorityName="HITSP Payers Section"/>
+          <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
+          <title>Payment sources</title>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.8" assigningAuthorityName="CCD Medications Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19" assigningAuthorityName="IHE Medications Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.112" assigningAuthorityName="HITSP Medications Section"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use"/>
+          <title>History of medication use</title>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.12" assigningAuthorityName="CCD Procedures Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11" assigningAuthorityName="IHE Surgeries Section"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12" assigningAuthorityName="IHE Coded Surgeries Section"/>
+          <templateId root="2.16.840.1.113883.3.88.11.83.108" assigningAuthorityName="HITSP Surgeries Section"/>
+          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/>
+          <title>History of procedures</title>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>]]></codeblock>
+</body>
+</topic>

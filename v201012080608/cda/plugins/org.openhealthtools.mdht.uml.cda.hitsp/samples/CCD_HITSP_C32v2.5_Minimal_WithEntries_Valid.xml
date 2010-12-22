@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The following sample document depicts a fictional character’s health summary. 
+	Any resemblance to a real person is coincidental. -->
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sdtc="urn:hl7-org:sdtc"
+	xsi:schemaLocation="urn:hl7-org:v3 schemas/C32_CDA.xsd">
+	<realmCode code="US"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="2.16.840.1.113883.3.27.1776" assigningAuthorityName="CDA/R2"/>
+	<templateId root="2.16.840.1.113883.10.20.1" assigningAuthorityName="CCD"/>
+	<templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDA4CDT"/>
+	<templateId root="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP/C32"/>
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"
+		assigningAuthorityName="IHE PCC Medical Documents Specification"/>
+	<id root="2.16.840.1.113883.3.72" extension="CCD_HITSP_C32_Minimal_WithEntries_Valid"
+		assigningAuthorityName="NIST Healthcare Project"/>
+	<code code="34133-9" displayName="Summarization of episode note"
+		codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+	<title>Sample C32 v2.5 Document</title>
+	<effectiveTime value="20071213155200-0500"/>
+	<confidentialityCode/>
+	<languageCode code="en-US"/>
+	<recordTarget>
+		<patientRole>
+			<id root="2.16.840.1.113883.3.72" extension="PAT-HL-00001" assigningAuthorityName="NIST Healthcare Project"/>
+			<addr>
+				<streetAddressLine>100 Bureau Drive</streetAddressLine>
+				<city>Rockville</city>
+				<state>MD</state>
+				<postalCode>20899</postalCode>
+			</addr>
+			<telecom/>
+			<patient>
+				<name use="L">
+					<given qualifier="CL">Henry</given>
+					<family qualifier="BR">Levin</family>
+					<suffix>the 7th</suffix>
+				</name>
+				<administrativeGenderCode code="UN" displayName="Undifferentiated"
+					codeSystemName="HL7 AdministrativeGenderCodes"
+					codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19320924"/>
+				<maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2"
+					codeSystemName="MaritalStatusCode"/>
+				<religiousAffiliationCode code="1022" displayName="Independent"
+					codeSystem="2.16.840.1.113883.5.1076" codeSystemName="ReligiousAffiliation"/>
+				<raceCode code="1004-1" displayName="American Indian"
+					codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity"/>
+				<sdtc:raceCode code="2058-6" displayName="African American"
+					codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity"/>
+				<ethnicGroupCode code="2178-2" displayName="Latin American"
+					codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity"/>
+				<languageCommunication>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"
+						assigningAuthorityName="IHE PCC"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.2"
+						assigningAuthorityName="HITSP C83"/>
+					<languageCode code="en-US"/>
+					<preferenceInd value="true"/>
+				</languageCommunication>
+				<languageCommunication>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"
+						assigningAuthorityName="IHE PCC"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.2"
+						assigningAuthorityName="HITSP C83"/>
+					<languageCode code="fr"/>
+					<modeCode code="EWR" codeSystem="2.16.840.1.113883.5.60"
+						codeSystemName="HL7 LanguageAbilityMode"/>
+					<preferenceInd value="false"/>
+				</languageCommunication>
+
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="200910011200"/>
+		<assignedAuthor>
+			<id/>
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>Len Gallagher</name>
+			</assignedPerson>
+			<representedOrganization>
+				<name>NIST Healthcare Testing Laboratory</name>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<author typeCode="AUT" contextControlCode="OP">
+		<time/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id/>
+		</assignedAuthor>
+	</author>
+	
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id/>
+				<name>NIST Healthcare Testing Laboratory</name>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<effectiveTime>
+				<low value="19650120"/>
+				<high value="20091031"/>
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+				<functionCode code="CP" displayName="Consulting Provider"
+					codeSystem="2.16.840.1.113883.12.443" codeSystemName="Provider Role">
+					<originalText>Consulting Provider</originalText>
+				</functionCode>
+				<time>
+					<low value="2006"/>
+					<high value="2007"/>
+				</time>
+				<assignedEntity>
+					<id root="78A150ED-B890-49dc-B716-5EC0027B3982" extension="ProviderID"/>
+					<code code="200000000X " displayName="Allopathic and Osteopathic Physicians"
+						codeSystem="2.16.840.1.113883.6.101" codeSystemName="ProviderCodes"/>
+					<addr nullFlavor="NI"/>
+					<telecom nullFlavor="NI"/>
+					<assignedPerson>
+						<name>
+							<prefix partType="PFX">Dr.</prefix>
+							<given partType="GIV">Nodda</given>
+							<family partType="FAM">Realdoc</family>	
+						</name>
+					</assignedPerson>
+					<sdtc:patient>
+						<sdtc:id root="78A150ED-B890-49dc-B716-5EC0027B3983"
+							extension="MedicalRecordNumber1"/>
+					</sdtc:patient>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<effectiveTime>
+				<low nullFlavor="ASKU"/>
+				<high nullFlavor="ASKU"/>
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<time/>
+				<assignedEntity>
+					<id/>
+					<addr use="HP">
+						<streetAddressLine>17 Daws Road</streetAddressLine>
+						<city>Blue Bell</city>
+						<state>MA</state>
+						<postalCode>00000</postalCode>
+						<country>US</country>
+					</addr>
+					<addr use="HV">
+						<streetAddressLine>41 IDX Dr </streetAddressLine>
+						<city>South Burlington </city>
+						<state>VT</state>
+						<postalCode>05403</postalCode>
+						<country>US</country>
+					</addr>
+					<addr use="WP">
+						<streetAddressLine>116 Huntington Ave</streetAddressLine>
+						<streetAddressLine>2nd Floor</streetAddressLine>
+						<city>Boston</city>
+						<state>MA</state>
+						<postalCode>02116</postalCode>
+						<country>US</country>
+					</addr>
+					<telecom use="HP" value="tel:+1-999-999-9999"/>
+					<telecom use="WP" value="tel:+1-888-888-8888;ext=9999"/>
+					<telecom use="MC" value="tel:+1-777-777-7777"/>
+					<telecom value="mailto:user@hostname"/>
+					<assignedPerson>
+						<name use="L">
+							<prefix qualifier="AC">Dr.</prefix>
+							<given>Margaret</given>
+							<given>Ross</given>
+							<family>Ellen</family>
+						</name>
+						<name use="P">
+							<given qualifier="CL">Meg</given>
+							<family>Ellen</family>
+						</name>
+						<name use="P">
+							<given>Margaret</given>
+							<given qualifier="BR">Josephine</given>
+							<family qualifier="BR">Ross</family>
+						</name>
+						<name use="P">
+							<prefix qualifier="AC">Dr.</prefix>
+							<given>Margaret</given>
+							<given>Josephine</given>
+							<family qualifier="BR">Ross</family>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<component>
+		<structuredBody>
+			<component>
+				<!--Allergies and Alerts -->
+				<section>
+					<templateId root="2.16.840.1.113883.3.88.11.83.102"
+						assigningAuthorityName="HITSP C83"/>
+					<templateId root="2.16.840.1.113883.10.20.1.2"
+						assigningAuthorityName="HL7 SDTC CCD"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"
+						assigningAuthorityName="IHE PCC"/>
+					<code code="48765-2" displayName="Allergies, adverse reactions, alerts"
+						codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Allergies and Alert Problems</title>
+					<text>
+						<paragraph ID="allergy001">Penicillin</paragraph>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"
+								assigningAuthorityName="HL7 SDTC CCD"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"
+								assigningAuthorityName="HITSP C83"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"
+								assigningAuthorityName="IHE PCC"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"
+								assigningAuthorityName="IHE PCC"/>
+							<id/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="1999"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ" inversionInd="false">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"
+										assigningAuthorityName="IHE PCC"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"
+										assigningAuthorityName="IHE PCC"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"
+										assigningAuthorityName="HL7 SDTC CCD"/>
+									<id root="6342618b-38b2-445a-b819-0867030d0380"/>
+									<code code="420134006"
+										displayName="propensity to adverse reactions"
+										codeSystemName="SNOMED CT"
+										codeSystem="2.16.840.1.113883.6.96"/>
+
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="1999"/>
+										<high value="1999"/>
+									</effectiveTime>
+									<value xsi:type="CD" nullFlavor="NA"/>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="70618" displayName="Penicillin"
+												codeSystem="2.16.840.1.113883.6.88"
+												codeSystemName="RxNorm">
+												<originalText>
+												<reference value="#allergy001"/>
+												</originalText>
+												</code>
+												<name/>
+											</playingEntity>
+										</participantRole>
+									</participant>
+
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<!--Conditions or Problems-->
+				<section>
+					<templateId root="2.16.840.1.113883.3.88.11.83.103"
+						assigningAuthorityName="HITSP C83"/>
+					<templateId root="2.16.840.1.113883.10.20.1.11"
+						assigningAuthorityName="HL7 SDTC CCD"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"
+						assigningAuthorityName="IHE PCC"/>
+					<code code="11450-4" displayName="Problems" codeSystem="2.16.840.1.113883.6.1"
+						codeSystemName="LOINC"/>
+					<title>Conditions or Problems</title>
+					<text>
+						<paragraph ID="cond001">Migraine</paragraph>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"
+								assigningAuthorityName="HITSP C83"/>
+							<templateId root="2.16.840.1.113883.10.20.1.27"
+								assigningAuthorityName="HL7 SDTC CCD"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"
+								assigningAuthorityName="IHE PCC"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"
+								assigningAuthorityName="IHE PCC"/>
+							<id/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="1999"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ" inversionInd="false">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"
+										assigningAuthorityName="HL7 SDTC CCD"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"
+										assigningAuthorityName="IHE PCC"/>
+									<id root="0fdf994f-2839-482d-bb92-f9b9d1a1786f"/>
+									<code code="64572001" displayName="Condition"
+										codeSystemName="SNOMED CT"
+										codeSystem="2.16.840.1.113883.6.96"/>
+									<text>
+										<reference value="cond001"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="1999"/>
+										<high value="1999"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="37796009" displayName="Migraine"
+										codeSystemName="SNOMED CT"
+										codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<!--Medications-->
+				<section>
+					<templateId root="2.16.840.1.113883.3.88.11.83.112"
+						assigningAuthorityName="HITSP C83"/>
+					<templateId root="2.16.840.1.113883.10.20.1.8"
+						assigningAuthorityName="HL7 SDTC CCD"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"
+						assigningAuthorityName="IHE PCC"/>
+					<code code="10160-0" displayName="History of medication use"
+						codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Medications - Prescription and Non-Prescription</title>
+					<text>
+						<paragraph ID="meds001">Vitamin D3 (cholecalciferol)</paragraph>
+					</text>
+					<entry>
+						<!--CCD Medication activity - Required-->
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.24"
+								assigningAuthorityName="HL7 SDTC CCD"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"
+								assigningAuthorityName="IHE PCC"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"
+								assigningAuthorityName="IHE PCC"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.8"
+								assigningAuthorityName="HITSP C83"/>
+							<id/>
+							<code/>
+							<statusCode code="completed"/>
+							<consumable>
+								<!--CCD Product - Required-->
+								<manufacturedProduct>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"
+										assigningAuthorityName="IHE PCC"/>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.8.2"
+										assigningAuthorityName="HITSP C83"/>
+									<!-- Product template -->
+									<manufacturedMaterial>
+										<code code="371481" codeSystem="2.16.840.1.113883.6.88"
+											displayName="Cholecalciferol Oral Tablet">
+											<originalText> Cholecalciferol <reference
+												value="#meds001"/>
+											</originalText>
+										</code>
+										<name>Vitamin D3 (cholecalciferol)</name>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+
+
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<!--Immunizations-->
+				<section>
+					<templateId root="2.16.840.1.113883.3.88.11.83.117"
+						assigningAuthorityName="HITSP C83"/>
+					<templateId root="2.16.840.1.113883.10.20.1.6"
+						assigningAuthorityName="HL7 SDTC CCD"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"
+						assigningAuthorityName="IHE PCC"/>
+					<code code="11369-6" displayName="History of immunizations"
+						codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Immunizations</title>
+					<text>
+						<paragraph ID="imm01">Hepatitis A vaccine</paragraph>
+					</text>
+					<entry>
+						<!--CCD Medication activity - Required-->
+						<substanceAdministration classCode="SBADM" moodCode="EVN"
+							negationInd="false">
+							<templateId root="2.16.840.1.113883.10.20.1.24"
+								assigningAuthorityName="HL7 SDTC CCD"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.13"
+								assigningAuthorityName="HITSP C83"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"
+								assigningAuthorityName="IHE PCC"/>
+							<id/>
+							<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4"
+								codeSystemName="ActCode"/>
+							<statusCode code="completed"/>
+							<effectiveTime nullFlavor="UNK"/>
+							<consumable>
+								<manufacturedProduct classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.1.53"
+										assigningAuthorityName="HL7 SDTC CCD"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"
+										assigningAuthorityName="IHE PCC "/>
+									<manufacturedMaterial>
+										<code code="52" codeSystem="2.16.840.1.113883.6.59"
+											displayName="Hepatitis A vaccine">
+											<originalText> Hepatitis A vaccine <reference
+												value="#imm01"/>
+											</originalText>
+										</code>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.openhealthtools.mdht.uml.rsm"
+      label="%featureName"
+      version="0.7.0.qualifier"
+      provider-name="%featureProvider">
+
+   <description url="http://mdht.projects.openhealthtools.org">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates/site.xml"/>
+   </url>
+
+   <requires>
+   <import feature="org.openhealthtools.mdht.uml.hdf" version="0.7.0" match="greaterOrEqual"/>
+      <import feature="org.openhealthtools.mdht.uml" version="0.7.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.hdf.ui.rsm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.hdf.tooling.rsm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

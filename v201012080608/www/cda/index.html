@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="mystyle.css" rel="stylesheet" type="text/css"?>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>CDA Tools</title>
+
+<style>
+img {
+	border: 0;
+}
+
+a:link {
+	color: #0000FF
+}
+</style>
+</head>
+
+<body>
+<h1 style="text-align: center">CDA Tools: Model-Driven Clinical
+Documents</h1>
+<p><a href="/index.html">Back to MDHT home page</a></p>
+<p>See <a href="doc/"><b>CDA Tools Documentation</b></a> for
+details on installation and use.</p>
+
+<div class="h2">
+<h2>Overview</h2>
+<p>CDA Tools is a component within the modeling tools project. This
+component will develop a UML approach for constraining HL7 Clinical
+Document Architecture (CDA) to create reusable templates and
+implementation guides. Tooling for consumers and implementers of CDA
+will be produced by generating runtime components from models of
+implementation guides. Objectives of the CDA Tools are to:</p>
+<ul>
+	<li>Accelerate and lower cost of adopting CDAr2 standard.</li>
+	<li>Provide a model-driven framework for generating runtime API
+	that supports:
+	<ul>
+		<li>Domain specific API (e.g. BloodPressureReading instead of
+		Observation)</li>
+		<li>Construction of instances that conform to one or more
+		templates</li>
+		<li>Consumption of XML instances that deserialize into
+		appropriate template</li>
+	</ul>
+	</li>
+	<li>Support the validation of instances against constraints
+	defined in model.</li>
+</ul>
+<p>For a more detailed description of this project's objectives, see
+HL7 News (April 2009), <a
+	href="/files/documents/58/186/ModelingCDA_HL7News.pdf">Modeling CDA
+with Standards-Based Tools</a>.</p>
+</div>
+
+<div class="h2">
+<h2>CDA Tools Process Flow</h2>
+<h3>User Roles</h3>
+<ul>
+	<li>Healthcare IT Standards Developer/Publisher
+	<ul>
+		<li>Create new models/templates</li>
+		<li>Combine and extend existing models</li>
+		<li>Publish Implementation Guides (IG), IHE Profiles, Data
+		Dictionaries</li>
+	</ul>
+	</li>
+	<li>Healthcare IT Standards User/Implementer
+	<ul>
+		<li>Use generated runtime API in healthcare data exchange
+		applications (e.g. EMR adapters to export/import CDA instances)</li>
+		<li>Minor modifications to existing models/templates</li>
+	</ul>
+	</li>
+</ul>
+<p><img alt="CDA Tools Process Flow" src="images/ProcessFlow.png" /></p>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11131278-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

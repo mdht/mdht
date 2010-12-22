@@ -1,0 +1,37 @@
+Completion of CCD constraints
+-------------------------------------------
+* First pass section completion (without conf IDs)
+ - Document Header
+ - Alerts
+ - Problems
+ - Results
+ - Vitals Signs
+ - Immunization
+ 
+* Completion with conf IDs
+ - through CONF-68
+ 
+ 
+* Medications
+ - completed CONF-298 thru CONF-333
+
+ Issues
+ ------------------------------------------
+ * an association MAY be present, but if present SHALL have specific typeCode.
+ 	See MedicationActivity, rules 330 and 333
+ 
+Conformance rules not included
+-------------------------------------------
+CONF-7: CCD SHALL contain one or more ClinicalDocument / templateId.
+ * this could never fail in MDHT implementation
+
+ 
+Publishing TODO
+-------------------------------------------
+* Appendix of defined templates, sorted by ID (as table)
+	- also referenced templates
+* Appendix of sorted Conf Rule IDs, with hyperlink to defining class
+* Appendix of referenced vocabulary
+* Table of section cardinality (see Cons Note, or as in HITSP)
+* 
+

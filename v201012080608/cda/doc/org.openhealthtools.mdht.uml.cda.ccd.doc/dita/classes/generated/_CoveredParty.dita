@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Covered Party - conformance rules</title>
+<shortdesc id="shortdesc">[ParticipantRole: templateId <tt>null</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>ParticipantRole</category></metadata>
+<resourceid id="null"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ParticipantRole.html">CDA Participant Role</xref></li>
+<li><b>CONF-59: </b><b>SHOULD</b> contain [1..*] <tt>id</tt></li>
+<li><b>CONF-60: </b><b>SHOULD</b> contain [1..1] <tt>code</tt></li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Role.html">RIM Role</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ParticipantRole.html">CDA Participant Role</xref></li>
+<li>[CCD] <b>CONF-59: </b><b>SHOULD</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>CONF-60: </b><b>SHOULD</b> contain [1..1] <tt>code</tt></li>
+<li>[CDA] <b>SHALL</b> satisfy: <codeblock>self.playingDevice.oclIsUndefined() or self.playingEntity.oclIsUndefined()</codeblock></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>
