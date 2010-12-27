@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Support</title>
+<shortdesc conref="generated/_Support.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_Support.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_Support.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_Support.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_Support.dita#classId/aggregate">
+<li></li>
+</ol>
+<p></p>
+<fig>
+<title>Support example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_Support.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>

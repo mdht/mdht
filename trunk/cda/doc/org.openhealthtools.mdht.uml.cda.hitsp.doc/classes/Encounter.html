@@ -24,34 +24,36 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Encounter</h1>
+<h1 class="title topictitle1">Encounter</h1>
 
 
 
-<div><p>[Encounter: templateId <tt>2.16.840.1.113883.3.88.11.83.16</tt>]</p>
+<div class="body"><p class="shortdesc">[Encounter: templateId <tt class="ph tt">2.16.840.1.113883.3.88.11.83.16</tt>]</p>
 
 
 <div class="section">
-<p>The encounter entry contains data describing the interactions between the patient and clinicians. Interaction includes both in-person and non-in-person encounters such as telephone and e-mail communication.</p>
+<p class="p">The encounter entry contains data describing the interactions between the patient and clinicians. Interaction includes both in-person and non-in-person encounters such as telephone and e-mail communication.</p>
 
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/EncounterActivity.html">IHE Encounter Activity</a> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/EncounterActivity.html">IHE Encounter Activity</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
 
-<li><strong>C83-[DE-16.02-1]: </strong><strong>SHOULD</strong> contain [1..1] <tt>code</tt>, which <strong>SHOULD</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.80.32 EncounterType DYNAMIC 20081218</li>
+<li class="li"><strong class="ph b">C83-[DE-16.02-1]: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHOULD</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.80.32 EncounterType DYNAMIC 20081218</li>
 
-<li><strong>C154-[DE-16.07-1]: </strong><strong>MAY</strong> contain [0..1] <tt>priorityCode</tt>, which <strong>MAY</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.80.33 Admission Type (NUBC) STATIC</li>
+<li class="li"><strong class="ph b">C154-[DE-16.07-1]: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">priorityCode</tt>, which <strong class="ph b">MAY</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.80.33 Admission Type (NUBC) STATIC</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Encounter example</span>
+<p class="p"/>
+
+<div class="fig fignone"><span class="figcap">Figure 1. Encounter example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -63,7 +65,7 @@
               &lt;templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/&gt;
               &lt;templateId root="2.16.840.1.113883.3.88.11.83.16" assigningAuthorityName="HITSP Encounter"/&gt;
-              &lt;id root="de0a0aa3-4e24-4057-966b-07b0c1a336ee"/&gt;
+              &lt;id root="ac539b7f-c248-4595-93cd-516379efc81e"/&gt;
               &lt;code codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4"/&gt;
               &lt;text/&gt;
               &lt;effectiveTime&gt;
@@ -83,9 +85,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

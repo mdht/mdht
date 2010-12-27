@@ -24,39 +24,41 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Plan Of Care Activity Procedure</h1>
+<h1 class="title topictitle1">Plan Of Care Activity Procedure</h1>
 
 
 
-<div><p>[Procedure: templateId <tt>2.16.840.1.113883.10.20.1.25</tt>]</p>
+<div class="body"><p class="shortdesc">[Procedure: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.25</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Procedure.html">CDA Procedure</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Procedure.html">CDA Procedure</a></li>
 
-<li>Conforms to <a href="PlanOfCareActivity.html">Plan Of Care Activity</a></li>
+<li class="li">Conforms to <a class="xref" href="PlanOfCareActivity.html">Plan Of Care Activity</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt></li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
 
-<li><strong>SHALL</strong> satisfy: <pre class="codeblock">self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: moodCodeValue<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ
   or self.moodCode = vocab::x_DocumentProcedureMood::PRMS or self.moodCode = vocab::x_DocumentProcedureMood::PRP
   or self.moodCode = vocab::x_DocumentProcedureMood::RQO</pre>
+</li>
+</ul>
 </li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Plan Of Care Activity Procedure example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Plan Of Care Activity Procedure example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -65,7 +67,7 @@
           &lt;entry&gt;
             &lt;procedure&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.25"/&gt;
-              &lt;id root="fdcc5567-0b13-4095-a106-d3bf09e95836"/&gt;
+              &lt;id root="17caa107-f2ce-4b69-82f7-9243e3673d34"/&gt;
             &lt;/procedure&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -78,9 +80,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

@@ -18,8 +18,6 @@
 <li>contains <xref href="../AdvanceDirectiveObservation.dita">Advance Directive Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.17</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "42348-3" <i>Advance directives</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
@@ -38,7 +36,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.17" assigningAuthorityName="CCD Advance Directive Observation"/>
-              <id root="5778b553-57a9-40ad-a650-4ac3eca18c7d"/>
+              <id root="e74ea9d5-2a12-45b8-a06c-73d252528fc8"/>
               <code/>
               <statusCode code="completed"/>
               <effectiveTime>

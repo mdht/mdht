@@ -40,8 +40,6 @@ during a colonoscopy.</p>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
@@ -61,6 +59,14 @@ during a colonoscopy.</p>
           <templateId assigningAuthorityName="CDT Diagnostic Findings"/>
           <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
           <title>Relevant diagnostic tests and/or laboratory data</title>
+          <entry>
+            <organizer moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
+              <id root="3a88cfad-1db7-4f97-89fb-757ae5eb1bb8"/>
+              <code/>
+              <statusCode/>
+            </organizer>
+          </entry>
         </section>
       </component>
     </structuredBody>

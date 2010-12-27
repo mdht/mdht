@@ -24,46 +24,95 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Supply Activity</h1>
+<h1 class="title topictitle1">Supply Activity</h1>
 
 
 
-<div><p>[Supply: templateId <tt>2.16.840.1.113883.10.20.1.34</tt>]</p>
+<div class="body"><p class="shortdesc">[Supply: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.34</tt>]</p>
 
 
 <div class="section">
+<p class="p">A medication activity is used to describe what is administered whereas a supply activity is used to describe what has been dispensed.</p>
+
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</a></li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+<li class="li"><strong class="ph b">CONF-318: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
 
-<li><strong>SHOULD</strong> contain [1..1] <tt>statusCode</tt></li>
+<li class="li"><strong class="ph b">CONF-319: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">statusCode</tt></li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entryRelationship</tt>, such that it<ol type="a">
-<li>contains <a href="MedicationStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.47]">Medication Status Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="MedicationStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.47]">Medication Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.47</tt>)</li>
 </ol>
 </li>
 
-<li><strong>MAY</strong> contain [0..*] <tt>entryRelationship</tt>, such that it<ol type="a">
-<li>has @typeCode="SUBJ" <em>SUBJ (has subject)</em></li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
-<li>contains <a href="FulfillmentInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.43]">Fulfillment Instruction</a> (templateId: <tt>2.16.840.1.113883.10.20.1.43</tt>)</li>
+<li class="li">contains <a class="xref" href="FulfillmentInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.43]">Fulfillment Instruction</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.43</tt>)</li>
 </ol>
 </li>
 
-<li><strong>SHOULD</strong> contain [1..1] <tt>effectiveTime</tt></li>
+<li class="li"><strong class="ph b">CONF-320: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Indicates the actual or intended time of dispensing.</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-322: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">quantity</tt><ul class="ul"><li class="li">Indicates the actual or intended supply quantity.</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-321: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">repeatNumber</tt><ul class="ul"><li class="li">Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-317: </strong><strong class="ph b">SHALL</strong> satisfy: Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-323: </strong><strong class="ph b">MAY</strong> satisfy: Contains one or more author.<ul class="ul"><li class="li">Indicates the prescriber.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.author-&gt;isEmpty()</pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-324: </strong><strong class="ph b">MAY</strong> satisfy: Contains one or more performer.<ul class="ul"><li class="li">Indicates the person dispensing the product.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.performer-&gt;isEmpty()</pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-325: </strong><strong class="ph b">MAY</strong> satisfy: Contains exactly one participant / @typeCode = "LOC".<ul class="ul"><li class="li">Iindicates the supply location.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::LOC)</pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-326: </strong><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+   and rel.observation.code.code = '48766-0'))</pre>
+</li>
+</ul>
+</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Supply Activity example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Supply Activity example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -72,9 +121,11 @@
           &lt;entry&gt;
             &lt;supply classCode="SPLY"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.34" assigningAuthorityName="CCD Supply Activity"/&gt;
-              &lt;id root="05a463aa-38c0-40cc-a206-5d640c8b6f50"/&gt;
+              &lt;id root="74b25353-a5c7-4839-b431-08604783a19b"/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime/&gt;
+              &lt;repeatNumber/&gt;
+              &lt;quantity/&gt;
             &lt;/supply&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -87,9 +138,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

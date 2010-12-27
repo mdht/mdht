@@ -17,8 +17,6 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PhysicalExamSection.html">IHE Physical Exam Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.9.15</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PhysicalExamNarrativeSection.html">IHE Physical Exam Narrative Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.24</tt>)</li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PhysicalExamSection.html">IHE Physical Exam Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.9.15</tt>)</li>

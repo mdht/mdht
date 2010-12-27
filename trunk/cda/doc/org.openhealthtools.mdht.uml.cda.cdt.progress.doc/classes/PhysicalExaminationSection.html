@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Physical Examination Section</h1>
+<h1 class="title topictitle1">Physical Examination Section</h1>
 
 
 
-<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.2.10</tt>]</p>
+<div class="body"><p class="shortdesc">[Section: templateId <tt class="ph tt">2.16.840.1.113883.10.20.2.10</tt>]</p>
 
 
 <div class="section">
-<p>The Physical Examination section includes direct observations made by the clinician.
+<p class="p">The Physical Examination section includes direct observations made by the clinician.
 The examination may include the use of simple instruments and may also describe
 simple maneuvers performed directly on the patient's body. This section only includes
 observations made by the examining clinician using inspection, palpation, auscultation,
@@ -46,7 +46,7 @@ Examination Subsections. Note that Vital Signs can be a top-level section or sub
 of Physical Exam.</p>
 
 
-<p>The physical findings included in this section describe direct observations made by the
+<p class="p">The physical findings included in this section describe direct observations made by the
 clinician divided by organ or body system and may be included under appropriate
 subsections to Physical Exam. Systems are typically listed cephalic to caudal (i.e.,
 starting with the head) and may include all body systems or only those pertinent to the
@@ -58,26 +58,26 @@ Peripheral Vascular, and Neurologic. A detailed Mental Status Examination may be
 included when pertinent.</p>
 
 
-<p>The Physical Examination section may contain multiple nested subsections: Vital Signs,
+<p class="p">The Physical Examination section may contain multiple nested subsections: Vital Signs,
 General Status, and those listed in Appendix D: List of Additional Physical
 Examination Subsections.</p>
 
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li><strong>CONF-HP-85: </strong><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29545-1" <em>PHYSICAL FINDINGS</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">CONF-HP-85: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "29545-1" <em class="ph i">PHYSICAL FINDINGS</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Physical Examination Section example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Physical Examination Section example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -96,9 +96,9 @@ Examination Subsections.</p>
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
 </div>
 </div>
 

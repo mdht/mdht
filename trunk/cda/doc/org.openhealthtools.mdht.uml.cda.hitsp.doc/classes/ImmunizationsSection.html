@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Immunizations Section</h1>
+<h1 class="title topictitle1">Immunizations Section</h1>
 
 
 
-<div><p>[Section: templateId <tt>2.16.840.1.113883.3.88.11.83.117</tt>]</p>
+<div class="body"><p class="shortdesc">[Section: templateId <tt class="ph tt">2.16.840.1.113883.3.88.11.83.117</tt>]</p>
 
 
 <div class="section">
-<p>
+<p class="p">
     The Immunizations Section contains information describing the immunizations administered to the
     patient. 
 </p>
@@ -40,22 +40,24 @@
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ImmunizationsSection.html">IHE Immunizations Section</a> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.23</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ImmunizationsSection.html">IHE Immunizations Section</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.3.23</tt>)</li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="Immunization.html" title="[SubstanceAdministration: templateId 2.16.840.1.113883.3.88.11.83.13]">Immunization</a> (templateId: <tt>2.16.840.1.113883.3.88.11.83.13</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="Immunization.html" title="[SubstanceAdministration: templateId 2.16.840.1.113883.3.88.11.83.13]">Immunization</a> (templateId: <tt class="ph tt">2.16.840.1.113883.3.88.11.83.13</tt>)</li>
 </ol>
 </li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Immunizations Section example</span>
+<p class="p"/>
+
+<div class="fig fignone"><span class="figcap">Figure 1. Immunizations Section example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -71,8 +73,22 @@
               &lt;templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/&gt;
               &lt;templateId root="2.16.840.1.113883.3.88.11.83.13" assigningAuthorityName="HITSP Immunization"/&gt;
-              &lt;id root="d8115124-d099-4572-9103-b4c657e95449"/&gt;
+              &lt;id root="3401abbf-d00e-4086-8dcc-9b0db7639b36"/&gt;
               &lt;statusCode/&gt;
+              &lt;effectiveTime/&gt;
+              &lt;routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/&gt;
+              &lt;maxDoseQuantity/&gt;
+            &lt;/substanceAdministration&gt;
+          &lt;/entry&gt;
+          &lt;entry&gt;
+            &lt;substanceAdministration classCode="SBADM"&gt;
+              &lt;templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/&gt;
+              &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/&gt;
+              &lt;id root="fa55cdf1-5793-4b91-a172-a7e485c27110"/&gt;
+              &lt;statusCode/&gt;
+              &lt;effectiveTime/&gt;
+              &lt;routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/&gt;
+              &lt;maxDoseQuantity/&gt;
             &lt;/substanceAdministration&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -85,9 +101,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
 </div>
 </div>
 

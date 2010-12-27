@@ -11,4 +11,7 @@
 <topicref href="ProcedureActivity.dita" type="topic" />
 <topicref href="Product.dita" type="topic" />
 <topicref href="ProductInstance.dita" type="topic" />
+<topicref href="Support.dita" type="topic" />
+<topicref href="SupportGuardian.dita" type="topic" />
+<topicref href="SupportParticipant.dita" type="topic" />
 </map>

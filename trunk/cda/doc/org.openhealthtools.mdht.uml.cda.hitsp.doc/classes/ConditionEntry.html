@@ -24,40 +24,42 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Condition Entry</h1>
+<h1 class="title topictitle1">Condition Entry</h1>
 
 
 
-<div><p>[Observation: templateId <tt>null</tt>]</p>
+<div class="body"><p class="shortdesc">[Observation: templateId <tt class="ph tt">null</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProblemEntry.html">IHE Problem Entry</a> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProblemEntry.html">IHE Problem Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5</tt>)</li>
 
-<li><strong>SHOULD</strong> contain [1..1] <tt>effectiveTime</tt><ul><li>The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &lt;low&gt; element of the &lt;effectiveTime&gt; element when known. The resolution data shall be recorded in the &lt;high&gt; element of the &lt;effectiveTime&gt; element when known. These dates represent the clinically effective time span over which the problem existed.
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &lt;low&gt; element of the &lt;effectiveTime&gt; element when known. The resolution data shall be recorded in the &lt;high&gt; element of the &lt;effectiveTime&gt; element when known. These dates represent the clinically effective time span over which the problem existed.
 
 If the problem is known to be resolved, but the date of resolution is not known, then the &lt;high&gt; element shall be present, and the nullFlavor attribute shall be set to 'UNK'. Therefore, the existence of an &lt;high&gt; element within a problem does indicate that the problem has been resolved.</li>
 </ul>
 </li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt>, which <strong>SHALL</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set STATIC</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHALL</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set STATIC</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>text</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>value</tt>, which <strong>SHALL</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set STATIC</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">value</tt>, which <strong class="ph b">SHALL</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set STATIC</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Condition Entry example</span>
+<p class="p"/>
+
+<div class="fig fignone"><span class="figcap">Figure 1. Condition Entry example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -76,6 +78,31 @@ If the problem is known to be resolved, but the date of resolution is not known,
                 &lt;high value="2008"/&gt;
               &lt;/effectiveTime&gt;
               &lt;value xsi:type="CD"/&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.50" assigningAuthorityName="CCD Problem Status Observation"/&gt;
+                  &lt;code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CE"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.51" assigningAuthorityName="CCD Problem Health Status Observation"/&gt;
+                  &lt;code code="11323-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health status"/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CE"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.38" assigningAuthorityName="CCD Age Observation"/&gt;
+                  &lt;code code="397659008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Age"/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
             &lt;/observation&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -88,9 +115,9 @@ If the problem is known to be resolved, but the date of resolution is not known,
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

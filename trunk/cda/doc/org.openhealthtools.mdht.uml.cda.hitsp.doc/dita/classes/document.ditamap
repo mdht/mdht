@@ -2,4 +2,5 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map title="Document Templates">
 <topicref href="PatientSummary.dita" type="topic" />
+<topicref href="UnstructuredDocument.dita" type="topic" />
 </map>

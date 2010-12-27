@@ -43,8 +43,6 @@
 <li>contains <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
@@ -76,37 +74,37 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="e6de53b6-44f6-47cd-a733-b10bb04a327e"/>
+              <id root="2e4650bd-e321-4fab-bd2a-cb7c92f7b64f"/>
             </act>
           </entry>
           <entry>
             <encounter>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="94431a17-2a6b-4f63-80eb-7ce68da205d7"/>
+              <id root="fa3e7538-f342-4b3b-af66-dea2a26eb942"/>
             </encounter>
           </entry>
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="430cfe90-3f33-49df-8319-54be4c4c9cd7"/>
+              <id root="9fba6c1d-0bfb-4fb4-885a-44b8303592bd"/>
             </observation>
           </entry>
           <entry>
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="0dbfe3d6-37ba-4ee2-b585-6eb50e453843"/>
+              <id root="ad35e39f-ac00-4be7-bdca-e816bbc0540e"/>
             </procedure>
           </entry>
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="1e489286-adaf-4a2a-93f2-5f3cf3dab536"/>
+              <id root="1fa3a757-7f02-4fef-afbd-311c5627c396"/>
             </substanceAdministration>
           </entry>
           <entry>
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="66f85fb7-159d-4ec0-adbf-568129bc8586"/>
+              <id root="2ce052d4-77c4-4fd2-a05c-a1f295e535a9"/>
             </supply>
           </entry>
         </section>

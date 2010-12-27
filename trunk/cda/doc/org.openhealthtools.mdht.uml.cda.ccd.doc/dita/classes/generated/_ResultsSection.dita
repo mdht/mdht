@@ -42,8 +42,6 @@
 <li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'results'.</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
@@ -64,7 +62,7 @@
           <entry>
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
-              <id root="0a9868f7-a701-4bdd-95fb-608685c584b4"/>
+              <id root="e3ab6ae7-0586-4b59-8aca-d63e36ec2bee"/>
               <code/>
               <statusCode/>
             </organizer>

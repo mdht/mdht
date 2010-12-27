@@ -15,19 +15,18 @@
 <li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
-<li><b>SHALL</b> satisfy: <codeblock>self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
-  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li>
+<li><b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
+  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
+<li>[CDA] Contains [1..1] <tt>@classCode</tt> = "SPLY", where its data type is ActClassSupply</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
-<li>[CCD] <b>SHALL</b> satisfy: <codeblock>self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
-  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li>
+<li>[CCD] <b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
+  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -38,7 +37,7 @@
           <entry>
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="d89544ec-cf05-46a0-a769-cd970873c587"/>
+              <id root="4f1c6329-ab21-44a6-9323-4402902f22d1"/>
             </supply>
           </entry>
         </section>

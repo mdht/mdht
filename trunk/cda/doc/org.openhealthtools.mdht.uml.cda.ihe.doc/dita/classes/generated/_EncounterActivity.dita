@@ -16,8 +16,6 @@
 </ol>
 <ol id="aggregate">
 <li>Conforms to <xref href="../EncounterEntry.dita">Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EncountersActivity.html">CCD Encounters Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.21</tt>)</li>
@@ -39,7 +37,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
               <templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
-              <id root="e32eb1de-4f3d-468a-b551-b06c17e49d4e"/>
+              <id root="a487b802-6cc3-4ff0-acf9-a216db092aaf"/>
               <code codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActEncounterCode"/>
               <text/>
               <effectiveTime>

@@ -24,126 +24,173 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Progress Note</h1>
+<h1 class="title topictitle1">Progress Note</h1>
 
 
 
-<div><p>[ClinicalDocument: templateId <tt>2.16.840.1.113883.10.20.21.1</tt>]</p>
+<div class="body"><p class="shortdesc">[ClinicalDocument: templateId <tt class="ph tt">2.16.840.1.113883.10.20.21.1</tt>]</p>
 
 
 <div class="section">
-<p>A Progress Note documents a patient's clinical status during a hospitalization or outpatient visit.</p>
+<p class="p">A Progress Note documents a patient's clinical status during a hospitalization or outpatient visit.</p>
 
-<p>Taber's  medical dictionary defines a Progress Note as "An ongoing record of a patient's illness and treatment. Physicians, nurses, consultants, and therapists record their notes concerning the progress or lack of progress made by the patient between the time of the previous note and the most recent note."</p>
+<p class="p">Taber's  medical dictionary defines a Progress Note as "An ongoing record of a patient's illness and treatment. Physicians, nurses, consultants, and therapists record their notes concerning the progress or lack of progress made by the patient between the time of the previous note and the most recent note."</p>
 
-<p>Mosby's  medical dictionary defines a Progress Note as "Notes made by a nurse, physician, social worker, physical therapist, and other health care professionals that describe the patient's condition and the treatment given or planned."</p>
+<p class="p">Mosby's  medical dictionary defines a Progress Note as "Notes made by a nurse, physician, social worker, physical therapist, and other health care professionals that describe the patient's condition and the treatment given or planned."</p>
 
 </div>
 
 
-<ol>
-<li>Conforms to <a href="GeneralHeaderConstraints.html" title="[ClinicalDocument: templateId 2.16.840.1.113883.10.20.3]">General Header Constraints</a> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="GeneralHeaderConstraints.html" title="[ClinicalDocument: templateId 2.16.840.1.113883.10.20.3]">General Header Constraints</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.3</tt>)</li>
 
-<li><strong>CONF-PRGN-3: </strong><strong>SHALL</strong> contain [1..1] <tt>code</tt>, which <strong>SHALL</strong> be selected from ValueSet 2.16.840.1.113883.11.20.8.1 <a href="../terminology/ProgressNoteDocumentTypeCode.html" title="[OID 2.16.840.1.113883.11.20.8.1 from code system: LOINC]">ProgressNoteDocumentTypeCode</a> DYNAMIC</li>
+<li class="li"><strong class="ph b">CONF-PRGN-3: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHALL</strong> be selected from ValueSet 2.16.840.1.113883.11.20.8.1 <a class="xref" href="../terminology/ProgressNoteDocumentTypeCode.html" title="[OID 2.16.840.1.113883.11.20.8.1 from code system: LOINC]">ProgressNoteDocumentTypeCode</a> DYNAMIC</li>
 
-<li>Contains [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="AssessmentAndPlanSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.14]">Assessment And Plan Section Proc Note</a> (templateId: <tt>2.16.840.1.113883.10.20.18.2.14</tt>)</li>
+<li class="li">Contains [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="AssessmentAndPlanSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.14]">Assessment And Plan Section Proc Note</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.18.2.14</tt>)</li>
 </ol>
 </li>
 
-<li>Contains [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="AssessmentSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.13]">Assessment Section Proc Note</a> (templateId: <tt>2.16.840.1.113883.10.20.18.2.13</tt>)</li>
+<li class="li">Contains [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="AssessmentSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.13]">Assessment Section Proc Note</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.18.2.13</tt>)</li>
 </ol>
 </li>
 
-<li>Contains [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li>
+<li class="li">Contains [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.10</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-21: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-21: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.2</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-22: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="ChiefComplaintSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.16]">Chief Complaint Section Proc Note</a> (templateId: <tt>2.16.840.1.113883.10.20.18.2.16</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-22: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ChiefComplaintSectionProcNote.html" title="[Section: templateId 2.16.840.1.113883.10.20.18.2.16]">Chief Complaint Section Proc Note</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.18.2.16</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-23: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-23: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.8</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-24: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="ObjectiveSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.21.2.1]">Objective Section</a> (templateId: <tt>2.16.840.1.113883.10.20.21.2.1</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-24: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ObjectiveSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.21.2.1]">Objective Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.21.2.1</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-26: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="PhysicalExaminationSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.10]">Physical Examination Section</a> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-26: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PhysicalExaminationSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.10]">Physical Examination Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.2.10</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-27: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-27: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.11</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-28: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</a> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-28: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.14</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-29: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="VitalSignsSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.4]">Vital Signs Section</a> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-29: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="VitalSignsSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.4]">Vital Signs Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.2.4</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-30: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="ReviewOfSystemsSectionIHE.html" title="[Section: templateId 1.3.6.1.4.1.19376.1.5.3.1.3.18]">Review Of Systems Section IHE</a> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-30: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ReviewOfSystemsSectionIHE.html" title="[Section: templateId 1.3.6.1.4.1.19376.1.5.3.1.3.18]">Review Of Systems Section IHE</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PRGN-31: </strong><strong>MAY</strong> contain [0..1] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="SubjectiveSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.21.2.2]">Subjective Section</a> (templateId: <tt>2.16.840.1.113883.10.20.21.2.2</tt>)</li>
+<li class="li"><strong class="ph b">CONF-PRGN-31: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="SubjectiveSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.21.2.2]">Subjective Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.21.2.2</tt>)</li>
 </ol>
 </li>
 
-<li><strong>CONF-PN-45: </strong><strong>SHALL</strong> satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections.</li>
+<li class="li"><strong class="ph b">CONF-PN-45: </strong><strong class="ph b">SHALL</strong> satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSectionProcNote))
+   xor (self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSectionProcNote))
+      and self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PlanOfCareSection)))</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PN-44: </strong><strong>SHALL</strong> satisfy: When Assessment section or Plan section is included, then both sections SHALL be included.</li>
+<li class="li"><strong class="ph b">CONF-PN-44: </strong><strong class="ph b">SHALL</strong> satisfy: When Assessment section or Plan section is included, then both sections SHALL be included.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: let assessmentExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSectionProcNote)) in
+  let planExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PlanOfCareSection))
+    in (assessmentExists or planExists) implies (assessmentExists and planExists)</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-4: </strong><strong>SHOULD</strong> satisfy: Contains a serviceEvent element.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-4: </strong><strong class="ph b">SHOULD</strong> satisfy: Contains a serviceEvent element.<ul class="ul"><li class="li">The serviceEvent represents the event of writing the Progress Note.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.documentationOf-&gt;exists(doc : cda::DocumentationOf | not doc.oclIsUndefined() 
+  and not doc.serviceEvent.oclIsUndefined())</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-5: </strong><strong>SHALL</strong> satisfy: The documentationOf/serviceEvent/code SHALL be 371532007 Progress Report 2.16.840.1.113883.6.96 SNOMED CT STATIC.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-5: </strong><strong class="ph b">SHALL</strong> satisfy: The documentationOf/serviceEvent/code SHALL be 371532007 Progress Report 2.16.840.1.113883.6.96 SNOMED CT STATIC.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.documentationOf-&gt;exists(doc : cda::DocumentationOf | not doc.oclIsUndefined() and not doc.serviceEvent.oclIsUndefined()
+  and doc.serviceEvent.code.code = '371532007' and doc.serviceEvent.code.codeSystem = '2.16.840.1.113883.6.96' )</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-6: </strong><strong>SHOULD</strong> satisfy: The serviceEvent/effectiveTime element SHOULD be present with effectiveTime/low element and SHALL include effectiveTime/high element if a width element is not present. The serviceEvent/effectiveTime element SHALLL be accurate to the day, and MAY be accurate to the second.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-6: </strong><strong class="ph b">SHOULD</strong> satisfy: The serviceEvent/effectiveTime element SHOULD be present with effectiveTime/low element and SHALL include effectiveTime/high element if a width element is not present. The serviceEvent/effectiveTime element SHALLL be accurate to the day, and MAY be accurate to the second.<ul class="ul"><li class="li">When you know only the date for documenting the time, place the date in both the low and high elements. However, if you know the date and the duration of the documentation, use serviceEvent/effectiveTime/low with a width element.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.documentationOf-&gt;exists(doc : cda::DocumentationOf | not doc.oclIsUndefined() and not doc.serviceEvent.oclIsUndefined()
+ and not doc.serviceEvent.effectiveTime.oclIsUndefined() and not doc.serviceEvent.effectiveTime.low.oclIsUndefined() )</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-7: </strong><strong>SHALL</strong> satisfy: Contains componentOf element.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-7: </strong><strong class="ph b">SHALL</strong> satisfy: Contains componentOf element.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.componentOf.oclIsUndefined()</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-8: </strong><strong>SHALL</strong> satisfy: The encompassingEncounter has an 'id' element.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-8: </strong><strong class="ph b">SHALL</strong> satisfy: The encompassingEncounter has an 'id' element.<ul class="ul"><li class="li">The Progress Note is always associated with an encounter by the componentOf/encompassingEncounter element in the header.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.componentOf.encompassingEncounter.id-&gt;notEmpty()</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-9: </strong><strong>SHALL</strong> satisfy: The encompassingEncounter has an effectiveTime element.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-9: </strong><strong class="ph b">SHALL</strong> satisfy: The encompassingEncounter has an effectiveTime element.<ul class="ul"><li class="li">The effectiveTime element for an encompassingEncounter represents the time or time interval in which the encounter took place. A single encounter may contain multiple Progress Notes; hence the effectiveTime elements for a Progress Note (recorded in serviceEvent) and for an encounter (recorded in encompassingEncounter) represent different time intervals.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.componentOf.encompassingEncounter.effectiveTime.oclIsUndefined()</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-10: </strong><strong>SHALL</strong> satisfy: The encompassingEncounter has an effectiveTime/low element.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-10: </strong><strong class="ph b">SHALL</strong> satisfy: The encompassingEncounter has an effectiveTime/low element.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.componentOf.encompassingEncounter.effectiveTime.low.oclIsUndefined()</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-PRGN-11: </strong><strong>SHOULD</strong> satisfy: The encompassingEncounter element has an encompassingEncounter/location/healthCareFacility/id element.</li>
+<li class="li"><strong class="ph b">CONF-PRGN-11: </strong><strong class="ph b">SHOULD</strong> satisfy: The encompassingEncounter element has an encompassingEncounter/location/healthCareFacility/id element.<ul class="ul"><li class="li">All visits take place at a specific location. When available, the location ID is included in the encompassingEncounter/location/healthCareFacility/id element.</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.componentOf.encompassingEncounter.location.healthCareFacility.id-&gt;notEmpty()</pre>
+</li>
+</ul>
+</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Progress Note example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Progress Note example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;realmCode code="US"/&gt;
   &lt;templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/&gt;
   &lt;templateId root="2.16.840.1.113883.10.20.21.1" assigningAuthorityName="CDT Progress Note"/&gt;
-  &lt;id root="4eec7e83-a257-48d4-8c2b-2254621ace35"/&gt;
+  &lt;id root="6de6c78a-2383-4513-821b-b98f45588160"/&gt;
   &lt;code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/&gt;
   &lt;title/&gt;
   &lt;effectiveTime/&gt;
@@ -151,27 +198,6 @@
   &lt;languageCode/&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
-      &lt;component&gt;
-        &lt;section&gt;
-          &lt;templateId root="2.16.840.1.113883.10.20.18.2.14" assigningAuthorityName="CDT Assessment And Plan Section Proc Note"/&gt;
-          &lt;code code="51847-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ASSESSMENT AND PLAN"/&gt;
-          &lt;title&gt;ASSESSMENT AND PLAN&lt;/title&gt;
-        &lt;/section&gt;
-      &lt;/component&gt;
-      &lt;component&gt;
-        &lt;section&gt;
-          &lt;templateId root="2.16.840.1.113883.10.20.18.2.13" assigningAuthorityName="CDT Assessment Section Proc Note"/&gt;
-          &lt;code code="51848-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ASSESSMENT"/&gt;
-          &lt;title&gt;ASSESSMENT&lt;/title&gt;
-        &lt;/section&gt;
-      &lt;/component&gt;
-      &lt;component&gt;
-        &lt;section&gt;
-          &lt;templateId root="2.16.840.1.113883.10.20.1.10" assigningAuthorityName="CCD Plan Of Care Section"/&gt;
-          &lt;code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Treatment plan"/&gt;
-          &lt;title&gt;Treatment plan&lt;/title&gt;
-        &lt;/section&gt;
-      &lt;/component&gt;
       &lt;component&gt;
         &lt;section&gt;
           &lt;templateId root="2.16.840.1.113883.10.20.1.2" assigningAuthorityName="CCD Alerts Section"/&gt;
@@ -250,9 +276,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/DocumentTemplates.html">DOCUMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/DocumentTemplates.html">DOCUMENT TEMPLATES</a></div>
 </div>
 </div>
 

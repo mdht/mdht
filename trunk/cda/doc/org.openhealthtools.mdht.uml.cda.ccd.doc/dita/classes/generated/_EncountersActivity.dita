@@ -19,8 +19,6 @@
 <li><b>MAY</b> contain [0..1] <tt>effectiveTime</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
@@ -38,7 +36,7 @@
           <entry>
             <encounter classCode="ENC" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/>
-              <id root="70d72367-f0c8-4e4c-9a3d-9b4324163d8f"/>
+              <id root="150cc7e2-699d-41ca-b853-1f653c691b2d"/>
               <code/>
               <effectiveTime>
                 <low value="1972"/>

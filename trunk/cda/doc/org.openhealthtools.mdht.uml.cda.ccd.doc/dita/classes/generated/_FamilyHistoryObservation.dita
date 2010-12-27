@@ -16,10 +16,11 @@
 <li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClassObservation</li>
+<li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_ActMoodDocumentObservation</li>
+<li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 </ol>
@@ -32,7 +33,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.22" assigningAuthorityName="CCD Family History Observation"/>
-              <id root="58c9f8bc-9c2c-4644-854c-972f5ebd0d05"/>
+              <id root="a854c89e-3fe8-4b78-be0a-08edc432cdb1"/>
               <statusCode code="completed"/>
             </observation>
           </entry>

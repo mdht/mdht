@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap id="cdabook">
-	<title>Health Story - Common Data Types (CDT)</title>
+	<title>Health Story - Common Document Types (CDT)</title>
 	
     <chapter format="ditamap" href="introduction/introduction.ditamap"/>
     

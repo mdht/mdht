@@ -16,15 +16,14 @@
 </ol>
 <ol id="aggregate">
 <li>Conforms to <xref href="../ProcedureActivity.dita">Procedure Activity</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>moodCode</tt>, where its data type is ActMood</li>
+<li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClassObservation</li>
+<li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_ActMoodDocumentObservation</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt>, where its data type is II</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.1.11.20.15 ProcedureStatusCode STATIC 20061017), where its data type is CS</li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>effectiveTime</tt>, where its data type is IVL_TS</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt>, where its data type is CD</li>
+<li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
