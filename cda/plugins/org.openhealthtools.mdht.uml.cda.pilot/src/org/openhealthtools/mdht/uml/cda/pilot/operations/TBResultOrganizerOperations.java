@@ -200,7 +200,7 @@ public class TBResultOrganizerOperations extends ResultOrganizerOperations {
 						(Diagnostic.ERROR,
 						 TBPNValidator.DIAGNOSTIC_SOURCE,
 						 TBPNValidator.TB_RESULT_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID,
-						 PilotPlugin.INSTANCE.getString("ResultOrganizerTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ResultOrganizerTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(tbResultOrganizer, context) }),
 						 new Object [] { tbResultOrganizer }));
 			}
 			return false;

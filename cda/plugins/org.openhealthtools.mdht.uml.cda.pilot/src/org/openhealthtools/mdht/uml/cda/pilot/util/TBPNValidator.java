@@ -249,9 +249,11 @@ public class TBPNValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTuberculosisFollowUpProgressNote(TuberculosisFollowUpProgressNote tuberculosisFollowUpProgressNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(tuberculosisFollowUpProgressNote, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(tuberculosisFollowUpProgressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tuberculosisFollowUpProgressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tuberculosisFollowUpProgressNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tuberculosisFollowUpProgressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tuberculosisFollowUpProgressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(tuberculosisFollowUpProgressNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tuberculosisFollowUpProgressNote, diagnostics, context);
@@ -298,9 +300,11 @@ public class TBPNValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTBResultOrganizer(TBResultOrganizer tbResultOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(tbResultOrganizer, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tbResultOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tbResultOrganizer, diagnostics, context);
@@ -391,9 +395,11 @@ public class TBPNValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTBResultsSection(TBResultsSection tbResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(tbResultsSection, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tbResultsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tbResultsSection, diagnostics, context);
@@ -514,9 +520,11 @@ public class TBPNValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTBResultObservation(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(tbResultObservation, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tbResultObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tbResultObservation, diagnostics, context);
