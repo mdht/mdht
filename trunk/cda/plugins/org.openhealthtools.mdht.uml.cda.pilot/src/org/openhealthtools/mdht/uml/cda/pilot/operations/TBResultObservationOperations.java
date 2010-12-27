@@ -153,7 +153,7 @@ public class TBResultObservationOperations extends ResultObservationOperations {
 						(Diagnostic.ERROR,
 						 TBPNValidator.DIAGNOSTIC_SOURCE,
 						 TBPNValidator.TB_RESULT_OBSERVATION__RESULT_OBSERVATION_TEMPLATE_ID,
-						 PilotPlugin.INSTANCE.getString("ResultObservationTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ResultObservationTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(tbResultObservation, context) }),
 						 new Object [] { tbResultObservation }));
 			}
 			return false;

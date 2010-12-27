@@ -92,7 +92,7 @@
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.displayName" value="Relevant diagnostic tests and/or laboratory data"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.2.6"/>
-      <details key="constraints.validation.error" value="ResultsSectionTemplateId ResultsSectionCode TBResultsSectionText TBResultsSectionTitle"/>
+      <details key="constraints.validation.error" value="TBResultsSectionTemplateId ResultsSectionCode TBResultsSectionText TBResultsSectionTitle"/>
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="30954-2"/>
       <details key="constraints.validation.info" value="TBResultsSectionTBResultOrganizer TBResultsSectionTBResultObservation"/>
@@ -259,7 +259,7 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.3.21"/>
-      <details key="constraints.validation.error" value="ResultOrganizerTemplateId ResultOrganizerCode TBResultOrganizerTBResultObservation"/>
+      <details key="constraints.validation.error" value="TBResultOrganizerTemplateId ResultOrganizerCode TBResultOrganizerTBResultObservation"/>
       <details key="code.codeSystemName" value="LOINC"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
@@ -346,7 +346,7 @@
       <details key="statusCode.code" value="completed"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.3.13"/>
-      <details key="constraints.validation.error" value="ResultObservationTemplateId TBResultObservationClassCode ResultObservationCode ResultObservationStatusCode"/>
+      <details key="constraints.validation.error" value="TBResultObservationTemplateId TBResultObservationClassCode ResultObservationCode ResultObservationStatusCode"/>
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="classCode" value="OBS"/>
     </eAnnotations>

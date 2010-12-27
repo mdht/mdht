@@ -371,7 +371,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.displayName", "Relevant diagnostic tests and/or laboratory data",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.2.6",
-			 "constraints.validation.error", "ResultsSectionTemplateId ResultsSectionCode TBResultsSectionText TBResultsSectionTitle",
+			 "constraints.validation.error", "TBResultsSectionTemplateId ResultsSectionCode TBResultsSectionText TBResultsSectionTitle",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "30954-2",
 			 "constraints.validation.info", "TBResultsSectionTBResultOrganizer TBResultsSectionTBResultObservation"
@@ -382,7 +382,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		   new String[] {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.3.21",
-			 "constraints.validation.error", "ResultOrganizerTemplateId ResultOrganizerCode TBResultOrganizerTBResultObservation",
+			 "constraints.validation.error", "TBResultOrganizerTemplateId ResultOrganizerCode TBResultOrganizerTBResultObservation",
 			 "code.codeSystemName", "LOINC"
 		   });									
 		addAnnotation
@@ -392,7 +392,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 			 "statusCode.code", "completed",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.3.13",
-			 "constraints.validation.error", "ResultObservationTemplateId TBResultObservationClassCode ResultObservationCode ResultObservationStatusCode",
+			 "constraints.validation.error", "TBResultObservationTemplateId TBResultObservationClassCode ResultObservationCode ResultObservationStatusCode",
 			 "code.codeSystemName", "LOINC",
 			 "classCode", "OBS"
 		   });					

@@ -23,7 +23,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage#getTBResultsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Relevant diagnostic tests and/or laboratory data' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Relevant diagnostic tests and/or laboratory data' templateId.root='2.16.840.1.113883.10.20.15.2.6' constraints.validation.error='ResultsSectionTemplateId ResultsSectionCode TBResultsSectionText TBResultsSectionTitle' code.codeSystemName='LOINC' code.code='30954-2' constraints.validation.info='TBResultsSectionTBResultOrganizer TBResultsSectionTBResultObservation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Relevant diagnostic tests and/or laboratory data' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Relevant diagnostic tests and/or laboratory data' templateId.root='2.16.840.1.113883.10.20.15.2.6' constraints.validation.error='TBResultsSectionTemplateId ResultsSectionCode TBResultsSectionText TBResultsSectionTitle' code.codeSystemName='LOINC' code.code='30954-2' constraints.validation.info='TBResultsSectionTBResultOrganizer TBResultsSectionTBResultObservation'"
  * @generated
  */
 public interface TBResultsSection extends ResultsSection {

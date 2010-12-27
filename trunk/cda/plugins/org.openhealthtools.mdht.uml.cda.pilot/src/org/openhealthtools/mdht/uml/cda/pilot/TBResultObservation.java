@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage#getTBResultObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.15.3.13' constraints.validation.error='ResultObservationTemplateId TBResultObservationClassCode ResultObservationCode ResultObservationStatusCode' code.codeSystemName='LOINC' classCode='OBS'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.15.3.13' constraints.validation.error='TBResultObservationTemplateId TBResultObservationClassCode ResultObservationCode ResultObservationStatusCode' code.codeSystemName='LOINC' classCode='OBS'"
  * @generated
  */
 public interface TBResultObservation extends ResultObservation {

@@ -427,7 +427,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 						(Diagnostic.ERROR,
 						 TBPNValidator.DIAGNOSTIC_SOURCE,
 						 TBPNValidator.TB_RESULTS_SECTION__RESULTS_SECTION_TEMPLATE_ID,
-						 PilotPlugin.INSTANCE.getString("ResultsSectionTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ResultsSectionTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(tbResultsSection, context) }),
 						 new Object [] { tbResultsSection }));
 			}
 			return false;
