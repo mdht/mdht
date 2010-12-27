@@ -24,58 +24,74 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Alert Observation</h1>
+<h1 class="title topictitle1">Alert Observation</h1>
 
 
 
-<div><p>[Observation: templateId <tt>2.16.840.1.113883.10.20.1.18</tt>]</p>
+<div class="body"><p class="shortdesc">[Observation: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.18</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>effectiveTime</tt></li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">effectiveTime</tt></li>
 
-<li><strong>MAY</strong> contain [0..*] <tt>value</tt>, which <strong>MAY</strong> be selected from ValueSet 2.16.840.1.113883.1.11.20.4 AlertTypeCode STATIC 20061017, where its data type is CE</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..*] <tt class="ph tt">value</tt>, which <strong class="ph b">MAY</strong> be selected from ValueSet 2.16.840.1.113883.1.11.20.4 AlertTypeCode STATIC 20061017, where its data type is CE</li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entryRelationship</tt>, such that it<ol type="a">
-<li>contains <a href="AlertStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.39]">Alert Status Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.39</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="AlertStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.39]">Alert Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.39</tt>)</li>
 </ol>
 </li>
 
-<li><strong>MAY</strong> contain [1..*] <tt>entryRelationship</tt>, such that it<ol type="a">
-<li>has @typeCode="MFST" <em>MFST (is manifestation of)</em></li>
+<li class="li"><strong class="ph b">MAY</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">has @typeCode="MFST" <em class="ph i">MFST (is manifestation of)</em></li>
 
-<li>contains <a href="ReactionObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.54]">Reaction Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.54</tt>)</li>
+<li class="li">contains <a class="xref" href="ReactionObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.54]">Reaction Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.54</tt>)</li>
 </ol>
 </li>
 
-<li><strong>SHOULD</strong> satisfy: The absence of known allergies SHOULD be represented in an alert observation by valuing Observation / value with 160244002 "No known allergies" 2.16.840.1.113883.6.96 SNOMED CT STATIC.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: The absence of known allergies SHOULD be represented in an alert observation by valuing Observation / value with 160244002 "No known allergies" 2.16.840.1.113883.6.96 SNOMED CT STATIC.</li>
 
-<li><strong>SHALL</strong> satisfy: An alert observation contains one or more sources of information.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: An alert observation contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+   and rel.observation.code.code = '48766-0'))</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>SHOULD</strong> satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant-&gt;exists(participant : cda::Participant2 | participant.typeCode = vocab::ParticipationType::CSM )</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>SHALL</strong> satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant.participantRole.playingEntity-&gt;one(entity : cda::PlayingEntity |
+  entity.classCode = vocab::EntityClassRoot::MMAT and not entity.code.oclIsUndefined())</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>SHOULD</strong> satisfy: The value for participant / participantRole / playingEntity / code in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: The value for participant / participantRole / playingEntity / code in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Alert Observation example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Alert Observation example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -117,9 +133,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

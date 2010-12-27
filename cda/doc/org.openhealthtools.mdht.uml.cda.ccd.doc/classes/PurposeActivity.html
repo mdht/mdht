@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Purpose Activity</h1>
+<h1 class="title topictitle1">Purpose Activity</h1>
 
 
 
-<div><p>[Act: templateId <tt>2.16.840.1.113883.10.20.1.30</tt>]</p>
+<div class="body"><p class="shortdesc">[Act: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.30</tt>]</p>
 
 
 <div class="section">
-<p>
+<p class="p">
     CCD represents the ASTM CCR &lt;Purpose&gt; object as a relationship between two classes -- the source
     represents the act of creating a summary document, the target is the reason for creating the document, and the
     relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,
@@ -42,29 +42,40 @@
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
 
-<li><strong>CONF-21: </strong><strong>SHALL</strong> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
+<li class="li"><strong class="ph b">CONF-21: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT"</li>
 
-<li><strong>CONF-22: </strong><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">CONF-22: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
 
-<li><strong>CONF-25: </strong><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <em>Documentation procedure</em> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
+<li class="li"><strong class="ph b">CONF-25: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "23745001" <em class="ph i">Documentation procedure</em> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
 
-<li><strong>CONF-23, CONF-24: </strong><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li class="li"><strong class="ph b">CONF-23, CONF-24: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 
-<li><strong>CONF-26: </strong><strong>SHALL</strong> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.</li>
+<li class="li"><strong class="ph b">CONF-26: </strong><strong class="ph b">SHALL</strong> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>CONF-27: </strong><strong>SHALL</strong> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.</li>
+<li class="li"><strong class="ph b">CONF-27: </strong><strong class="ph b">SHALL</strong> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( 
+  not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()
+       and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()
+       and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))</pre>
+</li>
+</ul>
+</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Purpose Activity example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Purpose Activity example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -87,9 +98,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

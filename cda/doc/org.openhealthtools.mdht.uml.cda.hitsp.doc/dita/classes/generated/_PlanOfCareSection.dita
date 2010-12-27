@@ -22,8 +22,6 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CarePlanSection.html">IHE Care Plan Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.31</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CarePlanSection.html">IHE Care Plan Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.31</tt>)</li>
@@ -56,6 +54,42 @@
           <templateId root="2.16.840.1.113883.3.88.11.83.124" assigningAuthorityName="HITSP Plan Of Care Section"/>
           <code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Treatment plan"/>
           <title>Treatment plan</title>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              <id root="6a2fa37d-4c89-48d7-bf21-d9ee4c468d95"/>
+            </act>
+          </entry>
+          <entry>
+            <encounter>
+              <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              <id root="e9b4b37e-40ed-4be1-bf82-a5534c79eaf7"/>
+            </encounter>
+          </entry>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              <id root="249d40f8-adbc-4fba-8de9-4207d9c79ca2"/>
+            </observation>
+          </entry>
+          <entry>
+            <procedure>
+              <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              <id root="96435fdb-eefe-4dc7-9d06-d6ec2660dffb"/>
+            </procedure>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM">
+              <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              <id root="145db89c-59ce-4c39-9a42-e7136e1b8fff"/>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <supply classCode="SPLY">
+              <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              <id root="80da4a23-71d8-4b70-bc2f-04c88083bf2a"/>
+            </supply>
+          </entry>
         </section>
       </component>
     </structuredBody>

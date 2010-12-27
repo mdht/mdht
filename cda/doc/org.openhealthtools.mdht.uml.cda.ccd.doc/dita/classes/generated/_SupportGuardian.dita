@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Support Guardian - conformance rules</title>
+<shortdesc id="shortdesc">[Guardian: templateId <tt>null</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Guardian</category></metadata>
+<resourceid id="null"/>
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
+<li>Conforms to <xref href="../Support.dita">Support</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Conforms to <xref href="../Support.dita">Support</xref></li>
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
+<li>[CDA] <b>SHALL</b> satisfy: guardianChoice<ul><li><codeblock>[OCL]: self.guardianPerson.oclIsUndefined() xor self.guardianOrganization.oclIsUndefined()</codeblock></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+</body>
+</topic>

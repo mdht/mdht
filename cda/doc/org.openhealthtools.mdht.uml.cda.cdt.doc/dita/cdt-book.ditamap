@@ -3,7 +3,7 @@
 <bookmap id="cdabook">
 	<booktitle>
 		<booklibrary>Implementation Guide for CDA Release 2</booklibrary>
-		<mainbooktitle>Health Story - Common Data Types (CDT)</mainbooktitle>
+		<mainbooktitle>Health Story - Common Document Types (CDT)</mainbooktitle>
 		<booktitlealt>(U.S. Realm)</booktitlealt>
 		<booktitlealt><image href="images/hl7_logo.gif"/></booktitlealt>
 		<booktitlealt>DRAFT: FOR DEVELOPMENT USE ONLY</booktitlealt>

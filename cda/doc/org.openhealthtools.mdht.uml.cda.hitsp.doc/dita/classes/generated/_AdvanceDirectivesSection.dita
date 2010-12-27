@@ -18,8 +18,6 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CodedAdvanceDirectivesSection.html">IHE Coded Advance Directives Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.35</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AdvanceDirectivesSection.html">CCD Advance Directives Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/AdvanceDirectivesSection.html">IHE Advance Directives Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.34</tt>)</li>
@@ -41,6 +39,18 @@
           <templateId root="2.16.840.1.113883.3.88.11.83.116" assigningAuthorityName="HITSP Advance Directives Section"/>
           <code code="42348-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Advance directives"/>
           <title>Advance directives</title>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.17" assigningAuthorityName="CCD Advance Directive Observation"/>
+              <id root="3bde4af0-5328-4343-9e3c-21a9fabf2680"/>
+              <code/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="1972"/>
+                <high value="2008"/>
+              </effectiveTime>
+            </observation>
+          </entry>
         </section>
       </component>
     </structuredBody>

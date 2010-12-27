@@ -24,38 +24,38 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Authorization Activity</h1>
+<h1 class="title topictitle1">Authorization Activity</h1>
 
 
 
-<div><p>[Act: templateId <tt>2.16.840.1.113883.10.20.1.19</tt>]</p>
+<div class="body"><p class="shortdesc">[Act: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.19</tt>]</p>
 
 
 <div class="section">
-<p>An authorization activity represents authorizations or pre-authorizations currently active for the patient for the particular payer.
+<p class="p">An authorization activity represents authorizations or pre-authorizations currently active for the patient for the particular payer.
 
 Authorizations are represented using an act subordinate to the policy or program that provided it. The policy or program is referred to by the authorization. Authorized treatments can be grouped into an Organizer class, where common properties, such as the reason for the authorization, can be expressed. Subordinate acts represent what was authorized.</p>
 
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT"</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Authorization Activity example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Authorization Activity example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -64,7 +64,7 @@ Authorizations are represented using an act subordinate to the policy or program
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.19" assigningAuthorityName="CCD Authorization Activity"/&gt;
-              &lt;id root="ad59583b-cca4-425d-b1d5-dde97889ffd5"/&gt;
+              &lt;id root="5802cba9-a9e4-463a-83ab-8f6fbea295a0"/&gt;
             &lt;/act&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -77,9 +77,9 @@ Authorizations are represented using an act subordinate to the policy or program
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

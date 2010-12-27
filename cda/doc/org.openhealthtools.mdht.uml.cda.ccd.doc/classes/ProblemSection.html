@@ -24,43 +24,43 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Problem Section</h1>
+<h1 class="title topictitle1">Problem Section</h1>
 
 
 
-<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.1.11</tt>]</p>
+<div class="body"><p class="shortdesc">[Section: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.11</tt>]</p>
 
 
 <div class="section">
-<p>This section lists and describes all relevant clinical problems at the time the summary is generated. At a minimum, all pertinent current and historical problems should be listed. CDA R2 represents problems as Observations.</p>
+<p class="p">This section lists and describes all relevant clinical problems at the time the summary is generated. At a minimum, all pertinent current and historical problems should be listed. CDA R2 represents problems as Observations.</p>
 
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <em>Problem list</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "11450-4" <em class="ph i">Problem list</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>title</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt></li>
 
-<li><strong>SHOULD</strong> contain [1..*] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="ProblemAct.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.27]">Problem Act</a> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ProblemAct.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.27]">Problem Act</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.27</tt>)</li>
 </ol>
 </li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>text</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt></li>
 
-<li><strong>SHOULD</strong> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'.</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Problem Section example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Problem Section example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -72,7 +72,7 @@
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/&gt;
-              &lt;id root="52e46071-e51e-4ae8-8ab6-e8cf6ca12656"/&gt;
+              &lt;id root="43ff221b-b1e7-4a67-a716-78d3a55d29dc"/&gt;
               &lt;code nullFlavor="NA"/&gt;
               &lt;effectiveTime&gt;
                 &lt;low value="1972"/&gt;
@@ -90,9 +90,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
 </div>
 </div>
 

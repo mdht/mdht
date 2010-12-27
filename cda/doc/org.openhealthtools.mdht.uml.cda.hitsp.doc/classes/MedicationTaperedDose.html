@@ -24,30 +24,32 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Medication Tapered Dose</h1>
+<h1 class="title topictitle1">Medication Tapered Dose</h1>
 
 
 
-<div><p>[SubstanceAdministration: templateId <tt>null</tt>]</p>
+<div class="body"><p class="shortdesc">[SubstanceAdministration: templateId <tt class="ph tt">null</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="Medication.html" title="[SubstanceAdministration: templateId 2.16.840.1.113883.3.88.11.83.8]">Medication</a> template (templateId: <tt>2.16.840.1.113883.3.88.11.83.8</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="Medication.html" title="[SubstanceAdministration: templateId 2.16.840.1.113883.3.88.11.83.8]">Medication</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.3.88.11.83.8</tt>)</li>
 
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/TaperedDose.html">IHE Tapered Dose</a> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.8</tt>)</li>
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/TaperedDose.html">IHE Tapered Dose</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.8</tt>)</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Medication Tapered Dose example</span>
+<p class="p"/>
+
+<div class="fig fignone"><span class="figcap">Figure 1. Medication Tapered Dose example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -61,8 +63,31 @@
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.8" assigningAuthorityName="IHE Tapered Dose"/&gt;
               &lt;templateId root="null" assigningAuthorityName="HITSP Medication Tapered Dose"/&gt;
               &lt;templateId assigningAuthorityName="HITSP Medication Tapered Dose"/&gt;
-              &lt;id root="ccd4a1a1-b7df-42d5-b98a-b3b374ba2bb1"/&gt;
+              &lt;id root="fe7d85d6-c778-4d48-8a66-7b10fca5ffb0"/&gt;
               &lt;statusCode/&gt;
+              &lt;effectiveTime/&gt;
+              &lt;routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/&gt;
+              &lt;approachSiteCode/&gt;
+              &lt;doseQuantity/&gt;
+              &lt;rateQuantity/&gt;
+              &lt;maxDoseQuantity/&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.46" assigningAuthorityName="CCD Medication Series Number Observation"/&gt;
+                  &lt;code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose number"/&gt;
+                  &lt;statusCode/&gt;
+                  &lt;value xsi:type="INT"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.47" assigningAuthorityName="CCD Medication Status Observation"/&gt;
+                  &lt;code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CE"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
             &lt;/substanceAdministration&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -75,9 +100,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

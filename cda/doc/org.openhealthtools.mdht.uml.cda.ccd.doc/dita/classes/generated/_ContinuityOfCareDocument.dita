@@ -20,7 +20,7 @@
 <li>contains <xref href="../SocialHistorySection.dita">Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
-<li><b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li><b>CONF-298: </b><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol></li>
@@ -46,24 +46,33 @@
 <li><b>CONF-5: </b><b>SHALL</b> contain [1..1] <tt>languageCode</tt></li>
 <li><b>CONF-15: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>)</li></ol></li>
-<li><b>CONF-2: </b><b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent</li>
-<li><b>CONF-3: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR'</li>
-<li><b>CONF-4: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high</li>
+<li><b>CONF-2: </b><b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())</codeblock></li></ul></li>
+<li><b>CONF-3: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR'<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)</codeblock></li></ul></li>
+<li><b>CONF-4: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | 
+   not doc.serviceEvent.effectiveTime.low.oclIsUndefined() and not doc.serviceEvent.effectiveTime.high.oclIsUndefined())</codeblock></li></ul></li>
 <li><b>CONF-6: </b><b>SHALL</b> satisfy: languageCode has the form nn, or nn-CC. The nn portion SHALL be an ISO-639-1 language code in lower case. The CC portion, if present, SHALL be an ISO-3166 country code in upper case</li>
-<li><b>CONF-8: </b><b>SHALL</b> satisfy: SHALL NOT contain templateId / @extension</li>
+<li><b>CONF-8: </b><b>SHALL</b> satisfy: SHALL NOT contain templateId / @extension<ul><li><codeblock>[OCL]: self.templateId-&gt;forAll(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1' implies id.extension.oclIsUndefined())</codeblock></li></ul></li>
 <li><b>CONF-9: </b><b>SHALL</b> satisfy: effectiveTime is expressed with precision to include seconds</li>
 <li><b>CONF-10: </b><b>SHALL</b> satisfy: effectiveTime includes an explicit time zone offset</li>
-<li><b>CONF-11: </b><b>SHALL</b> satisfy: Contains one or two recordTarget</li>
-<li><b>CONF-12: </b><b>SHOULD</b> satisfy: Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization</li>
-<li><b>CONF-13: </b><b>SHALL</b> satisfy: If author has an associated representedOrganization with no assignedPerson or assignedAuthoringDevice, then the value for author / assignedAuthor / id / @NullFlavor SHALL be 'NA'</li>
-<li><b>CONF-14: </b><b>MAY</b> satisfy: Contains one or more informationRecipient</li>
+<li><b>CONF-11: </b><b>SHALL</b> satisfy: Contains one or two recordTarget<ul><li><codeblock>[OCL]: self.recordTarget-&gt;size() = 1 or self.recordTarget-&gt;size() =2</codeblock></li></ul></li>
+<li><b>CONF-12: </b><b>SHOULD</b> satisfy: Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization<ul><li><codeblock>[OCL]: self.author-&gt;exists(author : cda::Author | not author.assignedAuthor.assignedPerson.oclIsUndefined() 
+   or not author.assignedAuthor.representedOrganization.oclIsUndefined())</codeblock></li></ul></li>
+<li><b>CONF-13: </b><b>SHALL</b> satisfy: If author has an associated representedOrganization with no assignedPerson or assignedAuthoringDevice, then the value for author / assignedAuthor / id / @NullFlavor SHALL be 'NA'<ul><li><codeblock>[OCL]: self.author-&gt;exists(author : cda::Author | (not author.assignedAuthor.representedOrganization.oclIsUndefined()
+      and author.assignedAuthor.assignedPerson.oclIsUndefined() and author.assignedAuthor.assignedAuthoringDevice.oclIsUndefined())
+   implies author.assignedAuthor.id-&gt;one(id : datatypes::II | id.nullFlavor = vocab::NullFlavor::NA))</codeblock></li></ul></li>
+<li><b>CONF-14: </b><b>MAY</b> satisfy: Contains one or more informationRecipient<ul><li><codeblock>[OCL]: self.informationRecipient-&gt;size() &gt; 0</codeblock></li></ul></li>
 <li><b>CONF-28: </b><b>MAY</b> satisfy: The value for component / structuredBody / component / section / entry / @typeCode MAY be 'DRIV' "is derived from" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate that the CDA Narrative Block is fully derived from the structured entries.</li>
 <li><b>CONF-29: </b><b>SHOULD</b> satisfy: A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &lt;content&gt;).</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li>[CDA] Contains [1..1] <tt>id</tt>, where its data type is II</li>
+<li>[CCD] <b>CONF-1: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "34133-9" <i>Summarization of episode note</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li>[CDA] Contains [1..1] <tt>effectiveTime</tt>, where its data type is TS</li>
+<li>[CDA] Contains [1..1] <tt>confidentialityCode</tt>, where its data type is CE</li>
+<li>[CDA] Contains [1..*] <tt>author</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
+<li>[CDA] Contains [1..1] <tt>custodian</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Custodian.html">CDA Custodian</xref></li>
+<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ProblemSection.dita">Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
@@ -72,7 +81,7 @@
 <li>contains <xref href="../SocialHistorySection.dita">Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
-<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>[CCD] <b>CONF-298: </b><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol></li>
@@ -94,21 +103,24 @@
 <li>contains <xref href="../AdvanceDirectivesSection.dita">Advance Directives Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../PayersSection.dita">Payers Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li></ol></li>
-<li>[CCD] <b>CONF-1: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "34133-9" <i>Summarization of episode note</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>CONF-5: </b><b>SHALL</b> contain [1..1] <tt>languageCode</tt></li>
 <li>[CCD] <b>CONF-15: </b><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>)</li></ol></li>
-<li>[CCD] <b>CONF-2: </b><b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent</li>
-<li>[CCD] <b>CONF-3: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR'</li>
-<li>[CCD] <b>CONF-4: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high</li>
+<li>[CCD] <b>CONF-2: </b><b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-3: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR'<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-4: </b><b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | 
+   not doc.serviceEvent.effectiveTime.low.oclIsUndefined() and not doc.serviceEvent.effectiveTime.high.oclIsUndefined())</codeblock></li></ul></li>
 <li>[CCD] <b>CONF-6: </b><b>SHALL</b> satisfy: languageCode has the form nn, or nn-CC. The nn portion SHALL be an ISO-639-1 language code in lower case. The CC portion, if present, SHALL be an ISO-3166 country code in upper case</li>
-<li>[CCD] <b>CONF-8: </b><b>SHALL</b> satisfy: SHALL NOT contain templateId / @extension</li>
+<li>[CCD] <b>CONF-8: </b><b>SHALL</b> satisfy: SHALL NOT contain templateId / @extension<ul><li><codeblock>[OCL]: self.templateId-&gt;forAll(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1' implies id.extension.oclIsUndefined())</codeblock></li></ul></li>
 <li>[CCD] <b>CONF-9: </b><b>SHALL</b> satisfy: effectiveTime is expressed with precision to include seconds</li>
 <li>[CCD] <b>CONF-10: </b><b>SHALL</b> satisfy: effectiveTime includes an explicit time zone offset</li>
-<li>[CCD] <b>CONF-11: </b><b>SHALL</b> satisfy: Contains one or two recordTarget</li>
-<li>[CCD] <b>CONF-12: </b><b>SHOULD</b> satisfy: Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization</li>
-<li>[CCD] <b>CONF-13: </b><b>SHALL</b> satisfy: If author has an associated representedOrganization with no assignedPerson or assignedAuthoringDevice, then the value for author / assignedAuthor / id / @NullFlavor SHALL be 'NA'</li>
-<li>[CCD] <b>CONF-14: </b><b>MAY</b> satisfy: Contains one or more informationRecipient</li>
+<li>[CCD] <b>CONF-11: </b><b>SHALL</b> satisfy: Contains one or two recordTarget<ul><li><codeblock>[OCL]: self.recordTarget-&gt;size() = 1 or self.recordTarget-&gt;size() =2</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-12: </b><b>SHOULD</b> satisfy: Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization<ul><li><codeblock>[OCL]: self.author-&gt;exists(author : cda::Author | not author.assignedAuthor.assignedPerson.oclIsUndefined() 
+   or not author.assignedAuthor.representedOrganization.oclIsUndefined())</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-13: </b><b>SHALL</b> satisfy: If author has an associated representedOrganization with no assignedPerson or assignedAuthoringDevice, then the value for author / assignedAuthor / id / @NullFlavor SHALL be 'NA'<ul><li><codeblock>[OCL]: self.author-&gt;exists(author : cda::Author | (not author.assignedAuthor.representedOrganization.oclIsUndefined()
+      and author.assignedAuthor.assignedPerson.oclIsUndefined() and author.assignedAuthor.assignedAuthoringDevice.oclIsUndefined())
+   implies author.assignedAuthor.id-&gt;one(id : datatypes::II | id.nullFlavor = vocab::NullFlavor::NA))</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-14: </b><b>MAY</b> satisfy: Contains one or more informationRecipient<ul><li><codeblock>[OCL]: self.informationRecipient-&gt;size() &gt; 0</codeblock></li></ul></li>
 <li>[CCD] <b>CONF-28: </b><b>MAY</b> satisfy: The value for component / structuredBody / component / section / entry / @typeCode MAY be 'DRIV' "is derived from" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate that the CDA Narrative Block is fully derived from the structured entries.</li>
 <li>[CCD] <b>CONF-29: </b><b>SHOULD</b> satisfy: A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &lt;content&gt;).</li>
 </ol>

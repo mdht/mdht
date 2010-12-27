@@ -24,44 +24,47 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Status Observation</h1>
+<h1 class="title topictitle1">Status Observation</h1>
 
 
 
-<div><p>[Observation: templateId <tt>2.16.840.1.113883.10.20.1.57</tt>]</p>
+<div class="body"><p class="shortdesc">[Observation: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.57</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "OBS"</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "33999-4" <em>Status</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "33999-4" <em class="ph i">Status</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>value</tt>, where its data type is CE</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">value</tt>, where its data type is CE</li>
 
-<li><strong>SHALL</strong> satisfy: SHALL NOT contain any additional Observation attributes.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: SHALL NOT contain any additional Observation attributes.</li>
 
-<li><strong>SHALL</strong> satisfy: SHALL NOT contain any Observation participants.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: SHALL NOT contain any Observation participants.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant-&gt;isEmpty()</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>SHALL</strong> satisfy: SHALL NOT be the source of any Observation relationships.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: SHALL NOT be the source of any Observation relationships.</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Status Observation example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Status Observation example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -85,9 +88,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

@@ -28,8 +28,6 @@
 <li><b>CONF-19: </b><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'purpose'.</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>[CCD] <b>CONF-16, CONF-17: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48764-5" <i>Summary purpose</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>CONF-18: </b><b>SHALL</b> contain [1..1] <tt>title</tt></li>

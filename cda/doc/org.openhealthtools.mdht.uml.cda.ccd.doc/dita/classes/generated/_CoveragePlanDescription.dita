@@ -17,12 +17,11 @@
 <li><b>CONF-68: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
 <li>[CCD] <b>CONF-67: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li>[CCD] <b>CONF-67: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF"</li>
+<li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
 <li>[CCD] <b>CONF-68: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -34,7 +33,7 @@
           <entry>
             <act classCode="ACT" moodCode="DEF">
               <templateId assigningAuthorityName="CCD Coverage Plan Description"/>
-              <id root="f4237d63-c608-495b-b2d9-e7b03b87542f"/>
+              <id root="959a092c-d869-4782-8e00-e47d2e2534c8"/>
             </act>
           </entry>
         </section>

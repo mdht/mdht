@@ -18,8 +18,6 @@ guarantor, or some combination.</p>
 <li>contains <xref href="../CoverageEntry.dita">Coverage Entry</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.17</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PayersSection.html">CCD Payers Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li>
 <li>[CCD] <b>CONF-31, CONF-32: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
@@ -45,7 +43,15 @@ guarantor, or some combination.</p>
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE Coverage Entry"/>
-              <id root="c9cf17ea-9625-48ed-b43c-2a79ef1177e1"/>
+              <id root="e81f5e07-8dc7-438d-bb02-2721a9c4a255"/>
+              <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
+              <statusCode code="completed"/>
+            </act>
+          </entry>
+          <entry>
+            <act classCode="ACT" moodCode="DEF">
+              <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
+              <id root="58c7c07a-d61b-4ef4-9ebd-a152d36935c2"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
             </act>

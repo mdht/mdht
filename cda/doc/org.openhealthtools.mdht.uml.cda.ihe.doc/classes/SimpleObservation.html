@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Simple Observation</h1>
+<h1 class="title topictitle1">Simple Observation</h1>
 
 
 
-<div><p>[Observation: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13</tt>]</p>
+<div class="body"><p class="shortdesc">[Observation: templateId <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.13</tt>]</p>
 
 
 <div class="section">
-<p>The simple observation entry is meant to be an abstract representation of many of the observations used in this
+<p class="p">The simple observation entry is meant to be an abstract representation of many of the observations used in this
 specification. It can be made concrete by the specification of a few additional constraints, namely the vocabulary used for
 codes, and the value representation. A simple observation may also inherit constraints from other specifications (e.g.,
 ASTM/HL7 Continuity of Care Document).</p>
@@ -40,29 +40,29 @@ ASTM/HL7 Continuity of Care Document).</p>
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Simple Observation example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Simple Observation example</span>
 
 
 
-<pre class="codeblock"/>
-
-</div>
+<pre class="pre codeblock"/>
 
 </div>
 
-<div>
+</div>
+
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

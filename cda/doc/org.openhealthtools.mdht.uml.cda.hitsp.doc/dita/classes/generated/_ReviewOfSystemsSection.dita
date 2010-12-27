@@ -18,8 +18,6 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ReviewOfSystemsSection.html">IHE Review Of Systems Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ReviewOfSystemsSection.html">IHE Review Of Systems Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10187-3" <i>REVIEW OF SYSTEMS</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
@@ -30,7 +28,7 @@
     <structuredBody>
       <component>
         <section>
-          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.18" assigningAuthorityName="CDT Review Of Systems Section IHE"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.18" assigningAuthorityName="IHE Review Of Systems Section"/>
           <templateId root="2.16.840.1.113883.3.88.11.83.120" assigningAuthorityName="HITSP Review Of Systems Section"/>
           <code code="10187-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REVIEW OF SYSTEMS"/>
           <title>REVIEW OF SYSTEMS</title>

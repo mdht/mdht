@@ -24,39 +24,43 @@
 <li>contains <xref href="../CoveredParty.dita">Covered Party</xref></li></ol></li>
 <li><b>CONF-63: </b><b>MAY</b> contain [1..1] <tt>participant</tt>, such that it<ol>
 <li>contains <xref href="../PolicySubscriber.dita">Policy Subscriber</xref></li></ol></li>
-<li><b>CONF-56: </b><b>SHALL</b> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer.</li>
-<li><b>CONF-58: </b><b>SHALL</b> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party.</li>
+<li><b>CONF-56: </b><b>SHALL</b> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer.<ul><li><codeblock>[OCL]: self.performer-&gt;one(perf : cda::Performer2 | perf.typeCode = vocab::ParticipationPhysicalPerformer::PRF)</codeblock></li></ul></li>
+<li><b>CONF-58: </b><b>SHALL</b> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV)</codeblock></li></ul></li>
 <li><b>CONF-61: </b><b>MAY</b> satisfy: The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC.</li>
-<li><b>CONF-62: </b><b>MAY</b> satisfy: A covered party in a policy activity MAY contain exactly one participant / time, to represent the time period over which the patient is covered.</li>
-<li><b>CONF-63: </b><b>MAY</b> satisfy: A policy activity MAY contain exactly one participant [@typeCode='HLD'], representing the subscriber.</li>
-<li><b>CONF-65: </b><b>MAY</b> satisfy: A subscriber in a policy activity MAY contain exactly one participant / time, to represent the time period for which the subscriber is enrolled.</li>
-<li><b>CONF-66: </b><b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a policy activity SHALL be 'REFR' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</li>
-<li><b>CONF-67: </b><b>SHALL</b> satisfy: The target of a policy activity with entryRelationship / @typeCode='REFR' SHALL be an Authorization Activity or an Act, with Act [@classCode = 'ACT'] and Act [@moodCode = 'DEF'], representing a description of the coverage plan.</li>
+<li><b>CONF-62: </b><b>MAY</b> satisfy: A covered party in a policy activity MAY contain exactly one participant / time, to represent the time period over which the patient is covered.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV
+  implies not part.time.oclIsUndefined())</codeblock></li></ul></li>
+<li><b>CONF-63: </b><b>MAY</b> satisfy: A policy activity MAY contain exactly one participant [@typeCode='HLD'], representing the subscriber.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::HLD)</codeblock></li></ul></li>
+<li><b>CONF-65: </b><b>MAY</b> satisfy: A subscriber in a policy activity MAY contain exactly one participant / time, to represent the time period for which the subscriber is enrolled.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::HLD
+  implies not part.time.oclIsUndefined())</codeblock></li></ul></li>
+<li><b>CONF-66: </b><b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a policy activity SHALL be 'REFR' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(rel : cda::EntryRelationship | rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)</codeblock></li></ul></li>
+<li><b>CONF-67: </b><b>SHALL</b> satisfy: The target of a policy activity with entryRelationship / @typeCode='REFR' SHALL be an Authorization Activity or an Act, with Act [@classCode = 'ACT'] and Act [@moodCode = 'DEF'], representing a description of the coverage plan.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(rel : cda::EntryRelationship | rel.act.oclIsKindOf(ccd::AuthorizationActivity)
+  or rel.act.oclIsKindOf(ccd::CoveragePlanDescription))</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
 <li>[CCD] <b>CONF-49: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li>[CCD] <b>CONF-50: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CCD] <b>CONF-54, CONF-55: </b><b>SHOULD</b> contain [1..1] <tt>code</tt>, which <b>SHOULD</b> be selected from ValueSet 2.16.840.1.113883.1.11.19832 ActCoverageType DYNAMIC</li>
 <li>[CCD] <b>CONF-51: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li>[CCD] <b>CONF-52, CONF-53: </b><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li>[CCD] <b>CONF-54, CONF-55: </b><b>SHOULD</b> contain [1..1] <tt>code</tt>, which <b>SHOULD</b> be selected from ValueSet 2.16.840.1.113883.1.11.19832 ActCoverageType DYNAMIC</li>
 <li>[CCD] <b>CONF-56: </b><b>SHALL</b> contain [1..1] <tt>performer</tt>, such that it<ol>
 <li>contains <xref href="../PayerEntity.dita">Payer Entity</xref></li></ol></li>
 <li>[CCD] <b>CONF-58: </b><b>SHALL</b> contain [1..1] <tt>participant</tt>, such that it<ol>
 <li>contains <xref href="../CoveredParty.dita">Covered Party</xref></li></ol></li>
 <li>[CCD] <b>CONF-63: </b><b>MAY</b> contain [1..1] <tt>participant</tt>, such that it<ol>
 <li>contains <xref href="../PolicySubscriber.dita">Policy Subscriber</xref></li></ol></li>
-<li>[CCD] <b>CONF-56: </b><b>SHALL</b> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer.</li>
-<li>[CCD] <b>CONF-58: </b><b>SHALL</b> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party.</li>
+<li>[CCD] <b>CONF-56: </b><b>SHALL</b> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer.<ul><li><codeblock>[OCL]: self.performer-&gt;one(perf : cda::Performer2 | perf.typeCode = vocab::ParticipationPhysicalPerformer::PRF)</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-58: </b><b>SHALL</b> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV)</codeblock></li></ul></li>
 <li>[CCD] <b>CONF-61: </b><b>MAY</b> satisfy: The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC.</li>
-<li>[CCD] <b>CONF-62: </b><b>MAY</b> satisfy: A covered party in a policy activity MAY contain exactly one participant / time, to represent the time period over which the patient is covered.</li>
-<li>[CCD] <b>CONF-63: </b><b>MAY</b> satisfy: A policy activity MAY contain exactly one participant [@typeCode='HLD'], representing the subscriber.</li>
-<li>[CCD] <b>CONF-65: </b><b>MAY</b> satisfy: A subscriber in a policy activity MAY contain exactly one participant / time, to represent the time period for which the subscriber is enrolled.</li>
-<li>[CCD] <b>CONF-66: </b><b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a policy activity SHALL be 'REFR' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</li>
-<li>[CCD] <b>CONF-67: </b><b>SHALL</b> satisfy: The target of a policy activity with entryRelationship / @typeCode='REFR' SHALL be an Authorization Activity or an Act, with Act [@classCode = 'ACT'] and Act [@moodCode = 'DEF'], representing a description of the coverage plan.</li>
+<li>[CCD] <b>CONF-62: </b><b>MAY</b> satisfy: A covered party in a policy activity MAY contain exactly one participant / time, to represent the time period over which the patient is covered.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV
+  implies not part.time.oclIsUndefined())</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-63: </b><b>MAY</b> satisfy: A policy activity MAY contain exactly one participant [@typeCode='HLD'], representing the subscriber.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::HLD)</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-65: </b><b>MAY</b> satisfy: A subscriber in a policy activity MAY contain exactly one participant / time, to represent the time period for which the subscriber is enrolled.<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::HLD
+  implies not part.time.oclIsUndefined())</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-66: </b><b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a policy activity SHALL be 'REFR' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(rel : cda::EntryRelationship | rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-67: </b><b>SHALL</b> satisfy: The target of a policy activity with entryRelationship / @typeCode='REFR' SHALL be an Authorization Activity or an Act, with Act [@classCode = 'ACT'] and Act [@moodCode = 'DEF'], representing a description of the coverage plan.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(rel : cda::EntryRelationship | rel.act.oclIsKindOf(ccd::AuthorizationActivity)
+  or rel.act.oclIsKindOf(ccd::CoveragePlanDescription))</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -67,26 +71,26 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
-              <id root="021439da-d151-4a58-8981-6a029ee75164"/>
+              <id root="31c66632-2db2-4807-a64c-aac385f23b7c"/>
               <code/>
               <statusCode code="completed"/>
               <performer>
                 <assignedEntity>
                   <templateId assigningAuthorityName="CCD Payer Entity"/>
-                  <id root="593cc913-0530-4210-89ec-8a8a92458cc6"/>
+                  <id root="5337ee25-0758-43ba-8f88-260d1c39f2a6"/>
                 </assignedEntity>
               </performer>
               <participant>
                 <participantRole>
                   <templateId assigningAuthorityName="CCD Covered Party"/>
-                  <id root="e3f1281b-e7c7-4448-96d8-c6e1e88d26b2"/>
+                  <id root="6bd70e8f-c0c7-40e4-92f6-f0809a4b387c"/>
                   <code/>
                 </participantRole>
               </participant>
               <participant>
                 <participantRole>
                   <templateId assigningAuthorityName="CCD Policy Subscriber"/>
-                  <id root="baa35ae0-9a4e-4e60-a002-0ba900219fad"/>
+                  <id root="6ed1c4d8-2e57-462b-ad1c-adcd43e3951c"/>
                 </participantRole>
               </participant>
             </act>

@@ -14,11 +14,10 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/HealthcareProvidersPharmacies.html">IHE Healthcare Providers Pharmacies</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.3</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Participation.html">RIM Participation</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer1.html">CDA Performer1</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/HealthcareProvidersPharmacies.html">IHE Healthcare Providers Pharmacies</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.3</tt>)</li>
-<li></li>
+<li>[CDA] Contains [1..1] <tt>@typeCode</tt>, where its data type is x_ServiceEventPerformer</li>
+<li>[CDA] Contains [1..1] <tt>assignedEntity</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/AssignedEntity.html">CDA Assigned Entity</xref></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 </body>

@@ -24,30 +24,36 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Vital Signs Organizer</h1>
+<h1 class="title topictitle1">Vital Signs Organizer</h1>
 
 
 
-<div><p>[Organizer: templateId <tt>2.16.840.1.113883.10.20.1.35</tt>]</p>
+<div class="body"><p class="shortdesc">[Organizer: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.35</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="ResultOrganizer.html" title="[Organizer: templateId 2.16.840.1.113883.10.20.1.32]">Result Organizer</a> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="ResultOrganizer.html" title="[Organizer: templateId 2.16.840.1.113883.10.20.1.32]">Result Organizer</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.32</tt>)</li>
 
-<li><strong>SHALL</strong> satisfy: Contains one or more sources of information.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</pre>
+</li>
+</ul>
+</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Vital Signs Organizer example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Vital Signs Organizer example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -57,13 +63,13 @@
             &lt;organizer moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/&gt;
-              &lt;id root="dd7cee82-21e9-455f-bae6-c1a2e7a118ea"/&gt;
+              &lt;id root="175f3579-a84b-462d-bc1a-9f41f2d285dc"/&gt;
               &lt;code/&gt;
               &lt;statusCode/&gt;
               &lt;component&gt;
                 &lt;observation classCode="OBS" moodCode="EVN"&gt;
                   &lt;templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/&gt;
-                  &lt;id root="08fc50ee-d589-4cd6-b4c5-a0825ad1b588"/&gt;
+                  &lt;id root="b83f6b0d-fd6c-4632-99b1-0a0af9549f49"/&gt;
                   &lt;code/&gt;
                   &lt;statusCode/&gt;
                   &lt;effectiveTime&gt;
@@ -86,9 +92,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

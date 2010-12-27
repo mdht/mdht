@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Procedures Section</h1>
+<h1 class="title topictitle1">Procedures Section</h1>
 
 
 
-<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.1.12</tt>]</p>
+<div class="body"><p class="shortdesc">[Section: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.12</tt>]</p>
 
 
 <div class="section">
-<p>
+<p class="p">
     This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments
     pertinent to the patient historically at the time the document is generated. The section may contain all procedures for
     the period of time being summarized, but should include notable procedures.
@@ -41,26 +41,26 @@
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "47519-4" <em>History of procedures</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "47519-4" <em class="ph i">History of procedures</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>title</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt></li>
 
-<li><strong>SHOULD</strong> contain [1..*] <tt>procedureActivity</tt>, such that it<ol type="a">
-<li>contains <a href="ProcedureActivity.html">Procedure Activity</a></li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">procedureActivity</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ProcedureActivity.html">Procedure Activity</a></li>
 </ol>
 </li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Procedures Section example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Procedures Section example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -79,9 +79,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
 </div>
 </div>
 

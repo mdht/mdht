@@ -17,8 +17,6 @@
 <li>contains <xref href="../VitalSignsOrganizer.dita">Vital Signs Organizer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.1</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsSection.html">CCD Vital Signs Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li>
 <li>Conforms to <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.25</tt>)</li>
@@ -41,17 +39,26 @@
           <code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vital signs"/>
           <title>Vital signs</title>
           <entry>
-            <organizer moodCode="EVN">
+            <organizer classCode="CLUSTER" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1" assigningAuthorityName="IHE Vital Signs Organizer"/>
-              <id root="d09a5880-5ada-4d99-a5e2-2fe0219f09e5"/>
+              <id root="bd44cad0-d845-4367-a0d8-2dab033105c3"/>
               <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Vital signs"/>
               <statusCode code="completed"/>
               <effectiveTime>
                 <low value="1972"/>
                 <high value="2008"/>
               </effectiveTime>
+            </organizer>
+          </entry>
+          <entry>
+            <organizer moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
+              <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
+              <id root="62ede68e-4759-4a2b-9bbf-c5c4856f7a29"/>
+              <code/>
+              <statusCode/>
             </organizer>
           </entry>
         </section>

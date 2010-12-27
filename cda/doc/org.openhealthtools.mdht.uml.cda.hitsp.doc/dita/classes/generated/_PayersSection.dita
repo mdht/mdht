@@ -20,8 +20,6 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PayersSection.html">IHE Payers Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PayersSection.html">CCD Payers Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PayersSection.html">IHE Payers Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7</tt>)</li>
@@ -45,6 +43,23 @@
           <templateId root="2.16.840.1.113883.3.88.11.83.101" assigningAuthorityName="HITSP Payers Section"/>
           <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
           <title>Payment sources</title>
+          <entry>
+            <act classCode="ACT" moodCode="DEF">
+              <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE Coverage Entry"/>
+              <id root="4ee4e7a1-c209-4ba4-a2db-15dc8b4af5be"/>
+              <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
+              <statusCode code="completed"/>
+            </act>
+          </entry>
+          <entry>
+            <act classCode="ACT" moodCode="DEF">
+              <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
+              <id root="b0d6b157-4f1a-44c0-8bd0-0cb94e7a3e02"/>
+              <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
+              <statusCode code="completed"/>
+            </act>
+          </entry>
         </section>
       </component>
     </structuredBody>

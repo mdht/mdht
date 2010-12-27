@@ -20,12 +20,11 @@ Authorizations are represented using an act subordinate to the policy or program
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -37,7 +36,7 @@ Authorizations are represented using an act subordinate to the policy or program
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.19" assigningAuthorityName="CCD Authorization Activity"/>
-              <id root="ad59583b-cca4-425d-b1d5-dde97889ffd5"/>
+              <id root="5802cba9-a9e4-463a-83ab-8f6fbea295a0"/>
             </act>
           </entry>
         </section>

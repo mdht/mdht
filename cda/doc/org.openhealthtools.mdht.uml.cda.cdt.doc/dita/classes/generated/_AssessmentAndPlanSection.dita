@@ -17,8 +17,6 @@
 <li><b>CONF-HP-92: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "51847-2" <i>Assessment + Plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>[CDT] <b>CONF-HP-92: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "51847-2" <i>Assessment + Plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 </ol>

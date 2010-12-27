@@ -22,17 +22,24 @@
 <li>has @typeCode="MFST" <i>MFST (is manifestation of)</i></li>
 <li>contains <xref href="../ReactionObservation.dita">Reaction Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.54</tt>)</li></ol></li>
 <li><b>SHOULD</b> satisfy: The absence of known allergies SHOULD be represented in an alert observation by valuing Observation / value with 160244002 "No known allergies" 2.16.840.1.113883.6.96 SNOMED CT STATIC.</li>
-<li><b>SHALL</b> satisfy: An alert observation contains one or more sources of information.</li>
-<li><b>SHOULD</b> satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.</li>
-<li><b>SHALL</b> satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.</li>
+<li><b>SHALL</b> satisfy: An alert observation contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+   and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
+<li><b>SHOULD</b> satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.<ul><li><codeblock>[OCL]: self.participant-&gt;exists(participant : cda::Participant2 | participant.typeCode = vocab::ParticipationType::CSM )</codeblock></li></ul></li>
+<li><b>SHALL</b> satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.<ul><li><codeblock>[OCL]: self.participant.participantRole.playingEntity-&gt;one(entity : cda::PlayingEntity |
+  entity.classCode = vocab::EntityClassRoot::MMAT and not entity.code.oclIsUndefined())</codeblock></li></ul></li>
 <li><b>SHOULD</b> satisfy: The value for participant / participantRole / playingEntity / code in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClassObservation</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>effectiveTime</tt></li>
 <li>[CCD] <b>MAY</b> contain [0..*] <tt>value</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.4 AlertTypeCode STATIC 20061017, where its data type is CE</li>
@@ -42,9 +49,16 @@
 <li>has @typeCode="MFST" <i>MFST (is manifestation of)</i></li>
 <li>contains <xref href="../ReactionObservation.dita">Reaction Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.54</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> satisfy: The absence of known allergies SHOULD be represented in an alert observation by valuing Observation / value with 160244002 "No known allergies" 2.16.840.1.113883.6.96 SNOMED CT STATIC.</li>
-<li>[CCD] <b>SHALL</b> satisfy: An alert observation contains one or more sources of information.</li>
-<li>[CCD] <b>SHOULD</b> satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.</li>
-<li>[CCD] <b>SHALL</b> satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.</li>
+<li>[CCD] <b>SHALL</b> satisfy: An alert observation contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+   and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
+<li>[CCD] <b>SHOULD</b> satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.<ul><li><codeblock>[OCL]: self.participant-&gt;exists(participant : cda::Participant2 | participant.typeCode = vocab::ParticipationType::CSM )</codeblock></li></ul></li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.<ul><li><codeblock>[OCL]: self.participant.participantRole.playingEntity-&gt;one(entity : cda::PlayingEntity |
+  entity.classCode = vocab::EntityClassRoot::MMAT and not entity.code.oclIsUndefined())</codeblock></li></ul></li>
 <li>[CCD] <b>SHOULD</b> satisfy: The value for participant / participantRole / playingEntity / code in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>

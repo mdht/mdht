@@ -15,11 +15,9 @@
 <li><b>CONF-64: </b><b>SHOULD</b> contain [0..*] <tt>id</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Role.html">RIM Role</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ParticipantRole.html">CDA Participant Role</xref></li>
 <li>[CCD] <b>CONF-64: </b><b>SHOULD</b> contain [0..*] <tt>id</tt></li>
-<li>[CDA] <b>SHALL</b> satisfy: <codeblock>self.playingDevice.oclIsUndefined() or self.playingEntity.oclIsUndefined()</codeblock></li>
+<li>[CDA] <b>SHALL</b> satisfy: playingEntityChoice<ul><li><codeblock>[OCL]: self.playingDevice.oclIsUndefined() or self.playingEntity.oclIsUndefined()</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 </body>

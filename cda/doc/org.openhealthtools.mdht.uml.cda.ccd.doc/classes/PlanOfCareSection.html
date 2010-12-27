@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Plan Of Care Section</h1>
+<h1 class="title topictitle1">Plan Of Care Section</h1>
 
 
 
-<div><p>[Section: templateId <tt>2.16.840.1.113883.10.20.1.10</tt>]</p>
+<div class="body"><p class="shortdesc">[Section: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.10</tt>]</p>
 
 
 <div class="section">
-<p>
+<p class="p">
     The plan of care section contains data defining pending orders, interventions, encounters, services, and
     procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All
     active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of
@@ -40,7 +40,7 @@
     of privacy.
 </p>
 
-<p>
+<p class="p">
     The plan of care section also contains information regarding goals and clinical reminders. Clinical
     reminders are placed here for purposes of providing prompts that may be used for disease prevention, disease
     management, patient safety, and healthcare quality improvements, including widely accepted performance measures.
@@ -49,58 +49,58 @@
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <em>Treatment plan</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "18776-5" <em class="ph i">Treatment plan</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>title</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>text</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt></li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="PlanOfCareActivityAct.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Act</a> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PlanOfCareActivityAct.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Act</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.25</tt>)</li>
 </ol>
 </li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="PlanOfCareActivityEncounter.html" title="[Encounter: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Encounter</a> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PlanOfCareActivityEncounter.html" title="[Encounter: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Encounter</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.25</tt>)</li>
 </ol>
 </li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="PlanOfCareActivityObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PlanOfCareActivityObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.25</tt>)</li>
 </ol>
 </li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="PlanOfCareActivityProcedure.html" title="[Procedure: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Procedure</a> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PlanOfCareActivityProcedure.html" title="[Procedure: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Procedure</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.25</tt>)</li>
 </ol>
 </li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="PlanOfCareActivitySubstanceAdministration.html" title="[SubstanceAdministration: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Substance Administration</a> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PlanOfCareActivitySubstanceAdministration.html" title="[SubstanceAdministration: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Substance Administration</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.25</tt>)</li>
 </ol>
 </li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>entry</tt>, such that it<ol type="a">
-<li>contains <a href="PlanOfCareActivitySupply.html" title="[Supply: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Supply</a> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PlanOfCareActivitySupply.html" title="[Supply: templateId 2.16.840.1.113883.10.20.1.25]">Plan Of Care Activity Supply</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.25</tt>)</li>
 </ol>
 </li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>planOfCareActivity</tt>, such that it<ol type="a">
-<li>contains <a href="PlanOfCareActivity.html">Plan Of Care Activity</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">planOfCareActivity</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="PlanOfCareActivity.html">Plan Of Care Activity</a></li>
 </ol>
 </li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Plan Of Care Section example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Plan Of Care Section example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -112,37 +112,37 @@
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.25"/&gt;
-              &lt;id root="e6de53b6-44f6-47cd-a733-b10bb04a327e"/&gt;
+              &lt;id root="2e4650bd-e321-4fab-bd2a-cb7c92f7b64f"/&gt;
             &lt;/act&gt;
           &lt;/entry&gt;
           &lt;entry&gt;
             &lt;encounter&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.25"/&gt;
-              &lt;id root="94431a17-2a6b-4f63-80eb-7ce68da205d7"/&gt;
+              &lt;id root="fa3e7538-f342-4b3b-af66-dea2a26eb942"/&gt;
             &lt;/encounter&gt;
           &lt;/entry&gt;
           &lt;entry&gt;
             &lt;observation classCode="OBS" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.25"/&gt;
-              &lt;id root="430cfe90-3f33-49df-8319-54be4c4c9cd7"/&gt;
+              &lt;id root="9fba6c1d-0bfb-4fb4-885a-44b8303592bd"/&gt;
             &lt;/observation&gt;
           &lt;/entry&gt;
           &lt;entry&gt;
             &lt;procedure&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.25"/&gt;
-              &lt;id root="0dbfe3d6-37ba-4ee2-b585-6eb50e453843"/&gt;
+              &lt;id root="ad35e39f-ac00-4be7-bdca-e816bbc0540e"/&gt;
             &lt;/procedure&gt;
           &lt;/entry&gt;
           &lt;entry&gt;
             &lt;substanceAdministration classCode="SBADM"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.25"/&gt;
-              &lt;id root="1e489286-adaf-4a2a-93f2-5f3cf3dab536"/&gt;
+              &lt;id root="1fa3a757-7f02-4fef-afbd-311c5627c396"/&gt;
             &lt;/substanceAdministration&gt;
           &lt;/entry&gt;
           &lt;entry&gt;
             &lt;supply classCode="SPLY"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.25"/&gt;
-              &lt;id root="66f85fb7-159d-4ec0-adbf-568129bc8586"/&gt;
+              &lt;id root="2ce052d4-77c4-4fd2-a05c-a1f295e535a9"/&gt;
             &lt;/supply&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -155,9 +155,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/SectionTemplates.html">SECTION TEMPLATES</a></div>
 </div>
 </div>
 

@@ -14,21 +14,25 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/CoverageActivity.html">CCD Coverage Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.20</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/CoverageActivity.html">CCD Coverage Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.20</tt>)</li>
 <li>[CCD] <b>CONF-36: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li>[CCD] <b>CONF-37: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF"</li>
+<li>[CCD] <b>CONF-41, CONF-42: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>CONF-38: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li>[CCD] <b>CONF-39, CONF-40: </b><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li>[CCD] <b>CONF-41, CONF-42: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>CONF-43, CONF-45, CONF-46: </b><b>SHALL</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="COMP" <i>COMP (has component)</i></li>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PolicyActivity.html">CCD Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>)</li></ol></li>
-<li>[CCD] <b>CONF-47: </b><b>SHALL</b> satisfy: An alert observation contains one or more sources of information.</li>
-<li>[CCD] <b>CONF-44: </b><b>MAY</b> satisfy: entryRelationship contains sequenceNumber, which serves to prioritize the payment sources.</li>
+<li>[CCD] <b>CONF-47: </b><b>SHALL</b> satisfy: An alert observation contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+  or not self.getSection().informant-&gt;isEmpty()
+  or not self.getClinicalDocument().informant-&gt;isEmpty()
+  or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+  or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+   and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-44: </b><b>MAY</b> satisfy: entryRelationship contains sequenceNumber, which serves to prioritize the payment sources.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | not rel.sequenceNumber.oclIsUndefined())</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -40,9 +44,17 @@
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE Coverage Entry"/>
-              <id root="f5226919-df2b-47c3-bfcf-e979124d4ff1"/>
+              <id root="2d24c373-0c7b-4fc2-915c-383f5957e09c"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
+              <entryRelationship>
+                <act classCode="ACT" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
+                  <id root="1f31addd-fde1-4cf7-a343-e09df1054e1c"/>
+                  <code/>
+                  <statusCode code="completed"/>
+                </act>
+              </entryRelationship>
             </act>
           </entry>
         </section>

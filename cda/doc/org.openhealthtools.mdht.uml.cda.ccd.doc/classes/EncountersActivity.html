@@ -24,38 +24,38 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Encounters Activity</h1>
+<h1 class="title topictitle1">Encounters Activity</h1>
 
 
 
-<div><p>[Encounter: templateId <tt>2.16.840.1.113883.10.20.1.21</tt>]</p>
+<div class="body"><p class="shortdesc">[Encounter: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.21</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ENC"</li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
 
-<li><strong>SHOULD</strong> contain [1..1] <tt>code</tt>, which <strong>SHOULD</strong> be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode STATIC</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHOULD</strong> be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode STATIC</li>
 
-<li><strong>MAY</strong> contain [0..1] <tt>effectiveTime</tt></li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">effectiveTime</tt></li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Encounters Activity example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Encounters Activity example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -64,7 +64,7 @@
           &lt;entry&gt;
             &lt;encounter classCode="ENC" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/&gt;
-              &lt;id root="70d72367-f0c8-4e4c-9a3d-9b4324163d8f"/&gt;
+              &lt;id root="150cc7e2-699d-41ca-b853-1f653c691b2d"/&gt;
               &lt;code/&gt;
               &lt;effectiveTime&gt;
                 &lt;low value="1972"/&gt;
@@ -82,9 +82,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

@@ -18,21 +18,19 @@
 <li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 <li><b>SHOULD</b> contain [0..1] <tt>effectiveTime</tt></li>
 <li><b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.2 AdvanceDirectiveTypeCode STATIC 20061017</li>
-<li><b>MAY</b> contain [1..*] <tt>verifications</tt>, such that it<ol>
+<li><b>MAY</b> contain [1..*] <tt>advanceDirectiveVerification</tt>, such that it<ol>
 <li>contains <xref href="../AdvanceDirectiveVerification.dita">Advance Directive Verification</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.58</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CCD] <b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.2 AdvanceDirectiveTypeCode STATIC 20061017</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>effectiveTime</tt></li>
-<li>[CCD] <b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.2 AdvanceDirectiveTypeCode STATIC 20061017</li>
-<li>[CCD] <b>MAY</b> contain [1..*] <tt>verifications</tt>, such that it<ol>
+<li>[CCD] <b>MAY</b> contain [1..*] <tt>advanceDirectiveVerification</tt>, such that it<ol>
 <li>contains <xref href="../AdvanceDirectiveVerification.dita">Advance Directive Verification</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.58</tt>)</li></ol></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -44,7 +42,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.17" assigningAuthorityName="CCD Advance Directive Observation"/>
-              <id root="12ce4362-998a-437c-997e-ac6b6dd92036"/>
+              <id root="bfd84efb-a66d-4cad-a34b-d4252e5d2981"/>
               <code/>
               <statusCode code="completed"/>
               <effectiveTime>

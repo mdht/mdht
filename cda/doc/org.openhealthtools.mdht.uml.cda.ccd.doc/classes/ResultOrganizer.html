@@ -24,21 +24,21 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Result Organizer</h1>
+<h1 class="title topictitle1">Result Organizer</h1>
 
 
 
-<div><p>[Organizer: templateId <tt>2.16.840.1.113883.10.20.1.32</tt>]</p>
+<div class="body"><p class="shortdesc">[Organizer: templateId <tt class="ph tt">2.16.840.1.113883.10.20.1.32</tt>]</p>
 
 
 <div class="section">
-<p>
+<p class="p">
     The result organizer identifies an observation set, contained with the result organizer
     as a set of result observations. It contains information applicable to all of the contained result
     observations.
 </p>
 
-<p>
+<p class="p">
     Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where
     there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR
     Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),
@@ -48,49 +48,58 @@
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</a></li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</a></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>component</tt>, such that it<ol type="a">
-<li>contains <a href="ResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.31]">Result Observation</a> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.31]">Result Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.31</tt>)</li>
 </ol>
 </li>
 
-<li><strong>SHOULD</strong> contain [1..*] <tt>specimen</tt>, such that it<ol type="a">
-<li>contains <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</a></li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">specimen</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</a></li>
 </ol>
 </li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>code</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt></li>
 
-<li><strong>SHALL</strong> contain [1..1] <tt>statusCode</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt></li>
 
-<li><strong>SHOULD</strong> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</li>
 
-<li><strong>SHOULD</strong> satisfy: Contains one or more Specimen if the specimen isn't inherent in code value.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Contains one or more Specimen if the specimen isn't inherent in code value.</li>
 
-<li><strong>SHALL</strong> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code</li>
 
-<li><strong>SHALL</strong> satisfy: Contains one or more component</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more component<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.component-&gt;isEmpty()</pre>
+</li>
+</ul>
+</li>
 
-<li><strong>MAY</strong> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</li>
 
-<li><strong>MAY</strong> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section.</li>
 
-<li><strong>SHALL</strong> satisfy: Contains one or more sources of information.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+or not self.getSection().informant-&gt;isEmpty()
+or not self.getClinicalDocument().informant-&gt;isEmpty()
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</pre>
+</li>
+</ul>
+</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Result Organizer example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Result Organizer example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -99,13 +108,13 @@
           &lt;entry&gt;
             &lt;organizer moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/&gt;
-              &lt;id root="a230b1ee-0c8f-45b1-8eb5-034694125f06"/&gt;
+              &lt;id root="9514c8da-0026-4881-aac8-d9ab2f1fae66"/&gt;
               &lt;code/&gt;
               &lt;statusCode/&gt;
               &lt;component&gt;
                 &lt;observation classCode="OBS" moodCode="EVN"&gt;
                   &lt;templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/&gt;
-                  &lt;id root="0decf564-ea7e-4c9a-a47f-cb36e9042f7e"/&gt;
+                  &lt;id root="08c90e3f-64b4-4db7-a10f-dfcadaa9d4e7"/&gt;
                   &lt;code/&gt;
                   &lt;statusCode/&gt;
                   &lt;effectiveTime&gt;
@@ -128,9 +137,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

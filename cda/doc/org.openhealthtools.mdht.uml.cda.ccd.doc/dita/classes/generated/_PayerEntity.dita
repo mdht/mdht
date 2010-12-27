@@ -15,8 +15,6 @@
 <li><b>CONF-57: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Role.html">RIM Role</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/AssignedEntity.html">CDA Assigned Entity</xref></li>
 <li>[CCD] <b>CONF-57: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 </ol>

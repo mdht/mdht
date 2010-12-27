@@ -24,15 +24,15 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Allergy Drug Sensitivity</h1>
+<h1 class="title topictitle1">Allergy Drug Sensitivity</h1>
 
 
 
-<div><p>[Act: templateId <tt>2.16.840.1.113883.3.88.11.83.6</tt>]</p>
+<div class="body"><p class="shortdesc">[Act: templateId <tt class="ph tt">2.16.840.1.113883.3.88.11.83.6</tt>]</p>
 
 
 <div class="section">
-<p>
+<p class="p">
     This module contains the allergy or intolerance conditions and the associated adverse reactions suffered
     by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module. 
 </p>
@@ -40,17 +40,19 @@
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/AllergyIntoleranceConcern.html">IHE Allergy Intolerance Concern</a> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5.3</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/AllergyIntoleranceConcern.html">IHE Allergy Intolerance Concern</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.3</tt>)</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Allergy Drug Sensitivity example</span>
+<p class="p"/>
+
+<div class="fig fignone"><span class="figcap">Figure 1. Allergy Drug Sensitivity example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -62,12 +64,20 @@
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3" assigningAuthorityName="IHE Allergy Intolerance Concern"/&gt;
               &lt;templateId root="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP Allergy Drug Sensitivity"/&gt;
-              &lt;id root="da29f952-235d-41b6-a902-98c88d299892"/&gt;
+              &lt;id root="665b173e-e4e3-4b5e-93c3-60979a3c4ea3"/&gt;
               &lt;code nullFlavor="NA"/&gt;
               &lt;effectiveTime&gt;
                 &lt;low value="1972"/&gt;
                 &lt;high value="2008"/&gt;
               &lt;/effectiveTime&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.41" assigningAuthorityName="CCD Episode Observation"/&gt;
+                  &lt;code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CD"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
             &lt;/act&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -80,9 +90,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

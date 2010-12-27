@@ -8,12 +8,12 @@
 <ol id="conformance">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProcedureEntry.html">IHE Procedure Entry</xref></li>
 <li><b>C83-[DE-17-CDA-3]: </b><b>SHOULD</b> contain [1..1] <tt>targetSiteCode</tt>, which <b>SHOULD</b> be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.8.9 Body Site Value Set STATIC 2</li>
-<li><b>SHOULD</b> satisfy: Contains the procedure provider in performer / assignedEntity.</li>
+<li><b>SHOULD</b> satisfy: Contains the procedure provider in performer / assignedEntity.<ul><li><codeblock>[OCL]: self.performer-&gt;forAll(perf : cda::Performer2 | not perf.oclIsUndefined() and not perf.assignedEntity.oclIsEmpty())</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProcedureEntry.html">IHE Procedure Entry</xref></li>
 <li>[HITSP] <b>C83-[DE-17-CDA-3]: </b><b>SHOULD</b> contain [1..1] <tt>targetSiteCode</tt>, which <b>SHOULD</b> be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.8.9 Body Site Value Set STATIC 2</li>
-<li>[HITSP] <b>SHOULD</b> satisfy: Contains the procedure provider in performer / assignedEntity.</li>
+<li>[HITSP] <b>SHOULD</b> satisfy: Contains the procedure provider in performer / assignedEntity.<ul><li><codeblock>[OCL]: self.performer-&gt;forAll(perf : cda::Performer2 | not perf.oclIsUndefined() and not perf.assignedEntity.oclIsEmpty())</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 </body>

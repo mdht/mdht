@@ -22,8 +22,6 @@
 <li><b>SHALL</b> satisfy: The absence of known allergies, adverse reactions or alerts SHALL be explicitly asserted.</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48765-2" <i>Allergies, adverse reactions, alerts</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
@@ -45,7 +43,7 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="9bca352f-d352-4bce-8388-0a2c5f009830"/>
+              <id root="31f5e708-377e-4f77-a78c-51589efa5615"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

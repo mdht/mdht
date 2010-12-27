@@ -6,4 +6,5 @@
 <topicref href="MedicalSummary.dita" type="topic" />
 <topicref href="PHRExtract.dita" type="topic" />
 <topicref href="PHRUpdate.dita" type="topic" />
+<topicref href="ScannedDocument.dita" type="topic" />
 </map>

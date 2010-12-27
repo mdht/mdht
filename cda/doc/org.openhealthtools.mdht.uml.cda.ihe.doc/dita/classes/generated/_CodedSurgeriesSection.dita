@@ -16,8 +16,6 @@ described in the Entry Content Modules.</p>
 <li>Conforms to <xref href="../SurgeriesSection.dita">Surgeries Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.11</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProceduresSection.html">CCD Procedures Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li>
 <li>Conforms to <xref href="../SurgeriesSection.dita">Surgeries Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.11</tt>)</li>

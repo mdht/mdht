@@ -24,35 +24,35 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Problem Concern Entry</h1>
+<h1 class="title topictitle1">Problem Concern Entry</h1>
 
 
 
-<div><p>[Act: templateId <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>]</p>
+<div class="body"><p class="shortdesc">[Act: templateId <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>]</p>
 
 
 <div class="section">
-<p>This entry is a specialization of the Concern Entry, wherein the subject of the concern is focused on a problem.</p>
+<p class="p">This entry is a specialization of the Concern Entry, wherein the subject of the concern is focused on a problem.</p>
 
 </div>
 
 
-<ol>
-<li>Conforms to <a href="ConcernEntry.html" title="[Act: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5.1]">Concern Entry</a> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5.1</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="ConcernEntry.html" title="[Act: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5.1]">Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.1</tt>)</li>
 
-<li><strong>SHALL</strong> contain [1..*] <tt>entryRelationship</tt>, such that it<ol type="a">
-<li>contains <a href="ProblemEntry.html" title="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5]">Problem Entry</a> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ProblemEntry.html" title="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5]">Problem Entry</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5</tt>)</li>
 </ol>
 </li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Problem Concern Entry example</span>
+<div class="fig fignone"><span class="figcap">Figure 1. Problem Concern Entry example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -63,7 +63,7 @@
               &lt;templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/&gt;
-              &lt;id root="cf34f8e8-6798-482f-be0a-bc1c384af2c5"/&gt;
+              &lt;id root="edb7fe76-14d0-4103-a017-4ea0501f3243"/&gt;
               &lt;code nullFlavor="NA"/&gt;
               &lt;effectiveTime&gt;
                 &lt;low value="1972"/&gt;
@@ -83,6 +83,14 @@
                   &lt;value xsi:type="CD"/&gt;
                 &lt;/observation&gt;
               &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.41" assigningAuthorityName="CCD Episode Observation"/&gt;
+                  &lt;code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CD"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
             &lt;/act&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -95,9 +103,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 

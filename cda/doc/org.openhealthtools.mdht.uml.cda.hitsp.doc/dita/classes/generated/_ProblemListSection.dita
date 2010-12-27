@@ -19,8 +19,6 @@
 <li>contains <xref href="../Condition.dita">Condition</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.7</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ActiveProblemsSection.html">IHE Active Problems Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.6</tt>)</li>
@@ -52,7 +50,31 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP Condition"/>
-              <id root="7bdac01f-cd8b-45d2-a3e4-aa7feb553927"/>
+              <id root="f94f7706-1bda-42c1-8ccb-2dc027a25d1f"/>
+              <code nullFlavor="NA"/>
+              <effectiveTime>
+                <low value="1972"/>
+                <high value="2008"/>
+              </effectiveTime>
+            </act>
+          </entry>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/>
+              <id root="27c68b60-b00f-4b89-bfcd-5c4ccefb2923"/>
+              <code nullFlavor="NA"/>
+              <effectiveTime>
+                <low value="1972"/>
+                <high value="2008"/>
+              </effectiveTime>
+            </act>
+          </entry>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
+              <id root="cab55260-2b4e-49cd-a28b-ae5ee7f2797b"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

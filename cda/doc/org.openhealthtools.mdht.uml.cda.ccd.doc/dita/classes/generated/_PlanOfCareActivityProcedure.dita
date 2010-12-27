@@ -15,21 +15,20 @@
 <li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
-<li><b>SHALL</b> satisfy: <codeblock>self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ
+<li><b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ
   or self.moodCode = vocab::x_DocumentProcedureMood::PRMS or self.moodCode = vocab::x_DocumentProcedureMood::PRP
-  or self.moodCode = vocab::x_DocumentProcedureMood::RQO</codeblock></li>
+  or self.moodCode = vocab::x_DocumentProcedureMood::RQO</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/InfrastructureRoot.html">RIM Infrastructure Root</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.hl7.rim.doc/classes/Act.html">RIM Act</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Procedure.html">CDA Procedure</xref></li>
+<li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClass</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
-<li>[CCD] <b>SHALL</b> satisfy: <codeblock>self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ
+<li>[CCD] <b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ
   or self.moodCode = vocab::x_DocumentProcedureMood::PRMS or self.moodCode = vocab::x_DocumentProcedureMood::PRP
-  or self.moodCode = vocab::x_DocumentProcedureMood::RQO</codeblock></li>
+  or self.moodCode = vocab::x_DocumentProcedureMood::RQO</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -40,7 +39,7 @@
           <entry>
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="fdcc5567-0b13-4095-a106-d3bf09e95836"/>
+              <id root="17caa107-f2ce-4b69-82f7-9243e3673d34"/>
             </procedure>
           </entry>
         </section>

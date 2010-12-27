@@ -24,28 +24,30 @@
 	may be found on the HL7, IHE, and HITSP web sites.</p>
 </div>
 
-<h1 class="topictitle1">Insurance Provider</h1>
+<h1 class="title topictitle1">Insurance Provider</h1>
 
 
 
-<div><p>[Act: templateId <tt>2.16.840.1.113883.3.88.11.83.5</tt>]</p>
+<div class="body"><p class="shortdesc">[Act: templateId <tt class="ph tt">2.16.840.1.113883.3.88.11.83.5</tt>]</p>
 
 
 <div class="section">
 </div>
 
 
-<ol>
-<li>Conforms to <a href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CoverageEntry.html">IHE Coverage Entry</a> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.17</tt>)</li>
+<ol class="ol">
+<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CoverageEntry.html">IHE Coverage Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.17</tt>)</li>
 
 </ol>
 
 
-<div class="fignone"><span class="figcap">Figure 1. Insurance Provider example</span>
+<p class="p"/>
+
+<div class="fig fignone"><span class="figcap">Figure 1. Insurance Provider example</span>
 
 
 
-<pre class="codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;component&gt;
     &lt;structuredBody&gt;
@@ -56,9 +58,17 @@
               &lt;templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE Coverage Entry"/&gt;
               &lt;templateId root="2.16.840.1.113883.3.88.11.83.5" assigningAuthorityName="HITSP Insurance Provider"/&gt;
-              &lt;id root="ed5d0957-2cfa-418e-8104-43be7f33a407"/&gt;
+              &lt;id root="80138578-bcf6-4ff4-bc9c-c30ef64f3557"/&gt;
               &lt;code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/&gt;
               &lt;statusCode code="completed"/&gt;
+              &lt;entryRelationship&gt;
+                &lt;act classCode="ACT" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/&gt;
+                  &lt;id root="4cc3c261-c338-4dbc-b640-f755903e974e"/&gt;
+                  &lt;code/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                &lt;/act&gt;
+              &lt;/entryRelationship&gt;
             &lt;/act&gt;
           &lt;/entry&gt;
         &lt;/section&gt;
@@ -71,9 +81,9 @@
 
 </div>
 
-<div>
+<div class="related-links">
 <div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../content/ClinicalStatementTemplates.html">CLINICAL STATEMENT TEMPLATES</a></div>
 </div>
 </div>
 
