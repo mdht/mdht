@@ -139,6 +139,16 @@
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.removeValidationMessagesAction">
 			</action>
+			
+			
+			
+			<action label="%compareTemplateAction.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.CompareTemplateAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.compareTemplateAction">
+			</action>
+			
+			
 			<action label="%generateSampleInstance.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.GenerateSampleInstanceAction"
 				menubarPath="cdatools/edit" enablesFor="1"
