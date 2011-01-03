@@ -9,6 +9,12 @@
 
 <plugin>
 
+
+
+   <extension point="org.eclipse.ui.startup">
+      <startup class="org.openhealthtools.mdht.uml.cda.validation.internal.Startup"/>
+   </extension>
+   
 	<!-- - Constraint Context -->
 	<extension point="org.eclipse.emf.validation.constraintBindings">
 		<clientContext

@@ -27,20 +27,8 @@ public class ValidationDelegateClientSelector implements IClientSelector {
 	public static boolean running = true;
 
 	@Override
-	public boolean selects(Object object) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean selects(Object object) {	
+		return running;
 	}
 
-//	/*
-//	 * (non-Javadoc)
-//	 * 
-//	 * @see
-//	 * org.eclipse.emf.validation.model.IClientSelector#selects(java.lang.Object
-//	 * )
-//	 */
-//	@Override
-//	public boolean selects(Object object) {
-//		return running;
-//	}
 }
