@@ -195,7 +195,7 @@ public class DischargeSummaryOperations extends MedicalSummaryOperations {
 	public static  ActiveProblemsSection getActiveProblemsSection(DischargeSummary dischargeSummary) {
 		if (GET_ACTIVE_PROBLEMS_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(IHEPackage.Literals.DISCHARGE_SUMMARY, IHEPackage.Literals.DISCHARGE_SUMMARY.getEAllOperations().get(40));
+			helper.setOperationContext(IHEPackage.Literals.DISCHARGE_SUMMARY, IHEPackage.Literals.DISCHARGE_SUMMARY.getEAllOperations().get(65));
 			try {
 				GET_ACTIVE_PROBLEMS_SECTION__EOCL_QRY = helper.createQuery(GET_ACTIVE_PROBLEMS_SECTION__EOCL_EXP);
 			}

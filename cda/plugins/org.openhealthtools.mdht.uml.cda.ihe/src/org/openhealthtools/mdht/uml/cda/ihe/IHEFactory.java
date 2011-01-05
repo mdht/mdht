@@ -383,6 +383,15 @@ public interface IHEFactory extends EFactory {
 	CodedResultsSection createCodedResultsSection();
 
 	/**
+	 * Returns a new object of class '<em>External Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>External Reference</em>'.
+	 * @generated
+	 */
+	ExternalReference createExternalReference();
+
+	/**
 	 * Returns a new object of class '<em>Assessment And Plan Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

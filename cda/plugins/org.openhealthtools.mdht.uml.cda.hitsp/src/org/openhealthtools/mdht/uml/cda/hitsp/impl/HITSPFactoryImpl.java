@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.openhealthtools.mdht.uml.cda.hitsp.*;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
@@ -127,9 +126,11 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.IMMUNIZATION: return createImmunization();
 			case HITSPPackage.PAYERS_SECTION: return createPayersSection();
 			case HITSPPackage.SURGERIES_SECTION: return createSurgeriesSection();
+			case HITSPPackage.PROCEDURE: return createProcedure();
 			case HITSPPackage.PLAN_OF_CARE_SECTION: return createPlanOfCareSection();
 			case HITSPPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
 			case HITSPPackage.DIAGNOSTIC_RESULTS_SECTION: return createDiagnosticResultsSection();
+			case HITSPPackage.RESULT: return createResult();
 			case HITSPPackage.VITAL_SIGN: return createVitalSign();
 			case HITSPPackage.HISTORY_OF_PAST_ILLNESS_SECTION: return createHistoryOfPastIllnessSection();
 			case HITSPPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
@@ -148,7 +149,6 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
 			case HITSPPackage.SOCIAL_HISTORY_SECTION: return createSocialHistorySection();
 			case HITSPPackage.MEDICAL_EQUIPMENT_SECTION: return createMedicalEquipmentSection();
-			case HITSPPackage.RESULT: return createResult();
 			case HITSPPackage.LANGUAGE_SPOKEN: return createLanguageSpoken();
 			case HITSPPackage.INSURANCE_PROVIDER: return createInsuranceProvider();
 			case HITSPPackage.HEALTHCARE_PROVIDER: return createHealthcareProvider();
@@ -158,7 +158,6 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.MEDICATION_TAPERED_DOSE: return createMedicationTaperedDose();
 			case HITSPPackage.MEDICATION_CONDITIONAL_DOSE: return createMedicationConditionalDose();
 			case HITSPPackage.MEDICATION_COMBINATION_MEDICATION: return createMedicationCombinationMedication();
-			case HITSPPackage.PROCEDURE: return createProcedure();
 			case HITSPPackage.SUPPORT: return createSupport();
 			case HITSPPackage.SUPPORT_GUARDIAN: return createSupportGuardian();
 			case HITSPPackage.SUPPORT_PARTICIPANT: return createSupportParticipant();

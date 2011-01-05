@@ -77,6 +77,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.EncounterActivity;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
+import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -641,6 +642,16 @@ public class IHESwitch<T> {
 				if (result == null) result = caseSection(codedResultsSection);
 				if (result == null) result = caseAct(codedResultsSection);
 				if (result == null) result = caseInfrastructureRoot(codedResultsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.EXTERNAL_REFERENCE: {
+				ExternalReference externalReference = (ExternalReference)theEObject;
+				T result = caseExternalReference(externalReference);
+				if (result == null) result = caseCDA_Act(externalReference);
+				if (result == null) result = caseClinicalStatement(externalReference);
+				if (result == null) result = caseAct(externalReference);
+				if (result == null) result = caseInfrastructureRoot(externalReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1591,6 +1602,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseCodedResultsSection(CodedResultsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>External Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>External Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExternalReference(ExternalReference object) {
 		return null;
 	}
 
