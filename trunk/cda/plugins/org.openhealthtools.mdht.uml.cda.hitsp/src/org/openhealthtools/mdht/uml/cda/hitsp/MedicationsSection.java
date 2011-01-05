@@ -19,10 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- *     The Medications Section contains information about the relevant medications for the patient. At a
- *     minimum, the currently active medications should be listed. 
- * </p>
+ * The Medications Section contains information about the relevant medications for the patient. At a minimum, the currently active medications should be listed.
  * <!-- end-model-doc -->
  *
  *

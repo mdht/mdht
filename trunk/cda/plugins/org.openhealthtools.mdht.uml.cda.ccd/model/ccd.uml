@@ -186,8 +186,8 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SbvIIOeZEd-aaJELhEID-A" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_3RKloKPSEd6t_4WfM070fA" name="resultsSection" visibility="private" type="_7TVToIiAEd66cKocspyVOg" association="_3RJXgKPSEd6t_4WfM070fA">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3RLMsaPSEd6t_4WfM070fA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3RLMsKPSEd6t_4WfM070fA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wfdioBg6EeCf9aMNaCAtDQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wfeJsBg6EeCf9aMNaCAtDQ" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_EF_jAKPTEd6t_4WfM070fA" name="proceduresSection" visibility="private" type="_p_LEwIjvEd66cKocspyVOg" association="_EF-U4KPTEd6t_4WfM070fA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EGAxIKPTEd6t_4WfM070fA" value="1"/>
@@ -564,16 +564,16 @@
           <body>The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_CQQmsBtDEd-vGNAsDUJvgw" name="specimenElement" constrainedElement="_Ht_RsHDAEd6eItyqb1FoWg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_MlsJcBtDEd-vGNAsDUJvgw">
-          <language>Analysis</language>
-          <body>Contains one or more Specimen if the specimen isn't inherent in code value.</body>
-        </specification>
-      </ownedRule>
       <ownedRule xmi:id="_SvpKQBtDEd-vGNAsDUJvgw" name="specimenConflict" constrainedElement="_Ht_RsHDAEd6eItyqb1FoWg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_aXRC8BtDEd-vGNAsDUJvgw">
           <language>Analysis</language>
           <body>The specimen element SHALL NOT conflict with the specimen inherent in code</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_p9oCwBg5EeCf9aMNaCAtDQ" name="specimenRoleId" constrainedElement="_Ht_RsHDAEd6eItyqb1FoWg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wtAr4Bg5EeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <body>specimen / specimenRole / id SHOULD be set to equal a Procedure / specimen / specimenRole / id to indicate that the Results and the Procedure are referring to the same specimen.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_mSUfsBtDEd-vGNAsDUJvgw" name="componentElement" constrainedElement="_Ht_RsHDAEd6eItyqb1FoWg">
@@ -777,8 +777,8 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_CinbMHDPEd6eItyqb1FoWg" name="ImmunizationsSection">
       <ownedComment xmi:id="_jTB1UBtJEd-vGNAsDUJvgw">
-        <body>The Immunizations section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized.&#xD;
-This section is optional, however it is strongly recommended that it be present in cases of pediatric care and in other cases when such information is available.</body>
+        <body>&lt;p>The Immunizations section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized.&lt;/p>&#xD;
+&lt;p>This section is optional, however it is strongly recommended that it be present in cases of pediatric care and in other cases when such information is available.&lt;/p></body>
       </ownedComment>
       <ownedRule xmi:id="_54_VkBtJEd-vGNAsDUJvgw" name="titleValue" constrainedElement="_CinbMHDPEd6eItyqb1FoWg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_93lSEBtJEd-vGNAsDUJvgw">
@@ -1884,6 +1884,9 @@ This section is optional, however it is strongly recommended that it be present 
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_EGc0YK33Ed6_ioDelDcPPg" memberEnd="_EGepkK33Ed6_ioDelDcPPg _EGhF0K33Ed6_ioDelDcPPg">
+      <ownedComment xmi:id="_XZIz4Bg5EeCf9aMNaCAtDQ">
+        <body>Should be included if the specimen isn't inherent in code value.</body>
+      </ownedComment>
       <ownedEnd xmi:id="_EGhF0K33Ed6_ioDelDcPPg" name="" visibility="private" type="_Ht_RsHDAEd6eItyqb1FoWg" association="_EGc0YK33Ed6_ioDelDcPPg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EGhs4a33Ed6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EGhs4K33Ed6_ioDelDcPPg"/>
@@ -2684,7 +2687,9 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:AssociationValidation xmi:id="_UUr0oKPSEd6t_4WfM070fA" severity="WARNING" base_Association="_NhXGsKPSEd6t_4WfM070fA">
     <ruleId>CONF-298</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_8F0ncKPSEd6t_4WfM070fA" severity="WARNING" base_Association="_3RJXgKPSEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_8F0ncKPSEd6t_4WfM070fA" severity="WARNING" base_Association="_3RJXgKPSEd6t_4WfM070fA">
+    <ruleId>CONF-388</ruleId>
+  </CDA:AssociationValidation>
   <CDA:AssociationValidation xmi:id="_KH9FcKPTEd6t_4WfM070fA" severity="WARNING" base_Association="_EF-U4KPTEd6t_4WfM070fA"/>
   <CDA:AssociationValidation xmi:id="_R_MHcKPTEd6t_4WfM070fA" severity="WARNING" base_Association="_QlgXsKPTEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_3ZQ8QKPTEd6t_4WfM070fA" base_Class="_o9nLAKPTEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.10" assigningAuthorityName="CCD"/>
@@ -2730,22 +2735,42 @@ Authorizations are represented using an act subordinate to the policy or program
     <ruleId>CONF-27</ruleId>
   </CDA:ConstraintValidation>
   <CDA:TextValue xmi:id="_dcoLwK3yEd6_ioDelDcPPg" base_Property="_K6UHIK3yEd6_ioDelDcPPg"/>
-  <CDA:TextValue xmi:id="_vwXo4K3yEd6_ioDelDcPPg" base_Property="_GMTtEIjpEd66cKocspyVOg"/>
+  <CDA:TextValue xmi:id="_vwXo4K3yEd6_ioDelDcPPg" base_Property="_GMTtEIjpEd66cKocspyVOg">
+    <ruleId>CONF-391</ruleId>
+  </CDA:TextValue>
   <CDA:CDATemplate xmi:id="_3x-SYK3zEd6_ioDelDcPPg" base_Class="_wN4O0K3zEd6_ioDelDcPPg" templateId="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD"/>
   <CDA:AssociationValidation xmi:id="_DyVs8K30Ed6_ioDelDcPPg" severity="WARNING" base_Association="__3xU0K3zEd6_ioDelDcPPg"/>
-  <CDA:AssociationValidation xmi:id="_tNsl4K30Ed6_ioDelDcPPg" base_Association="_Ubf3kK30Ed6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_tNsl4K30Ed6_ioDelDcPPg" base_Association="_Ubf3kK30Ed6_ioDelDcPPg">
+    <ruleId>CONF-405</ruleId>
+  </CDA:AssociationValidation>
   <Default:Documentation xmi:id="_HwwN0K31Ed6_ioDelDcPPg" base_Comment="_HwtKgK31Ed6_ioDelDcPPg"/>
-  <CDA:AssociationValidation xmi:id="_nFWSIK31Ed6_ioDelDcPPg" severity="WARNING" base_Association="_hl5m4K31Ed6_ioDelDcPPg"/>
-  <CDA:AssociationValidation xmi:id="_LpyC8K33Ed6_ioDelDcPPg" severity="WARNING" base_Association="_EGc0YK33Ed6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_nFWSIK31Ed6_ioDelDcPPg" severity="WARNING" base_Association="_hl5m4K31Ed6_ioDelDcPPg">
+    <ruleId>CONF-388</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:AssociationValidation xmi:id="_LpyC8K33Ed6_ioDelDcPPg" severity="WARNING" base_Association="_EGc0YK33Ed6_ioDelDcPPg">
+    <ruleId>CONF-399</ruleId>
+  </CDA:AssociationValidation>
   <CDA:ConstraintValidation xmi:id="_ALcL0K4BEd6_ioDelDcPPg" base_Constraint="_yqHDEI5qEd6x-qh9FleSiA">
     <ruleId>CONF-305</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:PropertyValidation xmi:id="_PhrfUK6sEd6_ioDelDcPPg" base_Property="_AAXGgK6sEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_gYlLAK6sEd6_ioDelDcPPg" base_Property="_G2B90K6sEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_7WLZ4K6sEd6_ioDelDcPPg" base_Property="_pnt0EK6sEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_CbfPsK6tEd6_ioDelDcPPg" base_Property="_pKklEK6sEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_5TUNcK6wEd6_ioDelDcPPg" severity="WARNING" base_Property="_5TTmYK6wEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_k0dHIK6xEd6_ioDelDcPPg" base_Property="_gX1x4K6xEd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_PhrfUK6sEd6_ioDelDcPPg" base_Property="_AAXGgK6sEd6_ioDelDcPPg">
+    <ruleId>CONF-394</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_gYlLAK6sEd6_ioDelDcPPg" base_Property="_G2B90K6sEd6_ioDelDcPPg">
+    <ruleId>CONF-408</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_7WLZ4K6sEd6_ioDelDcPPg" base_Property="_pnt0EK6sEd6_ioDelDcPPg">
+    <ruleId>CONF-395</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_CbfPsK6tEd6_ioDelDcPPg" base_Property="_pKklEK6sEd6_ioDelDcPPg">
+    <ruleId>CONF-409</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_5TUNcK6wEd6_ioDelDcPPg" severity="WARNING" base_Property="_5TTmYK6wEd6_ioDelDcPPg">
+    <ruleId>CONF-411</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_k0dHIK6xEd6_ioDelDcPPg" base_Property="_gX1x4K6xEd6_ioDelDcPPg">
+    <ruleId>CONF-416</ruleId>
+  </CDA:PropertyValidation>
   <CDA:TextValue xmi:id="_g8XVEMJWEd6-XpBv2uxYrQ" base_Property="_XhrYwMJVEd6-XpBv2uxYrQ"/>
   <CDA:CDATemplate xmi:id="_0DoSIMJcEd6-XpBv2uxYrQ" base_Class="_mEuuUMJcEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.17" assigningAuthorityName="CCD"/>
   <CDA:PropertyValidation xmi:id="_Jg9WYsJdEd6-XpBv2uxYrQ" severity="WARNING" base_Property="_Jg7hMMJdEd6-XpBv2uxYrQ"/>
@@ -2939,21 +2964,49 @@ Authorizations are represented using an act subordinate to the policy or program
     <ruleId>CONF-19</ruleId>
   </CDA:ConstraintValidation>
   <CDA:ConstraintValidation xmi:id="_rqaacBg9Ed-PS-Y_2ABBMQ" severity="WARNING" base_Constraint="_hVw60Bg9Ed-PS-Y_2ABBMQ"/>
-  <CDA:PropertyValidation xmi:id="_K_kLEBtBEd-vGNAsDUJvgw" base_Property="_JTQaQBtBEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_p9licBtBEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_TFty0BtBEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_ykTEIBtCEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_x4g8MBtCEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_M5z_UBtDEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_CQQmsBtDEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_bghxEBtDEd-vGNAsDUJvgw" base_Constraint="_SvpKQBtDEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_oHyMgBtDEd-vGNAsDUJvgw" base_Constraint="_mSUfsBtDEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_LU5agBtEEd-vGNAsDUJvgw" severity="INFO" base_Constraint="_Jl7XQBtEEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_h0o-ABtEEd-vGNAsDUJvgw" severity="INFO" base_Constraint="_cs62QBtEEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_2VOtMBtEEd-vGNAsDUJvgw" base_Constraint="_06WqoBtEEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_ZTUAsBtFEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_XhWT0BtFEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_BSNisBtGEd-vGNAsDUJvgw" base_Constraint="_9f02MBtFEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_UcNSYBtGEd-vGNAsDUJvgw" base_Constraint="_RKDlIBtGEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_OzzqABtHEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_Jnv00BtHEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_imJzIBtHEd-vGNAsDUJvgw" base_Constraint="_g4G88BtHEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_N9IrQBtIEd-vGNAsDUJvgw" base_Constraint="_MZDpYBtIEd-vGNAsDUJvgw"/>
+  <CDA:PropertyValidation xmi:id="_K_kLEBtBEd-vGNAsDUJvgw" base_Property="_JTQaQBtBEd-vGNAsDUJvgw">
+    <ruleId>CONF-388</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:ConstraintValidation xmi:id="_p9licBtBEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_TFty0BtBEd-vGNAsDUJvgw">
+    <ruleId>CONF-392</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_ykTEIBtCEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_x4g8MBtCEd-vGNAsDUJvgw">
+    <ruleId>CONF-398</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_M5z_UBtDEd-vGNAsDUJvgw" severity="WARNING"/>
+  <CDA:ConstraintValidation xmi:id="_bghxEBtDEd-vGNAsDUJvgw" base_Constraint="_SvpKQBtDEd-vGNAsDUJvgw">
+    <ruleId>CONF-400</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_oHyMgBtDEd-vGNAsDUJvgw" base_Constraint="_mSUfsBtDEd-vGNAsDUJvgw">
+    <ruleId>CONF-402</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_LU5agBtEEd-vGNAsDUJvgw" severity="INFO" base_Constraint="_Jl7XQBtEEd-vGNAsDUJvgw">
+    <ruleId>CONF-403</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_h0o-ABtEEd-vGNAsDUJvgw" severity="INFO" base_Constraint="_cs62QBtEEd-vGNAsDUJvgw">
+    <ruleId>CONF-404</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_2VOtMBtEEd-vGNAsDUJvgw" base_Constraint="_06WqoBtEEd-vGNAsDUJvgw">
+    <ruleId>CONF-406</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_ZTUAsBtFEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_XhWT0BtFEd-vGNAsDUJvgw">
+    <ruleId>CONF-413</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_BSNisBtGEd-vGNAsDUJvgw" base_Constraint="_9f02MBtFEd-vGNAsDUJvgw">
+    <ruleId>CONF-415</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_UcNSYBtGEd-vGNAsDUJvgw" base_Constraint="_RKDlIBtGEd-vGNAsDUJvgw">
+    <ruleId>CONF-417</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_OzzqABtHEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_Jnv00BtHEd-vGNAsDUJvgw">
+    <ruleId>CONF-419</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_imJzIBtHEd-vGNAsDUJvgw" base_Constraint="_g4G88BtHEd-vGNAsDUJvgw">
+    <ruleId>CONF-420</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_N9IrQBtIEd-vGNAsDUJvgw" base_Constraint="_MZDpYBtIEd-vGNAsDUJvgw">
+    <ruleId>CONF-421</ruleId>
+  </CDA:ConstraintValidation>
   <CDA:PropertyValidation xmi:id="_jcpg0BtIEd-vGNAsDUJvgw" base_Property="_iR-dcBtIEd-vGNAsDUJvgw"/>
   <CDA:ConstraintValidation xmi:id="_0zWG4BtIEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_zaNJsBtIEd-vGNAsDUJvgw"/>
   <CDA:ConstraintValidation xmi:id="_OPvBsBtJEd-vGNAsDUJvgw" base_Constraint="_MpjHABtJEd-vGNAsDUJvgw"/>
@@ -3004,12 +3057,24 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:CodeSystemConstraint xmi:id="_516SICfbEd-4R4ealYN1gQ" code="completed" base_Property="_fDnXgIHbEd6Ncrr6L3Ublw">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:PropertyValidation xmi:id="_5198gCfbEd-4R4ealYN1gQ" base_Property="_UbVD8K6uEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_51_KoCfbEd-4R4ealYN1gQ" base_Property="_fw3OQK6tEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_52Bm4CfbEd-4R4ealYN1gQ" base_Property="_MCHywK6tEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_52C1ACfbEd-4R4ealYN1gQ" base_Property="_H1HqAK6xEd6_ioDelDcPPg"/>
-  <CDA:PropertyValidation xmi:id="_52EqMCfbEd-4R4ealYN1gQ" severity="INFO" base_Property="_phzBgBtFEd-vGNAsDUJvgw"/>
-  <CDA:PropertyValidation xmi:id="_52GfYCfbEd-4R4ealYN1gQ" severity="WARNING" base_Property="_eLaioBtGEd-vGNAsDUJvgw"/>
+  <CDA:PropertyValidation xmi:id="_5198gCfbEd-4R4ealYN1gQ" base_Property="_UbVD8K6uEd6_ioDelDcPPg">
+    <ruleId>CONF-397</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_51_KoCfbEd-4R4ealYN1gQ" base_Property="_fw3OQK6tEd6_ioDelDcPPg">
+    <ruleId>CONF-396</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_52Bm4CfbEd-4R4ealYN1gQ" base_Property="_MCHywK6tEd6_ioDelDcPPg">
+    <ruleId>CONF-410</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_52C1ACfbEd-4R4ealYN1gQ" base_Property="_H1HqAK6xEd6_ioDelDcPPg">
+    <ruleId>CONF-412</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_52EqMCfbEd-4R4ealYN1gQ" severity="INFO" base_Property="_phzBgBtFEd-vGNAsDUJvgw">
+    <ruleId>CONF-414</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:PropertyValidation xmi:id="_52GfYCfbEd-4R4ealYN1gQ" severity="WARNING" base_Property="_eLaioBtGEd-vGNAsDUJvgw">
+    <ruleId>CONF-418</ruleId>
+  </CDA:PropertyValidation>
   <CDA:CodeSystemConstraint xmi:id="_52HtgCfbEd-4R4ealYN1gQ" code="29762-2" displayName="Social history" base_Property="_Qmz-cciiEd6mWrHPmrIIfQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
@@ -3045,6 +3110,7 @@ Authorizations are represented using an act subordinate to the policy or program
   </CDA:CodeSystemConstraint>
   <CDA:CodeSystemConstraint xmi:id="_52lnkCfbEd-4R4ealYN1gQ" code="30954-2" displayName="Relevant diagnostic tests and/or laboratory data" base_Property="_GMWwYIjpEd66cKocspyVOg">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+    <ruleId>CONF-389</ruleId>
   </CDA:CodeSystemConstraint>
   <CDA:CodeSystemConstraint xmi:id="_52oD0CfbEd-4R4ealYN1gQ" code="30973-2" displayName="Dose number" base_Property="_ANYJIIjsEd66cKocspyVOg">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
@@ -3311,4 +3377,13 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConformsTo xmi:id="_LgP4YOuZEd-HcKrkbxroPA" base_Generalization="_MqSJ4MKAEd6-XpBv2uxYrQ">
     <ruleId>CONF-331</ruleId>
   </CDA:ConformsTo>
+  <CDA:ConformsTo xmi:id="_cdbpcBgTEeCf9aMNaCAtDQ" base_Generalization="_eOylIHDAEd6eItyqb1FoWg">
+    <ruleId>CONF-407</ruleId>
+  </CDA:ConformsTo>
+  <CDA:ConformsTo xmi:id="_VH0mcBgWEeCf9aMNaCAtDQ" base_Generalization="_hZltMHDAEd6eItyqb1FoWg">
+    <ruleId>CONF-393</ruleId>
+  </CDA:ConformsTo>
+  <CDA:ConstraintValidation xmi:id="_qobTQBg5EeCf9aMNaCAtDQ" severity="WARNING" base_Constraint="_p9oCwBg5EeCf9aMNaCAtDQ">
+    <ruleId>CONF-401</ruleId>
+  </CDA:ConstraintValidation>
 </xmi:XMI>

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ProcedureOperations;
-import org.openhealthtools.mdht.uml.cda.ihe.impl.ProcedureEntryImpl;
+import org.openhealthtools.mdht.uml.cda.ihe.impl.ProcedureEntryProcedureActivityProcedureImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class ProcedureImpl extends ProcedureEntryImpl implements Procedure {
+public class ProcedureImpl extends ProcedureEntryProcedureActivityProcedureImpl implements Procedure {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,8 +50,8 @@ public class ProcedureImpl extends ProcedureEntryImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProcedurePerformerAssignedEntity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureOperations.validateProcedurePerformerAssignedEntity(this, diagnostics, context);
+	public boolean validateHITSPProcedureHasCodeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureOperations.validateHITSPProcedureHasCodeCode(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,35 @@ public class ProcedureImpl extends ProcedureEntryImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureOperations.validateProcedureTemplateId(this, diagnostics, context);
+	public boolean validateHITSPProcedureHasCodeOriginalText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureOperations.validateHITSPProcedureHasCodeOriginalText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHITSPProcedurePerformerAssignedEntity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureOperations.validateHITSPProcedurePerformerAssignedEntity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHITSPProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureOperations.validateHITSPProcedureTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHITSPProcedureTargetSiteCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureOperations.validateHITSPProcedureTargetSiteCode(this, diagnostics, context);
 	}
 
 	/**

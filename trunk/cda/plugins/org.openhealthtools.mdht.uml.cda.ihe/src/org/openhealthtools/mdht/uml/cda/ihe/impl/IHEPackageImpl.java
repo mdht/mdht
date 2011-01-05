@@ -45,6 +45,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.EncounterActivity;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
+import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -387,6 +388,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	private EClass codedResultsSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass externalReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1078,6 +1086,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getExternalReference() {
+		return externalReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAssessmentAndPlanSection() {
 		return assessmentAndPlanSectionEClass;
 	}
@@ -1509,6 +1526,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		codedResultsSectionEClass = createEClass(CODED_RESULTS_SECTION);
 
+		externalReferenceEClass = createEClass(EXTERNAL_REFERENCE);
+
 		assessmentAndPlanSectionEClass = createEClass(ASSESSMENT_AND_PLAN_SECTION);
 
 		carePlanSectionEClass = createEClass(CARE_PLAN_SECTION);
@@ -1654,6 +1673,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		reviewOfSystemsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		hospitalCourseSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		codedResultsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
+		externalReferenceEClass.getESuperTypes().add(theCDAPackage.getAct());
 		assessmentAndPlanSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		carePlanSectionEClass.getESuperTypes().add(theCCDPackage.getPlanOfCareSection());
 		familyMedicalHistorySectionEClass.getESuperTypes().add(theCCDPackage.getFamilyHistorySection());
@@ -2495,6 +2515,57 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(codedResultsSectionEClass, ecorePackage.getEBoolean(), "validateCodedResultsSectionExternalReference", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(codedResultsSectionEClass, ecorePackage.getEBoolean(), "validateCodedResultsSectionSimpleObservation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(codedResultsSectionEClass, this.getExternalReference(), "getExternalReferences", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(codedResultsSectionEClass, this.getSimpleObservation(), "getSimpleObservations", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(externalReferenceEClass, ExternalReference.class, "ExternalReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(externalReferenceEClass, ecorePackage.getEBoolean(), "validateExternalReferenceTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(externalReferenceEClass, ecorePackage.getEBoolean(), "validateExternalReferenceClassCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(externalReferenceEClass, ecorePackage.getEBoolean(), "validateExternalReferenceMoodCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(assessmentAndPlanSectionEClass, AssessmentAndPlanSection.class, "AssessmentAndPlanSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(assessmentAndPlanSectionEClass, ecorePackage.getEBoolean(), "validateAssessmentAndPlanSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2736,7 +2807,79 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		initEClass(procedureEntryProcedureActivityProcedureEClass, ProcedureEntryProcedureActivityProcedure.class, "ProcedureEntryProcedureActivityProcedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureHasTextReference", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureApproachSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureStatusCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureTargetSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(procedureEntryProcedureActivityProcedureEClass, ecorePackage.getEBoolean(), "validateProcedureEntryProcedureActivityProcedureText", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -3780,8 +3923,19 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "code.displayName", "STUDIES SUMMARY",
 			 "constraints.validation.error", "CodedResultsSectionTemplateId CodedResultsSectionCode",
 			 "code.codeSystemName", "LOINC",
-			 "code.code", "30954-2"
-		   });											
+			 "constraints.validation.warning", "CodedResultsSectionExternalReference",
+			 "code.code", "30954-2",
+			 "constraints.validation.info", "CodedResultsSectionSimpleObservation"
+		   });																						
+		addAnnotation
+		  (externalReferenceEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.4",
+			 "constraints.validation.error", "ExternalReferenceTemplateId ExternalReferenceClassCode ExternalReferenceMoodCode",
+			 "classCode", "ACT",
+			 "moodCode", "EVN"
+		   });															
 		addAnnotation
 		  (assessmentAndPlanSectionEClass, 
 		   source, 
@@ -3891,8 +4045,10 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "contextDependent", "true",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.19",
-			 "constraints.validation.error", "ProcedureEntryProcedureActivityProcedureTemplateId"
-		   });						
+			 "constraints.validation.error", "ProcedureEntryProcedureActivityProcedureTemplateId ProcedureEntryProcedureActivityProcedureHasTextReference ProcedureEntryProcedureActivityProcedureCode ProcedureEntryProcedureActivityProcedureId ProcedureEntryProcedureActivityProcedureStatusCode ProcedureEntryProcedureActivityProcedureText",
+			 "constraints.validation.warning", "ProcedureEntryProcedureActivityProcedureEffectiveTime",
+			 "constraints.validation.info", "ProcedureEntryProcedureActivityProcedureApproachSiteCode ProcedureEntryProcedureActivityProcedureTargetSiteCode"
+		   });																																						
 		addAnnotation
 		  (procedureEntryPlanOfCareActivityProcedureEClass, 
 		   source, 
@@ -4075,7 +4231,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
 	}
 
 	/**
@@ -4095,7 +4251,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (vitalSignObservationEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																																																																																																																																																																			
+		   });																																																																																																																																																																																																																																																																																																												
 		addAnnotation
 		  (medicalSummaryEClass, 
 		   source, 
@@ -4105,7 +4261,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (dischargeSummaryEClass, 
 		   source, 
 		   new String[] {
-		   });																																																															
+		   });																																																																																															
 		addAnnotation
 		  (payerEntryEClass, 
 		   source, 

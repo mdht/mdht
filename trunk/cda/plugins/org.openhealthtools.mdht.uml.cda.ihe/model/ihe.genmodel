@@ -433,6 +433,30 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CodedResultsSection/CodedResultsSectionCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CodedResultsSection/CodedResultsSectionCode/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//CodedResultsSection/CodedResultsSectionExternalReference">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CodedResultsSection/CodedResultsSectionExternalReference/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CodedResultsSection/CodedResultsSectionExternalReference/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//CodedResultsSection/CodedResultsSectionSimpleObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CodedResultsSection/CodedResultsSectionSimpleObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CodedResultsSection/CodedResultsSectionSimpleObservation/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//CodedResultsSection/getExternalReferences"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//CodedResultsSection/getSimpleObservations"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ExternalReference">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ExternalReference/ExternalReferenceTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ExternalReference/ExternalReferenceTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ExternalReference/ExternalReferenceTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ExternalReference/ExternalReferenceClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ExternalReference/ExternalReferenceClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ExternalReference/ExternalReferenceClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ExternalReference/ExternalReferenceMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ExternalReference/ExternalReferenceMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ExternalReference/ExternalReferenceMoodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//AssessmentAndPlanSection">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//AssessmentAndPlanSection/AssessmentAndPlanSectionTemplateId">
@@ -556,9 +580,41 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ProcedureEntry"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ProcedureEntryProcedureActivityProcedure">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureHasTextReference">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureHasTextReference/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureHasTextReference/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureApproachSiteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureApproachSiteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureApproachSiteCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureEffectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureEffectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureEffectiveTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureStatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureStatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureStatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureTargetSiteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureTargetSiteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureTargetSiteCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProcedureEntryProcedureActivityProcedure/ProcedureEntryProcedureActivityProcedureText/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ProcedureEntryPlanOfCareActivityProcedure">

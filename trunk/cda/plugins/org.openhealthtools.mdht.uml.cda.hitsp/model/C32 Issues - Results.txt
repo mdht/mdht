@@ -1,0 +1,14 @@
+
+* C83 Diagnostic Results Section IS NOT derived from CCD Results Section (or any other CCD section)
+	- How should non-procedure results be included in C32? 
+		Use CCD Results Section without any HITSP constraints? Require use of C83 Result entry?
+
+* C83 Diagnostic Results Section
+	- IHE ProcedureEntry (base of HITSP Procedure) is undefined in IHE PCC rev 5 and 6
+		-- for this draft, use template rules from IHE wiki
+	- Are both procedure and result contained directly within section?
+	- Does not specify how results are referenced from procedure.
+	
+* C83 Result
+	- referenceRange is optional in C32, but SHOULD be present in CCD (CONF-419). 
+		Cannot relax an inherited constraint.

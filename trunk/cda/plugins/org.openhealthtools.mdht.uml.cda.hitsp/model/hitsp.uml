@@ -52,6 +52,24 @@
           <body>The first &amp;lt;effectiveTime> SHALL use the IVL_TS data type unless for a single administration, in which case, it SHALL use the TS data type.</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_qtehkBaoEeCf9aMNaCAtDQ" name="dailyLivingActivities" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_8PJBgBaoEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <body>Medications that are administered based on activities of daily living SHALL identify the events that trigger administration in the &amp;lt;event> element beneath the &amp;lt;effectiveTime> element. The &amp;lt;effectiveTime> element SHALL be of type EIVL_TS.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_rY4PABaoEeCf9aMNaCAtDQ" name="specifiedFrequency" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_JEI-ABapEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <body>Medications that are administered at a specified frequency SHALL record the expected interval between doses in the &amp;lt;period> element beneath an &amp;lt;effectiveTime> of type PIVL_TS. The &amp;lt;effectiveTime> element SHALL have an institutionSpecified attribute value of &quot;true&quot;.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_r7w5oBaoEeCf9aMNaCAtDQ" name="specifiedInterval" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_PcJo8BapEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <body>Medications that are administered at a specified interval SHALL record interval between doses in the &amp;lt;period> element beneath an &amp;lt;effectiveTime> element of type PIVL_TS. The &amp;lt;effectiveTime> element SHALL have an institutionSpecified attribute value of &quot;false&quot;.</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_w0bkkHrGEd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_sFGZUHGfEd6bf47ZOcft4w"/>
       </generalization>
@@ -301,7 +319,7 @@
       <generalization xmi:id="_UcKsMMfuEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_9fsJYMftEd6VjLXh4DcWSg"/>
       </generalization>
-      <ownedAttribute xmi:id="_AMDs0KDmEd-dVeaMP0XXQw" name="procedure" type="_KYNNMKDlEd-dVeaMP0XXQw" association="_AMET4KDmEd-dVeaMP0XXQw">
+      <ownedAttribute xmi:id="_AMDs0KDmEd-dVeaMP0XXQw" name="surgicalProcedure" type="_KYNNMKDlEd-dVeaMP0XXQw" association="_AMET4KDmEd-dVeaMP0XXQw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ne4cEKrjEd-yFfcbpgNFIA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfFQYKrjEd-yFfcbpgNFIA" value="1"/>
       </ownedAttribute>
@@ -342,10 +360,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_WI3zsMfwEd6VjLXh4DcWSg" name="MedicationsSection">
       <ownedComment xmi:id="_iNKE8MfwEd6VjLXh4DcWSg" annotatedElement="_WI3zsMfwEd6VjLXh4DcWSg">
-        <body>&lt;p>&#xD;
-    The Medications Section contains information about the relevant medications for the patient. At a&#xD;
-    minimum, the currently active medications should be listed. &#xD;
-&lt;/p></body>
+        <body>The Medications Section contains information about the relevant medications for the patient. At a minimum, the currently active medications should be listed.</body>
       </ownedComment>
       <generalization xmi:id="_Y4PkAMfwEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_8YbB4HomEd6WAZ28-5wkSg"/>
@@ -448,14 +463,19 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_P3GVkMieEd6mWrHPmrIIfQ" name="DiagnosticResultsSection">
       <ownedComment xmi:id="_YY5XgMieEd6mWrHPmrIIfQ" annotatedElement="_P3GVkMieEd6mWrHPmrIIfQ">
-        <body>&lt;p>&#xD;
-    The Diagnostic Results Section contains information about the results from diagnostic procedures the&#xD;
-    patient received. &#xD;
-&lt;/p></body>
+        <body>The Diagnostic Results Section contains information about the results from diagnostic procedures the patient received.</body>
       </ownedComment>
       <generalization xmi:id="_RNzp0MieEd6mWrHPmrIIfQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_-OeSAMidEd6mWrHPmrIIfQ"/>
       </generalization>
+      <ownedAttribute xmi:id="_CHfD8BdkEeCf9aMNaCAtDQ" name="diagnosticProcedure" type="_KYNNMKDlEd-dVeaMP0XXQw" association="_CHfrARdkEeCf9aMNaCAtDQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ECPgcBdkEeCf9aMNaCAtDQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ECPgcRdkEeCf9aMNaCAtDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FNw4YBdkEeCf9aMNaCAtDQ" name="result" type="_oTzNMDIWEd-SYNRf-pkwtw" association="_FNxfcBdkEeCf9aMNaCAtDQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GIRY0BdkEeCf9aMNaCAtDQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GIR_4BdkEeCf9aMNaCAtDQ" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ml82oMifEd6mWrHPmrIIfQ" name="AssessmentAndPlanSection">
       <ownedComment xmi:id="_yaHoQMifEd6mWrHPmrIIfQ" annotatedElement="_ml82oMifEd6mWrHPmrIIfQ">
@@ -585,6 +605,29 @@ If the problem is known to be resolved, but the date of resolution is not known,
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_oTzNMDIWEd-SYNRf-pkwtw" name="Result">
+      <ownedComment xmi:id="_5VrPQBeTEeCf9aMNaCAtDQ">
+        <body>This module contains current and relevant historical result observations for the patient. The scope of &quot;observations&quot; is broad with the exception of &quot;vital signs&quot; which are contained in the Vital Signs section.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_K7iAwBeWEeCf9aMNaCAtDQ" name="resultTypeCodeSystem" constrainedElement="_ColIkDIXEd-SYNRf-pkwtw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_YH7JkBeWEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <body>Result Type SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96)</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_N2G7gBeWEeCf9aMNaCAtDQ" name="laboratoryResultsValueSet" constrainedElement="_ColIkDIXEd-SYNRf-pkwtw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_eK9qEBeWEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <body>Result Type for laboratory results SHOULD be coded as specified in HITSP/C80 Section 2.2.3.6.1 Laboratory Observations.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_yfmA4BeWEeCf9aMNaCAtDQ" name="resultValuePresence" constrainedElement="_p0cOoBeWEeCf9aMNaCAtDQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BH2qwBeXEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Result Value SHALL be present when the observation/@moodCode is EVN or GOL, and SHALL NOT be present when observation/@moodCode is INT or PRP.</body>
+          <body>(self.moodCode = vocab::x_ActMoodDocumentObservation::EVN or self.moodCode = vocab::x_ActMoodDocumentObservation::EVN)&#xD;&#xA;    implies (not self.value->isEmpty()) and&#xD;&#xA;  (self.moodCode = vocab::x_ActMoodDocumentObservation::INT or self.moodCode = vocab::x_ActMoodDocumentObservation::PRP)&#xD;&#xA;   implies (self.value->isEmpty())</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_oT1CYDIWEd-SYNRf-pkwtw">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg"/>
       </generalization>
@@ -600,6 +643,13 @@ If the problem is known to be resolved, but the date of resolution is not known,
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CuLaQTIXEd-SYNRf-pkwtw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CuLaQjIXEd-SYNRf-pkwtw" value="1"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5TTmYK6wEd6_ioDelDcPPg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_p0cOoBeWEeCf9aMNaCAtDQ" name="value" visibility="private">
+        <ownedComment xmi:id="_tCYKQBeWEeCf9aMNaCAtDQ">
+          <body>The Result value records the desired result in a goal or recorded event, and will not present when recording an intent, request or proposal to measure a result.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#__I8BwDxZEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_gX1x4K6xEd6_ioDelDcPPg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_MdoNoDuEEd-B8KE6Jx0UNQ" name="LanguageSpoken">
@@ -737,16 +787,35 @@ If the problem is known to be resolved, but the date of resolution is not known,
       <ownedEnd xmi:id="_XRb-4KDkEd-dVeaMP0XXQw" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_XRbX0KDkEd-dVeaMP0XXQw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_KYNNMKDlEd-dVeaMP0XXQw" name="Procedure">
+      <ownedComment xmi:id="_mGksABdlEeCf9aMNaCAtDQ">
+        <body>Defines a coded entry describing a procedure performed on a patient.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_zTQPEBdtEeCf9aMNaCAtDQ" name="hasCodeCode" constrainedElement="_KYNNMKDlEd-dVeaMP0XXQw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_sbysYBeLEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The code/@code attribute is present.</body>
+          <body>not self.code.code.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_05OHUBdtEeCf9aMNaCAtDQ" name="hasCodeOriginalText" constrainedElement="_KYNNMKDlEd-dVeaMP0XXQw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_0RHC0BeLEeCf9aMNaCAtDQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The code/originalText/reference/@value is present.</body>
+          <body>not self.code.originalText.reference.value.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
       <ownedRule xmi:id="_o4kiIKr_Ed-yFfcbpgNFIA" name="performerAssignedEntity" constrainedElement="_KYNNMKDlEd-dVeaMP0XXQw">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_3YYaoKr_Ed-yFfcbpgNFIA">
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains the procedure provider in performer / assignedEntity.</body>
-          <body>self.performer->forAll(perf : cda::Performer2 | not perf.oclIsUndefined() and not perf.assignedEntity.oclIsEmpty())</body>
+          <body>self.performer->forAll(perf : cda::Performer2 | not perf.oclIsUndefined() and perf.assignedEntity->size() > 0)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_KYObUKDlEd-dVeaMP0XXQw">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_uP4tkDuMEd-B8KE6Jx0UNQ"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_6yfdEDuNEd-B8KE6Jx0UNQ"/>
       </generalization>
       <ownedAttribute xmi:id="_LYNmwKDnEd-dVeaMP0XXQw" name="targetSiteCode" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
@@ -855,6 +924,12 @@ If the problem is known to be resolved, but the date of resolution is not known,
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_jZMQ0DuMEd-B8KE6Jx0UNQ"/>
       </generalization>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_CHfrARdkEeCf9aMNaCAtDQ" memberEnd="_CHfD8BdkEeCf9aMNaCAtDQ _CHgSEBdkEeCf9aMNaCAtDQ">
+      <ownedEnd xmi:id="_CHgSEBdkEeCf9aMNaCAtDQ" type="_P3GVkMieEd6mWrHPmrIIfQ" association="_CHfrARdkEeCf9aMNaCAtDQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FNxfcBdkEeCf9aMNaCAtDQ" memberEnd="_FNw4YBdkEeCf9aMNaCAtDQ _FNxfcRdkEeCf9aMNaCAtDQ">
+      <ownedEnd xmi:id="_FNxfcRdkEeCf9aMNaCAtDQ" type="_P3GVkMieEd6mWrHPmrIIfQ" association="_FNxfcBdkEeCf9aMNaCAtDQ"/>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -948,7 +1023,9 @@ If the problem is known to be resolved, but the date of resolution is not known,
   </CDA:ValueSetConstraint>
   <CDA:PropertyValidation xmi:id="_CuIW8DIXEd-SYNRf-pkwtw" base_Property="_ColIkDIXEd-SYNRf-pkwtw"/>
   <CDA:PropertyValidation xmi:id="_CuMBUDIXEd-SYNRf-pkwtw" base_Property="_CuLaQDIXEd-SYNRf-pkwtw"/>
-  <CDA:CDATemplate xmi:id="_HDAsgDIXEd-SYNRf-pkwtw" base_Class="_oTzNMDIWEd-SYNRf-pkwtw" templateId="2.16.840.1.113883.3.88.11.83.15"/>
+  <CDA:CDATemplate xmi:id="_HDAsgDIXEd-SYNRf-pkwtw" base_Class="_oTzNMDIWEd-SYNRf-pkwtw" templateId="2.16.840.1.113883.3.88.11.83.15">
+    <ruleId>C83-[DE-15-CDA-1]</ruleId>
+  </CDA:CDATemplate>
   <CDA:CDATemplate xmi:id="_SV4acDuEEd-B8KE6Jx0UNQ" base_Class="_MdoNoDuEEd-B8KE6Jx0UNQ" templateId="2.16.840.1.113883.3.88.11.83.2">
     <ruleId>C83-[DE-2.01-CDA-2]</ruleId>
   </CDA:CDATemplate>
@@ -1027,15 +1104,21 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:ConformsTo xmi:id="_rGTugVF6Ed-Lud-5SYZhMw" base_Generalization="_Yda28Mf1Ed6VjLXh4DcWSg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGUVkFF6Ed-Lud-5SYZhMw" base_Generalization="_H4oHUMiXEd6mWrHPmrIIfQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGU8oFF6Ed-Lud-5SYZhMw" base_Generalization="_LTgrEMidEd6mWrHPmrIIfQ" requiresParentId="true"/>
-  <CDA:ConformsTo xmi:id="_rGVjsFF6Ed-Lud-5SYZhMw" base_Generalization="_RNzp0MieEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGVjsFF6Ed-Lud-5SYZhMw" base_Generalization="_RNzp0MieEd6mWrHPmrIIfQ" requiresParentId="true">
+    <ruleId>C83-[CT-122-1]</ruleId>
+  </CDA:ConformsTo>
   <CDA:ConformsTo xmi:id="_rGVjsVF6Ed-Lud-5SYZhMw" base_Generalization="_n1jdUMifEd6mWrHPmrIIfQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGWKwFF6Ed-Lud-5SYZhMw" base_Generalization="_U9euoMigEd6mWrHPmrIIfQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGWx0FF6Ed-Lud-5SYZhMw" base_Generalization="_7ThccMigEd6mWrHPmrIIfQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGXY4FF6Ed-Lud-5SYZhMw" base_Generalization="_BW7T4MiiEd6mWrHPmrIIfQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGXY4VF6Ed-Lud-5SYZhMw" base_Generalization="_KMB24MijEd6mWrHPmrIIfQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGX_8FF6Ed-Lud-5SYZhMw" base_Generalization="_gF0NoMijEd6mWrHPmrIIfQ" requiresParentId="true"/>
-  <CDA:ConformsTo xmi:id="_rGZOEFF6Ed-Lud-5SYZhMw" base_Generalization="_oT1CYDIWEd-SYNRf-pkwtw" requiresParentId="true"/>
-  <CDA:ConformsTo xmi:id="_rGZOEVF6Ed-Lud-5SYZhMw" base_Generalization="_S1FzcDIXEd-SYNRf-pkwtw" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGZOEFF6Ed-Lud-5SYZhMw" base_Generalization="_oT1CYDIWEd-SYNRf-pkwtw" requiresParentId="true">
+    <ruleId>[C83-[DE-15-CDA-3]</ruleId>
+  </CDA:ConformsTo>
+  <CDA:ConformsTo xmi:id="_rGZOEVF6Ed-Lud-5SYZhMw" base_Generalization="_S1FzcDIXEd-SYNRf-pkwtw" requiresParentId="true">
+    <ruleId>C83-[DE-15-CDA-2]</ruleId>
+  </CDA:ConformsTo>
   <CDA:ConformsTo xmi:id="_rGZ1IFF6Ed-Lud-5SYZhMw" base_Generalization="_Md7IkDuEEd-B8KE6Jx0UNQ" requiresParentId="true">
     <ruleId>C83-[DE-2.01-CDA-3]</ruleId>
   </CDA:ConformsTo>
@@ -1054,7 +1137,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
     <ruleId>C83-[DE-17-CDA-2]</ruleId>
   </CDA:ConformsTo>
   <CDA:AssociationValidation xmi:id="_BsF8MKDmEd-dVeaMP0XXQw" base_Association="_AMET4KDmEd-dVeaMP0XXQw"/>
-  <CDA:ValueSetConstraint xmi:id="_AE8l8KDrEd-dVeaMP0XXQw" base_Property="_LYNmwKDnEd-dVeaMP0XXQw" severity="WARNING">
+  <CDA:ValueSetConstraint xmi:id="_AE8l8KDrEd-dVeaMP0XXQw" name="" base_Property="_LYNmwKDnEd-dVeaMP0XXQw" severity="WARNING">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_c215caDqEd-dVeaMP0XXQw"/>
     <ruleId>C83-[DE-17-CDA-3]</ruleId>
   </CDA:ValueSetConstraint>
@@ -1140,4 +1223,31 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:ConformsTo xmi:id="_tbnqUPyzEd-RgJ5u3I0u5A" base_Generalization="_eyAVkPyzEd-RgJ5u3I0u5A" requiresParentId="true">
     <ruleId>C83-[DE-8-CDA-4]</ruleId>
   </CDA:ConformsTo>
+  <CDA:ConstraintValidation xmi:id="_tVdQcBaoEeCf9aMNaCAtDQ" base_Constraint="_qtehkBaoEeCf9aMNaCAtDQ">
+    <ruleId>C83-[DE-8.03-CDA-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_wHujwBaoEeCf9aMNaCAtDQ" base_Constraint="_rY4PABaoEeCf9aMNaCAtDQ">
+    <ruleId>C83-[DE-8.04-CDA-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_yAGaoBaoEeCf9aMNaCAtDQ" base_Constraint="_r7w5oBaoEeCf9aMNaCAtDQ">
+    <ruleId>C83-[DE-8.05-CDA-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:AssociationValidation xmi:id="_MLxMUBdkEeCf9aMNaCAtDQ" base_Association="_CHfrARdkEeCf9aMNaCAtDQ">
+    <ruleId>C83-[CT-122-2]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:AssociationValidation xmi:id="_MqnEcBdkEeCf9aMNaCAtDQ" base_Association="_FNxfcBdkEeCf9aMNaCAtDQ">
+    <ruleId>C83-[CT-122-2]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:ConstraintValidation xmi:id="_5yVLUBdtEeCf9aMNaCAtDQ" severity="WARNING" base_Constraint="_zTQPEBdtEeCf9aMNaCAtDQ"/>
+  <CDA:ConstraintValidation xmi:id="_6S2ecBdtEeCf9aMNaCAtDQ" base_Constraint="_05OHUBdtEeCf9aMNaCAtDQ"/>
+  <CDA:ConstraintValidation xmi:id="_Qey1ABeWEeCf9aMNaCAtDQ" severity="WARNING" base_Constraint="_K7iAwBeWEeCf9aMNaCAtDQ">
+    <ruleId>C154-[DE-15.03-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_SqvvMBeWEeCf9aMNaCAtDQ" severity="WARNING" base_Constraint="_N2G7gBeWEeCf9aMNaCAtDQ">
+    <ruleId>C154-[DE-15.03-2]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:PropertyValidation xmi:id="_p0c1sBeWEeCf9aMNaCAtDQ" base_Property="_p0cOoBeWEeCf9aMNaCAtDQ"/>
+  <CDA:ConstraintValidation xmi:id="_zVypEBeWEeCf9aMNaCAtDQ" base_Constraint="_yfmA4BeWEeCf9aMNaCAtDQ">
+    <ruleId>C83-[DE-15.05-CDA-1]</ruleId>
+  </CDA:ConstraintValidation>
 </xmi:XMI>

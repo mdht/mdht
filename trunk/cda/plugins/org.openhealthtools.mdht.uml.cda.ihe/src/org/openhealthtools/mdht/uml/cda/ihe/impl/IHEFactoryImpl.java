@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterActivity;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
+import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -178,6 +179,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.REVIEW_OF_SYSTEMS_SECTION: return createReviewOfSystemsSection();
 			case IHEPackage.HOSPITAL_COURSE_SECTION: return createHospitalCourseSection();
 			case IHEPackage.CODED_RESULTS_SECTION: return createCodedResultsSection();
+			case IHEPackage.EXTERNAL_REFERENCE: return createExternalReference();
 			case IHEPackage.ASSESSMENT_AND_PLAN_SECTION: return createAssessmentAndPlanSection();
 			case IHEPackage.CARE_PLAN_SECTION: return createCarePlanSection();
 			case IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION: return createFamilyMedicalHistorySection();
@@ -603,6 +605,16 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public CodedResultsSection createCodedResultsSection() {
 		CodedResultsSectionImpl codedResultsSection = new CodedResultsSectionImpl();
 		return codedResultsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExternalReference createExternalReference() {
+		ExternalReferenceImpl externalReference = new ExternalReferenceImpl();
+		return externalReference;
 	}
 
 	/**
