@@ -1804,4 +1804,5 @@ life, hobbies, and risky habits.</body>
   <CDA:AssociationValidation xmi:id="_6L8y0Bj6EeCf9aMNaCAtDQ" base_Association="_B5XcYBj5EeCf9aMNaCAtDQ"/>
   <CDA:AssociationValidation xmi:id="_6pHP8Bj6EeCf9aMNaCAtDQ" severity="WARNING" base_Association="_0kDWMhj6EeCf9aMNaCAtDQ"/>
   <CDA:AssociationValidation xmi:id="_7O750Bj6EeCf9aMNaCAtDQ" severity="INFO" base_Association="_2raEQRj6EeCf9aMNaCAtDQ"/>
+  <CDA:CDATemplate xmi:id="_RuLm4BkjEeCoHPxvqZSHAw" base_Class="_uP4tkDuMEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
 </xmi:XMI>
