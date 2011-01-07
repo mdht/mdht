@@ -70,6 +70,15 @@ public class MySectionImpl extends SectionImpl implements MySection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateMySectionConfidentialityCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MySectionOperations.validateMySectionConfidentialityCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateMySectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MySectionOperations.validateMySectionTitle(this, diagnostics, context);
 	}

@@ -48,20 +48,28 @@ public class ExampleValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.cda.example";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Document Has Patient Name Given And Family' of 'My Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MY_DOCUMENT__MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Document Template Id' of 'My Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MY_DOCUMENT__MY_DOCUMENT_TEMPLATE_ID = 2;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Document My Section' of 'My Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_DOCUMENT__MY_DOCUMENT_MY_SECTION = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Template Id' of 'My Document'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int MY_DOCUMENT__GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID = 2;
+	public static final int MY_DOCUMENT__MY_DOCUMENT_MY_SECTION = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section Template Id' of 'My Section'.
@@ -69,7 +77,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_SECTION__MY_SECTION_TEMPLATE_ID = 3;
+	public static final int MY_SECTION__MY_SECTION_TEMPLATE_ID = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section Code' of 'My Section'.
@@ -77,7 +85,15 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_SECTION__MY_SECTION_CODE = 4;
+	public static final int MY_SECTION__MY_SECTION_CODE = 5;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section Confidentiality Code' of 'My Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MY_SECTION__MY_SECTION_CONFIDENTIALITY_CODE = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section Title' of 'My Section'.
@@ -85,7 +101,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_SECTION__MY_SECTION_TITLE = 5;
+	public static final int MY_SECTION__MY_SECTION_TITLE = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section My Observation' of 'My Section'.
@@ -93,7 +109,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_SECTION__MY_SECTION_MY_OBSERVATION = 6;
+	public static final int MY_SECTION__MY_SECTION_MY_OBSERVATION = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Observation Class Code' of 'My Observation'.
@@ -101,7 +117,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_OBSERVATION__MY_OBSERVATION_CLASS_CODE = 7;
+	public static final int MY_OBSERVATION__MY_OBSERVATION_CLASS_CODE = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Code' of 'My Observation'.
@@ -109,7 +125,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_OBSERVATION__PROBLEM_OBSERVATION_CODE = 8;
+	public static final int MY_OBSERVATION__PROBLEM_OBSERVATION_CODE = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Observation Effective Time' of 'My Observation'.
@@ -117,7 +133,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_OBSERVATION__MY_OBSERVATION_EFFECTIVE_TIME = 9;
+	public static final int MY_OBSERVATION__MY_OBSERVATION_EFFECTIVE_TIME = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Observation Value' of 'My Observation'.
@@ -125,7 +141,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_OBSERVATION__MY_OBSERVATION_VALUE = 10;
+	public static final int MY_OBSERVATION__MY_OBSERVATION_VALUE = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Observation Target Site Code' of 'My Observation'.
@@ -133,7 +149,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_OBSERVATION__MY_OBSERVATION_TARGET_SITE_CODE = 11;
+	public static final int MY_OBSERVATION__MY_OBSERVATION_TARGET_SITE_CODE = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Template Id' of 'My Observation'.
@@ -141,7 +157,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MY_OBSERVATION__PROBLEM_OBSERVATION_TEMPLATE_ID = 12;
+	public static final int MY_OBSERVATION__PROBLEM_OBSERVATION_TEMPLATE_ID = 14;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -149,7 +165,7 @@ public class ExampleValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 12;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 14;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -234,7 +250,15 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsPersonHasName(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsOrganizationsHaveContactInfo(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTimePreciseToDay(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTimePreciseToYear(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTelephoneMatchesRegex(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasTelephoneDialingDigits(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsUnknownTelephoneUsesNullFlavor(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeIdExtension(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsOidLength(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndVersionNumber(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsSetIdAndIdAreUnique(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCopyTimeNotPresent(myDocument, diagnostics, context);
@@ -251,7 +275,9 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsHasInformantAssignedPersonOrRelatedPerson(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsLegalAuthenticatorHasAssignedPerson(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyDocument_validateGeneralHeaderConstraintsTemplateId(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTimePreciseToSecond(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTimePreciseToYearAndDay(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsCode(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsEffectiveTime(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsId(myDocument, diagnostics, context);
@@ -259,8 +285,30 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRealmCode(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTitle(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeId(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyDocument_validateMyDocumentHasPatientNameGivenAndFamily(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyDocument_validateMyDocumentTemplateId(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMyDocument_validateMyDocumentMySection(myDocument, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validateMyDocumentHasPatientNameGivenAndFamily constraint of '<em>My Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMyDocument_validateMyDocumentHasPatientNameGivenAndFamily(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myDocument.validateMyDocumentHasPatientNameGivenAndFamily(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMyDocumentTemplateId constraint of '<em>My Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMyDocument_validateMyDocumentTemplateId(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myDocument.validateMyDocumentTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -271,35 +319,6 @@ public class ExampleValidator extends EObjectValidator {
 	 */
 	public boolean validateMyDocument_validateMyDocumentMySection(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return myDocument.validateMyDocumentMySection(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateGeneralHeaderConstraintsTemplateId constraint of '<em>My Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMyDocument_validateGeneralHeaderConstraintsTemplateId(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateGeneralHeaderConstraintsTemplateId", getObjectLabel(myDocument, context) },
-						 new Object[] { myDocument },
-						 context));
-			}
-			return false;
-		}
-		return cdtValidator.validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTemplateId(myDocument, diagnostics, context);
 	}
 
 	/**
@@ -318,6 +337,7 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMySection_validateMySectionTemplateId(mySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMySection_validateMySectionCode(mySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMySection_validateMySectionConfidentialityCode(mySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMySection_validateMySectionTitle(mySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMySection_validateMySectionMyObservation(mySection, diagnostics, context);
 		return result;
@@ -341,6 +361,16 @@ public class ExampleValidator extends EObjectValidator {
 	 */
 	public boolean validateMySection_validateMySectionCode(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return mySection.validateMySectionCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMySectionConfidentialityCode constraint of '<em>My Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMySection_validateMySectionConfidentialityCode(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return mySection.validateMySectionConfidentialityCode(diagnostics, context);
 	}
 
 	/**
@@ -389,8 +419,8 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMyObservation_validateMyObservationClassCode(myObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMyObservation_validateProblemObservationCode(myObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMyObservation_validateMyObservationEffectiveTime(myObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyObservation_validateMyObservationValue(myObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMyObservation_validateMyObservationTargetSiteCode(myObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyObservation_validateMyObservationValue(myObservation, diagnostics, context);
 		return result;
 	}
 

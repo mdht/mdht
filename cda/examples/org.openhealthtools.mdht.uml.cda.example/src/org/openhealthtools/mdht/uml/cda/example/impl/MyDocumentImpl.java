@@ -51,6 +51,24 @@ public class MyDocumentImpl extends GeneralHeaderConstraintsImpl implements MyDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateMyDocumentHasPatientNameGivenAndFamily(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyDocumentOperations.validateMyDocumentHasPatientNameGivenAndFamily(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMyDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyDocumentOperations.validateMyDocumentTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateMyDocumentMySection(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MyDocumentOperations.validateMyDocumentMySection(this, diagnostics, context);
 	}
@@ -62,16 +80,6 @@ public class MyDocumentImpl extends GeneralHeaderConstraintsImpl implements MyDo
 	 */
 	public MySection getMySection() {
 		return MyDocumentOperations.getMySection(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean validateGeneralHeaderConstraintsTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyDocumentOperations.validateGeneralHeaderConstraintsTemplateId(this, diagnostics, context);
 	}
 
 	/**

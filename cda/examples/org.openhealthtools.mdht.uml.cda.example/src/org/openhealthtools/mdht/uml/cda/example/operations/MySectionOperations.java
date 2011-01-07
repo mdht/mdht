@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MySection#validateMySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MySection#validateMySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MySection#validateMySectionConfidentialityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Section Confidentiality Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MySection#validateMySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MySection#validateMySectionMyObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Section My Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MySection#getMyObservations() <em>Get My Observations</em>}</li>
@@ -165,6 +166,63 @@ public class MySectionOperations extends SectionOperations {
 						 ExampleValidator.DIAGNOSTIC_SOURCE,
 						 ExampleValidator.MY_SECTION__MY_SECTION_CODE,
 						 ExamplePlugin.INSTANCE.getString("MySectionCode"),
+						 new Object [] { mySection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateMySectionConfidentialityCode(MySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Section Confidentiality Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMySectionConfidentialityCode(MySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_MY_SECTION_CONFIDENTIALITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.confidentialityCode.oclIsUndefined()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateMySectionConfidentialityCode(MySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Section Confidentiality Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMySectionConfidentialityCode(MySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_MY_SECTION_CONFIDENTIALITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.confidentialityCode.oclIsUndefined()
+	 * @param mySection The receiving '<em><b>My Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateMySectionConfidentialityCode(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MY_SECTION_CONFIDENTIALITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(ExamplePackage.Literals.MY_SECTION);
+			try {
+				VALIDATE_MY_SECTION_CONFIDENTIALITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_SECTION_CONFIDENTIALITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_MY_SECTION_CONFIDENTIALITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(mySection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 ExampleValidator.DIAGNOSTIC_SOURCE,
+						 ExampleValidator.MY_SECTION__MY_SECTION_CONFIDENTIALITY_CODE,
+						 ExamplePlugin.INSTANCE.getString("MySectionConfidentialityCode"),
 						 new Object [] { mySection }));
 			}
 			return false;
@@ -318,7 +376,7 @@ public class MySectionOperations extends SectionOperations {
 	public static  EList<MyObservation> getMyObservations(MySection mySection) {
 		if (GET_MY_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(ExamplePackage.Literals.MY_SECTION, ExamplePackage.Literals.MY_SECTION.getEAllOperations().get(51));
+			helper.setOperationContext(ExamplePackage.Literals.MY_SECTION, ExamplePackage.Literals.MY_SECTION.getEAllOperations().get(52));
 			try {
 				GET_MY_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_MY_OBSERVATIONS__EOCL_EXP);
 			}

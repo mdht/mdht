@@ -225,10 +225,28 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(myDocumentEClass, MyDocument.class, "MyDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(myDocumentEClass, ecorePackage.getEBoolean(), "validateMyDocumentMySection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(myDocumentEClass, ecorePackage.getEBoolean(), "validateMyDocumentHasPatientNameGivenAndFamily", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(myDocumentEClass, ecorePackage.getEBoolean(), "validateMyDocumentTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(myDocumentEClass, ecorePackage.getEBoolean(), "validateMyDocumentMySection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
@@ -248,6 +266,15 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(mySectionEClass, ecorePackage.getEBoolean(), "validateMySectionCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(mySectionEClass, ecorePackage.getEBoolean(), "validateMySectionConfidentialityCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -305,7 +332,7 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationTargetSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -314,7 +341,7 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationTargetSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(myObservationEClass, ecorePackage.getEBoolean(), "validateMyObservationValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -346,19 +373,20 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.2.3.4",
-			 "constraints.validation.error", "MyDocumentTemplateId MyDocumentMySection"
-		   });									
+			 "constraints.validation.error", "MyDocumentTemplateId MyDocumentHasPatientNameGivenAndFamily MyDocumentMySection"
+		   });																
 		addAnnotation
 		  (mySectionEClass, 
 		   source, 
 		   new String[] {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "1.2.3.4.1",
 			 "code.displayName", "Summary Purpose",
+			 "templateId.root", "1.2.3.4.1",
 			 "constraints.validation.error", "MySectionTemplateId MySectionCode MySectionTitle MySectionMyObservation",
 			 "code.codeSystemName", "LOINC",
+			 "constraints.validation.warning", "MySectionConfidentialityCode",
 			 "code.code", "48764-5"
-		   });																					
+		   });																									
 		addAnnotation
 		  (myObservationEClass, 
 		   source, 
@@ -381,12 +409,7 @@ public class ExamplePackageImpl extends EPackageImpl implements ExamplePackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";			
-		addAnnotation
-		  (myDocumentEClass, 
-		   source, 
-		   new String[] {
-		   });																													
+		String source = "duplicates";																																										
 		addAnnotation
 		  (myObservationEClass, 
 		   source, 
