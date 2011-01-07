@@ -31,8 +31,8 @@ import org.openhealthtools.mdht.uml.cda.example.util.ExampleValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyObservation#validateMyObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyObservation#validateProblemObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyObservation#validateMyObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyObservation#validateMyObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyObservation#validateMyObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Target Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyObservation#validateMyObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyObservation#validateProblemObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Template Id</em>}</li>
  * </ul>
  * </p>
@@ -225,28 +225,6 @@ public class MyObservationOperations extends ProblemObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_MY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.value->isEmpty() and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CE) and "+
-"let value : datatypes::CE = element.oclAsType(datatypes::CE) in "+
-"value.codeSystem = '2.16.840.1.113883.6.96' and not value.code.oclIsUndefined())";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Value</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_MY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -304,6 +282,28 @@ public class MyObservationOperations extends ProblemObservationOperations {
 	 * @ordered
 	 */
 	protected static Constraint VALIDATE_MY_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_MY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.value->isEmpty() and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CE) and "+
+"let value : datatypes::CE = element.oclAsType(datatypes::CE) in "+
+"value.codeSystem = '2.16.840.1.113883.6.96' and not value.code.oclIsUndefined())";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Observation Value</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMyObservationValue(MyObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_MY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->

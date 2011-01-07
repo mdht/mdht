@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.example.ExamplePackage#getMySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.2.3.4.1' code.displayName='Summary Purpose' constraints.validation.error='MySectionTemplateId MySectionCode MySectionTitle MySectionMyObservation' code.codeSystemName='LOINC' code.code='48764-5'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Summary Purpose' templateId.root='1.2.3.4.1' constraints.validation.error='MySectionTemplateId MySectionCode MySectionTitle MySectionMyObservation' code.codeSystemName='LOINC' constraints.validation.warning='MySectionConfidentialityCode' code.code='48764-5'"
  * @generated
  */
 public interface MySection extends Section {
@@ -50,6 +50,19 @@ public interface MySection extends Section {
 	 * @generated
 	 */
 	boolean validateMySectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.confidentialityCode.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.confidentialityCode.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateMySectionConfidentialityCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
