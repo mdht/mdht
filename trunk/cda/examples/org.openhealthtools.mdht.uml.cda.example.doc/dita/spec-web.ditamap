@@ -3,6 +3,12 @@
 <bookmap id="cdabook">
     <title>MDHT Example IG</title>
     
+	<frontmatter>
+		<preface>
+			<topicref href="preface/Acknowledgments.dita" navtitle="Acknowledgments" type="topic"/>
+		</preface>
+	</frontmatter>
+	
     <chapter format="ditamap" href="introduction/introduction.ditamap"/>
     
 	<chapter format="ditamap" href="content/content.ditamap"/>
