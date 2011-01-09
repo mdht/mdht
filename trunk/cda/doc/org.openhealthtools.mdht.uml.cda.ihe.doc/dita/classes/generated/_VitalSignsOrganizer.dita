@@ -27,26 +27,26 @@
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultOrganizer.html">CCD Result Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsOrganizer.html">CCD Vital Signs Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.35</tt>)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "CLUSTER"</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li>[CCD] <b>CONF-394: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)<ul><li>The observations have all been completed.</li></ul></li>
-<li>[CCD] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
+<li>[CCD] <b>CONF-405: </b><b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultObservation.html">CCD Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li></ol></li>
-<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref></li></ol></li>
-<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>CONF-399: </b><b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref></li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
+<li>[CCD] <b>CONF-395: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "46680005" <i>Vital signs</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>The effective time element shall be present to indicate when the measurement was taken.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../VitalSignObservation.dita">Vital Sign Observation</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.2</tt>)</li></ol></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>author</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li></ol></li>
-<li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</li>
-<li>[CCD] <b>SHOULD</b> satisfy: Contains one or more Specimen if the specimen isn't inherent in code value.</li>
-<li>[CCD] <b>SHALL</b> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code</li>
-<li>[CCD] <b>SHALL</b> satisfy: Contains one or more component<ul><li><codeblock>[OCL]: not self.component-&gt;isEmpty()</codeblock></li></ul></li>
-<li>[CCD] <b>MAY</b> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</li>
-<li>[CCD] <b>MAY</b> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section.</li>
-<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+<li>[CCD] <b>CONF-398: </b><b>SHOULD</b> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</li>
+<li>[CCD] <b>CONF-400: </b><b>SHALL</b> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code</li>
+<li>[CCD] <b>CONF-401: </b><b>SHOULD</b> satisfy: specimen / specimenRole / id SHOULD be set to equal a Procedure / specimen / specimenRole / id to indicate that the Results and the Procedure are referring to the same specimen.</li>
+<li>[CCD] <b>CONF-402: </b><b>SHALL</b> satisfy: Contains one or more component<ul><li><codeblock>[OCL]: not self.component-&gt;isEmpty()</codeblock></li></ul></li>
+<li>[CCD] <b>CONF-403: </b><b>MAY</b> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</li>
+<li>[CCD] <b>CONF-404: </b><b>MAY</b> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section.</li>
+<li>[CCD] <b>CONF-406: </b><b>SHALL</b> satisfy: Contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</codeblock></li></ul></li>
@@ -66,7 +66,7 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1" assigningAuthorityName="IHE Vital Signs Organizer"/>
-              <id root="04dd843a-5e79-40a7-bf1a-591b402f391d"/>
+              <id root="4e828506-0460-4e2f-8fda-23deba034d02"/>
               <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Vital signs"/>
               <statusCode code="completed"/>
               <effectiveTime>
@@ -78,7 +78,7 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE Simple Observation"/>
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2" assigningAuthorityName="IHE Vital Sign Observation"/>
-                  <id root="c72c59f2-bf2c-4355-9eae-8ab841d44cf8"/>
+                  <id root="e68d58d3-b37b-4a38-8789-f76519d4a1d4"/>
                   <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <statusCode code="completed"/>
                   <effectiveTime>
@@ -94,7 +94,7 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
               <component>
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-                  <id root="0fdf217c-55b7-4a99-af07-e6fe9a13db8c"/>
+                  <id root="40407568-6e67-4dfb-8621-2173a64c21d3"/>
                   <code/>
                   <statusCode/>
                   <effectiveTime>

@@ -45,20 +45,12 @@
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
-              <id root="2cc4f4fe-e8c5-4690-a6ac-11a6181aceb5"/>
+              <id root="0f7626fa-7877-45a5-95d5-8f59237a2e94"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>
                 <high value="2008"/>
               </effectiveTime>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.41" assigningAuthorityName="CCD Episode Observation"/>
-                  <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
-                  <statusCode code="completed"/>
-                  <value xsi:type="CD"/>
-                </observation>
-              </entryRelationship>
             </act>
           </entry>
         </section>

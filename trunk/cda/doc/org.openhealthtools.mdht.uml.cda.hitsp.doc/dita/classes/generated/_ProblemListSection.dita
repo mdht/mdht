@@ -50,7 +50,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP Condition"/>
-              <id root="f94f7706-1bda-42c1-8ccb-2dc027a25d1f"/>
+              <id root="7c8ee225-1aef-4ccd-9884-8e841931827b"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>
@@ -63,18 +63,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/>
-              <id root="27c68b60-b00f-4b89-bfcd-5c4ccefb2923"/>
-              <code nullFlavor="NA"/>
-              <effectiveTime>
-                <low value="1972"/>
-                <high value="2008"/>
-              </effectiveTime>
-            </act>
-          </entry>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="cab55260-2b4e-49cd-a28b-ae5ee7f2797b"/>
+              <id root="7c817107-e2fe-48fa-a1d3-3509357fec46"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

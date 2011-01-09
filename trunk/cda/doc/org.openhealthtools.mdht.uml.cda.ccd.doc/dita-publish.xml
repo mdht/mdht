@@ -5,7 +5,7 @@
 	
 	<import file="${dita.dir}/integrator.xml"/>
 
-	<target name="all" depends="standards-pdf, standards-eclipsehelp, developer-pdf" />
+	<target name="all" depends="standards-eclipsehelp" />
 
 	<target name="standards-pdf">
     	<antcall target="pdf">

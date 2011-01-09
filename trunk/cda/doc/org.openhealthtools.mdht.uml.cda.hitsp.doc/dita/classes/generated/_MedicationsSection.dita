@@ -9,10 +9,7 @@
 </prolog>
 <body>
 <section id="description">
-<p>
-    The Medications Section contains information about the relevant medications for the patient. At a
-    minimum, the currently active medications should be listed. 
-</p>
+<p>The Medications Section contains information about the relevant medications for the patient. At a minimum, the currently active medications should be listed.</p>
 </section>
 <ol id="conformance">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/MedicationsSection.html">IHE Medications Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.19</tt>)</li>
@@ -53,7 +50,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" assigningAuthorityName="IHE Medication"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.8"/>
-              <id root="6b20032c-6a66-4555-8b52-639f32844329"/>
+              <id root="79ca2115-f50a-4c0a-aa1f-b939e0514098"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
@@ -67,7 +64,7 @@
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" assigningAuthorityName="IHE Medication"/>
-              <id root="5a81f4f3-b9e7-4435-8e16-8b78a80879aa"/>
+              <id root="0da0c4b7-1e8d-4f00-9529-23507324a8d3"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

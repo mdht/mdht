@@ -42,7 +42,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.17" assigningAuthorityName="CCD Advance Directive Observation"/>
-              <id root="3bde4af0-5328-4343-9e3c-21a9fabf2680"/>
+              <id root="be13432a-0a72-407a-b8c2-13381cc19a5d"/>
               <code/>
               <statusCode code="completed"/>
               <effectiveTime>

@@ -42,12 +42,12 @@ during a colonoscopy.</p>
 <ol id="aggregate">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li>[CCD] <b>CONF-389: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
-<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
+<li>[CCD] <b>CONF-388: </b><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultOrganizer.html">CCD Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li></ol></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
-<li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'results'.</li>
+<li>[CCD] <b>CONF-388: </b><b>SHALL</b> contain [1..1] <tt>text</tt></li>
+<li>[CCD] <b>CONF-392: </b><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'results'.</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -59,14 +59,6 @@ during a colonoscopy.</p>
           <templateId assigningAuthorityName="CDT Diagnostic Findings"/>
           <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
           <title>Relevant diagnostic tests and/or laboratory data</title>
-          <entry>
-            <organizer moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
-              <id root="3a88cfad-1db7-4f97-89fb-757ae5eb1bb8"/>
-              <code/>
-              <statusCode/>
-            </organizer>
-          </entry>
         </section>
       </component>
     </structuredBody>

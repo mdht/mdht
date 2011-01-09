@@ -43,22 +43,13 @@
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1" assigningAuthorityName="IHE Vital Signs Organizer"/>
-              <id root="bd44cad0-d845-4367-a0d8-2dab033105c3"/>
+              <id root="22ea707f-f0d4-4f6f-be1d-7fc6d7047fb3"/>
               <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Vital signs"/>
               <statusCode code="completed"/>
               <effectiveTime>
                 <low value="1972"/>
                 <high value="2008"/>
               </effectiveTime>
-            </organizer>
-          </entry>
-          <entry>
-            <organizer moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
-              <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
-              <id root="62ede68e-4759-4a2b-9bbf-c5c4856f7a29"/>
-              <code/>
-              <statusCode/>
             </organizer>
           </entry>
         </section>

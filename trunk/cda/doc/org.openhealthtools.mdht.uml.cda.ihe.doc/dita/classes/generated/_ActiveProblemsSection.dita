@@ -42,18 +42,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/>
-              <id root="adfa1a18-9b31-4a7b-9b22-cf1ccfb90d03"/>
-              <code nullFlavor="NA"/>
-              <effectiveTime>
-                <low value="1972"/>
-                <high value="2008"/>
-              </effectiveTime>
-            </act>
-          </entry>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="9a8e3271-4f46-4e45-a3a9-0888e14f6f39"/>
+              <id root="f049eb51-618f-474c-b287-e36a88889387"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

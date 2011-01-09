@@ -91,7 +91,7 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
-              <id root="456294aa-1a01-4d46-ae17-8e89c0870ea5"/>
+              <id root="7e79c706-f6af-428c-8235-8c94cc49824d"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

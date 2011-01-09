@@ -52,7 +52,7 @@
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
-              <id root="3841b470-09f2-47d7-a358-7f1edd92f621"/>
+              <id root="c2ba8369-d248-4356-bcd0-d13da3538e42"/>
               <code/>
               <statusCode/>
             </organizer>
