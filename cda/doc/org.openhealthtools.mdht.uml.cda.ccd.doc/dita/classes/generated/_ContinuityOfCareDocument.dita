@@ -22,7 +22,7 @@
 <li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
 <li><b>CONF-298: </b><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol></li>
-<li><b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li><b>CONF-388: </b><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ProceduresSection.dita">Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
@@ -83,7 +83,7 @@
 <li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
 <li>[CCD] <b>CONF-298: </b><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol></li>
-<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
+<li>[CCD] <b>CONF-388: </b><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ProceduresSection.dita">Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>

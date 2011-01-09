@@ -38,8 +38,8 @@
 <ol class="ol">
 <li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CodedSurgeriesSection.html">IHE Coded Surgeries Section</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.3.12</tt>)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">procedure</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="Procedure.html">Procedure</a> (templateId: <tt class="ph tt">2.16.840.1.113883.3.88.11.83.17</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="Procedure.html" title="[Procedure: templateId 2.16.840.1.113883.3.88.11.83.17]">Procedure</a> (templateId: <tt class="ph tt">2.16.840.1.113883.3.88.11.83.17</tt>)</li>
 </ol>
 </li>
 
@@ -64,6 +64,23 @@
           &lt;templateId root="2.16.840.1.113883.3.88.11.83.108" assigningAuthorityName="HITSP Surgeries Section"/&gt;
           &lt;code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/&gt;
           &lt;title&gt;History of procedures&lt;/title&gt;
+          &lt;entry&gt;
+            &lt;procedure&gt;
+              &lt;templateId root="2.16.840.1.113883.10.20.1.29"/&gt;
+              &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/&gt;
+              &lt;templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP Procedure"/&gt;
+              &lt;id root="3a6dbdf1-1bb1-4393-a6ed-8acdd2b0cbd4"/&gt;
+              &lt;code/&gt;
+              &lt;text/&gt;
+              &lt;statusCode code="completed"/&gt;
+              &lt;effectiveTime&gt;
+                &lt;low value="1972"/&gt;
+                &lt;high value="2008"/&gt;
+              &lt;/effectiveTime&gt;
+              &lt;approachSiteCode/&gt;
+              &lt;targetSiteCode codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT"/&gt;
+            &lt;/procedure&gt;
+          &lt;/entry&gt;
         &lt;/section&gt;
       &lt;/component&gt;
     &lt;/structuredBody&gt;

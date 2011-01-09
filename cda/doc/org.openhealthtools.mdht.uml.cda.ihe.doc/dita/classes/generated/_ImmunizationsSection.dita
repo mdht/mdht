@@ -43,7 +43,7 @@ past. It shall include entries for medication administration as described in the
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/>
-              <id root="c1b4d531-2a3f-43a1-a013-d0ec3312a6c6"/>
+              <id root="9baf31a6-f871-4a5d-9fe4-87c74a6f1d28"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

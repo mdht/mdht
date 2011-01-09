@@ -44,13 +44,13 @@
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE Coverage Entry"/>
-              <id root="2d24c373-0c7b-4fc2-915c-383f5957e09c"/>
+              <id root="00128d87-8c0d-4281-a66c-ad56ff630bd3"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
               <entryRelationship>
                 <act classCode="ACT" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
-                  <id root="1f31addd-fde1-4cf7-a343-e09df1054e1c"/>
+                  <id root="0d01b75e-ea6b-45ff-a573-af097b59ae93"/>
                   <code/>
                   <statusCode code="completed"/>
                 </act>

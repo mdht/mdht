@@ -45,7 +45,7 @@
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE Simple Observation"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5" assigningAuthorityName="IHE Pregnancy Observation"/>
-              <id root="6e52328b-5321-4bc6-8eaf-eef301de6163"/>
+              <id root="1b58b497-1956-4b0b-9964-1b2ee490a90b"/>
               <code/>
               <statusCode code="completed"/>
               <repeatNumber/>

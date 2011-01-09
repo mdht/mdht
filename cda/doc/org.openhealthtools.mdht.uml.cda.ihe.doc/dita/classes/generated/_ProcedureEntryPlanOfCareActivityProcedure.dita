@@ -12,10 +12,10 @@
 </section>
 <ol id="conformance">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityProcedure.html">CCD Plan Of Care Activity Procedure</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
-<li>Conforms to <xref href="../ProcedureEntry.dita">Procedure Entry</xref></li>
+<li>Conforms to <xref href="../ProcedureEntry.dita">Procedure Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.19</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref href="../ProcedureEntry.dita">Procedure Entry</xref></li>
+<li>Conforms to <xref href="../ProcedureEntry.dita">Procedure Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.19</tt>)</li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivity.html">CCD Plan Of Care Activity</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Procedure.html">CDA Procedure</xref></li>
@@ -37,7 +37,7 @@
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
-              <id root="54c219ef-cc85-42e9-8baf-ee74e2763c2f"/>
+              <id root="34058632-f2af-4fe4-bde1-d6e7de290ee8"/>
             </procedure>
           </entry>
         </section>

@@ -41,17 +41,6 @@
           <templateId root="2.16.840.1.113883.3.88.11.83.102" assigningAuthorityName="HITSP Allergies Reactions Section"/>
           <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
           <title>Allergies, adverse reactions, alerts</title>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="85f56b13-7862-40d3-a691-f2c8c3b3aad1"/>
-              <code nullFlavor="NA"/>
-              <effectiveTime>
-                <low value="1972"/>
-                <high value="2008"/>
-              </effectiveTime>
-            </act>
-          </entry>
         </section>
       </component>
     </structuredBody>

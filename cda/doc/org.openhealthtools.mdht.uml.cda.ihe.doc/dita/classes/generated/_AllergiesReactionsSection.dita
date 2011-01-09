@@ -36,17 +36,6 @@ associated adverse reactions suffered by the patient.</p>
           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13" assigningAuthorityName="IHE Allergies Reactions Section"/>
           <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
           <title>Allergies, adverse reactions, alerts</title>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="6cea192b-2a79-437e-bf61-39bbeea6f784"/>
-              <code nullFlavor="NA"/>
-              <effectiveTime>
-                <low value="1972"/>
-                <high value="2008"/>
-              </effectiveTime>
-            </act>
-          </entry>
         </section>
       </component>
     </structuredBody>

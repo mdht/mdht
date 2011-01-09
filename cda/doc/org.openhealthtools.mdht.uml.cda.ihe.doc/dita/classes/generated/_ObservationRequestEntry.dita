@@ -36,7 +36,7 @@
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1" assigningAuthorityName="IHE Observation Request Entry"/>
-              <id root="f9f6a54c-6216-4eb4-bfe3-b702d33d7ba0"/>
+              <id root="ad8e480d-e110-4c22-a5fc-1458bd84f19e"/>
             </observation>
           </entry>
         </section>

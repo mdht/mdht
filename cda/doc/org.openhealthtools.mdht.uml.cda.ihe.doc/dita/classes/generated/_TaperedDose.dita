@@ -81,7 +81,7 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" assigningAuthorityName="IHE Medication"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.8" assigningAuthorityName="IHE Tapered Dose"/>
-              <id root="fbd87378-bd53-466e-9d1e-4e8ba7f3a59f"/>
+              <id root="2d28a17a-0f7d-4164-99dc-4c51e608d603"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
@@ -89,23 +89,6 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
               <doseQuantity/>
               <rateQuantity/>
               <maxDoseQuantity/>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.46" assigningAuthorityName="CCD Medication Series Number Observation"/>
-                  <code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose number"/>
-                  <statusCode/>
-                  <value xsi:type="INT"/>
-                </observation>
-              </entryRelationship>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.47" assigningAuthorityName="CCD Medication Status Observation"/>
-                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
-                  <statusCode code="completed"/>
-                  <value xsi:type="CE"/>
-                </observation>
-              </entryRelationship>
             </substanceAdministration>
           </entry>
         </section>

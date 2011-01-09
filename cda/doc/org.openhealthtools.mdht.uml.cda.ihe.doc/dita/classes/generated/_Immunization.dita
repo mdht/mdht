@@ -61,28 +61,11 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/>
-              <id root="271176bb-f633-48f5-9129-8483ad20427b"/>
+              <id root="d7a46423-6e52-4bae-b76a-09e51cf27096"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
               <maxDoseQuantity/>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.46" assigningAuthorityName="CCD Medication Series Number Observation"/>
-                  <code code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose number"/>
-                  <statusCode/>
-                  <value xsi:type="INT"/>
-                </observation>
-              </entryRelationship>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.47" assigningAuthorityName="CCD Medication Status Observation"/>
-                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
-                  <statusCode code="completed"/>
-                  <value xsi:type="CE"/>
-                </observation>
-              </entryRelationship>
             </substanceAdministration>
           </entry>
         </section>

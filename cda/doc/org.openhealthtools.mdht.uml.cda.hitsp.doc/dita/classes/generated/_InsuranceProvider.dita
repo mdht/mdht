@@ -46,13 +46,13 @@
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE Coverage Entry"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.5" assigningAuthorityName="HITSP Insurance Provider"/>
-              <id root="80138578-bcf6-4ff4-bc9c-c30ef64f3557"/>
+              <id root="c9551a7d-aa06-4732-a273-d258c1943b39"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
               <entryRelationship>
                 <act classCode="ACT" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
-                  <id root="4cc3c261-c338-4dbc-b640-f755903e974e"/>
+                  <id root="3b619911-1748-4e0d-a443-d32d12563b78"/>
                   <code/>
                   <statusCode code="completed"/>
                 </act>

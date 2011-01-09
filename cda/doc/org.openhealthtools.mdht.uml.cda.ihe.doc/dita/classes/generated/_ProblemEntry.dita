@@ -62,31 +62,6 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
                 <high value="2008"/>
               </effectiveTime>
               <value xsi:type="CD"/>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.50" assigningAuthorityName="CCD Problem Status Observation"/>
-                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
-                  <statusCode code="completed"/>
-                  <value xsi:type="CE"/>
-                </observation>
-              </entryRelationship>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.51" assigningAuthorityName="CCD Problem Health Status Observation"/>
-                  <code code="11323-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health status"/>
-                  <statusCode code="completed"/>
-                  <value xsi:type="CE"/>
-                </observation>
-              </entryRelationship>
-              <entryRelationship>
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.38" assigningAuthorityName="CCD Age Observation"/>
-                  <code code="397659008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Age"/>
-                  <statusCode code="completed"/>
-                </observation>
-              </entryRelationship>
             </observation>
           </entry>
         </section>

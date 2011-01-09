@@ -9,8 +9,8 @@
 </prolog>
 <body>
 <section id="description">
-<p>The Immunizations section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized.
-This section is optional, however it is strongly recommended that it be present in cases of pediatric care and in other cases when such information is available.</p>
+<p>The Immunizations section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized.</p>
+<p>This section is optional, however it is strongly recommended that it be present in cases of pediatric care and in other cases when such information is available.</p>
 </section>
 <ol id="conformance">
 <li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>

@@ -250,7 +250,7 @@ second.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: -- implem
 asMaintainedEntity/effectiveTime, relatedEntity/effectiveTime,
 serviceEvent/effectiveTime, ClinicalDocument/participant/time,
 serviceEvent/performer/time and encounterParticipant/time SHALL be precise at
-least to the year, SHOULD be precise to the day, and MAY omit time zone.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: -- implemented in Java using XPath selector</pre>
+least to the year, SHOULD be precise to the day, and MAY omit time zone.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: cda::OrganizationPartOf.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject)-&gt; union(  cda::MaintainedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union( cda::RelatedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::RelatedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::RelatedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::ServiceEvent.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::EncounterParticipant.allInstances()-&gt;select( time.oclIsUndefined()).oclAsType( ecore::EObject))-&gt;union(self.participant-&gt;select( time.oclIsUndefined()).oclAsType( ecore::EObject))-&gt;union(cda::OrganizationPartOf.allInstances().effectiveTime-&gt;union(cda::MaintainedEntity.allInstances().effectiveTime)-&gt;union( cda::RelatedEntity.allInstances().effectiveTime)-&gt;union(cda::RelatedEntity.allInstances().effectiveTime)-&gt;union(cda::RelatedEntity.allInstances().effectiveTime)-&gt;union(cda::ServiceEvent.allInstances().effectiveTime)-&gt;union(cda::EncounterParticipant.allInstances().time)-&gt;union(self.participant.time)-&gt;select(current : datatypes::IVL_TS  |  ((not current.low.oclIsUndefined()) and (current.low.value.oclIsUndefined() or current.low.value.size() &lt; 4)) or ((not current.center.oclIsUndefined()) and (current.center.value.oclIsUndefined() or current.center.value.size() &lt; 4)) or ((not current.high.oclIsUndefined()) and (current.high.value.oclIsUndefined() or current.high.value.size() &lt; 4)) or (current.low.oclIsUndefined() and current.center.oclIsUndefined() and current.high.oclIsUndefined()) ).oclAsType( ecore::EObject))</pre>
 </li>
 </ul>
 </li>
@@ -499,9 +499,22 @@ informationRecipient/intendedRecipient/receivedOrganization SHALL be present.</l
 author/time, dataEnterer/time, legalAuthenticator/time, authenticator/time and
 encompassingEncounter/effectiveTime elements SHALL be precise to the day, SHALL
 include a time zone if more precise than to the day, and SHOULD be precise to the
-second.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: -- implemented in Java using XPath selector</pre>
+second.<ul class="ul"><li class="li">Should portion of CON-HP-10 constraitn</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: -- implemented in Java using XPath selector</pre>
 </li>
 <li class="li"><pre class="pre codeblock">[XPath]: /cda:ClinicalDocument/cda:effectiveTime | //cda:author/cda:time | //cda:dataEnterer/cda:time | //cda:encompassingEncounter/cda:effectiveTime</pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">CONF-HP-11: </strong><strong class="ph b">SHOULD</strong> satisfy: Times or time intervals found in the asOrganizationPartOf/effectiveTime,
+asMaintainedEntity/effectiveTime, relatedEntity/effectiveTime,
+serviceEvent/effectiveTime, ClinicalDocument/participant/time,
+serviceEvent/performer/time and encounterParticipant/time SHALL be precise at
+least to the year, SHOULD be precise to the day, and MAY omit time zone.<ul class="ul"><li class="li">Should portion of CON-HP-11 constraitn</li>
+</ul>
+<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: cda::OrganizationPartOf.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject)-&gt; union(  cda::MaintainedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union( cda::RelatedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::RelatedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::RelatedEntity.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::ServiceEvent.allInstances()-&gt;select( effectiveTime.oclIsUndefined()).oclAsType( ecore::EObject) )-&gt;union(cda::EncounterParticipant.allInstances()-&gt;select( time.oclIsUndefined()).oclAsType( ecore::EObject))-&gt;union(self.participant-&gt;select( time.oclIsUndefined()).oclAsType( ecore::EObject))-&gt;union(cda::OrganizationPartOf.allInstances().effectiveTime-&gt;union(cda::MaintainedEntity.allInstances().effectiveTime)-&gt;union( cda::RelatedEntity.allInstances().effectiveTime)-&gt;union(cda::RelatedEntity.allInstances().effectiveTime)-&gt;union(cda::RelatedEntity.allInstances().effectiveTime)-&gt;union(cda::ServiceEvent.allInstances().effectiveTime)-&gt;union(cda::EncounterParticipant.allInstances().time)-&gt;union(self.participant.time)-&gt;select(current : datatypes::IVL_TS  |  ((not current.low.oclIsUndefined()) and (current.low.value.oclIsUndefined() or current.low.value.size() &lt; 8)) or ((not current.center.oclIsUndefined()) and (current.center.value.oclIsUndefined() or current.center.value.size() &lt; 8)) or ((not current.high.oclIsUndefined()) and (current.high.value.oclIsUndefined() or current.high.value.size() &lt; 8)) or (current.low.oclIsUndefined() and current.center.oclIsUndefined() and current.high.oclIsUndefined()) ).oclAsType( ecore::EObject))</pre>
 </li>
 </ul>
 </li>
@@ -517,12 +530,13 @@ second.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: -- implem
 &lt;ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"&gt;
   &lt;realmCode code="US"/&gt;
   &lt;templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/&gt;
-  &lt;id root="a6af1408-361d-4181-9320-09c5cf3bca6e"/&gt;
+  &lt;id root="5da66b22-c707-4289-ad90-4ce20ed7f995"/&gt;
   &lt;code/&gt;
   &lt;title/&gt;
   &lt;effectiveTime/&gt;
   &lt;confidentialityCode/&gt;
   &lt;languageCode/&gt;
+  &lt;author/&gt;
 &lt;/ClinicalDocument&gt;</pre>
 
 </div>

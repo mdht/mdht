@@ -59,7 +59,7 @@
           <entry>
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
-              <id root="02057131-189b-4ac0-b997-dc433ceb1134"/>
+              <id root="37fdf57a-0011-4043-a6b9-4cc156b2bc16"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
             </act>

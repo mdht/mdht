@@ -33,7 +33,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.22" assigningAuthorityName="CCD Family History Observation"/>
-              <id root="a854c89e-3fe8-4b78-be0a-08edc432cdb1"/>
+              <id root="d67cf27b-e1c0-4a53-ac2a-c9c8947cfd67"/>
               <statusCode code="completed"/>
             </observation>
           </entry>

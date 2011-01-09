@@ -14,6 +14,7 @@
 <topicref href="MedicationNormalDose.dita" type="topic" />
 <topicref href="MedicationSplitDose.dita" type="topic" />
 <topicref href="MedicationTaperedDose.dita" type="topic" />
+<topicref href="Procedure.dita" type="topic" />
 <topicref href="Result.dita" type="topic" />
 <topicref href="VitalSign.dita" type="topic" />
 </map>

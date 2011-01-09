@@ -50,26 +50,20 @@
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.18" assigningAuthorityName="IHE Payer Entry"/>
-              <id root="74202b65-1fbd-40d6-97f8-2ec397e77bee"/>
+              <id root="c7e105d1-10a6-4a76-bc05-bb165a89b924"/>
               <code/>
               <statusCode code="completed"/>
               <performer>
                 <assignedEntity>
                   <templateId assigningAuthorityName="CCD Payer Entity"/>
-                  <id root="81e03076-d6ef-437c-899a-501e72085bfd"/>
+                  <id root="0bd6c6c6-2eeb-40f2-a4ac-60d64f6aaceb"/>
                 </assignedEntity>
               </performer>
               <participant>
                 <participantRole>
                   <templateId assigningAuthorityName="CCD Covered Party"/>
-                  <id root="975ae069-d366-47a3-a17e-be689897c0be"/>
+                  <id root="78b38643-c91e-4b04-bf85-54548f4d84c9"/>
                   <code/>
-                </participantRole>
-              </participant>
-              <participant>
-                <participantRole>
-                  <templateId assigningAuthorityName="CCD Policy Subscriber"/>
-                  <id root="0e7cbe99-316c-42fb-ada7-394de8345ffd"/>
                 </participantRole>
               </participant>
             </act>
