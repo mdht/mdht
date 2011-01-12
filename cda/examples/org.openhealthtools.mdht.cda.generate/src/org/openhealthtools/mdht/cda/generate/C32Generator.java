@@ -13,9 +13,7 @@
 package org.openhealthtools.mdht.cda.generate;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,34 +21,23 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFDataFormat;
-import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFRichTextString;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.util.CellRangeAddress;
 import org.eclipse.emf.common.util.Diagnostic;
-
+import org.openhealthtools.mdht.builder.ccd.ContinuitOfCareDocumentBuilder.ImmunizationsSectionDirector;
 import org.openhealthtools.mdht.builder.ccd.helpers.BuildPatient;
-import org.openhealthtools.mdht.builder.cda.ArrayBuilder;
-import org.openhealthtools.mdht.builder.cda.Builder;
 import org.openhealthtools.mdht.builder.hitsp.C32DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder;
-import org.openhealthtools.mdht.builder.hitsp.DocumentBuilder.ImmunizationsSectionBuilder;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
-import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.Consumable;
 import org.openhealthtools.mdht.uml.cda.Material;
-import org.openhealthtools.mdht.uml.cda.NonXMLBody;
 import org.openhealthtools.mdht.uml.cda.Patient;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
-import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Immunization;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -91,7 +78,7 @@ public class C32Generator {
 			return "";
 		}
 	}
-	
+
 	/**
 	 * creates an {@link HSSFWorkbook} the specified OS filename.
 	 */
@@ -106,8 +93,6 @@ public class C32Generator {
 	static SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
 
 	public static class ExcelBuildPatient extends BuildPatient {
-
-	
 
 		private static String getGivenName(HSSFRow row) {
 			return getCellValueAsString(row.getCell(0));
@@ -130,8 +115,7 @@ public class C32Generator {
 		}
 
 		public ExcelBuildPatient(HSSFRow row) {
-			super(getGivenName(row), getFamilyName(row), getSuffix(row),
-					getDOB(row), getGender(row));
+			super(getGivenName(row), getFamilyName(row), getSuffix(row), getDOB(row), getGender(row));
 		}
 
 	}
@@ -148,124 +132,108 @@ public class C32Generator {
 			/*
 			 * Define and override various builders
 			 */
-			DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
+			C32DocumentBuilder exampleHITSPC32 = new C32DocumentBuilder() {
 
 				// note a single Random object is reused here
 				Random randomGenerator = new Random();
 
 				HSSFSheet patients = wb.getSheet("Patients");
-				
+
 				HSSFSheet immunizationsSheet = wb.getSheet("Immunizations");
 
 				@Override
-				public Builder<Patient> getPatientBuilder() {
-
+				public Patient buildPatient() {
+					//
 					int rows = patients.getPhysicalNumberOfRows() - 1;
 
 					int randomRow = randomGenerator.nextInt(rows) + 1;
 
-					return new ExcelBuildPatient(patients.getRow(randomRow));
+					return new ExcelBuildPatient(patients.getRow(randomRow)).construct();
 				}
-				
-				
+
 				@Override
-				public ImmunizationsSectionBuilder getImmunizationsSectionBuilder() {
-					return new ImmunizationsSectionBuilder() {
+				public ImmunizationsSectionDirector getImmunizationsSectionDirector() {
+					return new ImmunizationsSectionDirector() {
 
 						@Override
-						public ArrayBuilder<SubstanceAdministration> getSubstanceAdministrationBuilder() {
-							return new ArrayBuilder<SubstanceAdministration>() {
+						public List<SubstanceAdministration> buildSubstanceAdministrations() {
+							int rows = immunizationsSheet.getPhysicalNumberOfRows() - 1;
 
-								@Override
-								public List<SubstanceAdministration> construct() {
+							ArrayList<SubstanceAdministration> immunizations = new ArrayList<SubstanceAdministration>();
 
-									int rows = immunizationsSheet.getPhysicalNumberOfRows() - 1;
+							for (int i = 0; i < 5; i++) {
 
-									ArrayList<SubstanceAdministration> immunizations = new ArrayList<SubstanceAdministration>();
+								int randomRow = randomGenerator.nextInt(rows) + 1;
 
-									for (int i = 0; i<5; i++) {
+								HSSFRow row = immunizationsSheet.getRow(randomRow);
 
-										
+								Immunization immunization = HITSPFactory.eINSTANCE.createImmunization().init();
 
-										int randomRow = randomGenerator.nextInt(rows) + 1;
-										
-										HSSFRow row = immunizationsSheet.getRow(randomRow);
-										
-										
-										
-									Immunization immunization = HITSPFactory.eINSTANCE.createImmunization().init();
+								immunization.setNegationInd(false);
 
-									immunization.setNegationInd(false);
+								immunization.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
 
-									immunization.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
+								immunization.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
 
-									immunization.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
+								SXCM_TS effectiveTime = DatatypesFactory.eINSTANCE.createSXCM_TS();
 
-									SXCM_TS effectiveTime = DatatypesFactory.eINSTANCE.createSXCM_TS();
-									
-									effectiveTime.setNullFlavor(NullFlavor.UNK);
+								effectiveTime.setNullFlavor(NullFlavor.UNK);
 
-									immunization.getEffectiveTimes().add(effectiveTime);
+								immunization.getEffectiveTimes().add(effectiveTime);
 
-									immunization.setCode(DatatypesFactory.eINSTANCE.createCD("IMMUNIZ", "2.16.840.1.113883.5.4", "ActCode", ""));
+								immunization.setCode(DatatypesFactory.eINSTANCE.createCD("IMMUNIZ", "2.16.840.1.113883.5.4", "ActCode", ""));
 
-									Consumable consumable = CDAFactory.eINSTANCE.createConsumable();
+								Consumable consumable = CDAFactory.eINSTANCE.createConsumable();
 
-									Product product = IHEFactory.eINSTANCE.createProductEntry().init();
+								ProductEntry product = IHEFactory.eINSTANCE.createProductEntry().init();
 
-									Material material = CDAFactory.eINSTANCE.createMaterial();
+								Material material = CDAFactory.eINSTANCE.createMaterial();
 
-									CE ce = DatatypesFactory.eINSTANCE.createCE();
-									
-									ce.setCode(getCellValueAsString(row.getCell(0)));
-									
-									ce.setCodeSystem("2.16.840.1.113883.6.59");
+								CE ce = DatatypesFactory.eINSTANCE.createCE();
 
-									ce.setDisplayName(getCellValueAsString(row.getCell(1)));
+								ce.setCode(getCellValueAsString(row.getCell(0)));
 
-									ce.setOriginalText(DatatypesFactory.eINSTANCE.createED(getCellValueAsString(row.getCell(2))));
+								ce.setCodeSystem("2.16.840.1.113883.6.59");
 
-									material.setCode(ce);
+								ce.setDisplayName(getCellValueAsString(row.getCell(1)));
 
-									product.setManufacturedMaterial(material);
+								ce.setOriginalText(DatatypesFactory.eINSTANCE.createED(getCellValueAsString(row.getCell(2))));
 
-									consumable.setManufacturedProduct(product);
+								material.setCode(ce);
 
-									immunization.setConsumable(consumable);
+								product.setManufacturedMaterial(material);
 
-									immunizations.add(immunization);
-									}
+								consumable.setManufacturedProduct(product);
 
-									return immunizations;
-								}
-							};
+								immunization.setConsumable(consumable);
+
+								immunizations.add(immunization);
+							}
+
+							return immunizations;
 						}
 
 					};
-				}
 
+				}
 
 			};
 
 			try {
-				
 
 				System.out.println("Start C32 Document Build Example");
 
 				for (int i = 0; i < 5; i++) {
-					ClinicalDocument clinicalDocument = exampleHITSPC32
-							.buildDocument();
+					ClinicalDocument clinicalDocument = exampleHITSPC32.buildDocument();
 
 					CDAUtil.save(clinicalDocument, System.out);
-					
+
 					boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 						@Override
 						public void handleError(Diagnostic diagnostic) {
 							System.out.println("ERROR: " + diagnostic.getMessage());
-						}						
+						}
 					});
-					
-	
 
 				}
 				System.out.println("Completed C32 Document Build Example");

@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
  org.openhealthtools.mdht.uml.cda;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport,
- org.openhealthtools.mdht.cda.builder
+ org.openhealthtools.mdht.builder.cda
 Bundle-ActivationPolicy: lazy
 Import-Package: org.openhealthtools.mdht.builder.cda,
  org.openhealthtools.mdht.builder.hitsp
