@@ -15,8 +15,6 @@ package org.openhealthtools.mdht.cda.xml;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FilenameFilter;
-import java.io.IOException;
 import java.io.InputStream;
 
 import org.eclipse.core.resources.IProject;
@@ -34,8 +32,6 @@ import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
-import org.eclipse.jface.dialogs.ProgressMonitorDialog;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.wst.validation.ValidationResult;
 import org.eclipse.wst.validation.ValidationState;
 import org.eclipse.wst.validation.internal.provisional.core.IMessage;
@@ -68,31 +64,55 @@ public class Validator extends AbstractNestedValidator {
 
 	}
 
-//	private static final String VALIDATIONS = "validations.txt";
-
 	public ValidationReport validate(String uri, InputStream inputstream, NestedValidatorContext context, ValidationResult result)
 
 	{
 
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-
 		
 		IProject activeProject = null;
 
 		URI cdaDocumentURI = URI.createURI(uri);
+		
+		/*
+		 * uri passed in is full path, need to determine which project in the workspace the file is actually located
+		 * Using the project URI; workspace is not sufficient because of linked projects
+		 * the project.findmember was not able to return found from the uri we are passed 
+		 */
+		
+		String [] xmlDocumentSegments = cdaDocumentURI.segments();
+		
+		int segmentCtr = 0;
 
+		
 		for (IProject project : myWorkspaceRoot.getProjects()) {
-			if (project.isOpen()) {
-				// TODO use better approach to get correct launch project
-				for (String segment : cdaDocumentURI.segments()) {
-					if (segment.equals(project.getName())) {
-						activeProject = project;
-						break;
-					}
-				}
 
+			if (project.isOpen()) {
+
+				URI projectURI = URI.createURI(project.getLocationURI().getPath());
+				
+				String [] projectSegments = projectURI.segments();
+				
+				segmentCtr = 0;
+
+				while( segmentCtr < xmlDocumentSegments.length && segmentCtr < projectSegments.length)
+				{
+					if(!xmlDocumentSegments[segmentCtr].equals(projectSegments[segmentCtr]))	{
+						break;
+					} 
+					segmentCtr++;			
+				}
+				
+				if ( segmentCtr == projectSegments.length )
+				{
+					System.out.println(project.getName());
+					activeProject = project;
+					break;					
+				}
 			}
 		}
+		
+		
 
 		IPath validationsPath = Activator.getDefault().getStateLocation().append(cdaDocumentURI.segment(cdaDocumentURI.segmentCount()-1)+"validations");
 		
