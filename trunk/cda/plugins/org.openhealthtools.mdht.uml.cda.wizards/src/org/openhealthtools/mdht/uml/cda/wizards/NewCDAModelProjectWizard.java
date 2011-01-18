@@ -1,63 +1,53 @@
 package org.openhealthtools.mdht.uml.cda.wizards;
 
 import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
 
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IExtension;
-import org.eclipse.core.runtime.IExtensionPoint;
-import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.emf.codegen.ecore.generator.Generator;
+import org.eclipse.emf.codegen.ecore.genmodel.GenAnnotation;
+import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
+import org.eclipse.emf.codegen.ecore.genmodel.GenResourceKind;
+import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.jface.wizard.IWizardContainer;
 import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.osgi.util.ManifestElement;
-import org.eclipse.pde.core.plugin.IPluginModelBase;
-import org.eclipse.pde.core.plugin.IPluginReference;
-import org.eclipse.pde.internal.core.ICoreConstants;
-import org.eclipse.pde.internal.core.PDECore;
-import org.eclipse.pde.internal.ui.wizards.IProjectProvider;
 import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
-import org.eclipse.pde.internal.ui.wizards.plugin.PluginFieldData;
-import org.eclipse.pde.ui.IFieldData;
-import org.eclipse.pde.ui.IPluginContentWizard;
-import org.eclipse.pde.ui.templates.PluginReference;
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.graphics.RGB;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
+import org.eclipse.uml2.codegen.ecore.genmodel.GenFeature;
+import org.eclipse.uml2.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Package;
@@ -67,9 +57,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
 import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleException;
-import org.osgi.framework.Constants;
+import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
+import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
 
 @SuppressWarnings("restriction")
 public class NewCDAModelProjectWizard extends CDAWizard {
@@ -90,21 +79,13 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 	   public void addPages() {
 
 		   loadCDAModels();
-		   
-		   newCDATemplatePage = new NewCDAModelPage("MDHT CDA Model","Open Health Tools ",null, cdaDocuments);
-		   
+	   
+		   newCDATemplatePage = new NewCDAModelPage("MDHT CDA Model","Open Health Tools ",null, cdaDocuments);	   
 		   newCDATemplatePage.setDescription("Creates the CDA Model");
-		   
 		   newCDATemplatePage.setMessage("Use to create CDA Implementation Guide Model Project");
-
-		   newProjectPage = new WizardNewProjectCreationPage("MDHT CDA Model");
-		   
-		   newProjectPage.setTitle("Open Health Tools ");
-		   
+		   newProjectPage = new WizardNewProjectCreationPage("MDHT CDA Model");	   
+		   newProjectPage.setTitle("Open Health Tools ");		   
 		   newProjectPage.setDescription("Use to create CDA Implementation Guide Model Project");
-
-		
-
 		   addPage(newCDATemplatePage );
 		   addPage(newProjectPage);   
 
@@ -156,6 +137,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			createPluginProperties(project);
 			
 			createReadME( project);
+			
+			createGenModel(project); 
 
 		} catch (InvocationTargetException e) {
 			
@@ -177,12 +160,14 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		return true;
 	}
 
-	
+
 	void createUMLModel(IProject project) {
 
-		ResourceSet resourceSet = new ResourceSetImpl();
+		
 		try {
 
+			ResourceSet resourceSet = new ResourceSetImpl();
+			
 			URI niemCoreModelURI = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/model/example.uml", false);
 
 			PackageableElement niemCoreModel = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(niemCoreModelURI, true).getContents(),
@@ -446,21 +431,129 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-
-	
-				
-			
-
-			
-			
 			
 	}
 	
+	
+	/**
+	 * TODO Get proper static for annotation source -swm
+	 */
+	private static final String ANNOTATIONSOURCE="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer";
+	
+	
+	void createGenModel(IProject project) {
+		
+		loadGenModelsfromWorkspace();
+		
+		EPackage.Registry.INSTANCE.put(GenModelPackage.eNS_URI, GenModelPackage.eINSTANCE);
+
+		ResourceSet resourceSet = new ResourceSetImpl();
+
+		IPath filePath = new Path("model/" + newCDATemplatePage.getModelName().toLowerCase() + ".genmodel");
+
+		IFile file = getBundleRelativeFile(project, filePath);
+
+		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+
+		String genmodelPath = myWorkspaceRoot.getLocation().toOSString() + file.getFullPath().toOSString();
+
+		URI genmodelURI = URI.createFileURI(genmodelPath);
+		
+		Resource genmodelResource =  resourceSet.createResource(genmodelURI);
+		
+		org.eclipse.uml2.codegen.ecore.genmodel.GenModel genmodel = org.eclipse.uml2.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenModel(); //GenModelFactory.eINSTANCE.createGenModel();
+		
+		genmodel.setModelName(newCDATemplatePage.getModelName().toLowerCase() +"_Ecore");
+		
+		genmodel.setModelDirectory(project.getName()+"/src");
+		
+		genmodel.setModelPluginID(newCDATemplatePage.getModelName());
+		
+		genmodel.setImporterID("org.eclipse.uml2.uml.ecore.importer");
+		
+		genmodel.setInvariantPrefix("validate");
+
+		genmodel.setCopyrightFields(false);
+		
+		genmodel.setComplianceLevel(GenJDKLevel.JDK50_LITERAL);
+		
+		genmodel.getForeignModel().add(genmodel.getModelName()+".uml");
+	
+		
+		GenAnnotation ga = org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenAnnotation();
+		ga.setSource(ANNOTATIONSOURCE);
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__ECORE_TAGGED_VALUES, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__UNION_PROPERTIES, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__DUPLICATE_FEATURES, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__SUBSETTING_PROPERTIES, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__COMMENTS, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__DUPLICATE_FEATURE_INHERITANCE, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__DUPLICATE_OPERATIONS, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__INVARIANT_CONSTRAINTS, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__REDEFINING_PROPERTIES, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__ANNOTATION_DETAILS, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__DUPLICATE_OPERATION_INHERITANCE, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__REDEFINING_OPERATIONS, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__DERIVED_FEATURES, "IGNORE");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__OPERATION_BODIES, "PROCESS");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__CAMEL_CASE_NAMES, "IGNORE");
+		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__SUPER_CLASS_ORDER, "PROCESS");		
+		
+		genmodel.getGenAnnotations().add(ga);
+		
+		for(GenModel up : genPackages)
+		{			
+			for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage uup : up.getGenPackages())
+			{
+				genmodel.getUsedGenPackages().add(uup);	
+			}
+		
+		}
+
+		GenPackage gp = org.eclipse.uml2.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenPackage(); 
+		
+		gp.setPrefix(newCDATemplatePage.getModelName());
+		
+		gp.setResource(GenResourceKind.XMI_LITERAL);
+		
+		gp.setBasePackage("org.openhealthtools.mdht.uml.cda");
+		
+		gp.setDisposableProviderFactory(true);
+
+		gp.setOperationsPackage("org.openhealthtools.mdht.uml.cda."+newCDATemplatePage.getModelName().toLowerCase()+".operations");
+
+		genmodel.getGenPackages().add(gp);
+
+		genmodelResource.getContents().add(genmodel);
+		
+		try {
+			genmodelResource.save(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	   private void transformToUML(IProgressMonitor monitor) {
+		   
+	    }
+
 	
 	void createManifest(IProject project) {
 
 		try {
 			
+			IFile manfiestFile =	cdaDocumentsManfiest.get(newCDATemplatePage.getCDADocument());
+		
+			InputStream input = new FileInputStream(ResourcesPlugin.getWorkspace().getRoot().getLocation().toOSString()+manfiestFile.getFullPath().toOSString());
+			
+			Manifest projectManifest = new Manifest(input);
+						
+			Attributes attributes = projectManifest.getMainAttributes();
+
 			IFile manifest = getManifest(project);
 
 			StringWriter swriter = new StringWriter();
@@ -468,8 +561,55 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			PrintWriter writer = new PrintWriter(swriter);
 
 			writer.println("Bundle-Name: %pluginName");
+
 			writer.println("Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda."+newCDATemplatePage.getModelName().toLowerCase() +";singleton:=true");		
+			
 			writer.println("Bundle-Version: 0.7.0.qualifier");
+			
+			writer.println("Bundle-ClassPath: .");
+			writer.println("Bundle-Vendor: %providerName");
+			writer.println("Bundle-Localization: plugin");
+			writer.println("Bundle-RequiredExecutionEnvironment: J2SE-1.5");
+			
+//			writer.println("Export-Package: "+project.getName()+",");
+//			writer.println(" "+project.getName()+".impl,");
+//			writer.println(" "+project.getName()+".operations,");
+//			writer.println(" "+project.getName()+".util");
+			
+			String requiredBundles = attributes.getValue("Require-Bundle");
+			
+			String sourceBundle = attributes.getValue("Bundle-SymbolicName");
+			
+			String rb[] = requiredBundles.split(",");
+			
+			String sb[] = sourceBundle.split(";");
+			
+			for (int index = 0; index < rb.length; index++) {
+
+				if (index == 0) {
+					writer.print("Require-Bundle: " + rb[index]);
+				} else {
+
+					if (index > 0) {
+						writer.println(",");
+						writer.print(" "+rb[index]);
+					}
+				}
+
+			}
+			if (sb.length>0){
+				writer.println(",");
+				writer.println(" "+sb[0]+";visibility:=reexport");
+			}
+			
+			
+//			
+//			for (String value : requiredBundles.split(","))
+//			{
+//				
+//			}
+			
+			
 
 			writer.flush();
 
@@ -489,6 +629,46 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 	}
 	
-
+	ArrayList<GenModel > genPackages = new ArrayList<GenModel >();
 	
+	void loadGenModelsfromWorkspace() {
+	
+		ResourceSet resourceSet = new ResourceSetImpl();
+		
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+
+		IWorkspaceRoot root = workspace.getRoot();
+		
+		Path model = new Path("model");
+
+		for (IProject project : root.getProjects())
+		{
+			if (project.exists(model))
+			{
+				IFolder folder = project.getFolder(model);
+				try {
+					for (IResource resource : folder.members())
+					{
+						
+						if (resource.getName().endsWith(".genmodel") )
+						{
+							URI genmodelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							
+							GenModel foo2 = (GenModel ) EcoreUtil.getObjectByType(resourceSet.getResource(genmodelFile, true).getContents(),GenModelPackage.eINSTANCE.getGenModel ());
+//							
+							if (foo2 != null)
+							{
+								genPackages.add(foo2);				
+							}
+						}	
+					}
+					
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			}
+		}
+	}			
 }
