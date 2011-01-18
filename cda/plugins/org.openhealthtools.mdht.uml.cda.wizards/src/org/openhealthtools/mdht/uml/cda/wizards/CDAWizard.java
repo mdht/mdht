@@ -8,12 +8,17 @@ import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
+import java.util.jar.Manifest;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ProjectScope;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
@@ -57,7 +62,11 @@ public abstract class CDAWizard extends Wizard {
 
 	protected HashMap<String, Package> cdaPackages = new HashMap<String, Package>();
 
+	
 	protected HashMap<String, Type> cdaDocuments = new HashMap<String, Type>();
+	
+	protected HashMap<String, IFile> cdaDocumentsManfiest = new HashMap<String, IFile>();
+		
 
 	protected HashMap<String, PluginReference> references = new HashMap<String, PluginReference>();
 
@@ -283,8 +292,92 @@ public abstract class CDAWizard extends Wizard {
 		return null;
 	}
 
+	
+	void loadCDAModels()
+	{
+		loadCDAModelsfromWorkspace();
+	}
+	
+	void loadCDAModelsfromWorkspace() {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+
+		IWorkspaceRoot root = workspace.getRoot();
+		
+		Path model = new Path("model");
+		
+		Path manifestFolder = new Path("META-INF");	
+		
+		for (IProject project : root.getProjects())
+		{
+			
+			if (project.exists(model))
+			{
+				IFolder folder = project.getFolder(model);
+				try {
+					for (IResource resource : folder.members())
+					{
+						
+						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore"))
+						{
+							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							
+							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(modelFile, true).getContents(),UMLPackage.eINSTANCE.getPackageableElement());
+							
+							if (pe != null)
+							{
+								if (pe instanceof Package) {
+									Package p = (Package) pe;
+									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {					
+											cdaPackages.put(p.getQualifiedName(), p);
+											
+											cdaDocumentsManfiest.put(p.getQualifiedName(),getManifest(project) );
+									}
+
+								}
+								
+							}
+							
+						}
+						
+					}
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			}
+			
+			
+			
+		}
+
+
+
+		Package cdaPackage = cdaPackages.get("cda");
+
+		// make sure the package is available
+		if (cdaPackage != null) {
+			clinicalDocument = cdaPackage.getOwnedType("ClinicalDocument");
+			for (Package ps : cdaPackages.values()) {
+
+				for (Type type : ps.getOwnedTypes()) {
+					if (type.conformsTo(clinicalDocument)) {
+						cdaDocuments.put(type.getQualifiedName(), type);
+						cdaDocumentsManfiest.put(type.getQualifiedName(),cdaDocumentsManfiest.get(ps.getQualifiedName()));
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+	
 	@SuppressWarnings("unchecked")
-	void loadCDAModels() {
+	void loadCDAModelsfromPlugins() {
 		ResourceSet resourceSet = new ResourceSetImpl();
 
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
@@ -430,6 +523,16 @@ public abstract class CDAWizard extends Wizard {
 	 */
 	public static IFile getManifest(IProject project) {
 		return getBundleRelativeFile(project, ICoreConstants.MANIFEST_PATH);
+	}
+
+	public static IFile getGenModel(IProject project,IPath genmodelPath) {
+		
+		return getBundleRelativeFile(project, genmodelPath);
+	}
+	
+	public static IFile getECoreModel(IProject project,IPath genmodelPath) {
+		
+		return getBundleRelativeFile(project, genmodelPath);
 	}
 
 	/**
