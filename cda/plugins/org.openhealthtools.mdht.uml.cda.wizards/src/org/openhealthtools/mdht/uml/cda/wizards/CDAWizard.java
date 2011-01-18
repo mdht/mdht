@@ -8,7 +8,6 @@ import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
-import java.util.jar.Manifest;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -66,6 +65,8 @@ public abstract class CDAWizard extends Wizard {
 	protected HashMap<String, Type> cdaDocuments = new HashMap<String, Type>();
 	
 	protected HashMap<String, IFile> cdaDocumentsManfiest = new HashMap<String, IFile>();
+	
+	protected HashMap<String, IFile> cdaDocumentsGenModels = new HashMap<String, IFile>();
 		
 
 	protected HashMap<String, PluginReference> references = new HashMap<String, PluginReference>();
@@ -307,32 +308,29 @@ public abstract class CDAWizard extends Wizard {
 		
 		Path model = new Path("model");
 		
-		Path manifestFolder = new Path("META-INF");	
-		
-		for (IProject project : root.getProjects())
-		{
-			
-			if (project.exists(model))
-			{
+		for (IProject project : root.getProjects())	{			
+			if (project.exists(model)) {
 				IFolder folder = project.getFolder(model);
 				try {
-					for (IResource resource : folder.members())
-					{
-						
-						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore"))
-						{
-							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
-							
-							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(modelFile, true).getContents(),UMLPackage.eINSTANCE.getPackageableElement());
-							
-							if (pe != null)
-							{
+					for (IResource resource : folder.members())	{						
+						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore"))	{
+							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());							
+							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(modelFile, true).getContents(),UMLPackage.eINSTANCE.getPackageableElement());							
+							if (pe != null) {
 								if (pe instanceof Package) {
 									Package p = (Package) pe;
-									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {					
+									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {												
 											cdaPackages.put(p.getQualifiedName(), p);
-											
 											cdaDocumentsManfiest.put(p.getQualifiedName(),getManifest(project) );
+											
+											for (IResource genmodel : folder.members())
+											{
+												if (genmodel.getName().endsWith(".genmodel")) {
+													cdaDocumentsGenModels.put(p.getQualifiedName(),getGenModel(project,genmodel.getProjectRelativePath()) );		
+												}
+											}
+											
+//											
 									}
 
 								}
@@ -366,6 +364,7 @@ public abstract class CDAWizard extends Wizard {
 					if (type.conformsTo(clinicalDocument)) {
 						cdaDocuments.put(type.getQualifiedName(), type);
 						cdaDocumentsManfiest.put(type.getQualifiedName(),cdaDocumentsManfiest.get(ps.getQualifiedName()));
+						cdaDocumentsGenModels.put(type.getQualifiedName(),cdaDocumentsGenModels.get(ps.getQualifiedName()));
 					}
 				}
 

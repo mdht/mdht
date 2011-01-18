@@ -6,8 +6,6 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.openhealthtools.mdht.uml.cda.wizards.NewC32ProjectWizard;
-import org.openhealthtools.mdht.uml.cda.wizards.NewCDAJavaProjectWizard;
-import org.openhealthtools.mdht.uml.cda.wizards.NewCDAModelProjectWizard;
 
 /**
  * Temporary menu item for creating projects - need to add to new projects (or

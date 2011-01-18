@@ -11,7 +11,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
@@ -25,20 +24,14 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenAnnotation;
 import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
-import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.codegen.ecore.genmodel.GenResourceKind;
-import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
-import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -46,7 +39,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
-import org.eclipse.uml2.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.uml2.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -57,8 +49,6 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
 import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
-import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
-import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
 
 @SuppressWarnings("restriction")
 public class NewCDAModelProjectWizard extends CDAWizard {
@@ -442,9 +432,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 	
 	
 	void createGenModel(IProject project) {
-		
-		loadGenModelsfromWorkspace();
-		
+
 		EPackage.Registry.INSTANCE.put(GenModelPackage.eNS_URI, GenModelPackage.eINSTANCE);
 
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -501,13 +489,20 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		
 		genmodel.getGenAnnotations().add(ga);
 		
-		for(GenModel up : genPackages)
-		{			
-			for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage uup : up.getGenPackages())
-			{
-				genmodel.getUsedGenPackages().add(uup);	
-			}
+		URI genmodelFile = URI.createFileURI(cdaDocumentsGenModels.get(newCDATemplatePage.getCDADocument()).getRawLocation().toOSString());
 		
+		System.out.println(genmodelFile.toFileString());
+		
+		GenModel sourceGenModel = (GenModel ) EcoreUtil.getObjectByType(resourceSet.getResource(genmodelFile, true).getContents(),GenModelPackage.eINSTANCE.getGenModel ());
+		
+		if (sourceGenModel  != null) {
+			for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage usedGenPackage : sourceGenModel.getUsedGenPackages()) {
+				genmodel.getUsedGenPackages().add(usedGenPackage);	
+			}
+			
+			for (org.eclipse.emf.codegen.ecore.genmodel.GenPackage usedGenPackage : sourceGenModel.getGenPackages()) {
+					genmodel.getUsedGenPackages().add(usedGenPackage);	
+			}
 		}
 
 		GenPackage gp = org.eclipse.uml2.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenPackage(); 
@@ -521,6 +516,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		gp.setDisposableProviderFactory(true);
 
 		gp.setOperationsPackage("org.openhealthtools.mdht.uml.cda."+newCDATemplatePage.getModelName().toLowerCase()+".operations");
+
+//		gp.setEcorePackage(arg0);
 
 		genmodel.getGenPackages().add(gp);
 
@@ -548,7 +545,9 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			
 			IFile manfiestFile =	cdaDocumentsManfiest.get(newCDATemplatePage.getCDADocument());
 		
-			InputStream input = new FileInputStream(ResourcesPlugin.getWorkspace().getRoot().getLocation().toOSString()+manfiestFile.getFullPath().toOSString());
+			System.out.println(manfiestFile.getRawLocation().toOSString());
+			
+			InputStream input = new FileInputStream(manfiestFile.getRawLocation().toOSString());
 			
 			Manifest projectManifest = new Manifest(input);
 						
