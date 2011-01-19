@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
@@ -48,6 +49,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.Support;
 import org.openhealthtools.mdht.uml.cda.ccd.SupportGuardian;
@@ -79,6 +82,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
 import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.HealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness;
@@ -112,6 +116,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryPlanOfCareActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure;
@@ -122,6 +127,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
+import org.openhealthtools.mdht.uml.cda.ihe.Severity;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -291,6 +297,52 @@ public class IHESwitch<T> {
 				if (result == null) result = caseClinicalStatement(problemEntry);
 				if (result == null) result = caseAct(problemEntry);
 				if (result == null) result = caseInfrastructureRoot(problemEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.SEVERITY: {
+				Severity severity = (Severity)theEObject;
+				T result = caseSeverity(severity);
+				if (result == null) result = caseSeverityObservation(severity);
+				if (result == null) result = caseObservation(severity);
+				if (result == null) result = caseClinicalStatement(severity);
+				if (result == null) result = caseAct(severity);
+				if (result == null) result = caseInfrastructureRoot(severity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PROBLEM_STATUS_OBSERVATION: {
+				ProblemStatusObservation problemStatusObservation = (ProblemStatusObservation)theEObject;
+				T result = caseProblemStatusObservation(problemStatusObservation);
+				if (result == null) result = caseCCD_ProblemStatusObservation(problemStatusObservation);
+				if (result == null) result = caseStatusObservation(problemStatusObservation);
+				if (result == null) result = caseObservation(problemStatusObservation);
+				if (result == null) result = caseClinicalStatement(problemStatusObservation);
+				if (result == null) result = caseAct(problemStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(problemStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.HEALTH_STATUS_OBSERVATION: {
+				HealthStatusObservation healthStatusObservation = (HealthStatusObservation)theEObject;
+				T result = caseHealthStatusObservation(healthStatusObservation);
+				if (result == null) result = caseProblemHealthStatusObservation(healthStatusObservation);
+				if (result == null) result = caseStatusObservation(healthStatusObservation);
+				if (result == null) result = caseObservation(healthStatusObservation);
+				if (result == null) result = caseClinicalStatement(healthStatusObservation);
+				if (result == null) result = caseAct(healthStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(healthStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.COMMENT: {
+				Comment comment = (Comment)theEObject;
+				T result = caseComment(comment);
+				if (result == null) result = caseCCD_Comment(comment);
+				if (result == null) result = caseCDA_Act(comment);
+				if (result == null) result = caseClinicalStatement(comment);
+				if (result == null) result = caseAct(comment);
+				if (result == null) result = caseInfrastructureRoot(comment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -817,16 +869,6 @@ public class IHESwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case IHEPackage.COMMENT: {
-				Comment comment = (Comment)theEObject;
-				T result = caseComment(comment);
-				if (result == null) result = caseCDA_Act(comment);
-				if (result == null) result = caseClinicalStatement(comment);
-				if (result == null) result = caseAct(comment);
-				if (result == null) result = caseInfrastructureRoot(comment);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case IHEPackage.PAYER_ENTRY: {
 				PayerEntry payerEntry = (PayerEntry)theEObject;
 				T result = casePayerEntry(payerEntry);
@@ -1107,6 +1149,51 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseProblemEntry(ProblemEntry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Severity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Severity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSeverity(Severity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemStatusObservation(ProblemStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Health Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Health Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHealthStatusObservation(HealthStatusObservation object) {
 		return null;
 	}
 
@@ -2337,6 +2424,81 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseProblemObservation(ProblemObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSeverityObservation(SeverityObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatusObservation(StatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCCD_ProblemStatusObservation(org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Health Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Health Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemHealthStatusObservation(ProblemHealthStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCCD_Comment(org.openhealthtools.mdht.uml.cda.ccd.Comment object) {
 		return null;
 	}
 

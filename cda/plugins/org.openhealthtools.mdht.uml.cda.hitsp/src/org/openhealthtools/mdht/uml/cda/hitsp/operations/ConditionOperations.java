@@ -225,7 +225,7 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	public static  EList<ProblemEntry> getConditionEntries(Condition condition) {
 		if (GET_CONDITION_ENTRIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(HITSPPackage.Literals.CONDITION, HITSPPackage.Literals.CONDITION.getEAllOperations().get(64));
+			helper.setOperationContext(HITSPPackage.Literals.CONDITION, HITSPPackage.Literals.CONDITION.getEAllOperations().get(65));
 			try {
 				GET_CONDITION_ENTRIES__EOCL_QRY = helper.createQuery(GET_CONDITION_ENTRIES__EOCL_EXP);
 			}

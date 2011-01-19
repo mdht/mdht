@@ -15339,6 +15339,232 @@ public interface CCDPackage extends EPackage {
 	int SUPPORT_GUARDIAN_FEATURE_COUNT = CDAPackage.GUARDIAN_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CommentImpl <em>Comment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CommentImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getComment()
+	 * @generated
+	 */
+	int COMMENT = 72;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__REALM_CODE = CDAPackage.ACT__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__TYPE_ID = CDAPackage.ACT__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__TEMPLATE_ID = CDAPackage.ACT__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__ID = CDAPackage.ACT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__CODE = CDAPackage.ACT__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__TEXT = CDAPackage.ACT__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__STATUS_CODE = CDAPackage.ACT__STATUS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__EFFECTIVE_TIME = CDAPackage.ACT__EFFECTIVE_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__PRIORITY_CODE = CDAPackage.ACT__PRIORITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__LANGUAGE_CODE = CDAPackage.ACT__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__SUBJECT = CDAPackage.ACT__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__SPECIMEN = CDAPackage.ACT__SPECIMEN;
+
+	/**
+	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__PERFORMER = CDAPackage.ACT__PERFORMER;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__AUTHOR = CDAPackage.ACT__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__INFORMANT = CDAPackage.ACT__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__PARTICIPANT = CDAPackage.ACT__PARTICIPANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__ENTRY_RELATIONSHIP = CDAPackage.ACT__ENTRY_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__REFERENCE = CDAPackage.ACT__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__PRECONDITION = CDAPackage.ACT__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__NULL_FLAVOR = CDAPackage.ACT__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__CLASS_CODE = CDAPackage.ACT__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__MOOD_CODE = CDAPackage.ACT__MOOD_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__NEGATION_IND = CDAPackage.ACT__NEGATION_IND;
+
+	/**
+	 * The number of structural features of the '<em>Comment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_FEATURE_COUNT = CDAPackage.ACT_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CCDRegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15346,7 +15572,7 @@ public interface CCDPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getCCDRegistryDelegate()
 	 * @generated
 	 */
-	int CCD_REGISTRY_DELEGATE = 72;
+	int CCD_REGISTRY_DELEGATE = 73;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -16056,6 +16282,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSupportGuardian();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.Comment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Comment</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.Comment
+	 * @generated
+	 */
+	EClass getComment();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate <em>Registry Delegate</em>}'.
@@ -16808,6 +17044,16 @@ public interface CCDPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SUPPORT_GUARDIAN = eINSTANCE.getSupportGuardian();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CommentImpl <em>Comment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CommentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getComment()
+		 * @generated
+		 */
+		EClass COMMENT = eINSTANCE.getComment();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CCDRegistryDelegateImpl <em>Registry Delegate</em>}' class.

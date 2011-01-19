@@ -9,18 +9,19 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Comment</b></em>'.
+ * A representation of the model object '<em><b>Health Status Observation</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getComment()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.2' constraints.validation.error='IHECommentTemplateId IHECommentHasTextReference IHECommentStatusCode IHECommentText'"
+ * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getHealthStatusObservation()
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='SNOMEDCT' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.1.2' constraints.validation.error='HealthStatusObservationTemplateId HealthStatusObservationHasTextReference HealthStatusObservationText StatusObservationValue' value.codeSystem='2.16.840.1.113883.6.96'"
  * @generated
  */
-public interface Comment extends org.openhealthtools.mdht.uml.cda.ccd.Comment {
+public interface HealthStatusObservation extends ProblemHealthStatusObservation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -32,22 +33,20 @@ public interface Comment extends org.openhealthtools.mdht.uml.cda.ccd.Comment {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.text.reference.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean validateIHECommentHasTextReference(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateHealthStatusObservationHasTextReference(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and 
-	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
-	 * value.code = 'completed')
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.4.1.2')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'1.3.6.1.4.1.19376.1.5.3.1.4.1.2\')'"
 	 * @generated
 	 */
-	boolean validateIHECommentStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateHealthStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,12 +59,12 @@ public interface Comment extends org.openhealthtools.mdht.uml.cda.ccd.Comment {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.text.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean validateIHECommentText(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateHealthStatusObservationText(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Comment init();
-} // Comment
+	public HealthStatusObservation init();
+} // HealthStatusObservation

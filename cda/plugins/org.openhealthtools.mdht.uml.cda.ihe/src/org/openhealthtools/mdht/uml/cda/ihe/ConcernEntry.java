@@ -24,10 +24,25 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getConcernEntry()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.1' constraints.validation.error='ConcernEntryTemplateId ConcernEntryEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.1' constraints.validation.error='ConcernEntryTemplateId ConcernEntryEffectiveTimeLowHigh ConcernEntryEffectiveTime'"
  * @generated
  */
 public interface ConcernEntry extends ProblemAct {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.effectiveTime.low.oclIsUndefined()
+	 *    and ((self.statusCode.code = 'completed' or self.statusCode.code = 'aborted') implies not self.effectiveTime.high.oclIsUndefined())
+	 *    and ((self.statusCode.code <> 'completed' and self.statusCode.code <> 'aborted') implies self.effectiveTime.high.oclIsUndefined())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.effectiveTime.low.oclIsUndefined()\r\n   and ((self.statusCode.code = \'completed\' or self.statusCode.code = \'aborted\') implies not self.effectiveTime.high.oclIsUndefined())\r\n   and ((self.statusCode.code <> \'completed\' and self.statusCode.code <> \'aborted\') implies self.effectiveTime.high.oclIsUndefined())'"
+	 * @generated
+	 */
+	boolean validateConcernEntryEffectiveTimeLowHigh(DiagnosticChain diagnostics, Map<Object, Object> context);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

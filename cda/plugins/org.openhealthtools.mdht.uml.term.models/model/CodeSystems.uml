@@ -79,6 +79,7 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ejOkKFkEd-dVeaMP0XXQw" name="Industry (NAICS)"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_1o75oKFkEd-dVeaMP0XXQw" name="ObservationInterpretation"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pR34KFkEd-dVeaMP0XXQw" name="Occupation (SOC 2000)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_hSRvwCQMEeCxCon8a79rfA" name="SeverityObservation"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -124,4 +125,5 @@
   <term:CodeSystemVersion xmi:id="_1ej1oKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.85" version="20070101" source="NAICS" base_Enumeration="_1ejOkKFkEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_1o75oaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.83" version="20090501" source="HITSP-CS-83" base_Enumeration="_1o75oKFkEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_1pR34aFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.243" version="2000" source="SOC" base_Enumeration="_1pR34KFkEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_hSRvwSQMEeCxCon8a79rfA" identifier="2.16.840.1.113883.5.1063" base_Enumeration="_hSRvwCQMEeCxCon8a79rfA"/>
 </xmi:XMI>

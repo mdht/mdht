@@ -23,8 +23,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This entry is a specialization of the Concern
- * Entry, wherein the subject of the concern is focused on an allergy or intolerance.
+ * This entry is a specialization of the Concern Entry, wherein the subject of the concern is focused on an allergy or intolerance.
  * <!-- end-model-doc -->
  *
  *

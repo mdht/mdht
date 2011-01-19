@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryEffectiveTimeLowHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time Low High</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time</em>}</li>
  * </ul>
@@ -49,6 +50,67 @@ public class ConcernEntryOperations extends ProblemActOperations {
 	 */
 	protected ConcernEntryOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateConcernEntryEffectiveTimeLowHigh(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time Low High</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateConcernEntryEffectiveTimeLowHigh(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.effectiveTime.low.oclIsUndefined()"+
+"   and ((self.statusCode.code = 'completed' or self.statusCode.code = 'aborted') implies not self.effectiveTime.high.oclIsUndefined())"+
+"   and ((self.statusCode.code <> 'completed' and self.statusCode.code <> 'aborted') implies self.effectiveTime.high.oclIsUndefined())";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateConcernEntryEffectiveTimeLowHigh(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time Low High</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateConcernEntryEffectiveTimeLowHigh(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.effectiveTime.low.oclIsUndefined()
+	 *    and ((self.statusCode.code = 'completed' or self.statusCode.code = 'aborted') implies not self.effectiveTime.high.oclIsUndefined())
+	 *    and ((self.statusCode.code <> 'completed' and self.statusCode.code <> 'aborted') implies self.effectiveTime.high.oclIsUndefined())
+	 * @param concernEntry The receiving '<em><b>Concern Entry</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateConcernEntryEffectiveTimeLowHigh(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(IHEPackage.Literals.CONCERN_ENTRY);
+			try {
+				VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(concernEntry)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 IHEValidator.DIAGNOSTIC_SOURCE,
+						 IHEValidator.CONCERN_ENTRY__CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH,
+						 IHEPlugin.INSTANCE.getString("ConcernEntryEffectiveTimeLowHigh"),
+						 new Object [] { concernEntry }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
@@ -48,6 +49,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.Support;
 import org.openhealthtools.mdht.uml.cda.ccd.SupportGuardian;
@@ -79,6 +82,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
 import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.HealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness;
@@ -112,6 +116,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryPlanOfCareActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure;
@@ -122,6 +127,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
+import org.openhealthtools.mdht.uml.cda.ihe.Severity;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
@@ -223,6 +229,22 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseProblemEntry(ProblemEntry object) {
 				return createProblemEntryAdapter();
+			}
+			@Override
+			public Adapter caseSeverity(Severity object) {
+				return createSeverityAdapter();
+			}
+			@Override
+			public Adapter caseProblemStatusObservation(ProblemStatusObservation object) {
+				return createProblemStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseHealthStatusObservation(HealthStatusObservation object) {
+				return createHealthStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseComment(Comment object) {
+				return createCommentAdapter();
 			}
 			@Override
 			public Adapter caseMedication(Medication object) {
@@ -429,10 +451,6 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createProcedureEntryPlanOfCareActivityProcedureAdapter();
 			}
 			@Override
-			public Adapter caseComment(Comment object) {
-				return createCommentAdapter();
-			}
-			@Override
 			public Adapter casePayerEntry(PayerEntry object) {
 				return createPayerEntryAdapter();
 			}
@@ -555,6 +573,26 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseProblemObservation(ProblemObservation object) {
 				return createProblemObservationAdapter();
+			}
+			@Override
+			public Adapter caseSeverityObservation(SeverityObservation object) {
+				return createSeverityObservationAdapter();
+			}
+			@Override
+			public Adapter caseStatusObservation(StatusObservation object) {
+				return createStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseCCD_ProblemStatusObservation(org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation object) {
+				return createCCD_ProblemStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseProblemHealthStatusObservation(ProblemHealthStatusObservation object) {
+				return createProblemHealthStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseCCD_Comment(org.openhealthtools.mdht.uml.cda.ccd.Comment object) {
+				return createCCD_CommentAdapter();
 			}
 			@Override
 			public Adapter caseCCD_MedicationsSection(org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection object) {
@@ -839,6 +877,48 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProblemEntryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.Severity <em>Severity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.Severity
+	 * @generated
+	 */
+	public Adapter createSeverityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation <em>Problem Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation
+	 * @generated
+	 */
+	public Adapter createProblemStatusObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HealthStatusObservation <em>Health Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.HealthStatusObservation
+	 * @generated
+	 */
+	public Adapter createHealthStatusObservationAdapter() {
 		return null;
 	}
 
@@ -1987,6 +2067,76 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProblemObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation <em>Severity Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation
+	 * @generated
+	 */
+	public Adapter createSeverityObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation <em>Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.StatusObservation
+	 * @generated
+	 */
+	public Adapter createStatusObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation <em>Problem Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation
+	 * @generated
+	 */
+	public Adapter createCCD_ProblemStatusObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation <em>Problem Health Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation
+	 * @generated
+	 */
+	public Adapter createProblemHealthStatusObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.Comment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.Comment
+	 * @generated
+	 */
+	public Adapter createCCD_CommentAdapter() {
 		return null;
 	}
 
