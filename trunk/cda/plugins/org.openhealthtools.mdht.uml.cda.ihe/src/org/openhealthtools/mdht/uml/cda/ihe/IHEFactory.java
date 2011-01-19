@@ -95,6 +95,33 @@ public interface IHEFactory extends EFactory {
 	ProblemEntry createProblemEntry();
 
 	/**
+	 * Returns a new object of class '<em>Severity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Severity</em>'.
+	 * @generated
+	 */
+	Severity createSeverity();
+
+	/**
+	 * Returns a new object of class '<em>Problem Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Problem Status Observation</em>'.
+	 * @generated
+	 */
+	ProblemStatusObservation createProblemStatusObservation();
+
+	/**
+	 * Returns a new object of class '<em>Health Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Health Status Observation</em>'.
+	 * @generated
+	 */
+	HealthStatusObservation createHealthStatusObservation();
+
+	/**
 	 * Returns a new object of class '<em>Medication</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

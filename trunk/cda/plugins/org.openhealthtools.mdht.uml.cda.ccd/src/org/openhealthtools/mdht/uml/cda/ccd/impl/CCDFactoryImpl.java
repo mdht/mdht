@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.Comment;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CoveragePlanDescription;
@@ -207,6 +208,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.COVERAGE_PLAN_DESCRIPTION: return createCoveragePlanDescription();
 			case CCDPackage.SUPPORT_PARTICIPANT: return createSupportParticipant();
 			case CCDPackage.SUPPORT_GUARDIAN: return createSupportGuardian();
+			case CCDPackage.COMMENT: return createComment();
 			case CCDPackage.CCD_REGISTRY_DELEGATE: return createCCDRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -901,6 +903,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public SupportGuardian createSupportGuardian() {
 		SupportGuardianImpl supportGuardian = new SupportGuardianImpl();
 		return supportGuardian;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Comment createComment() {
+		CommentImpl comment = new CommentImpl();
+		return comment;
 	}
 
 	/**

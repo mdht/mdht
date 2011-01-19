@@ -2607,6 +2607,25 @@ Authorizations are represented using an act subordinate to the policy or program
 &lt;p>CDA R2 represents a patient's guardian with the CDA Header Guardian class. Other Supporters are represented as participant participations in the CDA Header.&lt;/p></body>
       </ownedComment>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Hj3aYCQYEeCxCon8a79rfA" name="Comment">
+      <generalization xmi:id="_Hj4BcCQYEeCxCon8a79rfA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_TvYVACQYEeCxCon8a79rfA" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOntkDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_1DWqEEbnEd6besF9iFIJkQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_W9YiECQYEeCxCon8a79rfA" value="ACT"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TvY8ESQYEeCxCon8a79rfA" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOpkkDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_yWn-AEocEd6c3qsAxlFHaQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_X_uI0CQYEeCxCon8a79rfA" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TvY8ECQYEeCxCon8a79rfA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_HUTHQEocEd6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -3386,4 +3405,11 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_qobTQBg5EeCf9aMNaCAtDQ" severity="WARNING" base_Constraint="_p9oCwBg5EeCf9aMNaCAtDQ">
     <ruleId>CONF-401</ruleId>
   </CDA:ConstraintValidation>
+  <CDA:CDATemplate xmi:id="_N-X_sCQYEeCxCon8a79rfA" base_Class="_Hj3aYCQYEeCxCon8a79rfA" templateId="2.16.840.1.113883.10.20.1.40"/>
+  <CDA:PropertyValidation xmi:id="_UsSpMCQYEeCxCon8a79rfA" base_Property="_TvYVACQYEeCxCon8a79rfA"/>
+  <CDA:PropertyValidation xmi:id="_VFdXICQYEeCxCon8a79rfA" base_Property="_TvY8ESQYEeCxCon8a79rfA"/>
+  <CDA:PropertyValidation xmi:id="_VehXYCQYEeCxCon8a79rfA" base_Property="_TvY8ECQYEeCxCon8a79rfA"/>
+  <CDA:CodeSystemConstraint xmi:id="_cWswICQYEeCxCon8a79rfA" code="48767-8" displayName="Annotation comment" base_Property="_TvY8ECQYEeCxCon8a79rfA">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
 </xmi:XMI>

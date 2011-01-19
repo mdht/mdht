@@ -4,15 +4,16 @@
  *
  * $Id$
  */
-package org.openhealthtools.mdht.uml.cda.ihe.impl;
+package org.openhealthtools.mdht.uml.cda.ccd.impl;
 
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.ihe.Comment;
-import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-import org.openhealthtools.mdht.uml.cda.ihe.operations.CommentOperations;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.Comment;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CommentOperations;
+import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -24,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class CommentImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl.CommentImpl implements Comment {
+public class CommentImpl extends ActImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -41,7 +42,7 @@ public class CommentImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl.Comme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IHEPackage.Literals.COMMENT;
+		return CCDPackage.Literals.COMMENT;
 	}
 
 	/**
@@ -49,36 +50,35 @@ public class CommentImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl.Comme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIHECommentHasTextReference(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CommentOperations.validateIHECommentHasTextReference(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIHECommentStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CommentOperations.validateIHECommentStatusCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIHECommentText(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CommentOperations.validateIHECommentText(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean validateCommentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return CommentOperations.validateCommentTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCommentClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CommentOperations.validateCommentClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCommentMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CommentOperations.validateCommentMoodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCommentCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CommentOperations.validateCommentCode(this, diagnostics, context);
 	}
 
 	/**

@@ -42,6 +42,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
 import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.HealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness;
@@ -75,6 +76,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryPlanOfCareActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure;
@@ -85,6 +87,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
+import org.openhealthtools.mdht.uml.cda.ihe.Severity;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
@@ -146,6 +149,10 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.ACTIVE_PROBLEMS_SECTION: return createActiveProblemsSection();
 			case IHEPackage.PROBLEM_CONCERN_ENTRY: return createProblemConcernEntry();
 			case IHEPackage.PROBLEM_ENTRY: return createProblemEntry();
+			case IHEPackage.SEVERITY: return createSeverity();
+			case IHEPackage.PROBLEM_STATUS_OBSERVATION: return createProblemStatusObservation();
+			case IHEPackage.HEALTH_STATUS_OBSERVATION: return createHealthStatusObservation();
+			case IHEPackage.COMMENT: return createComment();
 			case IHEPackage.MEDICATION: return createMedication();
 			case IHEPackage.MEDICATIONS_SECTION: return createMedicationsSection();
 			case IHEPackage.ALLERGY_INTOLERANCE_CONCERN: return createAllergyIntoleranceConcern();
@@ -195,7 +202,6 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.PROCEDURE_ENTRY: return createProcedureEntry();
 			case IHEPackage.PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE: return createProcedureEntryProcedureActivityProcedure();
 			case IHEPackage.PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE: return createProcedureEntryPlanOfCareActivityProcedure();
-			case IHEPackage.COMMENT: return createComment();
 			case IHEPackage.PAYER_ENTRY: return createPayerEntry();
 			case IHEPackage.PHR_EXTRACT: return createPHRExtract();
 			case IHEPackage.PHR_UPDATE: return createPHRUpdate();
@@ -285,6 +291,36 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public ProblemEntry createProblemEntry() {
 		ProblemEntryImpl problemEntry = new ProblemEntryImpl();
 		return problemEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Severity createSeverity() {
+		SeverityImpl severity = new SeverityImpl();
+		return severity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemStatusObservation createProblemStatusObservation() {
+		ProblemStatusObservationImpl problemStatusObservation = new ProblemStatusObservationImpl();
+		return problemStatusObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HealthStatusObservation createHealthStatusObservation() {
+		HealthStatusObservationImpl healthStatusObservation = new HealthStatusObservationImpl();
+		return healthStatusObservation;
 	}
 
 	/**

@@ -38,6 +38,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.Comment;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CoveragePlanDescription;
@@ -876,6 +877,16 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseSupport(supportGuardian);
 				if (result == null) result = caseRole(supportGuardian);
 				if (result == null) result = caseInfrastructureRoot(supportGuardian);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.COMMENT: {
+				Comment comment = (Comment)theEObject;
+				T result = caseComment(comment);
+				if (result == null) result = caseCDA_Act(comment);
+				if (result == null) result = caseClinicalStatement(comment);
+				if (result == null) result = caseAct(comment);
+				if (result == null) result = caseInfrastructureRoot(comment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1967,6 +1978,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseSupportGuardian(SupportGuardian object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComment(Comment object) {
 		return null;
 	}
 

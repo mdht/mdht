@@ -732,6 +732,10 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 				return createHealthcareProvidersPharmaciesAdapter();
 			}
 			@Override
+			public Adapter caseCCD_Comment(org.openhealthtools.mdht.uml.cda.ccd.Comment object) {
+				return createCCD_CommentAdapter();
+			}
+			@Override
 			public Adapter caseIHE_Comment(org.openhealthtools.mdht.uml.cda.ihe.Comment object) {
 				return createIHE_CommentAdapter();
 			}
@@ -2718,6 +2722,20 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHealthcareProvidersPharmaciesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.Comment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.Comment
+	 * @generated
+	 */
+	public Adapter createCCD_CommentAdapter() {
 		return null;
 	}
 

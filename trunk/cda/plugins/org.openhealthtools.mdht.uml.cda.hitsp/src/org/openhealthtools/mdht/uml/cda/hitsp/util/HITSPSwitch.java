@@ -658,6 +658,7 @@ public class HITSPSwitch<T> {
 				Comment comment = (Comment)theEObject;
 				T result = caseComment(comment);
 				if (result == null) result = caseIHE_Comment(comment);
+				if (result == null) result = caseCCD_Comment(comment);
 				if (result == null) result = caseCDA_Act(comment);
 				if (result == null) result = caseClinicalStatement(comment);
 				if (result == null) result = caseAct(comment);
@@ -2827,6 +2828,21 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseHealthcareProvidersPharmacies(HealthcareProvidersPharmacies object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCCD_Comment(org.openhealthtools.mdht.uml.cda.ccd.Comment object) {
 		return null;
 	}
 

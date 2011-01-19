@@ -26,6 +26,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.Comment;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CoveragePlanDescription;
@@ -2733,12 +2734,44 @@ public class CCDValidator extends EObjectValidator {
 	public static final int COVERAGE_PLAN_DESCRIPTION__COVERAGE_PLAN_DESCRIPTION_MOOD_CODE = 327;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Template Id' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_TEMPLATE_ID = 328;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Class Code' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_CLASS_CODE = 329;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Mood Code' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_MOOD_CODE = 330;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Code' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_CODE = 331;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 327;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 331;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -2931,6 +2964,8 @@ public class CCDValidator extends EObjectValidator {
 				return validateSupport((Support)value, diagnostics, context);
 			case CCDPackage.SUPPORT_GUARDIAN:
 				return validateSupportGuardian((SupportGuardian)value, diagnostics, context);
+			case CCDPackage.COMMENT:
+				return validateComment((Comment)value, diagnostics, context);
 			case CCDPackage.CCD_REGISTRY_DELEGATE:
 				return validateCCDRegistryDelegate((CCDRegistryDelegate)value, diagnostics, context);
 			default:
@@ -7945,6 +7980,67 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(supportGuardian, diagnostics, context);
 		if (result || diagnostics != null) result &= cdaValidator.validateGuardian_validateGuardianChoice(supportGuardian, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(comment, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentTemplateId(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentClassCode(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentMoodCode(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentCode(comment, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateCommentTemplateId constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentTemplateId(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCommentClassCode constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentClassCode(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentClassCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCommentMoodCode constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentMoodCode(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentMoodCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCommentCode constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentCode(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentCode(diagnostics, context);
 	}
 
 	/**
