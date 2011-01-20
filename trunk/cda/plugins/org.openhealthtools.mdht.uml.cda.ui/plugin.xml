@@ -209,6 +209,19 @@
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.openSubclassEditorAction">
 			</action>
 		</objectContribution>
+  <objectContribution
+        adaptable="true"
+        id="org.openhealthtools.mdht.uml.cda.ui.contribution1"
+        nameFilter="*"
+        objectClass="org.eclipse.core.resources.IProject">
+     <action
+           class="org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction"
+           enablesFor="+"
+           id="org.openhealthtools.mdht.uml.cda.ui.addRemoveNatureAction"
+           label="Add/Remove CDA Nature"
+           menubarPath="additions">
+     </action>
+  </objectContribution>
 	</extension>
 	
    <extension point="org.eclipse.ui.popupMenus">
@@ -297,6 +310,41 @@
                id="mdht.actions.addCDA.valueSetCode">
          </action>
       </objectContribution>
+   </extension>
+   <extension
+         id="CDAsampleBuilder"
+         name="CDA Sample Project Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.openhealthtools.mdht.uml.cda.ui.builder.CDASampleBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="CDA sampleNature"
+         name="CDA Sample Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.openhealthtools.mdht.uml.cda.ui.builder.CDASampleNature">
+         </run>
+      </runtime>
+      <builder
+            id="org.openhealthtools.mdht.uml.cda.ui.CDAsampleBuilder">
+      </builder>
+   </extension>
+   <extension
+         id="xmlProblem"
+         name="XML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
    </extension>
          
 </plugin>
