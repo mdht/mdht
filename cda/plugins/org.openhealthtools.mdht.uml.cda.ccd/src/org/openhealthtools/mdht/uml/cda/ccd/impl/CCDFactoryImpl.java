@@ -149,6 +149,10 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.PROBLEM_SECTION: return createProblemSection();
 			case CCDPackage.PROBLEM_ACT: return createProblemAct();
 			case CCDPackage.EPISODE_OBSERVATION: return createEpisodeObservation();
+			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
+			case CCDPackage.PROBLEM_STATUS_OBSERVATION: return createProblemStatusObservation();
+			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION: return createProblemHealthStatusObservation();
+			case CCDPackage.AGE_OBSERVATION: return createAgeObservation();
 			case CCDPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
 			case CCDPackage.SOCIAL_HISTORY_SECTION: return createSocialHistorySection();
 			case CCDPackage.ALERTS_SECTION: return createAlertsSection();
@@ -177,10 +181,6 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.POLICY_ACTIVITY: return createPolicyActivity();
 			case CCDPackage.PURPOSE_SECTION: return createPurposeSection();
 			case CCDPackage.PURPOSE_ACTIVITY: return createPurposeActivity();
-			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
-			case CCDPackage.PROBLEM_STATUS_OBSERVATION: return createProblemStatusObservation();
-			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION: return createProblemHealthStatusObservation();
-			case CCDPackage.AGE_OBSERVATION: return createAgeObservation();
 			case CCDPackage.PATIENT_AWARENESS: return createPatientAwareness();
 			case CCDPackage.FAMILY_HISTORY_OBSERVATION: return createFamilyHistoryObservation();
 			case CCDPackage.FAMILY_HISTORY_ORGANIZER: return createFamilyHistoryOrganizer();

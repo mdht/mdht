@@ -298,6 +298,48 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.PROBLEM_OBSERVATION: {
+				ProblemObservation problemObservation = (ProblemObservation)theEObject;
+				T result = caseProblemObservation(problemObservation);
+				if (result == null) result = caseObservation(problemObservation);
+				if (result == null) result = caseClinicalStatement(problemObservation);
+				if (result == null) result = caseAct(problemObservation);
+				if (result == null) result = caseInfrastructureRoot(problemObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PROBLEM_STATUS_OBSERVATION: {
+				ProblemStatusObservation problemStatusObservation = (ProblemStatusObservation)theEObject;
+				T result = caseProblemStatusObservation(problemStatusObservation);
+				if (result == null) result = caseStatusObservation(problemStatusObservation);
+				if (result == null) result = caseObservation(problemStatusObservation);
+				if (result == null) result = caseClinicalStatement(problemStatusObservation);
+				if (result == null) result = caseAct(problemStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(problemStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION: {
+				ProblemHealthStatusObservation problemHealthStatusObservation = (ProblemHealthStatusObservation)theEObject;
+				T result = caseProblemHealthStatusObservation(problemHealthStatusObservation);
+				if (result == null) result = caseStatusObservation(problemHealthStatusObservation);
+				if (result == null) result = caseObservation(problemHealthStatusObservation);
+				if (result == null) result = caseClinicalStatement(problemHealthStatusObservation);
+				if (result == null) result = caseAct(problemHealthStatusObservation);
+				if (result == null) result = caseInfrastructureRoot(problemHealthStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.AGE_OBSERVATION: {
+				AgeObservation ageObservation = (AgeObservation)theEObject;
+				T result = caseAgeObservation(ageObservation);
+				if (result == null) result = caseObservation(ageObservation);
+				if (result == null) result = caseClinicalStatement(ageObservation);
+				if (result == null) result = caseAct(ageObservation);
+				if (result == null) result = caseInfrastructureRoot(ageObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CCDPackage.FAMILY_HISTORY_SECTION: {
 				FamilyHistorySection familyHistorySection = (FamilyHistorySection)theEObject;
 				T result = caseFamilyHistorySection(familyHistorySection);
@@ -564,48 +606,6 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseClinicalStatement(purposeActivity);
 				if (result == null) result = caseAct(purposeActivity);
 				if (result == null) result = caseInfrastructureRoot(purposeActivity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.PROBLEM_OBSERVATION: {
-				ProblemObservation problemObservation = (ProblemObservation)theEObject;
-				T result = caseProblemObservation(problemObservation);
-				if (result == null) result = caseObservation(problemObservation);
-				if (result == null) result = caseClinicalStatement(problemObservation);
-				if (result == null) result = caseAct(problemObservation);
-				if (result == null) result = caseInfrastructureRoot(problemObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.PROBLEM_STATUS_OBSERVATION: {
-				ProblemStatusObservation problemStatusObservation = (ProblemStatusObservation)theEObject;
-				T result = caseProblemStatusObservation(problemStatusObservation);
-				if (result == null) result = caseStatusObservation(problemStatusObservation);
-				if (result == null) result = caseObservation(problemStatusObservation);
-				if (result == null) result = caseClinicalStatement(problemStatusObservation);
-				if (result == null) result = caseAct(problemStatusObservation);
-				if (result == null) result = caseInfrastructureRoot(problemStatusObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION: {
-				ProblemHealthStatusObservation problemHealthStatusObservation = (ProblemHealthStatusObservation)theEObject;
-				T result = caseProblemHealthStatusObservation(problemHealthStatusObservation);
-				if (result == null) result = caseStatusObservation(problemHealthStatusObservation);
-				if (result == null) result = caseObservation(problemHealthStatusObservation);
-				if (result == null) result = caseClinicalStatement(problemHealthStatusObservation);
-				if (result == null) result = caseAct(problemHealthStatusObservation);
-				if (result == null) result = caseInfrastructureRoot(problemHealthStatusObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.AGE_OBSERVATION: {
-				AgeObservation ageObservation = (AgeObservation)theEObject;
-				T result = caseAgeObservation(ageObservation);
-				if (result == null) result = caseObservation(ageObservation);
-				if (result == null) result = caseClinicalStatement(ageObservation);
-				if (result == null) result = caseAct(ageObservation);
-				if (result == null) result = caseInfrastructureRoot(ageObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
