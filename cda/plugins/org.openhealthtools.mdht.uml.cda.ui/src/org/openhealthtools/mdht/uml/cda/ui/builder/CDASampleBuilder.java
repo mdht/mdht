@@ -63,15 +63,10 @@ public class CDASampleBuilder extends IncrementalProjectBuilder {
 		if (delta != null) {
 			delta.accept(checkForModelChanged);	
 			if (checkForModelChanged.hasModelChanged) {
-				System.out.println("Model Has Changed");
 				runTransformation(getProject(),monitor);
 				runGeneration(getProject(),monitor);
-			} else	{
-				System.out.println("Model Has Not Changed");
-			}
-		} else	{
-			System.out.println("Model Has Not Changed");
-		}
+			} 
+		} 
 		
 		return null;
 	}
