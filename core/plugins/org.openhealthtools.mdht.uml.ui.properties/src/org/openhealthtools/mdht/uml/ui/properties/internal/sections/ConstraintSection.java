@@ -117,13 +117,15 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 
 		String ocl = bodyText.getText().trim();
 
+		String nsuri = "";
+		
 		for (org.eclipse.uml2.uml.Package p : constraint.allOwningPackages()) {
 
 			if (p.getAppliedStereotype("CDA::CodegenSupport") != null) {
 
 				Stereotype s = p.getAppliedStereotype("CDA::CodegenSupport");
 
-				String nsuri = (String) p.getValue(s, "nsURI");
+				nsuri = (String) p.getValue(s, "nsURI");
 
 				if (EPackage.Registry.INSTANCE.containsKey(nsuri)) {
 
@@ -131,6 +133,20 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 					break;
 				}
 
+			} else
+			{				
+				if (p.getAppliedStereotype("Ecore::EPackage") != null)
+				{
+					Stereotype s = p.getAppliedStereotype("Ecore::EPackage");
+
+					nsuri = (String) p.getValue(s, "nsURI");
+
+					if (EPackage.Registry.INSTANCE.containsKey(nsuri)) {
+
+						ePackage = EPackage.Registry.INSTANCE.getEPackage(nsuri);
+						break;
+					}	
+				}
 			}
 
 		}
