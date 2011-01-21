@@ -475,7 +475,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_INFORMATION_SOURCE = 249;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_INFORMATION_SOURCE = 103;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Contains Patient Awareness' of 'Problem Observation'.
@@ -483,7 +483,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_CONTAINS_PATIENT_AWARENESS = 250;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_CONTAINS_PATIENT_AWARENESS = 104;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Template Id' of 'Problem Observation'.
@@ -491,7 +491,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_TEMPLATE_ID = 251;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_TEMPLATE_ID = 105;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Mood Code' of 'Problem Observation'.
@@ -499,7 +499,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_MOOD_CODE = 252;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_MOOD_CODE = 106;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Status Code' of 'Problem Observation'.
@@ -507,7 +507,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_STATUS_CODE = 253;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_STATUS_CODE = 107;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Effective Time' of 'Problem Observation'.
@@ -515,7 +515,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_EFFECTIVE_TIME = 254;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_EFFECTIVE_TIME = 108;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Problem Status Observation' of 'Problem Observation'.
@@ -523,7 +523,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_STATUS_OBSERVATION = 255;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_STATUS_OBSERVATION = 109;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Problem Health Status Observation' of 'Problem Observation'.
@@ -531,7 +531,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS_OBSERVATION = 256;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS_OBSERVATION = 110;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Age Observation' of 'Problem Observation'.
@@ -539,7 +539,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_AGE_OBSERVATION = 257;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_AGE_OBSERVATION = 111;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Section Template Id' of 'Problem Section'.
@@ -587,7 +587,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 258;
+	public static final int PROBLEM_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 112;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation No Additional Participants' of 'Status Observation'.
@@ -667,7 +667,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 259;
+	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 113;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Code' of 'Problem Health Status Observation'.
@@ -675,7 +675,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__STATUS_OBSERVATION_CODE = 260;
+	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__STATUS_OBSERVATION_CODE = 114;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Episode Observation Template Id' of 'Episode Observation'.
@@ -763,7 +763,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FAMILY_HISTORY_SECTION__FAMILY_HISTORY_SECTION_TEMPLATE_ID = 103;
+	public static final int FAMILY_HISTORY_SECTION__FAMILY_HISTORY_SECTION_TEMPLATE_ID = 121;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family History Section Code' of 'Family History Section'.
@@ -771,7 +771,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FAMILY_HISTORY_SECTION__FAMILY_HISTORY_SECTION_CODE = 104;
+	public static final int FAMILY_HISTORY_SECTION__FAMILY_HISTORY_SECTION_CODE = 122;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family History Section Title' of 'Family History Section'.
@@ -779,7 +779,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FAMILY_HISTORY_SECTION__FAMILY_HISTORY_SECTION_TITLE = 105;
+	public static final int FAMILY_HISTORY_SECTION__FAMILY_HISTORY_SECTION_TITLE = 123;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family History Observation Template Id' of 'Family History Observation'.
@@ -827,7 +827,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_COMPONENT_ELEMENT = 119;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_COMPONENT_ELEMENT = 137;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Information Source' of 'Result Organizer'.
@@ -835,7 +835,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_INFORMATION_SOURCE = 120;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_INFORMATION_SOURCE = 138;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Template Id' of 'Result Organizer'.
@@ -843,7 +843,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID = 121;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID = 139;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Mood Code' of 'Result Organizer'.
@@ -851,7 +851,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_MOOD_CODE = 122;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_MOOD_CODE = 140;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Id' of 'Result Organizer'.
@@ -859,7 +859,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_ID = 123;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_ID = 141;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Code' of 'Result Organizer'.
@@ -867,7 +867,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_CODE = 124;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_CODE = 142;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Status Code' of 'Result Organizer'.
@@ -875,7 +875,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_STATUS_CODE = 125;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_STATUS_CODE = 143;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Result Observation' of 'Result Organizer'.
@@ -883,7 +883,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_RESULT_OBSERVATION = 126;
+	public static final int RESULT_ORGANIZER__RESULT_ORGANIZER_RESULT_OBSERVATION = 144;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Reference Range Required' of 'Result Observation'.
@@ -891,7 +891,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_REFERENCE_RANGE_REQUIRED = 127;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_REFERENCE_RANGE_REQUIRED = 145;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation No Observation Range Code' of 'Result Observation'.
@@ -899,7 +899,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_NO_OBSERVATION_RANGE_CODE = 128;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_NO_OBSERVATION_RANGE_CODE = 146;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Information Source' of 'Result Observation'.
@@ -907,7 +907,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_INFORMATION_SOURCE = 129;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_INFORMATION_SOURCE = 147;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Template Id' of 'Result Observation'.
@@ -915,7 +915,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_TEMPLATE_ID = 130;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_TEMPLATE_ID = 148;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Mood Code' of 'Result Observation'.
@@ -923,7 +923,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_MOOD_CODE = 131;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_MOOD_CODE = 149;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Id' of 'Result Observation'.
@@ -931,7 +931,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_ID = 132;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_ID = 150;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Effective Time' of 'Result Observation'.
@@ -939,7 +939,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_EFFECTIVE_TIME = 133;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_EFFECTIVE_TIME = 151;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Status Code' of 'Result Observation'.
@@ -947,7 +947,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_STATUS_CODE = 134;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_STATUS_CODE = 152;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Code' of 'Result Observation'.
@@ -955,7 +955,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_CODE = 135;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_CODE = 153;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Method Code' of 'Result Observation'.
@@ -963,7 +963,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_METHOD_CODE = 136;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_METHOD_CODE = 154;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Interpretation Code' of 'Result Observation'.
@@ -971,7 +971,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_INTERPRETATION_CODE = 137;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_INTERPRETATION_CODE = 155;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Value' of 'Result Observation'.
@@ -979,7 +979,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_VALUE = 138;
+	public static final int RESULT_OBSERVATION__RESULT_OBSERVATION_VALUE = 156;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Social History Section Template Id' of 'Social History Section'.
@@ -987,7 +987,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 106;
+	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 124;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Social History Section Code' of 'Social History Section'.
@@ -995,7 +995,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_CODE = 107;
+	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_CODE = 125;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Social History Section Title' of 'Social History Section'.
@@ -1003,7 +1003,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TITLE = 108;
+	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TITLE = 126;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Social History Observation Template Id' of 'Social History Observation'.
@@ -1019,7 +1019,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TEMPLATE_ID = 142;
+	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TEMPLATE_ID = 160;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Section Code' of 'Encounters Section'.
@@ -1027,7 +1027,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_CODE = 143;
+	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_CODE = 161;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Section Title' of 'Encounters Section'.
@@ -1035,7 +1035,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TITLE = 144;
+	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TITLE = 162;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunizations Section Clinical Statements' of 'Immunizations Section'.
@@ -1043,7 +1043,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_CLINICAL_STATEMENTS = 179;
+	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_CLINICAL_STATEMENTS = 197;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunizations Section Template Id' of 'Immunizations Section'.
@@ -1051,7 +1051,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TEMPLATE_ID = 180;
+	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TEMPLATE_ID = 198;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunizations Section Code' of 'Immunizations Section'.
@@ -1059,7 +1059,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_CODE = 181;
+	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_CODE = 199;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunizations Section Title' of 'Immunizations Section'.
@@ -1067,7 +1067,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TITLE = 182;
+	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TITLE = 200;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunizations Section Text' of 'Immunizations Section'.
@@ -1075,7 +1075,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TEXT = 183;
+	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TEXT = 201;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Activity Template Id' of 'Encounters Activity'.
@@ -1315,7 +1315,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALERTS_SECTION__ALERTS_SECTION_TEMPLATE_ID = 109;
+	public static final int ALERTS_SECTION__ALERTS_SECTION_TEMPLATE_ID = 127;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Alerts Section Code' of 'Alerts Section'.
@@ -1323,7 +1323,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALERTS_SECTION__ALERTS_SECTION_CODE = 110;
+	public static final int ALERTS_SECTION__ALERTS_SECTION_CODE = 128;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Alerts Section Title' of 'Alerts Section'.
@@ -1331,7 +1331,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALERTS_SECTION__ALERTS_SECTION_TITLE = 111;
+	public static final int ALERTS_SECTION__ALERTS_SECTION_TITLE = 129;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Alerts Section Text' of 'Alerts Section'.
@@ -1339,7 +1339,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALERTS_SECTION__ALERTS_SECTION_TEXT = 112;
+	public static final int ALERTS_SECTION__ALERTS_SECTION_TEXT = 130;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Alerts Section Problem Act' of 'Alerts Section'.
@@ -1347,7 +1347,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALERTS_SECTION__ALERTS_SECTION_PROBLEM_ACT = 113;
+	public static final int ALERTS_SECTION__ALERTS_SECTION_PROBLEM_ACT = 131;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Alert Observation Information Source' of 'Alert Observation'.
@@ -1531,7 +1531,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULTS_SECTION__RESULTS_SECTION_TEMPLATE_ID = 114;
+	public static final int RESULTS_SECTION__RESULTS_SECTION_TEMPLATE_ID = 132;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Code' of 'Results Section'.
@@ -1539,7 +1539,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULTS_SECTION__RESULTS_SECTION_CODE = 115;
+	public static final int RESULTS_SECTION__RESULTS_SECTION_CODE = 133;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Title' of 'Results Section'.
@@ -1547,7 +1547,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULTS_SECTION__RESULTS_SECTION_TITLE = 116;
+	public static final int RESULTS_SECTION__RESULTS_SECTION_TITLE = 134;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Text' of 'Results Section'.
@@ -1555,7 +1555,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULTS_SECTION__RESULTS_SECTION_TEXT = 117;
+	public static final int RESULTS_SECTION__RESULTS_SECTION_TEXT = 135;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Result Organizer' of 'Results Section'.
@@ -1563,7 +1563,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULTS_SECTION__RESULTS_SECTION_RESULT_ORGANIZER = 118;
+	public static final int RESULTS_SECTION__RESULTS_SECTION_RESULT_ORGANIZER = 136;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Series Number Observation Template Id' of 'Medication Series Number Observation'.
@@ -1635,7 +1635,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_TEMPLATE_ID = 139;
+	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_TEMPLATE_ID = 157;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedures Section Code' of 'Procedures Section'.
@@ -1643,7 +1643,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_CODE = 140;
+	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_CODE = 158;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedures Section Title' of 'Procedures Section'.
@@ -1651,7 +1651,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_TITLE = 141;
+	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_TITLE = 159;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Template Id' of 'Plan Of Care Section'.
@@ -1659,7 +1659,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TEMPLATE_ID = 145;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TEMPLATE_ID = 163;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Code' of 'Plan Of Care Section'.
@@ -1667,7 +1667,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_CODE = 146;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_CODE = 164;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Title' of 'Plan Of Care Section'.
@@ -1675,7 +1675,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TITLE = 147;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TITLE = 165;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Text' of 'Plan Of Care Section'.
@@ -1683,7 +1683,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TEXT = 148;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TEXT = 166;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Activity Act' of 'Plan Of Care Section'.
@@ -1691,7 +1691,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_ACT = 149;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_ACT = 167;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Activity Encounter' of 'Plan Of Care Section'.
@@ -1699,7 +1699,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_ENCOUNTER = 150;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_ENCOUNTER = 168;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Activity Observation' of 'Plan Of Care Section'.
@@ -1707,7 +1707,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_OBSERVATION = 151;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_OBSERVATION = 169;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Activity Procedure' of 'Plan Of Care Section'.
@@ -1715,7 +1715,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_PROCEDURE = 152;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_PROCEDURE = 170;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Activity Substance Administration' of 'Plan Of Care Section'.
@@ -1723,7 +1723,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION = 153;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION = 171;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Activity Supply' of 'Plan Of Care Section'.
@@ -1731,7 +1731,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_SUPPLY = 154;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY_SUPPLY = 172;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Template Id' of 'Vital Signs Section'.
@@ -1739,7 +1739,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 184;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 202;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Code' of 'Vital Signs Section'.
@@ -1747,7 +1747,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CODE = 185;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CODE = 203;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Title' of 'Vital Signs Section'.
@@ -1755,7 +1755,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TITLE = 186;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TITLE = 204;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Text' of 'Vital Signs Section'.
@@ -1763,7 +1763,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEXT = 187;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEXT = 205;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Vital Signs Organizer' of 'Vital Signs Section'.
@@ -1771,7 +1771,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 188;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 206;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Equipment Section Template Id' of 'Medical Equipment Section'.
@@ -1779,7 +1779,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 191;
+	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 209;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Equipment Section Code' of 'Medical Equipment Section'.
@@ -1787,7 +1787,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_CODE = 192;
+	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_CODE = 210;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Equipment Section Title' of 'Medical Equipment Section'.
@@ -1795,7 +1795,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TITLE = 193;
+	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TITLE = 211;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Clinical Statements' of 'Functional Status Section'.
@@ -1803,7 +1803,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_CLINICAL_STATEMENTS = 194;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_CLINICAL_STATEMENTS = 212;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Template Id' of 'Functional Status Section'.
@@ -1811,7 +1811,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 195;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 213;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Code' of 'Functional Status Section'.
@@ -1819,7 +1819,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_CODE = 196;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_CODE = 214;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Title' of 'Functional Status Section'.
@@ -1827,7 +1827,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TITLE = 197;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TITLE = 215;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Template Id' of 'Advance Directives Section'.
@@ -1835,7 +1835,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 198;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 216;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Code' of 'Advance Directives Section'.
@@ -1843,7 +1843,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_CODE = 199;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_CODE = 217;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Title' of 'Advance Directives Section'.
@@ -1851,7 +1851,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TITLE = 200;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TITLE = 218;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Advance Directive Observation' of 'Advance Directives Section'.
@@ -1859,7 +1859,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE_OBSERVATION = 201;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE_OBSERVATION = 219;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Template Id' of 'Payers Section'.
@@ -1867,7 +1867,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_TEMPLATE_ID = 208;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_TEMPLATE_ID = 226;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Code' of 'Payers Section'.
@@ -1875,7 +1875,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_CODE = 209;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_CODE = 227;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Title' of 'Payers Section'.
@@ -1883,7 +1883,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_TITLE = 210;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_TITLE = 228;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Text' of 'Payers Section'.
@@ -1891,7 +1891,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_TEXT = 211;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_TEXT = 229;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Coverage Activity' of 'Payers Section'.
@@ -1899,7 +1899,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_COVERAGE_ACTIVITY = 212;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_COVERAGE_ACTIVITY = 230;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Information Source' of 'Coverage Activity'.
@@ -1907,7 +1907,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_INFORMATION_SOURCE = 213;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_INFORMATION_SOURCE = 231;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Sequence Number' of 'Coverage Activity'.
@@ -1915,7 +1915,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_SEQUENCE_NUMBER = 214;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_SEQUENCE_NUMBER = 232;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Template Id' of 'Purpose Section'.
@@ -1923,7 +1923,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEMPLATE_ID = 237;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEMPLATE_ID = 255;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Code' of 'Purpose Section'.
@@ -1931,7 +1931,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_CODE = 238;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_CODE = 256;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Title' of 'Purpose Section'.
@@ -1939,7 +1939,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TITLE = 239;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TITLE = 257;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Text' of 'Purpose Section'.
@@ -1947,7 +1947,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEXT = 240;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEXT = 258;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Purpose Activity' of 'Purpose Section'.
@@ -1955,7 +1955,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_PURPOSE_ACTIVITY = 241;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_PURPOSE_ACTIVITY = 259;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Has Reason' of 'Purpose Activity'.
@@ -1963,7 +1963,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_HAS_REASON = 242;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_HAS_REASON = 260;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Reason Type' of 'Purpose Activity'.
@@ -1971,7 +1971,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_REASON_TYPE = 243;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_REASON_TYPE = 261;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Template Id' of 'Purpose Activity'.
@@ -1979,7 +1979,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_TEMPLATE_ID = 244;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_TEMPLATE_ID = 262;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Class Code' of 'Purpose Activity'.
@@ -1987,7 +1987,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CLASS_CODE = 245;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CLASS_CODE = 263;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Mood Code' of 'Purpose Activity'.
@@ -1995,7 +1995,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_MOOD_CODE = 246;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_MOOD_CODE = 264;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Code' of 'Purpose Activity'.
@@ -2003,7 +2003,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CODE = 247;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CODE = 265;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Status Code' of 'Purpose Activity'.
@@ -2011,7 +2011,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_STATUS_CODE = 248;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_STATUS_CODE = 266;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Information Source' of 'Vital Signs Organizer'.
@@ -2019,7 +2019,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE = 189;
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE = 207;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Template Id' of 'Vital Signs Organizer'.
@@ -2027,7 +2027,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID = 190;
+	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID = 208;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Template Id' of 'Advance Directive Observation'.
@@ -2035,7 +2035,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID = 202;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID = 220;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Class Code' of 'Advance Directive Observation'.
@@ -2043,7 +2043,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE = 203;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE = 221;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Mood Code' of 'Advance Directive Observation'.
@@ -2051,7 +2051,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE = 204;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE = 222;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Id' of 'Advance Directive Observation'.
@@ -2059,7 +2059,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_ID = 205;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_ID = 223;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Status Code' of 'Advance Directive Observation'.
@@ -2067,7 +2067,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE = 206;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE = 224;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Effective Time' of 'Advance Directive Observation'.
@@ -2075,7 +2075,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME = 207;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME = 225;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Template Id' of 'Advance Directive Status Observation'.
@@ -2115,7 +2115,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_TEMPLATE_ID = 215;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_TEMPLATE_ID = 233;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Class Code' of 'Coverage Activity'.
@@ -2123,7 +2123,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_CLASS_CODE = 216;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_CLASS_CODE = 234;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Mood Code' of 'Coverage Activity'.
@@ -2131,7 +2131,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_MOOD_CODE = 217;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_MOOD_CODE = 235;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Id' of 'Coverage Activity'.
@@ -2139,7 +2139,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_ID = 218;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_ID = 236;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Status Code' of 'Coverage Activity'.
@@ -2147,7 +2147,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_STATUS_CODE = 219;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_STATUS_CODE = 237;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Code' of 'Coverage Activity'.
@@ -2155,7 +2155,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_CODE = 220;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_CODE = 238;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Policy Activity' of 'Coverage Activity'.
@@ -2163,7 +2163,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_POLICY_ACTIVITY = 221;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_POLICY_ACTIVITY = 239;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Payer Entity Is Required' of 'Policy Activity'.
@@ -2171,7 +2171,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_PAYER_ENTITY_IS_REQUIRED = 222;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_PAYER_ENTITY_IS_REQUIRED = 240;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Covered Party Is Required' of 'Policy Activity'.
@@ -2179,7 +2179,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_COVERED_PARTY_IS_REQUIRED = 223;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_COVERED_PARTY_IS_REQUIRED = 241;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Covered Party Time' of 'Policy Activity'.
@@ -2187,7 +2187,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_COVERED_PARTY_TIME = 224;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_COVERED_PARTY_TIME = 242;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Subscriber Is Allowed' of 'Policy Activity'.
@@ -2195,7 +2195,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_SUBSCRIBER_IS_ALLOWED = 225;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_SUBSCRIBER_IS_ALLOWED = 243;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Subscriber Time' of 'Policy Activity'.
@@ -2203,7 +2203,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_SUBSCRIBER_TIME = 226;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_SUBSCRIBER_TIME = 244;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Entry Relationship REFR' of 'Policy Activity'.
@@ -2211,7 +2211,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ENTRY_RELATIONSHIP_REFR = 227;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ENTRY_RELATIONSHIP_REFR = 245;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Entry Relationship Target' of 'Policy Activity'.
@@ -2219,7 +2219,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ENTRY_RELATIONSHIP_TARGET = 228;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ENTRY_RELATIONSHIP_TARGET = 246;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Template Id' of 'Policy Activity'.
@@ -2227,7 +2227,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_TEMPLATE_ID = 229;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_TEMPLATE_ID = 247;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Class Code' of 'Policy Activity'.
@@ -2235,7 +2235,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_CLASS_CODE = 230;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_CLASS_CODE = 248;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Mood Code' of 'Policy Activity'.
@@ -2243,7 +2243,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_MOOD_CODE = 231;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_MOOD_CODE = 249;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Id' of 'Policy Activity'.
@@ -2251,7 +2251,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ID = 232;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ID = 250;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Status Code' of 'Policy Activity'.
@@ -2259,7 +2259,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_STATUS_CODE = 233;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_STATUS_CODE = 251;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Payer Entity' of 'Policy Activity'.
@@ -2267,7 +2267,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_PAYER_ENTITY = 234;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_PAYER_ENTITY = 252;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Covered Party' of 'Policy Activity'.
@@ -2275,7 +2275,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_COVERED_PARTY = 235;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_COVERED_PARTY = 253;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Policy Subscriber' of 'Policy Activity'.
@@ -2283,7 +2283,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_POLICY_SUBSCRIBER = 236;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_POLICY_SUBSCRIBER = 254;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payer Entity Id' of 'Payer Entity'.
@@ -2355,7 +2355,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_MOOD_CODE_VALUE = 155;
+	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_MOOD_CODE_VALUE = 173;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Act Template Id' of 'Plan Of Care Activity Act'.
@@ -2363,7 +2363,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_TEMPLATE_ID = 156;
+	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_TEMPLATE_ID = 174;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Act Id' of 'Plan Of Care Activity Act'.
@@ -2371,7 +2371,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_ID = 157;
+	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_ID = 175;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Act Mood Code' of 'Plan Of Care Activity Act'.
@@ -2379,7 +2379,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_MOOD_CODE = 158;
+	public static final int PLAN_OF_CARE_ACTIVITY_ACT__PLAN_OF_CARE_ACTIVITY_ACT_MOOD_CODE = 176;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Instruction Template Id' of 'Patient Instruction'.
@@ -2483,7 +2483,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_TEMPLATE_ID = 261;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_TEMPLATE_ID = 115;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Class Code' of 'Age Observation'.
@@ -2491,7 +2491,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CLASS_CODE = 262;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CLASS_CODE = 116;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Mood Code' of 'Age Observation'.
@@ -2499,7 +2499,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_MOOD_CODE = 263;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_MOOD_CODE = 117;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Code' of 'Age Observation'.
@@ -2507,7 +2507,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CODE = 264;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CODE = 118;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Status Code' of 'Age Observation'.
@@ -2515,7 +2515,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_STATUS_CODE = 265;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_STATUS_CODE = 119;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Value' of 'Age Observation'.
@@ -2523,7 +2523,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_VALUE = 266;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_VALUE = 120;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Observation Mood Code Value' of 'Plan Of Care Activity Observation'.
@@ -2531,7 +2531,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_MOOD_CODE_VALUE = 163;
+	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_MOOD_CODE_VALUE = 181;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Observation Template Id' of 'Plan Of Care Activity Observation'.
@@ -2539,7 +2539,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID = 164;
+	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID = 182;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Observation Id' of 'Plan Of Care Activity Observation'.
@@ -2547,7 +2547,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_ID = 165;
+	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_ID = 183;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Observation Mood Code' of 'Plan Of Care Activity Observation'.
@@ -2555,7 +2555,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_MOOD_CODE = 166;
+	public static final int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PLAN_OF_CARE_ACTIVITY_OBSERVATION_MOOD_CODE = 184;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Encounter Mood Code Value' of 'Plan Of Care Activity Encounter'.
@@ -2563,7 +2563,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_MOOD_CODE_VALUE = 159;
+	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_MOOD_CODE_VALUE = 177;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Encounter Template Id' of 'Plan Of Care Activity Encounter'.
@@ -2571,7 +2571,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID = 160;
+	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_TEMPLATE_ID = 178;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Encounter Id' of 'Plan Of Care Activity Encounter'.
@@ -2579,7 +2579,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_ID = 161;
+	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_ID = 179;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Encounter Mood Code' of 'Plan Of Care Activity Encounter'.
@@ -2587,7 +2587,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_MOOD_CODE = 162;
+	public static final int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PLAN_OF_CARE_ACTIVITY_ENCOUNTER_MOOD_CODE = 180;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Procedure Mood Code Value' of 'Plan Of Care Activity Procedure'.
@@ -2595,7 +2595,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_MOOD_CODE_VALUE = 167;
+	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_MOOD_CODE_VALUE = 185;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Procedure Template Id' of 'Plan Of Care Activity Procedure'.
@@ -2603,7 +2603,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 168;
+	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 186;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Procedure Id' of 'Plan Of Care Activity Procedure'.
@@ -2611,7 +2611,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_ID = 169;
+	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_ID = 187;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Procedure Mood Code' of 'Plan Of Care Activity Procedure'.
@@ -2619,7 +2619,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_MOOD_CODE = 170;
+	public static final int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PLAN_OF_CARE_ACTIVITY_PROCEDURE_MOOD_CODE = 188;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Substance Administration Mood Code Value' of 'Plan Of Care Activity Substance Administration'.
@@ -2627,7 +2627,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_MOOD_CODE_VALUE = 171;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_MOOD_CODE_VALUE = 189;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Substance Administration Template Id' of 'Plan Of Care Activity Substance Administration'.
@@ -2635,7 +2635,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID = 172;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID = 190;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Substance Administration Id' of 'Plan Of Care Activity Substance Administration'.
@@ -2643,7 +2643,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_ID = 173;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_ID = 191;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Substance Administration Mood Code' of 'Plan Of Care Activity Substance Administration'.
@@ -2651,7 +2651,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_MOOD_CODE = 174;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_MOOD_CODE = 192;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Supply Mood Code Value' of 'Plan Of Care Activity Supply'.
@@ -2659,7 +2659,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_MOOD_CODE_VALUE = 175;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_MOOD_CODE_VALUE = 193;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Supply Template Id' of 'Plan Of Care Activity Supply'.
@@ -2667,7 +2667,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_TEMPLATE_ID = 176;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_TEMPLATE_ID = 194;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Supply Id' of 'Plan Of Care Activity Supply'.
@@ -2675,7 +2675,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_ID = 177;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_ID = 195;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Supply Mood Code' of 'Plan Of Care Activity Supply'.
@@ -2683,7 +2683,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_MOOD_CODE = 178;
+	public static final int PLAN_OF_CARE_ACTIVITY_SUPPLY__PLAN_OF_CARE_ACTIVITY_SUPPLY_MOOD_CODE = 196;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Activity Act Template Id' of 'Procedure Activity Act'.
@@ -2844,6 +2844,14 @@ public class CCDValidator extends EObjectValidator {
 				return validateProblemAct((ProblemAct)value, diagnostics, context);
 			case CCDPackage.EPISODE_OBSERVATION:
 				return validateEpisodeObservation((EpisodeObservation)value, diagnostics, context);
+			case CCDPackage.PROBLEM_OBSERVATION:
+				return validateProblemObservation((ProblemObservation)value, diagnostics, context);
+			case CCDPackage.PROBLEM_STATUS_OBSERVATION:
+				return validateProblemStatusObservation((ProblemStatusObservation)value, diagnostics, context);
+			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION:
+				return validateProblemHealthStatusObservation((ProblemHealthStatusObservation)value, diagnostics, context);
+			case CCDPackage.AGE_OBSERVATION:
+				return validateAgeObservation((AgeObservation)value, diagnostics, context);
 			case CCDPackage.FAMILY_HISTORY_SECTION:
 				return validateFamilyHistorySection((FamilyHistorySection)value, diagnostics, context);
 			case CCDPackage.SOCIAL_HISTORY_SECTION:
@@ -2900,14 +2908,6 @@ public class CCDValidator extends EObjectValidator {
 				return validatePurposeSection((PurposeSection)value, diagnostics, context);
 			case CCDPackage.PURPOSE_ACTIVITY:
 				return validatePurposeActivity((PurposeActivity)value, diagnostics, context);
-			case CCDPackage.PROBLEM_OBSERVATION:
-				return validateProblemObservation((ProblemObservation)value, diagnostics, context);
-			case CCDPackage.PROBLEM_STATUS_OBSERVATION:
-				return validateProblemStatusObservation((ProblemStatusObservation)value, diagnostics, context);
-			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION:
-				return validateProblemHealthStatusObservation((ProblemHealthStatusObservation)value, diagnostics, context);
-			case CCDPackage.AGE_OBSERVATION:
-				return validateAgeObservation((AgeObservation)value, diagnostics, context);
 			case CCDPackage.PATIENT_AWARENESS:
 				return validatePatientAwareness((PatientAwareness)value, diagnostics, context);
 			case CCDPackage.FAMILY_HISTORY_OBSERVATION:

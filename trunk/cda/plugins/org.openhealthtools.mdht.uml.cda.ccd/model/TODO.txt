@@ -12,11 +12,17 @@ Completion of CCD constraints
  - through CONF-68
  
  
-* Medications
+* Medications Section
  - completed CONF-298 thru CONF-333
+ 
+ * Problems Section
+ - TODO: Define value set for ProblemStatusCode, and ProblemHealthStatusCode
+ - TODO: Finish OCL for PatientAwareness participantRoleId
 
  Issues
  ------------------------------------------
+ * ProblemObservation: code SHALL be present, by MAY use specified value set.
+ 	-- need to separate these two constraints on a property
  * an association MAY be present, but if present SHALL have specific typeCode.
  	See MedicationActivity, rules 330 and 333
  

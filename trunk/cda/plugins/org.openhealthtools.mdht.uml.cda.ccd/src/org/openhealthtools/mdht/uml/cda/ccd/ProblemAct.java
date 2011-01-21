@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.cda.Act;
 
 /**
@@ -198,6 +199,18 @@ public interface ProblemAct extends Act {
 	 * @generated
 	 */
 	EpisodeObservation getEpisodeObservation();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemObservation)).oclAsType(ccd::ProblemObservation)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ProblemObservation)).oclAsType(ccd::ProblemObservation)'"
+	 * @generated
+	 */
+	EList<ProblemObservation> getProblemObservations();
 
 	/**
 	 * <!-- begin-user-doc -->
