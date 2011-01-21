@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
+import org.eclipse.ant.launching.IAntLaunchConstants;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -25,21 +26,38 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.debug.core.DebugPlugin;
+import org.eclipse.debug.core.ILaunch;
+import org.eclipse.debug.core.ILaunchConfigurationType;
+import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
+import org.eclipse.debug.core.ILaunchManager;
+import org.eclipse.debug.core.model.IProcess;
+import org.eclipse.debug.ui.IDebugUIConstants;
+import org.eclipse.emf.codegen.ecore.generator.Generator;
+import org.eclipse.emf.codegen.ecore.generator.GeneratorAdapterFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.GenAnnotation;
 import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.codegen.ecore.genmodel.GenResourceKind;
+import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
+import org.eclipse.emf.common.util.BasicMonitor;
+import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.ocl.ecore.EcorePackage;
 import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.uml2.codegen.ecore.genmodel.GenPackage;
+import org.eclipse.uml2.codegen.ecore.genmodel.generator.GenModelGeneratorAdapterFactory;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Package;
@@ -87,48 +105,80 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 	public boolean performFinish() {
 		
 		
-		name = newProjectPage.getProjectName();
-				
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		
-		IWorkspaceRoot root = workspace.getRoot();
 		
-		project = root.getProject(name);
+		
+
 		
 		try {
+
+			ProgressMonitorDialog pd = new ProgressMonitorDialog(getShell());
 			
+			name = newProjectPage.getProjectName();
+			
+			IWorkspace workspace = ResourcesPlugin.getWorkspace();
+			
+			IWorkspaceRoot root = workspace.getRoot();
+			
+			project = root.getProject(name);
+
+
 			project.create(null);
 			
 			project.open(null);
 			
+			pd.run(false, false,new IRunnableWithProgress() {
+
+				@Override
+				public void run(IProgressMonitor monitor)
+						throws InvocationTargetException, InterruptedException {
+					
+					monitor.beginTask("Create Project Tasks", 9);
+
+					// Use pde internal functionality to create plugin 
+					getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
 		
-			
-		} catch (CoreException e) {
-			e.printStackTrace();
-		}
+					monitor.worked(1);
+					
+					monitor.setTaskName("Create Plugin XML");
+					
+					createPluginXML(project);
+					monitor.worked(1);
+					
+					monitor.setTaskName("Create Manifest");
+					createManifest(project);
+					monitor.worked(1);
+					
+					monitor.setTaskName("Create UML Model");
+					createFolder(project, "model");
 		
-
-
-		try {
+					createUMLModel(project);
+					monitor.worked(1);
+					
+					monitor.setTaskName("Create Transformation XML");
+					createTransformation(project);
+					monitor.worked(1);
+					
+					monitor.setTaskName("Add Properties");
+					createPluginProperties(project);
+					
+					monitor.worked(1);
+					monitor.setTaskName("Add Read Me");
+					createReadME( project);					
+					monitor.worked(1);
+					
+					monitor.setTaskName("Run MDHT Transformation");	
+					runTransformation(project);
+					monitor.worked(1);
+					
+					monitor.setTaskName("Create Generation Model");
+					createGenModel(project); 
+					monitor.worked(1);
 			
-			// Use pde internal functionality to create plugin 
-			getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
-
-			createPluginXML(project);
-
-			createManifest(project);
-
-			createFolder(project, "model");
-
-			createUMLModel(project);
-
-			createTransformation(project);
-
-			createPluginProperties(project);
+				}} );
 			
-			createReadME( project);
-			
-			createGenModel(project); 
+			project.refreshLocal(IResource.DEPTH_INFINITE, null);
+
 
 		} catch (InvocationTargetException e) {
 			
@@ -136,17 +186,11 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
-		}
-		
-		try {
-			project.refreshLocal(IResource.DEPTH_INFINITE, null);
-			
-		
 		} catch (CoreException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
+		
 		return true;
 	}
 
@@ -286,6 +330,48 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		}
 
 	}
+	
+	void runTransformation(IProject project)
+	{
+		try {
+			
+			ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
+			
+			ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(IAntLaunchConstants.ID_ANT_LAUNCH_CONFIGURATION_TYPE);
+			
+			IFile transformxml = project.getFile("transform.xml");
+
+			String name = launchManager.generateLaunchConfigurationName(transformxml.getName());
+
+			ILaunchConfigurationWorkingCopy workingCopy=type.newInstance(null, name);	
+			workingCopy.setAttribute( "org.eclipse.ui.externaltools.ATTR_LOCATION", transformxml.getLocation().toOSString());
+			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, project.getName());
+			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
+			workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, true);
+			workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, false);			
+			workingCopy.doSave();
+
+			ILaunch launch = workingCopy.launch(ILaunchManager.RUN_MODE, null);
+			
+			boolean terminated = false;
+			
+			while (!terminated) {
+				for (IProcess process : launch.getProcesses()) {
+					terminated = process.isTerminated();
+				}
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					terminated = true;
+				}
+			}
+
+		} catch (CoreException e) {
+			e.printStackTrace();
+		} 
+	}
+	
+
 	
 	
 	void createPluginProperties(IProject project) {
@@ -468,6 +554,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		genmodel.getForeignModel().add(genmodel.getModelName()+".uml");
 	
 		
+		
 		GenAnnotation ga = org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenAnnotation();
 		ga.setSource(ANNOTATIONSOURCE);
 		ga.getDetails().put(org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter.OPTION__ECORE_TAGGED_VALUES, "PROCESS");
@@ -505,22 +592,42 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			}
 		}
 
-		GenPackage gp = org.eclipse.uml2.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenPackage(); 
+//		GenPackage gp = org.eclipse.uml2.codegen.ecore.genmodel.GenModelFactory.eINSTANCE.createGenPackage(); 
 		
-		gp.setPrefix(newCDATemplatePage.getModelName());
+//		gp.setPrefix(newCDATemplatePage.getModelName());
 		
-		gp.setResource(GenResourceKind.XMI_LITERAL);
+//		gp.setResource(GenResourceKind.XMI_LITERAL);
 		
-		gp.setBasePackage("org.openhealthtools.mdht.uml.cda");
+//		gp.setBasePackage("org.openhealthtools.mdht.uml.cda");
 		
-		gp.setDisposableProviderFactory(true);
-
-		gp.setOperationsPackage("org.openhealthtools.mdht.uml.cda."+newCDATemplatePage.getModelName().toLowerCase()+".operations");
+//		gp.setDisposableProviderFactory(true);
+		
+//		String temp = project.getFolder(new Path("model")).getFile( newCDATemplatePage.getModelName().toLowerCase() +".ecore" ).getRawLocation().toOSString();
+//		System.out.println(temp);
+//		URI ecoreFile = URI.createFileURI(project.getFolder(new Path("model")).getFile( newCDATemplatePage.getModelName().toLowerCase() +".ecore" ).getRawLocation().toOSString());
+//		
+//		EPackage foo2 = (EPackage) EcoreUtil.getObjectByType(resourceSet.getResource(ecoreFile, true).getContents(),org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getEPackage());
+//		
+//		if (foo2 != null) {
+//			gp.setEcorePackage(foo2);
+//		}
+		//IPath ecorePath = new Path("model/" + newCDATemplatePage.getModelName().toLowerCase() +"_Ecore.uml");
+		
+		
+//		EPackage foo2 = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEPackage();
+//
+//		foo2.setName(newCDATemplatePage.getModelName().toLowerCase());
+//		
+//		gp.setEcorePackage(foo2);
+		
+//		gp.setOperationsPackage("org.openhealthtools.mdht.uml.cda."+newCDATemplatePage.getModelName().toLowerCase()+".operations");
 
 //		gp.setEcorePackage(arg0);
 
-		genmodel.getGenPackages().add(gp);
+//		genmodel.getGenPackages().add(gp);
 
+//		genmodelResource.getContents().add(foo2);
+		
 		genmodelResource.getContents().add(genmodel);
 		
 		try {
@@ -530,14 +637,28 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			e.printStackTrace();
 		}
 		
-	}
-	
-	
-	
-	   private void transformToUML(IProgressMonitor monitor) {
+		
+		  // Globally register the default generator adapter factory for GenModel
+		   // elements (only needed in stand-alone).
+		   // 
+		   GeneratorAdapterFactory.Descriptor.Registry.INSTANCE.addDescriptor
+		     (GenModelPackage.eNS_URI, GenModelGeneratorAdapterFactory.DESCRIPTOR);
+		 
+		   // Create the generator and set the model-level input object.
+		   // 
+		   Generator generator = new Generator();
 		   
-	    }
+//		   generator.
+		   generator.setInput(genmodel);
+		 
+		   // Generator model code.
+		   //
+		   generator.generate
+		     (genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE,
+		      new BasicMonitor.Printing(System.out));
 
+		
+	}
 	
 	void createManifest(IProject project) {
 
@@ -569,12 +690,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			writer.println("Bundle-Vendor: %providerName");
 			writer.println("Bundle-Localization: plugin");
 			writer.println("Bundle-RequiredExecutionEnvironment: J2SE-1.5");
-			
-//			writer.println("Export-Package: "+project.getName()+",");
-//			writer.println(" "+project.getName()+".impl,");
-//			writer.println(" "+project.getName()+".operations,");
-//			writer.println(" "+project.getName()+".util");
-			
+						
 			String requiredBundles = attributes.getValue("Require-Bundle");
 			
 			String sourceBundle = attributes.getValue("Bundle-SymbolicName");
@@ -601,15 +717,6 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 				writer.println(" "+sb[0]+";visibility:=reexport");
 			}
 			
-			
-//			
-//			for (String value : requiredBundles.split(","))
-//			{
-//				
-//			}
-			
-			
-
 			writer.flush();
 
 			swriter.close();
@@ -628,46 +735,5 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 	}
 	
-	ArrayList<GenModel > genPackages = new ArrayList<GenModel >();
-	
-	void loadGenModelsfromWorkspace() {
-	
-		ResourceSet resourceSet = new ResourceSetImpl();
-		
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
-		IWorkspaceRoot root = workspace.getRoot();
-		
-		Path model = new Path("model");
-
-		for (IProject project : root.getProjects())
-		{
-			if (project.exists(model))
-			{
-				IFolder folder = project.getFolder(model);
-				try {
-					for (IResource resource : folder.members())
-					{
-						
-						if (resource.getName().endsWith(".genmodel") )
-						{
-							URI genmodelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
-							
-							GenModel foo2 = (GenModel ) EcoreUtil.getObjectByType(resourceSet.getResource(genmodelFile, true).getContents(),GenModelPackage.eINSTANCE.getGenModel ());
-//							
-							if (foo2 != null)
-							{
-								genPackages.add(foo2);				
-							}
-						}	
-					}
-					
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
-			}
-		}
-	}			
 }
