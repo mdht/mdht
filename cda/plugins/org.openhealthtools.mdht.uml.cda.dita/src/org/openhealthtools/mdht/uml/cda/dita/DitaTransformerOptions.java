@@ -18,6 +18,7 @@ import java.util.Vector;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Preferences;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Activator;
 
@@ -42,6 +43,8 @@ public class DitaTransformerOptions {
 	private List<String> clinicalStatementList = new Vector<String>();
 	private List<String> classList = new Vector<String>();
 	private List<String> valueSetList = new Vector<String>();
+	
+	private List<Classifier> pubClassifiers = new Vector<Classifier>();
 	
 	public DitaTransformerOptions() {
 		initializePreferences();
@@ -82,6 +85,10 @@ public class DitaTransformerOptions {
 		if (!outputPath.hasTrailingSeparator()) {
 			outputPath = outputPath.addTrailingSeparator();
 		}
+	}
+
+	protected List<Classifier> getPubClassifiers() {
+		return pubClassifiers;
 	}
 
 	protected List<Element> getDeletedElementList() {

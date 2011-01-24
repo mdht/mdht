@@ -21,6 +21,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
+import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -178,12 +179,13 @@ public class TransformClassContent extends TransformAbstract {
 		// process parents in reverse order, CDA base class first
 		for (int i=allParents.size()-1; i>=0; i--) {
 			Class parent = (Class) allParents.get(i);
-			if (CDAModelUtil.isCDAModel(parent)) {
-				//TODO add option to include CDA class properties
-				continue;
-			}
 			
 			for (Property property : parent.getOwnedAttributes()) {
+				if (CDAModelUtil.isCDAModel(parent) && property.getLower() == 0) {
+					// include only required CDA class properties
+					continue;
+				}
+				
 				// if list contains this property name, replace it; else append
 				int index = findProperty(allProperties, property.getName());
 				if (index >= 0) {
@@ -208,9 +210,11 @@ public class TransformClassContent extends TransformAbstract {
 		// use i>0 to omit this class
 		for (int i=allParents.size()-1; i>0; i--) {
 			Class parent = (Class) allParents.get(i);
-			String message = CDAModelUtil.computeGeneralizationConformanceMessage(parent, true, xrefSource);
-			if (message.length() > 0) {
-				writer.println("<li>" + message + "</li>");
+			if (!RIMModelUtil.isRIMModel(parent)) {
+				String message = CDAModelUtil.computeGeneralizationConformanceMessage(parent, true, xrefSource);
+				if (message.length() > 0) {
+					writer.println("<li>" + message + "</li>");
+				}
 			}
 		}
 
@@ -221,6 +225,7 @@ public class TransformClassContent extends TransformAbstract {
 		}
 		allProperties.removeAll(allAttributes);
 		Collections.sort(allAttributes, new NamedElementComparator());
+		
 		// XML attributes
 		for (Property property : allAttributes) {
 			writer.println("<li>" + modelPrefix(property) +
