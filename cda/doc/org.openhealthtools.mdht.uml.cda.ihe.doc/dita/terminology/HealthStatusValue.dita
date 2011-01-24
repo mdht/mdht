@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Health Status Value</title>
+<shortdesc id="shortdesc">[OID <tt>null</tt> from code system: SNOMEDCT]</shortdesc>
+<prolog id="prolog">
+<resourceid id="null"/>
+</prolog>
+<body>
+<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->
+<section id="description">
+</section>
+<p>OID: null</p>
+<p>Name: null</p>
+<p>Code System: 2.16.840.1.113883.6.96</p>
+<p>Code System Name: SNOMEDCT</p>
+<table><tgroup cols="4"><thead><row>
+<entry>Code</entry><entry>Display Name</entry><entry>Code System</entry><entry>Code System Name</entry>
+</row></thead><tbody>
+<row><entry>81323004</entry><entry>Alive and well</entry><entry></entry><entry></entry></row>
+<row><entry>313386006</entry><entry>In remission</entry><entry></entry><entry></entry></row>
+<row><entry>162467007</entry><entry>Symptom free</entry><entry></entry><entry></entry></row>
+<row><entry>161901003</entry><entry>Chronically ill</entry><entry></entry><entry></entry></row>
+<row><entry>271593001</entry><entry>Severely ill</entry><entry></entry><entry></entry></row>
+<row><entry>21134002</entry><entry>Disabled</entry><entry></entry><entry></entry></row>
+<row><entry>161045001</entry><entry>Severely disabled</entry><entry></entry><entry></entry></row>
+<row><entry>419099009</entry><entry>Deceased</entry><entry></entry><entry></entry></row>
+</tbody></tgroup></table>
+</body>
+</topic>

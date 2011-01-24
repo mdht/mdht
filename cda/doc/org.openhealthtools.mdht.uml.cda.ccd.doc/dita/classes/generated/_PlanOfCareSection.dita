@@ -23,8 +23,8 @@
 </p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li><b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
@@ -43,8 +43,8 @@
 <li>contains <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
@@ -74,37 +74,37 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="181b65dc-c02b-4b90-94bf-0a2e8dc1b47a"/>
+              <id root="d6d37180-c796-4505-8b44-8fcdc44ade48"/>
             </act>
           </entry>
           <entry>
             <encounter>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="4e63c37c-5e54-49e0-98bf-6eb260c16547"/>
+              <id root="421d38d3-07d4-46ac-bd02-e879785b5205"/>
             </encounter>
           </entry>
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="ab5a3cfc-e648-4f87-b1a6-8189ef0b6dc2"/>
+              <id root="1113d8fd-81ce-4001-b97d-5dd3b7a2da8a"/>
             </observation>
           </entry>
           <entry>
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="c601e3c8-9e3b-4a96-afbe-382f466e620a"/>
+              <id root="d03f0ab6-71f3-405c-9492-9674da84d314"/>
             </procedure>
           </entry>
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="94a65cff-0177-4fc1-b83b-4ad352dca3a2"/>
+              <id root="c4792bdc-e57f-4f09-8415-c8612eac7b00"/>
             </substanceAdministration>
           </entry>
           <entry>
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="7555e1d3-dc9e-4fa1-8303-a6e80578b911"/>
+              <id root="f64a36c2-65c9-4b22-a14c-6643df5bbef1"/>
             </supply>
           </entry>
         </section>

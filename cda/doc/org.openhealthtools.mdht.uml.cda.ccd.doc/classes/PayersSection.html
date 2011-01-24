@@ -58,20 +58,20 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li class="li"><strong class="ph b">CONF-31, CONF-32: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "48768-6" <em class="ph i">Payment sources</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "48768-6" <em class="ph i">Payment sources</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-31, CONF-32)</li>
 
-<li class="li"><strong class="ph b">CONF-33: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt> (CONF-33)</li>
 
-<li class="li"><strong class="ph b">CONF-30: </strong><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="CoverageActivity.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.20]">Coverage Activity</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.20</tt>)</li>
 </ol>
-</li>
+ (CONF-30)</li>
 
-<li class="li"><strong class="ph b">CONF-30: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt> (CONF-30)</li>
 
-<li class="li"><strong class="ph b">CONF-34: </strong><strong class="ph b">SHOULD</strong> satisfy: Contains a case-insensitive language-insensitive string containing 'insurance' or 'payers'.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Contains a case-insensitive language-insensitive string containing 'insurance' or 'payers'. (CONF-34)</li>
 
 </ol>
 
@@ -92,7 +92,7 @@
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="DEF"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/&gt;
-              &lt;id root="37fdf57a-0011-4043-a6b9-4cc156b2bc16"/&gt;
+              &lt;id root="ec8648bc-9ed0-422e-8297-a4647b5091d5"/&gt;
               &lt;code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/&gt;
               &lt;statusCode code="completed"/&gt;
             &lt;/act&gt;

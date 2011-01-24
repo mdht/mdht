@@ -36,26 +36,26 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
 
-<li class="li"><strong class="ph b">CONF-36: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT" (CONF-36)</li>
 
-<li class="li"><strong class="ph b">CONF-37: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "DEF"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "DEF" (CONF-37)</li>
 
-<li class="li"><strong class="ph b">CONF-38: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-38)</li>
 
-<li class="li"><strong class="ph b">CONF-39, CONF-40: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-39, CONF-40)</li>
 
-<li class="li"><strong class="ph b">CONF-41, CONF-42: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "48768-6" <em class="ph i">Payment sources</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "48768-6" <em class="ph i">Payment sources</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-41, CONF-42)</li>
 
-<li class="li"><strong class="ph b">CONF-43, CONF-45, CONF-46: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="COMP" <em class="ph i">COMP (has component)</em></li>
 
 <li class="li">contains <a class="xref" href="PolicyActivity.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.26]">Policy Activity</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.26</tt>)</li>
 </ol>
-</li>
+ (CONF-43, CONF-45, CONF-46)</li>
 
-<li class="li"><strong class="ph b">CONF-47: </strong><strong class="ph b">SHALL</strong> satisfy: An alert observation contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: An alert observation contains one or more sources of information. (CONF-47)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
   or not self.getSection().informant-&gt;isEmpty()
   or not self.getClinicalDocument().informant-&gt;isEmpty()
   or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
@@ -66,7 +66,7 @@
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-44: </strong><strong class="ph b">MAY</strong> satisfy: entryRelationship contains sequenceNumber, which serves to prioritize the payment sources.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | not rel.sequenceNumber.oclIsUndefined())</pre>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: entryRelationship contains sequenceNumber, which serves to prioritize the payment sources. (CONF-44)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | not rel.sequenceNumber.oclIsUndefined())</pre>
 </li>
 </ul>
 </li>
@@ -87,13 +87,13 @@
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="DEF"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/&gt;
-              &lt;id root="96a8878d-514d-4d9c-bf0a-ad9d5957e08f"/&gt;
+              &lt;id root="658b009b-00ad-443e-931c-f9661df3867c"/&gt;
               &lt;code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/&gt;
               &lt;statusCode code="completed"/&gt;
               &lt;entryRelationship&gt;
                 &lt;act classCode="ACT" moodCode="EVN"&gt;
                   &lt;templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/&gt;
-                  &lt;id root="49d35f5a-3d26-4ed7-b37f-1ac4a29c8d66"/&gt;
+                  &lt;id root="31e4d29d-7979-4991-898c-9a13e89a06c5"/&gt;
                   &lt;code/&gt;
                   &lt;statusCode code="completed"/&gt;
                 &lt;/act&gt;

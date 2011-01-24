@@ -11,11 +11,11 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Participant2.html">CDA Participant2</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Participant2.html">CDA Participant2</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@typeCode</tt> = "LOC"</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Participant2.html">CDA Participant2</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Participant2.html">CDA Participant2</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@typeCode</tt> = "LOC"</li>
 <li>[CDA] Contains [1..1] <tt>participantRole</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ParticipantRole.html">CDA Participant Role</xref></li>
 </ol>

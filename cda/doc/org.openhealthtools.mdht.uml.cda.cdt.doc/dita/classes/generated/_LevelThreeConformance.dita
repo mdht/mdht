@@ -11,12 +11,12 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref href="../LevelTwoConformance.dita">Level Two Conformance</xref> template (templateId: <tt>2.16.840.1.113883.10.20.20</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../LevelTwoConformance.dita">Level Two Conformance</xref> template (templateId: <tt>2.16.840.1.113883.10.20.20</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
-<li>Conforms to <xref href="../LevelOneConformance.dita">Level One Conformance</xref> template (templateId: <tt>2.16.840.1.113883.10.20.10</tt>)</li>
-<li>Conforms to <xref href="../LevelTwoConformance.dita">Level Two Conformance</xref> template (templateId: <tt>2.16.840.1.113883.10.20.20</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to <xref href="../LevelOneConformance.dita">Level One Conformance</xref> template (templateId: <tt>2.16.840.1.113883.10.20.10</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../LevelTwoConformance.dita">Level Two Conformance</xref> template (templateId: <tt>2.16.840.1.113883.10.20.20</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>id</tt>, where its data type is II</li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CE</li>
 <li>[CDA] Contains [1..1] <tt>effectiveTime</tt>, where its data type is TS</li>

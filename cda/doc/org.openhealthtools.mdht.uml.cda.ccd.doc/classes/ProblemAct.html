@@ -38,49 +38,56 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a> (CONF-145)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT" (CONF-146)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-147)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-148)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@nullFlavor</tt> = "NA" <em class="ph i">NA (not applicable)</em></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@nullFlavor</tt> = "NA" <em class="ph i">NA (not applicable)</em> (CONF-149)</li>
 
-<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">effectiveTime</tt></li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li>
+</ul>
+ (CONF-150)</li>
 
-<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">MAY</strong> contain [1..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="EpisodeObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.41]">Episode Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.41</tt>)</li>
+</ol>
+ (CONF-168)</li>
+
+<li class="li">Contains [0..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="ProblemObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.28]">Problem Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.28</tt>)</li>
 </ol>
 </li>
 
-<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more entryRelationship<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.entryRelationship-&gt;isEmpty()</pre>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more entryRelationship (CONF-151)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.entryRelationship-&gt;isEmpty()</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-152: </strong><strong class="ph b">MAY</strong> satisfy: A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for "Act / entryRelationship / @typeCode" to be "SUBJ" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for "Act / entryRelationship / @typeCode" to be "SUBJ" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-152)</li>
 
-<li class="li"><strong class="ph b">CONF-153: </strong><strong class="ph b">SHOULD</strong> satisfy: The target of a problem act with Act / entryRelationship / @typeCode="SUBJ" SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)-&gt;forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and 
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: The target of a problem act with Act / entryRelationship / @typeCode="SUBJ" SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement. (CONF-153)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)-&gt;forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and 
   (target.oclIsKindOf(ccd::ProblemObservation) or target.oclIsKindOf(ccd::AlertObservation)))</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">SHOULD</strong> satisfy: In Problem Section, a Problem Act SHOULD contain a Problem Observation.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: In Problem Section, a Problem Act SHOULD contain one or more Problem Observations. (CONF-140)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()
    -&gt;exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">SHOULD</strong> satisfy: In Alert Section, a ProblemAct SHOULD contain an Alert Observation.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: In Alert Section, a ProblemAct SHOULD contain one or more Alert Observations. (CONF-256)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()
    -&gt;exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains exactly one Patient Awareness<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</pre>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains exactly one Patient Awareness (CONF-179)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</pre>
 </li>
 </ul>
 </li>
@@ -101,7 +108,7 @@
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/&gt;
-              &lt;id root="31bf7cbb-808b-448d-afb1-daaeabbf213d"/&gt;
+              &lt;id root="da6097e5-3143-470a-a849-88e7cbfd12de"/&gt;
               &lt;code nullFlavor="NA"/&gt;
               &lt;effectiveTime&gt;
                 &lt;low value="1972"/&gt;

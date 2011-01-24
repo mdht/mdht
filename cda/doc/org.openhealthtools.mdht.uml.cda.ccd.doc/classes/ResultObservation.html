@@ -36,47 +36,47 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a> (CONF-407)</li>
 
-<li class="li"><strong class="ph b">CONF-408: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-408)</li>
 
-<li class="li"><strong class="ph b">CONF-409: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-409)</li>
 
-<li class="li"><strong class="ph b">CONF-411: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li>
 </ul>
-</li>
+ (CONF-411)</li>
 
-<li class="li"><strong class="ph b">CONF-410: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt> (CONF-410)</li>
 
-<li class="li"><strong class="ph b">CONF-412: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt> (CONF-412)</li>
 
-<li class="li"><strong class="ph b">CONF-414: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">methodCode</tt><ul class="ul"><li class="li">Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">methodCode</tt><ul class="ul"><li class="li">Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li>
 </ul>
-</li>
+ (CONF-414)</li>
 
-<li class="li"><strong class="ph b">CONF-418: </strong><strong class="ph b">SHOULD</strong> contain [0..*] <tt class="ph tt">interpretationCode</tt><ul class="ul"><li class="li">Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [0..*] <tt class="ph tt">interpretationCode</tt><ul class="ul"><li class="li">Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li>
 </ul>
-</li>
+ (CONF-418)</li>
 
-<li class="li"><strong class="ph b">CONF-416: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">value</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">value</tt> (CONF-416)</li>
 
-<li class="li"><strong class="ph b">CONF-413: </strong><strong class="ph b">SHOULD</strong> satisfy: The value for 'code' SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12).</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: The value for 'code' SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12). (CONF-413)</li>
 
-<li class="li"><strong class="ph b">CONF-415: </strong><strong class="ph b">SHALL</strong> satisfy: The methodCode SHALL NOT conflict with the method inherent in code</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: The methodCode SHALL NOT conflict with the method inherent in code (CONF-415)</li>
 
-<li class="li"><strong class="ph b">CONF-417: </strong><strong class="ph b">SHALL</strong> satisfy: Where value is a physical quantity, the unit of measure SHALL be expressed using a valid Unified Code for Units of Measure (UCUM) expression.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Where value is a physical quantity, the unit of measure SHALL be expressed using a valid Unified Code for Units of Measure (UCUM) expression. (CONF-417)</li>
 
-<li class="li"><strong class="ph b">CONF-419: </strong><strong class="ph b">SHOULD</strong> satisfy: Contain one or more referenceRange to show the normal range of values for the observation result<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.referenceRange-&gt;isEmpty()</pre>
-</li>
-</ul>
-</li>
-
-<li class="li"><strong class="ph b">CONF-420: </strong><strong class="ph b">SHALL</strong> satisfy: SHALL NOT contain referenceRange / observationRange / code, as this attribute is not used by the HL7 Clinical Statement or Lab Committee models.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.referenceRange-&gt;forAll(range : cda::ReferenceRange | range.observationRange.code.code.oclIsUndefined())</pre>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Contain one or more referenceRange to show the normal range of values for the observation result (CONF-419)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.referenceRange-&gt;isEmpty()</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-421: </strong><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: SHALL NOT contain referenceRange / observationRange / code, as this attribute is not used by the HL7 Clinical Statement or Lab Committee models. (CONF-420)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.referenceRange-&gt;forAll(range : cda::ReferenceRange | range.observationRange.code.code.oclIsUndefined())</pre>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information. (CONF-421)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
@@ -103,7 +103,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
           &lt;entry&gt;
             &lt;observation classCode="OBS" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/&gt;
-              &lt;id root="2de94e3a-0bf2-43a5-a31f-c1f150dda0f3"/&gt;
+              &lt;id root="53ebd18b-027e-4200-a920-4548e9fdc659"/&gt;
               &lt;code/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime&gt;

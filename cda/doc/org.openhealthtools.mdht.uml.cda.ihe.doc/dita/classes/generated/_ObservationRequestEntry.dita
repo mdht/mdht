@@ -11,13 +11,13 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityObservation.html">CCD Plan Of Care Activity Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityObservation.html">CCD Plan Of Care Activity Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivity.html">CCD Plan Of Care Activity</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityObservation.html">CCD Plan Of Care Activity Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivity.html">CCD Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityObservation.html">CCD Plan Of Care Activity Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClassObservation</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
@@ -36,7 +36,7 @@
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1" assigningAuthorityName="IHE Observation Request Entry"/>
-              <id root="ad8e480d-e110-4c22-a5fc-1458bd84f19e"/>
+              <id root="aa96a1b9-4aa1-49ba-b94c-9884d18877c8"/>
             </observation>
           </entry>
         </section>

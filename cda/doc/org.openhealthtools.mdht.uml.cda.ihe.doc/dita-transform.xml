@@ -10,6 +10,7 @@
     	<mkdir dir="${ditaFilePath}/terminology"/>
     	
         <cdatools model="${modelPath.uml}">
+        	<model file="${vocabPath.uml}"/>
             <transformToDita ditaFilePath="${ditaFilePath}" />
         </cdatools>
 

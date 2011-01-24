@@ -11,15 +11,15 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
 <li><b>SHOULD</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.4 ActEncounterCode STATIC)<ul><li>Developers should take care to check that rational combinations of encounter.code and encounter.moodCode are used , but this profile does not restrict any combination.</li></ul></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
 <li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_DocumentEncounterMood</li>
 <li>[IHE] <b>SHOULD</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.4 ActEncounterCode STATIC)<ul><li>Developers should take care to check that rational combinations of encounter.code and encounter.moodCode are used , but this profile does not restrict any combination.</li></ul></li>

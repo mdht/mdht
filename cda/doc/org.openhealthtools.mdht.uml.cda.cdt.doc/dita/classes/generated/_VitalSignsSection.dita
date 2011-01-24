@@ -16,20 +16,20 @@ may be appropriate, but not required. This section can be a first-level section 
 under Physical Exam.</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>CONF-HP-87: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>VITAL SIGNS</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>VITAL SIGNS</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-87)</li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
-<li><b>CONF-HP-87: </b><b>SHOULD</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsOrganizer.html">CCD Vital Signs Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.35</tt>)</li></ol></li>
-<li><b>CONF-HP-87: </b><b>SHOULD</b> satisfy: Contains clinical statements.<ul><li><codeblock>[OCL]: not self.entry-&gt;isEmpty()</codeblock></li></ul></li>
+<li><b>SHOULD</b> contain [0..1] <tt>entry</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsOrganizer.html">CCD Vital Signs Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.35</tt>)</li></ol> (CONF-HP-87)</li>
+<li><b>SHOULD</b> satisfy: Contains clinical statements. (CONF-HP-87)<ul><li><codeblock>[OCL]: not self.entry-&gt;isEmpty()</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>[CDT] <b>CONF-HP-87: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>VITAL SIGNS</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>VITAL SIGNS</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-87)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
-<li>[CDT] <b>CONF-HP-87: </b><b>SHOULD</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsOrganizer.html">CCD Vital Signs Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.35</tt>)</li></ol></li>
-<li>[CDT] <b>CONF-HP-87: </b><b>SHOULD</b> satisfy: Contains clinical statements.<ul><li><codeblock>[OCL]: not self.entry-&gt;isEmpty()</codeblock></li></ul></li>
+<li>[CDT] <b>SHOULD</b> contain [0..1] <tt>entry</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsOrganizer.html">CCD Vital Signs Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.35</tt>)</li></ol> (CONF-HP-87)</li>
+<li>[CDT] <b>SHOULD</b> satisfy: Contains clinical statements. (CONF-HP-87)<ul><li><codeblock>[OCL]: not self.entry-&gt;isEmpty()</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -44,7 +44,7 @@ under Physical Exam.</p>
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
-              <id root="24c00c6c-ae94-48d9-ba47-782db2299ded"/>
+              <id root="02815bd4-ca1c-4ab6-80fa-7d1be1fe8364"/>
               <code/>
               <statusCode/>
             </organizer>

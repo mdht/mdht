@@ -12,22 +12,22 @@
 <p>This section lists and describes all relevant clinical problems at the time the summary is generated. At a minimum, all pertinent current and historical problems should be listed. CDA R2 represents problems as Observations.</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
-<li><b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-141, CONF-142)</li>
+<li><b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-143)</li>
 <li><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol></li>
-<li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
-<li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'.</li>
+<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol> (CONF-140)</li>
+<li><b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-140)</li>
+<li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'. (CONF-144)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-141, CONF-142)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-143)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
-<li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'.</li>
+<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol> (CONF-140)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-140)</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'. (CONF-144)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -41,7 +41,7 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="f3d5f921-c6e8-4d24-b581-d0690b556c4e"/>
+              <id root="db3b91d4-9f78-4098-8705-435c1a433162"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

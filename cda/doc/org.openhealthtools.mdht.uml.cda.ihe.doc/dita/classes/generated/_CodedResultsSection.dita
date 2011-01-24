@@ -14,20 +14,20 @@ past. It shall include entries for procedures and references to procedure report
 Content Modules.</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>STUDIES SUMMARY</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>STUDIES SUMMARY</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li><b>SHALL</b> contain [1..*] <tt>procedureEntry</tt>, such that it<ol>
-<li>contains <xref href="../ProcedureEntry.dita">Procedure Entry</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.19</tt>)</li></ol></li>
+<li>contains <xref href="../ProcedureEntry.dita">Procedure Entry</xref></li></ol></li>
 <li><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../ExternalReference.dita">External Reference</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.4</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../SimpleObservation.dita">Simple Observation</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>STUDIES SUMMARY</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>STUDIES SUMMARY</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[IHE] <b>SHALL</b> contain [1..*] <tt>procedureEntry</tt>, such that it<ol>
-<li>contains <xref href="../ProcedureEntry.dita">Procedure Entry</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.19</tt>)</li></ol></li>
+<li>contains <xref href="../ProcedureEntry.dita">Procedure Entry</xref></li></ol></li>
 <li>[IHE] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../ExternalReference.dita">External Reference</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.4</tt>)</li></ol></li>
 <li>[IHE] <b>MAY</b> contain [0..*] <tt>entry</tt>, such that it<ol>

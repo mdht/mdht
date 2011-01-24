@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Severity Observation</title>
+<shortdesc id="shortdesc">[OID <tt>null</tt> from code system: SeverityObservation]</shortdesc>
+<prolog id="prolog">
+<resourceid id="null"/>
+</prolog>
+<body>
+<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->
+<section id="description">
+</section>
+<p>OID: null</p>
+<p>Name: null</p>
+<p>Code System: 2.16.840.1.113883.5.1063</p>
+<p>Code System Name: SeverityObservation</p>
+<table><tgroup cols="4"><thead><row>
+<entry>Code</entry><entry>Display Name</entry><entry>Code System</entry><entry>Code System Name</entry>
+</row></thead><tbody>
+<row><entry>H</entry><entry>High</entry><entry></entry><entry></entry></row>
+<row><entry>M</entry><entry>Moderate</entry><entry></entry><entry></entry></row>
+<row><entry>L</entry><entry>Low</entry><entry></entry><entry></entry></row>
+</tbody></tgroup></table>
+</body>
+</topic>

@@ -11,47 +11,47 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref href="../Medication.dita">Medication</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.7</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../Medication.dita">Medication</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.7</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationActivity.html">CCD Medication Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.24</tt>)</li>
-<li>Conforms to <xref href="../Medication.dita">Medication</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.7</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationActivity.html">CCD Medication Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.24</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../Medication.dita">Medication</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.7</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt> = "SBADM", where its data type is ActClass</li>
 <li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_DocumentSubstanceMood</li>
 <li>[CDA] Contains [1..1] <tt>consumable</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Consumable.html">CDA Consumable</xref></li>
-<li>[CCD] <b>CONF-306: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
-<li>[CCD] <b>CONF-307: </b><b>SHOULD</b> contain [1..1] <tt>statusCode</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-306)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>statusCode</tt> (CONF-307)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationSeriesNumberObservation.html">CCD Medication Series Number Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.46</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationStatusObservation.html">CCD Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
-<li>[CCD] <b>CONF-330, CONF-333: </b><b>MAY</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
+<li>[CCD] <b>MAY</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PatientInstruction.html">CCD Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>)</li></ol></li>
-<li>[CCD] <b>CONF-308: </b><b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt><ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul></li>
-<li>[CCD] <b>CONF-312: </b><b>MAY</b> contain [0..1] <tt>maxDoseQuantity</tt></li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PatientInstruction.html">CCD Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>)</li></ol> (CONF-330, CONF-333)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt><ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul> (CONF-308)</li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>maxDoseQuantity</tt> (CONF-312)</li>
 <li>[IHE] <b>SHOULD</b> contain [1..1] <tt>routeCode</tt><ul><li>The route is a coded value, and indicates how the medication is received by the patient (by mouth, intravenously, topically, et cetera).</li></ul></li>
-<li>[CCD] <b>CONF-313: </b><b>MAY</b> contain [0..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref></li></ol><ul><li>Indicates the person administering a substance.</li></ul></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>performer</tt>, such that it<ol>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref></li></ol><ul><li>Indicates the person administering a substance.</li></ul> (CONF-313)</li>
 <li>[IHE] <b>MAY</b> contain [0..*] <tt>approachSiteCode</tt><ul><li>The site where the medication is administered, usually used with IV or topical drugs.</li></ul></li>
 <li>[IHE] <b>SHOULD</b> contain [0..1] <tt>doseQuantity</tt><ul><li>The amount of the medication given. This should be in some known and measurable unit, such as grams, milligrams, et cetera. It may be measured in "administration" units (such as tablets or each), for medications where the strength is relevant. In this case, only the unit count is specified , no units are specified. It may be a range.</li></ul></li>
 <li>[IHE] <b>SHOULD</b> contain [0..1] <tt>rateQuantity</tt><ul><li>The rate is a measurement of how fast the dose is given to the patient over time (e.g., .5 liter / 1 hr), and is often used with IV drugs.</li></ul></li>
-<li>[CCD] <b>CONF-305: </b><b>SHALL</b> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
-<li>[CCD] <b>CONF-311: </b><b>SHOULD</b> satisfy: Contains exactly one doseQuantity or rateQuantity.<ul><li><codeblock>[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-314: </b><b>MAY</b> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent.<ul><li><codeblock>[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
+<li>[CCD] <b>SHALL</b> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-305)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
+<li>[CCD] <b>SHOULD</b> satisfy: Contains exactly one doseQuantity or rateQuantity. (CONF-311)<ul><li><codeblock>[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent. (CONF-314)<ul><li><codeblock>[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
    not auth.oclIsUndefined() and not auth.consent.oclIsUndefined())</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-315: </b><b>SHALL</b> satisfy: Contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information. (CONF-315)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
    and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-327: </b><b>MAY</b> satisfy: Contains one or more precondition / Criterion, to indicate that the medication is administered only when the associated (coded or free text) criteria are met.<ul><li>Indicates that the medication is administered only when the associated (coded or free text) criteria are met.</li></ul><ul><li><codeblock>[OCL]: self.precondition-&gt;exists(precondition : cda::Precondition | not precondition.criterion.oclIsUndefined())</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-328: </b><b>MAY</b> satisfy: Contains one or more entryRelationship, where the value for @typeCode is "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.<ul><li>The target of the relationship represents the indication for the activity.</li></ul><ul><li><codeblock>[OCL]: self.entryRelationship-&gt;exists(entryRel : cda::EntryRelationship | entryRel.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-329: </b><b>SHALL</b> satisfy: entryRelationship / @typeCode="RSON" in a medication activity has a target of problem act, problem observation, or some other clinical statement.<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)-&gt;forAll(target : 
+<li>[CCD] <b>MAY</b> satisfy: Contains one or more precondition / Criterion, to indicate that the medication is administered only when the associated (coded or free text) criteria are met. (CONF-327)<ul><li>Indicates that the medication is administered only when the associated (coded or free text) criteria are met.</li></ul><ul><li><codeblock>[OCL]: self.precondition-&gt;exists(precondition : cda::Precondition | not precondition.criterion.oclIsUndefined())</codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Contains one or more entryRelationship, where the value for @typeCode is "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-328)<ul><li>The target of the relationship represents the indication for the activity.</li></ul><ul><li><codeblock>[OCL]: self.entryRelationship-&gt;exists(entryRel : cda::EntryRelationship | entryRel.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</codeblock></li></ul></li>
+<li>[CCD] <b>SHALL</b> satisfy: entryRelationship / @typeCode="RSON" in a medication activity has a target of problem act, problem observation, or some other clinical statement. (CONF-329)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)-&gt;forAll(target : 
 cda::ClinicalStatement | not target.oclIsUndefined() and 
   (target.oclIsKindOf(ccd::ProblemAct) or target.oclIsKindOf(ccd::ProblemObservation)))</codeblock></li></ul></li>
 <li>[IHE] <b>SHALL</b> satisfy: Contains the consumable name. If the name of the medication is unknown, the type, purpose or other description may be supplied.<ul><li>The name of the substance or product. This should be sufficient for a provider to identify the kind of medication. It may be a trade name or a generic name. This information is required in all medication entries. If the name of the medication is unknown, the type, purpose or other description may be supplied. The name should not include packaging, strength or dosing information. Note: Due to restrictions of the CDA schema, there is no way to explicitly link the name to the narrative text.</li></ul><ul><li><codeblock>[OCL]: not self.consumable.manufacturedProduct.manufacturedLabeledDrug.name.oclIsUndefined()
@@ -68,7 +68,7 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" assigningAuthorityName="IHE Medication"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.10" assigningAuthorityName="IHE Conditional Dose"/>
-              <id root="bbe52bec-7d51-4dd1-92e1-f48d9ac0f603"/>
+              <id root="751d83d2-cf95-4e4a-ac80-79cce068ce2a"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

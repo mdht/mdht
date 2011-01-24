@@ -11,18 +11,18 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
-<li><b>CONF-67: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
-<li><b>CONF-67: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF"</li>
-<li><b>CONF-68: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-67)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF" (CONF-67)</li>
+<li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-68)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
-<li>[CCD] <b>CONF-67: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
-<li>[CCD] <b>CONF-67: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF"</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-67)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF" (CONF-67)</li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
-<li>[CCD] <b>CONF-68: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-68)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -33,7 +33,7 @@
           <entry>
             <act classCode="ACT" moodCode="DEF">
               <templateId assigningAuthorityName="CCD Coverage Plan Description"/>
-              <id root="352fe7e8-3cd3-4c7b-af08-579f11da9350"/>
+              <id root="6ff7447e-d222-4627-a87d-b0b70d5e648e"/>
             </act>
           </entry>
         </section>

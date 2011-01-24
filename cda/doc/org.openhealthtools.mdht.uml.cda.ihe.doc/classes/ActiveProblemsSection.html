@@ -32,11 +32,13 @@
 
 
 <div class="section">
+<p class="p">The active problem section shall contain a narrative description of the conditions currently being monitored for the patient. It shall include entries for patient conditions as described in the Entry Content Module.</p>
+
 </div>
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.11</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.11</tt>)</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="ProblemConcernEntry.html" title="[Act: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5.2]">Problem Concern Entry</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>)</li>
@@ -65,8 +67,9 @@
               &lt;templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/&gt;
-              &lt;id root="f049eb51-618f-474c-b287-e36a88889387"/&gt;
+              &lt;id root="2248afec-e2ae-4d26-9ff6-8ed7cbc6cfac"/&gt;
               &lt;code nullFlavor="NA"/&gt;
+              &lt;statusCode/&gt;
               &lt;effectiveTime&gt;
                 &lt;low value="1972"/&gt;
                 &lt;high value="2008"/&gt;

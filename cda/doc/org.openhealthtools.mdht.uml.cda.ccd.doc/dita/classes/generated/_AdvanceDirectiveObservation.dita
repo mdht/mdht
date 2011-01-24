@@ -11,7 +11,7 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
@@ -22,8 +22,8 @@
 <li>contains <xref href="../AdvanceDirectiveVerification.dita">Advance Directive Verification</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.58</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.2 AdvanceDirectiveTypeCode STATIC 20061017</li>
@@ -42,7 +42,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.17" assigningAuthorityName="CCD Advance Directive Observation"/>
-              <id root="208f7804-b1d3-416b-8b4c-02576610d35f"/>
+              <id root="1c561d7b-872b-47d5-b946-67d134bd1375"/>
               <code/>
               <statusCode code="completed"/>
               <effectiveTime>

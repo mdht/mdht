@@ -38,11 +38,11 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</a> (CONF-316)</li>
 
-<li class="li"><strong class="ph b">CONF-318: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-318)</li>
 
-<li class="li"><strong class="ph b">CONF-319: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">statusCode</tt></li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">statusCode</tt> (CONF-319)</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="MedicationStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.47]">Medication Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.47</tt>)</li>
@@ -56,45 +56,45 @@
 </ol>
 </li>
 
-<li class="li"><strong class="ph b">CONF-320: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Indicates the actual or intended time of dispensing.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Indicates the actual or intended time of dispensing.</li>
+</ul>
+ (CONF-320)</li>
+
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">quantity</tt><ul class="ul"><li class="li">Indicates the actual or intended supply quantity.</li>
+</ul>
+ (CONF-322)</li>
+
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">repeatNumber</tt><ul class="ul"><li class="li">Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li>
+</ul>
+ (CONF-321)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-317)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </pre>
+</li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-322: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">quantity</tt><ul class="ul"><li class="li">Indicates the actual or intended supply quantity.</li>
-</ul>
-</li>
-
-<li class="li"><strong class="ph b">CONF-321: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">repeatNumber</tt><ul class="ul"><li class="li">Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li>
-</ul>
-</li>
-
-<li class="li"><strong class="ph b">CONF-317: </strong><strong class="ph b">SHALL</strong> satisfy: Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </pre>
-</li>
-</ul>
-</li>
-
-<li class="li"><strong class="ph b">CONF-323: </strong><strong class="ph b">MAY</strong> satisfy: Contains one or more author.<ul class="ul"><li class="li">Indicates the prescriber.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains one or more author. (CONF-323)<ul class="ul"><li class="li">Indicates the prescriber.</li>
 </ul>
 <ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.author-&gt;isEmpty()</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-324: </strong><strong class="ph b">MAY</strong> satisfy: Contains one or more performer.<ul class="ul"><li class="li">Indicates the person dispensing the product.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains one or more performer. (CONF-324)<ul class="ul"><li class="li">Indicates the person dispensing the product.</li>
 </ul>
 <ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.performer-&gt;isEmpty()</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-325: </strong><strong class="ph b">MAY</strong> satisfy: Contains exactly one participant / @typeCode = "LOC".<ul class="ul"><li class="li">Iindicates the supply location.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains exactly one participant / @typeCode = "LOC". (CONF-325)<ul class="ul"><li class="li">Iindicates the supply location.</li>
 </ul>
 <ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::LOC)</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-326: </strong><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information. (CONF-326)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
@@ -121,7 +121,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
           &lt;entry&gt;
             &lt;supply classCode="SPLY"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.34" assigningAuthorityName="CCD Supply Activity"/&gt;
-              &lt;id root="87adfc3c-4205-491a-b2a6-49fe6407232f"/&gt;
+              &lt;id root="6f6c71e9-d7f2-4d36-97c3-6aac513efa16"/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime/&gt;
               &lt;repeatNumber/&gt;

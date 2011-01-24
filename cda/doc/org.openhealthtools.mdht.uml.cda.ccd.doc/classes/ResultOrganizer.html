@@ -49,44 +49,44 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</a> (CONF-393)</li>
 
-<li class="li"><strong class="ph b">CONF-394: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-394)</li>
 
-<li class="li"><strong class="ph b">CONF-405: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="ResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.31]">Result Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.31</tt>)</li>
 </ol>
-</li>
+ (CONF-405)</li>
 
-<li class="li"><strong class="ph b">CONF-399: </strong><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">specimen</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">specimen</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</a></li>
 </ol>
 <ul class="ul"><li class="li">Should be included if the specimen isn't inherent in code value.</li>
 </ul>
-</li>
+ (CONF-399)</li>
 
-<li class="li"><strong class="ph b">CONF-395: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-395)</li>
 
-<li class="li"><strong class="ph b">CONF-397: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt> (CONF-397)</li>
 
-<li class="li"><strong class="ph b">CONF-396: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt> (CONF-396)</li>
 
-<li class="li"><strong class="ph b">CONF-398: </strong><strong class="ph b">SHOULD</strong> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC. (CONF-398)</li>
 
-<li class="li"><strong class="ph b">CONF-400: </strong><strong class="ph b">SHALL</strong> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: The specimen element SHALL NOT conflict with the specimen inherent in code (CONF-400)</li>
 
-<li class="li"><strong class="ph b">CONF-401: </strong><strong class="ph b">SHOULD</strong> satisfy: specimen / specimenRole / id SHOULD be set to equal a Procedure / specimen / specimenRole / id to indicate that the Results and the Procedure are referring to the same specimen.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: specimen / specimenRole / id SHOULD be set to equal a Procedure / specimen / specimenRole / id to indicate that the Results and the Procedure are referring to the same specimen. (CONF-401)</li>
 
-<li class="li"><strong class="ph b">CONF-402: </strong><strong class="ph b">SHALL</strong> satisfy: Contains one or more component<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.component-&gt;isEmpty()</pre>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more component (CONF-402)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.component-&gt;isEmpty()</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-403: </strong><strong class="ph b">MAY</strong> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value. (CONF-403)</li>
 
-<li class="li"><strong class="ph b">CONF-404: </strong><strong class="ph b">MAY</strong> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: A result organizer component / procedure MAY be a reference to a procedure described in the Procedure section. (CONF-404)</li>
 
-<li class="li"><strong class="ph b">CONF-406: </strong><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information. (CONF-406)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</pre>
@@ -110,13 +110,13 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
           &lt;entry&gt;
             &lt;organizer moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/&gt;
-              &lt;id root="2b1358f2-d84c-46a8-8ad3-d484801b5d93"/&gt;
+              &lt;id root="a407455f-a848-4d22-a94e-b8b4eac212fe"/&gt;
               &lt;code/&gt;
               &lt;statusCode/&gt;
               &lt;component&gt;
                 &lt;observation classCode="OBS" moodCode="EVN"&gt;
                   &lt;templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/&gt;
-                  &lt;id root="00c3c532-d7e2-4823-aad7-147f29d28656"/&gt;
+                  &lt;id root="763937bf-5068-4c00-a809-228aa6284be5"/&gt;
                   &lt;code/&gt;
                   &lt;statusCode/&gt;
                   &lt;effectiveTime&gt;

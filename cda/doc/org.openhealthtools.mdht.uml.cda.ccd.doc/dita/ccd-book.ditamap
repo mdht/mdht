@@ -5,7 +5,7 @@
 		<booklibrary>Implementation Guide for CDA Release 2</booklibrary>
 		<mainbooktitle>Continuity of Care Document (CCD)</mainbooktitle>
 		<booktitlealt>(U.S. Realm)</booktitlealt>
-		<booktitlealt><image href="images/hl7_logo.gif"/></booktitlealt>
+		<booktitlealt><image href="images/ONC_logo.png"/></booktitlealt>
 		<booktitlealt>DRAFT: FOR DEVELOPMENT USE ONLY</booktitlealt>
 		<booktitlealt audience="developer">(Consolidated Developer Documentation)</booktitlealt>
 	</booktitle>

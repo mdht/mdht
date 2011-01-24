@@ -11,29 +11,29 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupplyActivity.html">CCD Supply Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.34</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupplyActivity.html">CCD Supply Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.34</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupplyActivity.html">CCD Supply Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.34</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupplyActivity.html">CCD Supply Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.34</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt> = "SPLY", where its data type is ActClassSupply</li>
 <li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_DocumentSubstanceMood</li>
-<li>[CCD] <b>CONF-318: </b><b>SHALL</b> contain [1..*] <tt>id</tt></li>
-<li>[CCD] <b>CONF-319: </b><b>SHOULD</b> contain [1..1] <tt>statusCode</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-318)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>statusCode</tt> (CONF-319)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationStatusObservation.html">CCD Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FulfillmentInstruction.html">CCD Fulfillment Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.43</tt>)</li></ol></li>
-<li>[CCD] <b>CONF-320: </b><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Indicates the actual or intended time of dispensing.</li></ul></li>
-<li>[CCD] <b>CONF-322: </b><b>MAY</b> contain [0..1] <tt>quantity</tt><ul><li>Indicates the actual or intended supply quantity.</li></ul></li>
-<li>[CCD] <b>CONF-321: </b><b>MAY</b> contain [0..1] <tt>repeatNumber</tt><ul><li>Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li></ul></li>
-<li>[CCD] <b>CONF-317: </b><b>SHALL</b> satisfy: Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
-<li>[CCD] <b>CONF-323: </b><b>MAY</b> satisfy: Contains one or more author.<ul><li>Indicates the prescriber.</li></ul><ul><li><codeblock>[OCL]: not self.author-&gt;isEmpty()</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-324: </b><b>MAY</b> satisfy: Contains one or more performer.<ul><li>Indicates the person dispensing the product.</li></ul><ul><li><codeblock>[OCL]: not self.performer-&gt;isEmpty()</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-325: </b><b>MAY</b> satisfy: Contains exactly one participant / @typeCode = "LOC".<ul><li>Iindicates the supply location.</li></ul><ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::LOC)</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-326: </b><b>SHALL</b> satisfy: Contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Indicates the actual or intended time of dispensing.</li></ul> (CONF-320)</li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>quantity</tt><ul><li>Indicates the actual or intended supply quantity.</li></ul> (CONF-322)</li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>repeatNumber</tt><ul><li>Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li></ul> (CONF-321)</li>
+<li>[CCD] <b>SHALL</b> satisfy: Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-317)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Contains one or more author. (CONF-323)<ul><li>Indicates the prescriber.</li></ul><ul><li><codeblock>[OCL]: not self.author-&gt;isEmpty()</codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Contains one or more performer. (CONF-324)<ul><li>Indicates the person dispensing the product.</li></ul><ul><li><codeblock>[OCL]: not self.performer-&gt;isEmpty()</codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Contains exactly one participant / @typeCode = "LOC". (CONF-325)<ul><li>Iindicates the supply location.</li></ul><ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::LOC)</codeblock></li></ul></li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information. (CONF-326)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
@@ -51,7 +51,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.34" assigningAuthorityName="CCD Supply Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3" assigningAuthorityName="IHE Supply Entry"/>
-              <id root="f54cbfc7-4ea2-481c-8070-1752e6dcd434"/>
+              <id root="731dfc06-6120-4af2-9cc3-fa48914de765"/>
               <statusCode/>
               <effectiveTime/>
               <repeatNumber/>
