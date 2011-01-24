@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.util.UMLSwitch;
@@ -47,6 +48,25 @@ public class DitaTransformer {
 	}
 	
 	public void transformElement(Element element) {
+		// get list of published classifiers
+		UMLSwitch<Object> pubList = new UMLSwitch<Object>() {
+			public Object caseClassifier(Classifier classifier) {
+				transformerOptions.getPubClassifiers().add(classifier);
+				return classifier;
+			}
+			public Object caseElementImport(ElementImport elementImport) {
+				if (elementImport.getImportedElement() instanceof Classifier) {
+					transformerOptions.getPubClassifiers().add((Classifier)elementImport.getImportedElement());
+				}
+				return elementImport;
+			}
+		};
+		TreeIterator<EObject> pubListIterator = EcoreUtil.getAllContents(
+				Collections.singletonList(element));
+		while (pubListIterator != null && pubListIterator.hasNext()) {
+			EObject child = pubListIterator.next();
+			pubList.doSwitch(child);
+		}
 
 		UMLSwitch<Object> transformPackage = 
 			new TransformPackage(transformerOptions);
