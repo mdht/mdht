@@ -33,9 +33,11 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.DataEnterer;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -62,9 +64,11 @@ public class InstanceGenerator {
 
 	private Map<String,EPackage> packageURIMap = new HashMap<String,EPackage>();
 		
-	private CDARegistry cdaRegistry = new CDARegistry();
+	private CDARegistry cdaRegistry;
 	
 	public InstanceGenerator() {
+		CDAUtil.loadPackages();
+		cdaRegistry = new CDARegistry();
 	}
 	
 	private EPackage getEPackageForURI(String ePackageURI) {
@@ -131,8 +135,9 @@ public class InstanceGenerator {
 			}
 			
 			// for draft IGs, template IDs may not be filled
+			// don't insert templateId if class is from base CDA model
 			String thisTemplateId = CDAModelUtil.getTemplateId(umlClass);
-			if (thisTemplateId == null) {
+			if (thisTemplateId == null && !CDAModelUtil.isCDAModel(umlClass)) {
 				// insert new element without root attribute
 				II templateId = DatatypesFactory.eINSTANCE.createII();
 				templateId.setAssigningAuthorityName(CDAModelUtil.getPrefixedSplitName(umlClass));
@@ -170,12 +175,26 @@ public class InstanceGenerator {
 				}
 			}
 			if (levels > 0) {
-				// for now, only include inherited associations from same model, to exclude overridden
 				for (Property property : conformanceRules) {
-					if (property.getType() != null && property.getAssociation() != null
-							&& UMLUtil.getTopPackage(property).equals(UMLUtil.getTopPackage(umlClass))) {
-						EObject type = createInstance((Class)property.getType(), --levels);
-						addChild(eObject, type);
+					boolean isInherited = umlClass != property.getClass_();
+					
+					// for now, only include inherited associations from same model, to exclude overridden
+//					if (property.getType() != null && property.getAssociation() != null
+//							&& UMLUtil.getTopPackage(property).equals(UMLUtil.getTopPackage(umlClass))) {
+					if (property.getType() != null && property.getAssociation() != null) {
+						String severity = CDAModelUtil.getValidationSeverity(property.getAssociation());
+						
+						// omit optional associations that don't have validation severity (e.g. only documentation)
+						if (!isInherited && (severity != null || property.getLower() > 0)) {
+							EObject type = createInstance((Class)property.getType(), --levels);
+							addChild(eObject, type);
+						}
+						
+						// if inherited, include only associations that are required
+						else if (isInherited && CDAModelUtil.SEVERITY_ERROR.equals(severity)) {
+							EObject type = createInstance((Class)property.getType(), --levels);
+							addChild(eObject, type);
+						}
 					}
 				}
 			}
@@ -230,6 +249,12 @@ public class InstanceGenerator {
 		if (parent instanceof ClinicalDocument) {
 			if (child instanceof Section) {
 				((ClinicalDocument)parent).addSection((Section)child);
+			}
+			if (child instanceof Author) {
+				((ClinicalDocument)parent).getAuthors().add((Author)child);
+			}
+			if (child instanceof DataEnterer) {
+				((ClinicalDocument)parent).setDataEnterer((DataEnterer)child);
 			}
 			else {
 				return false;
