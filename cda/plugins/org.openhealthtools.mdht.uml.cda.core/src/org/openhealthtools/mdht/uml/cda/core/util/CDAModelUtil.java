@@ -278,7 +278,11 @@ public class CDAModelUtil {
 	
 	public static String computeConformanceMessage(Generalization generalization, boolean markup, Package xrefSource) {
 		Class general = (Class) generalization.getGeneral();
-		return computeGeneralizationConformanceMessage(general, markup, xrefSource);
+		StringBuffer message = new StringBuffer(computeGeneralizationConformanceMessage(general, markup, xrefSource));
+		
+		appendConformanceRuleIds(generalization, message, markup);
+		
+		return message.toString();
 	}
 
 	public static String computeGeneralizationConformanceMessage(Class general, boolean markup, Package xrefSource) {
@@ -288,15 +292,11 @@ public class CDAModelUtil {
 		String xref = computeXref(xrefSource, general);
 		boolean showXref = markup && (xref != null);
 		String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
-		
-//		String ruleId = getConformanceRuleIds(generalization);
-//		if (ruleId.length() > 0) {
-//			message.append(markup?"<b>":"");
-//			message.append(ruleId + ": ");
-//			message.append(markup?"</b>":"");
-//		}
-			
-		message.append("Conforms to ");
+
+		message.append(markup?"<b>":"");
+		message.append("SHALL");
+		message.append(markup?"</b>":"");
+		message.append(" conform to ");
 		message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
 		message.append(prefix).append(UMLUtil.splitName(general));
 		message.append(showXref?"</xref>":"");
@@ -321,13 +321,6 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 
-		String ruleId = getConformanceRuleIds(association);
-		if (ruleId.length() > 0) {
-			message.append(markup?"<b>":"");
-			message.append(ruleId + ": ");
-			message.append(markup?"</b>":"");
-		}
-		
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
@@ -376,6 +369,8 @@ public class CDAModelUtil {
 			}
 			message.append("</ul>");
 		}
+
+		appendConformanceRuleIds(association, message, markup);
 		
 		return message.toString();
 	}
@@ -406,13 +401,6 @@ public class CDAModelUtil {
 		Class endType = (property.getType() instanceof Class) 
 				? (Class)property.getType() : null;
 
-		String ruleId = getConformanceRuleIds(association);
-		if (ruleId.length() > 0) {
-			message.append(markup?"<b>":"");
-			message.append(ruleId + ": ");
-			message.append(markup?"</b>":"");
-		}
-		
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
@@ -485,6 +473,8 @@ public class CDAModelUtil {
 			}
 			message.append("</ul>");
 		}
+
+		appendConformanceRuleIds(association, message, markup);
 		
 		return message.toString();
 	}
@@ -503,13 +493,6 @@ public class CDAModelUtil {
 
 		StringBuffer message = new StringBuffer();
 
-		String ruleId = getConformanceRuleIds(property);
-		if (ruleId.length() > 0) {
-			message.append(markup?"<b>":"");
-			message.append(ruleId + ": ");
-			message.append(markup?"</b>":"");
-		}
-		
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
@@ -608,6 +591,8 @@ public class CDAModelUtil {
 			}
 			message.append("</ul>");
 		}
+
+		appendConformanceRuleIds(property, message, markup);
 		
 		return message.toString();
 	}
@@ -824,13 +809,6 @@ public class CDAModelUtil {
 			}
 		}
 
-		String ruleId = getConformanceRuleIds(constraint);
-		if (ruleId.length() > 0) {
-			message.append(markup?"<b>":"");
-			message.append(ruleId + ": ");
-			message.append(markup?"</b>":"");
-		}
-		
 		if (!markup) {
 			message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
 		}
@@ -850,6 +828,7 @@ public class CDAModelUtil {
 		else {
 			message.append(escapeMarkupCharacters(analysisBody));
 		}
+		appendConformanceRuleIds(constraint, message, markup);
 
 		// include comment text only in markup output
 		if (markup && constraint.getOwnedComments().size() > 0) {
@@ -940,7 +919,8 @@ public class CDAModelUtil {
 		if (first == null || second == null)
 			return false;
 		else
-			return UMLUtil.getTopPackage(first).equals(UMLUtil.getTopPackage(second));
+			return UMLUtil.getTopPackage(first).equals(UMLUtil.getTopPackage(second))
+				|| UMLUtil.getTopPackage(first).getImportedElements().contains(second);
 	}
 
 	protected static boolean isSameProject(Element first, Element second) {
@@ -1159,6 +1139,15 @@ public class CDAModelUtil {
 		}
 		
 		return ruleIds;
+	}
+	
+	protected static void appendConformanceRuleIds(Element element, StringBuffer message, boolean markup) {
+		String ruleIds = getConformanceRuleIds(element);
+		if (ruleIds.length() > 0) {
+			message.append(" (");
+			message.append(ruleIds);
+			message.append(")");
+		}
 	}
 	
 	/**
