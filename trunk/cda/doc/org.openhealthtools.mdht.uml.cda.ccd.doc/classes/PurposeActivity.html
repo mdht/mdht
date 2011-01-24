@@ -43,23 +43,23 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
 
-<li class="li"><strong class="ph b">CONF-21: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT" (CONF-21)</li>
 
-<li class="li"><strong class="ph b">CONF-22: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-22)</li>
 
-<li class="li"><strong class="ph b">CONF-25: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "23745001" <em class="ph i">Documentation procedure</em> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "23745001" <em class="ph i">Documentation procedure</em> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC) (CONF-25)</li>
 
-<li class="li"><strong class="ph b">CONF-23, CONF-24: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-23, CONF-24)</li>
 
-<li class="li"><strong class="ph b">CONF-26: </strong><strong class="ph b">SHALL</strong> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD. (CONF-26)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-27: </strong><strong class="ph b">SHALL</strong> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply. (CONF-27)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( 
   not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()
        and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()

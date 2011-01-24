@@ -12,7 +12,7 @@
 <p>A variety of legacy paper, film, electronic and scanner outputted formats are used to store and exchange clinical documents. These formats are not designed for healthcare documentation, and furthermore, do not have a uniform mechanism to store healthcare metadata associated with the documents, including patient identifiers, demographics, encounter, order or service information. The association of structured, healthcare metadata with this kind of document is important to maintain the integrity of the patient health record as managed by the source system. It is necessary to provide a mechanism that allows such source metadata to be stored with the document.</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><ul><li>Entered by operator or appropriately fixed for scanned content.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>confidentialityCode</tt><ul><li>Assigned by the operator in accordance with the scanning facility policy. The notion or level of confidentiality in the header may not be the same as that in the Affinity Domain, but in certain cases could be used to derive a confidentiality value among those specified by the Affinity Domain. Attributes @code and @codeSystem shall be present.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Denotes the time at which the original content was scanned. At a minimum, the time shall be precise to the day and shall include the time zone offset from GMT.</li></ul></li>
@@ -64,7 +64,7 @@
 <li><b>SHALL</b> satisfy: The component/nonXMLBody/text@representation is B64.<ul><li>The @representation for both PDF and plaintext scanned content will be "B64", because this profile requires the base-64 encoding of both formats.</li></ul><ul><li><codeblock>[OCL]: self.component.nonXMLBody.text.representation = datatypes::BinaryDataEncoding::B64</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>id</tt><ul><li>The root attribute shall contain the oid for the document, in which case the extension attribute shall be empty, or an oid that scopes the set of possible unique values for the extension attribute, in which case the extension shall be populated with a globally unique identifier within the scope of the root oid.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><ul><li>Entered by operator or appropriately fixed for scanned content.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Denotes the time at which the original content was scanned. At a minimum, the time shall be precise to the day and shall include the time zone offset from GMT.</li></ul></li>
@@ -121,7 +121,7 @@
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
   <templateId root="1.3.6.1.4.1.19376.1.2.20" assigningAuthorityName="IHE Scanned Document"/>
-  <id root="453b89cc-69a2-47b4-9562-41a8d7091f85"/>
+  <id root="58310d80-6122-4d7d-830a-686d7b9b6f74"/>
   <code/>
   <title/>
   <effectiveTime/>

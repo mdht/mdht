@@ -62,20 +62,20 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
 
-<li class="li"><strong class="ph b">CONF-389: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "30954-2" <em class="ph i">Relevant diagnostic tests and/or laboratory data</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "30954-2" <em class="ph i">Relevant diagnostic tests and/or laboratory data</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-389)</li>
 
-<li class="li"><strong class="ph b">CONF-391: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">title</tt> (CONF-391)</li>
 
-<li class="li"><strong class="ph b">CONF-388: </strong><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">entry</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="ResultOrganizer.html" title="[Organizer: templateId 2.16.840.1.113883.10.20.1.32]">Result Organizer</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.32</tt>)</li>
 </ol>
-</li>
+ (CONF-388)</li>
 
-<li class="li"><strong class="ph b">CONF-388: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt> (CONF-388)</li>
 
-<li class="li"><strong class="ph b">CONF-392: </strong><strong class="ph b">SHOULD</strong> satisfy: Contains a case-insensitive language-insensitive string containing 'results'.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Contains a case-insensitive language-insensitive string containing 'results'. (CONF-392)</li>
 
 </ol>
 
@@ -96,7 +96,7 @@
           &lt;entry&gt;
             &lt;organizer moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/&gt;
-              &lt;id root="b94443a8-234d-428a-9e4a-92760136afa1"/&gt;
+              &lt;id root="1013a59d-db6c-4a4c-ab50-b9502bf4cd72"/&gt;
               &lt;code/&gt;
               &lt;statusCode/&gt;
             &lt;/organizer&gt;

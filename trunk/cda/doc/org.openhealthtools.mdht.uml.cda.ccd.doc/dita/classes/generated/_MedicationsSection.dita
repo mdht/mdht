@@ -18,31 +18,31 @@
 </p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>CONF-300, CONF-301: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10160-0" <i>History of medication use</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
-<li><b>CONF-302: </b><b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10160-0" <i>History of medication use</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-300, CONF-301)</li>
+<li><b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-302)</li>
 <li><b>SHALL</b> contain [0..1] <tt>text</tt></li>
 <li>Contains [0..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../MedicationActivity.dita">Medication Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.24</tt>)</li></ol></li>
 <li>Contains [0..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../SupplyActivity.dita">Supply Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.34</tt>)</li></ol></li>
-<li><b>CONF-299: </b><b>SHALL</b> satisfy: The absence of known medications is explicitly asserted.</li>
-<li><b>CONF-303: </b><b>SHOULD</b> satisfy: Valued with a case-insensitive language-insensitive string containing 'medication'.</li>
-<li><b>CONF-298: </b><b>SHOULD</b> satisfy: Clinical statements include one or more Medication Activity and/or one or more Supply Activity.<ul><li><codeblock>[OCL]: self.getSubstanceAdministrations()-&gt;exists(activity : cda::SubstanceAdministration | activity.oclIsKindOf(ccd::MedicationActivity))
+<li><b>SHALL</b> satisfy: The absence of known medications is explicitly asserted. (CONF-299)</li>
+<li><b>SHOULD</b> satisfy: Valued with a case-insensitive language-insensitive string containing 'medication'. (CONF-303)</li>
+<li><b>SHOULD</b> satisfy: Clinical statements include one or more Medication Activity and/or one or more Supply Activity. (CONF-298)<ul><li><codeblock>[OCL]: self.getSubstanceAdministrations()-&gt;exists(activity : cda::SubstanceAdministration | activity.oclIsKindOf(ccd::MedicationActivity))
    or self.getSupplies()-&gt;exists(activity : cda::Supply | activity.oclIsKindOf(ccd::SupplyActivity))</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>[CCD] <b>CONF-300, CONF-301: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10160-0" <i>History of medication use</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
-<li>[CCD] <b>CONF-302: </b><b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10160-0" <i>History of medication use</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-300, CONF-301)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-302)</li>
 <li>[CCD] <b>SHALL</b> contain [0..1] <tt>text</tt></li>
 <li>[CCD] Contains [0..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../MedicationActivity.dita">Medication Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.24</tt>)</li></ol></li>
 <li>[CCD] Contains [0..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../SupplyActivity.dita">Supply Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.34</tt>)</li></ol></li>
-<li>[CCD] <b>CONF-299: </b><b>SHALL</b> satisfy: The absence of known medications is explicitly asserted.</li>
-<li>[CCD] <b>CONF-303: </b><b>SHOULD</b> satisfy: Valued with a case-insensitive language-insensitive string containing 'medication'.</li>
-<li>[CCD] <b>CONF-298: </b><b>SHOULD</b> satisfy: Clinical statements include one or more Medication Activity and/or one or more Supply Activity.<ul><li><codeblock>[OCL]: self.getSubstanceAdministrations()-&gt;exists(activity : cda::SubstanceAdministration | activity.oclIsKindOf(ccd::MedicationActivity))
+<li>[CCD] <b>SHALL</b> satisfy: The absence of known medications is explicitly asserted. (CONF-299)</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Valued with a case-insensitive language-insensitive string containing 'medication'. (CONF-303)</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Clinical statements include one or more Medication Activity and/or one or more Supply Activity. (CONF-298)<ul><li><codeblock>[OCL]: self.getSubstanceAdministrations()-&gt;exists(activity : cda::SubstanceAdministration | activity.oclIsKindOf(ccd::MedicationActivity))
    or self.getSupplies()-&gt;exists(activity : cda::Supply | activity.oclIsKindOf(ccd::SupplyActivity))</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>

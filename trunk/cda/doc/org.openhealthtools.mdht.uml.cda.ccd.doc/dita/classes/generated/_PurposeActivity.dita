@@ -17,29 +17,29 @@
 </p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
-<li><b>CONF-21: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
-<li><b>CONF-22: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
-<li><b>CONF-25: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
-<li><b>CONF-23, CONF-24: </b><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li><b>CONF-26: </b><b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-21)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-22)</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC) (CONF-25)</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-23, CONF-24)</li>
+<li><b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD. (CONF-26)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</codeblock></li></ul></li>
-<li><b>CONF-27: </b><b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
+<li><b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply. (CONF-27)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( 
   not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()
        and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()
        and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
-<li>[CCD] <b>CONF-21: </b><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
-<li>[CCD] <b>CONF-22: </b><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
-<li>[CCD] <b>CONF-25: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)</li>
-<li>[CCD] <b>CONF-23, CONF-24: </b><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li>[CCD] <b>CONF-26: </b><b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-21)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-22)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "23745001" <i>Documentation procedure</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC) (CONF-25)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-23, CONF-24)</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD. (CONF-26)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | 
   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</codeblock></li></ul></li>
-<li>[CCD] <b>CONF-27: </b><b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
+<li>[CCD] <b>SHALL</b> satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply. (CONF-27)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |
   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( 
   not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()
        and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()

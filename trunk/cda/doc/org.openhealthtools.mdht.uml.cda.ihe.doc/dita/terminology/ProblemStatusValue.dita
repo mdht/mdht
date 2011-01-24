@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Problem Status Value</title>
+<shortdesc id="shortdesc">[OID <tt>null</tt> from code system: SNOMEDCT]</shortdesc>
+<prolog id="prolog">
+<resourceid id="null"/>
+</prolog>
+<body>
+<!-- THIS IS GENERATED CONTENT, DO NOT EDIT -->
+<section id="description">
+</section>
+<p>OID: null</p>
+<p>Name: null</p>
+<p>Code System: 2.16.840.1.113883.6.96</p>
+<p>Code System Name: SNOMEDCT</p>
+<table><tgroup cols="4"><thead><row>
+<entry>Code</entry><entry>Display Name</entry><entry>Code System</entry><entry>Code System Name</entry>
+</row></thead><tbody>
+<row><entry>55561003</entry><entry>Active</entry><entry></entry><entry></entry></row>
+<row><entry>73425007</entry><entry>Inactive</entry><entry></entry><entry></entry></row>
+<row><entry>90734009</entry><entry>Chronic</entry><entry></entry><entry></entry></row>
+<row><entry>7087005</entry><entry>Intermittent</entry><entry></entry><entry></entry></row>
+<row><entry>255227004</entry><entry>Recurrent</entry><entry></entry><entry></entry></row>
+<row><entry>415684004</entry><entry>Rule out</entry><entry></entry><entry></entry></row>
+<row><entry>410516002</entry><entry>Ruled out</entry><entry></entry><entry></entry></row>
+<row><entry>413322009</entry><entry>Resolved</entry><entry></entry><entry></entry></row>
+</tbody></tgroup></table>
+</body>
+</topic>

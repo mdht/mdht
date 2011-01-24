@@ -32,15 +32,74 @@
 
 
 <div class="section">
+<p class="p">This section makes use of the linking, severity, clinical status and comment content specifications defined elsewhere in the technical framework. In HL7 RIM parlance, observations about a problem, complaint, symptom, finding, diagnosis, or functional limitation of a patient is the event (moodCode='EVN') of observing (&lt;observation classCode='OBS'&gt;) that problem. The &lt;value&gt; of the observation comes from a controlled vocabulary representing such things. The &lt;code&gt; contained within the &lt;observation&gt; describes the method of determination from yet another controlled vocabulary.</p>
+
+
+<p class="p">The basic pattern for reporting a problem uses the CDA &lt;observation&gt; element, setting the classCode='OBS' to represent that this is an observation of a problem, and the moodCode='EVN', to represent that this is an observation that has in fact taken place. The negationInd attribute, if true, specifies that the problem indicated was observed to not have occurred (which is subtly but importantly different from having not been observed). The value of negationInd should not normally be set to true. Instead, to record that there is "no prior history of chicken pox", one would use a coded value indicated exactly that. However, it is not always possible to record problems in this manner, especially if using a controlled vocabulary that does not supply pre-coordinated negations , or which do not allow the negation to be recorded with post-coordinated coded terminology.</p>
+
 </div>
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemObservation.html">CCD Problem Observation</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.28</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemObservation.html">CCD Problem Observation</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.28</tt>)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt></li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHOULD</strong> be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set STATIC 1<ul class="ul"><li class="li">The &lt;code&gt; describes the process of establishing a problem. The code element should be used, as the process of determining the value is important to clinicians (e.g., a diagnosis is a more advanced statement than a symptom). When a physical exam observation is being recorded the code used should be "Finding." When a review of systems observation is being recorded the code used should be "Symptom." The recommended vocabulary for describing problems is specified as a value set. Subclasses of this content module may specify other vocabularies.</li>
+</ul>
+</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">value</tt>, where its data type is CD</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [0..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">The &lt;effectiveTime&gt; of this &lt;observation&gt; is the time interval over which the &lt;observation&gt; is known to be true. The &lt;low&gt; and &lt;high&gt; values should be no more precise than known, but as precise as possible. While CDA allows for multiple mechanisms to record this time interval (e.g., by low and high values, low and width, high and width, or center point and width), we are constraining Medical summaries to use only the low/high form. The &lt;low&gt; value is the earliest point for which the condition is known to have existed. The &lt;high&gt; value, when present, indicates the time at which the observation was no longer known to be true. Thus, the implication is made that if the &lt;high&gt; value is specified, that the observation was no longer seen after this time, and it thus represents the date of resolution of the problem. Similarly, the &lt;low&gt; value may seem to represent onset of the problem. Neither of these statements is necessarily precise, as the &lt;low&gt; and &lt;high&gt; values may represent only an approximation of the true onset and resolution (respectively) times. For example, it may be the case that onset occurred prior to the &lt;low&gt; value, but no observation may have been possible before that time to discern whether the condition existed prior to that time. The &lt;low&gt; value should normally be present. There are exceptions, such as for the case where the patient may be able to report that they had chicken pox, but are unsure when. In this case, the &lt;effectiveTime&gt; element shall have a &lt;low&gt; element with a nullFlavor attribute set to 'UNK'. The &lt;high&gt; value need not be present when the observation is about a state of the patient that is unlikely to change (e.g., the diagnosis of an incurable disease).</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt><ul class="ul"><li class="li">The specific observation being recorded must have an identifier (&lt;id&gt;) that shall be provided for tracking purposes. If the source EMR does not or cannot supply an intrinsic identifier, then a GUID shall be provided as the root, with no extension (e.g., &lt;id root='CE1215CD-69EC-4C7B-805F-569233C5E159'/&gt;). At least one identifier must be present, more than one may appear.</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">text</tt><ul class="ul"><li class="li">The &lt;text&gt; element is required and points to the text describing the problem being recorded; including any dates, comments, et cetera. The &lt;reference&gt; contains a URI in value attribute. This URI points to the free text description of the problem in the document that is being described.</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">value</tt>, where its data type is CD<ul class="ul"><li class="li"><p class="p">The &lt;value&gt; is the condition that was found. This element is required. While the value may be a coded or an un-coded string, the type is always a coded value (xsi:type='CD'). If coded, the code and codeSystem attributes shall be present. The codeSystem should reference a controlled vocabulary describing problems, complaints, symptoms, findings, diagnoses, or functional limitations, e.g., ICD-9, SNOMED-CT or MEDCIN, or others.</p>
+
+<p class="p">It is recommended that the codeSystemName associated with the codeSystem, and the displayName for the code also be provided for diagnostic and human readability purposes, but this is not required by this profile.</p>
+
+<p class="p">If uncoded, all attributes other than xsi:type='CD' must be absent.</p>
+
+<p class="p">The &lt;value&gt; contains a &lt;reference&gt; to the &lt;originalText&gt; in order to link the coded value to the problem narrative text (minus any dates, comments, et cetera). The &lt;reference&gt; contains a URI in value attribute. This URI points to the free text description of the problem in the document that is being described.</p>
+</li>
+</ul>
+</li>
+
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="Severity.html" title="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.1]">Severity</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.1</tt>)</li>
+</ol>
+</li>
+
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">has @typeCode="REFR" <em class="ph i">REFR (refers to)</em></li>
+
+<li class="li">contains <a class="xref" href="ProblemStatusObservation.html" title="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.1.1]">Problem Status Observation</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.1.1</tt>)</li>
+</ol>
+</li>
+
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">has @typeCode="REFR" <em class="ph i">REFR (refers to)</em></li>
+
+<li class="li">contains <a class="xref" href="HealthStatusObservation.html" title="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.1.2]">Health Status Observation</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.1.2</tt>)</li>
+</ol>
+</li>
+
+<li class="li"><strong class="ph b">MAY</strong> contain [0..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
+
+<li class="li">contains <a class="xref" href="Comment.html" title="[Act: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.2]">Comment</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.2</tt>)</li>
+</ol>
+</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: If entryRelationship / Comment is present, then entryRelationship inversionInd = 'true'.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;forAll(rel : cda::EntryRelationship | (not rel.act.oclIsUndefined() and rel.act.oclIsKindOf(ihe::Comment)) implies rel.inversionInd='true')</pre>
+</li>
+</ul>
+</li>
 
 </ol>
 
@@ -59,7 +118,8 @@
             &lt;observation classCode="OBS" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD Problem Observation"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE Problem Entry"/&gt;
-              &lt;code/&gt;
+              &lt;id root="9e3587e6-2c8d-4b4b-b8b8-d075d47cebb3"/&gt;
+              &lt;code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT"/&gt;
               &lt;text/&gt;
               &lt;statusCode code="completed"/&gt;
               &lt;effectiveTime&gt;
@@ -67,6 +127,47 @@
                 &lt;high value="2008"/&gt;
               &lt;/effectiveTime&gt;
               &lt;value xsi:type="CD"/&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.55" assigningAuthorityName="CCD Severity Observation"/&gt;
+                  &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1" assigningAuthorityName="IHE Severity"/&gt;
+                  &lt;code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Severity observation"/&gt;
+                  &lt;text/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CD"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.50" assigningAuthorityName="CCD Problem Status Observation"/&gt;
+                  &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1.1" assigningAuthorityName="IHE Problem Status Observation"/&gt;
+                  &lt;code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/&gt;
+                  &lt;text/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CE"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;observation classCode="OBS" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD Status Observation"/&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.51" assigningAuthorityName="CCD Problem Health Status Observation"/&gt;
+                  &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1.2" assigningAuthorityName="IHE Health Status Observation"/&gt;
+                  &lt;code code="11323-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health status"/&gt;
+                  &lt;text/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                  &lt;value xsi:type="CE"/&gt;
+                &lt;/observation&gt;
+              &lt;/entryRelationship&gt;
+              &lt;entryRelationship&gt;
+                &lt;act classCode="ACT" moodCode="EVN"&gt;
+                  &lt;templateId root="2.16.840.1.113883.10.20.1.40" assigningAuthorityName="CCD Comment"/&gt;
+                  &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2" assigningAuthorityName="IHE Comment"/&gt;
+                  &lt;code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation comment"/&gt;
+                  &lt;text/&gt;
+                  &lt;statusCode code="completed"/&gt;
+                &lt;/act&gt;
+              &lt;/entryRelationship&gt;
             &lt;/observation&gt;
           &lt;/entry&gt;
         &lt;/section&gt;

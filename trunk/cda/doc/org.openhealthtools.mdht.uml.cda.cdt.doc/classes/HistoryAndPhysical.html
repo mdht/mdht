@@ -36,20 +36,20 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="GeneralHeaderConstraints.html" title="[ClinicalDocument: templateId 2.16.840.1.113883.10.20.3]">General Header Constraints</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.3</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="GeneralHeaderConstraints.html" title="[ClinicalDocument: templateId 2.16.840.1.113883.10.20.3]">General Header Constraints</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.3</tt>)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-54: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHALL</strong> be selected from ValueSet 2.16.840.1.113883.1.11.20.22 <a class="xref" href="../terminology/HPDocumentType.html" title="[OID 2.16.840.1.113883.1.11.20.22 from code system: LOINC]">HPDocumentType</a> DYNAMIC</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHALL</strong> be selected from ValueSet 2.16.840.1.113883.1.11.20.22 <a class="xref" href="../terminology/HPDocumentType.html" title="[OID 2.16.840.1.113883.1.11.20.22 from code system: LOINC]">HPDocumentType</a> DYNAMIC (CONF-HP-54)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-76: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="HistoryOfPresentIllness.html" title="[Section: templateId 1.3.6.1.4.1.19376.1.5.3.1.3.4]">History Of Present Illness</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.3.4</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">This section describes the history related to the chief complaint. It contains the
 historical details leading up to and pertaining to the patient's current complaint or
 reason for seeking medical care.</li>
 </ul>
-</li>
+ (CONF-HP-76)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-77: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="PastMedicalHistorySection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.9]">Past Medical History Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.2.9</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">This section describes the past medical history for the patient. It may contain
@@ -61,9 +61,9 @@ problems can be recorded in a standalone Problems section or in a nested Problem
 section. Wherever used, procedures and problems should conform to the CCD template
 for CDA entries cited in the Problems section.</li>
 </ul>
-</li>
+ (CONF-HP-77)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-79: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.8</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">The Medications section defines a patient's current medications and pertinent
@@ -74,9 +74,9 @@ option, particularly when the document is used for comprehensive data export. Th
 section may also include a patient's prescription history and enable the determination
 of the source of a medication list, e.g., from a pharmacy system versus from the patient.</li>
 </ul>
-</li>
+ (CONF-HP-79)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-80: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.2</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">This section is used to list and describe any medication allergies, adverse reactions,
@@ -87,9 +87,9 @@ environmental allergies, even if severe, should not be included in the Alerts se
 since they constitute a medical problem and should be listed in the problem list and
 past medical history, even if directly related to the presenting problem.</li>
 </ul>
-</li>
+ (CONF-HP-80)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-81: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SocialHistorySection.html">CCD Social History Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.15</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">This section contains data defining the patient's occupational, personal (i.e., lifestyle),
@@ -98,17 +98,17 @@ such as marital status, race, ethnicity, and religious affiliation. Social histo
 a significant influence on a patient's physical, psychological, and emotional health and
 wellbeing, so should be considered in the development of a complete health record.</li>
 </ul>
-</li>
+ (CONF-HP-81)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-82: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FamilyHistorySection.html">CCD Family History Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.4</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">This section contains data defining the patient's genetic relatives in terms of relevant
 health-risk factors that have a potential impact on the patient's health care profile.</li>
 </ul>
-</li>
+ (CONF-HP-82)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-83: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="ReviewOfSystemsSectionIHE.html" title="[Section: templateId 1.3.6.1.4.1.19376.1.5.3.1.3.18]">Review Of Systems Section IHE</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">The review of systems is a relevant collection of symptoms and function systematically
@@ -118,24 +118,24 @@ potentially large number of pertinent negatives, e.g., symptoms that the patient
 specifically asked if they had experienced or were currently experiencing, but had
 denied experiencing.</li>
 </ul>
-</li>
+ (CONF-HP-83)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-84: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="PhysicalExaminationSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.10]">Physical Examination Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.2.10</tt>)</li>
 </ol>
-</li>
+ (CONF-HP-84)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-86: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="VitalSignsSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.4]">Vital Signs Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.2.4</tt>)</li>
 </ol>
-</li>
+ (CONF-HP-86)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-88: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="GeneralStatusSection.html" title="[Section: templateId 2.16.840.1.113883.10.20.2.5]">General Status Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.2.5</tt>)</li>
 </ol>
-</li>
+ (CONF-HP-88)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-90: </strong><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="DiagnosticFindings.html" title="[Section: templateId null]">Diagnostic Findings</a></li>
 </ol>
 <ul class="ul"><li class="li">This section contains the results of observations generated by laboratories, imaging
@@ -160,9 +160,9 @@ granular information about component observations made during the performance of
 procedure, such as where a gastroenterologist reports the size of a polyp observed
 during a colonoscopy.</li>
 </ul>
-</li>
+ (CONF-HP-90)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-93: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.11</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">This section lists and describes all relevant clinical problems at the time the History
@@ -172,54 +172,54 @@ This section is optional because the information contained in it may also appear
 Past Medical History section or the History of Present Illness section. When a problem
 list is inserted into either of these sections, it should use the CCD template.</li>
 </ul>
-</li>
+ (CONF-HP-93)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-94: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProceduresSection.html">CCD Procedures Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.12</tt>)</li>
 </ol>
-</li>
+ (CONF-HP-94)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-96: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ImmunizationsSection.html">CCD Immunizations Section</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.6</tt>)</li>
 </ol>
 <ul class="ul"><li class="li">The Immunizations section provides a patient's pertinent immunization history. The
 Immunizations section is optional, however it is recommended that it be present when
 such information is available.</li>
 </ul>
-</li>
+ (CONF-HP-96)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-55: </strong><strong class="ph b">MAY</strong> satisfy: Implementations MAY use local codes in translation elements to specify a local code that is equivalent to the document type.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Implementations MAY use local codes in translation elements to specify a local code that is equivalent to the document type. (CONF-HP-55)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-56: </strong><strong class="ph b">SHALL</strong> satisfy: If pre-coordinated document type codes are used, values used in the
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: If pre-coordinated document type codes are used, values used in the
 assignedAuthor/code and assignedAuthor/author/functionCode elements SHALL NOT
-conflict with ClinicalDocument/code.</li>
+conflict with ClinicalDocument/code. (CONF-HP-56)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-57: </strong><strong class="ph b">SHALL</strong> satisfy: If pre-coordinated document type codes are used, values used in
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: If pre-coordinated document type codes are used, values used in
 encompassingEncounter/location/healthCareFacility/code SHALL NOT conflict with
-ClinicalDocument/code.</li>
+ClinicalDocument/code. (CONF-HP-57)</li>
 
-<li class="li"><strong class="ph b">CONF-HP-92: </strong><strong class="ph b">SHALL</strong> satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection))
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections. (CONF-HP-92)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection))
    xor (self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))
       and self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection)))</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-HP-91: </strong><strong class="ph b">SHALL</strong> satisfy: When Assessment section or Plan section is included, then both sections SHALL be included.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: let assessmentExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection)) in
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: When Assessment section or Plan section is included, then both sections SHALL be included. (CONF-HP-91)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: let assessmentExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection)) in
   let planExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))
     in (assessmentExists or planExists) implies (assessmentExists and planExists)</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-HP-75: </strong><strong class="ph b">SHALL</strong> satisfy: Either combined Reason for Visit and Chief Complaint section is included, or separate Reason for Visit section and Chief Complaint section included, but not both combined and separate sections.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Either combined Reason for Visit and Chief Complaint section is included, or separate Reason for Visit section and Chief Complaint section included, but not both combined and separate sections. (CONF-HP-75)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))
    xor (self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))
       and self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-HP-74: </strong><strong class="ph b">SHALL</strong> satisfy: When Reason for Visit section or Chief Complaint section is included, then both sections SHALL be included.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: let reasonExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection)) in
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: When Reason for Visit section or Chief Complaint section is included, then both sections SHALL be included. (CONF-HP-74)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: let reasonExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection)) in
   let complaintExists : Boolean = self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection))
     in (reasonExists or complaintExists) implies (reasonExists and complaintExists)</pre>
 </li>
@@ -238,7 +238,7 @@ ClinicalDocument/code.</li>
   &lt;realmCode code="US"/&gt;
   &lt;templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/&gt;
   &lt;templateId root="2.16.840.1.113883.10.20.2" assigningAuthorityName="CDT History And Physical"/&gt;
-  &lt;id root="1004646f-c258-4e9c-a0fb-cb915cea2fa4"/&gt;
+  &lt;id root="aad3f37e-2850-4942-9854-684c445cbec1"/&gt;
   &lt;code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/&gt;
   &lt;title/&gt;
   &lt;effectiveTime/&gt;

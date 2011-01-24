@@ -40,11 +40,11 @@
 
 
 <ol class="ol">
-<li class="li">Conforms to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</a> (CONF-304)</li>
 
-<li class="li"><strong class="ph b">CONF-306: </strong><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt></li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-306)</li>
 
-<li class="li"><strong class="ph b">CONF-307: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">statusCode</tt></li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">statusCode</tt> (CONF-307)</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="MedicationSeriesNumberObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.46]">Medication Series Number Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.46</tt>)</li>
@@ -56,45 +56,45 @@
 </ol>
 </li>
 
-<li class="li"><strong class="ph b">CONF-330, CONF-333: </strong><strong class="ph b">MAY</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">MAY</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
 <li class="li">contains <a class="xref" href="PatientInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.49]">Patient Instruction</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.49</tt>)</li>
 </ol>
-</li>
+ (CONF-330, CONF-333)</li>
 
-<li class="li"><strong class="ph b">CONF-308: </strong><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li>
 </ul>
-</li>
+ (CONF-308)</li>
 
-<li class="li"><strong class="ph b">CONF-312: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">maxDoseQuantity</tt></li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">maxDoseQuantity</tt> (CONF-312)</li>
 
-<li class="li"><strong class="ph b">CONF-309, CONF-310: </strong><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">routeCode</tt> (CodeSystem: 2.16.840.1.113883.5.112 HL7 RouteOfAdministration DYNAMIC)</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">routeCode</tt> (CodeSystem: 2.16.840.1.113883.5.112 HL7 RouteOfAdministration DYNAMIC) (CONF-309, CONF-310)</li>
 
-<li class="li"><strong class="ph b">CONF-313: </strong><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">performer</tt>, such that it<ol class="ol" type="a">
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">performer</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</a></li>
 </ol>
 <ul class="ul"><li class="li">Indicates the person administering a substance.</li>
 </ul>
-</li>
+ (CONF-313)</li>
 
-<li class="li"><strong class="ph b">CONF-305: </strong><strong class="ph b">SHALL</strong> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </pre>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-305)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-311: </strong><strong class="ph b">SHOULD</strong> satisfy: Contains exactly one doseQuantity or rateQuantity.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</pre>
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Contains exactly one doseQuantity or rateQuantity. (CONF-311)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-314: </strong><strong class="ph b">MAY</strong> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent. (CONF-314)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
    not auth.oclIsUndefined() and not auth.consent.oclIsUndefined())</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-315: </strong><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information. (CONF-315)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
@@ -105,21 +105,21 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-327: </strong><strong class="ph b">MAY</strong> satisfy: Contains one or more precondition / Criterion, to indicate that the medication is administered only when the associated (coded or free text) criteria are met.<ul class="ul"><li class="li">Indicates that the medication is administered only when the associated (coded or free text) criteria are met.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains one or more precondition / Criterion, to indicate that the medication is administered only when the associated (coded or free text) criteria are met. (CONF-327)<ul class="ul"><li class="li">Indicates that the medication is administered only when the associated (coded or free text) criteria are met.</li>
 </ul>
 <ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.precondition-&gt;exists(precondition : cda::Precondition | not precondition.criterion.oclIsUndefined())</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-328: </strong><strong class="ph b">MAY</strong> satisfy: Contains one or more entryRelationship, where the value for @typeCode is "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.<ul class="ul"><li class="li">The target of the relationship represents the indication for the activity.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains one or more entryRelationship, where the value for @typeCode is "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-328)<ul class="ul"><li class="li">The target of the relationship represents the indication for the activity.</li>
 </ul>
 <ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.entryRelationship-&gt;exists(entryRel : cda::EntryRelationship | entryRel.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</pre>
 </li>
 </ul>
 </li>
 
-<li class="li"><strong class="ph b">CONF-329: </strong><strong class="ph b">SHALL</strong> satisfy: entryRelationship / @typeCode="RSON" in a medication activity has a target of problem act, problem observation, or some other clinical statement.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)-&gt;forAll(target : 
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: entryRelationship / @typeCode="RSON" in a medication activity has a target of problem act, problem observation, or some other clinical statement. (CONF-329)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)-&gt;forAll(target : 
 
 cda::ClinicalStatement | not target.oclIsUndefined() and 
   (target.oclIsKindOf(ccd::ProblemAct) or target.oclIsKindOf(ccd::ProblemObservation)))</pre>
@@ -143,7 +143,7 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
           &lt;entry&gt;
             &lt;substanceAdministration classCode="SBADM"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/&gt;
-              &lt;id root="7e79c706-f6af-428c-8235-8c94cc49824d"/&gt;
+              &lt;id root="1eafb8f0-b425-472e-9770-88d2b8351d8b"/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime/&gt;
               &lt;routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/&gt;

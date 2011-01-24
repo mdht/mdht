@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="Publish DITA" default="all" basedir=".">
+	<tstamp>
+	  <format property="TODAY"
+	          pattern="yyyy-MM-dd"
+	          locale="en,US"/>
+	</tstamp>
 
 	<property file="dita.properties" />
 	
 	<import file="${dita.dir}/integrator.xml"/>
 
-	<target name="all" depends="standards-pdf, standards-eclipsehelp, developer-pdf" />
+	<target name="all" depends="standards-pdf, standards-eclipsehelp, developer-pdf, ResultsSection-developer-pdf" />
+
+	<target name="ResultsSection-developer-pdf">
+    	<antcall target="pdf-Section">
+    		<param name="dita.input.valfile" value="${ditaFilePath}/ditaval_developer.xml" />
+    		<param name="pdf.filename" value="${fileName}_ResultsSection.pdf" />
+    		<param name="section.name" value="ResultsSection" />
+    	</antcall>
+	</target>
+
+	<target name="ProblemsSection-developer-pdf">
+    	<antcall target="pdf-Section">
+    		<param name="dita.input.valfile" value="${ditaFilePath}/ditaval_developer.xml" />
+    		<param name="pdf.filename" value="${fileName}_ProblemsSection.pdf" />
+    		<param name="section.name" value="ProblemsSection" />
+    	</antcall>
+	</target>
 
 	<target name="standards-pdf">
     	<antcall target="pdf">
@@ -23,7 +44,7 @@
 	<target name="developer-pdf">
     	<antcall target="pdf">
     		<param name="dita.input.valfile" value="${ditaFilePath}/ditaval_developer.xml" />
-    		<param name="pdf.filename" value="${fileName}_developer.pdf" />
+    		<param name="pdf.filename" value="${fileName}_consolidated.pdf" />
     	</antcall>
 	</target>
 
@@ -74,6 +95,26 @@
 
 		<move file="${pdf.output}/${modelName}-book.pdf" tofile="${basedir}/${pdf.filename}" />
 		<delete dir="${pdf.output}"/>
+		
+		<delete dir="temp"/>
+	</target>
+
+	<target name="pdf-Section" depends="integrate">
+		<property name="pdf.output" value="${basedir}/pdf" />
+
+		<delete file="${basedir}/${pdf.filename}" />
+		
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="pdf" />
+			<property name="args.input" value="${ditaFilePath}/${modelName}-book-${section.name}.ditamap" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="output.dir" value="${pdf.output}" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+		</ant>
+
+		<move file="${pdf.output}/${modelName}-book-${section.name}.pdf" tofile="${basedir}/${pdf.filename}" />
+		<!-- <delete dir="${pdf.output}"/> -->
 		
 		<delete dir="temp"/>
 	</target>

@@ -11,55 +11,55 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref> (CONF-154)</li>
 <li>Contains [1..1] <tt>@classCode</tt> = "OBS"</li>
-<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
-<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li><b>SHOULD</b> contain [0..1] <tt>effectiveTime</tt></li>
-<li><b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-155)</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-156, CONF-157)</li>
+<li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Indicates the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition).</li></ul> (CONF-158)</li>
+<li><b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017<ul><li>code SHALL be present (per CDA schema), by MAY use specified value set.</li></ul> (CONF-159)</li>
 <li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
-<li>contains <xref href="../ProblemStatusObservation.dita">Problem Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.50</tt>)</li></ol></li>
+<li>contains <xref href="../ProblemStatusObservation.dita">Problem Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.50</tt>)</li></ol> (CONF-162)</li>
 <li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
-<li>contains <xref href="../ProblemHealthStatusObservation.dita">Problem Health Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.51</tt>)</li></ol></li>
+<li>contains <xref href="../ProblemHealthStatusObservation.dita">Problem Health Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.51</tt>)</li></ol> (CONF-165)</li>
 <li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
-<li>contains <xref href="../AgeObservation.dita">Age Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.38</tt>)</li></ol></li>
-<li><b>SHALL</b> satisfy: Contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+<li>contains <xref href="../AgeObservation.dita">Age Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.38</tt>)</li></ol> (CONF-160)</li>
+<li><b>SHALL</b> satisfy: Contains one or more sources of information. (CONF-161)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
    and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
-<li><b>MAY</b> satisfy: Contains exactly one Patient Awareness<ul><li><codeblock>[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</codeblock></li></ul></li>
+<li><b>MAY</b> satisfy: Contains exactly one Patient Awareness (CONF-180)<ul><li><codeblock>[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
 <li>[CCD] Contains [1..1] <tt>@classCode</tt> = "OBS"</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
-<li>[CCD] <b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li>[CCD] <b>SHOULD</b> contain [0..1] <tt>effectiveTime</tt></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-155)</li>
+<li>[CCD] <b>MAY</b> contain [1..1] <tt>code</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017<ul><li>code SHALL be present (per CDA schema), by MAY use specified value set.</li></ul> (CONF-159)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-156, CONF-157)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Indicates the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition).</li></ul> (CONF-158)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
-<li>contains <xref href="../ProblemStatusObservation.dita">Problem Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.50</tt>)</li></ol></li>
+<li>contains <xref href="../ProblemStatusObservation.dita">Problem Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.50</tt>)</li></ol> (CONF-162)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="REFR" <i>REFR (refers to)</i></li>
-<li>contains <xref href="../ProblemHealthStatusObservation.dita">Problem Health Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.51</tt>)</li></ol></li>
+<li>contains <xref href="../ProblemHealthStatusObservation.dita">Problem Health Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.51</tt>)</li></ol> (CONF-165)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
-<li>contains <xref href="../AgeObservation.dita">Age Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.38</tt>)</li></ol></li>
-<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
+<li>contains <xref href="../AgeObservation.dita">Age Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.38</tt>)</li></ol> (CONF-160)</li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains one or more sources of information. (CONF-161)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | 
    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
    and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
-<li>[CCD] <b>MAY</b> satisfy: Contains exactly one Patient Awareness<ul><li><codeblock>[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</codeblock></li></ul></li>
+<li>[CCD] <b>MAY</b> satisfy: Contains exactly one Patient Awareness (CONF-180)<ul><li><codeblock>[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">

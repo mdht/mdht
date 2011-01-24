@@ -12,7 +12,7 @@
 <p>Represents the author of the original content. It additionally can encode the original author?s institution in the subelement representedOrganization. Information regarding the original author and his/her institution shall be included, if it is known. In many cases this will have to be supplied by the operator.</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
 <li>Contains [1..1] <tt>time</tt><ul><li>Represents the day and time of the authoring of the original content. This value is not restricted beyond statements made in the HL7 CDA R2 documentation.</li></ul></li>
 <li><b>SHOULD</b> satisfy: The assignedAuthor/id element if known shall include both the root and the extension attributes. Refer to PCC TF-2: 4.1.1 for more details.<ul><li><codeblock>[OCL]: self.assignedAuthor.id-&gt;forAll(ident : datatypes::II |
    not ident.root.oclIsUndefined() and not ident.extension.oclIsUndefined())</codeblock></li></ul></li>
@@ -20,7 +20,7 @@
    not ident.root.oclIsUndefined() and not ident.extension.oclIsUndefined())</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
 <li>[IHE] Contains [1..1] <tt>time</tt><ul><li>Represents the day and time of the authoring of the original content. This value is not restricted beyond statements made in the HL7 CDA R2 documentation.</li></ul></li>
 <li>[CDA] Contains [1..1] <tt>assignedAuthor</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/AssignedAuthor.html">CDA Assigned Author</xref></li>
 <li>[IHE] <b>SHOULD</b> satisfy: The assignedAuthor/id element if known shall include both the root and the extension attributes. Refer to PCC TF-2: 4.1.1 for more details.<ul><li><codeblock>[OCL]: self.assignedAuthor.id-&gt;forAll(ident : datatypes::II |

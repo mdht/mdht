@@ -11,17 +11,17 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
-<li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li><b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
   or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</xref></li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt> = "SPLY", where its data type is ActClassSupply</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
@@ -37,7 +37,7 @@
           <entry>
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="9c203979-ad0d-487f-891c-c04a4f4e8083"/>
+              <id root="b041bed5-0d83-48de-9f86-26d1dd6d3293"/>
             </supply>
           </entry>
         </section>

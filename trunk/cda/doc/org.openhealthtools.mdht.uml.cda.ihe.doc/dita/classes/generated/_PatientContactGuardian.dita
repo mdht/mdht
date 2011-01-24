@@ -11,18 +11,18 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupportGuardian.html">CCD Support Guardian</xref></li>
-<li>Conforms to <xref href="../PatientContact.dita">Patient Contact</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupportGuardian.html">CCD Support Guardian</xref></li>
+<li><b>SHALL</b> conform to <xref href="../PatientContact.dita">Patient Contact</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "GUAR"</li>
 <li><b>SHOULD</b> contain [0..*] <tt>addr</tt></li>
 <li><b>SHALL</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.111 RoleCode STATIC)</li>
 <li><b>SHOULD</b> contain [0..*] <tt>telecom</tt></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref href="../PatientContact.dita">Patient Contact</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/Support.html">CCD Support</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupportGuardian.html">CCD Support Guardian</xref></li>
+<li><b>SHALL</b> conform to <xref href="../PatientContact.dita">Patient Contact</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/Support.html">CCD Support</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupportGuardian.html">CCD Support Guardian</xref></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "GUAR"</li>
 <li>[IHE] <b>SHOULD</b> contain [0..*] <tt>addr</tt></li>
 <li>[IHE] <b>SHALL</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.111 RoleCode STATIC)</li>

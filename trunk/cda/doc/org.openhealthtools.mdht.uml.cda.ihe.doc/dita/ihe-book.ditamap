@@ -4,8 +4,8 @@
 	<booktitle>
 		<booklibrary>Implementation Guide for CDA Release 2</booklibrary>
 		<mainbooktitle>IHE Patient Care Coordination (PCC)</mainbooktitle>
-		<booktitlealt><image href="images/ihe_logo.png"/></booktitlealt>
-		<booktitlealt>Revision 5.0</booktitlealt>
+		<booktitlealt><image href="images/ONC_logo.png"/></booktitlealt>
+		<booktitlealt>Revision 6.0</booktitlealt>
 		<booktitlealt>DRAFT: FOR DEVELOPMENT USE ONLY</booktitlealt>
 		<booktitlealt audience="developer">(Consolidated Developer Documentation)</booktitlealt>
 	</booktitle>

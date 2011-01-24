@@ -11,12 +11,12 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>CONF-HP-74: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29299-5" <i>Reason for visit</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29299-5" <i>Reason for visit</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-74)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>[CDT] <b>CONF-HP-74: </b><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29299-5" <i>Reason for visit</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "29299-5" <i>Reason for visit</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-74)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">

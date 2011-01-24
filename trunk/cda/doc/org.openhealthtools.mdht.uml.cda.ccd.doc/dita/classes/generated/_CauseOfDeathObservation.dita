@@ -11,12 +11,12 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Conforms to <xref href="../FamilyHistoryObservation.dita">Family History Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.22</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../FamilyHistoryObservation.dita">Family History Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.22</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
-<li>Conforms to <xref href="../FamilyHistoryObservation.dita">Family History Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.22</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> conform to <xref href="../FamilyHistoryObservation.dita">Family History Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.22</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClassObservation</li>
 <li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_ActMoodDocumentObservation</li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
@@ -33,7 +33,7 @@
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.22" assigningAuthorityName="CCD Family History Observation"/>
               <templateId root="2.16.840.1.113883.10.20.1.42" assigningAuthorityName="CCD Cause Of Death Observation"/>
-              <id root="21b2f505-9453-42e6-9583-3a4325649970"/>
+              <id root="7578fe9c-0f2b-47af-84d4-057e9a641963"/>
               <statusCode code="completed"/>
             </observation>
           </entry>

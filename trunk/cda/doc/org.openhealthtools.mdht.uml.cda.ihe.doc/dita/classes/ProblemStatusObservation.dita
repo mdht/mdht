@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Problem Status Observation</title>
+<shortdesc conref="generated/_ProblemStatusObservation.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_ProblemStatusObservation.dita#classId/prolog"></prolog>
+<body>
+<!-- TODO: insert non-model class description markup here -->
+<section conref="generated/_ProblemStatusObservation.dita#classId/description">
+</section>
+
+<ol audience="standards" conref="generated/_ProblemStatusObservation.dita#classId/conformance">
+<li></li>
+</ol>
+<ol audience="developer" conref="generated/_ProblemStatusObservation.dita#classId/aggregate">
+<li></li>
+</ol>
+<p></p>
+<fig>
+<title>Problem Status Observation example</title>
+<!-- TODO: insert custom instance example here -->
+<!-- generated instance example follows -->
+<codeblock conref="generated/_ProblemStatusObservation.dita#classId/example">
+</codeblock>
+</fig>
+</body>
+</topic>

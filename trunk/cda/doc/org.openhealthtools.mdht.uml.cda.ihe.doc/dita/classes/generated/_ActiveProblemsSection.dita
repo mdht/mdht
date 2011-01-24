@@ -9,23 +9,24 @@
 </prolog>
 <body>
 <section id="description">
+<p>The active problem section shall contain a narrative description of the conditions currently being monitored for the patient. It shall include entries for patient conditions as described in the Entry Content Module.</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li>
 <li><b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../ProblemConcernEntry.dita">Problem Concern Entry</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-141, CONF-142)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-143)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemAct.html">CCD Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemAct.html">CCD Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol> (CONF-140)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-140)</li>
 <li>[IHE] <b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../ProblemConcernEntry.dita">Problem Concern Entry</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>)</li></ol></li>
-<li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'.</li>
+<li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'. (CONF-144)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -42,8 +43,9 @@
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/>
-              <id root="f049eb51-618f-474c-b287-e36a88889387"/>
+              <id root="2248afec-e2ae-4d26-9ff6-8ed7cbc6cfac"/>
               <code nullFlavor="NA"/>
+              <statusCode/>
               <effectiveTime>
                 <low value="1972"/>
                 <high value="2008"/>

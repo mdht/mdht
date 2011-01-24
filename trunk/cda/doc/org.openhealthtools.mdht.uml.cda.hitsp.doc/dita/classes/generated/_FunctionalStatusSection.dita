@@ -15,14 +15,14 @@
 </p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FunctionalStatusSection.html">CCD Functional Status Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FunctionalStatusSection.html">CCD Functional Status Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FunctionalStatusSection.html">CCD Functional Status Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "47420-5" <i>Functional status assessment</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FunctionalStatusSection.html">CCD Functional Status Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "47420-5" <i>Functional status assessment</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
-<li>[CCD] <b>CONF-123: </b><b>SHOULD</b> satisfy: Contains one or more Problem Act and/or Result Organizer<ul><li><codeblock>[OCL]: self.getEntryTargets(ccd::ProblemAct)-&gt;size() &gt; 0
+<li>[CCD] <b>SHOULD</b> satisfy: Contains one or more Problem Act and/or Result Organizer (CONF-123)<ul><li><codeblock>[OCL]: self.getEntryTargets(ccd::ProblemAct)-&gt;size() &gt; 0
   or self.getEntryTargets(ccd::ResultOrganizer)-&gt;size() &gt; 0</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>

@@ -22,8 +22,8 @@
 </p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>Vital signs</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>Vital signs</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../VitalSignsOrganizer.dita">Vital Signs Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.35</tt>)</li></ol></li>
@@ -31,8 +31,8 @@
 <li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'vital signs'.</li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>Vital signs</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>Vital signs</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref href="../VitalSignsOrganizer.dita">Vital Signs Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.35</tt>)</li></ol></li>
@@ -52,7 +52,7 @@
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
-              <id root="c2ba8369-d248-4356-bcd0-d13da3538e42"/>
+              <id root="3778d639-8646-4846-90ea-0839ba42d950"/>
               <code/>
               <statusCode/>
             </organizer>

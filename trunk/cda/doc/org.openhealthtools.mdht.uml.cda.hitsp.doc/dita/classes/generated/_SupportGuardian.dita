@@ -12,16 +12,16 @@
 <p>At a minimum, key support contacts relative to healthcare decisions, including next of kin, should be included. If no healthcare providers are supplied, the reason should be supplied as free text in the narrative block (e.g., Unknown, etc).</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PatientContactGuardian.html">IHE Patient Contact Guardian</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.4</tt>)</li>
-<li>Conforms to <xref href="../Support.dita">Support</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PatientContactGuardian.html">IHE Patient Contact Guardian</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.4</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../Support.dita">Support</xref></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref href="../Support.dita">Support</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PatientContact.html">IHE Patient Contact</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/Support.html">CCD Support</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupportGuardian.html">CCD Support Guardian</xref></li>
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PatientContactGuardian.html">IHE Patient Contact Guardian</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.4</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../Support.dita">Support</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PatientContact.html">IHE Patient Contact</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/Support.html">CCD Support</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupportGuardian.html">CCD Support Guardian</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/PatientContactGuardian.html">IHE Patient Contact Guardian</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.2.4</tt>)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "GUAR"</li>
 <li>[IHE] <b>SHOULD</b> contain [0..*] <tt>addr</tt></li>
 <li>[IHE] <b>SHALL</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.111 RoleCode STATIC)</li>

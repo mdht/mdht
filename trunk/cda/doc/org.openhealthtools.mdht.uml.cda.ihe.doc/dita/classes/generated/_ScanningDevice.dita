@@ -12,7 +12,7 @@
 <p>Represents the scanning device and software used to produce the scanned content.</p>
 </section>
 <ol id="conformance">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
 <li>Contains [1..1] <tt>time</tt><ul><li>Denotes the time at which the original content was scanned.</li></ul></li>
 <li><b>SHALL</b> satisfy: The time shall be equal to that of ClinicalDocument/effectiveTime. At a minimum, the time shall be precise to the day and shall include the time zone offset from GMT.<ul><li><codeblock>[OCL]: self.time.value = self.getClinicalDocument().effectiveTime.value</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: The assignedAuthor/id element shall be at least the root oid of the scanning device.<ul><li><codeblock>[OCL]: self.assignedAuthor.id-&gt;forAll(ident : datatypes::II | not ident.root.oclIsUndefined())</codeblock></li></ul></li>
@@ -24,7 +24,7 @@
 <li><b>SHALL</b> satisfy: The assignedAuthor/representedOrganization/id element is present. The root attribute shall be set to the oid of the scanning facility.<ul><li><codeblock>[OCL]: self.assignedAuthor.representedOrganization.id-&gt;forAll(ident : datatypes::II | not ident.root.oclIsUndefined())</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
 <li>[IHE] Contains [1..1] <tt>time</tt><ul><li>Denotes the time at which the original content was scanned.</li></ul></li>
 <li>[CDA] Contains [1..1] <tt>assignedAuthor</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/AssignedAuthor.html">CDA Assigned Author</xref></li>
 <li>[IHE] <b>SHALL</b> satisfy: The time shall be equal to that of ClinicalDocument/effectiveTime. At a minimum, the time shall be precise to the day and shall include the time zone offset from GMT.<ul><li><codeblock>[OCL]: self.time.value = self.getClinicalDocument().effectiveTime.value</codeblock></li></ul></li>
