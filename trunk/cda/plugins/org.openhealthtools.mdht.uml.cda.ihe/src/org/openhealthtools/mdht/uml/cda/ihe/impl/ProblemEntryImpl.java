@@ -61,6 +61,15 @@ public class ProblemEntryImpl extends ProblemObservationImpl implements ProblemE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateProblemEntryHasTextReference(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemEntryOperations.validateProblemEntryHasTextReference(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateProblemEntryCommentInversionInd(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemEntryOperations.validateProblemEntryCommentInversionInd(this, diagnostics, context);
 	}

@@ -203,7 +203,7 @@ public class ProblemConcernEntryOperations extends ConcernEntryOperations {
 	public static  EList<ProblemEntry> getProblemEntries(ProblemConcernEntry problemConcernEntry) {
 		if (GET_PROBLEM_ENTRIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(IHEPackage.Literals.PROBLEM_CONCERN_ENTRY, IHEPackage.Literals.PROBLEM_CONCERN_ENTRY.getEAllOperations().get(61));
+			helper.setOperationContext(IHEPackage.Literals.PROBLEM_CONCERN_ENTRY, IHEPackage.Literals.PROBLEM_CONCERN_ENTRY.getEAllOperations().get(62));
 			try {
 				GET_PROBLEM_ENTRIES__EOCL_QRY = helper.createQuery(GET_PROBLEM_ENTRIES__EOCL_EXP);
 			}

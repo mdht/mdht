@@ -18,9 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- *     The Problem List Section contains data on the problems currently being monitored for the patient. 
- * </p>
+ * The Problem List Section contains data on the problems currently being monitored for the patient.
  * <!-- end-model-doc -->
  *
  *

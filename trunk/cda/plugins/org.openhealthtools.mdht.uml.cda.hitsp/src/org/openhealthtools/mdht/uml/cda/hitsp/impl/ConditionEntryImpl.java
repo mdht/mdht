@@ -50,8 +50,8 @@ public class ConditionEntryImpl extends ProblemEntryImpl implements ConditionEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConditionEntryEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionEntryOperations.validateConditionEntryEffectiveTime(this, diagnostics, context);
+	public boolean validateConditionEntryHasOnsetDate(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionEntryOperations.validateConditionEntryHasOnsetDate(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,36 @@ public class ConditionEntryImpl extends ProblemEntryImpl implements ConditionEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConditionEntryText(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionEntryOperations.validateConditionEntryText(this, diagnostics, context);
+	public boolean validateConditionEntryHasResolutionDate(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionEntryOperations.validateConditionEntryHasResolutionDate(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionEntryHasUnknownResolutionDate(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionEntryOperations.validateConditionEntryHasUnknownResolutionDate(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionEntryCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionEntryOperations.validateConditionEntryCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateProblemEntryValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionEntryOperations.validateProblemEntryValue(this, diagnostics, context);
 	}
 
 	/**

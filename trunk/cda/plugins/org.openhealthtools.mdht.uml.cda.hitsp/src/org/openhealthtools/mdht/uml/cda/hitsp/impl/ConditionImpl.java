@@ -59,6 +59,33 @@ public class ConditionImpl extends ProblemConcernEntryImpl implements Condition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateConditionHasTreatingProvider(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionOperations.validateConditionHasTreatingProvider(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionHasProviderId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionOperations.validateConditionHasProviderId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionHasProviderTreatmentTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionOperations.validateConditionHasProviderTreatmentTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateConditionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ConditionOperations.validateConditionTemplateId(this, diagnostics, context);
 	}

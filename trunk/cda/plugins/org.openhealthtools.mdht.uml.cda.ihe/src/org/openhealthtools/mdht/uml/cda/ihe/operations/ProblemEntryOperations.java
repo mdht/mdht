@@ -43,6 +43,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry#validateProblemEntryHasTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Has Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry#validateProblemEntryCommentInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Comment Inversion Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry#validateProblemEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry#validateProblemEntryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Code</em>}</li>
@@ -71,6 +72,63 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 	 */
 	protected ProblemEntryOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemEntryHasTextReference(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Has Text Reference</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemEntryHasTextReference(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.text.reference.oclIsUndefined()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemEntryHasTextReference(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Has Text Reference</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemEntryHasTextReference(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.text.reference.oclIsUndefined()
+	 * @param problemEntry The receiving '<em><b>Problem Entry</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateProblemEntryHasTextReference(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(IHEPackage.Literals.PROBLEM_ENTRY);
+			try {
+				VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemEntry)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 IHEValidator.DIAGNOSTIC_SOURCE,
+						 IHEValidator.PROBLEM_ENTRY__PROBLEM_ENTRY_HAS_TEXT_REFERENCE,
+						 IHEPlugin.INSTANCE.getString("ProblemEntryHasTextReference"),
+						 new Object [] { problemEntry }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -736,7 +794,7 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 	public static  Severity getSeverity(ProblemEntry problemEntry) {
 		if (GET_SEVERITY__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(66));
+			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(67));
 			try {
 				GET_SEVERITY__EOCL_QRY = helper.createQuery(GET_SEVERITY__EOCL_EXP);
 			}
@@ -780,7 +838,7 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 	public static  ProblemStatusObservation getProblemStatusObservation(ProblemEntry problemEntry) {
 		if (GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(67));
+			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(68));
 			try {
 				GET_PROBLEM_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_PROBLEM_STATUS_OBSERVATION__EOCL_EXP);
 			}
@@ -824,7 +882,7 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 	public static  HealthStatusObservation getHealthStatusObservation(ProblemEntry problemEntry) {
 		if (GET_HEALTH_STATUS_OBSERVATION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(68));
+			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(69));
 			try {
 				GET_HEALTH_STATUS_OBSERVATION__EOCL_QRY = helper.createQuery(GET_HEALTH_STATUS_OBSERVATION__EOCL_EXP);
 			}
@@ -868,7 +926,7 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 	public static  EList<Comment> getComments(ProblemEntry problemEntry) {
 		if (GET_COMMENTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(69));
+			helper.setOperationContext(IHEPackage.Literals.PROBLEM_ENTRY, IHEPackage.Literals.PROBLEM_ENTRY.getEAllOperations().get(70));
 			try {
 				GET_COMMENTS__EOCL_QRY = helper.createQuery(GET_COMMENTS__EOCL_EXP);
 			}

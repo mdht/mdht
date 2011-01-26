@@ -114,6 +114,16 @@ Content Module.</body>
 &#xD;
 &lt;p>The basic pattern for reporting a problem uses the CDA &amp;lt;observation> element, setting the classCode='OBS' to represent that this is an observation of a problem, and the moodCode='EVN', to represent that this is an observation that has in fact taken place. The negationInd attribute, if true, specifies that the problem indicated was observed to not have occurred (which is subtly but importantly different from having not been observed). The value of negationInd should not normally be set to true. Instead, to record that there is &quot;no prior history of chicken pox&quot;, one would use a coded value indicated exactly that. However, it is not always possible to record problems in this manner, especially if using a controlled vocabulary that does not supply pre-coordinated negations , or which do not allow the negation to be recorded with post-coordinated coded terminology.&lt;/p></body>
       </ownedComment>
+      <ownedRule xmi:id="_-vm8wCl4EeCXiupwzMk--A" name="hasTextReference" constrainedElement="_MIoHYCQKEeCxCon8a79rfA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_-vm8wSl4EeCXiupwzMk--A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The problem name SHALL be recorded in the entry by recording a &amp;lt;reference> where the value attribute points to the narrative text containing the name of the problem.</body>
+          <body>not self.text.reference.oclIsUndefined()</body>
+          <body>The problem name SHALL be recorded in the entry by recording a &amp;lt;reference> where the value attribute points to the narrative text containing the name of the problem.</body>
+          <body>not self.text.reference.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
       <ownedRule xmi:id="_wtsB8CQZEeCxCon8a79rfA" name="commentInversionInd" constrainedElement="_3ZiEwGdIEd6Hk_bPOfEjYA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Arh-sCQaEeCxCon8a79rfA">
           <language>Analysis</language>
@@ -137,8 +147,8 @@ Content Module.</body>
           <body>The &amp;lt;effectiveTime> of this &amp;lt;observation> is the time interval over which the &amp;lt;observation> is known to be true. The &amp;lt;low> and &amp;lt;high> values should be no more precise than known, but as precise as possible. While CDA allows for multiple mechanisms to record this time interval (e.g., by low and high values, low and width, high and width, or center point and width), we are constraining Medical summaries to use only the low/high form. The &amp;lt;low> value is the earliest point for which the condition is known to have existed. The &amp;lt;high> value, when present, indicates the time at which the observation was no longer known to be true. Thus, the implication is made that if the &amp;lt;high> value is specified, that the observation was no longer seen after this time, and it thus represents the date of resolution of the problem. Similarly, the &amp;lt;low> value may seem to represent onset of the problem. Neither of these statements is necessarily precise, as the &amp;lt;low> and &amp;lt;high> values may represent only an approximation of the true onset and resolution (respectively) times. For example, it may be the case that onset occurred prior to the &amp;lt;low> value, but no observation may have been possible before that time to discern whether the condition existed prior to that time. The &amp;lt;low> value should normally be present. There are exceptions, such as for the case where the patient may be able to report that they had chicken pox, but are unsure when. In this case, the &amp;lt;effectiveTime> element shall have a &amp;lt;low> element with a nullFlavor attribute set to 'UNK'. The &amp;lt;high> value need not be present when the observation is about a state of the patient that is unlikely to change (e.g., the diagnosis of an incurable disease).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F3xSwSNZEeCxCon8a79rfA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F3xSwiNZEeCxCon8a79rfA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2OL18CgSEeCXiupwzMk--A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2OUY0CgSEeCXiupwzMk--A" value="1"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_t3kdcIhREd6UrJD25cKDew"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_UJEgECNXEeCxCon8a79rfA" name="id" visibility="private" aggregation="composite">
@@ -2032,4 +2042,5 @@ life, hobbies, and risky habits.</body>
   <CDA:EntryRelationship xmi:id="_eShuMCQZEeCxCon8a79rfA" severity="INFO" base_Association="_ctFaYSQZEeCxCon8a79rfA" typeCode="REFR"/>
   <CDA:EntryRelationship xmi:id="_uXV1oCQZEeCxCon8a79rfA" severity="INFO" base_Association="_j4WHMiQZEeCxCon8a79rfA" typeCode="SUBJ"/>
   <CDA:ConstraintValidation xmi:id="_x2xw8CQZEeCxCon8a79rfA" base_Constraint="_wtsB8CQZEeCxCon8a79rfA"/>
+  <CDA:ConstraintValidation xmi:id="__lifMCl4EeCXiupwzMk--A" base_Constraint="_-vm8wCl4EeCXiupwzMk--A"/>
 </xmi:XMI>
