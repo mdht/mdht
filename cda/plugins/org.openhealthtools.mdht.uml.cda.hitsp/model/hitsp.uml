@@ -107,6 +107,30 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="Condition">
+      <ownedRule xmi:id="_TVZQ0CmAEeCXiupwzMk--A" name="hasTreatingProvider" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_qUUqsCmAEeCXiupwzMk--A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The treating provider or providers SHALL be recorded in a &amp;lt;performer> element under the &amp;lt;act> that describes the condition of concern</body>
+          <body>not self.performer->isEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_QbPM0CmAEeCXiupwzMk--A" name="hasProviderId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wAMoYCmAEeCXiupwzMk--A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The identifier of the treating provider SHALL be present in the &amp;lt;id> element beneath the &amp;lt;assignedEntity>. This identifier SHALL be the identifier of one of the providers listed in the healthcare providers module.</body>
+          <body>self.performer->exists(p : cda::Performer2 | p.assignedEntity.id->size() > 0)</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_PANoACl6EeCXiupwzMk--A" name="hasProviderTreatmentTime" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_UERXwCl6EeCXiupwzMk--A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The time over which this provider treated the condition MAY be recorded in the &amp;lt;time> element beneath the &amp;lt;performer> element</body>
+          <body>self.performer->exists(p : cda::Performer2 | p.time.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wSnPAGaQEd6Hk_bPOfEjYA"/>
       </generalization>
@@ -260,9 +284,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_cPtREMfaEd6VjLXh4DcWSg" name="ProblemListSection">
       <ownedComment xmi:id="_mOi4wMfaEd6VjLXh4DcWSg" annotatedElement="_cPtREMfaEd6VjLXh4DcWSg">
-        <body>&lt;p>&#xD;
-    The Problem List Section contains data on the problems currently being monitored for the patient. &#xD;
-&lt;/p></body>
+        <body>The Problem List Section contains data on the problems currently being monitored for the patient.</body>
       </ownedComment>
       <generalization xmi:id="_epE8MMfaEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_vz5koGGsEd6bFO5yxRh3Nw"/>
@@ -572,26 +594,39 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_c6bN4BvgEd-yI6xBTkJSNw" name="ConditionEntry">
+      <ownedComment xmi:id="_iTv5wClwEeCXiupwzMk--A">
+        <body>Condition Entry is not defined as a separate template in HITSP C83, but only as additional constraints on the IHE Problem Entry when embedded in a Condition template. In this model, Condition Entry is defined as a separate class (without a template ID) that restricts the IHE Problem Entry. When these templates are consolidated in the new implementation guide, these Condition Entry constraints will be merged with Problem Entry.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_Lt80wCl0EeCXiupwzMk--A" name="hasOnsetDate" constrainedElement="_c6bN4BvgEd-yI6xBTkJSNw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gcqfgCl0EeCXiupwzMk--A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The onset date SHALL be recorded in the &amp;lt;low> element of the &amp;lt;effectiveTime> element when known.</body>
+          <body>not self.effectiveTime.low.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_MZP0gCl0EeCXiupwzMk--A" name="hasResolutionDate" constrainedElement="_c6bN4BvgEd-yI6xBTkJSNw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_mKyf8Cl0EeCXiupwzMk--A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The resolution data SHALL be recorded in the &amp;lt;high> element of the &amp;lt;effectiveTime> element when known.</body>
+          <body>not self.effectiveTime.high.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_NcASACl0EeCXiupwzMk--A" name="hasUnknownResolutionDate" constrainedElement="_c6bN4BvgEd-yI6xBTkJSNw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_tRZWQCl0EeCXiupwzMk--A">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>If the problem is known to be resolved, but the date of resolution is not known, then the &amp;lt;high> element SHALL be present, and the nullFlavor attribute SHALL be set to 'UNK'. Therefore, the existence of an &amp;lt;high> element within a problem does indicate that the problem has been resolved.</body>
+          <body>not self.effectiveTime.high.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_fv2i4BvgEd-yI6xBTkJSNw">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA"/>
       </generalization>
-      <ownedAttribute xmi:id="_lkLxoBvjEd-yI6xBTkJSNw" name="effectiveTime" visibility="private" aggregation="composite">
-        <ownedComment xmi:id="_tM2MIBvjEd-yI6xBTkJSNw" annotatedElement="_lkLxoBvjEd-yI6xBTkJSNw">
-          <body>The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &amp;lt;low&amp;gt; element of the &amp;lt;effectiveTime&amp;gt; element when known. The resolution data shall be recorded in the &amp;lt;high&amp;gt; element of the &amp;lt;effectiveTime&amp;gt; element when known. These dates represent the clinically effective time span over which the problem existed.&#xD;
-&#xD;
-If the problem is known to be resolved, but the date of resolution is not known, then the &amp;lt;high&amp;gt; element shall be present, and the nullFlavor attribute shall be set to 'UNK'. Therefore, the existence of an &amp;lt;high&amp;gt; element within a problem does indicate that the problem has been resolved.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lkLxoRvjEd-yI6xBTkJSNw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lkLxohvjEd-yI6xBTkJSNw" value="1"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_t3kdcIhREd6UrJD25cKDew"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_hjpbwBvgEd-yI6xBTkJSNw" name="code" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_f1n6wIhTEd6UrJD25cKDew"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Kp7UYIwJEd6B6JSUB00H7g" name="text" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_hjsfEBvgEd-yI6xBTkJSNw" name="value" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
@@ -944,7 +979,9 @@ If the problem is known to be resolved, but the date of resolution is not known,
     </profileApplication>
   </uml:Package>
   <CDA:CDATemplate xmi:id="_t9ej4HcIEd6ZeOKq_2_a9g" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_uxtdMHcIEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_uxtdMHcIEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.7">
+    <ruleId>C83-[DE-7-CDA-1]</ruleId>
+  </CDA:CDATemplate>
   <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83" contextDependent="true">
     <ruleId>C83-[DE-8-CDA-1]</ruleId>
   </CDA:CDATemplate>
@@ -953,7 +990,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
   </CDA:CDATemplate>
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
   <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
+  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA"/>
   <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
   <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>
@@ -1012,12 +1049,16 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:CDATemplate xmi:id="_hOYYMMijEd6mWrHPmrIIfQ" base_Class="_d9cy8MijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.128" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_kMVXEMijEd6mWrHPmrIIfQ" base_Comment="_kMSTwMijEd6mWrHPmrIIfQ"/>
   <CDA:EntryRelationship xmi:id="_k2HnMBviEd-yI6xBTkJSNw" base_Association="_-HcW8BvhEd-yI6xBTkJSNw" typeCode="SUBJ"/>
-  <CDA:PropertyValidation xmi:id="_lkLxoxvjEd-yI6xBTkJSNw" severity="WARNING" base_Property="_lkLxoBvjEd-yI6xBTkJSNw"/>
+  <CDA:PropertyValidation xmi:id="_lkLxoxvjEd-yI6xBTkJSNw" severity="WARNING">
+    <ruleId>C83-[DE-7.01-1]</ruleId>
+    <ruleId>C83-[DE-7.01-2]</ruleId>
+    <ruleId>C83-[DE-7.01-3]</ruleId>
+  </CDA:PropertyValidation>
   <Default:Documentation xmi:id="_tM_WEBvjEd-yI6xBTkJSNw" base_Comment="_tM2MIBvjEd-yI6xBTkJSNw"/>
   <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
-  <CDA:AssociationValidation xmi:id="_ozqv8BvkEd-yI6xBTkJSNw" base_Association="_4D4oIBvYEd-yI6xBTkJSNw"/>
-  <CDA:ValueSetConstraint xmi:id="_baveQCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.2" name="Problem Type Value Set" base_Property="_hjpbwBvgEd-yI6xBTkJSNw"/>
-  <CDA:ValueSetConstraint xmi:id="_bayhkCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.4" name="Problem Value Set" base_Property="_hjsfEBvgEd-yI6xBTkJSNw"/>
+  <CDA:AssociationValidation xmi:id="_ozqv8BvkEd-yI6xBTkJSNw" base_Association="_4D4oIBvYEd-yI6xBTkJSNw">
+    <ruleId>C83-[CT-103-1]</ruleId>
+  </CDA:AssociationValidation>
   <CDA:ValueSetConstraint xmi:id="_P-2i8DITEd-saqiXO4OYhQ" base_Property="_K4Lk0K7REd6_ioDelDcPPg">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_UvVE0TISEd-saqiXO4OYhQ"/>
   </CDA:ValueSetConstraint>
@@ -1073,7 +1114,9 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:AssociationValidation xmi:id="_z9yaoEyaEd-GNbUQBie2ig" severity="INFO" base_Association="_AEKd8UyYEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-7]</ruleId>
   </CDA:AssociationValidation>
-  <CDA:ConformsTo xmi:id="_Sqad0E79Ed-qMv3VdH3jrA" base_Generalization="_H4qVgDxbEd6JwqSGecoePg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_Sqad0E79Ed-qMv3VdH3jrA" base_Generalization="_H4qVgDxbEd6JwqSGecoePg" requiresParentId="true">
+    <ruleId>C83-[DE-7-CDA-2]</ruleId>
+  </CDA:ConformsTo>
   <CDA:ConformsTo xmi:id="_rGFsEFF6Ed-Lud-5SYZhMw" base_Generalization="_hsBnwHrWEd68l9lQ-TLEBQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGIvYFF6Ed-Lud-5SYZhMw" base_Generalization="_w0bkkHrGEd68l9lQ-TLEBQ" requiresParentId="true">
     <ruleId>C83-[DE-8-CDA-2]</ruleId>
@@ -1084,7 +1127,9 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:ConformsTo xmi:id="_rGLLoFF6Ed-Lud-5SYZhMw" base_Generalization="_g9_UcK7IEd6_ioDelDcPPg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGLysFF6Ed-Lud-5SYZhMw" base_Generalization="_1sbqcMfXEd6VjLXh4DcWSg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGMZwFF6Ed-Lud-5SYZhMw" base_Generalization="_Xue-EMfZEd6VjLXh4DcWSg" requiresParentId="true"/>
-  <CDA:ConformsTo xmi:id="_rGNA0FF6Ed-Lud-5SYZhMw" base_Generalization="_epE8MMfaEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGNA0FF6Ed-Lud-5SYZhMw" base_Generalization="_epE8MMfaEd6VjLXh4DcWSg" requiresParentId="true">
+    <ruleId>C83-[CT-103-2]</ruleId>
+  </CDA:ConformsTo>
   <CDA:ConformsTo xmi:id="_rGNA0VF6Ed-Lud-5SYZhMw" base_Generalization="_nhstQMfbEd6VjLXh4DcWSg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGNn4FF6Ed-Lud-5SYZhMw" base_Generalization="__87QkMfcEd6VjLXh4DcWSg" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_rGOO8FF6Ed-Lud-5SYZhMw" base_Generalization="_eIhFcMfdEd6VjLXh4DcWSg" requiresParentId="true"/>
@@ -1249,5 +1294,34 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:PropertyValidation xmi:id="_p0c1sBeWEeCf9aMNaCAtDQ" base_Property="_p0cOoBeWEeCf9aMNaCAtDQ"/>
   <CDA:ConstraintValidation xmi:id="_zVypEBeWEeCf9aMNaCAtDQ" base_Constraint="_yfmA4BeWEeCf9aMNaCAtDQ">
     <ruleId>C83-[DE-15.05-CDA-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_xxKtMCl0EeCXiupwzMk--A" severity="WARNING" base_Constraint="_Lt80wCl0EeCXiupwzMk--A">
+    <ruleId>C83-[DE-7.01-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_yQ1EsCl0EeCXiupwzMk--A" severity="WARNING" base_Constraint="_MZP0gCl0EeCXiupwzMk--A">
+    <ruleId>C83-[DE-7.01-2]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_yswywCl0EeCXiupwzMk--A" severity="WARNING" base_Constraint="_NcASACl0EeCXiupwzMk--A">
+    <ruleId>C83-[DE-7.01-3]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:PropertyValidation xmi:id="_fkUFwCl1EeCXiupwzMk--A" severity="WARNING" base_Property="_hjpbwBvgEd-yI6xBTkJSNw"/>
+  <CDA:ValueSetConstraint xmi:id="_fxi-kCl3EeCXiupwzMk--A" base_Property="_hjsfEBvgEd-yI6xBTkJSNw">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_1-lLMCvAEd-LFp1hgdmc1w"/>
+  </CDA:ValueSetConstraint>
+  <CDA:ValueSetConstraint xmi:id="_kAnAACl3EeCXiupwzMk--A" base_Property="_hjpbwBvgEd-yI6xBTkJSNw">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_RS_-oCvBEd-LFp1hgdmc1w"/>
+    <ruleId>C154-[DE-7.02-1]</ruleId>
+  </CDA:ValueSetConstraint>
+  <CDA:ConstraintValidation xmi:id="_PtYh8Cl4EeCXiupwzMk--A">
+    <ruleId>C83-[DE-7.04-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_V88woCl6EeCXiupwzMk--A" severity="INFO" base_Constraint="_PANoACl6EeCXiupwzMk--A">
+    <ruleId>C83-[DE-7.05-CDA-1]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_cXWZgCmAEeCXiupwzMk--A" base_Constraint="_TVZQ0CmAEeCXiupwzMk--A">
+    <ruleId>C83-[DE-7.05-CDA-3]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_gTiiQCmAEeCXiupwzMk--A" base_Constraint="_QbPM0CmAEeCXiupwzMk--A">
+    <ruleId>C83-[DE-7.05-CDA-2]</ruleId>
   </CDA:ConstraintValidation>
 </xmi:XMI>

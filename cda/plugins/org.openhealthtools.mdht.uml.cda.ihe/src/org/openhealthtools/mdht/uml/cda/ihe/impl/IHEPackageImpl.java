@@ -1914,6 +1914,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		initEClass(problemEntryEClass, ProblemEntry.class, "ProblemEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(problemEntryEClass, ecorePackage.getEBoolean(), "validateProblemEntryHasTextReference", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(problemEntryEClass, ecorePackage.getEBoolean(), "validateProblemEntryCommentInversionInd", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -3834,11 +3843,11 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "code.codeSystem", "2.16.840.1.113883.6.96",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5",
-			 "constraints.validation.error", "ProblemEntryTemplateId ProblemEntryCommentInversionInd ProblemEntryId ProblemEntryText ProblemEntryValue",
+			 "constraints.validation.error", "ProblemEntryTemplateId ProblemEntryHasTextReference ProblemEntryCommentInversionInd ProblemEntryId ProblemEntryText ProblemEntryValue",
 			 "code.codeSystemName", "SNOMEDCT",
 			 "constraints.validation.warning", "ProblemEntryCode ProblemEntryEffectiveTime",
 			 "constraints.validation.info", "ProblemEntrySeverity ProblemEntryProblemStatusObservation ProblemEntryHealthStatusObservation ProblemEntryComment"
-		   });																																																						
+		   });																																																										
 		addAnnotation
 		  (severityEClass, 
 		   source, 
@@ -4447,7 +4456,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Problem Concern Entry", null
-		   });																																																																																																																																																																	
+		   });																																																																																																																																																																					
 		addAnnotation
 		  (allergyIntoleranceConcernEClass, 
 		   source, 
@@ -4475,7 +4484,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																															
+		String source = "duplicates";																																																																																																																																			
 		addAnnotation
 		  (severityEClass, 
 		   source, 

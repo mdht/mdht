@@ -52,6 +52,18 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//Condition">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/ConditionHasTreatingProvider">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionHasTreatingProvider/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionHasTreatingProvider/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/ConditionHasProviderId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionHasProviderId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionHasProviderId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/ConditionHasProviderTreatmentTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionHasProviderTreatmentTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionHasProviderTreatmentTime/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/ConditionTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/ConditionTemplateId/context"/>
@@ -64,13 +76,21 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/getConditionEntries"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//ConditionEntry">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryEffectiveTime">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryEffectiveTime/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryEffectiveTime/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryHasOnsetDate">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryHasOnsetDate/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryHasOnsetDate/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryText">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryText/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryText/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryHasResolutionDate">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryHasResolutionDate/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryHasResolutionDate/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryHasUnknownResolutionDate">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryHasUnknownResolutionDate/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryHasUnknownResolutionDate/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//PatientSummary">
