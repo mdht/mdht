@@ -44,34 +44,34 @@
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-156, CONF-157)</li>
 
-<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Indicates the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition).</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt> (CONF-158)<ul class="ul"><li class="li">Indicates the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition).</li>
 </ul>
- (CONF-158)</li>
+</li>
 
-<li class="li"><strong class="ph b">MAY</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">MAY</strong> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017<ul class="ul"><li class="li">code SHALL be present (per CDA schema), by MAY use specified value set.</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">MAY</strong> be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017 (CONF-159)<ul class="ul"><li class="li">code SHALL be present (per CDA schema), by MAY use specified value set.</li>
 </ul>
- (CONF-159)</li>
+</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="REFR" <em class="ph i">REFR (refers to)</em></li>
 
-<li class="li">contains <a class="xref" href="ProblemStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.50]">Problem Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.50</tt>)</li>
+<li class="li">contains <a class="xref" href="ProblemStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.50]">Problem Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.50</tt>) (CONF-162)</li>
 </ol>
- (CONF-162)</li>
+</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="REFR" <em class="ph i">REFR (refers to)</em></li>
 
-<li class="li">contains <a class="xref" href="ProblemHealthStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.51]">Problem Health Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.51</tt>)</li>
+<li class="li">contains <a class="xref" href="ProblemHealthStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.51]">Problem Health Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.51</tt>) (CONF-165)</li>
 </ol>
- (CONF-165)</li>
+</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
-<li class="li">contains <a class="xref" href="AgeObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.38]">Age Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.38</tt>)</li>
+<li class="li">contains <a class="xref" href="AgeObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.38]">Age Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.38</tt>) (CONF-160)</li>
 </ol>
- (CONF-160)</li>
+</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> satisfy: Contains one or more sources of information. (CONF-161)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()

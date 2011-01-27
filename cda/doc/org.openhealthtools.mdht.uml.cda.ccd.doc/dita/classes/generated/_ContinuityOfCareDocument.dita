@@ -13,7 +13,7 @@
 <ol id="conformance">
 <li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ProblemSection.dita">Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol> (CONF-140)</li>
+<li>contains <xref href="../ProblemSection.dita">Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-140)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../FamilyHistorySection.dita">Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
@@ -21,9 +21,9 @@
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol> (CONF-298)</li>
+<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-298)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol> (CONF-388)</li>
+<li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-388)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ProceduresSection.dita">Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
@@ -45,7 +45,7 @@
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "34133-9" <i>Summarization of episode note</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-1)</li>
 <li><b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-5)</li>
 <li><b>MAY</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>)</li></ol> (CONF-15)</li>
+<li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>) (CONF-15)</li></ol></li>
 <li><b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent (CONF-2)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR' (CONF-3)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high (CONF-4)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | 
@@ -74,7 +74,7 @@
 <li>[CDA] Contains [1..1] <tt>custodian</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Custodian.html">CDA Custodian</xref></li>
 <li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ProblemSection.dita">Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol> (CONF-140)</li>
+<li>contains <xref href="../ProblemSection.dita">Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-140)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../FamilyHistorySection.dita">Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
@@ -82,9 +82,9 @@
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol> (CONF-298)</li>
+<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-298)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol> (CONF-388)</li>
+<li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-388)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../ProceduresSection.dita">Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
@@ -105,7 +105,7 @@
 <li>contains <xref href="../PayersSection.dita">Payers Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-5)</li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>)</li></ol> (CONF-15)</li>
+<li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>) (CONF-15)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent (CONF-2)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())</codeblock></li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR' (CONF-3)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)</codeblock></li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high (CONF-4)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | 

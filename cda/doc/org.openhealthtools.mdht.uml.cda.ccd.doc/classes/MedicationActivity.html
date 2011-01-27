@@ -59,24 +59,24 @@
 <li class="li"><strong class="ph b">MAY</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
-<li class="li">contains <a class="xref" href="PatientInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.49]">Patient Instruction</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.49</tt>)</li>
+<li class="li">contains <a class="xref" href="PatientInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.49]">Patient Instruction</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.49</tt>) (CONF-330, CONF-333)</li>
 </ol>
- (CONF-330, CONF-333)</li>
+</li>
 
-<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li>
+<li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">effectiveTime</tt> (CONF-308)<ul class="ul"><li class="li">Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li>
 </ul>
- (CONF-308)</li>
+</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">maxDoseQuantity</tt> (CONF-312)</li>
 
 <li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">routeCode</tt> (CodeSystem: 2.16.840.1.113883.5.112 HL7 RouteOfAdministration DYNAMIC) (CONF-309, CONF-310)</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">performer</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</a></li>
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</a> (CONF-313)</li>
 </ol>
 <ul class="ul"><li class="li">Indicates the person administering a substance.</li>
 </ul>
- (CONF-313)</li>
+</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-305)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </pre>
 </li>
@@ -143,7 +143,7 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
           &lt;entry&gt;
             &lt;substanceAdministration classCode="SBADM"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/&gt;
-              &lt;id root="1eafb8f0-b425-472e-9770-88d2b8351d8b"/&gt;
+              &lt;id root="3365c342-3978-468a-b15a-2d1b568c7f3c"/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime/&gt;
               &lt;routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/&gt;

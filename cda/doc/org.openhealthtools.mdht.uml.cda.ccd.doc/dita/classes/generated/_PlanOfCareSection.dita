@@ -74,37 +74,37 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="d6d37180-c796-4505-8b44-8fcdc44ade48"/>
+              <id root="9ae535d4-2d42-4a67-a1e2-1d10070e9750"/>
             </act>
           </entry>
           <entry>
             <encounter>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="421d38d3-07d4-46ac-bd02-e879785b5205"/>
+              <id root="f53fd4a3-2b0f-4926-be61-1e6d56a5c01f"/>
             </encounter>
           </entry>
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="1113d8fd-81ce-4001-b97d-5dd3b7a2da8a"/>
+              <id root="052018b7-036e-459d-af4a-e9aba132a0a5"/>
             </observation>
           </entry>
           <entry>
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="d03f0ab6-71f3-405c-9492-9674da84d314"/>
+              <id root="cf66ce04-e96c-493f-b159-ee2ac3c5faac"/>
             </procedure>
           </entry>
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="c4792bdc-e57f-4f09-8415-c8612eac7b00"/>
+              <id root="2cca739c-b7a6-4913-a597-44e3b5efc31f"/>
             </substanceAdministration>
           </entry>
           <entry>
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="f64a36c2-65c9-4b22-a14c-6643df5bbef1"/>
+              <id root="def966c2-cdba-41b8-9e41-cb659702c231"/>
             </supply>
           </entry>
         </section>

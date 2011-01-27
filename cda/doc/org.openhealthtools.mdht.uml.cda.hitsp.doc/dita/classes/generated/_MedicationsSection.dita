@@ -14,7 +14,7 @@
 <ol id="conformance">
 <li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/MedicationsSection.html">IHE Medications Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.19</tt>) (C83-[CT-112-1])</li>
 <li><b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../Medication.dita">Medication</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.8</tt>)</li></ol> (C83-[CT-112-2])</li>
+<li>contains <xref href="../Medication.dita">Medication</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.8</tt>) (C83-[CT-112-2])</li></ol></li>
 </ol>
 <ol id="aggregate">
 <li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
@@ -28,7 +28,7 @@
 <li>[CCD] Contains [0..*] <tt>entry</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SupplyActivity.html">CCD Supply Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.34</tt>)</li></ol></li>
 <li>[HITSP] <b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../Medication.dita">Medication</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.8</tt>)</li></ol> (C83-[CT-112-2])</li>
+<li>contains <xref href="../Medication.dita">Medication</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.8</tt>) (C83-[CT-112-2])</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: The absence of known medications is explicitly asserted. (CONF-299)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: Valued with a case-insensitive language-insensitive string containing 'medication'. (CONF-303)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: Clinical statements include one or more Medication Activity and/or one or more Supply Activity. (CONF-298)<ul><li><codeblock>[OCL]: self.getSubstanceAdministrations()-&gt;exists(activity : cda::SubstanceAdministration | activity.oclIsKindOf(ccd::MedicationActivity))
@@ -50,7 +50,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" assigningAuthorityName="IHE Medication"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.8"/>
-              <id root="9f43af24-8aeb-45a0-b832-8ab11a5f40e6"/>
+              <id root="3c29714c-138b-437b-8fa4-5f7c51dfad41"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
@@ -64,7 +64,7 @@
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" assigningAuthorityName="IHE Medication"/>
-              <id root="fff7217a-6e63-4dd3-8f35-0364c25c34a1"/>
+              <id root="fb200fc1-387c-4f29-9033-aefd6c899673"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

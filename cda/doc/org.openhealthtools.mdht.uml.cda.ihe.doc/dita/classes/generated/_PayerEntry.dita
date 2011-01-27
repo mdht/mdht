@@ -23,11 +23,11 @@
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-51)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-52, CONF-53)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PayerEntity.html">CCD Payer Entity</xref></li></ol> (CONF-56)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PayerEntity.html">CCD Payer Entity</xref> (CONF-56)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>participant</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/CoveredParty.html">CCD Covered Party</xref></li></ol> (CONF-58)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/CoveredParty.html">CCD Covered Party</xref> (CONF-58)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>participant</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PolicySubscriber.html">CCD Policy Subscriber</xref></li></ol> (CONF-63)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PolicySubscriber.html">CCD Policy Subscriber</xref> (CONF-63)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer. (CONF-56)<ul><li><codeblock>[OCL]: self.performer-&gt;one(perf : cda::Performer2 | perf.typeCode = vocab::ParticipationPhysicalPerformer::PRF)</codeblock></li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party. (CONF-58)<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV)</codeblock></li></ul></li>
 <li>[CCD] <b>MAY</b> satisfy: The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC. (CONF-61)</li>
@@ -50,19 +50,19 @@
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.18" assigningAuthorityName="IHE Payer Entry"/>
-              <id root="8ddf9eed-d7c9-47f2-b7f2-552efcbd9f48"/>
+              <id root="43c4d1f6-3bca-404a-8fd6-10e02ab1c3fd"/>
               <code/>
               <statusCode code="completed"/>
               <performer>
                 <assignedEntity>
                   <templateId assigningAuthorityName="CCD Payer Entity"/>
-                  <id root="5ede524c-0c51-4ef6-8900-14701b5739df"/>
+                  <id root="845667df-9d97-4c08-95b4-318c39c83611"/>
                 </assignedEntity>
               </performer>
               <participant>
                 <participantRole>
                   <templateId assigningAuthorityName="CCD Covered Party"/>
-                  <id root="1aafc319-937b-4554-8016-131726a8234f"/>
+                  <id root="f80b7bd0-5beb-4111-8f9c-a220540e6a29"/>
                   <code/>
                 </participantRole>
               </participant>

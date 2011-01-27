@@ -51,19 +51,19 @@
 <li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">code</tt>, which <strong class="ph b">SHOULD</strong> be selected from ValueSet 2.16.840.1.113883.1.11.19832 ActCoverageType DYNAMIC (CONF-54, CONF-55)</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">performer</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="PayerEntity.html" title="[AssignedEntity: templateId null]">Payer Entity</a></li>
+<li class="li">contains <a class="xref" href="PayerEntity.html" title="[AssignedEntity: templateId null]">Payer Entity</a> (CONF-56)</li>
 </ol>
- (CONF-56)</li>
+</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">participant</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="CoveredParty.html" title="[ParticipantRole: templateId null]">Covered Party</a></li>
+<li class="li">contains <a class="xref" href="CoveredParty.html" title="[ParticipantRole: templateId null]">Covered Party</a> (CONF-58)</li>
 </ol>
- (CONF-58)</li>
+</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [1..1] <tt class="ph tt">participant</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="PolicySubscriber.html" title="[ParticipantRole: templateId null]">Policy Subscriber</a></li>
+<li class="li">contains <a class="xref" href="PolicySubscriber.html" title="[ParticipantRole: templateId null]">Policy Subscriber</a> (CONF-63)</li>
 </ol>
- (CONF-63)</li>
+</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer. (CONF-56)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.performer-&gt;one(perf : cda::Performer2 | perf.typeCode = vocab::ParticipationPhysicalPerformer::PRF)</pre>
 </li>
@@ -121,26 +121,26 @@
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/&gt;
-              &lt;id root="8f89c0b2-cc99-40f2-9eb5-21fa0d6ead84"/&gt;
+              &lt;id root="93986702-c2a3-41bc-a29d-b7d0665333b0"/&gt;
               &lt;code/&gt;
               &lt;statusCode code="completed"/&gt;
               &lt;performer&gt;
                 &lt;assignedEntity&gt;
                   &lt;templateId assigningAuthorityName="CCD Payer Entity"/&gt;
-                  &lt;id root="64988313-bd92-40cd-a0b2-0b50fa7e6662"/&gt;
+                  &lt;id root="8e2ce89b-cbeb-4df1-9cf4-dd95f9a3a2dc"/&gt;
                 &lt;/assignedEntity&gt;
               &lt;/performer&gt;
               &lt;participant&gt;
                 &lt;participantRole&gt;
                   &lt;templateId assigningAuthorityName="CCD Covered Party"/&gt;
-                  &lt;id root="a392ce44-f53b-4de7-83a5-01b22bfff57b"/&gt;
+                  &lt;id root="95ebe59b-f0e0-4324-a932-32f043b1e4a8"/&gt;
                   &lt;code/&gt;
                 &lt;/participantRole&gt;
               &lt;/participant&gt;
               &lt;participant&gt;
                 &lt;participantRole&gt;
                   &lt;templateId assigningAuthorityName="CCD Policy Subscriber"/&gt;
-                  &lt;id root="c02dde87-631a-462f-9dc3-2b14196867d8"/&gt;
+                  &lt;id root="87401a89-37d7-46a3-9286-9104e326a884"/&gt;
                 &lt;/participantRole&gt;
               &lt;/participant&gt;
             &lt;/act&gt;

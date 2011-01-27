@@ -113,8 +113,9 @@
 			<property name="clean.temp" value="true" />
 		</ant>
 
-		<move file="${pdf.output}/${modelName}-book-${section.name}.pdf" tofile="${basedir}/${pdf.filename}" />
-		<!-- <delete dir="${pdf.output}"/> -->
+		<move file="${pdf.output}/org.openhealthtools.mdht.uml.cda.hitsp.doc/dita/${modelName}-book-${section.name}.pdf" 
+			tofile="${basedir}/${pdf.filename}" />
+		<delete dir="${pdf.output}"/>
 		
 		<delete dir="temp"/>
 	</target>

@@ -45,6 +45,83 @@
 
 </ol>
 
+<ol class="ol">
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</a></li>
+
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemAct.html">CCD Problem Act</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.27</tt>)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ConcernEntry.html">IHE Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.1</tt>)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/AllergyIntoleranceConcern.html">IHE Allergy Intolerance Concern</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.3</tt>)</li>
+
+<li class="li">[CCD] <strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT" (CONF-146)</li>
+
+<li class="li">[CCD] <strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-147)</li>
+
+<li class="li">[CCD] <strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@nullFlavor</tt> = "NA" <em class="ph i">NA (not applicable)</em> (CONF-149)</li>
+
+<li class="li">[CCD] <strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-148)</li>
+
+<li class="li">[IHE] <strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">The effectiveTime element records the starting and ending times during which the concern was active.</li>
+</ul>
+</li>
+
+<li class="li">[CCD] <strong class="ph b">MAY</strong> contain [1..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EpisodeObservation.html">CCD Episode Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li>
+</ol>
+</li>
+
+<li class="li">[CCD] Contains [0..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemObservation.html">CCD Problem Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.28</tt>)</li>
+</ol>
+</li>
+
+<li class="li">[IHE] <strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt>, which <strong class="ph b">SHALL</strong> be selected from ValueSet <a class="xref" href="generated/../../terminology/ConcernEntryStatus.html">ConcernEntryStatus</a> STATIC</li>
+
+<li class="li">[CCD] <strong class="ph b">SHALL</strong> satisfy: Contains one or more entryRelationship (CONF-151)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.entryRelationship-&gt;isEmpty()</pre>
+</li>
+</ul>
+</li>
+
+<li class="li">[CCD] <strong class="ph b">MAY</strong> satisfy: A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for "Act / entryRelationship / @typeCode" to be "SUBJ" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-152)</li>
+
+<li class="li">[CCD] <strong class="ph b">SHOULD</strong> satisfy: The target of a problem act with Act / entryRelationship / @typeCode="SUBJ" SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement. (CONF-153)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)-&gt;forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and 
+  (target.oclIsKindOf(ccd::ProblemObservation) or target.oclIsKindOf(ccd::AlertObservation)))</pre>
+</li>
+</ul>
+</li>
+
+<li class="li">[CCD] <strong class="ph b">SHOULD</strong> satisfy: In Problem Section, a Problem Act SHOULD contain one or more Problem Observations. (CONF-140)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()
+   -&gt;exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))</pre>
+</li>
+</ul>
+</li>
+
+<li class="li">[CCD] <strong class="ph b">SHOULD</strong> satisfy: In Alert Section, a ProblemAct SHOULD contain one or more Alert Observations. (CONF-256)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()
+   -&gt;exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))</pre>
+</li>
+</ul>
+</li>
+
+<li class="li">[CCD] <strong class="ph b">MAY</strong> satisfy: Contains exactly one Patient Awareness (CONF-179)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</pre>
+</li>
+</ul>
+</li>
+
+<li class="li">[IHE] <strong class="ph b">SHALL</strong> satisfy: The effectiveTime 'low' element shall be present. The 'high' element shall be present for concerns in the completed or aborted state, and shall not be present otherwise.<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.effectiveTime.low.oclIsUndefined()
+   and ((self.statusCode.code = 'completed' or self.statusCode.code = 'aborted') implies not self.effectiveTime.high.oclIsUndefined())
+   and ((self.statusCode.code &lt;&gt; 'completed' and self.statusCode.code &lt;&gt; 'aborted') implies self.effectiveTime.high.oclIsUndefined())</pre>
+</li>
+</ul>
+</li>
+
+<li class="li">[IHE] <strong class="ph b">SHALL</strong> satisfy: Each concern is about one or more related problems or allergies. This entry shall contain one or more problem or allergy entries that conform to the specification in section Problem Entry or Allergies and Intolerances. This is how a series of related observations can be grouped as a single concern. This SHALL be represented using entryRelationship with typeCode = 'SUBJ'.</li>
+
+<li class="li">[IHE] <strong class="ph b">MAY</strong> satisfy: Each concern may have 0 or more related references. These may be used to represent related statements such related visits. This may be any valid CDA clinical statement, and SHOULD be an IHE entry template. This SHALL be represented using entryRelationship with typeCode = 'REFR'.</li>
+
+</ol>
 
 <p class="p"/>
 
@@ -64,7 +141,7 @@
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3" assigningAuthorityName="IHE Allergy Intolerance Concern"/&gt;
               &lt;templateId root="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP Allergy Drug Sensitivity"/&gt;
-              &lt;id root="c685f17a-865c-43b3-98e5-6035d9642121"/&gt;
+              &lt;id root="b824d994-29f3-4209-a657-01fa060b7131"/&gt;
               &lt;code nullFlavor="NA"/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime&gt;

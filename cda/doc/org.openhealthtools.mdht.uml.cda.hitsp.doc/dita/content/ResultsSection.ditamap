@@ -6,6 +6,8 @@
 		<topicref href="../classes/DiagnosticResultsSection.dita" type="topic" />
 		<topicref href="../classes/Procedure.dita" type="topic" />
 		<topicref href="../classes/Result.dita" type="topic" />
+		
+		<topicref href="../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ExternalReference.dita" type="topic" />
 
 	</chapter>
 	

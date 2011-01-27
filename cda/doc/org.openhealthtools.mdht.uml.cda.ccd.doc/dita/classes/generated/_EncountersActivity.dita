@@ -36,7 +36,7 @@
           <entry>
             <encounter classCode="ENC" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/>
-              <id root="93bed6fe-53c4-45e9-b6a5-2657712762a5"/>
+              <id root="93641c95-c5ca-40cb-8d96-a179bc52630b"/>
               <code/>
               <effectiveTime>
                 <low value="1972"/>

@@ -19,7 +19,7 @@
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-41, CONF-42)</li>
 <li><b>SHALL</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="COMP" <i>COMP (has component)</i></li>
-<li>contains <xref href="../PolicyActivity.dita">Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>)</li></ol> (CONF-43, CONF-45, CONF-46)</li>
+<li>contains <xref href="../PolicyActivity.dita">Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>) (CONF-43, CONF-45, CONF-46)</li></ol></li>
 <li><b>SHALL</b> satisfy: An alert observation contains one or more sources of information. (CONF-47)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
   or not self.getSection().informant-&gt;isEmpty()
   or not self.getClinicalDocument().informant-&gt;isEmpty()
@@ -39,7 +39,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-39, CONF-40)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="COMP" <i>COMP (has component)</i></li>
-<li>contains <xref href="../PolicyActivity.dita">Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>)</li></ol> (CONF-43, CONF-45, CONF-46)</li>
+<li>contains <xref href="../PolicyActivity.dita">Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>) (CONF-43, CONF-45, CONF-46)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: An alert observation contains one or more sources of information. (CONF-47)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
   or not self.getSection().informant-&gt;isEmpty()
   or not self.getClinicalDocument().informant-&gt;isEmpty()
@@ -58,13 +58,13 @@
           <entry>
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
-              <id root="658b009b-00ad-443e-931c-f9661df3867c"/>
+              <id root="572e7795-e666-44e9-a4ed-c6ada83d2156"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
               <entryRelationship>
                 <act classCode="ACT" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
-                  <id root="31e4d29d-7979-4991-898c-9a13e89a06c5"/>
+                  <id root="a5e6a153-484f-4194-9398-5b0e070cfcb1"/>
                   <code/>
                   <statusCode code="completed"/>
                 </act>

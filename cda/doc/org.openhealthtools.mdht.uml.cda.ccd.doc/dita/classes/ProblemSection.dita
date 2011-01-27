@@ -6,6 +6,9 @@
 <prolog conref="generated/_ProblemSection.dita#classId/prolog"></prolog>
 <body>
 <!-- TODO: insert non-model class description markup here -->
+<p>This diagram will be updated to show all consolidated constraints from IHE and CCD. 
+The image size will also be fixed to fit within the page width.</p>
+<image href="../images/ProblemsSection.png" width="700"/>
 <section conref="generated/_ProblemSection.dita#classId/description">
 </section>
 

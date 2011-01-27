@@ -18,16 +18,16 @@
 <li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.cdt.doc/classes/GeneralHeaderConstraints.html">CDT General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
 <li><b>SHALL</b> conform to <xref href="../MedicalDocument.dita">Medical Document</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.1</tt>)</li>
 <li><b>SHALL</b> conform to <xref href="../MedicalSummary.dita">Medical Summary</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.2</tt>)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt><ul><li>The ClinicalDocument/id element is an instance identifier data type (see HL7 Version 3
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt> (CONF-HP-17)<ul><li>The ClinicalDocument/id element is an instance identifier data type (see HL7 Version 3
 Abstract Data in Section 5 REFERENCES). The root attribute is a UUID or OID. The
 root uniquely identifies the scope of the extension. The root and extension attributes
-uniquely identify the document.</li></ul> (CONF-HP-17)</li>
+uniquely identify the document.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Specifies the creation time of the document. All documents
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt> (CONF-HP-23)<ul><li>Specifies the creation time of the document. All documents
 authored by direct input to a computer system should record an effectiveTime that is
 precise to the second. When authored in other ways, for example, by filling out a
 paper form that is then transferred into an EHR system, the precision of
-effectiveTime may be less than to the second.</li></ul> (CONF-HP-23)</li>
+effectiveTime may be less than to the second.</li></ul></li>
 <li>[CDT] Contains [1..1] <tt>confidentialityCode</tt><ul><li>Specifies the confidentiality assigned to the document. This specification provides no further guidance beyond CDA R2
 on documents with respect to the vocabulary used for confidentialityCode, nor
 treatment or implementation of confidentiality.</li></ul></li>
@@ -46,12 +46,12 @@ the clinical document.</li></ul></li>
 <li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-HP-24)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>realmCode</tt><tt>/@code</tt> = "US"  (CONF-HP-15)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt><ul><li>Specifies the local name used for the document.
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-HP-22)<ul><li>Specifies the local name used for the document.
 Note that the title does not need to be the same as the display name provided with the
 document type code. For example, the display name provided by LOINC&#174; as an aid in
-debugging may be "HISTORY AND PHYSICAL." The title can be localized, as appropriate.</li></ul> (CONF-HP-22)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt><ul><li>The clinical document type ID identifies the constraints imposed by CDA R2 on the
-content, essentially acting as a version identifier.</li></ul> (CONF-HP-16)</li>
+debugging may be "HISTORY AND PHYSICAL." The title can be localized, as appropriate.</li></ul></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt> (CONF-HP-16)<ul><li>The clinical document type ID identifies the constraints imposed by CDA R2 on the
+content, essentially acting as a version identifier.</li></ul></li>
 <li>[CDT] Contains [0..1] <tt>dataEnterer</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/DataEnterer.html">CDA Data Enterer</xref></li></ol><ul><li><p>The dataEnterer element represents the person who transferred the information from
 other sources into the clinical document, where the other sources wrote the content of
@@ -230,7 +230,7 @@ least to the year, SHOULD be precise to the day, and MAY omit time zone. (CONF-H
   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE Medical Document"/>
   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.2" assigningAuthorityName="IHE Medical Summary"/>
   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5" assigningAuthorityName="IHE PHR Extract"/>
-  <id root="9b73ca69-98f2-4ce7-974d-a249ec8e099e"/>
+  <id root="7ddc6f5e-8f89-4858-a7dc-de5e15441acb"/>
   <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
   <title/>
   <effectiveTime/>

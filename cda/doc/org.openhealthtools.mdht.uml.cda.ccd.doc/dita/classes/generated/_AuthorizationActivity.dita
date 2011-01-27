@@ -36,7 +36,7 @@ Authorizations are represented using an act subordinate to the policy or program
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.19" assigningAuthorityName="CCD Authorization Activity"/>
-              <id root="bb003567-f094-474e-88d0-47465cef5d77"/>
+              <id root="19f573f8-2656-4727-861d-a4357b1538bb"/>
             </act>
           </entry>
         </section>

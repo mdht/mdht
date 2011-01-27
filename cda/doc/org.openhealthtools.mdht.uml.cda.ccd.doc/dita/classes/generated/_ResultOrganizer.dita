@@ -25,9 +25,9 @@
 <li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</xref> (CONF-393)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-394)</li>
 <li><b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li></ol> (CONF-405)</li>
+<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
 <li><b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref></li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul> (CONF-399)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref> (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-395)</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-397)</li>
 <li><b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-396)</li>
@@ -49,9 +49,9 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-394)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-396)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li></ol> (CONF-405)</li>
+<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref></li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul> (CONF-399)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref> (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-395)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-397)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC. (CONF-398)</li>
@@ -74,13 +74,13 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
           <entry>
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
-              <id root="a407455f-a848-4d22-a94e-b8b4eac212fe"/>
+              <id root="cdefc18c-de20-41f8-840c-7c1ac6a9d5fa"/>
               <code/>
               <statusCode/>
               <component>
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-                  <id root="763937bf-5068-4c00-a809-228aa6284be5"/>
+                  <id root="3d5d24b8-544a-4842-95f5-2dfc09a38bf7"/>
                   <code/>
                   <statusCode/>
                   <effectiveTime>

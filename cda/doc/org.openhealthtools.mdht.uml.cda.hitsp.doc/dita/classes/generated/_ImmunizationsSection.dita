@@ -48,7 +48,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.13" assigningAuthorityName="HITSP Immunization"/>
-              <id root="0cd08ebf-6ccb-48c3-b03c-ccef6b3e3acd"/>
+              <id root="d65a92c1-b5c2-42ed-9b75-36d5645034d9"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
@@ -59,7 +59,7 @@
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/>
-              <id root="b68281c9-8a3e-4004-ab3d-0b3baabbb095"/>
+              <id root="5a23cf8a-9a28-4f75-b712-799e3f22d681"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

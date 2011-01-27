@@ -54,16 +54,16 @@
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-394)</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">component</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="ResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.31]">Result Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.31</tt>)</li>
+<li class="li">contains <a class="xref" href="ResultObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.31]">Result Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li>
 </ol>
- (CONF-405)</li>
+</li>
 
 <li class="li"><strong class="ph b">SHOULD</strong> contain [1..*] <tt class="ph tt">specimen</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</a></li>
+<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</a> (CONF-399)</li>
 </ol>
 <ul class="ul"><li class="li">Should be included if the specimen isn't inherent in code value.</li>
 </ul>
- (CONF-399)</li>
+</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-395)</li>
 
@@ -110,13 +110,13 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
           &lt;entry&gt;
             &lt;organizer moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/&gt;
-              &lt;id root="a407455f-a848-4d22-a94e-b8b4eac212fe"/&gt;
+              &lt;id root="cdefc18c-de20-41f8-840c-7c1ac6a9d5fa"/&gt;
               &lt;code/&gt;
               &lt;statusCode/&gt;
               &lt;component&gt;
                 &lt;observation classCode="OBS" moodCode="EVN"&gt;
                   &lt;templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/&gt;
-                  &lt;id root="763937bf-5068-4c00-a809-228aa6284be5"/&gt;
+                  &lt;id root="3d5d24b8-544a-4842-95f5-2dfc09a38bf7"/&gt;
                   &lt;code/&gt;
                   &lt;statusCode/&gt;
                   &lt;effectiveTime&gt;

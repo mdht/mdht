@@ -22,12 +22,12 @@
 <li>contains <xref href="../MedicationStatusObservation.dita">Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
 <li><b>MAY</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
-<li>contains <xref href="../PatientInstruction.dita">Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>)</li></ol> (CONF-330, CONF-333)</li>
-<li><b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt><ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul> (CONF-308)</li>
+<li>contains <xref href="../PatientInstruction.dita">Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>) (CONF-330, CONF-333)</li></ol></li>
+<li><b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt> (CONF-308)<ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul></li>
 <li><b>MAY</b> contain [0..1] <tt>maxDoseQuantity</tt> (CONF-312)</li>
 <li><b>SHOULD</b> contain [1..1] <tt>routeCode</tt> (CodeSystem: 2.16.840.1.113883.5.112 HL7 RouteOfAdministration DYNAMIC) (CONF-309, CONF-310)</li>
 <li><b>MAY</b> contain [0..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref></li></ol><ul><li>Indicates the person administering a substance.</li></ul> (CONF-313)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref> (CONF-313)</li></ol><ul><li>Indicates the person administering a substance.</li></ul></li>
 <li><b>SHALL</b> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-305)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
 <li><b>SHOULD</b> satisfy: Contains exactly one doseQuantity or rateQuantity. (CONF-311)<ul><li><codeblock>[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</codeblock></li></ul></li>
 <li><b>MAY</b> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent. (CONF-314)<ul><li><codeblock>[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
@@ -59,12 +59,12 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
 <li>contains <xref href="../MedicationStatusObservation.dita">Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
-<li>contains <xref href="../PatientInstruction.dita">Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>)</li></ol> (CONF-330, CONF-333)</li>
-<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt><ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul> (CONF-308)</li>
+<li>contains <xref href="../PatientInstruction.dita">Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>) (CONF-330, CONF-333)</li></ol></li>
+<li>[CCD] <b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt> (CONF-308)<ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>maxDoseQuantity</tt> (CONF-312)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>routeCode</tt> (CodeSystem: 2.16.840.1.113883.5.112 HL7 RouteOfAdministration DYNAMIC) (CONF-309, CONF-310)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref></li></ol><ul><li>Indicates the person administering a substance.</li></ul> (CONF-313)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref> (CONF-313)</li></ol><ul><li>Indicates the person administering a substance.</li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-305)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains exactly one doseQuantity or rateQuantity. (CONF-311)<ul><li><codeblock>[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</codeblock></li></ul></li>
 <li>[CCD] <b>MAY</b> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent. (CONF-314)<ul><li><codeblock>[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
@@ -91,7 +91,7 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
-              <id root="1eafb8f0-b425-472e-9770-88d2b8351d8b"/>
+              <id root="3365c342-3978-468a-b15a-2d1b568c7f3c"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

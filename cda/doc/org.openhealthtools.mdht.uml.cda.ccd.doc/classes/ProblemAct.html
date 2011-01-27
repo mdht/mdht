@@ -48,14 +48,14 @@
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@nullFlavor</tt> = "NA" <em class="ph i">NA (not applicable)</em> (CONF-149)</li>
 
-<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">effectiveTime</tt><ul class="ul"><li class="li">Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li>
+<li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">effectiveTime</tt> (CONF-150)<ul class="ul"><li class="li">Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li>
 </ul>
- (CONF-150)</li>
+</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [1..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="EpisodeObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.41]">Episode Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.41</tt>)</li>
+<li class="li">contains <a class="xref" href="EpisodeObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.41]">Episode Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li>
 </ol>
- (CONF-168)</li>
+</li>
 
 <li class="li">Contains [0..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">contains <a class="xref" href="ProblemObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.28]">Problem Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.28</tt>)</li>
@@ -108,7 +108,7 @@
           &lt;entry&gt;
             &lt;act classCode="ACT" moodCode="EVN"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/&gt;
-              &lt;id root="da6097e5-3143-470a-a849-88e7cbfd12de"/&gt;
+              &lt;id root="02e62b5a-bb1b-4a2b-af9c-ab39d0855c0b"/&gt;
               &lt;code nullFlavor="NA"/&gt;
               &lt;effectiveTime&gt;
                 &lt;low value="1972"/&gt;
