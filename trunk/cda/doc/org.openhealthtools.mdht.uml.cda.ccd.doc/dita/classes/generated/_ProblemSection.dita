@@ -16,7 +16,7 @@
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-141, CONF-142)</li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-143)</li>
 <li><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol> (CONF-140)</li>
+<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>) (CONF-140)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-140)</li>
 <li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'. (CONF-144)</li>
 </ol>
@@ -25,7 +25,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11450-4" <i>Problem list</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-141, CONF-142)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-143)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>)</li></ol> (CONF-140)</li>
+<li>contains <xref href="../ProblemAct.dita">Problem Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.27</tt>) (CONF-140)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-140)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'problems'. (CONF-144)</li>
 </ol>
@@ -41,7 +41,7 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="db3b91d4-9f78-4098-8705-435c1a433162"/>
+              <id root="915913b7-7412-456e-9998-711c65a37933"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

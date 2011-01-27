@@ -35,8 +35,8 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-410)</li>
 <li>[HITSP] <b>SHALL</b> contain [1..1] <tt>code</tt></li>
 <li>[HITSP] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt></li>
-<li>[CCD] <b>MAY</b> contain [0..1] <tt>methodCode</tt><ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul> (CONF-414)</li>
-<li>[CCD] <b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt><ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul> (CONF-418)</li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>methodCode</tt> (CONF-414)<ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul></li>
+<li>[CCD] <b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt> (CONF-418)<ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul></li>
 <li>[HITSP] <b>SHALL</b> contain [1..1] <tt>value</tt><ul><li>The Result value records the desired result in a goal or recorded event, and will not present when recording an intent, request or proposal to measure a result.</li></ul></li>
 <li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12). (CONF-413)</li>
 <li>[CCD] <b>SHALL</b> satisfy: The methodCode SHALL NOT conflict with the method inherent in code (CONF-415)</li>
@@ -68,7 +68,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
               <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE Simple Observation"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.15" assigningAuthorityName="HITSP Result"/>
-              <id root="4010cd7d-f139-4fc5-a1f7-d74197a42474"/>
+              <id root="df204fab-5aa2-4cc7-9d68-19cd0edb11c3"/>
               <code/>
               <statusCode code="completed"/>
               <effectiveTime>

@@ -37,7 +37,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
               <templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
-              <id root="473157f2-8494-4d1f-a467-ba928cd726d1"/>
+              <id root="dcbd5fde-9e2c-46cf-8a2e-dd6a86088ff6"/>
               <code codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActEncounterCode"/>
               <text/>
               <effectiveTime>

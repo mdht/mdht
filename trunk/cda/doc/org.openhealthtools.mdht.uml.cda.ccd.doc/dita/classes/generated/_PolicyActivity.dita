@@ -19,11 +19,11 @@
 <li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-52, CONF-53)</li>
 <li><b>SHOULD</b> contain [1..1] <tt>code</tt>, which <b>SHOULD</b> be selected from ValueSet 2.16.840.1.113883.1.11.19832 ActCoverageType DYNAMIC (CONF-54, CONF-55)</li>
 <li><b>SHALL</b> contain [1..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref href="../PayerEntity.dita">Payer Entity</xref></li></ol> (CONF-56)</li>
+<li>contains <xref href="../PayerEntity.dita">Payer Entity</xref> (CONF-56)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>participant</tt>, such that it<ol>
-<li>contains <xref href="../CoveredParty.dita">Covered Party</xref></li></ol> (CONF-58)</li>
+<li>contains <xref href="../CoveredParty.dita">Covered Party</xref> (CONF-58)</li></ol></li>
 <li><b>MAY</b> contain [1..1] <tt>participant</tt>, such that it<ol>
-<li>contains <xref href="../PolicySubscriber.dita">Policy Subscriber</xref></li></ol> (CONF-63)</li>
+<li>contains <xref href="../PolicySubscriber.dita">Policy Subscriber</xref> (CONF-63)</li></ol></li>
 <li><b>SHALL</b> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer. (CONF-56)<ul><li><codeblock>[OCL]: self.performer-&gt;one(perf : cda::Performer2 | perf.typeCode = vocab::ParticipationPhysicalPerformer::PRF)</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party. (CONF-58)<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV)</codeblock></li></ul></li>
 <li><b>MAY</b> satisfy: The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC. (CONF-61)</li>
@@ -45,11 +45,11 @@
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-51)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-52, CONF-53)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref href="../PayerEntity.dita">Payer Entity</xref></li></ol> (CONF-56)</li>
+<li>contains <xref href="../PayerEntity.dita">Payer Entity</xref> (CONF-56)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>participant</tt>, such that it<ol>
-<li>contains <xref href="../CoveredParty.dita">Covered Party</xref></li></ol> (CONF-58)</li>
+<li>contains <xref href="../CoveredParty.dita">Covered Party</xref> (CONF-58)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>participant</tt>, such that it<ol>
-<li>contains <xref href="../PolicySubscriber.dita">Policy Subscriber</xref></li></ol> (CONF-63)</li>
+<li>contains <xref href="../PolicySubscriber.dita">Policy Subscriber</xref> (CONF-63)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer. (CONF-56)<ul><li><codeblock>[OCL]: self.performer-&gt;one(perf : cda::Performer2 | perf.typeCode = vocab::ParticipationPhysicalPerformer::PRF)</codeblock></li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party. (CONF-58)<ul><li><codeblock>[OCL]: self.participant-&gt;one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV)</codeblock></li></ul></li>
 <li>[CCD] <b>MAY</b> satisfy: The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC. (CONF-61)</li>
@@ -71,26 +71,26 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
-              <id root="8f89c0b2-cc99-40f2-9eb5-21fa0d6ead84"/>
+              <id root="93986702-c2a3-41bc-a29d-b7d0665333b0"/>
               <code/>
               <statusCode code="completed"/>
               <performer>
                 <assignedEntity>
                   <templateId assigningAuthorityName="CCD Payer Entity"/>
-                  <id root="64988313-bd92-40cd-a0b2-0b50fa7e6662"/>
+                  <id root="8e2ce89b-cbeb-4df1-9cf4-dd95f9a3a2dc"/>
                 </assignedEntity>
               </performer>
               <participant>
                 <participantRole>
                   <templateId assigningAuthorityName="CCD Covered Party"/>
-                  <id root="a392ce44-f53b-4de7-83a5-01b22bfff57b"/>
+                  <id root="95ebe59b-f0e0-4324-a932-32f043b1e4a8"/>
                   <code/>
                 </participantRole>
               </participant>
               <participant>
                 <participantRole>
                   <templateId assigningAuthorityName="CCD Policy Subscriber"/>
-                  <id root="c02dde87-631a-462f-9dc3-2b14196867d8"/>
+                  <id root="87401a89-37d7-46a3-9286-9104e326a884"/>
                 </participantRole>
               </participant>
             </act>

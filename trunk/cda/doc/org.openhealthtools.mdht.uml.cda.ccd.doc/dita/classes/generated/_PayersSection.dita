@@ -34,7 +34,7 @@
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-31, CONF-32)</li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-33)</li>
 <li><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../CoverageActivity.dita">Coverage Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.20</tt>)</li></ol> (CONF-30)</li>
+<li>contains <xref href="../CoverageActivity.dita">Coverage Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.20</tt>) (CONF-30)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-30)</li>
 <li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'insurance' or 'payers'. (CONF-34)</li>
 </ol>
@@ -43,7 +43,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-31, CONF-32)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-33)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../CoverageActivity.dita">Coverage Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.20</tt>)</li></ol> (CONF-30)</li>
+<li>contains <xref href="../CoverageActivity.dita">Coverage Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.20</tt>) (CONF-30)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-30)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'insurance' or 'payers'. (CONF-34)</li>
 </ol>
@@ -59,7 +59,7 @@
           <entry>
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
-              <id root="ec8648bc-9ed0-422e-8297-a4647b5091d5"/>
+              <id root="5f93cf95-40d8-42ea-a31b-f8233d0aaf23"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
             </act>

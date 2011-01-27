@@ -25,9 +25,9 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-394)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-396)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li></ol> (CONF-405)</li>
+<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref></li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul> (CONF-399)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref> (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-395)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-397)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC. (CONF-398)</li>
@@ -55,13 +55,13 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
-              <id root="2a4a9895-e6e9-4ec7-8519-a1230e591c3b"/>
+              <id root="1de190a0-7a35-4826-aa3c-9ef79899adc7"/>
               <code/>
               <statusCode/>
               <component>
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-                  <id root="a2443df2-2b28-4e66-b8a1-2e1bc4aa0f2d"/>
+                  <id root="2f0889b3-b381-4d5b-80bb-9467e334608f"/>
                   <code/>
                   <statusCode/>
                   <effectiveTime>

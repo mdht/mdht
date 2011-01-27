@@ -25,7 +25,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-148)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>The effectiveTime element records the starting and ending times during which the concern was active.</li></ul></li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EpisodeObservation.html">CCD Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>)</li></ol> (CONF-168)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EpisodeObservation.html">CCD Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
 <li>[CCD] Contains [0..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemObservation.html">CCD Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>statusCode</tt>, which <b>SHALL</b> be selected from ValueSet <xref href="../../terminology/ConcernEntryStatus.dita">ConcernEntryStatus</xref> STATIC</li>
@@ -55,7 +55,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3" assigningAuthorityName="IHE Allergy Intolerance Concern"/>
-              <id root="1024187c-3ace-492c-b272-2a946c6abb5a"/>
+              <id root="c1dff209-0fae-4fee-8b56-4df50dbfa893"/>
               <code nullFlavor="NA"/>
               <statusCode/>
               <effectiveTime>

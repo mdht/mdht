@@ -20,9 +20,9 @@
 <li><b>MAY</b> contain [0..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
 <li>contains <xref href="../FulfillmentInstruction.dita">Fulfillment Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.43</tt>)</li></ol></li>
-<li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Indicates the actual or intended time of dispensing.</li></ul> (CONF-320)</li>
-<li><b>MAY</b> contain [0..1] <tt>quantity</tt><ul><li>Indicates the actual or intended supply quantity.</li></ul> (CONF-322)</li>
-<li><b>MAY</b> contain [0..1] <tt>repeatNumber</tt><ul><li>Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li></ul> (CONF-321)</li>
+<li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-320)<ul><li>Indicates the actual or intended time of dispensing.</li></ul></li>
+<li><b>MAY</b> contain [0..1] <tt>quantity</tt> (CONF-322)<ul><li>Indicates the actual or intended supply quantity.</li></ul></li>
+<li><b>MAY</b> contain [0..1] <tt>repeatNumber</tt> (CONF-321)<ul><li>Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li></ul></li>
 <li><b>SHALL</b> satisfy: Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-317)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
 <li><b>MAY</b> satisfy: Contains one or more author. (CONF-323)<ul><li>Indicates the prescriber.</li></ul><ul><li><codeblock>[OCL]: not self.author-&gt;isEmpty()</codeblock></li></ul></li>
 <li><b>MAY</b> satisfy: Contains one or more performer. (CONF-324)<ul><li>Indicates the person dispensing the product.</li></ul><ul><li><codeblock>[OCL]: not self.performer-&gt;isEmpty()</codeblock></li></ul></li>
@@ -47,9 +47,9 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
 <li>[CCD] <b>MAY</b> contain [0..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
 <li>contains <xref href="../FulfillmentInstruction.dita">Fulfillment Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.43</tt>)</li></ol></li>
-<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Indicates the actual or intended time of dispensing.</li></ul> (CONF-320)</li>
-<li>[CCD] <b>MAY</b> contain [0..1] <tt>quantity</tt><ul><li>Indicates the actual or intended supply quantity.</li></ul> (CONF-322)</li>
-<li>[CCD] <b>MAY</b> contain [0..1] <tt>repeatNumber</tt><ul><li>Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li></ul> (CONF-321)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-320)<ul><li>Indicates the actual or intended time of dispensing.</li></ul></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>quantity</tt> (CONF-322)<ul><li>Indicates the actual or intended supply quantity.</li></ul></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>repeatNumber</tt> (CONF-321)<ul><li>Indicates the number of fills. (Note that repeatNumber corresponds to the number of "fills", as opposed to the number of "refills").</li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: Value for moodCode is 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-317)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
 <li>[CCD] <b>MAY</b> satisfy: Contains one or more author. (CONF-323)<ul><li>Indicates the prescriber.</li></ul><ul><li><codeblock>[OCL]: not self.author-&gt;isEmpty()</codeblock></li></ul></li>
 <li>[CCD] <b>MAY</b> satisfy: Contains one or more performer. (CONF-324)<ul><li>Indicates the person dispensing the product.</li></ul><ul><li><codeblock>[OCL]: not self.performer-&gt;isEmpty()</codeblock></li></ul></li>
@@ -71,7 +71,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
           <entry>
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.34" assigningAuthorityName="CCD Supply Activity"/>
-              <id root="6f6c71e9-d7f2-4d36-97c3-6aac513efa16"/>
+              <id root="37c88f0d-9927-4ba5-bb11-a6a92d4ab6d9"/>
               <statusCode/>
               <effectiveTime/>
               <repeatNumber/>

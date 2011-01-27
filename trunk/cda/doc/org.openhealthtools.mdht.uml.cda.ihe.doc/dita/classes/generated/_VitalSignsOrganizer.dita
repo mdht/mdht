@@ -30,9 +30,9 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-394)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)<ul><li>The observations have all been completed.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultObservation.html">CCD Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>)</li></ol> (CONF-405)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultObservation.html">CCD Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref></li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul> (CONF-399)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref> (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-395)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "46680005" <i>Vital signs</i> (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>The effective time element shall be present to indicate when the measurement was taken.</li></ul></li>
@@ -66,7 +66,7 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1" assigningAuthorityName="IHE Vital Signs Organizer"/>
-              <id root="36883dad-a95e-49b0-b04e-513f8f7a3c3b"/>
+              <id root="6d099384-89c5-492c-8d1b-cd02937c4110"/>
               <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Vital signs"/>
               <statusCode code="completed"/>
               <effectiveTime>
@@ -78,7 +78,7 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE Simple Observation"/>
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2" assigningAuthorityName="IHE Vital Sign Observation"/>
-                  <id root="7b94b1b6-f13f-4c41-b3a3-f1643edd950d"/>
+                  <id root="8c19a2cf-1b60-436c-adc1-42baf7f07308"/>
                   <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <statusCode code="completed"/>
                   <effectiveTime>
@@ -94,7 +94,7 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
               <component>
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-                  <id root="a48bac1e-3353-4605-a969-a80d446443d6"/>
+                  <id root="e5df9f3f-7772-4317-a6d5-d239691e10fc"/>
                   <code/>
                   <statusCode/>
                   <effectiveTime>

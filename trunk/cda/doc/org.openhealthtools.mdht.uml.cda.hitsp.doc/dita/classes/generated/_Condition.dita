@@ -11,10 +11,13 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProblemConcernEntry.html">IHE Problem Concern Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>)</li>
+<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProblemConcernEntry.html">IHE Problem Concern Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>) (C83-[DE-7-CDA-2])</li>
 <li><b>SHALL</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
 <li>contains <xref href="../ConditionEntry.dita">Condition Entry</xref></li></ol></li>
+<li><b>SHALL</b> satisfy: The treating provider or providers SHALL be recorded in a &lt;performer&gt; element under the &lt;act&gt; that describes the condition of concern (C83-[DE-7.05-CDA-3])<ul><li><codeblock>[OCL]: not self.performer-&gt;isEmpty()</codeblock></li></ul></li>
+<li><b>SHALL</b> satisfy: The identifier of the treating provider SHALL be present in the &lt;id&gt; element beneath the &lt;assignedEntity&gt;. This identifier SHALL be the identifier of one of the providers listed in the healthcare providers module. (C83-[DE-7.05-CDA-2])<ul><li><codeblock>[OCL]: self.performer-&gt;exists(p : cda::Performer2 | p.assignedEntity.id-&gt;size() &gt; 0)</codeblock></li></ul></li>
+<li><b>MAY</b> satisfy: The time over which this provider treated the condition MAY be recorded in the &lt;time&gt; element beneath the &lt;performer&gt; element (C83-[DE-7.05-CDA-1])<ul><li><codeblock>[OCL]: self.performer-&gt;exists(p : cda::Performer2 | p.time.oclIsUndefined())</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
@@ -28,7 +31,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-148)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>The effectiveTime element records the starting and ending times during which the concern was active.</li></ul></li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EpisodeObservation.html">CCD Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>)</li></ol> (CONF-168)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EpisodeObservation.html">CCD Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
 <li>[CCD] Contains [0..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemObservation.html">CCD Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>statusCode</tt>, which <b>SHALL</b> be selected from ValueSet <xref href="../../terminology/ConcernEntryStatus.dita">ConcernEntryStatus</xref> STATIC</li>
@@ -52,6 +55,9 @@
    and ((self.statusCode.code &lt;&gt; 'completed' and self.statusCode.code &lt;&gt; 'aborted') implies self.effectiveTime.high.oclIsUndefined())</codeblock></li></ul></li>
 <li>[IHE] <b>SHALL</b> satisfy: Each concern is about one or more related problems or allergies. This entry shall contain one or more problem or allergy entries that conform to the specification in section Problem Entry or Allergies and Intolerances. This is how a series of related observations can be grouped as a single concern. This SHALL be represented using entryRelationship with typeCode = 'SUBJ'.</li>
 <li>[IHE] <b>MAY</b> satisfy: Each concern may have 0 or more related references. These may be used to represent related statements such related visits. This may be any valid CDA clinical statement, and SHOULD be an IHE entry template. This SHALL be represented using entryRelationship with typeCode = 'REFR'.</li>
+<li>[HITSP] <b>SHALL</b> satisfy: The treating provider or providers SHALL be recorded in a &lt;performer&gt; element under the &lt;act&gt; that describes the condition of concern (C83-[DE-7.05-CDA-3])<ul><li><codeblock>[OCL]: not self.performer-&gt;isEmpty()</codeblock></li></ul></li>
+<li>[HITSP] <b>SHALL</b> satisfy: The identifier of the treating provider SHALL be present in the &lt;id&gt; element beneath the &lt;assignedEntity&gt;. This identifier SHALL be the identifier of one of the providers listed in the healthcare providers module. (C83-[DE-7.05-CDA-2])<ul><li><codeblock>[OCL]: self.performer-&gt;exists(p : cda::Performer2 | p.assignedEntity.id-&gt;size() &gt; 0)</codeblock></li></ul></li>
+<li>[HITSP] <b>MAY</b> satisfy: The time over which this provider treated the condition MAY be recorded in the &lt;time&gt; element beneath the &lt;performer&gt; element (C83-[DE-7.05-CDA-1])<ul><li><codeblock>[OCL]: self.performer-&gt;exists(p : cda::Performer2 | p.time.oclIsUndefined())</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -65,7 +71,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP Condition"/>
-              <id root="4e22d4f3-edca-4153-9d7f-3251074cf3ed"/>
+              <id root="790bf712-e4cc-44ae-a905-ec18643e1a89"/>
               <code nullFlavor="NA"/>
               <statusCode/>
               <effectiveTime>
@@ -77,7 +83,7 @@
                   <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD Problem Observation"/>
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE Problem Entry"/>
                   <templateId assigningAuthorityName="HITSP Condition Entry"/>
-                  <id root="c4a4367b-cbbe-4fdb-875f-c434b0e91b72"/>
+                  <id root="821ce106-8861-49c7-ac13-d2b07ff63bd6"/>
                   <code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT"/>
                   <text/>
                   <statusCode code="completed"/>
@@ -92,7 +98,7 @@
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD Problem Observation"/>
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE Problem Entry"/>
-                  <id root="d23dc04f-70af-40b4-a2ac-fde58b8f8855"/>
+                  <id root="21592e83-a978-4822-b47f-4a58b67eeedd"/>
                   <code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT"/>
                   <text/>
                   <statusCode code="completed"/>

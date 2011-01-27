@@ -14,11 +14,11 @@
 <li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref> (CONF-407)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-408)</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-409)</li>
-<li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul> (CONF-411)</li>
+<li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-411)<ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-410)</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-412)</li>
-<li><b>MAY</b> contain [0..1] <tt>methodCode</tt><ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul> (CONF-414)</li>
-<li><b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt><ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul> (CONF-418)</li>
+<li><b>MAY</b> contain [0..1] <tt>methodCode</tt> (CONF-414)<ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul></li>
+<li><b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt> (CONF-418)<ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>value</tt> (CONF-416)</li>
 <li><b>SHOULD</b> satisfy: The value for 'code' SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12). (CONF-413)</li>
 <li><b>SHALL</b> satisfy: The methodCode SHALL NOT conflict with the method inherent in code (CONF-415)</li>
@@ -40,10 +40,10 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-408)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-412)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-409)</li>
-<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul> (CONF-411)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-411)<ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-410)</li>
-<li>[CCD] <b>MAY</b> contain [0..1] <tt>methodCode</tt><ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul> (CONF-414)</li>
-<li>[CCD] <b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt><ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul> (CONF-418)</li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>methodCode</tt> (CONF-414)<ul><li>Included if the method isn't inherent in code or if there is a need to further specialize the method in code.</li></ul></li>
+<li>[CCD] <b>SHOULD</b> contain [0..*] <tt>interpretationCode</tt> (CONF-418)<ul><li>Can be used to provide a rough qualitative interpretation of the observation, such as 'N' (normal), 'L' (low), 'S' (susceptible), etc. Interpretation is generally provided for numeric results where an interpretation range has been defined, or for antimicrobial susceptibility test interpretation.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>value</tt> (CONF-416)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12). (CONF-413)</li>
 <li>[CCD] <b>SHALL</b> satisfy: The methodCode SHALL NOT conflict with the method inherent in code (CONF-415)</li>
@@ -67,7 +67,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-              <id root="53ebd18b-027e-4200-a920-4548e9fdc659"/>
+              <id root="b3a7eb89-a547-4d2c-a302-ae2585cabeb1"/>
               <code/>
               <statusCode/>
               <effectiveTime>

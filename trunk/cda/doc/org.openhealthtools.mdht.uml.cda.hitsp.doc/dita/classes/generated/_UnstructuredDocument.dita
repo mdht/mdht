@@ -240,7 +240,7 @@ least to the year, SHOULD be precise to the day, and MAY omit time zone. (CONF-H
   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE Medical Document"/>
   <templateId root="1.3.6.1.4.1.19376.1.2.20" assigningAuthorityName="IHE Scanned Document"/>
   <templateId root="2.16.840.1.113883.3.88.11.62.1" assigningAuthorityName="HITSP Unstructured Document"/>
-  <id root="f6b6e576-af38-4cfe-a7da-9d10d62dfb35"/>
+  <id root="aa2937b0-6c1e-4faf-897b-5126fc3b6546"/>
   <code/>
   <title/>
   <effectiveTime/>

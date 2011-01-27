@@ -17,9 +17,9 @@
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-147)</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-148)</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@nullFlavor</tt> = "NA" <i>NA (not applicable)</i> (CONF-149)</li>
-<li><b>MAY</b> contain [0..1] <tt>effectiveTime</tt><ul><li>Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li></ul> (CONF-150)</li>
+<li><b>MAY</b> contain [0..1] <tt>effectiveTime</tt> (CONF-150)<ul><li>Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li></ul></li>
 <li><b>MAY</b> contain [1..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../EpisodeObservation.dita">Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>)</li></ol> (CONF-168)</li>
+<li>contains <xref href="../EpisodeObservation.dita">Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
 <li>Contains [0..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>contains <xref href="../ProblemObservation.dita">Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
 <li><b>SHALL</b> satisfy: Contains one or more entryRelationship (CONF-151)<ul><li><codeblock>[OCL]: not self.entryRelationship-&gt;isEmpty()</codeblock></li></ul></li>
@@ -39,9 +39,9 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-147)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@nullFlavor</tt> = "NA" <i>NA (not applicable)</i> (CONF-149)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-148)</li>
-<li>[CCD] <b>MAY</b> contain [0..1] <tt>effectiveTime</tt><ul><li>Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li></ul> (CONF-150)</li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>effectiveTime</tt> (CONF-150)<ul><li>Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li></ul></li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../EpisodeObservation.dita">Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>)</li></ol> (CONF-168)</li>
+<li>contains <xref href="../EpisodeObservation.dita">Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
 <li>[CCD] Contains [0..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>contains <xref href="../ProblemObservation.dita">Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: Contains one or more entryRelationship (CONF-151)<ul><li><codeblock>[OCL]: not self.entryRelationship-&gt;isEmpty()</codeblock></li></ul></li>
@@ -63,7 +63,7 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="da6097e5-3143-470a-a849-88e7cbfd12de"/>
+              <id root="02e62b5a-bb1b-4a2b-af9c-ab39d0855c0b"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

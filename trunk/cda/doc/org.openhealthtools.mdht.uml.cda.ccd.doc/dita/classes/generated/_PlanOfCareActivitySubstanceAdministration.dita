@@ -38,7 +38,7 @@
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="8f9916d0-d186-4adb-88d8-156745622b40"/>
+              <id root="ec70a535-b52d-493b-97d9-50f168856c49"/>
             </substanceAdministration>
           </entry>
         </section>

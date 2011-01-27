@@ -24,7 +24,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-39, CONF-40)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="COMP" <i>COMP (has component)</i></li>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PolicyActivity.html">CCD Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>)</li></ol> (CONF-43, CONF-45, CONF-46)</li>
+<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PolicyActivity.html">CCD Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>) (CONF-43, CONF-45, CONF-46)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: An alert observation contains one or more sources of information. (CONF-47)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
   or not self.getSection().informant-&gt;isEmpty()
   or not self.getClinicalDocument().informant-&gt;isEmpty()
@@ -44,13 +44,13 @@
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE Coverage Entry"/>
-              <id root="581dd4a7-0684-478a-83c7-fa4c1d8afc07"/>
+              <id root="ddde2992-ff97-401b-90bc-6ba7244d52a8"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
               <entryRelationship>
                 <act classCode="ACT" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
-                  <id root="06eb459a-76f3-4f98-8780-fb1218e3d13e"/>
+                  <id root="a92b1c8e-f5be-4525-b1b7-685664db4382"/>
                   <code/>
                   <statusCode code="completed"/>
                 </act>

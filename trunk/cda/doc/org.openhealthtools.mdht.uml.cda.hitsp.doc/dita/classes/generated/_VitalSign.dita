@@ -25,7 +25,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-409)</li>
 <li>[IHE] Contains [1..1] <tt>statusCode</tt><ul><li>The observations have all been completed.</li></ul></li>
 <li>[HITSP] <b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.3.88.12.80.62 Vital Sign Result Value Set STATIC 1</li>
-<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul> (CONF-411)</li>
+<li>[CCD] <b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-411)<ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul></li>
 <li>[IHE] <b>MAY</b> contain [0..*] <tt>methodCode</tt><ul><li>The method code element may be present to indicate the method used to obtain the measure. Note that method used is distinct from, but possibly related to the target site.</li></ul></li>
 <li>[IHE] <b>MAY</b> contain [0..*] <tt>interpretationCode</tt><ul><li>The interpretation code may be present to provide an interpretation of the vital signs measure (e.g., High, Normal, Low, et cetera).</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>value</tt>, where its data type is PQ</li>
@@ -55,7 +55,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE Simple Observation"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2" assigningAuthorityName="IHE Vital Sign Observation"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP Vital Sign"/>
-              <id root="24c63891-f2a3-42fd-8693-c688baed866b"/>
+              <id root="0c335c25-ad86-4454-be47-985ecc129c83"/>
               <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
               <statusCode code="completed"/>
               <effectiveTime>
