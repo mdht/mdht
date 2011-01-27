@@ -6,8 +6,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.ant.launching.IAntLaunchConstants;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -17,13 +15,6 @@ import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.debug.core.DebugPlugin;
-import org.eclipse.debug.core.ILaunch;
-import org.eclipse.debug.core.ILaunchConfigurationType;
-import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
-import org.eclipse.debug.core.ILaunchManager;
-import org.eclipse.debug.core.model.IProcess;
-import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.generator.GeneratorAdapterFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
@@ -34,7 +25,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.uml2.codegen.ecore.genmodel.GenModel;
 import org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.uml2.codegen.ecore.genmodel.generator.GenModelGeneratorAdapterFactory;
@@ -42,7 +32,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter;
 
-public class CDASampleBuilder extends IncrementalProjectBuilder {
+public class CDAModelBuilder extends IncrementalProjectBuilder {
 	
 	public static final String BUILDER_ID = "org.openhealthtools.mdht.uml.cda.ui.CDAsampleBuilder";
 
@@ -91,7 +81,9 @@ public class CDASampleBuilder extends IncrementalProjectBuilder {
 	
 	private void runTransformation(IProject project,IProgressMonitor monitor)
 	{
-		try {
+		
+		// Ant Launch is not part of Galileo - need to replace appropriately
+/*		try {
 			
 			ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 			
@@ -126,7 +118,8 @@ public class CDASampleBuilder extends IncrementalProjectBuilder {
 
 		} catch (CoreException e) {
 			e.printStackTrace();
-		} 
+		}
+		*/ 
 	}
 	
 	private void runGeneration(IProject project,IProgressMonitor monitor)
