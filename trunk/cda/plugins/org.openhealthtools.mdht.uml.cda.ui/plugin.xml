@@ -209,6 +209,8 @@
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.openSubclassEditorAction">
 			</action>
 		</objectContribution>
+		
+		<!--
   <objectContribution
         adaptable="true"
         id="org.openhealthtools.mdht.uml.cda.ui.contribution1"
@@ -222,6 +224,8 @@
            menubarPath="additions">
      </action>
   </objectContribution>
+  -->
+  
 	</extension>
 	
    <extension point="org.eclipse.ui.popupMenus">
@@ -311,6 +315,8 @@
          </action>
       </objectContribution>
    </extension>
+   
+   <!--
    <extension
          id="CDAsampleBuilder"
          name="CDA Sample Project Builder"
@@ -335,6 +341,9 @@
             id="org.openhealthtools.mdht.uml.cda.ui.CDAsampleBuilder">
       </builder>
    </extension>
+   -->
+   
+   
    <extension
          id="xmlProblem"
          name="XML Problem"
