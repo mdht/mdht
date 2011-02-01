@@ -288,7 +288,8 @@ public class CDAModelUtil {
 	public static String computeGeneralizationConformanceMessage(Class general, boolean markup, Package xrefSource) {
 		StringBuffer message = new StringBuffer();
 
-		String prefix = !isSameModel(xrefSource, general) ? getModelPrefix(general)+" " : "";
+//		String prefix = !isSameModel(xrefSource, general) ? getModelPrefix(general)+" " : "";
+		String prefix = getModelPrefix(general)+" ";
 		String xref = computeXref(xrefSource, general);
 		boolean showXref = markup && (xref != null);
 		String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -349,7 +350,8 @@ public class CDAModelUtil {
 		if (endType != null) {
 			message.append(", where its type is ");
 			
-			String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+//			String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+			String prefix = getModelPrefix(endType)+" ";
 			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -358,6 +360,8 @@ public class CDAModelUtil {
 			message.append(prefix).append(UMLUtil.splitName(endType));
 			message.append(showXref?"</xref>":"");
 		}
+
+		appendConformanceRuleIds(association, message, markup);
 		
 		// include comment text only in markup output
 		if (markup && association.getOwnedComments().size() > 0) {
@@ -370,8 +374,6 @@ public class CDAModelUtil {
 			message.append("</ul>");
 		}
 
-		appendConformanceRuleIds(association, message, markup);
-		
 		return message.toString();
 	}
 
@@ -421,7 +423,7 @@ public class CDAModelUtil {
 		message.append(markup?"<tt>":"");
 		message.append(elementName);
 		message.append(markup?"</tt>":"");
-		
+
 		if (typeCode != null || endType != null) {
 			message.append(", such that it");
 			message.append(markup?"<ol>":"");
@@ -440,7 +442,8 @@ public class CDAModelUtil {
 				message.append(markup?"\n<li>":" ");
 				message.append("contains ");
 	
-				String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+//				String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+				String prefix = getModelPrefix(endType)+" ";
 				String xref = computeXref(xrefSource, endType);
 				boolean showXref = markup && (xref != null);
 				String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -457,6 +460,8 @@ public class CDAModelUtil {
 					message.append(markup?"</tt>":"");
 					message.append(")");
 				}
+				
+				appendConformanceRuleIds(association, message, markup);
 				message.append(markup?"</li>":"");
 			}
 	
@@ -474,8 +479,6 @@ public class CDAModelUtil {
 			message.append("</ul>");
 		}
 
-		appendConformanceRuleIds(association, message, markup);
-		
 		return message.toString();
 	}
 
@@ -580,6 +583,8 @@ public class CDAModelUtil {
 				&& (property.getType() != redefinedProperty.getType())))) {
 			message.append(", where its data type is ").append(property.getType().getName());
 		}
+
+		appendConformanceRuleIds(property, message, markup);
 		
 		// include comment text only in markup output
 		if (markup && property.getOwnedComments().size() > 0) {
@@ -592,8 +597,6 @@ public class CDAModelUtil {
 			message.append("</ul>");
 		}
 
-		appendConformanceRuleIds(property, message, markup);
-		
 		return message.toString();
 	}
 
@@ -875,6 +878,9 @@ public class CDAModelUtil {
 		if (isSameModel(source, target)) {
 			href="../" + target.getName() + ".dita";
 		}
+		else if (isCDAModel(target)) {
+			// no xref to CDA available at this time
+		}
 		else {
 			String pathFolder = "classes";
 			String basePackage = "";
@@ -901,8 +907,12 @@ public class CDAModelUtil {
 				prefix += ".";
 			}
 
-			href = INFOCENTER_URL + "/topic/" + basePackage + "."
-				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".html";
+//			href = INFOCENTER_URL + "/topic/" + basePackage + "."
+//				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".html";
+
+			pathFolder = "dita/classes";
+			href = "../../../../" + basePackage + "."
+				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".dita";
 		}
 		return href;
 	}
