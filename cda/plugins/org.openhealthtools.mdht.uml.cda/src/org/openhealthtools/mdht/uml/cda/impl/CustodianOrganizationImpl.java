@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -580,6 +582,24 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 */
 	public boolean isSetDeterminerCode() {
 		return determinerCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CustodianOrganizationOperations.validateClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDeterminerCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CustodianOrganizationOperations.validateDeterminerCode(this, diagnostics, context);
 	}
 
 	/**

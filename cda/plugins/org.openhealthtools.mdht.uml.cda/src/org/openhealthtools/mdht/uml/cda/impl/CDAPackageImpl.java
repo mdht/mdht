@@ -9541,7 +9541,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getSubstanceAdministration_Reference() {
-        return (EReference)getSubstanceAdministration().getEStructuralFeatures().get(22);
+        return (EReference)getSubstanceAdministration().getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -9550,7 +9550,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getSubstanceAdministration_Participant() {
-        return (EReference)getSubstanceAdministration().getEStructuralFeatures().get(23);
+        return (EReference)getSubstanceAdministration().getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -9559,7 +9559,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getSubstanceAdministration_EntryRelationship() {
-        return (EReference)getSubstanceAdministration().getEStructuralFeatures().get(24);
+        return (EReference)getSubstanceAdministration().getEStructuralFeatures().get(23);
 	}
 
 	/**

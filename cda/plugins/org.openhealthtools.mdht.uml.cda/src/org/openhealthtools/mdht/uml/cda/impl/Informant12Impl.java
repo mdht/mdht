@@ -519,6 +519,24 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Informant12Operations.validateTypeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContextControlCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Informant12Operations.validateContextControlCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

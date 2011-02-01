@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -957,6 +959,24 @@ public class SectionImpl extends ActImpl implements Section {
 	 */
 	public boolean isSetMoodCode() {
 		return moodCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SectionOperations.validateClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SectionOperations.validateMoodCode(this, diagnostics, context);
 	}
 
 	/**

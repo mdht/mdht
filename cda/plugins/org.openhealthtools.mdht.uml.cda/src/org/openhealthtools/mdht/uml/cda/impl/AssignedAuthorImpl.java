@@ -623,6 +623,15 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AssignedAuthorOperations.validateClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

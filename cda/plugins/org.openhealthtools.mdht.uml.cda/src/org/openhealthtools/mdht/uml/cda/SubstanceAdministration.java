@@ -12,6 +12,9 @@
  */
 package org.openhealthtools.mdht.uml.cda;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -56,9 +59,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPerformers <em>Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAuthors <em>Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getInformants <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getReferences <em>Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getParticipants <em>Participant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getReferences <em>Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPreconditions <em>Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getClassCode <em>Class Code</em>}</li>
@@ -865,6 +868,19 @@ public interface SubstanceAdministration extends ClinicalStatement {
 	 * @generated
 	 */
 	boolean isSetNegationInd();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::SBADM
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::SBADM'"
+	 * @generated
+	 */
+	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

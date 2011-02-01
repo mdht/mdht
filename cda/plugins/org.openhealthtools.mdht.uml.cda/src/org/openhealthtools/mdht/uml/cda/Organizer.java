@@ -505,7 +505,7 @@ public interface Organizer extends ClinicalStatement {
 	 * @see #unsetMoodCode()
 	 * @see #setMoodCode(ActMood)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_MoodCode()
-	 * @model unsettable="true" ordered="false"
+	 * @model unsettable="true" required="true" ordered="false"
 	 * @generated
 	 */
 	ActMood getMoodCode();

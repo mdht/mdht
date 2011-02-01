@@ -11,6 +11,18 @@
       <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_S9OzADxXEd6JwqSGecoePg" name="ClinicalDocument">
+      <ownedRule xmi:id="_o2V2cCVyEeCrtN9McWFciw" name="classCode" constrainedElement="_S9OzADxXEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wAjaYCVyEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>self.classCode=vocab::ActClassClinicalDocument::DOCCLIN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_t4PNkCVzEeCrtN9McWFciw" name="moodCode" constrainedElement="_S9OzADxXEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zylFECVzEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_BtBwUIYLEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -20,8 +32,8 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fQPpMkxwEd6h-an5IXo-DA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fQZaNkxwEd6h-an5IXo-DA" name="typeId" visibility="private" type="_sKX1MEb9Ed6besF9iFIJkQ" aggregation="composite">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fQZaN0xwEd6h-an5IXo-DA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fQZaOExwEd6h-an5IXo-DA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iiyDICVxEeCrtN9McWFciw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ijE-ECVxEeCrtN9McWFciw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fQZaM0xwEd6h-an5IXo-DA" name="templateId" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
@@ -70,8 +82,8 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CMJyoEolEd6c3qsAxlFHaQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_EC35wUALEd6wZe6nFLrjsw" name="recordTarget" visibility="private" type="_CVzT8EALEd6wZe6nFLrjsw" aggregation="composite" association="_EC35wEALEd6wZe6nFLrjsw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EC35w0ALEd6wZe6nFLrjsw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EC35wkALEd6wZe6nFLrjsw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_At1FcCVyEeCrtN9McWFciw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_At1FcSVyEeCrtN9McWFciw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_hhbysUcgEd6besF9iFIJkQ" name="author" visibility="private" type="_ChEisEcEEd6besF9iFIJkQ" aggregation="composite" association="_hhbysEcgEd6besF9iFIJkQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hhbys0cgEd6besF9iFIJkQ" value="*"/>
@@ -262,6 +274,18 @@
           <body>self.structuredBody.oclIsUndefined() xor self.nonXMLBody.oclIsUndefined()</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_hkEsECfKEeCrtN9McWFciw" name="typeCode" constrainedElement="_UOJoUDxXEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ko69ICfKEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_rD5cgCfKEeCrtN9McWFciw" name="contextConductionInd" constrainedElement="_UOJoUDxXEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_0NqdYCfKEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="__tOt4IYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -311,6 +335,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_WK3zsDxXEd6JwqSGecoePg" name="StructuredBody">
+      <ownedRule xmi:id="_8dXMYCi_EeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_8dXMYSi_EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_8zHZ8Ci_EeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_8zHZ8Si_EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_8s7JIIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -367,6 +403,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_YIL08DxXEd6JwqSGecoePg" name="NonXMLBody">
+      <ownedRule xmi:id="_p2WbwCgAEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_p2WbwSgAEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_qIYm8CgAEeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_qIYm8SgAEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_-M8KYIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -422,6 +470,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dkuWIDxXEd6JwqSGecoePg" name="Component3">
+      <ownedRule xmi:id="_UWUb4CfLEeCrtN9McWFciw" name="typeCode" constrainedElement="_UOJoUDxXEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_UWUb4SfLEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_aRQJQCfLEeCrtN9McWFciw" name="contextConductionInd" constrainedElement="_dkuWIDxXEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_e6PGkCfLEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_BTYMUIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -473,6 +533,18 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_qIf_wDxXEd6JwqSGecoePg" name="Section">
+      <ownedRule xmi:id="_GxiSQCi9EeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_GxiSQSi9EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCSECT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_Hh0fsCi9EeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Hh0fsSi9EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_qj-7sIYLEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -933,6 +1005,12 @@
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_8IM9wVBnEd6aGcsNlPFt8A">
           <language>OCL</language>
           <body>Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_2rN2YCf1EeCrtN9McWFciw" name="contextConductionInd" constrainedElement="_r0FX0DxXEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_S3vWgCf2EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_Nrxh0IYtEd-kaPURbz5lmQ">
@@ -1888,6 +1966,12 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_NWHRoEAJEd6wZe6nFLrjsw" name="Component1">
+      <ownedRule xmi:id="_IUEloCWUEeCrtN9McWFciw" name="typeCode" constrainedElement="_NWHRoEAJEd6wZe6nFLrjsw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_VG4w0CWUEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_-koHEIYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -1925,6 +2009,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_j5JZsEAJEd6wZe6nFLrjsw" name="EncompassingEncounter">
+      <ownedRule xmi:id="_RyCPgCfyEeCrtN9McWFciw" name="classCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_RyCPgSfyEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ENC</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_TBTfACfyEeCrtN9McWFciw" name="moodCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_TBTfASfyEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_SHl68IYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -2009,6 +2105,18 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_CVzT8EALEd6wZe6nFLrjsw" name="RecordTarget">
+      <ownedRule xmi:id="_vlv-kCiwEeCrtN9McWFciw" name="typeCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_vlv-kSiwEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::RCT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_xmDCYCiwEeCrtN9McWFciw" name="contextControlCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_xmDCYSiwEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_jiICsIYwEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -2061,6 +2169,12 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_OApKcEALEd6wZe6nFLrjsw" name="PatientRole">
+      <ownedRule xmi:id="_NvvqQCisEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_NvvqQSisEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PAT</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_Ob6oUIYMEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -2123,6 +2237,18 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_mxsCMEALEd6wZe6nFLrjsw" name="Patient">
+      <ownedRule xmi:id="_hlb3wCirEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_hlb3wSirEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_i3160CirEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_i3160SirEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_t7aR4IYIEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -2241,6 +2367,18 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_zegkcEbtEd6besF9iFIJkQ" name="RegionOfInterest">
+      <ownedRule xmi:id="_RktBQCi6EeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_RktBQSi6EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ROIOVL</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_SzPQ8Ci6EeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_SzPQ8Si6EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_CyVzIHfUEd-6wJLq2P_7OA" general="_Rm7eQHfTEd-6wJLq2P_7OA"/>
       <ownedAttribute xmi:id="_0Q3OMExuEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
@@ -2265,8 +2403,8 @@
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_kmUtkEcAEd6besF9iFIJkQ" name="value" visibility="private" type="_VCoWMEcAEd6besF9iFIJkQ" aggregation="composite">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mP-L8UcAEd6besF9iFIJkQ" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mP-L8EcAEd6besF9iFIJkQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yvC7sCi5EeCrtN9McWFciw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yvC7sSi5EeCrtN9McWFciw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_UpuaoUxpEd6h-an5IXo-DA" name="subject" visibility="private" type="_rNlWoEcaEd6besF9iFIJkQ" aggregation="composite" association="_UpuaoExpEd6h-an5IXo-DA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Upuao0xpEd6h-an5IXo-DA" value="1"/>
@@ -2998,6 +3136,12 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_nazskEbuEd6besF9iFIJkQ" name="SubstanceAdministration">
+      <ownedRule xmi:id="_VtfFcCjDEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_VtfFcSjDEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::SBADM</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_EilBsHfUEd-6wJLq2P_7OA" general="_Rm7eQHfTEd-6wJLq2P_7OA"/>
       <ownedAttribute xmi:id="_MfCCYExvEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
@@ -3102,10 +3246,6 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I03h80xoEd6h-an5IXo-DA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I03h8kxoEd6h-an5IXo-DA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_2DYY4ExnEd6h-an5IXo-DA" name="reference" visibility="private" type="_NDnXkEcIEd6besF9iFIJkQ" aggregation="composite" association="_2DPO8ExnEd6h-an5IXo-DA">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2DYY4kxnEd6h-an5IXo-DA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2DYY4UxnEd6h-an5IXo-DA"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_becsMUxoEd6h-an5IXo-DA" name="participant" visibility="private" type="_51DLwEcZEd6besF9iFIJkQ" aggregation="composite" association="_becsMExoEd6h-an5IXo-DA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bemdMUxoEd6h-an5IXo-DA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bemdMExoEd6h-an5IXo-DA"/>
@@ -3113,6 +3253,10 @@
       <ownedAttribute xmi:id="_E7yFoUxqEd6h-an5IXo-DA" name="entryRelationship" visibility="private" type="_BoxMQEcFEd6besF9iFIJkQ" aggregation="composite" association="_E7yFoExqEd6h-an5IXo-DA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_E7yFo0xqEd6h-an5IXo-DA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E7yFokxqEd6h-an5IXo-DA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_2DYY4ExnEd6h-an5IXo-DA" name="reference" visibility="private" type="_NDnXkEcIEd6besF9iFIJkQ" aggregation="composite" association="_2DPO8ExnEd6h-an5IXo-DA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2DYY4kxnEd6h-an5IXo-DA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2DYY4UxnEd6h-an5IXo-DA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_nqG7UUxpEd6h-an5IXo-DA" name="precondition" visibility="private" type="_OJn4MEcaEd6besF9iFIJkQ" aggregation="composite" association="_nqG7UExpEd6h-an5IXo-DA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nqG7U0xpEd6h-an5IXo-DA" value="*"/>
@@ -3447,6 +3591,12 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3gL0sEbuEd6besF9iFIJkQ" name="Supply">
+      <ownedRule xmi:id="_GnoEICjEEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_GnoEISjEEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassSupply::SPLY</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_GQZOYHfUEd-6wJLq2P_7OA" general="_Rm7eQHfTEd-6wJLq2P_7OA"/>
       <ownedAttribute xmi:id="_p2Xv0ExvEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
@@ -4772,8 +4922,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_Z5I4MErcEd6FXKclYGEDCw" name="moodCode" visibility="private">
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bH-C0UrcEd6FXKclYGEDCw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bH-C0ErcEd6FXKclYGEDCw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xhK1kCgEEeCrtN9McWFciw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xhK1kSgEEeCrtN9McWFciw" value="1"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_Tq82AFxTEd6ZEsfifJz_3w" name="addAct">
         <ownedParameter xmi:id="_Tq82AVxTEd6ZEsfifJz_3w" name="act" type="_YiANsDxYEd6JwqSGecoePg"/>
@@ -5117,6 +5267,12 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_sKX1MEb9Ed6besF9iFIJkQ" name="InfrastructureRootTypeId">
+      <ownedRule xmi:id="_W3KzwCV1EeCrtN9McWFciw" name="redefinedRoot (root)" constrainedElement="_sKX1MEb9Ed6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_fYG6ECV1EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>self.root='2.16.840.1.113883.1.3'</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_x2aK8Eb9Ed6besF9iFIJkQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
       </generalization>
@@ -5151,6 +5307,12 @@
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_zZYxcU7QEd6ohP_YEXs4Wg">
           <language>OCL</language>
           <body>self.assignedPerson.oclIsUndefined() or self.assignedAuthoringDevice.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_QwqHgCWAEeCrtN9McWFciw" name="classCode" constrainedElement="_z2vcQEcDEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_fWXMoCWAEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_wpGKsIYJEd-kaPURbz5lmQ">
@@ -5218,6 +5380,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_1G6DoEcDEd6besF9iFIJkQ" name="AssignedCustodian">
+      <ownedRule xmi:id="_Hhld8CWCEeCrtN9McWFciw" name="classCode" constrainedElement="_1G6DoEcDEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_KHSU4CWCEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_xutH4IYJEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5255,6 +5423,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_6qmVsEcDEd6besF9iFIJkQ" name="AssignedEntity">
+      <ownedRule xmi:id="__oYzcCWJEeCrtN9McWFciw" name="classCode" constrainedElement="_6qmVsEcDEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_B5FDsCWKEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_yg5Z0IYJEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5379,6 +5553,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_BkHyQEcEEd6besF9iFIJkQ" name="Authenticator">
+      <ownedRule xmi:id="_5sb88CWKEeCrtN9McWFciw" name="typeCode" constrainedElement="_BkHyQEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_DNmKICWLEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUTHEN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_VFrnQIYwEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5403,8 +5583,8 @@
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_dsqn8UcdEd6besF9iFIJkQ" name="assignedEntity" visibility="private" type="_6qmVsEcDEd6besF9iFIJkQ" aggregation="composite" association="_dsqn8EcdEd6besF9iFIJkQ">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dsqn80cdEd6besF9iFIJkQ" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dsqn8kcdEd6besF9iFIJkQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yG0PYCWKEeCrtN9McWFciw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yG0PYSWKEeCrtN9McWFciw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fPpzU0xwEd6h-an5IXo-DA" name="nullFlavor" visibility="private">
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>
@@ -5422,6 +5602,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ChEisEcEEd6besF9iFIJkQ" name="Author">
+      <ownedRule xmi:id="__t9lECWLEeCrtN9McWFciw" name="typeCode" constrainedElement="_ChEisEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_IOKEgCWMEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_BsoRMCWMEeCrtN9McWFciw" name="contextControlCode" constrainedElement="_ChEisEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_UZfY8CWMEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_5SfCYIYJEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5479,6 +5671,18 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IIL8MEcEEd6besF9iFIJkQ" name="AuthoringDevice">
+      <ownedRule xmi:id="_83KvYCWREeCrtN9McWFciw" name="classCode" constrainedElement="_IIL8MEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E5aHgCWSEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassDevice::DEV</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_-4z3ACWREeCrtN9McWFciw" name="determinerCode" constrainedElement="_IIL8MEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_X8Bc0CWSEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_jmNcAIYxEd-9YcrCLsHEiw">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5540,6 +5744,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_JpCq8EcEEd6besF9iFIJkQ" name="Authorization">
+      <ownedRule xmi:id="_5ePPQCWSEeCrtN9McWFciw" name="typeCode" constrainedElement="_JpCq8EcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BbZ6ICWTEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::AUTH</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_7egYwIYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5577,6 +5787,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Y18S8EcEEd6besF9iFIJkQ" name="Birthplace">
+      <ownedRule xmi:id="_deGv4CWTEeCrtN9McWFciw" name="classCode" constrainedElement="_Y18S8EcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_kt-28CWTEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::BIRTHPL</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_mFbQcIYxEd-9YcrCLsHEiw">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5618,6 +5834,18 @@
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Dv49UVBnEd6aGcsNlPFt8A">
           <language>OCL</language>
           <body>Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_k8a3MCfmEeCrtN9McWFciw" name="typeCode" constrainedElement="_cEUTcEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ntvvUCfmEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_tJY4oCfmEeCrtN9McWFciw" name="contextConductionInd" constrainedElement="_cEUTcEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_xv1fUCfmEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_CYmvAIYuEd-kaPURbz5lmQ">
@@ -5707,6 +5935,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dJUMoEcEEd6besF9iFIJkQ" name="Component5">
+      <ownedRule xmi:id="_XavlcCfnEeCrtN9McWFciw" name="typeCode" constrainedElement="_cEUTcEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_XavlcSfnEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_YesVwCfnEeCrtN9McWFciw" name="contextConductionInd" constrainedElement="_cEUTcEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_YesVwSfnEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextConductionInd.oclIsUndefined() implies self.contextConductionInd=true</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_DUfIcIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5752,6 +5992,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fVPRoEcEEd6besF9iFIJkQ" name="Consent">
+      <ownedRule xmi:id="_9AYxECfnEeCrtN9McWFciw" name="classCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_F8l3ECfoEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::CONS</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_PdAdYCfoEeCrtN9McWFciw" name="moodCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Y4DbgCfoEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_QEUboIYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -5807,6 +6059,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_gRI5MEcEEd6besF9iFIJkQ" name="Consumable">
+      <ownedRule xmi:id="_cOGfYCfqEeCrtN9McWFciw" name="typeCode" constrainedElement="_gRI5MEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_m7sqgCfqEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::CSM</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_kirBEIYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5844,6 +6102,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hKgxMEcEEd6besF9iFIJkQ" name="Criterion">
+      <ownedRule xmi:id="_JqNQ8CfrEeCrtN9McWFciw" name="moodCode" constrainedElement="_hKgxMEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_b3oDoCfrEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVNCRT</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_QkbUgIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -5901,6 +6165,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_mMYIkEcEEd6besF9iFIJkQ" name="Custodian">
+      <ownedRule xmi:id="_u8P5MCftEeCrtN9McWFciw" name="typeCode" constrainedElement="_mMYIkEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1z01ACftEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::CST</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_cWlpEIYwEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -5938,6 +6208,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_nNMFUEcEEd6besF9iFIJkQ" name="CustodianOrganization">
+      <ownedRule xmi:id="_jJr0oCfuEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_oAhAsCfuEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_3NtjoCfuEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_-8lT0CfuEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_wij9sIYxEd-9YcrCLsHEiw">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -6039,6 +6321,18 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_twqZYEcEEd6besF9iFIJkQ" name="DataEnterer">
+      <ownedRule xmi:id="_rIrPACfvEeCrtN9McWFciw" name="typeCode" constrainedElement="_mMYIkEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_rIrPASfvEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::ENT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_1Hx8cCfvEeCrtN9McWFciw" name="contextControlCode" constrainedElement="_twqZYEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_64SigCfvEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_dUUcoIYwEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -6093,6 +6387,12 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_u3llMEcEEd6besF9iFIJkQ" name="Device">
+      <ownedRule xmi:id="_45XiQCfwEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_45XiQSfwEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_wrKncIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -6150,6 +6450,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_1fhigEcEEd6besF9iFIJkQ" name="DocumentationOf">
+      <ownedRule xmi:id="_U_CzgCfxEeCrtN9McWFciw" name="typeCode" constrainedElement="_mMYIkEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_U_CzgSfxEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::DOC</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_2yiY4IYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -6223,6 +6529,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_-19GYEcEEd6besF9iFIJkQ" name="Entity">
+      <ownedRule xmi:id="_GD_zsCf1EeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_GD_zsSf1EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_uYhPMIYJEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -6431,6 +6743,12 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_0FI9QEcGEd6besF9iFIJkQ" name="ExternalAct">
+      <ownedRule xmi:id="_heG4ECf4EeCrtN9McWFciw" name="moodCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_heG4ESf4EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_VdO2gIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -6488,6 +6806,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_gRO4cEcHEd6besF9iFIJkQ" name="ExternalDocument">
+      <ownedRule xmi:id="_5ugg4Cf4EeCrtN9McWFciw" name="moodCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_5ugg4Sf4EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_W0dvMIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -6555,6 +6879,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iVG0sEcHEd6besF9iFIJkQ" name="ExternalObservation">
+      <ownedRule xmi:id="_ONXxwCf5EeCrtN9McWFciw" name="moodCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ONXxwSf5EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_XrVFwIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -6612,6 +6942,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_moeuYEcHEd6besF9iFIJkQ" name="ExternalProcedure">
+      <ownedRule xmi:id="_iCMnICf5EeCrtN9McWFciw" name="classCode" constrainedElement="_moeuYEcHEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_pUTi0Cf5EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::PROC</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_j8PR8Cf5EeCrtN9McWFciw" name="moodCode" constrainedElement="_fVPRoEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_j8PR8Sf5EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_YYSSYIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -6753,6 +7095,12 @@
           <body>self.guardianPerson.oclIsUndefined() xor self.guardianOrganization.oclIsUndefined()</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_Nu_-QCf6EeCrtN9McWFciw" name="classCode" constrainedElement="_moeuYEcHEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Nu_-QSf6EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::GUARD</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_ZFKe8IYMEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -6807,10 +7155,7 @@
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zE2iEDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3tJigUo3Ed6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3tJigEo3Ed6c3qsAxlFHaQ"/>
-        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_53vKwEo3Ed6c3qsAxlFHaQ" name="GUAR">
-          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zE2iEDcEd6xYZuu1VKCVw"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zE2kUDcEd6xYZuu1VKCVw"/>
-        </defaultValue>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FoJL4Cf6EeCrtN9McWFciw" value="GUARD"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_qS58QEcIEd6besF9iFIJkQ" name="HealthCareFacility">
@@ -6925,6 +7270,18 @@
           <body>self.assignedEntity.oclIsUndefined() xor self.relatedEntity.oclIsUndefined()</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_G7BTkCf7EeCrtN9McWFciw" name="typeCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Po630Cf7EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::INF</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ZBvBUCf7EeCrtN9McWFciw" name="contextControlCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_h4uQICf7EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_VIH-oIYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7012,6 +7369,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Li14oEcZEd6besF9iFIJkQ" name="InFulfillmentOf">
+      <ownedRule xmi:id="_L4JfcCf8EeCrtN9McWFciw" name="typeCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_L4JfcSf8EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_4besoIYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7105,6 +7468,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Yc0bwEcZEd6besF9iFIJkQ" name="LabeledDrug">
+      <ownedRule xmi:id="_AwW2MCf9EeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_AwW2MSf9EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_BzQdoCf9EeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BzQdoSf9EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_tE65gIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7198,6 +7573,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fcTWYEcZEd6besF9iFIJkQ" name="LegalAuthenticator">
+      <ownedRule xmi:id="_6gI_4Cf9EeCrtN9McWFciw" name="typeCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_6gI_4Sf9EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::LA</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_HeIgUCf-EeCrtN9McWFciw" name="contextControlCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_HeIgUSf-EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_WrB0cIYwEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7250,6 +7637,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_il6LoEcZEd6besF9iFIJkQ" name="Location">
+      <ownedRule xmi:id="_mNFg8Cf-EeCrtN9McWFciw" name="typeCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_mNFg8Sf-EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationTargetLocation::LOC</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_eCPIAIYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7287,6 +7680,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_j-uYsEcZEd6besF9iFIJkQ" name="MaintainedEntity">
+      <ownedRule xmi:id="__olq8Cf-EeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="__olq8Sf-EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::MNT</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_KXowMIYwEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7333,6 +7732,12 @@
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_i1ndIU7QEd6ohP_YEXs4Wg">
           <language>OCL</language>
           <body>self.manufacturedLabeledDrug.oclIsUndefined() xor self.manufacturedMaterial.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_fFcTYCf_EeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_fFcTYSf_EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassManufacturedProduct::MANU</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_i0S-QIYuEd-kaPURbz5lmQ">
@@ -7385,6 +7790,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_rFzJEEcZEd6besF9iFIJkQ" name="Material">
+      <ownedRule xmi:id="_FcaOQCgAEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_FcaOQSgAEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_Fw0YACgAEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Fw0YASgAEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_vD9ZEIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7442,6 +7859,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ujrlMEcZEd6besF9iFIJkQ" name="ObservationRange">
+      <ownedRule xmi:id="_pF_D4CgCEeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_pF_D4SgCEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVNCRT</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_OttDcIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -7504,6 +7927,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_vgekoEcZEd6besF9iFIJkQ" name="Order">
+      <ownedRule xmi:id="_NYoWkCgDEeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_NYoWkSgDEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::RQO</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_OhA10IYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -7561,6 +7990,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_zjKW8EcZEd6besF9iFIJkQ" name="Organization">
+      <ownedRule xmi:id="_vIaD4CgDEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_vIaD4SgDEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_v82_oCgDEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_v82_oSgDEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_ru9ocIYIEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7632,6 +8073,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_24_qUEcZEd6besF9iFIJkQ" name="ParentDocument">
+      <ownedRule xmi:id="_iR7OwCgFEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iR7OwSgFEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ik2KwCgFEeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ik2KwSgFEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_KWTv8IYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -7699,6 +8152,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4_GbMEcZEd6besF9iFIJkQ" name="Participant1">
+      <ownedRule xmi:id="_0PUWQCimEeCrtN9McWFciw" name="contextControlCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_0PUWQSimEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_ILw44IYMEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7749,6 +8208,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_51DLwEcZEd6besF9iFIJkQ" name="Participant2">
+      <ownedRule xmi:id="_tyIa8CinEeCrtN9McWFciw" name="contextControlCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_tyIa8SinEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_JNNu0IYMEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7911,6 +8376,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_HP8qoEcaEd6besF9iFIJkQ" name="Performer2">
+      <ownedRule xmi:id="_umJfkCisEeCrtN9McWFciw" name="typeCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_umJfkSisEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationPhysicalPerformer::PRF</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_LJ-WcIYMEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -7958,6 +8429,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Je2yMEcaEd6besF9iFIJkQ" name="Person">
+      <ownedRule xmi:id="_W3KFQCitEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_W3KFQSitEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_YFF4ACitEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_YFF4ASitEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_v9gsgIYIEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8010,6 +8493,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_KY0gEEcaEd6besF9iFIJkQ" name="Place">
+      <ownedRule xmi:id="_xbOZ0CitEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_xbOZ0SitEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassPlace::PLC</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_yEpxUCitEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yEpxUSitEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_hm_BIIYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8088,6 +8583,12 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Lr9i8EcaEd6besF9iFIJkQ" name="PlayingEntity">
+      <ownedRule xmi:id="_TFpGACiuEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_TFpGASiuEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_0hTLgIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8155,6 +8656,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_OJn4MEcaEd6besF9iFIJkQ" name="Precondition">
+      <ownedRule xmi:id="_m3Mk8CiuEeCrtN9McWFciw" name="typeCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_m3Mk8SiuEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::PRCN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_zxrh4IYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8192,6 +8699,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_UCUw8EcaEd6besF9iFIJkQ" name="Product">
+      <ownedRule xmi:id="_vnp4gCivEeCrtN9McWFciw" name="typeCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_vnp4gSivEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::PRD</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_nGjTEIYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8229,6 +8742,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_XFrNMEcaEd6besF9iFIJkQ" name="ReferenceRange">
+      <ownedRule xmi:id="_w2IkMCi3EeCrtN9McWFciw" name="typeCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_w2IkMSi3EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::REFV</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_w4ixkIYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_frJdEIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8404,6 +8923,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hfdrgEcaEd6besF9iFIJkQ" name="ResponsibleParty">
+      <ownedRule xmi:id="_I4gbQCi8EeCrtN9McWFciw" name="typeCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_I4gbQSi8EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::RESP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_ZeAu4IYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8441,6 +8966,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_lriDUEcaEd6besF9iFIJkQ" name="ServiceEvent">
+      <ownedRule xmi:id="_roiPMCi9EeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_roiPMSi9EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_MUR4gIYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -8502,6 +9033,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_mdwKcEcaEd6besF9iFIJkQ" name="Specimen">
+      <ownedRule xmi:id="_Bbb60Ci-EeCrtN9McWFciw" name="typeCode" constrainedElement="_GUBDUEcZEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Bbb60Si-EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::SPC</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_qM71MIYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8539,6 +9076,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_nos6oEcaEd6besF9iFIJkQ" name="SpecimenRole">
+      <ownedRule xmi:id="_T07aoCi-EeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_T07aoSi-EeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassSpecimen::SPEC</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_lwSOQIYuEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8581,6 +9124,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_rNlWoEcaEd6besF9iFIJkQ" name="Subject">
+      <ownedRule xmi:id="_lwO3sCjAEeCrtN9McWFciw" name="typeCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_lwO3sSjAEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationTargetSubject::SBJ</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_mN4dACjAEeCrtN9McWFciw" name="contextControlCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_mN4dASjAEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_go7vYIYtEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_hVk-kIVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8632,6 +9187,18 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_r19lQEcaEd6besF9iFIJkQ" name="SubjectPerson">
+      <ownedRule xmi:id="_WqEUYCjBEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_WqEUYSjBEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_atWjoCjBEeCrtN9McWFciw" name="determinerCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_atWjoSjBEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_rWDHcIYvEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_ZWm84IVfEd-9G7Mk0NuIMg"/>
       </generalization>
@@ -8766,7 +9333,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ytSasUcgEd6besF9iFIJkQ" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_9_sjEEcgEd6besF9iFIJkQ" name="" memberEnd="_9_sjEUcgEd6besF9iFIJkQ _9_2UEEcgEd6besF9iFIJkQ">
+    <packagedElement xmi:type="uml:Association" xmi:id="_9_sjEEcgEd6besF9iFIJkQ" name="assignedPerson" memberEnd="_9_sjEUcgEd6besF9iFIJkQ _9_2UEEcgEd6besF9iFIJkQ">
       <ownedEnd xmi:id="_9_2UEEcgEd6besF9iFIJkQ" name="" visibility="private" type="_z2vcQEcDEd6besF9iFIJkQ" association="_9_sjEEcgEd6besF9iFIJkQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9_2UEkcgEd6besF9iFIJkQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9_2UEUcgEd6besF9iFIJkQ" value="1"/>
@@ -9157,6 +9724,12 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_0YNvoEcZEd6besF9iFIJkQ" name="OrganizationPartOf">
+      <ownedRule xmi:id="_RfEyECgEEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_RfEyESgEEeCrtN9McWFciw">
+          <language>OCL</language>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PART</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_F1jFEIYwEd-kaPURbz5lmQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml#_eITxUIVfEd-9G7Mk0NuIMg"/>
       </generalization>

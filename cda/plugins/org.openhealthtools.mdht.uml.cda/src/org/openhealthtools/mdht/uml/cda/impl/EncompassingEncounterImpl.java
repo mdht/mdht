@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -28,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Location;
 import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
+import org.openhealthtools.mdht.uml.cda.operations.EncompassingEncounterOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -711,6 +714,24 @@ public class EncompassingEncounterImpl extends ActImpl implements EncompassingEn
 	 */
 	public boolean isSetMoodCode() {
 		return moodCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncompassingEncounterOperations.validateClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncompassingEncounterOperations.validateMoodCode(this, diagnostics, context);
 	}
 
 	/**

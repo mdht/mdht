@@ -12,6 +12,9 @@
  */
 package org.openhealthtools.mdht.uml.cda;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -329,6 +332,32 @@ public interface DataEnterer extends Participation {
 	 * @generated
 	 */
 	boolean isSetContextControlCode();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::ENT
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::ENT'"
+	 * @generated
+	 */
+	boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP'"
+	 * @generated
+	 */
+	boolean validateContextControlCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

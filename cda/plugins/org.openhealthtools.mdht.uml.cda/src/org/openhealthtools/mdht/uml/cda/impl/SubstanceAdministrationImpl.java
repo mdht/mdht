@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -88,9 +90,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getPerformers <em>Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getAuthors <em>Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getInformants <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getReferences <em>Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getParticipants <em>Participant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getReferences <em>Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getPreconditions <em>Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getClassCode <em>Class Code</em>}</li>
@@ -323,16 +325,6 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferences()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Reference> references;
-
-	/**
 	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -351,6 +343,16 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 	 * @ordered
 	 */
 	protected EList<EntryRelationship> entryRelationships;
+
+	/**
+	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferences()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Reference> references;
 
 	/**
 	 * The cached value of the '{@link #getPreconditions() <em>Precondition</em>}' containment reference list.
@@ -1401,6 +1403,15 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SubstanceAdministrationOperations.validateClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void addAct(Act act) {
 		SubstanceAdministrationOperations.addAct(this, act);
 	}
@@ -1727,12 +1738,12 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
 				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
 				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
 				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
+				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
 				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
 		}
@@ -1791,12 +1802,12 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 				return getAuthors();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
 				return getInformants();
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				return getReferences();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
 				return getParticipants();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
 				return getEntryRelationships();
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
+				return getReferences();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
 				return getPreconditions();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR:
@@ -1895,10 +1906,6 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 				getInformants().clear();
 				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				getReferences().clear();
-				getReferences().addAll((Collection<? extends Reference>)newValue);
-				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
 				getParticipants().clear();
 				getParticipants().addAll((Collection<? extends Participant2>)newValue);
@@ -1906,6 +1913,10 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
 				getEntryRelationships().clear();
 				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
+				return;
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
+				getReferences().clear();
+				getReferences().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
 				getPreconditions().clear();
@@ -2001,14 +2012,14 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
 				getInformants().clear();
 				return;
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				getReferences().clear();
-				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
 				getParticipants().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
 				getEntryRelationships().clear();
+				return;
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
+				getReferences().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
 				getPreconditions().clear();
@@ -2081,12 +2092,12 @@ public class SubstanceAdministrationImpl extends ClinicalStatementImpl implement
 				return authors != null && !authors.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
 				return informants != null && !informants.isEmpty();
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				return references != null && !references.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
 				return participants != null && !participants.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
 				return entryRelationships != null && !entryRelationships.isEmpty();
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
+				return references != null && !references.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
 				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR:

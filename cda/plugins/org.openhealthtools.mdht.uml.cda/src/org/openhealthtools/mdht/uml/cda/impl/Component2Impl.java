@@ -518,6 +518,24 @@ public class Component2Impl extends ActRelationshipImpl implements Component2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component2Operations.validateTypeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContextConductionInd(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component2Operations.validateContextConductionInd(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

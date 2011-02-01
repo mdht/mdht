@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.ObservationRange;
+import org.openhealthtools.mdht.uml.cda.operations.ObservationRangeOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -610,6 +613,15 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 	 */
 	public boolean isSetMoodCode() {
 		return moodCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ObservationRangeOperations.validateMoodCode(this, diagnostics, context);
 	}
 
 	/**
