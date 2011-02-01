@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Product;
+import org.openhealthtools.mdht.uml.cda.operations.ProductOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.impl.ParticipationImpl;
@@ -368,6 +371,15 @@ public class ProductImpl extends ParticipationImpl implements Product {
 	 */
 	public boolean isSetTypeCode() {
 		return typeCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductOperations.validateTypeCode(this, diagnostics, context);
 	}
 
 	/**

@@ -13,12 +13,17 @@
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import java.util.Collection;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.Act;
@@ -36,6 +41,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,6 +51,8 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#validateClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#validateMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#addAct(org.openhealthtools.mdht.uml.cda.Act) <em>Add Act</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#addEncounter(org.openhealthtools.mdht.uml.cda.Encounter) <em>Add Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#addObservation(org.openhealthtools.mdht.uml.cda.Observation) <em>Add Observation</em>}</li>
@@ -98,6 +106,120 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	 */
 	protected RegionOfInterestOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateClassCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateClassCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ROIOVL";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateClassCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateClassCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ROIOVL
+	 * @param regionOfInterest The receiving '<em><b>Region Of Interest</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateClassCode(RegionOfInterest regionOfInterest, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CDAPackage.Literals.REGION_OF_INTEREST);
+			try {
+				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(regionOfInterest)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CDAValidator.DIAGNOSTIC_SOURCE,
+						 CDAValidator.REGION_OF_INTEREST__CLASS_CODE,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateClassCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(regionOfInterest, context) }),
+						 new Object [] { regionOfInterest }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateMoodCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMoodCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateMoodCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMoodCode(RegionOfInterest, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN
+	 * @param regionOfInterest The receiving '<em><b>Region Of Interest</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateMoodCode(RegionOfInterest regionOfInterest, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CDAPackage.Literals.REGION_OF_INTEREST);
+			try {
+				VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(regionOfInterest)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CDAValidator.DIAGNOSTIC_SOURCE,
+						 CDAValidator.REGION_OF_INTEREST__MOOD_CODE,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateMoodCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(regionOfInterest, context) }),
+						 new Object [] { regionOfInterest }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -231,7 +353,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<Act> getActs(RegionOfInterest regionOfInterest) {
 		if (GET_ACTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(21));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(23));
 			try {
 				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
 			}
@@ -286,7 +408,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<Encounter> getEncounters(RegionOfInterest regionOfInterest) {
 		if (GET_ENCOUNTERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(23));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(25));
 			try {
 				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
 			}
@@ -332,7 +454,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<Observation> getObservations(RegionOfInterest regionOfInterest) {
 		if (GET_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(24));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(26));
 			try {
 				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
 			}
@@ -378,7 +500,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<ObservationMedia> getObservationMedia(RegionOfInterest regionOfInterest) {
 		if (GET_OBSERVATION_MEDIA__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(25));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(27));
 			try {
 				GET_OBSERVATION_MEDIA__EOCL_QRY = helper.createQuery(GET_OBSERVATION_MEDIA__EOCL_EXP);
 			}
@@ -424,7 +546,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<Organizer> getOrganizers(RegionOfInterest regionOfInterest) {
 		if (GET_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(26));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(28));
 			try {
 				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
 			}
@@ -470,7 +592,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<Procedure> getProcedures(RegionOfInterest regionOfInterest) {
 		if (GET_PROCEDURES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(27));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(29));
 			try {
 				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
 			}
@@ -516,7 +638,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<RegionOfInterest> getRegionsOfInterest(RegionOfInterest regionOfInterest) {
 		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(28));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(30));
 			try {
 				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
 			}
@@ -571,7 +693,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<SubstanceAdministration> getSubstanceAdministrations(RegionOfInterest regionOfInterest) {
 		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(30));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(32));
 			try {
 				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
 			}
@@ -617,7 +739,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  EList<Supply> getSupplies(RegionOfInterest regionOfInterest) {
 		if (GET_SUPPLIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(31));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(33));
 			try {
 				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
 			}
@@ -663,7 +785,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasActTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_ACT_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(32));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(34));
 			try {
 				HAS_ACT_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ACT_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -709,7 +831,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasCode(RegionOfInterest regionOfInterest, String code) {
 		if (HAS_CODE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(33));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(35));
 			try {
 				HAS_CODE__STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING__EOCL_EXP);
 			}
@@ -755,7 +877,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasEncounterTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(34));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(36));
 			try {
 				HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -801,7 +923,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasObservationMediaTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(35));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(37));
 			try {
 				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -847,7 +969,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasObservationTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(36));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(38));
 			try {
 				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -893,7 +1015,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasOrganizerTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(37));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(39));
 			try {
 				HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -939,7 +1061,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasProcedureTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(38));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(40));
 			try {
 				HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -985,7 +1107,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasRegionOfInterestTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(39));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(41));
 			try {
 				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1031,7 +1153,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasSubstanceAdministrationTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(40));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(42));
 			try {
 				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1077,7 +1199,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasSupplyTemplate(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(41));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(43));
 			try {
 				HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1123,7 +1245,7 @@ public class RegionOfInterestOperations extends ClinicalStatementOperations {
 	public static  boolean hasTemplateId(RegionOfInterest regionOfInterest, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(42));
+			helper.setOperationContext(CDAPackage.Literals.REGION_OF_INTEREST, CDAPackage.Literals.REGION_OF_INTEREST.getEAllOperations().get(44));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}

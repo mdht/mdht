@@ -190,7 +190,7 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final RoleClass CLASS_CODE_EDEFAULT = RoleClass.GUAR;
+	protected static final RoleClass CLASS_CODE_EDEFAULT = RoleClass.GUARD;
 
 	/**
 	 * The cached value of the '{@link #getClassCode() <em>Class Code</em>}' attribute.
@@ -561,6 +561,15 @@ public class GuardianImpl extends RoleImpl implements Guardian {
 	 */
 	public boolean validateGuardianChoice(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return GuardianOperations.validateGuardianChoice(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GuardianOperations.validateClassCode(this, diagnostics, context);
 	}
 
 	/**

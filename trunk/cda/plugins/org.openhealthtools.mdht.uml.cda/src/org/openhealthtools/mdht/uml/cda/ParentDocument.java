@@ -12,6 +12,9 @@
  */
 package org.openhealthtools.mdht.uml.cda;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -405,5 +408,31 @@ public interface ParentDocument extends Act {
 	 * @generated
 	 */
 	boolean isSetMoodCode();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN'"
+	 * @generated
+	 */
+	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN'"
+	 * @generated
+	 */
+	boolean validateMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ParentDocument

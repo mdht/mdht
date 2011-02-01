@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.RelatedSubject;
 import org.openhealthtools.mdht.uml.cda.Subject;
+import org.openhealthtools.mdht.uml.cda.operations.SubjectOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -500,6 +503,24 @@ public class SubjectImpl extends ParticipationImpl implements Subject {
 	 */
 	public boolean isSetContextControlCode() {
 		return contextControlCodeESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SubjectOperations.validateTypeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContextControlCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SubjectOperations.validateContextControlCode(this, diagnostics, context);
 	}
 
 	/**

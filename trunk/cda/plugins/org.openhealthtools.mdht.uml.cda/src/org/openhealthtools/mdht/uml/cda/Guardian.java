@@ -302,7 +302,7 @@ public interface Guardian extends Role {
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
-	 * The default value is <code>"GUAR"</code>.
+	 * The default value is <code>"GUARD"</code>.
 	 * The literals are from the enumeration {@link org.openhealthtools.mdht.uml.hl7.vocab.RoleClass}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -316,7 +316,7 @@ public interface Guardian extends Role {
 	 * @see #unsetClassCode()
 	 * @see #setClassCode(RoleClass)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getGuardian_ClassCode()
-	 * @model default="GUAR" unsettable="true" ordered="false"
+	 * @model default="GUARD" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	RoleClass getClassCode();
@@ -369,5 +369,18 @@ public interface Guardian extends Role {
 	 * @generated
 	 */
 	boolean validateGuardianChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::GUARD
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::GUARD'"
+	 * @generated
+	 */
+	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Guardian

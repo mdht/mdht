@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Component3;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.operations.Component3Operations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.impl.ActRelationshipImpl;
@@ -444,6 +447,24 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 */
 	public boolean isSetContextConductionInd() {
 		return contextConductionIndESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component3Operations.validateTypeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContextConductionInd(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component3Operations.validateContextConductionInd(this, diagnostics, context);
 	}
 
 	/**

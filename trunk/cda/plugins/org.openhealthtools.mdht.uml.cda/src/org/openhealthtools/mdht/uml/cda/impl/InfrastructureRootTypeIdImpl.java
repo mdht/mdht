@@ -12,11 +12,15 @@
  */
 package org.openhealthtools.mdht.uml.cda.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
+import org.openhealthtools.mdht.uml.cda.operations.InfrastructureRootTypeIdOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.impl.IIImpl;
 
 /**
@@ -176,6 +180,15 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 */
 	public boolean isSetRedefinedExtension() {
 		return REDEFINED_EXTENSION_EDEFAULT == null ? redefinedExtension != null : !REDEFINED_EXTENSION_EDEFAULT.equals(redefinedExtension);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRedefinedRootroot(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return InfrastructureRootTypeIdOperations.validateRedefinedRootroot(this, diagnostics, context);
 	}
 
 	/**

@@ -7,15 +7,21 @@
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import java.util.Collection;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
+import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
@@ -29,6 +35,8 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.EntityOperations;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#validateClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#validateDeterminerCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Determiner Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getNames() <em>Get Names</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getTelecoms() <em>Get Telecoms</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getAddrs() <em>Get Addrs</em>}</li>
@@ -54,6 +62,120 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	 */
 	protected CustodianOrganizationOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateClassCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateClassCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateClassCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateClassCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG
+	 * @param custodianOrganization The receiving '<em><b>Custodian Organization</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateClassCode(CustodianOrganization custodianOrganization, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION);
+			try {
+				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(custodianOrganization)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CDAValidator.DIAGNOSTIC_SOURCE,
+						 CDAValidator.CUSTODIAN_ORGANIZATION__CLASS_CODE,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateClassCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(custodianOrganization, context) }),
+						 new Object [] { custodianOrganization }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateDeterminerCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Determiner Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDeterminerCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateDeterminerCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Determiner Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDeterminerCode(CustodianOrganization, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE
+	 * @param custodianOrganization The receiving '<em><b>Custodian Organization</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateDeterminerCode(CustodianOrganization custodianOrganization, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION);
+			try {
+				VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(custodianOrganization)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CDAValidator.DIAGNOSTIC_SOURCE,
+						 CDAValidator.CUSTODIAN_ORGANIZATION__DETERMINER_CODE,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeterminerCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(custodianOrganization, context) }),
+						 new Object [] { custodianOrganization }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -88,7 +210,7 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	public static  EList<EN> getNames(CustodianOrganization custodianOrganization) {
 		if (GET_NAMES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(8));
+			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(10));
 			try {
 				GET_NAMES__EOCL_QRY = helper.createQuery(GET_NAMES__EOCL_EXP);
 			}
@@ -134,7 +256,7 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	public static  EList<TEL> getTelecoms(CustodianOrganization custodianOrganization) {
 		if (GET_TELECOMS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(9));
+			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(11));
 			try {
 				GET_TELECOMS__EOCL_QRY = helper.createQuery(GET_TELECOMS__EOCL_EXP);
 			}
@@ -180,7 +302,7 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	public static  EList<AD> getAddrs(CustodianOrganization custodianOrganization) {
 		if (GET_ADDRS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(10));
+			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(12));
 			try {
 				GET_ADDRS__EOCL_QRY = helper.createQuery(GET_ADDRS__EOCL_EXP);
 			}

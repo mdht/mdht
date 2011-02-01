@@ -13,9 +13,11 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.Authenticator;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
+import org.openhealthtools.mdht.uml.cda.operations.AuthenticatorOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
@@ -45,7 +48,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTime <em>Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getSignatureCode <em>Signature Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getAssignedEntities <em>Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getAssignedEntity <em>Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
@@ -105,14 +108,14 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 	protected CS signatureCode;
 
 	/**
-	 * The cached value of the '{@link #getAssignedEntities() <em>Assigned Entity</em>}' containment reference list.
+	 * The cached value of the '{@link #getAssignedEntity() <em>Assigned Entity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssignedEntities()
+	 * @see #getAssignedEntity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AssignedEntity> assignedEntities;
+	protected AssignedEntity assignedEntity;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -349,11 +352,42 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AssignedEntity> getAssignedEntities() {
-		if (assignedEntities == null) {
-			assignedEntities = new EObjectContainmentEList<AssignedEntity>(AssignedEntity.class, this, CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY);
+	public AssignedEntity getAssignedEntity() {
+		return assignedEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAssignedEntity(AssignedEntity newAssignedEntity, NotificationChain msgs) {
+		AssignedEntity oldAssignedEntity = assignedEntity;
+		assignedEntity = newAssignedEntity;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY, oldAssignedEntity, newAssignedEntity);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return assignedEntities;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAssignedEntity(AssignedEntity newAssignedEntity) {
+		if (newAssignedEntity != assignedEntity) {
+			NotificationChain msgs = null;
+			if (assignedEntity != null)
+				msgs = ((InternalEObject)assignedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY, null, msgs);
+			if (newAssignedEntity != null)
+				msgs = ((InternalEObject)newAssignedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY, null, msgs);
+			msgs = basicSetAssignedEntity(newAssignedEntity, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY, newAssignedEntity, newAssignedEntity));
 	}
 
 	/**
@@ -453,6 +487,15 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AuthenticatorOperations.validateTypeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -467,7 +510,7 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 			case CDAPackage.AUTHENTICATOR__SIGNATURE_CODE:
 				return basicSetSignatureCode(null, msgs);
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				return ((InternalEList<?>)getAssignedEntities()).basicRemove(otherEnd, msgs);
+				return basicSetAssignedEntity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -491,7 +534,7 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 			case CDAPackage.AUTHENTICATOR__SIGNATURE_CODE:
 				return getSignatureCode();
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				return getAssignedEntities();
+				return getAssignedEntity();
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:
@@ -527,8 +570,7 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				setSignatureCode((CS)newValue);
 				return;
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				getAssignedEntities().clear();
-				getAssignedEntities().addAll((Collection<? extends AssignedEntity>)newValue);
+				setAssignedEntity((AssignedEntity)newValue);
 				return;
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -564,7 +606,7 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				setSignatureCode((CS)null);
 				return;
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				getAssignedEntities().clear();
+				setAssignedEntity((AssignedEntity)null);
 				return;
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -595,7 +637,7 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 			case CDAPackage.AUTHENTICATOR__SIGNATURE_CODE:
 				return signatureCode != null;
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				return assignedEntities != null && !assignedEntities.isEmpty();
+				return assignedEntity != null;
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:

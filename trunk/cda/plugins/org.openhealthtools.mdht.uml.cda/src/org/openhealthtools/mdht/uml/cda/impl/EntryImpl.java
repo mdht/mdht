@@ -903,6 +903,15 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateContextConductionInd(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EntryOperations.validateContextConductionInd(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

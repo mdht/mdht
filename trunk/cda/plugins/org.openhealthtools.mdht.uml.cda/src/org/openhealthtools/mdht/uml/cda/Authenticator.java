@@ -12,6 +12,9 @@
  */
 package org.openhealthtools.mdht.uml.cda;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -33,7 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Authenticator#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Authenticator#getTime <em>Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Authenticator#getSignatureCode <em>Signature Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntities <em>Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntity <em>Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Authenticator#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Authenticator#getTypeCode <em>Type Code</em>}</li>
  * </ul>
@@ -160,21 +163,31 @@ public interface Authenticator extends Participation {
 	void setSignatureCode(CS value);
 
 	/**
-	 * Returns the value of the '<em><b>Assigned Entity</b></em>' containment reference list.
-	 * The list contents are of type {@link org.openhealthtools.mdht.uml.cda.AssignedEntity}.
+	 * Returns the value of the '<em><b>Assigned Entity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Assigned Entity</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Assigned Entity</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assigned Entity</em>' containment reference list.
+	 * @return the value of the '<em>Assigned Entity</em>' containment reference.
+	 * @see #setAssignedEntity(AssignedEntity)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthenticator_AssignedEntity()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<AssignedEntity> getAssignedEntities();
+	AssignedEntity getAssignedEntity();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntity <em>Assigned Entity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Assigned Entity</em>' containment reference.
+	 * @see #getAssignedEntity()
+	 * @generated
+	 */
+	void setAssignedEntity(AssignedEntity value);
 
 	/**
 	 * Returns the value of the '<em><b>Null Flavor</b></em>' attribute.
@@ -288,5 +301,18 @@ public interface Authenticator extends Participation {
 	 * @generated
 	 */
 	boolean isSetTypeCode();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUTHEN
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUTHEN'"
+	 * @generated
+	 */
+	boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Authenticator

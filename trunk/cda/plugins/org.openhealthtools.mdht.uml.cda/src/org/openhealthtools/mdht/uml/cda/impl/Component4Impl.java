@@ -1013,6 +1013,24 @@ public class Component4Impl extends ActRelationshipImpl implements Component4 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component4Operations.validateTypeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContextConductionInd(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component4Operations.validateContextConductionInd(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

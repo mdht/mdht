@@ -12,6 +12,9 @@
  */
 package org.openhealthtools.mdht.uml.cda;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -98,7 +101,7 @@ public interface ClinicalDocument extends Act {
 	 * @return the value of the '<em>Type Id</em>' containment reference.
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_TypeId()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
@@ -385,7 +388,7 @@ public interface ClinicalDocument extends Act {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Record Target</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_RecordTarget()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
@@ -848,6 +851,32 @@ public interface ClinicalDocument extends Act {
 	 * @generated
 	 */
 	boolean isSetMoodCode();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.classCode=vocab::ActClassClinicalDocument::DOCCLIN
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::ActClassClinicalDocument::DOCCLIN'"
+	 * @generated
+	 */
+	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.moodCode=vocab::ActMood::EVN
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::ActMood::EVN'"
+	 * @generated
+	 */
+	boolean validateMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

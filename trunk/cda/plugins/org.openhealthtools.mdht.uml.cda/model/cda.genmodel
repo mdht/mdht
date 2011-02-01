@@ -84,8 +84,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ClinicalDocument/component"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ClinicalDocument/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ClinicalDocument/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ClinicalDocument/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ClinicalDocument/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ClinicalDocument/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/moodCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/addPatient">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/addPatient/patient"/>
       </genOperations>
@@ -117,6 +125,10 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//InfrastructureRootTypeId">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InfrastructureRootTypeId/redefinedRoot"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InfrastructureRootTypeId/redefinedExtension"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//InfrastructureRootTypeId/redefinedRootroot">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InfrastructureRootTypeId/redefinedRootroot/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InfrastructureRootTypeId/redefinedRootroot/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//RecordTarget">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -128,8 +140,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//RecordTarget/patientRole"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RecordTarget/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RecordTarget/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RecordTarget/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RecordTarget/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RecordTarget/contextControlCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RecordTarget/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RecordTarget/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RecordTarget/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RecordTarget/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RecordTarget/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RecordTarget/contextControlCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//PatientRole">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -149,7 +169,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//PatientRole/providerOrganization"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PatientRole/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PatientRole/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PatientRole/classCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//PatientRole/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//PatientRole/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//PatientRole/classCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Patient">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -183,8 +207,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Patient/languageCommunication"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Patient/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Patient/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Patient/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Patient/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Patient/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Patient/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Patient/determinerCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Patient/getIds"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Guardian">
@@ -207,10 +239,14 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Guardian/guardianOrganization"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Guardian/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Guardian/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Guardian/classCode.1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Guardian/guardianChoice">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Guardian/guardianChoice/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Guardian/guardianChoice/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Guardian/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Guardian/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Guardian/classCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Person">
@@ -225,8 +261,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Person/sDTCBirthTime"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Person/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Person/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Person/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Person/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Person/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Person/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Organization">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -248,8 +292,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Organization/asOrganizationPartOf"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Organization/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Organization/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Organization/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Organization/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Organization/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organization/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Organization/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Organization/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organization/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Organization/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Organization/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//OrganizationPartOf">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -269,7 +321,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//OrganizationPartOf/wholeOrganization"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//OrganizationPartOf/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//OrganizationPartOf/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//OrganizationPartOf/classCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//OrganizationPartOf/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//OrganizationPartOf/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//OrganizationPartOf/classCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Birthplace">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -281,7 +337,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Birthplace/place"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Birthplace/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Birthplace/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Birthplace/classCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Birthplace/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Birthplace/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Birthplace/classCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Place">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -295,8 +355,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Place/addr"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Place/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Place/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Place/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Place/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Place/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Place/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Place/determinerCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Place/getNames"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Place/getAddrs"/>
     </genClasses>
@@ -331,8 +399,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Author/assignedAuthor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Author/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Author/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Author/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Author/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Author/contextControlCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Author/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Author/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Author/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Author/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Author/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Author/contextControlCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Author/getClinicalDocument"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//AssignedAuthor">
@@ -357,10 +433,14 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssignedAuthor/representedOrganization"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedAuthor/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedAuthor/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedAuthor/classCode.1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//AssignedAuthor/assignedAuthorChoice">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedAuthor/assignedAuthorChoice/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedAuthor/assignedAuthorChoice/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//AssignedAuthor/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedAuthor/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedAuthor/classCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//AuthoringDevice">
@@ -379,8 +459,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AuthoringDevice/asMaintainedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AuthoringDevice/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AuthoringDevice/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AuthoringDevice/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AuthoringDevice/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AuthoringDevice/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//AuthoringDevice/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AuthoringDevice/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AuthoringDevice/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//AuthoringDevice/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AuthoringDevice/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AuthoringDevice/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//MaintainedEntity">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -394,7 +482,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//MaintainedEntity/maintainingPerson"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//MaintainedEntity/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//MaintainedEntity/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//MaintainedEntity/classCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//MaintainedEntity/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//MaintainedEntity/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//MaintainedEntity/classCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//DataEnterer">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -408,8 +500,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DataEnterer/assignedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DataEnterer/contextControlCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//DataEnterer/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//DataEnterer/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//DataEnterer/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//DataEnterer/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//DataEnterer/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//DataEnterer/contextControlCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//DataEnterer/getClinicalDocument"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//AssignedEntity">
@@ -434,7 +534,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssignedEntity/sDTCPatient"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedEntity/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedEntity/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedEntity/classCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//AssignedEntity/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedEntity/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedEntity/classCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//SDTCPatient">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -452,11 +556,19 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Informant12/relatedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Informant12/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Informant12/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Informant12/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Informant12/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Informant12/contextControlCode.1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Informant12/informantChoice">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Informant12/informantChoice/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Informant12/informantChoice/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Informant12/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Informant12/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Informant12/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Informant12/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Informant12/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Informant12/contextControlCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//RelatedEntity">
@@ -491,7 +603,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Custodian/assignedCustodian"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Custodian/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Custodian/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Custodian/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Custodian/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Custodian/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Custodian/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//AssignedCustodian">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -503,7 +619,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssignedCustodian/representedCustodianOrganization"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedCustodian/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedCustodian/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedCustodian/classCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//AssignedCustodian/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedCustodian/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//AssignedCustodian/classCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//CustodianOrganization">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -521,8 +641,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//CustodianOrganization/addr"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//CustodianOrganization/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//CustodianOrganization/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//CustodianOrganization/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//CustodianOrganization/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//CustodianOrganization/determinerCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/getNames"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/getTelecoms"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//CustodianOrganization/getAddrs"/>
@@ -573,8 +701,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//LegalAuthenticator/assignedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LegalAuthenticator/contextControlCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//LegalAuthenticator/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LegalAuthenticator/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LegalAuthenticator/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//LegalAuthenticator/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LegalAuthenticator/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LegalAuthenticator/contextControlCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Authenticator">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -590,7 +726,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Authenticator/assignedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authenticator/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authenticator/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authenticator/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Authenticator/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Authenticator/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Authenticator/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Participant1">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -607,7 +747,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Participant1/associatedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant1/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant1/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant1/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant1/contextControlCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Participant1/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Participant1/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Participant1/contextControlCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//AssociatedEntity">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -643,7 +787,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//InFulfillmentOf/order"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InFulfillmentOf/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InFulfillmentOf/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InFulfillmentOf/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//InFulfillmentOf/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InFulfillmentOf/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InFulfillmentOf/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Order">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -660,7 +808,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Order/priorityCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Order/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Order/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Order/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Order/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Order/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Order/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Order/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//DocumentationOf">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -672,7 +824,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentationOf/serviceEvent"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DocumentationOf/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DocumentationOf/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//DocumentationOf/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//DocumentationOf/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//DocumentationOf/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//DocumentationOf/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ServiceEvent">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -691,7 +847,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ServiceEvent/performer"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ServiceEvent/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ServiceEvent/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ServiceEvent/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ServiceEvent/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ServiceEvent/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ServiceEvent/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ServiceEvent/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Performer1">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -739,8 +899,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ParentDocument/versionNumber"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ParentDocument/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ParentDocument/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ParentDocument/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ParentDocument/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ParentDocument/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ParentDocument/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ParentDocument/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ParentDocument/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ParentDocument/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ParentDocument/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ParentDocument/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Authorization">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -752,7 +920,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Authorization/consent"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authorization/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authorization/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Authorization/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Authorization/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Authorization/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Authorization/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Consent">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -768,8 +940,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Consent/statusCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consent/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consent/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consent/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consent/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consent/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Consent/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Consent/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Consent/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Consent/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Consent/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Consent/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Component1">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -781,7 +961,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Component1/encompassingEncounter"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component1/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component1/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component1/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component1/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component1/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component1/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//EncompassingEncounter">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -805,8 +989,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//EncompassingEncounter/location"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//EncompassingEncounter/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//EncompassingEncounter/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//EncompassingEncounter/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//EncompassingEncounter/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//EncompassingEncounter/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//EncompassingEncounter/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//EncompassingEncounter/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//EncompassingEncounter/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//EncompassingEncounter/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//EncompassingEncounter/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//EncompassingEncounter/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ResponsibleParty">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -818,7 +1010,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ResponsibleParty/assignedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ResponsibleParty/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ResponsibleParty/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ResponsibleParty/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ResponsibleParty/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ResponsibleParty/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ResponsibleParty/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//EncounterParticipant">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -844,7 +1040,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Location/healthCareFacility"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Location/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Location/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Location/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Location/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Location/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Location/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//HealthCareFacility">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -876,11 +1076,19 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Component2/structuredBody"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component2/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component2/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component2/contextConductionInd"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component2/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component2/contextConductionInd.1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component2/bodyChoice">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component2/bodyChoice/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component2/bodyChoice/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component2/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component2/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component2/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component2/contextConductionInd">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component2/contextConductionInd/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component2/contextConductionInd/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//NonXMLBody">
@@ -897,8 +1105,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//NonXMLBody/languageCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//NonXMLBody/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//NonXMLBody/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//NonXMLBody/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//NonXMLBody/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//NonXMLBody/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//NonXMLBody/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//NonXMLBody/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//NonXMLBody/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//NonXMLBody/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//NonXMLBody/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//NonXMLBody/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//StructuredBody">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -914,8 +1130,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//StructuredBody/component"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//StructuredBody/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//StructuredBody/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//StructuredBody/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//StructuredBody/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//StructuredBody/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StructuredBody/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StructuredBody/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StructuredBody/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StructuredBody/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StructuredBody/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StructuredBody/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Component3">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -927,8 +1151,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Component3/section"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component3/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component3/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component3/contextConductionInd"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component3/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component3/contextConductionInd.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component3/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component3/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component3/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component3/contextConductionInd">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component3/contextConductionInd/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component3/contextConductionInd/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Section">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -961,8 +1193,16 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Section/component"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Section/sectionId"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Section/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Section/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Section/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Section/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Section/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/moodCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/addAct">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/addAct/act"/>
       </genOperations>
@@ -1080,8 +1320,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Subject/relatedSubject"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Subject/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Subject/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Subject/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Subject/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Subject/contextControlCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Subject/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Subject/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Subject/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Subject/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Subject/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Subject/contextControlCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//RelatedSubject">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1115,8 +1363,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubjectPerson/birthTime"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubjectPerson/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubjectPerson/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubjectPerson/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubjectPerson/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubjectPerson/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubjectPerson/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubjectPerson/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubjectPerson/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubjectPerson/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubjectPerson/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubjectPerson/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Entry">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1145,10 +1401,14 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Entry/supply"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entry/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entry/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entry/contextConductionInd"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entry/contextConductionInd.1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Entry/clinicalStatement">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entry/clinicalStatement/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entry/clinicalStatement/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Entry/contextConductionInd">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entry/contextConductionInd/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entry/contextConductionInd/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Act">
@@ -1287,7 +1547,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Specimen/specimenRole"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Specimen/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Specimen/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Specimen/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Specimen/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Specimen/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Specimen/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//SpecimenRole">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1301,7 +1565,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SpecimenRole/specimenPlayingEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SpecimenRole/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SpecimenRole/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SpecimenRole/classCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SpecimenRole/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SpecimenRole/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SpecimenRole/classCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//PlayingEntity">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1322,7 +1590,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//PlayingEntity/desc"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PlayingEntity/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PlayingEntity/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PlayingEntity/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//PlayingEntity/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//PlayingEntity/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//PlayingEntity/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//PlayingEntity/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Performer2">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1338,7 +1610,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Performer2/assignedEntity"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Performer2/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Performer2/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Performer2/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Performer2/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Performer2/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Performer2/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Participant2">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1355,7 +1631,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Participant2/participantRole"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant2/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant2/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant2/contextControlCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Participant2/contextControlCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Participant2/contextControlCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Participant2/contextControlCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Participant2/contextControlCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ParticipantRole">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1400,7 +1680,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Device/softwareName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Device/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Device/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Device/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Device/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Device/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Device/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Device/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Entity">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1417,7 +1701,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Entity/desc"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entity/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entity/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entity/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Entity/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Entity/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entity/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entity/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//EntryRelationship">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1611,7 +1899,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ExternalAct/text"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalAct/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalAct/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalAct/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalAct/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ExternalAct/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalAct/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalAct/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ExternalObservation">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1628,7 +1920,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ExternalObservation/text"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalObservation/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalObservation/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalObservation/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalObservation/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ExternalObservation/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalObservation/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalObservation/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ExternalProcedure">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1644,8 +1940,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ExternalProcedure/text"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalProcedure/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalProcedure/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalProcedure/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalProcedure/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalProcedure/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ExternalProcedure/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalProcedure/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalProcedure/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ExternalProcedure/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalProcedure/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalProcedure/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ExternalDocument">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1666,7 +1970,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ExternalDocument/versionNumber"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalDocument/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalDocument/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalDocument/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ExternalDocument/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ExternalDocument/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalDocument/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ExternalDocument/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Precondition">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1678,7 +1986,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Precondition/criterion"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Precondition/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Precondition/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Precondition/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Precondition/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Precondition/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Precondition/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Criterion">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1695,7 +2007,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Criterion/value"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Criterion/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Criterion/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Criterion/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Criterion/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Criterion/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Criterion/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Criterion/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Observation">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1838,7 +2154,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ReferenceRange/observationRange"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ReferenceRange/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ReferenceRange/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ReferenceRange/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ReferenceRange/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ReferenceRange/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ReferenceRange/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ObservationRange">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1857,7 +2177,11 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ObservationRange/interpretationCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ObservationRange/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ObservationRange/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ObservationRange/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ObservationRange/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationRange/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationRange/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationRange/moodCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ObservationMedia">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -2103,11 +2427,19 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Component4/supply"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component4/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component4/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component4/contextConductionInd"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component4/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component4/contextConductionInd.1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component4/clinicalStatement">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/clinicalStatement/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/clinicalStatement/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component4/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component4/contextConductionInd">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/contextConductionInd/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/contextConductionInd/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Procedure">
@@ -2266,8 +2598,16 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//RegionOfInterest/precondition"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RegionOfInterest/regionOfInterestId"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RegionOfInterest/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RegionOfInterest/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RegionOfInterest/moodCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RegionOfInterest/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RegionOfInterest/moodCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/moodCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/addAct">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/addAct/act"/>
       </genOperations>
@@ -2389,17 +2729,21 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/informant"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/reference"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/participant"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/entryRelationship"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/reference"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/precondition"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubstanceAdministration/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubstanceAdministration/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubstanceAdministration/classCode.1"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubstanceAdministration/moodCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//SubstanceAdministration/negationInd"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubstanceAdministration/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubstanceAdministration/classCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/addAct">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubstanceAdministration/addAct/act"/>
       </genOperations>
@@ -2484,7 +2828,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Consumable/manufacturedProduct"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consumable/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consumable/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Consumable/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Consumable/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Consumable/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Consumable/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ManufacturedProduct">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -2502,10 +2850,14 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ManufacturedProduct/manufacturerOrganization"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ManufacturedProduct/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ManufacturedProduct/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//ManufacturedProduct/classCode.1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ManufacturedProduct/manufacturedDrugOrOtherMaterial">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ManufacturedProduct/manufacturedDrugOrOtherMaterial/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ManufacturedProduct/manufacturedDrugOrOtherMaterial/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ManufacturedProduct/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ManufacturedProduct/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ManufacturedProduct/classCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//LabeledDrug">
@@ -2520,8 +2872,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//LabeledDrug/name"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LabeledDrug/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LabeledDrug/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LabeledDrug/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LabeledDrug/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//LabeledDrug/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//LabeledDrug/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LabeledDrug/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LabeledDrug/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//LabeledDrug/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LabeledDrug/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//LabeledDrug/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Material">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -2537,8 +2897,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Material/lotNumberText"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Material/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Material/classCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Material/determinerCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Material/classCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Material/determinerCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Material/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Material/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Material/classCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Material/determinerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Material/determinerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Material/determinerCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Supply">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -2588,8 +2956,12 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Supply/precondition"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Supply/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Supply/classCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Supply/classCode.1"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Supply/moodCode"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Supply/classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Supply/classCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/addAct">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Supply/addAct/act"/>
       </genOperations>
@@ -2674,7 +3046,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Product/manufacturedProduct"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Product/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Product/typeCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Product/typeCode.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Product/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Product/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Product/typeCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Component5">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -2686,8 +3062,16 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Component5/section"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component5/nullFlavor"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component5/typeCode"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component5/contextConductionInd"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component5/typeCode.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Component5/contextConductionInd.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component5/typeCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component5/typeCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component5/typeCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component5/contextConductionInd">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component5/contextConductionInd/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component5/contextConductionInd/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//DocumentRoot">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

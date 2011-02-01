@@ -2976,7 +2976,7 @@ public interface CDAPackage extends EPackage {
 	int AUTHENTICATOR__SIGNATURE_CODE = RIMPackage.PARTICIPATION_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -9476,22 +9476,13 @@ public interface CDAPackage extends EPackage {
 	int SUBSTANCE_ADMINISTRATION__INFORMANT = CLINICAL_STATEMENT_FEATURE_COUNT + 21;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBSTANCE_ADMINISTRATION__REFERENCE = CLINICAL_STATEMENT_FEATURE_COUNT + 22;
-
-	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTANCE_ADMINISTRATION__PARTICIPANT = CLINICAL_STATEMENT_FEATURE_COUNT + 23;
+	int SUBSTANCE_ADMINISTRATION__PARTICIPANT = CLINICAL_STATEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -9500,7 +9491,16 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP = CLINICAL_STATEMENT_FEATURE_COUNT + 24;
+	int SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP = CLINICAL_STATEMENT_FEATURE_COUNT + 23;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSTANCE_ADMINISTRATION__REFERENCE = CLINICAL_STATEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -13545,11 +13545,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAuthenticator_SignatureCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntities <em>Assigned Entity</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntity <em>Assigned Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Assigned Entity</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntities()
+	 * @return the meta object for the containment reference '<em>Assigned Entity</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntity()
 	 * @see #getAuthenticator()
 	 * @generated
 	 */
@@ -24112,7 +24112,7 @@ public interface CDAPackage extends EPackage {
 		EReference AUTHENTICATOR__SIGNATURE_CODE = eINSTANCE.getAuthenticator_SignatureCode();
 
 		/**
-		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
