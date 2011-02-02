@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adjusting to handle containment proxies
  *     
  * $Id$
  *******************************************************************************/
@@ -20,7 +21,10 @@ import java.util.Map;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
@@ -69,6 +73,7 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
     private void transformToUML(IProgressMonitor monitor) {
     	Package umlModel = getHL7ModelingTask().getDefaultModel();
+    	Resource umlResource = umlModel.eResource();
 
     	EcoreTransformerOptions options = new EcoreTransformerOptions();
     	if (includeVocabularyConstraints != null)
@@ -88,22 +93,35 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 			ecoreModelURI = URI.createFileURI(ecoreModelPath);
 		}
 		if (ecoreModelURI == null) {
-			ecoreModelURI = umlModel.eResource().getURI();
+			ecoreModelURI = umlResource.getURI();
 			ecoreModelURI = ecoreModelURI.trimFileExtension();
 			ecoreModelURI = ecoreModelURI.trimSegments(1).appendSegment(ecoreModelURI.lastSegment() + "_Ecore");
 		}
 
-		String fileExtension = umlModel.eResource().getURI().fileExtension();
+		String fileExtension = umlResource.getURI().fileExtension();
 		if (!fileExtension.equals(ecoreModelURI.fileExtension())) {
 			ecoreModelURI = ecoreModelURI.appendFileExtension(fileExtension);
 		}
 		
-		umlModel.eResource().setURI(ecoreModelURI);
+		umlResource.setURI(ecoreModelURI);
+		
+		for (TreeIterator<EObject> allContents = umlResource.getAllContents(); allContents.hasNext();) {
+			EObject eObject = allContents.next();
+			Resource eResource = eObject.eResource();
+			if (eResource != umlResource) {
+				if (eObject.eContainer() == null) {
+					umlResource.getContents().add(eObject);
+				} else {
+					eResource.getContents().remove(eObject);
+				}
+			}
+		}
+
 		logInfo("Saving model: " + ecoreModelURI.toString());
 		
 		try {
 			Map<String, String> saveOptions = new HashMap<String, String>();
-			umlModel.eResource().save(saveOptions);
+			umlResource.save(saveOptions);
 			
 		} catch (IOException e) {
 			throw new BuildException(e);

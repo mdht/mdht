@@ -133,7 +133,7 @@ public class CDAModelingTask extends Task {
 				Package pkg = (Package) UMLUtil.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
 				if (pkg != null) {
 					rootPackages.add(pkg);
-					logInfo("Loaded model: " + pkg.getQualifiedName());
+					logInfo("Loaded model: " + uri);
 					
 					if (defaultModel == null) {
 						defaultModel = pkg;

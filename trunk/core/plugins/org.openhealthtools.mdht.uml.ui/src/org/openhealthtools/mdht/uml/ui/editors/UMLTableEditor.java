@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.ui.editors;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
@@ -35,7 +36,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.ui.ViewerPane;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -123,6 +126,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
@@ -160,6 +164,19 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	private ResourceSetListener dirtyResourceListener = null;
 	private ResourceSetListener resourceLoadListener = null;
 	
+	protected List<Resource> getChildResources() {
+		List<Resource> childResources = new UniqueEList.FastCompare<Resource>();
+		if (resource != null) {
+			for (TreeIterator<EObject> allContents = resource.getAllContents(); allContents.hasNext();) {
+				Resource eResource = allContents.next().eResource();
+				if (eResource != resource) {
+					childResources.add(eResource);
+				}
+			}
+		}
+		return childResources;
+	}
+
 	/** This editor's property sheet page. */
 	protected TabbedPropertySheetPage propertySheetPage;
 	
@@ -350,8 +367,16 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			((AdapterFactoryEditingDomain)editingDomain).getResourceToReadOnlyMap().clear();
 		}
 
-		if (ModelManager.getManager().getChangedResources().contains(resource)) {
+		Collection<Resource> changedResources = ModelManager.getManager().getChangedResources();
+		if (changedResources.contains(resource)) {
 			handleChangedResources();
+		} else {
+			for (Resource childResource : getChildResources()) {
+				if (changedResources.contains(childResource)) {
+					handleChangedResources();
+					break;
+				}
+			}
 		}
 	}
 
@@ -795,8 +820,10 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		
 		for (Property property : containerFilter.getAllAttributes()) {
 			// include only those classes that are in this editor's resource
-			if (property.getType() instanceof Class && resource.equals(property.getType().eResource())) {
-				contents.add((Class)property.getType());
+			Type type = property.getType();
+			Resource eResource = type.eResource();
+			if (type instanceof Class && (resource.equals(eResource) || getChildResources().contains(eResource))) {
+				contents.add((Class)type);
 			}
 		}
 		
@@ -1023,15 +1050,30 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	 * Saveables affected by the editor input.
 	 */
 	public boolean isDirty() {
-		return resource.isModified();
+		if (resource.isModified()) {
+			return true;
+		}
+		for (Resource childResource : getChildResources()) {
+			if (childResource.isModified()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public Saveable[] getSaveables() {
+		List<Saveable> saveables = new ArrayList<Saveable>();
 		ModelDocument saveable = ModelManager.getManager().getModelDocument(resource);
-		if (saveable != null)
-			return new Saveable[] { saveable };
-		else
-			return new Saveable[0];
+		if (saveable != null) {
+			saveables.add(saveable);
+		}
+		for (Resource childResource : getChildResources()) {
+			saveable = ModelManager.getManager().getModelDocument(childResource);
+			if (saveable != null) {
+				saveables.add(saveable);				
+			}
+		}
+		return saveables.toArray(new Saveable[]{});
 	}
 
 	public Saveable[] getActiveSaveables() {
@@ -1157,7 +1199,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			Object markerURIAttr = marker.getAttribute(EValidator.URI_ATTRIBUTE);
 			if (markerURIAttr != null) {
 				URI markerURI = URI.createURI(markerURIAttr.toString());
-				eObject = resource.getEObject(markerURI.fragment());
+				eObject = editingDomain.getResourceSet().getEObject(markerURI, true);
 			}
 			if (eObject != null && eObject instanceof NamedElement) {
 				IStructuredSelection rootSelection = new StructuredSelection(
