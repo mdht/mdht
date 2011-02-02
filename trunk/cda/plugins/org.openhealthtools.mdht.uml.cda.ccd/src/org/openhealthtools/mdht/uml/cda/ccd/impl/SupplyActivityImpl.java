@@ -98,6 +98,15 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateSupplyActivityHasProduct(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityHasProduct(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateSupplyActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return SupplyActivityOperations.validateSupplyActivityTemplateId(this, diagnostics, context);
 	}

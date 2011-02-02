@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.Supply;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getSupplyActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.34' constraints.validation.error='SupplyActivityTemplateId SupplyActivityMoodCode SupplyActivityInformationSource SupplyActivityId' constraints.validation.warning='SupplyActivityStatusCode SupplyActivityEffectiveTime' constraints.validation.info='SupplyActivityHasAuthor SupplyActivityHasPerformer SupplyActivityHasParticipantLocation SupplyActivityQuantity SupplyActivityRepeatNumber SupplyActivityMedicationStatusObservation SupplyActivityFulfillmentInstruction'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.34' constraints.validation.error='SupplyActivityTemplateId SupplyActivityMoodCode SupplyActivityInformationSource SupplyActivityId' constraints.validation.warning='SupplyActivityStatusCode SupplyActivityEffectiveTime' constraints.validation.info='SupplyActivityHasAuthor SupplyActivityHasPerformer SupplyActivityHasParticipantLocation SupplyActivityHasProduct SupplyActivityQuantity SupplyActivityRepeatNumber SupplyActivityMedicationStatusObservation SupplyActivityFulfillmentInstruction'"
  * @generated
  */
 public interface SupplyActivity extends Supply {
@@ -93,6 +93,19 @@ public interface SupplyActivity extends Supply {
 	 * @generated
 	 */
 	boolean validateSupplyActivityInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.product.oclIsUndefined() and self.product.oclIsKindOf(ccd::Product)
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.product.oclIsUndefined() and self.product.oclIsKindOf(ccd::Product)'"
+	 * @generated
+	 */
+	boolean validateSupplyActivityHasProduct(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

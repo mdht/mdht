@@ -25,6 +25,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *     patient's prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy
  *     system vs. from the patient).
  * </p>
+ * <p>Reconciliation of conflicting medication information from various sources is enabled both by indicating the source of information and by indicating whether the source is reporting intended or actual medication use. For instance, a physician may intend for a patient to be on a particular dose, but the patient may actually be taking a different dose; a pharmacy may fill a prescription for a particular dose only to then have the patient's physician lower the dose without notifying the pharmacy. Therefore, medication and supply activities can be expressed in CCD in either the "EVN" (event) mood or the "INT" (intent) mood. Medication activities in "INT" mood are not orders (which are represented in the Plan of Care section), but rather are reflections of what a clinician intends a patient to be taking. Medication activities in "EVN" mood reflect actual use. A pharmacy system will typically report what was actually filled (supply event), along with intended use (substance administration intent). A physician will often report intended use (substance administration and supply intent). A patient or family member will typically report actual use (substance administration event).</p>
  * <!-- end-model-doc -->
  *
  *

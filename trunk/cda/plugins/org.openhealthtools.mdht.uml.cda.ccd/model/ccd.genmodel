@@ -80,6 +80,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasReasonProblem/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasReasonProblem/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivityHasProduct">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasProduct/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityHasProduct/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivityTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityTemplateId/context"/>
@@ -116,14 +120,27 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityPatientInstruction/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityPatientInstruction/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivityReactionObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityReactionObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivityReactionObservation/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/getMedicationSeriesNumberObservation"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/getMedicationStatusObservation"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/getPatientInstructions"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/getReactionObservation"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//MedicationSeriesNumberObservation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationMoodCode/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationStatusCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservationStatusCode/diagnostics"/>
@@ -179,6 +196,55 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PatientInstruction/PatientInstructionMoodCode/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ReactionObservation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationMoodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationStatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationStatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationStatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationSeverityObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationSeverityObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationSeverityObservation/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/getSeverityObservation"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//SeverityObservation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationMoodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationStatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationStatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationStatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationValue/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//SupplyActivity">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SupplyActivity/SupplyActivityMoodCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SupplyActivity/SupplyActivityMoodCode/diagnostics"/>
@@ -199,6 +265,10 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SupplyActivity/SupplyActivityInformationSource">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SupplyActivity/SupplyActivityInformationSource/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SupplyActivity/SupplyActivityInformationSource/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SupplyActivity/SupplyActivityHasProduct">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SupplyActivity/SupplyActivityHasProduct/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SupplyActivity/SupplyActivityHasProduct/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SupplyActivity/SupplyActivityTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SupplyActivity/SupplyActivityTemplateId/diagnostics"/>
@@ -1313,55 +1383,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//AlertObservation/getReactionObservations"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//AlertStatusObservation"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ReactionObservation">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationTemplateId/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationClassCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationClassCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationClassCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationMoodCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationStatusCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationStatusCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationStatusCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/ReactionObservationSeverityObservation">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationSeverityObservation/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ReactionObservation/ReactionObservationSeverityObservation/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ReactionObservation/getSeverityObservation"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//SeverityObservation">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationTemplateId/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationClassCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationClassCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationClassCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationMoodCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationStatusCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationStatusCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationStatusCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SeverityObservation/SeverityObservationValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SeverityObservation/SeverityObservationValue/context"/>
-      </genOperations>
-    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//CauseOfDeathObservation"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//EncounterLocation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//EncounterLocation/EncounterLocationTemplateId">
@@ -1374,6 +1395,22 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//Product">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//Product/ProductHasMaterial">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterial/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterial/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//Product/ProductHasMaterialCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterialCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterialCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//Product/ProductHasMaterialCodeOriginalText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterialCodeOriginalText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterialCodeOriginalText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//Product/ProductHasMaterialName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterialName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductHasMaterialName/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//Product/ProductTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//Product/ProductTemplateId/context"/>

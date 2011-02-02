@@ -143,6 +143,8 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.MEDICATION_STATUS_OBSERVATION: return createMedicationStatusObservation();
 			case CCDPackage.STATUS_OBSERVATION: return createStatusObservation();
 			case CCDPackage.PATIENT_INSTRUCTION: return createPatientInstruction();
+			case CCDPackage.REACTION_OBSERVATION: return createReactionObservation();
+			case CCDPackage.SEVERITY_OBSERVATION: return createSeverityObservation();
 			case CCDPackage.SUPPLY_ACTIVITY: return createSupplyActivity();
 			case CCDPackage.FULFILLMENT_INSTRUCTION: return createFulfillmentInstruction();
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: return createContinuityOfCareDocument();
@@ -188,8 +190,6 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.ENCOUNTERS_ACTIVITY: return createEncountersActivity();
 			case CCDPackage.ALERT_OBSERVATION: return createAlertObservation();
 			case CCDPackage.ALERT_STATUS_OBSERVATION: return createAlertStatusObservation();
-			case CCDPackage.REACTION_OBSERVATION: return createReactionObservation();
-			case CCDPackage.SEVERITY_OBSERVATION: return createSeverityObservation();
 			case CCDPackage.CAUSE_OF_DEATH_OBSERVATION: return createCauseOfDeathObservation();
 			case CCDPackage.ENCOUNTER_LOCATION: return createEncounterLocation();
 			case CCDPackage.PRODUCT: return createProduct();

@@ -187,6 +187,14 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createPatientInstructionAdapter();
 			}
 			@Override
+			public Adapter caseReactionObservation(ReactionObservation object) {
+				return createReactionObservationAdapter();
+			}
+			@Override
+			public Adapter caseSeverityObservation(SeverityObservation object) {
+				return createSeverityObservationAdapter();
+			}
+			@Override
 			public Adapter caseSupplyActivity(SupplyActivity object) {
 				return createSupplyActivityAdapter();
 			}
@@ -365,14 +373,6 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAlertStatusObservation(AlertStatusObservation object) {
 				return createAlertStatusObservationAdapter();
-			}
-			@Override
-			public Adapter caseReactionObservation(ReactionObservation object) {
-				return createReactionObservationAdapter();
-			}
-			@Override
-			public Adapter caseSeverityObservation(SeverityObservation object) {
-				return createSeverityObservationAdapter();
 			}
 			@Override
 			public Adapter caseCauseOfDeathObservation(CauseOfDeathObservation object) {
