@@ -119,6 +119,7 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
@@ -755,9 +756,16 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			}
 		});
 
+ 		if (viewSelection.size() > 1) {
+ 			treeViewerWithColumns.setAutoExpandLevel(1);
+ 		}
+		
 		getEditorSite().setSelectionProvider(new SelectionProvider(tree));
 		updateViewContents();
-		treeViewerWithColumns.setSelection(viewSelection);
+		
+		if (viewSelection.size() >= 1) {
+			treeViewerWithColumns.setSelection(new StructuredSelection(viewSelection.getFirstElement()));
+		}
 
 		// set to 1 level expansion after initial display
 		treeViewerWithColumns.setAutoExpandLevel(1);
@@ -774,7 +782,14 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	
 	private void setDefaultSelection() {
 		if (resource != null && !resource.getContents().isEmpty()) {
-			viewSelection = new StructuredSelection(resource.getContents().get(0));
+			List<NamedElement> contents = new ArrayList<NamedElement>();
+			for (EObject eObject : resource.getContents()) {
+				if (eObject instanceof Package || (eObject instanceof Classifier
+						&& !(eObject instanceof Association)))
+					contents.add((NamedElement)eObject);
+			}
+			
+			viewSelection = new StructuredSelection(contents);
 			updateViewContents();
 			selectReveal(viewSelection);
 		}
