@@ -1670,14 +1670,14 @@
 &lt;/p>&#xD;
 &lt;p>&#xD;
     Vital signs are represented like other results (as defined in &lt;b>&lt;i>Results&#xD;
-    Section&lt;/i>&lt;/b>), but are aggregated into their own section in order to follow clinical&#xD;
-    conventions.&#xD;
+    Section&lt;/i>&lt;/b>),  with additional vocabulary constraints and are aggregated into their own section in order to follow clinical&#xD;
+    conventions&#xD;
 &lt;/p></body>
       </ownedComment>
       <ownedRule xmi:id="_zaNJsBtIEd-vGNAsDUJvgw" name="titleValue" constrainedElement="_GKpeMKPaEd6t_4WfM070fA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_1jpicBtIEd-vGNAsDUJvgw">
           <language>Analysis</language>
-          <body>Contains a case-insensitive language-insensitive string containing 'vital signs'.</body>
+          <body>title contains a case-insensitive language-insensitive string containing 'vital signs'.</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_aEDRkKPaEd6t_4WfM070fA">
@@ -2844,7 +2844,9 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:AssociationValidation xmi:id="_g-C28KPUEd6t_4WfM070fA" severity="WARNING" base_Association="_e_CMkKPUEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_Wy1YcKPaEd6t_4WfM070fA" base_Comment="_WyxuEKPaEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_fE-NwKPaEd6t_4WfM070fA" base_Class="_GKpeMKPaEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.16" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_maaKQKPaEd6t_4WfM070fA" severity="WARNING" base_Association="_kxx_kKPaEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_maaKQKPaEd6t_4WfM070fA" severity="WARNING" base_Association="_kxx_kKPaEd6t_4WfM070fA">
+    <ruleId>CONF-381</ruleId>
+  </CDA:AssociationValidation>
   <CDA:CDATemplate xmi:id="_CJFbUKPcEd6t_4WfM070fA" base_Class="_5hfTYKPbEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.7" assigningAuthorityName="CCD"/>
   <CDA:AssociationValidation xmi:id="_QXIOYKPcEd6t_4WfM070fA" severity="WARNING" base_Association="_MnFrQKPcEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_fMHssKPcEd6t_4WfM070fA" base_Comment="_fMDbQKPcEd6t_4WfM070fA"/>
@@ -2880,12 +2882,16 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_2qHaMKR2Ed6t_4WfM070fA" base_Constraint="_zYt64KR2Ed6t_4WfM070fA">
     <ruleId>CONF-27</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:TextValue xmi:id="_dcoLwK3yEd6_ioDelDcPPg" base_Property="_K6UHIK3yEd6_ioDelDcPPg"/>
+  <CDA:TextValue xmi:id="_dcoLwK3yEd6_ioDelDcPPg" base_Property="_K6UHIK3yEd6_ioDelDcPPg">
+    <ruleId>CONF-384</ruleId>
+  </CDA:TextValue>
   <CDA:TextValue xmi:id="_vwXo4K3yEd6_ioDelDcPPg" base_Property="_GMTtEIjpEd66cKocspyVOg">
     <ruleId>CONF-391</ruleId>
   </CDA:TextValue>
   <CDA:CDATemplate xmi:id="_3x-SYK3zEd6_ioDelDcPPg" base_Class="_wN4O0K3zEd6_ioDelDcPPg" templateId="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_DyVs8K30Ed6_ioDelDcPPg" severity="WARNING" base_Association="__3xU0K3zEd6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_DyVs8K30Ed6_ioDelDcPPg" severity="WARNING" base_Association="__3xU0K3zEd6_ioDelDcPPg">
+    <ruleId>CONF-381</ruleId>
+  </CDA:AssociationValidation>
   <CDA:AssociationValidation xmi:id="_tNsl4K30Ed6_ioDelDcPPg" base_Association="_Ubf3kK30Ed6_ioDelDcPPg">
     <ruleId>CONF-405</ruleId>
   </CDA:AssociationValidation>
@@ -3239,9 +3245,15 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_N9IrQBtIEd-vGNAsDUJvgw" base_Constraint="_MZDpYBtIEd-vGNAsDUJvgw">
     <ruleId>CONF-421</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:PropertyValidation xmi:id="_jcpg0BtIEd-vGNAsDUJvgw" base_Property="_iR-dcBtIEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_0zWG4BtIEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_zaNJsBtIEd-vGNAsDUJvgw"/>
-  <CDA:ConstraintValidation xmi:id="_OPvBsBtJEd-vGNAsDUJvgw" base_Constraint="_MpjHABtJEd-vGNAsDUJvgw"/>
+  <CDA:PropertyValidation xmi:id="_jcpg0BtIEd-vGNAsDUJvgw" base_Property="_iR-dcBtIEd-vGNAsDUJvgw">
+    <ruleId>CONF-381</ruleId>
+  </CDA:PropertyValidation>
+  <CDA:ConstraintValidation xmi:id="_0zWG4BtIEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_zaNJsBtIEd-vGNAsDUJvgw">
+    <ruleId>CONF-385</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_OPvBsBtJEd-vGNAsDUJvgw" base_Constraint="_MpjHABtJEd-vGNAsDUJvgw">
+    <ruleId>CONF-387</ruleId>
+  </CDA:ConstraintValidation>
   <CDA:PropertyValidation xmi:id="_oByqgBtJEd-vGNAsDUJvgw" base_Property="_mxb14BtJEd-vGNAsDUJvgw"/>
   <CDA:ConstraintValidation xmi:id="_7Hr9UBtJEd-vGNAsDUJvgw" severity="WARNING" base_Constraint="_54_VkBtJEd-vGNAsDUJvgw"/>
   <CDA:AssociationValidation xmi:id="_KP7HwBtKEd-vGNAsDUJvgw" message="CCD Immunizations Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Medication Activity (templateId: 2.16.840.1.113883.10.20.1.24)" severity="WARNING"/>
@@ -3387,6 +3399,8 @@ Authorizations are represented using an act subordinate to the policy or program
   </CDA:CodeSystemConstraint>
   <CDA:CodeSystemConstraint xmi:id="_52xNwCfbEd-4R4ealYN1gQ" code="8716-3" displayName="Vital signs" base_Property="_K6ZmsK3yEd6_ioDelDcPPg">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+    <ruleId>CONF-382</ruleId>
+    <ruleId>CONF-383</ruleId>
   </CDA:CodeSystemConstraint>
   <CDA:CodeSystemConstraint xmi:id="_52zqACfbEd-4R4ealYN1gQ" code="46264-8" displayName="History of medical device use" base_Property="_CZOMcMikEd6mWrHPmrIIfQ">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
@@ -3745,4 +3759,7 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_LKODYC2XEeCrtaini_hOYQ" severity="INFO" base_Constraint="_Je8NUC2XEeCrtaini_hOYQ">
     <ruleId>CONF-364</ruleId>
   </CDA:ConstraintValidation>
+  <CDA:AssociationValidation xmi:id="_lhtGoCo4EeCP9IVcrNepYQ">
+    <ruleId>CONF-381</ruleId>
+  </CDA:AssociationValidation>
 </xmi:XMI>
