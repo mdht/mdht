@@ -16,9 +16,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
@@ -27,7 +25,6 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemEntryOperationsTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * This class is a JUnit4 test case.
@@ -43,38 +40,38 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
-		// EffectiveTime
-		// -------------------------------------------------------------
-		new EffectiveTimeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ConditionEntryOperations
-				.validateConditionEntryEffectiveTime(
-						(ConditionEntry) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Condition Entry Text
-		//-------------------------------------------------------------
-		new CCDValidationTestCase("text") {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ConditionEntryOperations.
-				validateConditionEntryText(
-						(ConditionEntry) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				return DatatypesFactory.eINSTANCE.createED("some text");
-			}
-		}
+//		// EffectiveTime
+//		// -------------------------------------------------------------
+//		new EffectiveTimeCCDValidationTest() {
+//			@Override
+//			protected boolean validate(final EObject objectToTest,
+//					final BasicDiagnostic diagnostician,
+//					final Map<Object, Object> map) {
+//				return ConditionEntryOperations
+//				.validateConditionEntryEffectiveTime(
+//						(ConditionEntry) objectToTest,
+//						diagnostician, map);
+//			}
+//		},
+//
+//		// Condition Entry Text
+//		//-------------------------------------------------------------
+//		new CCDValidationTestCase("text") {
+//			@Override
+//			protected boolean validate(final EObject objectToTest,
+//					final BasicDiagnostic diagnostician,
+//					final Map<Object, Object> map) {
+//				return ConditionEntryOperations.
+//				validateConditionEntryText(
+//						(ConditionEntry) objectToTest,
+//						diagnostician, map);
+//			}
+//
+//			@Override
+//			protected Object getValueToSet() {
+//				return DatatypesFactory.eINSTANCE.createED("some text");
+//			}
+//		}
 
 	}; // TEST_CASE_ARRAY
 
