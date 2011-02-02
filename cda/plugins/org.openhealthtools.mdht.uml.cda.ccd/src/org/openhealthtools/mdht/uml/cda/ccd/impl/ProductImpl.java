@@ -50,6 +50,42 @@ public class ProductImpl extends ManufacturedProductImpl implements Product {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateProductHasMaterial(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductOperations.validateProductHasMaterial(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProductHasMaterialCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductOperations.validateProductHasMaterialCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProductHasMaterialCodeOriginalText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductOperations.validateProductHasMaterialCodeOriginalText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProductHasMaterialName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductOperations.validateProductHasMaterialName(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateProductTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProductOperations.validateProductTemplateId(this, diagnostics, context);
 	}

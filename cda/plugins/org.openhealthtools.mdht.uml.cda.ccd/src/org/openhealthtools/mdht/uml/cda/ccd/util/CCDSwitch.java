@@ -240,6 +240,26 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.REACTION_OBSERVATION: {
+				ReactionObservation reactionObservation = (ReactionObservation)theEObject;
+				T result = caseReactionObservation(reactionObservation);
+				if (result == null) result = caseObservation(reactionObservation);
+				if (result == null) result = caseClinicalStatement(reactionObservation);
+				if (result == null) result = caseAct(reactionObservation);
+				if (result == null) result = caseInfrastructureRoot(reactionObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.SEVERITY_OBSERVATION: {
+				SeverityObservation severityObservation = (SeverityObservation)theEObject;
+				T result = caseSeverityObservation(severityObservation);
+				if (result == null) result = caseObservation(severityObservation);
+				if (result == null) result = caseClinicalStatement(severityObservation);
+				if (result == null) result = caseAct(severityObservation);
+				if (result == null) result = caseInfrastructureRoot(severityObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CCDPackage.SUPPLY_ACTIVITY: {
 				SupplyActivity supplyActivity = (SupplyActivity)theEObject;
 				T result = caseSupplyActivity(supplyActivity);
@@ -676,26 +696,6 @@ public class CCDSwitch<T> {
 				if (result == null) result = caseClinicalStatement(alertStatusObservation);
 				if (result == null) result = caseAct(alertStatusObservation);
 				if (result == null) result = caseInfrastructureRoot(alertStatusObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.REACTION_OBSERVATION: {
-				ReactionObservation reactionObservation = (ReactionObservation)theEObject;
-				T result = caseReactionObservation(reactionObservation);
-				if (result == null) result = caseObservation(reactionObservation);
-				if (result == null) result = caseClinicalStatement(reactionObservation);
-				if (result == null) result = caseAct(reactionObservation);
-				if (result == null) result = caseInfrastructureRoot(reactionObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.SEVERITY_OBSERVATION: {
-				SeverityObservation severityObservation = (SeverityObservation)theEObject;
-				T result = caseSeverityObservation(severityObservation);
-				if (result == null) result = caseObservation(severityObservation);
-				if (result == null) result = caseClinicalStatement(severityObservation);
-				if (result == null) result = caseAct(severityObservation);
-				if (result == null) result = caseInfrastructureRoot(severityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
