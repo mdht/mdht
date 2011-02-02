@@ -16,13 +16,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
-import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 
 /**
  * This class
@@ -37,19 +34,20 @@ public class LevelOneConformanceOperationsTest extends
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
-	new TemplateIDValidationTest(TEMPLATE_ID) {
-
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return LevelOneConformanceOperations
-					.validateGeneralHeaderConstraintsTemplateId(
-							(LevelOneConformance) objectToTest, diagnostician,
-							map);
-		}
-
-	} };
+//	new TemplateIDValidationTest(TEMPLATE_ID) {
+//
+//		@Override
+//		protected boolean validate(final EObject objectToTest,
+//				final BasicDiagnostic diagnostician,
+//				final Map<Object, Object> map) {
+//			return LevelOneConformanceOperations
+//					.validateGeneralHeaderConstraintsTemplateId(
+//							(LevelOneConformance) objectToTest, diagnostician,
+//							map);
+//		}
+//
+//	}
+	};
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
