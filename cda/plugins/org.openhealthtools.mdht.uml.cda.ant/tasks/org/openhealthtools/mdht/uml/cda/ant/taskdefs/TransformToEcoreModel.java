@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
@@ -75,19 +76,20 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	Package umlModel = getHL7ModelingTask().getDefaultModel();
     	Resource umlResource = umlModel.eResource();
 
-    	EcoreTransformerOptions options = new EcoreTransformerOptions();
-    	if (includeVocabularyConstraints != null)
-    		options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
+    	EcoreUtil.resolveAll(umlResource.getResourceSet());
 
-    	EcoreTransformer transformer = new EcoreTransformer(options);
-    	transformer.transformElement(umlModel);
-    	
-		monitor.worked(1);
-		if( monitor.isCanceled() )
-			return;
-		
-		/* Save */
-		monitor.setTaskName("Saving model");
+    	for (TreeIterator<EObject> allContents = umlResource.getAllContents(); allContents.hasNext();) {
+			EObject eObject = allContents.next();
+			Resource eResource = eObject.eResource();
+			if (eResource != umlResource) {
+				if (eObject.eContainer() == null) {
+					umlResource.getContents().add(eObject);
+				} else {
+					eResource.getContents().remove(eObject);
+				}
+			}
+		}
+
 		URI ecoreModelURI = null;
 		if (ecoreModelPath != null) {
 			ecoreModelURI = URI.createFileURI(ecoreModelPath);
@@ -105,17 +107,19 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		
 		umlResource.setURI(ecoreModelURI);
 		
-		for (TreeIterator<EObject> allContents = umlResource.getAllContents(); allContents.hasNext();) {
-			EObject eObject = allContents.next();
-			Resource eResource = eObject.eResource();
-			if (eResource != umlResource) {
-				if (eObject.eContainer() == null) {
-					umlResource.getContents().add(eObject);
-				} else {
-					eResource.getContents().remove(eObject);
-				}
-			}
-		}
+    	EcoreTransformerOptions options = new EcoreTransformerOptions();
+    	if (includeVocabularyConstraints != null)
+    		options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
+
+    	EcoreTransformer transformer = new EcoreTransformer(options);
+    	transformer.transformElement(umlModel);
+    	
+		monitor.worked(1);
+		if( monitor.isCanceled() )
+			return;
+		
+		/* Save */
+		monitor.setTaskName("Saving model");
 
 		logInfo("Saving model: " + ecoreModelURI.toString());
 		
