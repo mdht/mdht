@@ -1,6 +1,6 @@
 package org.openhealthtools.mdht.uml.cda.consol.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.Collections;
@@ -10,7 +10,10 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
+import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.Patient;
@@ -80,7 +83,110 @@ public class GeneralHeaderConstraintsOperationsTest extends
 	@Test
 	public void testValidateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom() {
 
-		GeneralHeaderConstraints generalHeaderConstraints = CONSOLFactory.eINSTANCE.createGeneralHeaderConstraints();
+		GeneralHeaderConstraints generalHeaderConstraints = CONSOLFactory.eINSTANCE.createGeneralHeaderConstraints().init();
+
+		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+
+		Patient patient = CDAFactory.eINSTANCE.createPatient();
+
+		patientRole.setPatient(patient);
+
+		generalHeaderConstraints.addPatientRole(patientRole);
+
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+
+		Map<Object, Object> context = new HashMap<Object, Object>();
+
+		try {
+			System.out.println("\n \n Guardian HAS NO Address and Telecom XML \n");
+			CDAUtil.save(generalHeaderConstraints, System.out);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(generalHeaderConstraints, diagnostics, context);
+
+		BasicDiagnostic key = new BasicDiagnostic
+				(Diagnostic.ERROR,
+				 CONSOLValidator.DIAGNOSTIC_SOURCE,
+				 CONSOLValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
+				CONSOLPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
+				 new Object [] { patientRole  });
+
+		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key,	new CDADiagnosticCompare()) >= 0);
+
+		patientRole.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+		patientRole.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+		diagnostics = new BasicDiagnostic();
+		try {
+			System.out.println("\n \n  Guardian HAS Address and Telecom XML \n");
+			CDAUtil.save(generalHeaderConstraints, System.out);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(generalHeaderConstraints, diagnostics, context);
+
+		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key,	new CDADiagnosticCompare()) < 0);
+	
+		
+		generalHeaderConstraints = CONSOLFactory.eINSTANCE.createGeneralHeaderConstraints().init();
+		
+		
+		
+		Author author = CDAFactory.eINSTANCE.createAuthor();
+		
+		AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
+		
+		author.setAssignedAuthor(assignedAuthor);
+		
+		generalHeaderConstraints.getAuthors().add(author);
+		
+		diagnostics = new BasicDiagnostic();
+		
+		key = new BasicDiagnostic
+		(Diagnostic.ERROR,
+		 CONSOLValidator.DIAGNOSTIC_SOURCE,
+		 CONSOLValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
+		CONSOLPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
+		 new Object [] { assignedAuthor });
+		
+	
+		try {
+			System.out.println("\n \n  AssignedAuthor HAS NO Address and Telecom XML \n");
+			CDAUtil.save(generalHeaderConstraints, System.out);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(generalHeaderConstraints, diagnostics, context);
+		
+		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key,	new CDADiagnosticCompare()) >= 0);
+		
+		diagnostics = new BasicDiagnostic();
+		
+		
+		assignedAuthor.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+		assignedAuthor.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+		
+		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(generalHeaderConstraints, diagnostics, context);
+		
+		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key,	new CDADiagnosticCompare()) < 0);
+		
+		try {
+			System.out.println("\n \n  AssignedAuthor HAS Address and Telecom XML \n");
+			CDAUtil.save(generalHeaderConstraints, System.out);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
+	public void testValidateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom() {
+	
+		
+		GeneralHeaderConstraints generalHeaderConstraints = CONSOLFactory.eINSTANCE.createGeneralHeaderConstraints().init();
 
 		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
 
@@ -130,12 +236,7 @@ public class GeneralHeaderConstraintsOperationsTest extends
 		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(generalHeaderConstraints, diagnostics, context);
 
 		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key,	new CDADiagnosticCompare()) < 0);
-
-	}
-
-	@Test
-	public void testValidateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
@@ -270,7 +371,27 @@ public class GeneralHeaderConstraintsOperationsTest extends
 
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		fail("Not yet implemented");
+
+		TemplateIDValidationTest templateIDValidationTest = new TemplateIDValidationTest("2.16.840.1.113883.10.20.3") {
+
+			@Override
+			protected boolean validate(final EObject objectToTest,
+					final BasicDiagnostic diagnostician,
+					final Map<Object, Object> map) {
+				return GeneralHeaderConstraintsOperations
+						.validateGeneralHeaderConstraintsTemplateId(
+								(GeneralHeaderConstraints) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+		
+		
+		GeneralHeaderConstraints generalHeaderConstraints = CONSOLFactory.eINSTANCE.createGeneralHeaderConstraints();
+		BasicDiagnostic arg1 = new BasicDiagnostic();
+		Map<Object, Object> arg2 = new HashMap<Object, Object> ();
+		templateIDValidationTest.doTest(generalHeaderConstraints, arg1, arg2);
+	
 	}
 
 	@Test
