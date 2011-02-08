@@ -11,11 +11,11 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "46239-0" <i>Reason for visit + Chief complaint</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-75)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "46239-0" <i>Reason for visit + Chief complaint</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-HP-75)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
