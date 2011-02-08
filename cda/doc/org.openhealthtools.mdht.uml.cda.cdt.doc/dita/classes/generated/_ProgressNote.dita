@@ -21,27 +21,27 @@
 <li>Contains [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../AssessmentSectionProcNote.dita">Assessment Section Proc Note</xref> (templateId: <tt>2.16.840.1.113883.10.20.18.2.13</tt>)</li></ol></li>
 <li>Contains [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareSection.dita">CCD Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol> (CONF-PRGN-21)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/AlertsSection.dita">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>) (CONF-PRGN-21)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ChiefComplaintSectionProcNote.dita">Chief Complaint Section Proc Note</xref> (templateId: <tt>2.16.840.1.113883.10.20.18.2.16</tt>)</li></ol> (CONF-PRGN-22)</li>
+<li>contains <xref href="../ChiefComplaintSectionProcNote.dita">Chief Complaint Section Proc Note</xref> (templateId: <tt>2.16.840.1.113883.10.20.18.2.16</tt>) (CONF-PRGN-22)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol> (CONF-PRGN-23)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/MedicationsSection.dita">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-PRGN-23)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ObjectiveSection.dita">Objective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.1</tt>)</li></ol> (CONF-PRGN-24)</li>
+<li>contains <xref href="../ObjectiveSection.dita">Objective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.1</tt>) (CONF-PRGN-24)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>)</li></ol> (CONF-PRGN-26)</li>
+<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>) (CONF-PRGN-26)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol> (CONF-PRGN-27)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemSection.dita">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-PRGN-27)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol> (CONF-PRGN-28)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ResultsSection.dita">CCD Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-PRGN-28)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>)</li></ol> (CONF-PRGN-29)</li>
+<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>) (CONF-PRGN-29)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li></ol> (CONF-PRGN-30)</li>
+<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>) (CONF-PRGN-30)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../SubjectiveSection.dita">Subjective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.2</tt>)</li></ol> (CONF-PRGN-31)</li>
+<li>contains <xref href="../SubjectiveSection.dita">Subjective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.2</tt>) (CONF-PRGN-31)</li></ol></li>
 <li><b>SHALL</b> satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections. (CONF-PN-45)<ul><li><codeblock>[OCL]: self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSectionProcNote))
    xor (self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSectionProcNote))
       and self.getSections()-&gt;exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PlanOfCareSection)))</codeblock></li></ul></li>
@@ -61,23 +61,23 @@
 <li><b>SHOULD</b> satisfy: The encompassingEncounter element has an encompassingEncounter/location/healthCareFacility/id element. (CONF-PRGN-11)<ul><li>All visits take place at a specific location. When available, the location ID is included in the encompassingEncounter/location/healthCareFacility/id element.</li></ul><ul><li><codeblock>[OCL]: self.componentOf.encompassingEncounter.location.healthCareFacility.id-&gt;notEmpty()</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Document</li>
 <li><b>SHALL</b> conform to <xref href="../GeneralHeaderConstraints.dita">General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt><ul><li>The ClinicalDocument/id element is an instance identifier data type (see HL7 Version 3
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt> (CONF-HP-17)<ul><li>The ClinicalDocument/id element is an instance identifier data type (see HL7 Version 3
 Abstract Data in Section 5 REFERENCES). The root attribute is a UUID or OID. The
 root uniquely identifies the scope of the extension. The root and extension attributes
-uniquely identify the document.</li></ul> (CONF-HP-17)</li>
+uniquely identify the document.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.11.20.8.1 <xref href="../../terminology/ProgressNoteDocumentTypeCode.dita">ProgressNoteDocumentTypeCode</xref> DYNAMIC (CONF-PRGN-3)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Specifies the creation time of the document. All documents
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt> (CONF-HP-23)<ul><li>Specifies the creation time of the document. All documents
 authored by direct input to a computer system should record an effectiveTime that is
 precise to the second. When authored in other ways, for example, by filling out a
 paper form that is then transferred into an EHR system, the precision of
-effectiveTime may be less than to the second.</li></ul> (CONF-HP-23)</li>
+effectiveTime may be less than to the second.</li></ul></li>
 <li>[CDT] Contains [1..1] <tt>confidentialityCode</tt><ul><li>Specifies the confidentiality assigned to the document. This specification provides no further guidance beyond CDA R2
 on documents with respect to the vocabulary used for confidentialityCode, nor
 treatment or implementation of confidentiality.</li></ul></li>
 <li>[CDT] Contains [1..*] <tt>author</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li></ol><ul><li>The author element represents the creator of the clinical document. If the role of the
+<li>contains CDA Author</li></ol><ul><li>The author element represents the creator of the clinical document. If the role of the
 actor is the entry of information from his or her own knowledge or application of skills,
 that actor is the author. If one actor provides information to another actor who filters,
 reasons, or algorithmically creates new information, then that second actor is also an
@@ -85,20 +85,20 @@ author, having created information from his or her own knowledge or skills. Howe
 that determination is independent from the determination of the first actor's
 authorship.</li></ul></li>
 <li>[CDT] Contains [1..1] <tt>custodian</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Custodian.html">CDA Custodian</xref></li></ol><ul><li>Based on the CDA R2 constraints (Section 4.2.2.3 of the CDA Normative Web Edition.
+<li>contains CDA Custodian</li></ol><ul><li>Based on the CDA R2 constraints (Section 4.2.2.3 of the CDA Normative Web Edition.
 See Section 5 REFERENCES), the custodian element is required and is the custodian of
 the clinical document.</li></ul></li>
-<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
+<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is CDA Component2</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-HP-24)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>realmCode</tt><tt>/@code</tt> = "US"  (CONF-HP-15)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt><ul><li>Specifies the local name used for the document.
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-HP-22)<ul><li>Specifies the local name used for the document.
 Note that the title does not need to be the same as the display name provided with the
 document type code. For example, the display name provided by LOINC&#174; as an aid in
-debugging may be "HISTORY AND PHYSICAL." The title can be localized, as appropriate.</li></ul> (CONF-HP-22)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt><ul><li>The clinical document type ID identifies the constraints imposed by CDA R2 on the
-content, essentially acting as a version identifier.</li></ul> (CONF-HP-16)</li>
+debugging may be "HISTORY AND PHYSICAL." The title can be localized, as appropriate.</li></ul></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt> (CONF-HP-16)<ul><li>The clinical document type ID identifies the constraints imposed by CDA R2 on the
+content, essentially acting as a version identifier.</li></ul></li>
 <li>[CDT] Contains [0..1] <tt>dataEnterer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/DataEnterer.html">CDA Data Enterer</xref></li></ol><ul><li><p>The dataEnterer element represents the person who transferred the information from
+<li>contains CDA Data Enterer</li></ol><ul><li><p>The dataEnterer element represents the person who transferred the information from
 other sources into the clinical document, where the other sources wrote the content of
 the note. The guiding rule of thumb is that an author provides the content found
 within the header or body of the document, subject to their own interpretation. The
@@ -108,12 +108,12 @@ both author and dataEnterer.</p>
 transcription or transfer from paper form to electronic system), that actor is considered
 a dataEnterer.</p></li></ul></li>
 <li>[CDT] Contains [0..*] <tt>informationRecipient</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/InformationRecipient.html">CDA Information Recipient</xref></li></ol><ul><li>informationRecipient, when used in the context of a referral or request for consultation,
+<li>contains CDA Information Recipient</li></ol><ul><li>informationRecipient, when used in the context of a referral or request for consultation,
 this records the intended recipient of the information at the time the document is
 created. The intended recipient may also be the health chart of the patient, in which
 case the receivedOrganization is the scoping organization of that chart.</li></ul></li>
 <li>[CDT] Contains [0..1] <tt>legalAuthenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/LegalAuthenticator.html">CDA Legal Authenticator</xref></li></ol><ul><li><p>The legalAuthenticator element identifies the legal authenticator of the document and
+<li>contains CDA Legal Authenticator</li></ol><ul><li><p>The legalAuthenticator element identifies the legal authenticator of the document and
 must be present if the document has been legally authenticated. Based on local
 practice, clinical documents may be released before legal authentication. This implies
 that a clinical document that does not contain this element has not been legally
@@ -125,7 +125,7 @@ legal authentication, given the appropriate credentials.</p>
 system that generates the clinical document. In these cases, the legal authenticator is
 a person accepting responsibility for the document, not the generating device or system.</p></li></ul></li>
 <li>[CDT] Contains [0..*] <tt>authenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Authenticator.html">CDA Authenticator</xref></li></ol><ul><li><p>The authenticator identifies the participant who attested to the accuracy of the
+<li>contains CDA Authenticator</li></ol><ul><li><p>The authenticator identifies the participant who attested to the accuracy of the
 information in the document.</p>
 <p>Automated systems, such as a PHR, that allow a clinical document to be generated need to give
 special consideration to authentication permissions because the information contained in the
@@ -135,27 +135,27 @@ document may come from sources or contain information that the author cannot val
 <li>[CDT] Contains [0..1] <tt>component</tt>, such that it<ol>
 <li>contains <xref href="../AssessmentSectionProcNote.dita">Assessment Section Proc Note</xref> (templateId: <tt>2.16.840.1.113883.10.20.18.2.13</tt>)</li></ol></li>
 <li>[CDT] Contains [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareSection.dita">CCD Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol> (CONF-PRGN-21)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/AlertsSection.dita">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>) (CONF-PRGN-21)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ChiefComplaintSectionProcNote.dita">Chief Complaint Section Proc Note</xref> (templateId: <tt>2.16.840.1.113883.10.20.18.2.16</tt>)</li></ol> (CONF-PRGN-22)</li>
+<li>contains <xref href="../ChiefComplaintSectionProcNote.dita">Chief Complaint Section Proc Note</xref> (templateId: <tt>2.16.840.1.113883.10.20.18.2.16</tt>) (CONF-PRGN-22)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol> (CONF-PRGN-23)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/MedicationsSection.dita">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-PRGN-23)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ObjectiveSection.dita">Objective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.1</tt>)</li></ol> (CONF-PRGN-24)</li>
+<li>contains <xref href="../ObjectiveSection.dita">Objective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.1</tt>) (CONF-PRGN-24)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>)</li></ol> (CONF-PRGN-26)</li>
+<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>) (CONF-PRGN-26)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol> (CONF-PRGN-27)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemSection.dita">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-PRGN-27)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ResultsSection.html">CCD Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>)</li></ol> (CONF-PRGN-28)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ResultsSection.dita">CCD Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-PRGN-28)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>)</li></ol> (CONF-PRGN-29)</li>
+<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>) (CONF-PRGN-29)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li></ol> (CONF-PRGN-30)</li>
+<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>) (CONF-PRGN-30)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../SubjectiveSection.dita">Subjective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.2</tt>)</li></ol> (CONF-PRGN-31)</li>
+<li>contains <xref href="../SubjectiveSection.dita">Subjective Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.21.2.2</tt>) (CONF-PRGN-31)</li></ol></li>
 <li>[CDT] <b>SHALL</b> satisfy: All patient, guardianPerson, assignedPerson, maintainingPerson, relatedPerson, intendedRecipient/informationRecipient, associatedPerson, and relatedSubject/subject elements have a name. (CONF-HP-6)<ul><li><codeblock>[OCL]: -- implemented in Java using XPath selector</codeblock></li><li><codeblock>[XPath]: *[self::cda:patient or self::cda:guardianPerson or self::cda:assignedPerson
    or self::cda:maintainingPerson or self::cda:relatedPerson or self::cda:associatedPerson
    or self::cda:intendedRecipient/cda:informationRecipient or self::cda:relatedSubject/cda:subject]</codeblock></li></ul></li>
@@ -313,7 +313,7 @@ least to the year, SHOULD be precise to the day, and MAY omit time zone. (CONF-H
   <realmCode code="US"/>
   <templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/>
   <templateId root="2.16.840.1.113883.10.20.21.1" assigningAuthorityName="CDT Progress Note"/>
-  <id root="f2797b17-cba2-4303-bc3f-876762c66ac0"/>
+  <id root="5355bea0-1dbb-43f5-bc5f-ed297222dc12"/>
   <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
   <title/>
   <effectiveTime/>

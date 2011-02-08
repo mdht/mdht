@@ -14,58 +14,58 @@
 <li><b>SHALL</b> conform to <xref href="../GeneralHeaderConstraints.dita">General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.22 <xref href="../../terminology/HPDocumentType.dita">HPDocumentType</xref> DYNAMIC (CONF-HP-54)</li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../HistoryOfPresentIllness.dita">History Of Present Illness</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.4</tt>)</li></ol><ul><li>This section describes the history related to the chief complaint. It contains the
+<li>contains <xref href="../HistoryOfPresentIllness.dita">History Of Present Illness</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.4</tt>) (CONF-HP-76)</li></ol><ul><li>This section describes the history related to the chief complaint. It contains the
 historical details leading up to and pertaining to the patient's current complaint or
-reason for seeking medical care.</li></ul> (CONF-HP-76)</li>
+reason for seeking medical care.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PastMedicalHistorySection.dita">Past Medical History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.9</tt>)</li></ol><ul><li>This section describes the past medical history for the patient. It may contain
+<li>contains <xref href="../PastMedicalHistorySection.dita">Past Medical History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.9</tt>) (CONF-HP-77)</li></ol><ul><li>This section describes the past medical history for the patient. It may contain
 information about past procedures or other illnesses that might have a bearing on the
 patient's current illness. Since past medical history can include past surgical history
 and other procedures, the Procedure History section may be included under the Past
 Medical History section or it may stand alone as its own section. By the same token,
 problems can be recorded in a standalone Problems section or in a nested Problems
 section. Wherever used, procedures and problems should conform to the CCD template
-for CDA entries cited in the Problems section.</li></ul> (CONF-HP-77)</li>
+for CDA entries cited in the Problems section.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol><ul><li>The Medications section defines a patient's current medications and pertinent
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/MedicationsSection.dita">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-HP-79)</li></ol><ul><li>The Medications section defines a patient's current medications and pertinent
 medication history. In this case, the LOINC displayName is not appropriate for the title
 of this section. The title should include the word "Medications." At a minimum, the
 currently active medications should be listed with an entire medication history as an
 option, particularly when the document is used for comprehensive data export. The
 section may also include a patient's prescription history and enable the determination
-of the source of a medication list, e.g., from a pharmacy system versus from the patient.</li></ul> (CONF-HP-79)</li>
+of the source of a medication list, e.g., from a pharmacy system versus from the patient.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol><ul><li>This section is used to list and describe any medication allergies, adverse reactions,
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/AlertsSection.dita">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>) (CONF-HP-80)</li></ol><ul><li>This section is used to list and describe any medication allergies, adverse reactions,
 idiosyncratic reactions, anaphylaxis/anaphylactoid reactions to food items, and
 metabolic variations or adverse reactions/allergies to other substances (such as latex,
 iodine, tape adhesives) used to assure the safety of health care delivery. In general,
 environmental allergies, even if severe, should not be included in the Alerts section
 since they constitute a medical problem and should be listed in the problem list and
-past medical history, even if directly related to the presenting problem.</li></ul> (CONF-HP-80)</li>
+past medical history, even if directly related to the presenting problem.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SocialHistorySection.html">CCD Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol><ul><li>This section contains data defining the patient's occupational, personal (i.e., lifestyle),
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/SocialHistorySection.dita">CCD Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>) (CONF-HP-81)</li></ol><ul><li>This section contains data defining the patient's occupational, personal (i.e., lifestyle),
 social, and environmental history and health risk factors, as well as administrative data
 such as marital status, race, ethnicity, and religious affiliation. Social history can have
 a significant influence on a patient's physical, psychological, and emotional health and
-wellbeing, so should be considered in the development of a complete health record.</li></ul> (CONF-HP-81)</li>
+wellbeing, so should be considered in the development of a complete health record.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FamilyHistorySection.html">CCD Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol><ul><li>This section contains data defining the patient's genetic relatives in terms of relevant
-health-risk factors that have a potential impact on the patient's health care profile.</li></ul> (CONF-HP-82)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/FamilyHistorySection.dita">CCD Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>) (CONF-HP-82)</li></ol><ul><li>This section contains data defining the patient's genetic relatives in terms of relevant
+health-risk factors that have a potential impact on the patient's health care profile.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li></ol><ul><li>The review of systems is a relevant collection of symptoms and function systematically
+<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>) (CONF-HP-83)</li></ol><ul><li>The review of systems is a relevant collection of symptoms and function systematically
 gathered by a clinician. It includes symptoms the patient is currently experiencing,
 some of which were not elicited during the history of present illness, as well as a
 potentially large number of pertinent negatives, e.g., symptoms that the patient was
 specifically asked if they had experienced or were currently experiencing, but had
-denied experiencing.</li></ul> (CONF-HP-83)</li>
+denied experiencing.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>)</li></ol> (CONF-HP-84)</li>
+<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>) (CONF-HP-84)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>)</li></ol> (CONF-HP-86)</li>
+<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>) (CONF-HP-86)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../GeneralStatusSection.dita">General Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.5</tt>)</li></ol> (CONF-HP-88)</li>
+<li>contains <xref href="../GeneralStatusSection.dita">General Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.5</tt>) (CONF-HP-88)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../DiagnosticFindings.dita">Diagnostic Findings</xref></li></ol><ul><li>This section contains the results of observations generated by laboratories, imaging
+<li>contains <xref href="../DiagnosticFindings.dita">Diagnostic Findings</xref> (CONF-HP-90)</li></ol><ul><li>This section contains the results of observations generated by laboratories, imaging
 procedures, and other procedures. The scope includes hematology, chemistry, serology,
 virology, toxicology, microbiology, plain x-ray, ultrasound, CT, MRI, angiography,
 echocardiography, nuclear medicine, pathology, and procedure observations. The
@@ -85,20 +85,20 @@ based on the review of a cardiac echocardiogram.
 Procedure results are typically generated by a clinician wanting to provide more
 granular information about component observations made during the performance of a
 procedure, such as where a gastroenterologist reports the size of a polyp observed
-during a colonoscopy.</li></ul> (CONF-HP-90)</li>
+during a colonoscopy.</li></ul></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol><ul><li>This section lists and describes all relevant clinical problems at the time the History
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemSection.dita">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-HP-93)</li></ol><ul><li>This section lists and describes all relevant clinical problems at the time the History
 and Physical is generated. At a minimum, all pertinent current and historical problems
 should be listed.
 This section is optional because the information contained in it may also appear in the
 Past Medical History section or the History of Present Illness section. When a problem
-list is inserted into either of these sections, it should use the CCD template.</li></ul> (CONF-HP-93)</li>
+list is inserted into either of these sections, it should use the CCD template.</li></ul></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProceduresSection.html">CCD Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol> (CONF-HP-94)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProceduresSection.dita">CCD Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>) (CONF-HP-94)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ImmunizationsSection.html">CCD Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li></ol><ul><li>The Immunizations section provides a patient's pertinent immunization history. The
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ImmunizationsSection.dita">CCD Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>) (CONF-HP-96)</li></ol><ul><li>The Immunizations section provides a patient's pertinent immunization history. The
 Immunizations section is optional, however it is recommended that it be present when
-such information is available.</li></ul> (CONF-HP-96)</li>
+such information is available.</li></ul></li>
 <li><b>MAY</b> satisfy: Implementations MAY use local codes in translation elements to specify a local code that is equivalent to the document type. (CONF-HP-55)</li>
 <li><b>SHALL</b> satisfy: If pre-coordinated document type codes are used, values used in the
 assignedAuthor/code and assignedAuthor/author/functionCode elements SHALL NOT
@@ -120,23 +120,23 @@ ClinicalDocument/code. (CONF-HP-57)</li>
     in (reasonExists or complaintExists) implies (reasonExists and complaintExists)</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Document</li>
 <li><b>SHALL</b> conform to <xref href="../GeneralHeaderConstraints.dita">General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt><ul><li>The ClinicalDocument/id element is an instance identifier data type (see HL7 Version 3
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt> (CONF-HP-17)<ul><li>The ClinicalDocument/id element is an instance identifier data type (see HL7 Version 3
 Abstract Data in Section 5 REFERENCES). The root attribute is a UUID or OID. The
 root uniquely identifies the scope of the extension. The root and extension attributes
-uniquely identify the document.</li></ul> (CONF-HP-17)</li>
+uniquely identify the document.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>code</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.22 <xref href="../../terminology/HPDocumentType.dita">HPDocumentType</xref> DYNAMIC (CONF-HP-54)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Specifies the creation time of the document. All documents
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt> (CONF-HP-23)<ul><li>Specifies the creation time of the document. All documents
 authored by direct input to a computer system should record an effectiveTime that is
 precise to the second. When authored in other ways, for example, by filling out a
 paper form that is then transferred into an EHR system, the precision of
-effectiveTime may be less than to the second.</li></ul> (CONF-HP-23)</li>
+effectiveTime may be less than to the second.</li></ul></li>
 <li>[CDT] Contains [1..1] <tt>confidentialityCode</tt><ul><li>Specifies the confidentiality assigned to the document. This specification provides no further guidance beyond CDA R2
 on documents with respect to the vocabulary used for confidentialityCode, nor
 treatment or implementation of confidentiality.</li></ul></li>
 <li>[CDT] Contains [1..*] <tt>author</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li></ol><ul><li>The author element represents the creator of the clinical document. If the role of the
+<li>contains CDA Author</li></ol><ul><li>The author element represents the creator of the clinical document. If the role of the
 actor is the entry of information from his or her own knowledge or application of skills,
 that actor is the author. If one actor provides information to another actor who filters,
 reasons, or algorithmically creates new information, then that second actor is also an
@@ -144,20 +144,20 @@ author, having created information from his or her own knowledge or skills. Howe
 that determination is independent from the determination of the first actor's
 authorship.</li></ul></li>
 <li>[CDT] Contains [1..1] <tt>custodian</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Custodian.html">CDA Custodian</xref></li></ol><ul><li>Based on the CDA R2 constraints (Section 4.2.2.3 of the CDA Normative Web Edition.
+<li>contains CDA Custodian</li></ol><ul><li>Based on the CDA R2 constraints (Section 4.2.2.3 of the CDA Normative Web Edition.
 See Section 5 REFERENCES), the custodian element is required and is the custodian of
 the clinical document.</li></ul></li>
-<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
+<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is CDA Component2</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-HP-24)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>realmCode</tt><tt>/@code</tt> = "US"  (CONF-HP-15)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt><ul><li>Specifies the local name used for the document.
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-HP-22)<ul><li>Specifies the local name used for the document.
 Note that the title does not need to be the same as the display name provided with the
 document type code. For example, the display name provided by LOINC&#174; as an aid in
-debugging may be "HISTORY AND PHYSICAL." The title can be localized, as appropriate.</li></ul> (CONF-HP-22)</li>
-<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt><ul><li>The clinical document type ID identifies the constraints imposed by CDA R2 on the
-content, essentially acting as a version identifier.</li></ul> (CONF-HP-16)</li>
+debugging may be "HISTORY AND PHYSICAL." The title can be localized, as appropriate.</li></ul></li>
+<li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt> (CONF-HP-16)<ul><li>The clinical document type ID identifies the constraints imposed by CDA R2 on the
+content, essentially acting as a version identifier.</li></ul></li>
 <li>[CDT] Contains [0..1] <tt>dataEnterer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/DataEnterer.html">CDA Data Enterer</xref></li></ol><ul><li><p>The dataEnterer element represents the person who transferred the information from
+<li>contains CDA Data Enterer</li></ol><ul><li><p>The dataEnterer element represents the person who transferred the information from
 other sources into the clinical document, where the other sources wrote the content of
 the note. The guiding rule of thumb is that an author provides the content found
 within the header or body of the document, subject to their own interpretation. The
@@ -167,12 +167,12 @@ both author and dataEnterer.</p>
 transcription or transfer from paper form to electronic system), that actor is considered
 a dataEnterer.</p></li></ul></li>
 <li>[CDT] Contains [0..*] <tt>informationRecipient</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/InformationRecipient.html">CDA Information Recipient</xref></li></ol><ul><li>informationRecipient, when used in the context of a referral or request for consultation,
+<li>contains CDA Information Recipient</li></ol><ul><li>informationRecipient, when used in the context of a referral or request for consultation,
 this records the intended recipient of the information at the time the document is
 created. The intended recipient may also be the health chart of the patient, in which
 case the receivedOrganization is the scoping organization of that chart.</li></ul></li>
 <li>[CDT] Contains [0..1] <tt>legalAuthenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/LegalAuthenticator.html">CDA Legal Authenticator</xref></li></ol><ul><li><p>The legalAuthenticator element identifies the legal authenticator of the document and
+<li>contains CDA Legal Authenticator</li></ol><ul><li><p>The legalAuthenticator element identifies the legal authenticator of the document and
 must be present if the document has been legally authenticated. Based on local
 practice, clinical documents may be released before legal authentication. This implies
 that a clinical document that does not contain this element has not been legally
@@ -184,64 +184,64 @@ legal authentication, given the appropriate credentials.</p>
 system that generates the clinical document. In these cases, the legal authenticator is
 a person accepting responsibility for the document, not the generating device or system.</p></li></ul></li>
 <li>[CDT] Contains [0..*] <tt>authenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Authenticator.html">CDA Authenticator</xref></li></ol><ul><li><p>The authenticator identifies the participant who attested to the accuracy of the
+<li>contains CDA Authenticator</li></ol><ul><li><p>The authenticator identifies the participant who attested to the accuracy of the
 information in the document.</p>
 <p>Automated systems, such as a PHR, that allow a clinical document to be generated need to give
 special consideration to authentication permissions because the information contained in the
 document may come from sources or contain information that the author cannot validate.</p></li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../HistoryOfPresentIllness.dita">History Of Present Illness</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.4</tt>)</li></ol><ul><li>This section describes the history related to the chief complaint. It contains the
+<li>contains <xref href="../HistoryOfPresentIllness.dita">History Of Present Illness</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.4</tt>) (CONF-HP-76)</li></ol><ul><li>This section describes the history related to the chief complaint. It contains the
 historical details leading up to and pertaining to the patient's current complaint or
-reason for seeking medical care.</li></ul> (CONF-HP-76)</li>
+reason for seeking medical care.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PastMedicalHistorySection.dita">Past Medical History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.9</tt>)</li></ol><ul><li>This section describes the past medical history for the patient. It may contain
+<li>contains <xref href="../PastMedicalHistorySection.dita">Past Medical History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.9</tt>) (CONF-HP-77)</li></ol><ul><li>This section describes the past medical history for the patient. It may contain
 information about past procedures or other illnesses that might have a bearing on the
 patient's current illness. Since past medical history can include past surgical history
 and other procedures, the Procedure History section may be included under the Past
 Medical History section or it may stand alone as its own section. By the same token,
 problems can be recorded in a standalone Problems section or in a nested Problems
 section. Wherever used, procedures and problems should conform to the CCD template
-for CDA entries cited in the Problems section.</li></ul> (CONF-HP-77)</li>
+for CDA entries cited in the Problems section.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/MedicationsSection.html">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>)</li></ol><ul><li>The Medications section defines a patient's current medications and pertinent
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/MedicationsSection.dita">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-HP-79)</li></ol><ul><li>The Medications section defines a patient's current medications and pertinent
 medication history. In this case, the LOINC displayName is not appropriate for the title
 of this section. The title should include the word "Medications." At a minimum, the
 currently active medications should be listed with an entire medication history as an
 option, particularly when the document is used for comprehensive data export. The
 section may also include a patient's prescription history and enable the determination
-of the source of a medication list, e.g., from a pharmacy system versus from the patient.</li></ul> (CONF-HP-79)</li>
+of the source of a medication list, e.g., from a pharmacy system versus from the patient.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AlertsSection.html">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol><ul><li>This section is used to list and describe any medication allergies, adverse reactions,
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/AlertsSection.dita">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>) (CONF-HP-80)</li></ol><ul><li>This section is used to list and describe any medication allergies, adverse reactions,
 idiosyncratic reactions, anaphylaxis/anaphylactoid reactions to food items, and
 metabolic variations or adverse reactions/allergies to other substances (such as latex,
 iodine, tape adhesives) used to assure the safety of health care delivery. In general,
 environmental allergies, even if severe, should not be included in the Alerts section
 since they constitute a medical problem and should be listed in the problem list and
-past medical history, even if directly related to the presenting problem.</li></ul> (CONF-HP-80)</li>
+past medical history, even if directly related to the presenting problem.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/SocialHistorySection.html">CCD Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol><ul><li>This section contains data defining the patient's occupational, personal (i.e., lifestyle),
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/SocialHistorySection.dita">CCD Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>) (CONF-HP-81)</li></ol><ul><li>This section contains data defining the patient's occupational, personal (i.e., lifestyle),
 social, and environmental history and health risk factors, as well as administrative data
 such as marital status, race, ethnicity, and religious affiliation. Social history can have
 a significant influence on a patient's physical, psychological, and emotional health and
-wellbeing, so should be considered in the development of a complete health record.</li></ul> (CONF-HP-81)</li>
+wellbeing, so should be considered in the development of a complete health record.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/FamilyHistorySection.html">CCD Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol><ul><li>This section contains data defining the patient's genetic relatives in terms of relevant
-health-risk factors that have a potential impact on the patient's health care profile.</li></ul> (CONF-HP-82)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/FamilyHistorySection.dita">CCD Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>) (CONF-HP-82)</li></ol><ul><li>This section contains data defining the patient's genetic relatives in terms of relevant
+health-risk factors that have a potential impact on the patient's health care profile.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>)</li></ol><ul><li>The review of systems is a relevant collection of symptoms and function systematically
+<li>contains <xref href="../ReviewOfSystemsSectionIHE.dita">Review Of Systems Section IHE</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.18</tt>) (CONF-HP-83)</li></ol><ul><li>The review of systems is a relevant collection of symptoms and function systematically
 gathered by a clinician. It includes symptoms the patient is currently experiencing,
 some of which were not elicited during the history of present illness, as well as a
 potentially large number of pertinent negatives, e.g., symptoms that the patient was
 specifically asked if they had experienced or were currently experiencing, but had
-denied experiencing.</li></ul> (CONF-HP-83)</li>
+denied experiencing.</li></ul></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>)</li></ol> (CONF-HP-84)</li>
+<li>contains <xref href="../PhysicalExaminationSection.dita">Physical Examination Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.10</tt>) (CONF-HP-84)</li></ol></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>)</li></ol> (CONF-HP-86)</li>
+<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.4</tt>) (CONF-HP-86)</li></ol></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../GeneralStatusSection.dita">General Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.5</tt>)</li></ol> (CONF-HP-88)</li>
+<li>contains <xref href="../GeneralStatusSection.dita">General Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.2.5</tt>) (CONF-HP-88)</li></ol></li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../DiagnosticFindings.dita">Diagnostic Findings</xref></li></ol><ul><li>This section contains the results of observations generated by laboratories, imaging
+<li>contains <xref href="../DiagnosticFindings.dita">Diagnostic Findings</xref> (CONF-HP-90)</li></ol><ul><li>This section contains the results of observations generated by laboratories, imaging
 procedures, and other procedures. The scope includes hematology, chemistry, serology,
 virology, toxicology, microbiology, plain x-ray, ultrasound, CT, MRI, angiography,
 echocardiography, nuclear medicine, pathology, and procedure observations. The
@@ -261,20 +261,20 @@ based on the review of a cardiac echocardiogram.
 Procedure results are typically generated by a clinician wanting to provide more
 granular information about component observations made during the performance of a
 procedure, such as where a gastroenterologist reports the size of a polyp observed
-during a colonoscopy.</li></ul> (CONF-HP-90)</li>
+during a colonoscopy.</li></ul></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>)</li></ol><ul><li>This section lists and describes all relevant clinical problems at the time the History
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemSection.dita">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-HP-93)</li></ol><ul><li>This section lists and describes all relevant clinical problems at the time the History
 and Physical is generated. At a minimum, all pertinent current and historical problems
 should be listed.
 This section is optional because the information contained in it may also appear in the
 Past Medical History section or the History of Present Illness section. When a problem
-list is inserted into either of these sections, it should use the CCD template.</li></ul> (CONF-HP-93)</li>
+list is inserted into either of these sections, it should use the CCD template.</li></ul></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProceduresSection.html">CCD Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol> (CONF-HP-94)</li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProceduresSection.dita">CCD Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>) (CONF-HP-94)</li></ol></li>
 <li>[CDT] <b>MAY</b> contain [0..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ImmunizationsSection.html">CCD Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li></ol><ul><li>The Immunizations section provides a patient's pertinent immunization history. The
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ImmunizationsSection.dita">CCD Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>) (CONF-HP-96)</li></ol><ul><li>The Immunizations section provides a patient's pertinent immunization history. The
 Immunizations section is optional, however it is recommended that it be present when
-such information is available.</li></ul> (CONF-HP-96)</li>
+such information is available.</li></ul></li>
 <li>[CDT] <b>SHALL</b> satisfy: All patient, guardianPerson, assignedPerson, maintainingPerson, relatedPerson, intendedRecipient/informationRecipient, associatedPerson, and relatedSubject/subject elements have a name. (CONF-HP-6)<ul><li><codeblock>[OCL]: -- implemented in Java using XPath selector</codeblock></li><li><codeblock>[XPath]: *[self::cda:patient or self::cda:guardianPerson or self::cda:assignedPerson
    or self::cda:maintainingPerson or self::cda:relatedPerson or self::cda:associatedPerson
    or self::cda:intendedRecipient/cda:informationRecipient or self::cda:relatedSubject/cda:subject]</codeblock></li></ul></li>
@@ -434,7 +434,7 @@ ClinicalDocument/code. (CONF-HP-57)</li>
   <realmCode code="US"/>
   <templateId root="2.16.840.1.113883.10.20.3" assigningAuthorityName="CDT General Header Constraints"/>
   <templateId root="2.16.840.1.113883.10.20.2" assigningAuthorityName="CDT History And Physical"/>
-  <id root="aad3f37e-2850-4942-9854-684c445cbec1"/>
+  <id root="5ef2fe9c-6ae1-41f5-9da7-cd485254c51a"/>
   <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
   <title/>
   <effectiveTime/>
