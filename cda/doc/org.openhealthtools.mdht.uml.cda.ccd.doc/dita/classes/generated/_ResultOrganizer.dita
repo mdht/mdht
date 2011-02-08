@@ -22,12 +22,12 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</xref> (CONF-393)</li>
+<li><b>SHALL</b> conform to CDA Organizer (CONF-393)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-394)</li>
 <li><b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
+<li>contains <xref href="../ResultObservation.dita">CCD Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
 <li><b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref> (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
+<li>contains CDA Specimen (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-395)</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-397)</li>
 <li><b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-396)</li>
@@ -43,15 +43,15 @@ or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Organizer</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is x_ActClassDocumentEntryOrganizer</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-394)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-396)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
+<li>contains <xref href="../ResultObservation.dita">CCD Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref> (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
+<li>contains CDA Specimen (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-395)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-397)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC. (CONF-398)</li>
@@ -74,13 +74,13 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
           <entry>
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
-              <id root="cdefc18c-de20-41f8-840c-7c1ac6a9d5fa"/>
+              <id root="ccbc483f-0939-4c0b-8135-488ba5faa4c3"/>
               <code/>
               <statusCode/>
               <component>
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-                  <id root="3d5d24b8-544a-4842-95f5-2dfc09a38bf7"/>
+                  <id root="018ef4cd-35ed-47b3-a99b-018a863e8dc0"/>
                   <code/>
                   <statusCode/>
                   <effectiveTime>

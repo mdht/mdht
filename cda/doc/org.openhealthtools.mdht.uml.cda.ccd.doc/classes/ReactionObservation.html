@@ -32,26 +32,32 @@
 
 
 <div class="section">
+<p class="p">A reaction represents an adverse event due to an administered or exposed substance. A reaction can be defined with respect to its severity, and can have been treated by one or more interventions. Significant reactions are to be listed in the Alerts section. Reactions in the Medications section can be used to track reactions associated with individual substance administrations or to track routine follow up to an administration (e.g. "no adverse reaction 30 minutes post administration").</p>
+
 </div>
 
 
 <ol class="ol">
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Observation (CONF-282)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "OBS"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "OBS" (CONF-283)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN"</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@moodCode</tt> = "EVN" (CONF-284)</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="SeverityObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.55]">Severity Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.55</tt>)</li>
+<li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
+
+<li class="li">contains <a class="xref" href="SeverityObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.55]">Severity Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.55</tt>) (CONF-348, CONF-288)</li>
 </ol>
 </li>
 
-<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">statusCode</tt><tt class="ph tt">/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-285, CONF-286)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> satisfy: The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</li>
+<li class="li"><strong class="ph b">MAY</strong> satisfy: A reaction observation MAY contain one or more reation interventions. (CONF-280)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> satisfy: A reaction observation MAY contain one or more reation interventions. A reaction intervention SHALL be represented as a procedure activity (templateId 2.16.840.1.113883.10.20.1.29), a medication activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement.</li>
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: A reaction intervention SHALL be represented as a Procedure Activity (templateId 2.16.840.1.113883.10.20.1.29), a Medication Activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement. (CONF-297)</li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-296)</li>
 
 </ol>
 

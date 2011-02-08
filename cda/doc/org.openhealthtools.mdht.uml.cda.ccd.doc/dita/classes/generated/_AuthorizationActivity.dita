@@ -14,14 +14,14 @@
 Authorizations are represented using an act subordinate to the policy or program that provided it. The policy or program is referred to by the authorization. Authorized treatments can be grouped into an Organizer class, where common properties, such as the reason for the authorization, can be expressed. Subordinate acts represent what was authorized.</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
@@ -36,7 +36,7 @@ Authorizations are represented using an act subordinate to the policy or program
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.19" assigningAuthorityName="CCD Authorization Activity"/>
-              <id root="19f573f8-2656-4727-861d-a4357b1538bb"/>
+              <id root="bc98b664-ce64-49bd-afea-5778fe1bd5a3"/>
             </act>
           </entry>
         </section>

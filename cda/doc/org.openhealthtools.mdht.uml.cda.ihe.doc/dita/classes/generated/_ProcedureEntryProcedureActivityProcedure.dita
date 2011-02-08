@@ -11,8 +11,8 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProcedureActivityProcedure.html">CCD Procedure Activity Procedure</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.29</tt>)</li>
-<li><b>SHALL</b> conform to <xref href="../ProcedureEntry.dita">Procedure Entry</xref></li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProcedureActivityProcedure.dita">CCD Procedure Activity Procedure</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.29</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../ProcedureEntry.dita">IHE Procedure Entry</xref></li>
 <li><b>MAY</b> contain [0..*] <tt>approachSiteCode</tt><ul><li>This element may be present to indicate the procedure approach.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><ul><li>Contains a code describing the type of procedure.</li></ul></li>
 <li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt></li>
@@ -25,11 +25,11 @@
 <li><b>MAY</b> satisfy: entryRelationship with typeCode='RSON' may be present. A &lt;procedure&gt; act may indicate one or more reasons for the procedure. These reasons identify the concern that was the reason for the procedure via an Internal Reference to the concern. The extension and root of each observation present must match the identifier of a concern entry contained elsewhere within the CDA document.</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref href="../ProcedureEntry.dita">Procedure Entry</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProcedureActivity.html">CCD Procedure Activity</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Procedure.html">CDA Procedure</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProcedureActivityProcedure.html">CCD Procedure Activity Procedure</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.29</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../ProcedureEntry.dita">IHE Procedure Entry</xref></li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProcedureActivity.dita">CCD Procedure Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Procedure</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProcedureActivityProcedure.dita">CCD Procedure Activity Procedure</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.29</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClass</li>
 <li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_DocumentProcedureMood</li>
 <li>[IHE] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
@@ -53,7 +53,7 @@
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.29"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
-              <id root="d98e4f09-06f0-4528-a4aa-b7a96a436b39"/>
+              <id root="acb2aae0-2986-4df4-8b57-21e50bd421b8"/>
               <code/>
               <text/>
               <statusCode code="completed"/>

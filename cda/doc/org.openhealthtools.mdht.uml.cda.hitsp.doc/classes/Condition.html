@@ -36,12 +36,12 @@
 
 
 <ol class="ol">
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProblemConcernEntry.html">IHE Problem Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>) (C83-[DE-7-CDA-2])</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="generated/../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ProblemConcernEntry.html" title="[Act: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5.2]">IHE Problem Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>) (C83-[DE-7-CDA-2])</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
-<li class="li">contains <a class="xref" href="ConditionEntry.html" title="[Observation: templateId null]">Condition Entry</a></li>
+<li class="li">contains <a class="xref" href="ConditionEntry.html" title="[Observation: templateId null]">HITSP Condition Entry</a></li>
 </ol>
 </li>
 
@@ -63,15 +63,15 @@
 </ol>
 
 <ol class="ol">
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Clinical Statement</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Act</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemAct.html">CCD Problem Act</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.27</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="generated/../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemAct.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.27]">CCD Problem Act</a> template (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.27</tt>)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ConcernEntry.html">IHE Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.1</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="generated/../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ConcernEntry.html" title="[Act: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5.1]">IHE Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.1</tt>)</li>
 
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProblemConcernEntry.html">IHE Problem Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>)</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="generated/../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ProblemConcernEntry.html" title="[Act: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5.2]">IHE Problem Concern Entry</a> template (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5.2</tt>)</li>
 
 <li class="li">[CCD] <strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">@classCode</tt> = "ACT" (CONF-146)</li>
 
@@ -86,12 +86,12 @@
 </li>
 
 <li class="li">[CCD] <strong class="ph b">MAY</strong> contain [1..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EpisodeObservation.html">CCD Episode Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li>
+<li class="li">contains <a class="xref" href="generated/../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/EpisodeObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.41]">CCD Episode Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li>
 </ol>
 </li>
 
 <li class="li">[CCD] Contains [0..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemObservation.html">CCD Problem Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.28</tt>)</li>
+<li class="li">contains <a class="xref" href="generated/../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ProblemObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.28]">CCD Problem Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.28</tt>)</li>
 </ol>
 </li>
 
@@ -100,14 +100,14 @@
 <li class="li">[IHE] <strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
-<li class="li">contains <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ProblemEntry.html">IHE Problem Entry</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5</tt>)</li>
+<li class="li">contains <a class="xref" href="generated/../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ProblemEntry.html" title="[Observation: templateId 1.3.6.1.4.1.19376.1.5.3.1.4.5]">IHE Problem Entry</a> (templateId: <tt class="ph tt">1.3.6.1.4.1.19376.1.5.3.1.4.5</tt>)</li>
 </ol>
 </li>
 
 <li class="li">[HITSP] <strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
-<li class="li">contains <a class="xref" href="ConditionEntry.html" title="[Observation: templateId null]">Condition Entry</a></li>
+<li class="li">contains <a class="xref" href="ConditionEntry.html" title="[Observation: templateId null]">HITSP Condition Entry</a></li>
 </ol>
 </li>
 
@@ -187,7 +187,7 @@
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE Concern Entry"/&gt;
               &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE Problem Concern Entry"/&gt;
               &lt;templateId root="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP Condition"/&gt;
-              &lt;id root="790bf712-e4cc-44ae-a905-ec18643e1a89"/&gt;
+              &lt;id root="a2ff82b4-5e8e-4ea7-bd5a-151889073a1b"/&gt;
               &lt;code nullFlavor="NA"/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime&gt;
@@ -199,7 +199,7 @@
                   &lt;templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD Problem Observation"/&gt;
                   &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE Problem Entry"/&gt;
                   &lt;templateId assigningAuthorityName="HITSP Condition Entry"/&gt;
-                  &lt;id root="821ce106-8861-49c7-ac13-d2b07ff63bd6"/&gt;
+                  &lt;id root="b8ea42fe-8e72-4903-b7db-538f1aceffd7"/&gt;
                   &lt;code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT"/&gt;
                   &lt;text/&gt;
                   &lt;statusCode code="completed"/&gt;
@@ -214,7 +214,7 @@
                 &lt;observation classCode="OBS" moodCode="EVN"&gt;
                   &lt;templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD Problem Observation"/&gt;
                   &lt;templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE Problem Entry"/&gt;
-                  &lt;id root="21592e83-a978-4822-b47f-4a58b67eeedd"/&gt;
+                  &lt;id root="bcd870f5-e05b-43fc-93a3-cb406d18a498"/&gt;
                   &lt;code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT"/&gt;
                   &lt;text/&gt;
                   &lt;statusCode code="completed"/&gt;

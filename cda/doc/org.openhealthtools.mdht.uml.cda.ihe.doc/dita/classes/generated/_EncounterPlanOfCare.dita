@@ -11,17 +11,17 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityEncounter.html">CCD Plan Of Care Activity Encounter</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
-<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivityEncounter.dita">CCD Plan Of Care Activity Encounter</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">IHE Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
 <li><b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentEncounterMood::ARQ
   or self.moodCode = vocab::x_DocumentEncounterMood::PRMS</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivity.html">CCD Plan Of Care Activity</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityEncounter.html">CCD Plan Of Care Activity Encounter</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">IHE Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Encounter</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivityEncounter.dita">CCD Plan Of Care Activity Encounter</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClass</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li>[IHE] <b>SHOULD</b> contain [0..1] <tt>code</tt> (CodeSystem: 2.16.840.1.113883.5.4 ActEncounterCode STATIC)<ul><li>Developers should take care to check that rational combinations of encounter.code and encounter.moodCode are used , but this profile does not restrict any combination.</li></ul></li>
@@ -44,7 +44,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
-              <id root="3f2fe907-bd57-4851-9a39-44f45c642083"/>
+              <id root="dd848e88-cf83-4a18-8648-c6e62719f4f2"/>
               <code codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActEncounterCode"/>
               <text/>
             </encounter>

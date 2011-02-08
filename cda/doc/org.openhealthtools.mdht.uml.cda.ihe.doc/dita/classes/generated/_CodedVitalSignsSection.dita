@@ -12,18 +12,18 @@
 <p>The vital signs section contains coded measurement results of a patient's vital signs.</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.25</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../VitalSignsSection.dita">IHE Vital Signs Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.25</tt>)</li>
 <li><b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsOrganizer.dita">Vital Signs Organizer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.1</tt>)</li></ol></li>
+<li>contains <xref href="../VitalSignsOrganizer.dita">IHE Vital Signs Organizer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.1</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/VitalSignsSection.html">CCD Vital Signs Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li>
-<li><b>SHALL</b> conform to <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.25</tt>)</li>
+<li><b>SHALL</b> conform to CDA Section</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/VitalSignsSection.dita">CCD Vital Signs Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../VitalSignsSection.dita">IHE Vital Signs Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.25</tt>)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "8716-3" <i>Vital signs</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li>[IHE] <b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsOrganizer.dita">Vital Signs Organizer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.1</tt>)</li></ol></li>
+<li>contains <xref href="../VitalSignsOrganizer.dita">IHE Vital Signs Organizer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.13.1</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'vital signs'.</li>
 </ol>
@@ -43,7 +43,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1" assigningAuthorityName="IHE Vital Signs Organizer"/>
-              <id root="22926fe7-abf3-420f-a328-f3867828b91c"/>
+              <id root="c0c8e8e1-4ed0-4843-85d5-a074c1d09b3e"/>
               <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Vital signs"/>
               <statusCode code="completed"/>
               <effectiveTime>

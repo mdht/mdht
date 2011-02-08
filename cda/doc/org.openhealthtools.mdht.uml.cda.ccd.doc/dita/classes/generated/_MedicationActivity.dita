@@ -13,21 +13,24 @@
 <p>An indication describes the rationale for a medication activity. The indication can be an existing problem or can be a criterion that if met would warrant the activity. Criteria are typically associated with PRN (from the Latin "pro re nata", meaning "as needed") medications (e.g. "give Medication X as needed for nausea").</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref> (CONF-304)</li>
+<li><b>SHALL</b> conform to CDA Substance Administration (CONF-304)</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-306)</li>
 <li><b>SHOULD</b> contain [1..1] <tt>statusCode</tt> (CONF-307)</li>
 <li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../MedicationSeriesNumberObservation.dita">Medication Series Number Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.46</tt>)</li></ol></li>
+<li>contains <xref href="../MedicationSeriesNumberObservation.dita">CCD Medication Series Number Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.46</tt>) (CONF-338, CONF-339)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../MedicationStatusObservation.dita">Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
+<li>contains <xref href="../MedicationStatusObservation.dita">CCD Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>) (CONF-350)</li></ol></li>
 <li><b>MAY</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
-<li>contains <xref href="../PatientInstruction.dita">Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>) (CONF-330, CONF-333)</li></ol></li>
+<li>contains <xref href="../PatientInstruction.dita">CCD Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>) (CONF-330, CONF-333)</li></ol></li>
 <li><b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt> (CONF-308)<ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul></li>
 <li><b>MAY</b> contain [0..1] <tt>maxDoseQuantity</tt> (CONF-312)</li>
 <li><b>SHOULD</b> contain [1..1] <tt>routeCode</tt> (CodeSystem: 2.16.840.1.113883.5.112 HL7 RouteOfAdministration DYNAMIC) (CONF-309, CONF-310)</li>
 <li><b>MAY</b> contain [0..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref> (CONF-313)</li></ol><ul><li>Indicates the person administering a substance.</li></ul></li>
+<li>contains CDA Performer2 (CONF-313)</li></ol><ul><li>Indicates the person administering a substance.</li></ul></li>
+<li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="CAUS" <i>CAUS (is etiology for)</i></li>
+<li>contains <xref href="../ReactionObservation.dita">CCD Reaction Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.54</tt>) (CONF-348, CONF-349)</li></ol></li>
 <li><b>SHALL</b> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-305)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
 <li><b>SHOULD</b> satisfy: Contains exactly one doseQuantity or rateQuantity. (CONF-311)<ul><li><codeblock>[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</codeblock></li></ul></li>
 <li><b>MAY</b> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent. (CONF-314)<ul><li><codeblock>[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
@@ -44,27 +47,31 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
 <li><b>SHALL</b> satisfy: entryRelationship / @typeCode="RSON" in a medication activity has a target of problem act, problem observation, or some other clinical statement. (CONF-329)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)-&gt;forAll(target : 
 cda::ClinicalStatement | not target.oclIsUndefined() and 
   (target.oclIsKindOf(ccd::ProblemAct) or target.oclIsKindOf(ccd::ProblemObservation)))</codeblock></li></ul></li>
+<li><b>SHALL</b> satisfy: Contains exactly one consumable, the target of which is a Product template. (CONF-354)<ul><li><codeblock>[OCL]: self.consumable.manufacturedProduct.oclIsKindOf(ccd::Product)</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Substance Administration</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt> = "SBADM", where its data type is ActClass</li>
 <li>[CDA] Contains [1..1] <tt>@moodCode</tt>, where its data type is x_DocumentSubstanceMood</li>
-<li>[CDA] Contains [1..1] <tt>consumable</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Consumable.html">CDA Consumable</xref></li>
+<li>[CDA] Contains [1..1] <tt>consumable</tt>, where its type is CDA Consumable</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-306)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>statusCode</tt> (CONF-307)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../MedicationSeriesNumberObservation.dita">Medication Series Number Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.46</tt>)</li></ol></li>
+<li>contains <xref href="../MedicationSeriesNumberObservation.dita">CCD Medication Series Number Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.46</tt>) (CONF-338, CONF-339)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../MedicationStatusObservation.dita">Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>)</li></ol></li>
+<li>contains <xref href="../MedicationStatusObservation.dita">CCD Medication Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.47</tt>) (CONF-350)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
-<li>contains <xref href="../PatientInstruction.dita">Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>) (CONF-330, CONF-333)</li></ol></li>
+<li>contains <xref href="../PatientInstruction.dita">CCD Patient Instruction</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.49</tt>) (CONF-330, CONF-333)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>effectiveTime</tt> (CONF-308)<ul><li>Used to indicate the actual or intended start and stop date of a medication, and the frequency of administration.</li></ul></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>maxDoseQuantity</tt> (CONF-312)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>routeCode</tt> (CodeSystem: 2.16.840.1.113883.5.112 HL7 RouteOfAdministration DYNAMIC) (CONF-309, CONF-310)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>performer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Performer2.html">CDA Performer2</xref> (CONF-313)</li></ol><ul><li>Indicates the person administering a substance.</li></ul></li>
+<li>contains CDA Performer2 (CONF-313)</li></ol><ul><li>Indicates the person administering a substance.</li></ul></li>
+<li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
+<li>has @typeCode="CAUS" <i>CAUS (is etiology for)</i></li>
+<li>contains <xref href="../ReactionObservation.dita">CCD Reaction Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.54</tt>) (CONF-348, CONF-349)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: Value for moodCode is "EVN" or "INT" 2.16.840.1.113883.5.1001 ActMood STATIC (CONF-305)<ul><li><codeblock>[OCL]: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </codeblock></li></ul></li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains exactly one doseQuantity or rateQuantity. (CONF-311)<ul><li><codeblock>[OCL]: not self.doseQuantity.oclIsUndefined() or not self.rateQuantity.oclIsUndefined()</codeblock></li></ul></li>
 <li>[CCD] <b>MAY</b> satisfy: Has one or more associated consents, represented in the CCD Header as ClinicalDocument / authorization / consent. (CONF-314)<ul><li><codeblock>[OCL]: self.getClinicalDocument().authorization-&gt;exists(auth : cda::Authorization | 
@@ -81,6 +88,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
 <li>[CCD] <b>SHALL</b> satisfy: entryRelationship / @typeCode="RSON" in a medication activity has a target of problem act, problem observation, or some other clinical statement. (CONF-329)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::RSON, cda::ClinicalStatement)-&gt;forAll(target : 
 cda::ClinicalStatement | not target.oclIsUndefined() and 
   (target.oclIsKindOf(ccd::ProblemAct) or target.oclIsKindOf(ccd::ProblemObservation)))</codeblock></li></ul></li>
+<li>[CCD] <b>SHALL</b> satisfy: Contains exactly one consumable, the target of which is a Product template. (CONF-354)<ul><li><codeblock>[OCL]: self.consumable.manufacturedProduct.oclIsKindOf(ccd::Product)</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -91,7 +99,7 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
-              <id root="3365c342-3978-468a-b15a-2d1b568c7f3c"/>
+              <id root="fd879f1f-e363-4fcf-80af-fd77899a7ab4"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
@@ -111,6 +119,12 @@ cda::ClinicalStatement | not target.oclIsUndefined() and
                   <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
                   <statusCode code="completed"/>
                   <value xsi:type="CE"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.54" assigningAuthorityName="CCD Reaction Observation"/>
+                  <statusCode code="completed"/>
                 </observation>
               </entryRelationship>
             </substanceAdministration>

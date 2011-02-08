@@ -11,12 +11,16 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/Product.html">CCD Product</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.53</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/Product.dita">CCD Product</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.53</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ManufacturedProduct.html">CDA Manufactured Product</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/Product.html">CCD Product</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.53</tt>)</li>
+<li><b>SHALL</b> conform to CDA Manufactured Product</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/Product.dita">CCD Product</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.53</tt>)</li>
 <li>[CDA] <b>SHALL</b> satisfy: manufacturedDrugOrOtherMaterial<ul><li><codeblock>[OCL]: self.manufacturedLabeledDrug.oclIsUndefined() xor self.manufacturedMaterial.oclIsUndefined()</codeblock></li></ul></li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterial</li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterialCode</li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterialCodeVocab</li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterialPrecoordinatedCode</li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 </body>

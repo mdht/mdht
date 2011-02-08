@@ -38,21 +38,21 @@
 
 
 <ol class="ol">
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Supply.html">CDA Supply</a> (CONF-316)</li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Supply (CONF-316)</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..*] <tt class="ph tt">id</tt> (CONF-318)</li>
 
 <li class="li"><strong class="ph b">SHOULD</strong> contain [1..1] <tt class="ph tt">statusCode</tt> (CONF-319)</li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..1] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
-<li class="li">contains <a class="xref" href="MedicationStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.47]">Medication Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.47</tt>)</li>
+<li class="li">contains <a class="xref" href="MedicationStatusObservation.html" title="[Observation: templateId 2.16.840.1.113883.10.20.1.47]">Medication Status Observation</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.47</tt>) (CONF-351)</li>
 </ol>
 </li>
 
 <li class="li"><strong class="ph b">MAY</strong> contain [0..*] <tt class="ph tt">entryRelationship</tt>, such that it<ol class="ol" type="a">
 <li class="li">has @typeCode="SUBJ" <em class="ph i">SUBJ (has subject)</em></li>
 
-<li class="li">contains <a class="xref" href="FulfillmentInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.43]">Fulfillment Instruction</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.43</tt>)</li>
+<li class="li">contains <a class="xref" href="FulfillmentInstruction.html" title="[Act: templateId 2.16.840.1.113883.10.20.1.43]">Fulfillment Instruction</a> (templateId: <tt class="ph tt">2.16.840.1.113883.10.20.1.43</tt>) (CONF-334, CONF-337)</li>
 </ol>
 </li>
 
@@ -105,6 +105,11 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
 </ul>
 </li>
 
+<li class="li"><strong class="ph b">MAY</strong> satisfy: Contains exactly one product, the target of which is a Product template. (CONF-355)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: not self.product.oclIsUndefined() and self.product.oclIsKindOf(ccd::Product)</pre>
+</li>
+</ul>
+</li>
+
 </ol>
 
 
@@ -121,7 +126,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
           &lt;entry&gt;
             &lt;supply classCode="SPLY"&gt;
               &lt;templateId root="2.16.840.1.113883.10.20.1.34" assigningAuthorityName="CCD Supply Activity"/&gt;
-              &lt;id root="37c88f0d-9927-4ba5-bb11-a6a92d4ab6d9"/&gt;
+              &lt;id root="caaf2755-0481-4236-aa4a-dd9f7217b8c9"/&gt;
               &lt;statusCode/&gt;
               &lt;effectiveTime/&gt;
               &lt;repeatNumber/&gt;

@@ -11,8 +11,8 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Procedure.html">CDA Procedure</xref></li>
-<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Procedure</li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li><b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ
@@ -20,9 +20,9 @@
   or self.moodCode = vocab::x_DocumentProcedureMood::RQO</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Procedure.html">CDA Procedure</xref></li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Procedure</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClass</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
@@ -39,7 +39,7 @@
           <entry>
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="e7b1de42-8a6a-4985-b9fb-93ae51f7dd67"/>
+              <id root="1933249e-2e27-4e92-82f5-758872b2037d"/>
             </procedure>
           </entry>
         </section>

@@ -16,11 +16,11 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/DischargeDiagnosisSection.html">IHE Discharge Diagnosis Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.7</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/DischargeDiagnosisSection.dita">IHE Discharge Diagnosis Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.7</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/DischargeDiagnosisSection.html">IHE Discharge Diagnosis Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.7</tt>)</li>
+<li><b>SHALL</b> conform to CDA Section</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/DischargeDiagnosisSection.dita">IHE Discharge Diagnosis Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.7</tt>)</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11535-2" <i>HOSPITAL DISCHARGE DX</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>

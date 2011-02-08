@@ -40,11 +40,13 @@
     system vs. from the patient).
 </p>
 
+<p class="p">Reconciliation of conflicting medication information from various sources is enabled both by indicating the source of information and by indicating whether the source is reporting intended or actual medication use. For instance, a physician may intend for a patient to be on a particular dose, but the patient may actually be taking a different dose; a pharmacy may fill a prescription for a particular dose only to then have the patient's physician lower the dose without notifying the pharmacy. Therefore, medication and supply activities can be expressed in CCD in either the "EVN" (event) mood or the "INT" (intent) mood. Medication activities in "INT" mood are not orders (which are represented in the Plan of Care section), but rather are reflections of what a clinician intends a patient to be taking. Medication activities in "EVN" mood reflect actual use. A pharmacy system will typically report what was actually filled (supply event), along with intended use (substance administration intent). A physician will often report intended use (substance administration and supply intent). A patient or family member will typically report actual use (substance administration event).</p>
+
 </div>
 
 
 <ol class="ol">
-<li class="li"><strong class="ph b">SHALL</strong> conform to <a class="xref" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</a></li>
+<li class="li"><strong class="ph b">SHALL</strong> conform to CDA Section</li>
 
 <li class="li"><strong class="ph b">SHALL</strong> contain [1..1] <tt class="ph tt">code</tt><tt class="ph tt">/@code</tt> = "10160-0" <em class="ph i">History of medication use</em> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-300, CONF-301)</li>
 
@@ -62,15 +64,15 @@
 </ol>
 </li>
 
-<li class="li"><strong class="ph b">SHALL</strong> satisfy: The absence of known medications is explicitly asserted. (CONF-299)</li>
-
-<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Valued with a case-insensitive language-insensitive string containing 'medication'. (CONF-303)</li>
-
 <li class="li"><strong class="ph b">SHOULD</strong> satisfy: Clinical statements include one or more Medication Activity and/or one or more Supply Activity. (CONF-298)<ul class="ul"><li class="li"><pre class="pre codeblock">[OCL]: self.getSubstanceAdministrations()-&gt;exists(activity : cda::SubstanceAdministration | activity.oclIsKindOf(ccd::MedicationActivity))
    or self.getSupplies()-&gt;exists(activity : cda::Supply | activity.oclIsKindOf(ccd::SupplyActivity))</pre>
 </li>
 </ul>
 </li>
+
+<li class="li"><strong class="ph b">SHALL</strong> satisfy: The absence of known medications is explicitly asserted. (CONF-299)</li>
+
+<li class="li"><strong class="ph b">SHOULD</strong> satisfy: Valued with a case-insensitive language-insensitive string containing 'medication'. (CONF-303)</li>
 
 </ol>
 

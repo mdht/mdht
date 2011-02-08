@@ -12,16 +12,16 @@
 <p>A problem is a clinical statement that a clinician is particularly concerned about and wants to track. It has important patient management use cases (e.g. health records often present the problem list as a way of summarizing a patient's medical history).</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref> (CONF-145)</li>
+<li><b>SHALL</b> conform to CDA Act (CONF-145)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-146)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-147)</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-148)</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@nullFlavor</tt> = "NA" <i>NA (not applicable)</i> (CONF-149)</li>
 <li><b>MAY</b> contain [0..1] <tt>effectiveTime</tt> (CONF-150)<ul><li>Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li></ul></li>
 <li><b>MAY</b> contain [1..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../EpisodeObservation.dita">Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
+<li>contains <xref href="../EpisodeObservation.dita">CCD Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
 <li>Contains [0..*] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../ProblemObservation.dita">Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
+<li>contains <xref href="../ProblemObservation.dita">CCD Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
 <li><b>SHALL</b> satisfy: Contains one or more entryRelationship (CONF-151)<ul><li><codeblock>[OCL]: not self.entryRelationship-&gt;isEmpty()</codeblock></li></ul></li>
 <li><b>MAY</b> satisfy: A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for "Act / entryRelationship / @typeCode" to be "SUBJ" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-152)</li>
 <li><b>SHOULD</b> satisfy: The target of a problem act with Act / entryRelationship / @typeCode="SUBJ" SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement. (CONF-153)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)-&gt;forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and 
@@ -33,17 +33,17 @@
 <li><b>MAY</b> satisfy: Contains exactly one Patient Awareness (CONF-179)<ul><li><codeblock>[OCL]: self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-146)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-147)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@nullFlavor</tt> = "NA" <i>NA (not applicable)</i> (CONF-149)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-148)</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>effectiveTime</tt> (CONF-150)<ul><li>Indicates the timing of the concern (e.g. the interval of time for which the problem is a concern).</li></ul></li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../EpisodeObservation.dita">Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
+<li>contains <xref href="../EpisodeObservation.dita">CCD Episode Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.41</tt>) (CONF-168)</li></ol></li>
 <li>[CCD] Contains [0..*] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../ProblemObservation.dita">Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
+<li>contains <xref href="../ProblemObservation.dita">CCD Problem Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.28</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: Contains one or more entryRelationship (CONF-151)<ul><li><codeblock>[OCL]: not self.entryRelationship-&gt;isEmpty()</codeblock></li></ul></li>
 <li>[CCD] <b>MAY</b> satisfy: A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for "Act / entryRelationship / @typeCode" to be "SUBJ" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-152)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: The target of a problem act with Act / entryRelationship / @typeCode="SUBJ" SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement. (CONF-153)<ul><li><codeblock>[OCL]: self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)-&gt;forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and 
@@ -63,7 +63,7 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD Problem Act"/>
-              <id root="02e62b5a-bb1b-4a2b-af9c-ab39d0855c0b"/>
+              <id root="31e6a418-b4fb-44b3-a688-144f5047975d"/>
               <code nullFlavor="NA"/>
               <effectiveTime>
                 <low value="1972"/>

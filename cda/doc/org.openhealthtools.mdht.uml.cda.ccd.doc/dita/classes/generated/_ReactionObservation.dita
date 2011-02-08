@@ -9,28 +9,33 @@
 </prolog>
 <body>
 <section id="description">
+<p>A reaction represents an adverse event due to an administered or exposed substance. A reaction can be defined with respect to its severity, and can have been treated by one or more interventions. Significant reactions are to be listed in the Alerts section. Reactions in the Medications section can be used to track reactions associated with individual substance administrations or to track routine follow up to an administration (e.g. "no adverse reaction 30 minutes post administration").</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
-<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
-<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li><b>SHALL</b> conform to CDA Observation (CONF-282)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS" (CONF-283)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-284)</li>
 <li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../SeverityObservation.dita">Severity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.55</tt>)</li></ol></li>
-<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li><b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</li>
-<li><b>SHALL</b> satisfy: A reaction observation MAY contain one or more reation interventions. A reaction intervention SHALL be represented as a procedure activity (templateId 2.16.840.1.113883.10.20.1.29), a medication activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement.</li>
+<li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
+<li>contains <xref href="../SeverityObservation.dita">CCD Severity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.55</tt>) (CONF-348, CONF-288)</li></ol></li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-285, CONF-286)</li>
+<li><b>MAY</b> satisfy: A reaction observation MAY contain one or more reation interventions. (CONF-280)</li>
+<li><b>SHALL</b> satisfy: A reaction intervention SHALL be represented as a Procedure Activity (templateId 2.16.840.1.113883.10.20.1.29), a Medication Activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement. (CONF-297)</li>
+<li><b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-296)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS"</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Observation</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS" (CONF-283)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-284)</li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entryRelationship</tt>, such that it<ol>
-<li>contains <xref href="../SeverityObservation.dita">Severity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.55</tt>)</li></ol></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
-<li>[CCD] <b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</li>
-<li>[CCD] <b>SHALL</b> satisfy: A reaction observation MAY contain one or more reation interventions. A reaction intervention SHALL be represented as a procedure activity (templateId 2.16.840.1.113883.10.20.1.29), a medication activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement.</li>
+<li>has @typeCode="SUBJ" <i>SUBJ (has subject)</i></li>
+<li>contains <xref href="../SeverityObservation.dita">CCD Severity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.55</tt>) (CONF-348, CONF-288)</li></ol></li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-285, CONF-286)</li>
+<li>[CCD] <b>MAY</b> satisfy: A reaction observation MAY contain one or more reation interventions. (CONF-280)</li>
+<li>[CCD] <b>SHALL</b> satisfy: A reaction intervention SHALL be represented as a Procedure Activity (templateId 2.16.840.1.113883.10.20.1.29), a Medication Activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement. (CONF-297)</li>
+<li>[CCD] <b>SHALL</b> satisfy: The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (CONF-296)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">

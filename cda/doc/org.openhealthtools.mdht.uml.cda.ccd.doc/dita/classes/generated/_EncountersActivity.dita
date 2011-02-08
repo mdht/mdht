@@ -11,7 +11,7 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
+<li><b>SHALL</b> conform to CDA Encounter</li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
@@ -19,8 +19,8 @@
 <li><b>MAY</b> contain [0..1] <tt>effectiveTime</tt></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Encounter</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
@@ -36,7 +36,7 @@
           <entry>
             <encounter classCode="ENC" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/>
-              <id root="93641c95-c5ca-40cb-8d96-a179bc52630b"/>
+              <id root="c9fea00e-6f11-4710-9e68-ee8b05a23679"/>
               <code/>
               <effectiveTime>
                 <low value="1972"/>

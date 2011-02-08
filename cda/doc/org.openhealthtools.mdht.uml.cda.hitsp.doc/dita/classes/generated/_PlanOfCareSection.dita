@@ -19,29 +19,29 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CarePlanSection.html">IHE Care Plan Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.31</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/CarePlanSection.dita">IHE Care Plan Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.31</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareSection.html">CCD Plan Of Care Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/CarePlanSection.html">IHE Care Plan Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.31</tt>)</li>
+<li><b>SHALL</b> conform to CDA Section</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareSection.dita">CCD Plan Of Care Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/CarePlanSection.dita">IHE Care Plan Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.31</tt>)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityAct.html">CCD Plan Of Care Activity Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivityAct.dita">CCD Plan Of Care Activity Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityEncounter.html">CCD Plan Of Care Activity Encounter</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivityEncounter.dita">CCD Plan Of Care Activity Encounter</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityObservation.html">CCD Plan Of Care Activity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivityObservation.dita">CCD Plan Of Care Activity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivityProcedure.html">CCD Plan Of Care Activity Procedure</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivityProcedure.dita">CCD Plan Of Care Activity Procedure</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivitySubstanceAdministration.html">CCD Plan Of Care Activity Substance Administration</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivitySubstanceAdministration.dita">CCD Plan Of Care Activity Substance Administration</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivitySupply.html">CCD Plan Of Care Activity Supply</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivitySupply.dita">CCD Plan Of Care Activity Supply</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>planOfCareActivity</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/PlanOfCareActivity.html">CCD Plan Of Care Activity</xref></li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li></ol></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">

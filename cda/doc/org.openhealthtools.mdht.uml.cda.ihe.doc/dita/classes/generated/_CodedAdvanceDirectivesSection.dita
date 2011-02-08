@@ -11,16 +11,16 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref href="../AdvanceDirectivesSection.dita">Advance Directives Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.34</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../AdvanceDirectivesSection.dita">IHE Advance Directives Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.34</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AdvanceDirectivesSection.html">CCD Advance Directives Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li>
-<li><b>SHALL</b> conform to <xref href="../AdvanceDirectivesSection.dita">Advance Directives Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.34</tt>)</li>
+<li><b>SHALL</b> conform to CDA Section</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/AdvanceDirectivesSection.dita">CCD Advance Directives Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../AdvanceDirectivesSection.dita">IHE Advance Directives Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.34</tt>)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "42348-3" <i>Advance directives</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/AdvanceDirectiveObservation.html">CCD Advance Directive Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.17</tt>)</li></ol></li>
+<li>contains <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/AdvanceDirectiveObservation.dita">CCD Advance Directive Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.17</tt>)</li></ol></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -36,7 +36,7 @@
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.17" assigningAuthorityName="CCD Advance Directive Observation"/>
-              <id root="197e6712-b8a7-4048-a53a-2ac0b52e9071"/>
+              <id root="68eaa49e-17c2-4e0e-8d13-66ece2d6e6ab"/>
               <code/>
               <statusCode code="completed"/>
               <effectiveTime>

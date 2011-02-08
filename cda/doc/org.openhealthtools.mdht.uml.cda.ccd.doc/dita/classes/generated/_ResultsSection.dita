@@ -33,20 +33,20 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-389)</li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-391)</li>
 <li><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../ResultOrganizer.dita">Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>) (CONF-388)</li></ol></li>
+<li>contains <xref href="../ResultOrganizer.dita">CCD Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>) (CONF-388)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-388)</li>
 <li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'results'. (CONF-392)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30954-2" <i>Relevant diagnostic tests and/or laboratory data</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-389)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-391)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../ResultOrganizer.dita">Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>) (CONF-388)</li></ol></li>
+<li>contains <xref href="../ResultOrganizer.dita">CCD Result Organizer</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>) (CONF-388)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt> (CONF-388)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'results'. (CONF-392)</li>
 </ol>
@@ -62,7 +62,7 @@
           <entry>
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
-              <id root="f267faa9-089c-4e1b-b699-152f49c7697c"/>
+              <id root="d27aae29-c29e-44c9-8dff-68c7336892cf"/>
               <code/>
               <statusCode/>
             </organizer>
