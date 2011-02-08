@@ -19,20 +19,20 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48764-5" <i>Summary purpose</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-16, CONF-17)</li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-18)</li>
 <li><b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PurposeActivity.dita">Purpose Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.30</tt>)</li></ol></li>
+<li>contains <xref href="../PurposeActivity.dita">CCD Purpose Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.30</tt>)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li><b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'purpose'. (CONF-19)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48764-5" <i>Summary purpose</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-16, CONF-17)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-18)</li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PurposeActivity.dita">Purpose Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.30</tt>)</li></ol></li>
+<li>contains <xref href="../PurposeActivity.dita">CCD Purpose Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.30</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'purpose'. (CONF-19)</li>
 </ol>

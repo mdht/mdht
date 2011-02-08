@@ -11,12 +11,12 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
-<li><b>SHALL</b> conform to <xref href="../Support.dita">Support</xref></li>
+<li><b>SHALL</b> conform to CDA Guardian</li>
+<li><b>SHALL</b> conform to <xref href="../Support.dita">CCD Support</xref></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref href="../Support.dita">Support</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Guardian.html">CDA Guardian</xref></li>
+<li><b>SHALL</b> conform to <xref href="../Support.dita">CCD Support</xref></li>
+<li><b>SHALL</b> conform to CDA Guardian</li>
 <li>[CDA] <b>SHALL</b> satisfy: guardianChoice<ul><li><codeblock>[OCL]: self.guardianPerson.oclIsUndefined() xor self.guardianOrganization.oclIsUndefined()</codeblock></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>

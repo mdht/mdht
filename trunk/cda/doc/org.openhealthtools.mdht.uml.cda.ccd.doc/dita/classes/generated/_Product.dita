@@ -11,11 +11,19 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ManufacturedProduct.html">CDA Manufactured Product</xref></li>
+<li><b>SHALL</b> conform to CDA Manufactured Product (CONF-356)</li>
+<li><b>SHALL</b> satisfy: hasMaterial</li>
+<li><b>SHALL</b> satisfy: hasMaterialCode</li>
+<li><b>SHALL</b> satisfy: hasMaterialCodeVocab</li>
+<li><b>SHALL</b> satisfy: hasMaterialPrecoordinatedCode</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ManufacturedProduct.html">CDA Manufactured Product</xref></li>
+<li><b>SHALL</b> conform to CDA Manufactured Product</li>
 <li>[CDA] <b>SHALL</b> satisfy: manufacturedDrugOrOtherMaterial<ul><li><codeblock>[OCL]: self.manufacturedLabeledDrug.oclIsUndefined() xor self.manufacturedMaterial.oclIsUndefined()</codeblock></li></ul></li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterial</li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterialCode</li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterialCodeVocab</li>
+<li>[CCD] <b>SHALL</b> satisfy: hasMaterialPrecoordinatedCode</li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 </body>

@@ -11,7 +11,7 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref> (CONF-407)</li>
+<li><b>SHALL</b> conform to CDA Observation (CONF-407)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-408)</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-409)</li>
 <li><b>SHOULD</b> contain [1..1] <tt>effectiveTime</tt> (CONF-411)<ul><li>Represents the biologically relevant time (e.g. time the specimen was obtained from the patient).</li></ul></li>
@@ -34,8 +34,8 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
    and rel.observation.code.code = '48766-0'))</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Observation</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClassObservation</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-408)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-412)</li>
@@ -67,7 +67,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship |
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-              <id root="b3a7eb89-a547-4d2c-a302-ae2585cabeb1"/>
+              <id root="3dfebf60-e3b4-4236-be7b-a6200f31865f"/>
               <code/>
               <statusCode/>
               <effectiveTime>

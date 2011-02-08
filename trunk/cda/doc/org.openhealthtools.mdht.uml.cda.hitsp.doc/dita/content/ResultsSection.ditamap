@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap id="cdabook">
 
-	<chapter navtitle="HITSP Diagnostic Results" type="topic">
+	<chapter navtitle="Consolidated Results" type="topic">
 		<topicref href="../classes/DiagnosticResultsSection.dita" type="topic" />
 		<topicref href="../classes/Procedure.dita" type="topic" />
 		<topicref href="../classes/Result.dita" type="topic" />

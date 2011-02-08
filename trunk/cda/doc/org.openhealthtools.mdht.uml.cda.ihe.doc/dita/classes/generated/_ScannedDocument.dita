@@ -12,7 +12,7 @@
 <p>A variety of legacy paper, film, electronic and scanner outputted formats are used to store and exchange clinical documents. These formats are not designed for healthcare documentation, and furthermore, do not have a uniform mechanism to store healthcare metadata associated with the documents, including patient identifiers, demographics, encounter, order or service information. The association of structured, healthcare metadata with this kind of document is important to maintain the integrity of the patient health record as managed by the source system. It is necessary to provide a mechanism that allows such source metadata to be stored with the document.</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Document</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><ul><li>Entered by operator or appropriately fixed for scanned content.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>confidentialityCode</tt><ul><li>Assigned by the operator in accordance with the scanning facility policy. The notion or level of confidentiality in the header may not be the same as that in the Affinity Domain, but in certain cases could be used to derive a confidentiality value among those specified by the Affinity Domain. Attributes @code and @codeSystem shall be present.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Denotes the time at which the original content was scanned. At a minimum, the time shall be precise to the day and shall include the time zone offset from GMT.</li></ul></li>
@@ -21,15 +21,15 @@
 <li><b>SHOULD</b> contain [1..1] <tt>title</tt><ul><li>Entered by operator, or possibly can be taken from the scanned content.</li></ul></li>
 <li><b>SHALL</b> contain [1..1] <tt>typeId</tt></li>
 <li><b>SHOULD</b> contain [1..*] <tt>scanOriginalAuthor</tt>, such that it<ol>
-<li>contains <xref href="../ScanOriginalAuthor.dita">Scan Original Author</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.1</tt>)</li></ol></li>
+<li>contains <xref href="../ScanOriginalAuthor.dita">IHE Scan Original Author</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.1</tt>)</li></ol></li>
 <li><b>SHALL</b> contain [1..*] <tt>scanningDevice</tt>, such that it<ol>
-<li>contains <xref href="../ScanningDevice.dita">Scanning Device</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.2</tt>)</li></ol></li>
+<li>contains <xref href="../ScanningDevice.dita">IHE Scanning Device</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.2</tt>)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>scanDataEnterer</tt>, such that it<ol>
-<li>contains <xref href="../ScanDataEnterer.dita">Scan Data Enterer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.3</tt>)</li></ol></li>
+<li>contains <xref href="../ScanDataEnterer.dita">IHE Scan Data Enterer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.3</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>legalAuthenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/LegalAuthenticator.html">CDA Legal Authenticator</xref></li></ol><ul><li>Context is left up to the scanning facility to refine in accordance with local policies.</li></ul></li>
+<li>contains CDA Legal Authenticator</li></ol><ul><li>Context is left up to the scanning facility to refine in accordance with local policies.</li></ul></li>
 <li><b>MAY</b> contain [0..1] <tt>documentationOf</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/DocumentationOf.html">CDA Documentation Of</xref></li></ol><ul><li>Used to encode the date/time range of the original content. If the original content is representative of a single point in time then the endpoints of the date/time range shall be the same. Information regarding this date/time range shall be included, if it is known. In many cases this will have to be supplied by the operator.</li></ul></li>
+<li>contains CDA Documentation Of</li></ol><ul><li>Used to encode the date/time range of the original content. If the original content is representative of a single point in time then the endpoints of the date/time range shall be the same. Information regarding this date/time range shall be included, if it is known. In many cases this will have to be supplied by the operator.</li></ul></li>
 <li><b>SHALL</b> satisfy: The typeId root is 2.16.840.1.113883.1.3 and extension is POCD_HD000040.<ul><li><codeblock>[OCL]: self.typeId.root = '2.16.840.1.113883.1.3' and self.typeId.extension = 'POCD_HD000040'</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: Contains exactly one recordTarget.<ul><li>Contains identifying information about the patient concerned in the original content. In many cases this will have to be supplied by the operator.</li></ul><ul><li><codeblock>[OCL]: self.recordTarget-&gt;size() = 1</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization<ul><li><codeblock>[OCL]: self.author-&gt;exists(author : cda::Author | not author.assignedAuthor.assignedPerson.oclIsUndefined() 
@@ -64,27 +64,27 @@
 <li><b>SHALL</b> satisfy: The component/nonXMLBody/text@representation is B64.<ul><li>The @representation for both PDF and plaintext scanned content will be "B64", because this profile requires the base-64 encoding of both formats.</li></ul><ul><li><codeblock>[OCL]: self.component.nonXMLBody.text.representation = datatypes::BinaryDataEncoding::B64</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Document</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>id</tt><ul><li>The root attribute shall contain the oid for the document, in which case the extension attribute shall be empty, or an oid that scopes the set of possible unique values for the extension attribute, in which case the extension shall be populated with a globally unique identifier within the scope of the root oid.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><ul><li>Entered by operator or appropriately fixed for scanned content.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>effectiveTime</tt><ul><li>Denotes the time at which the original content was scanned. At a minimum, the time shall be precise to the day and shall include the time zone offset from GMT.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>confidentialityCode</tt><ul><li>Assigned by the operator in accordance with the scanning facility policy. The notion or level of confidentiality in the header may not be the same as that in the Affinity Domain, but in certain cases could be used to derive a confidentiality value among those specified by the Affinity Domain. Attributes @code and @codeSystem shall be present.</li></ul></li>
-<li>[CDA] Contains [1..*] <tt>author</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
-<li>[CDA] Contains [1..1] <tt>custodian</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Custodian.html">CDA Custodian</xref></li>
-<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
+<li>[CDA] Contains [1..*] <tt>author</tt>, where its type is CDA Author</li>
+<li>[CDA] Contains [1..1] <tt>custodian</tt>, where its type is CDA Custodian</li>
+<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is CDA Component2</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>languageCode</tt><ul><li>Denotes the language used in the character data of the wrapper CDA header. If the scanned content, when rendered, is in a language different than that of the header, the language context of the CDA will be overwritten at the body level (see ITI TF-3: 5.2.3.9 ClinicalDocument/component/nonXMLBody for an example). Attribute @code shall be present.</li></ul></li>
 <li>[IHE] <b>SHOULD</b> contain [1..1] <tt>title</tt><ul><li>Entered by operator, or possibly can be taken from the scanned content.</li></ul></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>typeId</tt></li>
 <li>[IHE] <b>SHOULD</b> contain [1..*] <tt>scanOriginalAuthor</tt>, such that it<ol>
-<li>contains <xref href="../ScanOriginalAuthor.dita">Scan Original Author</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.1</tt>)</li></ol></li>
+<li>contains <xref href="../ScanOriginalAuthor.dita">IHE Scan Original Author</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.1</tt>)</li></ol></li>
 <li>[IHE] <b>SHALL</b> contain [1..*] <tt>scanningDevice</tt>, such that it<ol>
-<li>contains <xref href="../ScanningDevice.dita">Scanning Device</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.2</tt>)</li></ol></li>
+<li>contains <xref href="../ScanningDevice.dita">IHE Scanning Device</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.2</tt>)</li></ol></li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>scanDataEnterer</tt>, such that it<ol>
-<li>contains <xref href="../ScanDataEnterer.dita">Scan Data Enterer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.3</tt>)</li></ol></li>
+<li>contains <xref href="../ScanDataEnterer.dita">IHE Scan Data Enterer</xref> (templateId: <tt>1.3.6.1.4.1.19376.1.2.20.3</tt>)</li></ol></li>
 <li>[IHE] <b>MAY</b> contain [0..1] <tt>legalAuthenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/LegalAuthenticator.html">CDA Legal Authenticator</xref></li></ol><ul><li>Context is left up to the scanning facility to refine in accordance with local policies.</li></ul></li>
+<li>contains CDA Legal Authenticator</li></ol><ul><li>Context is left up to the scanning facility to refine in accordance with local policies.</li></ul></li>
 <li>[IHE] <b>MAY</b> contain [0..1] <tt>documentationOf</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/DocumentationOf.html">CDA Documentation Of</xref></li></ol><ul><li>Used to encode the date/time range of the original content. If the original content is representative of a single point in time then the endpoints of the date/time range shall be the same. Information regarding this date/time range shall be included, if it is known. In many cases this will have to be supplied by the operator.</li></ul></li>
+<li>contains CDA Documentation Of</li></ol><ul><li>Used to encode the date/time range of the original content. If the original content is representative of a single point in time then the endpoints of the date/time range shall be the same. Information regarding this date/time range shall be included, if it is known. In many cases this will have to be supplied by the operator.</li></ul></li>
 <li>[IHE] <b>SHALL</b> satisfy: The typeId root is 2.16.840.1.113883.1.3 and extension is POCD_HD000040.<ul><li><codeblock>[OCL]: self.typeId.root = '2.16.840.1.113883.1.3' and self.typeId.extension = 'POCD_HD000040'</codeblock></li></ul></li>
 <li>[IHE] <b>SHALL</b> satisfy: Contains exactly one recordTarget.<ul><li>Contains identifying information about the patient concerned in the original content. In many cases this will have to be supplied by the operator.</li></ul><ul><li><codeblock>[OCL]: self.recordTarget-&gt;size() = 1</codeblock></li></ul></li>
 <li>[IHE] <b>SHALL</b> satisfy: Contains one or more author / assignedAuthor / assignedPerson and/or author / assignedAuthor / representedOrganization<ul><li><codeblock>[OCL]: self.author-&gt;exists(author : cda::Author | not author.assignedAuthor.assignedPerson.oclIsUndefined() 
@@ -121,7 +121,7 @@
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
   <templateId root="1.3.6.1.4.1.19376.1.2.20" assigningAuthorityName="IHE Scanned Document"/>
-  <id root="26c5ea54-435e-4f7b-a26e-94c8617e3e8d"/>
+  <id root="8faf4936-2f25-4004-8311-16c3dc7d71b7"/>
   <code/>
   <title/>
   <effectiveTime/>

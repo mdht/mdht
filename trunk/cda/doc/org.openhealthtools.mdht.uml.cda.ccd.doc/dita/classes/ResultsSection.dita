@@ -6,6 +6,7 @@
 <prolog conref="generated/_ResultsSection.dita#classId/prolog"></prolog>
 <body>
 <!-- TODO: insert non-model class description markup here -->
+<image href="../images/ResultSection.png" width="420pt"/>
 <section conref="generated/_ResultsSection.dita#classId/description">
 </section>
 

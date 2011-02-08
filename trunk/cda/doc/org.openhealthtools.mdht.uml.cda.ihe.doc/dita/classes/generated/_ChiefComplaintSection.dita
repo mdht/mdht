@@ -12,11 +12,11 @@
 <p>This contains a narrative description of the patient's chief complaint.</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10154-3" <i>CHIEF COMPLAINT</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "10154-3" <i>CHIEF COMPLAINT</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>

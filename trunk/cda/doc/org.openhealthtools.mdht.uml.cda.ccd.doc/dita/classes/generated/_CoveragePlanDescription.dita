@@ -11,14 +11,14 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-67)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF" (CONF-67)</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-68)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-67)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF" (CONF-67)</li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>
@@ -33,7 +33,7 @@
           <entry>
             <act classCode="ACT" moodCode="DEF">
               <templateId assigningAuthorityName="CCD Coverage Plan Description"/>
-              <id root="f5395f03-46d2-4031-857d-4f3276da37bf"/>
+              <id root="1fead283-ff09-497e-ab7a-c825a9a8dcbb"/>
             </act>
           </entry>
         </section>

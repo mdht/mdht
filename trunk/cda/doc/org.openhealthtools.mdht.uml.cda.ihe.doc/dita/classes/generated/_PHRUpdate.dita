@@ -11,13 +11,13 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref href="../MedicalSummary.dita">Medical Summary</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.2</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../MedicalSummary.dita">IHE Medical Summary</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.2</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.cdt.doc/classes/GeneralHeaderConstraints.html">CDT General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
-<li><b>SHALL</b> conform to <xref href="../MedicalDocument.dita">Medical Document</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.1</tt>)</li>
-<li><b>SHALL</b> conform to <xref href="../MedicalSummary.dita">Medical Summary</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.2</tt>)</li>
+<li><b>SHALL</b> conform to CDA Clinical Document</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.cdt.doc/dita/classes/GeneralHeaderConstraints.dita">CDT General Header Constraints</xref> template (templateId: <tt>2.16.840.1.113883.10.20.3</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../MedicalDocument.dita">IHE Medical Document</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.1</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../MedicalSummary.dita">IHE Medical Summary</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.1.2</tt>)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>id</tt> (CONF-HP-17)<ul><li>The ClinicalDocument/id element is an instance identifier data type (see HL7 Version 3
 Abstract Data in Section 5 REFERENCES). The root attribute is a UUID or OID. The
 root uniquely identifies the scope of the extension. The root and extension attributes
@@ -32,7 +32,7 @@ effectiveTime may be less than to the second.</li></ul></li>
 on documents with respect to the vocabulary used for confidentialityCode, nor
 treatment or implementation of confidentiality.</li></ul></li>
 <li>[CDT] Contains [1..*] <tt>author</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li></ol><ul><li>The author element represents the creator of the clinical document. If the role of the
+<li>contains CDA Author</li></ol><ul><li>The author element represents the creator of the clinical document. If the role of the
 actor is the entry of information from his or her own knowledge or application of skills,
 that actor is the author. If one actor provides information to another actor who filters,
 reasons, or algorithmically creates new information, then that second actor is also an
@@ -40,10 +40,10 @@ author, having created information from his or her own knowledge or skills. Howe
 that determination is independent from the determination of the first actor's
 authorship.</li></ul></li>
 <li>[CDT] Contains [1..1] <tt>custodian</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Custodian.html">CDA Custodian</xref></li></ol><ul><li>Based on the CDA R2 constraints (Section 4.2.2.3 of the CDA Normative Web Edition.
+<li>contains CDA Custodian</li></ol><ul><li>Based on the CDA R2 constraints (Section 4.2.2.3 of the CDA Normative Web Edition.
 See Section 5 REFERENCES), the custodian element is required and is the custodian of
 the clinical document.</li></ul></li>
-<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
+<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is CDA Component2</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-HP-24)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>realmCode</tt><tt>/@code</tt> = "US"  (CONF-HP-15)</li>
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>title</tt> (CONF-HP-22)<ul><li>Specifies the local name used for the document.
@@ -53,7 +53,7 @@ debugging may be "HISTORY AND PHYSICAL." The title can be localized, as appropri
 <li>[CDT] <b>SHALL</b> contain [1..1] <tt>typeId</tt> (CONF-HP-16)<ul><li>The clinical document type ID identifies the constraints imposed by CDA R2 on the
 content, essentially acting as a version identifier.</li></ul></li>
 <li>[CDT] Contains [0..1] <tt>dataEnterer</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/DataEnterer.html">CDA Data Enterer</xref></li></ol><ul><li><p>The dataEnterer element represents the person who transferred the information from
+<li>contains CDA Data Enterer</li></ol><ul><li><p>The dataEnterer element represents the person who transferred the information from
 other sources into the clinical document, where the other sources wrote the content of
 the note. The guiding rule of thumb is that an author provides the content found
 within the header or body of the document, subject to their own interpretation. The
@@ -63,12 +63,12 @@ both author and dataEnterer.</p>
 transcription or transfer from paper form to electronic system), that actor is considered
 a dataEnterer.</p></li></ul></li>
 <li>[CDT] Contains [0..*] <tt>informationRecipient</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/InformationRecipient.html">CDA Information Recipient</xref></li></ol><ul><li>informationRecipient, when used in the context of a referral or request for consultation,
+<li>contains CDA Information Recipient</li></ol><ul><li>informationRecipient, when used in the context of a referral or request for consultation,
 this records the intended recipient of the information at the time the document is
 created. The intended recipient may also be the health chart of the patient, in which
 case the receivedOrganization is the scoping organization of that chart.</li></ul></li>
 <li>[CDT] Contains [0..1] <tt>legalAuthenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/LegalAuthenticator.html">CDA Legal Authenticator</xref></li></ol><ul><li><p>The legalAuthenticator element identifies the legal authenticator of the document and
+<li>contains CDA Legal Authenticator</li></ol><ul><li><p>The legalAuthenticator element identifies the legal authenticator of the document and
 must be present if the document has been legally authenticated. Based on local
 practice, clinical documents may be released before legal authentication. This implies
 that a clinical document that does not contain this element has not been legally
@@ -80,7 +80,7 @@ legal authentication, given the appropriate credentials.</p>
 system that generates the clinical document. In these cases, the legal authenticator is
 a person accepting responsibility for the document, not the generating device or system.</p></li></ul></li>
 <li>[CDT] Contains [0..*] <tt>authenticator</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Authenticator.html">CDA Authenticator</xref></li></ol><ul><li><p>The authenticator identifies the participant who attested to the accuracy of the
+<li>contains CDA Authenticator</li></ol><ul><li><p>The authenticator identifies the participant who attested to the accuracy of the
 information in the document.</p>
 <p>Automated systems, such as a PHR, that allow a clinical document to be generated need to give
 special consideration to authentication permissions because the information contained in the
@@ -230,7 +230,7 @@ least to the year, SHOULD be precise to the day, and MAY omit time zone. (CONF-H
   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE Medical Document"/>
   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.2" assigningAuthorityName="IHE Medical Summary"/>
   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.6" assigningAuthorityName="IHE PHR Update"/>
-  <id root="3a466f56-8a2e-440d-8e06-967afea3ec78"/>
+  <id root="c93adb98-906a-49e0-b6b9-79249c78eed1"/>
   <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
   <title/>
   <effectiveTime/>

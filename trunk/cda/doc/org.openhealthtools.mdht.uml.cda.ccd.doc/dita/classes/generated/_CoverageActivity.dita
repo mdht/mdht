@@ -11,7 +11,7 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-36)</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF" (CONF-37)</li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-38)</li>
@@ -19,7 +19,7 @@
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-41, CONF-42)</li>
 <li><b>SHALL</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="COMP" <i>COMP (has component)</i></li>
-<li>contains <xref href="../PolicyActivity.dita">Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>) (CONF-43, CONF-45, CONF-46)</li></ol></li>
+<li>contains <xref href="../PolicyActivity.dita">CCD Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>) (CONF-43, CONF-45, CONF-46)</li></ol></li>
 <li><b>SHALL</b> satisfy: An alert observation contains one or more sources of information. (CONF-47)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
   or not self.getSection().informant-&gt;isEmpty()
   or not self.getClinicalDocument().informant-&gt;isEmpty()
@@ -30,8 +30,8 @@
 <li><b>MAY</b> satisfy: entryRelationship contains sequenceNumber, which serves to prioritize the payment sources. (CONF-44)<ul><li><codeblock>[OCL]: self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | not rel.sequenceNumber.oclIsUndefined())</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT" (CONF-36)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "DEF" (CONF-37)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "48768-6" <i>Payment sources</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-41, CONF-42)</li>
@@ -39,7 +39,7 @@
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08) (CONF-39, CONF-40)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>entryRelationship</tt>, such that it<ol>
 <li>has @typeCode="COMP" <i>COMP (has component)</i></li>
-<li>contains <xref href="../PolicyActivity.dita">Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>) (CONF-43, CONF-45, CONF-46)</li></ol></li>
+<li>contains <xref href="../PolicyActivity.dita">CCD Policy Activity</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.26</tt>) (CONF-43, CONF-45, CONF-46)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: An alert observation contains one or more sources of information. (CONF-47)<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
   or not self.getSection().informant-&gt;isEmpty()
   or not self.getClinicalDocument().informant-&gt;isEmpty()
@@ -58,13 +58,13 @@
           <entry>
             <act classCode="ACT" moodCode="DEF">
               <templateId root="2.16.840.1.113883.10.20.1.20" assigningAuthorityName="CCD Coverage Activity"/>
-              <id root="572e7795-e666-44e9-a4ed-c6ada83d2156"/>
+              <id root="b9d614e5-5d3e-49b9-976c-22119de28ba2"/>
               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Payment sources"/>
               <statusCode code="completed"/>
               <entryRelationship>
                 <act classCode="ACT" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.26" assigningAuthorityName="CCD Policy Activity"/>
-                  <id root="a5e6a153-484f-4194-9398-5b0e070cfcb1"/>
+                  <id root="f31522e2-4bd2-4a3f-9ddb-048bad5ac242"/>
                   <code/>
                   <statusCode code="completed"/>
                 </act>

@@ -11,14 +11,14 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EncountersActivity.html">CCD Encounters Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.21</tt>)</li>
-<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/EncountersActivity.dita">CCD Encounters Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.21</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">IHE Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/EncountersActivity.html">CCD Encounters Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.21</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../EncounterEntry.dita">IHE Encounter Entry</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.4.14</tt>)</li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Encounter</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/EncountersActivity.dita">CCD Encounters Activity</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.21</tt>)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>code</tt>, which <b>SHOULD</b> be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode STATIC</li>
@@ -37,7 +37,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
               <templateId root="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD Encounters Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
-              <id root="dcbd5fde-9e2c-46cf-8a2e-dd6a86088ff6"/>
+              <id root="d923b6e9-8e2c-4823-ac17-2503697c5f3f"/>
               <code codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActEncounterCode"/>
               <text/>
               <effectiveTime>

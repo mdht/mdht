@@ -23,44 +23,44 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li><b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li><b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li><b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityAct.dita">Plan Of Care Activity Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityAct.dita">CCD Plan Of Care Activity Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityEncounter.dita">Plan Of Care Activity Encounter</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityEncounter.dita">CCD Plan Of Care Activity Encounter</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityObservation.dita">Plan Of Care Activity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityObservation.dita">CCD Plan Of Care Activity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityProcedure.dita">Plan Of Care Activity Procedure</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityProcedure.dita">CCD Plan Of Care Activity Procedure</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivitySubstanceAdministration.dita">Plan Of Care Activity Substance Administration</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivitySubstanceAdministration.dita">CCD Plan Of Care Activity Substance Administration</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li><b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivitySupply.dita">Plan Of Care Activity Supply</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivitySupply.dita">CCD Plan Of Care Activity Supply</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>planOfCareActivity</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li></ol></li>
+<li>contains <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li></ol></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "18776-5" <i>Treatment plan</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityAct.dita">Plan Of Care Activity Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityAct.dita">CCD Plan Of Care Activity Act</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityEncounter.dita">Plan Of Care Activity Encounter</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityEncounter.dita">CCD Plan Of Care Activity Encounter</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityObservation.dita">Plan Of Care Activity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityObservation.dita">CCD Plan Of Care Activity Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivityProcedure.dita">Plan Of Care Activity Procedure</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivityProcedure.dita">CCD Plan Of Care Activity Procedure</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivitySubstanceAdministration.dita">Plan Of Care Activity Substance Administration</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivitySubstanceAdministration.dita">CCD Plan Of Care Activity Substance Administration</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>MAY</b> contain [0..1] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivitySupply.dita">Plan Of Care Activity Supply</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareActivitySupply.dita">CCD Plan Of Care Activity Supply</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.25</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>planOfCareActivity</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li></ol></li>
+<li>contains <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li></ol></li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
@@ -74,37 +74,37 @@
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="9ae535d4-2d42-4a67-a1e2-1d10070e9750"/>
+              <id root="013bf66e-4364-47a2-8492-ac9ee4a1b5f3"/>
             </act>
           </entry>
           <entry>
             <encounter>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="f53fd4a3-2b0f-4926-be61-1e6d56a5c01f"/>
+              <id root="150a06eb-8080-4ff2-93d6-eed1b0540579"/>
             </encounter>
           </entry>
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="052018b7-036e-459d-af4a-e9aba132a0a5"/>
+              <id root="62f85e91-837c-4fa2-8a5d-f35d1981fdee"/>
             </observation>
           </entry>
           <entry>
             <procedure>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="cf66ce04-e96c-493f-b159-ee2ac3c5faac"/>
+              <id root="58642348-1c51-459c-a703-76aa7e766dd3"/>
             </procedure>
           </entry>
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="2cca739c-b7a6-4913-a597-44e3b5efc31f"/>
+              <id root="7577aba6-44b2-4244-9bea-5f9b8685f48f"/>
             </substanceAdministration>
           </entry>
           <entry>
             <supply classCode="SPLY">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="def966c2-cdba-41b8-9e41-cb659702c231"/>
+              <id root="16c32a96-a32f-4de7-8796-cfcf340347d5"/>
             </supply>
           </entry>
         </section>

@@ -11,20 +11,20 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref></li>
-<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Substance Administration</li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li><b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
   or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/SubstanceAdministration.html">CDA Substance Administration</xref></li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Substance Administration</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt> = "SBADM", where its data type is ActClass</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
-<li>[CDA] Contains [1..1] <tt>consumable</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Consumable.html">CDA Consumable</xref></li>
+<li>[CDA] Contains [1..1] <tt>consumable</tt>, where its type is CDA Consumable</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li>[CCD] <b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
   or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</codeblock></li></ul></li>
@@ -38,7 +38,7 @@
           <entry>
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="ec70a535-b52d-493b-97d9-50f168856c49"/>
+              <id root="d3e05f15-da2d-4a74-a53f-f3679c960061"/>
             </substanceAdministration>
           </entry>
         </section>

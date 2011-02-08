@@ -11,13 +11,13 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Act.html">CDA Act</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Act</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ACT"</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
 <li>[CDA] Contains [1..1] <tt>code</tt>, where its data type is CD</li>

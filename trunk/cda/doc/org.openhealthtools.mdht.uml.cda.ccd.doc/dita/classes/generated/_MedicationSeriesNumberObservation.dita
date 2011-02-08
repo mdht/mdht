@@ -15,21 +15,21 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
-<li>Contains [1..1] <tt>@classCode</tt> = "OBS"</li>
-<li>Contains [1..1] <tt>@moodCode</tt> = "EVN"</li>
-<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt></li>
-<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30973-2" <i>Dose number</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
-<li><b>SHALL</b> contain [1..1] <tt>value</tt>, where its data type is INT</li>
+<li><b>SHALL</b> conform to CDA Observation (CONF-340)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS" (CONF-341)</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-342)</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-343)</li>
+<li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30973-2" <i>Dose number</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-344, CONF-345)</li>
+<li><b>SHALL</b> contain [1..1] <tt>value</tt>, where its data type is INT (CONF-346, CONF-347)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
-<li>[CCD] Contains [1..1] <tt>@classCode</tt> = "OBS"</li>
-<li>[CCD] Contains [1..1] <tt>@moodCode</tt> = "EVN"</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30973-2" <i>Dose number</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt></li>
-<li>[CCD] <b>SHALL</b> contain [1..1] <tt>value</tt>, where its data type is INT</li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Observation</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "OBS" (CONF-341)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-342)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "30973-2" <i>Dose number</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-344, CONF-345)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-343)</li>
+<li>[CCD] <b>SHALL</b> contain [1..1] <tt>value</tt>, where its data type is INT (CONF-346, CONF-347)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">

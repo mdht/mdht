@@ -11,23 +11,23 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref href="../ResultOrganizer.dita">Result Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../ResultOrganizer.dita">CCD Result Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
 <li><b>SHALL</b> satisfy: Contains one or more sources of information.<ul><li><codeblock>[OCL]: not self.informant-&gt;isEmpty() 
 or not self.getSection().informant-&gt;isEmpty()
 or not self.getClinicalDocument().informant-&gt;isEmpty()
 or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</xref></li>
-<li><b>SHALL</b> conform to <xref href="../ResultOrganizer.dita">Result Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Organizer</li>
+<li><b>SHALL</b> conform to <xref href="../ResultOrganizer.dita">CCD Result Organizer</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.32</tt>)</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is x_ActClassDocumentEntryOrganizer</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN" (CONF-394)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>statusCode</tt> (CONF-396)</li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultObservation.dita">Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
+<li>contains <xref href="../ResultObservation.dita">CCD Result Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.31</tt>) (CONF-405)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..*] <tt>specimen</tt>, such that it<ol>
-<li>contains <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Specimen.html">CDA Specimen</xref> (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
+<li>contains CDA Specimen (CONF-399)</li></ol><ul><li>Should be included if the specimen isn't inherent in code value.</li></ul></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt> (CONF-395)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt> (CONF-397)</li>
 <li>[CCD] <b>SHOULD</b> satisfy: The value for 'code' in a result organizer SHOULD be selected from LOINC (codeSystem 2.16.840.1.113883.6.1) or SNOMED CT (codeSystem 2.16.840.1.113883.6.96), and MAY be selected from CPT-4 (codeSystem 2.16.840.1.113883.6.12) or ValueSet 2.16.840.1.113883.1.11.20.16 ResultTypeCode STATIC. (CONF-398)</li>
@@ -55,13 +55,13 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
             <organizer moodCode="EVN">
               <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD Result Organizer"/>
               <templateId root="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD Vital Signs Organizer"/>
-              <id root="1de190a0-7a35-4826-aa3c-9ef79899adc7"/>
+              <id root="2be16b6a-f9f6-4c25-86fb-928a799300d0"/>
               <code/>
               <statusCode/>
               <component>
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD Result Observation"/>
-                  <id root="2f0889b3-b381-4d5b-80bb-9467e334608f"/>
+                  <id root="3f5b6387-f576-4efe-bfbd-65958e757b56"/>
                   <code/>
                   <statusCode/>
                   <effectiveTime>

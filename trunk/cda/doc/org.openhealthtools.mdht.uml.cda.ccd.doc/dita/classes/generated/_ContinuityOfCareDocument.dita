@@ -11,41 +11,41 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Document</li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ProblemSection.dita">Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-140)</li></ol></li>
+<li>contains <xref href="../ProblemSection.dita">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-140)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../FamilyHistorySection.dita">Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol></li>
+<li>contains <xref href="../FamilyHistorySection.dita">CCD Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../SocialHistorySection.dita">Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol></li>
+<li>contains <xref href="../SocialHistorySection.dita">CCD Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
+<li>contains <xref href="../AlertsSection.dita">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-298)</li></ol></li>
+<li>contains <xref href="../MedicationsSection.dita">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-298)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-388)</li></ol></li>
+<li>contains <xref href="../ResultsSection.dita">CCD Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-388)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ProceduresSection.dita">Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
+<li>contains <xref href="../ProceduresSection.dita">CCD Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../EncountersSection.dita">Encounters Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.3</tt>)</li></ol></li>
+<li>contains <xref href="../EncountersSection.dita">CCD Encounters Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.3</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareSection.dita">Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareSection.dita">CCD Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ImmunizationsSection.dita">Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li></ol></li>
+<li>contains <xref href="../ImmunizationsSection.dita">CCD Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li></ol></li>
+<li>contains <xref href="../VitalSignsSection.dita">CCD Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../MedicalEquipmentSection.dita">Medical Equipment Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.7</tt>)</li></ol></li>
+<li>contains <xref href="../MedicalEquipmentSection.dita">CCD Medical Equipment Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.7</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../FunctionalStatusSection.dita">Functional Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li></ol></li>
+<li>contains <xref href="../FunctionalStatusSection.dita">CCD Functional Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../AdvanceDirectivesSection.dita">Advance Directives Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li></ol></li>
+<li>contains <xref href="../AdvanceDirectivesSection.dita">CCD Advance Directives Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li></ol></li>
 <li><b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PayersSection.dita">Payers Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li></ol></li>
+<li>contains <xref href="../PayersSection.dita">CCD Payers Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li></ol></li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "34133-9" <i>Summarization of episode note</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-1)</li>
 <li><b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-5)</li>
 <li><b>MAY</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>) (CONF-15)</li></ol></li>
+<li>contains <xref href="../PurposeSection.dita">CCD Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>) (CONF-15)</li></ol></li>
 <li><b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent (CONF-2)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR' (CONF-3)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)</codeblock></li></ul></li>
 <li><b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high (CONF-4)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | 
@@ -65,47 +65,47 @@
 <li><b>SHOULD</b> satisfy: A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &lt;content&gt;). (CONF-29)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalDocument.html">CDA Clinical Document</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Document</li>
 <li>[CDA] Contains [1..1] <tt>id</tt>, where its data type is II</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "34133-9" <i>Summarization of episode note</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC) (CONF-1)</li>
 <li>[CDA] Contains [1..1] <tt>effectiveTime</tt>, where its data type is TS</li>
 <li>[CDA] Contains [1..1] <tt>confidentialityCode</tt>, where its data type is CE</li>
-<li>[CDA] Contains [1..*] <tt>author</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Author.html">CDA Author</xref></li>
-<li>[CDA] Contains [1..1] <tt>custodian</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Custodian.html">CDA Custodian</xref></li>
-<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Component2.html">CDA Component2</xref></li>
+<li>[CDA] Contains [1..*] <tt>author</tt>, where its type is CDA Author</li>
+<li>[CDA] Contains [1..1] <tt>custodian</tt>, where its type is CDA Custodian</li>
+<li>[CDA] Contains [1..1] <tt>component</tt>, where its type is CDA Component2</li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ProblemSection.dita">Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-140)</li></ol></li>
+<li>contains <xref href="../ProblemSection.dita">CCD Problem Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.11</tt>) (CONF-140)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../FamilyHistorySection.dita">Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol></li>
+<li>contains <xref href="../FamilyHistorySection.dita">CCD Family History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.4</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../SocialHistorySection.dita">Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol></li>
+<li>contains <xref href="../SocialHistorySection.dita">CCD Social History Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.15</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../AlertsSection.dita">Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
+<li>contains <xref href="../AlertsSection.dita">CCD Alerts Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.2</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../MedicationsSection.dita">Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-298)</li></ol></li>
+<li>contains <xref href="../MedicationsSection.dita">CCD Medications Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.8</tt>) (CONF-298)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ResultsSection.dita">Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-388)</li></ol></li>
+<li>contains <xref href="../ResultsSection.dita">CCD Results Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.14</tt>) (CONF-388)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ProceduresSection.dita">Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
+<li>contains <xref href="../ProceduresSection.dita">CCD Procedures Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.12</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../EncountersSection.dita">Encounters Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.3</tt>)</li></ol></li>
+<li>contains <xref href="../EncountersSection.dita">CCD Encounters Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.3</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PlanOfCareSection.dita">Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
+<li>contains <xref href="../PlanOfCareSection.dita">CCD Plan Of Care Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.10</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../ImmunizationsSection.dita">Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li></ol></li>
+<li>contains <xref href="../ImmunizationsSection.dita">CCD Immunizations Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../VitalSignsSection.dita">Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li></ol></li>
+<li>contains <xref href="../VitalSignsSection.dita">CCD Vital Signs Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.16</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../MedicalEquipmentSection.dita">Medical Equipment Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.7</tt>)</li></ol></li>
+<li>contains <xref href="../MedicalEquipmentSection.dita">CCD Medical Equipment Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.7</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../FunctionalStatusSection.dita">Functional Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li></ol></li>
+<li>contains <xref href="../FunctionalStatusSection.dita">CCD Functional Status Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.5</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../AdvanceDirectivesSection.dita">Advance Directives Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li></ol></li>
+<li>contains <xref href="../AdvanceDirectivesSection.dita">CCD Advance Directives Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.1</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PayersSection.dita">Payers Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li></ol></li>
+<li>contains <xref href="../PayersSection.dita">CCD Payers Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.9</tt>)</li></ol></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>languageCode</tt> (CONF-5)</li>
 <li>[CCD] <b>MAY</b> contain [1..1] <tt>component</tt>, such that it<ol>
-<li>contains <xref href="../PurposeSection.dita">Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>) (CONF-15)</li></ol></li>
+<li>contains <xref href="../PurposeSection.dita">CCD Purpose Section</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.13</tt>) (CONF-15)</li></ol></li>
 <li>[CCD] <b>SHALL</b> satisfy: Contains exactly one documentationOf / serviceEvent (CONF-2)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())</codeblock></li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: documentationOf / serviceEvent / @classCode SHALL be 'PCPR' (CONF-3)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)</codeblock></li></ul></li>
 <li>[CCD] <b>SHALL</b> satisfy: documentationOf / serviceEvent contains exactly one serviceEvent / effectiveTime / low and exactly one serviveEvent / effectiveTime / high (CONF-4)<ul><li><codeblock>[OCL]: self.documentationOf-&gt;one(doc : cda::DocumentationOf | 

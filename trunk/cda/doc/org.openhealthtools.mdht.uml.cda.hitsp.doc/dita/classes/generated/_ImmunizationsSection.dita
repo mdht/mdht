@@ -15,19 +15,19 @@
 </p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ImmunizationsSection.html">IHE Immunizations Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.23</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ImmunizationsSection.dita">IHE Immunizations Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.23</tt>)</li>
 <li><b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../Immunization.dita">Immunization</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.13</tt>)</li></ol></li>
+<li>contains <xref href="../Immunization.dita">HITSP Immunization</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.13</tt>)</li></ol></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ImmunizationsSection.html">CCD Immunizations Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.ihe.doc/classes/ImmunizationsSection.html">IHE Immunizations Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.23</tt>)</li>
+<li><b>SHALL</b> conform to CDA Section</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ccd.doc/dita/classes/ImmunizationsSection.dita">CCD Immunizations Section</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.6</tt>)</li>
+<li><b>SHALL</b> conform to <xref href="../../../../org.openhealthtools.mdht.uml.cda.ihe.doc/dita/classes/ImmunizationsSection.dita">IHE Immunizations Section</xref> template (templateId: <tt>1.3.6.1.4.1.19376.1.5.3.1.3.23</tt>)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "11369-6" <i>History of immunizations</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>title</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>text</tt></li>
 <li>[HITSP] <b>SHALL</b> contain [1..*] <tt>entry</tt>, such that it<ol>
-<li>contains <xref href="../Immunization.dita">Immunization</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.13</tt>)</li></ol></li>
+<li>contains <xref href="../Immunization.dita">HITSP Immunization</xref> (templateId: <tt>2.16.840.1.113883.3.88.11.83.13</tt>)</li></ol></li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains a case-insensitive language-insensitive string containing 'immunization'.</li>
 <li>[CCD] <b>SHOULD</b> satisfy: Contains one or more Medication Activity and/or Supply Activity (CONF-376)<ul><li><codeblock>[OCL]: self.getEntryTargets(ccd::MedicationActivity)-&gt;size() &gt; 0
   or self.getEntryTargets(ccd::SupplyActivity)-&gt;size() &gt; 0</codeblock></li></ul></li>
@@ -48,7 +48,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/>
               <templateId root="2.16.840.1.113883.3.88.11.83.13" assigningAuthorityName="HITSP Immunization"/>
-              <id root="d65a92c1-b5c2-42ed-9b75-36d5645034d9"/>
+              <id root="5d4417cf-e292-475e-a6c4-66a914b793c4"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
@@ -59,7 +59,7 @@
             <substanceAdministration classCode="SBADM">
               <templateId root="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD Medication Activity"/>
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE Immunization"/>
-              <id root="5a23cf8a-9a28-4f75-b712-799e3f22d681"/>
+              <id root="fa30e7ce-b9a6-4da0-ac06-86cb37a0ee74"/>
               <statusCode/>
               <effectiveTime/>
               <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>

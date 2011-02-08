@@ -11,8 +11,8 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
-<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Encounter</li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li>
 <li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
 <li><b>SHALL</b> satisfy: moodCodeValue<ul><li><codeblock>[OCL]: self.moodCode = vocab::x_DocumentEncounterMood::INT or self.moodCode = vocab::x_DocumentEncounterMood::ARQ
@@ -20,9 +20,9 @@
   or self.moodCode = vocab::x_DocumentEncounterMood::RQO</codeblock></li></ul></li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">Plan Of Care Activity</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ClinicalStatement.html">CDA Clinical Statement</xref></li>
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
+<li><b>SHALL</b> conform to <xref href="../PlanOfCareActivity.dita">CCD Plan Of Care Activity</xref></li>
+<li><b>SHALL</b> conform to CDA Clinical Statement</li>
+<li><b>SHALL</b> conform to CDA Encounter</li>
 <li>[CDA] Contains [1..1] <tt>@classCode</tt>, where its data type is ActClass</li>
 <li>[CCD] <b>SHALL</b> contain [1..1] <tt>@moodCode</tt></li>
 <li>[CCD] <b>SHALL</b> contain [1..*] <tt>id</tt></li>
@@ -39,7 +39,7 @@
           <entry>
             <encounter>
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
-              <id root="face0a03-8bef-4ff5-8d6a-f0cf9d8a12aa"/>
+              <id root="b5eba924-8837-4869-b9d8-83b8b37bf508"/>
             </encounter>
           </entry>
         </section>

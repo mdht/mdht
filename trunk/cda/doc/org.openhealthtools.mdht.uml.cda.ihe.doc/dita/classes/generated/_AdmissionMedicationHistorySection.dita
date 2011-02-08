@@ -14,11 +14,11 @@ a patient prior to admission to a facility. It shall include entries for medicat
 Entry Content Module.</p>
 </section>
 <ol id="conformance">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li><b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "42346-7" <i>MEDICATIONS ON ADMISSION</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 </ol>
 <ol id="aggregate">
-<li><b>SHALL</b> conform to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Section.html">CDA Section</xref></li>
+<li><b>SHALL</b> conform to CDA Section</li>
 <li>[IHE] <b>SHALL</b> contain [1..1] <tt>code</tt><tt>/@code</tt> = "42346-7" <i>MEDICATIONS ON ADMISSION</i> (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)</li>
 </ol>
 <codeblock id="example"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
