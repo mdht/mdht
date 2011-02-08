@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
@@ -41,9 +40,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUseablePeriods <em>Useable Period</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUses <em>Use</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getIsNotOrdered <em>Is Not Ordered</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDelimiters <em>Delimiter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCountries <em>Country</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStates <em>State</em>}</li>
@@ -72,6 +68,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPostBoxes <em>Post Box</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPrecincts <em>Precinct</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getParts <em>Part</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUseablePeriods <em>Useable Period</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUses <em>Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getIsNotOrdered <em>Is Not Ordered</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getMixed <em>Mixed</em>}</li>
  * </ul>
  * </p>
@@ -79,16 +78,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  * @generated
  */
 public class ADImpl extends ANYImpl implements AD {
-	/**
-	 * The cached value of the '{@link #getUseablePeriods() <em>Useable Period</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseablePeriods()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SXCM_TS> useablePeriods;
-
 	/**
 	 * The cached value of the '{@link #getUses() <em>Use</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -154,10 +143,7 @@ public class ADImpl extends ANYImpl implements AD {
 	 * @generated
 	 */
 	public EList<SXCM_TS> getUseablePeriods() {
-		if (useablePeriods == null) {
-			useablePeriods = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, DatatypesPackage.AD__USEABLE_PERIOD);
-		}
-		return useablePeriods;
+		return getMixed().list(DatatypesPackage.Literals.AD__USEABLE_PERIOD);
 	}
 
 	/**
@@ -987,8 +973,6 @@ public class ADImpl extends ANYImpl implements AD {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DatatypesPackage.AD__USEABLE_PERIOD:
-				return ((InternalEList<?>)getUseablePeriods()).basicRemove(otherEnd, msgs);
 			case DatatypesPackage.AD__MIXED:
 				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
 		}
@@ -1003,12 +987,6 @@ public class ADImpl extends ANYImpl implements AD {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatatypesPackage.AD__USEABLE_PERIOD:
-				return getUseablePeriods();
-			case DatatypesPackage.AD__USE:
-				return getUses();
-			case DatatypesPackage.AD__IS_NOT_ORDERED:
-				return getIsNotOrdered();
 			case DatatypesPackage.AD__DELIMITER:
 				return getDelimiters();
 			case DatatypesPackage.AD__COUNTRY:
@@ -1066,6 +1044,12 @@ public class ADImpl extends ANYImpl implements AD {
 			case DatatypesPackage.AD__PART:
 				if (coreType) return getParts();
 				return ((FeatureMap.Internal)getParts()).getWrapper();
+			case DatatypesPackage.AD__USEABLE_PERIOD:
+				return getUseablePeriods();
+			case DatatypesPackage.AD__USE:
+				return getUses();
+			case DatatypesPackage.AD__IS_NOT_ORDERED:
+				return getIsNotOrdered();
 			case DatatypesPackage.AD__MIXED:
 				if (coreType) return getMixed();
 				return ((FeatureMap.Internal)getMixed()).getWrapper();
@@ -1082,17 +1066,6 @@ public class ADImpl extends ANYImpl implements AD {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DatatypesPackage.AD__USEABLE_PERIOD:
-				getUseablePeriods().clear();
-				getUseablePeriods().addAll((Collection<? extends SXCM_TS>)newValue);
-				return;
-			case DatatypesPackage.AD__USE:
-				getUses().clear();
-				getUses().addAll((Collection<? extends PostalAddressUse>)newValue);
-				return;
-			case DatatypesPackage.AD__IS_NOT_ORDERED:
-				setIsNotOrdered((Boolean)newValue);
-				return;
 			case DatatypesPackage.AD__DELIMITER:
 				getDelimiters().clear();
 				getDelimiters().addAll((Collection<? extends ADXP>)newValue);
@@ -1204,6 +1177,17 @@ public class ADImpl extends ANYImpl implements AD {
 			case DatatypesPackage.AD__PART:
 				((FeatureMap.Internal)getParts()).set(newValue);
 				return;
+			case DatatypesPackage.AD__USEABLE_PERIOD:
+				getUseablePeriods().clear();
+				getUseablePeriods().addAll((Collection<? extends SXCM_TS>)newValue);
+				return;
+			case DatatypesPackage.AD__USE:
+				getUses().clear();
+				getUses().addAll((Collection<? extends PostalAddressUse>)newValue);
+				return;
+			case DatatypesPackage.AD__IS_NOT_ORDERED:
+				setIsNotOrdered((Boolean)newValue);
+				return;
 			case DatatypesPackage.AD__MIXED:
 				((FeatureMap.Internal)getMixed()).set(newValue);
 				return;
@@ -1219,15 +1203,6 @@ public class ADImpl extends ANYImpl implements AD {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.AD__USEABLE_PERIOD:
-				getUseablePeriods().clear();
-				return;
-			case DatatypesPackage.AD__USE:
-				unsetUses();
-				return;
-			case DatatypesPackage.AD__IS_NOT_ORDERED:
-				setIsNotOrdered(IS_NOT_ORDERED_EDEFAULT);
-				return;
 			case DatatypesPackage.AD__DELIMITER:
 				getDelimiters().clear();
 				return;
@@ -1312,6 +1287,15 @@ public class ADImpl extends ANYImpl implements AD {
 			case DatatypesPackage.AD__PART:
 				getParts().clear();
 				return;
+			case DatatypesPackage.AD__USEABLE_PERIOD:
+				getUseablePeriods().clear();
+				return;
+			case DatatypesPackage.AD__USE:
+				unsetUses();
+				return;
+			case DatatypesPackage.AD__IS_NOT_ORDERED:
+				setIsNotOrdered(IS_NOT_ORDERED_EDEFAULT);
+				return;
 			case DatatypesPackage.AD__MIXED:
 				getMixed().clear();
 				return;
@@ -1327,12 +1311,6 @@ public class ADImpl extends ANYImpl implements AD {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.AD__USEABLE_PERIOD:
-				return useablePeriods != null && !useablePeriods.isEmpty();
-			case DatatypesPackage.AD__USE:
-				return isSetUses();
-			case DatatypesPackage.AD__IS_NOT_ORDERED:
-				return IS_NOT_ORDERED_EDEFAULT == null ? isNotOrdered != null : !IS_NOT_ORDERED_EDEFAULT.equals(isNotOrdered);
 			case DatatypesPackage.AD__DELIMITER:
 				return !getDelimiters().isEmpty();
 			case DatatypesPackage.AD__COUNTRY:
@@ -1389,6 +1367,12 @@ public class ADImpl extends ANYImpl implements AD {
 				return !getPrecincts().isEmpty();
 			case DatatypesPackage.AD__PART:
 				return !getParts().isEmpty();
+			case DatatypesPackage.AD__USEABLE_PERIOD:
+				return !getUseablePeriods().isEmpty();
+			case DatatypesPackage.AD__USE:
+				return isSetUses();
+			case DatatypesPackage.AD__IS_NOT_ORDERED:
+				return IS_NOT_ORDERED_EDEFAULT == null ? isNotOrdered != null : !IS_NOT_ORDERED_EDEFAULT.equals(isNotOrdered);
 			case DatatypesPackage.AD__MIXED:
 				return mixed != null && !mixed.isEmpty();
 		}

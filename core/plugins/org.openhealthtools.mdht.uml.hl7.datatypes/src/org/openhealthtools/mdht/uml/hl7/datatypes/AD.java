@@ -27,9 +27,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriods <em>Useable Period</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUses <em>Use</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getIsNotOrdered <em>Is Not Ordered</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDelimiters <em>Delimiter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCountries <em>Country</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStates <em>State</em>}</li>
@@ -58,6 +55,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostBoxes <em>Post Box</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPrecincts <em>Precinct</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getParts <em>Part</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriods <em>Useable Period</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUses <em>Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getIsNotOrdered <em>Is Not Ordered</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getMixed <em>Mixed</em>}</li>
  * </ul>
  * </p>
@@ -78,8 +78,8 @@ public interface AD extends ANY {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Useable Period</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_UseablePeriod()
-	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element'"
 	 * @generated
 	 */
 	EList<SXCM_TS> getUseablePeriods();

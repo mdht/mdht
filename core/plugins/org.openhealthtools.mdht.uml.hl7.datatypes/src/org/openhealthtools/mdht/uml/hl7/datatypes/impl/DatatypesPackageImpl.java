@@ -868,258 +868,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * @generated
 	 */
 	public EReference getAD_UseablePeriod() {
-		return (EReference)adEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAD_Use() {
-		return (EAttribute)adEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAD_IsNotOrdered() {
-		return (EAttribute)adEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_Delimiter() {
-		return (EReference)adEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_Country() {
-		return (EReference)adEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_State() {
-		return (EReference)adEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_County() {
-		return (EReference)adEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_City() {
-		return (EReference)adEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_PostalCode() {
-		return (EReference)adEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_StreetAddressLine() {
-		return (EReference)adEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_HouseNumber() {
-		return (EReference)adEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_HouseNumberNumeric() {
-		return (EReference)adEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_Direction() {
-		return (EReference)adEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_StreetName() {
-		return (EReference)adEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_StreetNameBase() {
-		return (EReference)adEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_StreetNameType() {
-		return (EReference)adEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_AdditionalLocator() {
-		return (EReference)adEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_UnitID() {
-		return (EReference)adEClass.getEStructuralFeatures().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_UnitType() {
-		return (EReference)adEClass.getEStructuralFeatures().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_CareOf() {
-		return (EReference)adEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_CensusTract() {
-		return (EReference)adEClass.getEStructuralFeatures().get(20);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_DeliveryAddressLine() {
-		return (EReference)adEClass.getEStructuralFeatures().get(21);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_DeliveryInstallationType() {
-		return (EReference)adEClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_DeliveryInstallationArea() {
-		return (EReference)adEClass.getEStructuralFeatures().get(23);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_DeliveryInstallationQualifier() {
-		return (EReference)adEClass.getEStructuralFeatures().get(24);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_DeliveryMode() {
-		return (EReference)adEClass.getEStructuralFeatures().get(25);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_DeliveryModeIdentifier() {
-		return (EReference)adEClass.getEStructuralFeatures().get(26);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_BuildingNumberSuffix() {
-		return (EReference)adEClass.getEStructuralFeatures().get(27);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAD_PostBox() {
 		return (EReference)adEClass.getEStructuralFeatures().get(28);
 	}
 
@@ -1128,8 +876,260 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAD_Use() {
+		return (EAttribute)adEClass.getEStructuralFeatures().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAD_IsNotOrdered() {
+		return (EAttribute)adEClass.getEStructuralFeatures().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_Delimiter() {
+		return (EReference)adEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_Country() {
+		return (EReference)adEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_State() {
+		return (EReference)adEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_County() {
+		return (EReference)adEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_City() {
+		return (EReference)adEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_PostalCode() {
+		return (EReference)adEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_StreetAddressLine() {
+		return (EReference)adEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_HouseNumber() {
+		return (EReference)adEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_HouseNumberNumeric() {
+		return (EReference)adEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_Direction() {
+		return (EReference)adEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_StreetName() {
+		return (EReference)adEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_StreetNameBase() {
+		return (EReference)adEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_StreetNameType() {
+		return (EReference)adEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_AdditionalLocator() {
+		return (EReference)adEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_UnitID() {
+		return (EReference)adEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_UnitType() {
+		return (EReference)adEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_CareOf() {
+		return (EReference)adEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_CensusTract() {
+		return (EReference)adEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_DeliveryAddressLine() {
+		return (EReference)adEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_DeliveryInstallationType() {
+		return (EReference)adEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_DeliveryInstallationArea() {
+		return (EReference)adEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_DeliveryInstallationQualifier() {
+		return (EReference)adEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_DeliveryMode() {
+		return (EReference)adEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_DeliveryModeIdentifier() {
+		return (EReference)adEClass.getEStructuralFeatures().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_BuildingNumberSuffix() {
+		return (EReference)adEClass.getEStructuralFeatures().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAD_PostBox() {
+		return (EReference)adEClass.getEStructuralFeatures().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getAD_Precinct() {
-		return (EReference)adEClass.getEStructuralFeatures().get(29);
+		return (EReference)adEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -1138,7 +1138,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * @generated
 	 */
 	public EAttribute getAD_Part() {
-		return (EAttribute)adEClass.getEStructuralFeatures().get(30);
+		return (EAttribute)adEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -1183,7 +1183,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * @generated
 	 */
 	public EAttribute getEN_Use() {
-		return (EAttribute)enEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)enEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1192,51 +1192,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * @generated
 	 */
 	public EReference getEN_ValidTime() {
-		return (EReference)enEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEN_Delimiter() {
-		return (EReference)enEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEN_Family() {
-		return (EReference)enEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEN_Given() {
-		return (EReference)enEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEN_Prefix() {
-		return (EReference)enEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEN_Suffix() {
 		return (EReference)enEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1245,8 +1200,53 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEN_Delimiter() {
+		return (EReference)enEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEN_Family() {
+		return (EReference)enEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEN_Given() {
+		return (EReference)enEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEN_Prefix() {
+		return (EReference)enEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEN_Suffix() {
+		return (EReference)enEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEN_Part() {
-		return (EAttribute)enEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)enEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1971,9 +1971,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		bnEClass = createEClass(BN);
 
 		adEClass = createEClass(AD);
-		createEReference(adEClass, AD__USEABLE_PERIOD);
-		createEAttribute(adEClass, AD__USE);
-		createEAttribute(adEClass, AD__IS_NOT_ORDERED);
 		createEReference(adEClass, AD__DELIMITER);
 		createEReference(adEClass, AD__COUNTRY);
 		createEReference(adEClass, AD__STATE);
@@ -2002,21 +1999,28 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		createEReference(adEClass, AD__POST_BOX);
 		createEReference(adEClass, AD__PRECINCT);
 		createEAttribute(adEClass, AD__PART);
+		createEReference(adEClass, AD__USEABLE_PERIOD);
+		createEAttribute(adEClass, AD__USE);
+		createEAttribute(adEClass, AD__IS_NOT_ORDERED);
 		createEAttribute(adEClass, AD__MIXED);
 
 		adxpEClass = createEClass(ADXP);
 		createEAttribute(adxpEClass, ADXP__PART_TYPE);
 
 		enEClass = createEClass(EN);
-		createEAttribute(enEClass, EN__USE);
-		createEReference(enEClass, EN__VALID_TIME);
 		createEReference(enEClass, EN__DELIMITER);
 		createEReference(enEClass, EN__FAMILY);
 		createEReference(enEClass, EN__GIVEN);
 		createEReference(enEClass, EN__PREFIX);
 		createEReference(enEClass, EN__SUFFIX);
 		createEAttribute(enEClass, EN__PART);
+		createEReference(enEClass, EN__VALID_TIME);
+		createEAttribute(enEClass, EN__USE);
 		createEAttribute(enEClass, EN__MIXED);
+
+		enxpEClass = createEClass(ENXP);
+		createEAttribute(enxpEClass, ENXP__PART_TYPE);
+		createEAttribute(enxpEClass, ENXP__QUALIFIER);
 
 		ivL_TSEClass = createEClass(IVL_TS);
 		createEReference(ivL_TSEClass, IVL_TS__LOW);
@@ -2034,10 +2038,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		pqrEClass = createEClass(PQR);
 		createEAttribute(pqrEClass, PQR__VALUE);
-
-		enxpEClass = createEClass(ENXP);
-		createEAttribute(enxpEClass, ENXP__PART_TYPE);
-		createEAttribute(enxpEClass, ENXP__QUALIFIER);
 
 		onEClass = createEClass(ON);
 
@@ -2165,11 +2165,11 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		adEClass.getESuperTypes().add(this.getANY());
 		adxpEClass.getESuperTypes().add(this.getST());
 		enEClass.getESuperTypes().add(this.getANY());
+		enxpEClass.getESuperTypes().add(this.getST());
 		ivL_TSEClass.getESuperTypes().add(this.getSXCM_TS());
 		ivxB_TSEClass.getESuperTypes().add(this.getTS());
 		pqEClass.getESuperTypes().add(this.getQTY());
 		pqrEClass.getESuperTypes().add(this.getCV());
-		enxpEClass.getESuperTypes().add(this.getST());
 		onEClass.getESuperTypes().add(this.getEN());
 		pnEClass.getESuperTypes().add(this.getEN());
 		tnEClass.getESuperTypes().add(this.getEN());
@@ -2271,9 +2271,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(adEClass, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, "AD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAD_UseablePeriod(), this.getSXCM_TS(), null, "useablePeriod", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAD_Use(), theVocabPackage.getPostalAddressUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAD_IsNotOrdered(), ecorePackage.getEBooleanObject(), "isNotOrdered", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAD_Delimiter(), this.getADXP(), null, "delimiter", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAD_Country(), this.getADXP(), null, "country", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAD_State(), this.getADXP(), null, "state", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -2302,6 +2299,9 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEReference(getAD_PostBox(), this.getADXP(), null, "postBox", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAD_Precinct(), this.getADXP(), null, "precinct", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAD_Part(), ecorePackage.getEFeatureMapEntry(), "part", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAD_UseablePeriod(), this.getSXCM_TS(), null, "useablePeriod", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAD_Use(), theVocabPackage.getPostalAddressUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAD_IsNotOrdered(), ecorePackage.getEBooleanObject(), "isNotOrdered", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAD_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDelimiter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2637,14 +2637,14 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getADXP_PartType(), theVocabPackage.getAddressPartType(), "partType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ADXP.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(enEClass, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, "EN", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEN_Use(), theVocabPackage.getEntityNameUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEN_ValidTime(), this.getIVL_TS(), null, "validTime", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEN_Delimiter(), this.getENXP(), null, "delimiter", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEN_Family(), this.getENXP(), null, "family", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEN_Given(), this.getENXP(), null, "given", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEN_Prefix(), this.getENXP(), null, "prefix", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEN_Suffix(), this.getENXP(), null, "suffix", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEN_Part(), ecorePackage.getEFeatureMapEntry(), "part", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getEN_ValidTime(), this.getIVL_TS(), null, "validTime", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEN_Use(), theVocabPackage.getEntityNameUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEN_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "validateDelimiter", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2712,6 +2712,10 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		addEOperation(enEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEClass(enxpEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, "ENXP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getENXP_PartType(), theVocabPackage.getEntityNamePartType(), "partType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getENXP_Qualifier(), theVocabPackage.getEntityNamePartQualifier(), "qualifier", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(ivL_TSEClass, org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS.class, "IVL_TS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIVL_TS_Low(), this.getIVXB_TS(), null, "low", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIVL_TS_Center(), this.getIVXB_TS(), null, "center", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2728,10 +2732,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		initEClass(pqrEClass, org.openhealthtools.mdht.uml.hl7.datatypes.PQR.class, "PQR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPQR_Value(), ecorePackage.getEDoubleObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PQR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(enxpEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, "ENXP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getENXP_PartType(), theVocabPackage.getEntityNamePartType(), "partType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getENXP_Qualifier(), theVocabPackage.getEntityNamePartQualifier(), "qualifier", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(onEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ON.class, "ON", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2931,18 +2931,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   new String[] {
 			 "kind", "mixed"
 		   });																																																																																																														
-		addAnnotation
-		  (getAD_UseablePeriod(), 
-		   source, 
-		   new String[] {
-			 "namespace", "urn:hl7-org:v3"
-		   });		
-		addAnnotation
-		  (getAD_Use(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute"
-		   });		
 		addAnnotation
 		  (getAD_Delimiter(), 
 		   source, 
@@ -3166,6 +3154,19 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "kind", "group"
 		   });		
 		addAnnotation
+		  (getAD_UseablePeriod(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
+			 "kind", "element"
+		   });		
+		addAnnotation
+		  (getAD_Use(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute"
+		   });		
+		addAnnotation
 		  (getAD_Mixed(), 
 		   source, 
 		   new String[] {
@@ -3183,18 +3184,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   new String[] {
 			 "kind", "mixed"
 		   });																						
-		addAnnotation
-		  (getEN_Use(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute"
-		   });		
-		addAnnotation
-		  (getEN_ValidTime(), 
-		   source, 
-		   new String[] {
-			 "namespace", "urn:hl7-org:v3"
-		   });		
 		addAnnotation
 		  (getEN_Delimiter(), 
 		   source, 
@@ -3242,10 +3231,35 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "kind", "group"
 		   });		
 		addAnnotation
+		  (getEN_ValidTime(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
+			 "kind", "element"
+		   });		
+		addAnnotation
+		  (getEN_Use(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute"
+		   });		
+		addAnnotation
 		  (getEN_Mixed(), 
 		   source, 
 		   new String[] {
 			 "kind", "elementWildcard"
+		   });		
+		addAnnotation
+		  (enxpEClass, 
+		   source, 
+		   new String[] {
+			 "kind", "mixed"
+		   });		
+		addAnnotation
+		  (getENXP_Qualifier(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute"
 		   });		
 		addAnnotation
 		  (getIVL_TS_Low(), 
@@ -3276,18 +3290,6 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "namespace", "urn:hl7-org:v3"
-		   });		
-		addAnnotation
-		  (enxpEClass, 
-		   source, 
-		   new String[] {
-			 "kind", "mixed"
-		   });		
-		addAnnotation
-		  (getENXP_Qualifier(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute"
 		   });		
 		addAnnotation
 		  (onEClass, 

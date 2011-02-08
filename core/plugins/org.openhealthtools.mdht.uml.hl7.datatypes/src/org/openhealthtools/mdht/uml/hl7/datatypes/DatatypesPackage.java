@@ -1065,40 +1065,13 @@ public interface DatatypesPackage extends EPackage {
 	int AD__NULL_FLAVOR = ANY__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Useable Period</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AD__USEABLE_PERIOD = ANY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Use</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AD__USE = ANY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Not Ordered</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AD__IS_NOT_ORDERED = ANY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Delimiter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DELIMITER = ANY_FEATURE_COUNT + 3;
+	int AD__DELIMITER = ANY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Country</b></em>' containment reference list.
@@ -1107,7 +1080,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__COUNTRY = ANY_FEATURE_COUNT + 4;
+	int AD__COUNTRY = ANY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' containment reference list.
@@ -1116,7 +1089,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__STATE = ANY_FEATURE_COUNT + 5;
+	int AD__STATE = ANY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>County</b></em>' containment reference list.
@@ -1125,7 +1098,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__COUNTY = ANY_FEATURE_COUNT + 6;
+	int AD__COUNTY = ANY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>City</b></em>' containment reference list.
@@ -1134,7 +1107,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__CITY = ANY_FEATURE_COUNT + 7;
+	int AD__CITY = ANY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Postal Code</b></em>' containment reference list.
@@ -1143,7 +1116,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__POSTAL_CODE = ANY_FEATURE_COUNT + 8;
+	int AD__POSTAL_CODE = ANY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Street Address Line</b></em>' containment reference list.
@@ -1152,7 +1125,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__STREET_ADDRESS_LINE = ANY_FEATURE_COUNT + 9;
+	int AD__STREET_ADDRESS_LINE = ANY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>House Number</b></em>' containment reference list.
@@ -1161,7 +1134,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__HOUSE_NUMBER = ANY_FEATURE_COUNT + 10;
+	int AD__HOUSE_NUMBER = ANY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>House Number Numeric</b></em>' containment reference list.
@@ -1170,7 +1143,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__HOUSE_NUMBER_NUMERIC = ANY_FEATURE_COUNT + 11;
+	int AD__HOUSE_NUMBER_NUMERIC = ANY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' containment reference list.
@@ -1179,7 +1152,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DIRECTION = ANY_FEATURE_COUNT + 12;
+	int AD__DIRECTION = ANY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Street Name</b></em>' containment reference list.
@@ -1188,7 +1161,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__STREET_NAME = ANY_FEATURE_COUNT + 13;
+	int AD__STREET_NAME = ANY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Street Name Base</b></em>' containment reference list.
@@ -1197,7 +1170,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__STREET_NAME_BASE = ANY_FEATURE_COUNT + 14;
+	int AD__STREET_NAME_BASE = ANY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Street Name Type</b></em>' containment reference list.
@@ -1206,7 +1179,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__STREET_NAME_TYPE = ANY_FEATURE_COUNT + 15;
+	int AD__STREET_NAME_TYPE = ANY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Additional Locator</b></em>' containment reference list.
@@ -1215,7 +1188,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__ADDITIONAL_LOCATOR = ANY_FEATURE_COUNT + 16;
+	int AD__ADDITIONAL_LOCATOR = ANY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Unit ID</b></em>' containment reference list.
@@ -1224,7 +1197,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__UNIT_ID = ANY_FEATURE_COUNT + 17;
+	int AD__UNIT_ID = ANY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Unit Type</b></em>' containment reference list.
@@ -1233,7 +1206,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__UNIT_TYPE = ANY_FEATURE_COUNT + 18;
+	int AD__UNIT_TYPE = ANY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Care Of</b></em>' containment reference list.
@@ -1242,7 +1215,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__CARE_OF = ANY_FEATURE_COUNT + 19;
+	int AD__CARE_OF = ANY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Census Tract</b></em>' containment reference list.
@@ -1251,7 +1224,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__CENSUS_TRACT = ANY_FEATURE_COUNT + 20;
+	int AD__CENSUS_TRACT = ANY_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Address Line</b></em>' containment reference list.
@@ -1260,7 +1233,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DELIVERY_ADDRESS_LINE = ANY_FEATURE_COUNT + 21;
+	int AD__DELIVERY_ADDRESS_LINE = ANY_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Installation Type</b></em>' containment reference list.
@@ -1269,7 +1242,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DELIVERY_INSTALLATION_TYPE = ANY_FEATURE_COUNT + 22;
+	int AD__DELIVERY_INSTALLATION_TYPE = ANY_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Installation Area</b></em>' containment reference list.
@@ -1278,7 +1251,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DELIVERY_INSTALLATION_AREA = ANY_FEATURE_COUNT + 23;
+	int AD__DELIVERY_INSTALLATION_AREA = ANY_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Installation Qualifier</b></em>' containment reference list.
@@ -1287,7 +1260,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DELIVERY_INSTALLATION_QUALIFIER = ANY_FEATURE_COUNT + 24;
+	int AD__DELIVERY_INSTALLATION_QUALIFIER = ANY_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Mode</b></em>' containment reference list.
@@ -1296,7 +1269,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DELIVERY_MODE = ANY_FEATURE_COUNT + 25;
+	int AD__DELIVERY_MODE = ANY_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Delivery Mode Identifier</b></em>' containment reference list.
@@ -1305,7 +1278,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__DELIVERY_MODE_IDENTIFIER = ANY_FEATURE_COUNT + 26;
+	int AD__DELIVERY_MODE_IDENTIFIER = ANY_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Building Number Suffix</b></em>' containment reference list.
@@ -1314,7 +1287,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__BUILDING_NUMBER_SUFFIX = ANY_FEATURE_COUNT + 27;
+	int AD__BUILDING_NUMBER_SUFFIX = ANY_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Post Box</b></em>' containment reference list.
@@ -1323,7 +1296,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__POST_BOX = ANY_FEATURE_COUNT + 28;
+	int AD__POST_BOX = ANY_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Precinct</b></em>' containment reference list.
@@ -1332,7 +1305,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__PRECINCT = ANY_FEATURE_COUNT + 29;
+	int AD__PRECINCT = ANY_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Part</b></em>' attribute list.
@@ -1341,7 +1314,34 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AD__PART = ANY_FEATURE_COUNT + 30;
+	int AD__PART = ANY_FEATURE_COUNT + 27;
+
+	/**
+	 * The feature id for the '<em><b>Useable Period</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AD__USEABLE_PERIOD = ANY_FEATURE_COUNT + 28;
+
+	/**
+	 * The feature id for the '<em><b>Use</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AD__USE = ANY_FEATURE_COUNT + 29;
+
+	/**
+	 * The feature id for the '<em><b>Is Not Ordered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AD__IS_NOT_ORDERED = ANY_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -1499,31 +1499,13 @@ public interface DatatypesPackage extends EPackage {
 	int EN__NULL_FLAVOR = ANY__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Use</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EN__USE = ANY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EN__VALID_TIME = ANY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Delimiter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EN__DELIMITER = ANY_FEATURE_COUNT + 2;
+	int EN__DELIMITER = ANY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Family</b></em>' containment reference list.
@@ -1532,7 +1514,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EN__FAMILY = ANY_FEATURE_COUNT + 3;
+	int EN__FAMILY = ANY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Given</b></em>' containment reference list.
@@ -1541,7 +1523,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EN__GIVEN = ANY_FEATURE_COUNT + 4;
+	int EN__GIVEN = ANY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Prefix</b></em>' containment reference list.
@@ -1550,7 +1532,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EN__PREFIX = ANY_FEATURE_COUNT + 5;
+	int EN__PREFIX = ANY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Suffix</b></em>' containment reference list.
@@ -1559,7 +1541,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EN__SUFFIX = ANY_FEATURE_COUNT + 6;
+	int EN__SUFFIX = ANY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Part</b></em>' attribute list.
@@ -1568,7 +1550,25 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EN__PART = ANY_FEATURE_COUNT + 7;
+	int EN__PART = ANY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EN__VALID_TIME = ANY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Use</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EN__USE = ANY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -1596,79 +1596,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getIVL_TS()
 	 * @generated
 	 */
-	int IVL_TS = 19;
-
-	/**
-	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS__NULL_FLAVOR = SXCM_TS__NULL_FLAVOR;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS__VALUE = SXCM_TS__VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS__OPERATOR = SXCM_TS__OPERATOR;
-
-	/**
-	 * The feature id for the '<em><b>Low</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS__LOW = SXCM_TS_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Center</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS__CENTER = SXCM_TS_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>High</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS__HIGH = SXCM_TS_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Width</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS__WIDTH = SXCM_TS_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>IVL TS</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVL_TS_FEATURE_COUNT = SXCM_TS_FEATURE_COUNT + 4;
+	int IVL_TS = 20;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.IVXB_TSImpl <em>IVXB TS</em>}' class.
@@ -1678,43 +1606,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getIVXB_TS()
 	 * @generated
 	 */
-	int IVXB_TS = 20;
-
-	/**
-	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVXB_TS__NULL_FLAVOR = TS__NULL_FLAVOR;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVXB_TS__VALUE = TS__VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Inclusive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVXB_TS__INCLUSIVE = TS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>IVXB TS</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IVXB_TS_FEATURE_COUNT = TS_FEATURE_COUNT + 1;
+	int IVXB_TS = 21;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.PQImpl <em>PQ</em>}' class.
@@ -1724,52 +1616,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getPQ()
 	 * @generated
 	 */
-	int PQ = 21;
-
-	/**
-	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQ__NULL_FLAVOR = QTY__NULL_FLAVOR;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQ__VALUE = QTY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQ__UNIT = QTY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Translation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQ__TRANSLATION = QTY_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>PQ</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQ_FEATURE_COUNT = QTY_FEATURE_COUNT + 3;
+	int PQ = 22;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.PQRImpl <em>PQR</em>}' class.
@@ -1779,106 +1626,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getPQR()
 	 * @generated
 	 */
-	int PQR = 22;
-
-	/**
-	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__NULL_FLAVOR = CV__NULL_FLAVOR;
-
-	/**
-	 * The feature id for the '<em><b>Original Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__ORIGINAL_TEXT = CV__ORIGINAL_TEXT;
-
-	/**
-	 * The feature id for the '<em><b>Qualifier</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__QUALIFIER = CV__QUALIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Translation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__TRANSLATION = CV__TRANSLATION;
-
-	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__CODE = CV__CODE;
-
-	/**
-	 * The feature id for the '<em><b>Code System</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__CODE_SYSTEM = CV__CODE_SYSTEM;
-
-	/**
-	 * The feature id for the '<em><b>Code System Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__CODE_SYSTEM_NAME = CV__CODE_SYSTEM_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Code System Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__CODE_SYSTEM_VERSION = CV__CODE_SYSTEM_VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__DISPLAY_NAME = CV__DISPLAY_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR__VALUE = CV_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>PQR</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PQR_FEATURE_COUNT = CV_FEATURE_COUNT + 1;
+	int PQR = 23;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl <em>ENXP</em>}' class.
@@ -1888,7 +1636,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getENXP()
 	 * @generated
 	 */
-	int ENXP = 23;
+	int ENXP = 19;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2008,6 +1756,258 @@ public interface DatatypesPackage extends EPackage {
 	int ENXP_FEATURE_COUNT = ST_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS__NULL_FLAVOR = SXCM_TS__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS__VALUE = SXCM_TS__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS__OPERATOR = SXCM_TS__OPERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Low</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS__LOW = SXCM_TS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Center</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS__CENTER = SXCM_TS_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>High</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS__HIGH = SXCM_TS_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS__WIDTH = SXCM_TS_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>IVL TS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVL_TS_FEATURE_COUNT = SXCM_TS_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVXB_TS__NULL_FLAVOR = TS__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVXB_TS__VALUE = TS__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Inclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVXB_TS__INCLUSIVE = TS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IVXB TS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IVXB_TS_FEATURE_COUNT = TS_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQ__NULL_FLAVOR = QTY__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQ__VALUE = QTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQ__UNIT = QTY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Translation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQ__TRANSLATION = QTY_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>PQ</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQ_FEATURE_COUNT = QTY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__NULL_FLAVOR = CV__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Original Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__ORIGINAL_TEXT = CV__ORIGINAL_TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Qualifier</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__QUALIFIER = CV__QUALIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Translation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__TRANSLATION = CV__TRANSLATION;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__CODE = CV__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Code System</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__CODE_SYSTEM = CV__CODE_SYSTEM;
+
+	/**
+	 * The feature id for the '<em><b>Code System Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__CODE_SYSTEM_NAME = CV__CODE_SYSTEM_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Code System Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__CODE_SYSTEM_VERSION = CV__CODE_SYSTEM_VERSION;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__DISPLAY_NAME = CV__DISPLAY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR__VALUE = CV_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>PQR</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PQR_FEATURE_COUNT = CV_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ONImpl <em>ON</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2025,24 +2025,6 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ON__NULL_FLAVOR = EN__NULL_FLAVOR;
-
-	/**
-	 * The feature id for the '<em><b>Use</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__USE = EN__USE;
-
-	/**
-	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__VALID_TIME = EN__VALID_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Delimiter</b></em>' containment reference list.
@@ -2099,6 +2081,24 @@ public interface DatatypesPackage extends EPackage {
 	int ON__PART = EN__PART;
 
 	/**
+	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__VALID_TIME = EN__VALID_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Use</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__USE = EN__USE;
+
+	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2134,24 +2134,6 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int PN__NULL_FLAVOR = EN__NULL_FLAVOR;
-
-	/**
-	 * The feature id for the '<em><b>Use</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PN__USE = EN__USE;
-
-	/**
-	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PN__VALID_TIME = EN__VALID_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Delimiter</b></em>' containment reference list.
@@ -2208,6 +2190,24 @@ public interface DatatypesPackage extends EPackage {
 	int PN__PART = EN__PART;
 
 	/**
+	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PN__VALID_TIME = EN__VALID_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Use</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PN__USE = EN__USE;
+
+	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2243,24 +2243,6 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int TN__NULL_FLAVOR = EN__NULL_FLAVOR;
-
-	/**
-	 * The feature id for the '<em><b>Use</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TN__USE = EN__USE;
-
-	/**
-	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TN__VALID_TIME = EN__VALID_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Delimiter</b></em>' containment reference list.
@@ -2315,6 +2297,24 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int TN__PART = EN__PART;
+
+	/**
+	 * The feature id for the '<em><b>Valid Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TN__VALID_TIME = EN__VALID_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Use</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TN__USE = EN__USE;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.

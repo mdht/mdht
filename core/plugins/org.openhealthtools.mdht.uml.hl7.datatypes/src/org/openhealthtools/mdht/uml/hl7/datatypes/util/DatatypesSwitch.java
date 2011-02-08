@@ -283,6 +283,16 @@ public class DatatypesSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DatatypesPackage.ENXP: {
+				ENXP enxp = (ENXP)theEObject;
+				T result = caseENXP(enxp);
+				if (result == null) result = caseST(enxp);
+				if (result == null) result = caseED(enxp);
+				if (result == null) result = caseBIN(enxp);
+				if (result == null) result = caseANY(enxp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case DatatypesPackage.IVL_TS: {
 				IVL_TS ivL_TS = (IVL_TS)theEObject;
 				T result = caseIVL_TS(ivL_TS);
@@ -317,16 +327,6 @@ public class DatatypesSwitch<T> {
 				if (result == null) result = caseCE(pqr);
 				if (result == null) result = caseCD(pqr);
 				if (result == null) result = caseANY(pqr);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DatatypesPackage.ENXP: {
-				ENXP enxp = (ENXP)theEObject;
-				T result = caseENXP(enxp);
-				if (result == null) result = caseST(enxp);
-				if (result == null) result = caseED(enxp);
-				if (result == null) result = caseBIN(enxp);
-				if (result == null) result = caseANY(enxp);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
