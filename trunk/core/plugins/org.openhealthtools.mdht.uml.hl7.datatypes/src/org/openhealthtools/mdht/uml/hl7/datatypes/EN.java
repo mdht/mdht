@@ -27,14 +27,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUses <em>Use</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getValidTime <em>Valid Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getDelimiters <em>Delimiter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getFamilies <em>Family</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getGivens <em>Given</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getPrefixes <em>Prefix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getSuffixes <em>Suffix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getParts <em>Part</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getValidTime <em>Valid Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUses <em>Use</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getMixed <em>Mixed</em>}</li>
  * </ul>
  * </p>
@@ -97,8 +97,8 @@ public interface EN extends ANY {
 	 * @return the value of the '<em>Valid Time</em>' containment reference.
 	 * @see #setValidTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_ValidTime()
-	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element'"
 	 * @generated
 	 */
 	IVL_TS getValidTime();

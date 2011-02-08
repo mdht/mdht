@@ -333,20 +333,6 @@
         </specification>
       </ownedRule>
       <generalization xmi:id="_G5ptAD5zEd6cla2oXsPtlA" general="__I8BwDxZEd6JwqSGecoePg"/>
-      <ownedAttribute xmi:id="_g4yxwD6CEd6cla2oXsPtlA" name="useablePeriod" visibility="private" type="_kSZ5QD5_Ed6cla2oXsPtlA" aggregation="composite">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kCjYAT6CEd6cla2oXsPtlA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kCjYAD6CEd6cla2oXsPtlA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_qe2q4D5zEd6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7Gd0DcEd6xYZuu1VKCVw"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wvOtsT58Ed6cla2oXsPtlA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wvOtsD58Ed6cla2oXsPtlA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_o0VE8D6CEd6cla2oXsPtlA" name="isNotOrdered" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_voe5UT6CEd6cla2oXsPtlA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_voe5UD6CEd6cla2oXsPtlA"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_NozugD_lEd6wZe6nFLrjsw" name="delimiter" visibility="private" type="_DHg4ID5zEd6cla2oXsPtlA" isOrdered="true" isDerived="true" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q-WG8T_lEd6wZe6nFLrjsw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q-WG8D_lEd6wZe6nFLrjsw"/>
@@ -459,6 +445,20 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uRXk0US2Ed66ToKxWS_1fg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uRXk0ES2Ed66ToKxWS_1fg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_g4yxwD6CEd6cla2oXsPtlA" name="useablePeriod" visibility="private" type="_kSZ5QD5_Ed6cla2oXsPtlA" isOrdered="true" isDerived="true" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kCjYAT6CEd6cla2oXsPtlA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kCjYAD6CEd6cla2oXsPtlA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_qe2q4D5zEd6cla2oXsPtlA" name="use" visibility="private">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7Gd0DcEd6xYZuu1VKCVw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wvOtsT58Ed6cla2oXsPtlA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wvOtsD58Ed6cla2oXsPtlA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_o0VE8D6CEd6cla2oXsPtlA" name="isNotOrdered" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_voe5UT6CEd6cla2oXsPtlA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_voe5UD6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_VZnuQEVdEd6QuJiOJFSRPQ" name="mixed" visibility="private" isOrdered="true" isUnique="false">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
@@ -671,15 +671,6 @@
         </specification>
       </ownedRule>
       <generalization xmi:id="_HfzHAD5zEd6cla2oXsPtlA" general="__I8BwDxZEd6JwqSGecoePg"/>
-      <ownedAttribute xmi:id="_ruuXUD5zEd6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoORUDcEd6xYZuu1VKCVw"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x2wWcT58Ed6cla2oXsPtlA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x2wWcD58Ed6cla2oXsPtlA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_4EDXcD6CEd6cla2oXsPtlA" name="validTime" visibility="private" type="_QYeW4D5-Ed6cla2oXsPtlA" aggregation="composite">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9vf3UT6CEd6cla2oXsPtlA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9vf3UD6CEd6cla2oXsPtlA"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_yxqP4D92Ed6NdqfHy-LGHg" name="delimiter" visibility="private" type="_D7EcAD5zEd6cla2oXsPtlA" isOrdered="true" isDerived="true" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2520UT92Ed6NdqfHy-LGHg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2520UD92Ed6NdqfHy-LGHg"/>
@@ -704,6 +695,15 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S_GL4UQFEd6ddYmQzbFZWw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S_GL4EQFEd6ddYmQzbFZWw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4EDXcD6CEd6cla2oXsPtlA" name="validTime" visibility="private" type="_QYeW4D5-Ed6cla2oXsPtlA" isOrdered="true" isDerived="true" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9vf3UT6CEd6cla2oXsPtlA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9vf3UD6CEd6cla2oXsPtlA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ruuXUD5zEd6cla2oXsPtlA" name="use" visibility="private">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoORUDcEd6xYZuu1VKCVw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x2wWcT58Ed6cla2oXsPtlA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x2wWcD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Xe1uUEVdEd6QuJiOJFSRPQ" name="mixed" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
@@ -1267,13 +1267,13 @@
   <Ecore:EAttribute xmi:id="_RD-UkHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_nEao4ErrEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_SX3lYHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_2C6tgD5_Ed6cla2oXsPtlA"/>
   <Ecore:EAttribute xmi:id="_WFr68HrPEd648OeXdSIbLg" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_5iTUkD52Ed6cla2oXsPtlA"/>
-  <Ecore:EReference xmi:id="_K2E2EJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_g4yxwD6CEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_K2E2EJ75Ed6BCKDGgDgllw" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_g4yxwD6CEd6cla2oXsPtlA" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_RZ1eAJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_TgJEsD55Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_RZ1eAZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="__CseMD56Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_RZ1eAp75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_DtKpQD57Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_Y_dyoJ75Ed6BCKDGgDgllw" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_PIRiAD54Ed6cla2oXsPtlA" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_Y_dyoZ75Ed6BCKDGgDgllw" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_Px2DcD54Ed6cla2oXsPtlA" isResolveProxies="false"/>
-  <Ecore:EReference xmi:id="_dzoFMJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_4EDXcD6CEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_dzoFMJ75Ed6BCKDGgDgllw" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_4EDXcD6CEd6cla2oXsPtlA" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_jYp0AJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_ywsA0Eo9Ed6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_jYp0AZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_0JgN4Eo9Ed6c3qsAxlFHaQ"/>
   <Ecore:EReference xmi:id="_jYp0Ap75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_xTaKgEo9Ed6c3qsAxlFHaQ"/>

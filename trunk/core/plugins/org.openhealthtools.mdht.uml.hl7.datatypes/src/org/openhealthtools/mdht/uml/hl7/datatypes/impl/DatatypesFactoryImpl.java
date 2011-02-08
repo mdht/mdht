@@ -125,11 +125,11 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.AD: return createAD();
 			case DatatypesPackage.ADXP: return createADXP();
 			case DatatypesPackage.EN: return createEN();
+			case DatatypesPackage.ENXP: return createENXP();
 			case DatatypesPackage.IVL_TS: return createIVL_TS();
 			case DatatypesPackage.IVXB_TS: return createIVXB_TS();
 			case DatatypesPackage.PQ: return createPQ();
 			case DatatypesPackage.PQR: return createPQR();
-			case DatatypesPackage.ENXP: return createENXP();
 			case DatatypesPackage.ON: return createON();
 			case DatatypesPackage.PN: return createPN();
 			case DatatypesPackage.TN: return createTN();

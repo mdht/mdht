@@ -196,6 +196,10 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 				return createENAdapter();
 			}
 			@Override
+			public Adapter caseENXP(ENXP object) {
+				return createENXPAdapter();
+			}
+			@Override
 			public Adapter caseIVL_TS(IVL_TS object) {
 				return createIVL_TSAdapter();
 			}
@@ -210,10 +214,6 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePQR(PQR object) {
 				return createPQRAdapter();
-			}
-			@Override
-			public Adapter caseENXP(ENXP object) {
-				return createENXPAdapter();
 			}
 			@Override
 			public Adapter caseON(ON object) {

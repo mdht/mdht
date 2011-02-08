@@ -15,13 +15,11 @@ package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 import java.util.Collection;
 import java.util.Map;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -40,14 +38,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getUses <em>Use</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getValidTime <em>Valid Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getDelimiters <em>Delimiter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getFamilies <em>Family</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getGivens <em>Given</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getPrefixes <em>Prefix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getSuffixes <em>Suffix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getParts <em>Part</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getValidTime <em>Valid Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getUses <em>Use</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getMixed <em>Mixed</em>}</li>
  * </ul>
  * </p>
@@ -64,16 +62,6 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @ordered
 	 */
 	protected EList<EntityNameUse> uses;
-
-	/**
-	 * The cached value of the '{@link #getValidTime() <em>Valid Time</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValidTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected IVL_TS validTime;
 
 	/**
 	 * The cached value of the '{@link #getMixed() <em>Mixed</em>}' attribute list.
@@ -140,7 +128,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public IVL_TS getValidTime() {
-		return validTime;
+		return (IVL_TS)getMixed().get(DatatypesPackage.Literals.EN__VALID_TIME, true);
 	}
 
 	/**
@@ -149,13 +137,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public NotificationChain basicSetValidTime(IVL_TS newValidTime, NotificationChain msgs) {
-		IVL_TS oldValidTime = validTime;
-		validTime = newValidTime;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.EN__VALID_TIME, oldValidTime, newValidTime);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+		return ((FeatureMap.Internal)getMixed()).basicAdd(DatatypesPackage.Literals.EN__VALID_TIME, newValidTime, msgs);
 	}
 
 	/**
@@ -164,17 +146,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public void setValidTime(IVL_TS newValidTime) {
-		if (newValidTime != validTime) {
-			NotificationChain msgs = null;
-			if (validTime != null)
-				msgs = ((InternalEObject)validTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.EN__VALID_TIME, null, msgs);
-			if (newValidTime != null)
-				msgs = ((InternalEObject)newValidTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.EN__VALID_TIME, null, msgs);
-			msgs = basicSetValidTime(newValidTime, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EN__VALID_TIME, newValidTime, newValidTime));
+		((FeatureMap.Internal)getMixed()).set(DatatypesPackage.Literals.EN__VALID_TIME, newValidTime);
 	}
 
 	/**
@@ -359,8 +331,6 @@ public class ENImpl extends ANYImpl implements EN {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DatatypesPackage.EN__VALID_TIME:
-				return basicSetValidTime(null, msgs);
 			case DatatypesPackage.EN__MIXED:
 				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
 		}
@@ -375,10 +345,6 @@ public class ENImpl extends ANYImpl implements EN {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatatypesPackage.EN__USE:
-				return getUses();
-			case DatatypesPackage.EN__VALID_TIME:
-				return getValidTime();
 			case DatatypesPackage.EN__DELIMITER:
 				return getDelimiters();
 			case DatatypesPackage.EN__FAMILY:
@@ -392,6 +358,10 @@ public class ENImpl extends ANYImpl implements EN {
 			case DatatypesPackage.EN__PART:
 				if (coreType) return getParts();
 				return ((FeatureMap.Internal)getParts()).getWrapper();
+			case DatatypesPackage.EN__VALID_TIME:
+				return getValidTime();
+			case DatatypesPackage.EN__USE:
+				return getUses();
 			case DatatypesPackage.EN__MIXED:
 				if (coreType) return getMixed();
 				return ((FeatureMap.Internal)getMixed()).getWrapper();
@@ -408,13 +378,6 @@ public class ENImpl extends ANYImpl implements EN {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DatatypesPackage.EN__USE:
-				getUses().clear();
-				getUses().addAll((Collection<? extends EntityNameUse>)newValue);
-				return;
-			case DatatypesPackage.EN__VALID_TIME:
-				setValidTime((IVL_TS)newValue);
-				return;
 			case DatatypesPackage.EN__DELIMITER:
 				getDelimiters().clear();
 				getDelimiters().addAll((Collection<? extends ENXP>)newValue);
@@ -438,6 +401,13 @@ public class ENImpl extends ANYImpl implements EN {
 			case DatatypesPackage.EN__PART:
 				((FeatureMap.Internal)getParts()).set(newValue);
 				return;
+			case DatatypesPackage.EN__VALID_TIME:
+				setValidTime((IVL_TS)newValue);
+				return;
+			case DatatypesPackage.EN__USE:
+				getUses().clear();
+				getUses().addAll((Collection<? extends EntityNameUse>)newValue);
+				return;
 			case DatatypesPackage.EN__MIXED:
 				((FeatureMap.Internal)getMixed()).set(newValue);
 				return;
@@ -453,12 +423,6 @@ public class ENImpl extends ANYImpl implements EN {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.EN__USE:
-				unsetUses();
-				return;
-			case DatatypesPackage.EN__VALID_TIME:
-				setValidTime((IVL_TS)null);
-				return;
 			case DatatypesPackage.EN__DELIMITER:
 				getDelimiters().clear();
 				return;
@@ -477,6 +441,12 @@ public class ENImpl extends ANYImpl implements EN {
 			case DatatypesPackage.EN__PART:
 				getParts().clear();
 				return;
+			case DatatypesPackage.EN__VALID_TIME:
+				setValidTime((IVL_TS)null);
+				return;
+			case DatatypesPackage.EN__USE:
+				unsetUses();
+				return;
 			case DatatypesPackage.EN__MIXED:
 				getMixed().clear();
 				return;
@@ -492,10 +462,6 @@ public class ENImpl extends ANYImpl implements EN {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.EN__USE:
-				return isSetUses();
-			case DatatypesPackage.EN__VALID_TIME:
-				return validTime != null;
 			case DatatypesPackage.EN__DELIMITER:
 				return !getDelimiters().isEmpty();
 			case DatatypesPackage.EN__FAMILY:
@@ -508,6 +474,10 @@ public class ENImpl extends ANYImpl implements EN {
 				return !getSuffixes().isEmpty();
 			case DatatypesPackage.EN__PART:
 				return !getParts().isEmpty();
+			case DatatypesPackage.EN__VALID_TIME:
+				return getValidTime() != null;
+			case DatatypesPackage.EN__USE:
+				return isSetUses();
 			case DatatypesPackage.EN__MIXED:
 				return mixed != null && !mixed.isEmpty();
 		}
