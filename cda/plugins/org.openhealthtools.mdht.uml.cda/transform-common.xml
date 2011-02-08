@@ -1,6 +1,6 @@
 <project name="common">
 	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
-	<property name="modelPath.uml" location="${basedir}/model/${modelName}.uml"/>
+	<property name="modelPath.uml" location="${basedir}.model/model/${modelName}.uml"/>
 	<property name="ecoreModelPath.uml" location="${basedir}/model/${modelName}_Ecore.uml"/>
 	
 	<target name="all">
