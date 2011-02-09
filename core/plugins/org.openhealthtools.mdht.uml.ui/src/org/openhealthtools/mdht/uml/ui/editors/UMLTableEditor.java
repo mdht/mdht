@@ -851,7 +851,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	}
 	
 	private void computeResourceFilterSelection() {
-		if (resourceFilter == null) {
+		if (resourceFilter == null || resourceFilter == resource) {
 			return;
 		}
 
@@ -860,7 +860,10 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		for (TreeIterator<EObject> allContents = resource.getAllContents(); allContents.hasNext();) {
 			EObject eObject = allContents.next();
 			if (eObject.eResource() == resourceFilter) {
-				contents.add(eObject);
+				if (eObject instanceof Package
+						|| (eObject instanceof Classifier && !(eObject instanceof Association)))
+					contents.add(eObject);
+
 				allContents.prune();
 			}
 		}
@@ -1069,6 +1072,61 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	private Action resourceFilterAction = new ResourceFilterAction();
 	private Resource resourceFilter = null;
 
+	private class ResourceFilterMenuAction extends Action {
+		String imageKey = "icons/full/eview16/filter_resource.gif";
+		ImageDescriptor imageDescriptor = UML2UIPlugin.getImageDescriptor(imageKey);
+		
+		protected ResourceFilterMenuAction() {
+			super(UML2UIMessages.ResourceFilter_menu, Action.AS_PUSH_BUTTON);
+			setImageDescriptor(imageDescriptor);
+			setToolTipText(UML2UIMessages.ResourceFilter_tooltip);
+
+			if (UML2UIPlugin.getDefault().getImageRegistry().getDescriptor(imageKey) == null) {
+				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+			}
+		}
+
+		// TODO need to listen for selection events
+		public void selectionChanged(IAction action, ISelection selection) {
+			
+		}
+		
+		public void run() {
+			// action enabled only when exactly one Element is selected
+			ISelection selection = getSite().getSelectionProvider().getSelection();
+			
+			if (((IStructuredSelection)selection).size() == 1) {
+				Object element = ((IStructuredSelection)selection).getFirstElement();
+				if (element instanceof IAdaptable) {
+					element = ((IAdaptable)element).getAdapter(Element.class);
+				}
+				if (element instanceof Element) {
+					resourceFilter = ((Element)element).eResource();
+				}
+			}
+
+			if (resourceFilter != null) {
+				computeResourceFilterSelection();
+			}
+			
+			if (resourceFilter != null) {
+				resourceFilterAction.setChecked(true);
+				baseTypeFilterAction.setChecked(false);
+				baseTypeFilter = null;
+				containerFilterAction.setChecked(false);
+				containerFilter = null;
+				
+				// use icon for Resource action to show which filter is applied
+				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
+				viewerPane.setTitle(resourceFilter.getURI().lastSegment(), filterImage);
+			}
+			else {
+				containerFilterAction.setChecked(false);
+			}
+		}
+	};
+	private Action resourceFilterMenuAction = new ResourceFilterMenuAction();
+	
 	private Action removeFiltersAction = new RemoveFilterAction();
 	
 	private class RemoveFilterAction extends Action {
@@ -1100,8 +1158,12 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			if (element instanceof Class) {
 				containerFilterMenuAction.setEnabled(true);
 			}
+			if (element instanceof Element) {
+				resourceFilterMenuAction.setEnabled(true);
+			}
 		}
 		containerFilterMenuAction.setEnabled(false);
+		resourceFilterMenuAction.setEnabled(false);
 	}
 	
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
@@ -1231,6 +1293,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		((IMenuListener)getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
 
 		menuManager.appendToGroup(ICommonMenuConstants.GROUP_GOTO, containerFilterMenuAction);
+		menuManager.appendToGroup(ICommonMenuConstants.GROUP_GOTO, resourceFilterMenuAction);
 	}
 
 	/**
