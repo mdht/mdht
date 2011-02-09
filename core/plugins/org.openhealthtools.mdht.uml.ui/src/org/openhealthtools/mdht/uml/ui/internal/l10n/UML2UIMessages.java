@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -77,6 +77,10 @@ public class UML2UIMessages extends NLS {
 	public static String ContainerFilter_menu;
 	public static String ContainerFilter_tooltip;
 	public static String ContainerFilter_message;
+
+	public static String ResourceFilter_title;
+	public static String ResourceFilter_tooltip;
+	public static String ResourceFilter_message;
 
 	public static String RemoveFilter_title;
 	public static String RemoveFilter_tooltip;
