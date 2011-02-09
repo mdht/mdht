@@ -22,6 +22,8 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.ant.types.EPackageClass;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformer;
@@ -115,6 +117,9 @@ public class TransformToDita extends CDAModelingSubTask {
 
     	DitaTransformer transformer = new DitaTransformer(options);
     	for (Package umlModel : umlModels) {
+        	Resource umlResource = umlModel.eResource();
+        	EcoreUtil.resolveAll(umlResource.getResourceSet());
+
         	transformer.transformElement(umlModel);
 		}
 		
