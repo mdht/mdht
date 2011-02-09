@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -71,12 +71,14 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -108,6 +110,7 @@ import org.eclipse.ui.ISaveablesSource;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.Saveable;
+import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.part.EditorPart;
@@ -847,6 +850,25 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		selectReveal(new StructuredSelection(containerFilter));
 	}
 	
+	private void computeResourceFilterSelection() {
+		if (resourceFilter == null) {
+			return;
+		}
+
+		final List<EObject> contents = new ArrayList<EObject>();
+
+		for (TreeIterator<EObject> allContents = resource.getAllContents(); allContents.hasNext();) {
+			EObject eObject = allContents.next();
+			if (eObject.eResource() == resourceFilter) {
+				contents.add(eObject);
+				allContents.prune();
+			}
+		}
+		
+		viewSelection = new StructuredSelection(contents);
+		updateViewContents();
+	}
+
 	private class BaseTypeFilterAction extends Action {
 		String imageKey = "icons/full/eview16/filter_basetype.gif";
 		ImageDescriptor imageDescriptor = UML2UIPlugin.getImageDescriptor(imageKey);
@@ -877,6 +899,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 				this.setChecked(true);
 				containerFilterAction.setChecked(false);
 				containerFilter = null;
+				resourceFilterAction.setChecked(false);
+				resourceFilter = null;
 				
 				// use icon for Base Type action to show which filter is applied
 				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
@@ -919,6 +943,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 				this.setChecked(true);
 				baseTypeFilterAction.setChecked(false);
 				baseTypeFilter = null;
+				resourceFilterAction.setChecked(false);
+				resourceFilter = null;
 				
 				// use icon for Container action to show which filter is applied
 				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
@@ -975,6 +1001,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 				containerFilterAction.setChecked(true);
 				baseTypeFilterAction.setChecked(false);
 				baseTypeFilter = null;
+				resourceFilterAction.setChecked(false);
+				resourceFilter = null;
 				
 				// use icon for Container action to show which filter is applied
 				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
@@ -987,6 +1015,60 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	};
 	private Action containerFilterMenuAction = new ContainerFilterMenuAction();
 	
+	private class ResourceFilterAction extends Action {
+		String imageKey = "icons/full/eview16/filter_resource.gif";
+		ImageDescriptor imageDescriptor = UML2UIPlugin.getImageDescriptor(imageKey);
+		
+		protected ResourceFilterAction() {
+			super(UML2UIMessages.ResourceFilter_title, Action.AS_CHECK_BOX);
+			setImageDescriptor(imageDescriptor);
+			setToolTipText(UML2UIMessages.ResourceFilter_tooltip);
+
+			if (imageDescriptor != null && 
+					UML2UIPlugin.getDefault().getImageRegistry().getDescriptor(imageKey) == null) {
+				UML2UIPlugin.getDefault().getImageRegistry().put(imageKey, imageDescriptor);
+			}
+		}
+		
+		public void run() {
+			// prompt for resource
+			ElementListSelectionDialog dialog = new ElementListSelectionDialog(getSite().getShell(), new LabelProvider() {
+
+				@Override
+				public String getText(Object element) {
+					return ((Resource)element).getURI().lastSegment();
+				}
+			});
+			dialog.setMessage(UML2UIMessages.ResourceFilter_message);
+			dialog.setFilter("*");
+			dialog.setTitle(UML2UIMessages.ResourceFilter_title);
+
+			dialog.setElements(getChildResources().toArray());
+
+			if(dialog.open() == Window.OK) {
+				resourceFilter = (Resource) dialog.getFirstResult();
+				computeResourceFilterSelection();
+			}
+			
+			if (resourceFilter != null) {
+				this.setChecked(true);
+				baseTypeFilterAction.setChecked(false);
+				baseTypeFilter = null;
+				containerFilterAction.setChecked(false);
+				containerFilter = null;
+				
+				// use icon for Resource action to show which filter is applied
+				Image filterImage = UML2UIPlugin.getDefault().getImageRegistry().get(imageKey);
+				viewerPane.setTitle(resourceFilter.getURI().lastSegment(), filterImage);
+			}
+			else {
+				this.setChecked(false);
+			}
+		}
+	};
+	private Action resourceFilterAction = new ResourceFilterAction();
+	private Resource resourceFilter = null;
+
 	private Action removeFiltersAction = new RemoveFilterAction();
 	
 	private class RemoveFilterAction extends Action {
@@ -999,8 +1081,10 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		public void run() {
 				baseTypeFilter = null;
 				containerFilter = null;
+				resourceFilter = null;
 				baseTypeFilterAction.setChecked(false);
 				containerFilterAction.setChecked(false);
+				resourceFilterAction.setChecked(false);
 				viewerPane.setTitle(null);
 
 				setDefaultSelection();
@@ -1025,6 +1109,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		
 		toolBarManager.add(baseTypeFilterAction);
 		toolBarManager.add(containerFilterAction);
+		toolBarManager.add(resourceFilterAction);
 		toolBarManager.add(removeFiltersAction);
 		
 //		toolBarManager.add(new Separator());
