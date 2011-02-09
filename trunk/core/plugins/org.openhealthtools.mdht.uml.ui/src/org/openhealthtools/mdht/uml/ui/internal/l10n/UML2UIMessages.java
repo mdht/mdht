@@ -79,6 +79,7 @@ public class UML2UIMessages extends NLS {
 	public static String ContainerFilter_message;
 
 	public static String ResourceFilter_title;
+	public static String ResourceFilter_menu;
 	public static String ResourceFilter_tooltip;
 	public static String ResourceFilter_message;
 
