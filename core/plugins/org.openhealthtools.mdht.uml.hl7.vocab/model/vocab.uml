@@ -1121,4 +1121,6 @@
   </uml:Package>
   <Ecore:EPackage xmi:id="_sDccIEF-Ed6OL54Mnsamsg" base_Package="__yVbeUDcEd6xYZuu1VKCVw" packageName="vocab" nsPrefix="vocab" nsURI="http://www.openhealthtools.org/mdht/uml/hl7/vocab" basePackage="org.openhealthtools.mdht.uml.hl7" prefix="Vocab"/>
   <Ecore:EEnumLiteral xmi:id="_POngMEySEd6h-an5IXo-DA" xmlName="EVN.CRT" base_EnumerationLiteral="__yeW70DcEd6xYZuu1VKCVw" enumLiteralName="EVNCRT" literal="EVN.CRT"/>
+  <Ecore:EEnumLiteral xmi:id="_P2zgEDYjEeCek8inbxDOtw" xmlName="SHA-1" base_EnumerationLiteral="__yx4IUDcEd6xYZuu1VKCVw" enumLiteralName="SHA1" literal="SHA-1"/>
+  <Ecore:EEnumLiteral xmi:id="_6b2TADYlEeCek8inbxDOtw" xmlName="SHA-256" base_EnumerationLiteral="__yx4IkDcEd6xYZuu1VKCVw" enumLiteralName="SHA256" literal="SHA-256"/>
 </xmi:XMI>
