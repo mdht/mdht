@@ -543,8 +543,8 @@
     <eLiterals name="SYL" value="13"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IntegrityCheckAlgorithm">
-    <eLiterals name="SHA1"/>
-    <eLiterals name="SHA256" value="1"/>
+    <eLiterals name="SHA1" literal="SHA-1"/>
+    <eLiterals name="SHA256" value="1" literal="SHA-256"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="NullFlavor">
     <eLiterals name="ASKU"/>

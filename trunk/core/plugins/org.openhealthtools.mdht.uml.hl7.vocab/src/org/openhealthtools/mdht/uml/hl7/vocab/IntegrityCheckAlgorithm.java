@@ -36,7 +36,7 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SHA1(0, "SHA1", "SHA1"),
+	SHA1(0, "SHA1", "SHA-1"),
 
 	/**
 	 * The '<em><b>SHA256</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SHA256(1, "SHA256", "SHA256");
+	SHA256(1, "SHA256", "SHA-256");
 
 	/**
 	 * The '<em><b>SHA1</b></em>' literal value.
@@ -57,7 +57,7 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SHA1
-	 * @model
+	 * @model literal="SHA-1"
 	 * @generated
 	 * @ordered
 	 */
@@ -72,7 +72,7 @@ public enum IntegrityCheckAlgorithm implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SHA256
-	 * @model
+	 * @model literal="SHA-256"
 	 * @generated
 	 * @ordered
 	 */
