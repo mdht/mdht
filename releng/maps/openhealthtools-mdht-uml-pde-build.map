@@ -35,29 +35,32 @@ plugin@org.openhealthtools.mdht.uml.cda.cdt.doc=SVN,trunk,https://www.projects.o
 
 plugin@org.openhealthtools.mdht.uml.cda.cdt.progress.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/doc/org.openhealthtools.mdht.uml.cda.cdt.progress.doc,force
 
-plugin@org.openhealthtools.mdht.uml.cda.ccd.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/doc/org.openhealthtools.mdht.uml.cda.ccd.doc,force
+plugin@org.openhealthtools.mdht.uml.cda.ccd.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.ccd.doc,force
 
-plugin@org.openhealthtools.mdht.uml.cda.hitsp.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/doc/org.openhealthtools.mdht.uml.cda.hitsp.doc,force
+plugin@org.openhealthtools.mdht.uml.cda.hitsp.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.hitsp.doc,force
 
-plugin@org.openhealthtools.mdht.uml.cda.ihe.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/doc/org.openhealthtools.mdht.uml.cda.ihe.doc,force
+plugin@org.openhealthtools.mdht.uml.cda.ihe.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.ihe.doc,force
 
 !***************  MDHT Feature for CDA Runtime for Application Development  ********************************************** 
+
+
+
 feature@org.openhealthtools.mdht.uml.cda.models=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models-feature,force
 
 plugin@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda,force
 
-plugin@org.openhealthtools.mdht.uml.cda.cdt=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.cdt,force
+plugin@org.openhealthtools.mdht.uml.cda.cdt=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.cdt,force
 
-plugin@org.openhealthtools.mdht.uml.cda.ccd=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ccd,force
+plugin@org.openhealthtools.mdht.uml.cda.ccd=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.ccd,force
 
-plugin@org.openhealthtools.mdht.uml.cda.hitsp=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.hitsp,force
+plugin@org.openhealthtools.mdht.uml.cda.hitsp=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.hitsp,force
 
-plugin@org.openhealthtools.mdht.uml.cda.ihe=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ihe,force
+plugin@org.openhealthtools.mdht.uml.cda.ihe=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.ihe,force
 
 
-plugin@org.openhealthtools.mdht.uml.cda.ncr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ncr,force
+!####plugin@org.openhealthtools.mdht.uml.cda.ncr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ncr,force
 
-plugin@org.openhealthtools.mdht.uml.cda.pilot=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.pilot,force
+plugin@org.openhealthtools.mdht.uml.cda.pilot=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.pilot,force
 
 plugin@org.openhealthtools.mdht.uml.hl7.datatypes=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.datatypes,force
 
