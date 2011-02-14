@@ -38,7 +38,6 @@ import org.eclipse.emf.common.ui.ViewerPane;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -140,6 +139,7 @@ import org.openhealthtools.mdht.uml.common.ui.util.AdapterFactoryCellModifier;
 import org.openhealthtools.mdht.uml.common.ui.util.ComboBoxTextCellEditor;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
 import org.openhealthtools.mdht.uml.common.ui.util.TreeCursor;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.SimpleListNotifier;
 import org.openhealthtools.mdht.uml.edit.provider.UML2ExtendedAdapterFactory;
@@ -168,19 +168,6 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	private ResourceSetListener dirtyResourceListener = null;
 	private ResourceSetListener resourceLoadListener = null;
 	
-	protected List<Resource> getChildResources() {
-		List<Resource> childResources = new UniqueEList.FastCompare<Resource>();
-		if (resource != null) {
-			for (TreeIterator<EObject> allContents = resource.getAllContents(); allContents.hasNext();) {
-				Resource eResource = allContents.next().eResource();
-				if (eResource != resource) {
-					childResources.add(eResource);
-				}
-			}
-		}
-		return childResources;
-	}
-
 	/** This editor's property sheet page. */
 	protected TabbedPropertySheetPage propertySheetPage;
 	
@@ -375,8 +362,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		if (changedResources.contains(resource)) {
 			handleChangedResources();
 		} else {
-			for (Resource childResource : getChildResources()) {
-				if (changedResources.contains(childResource)) {
+			for (Resource controlledResource : UMLUtil.getControlledResources(resource)) {
+				if (changedResources.contains(controlledResource)) {
 					handleChangedResources();
 					break;
 				}
@@ -840,7 +827,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			// include only those classes that are in this editor's resource
 			Type type = property.getType();
 			Resource eResource = type.eResource();
-			if (type instanceof Class && (resource.equals(eResource) || getChildResources().contains(eResource))) {
+			if (type instanceof Class && (resource.equals(eResource) || UMLUtil.getControlledResources(resource).contains(eResource))) {
 				contents.add((Class)type);
 			}
 		}
@@ -1046,7 +1033,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			dialog.setFilter("*");
 			dialog.setTitle(UML2UIMessages.ResourceFilter_title);
 
-			dialog.setElements(getChildResources().toArray());
+			dialog.setElements(UMLUtil.getControlledResources(resource).toArray());
 
 			if(dialog.open() == Window.OK) {
 				resourceFilter = (Resource) dialog.getFirstResult();
@@ -1215,8 +1202,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		if (resource.isModified()) {
 			return true;
 		}
-		for (Resource childResource : getChildResources()) {
-			if (childResource.isModified()) {
+		for (Resource controlledResource : UMLUtil.getControlledResources(resource)) {
+			if (controlledResource.isModified()) {
 				return true;
 			}
 		}
@@ -1229,8 +1216,8 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		if (saveable != null) {
 			saveables.add(saveable);
 		}
-		for (Resource childResource : getChildResources()) {
-			saveable = ModelManager.getManager().getModelDocument(childResource);
+		for (Resource controlledResource : UMLUtil.getControlledResources(resource)) {
+			saveable = ModelManager.getManager().getModelDocument(controlledResource);
 			if (saveable != null) {
 				saveables.add(saveable);				
 			}

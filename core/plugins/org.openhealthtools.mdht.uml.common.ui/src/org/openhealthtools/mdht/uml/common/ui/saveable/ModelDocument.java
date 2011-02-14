@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004, 2009 David A Carlson.
+ * Copyright (c) 2004, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,9 +51,14 @@ public class ModelDocument extends Saveable {
 		domainDirtyListener = new ResourceSetListenerImpl(NotificationFilter.NOT_TOUCH) {
 		        public void resourceSetChanged(ResourceSetChangeEvent event) {
 		        	for (Notification notification : event.getNotifications()) {
-						if (notification.getNotifier() instanceof EObject
-								&& resource == ((EObject)notification.getNotifier()).eResource()) {
+						Object notifier = notification.getNotifier();
+						if (notifier instanceof EObject
+								&& resource == ((EObject) notifier).eResource()) {
 							dirty = true;
+						} else if (notifier instanceof Resource
+								&& resource == notifier
+								&& Resource.RESOURCE__IS_MODIFIED == notification.getFeatureID(null)) {
+							dirty = resource.isModified();
 						}
 					}
 		        }
