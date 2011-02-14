@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -948,6 +950,19 @@ public class UMLUtil {
 		}
 		
 		return redefinedProperties;
+	}
+
+	public static List<Resource> getControlledResources(Resource resource) {
+		List<Resource> controlledResources = new UniqueEList.FastCompare<Resource>();
+		if (resource != null) {
+			for (TreeIterator<EObject> allContents = resource.getAllContents(); allContents.hasNext();) {
+				Resource eResource = allContents.next().eResource();
+				if (eResource != resource) {
+					controlledResources.add(eResource);
+				}
+			}
+		}
+		return controlledResources;
 	}
 
 }

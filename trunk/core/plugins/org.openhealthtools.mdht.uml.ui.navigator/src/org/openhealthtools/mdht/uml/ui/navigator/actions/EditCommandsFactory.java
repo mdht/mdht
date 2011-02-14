@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,19 +17,26 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.ui.dialogs.DiagnosticDialog;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
+import org.eclipse.emf.edit.ui.action.ControlAction;
 import org.eclipse.emf.edit.ui.action.CopyAction;
 import org.eclipse.emf.edit.ui.action.CutAction;
 import org.eclipse.emf.edit.ui.action.DeleteAction;
@@ -42,6 +49,10 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.service.ModelValidationService;
 import org.eclipse.emf.validation.service.ValidationEvent;
+import org.eclipse.emf.workspace.CompositeEMFOperation;
+import org.eclipse.emf.workspace.EMFCommandOperation;
+import org.eclipse.emf.workspace.IWorkspaceCommandStack;
+import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.emf.workspace.ui.actions.RedoActionWrapper;
 import org.eclipse.emf.workspace.ui.actions.UndoActionWrapper;
 import org.eclipse.jface.action.IMenuManager;
@@ -49,23 +60,31 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.window.Window;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory;
+import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.part.ISetSelectionTarget;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
+import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Activator;
+import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
 
 /**
  * 
@@ -114,7 +133,7 @@ public class EditCommandsFactory implements IPropertyListener {
 		
 		public void run() {
 			// always clear all markers on the resource
-			for (Iterator iterator = selectedObjects.iterator(); iterator.hasNext();) {
+			for (Iterator<?> iterator = selectedObjects.iterator(); iterator.hasNext();) {
 				Object object = (Object) iterator.next();
 				if (object instanceof EObject) {
 					eclipseResourcesUtil.deleteMarkers(object);
@@ -128,7 +147,7 @@ public class EditCommandsFactory implements IPropertyListener {
 			// Simulate a validation event AFTER resource markers are created.
 			// Used to trigger other listeners to update the UI decorators
 			List<EObject> targets = new ArrayList<EObject>();
-			for (Iterator iterator = selectedObjects.iterator(); iterator.hasNext();) {
+			for (Iterator<?> iterator = selectedObjects.iterator(); iterator.hasNext();) {
 				Object object = (Object) iterator.next();
 				if (object instanceof EObject) {
 					targets.add((EObject)object);
@@ -225,6 +244,203 @@ public class EditCommandsFactory implements IPropertyListener {
   
 	}
 
+	private class MyControlAction extends ControlAction {
+
+		public MyControlAction(EditingDomain domain) {
+			super(domain);
+		}
+
+		@Override
+		protected Resource getResource() {
+			Shell shell = activePart.getSite().getShell();
+			boolean existing = MessageDialog.openQuestion(shell, Messages.ExistingControlledResource_dialogTitle, Messages.ExistingControlledResource_dialogMessage);
+
+			if (existing) {
+				ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, new LabelProvider() {
+
+					@Override
+					public String getText(Object element) {
+						return ((Resource)element).getURI().lastSegment();
+					}
+				});
+				dialog.setMessage(Messages.SelectControlledResource_dialogMessage);
+				dialog.setFilter("*");
+				dialog.setTitle(Messages.SelectControlledResource_dialogTitle);
+
+				dialog.setElements(UMLUtil.getControlledResources(eObject.eResource()).toArray());
+
+				return dialog.open() == Window.OK ? (Resource) dialog.getFirstResult(): null;
+			} else {
+				return super.getResource();				
+			}
+		}
+
+		@Override
+		public boolean updateSelection(IStructuredSelection selection) {
+			return super.updateSelection(selection)
+					&& eObject instanceof Element;
+		}
+
+		@Override
+		public void run() {
+			try {
+				TransactionalEditingDomain ted = (TransactionalEditingDomain) domain;
+				EcoreUtil.resolveAll(ted.getResourceSet());
+
+				CompositeEMFOperation operation = null;
+				
+				if (command == null) { // control
+					Resource resource = getResource();
+
+					if (resource == null) {
+						return;
+					}
+
+					operation = new CompositeEMFOperation(ted,
+							Messages.ControlAction_label);
+
+					operation.addContext(new ResourceUndoContext(ted, resource));
+
+					Resource eResource = eObject.eResource();
+					operation.addContext(new ResourceUndoContext(ted, eResource));
+
+					List<Element> controlledElements = new ArrayList<Element>();
+
+					EList<EObject> resourceContents = resource.getContents();
+					operation.add(new EMFCommandOperation(ted, new AddCommand(
+							ted, resourceContents, eObject)));
+
+					controlledElements.add((Element)eObject);
+
+					if (eObject instanceof org.eclipse.uml2.uml.Class) {
+
+						for (Property ownedAttribute : ((org.eclipse.uml2.uml.Class) eObject)
+								.getOwnedAttributes()) {
+							Association association = ownedAttribute
+									.getAssociation();
+
+							if (association != null) {
+								operation.add(new EMFCommandOperation(ted,
+										new AddCommand(ted,
+												resourceContents,
+												association)));
+								
+								controlledElements.add(association);
+							}
+						}
+					}
+
+					for (Element element : controlledElements) {
+
+						for (EObject stereotypeApplication : element
+								.getStereotypeApplications()) {
+							operation.add(new EMFCommandOperation(ted,
+									new AddCommand(ted, resourceContents,
+											stereotypeApplication)));
+						}
+
+						for (TreeIterator<EObject> allProperContents = EcoreUtil
+								.getAllProperContents(element, true); allProperContents
+								.hasNext();) {
+							EObject content = allProperContents.next();
+
+							if (content instanceof Element) {
+
+								for (EObject stereotypeApplication : ((Element) content)
+										.getStereotypeApplications()) {
+									operation.add(new EMFCommandOperation(ted,
+											new AddCommand(ted,
+													resourceContents,
+													stereotypeApplication)));
+								}
+							}
+						}
+					}
+				} else { // uncontrol
+					operation = new CompositeEMFOperation(ted,
+							Messages.UncontrolAction_label);
+
+					Resource eContainerResource = eObject.eContainer().eResource();
+					operation.addContext(new ResourceUndoContext(ted, eContainerResource));
+
+					Resource eResource = eObject.eResource();
+					operation.addContext(new ResourceUndoContext(ted, eResource));
+
+					List<Element> uncontrolledElements = new ArrayList<Element>();
+
+					EList<EObject> eResourceContents = eResource.getContents();
+					operation.add(new EMFCommandOperation(ted,
+							new RemoveCommand(ted, eResourceContents, eObject)));
+
+					uncontrolledElements.add((Element)eObject);
+
+					if (eObject instanceof org.eclipse.uml2.uml.Class) {
+
+						for (Property ownedAttribute : ((org.eclipse.uml2.uml.Class) eObject)
+								.getOwnedAttributes()) {
+							Association association = ownedAttribute
+									.getAssociation();
+
+							if (association != null) {
+								operation.add(new EMFCommandOperation(ted,
+										new RemoveCommand(ted,
+												eResourceContents,
+												association)));
+								
+								uncontrolledElements.add(association);
+							}
+						}
+					}
+					
+					EList<EObject> eContainerResourceContents = eContainerResource.getContents();
+
+					for (Element element : uncontrolledElements) {
+
+						for (EObject stereotypeApplication : element
+								.getStereotypeApplications()) {
+							operation.add(new EMFCommandOperation(ted,
+									new AddCommand(ted,
+											eContainerResourceContents,
+											stereotypeApplication)));
+						}
+
+						for (TreeIterator<EObject> allProperContents = EcoreUtil
+								.getAllProperContents(element, true); allProperContents
+								.hasNext();) {
+							EObject content = allProperContents.next();
+
+							if (content instanceof Element) {
+
+								for (EObject stereotypeApplication : ((Element) content)
+										.getStereotypeApplications()) {
+									operation.add(new EMFCommandOperation(ted,
+											new AddCommand(ted,
+													eContainerResourceContents,
+													stereotypeApplication)));
+								}
+							}
+						}
+					}
+				}
+
+				try {
+					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) ted
+							.getCommandStack();
+					operation.addContext(commandStack.getDefaultUndoContext());
+					commandStack.getOperationHistory().execute(operation,
+							new NullProgressMonitor(), activePart);
+
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
+
+			} catch (Exception e) {
+				throw new RuntimeException(e.getCause());
+			}
+		}
+
+	}
+
 //	public static final EditCommandsFactory INSTANCE = new EditCommandsFactory();
 	
 	/**
@@ -271,6 +487,11 @@ public class EditCommandsFactory implements IPropertyListener {
 	 * This is the action used to perform validation.
 	 */
 	protected MyValidateAction validateAction;
+
+	/**
+	 * This is the action used to control/uncontrol elements.
+	 */
+	protected MyControlAction controlAction;
 
 	/**
 	 * Singleton constructor.
@@ -334,12 +555,17 @@ public class EditCommandsFactory implements IPropertyListener {
 			}
 		};
 		validateAction.setImageDescriptor(Activator.findImageDescriptor("icons/validate.gif"));
-
+		
+		controlAction = new MyControlAction(editingDomain){
+			public boolean updateSelection(IStructuredSelection selection) {
+				return super.updateSelection(unwrap(selection));
+			}
+		};
 	}
 	
 	private IStructuredSelection unwrap(IStructuredSelection selection) {
-		List unwrapped = new ArrayList();
-		for (Iterator iterator = selection.iterator(); iterator.hasNext();) {
+		List<Object> unwrapped = new ArrayList<Object>();
+		for (Iterator<?> iterator = selection.iterator(); iterator.hasNext();) {
 			Object item = iterator.next();
 	        if (item instanceof IAdaptable)
 	        	item = ((IAdaptable)item).getAdapter(EObject.class);
@@ -395,6 +621,9 @@ public class EditCommandsFactory implements IPropertyListener {
 		
 		if(validateAction.isEnabled())
 			menu.appendToGroup(ICommonMenuConstants.GROUP_BUILD, validateAction);
+
+		if(controlAction.isEnabled())
+			menu.appendToGroup(ICommonMenuConstants.GROUP_BUILD, controlAction);
 	}
 
 	public IWorkbenchPart getActivePart() {
@@ -433,6 +662,10 @@ public class EditCommandsFactory implements IPropertyListener {
 			validateAction.setActiveWorkbenchPart(null);
 		}
 
+		if (controlAction != null) {
+			controlAction.setActiveWorkbenchPart(null);
+		}
+
 		ISelectionProvider selectionProvider = activePart instanceof ISelectionProvider ? (ISelectionProvider) activePart
 				: activePart.getSite().getSelectionProvider();
 
@@ -444,6 +677,10 @@ public class EditCommandsFactory implements IPropertyListener {
 
 			if (validateAction != null) {
 				selectionProvider.removeSelectionChangedListener(validateAction);
+			}
+
+			if (controlAction != null) {
+				selectionProvider.removeSelectionChangedListener(controlAction);
 			}
 		}
 	}
@@ -466,6 +703,10 @@ public class EditCommandsFactory implements IPropertyListener {
 			validateAction.setActiveWorkbenchPart(activePart);
 		}
 
+		if (controlAction != null) {
+			controlAction.setActiveWorkbenchPart(activePart);
+		}
+
 		ISelectionProvider selectionProvider = activePart instanceof ISelectionProvider ? (ISelectionProvider) activePart
 				: activePart.getSite().getSelectionProvider();
 
@@ -477,6 +718,10 @@ public class EditCommandsFactory implements IPropertyListener {
 
 			if (validateAction != null) {
 				selectionProvider.addSelectionChangedListener(validateAction);
+			}
+
+			if (controlAction != null) {
+				selectionProvider.addSelectionChangedListener(controlAction);
 			}
 		}
 
@@ -507,6 +752,10 @@ public class EditCommandsFactory implements IPropertyListener {
 
 			if (validateAction != null) {
 				validateAction.updateSelection(structuredSelection);
+			}
+
+			if (controlAction != null) {
+				controlAction.updateSelection(structuredSelection);
 			}
 		}
 

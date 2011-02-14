@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,6 +36,15 @@ public class Messages extends NLS {
 	public static String CloseModelAction_dialogMessage;
 	public static String CloseModelAction_errorTitle;
 	public static String CloseModelAction_errorMessage;
+
+	public static String ControlAction_label;
+	public static String UncontrolAction_label;
+
+	public static String ExistingControlledResource_dialogTitle;
+	public static String ExistingControlledResource_dialogMessage;
+
+	public static String SelectControlledResource_dialogTitle;
+	public static String SelectControlledResource_dialogMessage;
 
 	static {
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
