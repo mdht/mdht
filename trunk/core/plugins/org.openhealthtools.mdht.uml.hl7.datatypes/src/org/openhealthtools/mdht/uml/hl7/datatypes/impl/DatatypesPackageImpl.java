@@ -2267,6 +2267,24 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(stEClass, ecorePackage.getEBoolean(), "validateCompression", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(stEClass, ecorePackage.getEBoolean(), "validateIntegrityCheckAlgorithm", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(cdEClass, org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, "CD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCD_OriginalText(), this.getED(), null, "originalText", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCD_Qualifier(), this.getCR(), null, "qualifier", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3167,7 +3185,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "kind", "mixed"
-		   });														
+		   });																				
 		addAnnotation
 		  (getCD_OriginalText(), 
 		   source, 

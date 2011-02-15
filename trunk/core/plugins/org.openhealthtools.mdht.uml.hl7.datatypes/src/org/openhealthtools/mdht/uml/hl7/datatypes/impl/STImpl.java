@@ -79,4 +79,22 @@ public class STImpl extends EDImpl implements ST {
 		return STOperations.validateIntegrityCheck(this, diagnostics, context);
 	}
 
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCompression(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return STOperations.validateCompression(this, diagnostics, context);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIntegrityCheckAlgorithm(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return STOperations.validateIntegrityCheckAlgorithm(this, diagnostics, context);
+	}
+
 } //STImpl

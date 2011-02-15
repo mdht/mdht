@@ -103,6 +103,13 @@
           <body>self.integrityCheck.oclIsUndefined()</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_XIgGoDlFEeCzCsdl8TLd-w" name="compression" constrainedElement="_EaTNsDxaEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_RKUbgDlGEeCzCsdl8TLd-w">
+          <language>Analysis</language>
+          <body>Implemented in Java to verify that compression is not used.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_55kcYDlGEeCzCsdl8TLd-w" name="integrityCheckAlgorithm" constrainedElement="_EaTNsDxaEd6JwqSGecoePg"/>
       <generalization xmi:id="_IY9boDxaEd6JwqSGecoePg" general="_CowXkDxaEd6JwqSGecoePg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_VKl7EDxaEd6JwqSGecoePg" name="CD">

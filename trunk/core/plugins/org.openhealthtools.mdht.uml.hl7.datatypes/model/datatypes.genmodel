@@ -87,6 +87,14 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheck/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheck/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/compression">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/compression/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/compression/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/integrityCheckAlgorithm">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheckAlgorithm/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheckAlgorithm/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CD">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
