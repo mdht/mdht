@@ -12,9 +12,13 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.STOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +47,36 @@ public class STImpl extends EDImpl implements ST {
 	@Override
 	protected EClass eStaticClass() {
 		return DatatypesPackage.Literals.ST;
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateThumbnail(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return STOperations.validateThumbnail(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateReference(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return STOperations.validateReference(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateIntegrityCheck(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return STOperations.validateIntegrityCheck(this, diagnostics, context);
 	}
 
 } //STImpl

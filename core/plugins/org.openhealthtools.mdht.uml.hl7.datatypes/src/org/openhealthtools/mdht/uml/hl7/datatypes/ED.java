@@ -12,6 +12,9 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.openhealthtools.mdht.uml.hl7.vocab.CompressionAlgorithm;
 import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
@@ -113,6 +116,7 @@ public interface ED extends BIN {
 
 	/**
 	 * Returns the value of the '<em><b>Media Type</b></em>' attribute.
+	 * The default value is <code>"text/plain"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Media Type</em>' attribute isn't clear,
@@ -122,7 +126,7 @@ public interface ED extends BIN {
 	 * @return the value of the '<em>Media Type</em>' attribute.
 	 * @see #setMediaType(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_MediaType()
-	 * @model ordered="false"
+	 * @model default="text/plain" ordered="false"
 	 * @generated
 	 */
 	String getMediaType();
@@ -247,6 +251,7 @@ public interface ED extends BIN {
 
 	/**
 	 * Returns the value of the '<em><b>Integrity Check Algorithm</b></em>' attribute.
+	 * The default value is <code>"SHA-1"</code>.
 	 * The literals are from the enumeration {@link org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -260,7 +265,7 @@ public interface ED extends BIN {
 	 * @see #unsetIntegrityCheckAlgorithm()
 	 * @see #setIntegrityCheckAlgorithm(IntegrityCheckAlgorithm)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_IntegrityCheckAlgorithm()
-	 * @model unsettable="true" ordered="false"
+	 * @model default="SHA-1" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	IntegrityCheckAlgorithm getIntegrityCheckAlgorithm();
@@ -300,6 +305,19 @@ public interface ED extends BIN {
 	 * @generated
 	 */
 	boolean isSetIntegrityCheckAlgorithm();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.thumbnail.oclIsUndefined() implies self.thumbnail.thumbnail.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.thumbnail.oclIsUndefined() implies self.thumbnail.thumbnail.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateThumbnailThumbnail(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

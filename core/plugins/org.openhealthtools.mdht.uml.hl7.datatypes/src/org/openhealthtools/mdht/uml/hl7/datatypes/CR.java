@@ -86,6 +86,7 @@ public interface CR extends ANY {
 
 	/**
 	 * Returns the value of the '<em><b>Inverted</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inverted</em>' attribute isn't clear,
@@ -95,7 +96,7 @@ public interface CR extends ANY {
 	 * @return the value of the '<em>Inverted</em>' attribute.
 	 * @see #setInverted(boolean)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCR_Inverted()
-	 * @model ordered="false"
+	 * @model default="false" ordered="false"
 	 * @generated
 	 */
 	boolean isInverted();

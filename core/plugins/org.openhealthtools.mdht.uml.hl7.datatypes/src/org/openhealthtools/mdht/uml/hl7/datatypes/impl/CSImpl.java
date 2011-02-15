@@ -12,9 +12,13 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.CSOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +47,51 @@ public class CSImpl extends CVImpl implements CS {
 	@Override
 	protected EClass eStaticClass() {
 		return DatatypesPackage.Literals.CS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOriginalText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CSOperations.validateOriginalText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCodeSystem(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CSOperations.validateCodeSystem(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCodeSystemName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CSOperations.validateCodeSystemName(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCodeSystemVersion(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CSOperations.validateCodeSystemVersion(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDisplayName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CSOperations.validateDisplayName(this, diagnostics, context);
 	}
 
 } //CSImpl

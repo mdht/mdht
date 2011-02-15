@@ -12,8 +12,11 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -66,7 +69,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDIA_TYPE_EDEFAULT = null;
+	protected static final String MEDIA_TYPE_EDEFAULT = "text/plain";
 
 	/**
 	 * The cached value of the '{@link #getMediaType() <em>Media Type</em>}' attribute.
@@ -414,6 +417,15 @@ public class EDImpl extends BINImpl implements ED {
 	 */
 	public boolean isSetIntegrityCheckAlgorithm() {
 		return integrityCheckAlgorithmESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateThumbnailThumbnail(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EDOperations.validateThumbnailThumbnail(this, diagnostics, context);
 	}
 
 	/**

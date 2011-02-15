@@ -12,9 +12,13 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.CEOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +47,15 @@ public class CEImpl extends CDImpl implements CE {
 	@Override
 	protected EClass eStaticClass() {
 		return DatatypesPackage.Literals.CE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateQualifier(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CEOperations.validateQualifier(this, diagnostics, context);
 	}
 
 } //CEImpl

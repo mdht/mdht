@@ -12,6 +12,10 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -24,4 +28,17 @@ package org.openhealthtools.mdht.uml.hl7.datatypes;
  * @generated
  */
 public interface CV extends CE {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.translation->size()=0
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.translation->size()=0'"
+	 * @generated
+	 */
+	boolean validateTranslation(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // CV
