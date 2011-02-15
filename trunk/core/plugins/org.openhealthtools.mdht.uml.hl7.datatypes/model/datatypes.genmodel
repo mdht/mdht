@@ -50,6 +50,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/compression"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/integrityCheck"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/integrityCheckAlgorithm"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/thumbnail_thumbnail">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ED/thumbnail_thumbnail/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ED/thumbnail_thumbnail/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/addText">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ED/addText/text"/>
       </genOperations>
@@ -70,7 +74,20 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//TS/value"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//QTY"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ST"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ST">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/thumbnail">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/thumbnail/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/thumbnail/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/reference">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/reference/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/reference/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/integrityCheck">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheck/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheck/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CD">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CD/originalText"/>
@@ -91,8 +108,18 @@
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CR/value"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CR/inverted"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CV"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CE"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CV">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CV/translation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CV/translation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CV/translation/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CE">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CE/qualifier">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CE/qualifier/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CE/qualifier/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//II">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/root"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/extension"/>
@@ -441,6 +468,22 @@
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_TS/high"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_TS/width"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_TS/optionsContainingLow">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingLow/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingLow/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_TS/optionsContainingCenter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingCenter/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingCenter/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_TS/optionsContainingHigh">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingHigh/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingHigh/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_TS/optionsContainingWidth">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingWidth/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_TS/optionsContainingWidth/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVXB_TS">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//IVXB_TS/inclusive"/>
@@ -478,7 +521,28 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//REAL">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//REAL/value"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CS"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CS">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CS/originalText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/originalText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/originalText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CS/codeSystem">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/codeSystem/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/codeSystem/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CS/codeSystemName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/codeSystemName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/codeSystemName/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CS/codeSystemVersion">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/codeSystemVersion/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/codeSystemVersion/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CS/displayName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/displayName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CS/displayName/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CO"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//SC">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SC/code"/>
@@ -491,7 +555,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_QTY_QTY/numerator"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_QTY_QTY/denominator"/>
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_QTY_QTY/denominator.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//RTO_QTY_QTY/denominator">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//RTO_QTY_QTY/denominator/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//RTO_QTY_QTY/denominator/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//MO">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//MO/value"/>
@@ -513,6 +581,22 @@
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_INT/high"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_INT/width"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_INT/optionsContainingLow">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingLow/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingLow/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_INT/optionsContainingCenter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingCenter/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingCenter/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_INT/optionsContainingHigh">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingHigh/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingHigh/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_INT/optionsContainingWidth">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingWidth/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_INT/optionsContainingWidth/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//IVXB_PQ">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//IVXB_PQ/inclusive"/>
@@ -529,12 +613,32 @@
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_PQ/high"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//IVL_PQ/width"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_PQ/optionsContainingLow">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingLow/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingLow/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_PQ/optionsContainingCenter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingCenter/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingCenter/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_PQ/optionsContainingHigh">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingHigh/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingHigh/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//IVL_PQ/optionsContainingWidth">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingWidth/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//IVL_PQ/optionsContainingWidth/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//RTO_PQ_PQ">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_PQ_PQ/numerator"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_PQ_PQ/denominator"/>
+          createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//RTO_PQ_PQ/denominator.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//RTO_PQ_PQ/denominator">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//RTO_PQ_PQ/denominator/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//RTO_PQ_PQ/denominator/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//PIVL_TS">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -545,6 +649,22 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PIVL_TS/institutionSpecified"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EIVL_event">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/originalText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/originalText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/originalText/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/translation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/translation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/translation/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/codeSystem">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/codeSystem/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/codeSystem/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/codeSystemName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/codeSystemName/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/codeSystemName/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/init"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EIVL_TS">

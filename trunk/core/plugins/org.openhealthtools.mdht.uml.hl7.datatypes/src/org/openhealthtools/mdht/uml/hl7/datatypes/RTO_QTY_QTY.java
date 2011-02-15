@@ -12,6 +12,10 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +46,7 @@ public interface RTO_QTY_QTY extends QTY {
 	 * @return the value of the '<em>Numerator</em>' containment reference.
 	 * @see #setNumerator(QTY)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getRTO_QTY_QTY_Numerator()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
@@ -69,7 +73,7 @@ public interface RTO_QTY_QTY extends QTY {
 	 * @return the value of the '<em>Denominator</em>' containment reference.
 	 * @see #setDenominator(QTY)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getRTO_QTY_QTY_Denominator()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
@@ -84,5 +88,18 @@ public interface RTO_QTY_QTY extends QTY {
 	 * @generated
 	 */
 	void setDenominator(QTY value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.denominator.value<>0
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.denominator.value<>0'"
+	 * @generated
+	 */
+	boolean validateDenominator(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // RTO_QTY_QTY

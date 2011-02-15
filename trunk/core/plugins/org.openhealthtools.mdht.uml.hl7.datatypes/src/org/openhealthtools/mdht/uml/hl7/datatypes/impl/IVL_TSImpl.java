@@ -12,8 +12,11 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -21,6 +24,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.IVL_TSOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +62,7 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 	 * @generated
 	 * @ordered
 	 */
-	protected IVXB_TS center;
+	protected TS center;
 
 	/**
 	 * The cached value of the '{@link #getHigh() <em>High</em>}' containment reference.
@@ -146,17 +151,18 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IVXB_TS getCenter() {
+	public TS getCenter() {
 		return center;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCenter(IVXB_TS newCenter, NotificationChain msgs) {
-		IVXB_TS oldCenter = center;
+    public NotificationChain basicSetCenter(TS newCenter, NotificationChain msgs)
+    {
+		TS oldCenter = center;
 		center = newCenter;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__CENTER, oldCenter, newCenter);
@@ -165,12 +171,13 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 		return msgs;
 	}
 
-	/**
+    /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCenter(IVXB_TS newCenter) {
+    public void setCenter(TS newCenter)
+    {
 		if (newCenter != center) {
 			NotificationChain msgs = null;
 			if (center != null)
@@ -184,7 +191,7 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__CENTER, newCenter, newCenter));
 	}
 
-	/**
+    /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -272,6 +279,46 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 
 	/**
 	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingLow(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_TSOperations.validateOptionsContainingLow(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingCenter(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_TSOperations.validateOptionsContainingCenter(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingHigh(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_TSOperations.validateOptionsContainingHigh(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingWidth(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_TSOperations.validateOptionsContainingWidth(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -322,7 +369,7 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 				setLow((IVXB_TS)newValue);
 				return;
 			case DatatypesPackage.IVL_TS__CENTER:
-				setCenter((IVXB_TS)newValue);
+				setCenter((TS)newValue);
 				return;
 			case DatatypesPackage.IVL_TS__HIGH:
 				setHigh((IVXB_TS)newValue);
@@ -346,7 +393,7 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 				setLow((IVXB_TS)null);
 				return;
 			case DatatypesPackage.IVL_TS__CENTER:
-				setCenter((IVXB_TS)null);
+				setCenter((TS)null);
 				return;
 			case DatatypesPackage.IVL_TS__HIGH:
 				setHigh((IVXB_TS)null);

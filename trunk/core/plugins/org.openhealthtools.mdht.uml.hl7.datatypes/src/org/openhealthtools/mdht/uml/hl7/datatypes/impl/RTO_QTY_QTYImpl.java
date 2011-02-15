@@ -12,14 +12,18 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.QTY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_QTY_QTY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.RTO_QTY_QTYOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,6 +163,15 @@ public class RTO_QTY_QTYImpl extends QTYImpl implements RTO_QTY_QTY {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RTO_QTY_QTY__DENOMINATOR, newDenominator, newDenominator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDenominator(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return RTO_QTY_QTYOperations.validateDenominator(this, diagnostics, context);
 	}
 
 	/**

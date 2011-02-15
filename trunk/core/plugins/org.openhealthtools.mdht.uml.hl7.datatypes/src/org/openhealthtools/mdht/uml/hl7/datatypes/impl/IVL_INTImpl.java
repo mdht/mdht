@@ -12,8 +12,11 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -21,6 +24,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.IVL_INTOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +61,7 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	 * @generated
 	 * @ordered
 	 */
-	protected IVXB_INT center;
+	protected INT center;
 
 	/**
 	 * The cached value of the '{@link #getHigh() <em>High</em>}' containment reference.
@@ -146,7 +150,7 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IVXB_INT getCenter() {
+	public INT getCenter() {
 		return center;
 	}
 
@@ -155,8 +159,8 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCenter(IVXB_INT newCenter, NotificationChain msgs) {
-		IVXB_INT oldCenter = center;
+	public NotificationChain basicSetCenter(INT newCenter, NotificationChain msgs) {
+		INT oldCenter = center;
 		center = newCenter;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_INT__CENTER, oldCenter, newCenter);
@@ -170,7 +174,7 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCenter(IVXB_INT newCenter) {
+	public void setCenter(INT newCenter) {
 		if (newCenter != center) {
 			NotificationChain msgs = null;
 			if (center != null)
@@ -275,6 +279,42 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateOptionsContainingLow(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return IVL_INTOperations.validateOptionsContainingLow(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOptionsContainingCenter(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return IVL_INTOperations.validateOptionsContainingCenter(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOptionsContainingHigh(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return IVL_INTOperations.validateOptionsContainingHigh(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOptionsContainingWidth(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return IVL_INTOperations.validateOptionsContainingWidth(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -322,7 +362,7 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 				setLow((IVXB_INT)newValue);
 				return;
 			case DatatypesPackage.IVL_INT__CENTER:
-				setCenter((IVXB_INT)newValue);
+				setCenter((INT)newValue);
 				return;
 			case DatatypesPackage.IVL_INT__HIGH:
 				setHigh((IVXB_INT)newValue);
@@ -346,7 +386,7 @@ public class IVL_INTImpl extends SXCM_INTImpl implements IVL_INT {
 				setLow((IVXB_INT)null);
 				return;
 			case DatatypesPackage.IVL_INT__CENTER:
-				setCenter((IVXB_INT)null);
+				setCenter((INT)null);
 				return;
 			case DatatypesPackage.IVL_INT__HIGH:
 				setHigh((IVXB_INT)null);

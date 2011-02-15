@@ -12,9 +12,13 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.CVOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +47,15 @@ public class CVImpl extends CEImpl implements CV {
 	@Override
 	protected EClass eStaticClass() {
 		return DatatypesPackage.Literals.CV;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTranslation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CVOperations.validateTranslation(this, diagnostics, context);
 	}
 
 } //CVImpl

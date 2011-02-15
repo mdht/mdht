@@ -12,6 +12,10 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -69,13 +73,13 @@ public interface IVL_INT extends SXCM_INT {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Center</em>' containment reference.
-	 * @see #setCenter(IVXB_INT)
+	 * @see #setCenter(INT)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_INT_Center()
 	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
-	IVXB_INT getCenter();
+	INT getCenter();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT#getCenter <em>Center</em>}' containment reference.
@@ -85,7 +89,7 @@ public interface IVL_INT extends SXCM_INT {
 	 * @see #getCenter()
 	 * @generated
 	 */
-	void setCenter(IVXB_INT value);
+	void setCenter(INT value);
 
 	/**
 	 * Returns the value of the '<em><b>High</b></em>' containment reference.
@@ -140,5 +144,57 @@ public interface IVL_INT extends SXCM_INT {
 	 * @generated
 	 */
 	void setWidth(INT value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.low.oclIsUndefined() implies self.center.oclIsUndefined() and (self.width.oclIsUndefined() or self.high.oclIsUndefined())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.low.oclIsUndefined() implies self.center.oclIsUndefined() and (self.width.oclIsUndefined() or self.high.oclIsUndefined())'"
+	 * @generated
+	 */
+	boolean validateOptionsContainingLow(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.center.oclIsUndefined() implies self.high.oclIsUndefined() and self.low.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.center.oclIsUndefined() implies self.high.oclIsUndefined() and self.low.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateOptionsContainingCenter(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.high.oclIsUndefined() implies (self.low.oclIsUndefined() and self.center.oclIsUndefined() and self.width.oclIsUndefined()) or ((not self.low.oclIsUndefined()) and self.width.oclIsUndefined() and self.center.oclIsUndefined()) or ((not self.width.oclIsUndefined()) and self.low.oclIsUndefined() and self.center.oclIsUndefined())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.high.oclIsUndefined() implies (self.low.oclIsUndefined() and self.center.oclIsUndefined() and self.width.oclIsUndefined()) or ((not self.low.oclIsUndefined()) and self.width.oclIsUndefined() and self.center.oclIsUndefined()) or ((not self.width.oclIsUndefined()) and self.low.oclIsUndefined() and self.center.oclIsUndefined())'"
+	 * @generated
+	 */
+	boolean validateOptionsContainingHigh(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.width.oclIsUndefined() implies ((not self.low.oclIsUndefined()) and self.center.oclIsUndefined() and self.high.oclIsUndefined()) or (self.low.oclIsUndefined() and self.center.oclIsUndefined()) or ((not self.center.oclIsUndefined()) and self.low.oclIsUndefined() and self.high.oclIsUndefined())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.width.oclIsUndefined() implies ((not self.low.oclIsUndefined()) and self.center.oclIsUndefined() and self.high.oclIsUndefined()) or (self.low.oclIsUndefined() and self.center.oclIsUndefined()) or ((not self.center.oclIsUndefined()) and self.low.oclIsUndefined() and self.high.oclIsUndefined())'"
+	 * @generated
+	 */
+	boolean validateOptionsContainingWidth(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // IVL_INT

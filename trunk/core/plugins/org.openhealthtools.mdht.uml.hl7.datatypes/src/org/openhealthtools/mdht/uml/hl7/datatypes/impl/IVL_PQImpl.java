@@ -12,8 +12,11 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -21,6 +24,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.IVL_PQOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +61,7 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	 * @generated
 	 * @ordered
 	 */
-	protected IVXB_PQ center;
+	protected PQ center;
 
 	/**
 	 * The cached value of the '{@link #getHigh() <em>High</em>}' containment reference.
@@ -146,17 +150,18 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IVXB_PQ getCenter() {
+	public PQ getCenter() {
 		return center;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCenter(IVXB_PQ newCenter, NotificationChain msgs) {
-		IVXB_PQ oldCenter = center;
+    public NotificationChain basicSetCenter(PQ newCenter, NotificationChain msgs)
+    {
+		PQ oldCenter = center;
 		center = newCenter;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__CENTER, oldCenter, newCenter);
@@ -165,12 +170,13 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 		return msgs;
 	}
 
-	/**
+    /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCenter(IVXB_PQ newCenter) {
+    public void setCenter(PQ newCenter)
+    {
 		if (newCenter != center) {
 			NotificationChain msgs = null;
 			if (center != null)
@@ -184,7 +190,7 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_PQ__CENTER, newCenter, newCenter));
 	}
 
-	/**
+    /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -272,6 +278,46 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 
 	/**
 	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingLow(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_PQOperations.validateOptionsContainingLow(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingCenter(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_PQOperations.validateOptionsContainingCenter(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingHigh(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_PQOperations.validateOptionsContainingHigh(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
+    public boolean validateOptionsContainingWidth(DiagnosticChain diagnostics, Map<Object, Object> context)
+    {
+		return IVL_PQOperations.validateOptionsContainingWidth(this, diagnostics, context);
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -322,7 +368,7 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 				setLow((IVXB_PQ)newValue);
 				return;
 			case DatatypesPackage.IVL_PQ__CENTER:
-				setCenter((IVXB_PQ)newValue);
+				setCenter((PQ)newValue);
 				return;
 			case DatatypesPackage.IVL_PQ__HIGH:
 				setHigh((IVXB_PQ)newValue);
@@ -346,7 +392,7 @@ public class IVL_PQImpl extends SXCM_PQImpl implements IVL_PQ {
 				setLow((IVXB_PQ)null);
 				return;
 			case DatatypesPackage.IVL_PQ__CENTER:
-				setCenter((IVXB_PQ)null);
+				setCenter((PQ)null);
 				return;
 			case DatatypesPackage.IVL_PQ__HIGH:
 				setHigh((IVXB_PQ)null);
