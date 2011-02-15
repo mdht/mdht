@@ -29,6 +29,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateThumbnail(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thumbnail</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateIntegrityCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integrity Check</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateCompression(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateIntegrityCheckAlgorithm(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integrity Check Algorithm</em>}</li>
  * </ul>
  * </p>
  *
@@ -212,6 +214,78 @@ public class STOperations extends EDOperations
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.ST__INTEGRITY_CHECK,
 						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateIntegrityCheck", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+						 new Object [] { st }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+				/**
+	 * The cached OCL expression body for the '{@link #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "Implemented in Java to verify that compression is not used.";
+
+				/**
+	 * The cached OCL invariant for the '{@link #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated NOT
+	 */
+	public static  boolean validateCompression(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (st.isSetCompression()) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.ST__COMPRESSION,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCompression", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+						 new Object [] { st }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateIntegrityCheckAlgorithm(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (st.isSetIntegrityCheckAlgorithm()) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.ST__INTEGRITY_CHECK_ALGORITHM,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateIntegrityCheckAlgorithm", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
 						 new Object [] { st }));
 			}
 			return false;
