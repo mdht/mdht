@@ -784,7 +784,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(ed, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ed, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ed, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ed, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ed, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(ed, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ed, diagnostics, context);
@@ -858,7 +857,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(st, diagnostics, context);
@@ -931,7 +929,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(cv, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(cv, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(cv, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(cv, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(cv, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(cv, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cv, diagnostics, context);
@@ -961,7 +958,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(ce, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ce, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ce, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ce, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ce, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(ce, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ce, diagnostics, context);
@@ -1008,7 +1004,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(bn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(bn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(bn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(bn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(bn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(bn, diagnostics, context);
@@ -1037,7 +1032,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(ad, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ad, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ad, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ad, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(ad, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ad, diagnostics, context);
@@ -1352,7 +1346,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(adxp, diagnostics, context);
@@ -1374,7 +1367,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(en, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(en, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(en, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(en, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(en, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(en, diagnostics, context);
@@ -1447,7 +1439,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(ivL_TS, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ivL_TS, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ivL_TS, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ivL_TS, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ivL_TS, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(ivL_TS, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ivL_TS, diagnostics, context);
@@ -1531,7 +1522,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(pqr, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pqr, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pqr, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(pqr, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(pqr, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(pqr, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pqr, diagnostics, context);
@@ -1551,7 +1541,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enxp, diagnostics, context);
@@ -1573,7 +1562,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(on, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(on, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(on, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(on, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(on, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(on, diagnostics, context);
@@ -1607,7 +1595,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(pn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(pn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(pn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(pn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pn, diagnostics, context);
@@ -1641,7 +1628,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(tn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(tn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tn, diagnostics, context);
@@ -1693,7 +1679,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(cs, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(cs, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(cs, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(cs, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(cs, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(cs, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cs, diagnostics, context);
@@ -1768,7 +1753,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(co, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(co, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(co, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(co, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(co, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(co, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(co, diagnostics, context);
@@ -1788,7 +1772,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sc, diagnostics, context);
@@ -1810,7 +1793,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(rtO_QTY_QTY, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rtO_QTY_QTY, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rtO_QTY_QTY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(rtO_QTY_QTY, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rtO_QTY_QTY, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(rtO_QTY_QTY, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rtO_QTY_QTY, diagnostics, context);
@@ -1848,7 +1830,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(rto, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rto, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rto, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(rto, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rto, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(rto, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rto, diagnostics, context);
@@ -1885,7 +1866,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(ivL_INT, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ivL_INT, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ivL_INT, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ivL_INT, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ivL_INT, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(ivL_INT, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ivL_INT, diagnostics, context);
@@ -1965,7 +1945,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(ivL_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ivL_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ivL_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ivL_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ivL_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(ivL_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ivL_PQ, diagnostics, context);
@@ -2031,7 +2010,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(rtO_PQ_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(rtO_PQ_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(rtO_PQ_PQ, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(rtO_PQ_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(rtO_PQ_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(rtO_PQ_PQ, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rtO_PQ_PQ, diagnostics, context);
@@ -2069,7 +2047,6 @@ public class DatatypesValidator extends EObjectValidator {
 		boolean result = validate_EveryMultiplicityConforms(eivL_event, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(eivL_event, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(eivL_event, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(eivL_event, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(eivL_event, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(eivL_event, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(eivL_event, diagnostics, context);
