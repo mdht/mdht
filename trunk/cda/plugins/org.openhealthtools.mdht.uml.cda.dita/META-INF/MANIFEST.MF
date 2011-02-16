@@ -8,11 +8,38 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Activator: org.openhealthtools.mdht.uml.cda.dita.internal.Activator
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ DITA-OT/lib/commons-codec-1.4.jar,
+ DITA-OT/lib/commons-logging-1.1.1.jar,
+ DITA-OT/lib/dost.jar,
+ DITA-OT/lib/icu4j.jar,
+ DITA-OT/lib/resolver.jar,
+ DITA-OT/lib/saxon/saxon9-dom.jar,
+ DITA-OT/lib/saxon/saxon9-dom4j.jar,
+ DITA-OT/lib/saxon/saxon9-jdom.jar,
+ DITA-OT/lib/saxon/saxon9-s9api.jar,
+ DITA-OT/lib/saxon/saxon9-sql.jar,
+ DITA-OT/lib/saxon/saxon9-xom.jar,
+ DITA-OT/lib/saxon/saxon9-xpath.jar,
+ DITA-OT/lib/saxon/saxon9-xqj.jar,
+ DITA-OT/lib/saxon/saxon9.jar,
+ DITA-OT/tools/ant/lib/xercesImpl.jar,
+ DITA-OT/tools/ant/lib/xml-apis.jar
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml,
  org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.cda.resources,
  org.openhealthtools.mdht.uml.cda.core,
- org.openhealthtools.mdht.uml.term.core
+ org.openhealthtools.mdht.uml.term.core,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.transaction,
+ org.eclipse.emf.workspace,
+ org.eclipse.gmf.runtime.common.core,
+ org.eclipse.gmf.runtime.diagram.ui.properties,
+ org.eclipse.jdt.launching;visibility:=reexport,
+ org.eclipse.debug.ui;visibility:=reexport,
+ org.eclipse.ant.launching;visibility:=reexport,
+ org.eclipse.jdt.core,
+ org.eclipse.core.externaltools
 Export-Package: org.openhealthtools.mdht.uml.cda.dita

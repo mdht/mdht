@@ -21,4 +21,31 @@
             class="org.openhealthtools.mdht.uml.cda.dita.internal.preferences.PreferenceInitializer">
       </initializer>
    </extension>
+   
+   
+       <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="org.openhealthtools.mdht.uml.dita.publish"
+             nameFilter="*.ditamap"
+            >
+         <menu
+               label="MDHT"
+               path="additions"
+               id="org.openhealthtools.mdht.uml.dita.publish.menu">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="org.openhealthtools.mdht.uml.cda.dita.actions.PublishModelAction"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.dita.publish"
+               label="Publish"
+               menubarPath="org.openhealthtools.mdht.uml.dita.publish.menu/group1">
+         </action>
+      </objectContribution>
+   </extension>
+   
 </plugin>

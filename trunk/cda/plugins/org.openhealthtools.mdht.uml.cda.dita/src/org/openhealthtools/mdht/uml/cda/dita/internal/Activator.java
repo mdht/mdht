@@ -56,6 +56,10 @@ public class Activator extends Plugin {
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
+		
+		if(plugin == null){
+			new Activator();			
+		}
 		return plugin;
 	}
 
