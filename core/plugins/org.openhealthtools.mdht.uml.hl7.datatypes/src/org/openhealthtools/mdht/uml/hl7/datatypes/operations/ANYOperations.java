@@ -37,9 +37,8 @@ public class ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  boolean isNullFlavorUndefined(ANY any) 
-	{
-		return (! any.isSetNullFlavor());
+	public static boolean isNullFlavorUndefined(ANY any) {
+		return (!any.isSetNullFlavor());
 	}
 
 } // ANYOperations
