@@ -42,7 +42,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *
  * @generated
  */
-public class EDOperations {
+public class EDOperations extends ANYOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

@@ -35,7 +35,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *
  * @generated
  */
-public class IVL_INTOperations {
+public class IVL_INTOperations extends ANYOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

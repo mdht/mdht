@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *
  * @generated
  */
-public class RTO_PQ_PQOperations {
+public class RTO_PQ_PQOperations extends ANYOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

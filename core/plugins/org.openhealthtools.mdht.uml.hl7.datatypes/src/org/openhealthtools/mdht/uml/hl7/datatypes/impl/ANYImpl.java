@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.ANYOperations;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
@@ -126,6 +127,15 @@ public abstract class ANYImpl extends EObjectImpl implements ANY {
 	 */
 	public boolean isSetNullFlavor() {
 		return nullFlavorESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isNullFlavorUndefined() {
+		return ANYOperations.isNullFlavorUndefined(this);
 	}
 
 	/**

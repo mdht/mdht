@@ -53,7 +53,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
  *
  * @generated
  */
-public class ENOperations {
+public class ENOperations extends ANYOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->
