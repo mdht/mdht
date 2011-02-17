@@ -102,8 +102,9 @@ public class InstanceGenerator {
 	
 	public EObject createInstance(Class umlClass, int levels) {
 		EObject eObject = null;
-		EClass eClass = getEClass(umlClass);
 		
+		EClass eClass = getEClass(umlClass);
+
 		if (eClass != null && !eClass.isAbstract()) {
 			eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
 			
@@ -192,6 +193,7 @@ public class InstanceGenerator {
 						
 						// if inherited, include only associations that are required
 						else if (isInherited && CDAModelUtil.SEVERITY_ERROR.equals(severity)) {
+							
 							EObject type = createInstance((Class)property.getType(), --levels);
 							addChild(eObject, type);
 						}
@@ -231,7 +233,7 @@ public class InstanceGenerator {
 		classes.addAll(umlClass.allParents());
 		for (Classifier parent : classes) {
 			// exclude CDA model properties
-			if (! CDAModelUtil.CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName())) {
+			if (parent.getNearestPackage() != null &&  (! CDAModelUtil.CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()))) {
 				for (Property property : parent.getAttributes()) {
 					allProperties.add(property);
 				}
