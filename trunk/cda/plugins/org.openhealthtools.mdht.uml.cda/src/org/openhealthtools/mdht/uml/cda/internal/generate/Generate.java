@@ -1,4 +1,4 @@
-package org.openhealthtools.mdht.uml.cda.core.util;
+package org.openhealthtools.mdht.uml.cda.internal.generate;
 
 import java.io.PrintWriter;
 import java.util.Map;
@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.UMLPlugin;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+//import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class Generate {

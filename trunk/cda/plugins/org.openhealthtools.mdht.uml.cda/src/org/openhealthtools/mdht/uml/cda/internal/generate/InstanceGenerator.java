@@ -9,7 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.core.util;
+package org.openhealthtools.mdht.uml.cda.internal.generate;
 
 import java.io.Writer;
 import java.lang.reflect.Method;
@@ -49,6 +49,7 @@ import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
