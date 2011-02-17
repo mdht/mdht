@@ -168,8 +168,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_culQ8DxaEd6JwqSGecoePg" name="II">
       <generalization xmi:id="_fJZtkDxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>
-      <ownedAttribute xmi:id="_hVUykDxaEd6JwqSGecoePg" name="root" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_hVUykDxaEd6JwqSGecoePg" name="root" visibility="private" type="_RpDqMDrsEeCN26jpCPaoAw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NXLzUT6CEd6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NXLzUD6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -1316,6 +1315,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcCfYaQLEd-QEohlUVMP5A"/>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_RpDqMDrsEeCN26jpCPaoAw" name="uid"/>
     <profileApplication xmi:id="_XgMSyDxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_XgMSyTxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -1486,4 +1486,7 @@
   <Ecore:EReference xmi:id="_e-sGwKQLEd-QEohlUVMP5A" xmlNamespace="urn:hl7-org:v3" base_Property="_JpJFgKQLEd-QEohlUVMP5A"/>
   <Ecore:EReference xmi:id="_f0LkUKQLEd-QEohlUVMP5A" xmlNamespace="urn:hl7-org:v3" base_Property="_Z5ix4KQLEd-QEohlUVMP5A"/>
   <Ecore:EClass xmi:id="_lUqGYDhgEeCIH_Ti2hedgg" xmlName="EIVL.event" base_Class="_Cm05UKQLEd-QEohlUVMP5A"/>
+  <Ecore:EDataType xmi:id="_U6RjUDrsEeCN26jpCPaoAw" instanceClassName="java.lang.String" base_PrimitiveType="_RpDqMDrsEeCN26jpCPaoAw" dataTypeName="uid">
+    <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData pattern='[0-2](\.(0|[1-9][0-9]*))* [0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12} [A-Za-z][A-Za-z0-9\-]*'</annotation>
+  </Ecore:EDataType>
 </xmi:XMI>

@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
@@ -767,6 +768,8 @@ public class DatatypesValidator extends EObjectValidator {
 				return validateEIVL_TS((EIVL_TS)value, diagnostics, context);
 			case DatatypesPackage.BINARY_DATA_ENCODING:
 				return validateBinaryDataEncoding((BinaryDataEncoding)value, diagnostics, context);
+			case DatatypesPackage.UID:
+				return validateuid((String)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -2159,6 +2162,41 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	public boolean validateBinaryDataEncoding(BinaryDataEncoding binaryDataEncoding, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateuid(String uid, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validateuid_Pattern(uid, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateuid_Pattern
+	 */
+	public static final  PatternMatcher [][] UID__PATTERN__VALUES =
+		new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher("[0-2](\\.(0|[1-9][0-9]*))*"),
+				XMLTypeUtil.createPatternMatcher("[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}"),
+				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9\\-]*")
+			}
+		};
+
+	/**
+	 * Validates the Pattern constraint of '<em>uid</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateuid_Pattern(String uid, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validatePattern(DatatypesPackage.Literals.UID, uid, UID__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**
