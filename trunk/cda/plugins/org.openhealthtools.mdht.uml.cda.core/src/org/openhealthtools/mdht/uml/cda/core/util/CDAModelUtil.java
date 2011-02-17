@@ -123,7 +123,7 @@ public class CDAModelUtil {
 	}
 
 	public static boolean isCDAModel(Element element) {
-		return CDA_PACKAGE_NAME.equals(element.getNearestPackage().getName());
+		return CDA_PACKAGE_NAME.equals( (element.getNearestPackage()!=null) ?  element.getNearestPackage().getName(): "");
 	}
 	
 	public static boolean isCDAType(Type templateClass, String typeName) {

@@ -3,25 +3,54 @@ package org.openhealthtools.mdht.uml.cda.ui.actions;
 import java.io.PrintWriter;
 import java.util.Iterator;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.debug.core.DebugPlugin;
+import org.eclipse.debug.core.ILaunch;
+import org.eclipse.debug.core.ILaunchConfigurationType;
+import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
+import org.eclipse.debug.core.ILaunchManager;
+import org.eclipse.debug.core.model.IProcess;
+import org.eclipse.debug.ui.IDebugUIConstants;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.IConsoleConstants;
+import org.eclipse.ui.console.IConsoleManager;
+import org.eclipse.ui.console.IConsoleView;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.uml2.uml.Class;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
+import org.osgi.framework.Bundle;
 
 public class GenerateSampleInstanceAction implements IObjectActionDelegate {
-	
+
 	protected IWorkbenchPart activePart;
 	protected ISelection currentSelection;
 	protected Class selectedElement;
-	
+
 	public GenerateSampleInstanceAction() {
 		super();
 	}
@@ -30,9 +59,9 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-    	createInstance();
+		createInstance();
 	}
-	
+
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
@@ -46,53 +75,169 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 	public void selectionChanged(IAction action, ISelection selection) {
 		currentSelection = selection;
 		selectedElement = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
 				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof View) {
-				selected = ((View)selected).getElement();
+				selected = ((View) selected).getElement();
 			}
-			
+
 			if (selected instanceof Class) {
 				selectedElement = (Class) selected;
 			}
 		}
-		
-		if (selectedElement != null &&
-				CDAProfileUtil.getAppliedCDAProfile(selectedElement) != null) {
+
+		if (selectedElement != null && CDAProfileUtil.getAppliedCDAProfile(selectedElement) != null) {
 			action.setEnabled(true);
-		}
-		else {
+		} else {
 			action.setEnabled(false);
 		}
 	}
 
 	protected View getSelectedView() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection)
-				.iterator(); elements.hasNext();) {
+		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
-			View view = (View) ((IAdaptable) element)
-					.getAdapter(View.class);
+			View view = (View) ((IAdaptable) element).getAdapter(View.class);
 
 			if (view != null) {
 				return view;
 			}
 		}
-		
+
 		return null;
 	}
-	
-	private void createInstance() {
-		InstanceGenerator generator = new InstanceGenerator();
-		EObject instance = generator.createInstance(selectedElement, 5);
-		
-		PrintWriter writer = new PrintWriter(System.out);
-		generator.save(instance, writer);
-		writer.close();
+
+	/**
+	 * Returns jar location from symboic name used in generatexml to load the
+	 * uml and cda resources appropriately
+	 * 
+	 * @param symbolicName
+	 * @return
+	 */
+	private String getJarLocation(String symbolicName) {
+		Bundle bundle = Platform.getBundle(symbolicName);
+		if (bundle != null)
+			return new StringBuffer().append(bundle.getLocation().replaceFirst("reference", "jar")).append("!/").toString();
+		else
+			return "";
 	}
+
+	private void createInstance() {
+
+		if (selectedElement != null) {
+			if (selectedElement.eContainer() != null) {
+				if (selectedElement.eContainer().eResource() != null) {
+					ILaunch launch = null;
+
+					IWorkspace workspace = ResourcesPlugin.getWorkspace();
+
+					IWorkspaceRoot root = workspace.getRoot();
+
+					URI u = selectedElement.eContainer().eResource().getURI();
+
+					String segments[] = u.segments();
+
+					// Assumes the project is structured with the uml file in
+					// the models directory
+					IFile file = root.getProject(segments[1]).getFolder(segments[2]).getFile(segments[3]);
+
+					if (file != null && file.exists()) {
+						
+						int index = segments[1].lastIndexOf(".model");
+
+						// if not following mdht naming .model; do not attempt to
+						// find corresponding generation project
+						String generateProject = (index < 0) ? segments[1] : segments[1].substring(0, index);
+
+						IProject project = root.getProject(generateProject);
+						
+						// If the generation project is in the workspace - launch as java					
+						if (index>=0 && project.exists()) {
+
+							ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
+
+							ILaunchConfigurationType type = manager.getLaunchConfigurationType(IJavaLaunchConfigurationConstants.ID_JAVA_APPLICATION);
+
+							ILaunchConfigurationWorkingCopy workingCopy;
+							try {
+								workingCopy = type.newInstance(null, "generateXML");
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.core.util.Generate");
+								String cdaGenerateArguments = String.format(" \"%s\" \"%s\" \"%s\" \"%s\" ", file.getRawLocation().toOSString(), selectedElement.getName(),
+										getJarLocation("org.eclipse.uml2.uml.resources"), getJarLocation("org.openhealthtools.mdht.uml.cda.resources"));
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, cdaGenerateArguments);
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, project.getName());
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
+								workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, true);
+								workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, false);
+								launch = workingCopy.launch(ILaunchManager.RUN_MODE, null);
+							} catch (CoreException e1) {
+								e1.printStackTrace();
+							}
+						} else {
+														
+							MessageConsole myConsole = findConsole("GENERATEXML");
+							
+							myConsole.clearConsole();
+							
+							MessageConsoleStream out = myConsole.newMessageStream();
+							   
+							out.println("Generated Sample XML for "+selectedElement.getName());
+							out.println();
+							out.println();
+							out.println();
+							InstanceGenerator generator = new InstanceGenerator();
+							EObject instance = generator.createInstance(selectedElement, 5);
+							PrintWriter writer = new PrintWriter(out);
+							generator.save(instance, writer);
+							
+							
+							out.println();
+							out.println();
+							out.println();
+							out.println("Done Generating");
+							
+							writer.close();
+						
+			
+							try {
+
+								IWorkbench wb = PlatformUI.getWorkbench();
+								IWorkbenchWindow win = wb.getActiveWorkbenchWindow();
+								IWorkbenchPage page = win.getActivePage();
+								String id = IConsoleConstants.ID_CONSOLE_VIEW;
+								IConsoleView view;
+								view = (IConsoleView) page.showView(id);
+								view.display(myConsole);
+
+							} catch (PartInitException e) {
+							}
+							
+						}
+					}
+				}
+
+			}
+		}
+	}
+	
+	 private MessageConsole findConsole(String name) {
+	      ConsolePlugin plugin = ConsolePlugin.getDefault();
+	      IConsoleManager conMan = plugin.getConsoleManager();
+	      IConsole[] existing = conMan.getConsoles();
+
+	      for (int i = 0; i < existing.length; i++)
+	      {
+	         if (name.equals(existing[i].getName()))
+	            return (MessageConsole) existing[i];
+	      }
+	      //no console found, so create a new one
+	      MessageConsole myConsole = new MessageConsole(name, null);
+	      conMan.addConsoles(new IConsole[]{myConsole});
+	      return myConsole;
+	   }
 
 }
