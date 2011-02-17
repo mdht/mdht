@@ -165,7 +165,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							ILaunchConfigurationWorkingCopy workingCopy;
 							try {
 								workingCopy = type.newInstance(null, "generateXML");
-								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.core.util.Generate");
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.internal.generate.Generate");
 								String cdaGenerateArguments = String.format(" \"%s\" \"%s\" \"%s\" \"%s\" ", file.getRawLocation().toOSString(), selectedElement.getName(),
 										getJarLocation("org.eclipse.uml2.uml.resources"), getJarLocation("org.openhealthtools.mdht.uml.cda.resources"));
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, cdaGenerateArguments);
