@@ -308,13 +308,18 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="II" eSuperTypes="#//ANY">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="root" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="root" ordered="false" eType="#//uid"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="extension" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assigningAuthorityName"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayable" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="uid" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="pattern" value="[0-2](\.(0|[1-9][0-9]*))* [0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12} [A-Za-z][A-Za-z0-9\-]*"/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BL" eSuperTypes="#//ANY">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"

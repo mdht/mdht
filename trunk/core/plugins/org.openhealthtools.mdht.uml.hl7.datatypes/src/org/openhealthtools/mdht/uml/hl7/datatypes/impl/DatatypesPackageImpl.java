@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -356,6 +357,13 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * @generated
 	 */
 	private EEnum binaryDataEncodingEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType uidEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1884,6 +1892,15 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getuid() {
+		return uidEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DatatypesFactory getDatatypesFactory() {
 		return (DatatypesFactory)getEFactoryInstance();
 	}
@@ -2114,6 +2131,9 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		// Create enums
 		binaryDataEncodingEEnum = createEEnum(BINARY_DATA_ENCODING);
+
+		// Create data types
+		uidEDataType = createEDataType(UID);
 	}
 
 	/**
@@ -2325,7 +2345,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(iiEClass, org.openhealthtools.mdht.uml.hl7.datatypes.II.class, "II", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getII_Root(), ecorePackage.getEString(), "root", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.II.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getII_Root(), this.getuid(), "root", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.II.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getII_Extension(), ecorePackage.getEString(), "extension", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.II.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getII_AssigningAuthorityName(), ecorePackage.getEString(), "assigningAuthorityName", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.II.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getII_Displayable(), ecorePackage.getEBooleanObject(), "displayable", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.II.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3121,6 +3141,9 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEEnumLiteral(binaryDataEncodingEEnum, BinaryDataEncoding.B64);
 		addEEnumLiteral(binaryDataEncodingEEnum, BinaryDataEncoding.TXT);
 
+		// Initialize data types
+		initEDataType(uidEDataType, String.class, "uid", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -3205,7 +3228,13 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "namespace", "urn:hl7-org:v3"
-		   });														
+		   });										
+		addAnnotation
+		  (uidEDataType, 
+		   source, 
+		   new String[] {
+			 "pattern", "[0-2](\\.(0|[1-9][0-9]*))* [0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12} [A-Za-z][A-Za-z0-9\\-]*"
+		   });						
 		addAnnotation
 		  (adEClass, 
 		   source, 

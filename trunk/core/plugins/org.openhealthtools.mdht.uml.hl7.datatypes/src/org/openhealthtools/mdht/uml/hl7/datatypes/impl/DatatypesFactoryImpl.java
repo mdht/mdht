@@ -166,6 +166,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		switch (eDataType.getClassifierID()) {
 			case DatatypesPackage.BINARY_DATA_ENCODING:
 				return createBinaryDataEncodingFromString(eDataType, initialValue);
+			case DatatypesPackage.UID:
+				return createuidFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -181,6 +183,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		switch (eDataType.getClassifierID()) {
 			case DatatypesPackage.BINARY_DATA_ENCODING:
 				return convertBinaryDataEncodingToString(eDataType, instanceValue);
+			case DatatypesPackage.UID:
+				return convertuidToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -739,6 +743,24 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public String convertBinaryDataEncodingToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createuidFromString(EDataType eDataType, String initialValue) {
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertuidToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

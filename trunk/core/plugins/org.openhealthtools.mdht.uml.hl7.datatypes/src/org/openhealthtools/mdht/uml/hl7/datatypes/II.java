@@ -44,7 +44,7 @@ public interface II extends ANY {
 	 * @return the value of the '<em>Root</em>' attribute.
 	 * @see #setRoot(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getII_Root()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.uid" ordered="false"
 	 * @generated
 	 */
 	String getRoot();

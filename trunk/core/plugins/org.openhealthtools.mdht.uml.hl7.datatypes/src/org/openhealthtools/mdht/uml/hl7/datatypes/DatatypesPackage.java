@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.uml.hl7.datatypes;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -3606,6 +3607,17 @@ public interface DatatypesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>uid</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getuid()
+	 * @generated
+	 */
+	int UID = 46;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY <em>ANY</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5331,6 +5343,18 @@ public interface DatatypesPackage extends EPackage {
 	EEnum getBinaryDataEncoding();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>uid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>uid</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 *        extendedMetaData="pattern='[0-2](\\.(0|[1-9][0-9]*))* [0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12} [A-Za-z][A-Za-z0-9\\-]*'"
+	 * @generated
+	 */
+	EDataType getuid();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6731,6 +6755,16 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum BINARY_DATA_ENCODING = eINSTANCE.getBinaryDataEncoding();
+
+		/**
+		 * The meta object literal for the '<em>uid</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getuid()
+		 * @generated
+		 */
+		EDataType UID = eINSTANCE.getuid();
 
 	}
 
