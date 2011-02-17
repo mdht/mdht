@@ -97,7 +97,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType;
  *
  * @generated
  */
-public class ADOperations {
+public class ADOperations extends ANYOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->

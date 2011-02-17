@@ -16,6 +16,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VJD-IDxnEd6JwqSGecoePg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VI6NIDxnEd6JwqSGecoePg"/>
       </ownedAttribute>
+      <ownedOperation xmi:id="_gkrLYDrgEeCzCsdl8TLd-w" name="isNullFlavorUndefined" isQuery="true">
+        <ownedParameter xmi:id="_mfwpwDrgEeCzCsdl8TLd-w" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Av5_kDxaEd6JwqSGecoePg" name="BIN" isAbstract="true">
       <generalization xmi:id="_F-I_ADxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>

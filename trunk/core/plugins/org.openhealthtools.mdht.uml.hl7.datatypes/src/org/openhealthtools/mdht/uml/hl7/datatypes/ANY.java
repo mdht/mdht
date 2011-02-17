@@ -88,4 +88,12 @@ public interface ANY extends EObject {
 	 */
 	boolean isSetNullFlavor();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isNullFlavorUndefined();
+
 } // ANY

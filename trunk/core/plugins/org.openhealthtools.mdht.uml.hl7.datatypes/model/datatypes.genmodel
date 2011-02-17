@@ -33,6 +33,7 @@
     </genEnums>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//ANY">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ANY/nullFlavor"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/isNullFlavorUndefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//BIN">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//BIN/representation"/>
