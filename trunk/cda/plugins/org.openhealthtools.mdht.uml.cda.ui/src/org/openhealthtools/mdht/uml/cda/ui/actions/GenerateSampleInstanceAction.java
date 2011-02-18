@@ -1,6 +1,8 @@
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
@@ -9,14 +11,13 @@ import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
-import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
-import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -97,8 +98,10 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 		}
 	}
 
+	@SuppressWarnings("rawtypes")
 	protected View getSelectedView() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
+		for (
+		Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
 			View view = (View) ((IAdaptable) element).getAdapter(View.class);
@@ -119,11 +122,18 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 	 * @return
 	 */
 	private String getJarLocation(String symbolicName) {
-		Bundle bundle = Platform.getBundle(symbolicName);
-		if (bundle != null)
-			return new StringBuffer().append(bundle.getLocation().replaceFirst("reference", "jar")).append("!/").toString();
-		else
-			return "";
+
+		try {
+			Bundle bundle = Platform.getBundle(symbolicName);
+			URL url = bundle.getEntry("/");
+			url = FileLocator.resolve(url);
+			return url.getFile();
+
+		} catch (IOException e) {
+		
+		}
+		
+		return "";
 	}
 
 	private void createInstance() {
@@ -131,7 +141,6 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 		if (selectedElement != null) {
 			if (selectedElement.eContainer() != null) {
 				if (selectedElement.eContainer().eResource() != null) {
-					ILaunch launch = null;
 
 					IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
@@ -156,7 +165,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 						IProject project = root.getProject(generateProject);
 						
 						// If the generation project is in the workspace - launch as java					
-						if (index>=0 && project.exists()) {
+						if (index>=0 && project.exists() && project.isOpen()) {
 
 							ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
 
@@ -166,14 +175,16 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							try {
 								workingCopy = type.newInstance(null, "generateXML");
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.internal.generate.Generate");
-								String cdaGenerateArguments = String.format(" \"%s\" \"%s\" \"%s\" \"%s\" ", file.getRawLocation().toOSString(), selectedElement.getName(),
+								String cdaGenerateArguments = String.format(" \"%s\" \"%s\" \"jar:%s\" \"jar:%s\" ", file.getRawLocation().toOSString(), selectedElement.getName(),
 										getJarLocation("org.eclipse.uml2.uml.resources"), getJarLocation("org.openhealthtools.mdht.uml.cda.resources"));
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, cdaGenerateArguments);
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, project.getName());
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
 								workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, true);
 								workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, false);
-								launch = workingCopy.launch(ILaunchManager.RUN_MODE, null);
+							
+								workingCopy.launch(ILaunchManager.RUN_MODE, null);
+								
 							} catch (CoreException e1) {
 								e1.printStackTrace();
 							}
