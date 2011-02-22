@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004, 2009 David A Carlson.
+ * Copyright (c) 2004, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -68,7 +68,7 @@ public class ModelSearch {
 	
 	public static List<Element> findAllOf(ResourceSet resourceSet, IElementFilter filter) {
 		List<Element> elementList = new ArrayList<Element>();
-		TreeIterator<EObject> iterator = EcoreUtil.getAllContents(resourceSet.getResources());
+		TreeIterator<EObject> iterator = EcoreUtil.getAllProperContents(resourceSet.getResources(), true);
 
 		while (iterator != null && iterator.hasNext()) {
 			Object element = iterator.next();
@@ -121,7 +121,7 @@ public class ModelSearch {
 	}
 	
 	//TODO include source object in params, also test Classifier::conformsTo
-	public static List<Element> findAllOf(Package umlPackage, Class type) {
+	public static List<Element> findAllOf(Package umlPackage, Class<?> type) {
 		List<Element> elementList = new ArrayList<Element>();
 		TreeIterator<EObject> iterator = umlPackage.eAllContents();
 
@@ -138,7 +138,7 @@ public class ModelSearch {
 		return elementList;
 	}
 
-	public static List<Element> findAllOf(Resource resource, Class type) {
+	public static List<Element> findAllOf(Resource resource, Class<?> type) {
 		List<Element> elementList = new ArrayList<Element>();
 		TreeIterator<EObject> iterator = EcoreUtil.getAllContents(resource, true);
 
@@ -155,9 +155,9 @@ public class ModelSearch {
 		return elementList;
 	}
 	
-	public static List<Element> findAllOf(ResourceSet resourceSet, Class type) {
+	public static List<Element> findAllOf(ResourceSet resourceSet, Class<?> type) {
 		List<Element> elementList = new ArrayList<Element>();
-		TreeIterator<Object> iterator = EcoreUtil.getAllContents(resourceSet.getResources(), true);
+		TreeIterator<Object> iterator = EcoreUtil.getAllProperContents(resourceSet.getResources(), true);
 
 		while (iterator != null && iterator.hasNext()) {
 			Object element = iterator.next();
