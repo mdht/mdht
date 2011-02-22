@@ -43,7 +43,7 @@ import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.uml2.uml.Class;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.ui.internal.generate.InstanceGenerator;
+import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.osgi.framework.Bundle;
 
 public class GenerateSampleInstanceAction implements IObjectActionDelegate {
@@ -174,7 +174,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							ILaunchConfigurationWorkingCopy workingCopy;
 							try {
 								workingCopy = type.newInstance(null, "generateXML");
-								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.internal.generate.Generate");
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.openhealthtools.mdht.uml.cda.core.internal.generate.Generate");
 								String cdaGenerateArguments = String.format(" \"%s\" \"%s\" \"jar:%s\" \"jar:%s\" ", file.getRawLocation().toOSString(), selectedElement.getName(),
 										getJarLocation("org.eclipse.uml2.uml.resources"), getJarLocation("org.openhealthtools.mdht.uml.cda.resources"));
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, cdaGenerateArguments);
@@ -182,7 +182,8 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true);
 								workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, true);
 								workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, false);
-							
+								workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_CLASSPATH_PROVIDER,"org.openhealthtools.mdht.uml.cda.ui.classpathProvider");
+								
 								workingCopy.launch(ILaunchManager.RUN_MODE, null);
 								
 							} catch (CoreException e1) {

@@ -30,7 +30,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.ui.filters,
- org.openhealthtools.mdht.uml.cda.ui.internal.generate,
  org.openhealthtools.mdht.uml.cda.ui.properties,
  org.openhealthtools.mdht.uml.cda.ui.providers,
  org.openhealthtools.mdht.uml.cda.ui.util
+Import-Package: org.eclipse.jdt.core
