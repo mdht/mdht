@@ -9,7 +9,6 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.openhealthtools.mdht.uml.cda,
  org.openhealthtools.mdht.uml.cda.impl,
- org.openhealthtools.mdht.uml.cda.internal.generate,
  org.openhealthtools.mdht.uml.cda.internal.registry;x-internal:=true,
  org.openhealthtools.mdht.uml.cda.internal.resource;x-internal:=true,
  org.openhealthtools.mdht.uml.cda.operations,
@@ -20,7 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport,
- org.openhealthtools.mdht.uml.hl7.rim;visibility:=reexport,
- org.openhealthtools.mdht.uml.cda.core;visibility:=reexport
+ org.openhealthtools.mdht.uml.hl7.rim;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.openhealthtools.mdht.uml.cda.CDAPlugin$Implementation
