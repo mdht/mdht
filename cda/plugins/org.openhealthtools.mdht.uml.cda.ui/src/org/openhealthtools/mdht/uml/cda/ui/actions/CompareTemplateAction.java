@@ -37,7 +37,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.internal.generate.InstanceGenerator;
+import org.openhealthtools.mdht.uml.cda.ui.internal.generate.InstanceGenerator;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;

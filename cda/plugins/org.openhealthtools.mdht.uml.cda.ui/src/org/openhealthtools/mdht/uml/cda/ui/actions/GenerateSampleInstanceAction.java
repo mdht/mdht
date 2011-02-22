@@ -43,7 +43,7 @@ import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.uml2.uml.Class;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.internal.generate.InstanceGenerator;
+import org.openhealthtools.mdht.uml.cda.ui.internal.generate.InstanceGenerator;
 import org.osgi.framework.Bundle;
 
 public class GenerateSampleInstanceAction implements IObjectActionDelegate {
