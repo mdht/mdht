@@ -175,12 +175,12 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		}
 		if (hasNullFlavor) {
 			if (cdaProperty.upperBound() == 1) {
-				nullFlavorBody = "not " + selfName + ".isNullFlavorUndefined() xor (" + body + ")";
+				nullFlavorBody = selfName + ".isNullFlavorDefined() xor (" + body + ")";
 			}
 			else {
 				// must have size()==1 to have nullFlavor
 				nullFlavorBody = "(" + selfName + "->size() = 1 and " 
-					+ selfName + "->forAll(element | not element.isNullFlavorUndefined()))"
+					+ selfName + "->forAll(element | element.isNullFlavorDefined()))"
 					+ " xor (" + body + ")";
 			}
 		}
