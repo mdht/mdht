@@ -13,12 +13,12 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import org.eclipse.emf.common.util.Enumerator;
+import java.util.List;
+
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
@@ -162,13 +162,35 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 			
 			return;
 		}
+
+		Property cdaProperty = CDAModelUtil.getCDAProperty(property);
+		String selfName = "self." + cdaProperty.getName();
+
+		String nullFlavorBody = body.toString();
+		boolean hasNullFlavor = false;
+		if (cdaProperty.getType() instanceof Class) {
+			List<String> parentNames = org.openhealthtools.mdht.uml.common.util.UMLUtil.getAllParentNames((Class)cdaProperty.getType());
+			if (parentNames.contains("ANY"))
+				hasNullFlavor = true;
+		}
+		if (hasNullFlavor) {
+			if (cdaProperty.upperBound() == 1) {
+				nullFlavorBody = "not " + selfName + ".isNullFlavorUndefined() xor (" + body + ")";
+			}
+			else {
+				// must have size()==1 to have nullFlavor
+				nullFlavorBody = "(" + selfName + "->size() = 1 and " 
+					+ selfName + "->forAll(element | not element.isNullFlavorUndefined()))"
+					+ " xor (" + body + ")";
+			}
+		}
 		
 		Constraint constraint = property.getClass_().createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(property.getClass_());
 
 		OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
-		expression.getBodies().add(body.toString());
+		expression.getBodies().add(nullFlavorBody);
 
 		addValidationSupport(property, constraintName);
 	}
