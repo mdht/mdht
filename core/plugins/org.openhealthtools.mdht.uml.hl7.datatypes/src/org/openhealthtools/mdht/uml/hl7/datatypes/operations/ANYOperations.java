@@ -6,6 +6,7 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 
 /**
@@ -16,7 +17,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#isNullFlavorDefined() <em>Is Null Flavor Defined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#isNullFlavorUndefined() <em>Is Null Flavor Undefined</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#hasContent() <em>Has Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,8 +40,31 @@ public class ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	public static boolean isNullFlavorDefined(ANY any) {
+		return any.isSetNullFlavor();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public static boolean isNullFlavorUndefined(ANY any) {
-		return (!any.isSetNullFlavor());
+		return !isNullFlavorDefined(any);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static  boolean hasContent(ANY any) {
+		for (EStructuralFeature feature : any.eClass().getEAllStructuralFeatures()) {
+			if (any.eIsSet(feature) && !"nullFlavor".equals(feature.getName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 } // ANYOperations

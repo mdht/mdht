@@ -2216,7 +2216,11 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEClass(anyEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, "ANY", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getANY_NullFlavor(), theVocabPackage.getNullFlavor(), "nullFlavor", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		addEOperation(anyEClass, ecorePackage.getEBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		addEOperation(anyEClass, ecorePackage.getEBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(anyEClass, ecorePackage.getEBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(binEClass, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, "BIN", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBIN_Representation(), this.getBinaryDataEncoding(), "representation", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

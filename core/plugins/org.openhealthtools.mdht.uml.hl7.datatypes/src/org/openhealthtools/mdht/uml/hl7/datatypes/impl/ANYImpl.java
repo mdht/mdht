@@ -134,8 +134,26 @@ public abstract class ANYImpl extends EObjectImpl implements ANY {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isNullFlavorDefined() {
+		return ANYOperations.isNullFlavorDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isNullFlavorUndefined() {
 		return ANYOperations.isNullFlavorUndefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasContent() {
+		return ANYOperations.hasContent(this);
 	}
 
 	/**
