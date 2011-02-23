@@ -61,7 +61,7 @@ public class ParentDocumentOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN";
+	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateClassCode(ParentDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' invariant operation.
@@ -77,7 +77,7 @@ public class ParentDocumentOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN
+	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN
 	 * @param parentDocument The receiving '<em><b>Parent Document</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

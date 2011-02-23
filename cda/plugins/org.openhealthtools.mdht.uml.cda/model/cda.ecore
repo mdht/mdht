@@ -6,10 +6,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ClinicalDocument" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.classCode=vocab::ActClassClinicalDocument::DOCCLIN"/>
+        <details key="body" value="self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.classCode=vocab::ActClassClinicalDocument::DOCCLIN"/>
+        <details key="documentation" value="self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3179,10 +3179,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ParentDocument" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN"/>
+        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN"/>
+        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
