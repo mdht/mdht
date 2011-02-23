@@ -14,7 +14,7 @@
       <ownedRule xmi:id="_o2V2cCVyEeCrtN9McWFciw" name="classCode" constrainedElement="_S9OzADxXEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_wAjaYCVyEeCrtN9McWFciw">
           <language>OCL</language>
-          <body>self.classCode=vocab::ActClassClinicalDocument::DOCCLIN</body>
+          <body>self.classCode=vocab::ActClinicalDocument::DOCCLIN</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_t4PNkCVzEeCrtN9McWFciw" name="moodCode" constrainedElement="_S9OzADxXEd6JwqSGecoePg">
@@ -8076,7 +8076,7 @@
       <ownedRule xmi:id="_iR7OwCgFEeCrtN9McWFciw" name="classCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_iR7OwSgFEeCrtN9McWFciw">
           <language>OCL</language>
-          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassClinicalDocument::DOCCLIN</body>
+          <body>not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_ik2KwCgFEeCrtN9McWFciw" name="moodCode" constrainedElement="_nNMFUEcEEd6besF9iFIJkQ">

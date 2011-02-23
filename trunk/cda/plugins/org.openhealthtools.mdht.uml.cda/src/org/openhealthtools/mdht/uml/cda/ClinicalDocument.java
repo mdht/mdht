@@ -856,11 +856,11 @@ public interface ClinicalDocument extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode=vocab::ActClassClinicalDocument::DOCCLIN
+	 * self.classCode=vocab::ActClinicalDocument::DOCCLIN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::ActClassClinicalDocument::DOCCLIN'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::ActClinicalDocument::DOCCLIN'"
 	 * @generated
 	 */
 	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);

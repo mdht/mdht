@@ -206,7 +206,7 @@ public class PatientOperations extends EntityOperations {
 	public static  EList<II> getIds(Patient patient) {
 		if (GET_IDS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PATIENT, CDAPackage.Literals.PATIENT.getEAllOperations().get(10));
+			helper.setOperationContext(CDAPackage.Literals.PATIENT, CDAPackage.Literals.PATIENT.getEAllOperations().get(13));
 			try {
 				GET_IDS__EOCL_QRY = helper.createQuery(GET_IDS__EOCL_EXP);
 			}
