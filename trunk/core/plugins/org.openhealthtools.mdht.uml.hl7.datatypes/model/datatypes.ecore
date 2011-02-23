@@ -4,7 +4,9 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datatypes"
     nsURI="http://www.openhealthtools.org/mdht/uml/hl7/datatypes" nsPrefix="datatypes">
   <eClassifiers xsi:type="ecore:EClass" name="ANY" abstract="true">
+    <eOperations name="isNullFlavorDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="isNullFlavorUndefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="hasContent" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
         unsettable="true"/>

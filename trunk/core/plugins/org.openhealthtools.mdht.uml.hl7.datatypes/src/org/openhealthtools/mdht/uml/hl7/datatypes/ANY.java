@@ -94,6 +94,22 @@ public interface ANY extends EObject {
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
+	boolean isNullFlavorDefined();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
 	boolean isNullFlavorUndefined();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean hasContent();
 
 } // ANY
