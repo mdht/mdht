@@ -71,6 +71,21 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zMQPgIX_Ed-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_1x7aoD9yEeCv4fYDBDbIQQ" name="isNullFlavorDefined" isQuery="true">
+        <ownedParameter xmi:id="_4kclkD9yEeCv4fYDBDbIQQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Nt2FYD9sEeCc54NTlfHrjw" name="isNullFlavorUndefined" isQuery="true">
+        <ownedParameter xmi:id="_VLbRQD9sEeCc54NTlfHrjw" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_aUcZgD9sEeCc54NTlfHrjw" name="hasContent" isQuery="true">
+        <ownedParameter xmi:id="_b9gCAD9sEeCc54NTlfHrjw" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZWm84IVfEd-9G7Mk0NuIMg" name="Entity" isAbstract="true">
       <generalization xmi:id="_pJgN4IVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>

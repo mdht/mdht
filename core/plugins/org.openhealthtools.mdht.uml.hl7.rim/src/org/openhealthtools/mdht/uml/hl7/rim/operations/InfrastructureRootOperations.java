@@ -7,6 +7,7 @@
 package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -24,6 +25,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#getTypeId() <em>Get Type Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#getTemplateIds() <em>Get Template Ids</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#getNullFlavor() <em>Get Null Flavor</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#isNullFlavorDefined() <em>Is Null Flavor Defined</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#isNullFlavorUndefined() <em>Is Null Flavor Undefined</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#hasContent() <em>Has Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +85,38 @@ public class InfrastructureRootOperations {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static boolean isNullFlavorDefined(InfrastructureRoot infrastructureRoot) {
+		return infrastructureRoot.eIsSet(infrastructureRoot.eClass().getEStructuralFeature("nullFlavor"));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static boolean isNullFlavorUndefined(InfrastructureRoot infrastructureRoot) {
+		return !isNullFlavorDefined(infrastructureRoot);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static boolean hasContent(InfrastructureRoot infrastructureRoot) {
+		for (EStructuralFeature feature : infrastructureRoot.eClass().getEAllStructuralFeatures()) {
+			if (infrastructureRoot.eIsSet(feature) && !"nullFlavor".equals(feature.getName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 } // InfrastructureRootOperations

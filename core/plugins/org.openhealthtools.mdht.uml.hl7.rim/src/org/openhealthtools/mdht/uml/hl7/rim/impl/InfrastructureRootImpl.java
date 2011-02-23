@@ -81,4 +81,31 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 		return InfrastructureRootOperations.getNullFlavor(this);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isNullFlavorDefined() {
+		return InfrastructureRootOperations.isNullFlavorDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isNullFlavorUndefined() {
+		return InfrastructureRootOperations.isNullFlavorUndefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasContent() {
+		return InfrastructureRootOperations.hasContent(this);
+	}
+
 } //InfrastructureRootImpl
