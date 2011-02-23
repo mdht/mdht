@@ -12,9 +12,11 @@
  */
 package org.openhealthtools.mdht.uml.cda.util;
 
+import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,15 +28,22 @@ import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.xml.XMLConstants;
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
@@ -89,7 +98,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
@@ -257,6 +269,49 @@ public class CDAUtil {
 			processDiagnostic(diagnostic, handler);
 		}
 		return diagnostic.getSeverity() != Diagnostic.ERROR;
+	}
+	
+	public static void performSchemaValidation(ClinicalDocument clinicalDocument, ValidationHandler handler) {
+		try {
+			Document document = CDAUtil.save(clinicalDocument, (DOMHandler) null);
+
+			URL url = CDAUtil.class.getResource("/samples/CDA.xsd");
+			if (url == null) {
+				url = new File("samples/CDA.xsd").toURI().toURL();
+			}
+
+			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+			Schema schema = factory.newSchema(new StreamSource(url.toExternalForm()));
+
+			Validator validator = schema.newValidator();
+			validator.setErrorHandler(new SchemaValidationHandler(handler));
+			validator.validate(new DOMSource(document));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static class SchemaValidationHandler implements ErrorHandler {
+		private ValidationHandler handler = null;
+		
+		public SchemaValidationHandler(ValidationHandler handler) {
+			this.handler = handler;
+		}
+		
+		public void error(SAXParseException exception) throws SAXException {
+			handler.handleError(createDiagnostic(Diagnostic.ERROR, exception.getMessage()));
+		}
+
+		public void fatalError(SAXParseException exception) throws SAXException {
+		}
+
+		public void warning(SAXParseException exception) throws SAXException {
+			handler.handleWarning(createDiagnostic(Diagnostic.WARNING, exception.getMessage()));
+		}
+		
+		private Diagnostic createDiagnostic(int severity, String message) {
+			return new BasicDiagnostic(severity, "javax.xml.validation.Validator", -1, message, null);
+		}
 	}
 
 	// iterative breadth-first traversal of diagnostic tree using queue

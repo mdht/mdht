@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RecordTarget;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil.ValidationHandler;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -110,7 +111,8 @@ public class Main {
 		System.out.println();
 
 		System.out.println("\n***** Sample validation results *****");
-		boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+		
+		ValidationHandler handler = new BasicValidationHandler() {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
@@ -119,7 +121,10 @@ public class Main {
 			public void handleWarning(Diagnostic diagnostic) {
 				System.out.println("WARNING: " + diagnostic.getMessage());
 			}
-		});
+		};
+		
+		CDAUtil.performSchemaValidation(clinicalDocument, handler);
+		boolean valid = CDAUtil.validate(clinicalDocument, handler);
 		
 		if (valid) {
 			System.out.println("Document is valid");
