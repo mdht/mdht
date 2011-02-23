@@ -311,6 +311,12 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(infrastructureRootEClass, theVocabPackage.getNullFlavor(), "getNullFlavor", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(participationEClass, Participation.class, "Participation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(participationEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);

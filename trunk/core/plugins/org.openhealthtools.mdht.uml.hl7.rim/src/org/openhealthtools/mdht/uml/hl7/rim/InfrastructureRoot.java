@@ -55,4 +55,28 @@ public interface InfrastructureRoot extends EObject {
 	 */
 	NullFlavor getNullFlavor();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isNullFlavorDefined();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isNullFlavorUndefined();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean hasContent();
+
 } // InfrastructureRoot
