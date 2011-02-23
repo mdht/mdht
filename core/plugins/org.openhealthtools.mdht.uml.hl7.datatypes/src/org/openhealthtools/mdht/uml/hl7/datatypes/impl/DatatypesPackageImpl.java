@@ -3232,6 +3232,18 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getCR_Name(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getCR_Value(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
 		   });										
 		addAnnotation
 		  (uidEDataType, 
