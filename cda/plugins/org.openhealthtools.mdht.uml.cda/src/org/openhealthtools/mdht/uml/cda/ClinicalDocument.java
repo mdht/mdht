@@ -23,7 +23,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.rim.Act;
-import org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
@@ -741,7 +741,7 @@ public interface ClinicalDocument extends Act {
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
 	 * The default value is <code>"DOCCLIN"</code>.
-	 * The literals are from the enumeration {@link org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument}.
+	 * The literals are from the enumeration {@link org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Class Code</em>' attribute isn't clear,
@@ -749,28 +749,28 @@ public interface ClinicalDocument extends Act {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
-	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument
 	 * @see #isSetClassCode()
 	 * @see #unsetClassCode()
-	 * @see #setClassCode(ActClassClinicalDocument)
+	 * @see #setClassCode(ActClinicalDocument)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_ClassCode()
 	 * @model default="DOCCLIN" unsettable="true" ordered="false"
 	 * @generated
 	 */
-	ActClassClinicalDocument getClassCode();
+	ActClinicalDocument getClassCode();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getClassCode <em>Class Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
-	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument
 	 * @see #isSetClassCode()
 	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
-	void setClassCode(ActClassClinicalDocument value);
+	void setClassCode(ActClinicalDocument value);
 
 	/**
 	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getClassCode <em>Class Code</em>}' attribute.
@@ -778,7 +778,7 @@ public interface ClinicalDocument extends Act {
 	 * <!-- end-user-doc -->
 	 * @see #isSetClassCode()
 	 * @see #getClassCode()
-	 * @see #setClassCode(ActClassClinicalDocument)
+	 * @see #setClassCode(ActClinicalDocument)
 	 * @generated
 	 */
 	void unsetClassCode();
@@ -790,7 +790,7 @@ public interface ClinicalDocument extends Act {
 	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
 	 * @see #unsetClassCode()
 	 * @see #getClassCode()
-	 * @see #setClassCode(ActClassClinicalDocument)
+	 * @see #setClassCode(ActClinicalDocument)
 	 * @generated
 	 */
 	boolean isSetClassCode();

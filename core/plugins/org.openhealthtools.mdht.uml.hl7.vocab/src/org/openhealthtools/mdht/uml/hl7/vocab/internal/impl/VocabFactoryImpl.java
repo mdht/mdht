@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
-import org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipFulfills;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipHasComponent;
@@ -139,8 +139,8 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 		switch (eDataType.getClassifierID()) {
 			case VocabPackage.ACT_CLASS:
 				return createActClassFromString(eDataType, initialValue);
-			case VocabPackage.ACT_CLASS_CLINICAL_DOCUMENT:
-				return createActClassClinicalDocumentFromString(eDataType, initialValue);
+			case VocabPackage.ACT_CLINICAL_DOCUMENT:
+				return createActClinicalDocumentFromString(eDataType, initialValue);
 			case VocabPackage.ACT_CLASS_DOCUMENT:
 				return createActClassDocumentFromString(eDataType, initialValue);
 			case VocabPackage.ACT_CLASS_OBSERVATION:
@@ -270,8 +270,8 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 		switch (eDataType.getClassifierID()) {
 			case VocabPackage.ACT_CLASS:
 				return convertActClassToString(eDataType, instanceValue);
-			case VocabPackage.ACT_CLASS_CLINICAL_DOCUMENT:
-				return convertActClassClinicalDocumentToString(eDataType, instanceValue);
+			case VocabPackage.ACT_CLINICAL_DOCUMENT:
+				return convertActClinicalDocumentToString(eDataType, instanceValue);
 			case VocabPackage.ACT_CLASS_DOCUMENT:
 				return convertActClassDocumentToString(eDataType, instanceValue);
 			case VocabPackage.ACT_CLASS_OBSERVATION:
@@ -416,8 +416,8 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActClassClinicalDocument createActClassClinicalDocumentFromString(EDataType eDataType, String initialValue) {
-		ActClassClinicalDocument result = ActClassClinicalDocument.get(initialValue);
+	public ActClinicalDocument createActClinicalDocumentFromString(EDataType eDataType, String initialValue) {
+		ActClinicalDocument result = ActClinicalDocument.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -427,7 +427,7 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertActClassClinicalDocumentToString(EDataType eDataType, Object instanceValue) {
+	public String convertActClinicalDocumentToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

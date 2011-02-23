@@ -74,7 +74,7 @@
     <eLiterals name="VERIF" value="67"/>
     <eLiterals name="XACT" value="68"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ActClassClinicalDocument">
+  <eClassifiers xsi:type="ecore:EEnum" name="ActClinicalDocument">
     <eLiterals name="CDALVLONE"/>
     <eLiterals name="DOCCLIN" value="1"/>
   </eClassifiers>

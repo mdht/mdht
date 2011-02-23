@@ -54,7 +54,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.rim.impl.ActImpl;
-import org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
@@ -408,7 +408,7 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActClassClinicalDocument CLASS_CODE_EDEFAULT = ActClassClinicalDocument.DOCCLIN;
+	protected static final ActClinicalDocument CLASS_CODE_EDEFAULT = ActClinicalDocument.DOCCLIN;
 
 	/**
 	 * The cached value of the '{@link #getClassCode() <em>Class Code</em>}' attribute.
@@ -418,7 +418,7 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 	 * @generated
 	 * @ordered
 	 */
-	protected ActClassClinicalDocument classCode = CLASS_CODE_EDEFAULT;
+	protected ActClinicalDocument classCode = CLASS_CODE_EDEFAULT;
 
 	/**
 	 * This is true if the Class Code attribute has been set.
@@ -1317,7 +1317,7 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActClassClinicalDocument getClassCode() {
+	public ActClinicalDocument getClassCode() {
 		return classCode;
 	}
 
@@ -1326,8 +1326,8 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClassCode(ActClassClinicalDocument newClassCode) {
-		ActClassClinicalDocument oldClassCode = classCode;
+	public void setClassCode(ActClinicalDocument newClassCode) {
+		ActClinicalDocument oldClassCode = classCode;
 		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
@@ -1341,7 +1341,7 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 	 * @generated
 	 */
 	public void unsetClassCode() {
-		ActClassClinicalDocument oldClassCode = classCode;
+		ActClinicalDocument oldClassCode = classCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
@@ -1765,7 +1765,7 @@ public class ClinicalDocumentImpl extends ActImpl implements ClinicalDocument {
 				setNullFlavor((NullFlavor)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE:
-				setClassCode((ActClassClinicalDocument)newValue);
+				setClassCode((ActClinicalDocument)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE:
 				setMoodCode((ActMood)newValue);

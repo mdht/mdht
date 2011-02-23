@@ -72,7 +72,7 @@
       <ownedLiteral xmi:id="__yVdlEDcEd6xYZuu1VKCVw" name="VERIF"/>
       <ownedLiteral xmi:id="__yVda0DcEd6xYZuu1VKCVw" name="XACT"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="__yVd2kDcEd6xYZuu1VKCVw" name="ActClassClinicalDocument">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="__yVd2kDcEd6xYZuu1VKCVw" name="ActClinicalDocument">
       <ownedLiteral xmi:id="__yVd3EDcEd6xYZuu1VKCVw" name="CDALVLONE"/>
       <ownedLiteral xmi:id="__yVd20DcEd6xYZuu1VKCVw" name="DOCCLIN"/>
     </packagedElement>

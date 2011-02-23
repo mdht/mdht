@@ -52,7 +52,7 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum actClassClinicalDocumentEEnum = null;
+	private EEnum actClinicalDocumentEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -529,11 +529,11 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getActClassClinicalDocument() {
-		if (actClassClinicalDocumentEEnum == null) {
-			actClassClinicalDocumentEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(1);
+	public EEnum getActClinicalDocument() {
+		if (actClinicalDocumentEEnum == null) {
+			actClinicalDocumentEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(1);
 		}
-		return actClassClinicalDocumentEEnum;
+		return actClinicalDocumentEEnum;
 	}
 
 	/**
