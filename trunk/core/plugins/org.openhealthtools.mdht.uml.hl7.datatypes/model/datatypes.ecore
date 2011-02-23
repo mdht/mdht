@@ -255,9 +255,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CR" eSuperTypes="#//ANY">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" ordered="false" eType="#//CV"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
-        eType="#//CD" containment="true"/>
+        eType="#//CD" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inverted" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>

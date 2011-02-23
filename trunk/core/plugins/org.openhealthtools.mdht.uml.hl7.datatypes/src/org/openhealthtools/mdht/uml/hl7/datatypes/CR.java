@@ -44,6 +44,7 @@ public interface CR extends ANY {
 	 * @see #setName(CV)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCR_Name()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	CV getName();
@@ -70,6 +71,7 @@ public interface CR extends ANY {
 	 * @see #setValue(CD)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCR_Value()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	CD getValue();
