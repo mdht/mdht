@@ -8,7 +8,6 @@
       <ownedLiteral xmi:id="__yVdYUDcEd6xYZuu1VKCVw" name="ACT"/>
       <ownedLiteral xmi:id="__yVdjEDcEd6xYZuu1VKCVw" name="ACTN"/>
       <ownedLiteral xmi:id="__yVdakDcEd6xYZuu1VKCVw" name="ADJUD"/>
-      <ownedLiteral xmi:id="__yVdkEDcEd6xYZuu1VKCVw" name="AEXPOS"/>
       <ownedLiteral xmi:id="__yVdlkDcEd6xYZuu1VKCVw" name="ALRT"/>
       <ownedLiteral xmi:id="__yVdgEDcEd6xYZuu1VKCVw" name="BATTERY"/>
       <ownedLiteral xmi:id="__yVdi0DcEd6xYZuu1VKCVw" name="CACT"/>
@@ -25,7 +24,6 @@
       <ownedLiteral xmi:id="__yVdaEDcEd6xYZuu1VKCVw" name="CONTREG"/>
       <ownedLiteral xmi:id="__yVdikDcEd6xYZuu1VKCVw" name="COV"/>
       <ownedLiteral xmi:id="__yVdZkDcEd6xYZuu1VKCVw" name="CTTEVENT"/>
-      <ownedLiteral xmi:id="__yVdoEDcEd6xYZuu1VKCVw" name="DETPOL"/>
       <ownedLiteral xmi:id="__yVdl0DcEd6xYZuu1VKCVw" name="DGIMG"/>
       <ownedLiteral xmi:id="__yVdvkDcEd6xYZuu1VKCVw" name="DIET"/>
       <ownedLiteral xmi:id="__yVdaUDcEd6xYZuu1VKCVw" name="DISPACT"/>
@@ -36,46 +34,28 @@
       <ownedLiteral xmi:id="__yVdgkDcEd6xYZuu1VKCVw" name="EHR"/>
       <ownedLiteral xmi:id="__yVdeEDcEd6xYZuu1VKCVw" name="ENC"/>
       <ownedLiteral xmi:id="__yVdfkDcEd6xYZuu1VKCVw" name="ENTRY"/>
-      <ownedLiteral xmi:id="__yVdoUDcEd6xYZuu1VKCVw" name="EXP"/>
-      <ownedLiteral xmi:id="__yVdj0DcEd6xYZuu1VKCVw" name="EXPOS"/>
       <ownedLiteral xmi:id="__yVdgUDcEd6xYZuu1VKCVw" name="EXTRACT"/>
       <ownedLiteral xmi:id="__yVdiUDcEd6xYZuu1VKCVw" name="FCNTRCT"/>
       <ownedLiteral xmi:id="__yVdeUDcEd6xYZuu1VKCVw" name="FOLDER"/>
-      <ownedLiteral xmi:id="__yVdnUDcEd6xYZuu1VKCVw" name="GEN"/>
-      <ownedLiteral xmi:id="__yVdrEDcEd6xYZuu1VKCVw" name="ImagingSubjectOrientation"/>
       <ownedLiteral xmi:id="__yVdbEDcEd6xYZuu1VKCVw" name="INC"/>
       <ownedLiteral xmi:id="__yVdjUDcEd6xYZuu1VKCVw" name="INFO"/>
       <ownedLiteral xmi:id="__yVdbUDcEd6xYZuu1VKCVw" name="INFRM"/>
       <ownedLiteral xmi:id="__yVdbkDcEd6xYZuu1VKCVw" name="INVE"/>
       <ownedLiteral xmi:id="__yVdmEDcEd6xYZuu1VKCVw" name="INVSTG"/>
-      <ownedLiteral xmi:id="__yVdt0DcEd6xYZuu1VKCVw" name="JURISPOL"/>
       <ownedLiteral xmi:id="__yVddkDcEd6xYZuu1VKCVw" name="LIST"/>
-      <ownedLiteral xmi:id="__yVdrkDcEd6xYZuu1VKCVw" name="LLD"/>
-      <ownedLiteral xmi:id="__yVdokDcEd6xYZuu1VKCVw" name="LOC"/>
       <ownedLiteral xmi:id="__yVdb0DcEd6xYZuu1VKCVw" name="MPROT"/>
       <ownedLiteral xmi:id="__yVdkkDcEd6xYZuu1VKCVw" name="OBS"/>
       <ownedLiteral xmi:id="__yVdpkDcEd6xYZuu1VKCVw" name="OBSCOR"/>
       <ownedLiteral xmi:id="__yVdpUDcEd6xYZuu1VKCVw" name="OBSSER"/>
       <ownedLiteral xmi:id="__yVdg0DcEd6xYZuu1VKCVw" name="ORGANIZER"/>
-      <ownedLiteral xmi:id="__yVduEDcEd6xYZuu1VKCVw" name="ORGPOL"/>
       <ownedLiteral xmi:id="__yVdnEDcEd6xYZuu1VKCVw" name="OUTB"/>
       <ownedLiteral xmi:id="__yVdd0DcEd6xYZuu1VKCVw" name="PCPR"/>
-      <ownedLiteral xmi:id="__yVdo0DcEd6xYZuu1VKCVw" name="PHN"/>
-      <ownedLiteral xmi:id="__yVdpEDcEd6xYZuu1VKCVw" name="POL"/>
-      <ownedLiteral xmi:id="__yVdtkDcEd6xYZuu1VKCVw" name="POLICY"/>
-      <ownedLiteral xmi:id="__yVdp0DcEd6xYZuu1VKCVw" name="POS"/>
-      <ownedLiteral xmi:id="__yVdqEDcEd6xYZuu1VKCVw" name="POSACC"/>
-      <ownedLiteral xmi:id="__yVdqUDcEd6xYZuu1VKCVw" name="POSCOORD"/>
-      <ownedLiteral xmi:id="__yVdr0DcEd6xYZuu1VKCVw" name="PRN"/>
       <ownedLiteral xmi:id="__yVdu0DcEd6xYZuu1VKCVw" name="PROC"/>
       <ownedLiteral xmi:id="__yVdcEDcEd6xYZuu1VKCVw" name="REG"/>
       <ownedLiteral xmi:id="__yVdcUDcEd6xYZuu1VKCVw" name="REV"/>
-      <ownedLiteral xmi:id="__yVdsEDcEd6xYZuu1VKCVw" name="RLD"/>
       <ownedLiteral xmi:id="__yVdqkDcEd6xYZuu1VKCVw" name="ROIBND"/>
       <ownedLiteral xmi:id="__yVdq0DcEd6xYZuu1VKCVw" name="ROIOVL"/>
-      <ownedLiteral xmi:id="__yVdtEDcEd6xYZuu1VKCVw" name="RTRD"/>
       <ownedLiteral xmi:id="__yVdc0DcEd6xYZuu1VKCVw" name="SBADM"/>
-      <ownedLiteral xmi:id="__yVduUDcEd6xYZuu1VKCVw" name="SCOPOL"/>
       <ownedLiteral xmi:id="__yVdnkDcEd6xYZuu1VKCVw" name="SEQ"/>
       <ownedLiteral xmi:id="__yVdn0DcEd6xYZuu1VKCVw" name="SEQVAR"/>
       <ownedLiteral xmi:id="__yVdrUDcEd6xYZuu1VKCVw" name="SFWL"/>
@@ -86,13 +66,8 @@
       <ownedLiteral xmi:id="__yVdvUDcEd6xYZuu1VKCVw" name="SPLY"/>
       <ownedLiteral xmi:id="__yVdjkDcEd6xYZuu1VKCVw" name="STC"/>
       <ownedLiteral xmi:id="__yVdukDcEd6xYZuu1VKCVw" name="STDPOL"/>
-      <ownedLiteral xmi:id="__yVdskDcEd6xYZuu1VKCVw" name="STN"/>
       <ownedLiteral xmi:id="__yVdYkDcEd6xYZuu1VKCVw" name="SUBST"/>
-      <ownedLiteral xmi:id="__yVds0DcEd6xYZuu1VKCVw" name="SUP"/>
-      <ownedLiteral xmi:id="__yVdkUDcEd6xYZuu1VKCVw" name="TEXPOS"/>
       <ownedLiteral xmi:id="__yVdh0DcEd6xYZuu1VKCVw" name="TOPIC"/>
-      <ownedLiteral xmi:id="__yVdtUDcEd6xYZuu1VKCVw" name="TRD"/>
-      <ownedLiteral xmi:id="__yVddEDcEd6xYZuu1VKCVw" name="TRFR"/>
       <ownedLiteral xmi:id="__yVddUDcEd6xYZuu1VKCVw" name="TRNS"/>
       <ownedLiteral xmi:id="__yVdlEDcEd6xYZuu1VKCVw" name="VERIF"/>
       <ownedLiteral xmi:id="__yVda0DcEd6xYZuu1VKCVw" name="XACT"/>
@@ -112,37 +87,15 @@
       <ownedLiteral xmi:id="__yVedEDcEd6xYZuu1VKCVw" name="CLNTRL"/>
       <ownedLiteral xmi:id="__yVeckDcEd6xYZuu1VKCVw" name="CNOD"/>
       <ownedLiteral xmi:id="__yVeeUDcEd6xYZuu1VKCVw" name="COND"/>
-      <ownedLiteral xmi:id="__yVef0DcEd6xYZuu1VKCVw" name="DETPOL"/>
       <ownedLiteral xmi:id="__yVedkDcEd6xYZuu1VKCVw" name="DGIMG"/>
-      <ownedLiteral xmi:id="__yVegEDcEd6xYZuu1VKCVw" name="EXP"/>
-      <ownedLiteral xmi:id="__yVefEDcEd6xYZuu1VKCVw" name="GEN"/>
-      <ownedLiteral xmi:id="__yVei0DcEd6xYZuu1VKCVw" name="ImagingSubjectOrientation"/>
       <ownedLiteral xmi:id="__yVed0DcEd6xYZuu1VKCVw" name="INVSTG"/>
-      <ownedLiteral xmi:id="__yVejUDcEd6xYZuu1VKCVw" name="LLD"/>
-      <ownedLiteral xmi:id="__yVegUDcEd6xYZuu1VKCVw" name="LOC"/>
       <ownedLiteral xmi:id="__yVecUDcEd6xYZuu1VKCVw" name="OBS"/>
       <ownedLiteral xmi:id="__yVehUDcEd6xYZuu1VKCVw" name="OBSCOR"/>
       <ownedLiteral xmi:id="__yVehEDcEd6xYZuu1VKCVw" name="OBSSER"/>
       <ownedLiteral xmi:id="__yVee0DcEd6xYZuu1VKCVw" name="OUTB"/>
-      <ownedLiteral xmi:id="__yVegkDcEd6xYZuu1VKCVw" name="PHN"/>
-      <ownedLiteral xmi:id="__yVeg0DcEd6xYZuu1VKCVw" name="POL"/>
-      <ownedLiteral xmi:id="__yVehkDcEd6xYZuu1VKCVw" name="POS"/>
-      <ownedLiteral xmi:id="__yVeh0DcEd6xYZuu1VKCVw" name="POSACC"/>
-      <ownedLiteral xmi:id="__yVeiEDcEd6xYZuu1VKCVw" name="POSCOORD"/>
-      <ownedLiteral xmi:id="__yVejkDcEd6xYZuu1VKCVw" name="PRN"/>
-      <ownedLiteral xmi:id="__yVej0DcEd6xYZuu1VKCVw" name="RLD"/>
       <ownedLiteral xmi:id="__yVeiUDcEd6xYZuu1VKCVw" name="ROIBND"/>
       <ownedLiteral xmi:id="__yVeikDcEd6xYZuu1VKCVw" name="ROIOVL"/>
-      <ownedLiteral xmi:id="__yVek0DcEd6xYZuu1VKCVw" name="RTRD"/>
-      <ownedLiteral xmi:id="__yVefUDcEd6xYZuu1VKCVw" name="SEQ"/>
-      <ownedLiteral xmi:id="__yVefkDcEd6xYZuu1VKCVw" name="SEQVAR"/>
-      <ownedLiteral xmi:id="__yVejEDcEd6xYZuu1VKCVw" name="SFWL"/>
-      <ownedLiteral xmi:id="__yVekEDcEd6xYZuu1VKCVw" name="SIT"/>
       <ownedLiteral xmi:id="__yVeeEDcEd6xYZuu1VKCVw" name="SPCOBS"/>
-      <ownedLiteral xmi:id="__yVekUDcEd6xYZuu1VKCVw" name="STN"/>
-      <ownedLiteral xmi:id="__yVekkDcEd6xYZuu1VKCVw" name="SUP"/>
-      <ownedLiteral xmi:id="__yVelEDcEd6xYZuu1VKCVw" name="TRD"/>
-      <ownedLiteral xmi:id="__yVec0DcEd6xYZuu1VKCVw" name="VERIF"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yVe2UDcEd6xYZuu1VKCVw" name="ActClassRoot">
       <ownedLiteral xmi:id="__yVe3UDcEd6xYZuu1VKCVw" name="ACCM"/>
@@ -151,7 +104,6 @@
       <ownedLiteral xmi:id="__yVe2kDcEd6xYZuu1VKCVw" name="ACT"/>
       <ownedLiteral xmi:id="__yVfBUDcEd6xYZuu1VKCVw" name="ACTN"/>
       <ownedLiteral xmi:id="__yVe40DcEd6xYZuu1VKCVw" name="ADJUD"/>
-      <ownedLiteral xmi:id="__yVfCUDcEd6xYZuu1VKCVw" name="AEXPOS"/>
       <ownedLiteral xmi:id="__yVfD0DcEd6xYZuu1VKCVw" name="ALRT"/>
       <ownedLiteral xmi:id="__yVe-UDcEd6xYZuu1VKCVw" name="BATTERY"/>
       <ownedLiteral xmi:id="__yVfBEDcEd6xYZuu1VKCVw" name="CACT"/>
@@ -168,7 +120,6 @@
       <ownedLiteral xmi:id="__yVe4UDcEd6xYZuu1VKCVw" name="CONTREG"/>
       <ownedLiteral xmi:id="__yVfA0DcEd6xYZuu1VKCVw" name="COV"/>
       <ownedLiteral xmi:id="__yVe30DcEd6xYZuu1VKCVw" name="CTTEVENT"/>
-      <ownedLiteral xmi:id="__yVfGUDcEd6xYZuu1VKCVw" name="DETPOL"/>
       <ownedLiteral xmi:id="__yVfEEDcEd6xYZuu1VKCVw" name="DGIMG"/>
       <ownedLiteral xmi:id="__yVfN0DcEd6xYZuu1VKCVw" name="DIET"/>
       <ownedLiteral xmi:id="__yVe4kDcEd6xYZuu1VKCVw" name="DISPACT"/>
@@ -179,63 +130,34 @@
       <ownedLiteral xmi:id="__yVe-0DcEd6xYZuu1VKCVw" name="EHR"/>
       <ownedLiteral xmi:id="__yVe8UDcEd6xYZuu1VKCVw" name="ENC"/>
       <ownedLiteral xmi:id="__yVe90DcEd6xYZuu1VKCVw" name="ENTRY"/>
-      <ownedLiteral xmi:id="__yVfGkDcEd6xYZuu1VKCVw" name="EXP"/>
-      <ownedLiteral xmi:id="__yVfCEDcEd6xYZuu1VKCVw" name="EXPOS"/>
       <ownedLiteral xmi:id="__yVe-kDcEd6xYZuu1VKCVw" name="EXTRACT"/>
       <ownedLiteral xmi:id="__yVfAkDcEd6xYZuu1VKCVw" name="FCNTRCT"/>
       <ownedLiteral xmi:id="__yVe8kDcEd6xYZuu1VKCVw" name="FOLDER"/>
-      <ownedLiteral xmi:id="__yVfFkDcEd6xYZuu1VKCVw" name="GEN"/>
-      <ownedLiteral xmi:id="__yVfJUDcEd6xYZuu1VKCVw" name="ImagingSubjectOrientation"/>
       <ownedLiteral xmi:id="__yVe5UDcEd6xYZuu1VKCVw" name="INC"/>
       <ownedLiteral xmi:id="__yVfBkDcEd6xYZuu1VKCVw" name="INFO"/>
       <ownedLiteral xmi:id="__yVe5kDcEd6xYZuu1VKCVw" name="INFRM"/>
       <ownedLiteral xmi:id="__yVe50DcEd6xYZuu1VKCVw" name="INVE"/>
       <ownedLiteral xmi:id="__yVfEUDcEd6xYZuu1VKCVw" name="INVSTG"/>
-      <ownedLiteral xmi:id="__yVfMEDcEd6xYZuu1VKCVw" name="JURISPOL"/>
       <ownedLiteral xmi:id="__yVe70DcEd6xYZuu1VKCVw" name="LIST"/>
-      <ownedLiteral xmi:id="__yVfJ0DcEd6xYZuu1VKCVw" name="LLD"/>
-      <ownedLiteral xmi:id="__yVfG0DcEd6xYZuu1VKCVw" name="LOC"/>
       <ownedLiteral xmi:id="__yVe6EDcEd6xYZuu1VKCVw" name="MPROT"/>
       <ownedLiteral xmi:id="__yVfC0DcEd6xYZuu1VKCVw" name="OBS"/>
       <ownedLiteral xmi:id="__yVfH0DcEd6xYZuu1VKCVw" name="OBSCOR"/>
       <ownedLiteral xmi:id="__yVfHkDcEd6xYZuu1VKCVw" name="OBSSER"/>
       <ownedLiteral xmi:id="__yVe_EDcEd6xYZuu1VKCVw" name="ORGANIZER"/>
-      <ownedLiteral xmi:id="__yVfMUDcEd6xYZuu1VKCVw" name="ORGPOL"/>
       <ownedLiteral xmi:id="__yVfFUDcEd6xYZuu1VKCVw" name="OUTB"/>
       <ownedLiteral xmi:id="__yVe8EDcEd6xYZuu1VKCVw" name="PCPR"/>
-      <ownedLiteral xmi:id="__yVfHEDcEd6xYZuu1VKCVw" name="PHN"/>
-      <ownedLiteral xmi:id="__yVfHUDcEd6xYZuu1VKCVw" name="POL"/>
-      <ownedLiteral xmi:id="__yVfL0DcEd6xYZuu1VKCVw" name="POLICY"/>
-      <ownedLiteral xmi:id="__yVfIEDcEd6xYZuu1VKCVw" name="POS"/>
-      <ownedLiteral xmi:id="__yVfIUDcEd6xYZuu1VKCVw" name="POSACC"/>
-      <ownedLiteral xmi:id="__yVfIkDcEd6xYZuu1VKCVw" name="POSCOORD"/>
-      <ownedLiteral xmi:id="__yVfKEDcEd6xYZuu1VKCVw" name="PRN"/>
       <ownedLiteral xmi:id="__yVfNEDcEd6xYZuu1VKCVw" name="PROC"/>
       <ownedLiteral xmi:id="__yVe6UDcEd6xYZuu1VKCVw" name="REG"/>
       <ownedLiteral xmi:id="__yVe6kDcEd6xYZuu1VKCVw" name="REV"/>
-      <ownedLiteral xmi:id="__yVfKUDcEd6xYZuu1VKCVw" name="RLD"/>
       <ownedLiteral xmi:id="__yVfI0DcEd6xYZuu1VKCVw" name="ROIBND"/>
       <ownedLiteral xmi:id="__yVfJEDcEd6xYZuu1VKCVw" name="ROIOVL"/>
-      <ownedLiteral xmi:id="__yVfLUDcEd6xYZuu1VKCVw" name="RTRD"/>
       <ownedLiteral xmi:id="__yVe7EDcEd6xYZuu1VKCVw" name="SBADM"/>
-      <ownedLiteral xmi:id="__yVfMkDcEd6xYZuu1VKCVw" name="SCOPOL"/>
-      <ownedLiteral xmi:id="__yVfF0DcEd6xYZuu1VKCVw" name="SEQ"/>
-      <ownedLiteral xmi:id="__yVfGEDcEd6xYZuu1VKCVw" name="SEQVAR"/>
-      <ownedLiteral xmi:id="__yVfJkDcEd6xYZuu1VKCVw" name="SFWL"/>
-      <ownedLiteral xmi:id="__yVfKkDcEd6xYZuu1VKCVw" name="SIT"/>
       <ownedLiteral xmi:id="__yVfEkDcEd6xYZuu1VKCVw" name="SPCOBS"/>
       <ownedLiteral xmi:id="__yVe60DcEd6xYZuu1VKCVw" name="SPCTRT"/>
-      <ownedLiteral xmi:id="__yVfNUDcEd6xYZuu1VKCVw" name="SPECCOLLECT"/>
       <ownedLiteral xmi:id="__yVfNkDcEd6xYZuu1VKCVw" name="SPLY"/>
       <ownedLiteral xmi:id="__yVfB0DcEd6xYZuu1VKCVw" name="STC"/>
-      <ownedLiteral xmi:id="__yVfM0DcEd6xYZuu1VKCVw" name="STDPOL"/>
-      <ownedLiteral xmi:id="__yVfK0DcEd6xYZuu1VKCVw" name="STN"/>
       <ownedLiteral xmi:id="__yVe20DcEd6xYZuu1VKCVw" name="SUBST"/>
-      <ownedLiteral xmi:id="__yVfLEDcEd6xYZuu1VKCVw" name="SUP"/>
-      <ownedLiteral xmi:id="__yVfCkDcEd6xYZuu1VKCVw" name="TEXPOS"/>
       <ownedLiteral xmi:id="__yVfAEDcEd6xYZuu1VKCVw" name="TOPIC"/>
-      <ownedLiteral xmi:id="__yVfLkDcEd6xYZuu1VKCVw" name="TRD"/>
-      <ownedLiteral xmi:id="__yVe7UDcEd6xYZuu1VKCVw" name="TRFR"/>
       <ownedLiteral xmi:id="__yVe7kDcEd6xYZuu1VKCVw" name="TRNS"/>
       <ownedLiteral xmi:id="__yVfDUDcEd6xYZuu1VKCVw" name="VERIF"/>
       <ownedLiteral xmi:id="__yVe5EDcEd6xYZuu1VKCVw" name="XACT"/>
@@ -247,11 +169,9 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yeW3UDcEd6xYZuu1VKCVw" name="ActMood">
       <ownedLiteral xmi:id="__yeW4UDcEd6xYZuu1VKCVw" name="APT"/>
       <ownedLiteral xmi:id="__yeW4kDcEd6xYZuu1VKCVw" name="ARQ"/>
-      <ownedLiteral xmi:id="__yeW7kDcEd6xYZuu1VKCVw" name="CRT"/>
       <ownedLiteral xmi:id="__yeW3kDcEd6xYZuu1VKCVw" name="DEF"/>
       <ownedLiteral xmi:id="__yeW30DcEd6xYZuu1VKCVw" name="EVN"/>
       <ownedLiteral xmi:id="__yeW70DcEd6xYZuu1VKCVw" name="EVN.CRT"/>
-      <ownedLiteral xmi:id="__yeW6UDcEd6xYZuu1VKCVw" name="EXPEC"/>
       <ownedLiteral xmi:id="__yeW6EDcEd6xYZuu1VKCVw" name="GOL"/>
       <ownedLiteral xmi:id="__yeW4EDcEd6xYZuu1VKCVw" name="INT"/>
       <ownedLiteral xmi:id="__yeW6kDcEd6xYZuu1VKCVw" name="OPT"/>
@@ -259,9 +179,7 @@
       <ownedLiteral xmi:id="__yeW7EDcEd6xYZuu1VKCVw" name="PERMRQ"/>
       <ownedLiteral xmi:id="__yeW40DcEd6xYZuu1VKCVw" name="PRMS"/>
       <ownedLiteral xmi:id="__yeW5kDcEd6xYZuu1VKCVw" name="PRP"/>
-      <ownedLiteral xmi:id="__yeW50DcEd6xYZuu1VKCVw" name="RMD"/>
       <ownedLiteral xmi:id="__yeW5EDcEd6xYZuu1VKCVw" name="RQO"/>
-      <ownedLiteral xmi:id="__yeW7UDcEd6xYZuu1VKCVw" name="RSK"/>
       <ownedLiteral xmi:id="__yeW5UDcEd6xYZuu1VKCVw" name="SLOT"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yeZrkDcEd6xYZuu1VKCVw" name="ActRelationshipFulfills">
@@ -280,7 +198,6 @@
       <ownedLiteral xmi:id="__yea2EDcEd6xYZuu1VKCVw" name="APND"/>
       <ownedLiteral xmi:id="__yeasUDcEd6xYZuu1VKCVw" name="ARR"/>
       <ownedLiteral xmi:id="__yeau0DcEd6xYZuu1VKCVw" name="AUTH"/>
-      <ownedLiteral xmi:id="__yeaqEDcEd6xYZuu1VKCVw" name="BLOCK"/>
       <ownedLiteral xmi:id="__yeaw0DcEd6xYZuu1VKCVw" name="CAUS"/>
       <ownedLiteral xmi:id="__yeaykDcEd6xYZuu1VKCVw" name="CHRG"/>
       <ownedLiteral xmi:id="__yeapEDcEd6xYZuu1VKCVw" name="CIND"/>
@@ -289,15 +206,11 @@
       <ownedLiteral xmi:id="__yeavEDcEd6xYZuu1VKCVw" name="COVBY"/>
       <ownedLiteral xmi:id="__yeazEDcEd6xYZuu1VKCVw" name="CREDIT"/>
       <ownedLiteral xmi:id="__yeas0DcEd6xYZuu1VKCVw" name="CTRLV"/>
-      <ownedLiteral xmi:id="__yeaq0DcEd6xYZuu1VKCVw" name="CURE"/>
-      <ownedLiteral xmi:id="__yeaqUDcEd6xYZuu1VKCVw" name="CUREADJ"/>
       <ownedLiteral xmi:id="__yeazUDcEd6xYZuu1VKCVw" name="DEBIT"/>
       <ownedLiteral xmi:id="__yeaskDcEd6xYZuu1VKCVw" name="DEP"/>
-      <ownedLiteral xmi:id="__yearEDcEd6xYZuu1VKCVw" name="DIAG"/>
       <ownedLiteral xmi:id="__yea00DcEd6xYZuu1VKCVw" name="DOC"/>
       <ownedLiteral xmi:id="__yeawkDcEd6xYZuu1VKCVw" name="DRIV"/>
       <ownedLiteral xmi:id="__yeavUDcEd6xYZuu1VKCVw" name="ELNK"/>
-      <ownedLiteral xmi:id="__yeax0DcEd6xYZuu1VKCVw" name="EVID"/>
       <ownedLiteral xmi:id="__yeavkDcEd6xYZuu1VKCVw" name="EXPL"/>
       <ownedLiteral xmi:id="__yea40DcEd6xYZuu1VKCVw" name="FLFS"/>
       <ownedLiteral xmi:id="__yea1UDcEd6xYZuu1VKCVw" name="GEN"/>
@@ -308,9 +221,7 @@
       <ownedLiteral xmi:id="__yeaxkDcEd6xYZuu1VKCVw" name="LIMIT"/>
       <ownedLiteral xmi:id="__yeaxEDcEd6xYZuu1VKCVw" name="MFST"/>
       <ownedLiteral xmi:id="__yearkDcEd6xYZuu1VKCVw" name="MITGT"/>
-      <ownedLiteral xmi:id="__yea2kDcEd6xYZuu1VKCVw" name="MOD"/>
       <ownedLiteral xmi:id="__yea2UDcEd6xYZuu1VKCVw" name="MTCH"/>
-      <ownedLiteral xmi:id="__yeaqkDcEd6xYZuu1VKCVw" name="MTGTADJ"/>
       <ownedLiteral xmi:id="__yeaukDcEd6xYZuu1VKCVw" name="NAME"/>
       <ownedLiteral xmi:id="__yeat0DcEd6xYZuu1VKCVw" name="OBJC"/>
       <ownedLiteral xmi:id="__yeauEDcEd6xYZuu1VKCVw" name="OBJF"/>
@@ -321,15 +232,12 @@
       <ownedLiteral xmi:id="__yeauUDcEd6xYZuu1VKCVw" name="PERT"/>
       <ownedLiteral xmi:id="__yeapUDcEd6xYZuu1VKCVw" name="PRCN"/>
       <ownedLiteral xmi:id="__yeav0DcEd6xYZuu1VKCVw" name="PREV"/>
-      <ownedLiteral xmi:id="__yea20DcEd6xYZuu1VKCVw" name="RCHAL"/>
-      <ownedLiteral xmi:id="__year0DcEd6xYZuu1VKCVw" name="RCVY"/>
       <ownedLiteral xmi:id="__yeayEDcEd6xYZuu1VKCVw" name="REFR"/>
       <ownedLiteral xmi:id="__yeawEDcEd6xYZuu1VKCVw" name="REFV"/>
       <ownedLiteral xmi:id="__yea3UDcEd6xYZuu1VKCVw" name="REV"/>
       <ownedLiteral xmi:id="__yeatkDcEd6xYZuu1VKCVw" name="RISK"/>
       <ownedLiteral xmi:id="__yea3EDcEd6xYZuu1VKCVw" name="RPLC"/>
       <ownedLiteral xmi:id="__yeap0DcEd6xYZuu1VKCVw" name="RSON"/>
-      <ownedLiteral xmi:id="__yea0EDcEd6xYZuu1VKCVw" name="SAE"/>
       <ownedLiteral xmi:id="__yea0UDcEd6xYZuu1VKCVw" name="SAS"/>
       <ownedLiteral xmi:id="__yea5kDcEd6xYZuu1VKCVw" name="SCH"/>
       <ownedLiteral xmi:id="__yea0kDcEd6xYZuu1VKCVw" name="SEQL"/>
@@ -338,7 +246,6 @@
       <ownedLiteral xmi:id="__yeawUDcEd6xYZuu1VKCVw" name="SUBJ"/>
       <ownedLiteral xmi:id="__yea3kDcEd6xYZuu1VKCVw" name="SUCC"/>
       <ownedLiteral xmi:id="__yeayUDcEd6xYZuu1VKCVw" name="SUMM"/>
-      <ownedLiteral xmi:id="__yearUDcEd6xYZuu1VKCVw" name="SYMP"/>
       <ownedLiteral xmi:id="__yeapkDcEd6xYZuu1VKCVw" name="TRIG"/>
       <ownedLiteral xmi:id="__yea4EDcEd6xYZuu1VKCVw" name="UPDT"/>
       <ownedLiteral xmi:id="__yea4kDcEd6xYZuu1VKCVw" name="VRXCRPT"/>
@@ -498,11 +405,11 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yoOBUDcEd6xYZuu1VKCVw" name="EntityDeterminer">
       <ownedLiteral xmi:id="__yoOBkDcEd6xYZuu1VKCVw" name="INSTANCE"/>
       <ownedLiteral xmi:id="__yoOB0DcEd6xYZuu1VKCVw" name="KIND"/>
-      <ownedLiteral xmi:id="__yoOCEDcEd6xYZuu1VKCVw" name="QUANTIFIEDKIND"/>
+      <ownedLiteral xmi:id="__yoOCEDcEd6xYZuu1VKCVw" name="QUANITFIED_KIND"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yoOC0DcEd6xYZuu1VKCVw" name="EntityDeterminerDetermined">
       <ownedLiteral xmi:id="__yoODEDcEd6xYZuu1VKCVw" name="KIND"/>
-      <ownedLiteral xmi:id="__yoODUDcEd6xYZuu1VKCVw" name="QUANTIFIEDKIND"/>
+      <ownedLiteral xmi:id="__yoODUDcEd6xYZuu1VKCVw" name="QUANTIFIED_KIND"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yoOKUDcEd6xYZuu1VKCVw" name="EntityNamePartQualifier">
       <ownedLiteral xmi:id="__yoOLUDcEd6xYZuu1VKCVw" name="AC"/>
@@ -532,7 +439,6 @@
       <ownedLiteral xmi:id="__yoOT0DcEd6xYZuu1VKCVw" name="I"/>
       <ownedLiteral xmi:id="__yoOTUDcEd6xYZuu1VKCVw" name="IDE"/>
       <ownedLiteral xmi:id="__yoOSkDcEd6xYZuu1VKCVw" name="L"/>
-      <ownedLiteral xmi:id="__yoOS0DcEd6xYZuu1VKCVw" name="OR"/>
       <ownedLiteral xmi:id="__yoOVUDcEd6xYZuu1VKCVw" name="P"/>
       <ownedLiteral xmi:id="__yoOSUDcEd6xYZuu1VKCVw" name="PHON"/>
       <ownedLiteral xmi:id="__yoOUUDcEd6xYZuu1VKCVw" name="R"/>
@@ -541,8 +447,8 @@
       <ownedLiteral xmi:id="__yoOTkDcEd6xYZuu1VKCVw" name="SYL"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yx4IEDcEd6xYZuu1VKCVw" name="IntegrityCheckAlgorithm">
-      <ownedLiteral xmi:id="__yx4IUDcEd6xYZuu1VKCVw" name="SHA1"/>
-      <ownedLiteral xmi:id="__yx4IkDcEd6xYZuu1VKCVw" name="SHA256"/>
+      <ownedLiteral xmi:id="__yx4IUDcEd6xYZuu1VKCVw" name="SHA-1"/>
+      <ownedLiteral xmi:id="__yx4IkDcEd6xYZuu1VKCVw" name="SHA-256"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__yyDSUDcEd6xYZuu1VKCVw" name="NullFlavor">
       <ownedLiteral xmi:id="__yyDVUDcEd6xYZuu1VKCVw" name="ASKU"/>
@@ -554,10 +460,9 @@
       <ownedLiteral xmi:id="__yyDT0DcEd6xYZuu1VKCVw" name="NINF"/>
       <ownedLiteral xmi:id="__yyDTkDcEd6xYZuu1VKCVw" name="OTH"/>
       <ownedLiteral xmi:id="__yyDUEDcEd6xYZuu1VKCVw" name="PINF"/>
-      <ownedLiteral xmi:id="__yyDUkDcEd6xYZuu1VKCVw" name="QS"/>
       <ownedLiteral xmi:id="__yyDVEDcEd6xYZuu1VKCVw" name="TRC"/>
-      <ownedLiteral xmi:id="__yyDTUDcEd6xYZuu1VKCVw" name="UNC"/>
       <ownedLiteral xmi:id="__yyDUUDcEd6xYZuu1VKCVw" name="UNK"/>
+      <ownedLiteral xmi:id="_gGa7ED6vEeCjmqRfHzEYTQ" name="NP"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__y7BIEDcEd6xYZuu1VKCVw" name="ParticipationPhysicalPerformer">
       <ownedLiteral xmi:id="__y7BIkDcEd6xYZuu1VKCVw" name="DIST"/>
@@ -584,7 +489,6 @@
       <ownedLiteral xmi:id="__y7BsUDcEd6xYZuu1VKCVw" name="AUTHEN"/>
       <ownedLiteral xmi:id="__y7BnkDcEd6xYZuu1VKCVw" name="BBY"/>
       <ownedLiteral xmi:id="__y7BhkDcEd6xYZuu1VKCVw" name="BEN"/>
-      <ownedLiteral xmi:id="__y7Bh0DcEd6xYZuu1VKCVw" name="CAGNT"/>
       <ownedLiteral xmi:id="__y7BgEDcEd6xYZuu1VKCVw" name="CALLBCK"/>
       <ownedLiteral xmi:id="__y7BgUDcEd6xYZuu1VKCVw" name="CON"/>
       <ownedLiteral xmi:id="__y7BiEDcEd6xYZuu1VKCVw" name="COV"/>
@@ -599,11 +503,6 @@
       <ownedLiteral xmi:id="__y7BrEDcEd6xYZuu1VKCVw" name="ELOC"/>
       <ownedLiteral xmi:id="__y7BkUDcEd6xYZuu1VKCVw" name="ENT"/>
       <ownedLiteral xmi:id="__y7Bg0DcEd6xYZuu1VKCVw" name="ESC"/>
-      <ownedLiteral xmi:id="__y7BnUDcEd6xYZuu1VKCVw" name="EXPAGNT"/>
-      <ownedLiteral xmi:id="__y7BokDcEd6xYZuu1VKCVw" name="EXPART"/>
-      <ownedLiteral xmi:id="__y7BpEDcEd6xYZuu1VKCVw" name="EXPTRGT"/>
-      <ownedLiteral xmi:id="__y7Bo0DcEd6xYZuu1VKCVw" name="EXSRC"/>
-      <ownedLiteral xmi:id="__y7BiUDcEd6xYZuu1VKCVw" name="GUAR"/>
       <ownedLiteral xmi:id="__y7BikDcEd6xYZuu1VKCVw" name="HLD"/>
       <ownedLiteral xmi:id="__y7BhUDcEd6xYZuu1VKCVw" name="IND"/>
       <ownedLiteral xmi:id="__y7BjkDcEd6xYZuu1VKCVw" name="INF"/>
@@ -613,7 +512,6 @@
       <ownedLiteral xmi:id="__y7Bl0DcEd6xYZuu1VKCVw" name="NOT"/>
       <ownedLiteral xmi:id="__y7BpkDcEd6xYZuu1VKCVw" name="NRD"/>
       <ownedLiteral xmi:id="__y7BrUDcEd6xYZuu1VKCVw" name="ORG"/>
-      <ownedLiteral xmi:id="__y7Be0DcEd6xYZuu1VKCVw" name="PART"/>
       <ownedLiteral xmi:id="__y7BmkDcEd6xYZuu1VKCVw" name="PPRF"/>
       <ownedLiteral xmi:id="__y7BlUDcEd6xYZuu1VKCVw" name="PRCP"/>
       <ownedLiteral xmi:id="__y7BoUDcEd6xYZuu1VKCVw" name="PRD"/>
@@ -629,7 +527,6 @@
       <ownedLiteral xmi:id="__y7BqEDcEd6xYZuu1VKCVw" name="SBJ"/>
       <ownedLiteral xmi:id="__y7BqUDcEd6xYZuu1VKCVw" name="SPC"/>
       <ownedLiteral xmi:id="__y7Bm0DcEd6xYZuu1VKCVw" name="SPRF"/>
-      <ownedLiteral xmi:id="__y7BkEDcEd6xYZuu1VKCVw" name="TRANS"/>
       <ownedLiteral xmi:id="__y7BlkDcEd6xYZuu1VKCVw" name="TRC"/>
       <ownedLiteral xmi:id="__y7Br0DcEd6xYZuu1VKCVw" name="VIA"/>
       <ownedLiteral xmi:id="__y7BsEDcEd6xYZuu1VKCVw" name="VRF"/>
@@ -653,22 +550,16 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__zE2iEDcEd6xYZuu1VKCVw" name="RoleClass">
       <ownedLiteral xmi:id="__zE2sUDcEd6xYZuu1VKCVw" name="ACCESS"/>
       <ownedLiteral xmi:id="__zE22EDcEd6xYZuu1VKCVw" name="ACTI"/>
-      <ownedLiteral xmi:id="__zE22UDcEd6xYZuu1VKCVw" name="ACTIB"/>
-      <ownedLiteral xmi:id="__zE22kDcEd6xYZuu1VKCVw" name="ACTIM"/>
-      <ownedLiteral xmi:id="__zE220DcEd6xYZuu1VKCVw" name="ACTIR"/>
       <ownedLiteral xmi:id="__zE230DcEd6xYZuu1VKCVw" name="ACTM"/>
-      <ownedLiteral xmi:id="__zE2sEDcEd6xYZuu1VKCVw" name="ADMM"/>
       <ownedLiteral xmi:id="__zE20UDcEd6xYZuu1VKCVw" name="ADTV"/>
-      <ownedLiteral xmi:id="__zE2jEDcEd6xYZuu1VKCVw" name="AFFL"/>
       <ownedLiteral xmi:id="__zE2mUDcEd6xYZuu1VKCVw" name="AGNT"/>
       <ownedLiteral xmi:id="__zE24UDcEd6xYZuu1VKCVw" name="ALQT"/>
       <ownedLiteral xmi:id="__zE2m0DcEd6xYZuu1VKCVw" name="ASSIGNED"/>
       <ownedLiteral xmi:id="__zE20kDcEd6xYZuu1VKCVw" name="BASE"/>
       <ownedLiteral xmi:id="__zE2skDcEd6xYZuu1VKCVw" name="BIRTHPL"/>
       <ownedLiteral xmi:id="__zE2ikDcEd6xYZuu1VKCVw" name="CAREGIVER"/>
-      <ownedLiteral xmi:id="__zE2q0DcEd6xYZuu1VKCVw" name="CASEBJ"/>
+      <ownedLiteral xmi:id="_qjZjYD7HEeCjmqRfHzEYTQ" name="CASESBJ"/>
       <ownedLiteral xmi:id="__zE2jUDcEd6xYZuu1VKCVw" name="CIT"/>
-      <ownedLiteral xmi:id="__zE2okDcEd6xYZuu1VKCVw" name="CLAIM"/>
       <ownedLiteral xmi:id="__zE21EDcEd6xYZuu1VKCVw" name="COLR"/>
       <ownedLiteral xmi:id="__zE2nEDcEd6xYZuu1VKCVw" name="COMPAR"/>
       <ownedLiteral xmi:id="__zE2nkDcEd6xYZuu1VKCVw" name="CON"/>
@@ -676,18 +567,12 @@
       <ownedLiteral xmi:id="__zE2oUDcEd6xYZuu1VKCVw" name="COVPTY"/>
       <ownedLiteral xmi:id="__zE2jkDcEd6xYZuu1VKCVw" name="CRINV"/>
       <ownedLiteral xmi:id="__zE2j0DcEd6xYZuu1VKCVw" name="CRSPNSR"/>
-      <ownedLiteral xmi:id="__zE2uUDcEd6xYZuu1VKCVw" name="DEATHPLC"/>
-      <ownedLiteral xmi:id="__zE2pUDcEd6xYZuu1VKCVw" name="DEPEN"/>
       <ownedLiteral xmi:id="__zE2wkDcEd6xYZuu1VKCVw" name="DSDLOC"/>
       <ownedLiteral xmi:id="__zE2vUDcEd6xYZuu1VKCVw" name="DST"/>
       <ownedLiteral xmi:id="__zE2n0DcEd6xYZuu1VKCVw" name="ECON"/>
       <ownedLiteral xmi:id="__zE2qEDcEd6xYZuu1VKCVw" name="EMP"/>
-      <ownedLiteral xmi:id="__zE2yEDcEd6xYZuu1VKCVw" name="EQUIV"/>
-      <ownedLiteral xmi:id="__zE2zUDcEd6xYZuu1VKCVw" name="EXPAGTCAR"/>
       <ownedLiteral xmi:id="__zE2s0DcEd6xYZuu1VKCVw" name="EXPR"/>
-      <ownedLiteral xmi:id="__zE2zkDcEd6xYZuu1VKCVw" name="EXPVECTOR"/>
       <ownedLiteral xmi:id="__zE21UDcEd6xYZuu1VKCVw" name="FLVR"/>
-      <ownedLiteral xmi:id="__zE2z0DcEd6xYZuu1VKCVw" name="FOMITE"/>
       <ownedLiteral xmi:id="__zE2xkDcEd6xYZuu1VKCVw" name="GEN"/>
       <ownedLiteral xmi:id="__zE2x0DcEd6xYZuu1VKCVw" name="GRIC"/>
       <ownedLiteral xmi:id="__zE2kUDcEd6xYZuu1VKCVw" name="GUAR"/>
@@ -696,7 +581,6 @@
       <ownedLiteral xmi:id="__zE2tEDcEd6xYZuu1VKCVw" name="HLTHCHRT"/>
       <ownedLiteral xmi:id="__zE200DcEd6xYZuu1VKCVw" name="IACT"/>
       <ownedLiteral xmi:id="__zE2tkDcEd6xYZuu1VKCVw" name="IDENT"/>
-      <ownedLiteral xmi:id="__zE2pkDcEd6xYZuu1VKCVw" name="INDIV"/>
       <ownedLiteral xmi:id="__zE20EDcEd6xYZuu1VKCVw" name="INGR"/>
       <ownedLiteral xmi:id="__zE2xEDcEd6xYZuu1VKCVw" name="INST"/>
       <ownedLiteral xmi:id="__zE2qkDcEd6xYZuu1VKCVw" name="INVSBJ"/>
@@ -708,7 +592,6 @@
       <ownedLiteral xmi:id="__zE2zEDcEd6xYZuu1VKCVw" name="MBR"/>
       <ownedLiteral xmi:id="__zE2qUDcEd6xYZuu1VKCVw" name="MIL"/>
       <ownedLiteral xmi:id="__zE2t0DcEd6xYZuu1VKCVw" name="MNT"/>
-      <ownedLiteral xmi:id="__zE2pEDcEd6xYZuu1VKCVw" name="NAMED"/>
       <ownedLiteral xmi:id="__zE2oEDcEd6xYZuu1VKCVw" name="NOK"/>
       <ownedLiteral xmi:id="__zE2r0DcEd6xYZuu1VKCVw" name="NOT"/>
       <ownedLiteral xmi:id="__zE2uEDcEd6xYZuu1VKCVw" name="OWN"/>
@@ -717,7 +600,6 @@
       <ownedLiteral xmi:id="__zE2lEDcEd6xYZuu1VKCVw" name="PAYEE"/>
       <ownedLiteral xmi:id="__zE2kkDcEd6xYZuu1VKCVw" name="PAYOR"/>
       <ownedLiteral xmi:id="__zE2lUDcEd6xYZuu1VKCVw" name="POLHOLD"/>
-      <ownedLiteral xmi:id="__zE2o0DcEd6xYZuu1VKCVw" name="PROG"/>
       <ownedLiteral xmi:id="__zE2rkDcEd6xYZuu1VKCVw" name="PROV"/>
       <ownedLiteral xmi:id="__zE2i0DcEd6xYZuu1VKCVw" name="PRS"/>
       <ownedLiteral xmi:id="__zE21kDcEd6xYZuu1VKCVw" name="PRSV"/>
@@ -726,7 +608,6 @@
       <ownedLiteral xmi:id="__zE2vkDcEd6xYZuu1VKCVw" name="RET"/>
       <ownedLiteral xmi:id="__zE2ukDcEd6xYZuu1VKCVw" name="RGPR"/>
       <ownedLiteral xmi:id="__zE2iUDcEd6xYZuu1VKCVw" name="ROL"/>
-      <ownedLiteral xmi:id="__zE2yUDcEd6xYZuu1VKCVw" name="SAME"/>
       <ownedLiteral xmi:id="__zE2wUDcEd6xYZuu1VKCVw" name="SDLOC"/>
       <ownedLiteral xmi:id="__zE2nUDcEd6xYZuu1VKCVw" name="SGNOFF"/>
       <ownedLiteral xmi:id="__zE24EDcEd6xYZuu1VKCVw" name="SPEC"/>
@@ -735,7 +616,6 @@
       <ownedLiteral xmi:id="__zE2l0DcEd6xYZuu1VKCVw" name="STD"/>
       <ownedLiteral xmi:id="__zE23UDcEd6xYZuu1VKCVw" name="STOR"/>
       <ownedLiteral xmi:id="__zE2xUDcEd6xYZuu1VKCVw" name="SUBS"/>
-      <ownedLiteral xmi:id="__zE2p0DcEd6xYZuu1VKCVw" name="SUBSCR"/>
       <ownedLiteral xmi:id="__zE2ykDcEd6xYZuu1VKCVw" name="SUBY"/>
       <ownedLiteral xmi:id="__zE2u0DcEd6xYZuu1VKCVw" name="TERR"/>
       <ownedLiteral xmi:id="__zE2wEDcEd6xYZuu1VKCVw" name="THER"/>
@@ -752,22 +632,17 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__zE3C0DcEd6xYZuu1VKCVw" name="RoleClassAssociative">
       <ownedLiteral xmi:id="__zE3M0DcEd6xYZuu1VKCVw" name="ACCESS"/>
-      <ownedLiteral xmi:id="__zE3MkDcEd6xYZuu1VKCVw" name="ADMM"/>
-      <ownedLiteral xmi:id="__zE3DkDcEd6xYZuu1VKCVw" name="AFFL"/>
       <ownedLiteral xmi:id="__zE3G0DcEd6xYZuu1VKCVw" name="AGNT"/>
       <ownedLiteral xmi:id="__zE3HUDcEd6xYZuu1VKCVw" name="ASSIGNED"/>
       <ownedLiteral xmi:id="__zE3NEDcEd6xYZuu1VKCVw" name="BIRTHPL"/>
       <ownedLiteral xmi:id="__zE3DEDcEd6xYZuu1VKCVw" name="CAREGIVER"/>
-      <ownedLiteral xmi:id="__zE3LUDcEd6xYZuu1VKCVw" name="CASEBJ"/>
+      <ownedLiteral xmi:id="_ELsBoD7HEeCjmqRfHzEYTQ" name="CASESBJ"/>
       <ownedLiteral xmi:id="__zE3D0DcEd6xYZuu1VKCVw" name="CIT"/>
-      <ownedLiteral xmi:id="__zE3JEDcEd6xYZuu1VKCVw" name="CLAIM"/>
       <ownedLiteral xmi:id="__zE3HkDcEd6xYZuu1VKCVw" name="COMPAR"/>
       <ownedLiteral xmi:id="__zE3IEDcEd6xYZuu1VKCVw" name="CON"/>
       <ownedLiteral xmi:id="__zE3I0DcEd6xYZuu1VKCVw" name="COVPTY"/>
       <ownedLiteral xmi:id="__zE3EEDcEd6xYZuu1VKCVw" name="CRINV"/>
       <ownedLiteral xmi:id="__zE3EUDcEd6xYZuu1VKCVw" name="CRSPNSR"/>
-      <ownedLiteral xmi:id="__zE3O0DcEd6xYZuu1VKCVw" name="DEATHPLC"/>
-      <ownedLiteral xmi:id="__zE3J0DcEd6xYZuu1VKCVw" name="DEPEN"/>
       <ownedLiteral xmi:id="__zE3REDcEd6xYZuu1VKCVw" name="DSDLOC"/>
       <ownedLiteral xmi:id="__zE3P0DcEd6xYZuu1VKCVw" name="DST"/>
       <ownedLiteral xmi:id="__zE3IUDcEd6xYZuu1VKCVw" name="ECON"/>
@@ -778,14 +653,12 @@
       <ownedLiteral xmi:id="__zE3N0DcEd6xYZuu1VKCVw" name="HLD"/>
       <ownedLiteral xmi:id="__zE3NkDcEd6xYZuu1VKCVw" name="HLTHCHRT"/>
       <ownedLiteral xmi:id="__zE3OEDcEd6xYZuu1VKCVw" name="IDENT"/>
-      <ownedLiteral xmi:id="__zE3KEDcEd6xYZuu1VKCVw" name="INDIV"/>
       <ownedLiteral xmi:id="__zE3LEDcEd6xYZuu1VKCVw" name="INVSBJ"/>
       <ownedLiteral xmi:id="__zE3RUDcEd6xYZuu1VKCVw" name="ISDLOC"/>
       <ownedLiteral xmi:id="__zE3L0DcEd6xYZuu1VKCVw" name="LIC"/>
       <ownedLiteral xmi:id="__zE3QUDcEd6xYZuu1VKCVw" name="MANU"/>
       <ownedLiteral xmi:id="__zE3K0DcEd6xYZuu1VKCVw" name="MIL"/>
       <ownedLiteral xmi:id="__zE3OUDcEd6xYZuu1VKCVw" name="MNT"/>
-      <ownedLiteral xmi:id="__zE3JkDcEd6xYZuu1VKCVw" name="NAMED"/>
       <ownedLiteral xmi:id="__zE3IkDcEd6xYZuu1VKCVw" name="NOK"/>
       <ownedLiteral xmi:id="__zE3MUDcEd6xYZuu1VKCVw" name="NOT"/>
       <ownedLiteral xmi:id="__zE3OkDcEd6xYZuu1VKCVw" name="OWN"/>
@@ -793,7 +666,6 @@
       <ownedLiteral xmi:id="__zE3FkDcEd6xYZuu1VKCVw" name="PAYEE"/>
       <ownedLiteral xmi:id="__zE3FEDcEd6xYZuu1VKCVw" name="PAYOR"/>
       <ownedLiteral xmi:id="__zE3F0DcEd6xYZuu1VKCVw" name="POLHOLD"/>
-      <ownedLiteral xmi:id="__zE3JUDcEd6xYZuu1VKCVw" name="PROG"/>
       <ownedLiteral xmi:id="__zE3MEDcEd6xYZuu1VKCVw" name="PROV"/>
       <ownedLiteral xmi:id="__zE3DUDcEd6xYZuu1VKCVw" name="PRS"/>
       <ownedLiteral xmi:id="__zE3GEDcEd6xYZuu1VKCVw" name="QUAL"/>
@@ -804,7 +676,6 @@
       <ownedLiteral xmi:id="__zE3H0DcEd6xYZuu1VKCVw" name="SGNOFF"/>
       <ownedLiteral xmi:id="__zE3EkDcEd6xYZuu1VKCVw" name="SPNSR"/>
       <ownedLiteral xmi:id="__zE3GUDcEd6xYZuu1VKCVw" name="STD"/>
-      <ownedLiteral xmi:id="__zE3KUDcEd6xYZuu1VKCVw" name="SUBSCR"/>
       <ownedLiteral xmi:id="__zE3PUDcEd6xYZuu1VKCVw" name="TERR"/>
       <ownedLiteral xmi:id="__zE3QkDcEd6xYZuu1VKCVw" name="THER"/>
       <ownedLiteral xmi:id="__zE3GkDcEd6xYZuu1VKCVw" name="UNDWRT"/>
@@ -815,35 +686,29 @@
       <ownedLiteral xmi:id="__zE350DcEd6xYZuu1VKCVw" name="THER"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__zE37kDcEd6xYZuu1VKCVw" name="RoleClassMutualRelationship">
-      <ownedLiteral xmi:id="__zE38UDcEd6xYZuu1VKCVw" name="AFFL"/>
       <ownedLiteral xmi:id="__zE3_kDcEd6xYZuu1VKCVw" name="AGNT"/>
       <ownedLiteral xmi:id="__zE4AEDcEd6xYZuu1VKCVw" name="ASSIGNED"/>
       <ownedLiteral xmi:id="__zE370DcEd6xYZuu1VKCVw" name="CAREGIVER"/>
-      <ownedLiteral xmi:id="__zE4EEDcEd6xYZuu1VKCVw" name="CASEBJ"/>
+      <ownedLiteral xmi:id="_t5pi8D7GEeCjmqRfHzEYTQ" name="CASESBJ"/>
       <ownedLiteral xmi:id="__zE38kDcEd6xYZuu1VKCVw" name="CIT"/>
-      <ownedLiteral xmi:id="__zE4B0DcEd6xYZuu1VKCVw" name="CLAIM"/>
       <ownedLiteral xmi:id="__zE4AUDcEd6xYZuu1VKCVw" name="COMPAR"/>
       <ownedLiteral xmi:id="__zE4A0DcEd6xYZuu1VKCVw" name="CON"/>
       <ownedLiteral xmi:id="__zE4BkDcEd6xYZuu1VKCVw" name="COVPTY"/>
       <ownedLiteral xmi:id="__zE380DcEd6xYZuu1VKCVw" name="CRINV"/>
       <ownedLiteral xmi:id="__zE39EDcEd6xYZuu1VKCVw" name="CRSPNSR"/>
-      <ownedLiteral xmi:id="__zE4CkDcEd6xYZuu1VKCVw" name="DEPEN"/>
       <ownedLiteral xmi:id="__zE4BEDcEd6xYZuu1VKCVw" name="ECON"/>
       <ownedLiteral xmi:id="__zE4DUDcEd6xYZuu1VKCVw" name="EMP"/>
       <ownedLiteral xmi:id="__zE39kDcEd6xYZuu1VKCVw" name="GUAR"/>
       <ownedLiteral xmi:id="__zE3_0DcEd6xYZuu1VKCVw" name="GUARD"/>
-      <ownedLiteral xmi:id="__zE4C0DcEd6xYZuu1VKCVw" name="INDIV"/>
       <ownedLiteral xmi:id="__zE4D0DcEd6xYZuu1VKCVw" name="INVSBJ"/>
       <ownedLiteral xmi:id="__zE4EkDcEd6xYZuu1VKCVw" name="LIC"/>
       <ownedLiteral xmi:id="__zE4DkDcEd6xYZuu1VKCVw" name="MIL"/>
-      <ownedLiteral xmi:id="__zE4CUDcEd6xYZuu1VKCVw" name="NAMED"/>
       <ownedLiteral xmi:id="__zE4BUDcEd6xYZuu1VKCVw" name="NOK"/>
       <ownedLiteral xmi:id="__zE4FEDcEd6xYZuu1VKCVw" name="NOT"/>
       <ownedLiteral xmi:id="__zE3-EDcEd6xYZuu1VKCVw" name="PAT"/>
       <ownedLiteral xmi:id="__zE3-UDcEd6xYZuu1VKCVw" name="PAYEE"/>
       <ownedLiteral xmi:id="__zE390DcEd6xYZuu1VKCVw" name="PAYOR"/>
       <ownedLiteral xmi:id="__zE3-kDcEd6xYZuu1VKCVw" name="POLHOLD"/>
-      <ownedLiteral xmi:id="__zE4CEDcEd6xYZuu1VKCVw" name="PROG"/>
       <ownedLiteral xmi:id="__zE4E0DcEd6xYZuu1VKCVw" name="PROV"/>
       <ownedLiteral xmi:id="__zE38EDcEd6xYZuu1VKCVw" name="PRS"/>
       <ownedLiteral xmi:id="__zE3-0DcEd6xYZuu1VKCVw" name="QUAL"/>
@@ -851,28 +716,21 @@
       <ownedLiteral xmi:id="__zE4AkDcEd6xYZuu1VKCVw" name="SGNOFF"/>
       <ownedLiteral xmi:id="__zE39UDcEd6xYZuu1VKCVw" name="SPNSR"/>
       <ownedLiteral xmi:id="__zE3_EDcEd6xYZuu1VKCVw" name="STD"/>
-      <ownedLiteral xmi:id="__zE4DEDcEd6xYZuu1VKCVw" name="SUBSCR"/>
       <ownedLiteral xmi:id="__zE3_UDcEd6xYZuu1VKCVw" name="UNDWRT"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__zE4tEDcEd6xYZuu1VKCVw" name="RoleClassRoot">
       <ownedLiteral xmi:id="__zE43UDcEd6xYZuu1VKCVw" name="ACCESS"/>
       <ownedLiteral xmi:id="__zE5BEDcEd6xYZuu1VKCVw" name="ACTI"/>
-      <ownedLiteral xmi:id="__zE5BUDcEd6xYZuu1VKCVw" name="ACTIB"/>
-      <ownedLiteral xmi:id="__zE5BkDcEd6xYZuu1VKCVw" name="ACTIM"/>
-      <ownedLiteral xmi:id="__zE5B0DcEd6xYZuu1VKCVw" name="ACTIR"/>
       <ownedLiteral xmi:id="__zE5C0DcEd6xYZuu1VKCVw" name="ACTM"/>
-      <ownedLiteral xmi:id="__zE43EDcEd6xYZuu1VKCVw" name="ADMM"/>
       <ownedLiteral xmi:id="__zE4_UDcEd6xYZuu1VKCVw" name="ADTV"/>
-      <ownedLiteral xmi:id="__zE4uEDcEd6xYZuu1VKCVw" name="AFFL"/>
       <ownedLiteral xmi:id="__zE4xUDcEd6xYZuu1VKCVw" name="AGNT"/>
       <ownedLiteral xmi:id="__zE5DUDcEd6xYZuu1VKCVw" name="ALQT"/>
       <ownedLiteral xmi:id="__zE4x0DcEd6xYZuu1VKCVw" name="ASSIGNED"/>
       <ownedLiteral xmi:id="__zE4_kDcEd6xYZuu1VKCVw" name="BASE"/>
       <ownedLiteral xmi:id="__zE43kDcEd6xYZuu1VKCVw" name="BIRTHPL"/>
       <ownedLiteral xmi:id="__zE4tkDcEd6xYZuu1VKCVw" name="CAREGIVER"/>
-      <ownedLiteral xmi:id="__zE410DcEd6xYZuu1VKCVw" name="CASEBJ"/>
+      <ownedLiteral xmi:id="_XlZoUD7HEeCjmqRfHzEYTQ" name="CASESBJ"/>
       <ownedLiteral xmi:id="__zE4uUDcEd6xYZuu1VKCVw" name="CIT"/>
-      <ownedLiteral xmi:id="__zE4zkDcEd6xYZuu1VKCVw" name="CLAIM"/>
       <ownedLiteral xmi:id="__zE5AEDcEd6xYZuu1VKCVw" name="COLR"/>
       <ownedLiteral xmi:id="__zE4yEDcEd6xYZuu1VKCVw" name="COMPAR"/>
       <ownedLiteral xmi:id="__zE4ykDcEd6xYZuu1VKCVw" name="CON"/>
@@ -880,18 +738,12 @@
       <ownedLiteral xmi:id="__zE4zUDcEd6xYZuu1VKCVw" name="COVPTY"/>
       <ownedLiteral xmi:id="__zE4ukDcEd6xYZuu1VKCVw" name="CRINV"/>
       <ownedLiteral xmi:id="__zE4u0DcEd6xYZuu1VKCVw" name="CRSPNSR"/>
-      <ownedLiteral xmi:id="__zE45UDcEd6xYZuu1VKCVw" name="DEATHPLC"/>
-      <ownedLiteral xmi:id="__zE40UDcEd6xYZuu1VKCVw" name="DEPEN"/>
       <ownedLiteral xmi:id="__zE47kDcEd6xYZuu1VKCVw" name="DSDLOC"/>
       <ownedLiteral xmi:id="__zE46UDcEd6xYZuu1VKCVw" name="DST"/>
       <ownedLiteral xmi:id="__zE4y0DcEd6xYZuu1VKCVw" name="ECON"/>
       <ownedLiteral xmi:id="__zE41EDcEd6xYZuu1VKCVw" name="EMP"/>
-      <ownedLiteral xmi:id="__zE49EDcEd6xYZuu1VKCVw" name="EQUIV"/>
-      <ownedLiteral xmi:id="__zE4-UDcEd6xYZuu1VKCVw" name="EXPAGTCAR"/>
       <ownedLiteral xmi:id="__zE430DcEd6xYZuu1VKCVw" name="EXPR"/>
-      <ownedLiteral xmi:id="__zE4-kDcEd6xYZuu1VKCVw" name="EXPVECTOR"/>
       <ownedLiteral xmi:id="__zE5AUDcEd6xYZuu1VKCVw" name="FLVR"/>
-      <ownedLiteral xmi:id="__zE4-0DcEd6xYZuu1VKCVw" name="FOMITE"/>
       <ownedLiteral xmi:id="__zE48kDcEd6xYZuu1VKCVw" name="GEN"/>
       <ownedLiteral xmi:id="__zE480DcEd6xYZuu1VKCVw" name="GRIC"/>
       <ownedLiteral xmi:id="__zE4vUDcEd6xYZuu1VKCVw" name="GUAR"/>
@@ -900,7 +752,6 @@
       <ownedLiteral xmi:id="__zE44EDcEd6xYZuu1VKCVw" name="HLTHCHRT"/>
       <ownedLiteral xmi:id="__zE4_0DcEd6xYZuu1VKCVw" name="IACT"/>
       <ownedLiteral xmi:id="__zE44kDcEd6xYZuu1VKCVw" name="IDENT"/>
-      <ownedLiteral xmi:id="__zE40kDcEd6xYZuu1VKCVw" name="INDIV"/>
       <ownedLiteral xmi:id="__zE4_EDcEd6xYZuu1VKCVw" name="INGR"/>
       <ownedLiteral xmi:id="__zE48EDcEd6xYZuu1VKCVw" name="INST"/>
       <ownedLiteral xmi:id="__zE41kDcEd6xYZuu1VKCVw" name="INVSBJ"/>
@@ -912,7 +763,6 @@
       <ownedLiteral xmi:id="__zE4-EDcEd6xYZuu1VKCVw" name="MBR"/>
       <ownedLiteral xmi:id="__zE41UDcEd6xYZuu1VKCVw" name="MIL"/>
       <ownedLiteral xmi:id="__zE440DcEd6xYZuu1VKCVw" name="MNT"/>
-      <ownedLiteral xmi:id="__zE40EDcEd6xYZuu1VKCVw" name="NAMED"/>
       <ownedLiteral xmi:id="__zE4zEDcEd6xYZuu1VKCVw" name="NOK"/>
       <ownedLiteral xmi:id="__zE420DcEd6xYZuu1VKCVw" name="NOT"/>
       <ownedLiteral xmi:id="__zE45EDcEd6xYZuu1VKCVw" name="OWN"/>
@@ -921,7 +771,6 @@
       <ownedLiteral xmi:id="__zE4wEDcEd6xYZuu1VKCVw" name="PAYEE"/>
       <ownedLiteral xmi:id="__zE4vkDcEd6xYZuu1VKCVw" name="PAYOR"/>
       <ownedLiteral xmi:id="__zE4wUDcEd6xYZuu1VKCVw" name="POLHOLD"/>
-      <ownedLiteral xmi:id="__zE4z0DcEd6xYZuu1VKCVw" name="PROG"/>
       <ownedLiteral xmi:id="__zE42kDcEd6xYZuu1VKCVw" name="PROV"/>
       <ownedLiteral xmi:id="__zE4t0DcEd6xYZuu1VKCVw" name="PRS"/>
       <ownedLiteral xmi:id="__zE5AkDcEd6xYZuu1VKCVw" name="PRSV"/>
@@ -930,7 +779,6 @@
       <ownedLiteral xmi:id="__zE46kDcEd6xYZuu1VKCVw" name="RET"/>
       <ownedLiteral xmi:id="__zE45kDcEd6xYZuu1VKCVw" name="RGPR"/>
       <ownedLiteral xmi:id="__zE4tUDcEd6xYZuu1VKCVw" name="ROL"/>
-      <ownedLiteral xmi:id="__zE49UDcEd6xYZuu1VKCVw" name="SAME"/>
       <ownedLiteral xmi:id="__zE47UDcEd6xYZuu1VKCVw" name="SDLOC"/>
       <ownedLiteral xmi:id="__zE4yUDcEd6xYZuu1VKCVw" name="SGNOFF"/>
       <ownedLiteral xmi:id="__zE5DEDcEd6xYZuu1VKCVw" name="SPEC"/>
@@ -939,7 +787,6 @@
       <ownedLiteral xmi:id="__zE4w0DcEd6xYZuu1VKCVw" name="STD"/>
       <ownedLiteral xmi:id="__zE5CUDcEd6xYZuu1VKCVw" name="STOR"/>
       <ownedLiteral xmi:id="__zE48UDcEd6xYZuu1VKCVw" name="SUBS"/>
-      <ownedLiteral xmi:id="__zE400DcEd6xYZuu1VKCVw" name="SUBSCR"/>
       <ownedLiteral xmi:id="__zE49kDcEd6xYZuu1VKCVw" name="SUBY"/>
       <ownedLiteral xmi:id="__zE450DcEd6xYZuu1VKCVw" name="TERR"/>
       <ownedLiteral xmi:id="__zE47EDcEd6xYZuu1VKCVw" name="THER"/>
@@ -962,7 +809,6 @@
       <ownedLiteral xmi:id="__zFACEDcEd6xYZuu1VKCVw" name="H"/>
       <ownedLiteral xmi:id="__zFACkDcEd6xYZuu1VKCVw" name="I"/>
       <ownedLiteral xmi:id="__zFADEDcEd6xYZuu1VKCVw" name="P"/>
-      <ownedLiteral xmi:id="__zFAB0DcEd6xYZuu1VKCVw" name="_ValueSetOperator"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__zFEA0DcEd6xYZuu1VKCVw" name="TelecommunicationAddressUse">
       <ownedLiteral xmi:id="__zFEBEDcEd6xYZuu1VKCVw" name="AS"/>
@@ -988,7 +834,6 @@
       <ownedLiteral xmi:id="__zOnuUDcEd6xYZuu1VKCVw" name="PCPR"/>
       <ownedLiteral xmi:id="__zOnvkDcEd6xYZuu1VKCVw" name="REG"/>
       <ownedLiteral xmi:id="__zOnv0DcEd6xYZuu1VKCVw" name="SPCTRT"/>
-      <ownedLiteral xmi:id="__zOnwEDcEd6xYZuu1VKCVw" name="TRNS"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__zOnw0DcEd6xYZuu1VKCVw" name="x_ActClassDocumentEntryOrganizer">
       <ownedLiteral xmi:id="__zOnxUDcEd6xYZuu1VKCVw" name="BATTERY"/>
@@ -1089,6 +934,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__zOqckDcEd6xYZuu1VKCVw" name="x_ServiceEventPerformer">
       <ownedLiteral xmi:id="__zOqc0DcEd6xYZuu1VKCVw" name="PRF"/>
+      <ownedLiteral xmi:id="_CIwaMD6_EeCjmqRfHzEYTQ" name="PPRF"/>
       <ownedLiteral xmi:id="__zOqdEDcEd6xYZuu1VKCVw" name="SPRF"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_toprsKQJEd-QEohlUVMP5A" name="TimingEvent">
@@ -1123,4 +969,6 @@
   <Ecore:EEnumLiteral xmi:id="_POngMEySEd6h-an5IXo-DA" xmlName="EVN.CRT" base_EnumerationLiteral="__yeW70DcEd6xYZuu1VKCVw" enumLiteralName="EVNCRT" literal="EVN.CRT"/>
   <Ecore:EEnumLiteral xmi:id="_P2zgEDYjEeCek8inbxDOtw" xmlName="SHA-1" base_EnumerationLiteral="__yx4IUDcEd6xYZuu1VKCVw" enumLiteralName="SHA1" literal="SHA-1"/>
   <Ecore:EEnumLiteral xmi:id="_6b2TADYlEeCek8inbxDOtw" xmlName="SHA-256" base_EnumerationLiteral="__yx4IkDcEd6xYZuu1VKCVw" enumLiteralName="SHA256" literal="SHA-256"/>
+  <Ecore:EEnumLiteral xmi:id="_sAAEED6iEeCjmqRfHzEYTQ" xmlName="QUANTIFIED_KIND" base_EnumerationLiteral="__yoODUDcEd6xYZuu1VKCVw" enumLiteralName="QUANTIFIEDKIND" literal="QUANITFIED_KIND"/>
+  <Ecore:EEnumLiteral xmi:id="_8WWncD6iEeCjmqRfHzEYTQ" xmlName="QUANITFIED_KIND" base_EnumerationLiteral="__yoOCEDcEd6xYZuu1VKCVw" enumLiteralName="QUANTIFIEDKIND" literal="QUANITFIED_KIND"/>
 </xmi:XMI>

@@ -119,16 +119,6 @@ public enum NullFlavor implements Enumerator {
 	PINF(8, "PINF", "PINF"),
 
 	/**
-	 * The '<em><b>QS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #QS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	QS(9, "QS", "QS"),
-
-	/**
 	 * The '<em><b>TRC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,17 +126,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TRC(10, "TRC", "TRC"),
-
-	/**
-	 * The '<em><b>UNC</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #UNC_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	UNC(11, "UNC", "UNC"),
+	TRC(9, "TRC", "TRC"),
 
 	/**
 	 * The '<em><b>UNK</b></em>' literal object.
@@ -156,7 +136,15 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNK(12, "UNK", "UNK");
+	UNK(10, "UNK", "UNK"), /**
+	 * The '<em><b>NP</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NP_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NP(11, "NP", "NP");
 
 	/**
 	 * The '<em><b>ASKU</b></em>' literal value.
@@ -294,21 +282,6 @@ public enum NullFlavor implements Enumerator {
 	public static final int PINF_VALUE = 8;
 
 	/**
-	 * The '<em><b>QS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>QS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #QS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int QS_VALUE = 9;
-
-	/**
 	 * The '<em><b>TRC</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -321,22 +294,7 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRC_VALUE = 10;
-
-	/**
-	 * The '<em><b>UNC</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>UNC</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #UNC
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int UNC_VALUE = 11;
+	public static final int TRC_VALUE = 9;
 
 	/**
 	 * The '<em><b>UNK</b></em>' literal value.
@@ -351,7 +309,22 @@ public enum NullFlavor implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNK_VALUE = 12;
+	public static final int UNK_VALUE = 10;
+
+	/**
+	 * The '<em><b>NP</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NP</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NP
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NP_VALUE = 11;
 
 	/**
 	 * An array of all the '<em><b>Null Flavor</b></em>' enumerators.
@@ -370,10 +343,9 @@ public enum NullFlavor implements Enumerator {
 			NINF,
 			OTH,
 			PINF,
-			QS,
 			TRC,
-			UNC,
 			UNK,
+			NP,
 		};
 
 	/**
@@ -433,10 +405,9 @@ public enum NullFlavor implements Enumerator {
 			case NINF_VALUE: return NINF;
 			case OTH_VALUE: return OTH;
 			case PINF_VALUE: return PINF;
-			case QS_VALUE: return QS;
 			case TRC_VALUE: return TRC;
-			case UNC_VALUE: return UNC;
 			case UNK_VALUE: return UNK;
+			case NP_VALUE: return NP;
 		}
 		return null;
 	}

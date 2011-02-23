@@ -188,7 +188,7 @@ public class RelatedEntityImpl extends RoleImpl implements RelatedEntity {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final RoleClassMutualRelationship CLASS_CODE_EDEFAULT = RoleClassMutualRelationship.AFFL;
+	protected static final RoleClassMutualRelationship CLASS_CODE_EDEFAULT = RoleClassMutualRelationship.AGNT;
 
 	/**
 	 * The cached value of the '{@link #getClassCode() <em>Class Code</em>}' attribute.

@@ -29,16 +29,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum RoleClassMutualRelationship implements Enumerator {
 	/**
-	 * The '<em><b>AFFL</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AFFL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	AFFL(0, "AFFL", "AFFL"),
-
-	/**
 	 * The '<em><b>AGNT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,7 +36,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AGNT(1, "AGNT", "AGNT"),
+	AGNT(0, "AGNT", "AGNT"),
 
 	/**
 	 * The '<em><b>ASSIGNED</b></em>' literal object.
@@ -56,7 +46,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ASSIGNED(2, "ASSIGNED", "ASSIGNED"),
+	ASSIGNED(1, "ASSIGNED", "ASSIGNED"),
 
 	/**
 	 * The '<em><b>CAREGIVER</b></em>' literal object.
@@ -66,19 +56,17 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CAREGIVER(3, "CAREGIVER", "CAREGIVER"),
+	CAREGIVER(2, "CAREGIVER", "CAREGIVER"),
 
 	/**
-	 * The '<em><b>CASEBJ</b></em>' literal object.
+	 * The '<em><b>CASESBJ</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CASEBJ_VALUE
+	 * @see #CASESBJ_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CASEBJ(4, "CASEBJ", "CASEBJ"),
-
-	/**
+	CASESBJ(3, "CASESBJ", "CASESBJ"), /**
 	 * The '<em><b>CIT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,17 +74,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CIT(5, "CIT", "CIT"),
-
-	/**
-	 * The '<em><b>CLAIM</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CLAIM_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CLAIM(6, "CLAIM", "CLAIM"),
+	CIT(4, "CIT", "CIT"),
 
 	/**
 	 * The '<em><b>COMPAR</b></em>' literal object.
@@ -106,7 +84,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COMPAR(7, "COMPAR", "COMPAR"),
+	COMPAR(5, "COMPAR", "COMPAR"),
 
 	/**
 	 * The '<em><b>CON</b></em>' literal object.
@@ -116,7 +94,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CON(8, "CON", "CON"),
+	CON(6, "CON", "CON"),
 
 	/**
 	 * The '<em><b>COVPTY</b></em>' literal object.
@@ -126,7 +104,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COVPTY(9, "COVPTY", "COVPTY"),
+	COVPTY(7, "COVPTY", "COVPTY"),
 
 	/**
 	 * The '<em><b>CRINV</b></em>' literal object.
@@ -136,7 +114,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CRINV(10, "CRINV", "CRINV"),
+	CRINV(8, "CRINV", "CRINV"),
 
 	/**
 	 * The '<em><b>CRSPNSR</b></em>' literal object.
@@ -146,17 +124,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CRSPNSR(11, "CRSPNSR", "CRSPNSR"),
-
-	/**
-	 * The '<em><b>DEPEN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DEPEN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DEPEN(12, "DEPEN", "DEPEN"),
+	CRSPNSR(9, "CRSPNSR", "CRSPNSR"),
 
 	/**
 	 * The '<em><b>ECON</b></em>' literal object.
@@ -166,7 +134,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ECON(13, "ECON", "ECON"),
+	ECON(10, "ECON", "ECON"),
 
 	/**
 	 * The '<em><b>EMP</b></em>' literal object.
@@ -176,7 +144,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EMP(14, "EMP", "EMP"),
+	EMP(11, "EMP", "EMP"),
 
 	/**
 	 * The '<em><b>GUAR</b></em>' literal object.
@@ -186,7 +154,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GUAR(15, "GUAR", "GUAR"),
+	GUAR(12, "GUAR", "GUAR"),
 
 	/**
 	 * The '<em><b>GUARD</b></em>' literal object.
@@ -196,17 +164,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GUARD(16, "GUARD", "GUARD"),
-
-	/**
-	 * The '<em><b>INDIV</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INDIV_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	INDIV(17, "INDIV", "INDIV"),
+	GUARD(13, "GUARD", "GUARD"),
 
 	/**
 	 * The '<em><b>INVSBJ</b></em>' literal object.
@@ -216,7 +174,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INVSBJ(18, "INVSBJ", "INVSBJ"),
+	INVSBJ(14, "INVSBJ", "INVSBJ"),
 
 	/**
 	 * The '<em><b>LIC</b></em>' literal object.
@@ -226,7 +184,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LIC(19, "LIC", "LIC"),
+	LIC(15, "LIC", "LIC"),
 
 	/**
 	 * The '<em><b>MIL</b></em>' literal object.
@@ -236,17 +194,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MIL(20, "MIL", "MIL"),
-
-	/**
-	 * The '<em><b>NAMED</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #NAMED_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	NAMED(21, "NAMED", "NAMED"),
+	MIL(16, "MIL", "MIL"),
 
 	/**
 	 * The '<em><b>NOK</b></em>' literal object.
@@ -256,7 +204,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOK(22, "NOK", "NOK"),
+	NOK(17, "NOK", "NOK"),
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal object.
@@ -266,7 +214,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOT(23, "NOT", "NOT"),
+	NOT(18, "NOT", "NOT"),
 
 	/**
 	 * The '<em><b>PAT</b></em>' literal object.
@@ -276,7 +224,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PAT(24, "PAT", "PAT"),
+	PAT(19, "PAT", "PAT"),
 
 	/**
 	 * The '<em><b>PAYEE</b></em>' literal object.
@@ -286,7 +234,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PAYEE(25, "PAYEE", "PAYEE"),
+	PAYEE(20, "PAYEE", "PAYEE"),
 
 	/**
 	 * The '<em><b>PAYOR</b></em>' literal object.
@@ -296,7 +244,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PAYOR(26, "PAYOR", "PAYOR"),
+	PAYOR(21, "PAYOR", "PAYOR"),
 
 	/**
 	 * The '<em><b>POLHOLD</b></em>' literal object.
@@ -306,17 +254,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POLHOLD(27, "POLHOLD", "POLHOLD"),
-
-	/**
-	 * The '<em><b>PROG</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PROG_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PROG(28, "PROG", "PROG"),
+	POLHOLD(22, "POLHOLD", "POLHOLD"),
 
 	/**
 	 * The '<em><b>PROV</b></em>' literal object.
@@ -326,7 +264,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROV(29, "PROV", "PROV"),
+	PROV(23, "PROV", "PROV"),
 
 	/**
 	 * The '<em><b>PRS</b></em>' literal object.
@@ -336,7 +274,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRS(30, "PRS", "PRS"),
+	PRS(24, "PRS", "PRS"),
 
 	/**
 	 * The '<em><b>QUAL</b></em>' literal object.
@@ -346,7 +284,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	QUAL(31, "QUAL", "QUAL"),
+	QUAL(25, "QUAL", "QUAL"),
 
 	/**
 	 * The '<em><b>RESBJ</b></em>' literal object.
@@ -356,7 +294,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESBJ(32, "RESBJ", "RESBJ"),
+	RESBJ(26, "RESBJ", "RESBJ"),
 
 	/**
 	 * The '<em><b>SGNOFF</b></em>' literal object.
@@ -366,7 +304,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SGNOFF(33, "SGNOFF", "SGNOFF"),
+	SGNOFF(27, "SGNOFF", "SGNOFF"),
 
 	/**
 	 * The '<em><b>SPNSR</b></em>' literal object.
@@ -376,7 +314,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPNSR(34, "SPNSR", "SPNSR"),
+	SPNSR(28, "SPNSR", "SPNSR"),
 
 	/**
 	 * The '<em><b>STD</b></em>' literal object.
@@ -386,17 +324,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STD(35, "STD", "STD"),
-
-	/**
-	 * The '<em><b>SUBSCR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SUBSCR(36, "SUBSCR", "SUBSCR"),
+	STD(29, "STD", "STD"),
 
 	/**
 	 * The '<em><b>UNDWRT</b></em>' literal object.
@@ -406,22 +334,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNDWRT(37, "UNDWRT", "UNDWRT");
-
-	/**
-	 * The '<em><b>AFFL</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>AFFL</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #AFFL
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int AFFL_VALUE = 0;
+	UNDWRT(30, "UNDWRT", "UNDWRT");
 
 	/**
 	 * The '<em><b>AGNT</b></em>' literal value.
@@ -436,7 +349,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AGNT_VALUE = 1;
+	public static final int AGNT_VALUE = 0;
 
 	/**
 	 * The '<em><b>ASSIGNED</b></em>' literal value.
@@ -451,7 +364,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ASSIGNED_VALUE = 2;
+	public static final int ASSIGNED_VALUE = 1;
 
 	/**
 	 * The '<em><b>CAREGIVER</b></em>' literal value.
@@ -466,22 +379,22 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CAREGIVER_VALUE = 3;
+	public static final int CAREGIVER_VALUE = 2;
 
 	/**
-	 * The '<em><b>CASEBJ</b></em>' literal value.
+	 * The '<em><b>CASESBJ</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CASEBJ</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>CASESBJ</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CASEBJ
+	 * @see #CASESBJ
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CASEBJ_VALUE = 4;
+	public static final int CASESBJ_VALUE = 3;
 
 	/**
 	 * The '<em><b>CIT</b></em>' literal value.
@@ -496,22 +409,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CIT_VALUE = 5;
-
-	/**
-	 * The '<em><b>CLAIM</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CLAIM</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CLAIM
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CLAIM_VALUE = 6;
+	public static final int CIT_VALUE = 4;
 
 	/**
 	 * The '<em><b>COMPAR</b></em>' literal value.
@@ -526,7 +424,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COMPAR_VALUE = 7;
+	public static final int COMPAR_VALUE = 5;
 
 	/**
 	 * The '<em><b>CON</b></em>' literal value.
@@ -541,7 +439,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CON_VALUE = 8;
+	public static final int CON_VALUE = 6;
 
 	/**
 	 * The '<em><b>COVPTY</b></em>' literal value.
@@ -556,7 +454,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COVPTY_VALUE = 9;
+	public static final int COVPTY_VALUE = 7;
 
 	/**
 	 * The '<em><b>CRINV</b></em>' literal value.
@@ -571,7 +469,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CRINV_VALUE = 10;
+	public static final int CRINV_VALUE = 8;
 
 	/**
 	 * The '<em><b>CRSPNSR</b></em>' literal value.
@@ -586,22 +484,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CRSPNSR_VALUE = 11;
-
-	/**
-	 * The '<em><b>DEPEN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>DEPEN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DEPEN
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DEPEN_VALUE = 12;
+	public static final int CRSPNSR_VALUE = 9;
 
 	/**
 	 * The '<em><b>ECON</b></em>' literal value.
@@ -616,7 +499,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ECON_VALUE = 13;
+	public static final int ECON_VALUE = 10;
 
 	/**
 	 * The '<em><b>EMP</b></em>' literal value.
@@ -631,7 +514,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMP_VALUE = 14;
+	public static final int EMP_VALUE = 11;
 
 	/**
 	 * The '<em><b>GUAR</b></em>' literal value.
@@ -646,7 +529,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUAR_VALUE = 15;
+	public static final int GUAR_VALUE = 12;
 
 	/**
 	 * The '<em><b>GUARD</b></em>' literal value.
@@ -661,22 +544,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUARD_VALUE = 16;
-
-	/**
-	 * The '<em><b>INDIV</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>INDIV</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #INDIV
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INDIV_VALUE = 17;
+	public static final int GUARD_VALUE = 13;
 
 	/**
 	 * The '<em><b>INVSBJ</b></em>' literal value.
@@ -691,7 +559,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INVSBJ_VALUE = 18;
+	public static final int INVSBJ_VALUE = 14;
 
 	/**
 	 * The '<em><b>LIC</b></em>' literal value.
@@ -706,7 +574,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LIC_VALUE = 19;
+	public static final int LIC_VALUE = 15;
 
 	/**
 	 * The '<em><b>MIL</b></em>' literal value.
@@ -721,22 +589,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MIL_VALUE = 20;
-
-	/**
-	 * The '<em><b>NAMED</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>NAMED</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #NAMED
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int NAMED_VALUE = 21;
+	public static final int MIL_VALUE = 16;
 
 	/**
 	 * The '<em><b>NOK</b></em>' literal value.
@@ -751,7 +604,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOK_VALUE = 22;
+	public static final int NOK_VALUE = 17;
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal value.
@@ -766,7 +619,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_VALUE = 23;
+	public static final int NOT_VALUE = 18;
 
 	/**
 	 * The '<em><b>PAT</b></em>' literal value.
@@ -781,7 +634,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PAT_VALUE = 24;
+	public static final int PAT_VALUE = 19;
 
 	/**
 	 * The '<em><b>PAYEE</b></em>' literal value.
@@ -796,7 +649,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PAYEE_VALUE = 25;
+	public static final int PAYEE_VALUE = 20;
 
 	/**
 	 * The '<em><b>PAYOR</b></em>' literal value.
@@ -811,7 +664,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PAYOR_VALUE = 26;
+	public static final int PAYOR_VALUE = 21;
 
 	/**
 	 * The '<em><b>POLHOLD</b></em>' literal value.
@@ -826,22 +679,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POLHOLD_VALUE = 27;
-
-	/**
-	 * The '<em><b>PROG</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>PROG</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PROG
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PROG_VALUE = 28;
+	public static final int POLHOLD_VALUE = 22;
 
 	/**
 	 * The '<em><b>PROV</b></em>' literal value.
@@ -856,7 +694,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROV_VALUE = 29;
+	public static final int PROV_VALUE = 23;
 
 	/**
 	 * The '<em><b>PRS</b></em>' literal value.
@@ -871,7 +709,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRS_VALUE = 30;
+	public static final int PRS_VALUE = 24;
 
 	/**
 	 * The '<em><b>QUAL</b></em>' literal value.
@@ -886,7 +724,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int QUAL_VALUE = 31;
+	public static final int QUAL_VALUE = 25;
 
 	/**
 	 * The '<em><b>RESBJ</b></em>' literal value.
@@ -901,7 +739,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RESBJ_VALUE = 32;
+	public static final int RESBJ_VALUE = 26;
 
 	/**
 	 * The '<em><b>SGNOFF</b></em>' literal value.
@@ -916,7 +754,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SGNOFF_VALUE = 33;
+	public static final int SGNOFF_VALUE = 27;
 
 	/**
 	 * The '<em><b>SPNSR</b></em>' literal value.
@@ -931,7 +769,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPNSR_VALUE = 34;
+	public static final int SPNSR_VALUE = 28;
 
 	/**
 	 * The '<em><b>STD</b></em>' literal value.
@@ -946,22 +784,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STD_VALUE = 35;
-
-	/**
-	 * The '<em><b>SUBSCR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>SUBSCR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SUBSCR_VALUE = 36;
+	public static final int STD_VALUE = 29;
 
 	/**
 	 * The '<em><b>UNDWRT</b></em>' literal value.
@@ -976,7 +799,7 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNDWRT_VALUE = 37;
+	public static final int UNDWRT_VALUE = 30;
 
 	/**
 	 * An array of all the '<em><b>Role Class Mutual Relationship</b></em>' enumerators.
@@ -986,35 +809,29 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 */
 	private static final RoleClassMutualRelationship[] VALUES_ARRAY =
 		new RoleClassMutualRelationship[] {
-			AFFL,
 			AGNT,
 			ASSIGNED,
 			CAREGIVER,
-			CASEBJ,
+			CASESBJ,
 			CIT,
-			CLAIM,
 			COMPAR,
 			CON,
 			COVPTY,
 			CRINV,
 			CRSPNSR,
-			DEPEN,
 			ECON,
 			EMP,
 			GUAR,
 			GUARD,
-			INDIV,
 			INVSBJ,
 			LIC,
 			MIL,
-			NAMED,
 			NOK,
 			NOT,
 			PAT,
 			PAYEE,
 			PAYOR,
 			POLHOLD,
-			PROG,
 			PROV,
 			PRS,
 			QUAL,
@@ -1022,7 +839,6 @@ public enum RoleClassMutualRelationship implements Enumerator {
 			SGNOFF,
 			SPNSR,
 			STD,
-			SUBSCR,
 			UNDWRT,
 		};
 
@@ -1074,35 +890,29 @@ public enum RoleClassMutualRelationship implements Enumerator {
 	 */
 	public static RoleClassMutualRelationship get(int value) {
 		switch (value) {
-			case AFFL_VALUE: return AFFL;
 			case AGNT_VALUE: return AGNT;
 			case ASSIGNED_VALUE: return ASSIGNED;
 			case CAREGIVER_VALUE: return CAREGIVER;
-			case CASEBJ_VALUE: return CASEBJ;
+			case CASESBJ_VALUE: return CASESBJ;
 			case CIT_VALUE: return CIT;
-			case CLAIM_VALUE: return CLAIM;
 			case COMPAR_VALUE: return COMPAR;
 			case CON_VALUE: return CON;
 			case COVPTY_VALUE: return COVPTY;
 			case CRINV_VALUE: return CRINV;
 			case CRSPNSR_VALUE: return CRSPNSR;
-			case DEPEN_VALUE: return DEPEN;
 			case ECON_VALUE: return ECON;
 			case EMP_VALUE: return EMP;
 			case GUAR_VALUE: return GUAR;
 			case GUARD_VALUE: return GUARD;
-			case INDIV_VALUE: return INDIV;
 			case INVSBJ_VALUE: return INVSBJ;
 			case LIC_VALUE: return LIC;
 			case MIL_VALUE: return MIL;
-			case NAMED_VALUE: return NAMED;
 			case NOK_VALUE: return NOK;
 			case NOT_VALUE: return NOT;
 			case PAT_VALUE: return PAT;
 			case PAYEE_VALUE: return PAYEE;
 			case PAYOR_VALUE: return PAYOR;
 			case POLHOLD_VALUE: return POLHOLD;
-			case PROG_VALUE: return PROG;
 			case PROV_VALUE: return PROV;
 			case PRS_VALUE: return PRS;
 			case QUAL_VALUE: return QUAL;
@@ -1110,7 +920,6 @@ public enum RoleClassMutualRelationship implements Enumerator {
 			case SGNOFF_VALUE: return SGNOFF;
 			case SPNSR_VALUE: return SPNSR;
 			case STD_VALUE: return STD;
-			case SUBSCR_VALUE: return SUBSCR;
 			case UNDWRT_VALUE: return UNDWRT;
 		}
 		return null;

@@ -59,16 +59,6 @@ public enum ActRelationshipType implements Enumerator {
 	AUTH(2, "AUTH", "AUTH"),
 
 	/**
-	 * The '<em><b>BLOCK</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BLOCK_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BLOCK(3, "BLOCK", "BLOCK"),
-
-	/**
 	 * The '<em><b>CAUS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,7 +66,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CAUS(4, "CAUS", "CAUS"),
+	CAUS(3, "CAUS", "CAUS"),
 
 	/**
 	 * The '<em><b>CHRG</b></em>' literal object.
@@ -86,7 +76,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CHRG(5, "CHRG", "CHRG"),
+	CHRG(4, "CHRG", "CHRG"),
 
 	/**
 	 * The '<em><b>CIND</b></em>' literal object.
@@ -96,7 +86,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CIND(6, "CIND", "CIND"),
+	CIND(5, "CIND", "CIND"),
 
 	/**
 	 * The '<em><b>COMP</b></em>' literal object.
@@ -106,7 +96,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COMP(7, "COMP", "COMP"),
+	COMP(6, "COMP", "COMP"),
 
 	/**
 	 * The '<em><b>COST</b></em>' literal object.
@@ -116,7 +106,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COST(8, "COST", "COST"),
+	COST(7, "COST", "COST"),
 
 	/**
 	 * The '<em><b>COVBY</b></em>' literal object.
@@ -126,7 +116,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COVBY(9, "COVBY", "COVBY"),
+	COVBY(8, "COVBY", "COVBY"),
 
 	/**
 	 * The '<em><b>CREDIT</b></em>' literal object.
@@ -136,7 +126,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CREDIT(10, "CREDIT", "CREDIT"),
+	CREDIT(9, "CREDIT", "CREDIT"),
 
 	/**
 	 * The '<em><b>CTRLV</b></em>' literal object.
@@ -146,27 +136,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CTRLV(11, "CTRLV", "CTRLV"),
-
-	/**
-	 * The '<em><b>CURE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CURE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CURE(12, "CURE", "CURE"),
-
-	/**
-	 * The '<em><b>CUREADJ</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CUREADJ_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CUREADJ(13, "CUREADJ", "CUREADJ"),
+	CTRLV(10, "CTRLV", "CTRLV"),
 
 	/**
 	 * The '<em><b>DEBIT</b></em>' literal object.
@@ -176,7 +146,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEBIT(14, "DEBIT", "DEBIT"),
+	DEBIT(11, "DEBIT", "DEBIT"),
 
 	/**
 	 * The '<em><b>DEP</b></em>' literal object.
@@ -186,17 +156,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEP(15, "DEP", "DEP"),
-
-	/**
-	 * The '<em><b>DIAG</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DIAG_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DIAG(16, "DIAG", "DIAG"),
+	DEP(12, "DEP", "DEP"),
 
 	/**
 	 * The '<em><b>DOC</b></em>' literal object.
@@ -206,7 +166,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOC(17, "DOC", "DOC"),
+	DOC(13, "DOC", "DOC"),
 
 	/**
 	 * The '<em><b>DRIV</b></em>' literal object.
@@ -216,7 +176,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DRIV(18, "DRIV", "DRIV"),
+	DRIV(14, "DRIV", "DRIV"),
 
 	/**
 	 * The '<em><b>ELNK</b></em>' literal object.
@@ -226,17 +186,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ELNK(19, "ELNK", "ELNK"),
-
-	/**
-	 * The '<em><b>EVID</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EVID_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EVID(20, "EVID", "EVID"),
+	ELNK(15, "ELNK", "ELNK"),
 
 	/**
 	 * The '<em><b>EXPL</b></em>' literal object.
@@ -246,7 +196,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EXPL(21, "EXPL", "EXPL"),
+	EXPL(16, "EXPL", "EXPL"),
 
 	/**
 	 * The '<em><b>FLFS</b></em>' literal object.
@@ -256,7 +206,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLFS(22, "FLFS", "FLFS"),
+	FLFS(17, "FLFS", "FLFS"),
 
 	/**
 	 * The '<em><b>GEN</b></em>' literal object.
@@ -266,7 +216,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GEN(23, "GEN", "GEN"),
+	GEN(18, "GEN", "GEN"),
 
 	/**
 	 * The '<em><b>GEVL</b></em>' literal object.
@@ -276,7 +226,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GEVL(24, "GEVL", "GEVL"),
+	GEVL(19, "GEVL", "GEVL"),
 
 	/**
 	 * The '<em><b>GOAL</b></em>' literal object.
@@ -286,7 +236,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GOAL(25, "GOAL", "GOAL"),
+	GOAL(20, "GOAL", "GOAL"),
 
 	/**
 	 * The '<em><b>INST</b></em>' literal object.
@@ -296,7 +246,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INST(26, "INST", "INST"),
+	INST(21, "INST", "INST"),
 
 	/**
 	 * The '<em><b>ITEMSLOC</b></em>' literal object.
@@ -306,7 +256,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ITEMSLOC(27, "ITEMSLOC", "ITEMSLOC"),
+	ITEMSLOC(22, "ITEMSLOC", "ITEMSLOC"),
 
 	/**
 	 * The '<em><b>LIMIT</b></em>' literal object.
@@ -316,7 +266,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LIMIT(28, "LIMIT", "LIMIT"),
+	LIMIT(23, "LIMIT", "LIMIT"),
 
 	/**
 	 * The '<em><b>MFST</b></em>' literal object.
@@ -326,7 +276,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MFST(29, "MFST", "MFST"),
+	MFST(24, "MFST", "MFST"),
 
 	/**
 	 * The '<em><b>MITGT</b></em>' literal object.
@@ -336,17 +286,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MITGT(30, "MITGT", "MITGT"),
-
-	/**
-	 * The '<em><b>MOD</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MOD_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MOD(31, "MOD", "MOD"),
+	MITGT(25, "MITGT", "MITGT"),
 
 	/**
 	 * The '<em><b>MTCH</b></em>' literal object.
@@ -356,17 +296,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MTCH(32, "MTCH", "MTCH"),
-
-	/**
-	 * The '<em><b>MTGTADJ</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MTGTADJ_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MTGTADJ(33, "MTGTADJ", "MTGTADJ"),
+	MTCH(26, "MTCH", "MTCH"),
 
 	/**
 	 * The '<em><b>NAME</b></em>' literal object.
@@ -376,7 +306,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NAME(34, "NAME", "NAME"),
+	NAME(27, "NAME", "NAME"),
 
 	/**
 	 * The '<em><b>OBJC</b></em>' literal object.
@@ -386,7 +316,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OBJC(35, "OBJC", "OBJC"),
+	OBJC(28, "OBJC", "OBJC"),
 
 	/**
 	 * The '<em><b>OBJF</b></em>' literal object.
@@ -396,7 +326,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OBJF(36, "OBJF", "OBJF"),
+	OBJF(29, "OBJF", "OBJF"),
 
 	/**
 	 * The '<em><b>OCCR</b></em>' literal object.
@@ -406,7 +336,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OCCR(37, "OCCR", "OCCR"),
+	OCCR(30, "OCCR", "OCCR"),
 
 	/**
 	 * The '<em><b>OPTN</b></em>' literal object.
@@ -416,7 +346,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OPTN(38, "OPTN", "OPTN"),
+	OPTN(31, "OPTN", "OPTN"),
 
 	/**
 	 * The '<em><b>OREF</b></em>' literal object.
@@ -426,7 +356,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OREF(39, "OREF", "OREF"),
+	OREF(32, "OREF", "OREF"),
 
 	/**
 	 * The '<em><b>OUTC</b></em>' literal object.
@@ -436,7 +366,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OUTC(40, "OUTC", "OUTC"),
+	OUTC(33, "OUTC", "OUTC"),
 
 	/**
 	 * The '<em><b>PERT</b></em>' literal object.
@@ -446,7 +376,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PERT(41, "PERT", "PERT"),
+	PERT(34, "PERT", "PERT"),
 
 	/**
 	 * The '<em><b>PRCN</b></em>' literal object.
@@ -456,7 +386,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRCN(42, "PRCN", "PRCN"),
+	PRCN(35, "PRCN", "PRCN"),
 
 	/**
 	 * The '<em><b>PREV</b></em>' literal object.
@@ -466,27 +396,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PREV(43, "PREV", "PREV"),
-
-	/**
-	 * The '<em><b>RCHAL</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RCHAL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	RCHAL(44, "RCHAL", "RCHAL"),
-
-	/**
-	 * The '<em><b>RCVY</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RCVY_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	RCVY(45, "RCVY", "RCVY"),
+	PREV(36, "PREV", "PREV"),
 
 	/**
 	 * The '<em><b>REFR</b></em>' literal object.
@@ -496,7 +406,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REFR(46, "REFR", "REFR"),
+	REFR(37, "REFR", "REFR"),
 
 	/**
 	 * The '<em><b>REFV</b></em>' literal object.
@@ -506,7 +416,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REFV(47, "REFV", "REFV"),
+	REFV(38, "REFV", "REFV"),
 
 	/**
 	 * The '<em><b>REV</b></em>' literal object.
@@ -516,7 +426,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REV(48, "REV", "REV"),
+	REV(39, "REV", "REV"),
 
 	/**
 	 * The '<em><b>RISK</b></em>' literal object.
@@ -526,7 +436,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RISK(49, "RISK", "RISK"),
+	RISK(40, "RISK", "RISK"),
 
 	/**
 	 * The '<em><b>RPLC</b></em>' literal object.
@@ -536,7 +446,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RPLC(50, "RPLC", "RPLC"),
+	RPLC(41, "RPLC", "RPLC"),
 
 	/**
 	 * The '<em><b>RSON</b></em>' literal object.
@@ -546,17 +456,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RSON(51, "RSON", "RSON"),
-
-	/**
-	 * The '<em><b>SAE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SAE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SAE(52, "SAE", "SAE"),
+	RSON(42, "RSON", "RSON"),
 
 	/**
 	 * The '<em><b>SAS</b></em>' literal object.
@@ -566,7 +466,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SAS(53, "SAS", "SAS"),
+	SAS(43, "SAS", "SAS"),
 
 	/**
 	 * The '<em><b>SCH</b></em>' literal object.
@@ -576,7 +476,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SCH(54, "SCH", "SCH"),
+	SCH(44, "SCH", "SCH"),
 
 	/**
 	 * The '<em><b>SEQL</b></em>' literal object.
@@ -586,7 +486,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SEQL(55, "SEQL", "SEQL"),
+	SEQL(45, "SEQL", "SEQL"),
 
 	/**
 	 * The '<em><b>SPRT</b></em>' literal object.
@@ -596,7 +496,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPRT(56, "SPRT", "SPRT"),
+	SPRT(46, "SPRT", "SPRT"),
 
 	/**
 	 * The '<em><b>SPRTBND</b></em>' literal object.
@@ -606,7 +506,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPRTBND(57, "SPRTBND", "SPRTBND"),
+	SPRTBND(47, "SPRTBND", "SPRTBND"),
 
 	/**
 	 * The '<em><b>SUBJ</b></em>' literal object.
@@ -616,7 +516,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUBJ(58, "SUBJ", "SUBJ"),
+	SUBJ(48, "SUBJ", "SUBJ"),
 
 	/**
 	 * The '<em><b>SUCC</b></em>' literal object.
@@ -626,7 +526,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUCC(59, "SUCC", "SUCC"),
+	SUCC(49, "SUCC", "SUCC"),
 
 	/**
 	 * The '<em><b>SUMM</b></em>' literal object.
@@ -636,17 +536,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUMM(60, "SUMM", "SUMM"),
-
-	/**
-	 * The '<em><b>SYMP</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SYMP_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SYMP(61, "SYMP", "SYMP"),
+	SUMM(50, "SUMM", "SUMM"),
 
 	/**
 	 * The '<em><b>TRIG</b></em>' literal object.
@@ -656,7 +546,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TRIG(62, "TRIG", "TRIG"),
+	TRIG(51, "TRIG", "TRIG"),
 
 	/**
 	 * The '<em><b>UPDT</b></em>' literal object.
@@ -666,7 +556,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UPDT(63, "UPDT", "UPDT"),
+	UPDT(52, "UPDT", "UPDT"),
 
 	/**
 	 * The '<em><b>VRXCRPT</b></em>' literal object.
@@ -676,7 +566,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VRXCRPT(64, "VRXCRPT", "VRXCRPT"),
+	VRXCRPT(53, "VRXCRPT", "VRXCRPT"),
 
 	/**
 	 * The '<em><b>XCRPT</b></em>' literal object.
@@ -686,7 +576,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	XCRPT(65, "XCRPT", "XCRPT"),
+	XCRPT(54, "XCRPT", "XCRPT"),
 
 	/**
 	 * The '<em><b>XFRM</b></em>' literal object.
@@ -696,7 +586,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	XFRM(66, "XFRM", "XFRM");
+	XFRM(55, "XFRM", "XFRM");
 
 	/**
 	 * The '<em><b>APND</b></em>' literal value.
@@ -744,21 +634,6 @@ public enum ActRelationshipType implements Enumerator {
 	public static final int AUTH_VALUE = 2;
 
 	/**
-	 * The '<em><b>BLOCK</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>BLOCK</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #BLOCK
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BLOCK_VALUE = 3;
-
-	/**
 	 * The '<em><b>CAUS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -771,7 +646,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CAUS_VALUE = 4;
+	public static final int CAUS_VALUE = 3;
 
 	/**
 	 * The '<em><b>CHRG</b></em>' literal value.
@@ -786,7 +661,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CHRG_VALUE = 5;
+	public static final int CHRG_VALUE = 4;
 
 	/**
 	 * The '<em><b>CIND</b></em>' literal value.
@@ -801,7 +676,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CIND_VALUE = 6;
+	public static final int CIND_VALUE = 5;
 
 	/**
 	 * The '<em><b>COMP</b></em>' literal value.
@@ -816,7 +691,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COMP_VALUE = 7;
+	public static final int COMP_VALUE = 6;
 
 	/**
 	 * The '<em><b>COST</b></em>' literal value.
@@ -831,7 +706,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COST_VALUE = 8;
+	public static final int COST_VALUE = 7;
 
 	/**
 	 * The '<em><b>COVBY</b></em>' literal value.
@@ -846,7 +721,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COVBY_VALUE = 9;
+	public static final int COVBY_VALUE = 8;
 
 	/**
 	 * The '<em><b>CREDIT</b></em>' literal value.
@@ -861,7 +736,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CREDIT_VALUE = 10;
+	public static final int CREDIT_VALUE = 9;
 
 	/**
 	 * The '<em><b>CTRLV</b></em>' literal value.
@@ -876,37 +751,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CTRLV_VALUE = 11;
-
-	/**
-	 * The '<em><b>CURE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CURE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CURE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CURE_VALUE = 12;
-
-	/**
-	 * The '<em><b>CUREADJ</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CUREADJ</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CUREADJ
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CUREADJ_VALUE = 13;
+	public static final int CTRLV_VALUE = 10;
 
 	/**
 	 * The '<em><b>DEBIT</b></em>' literal value.
@@ -921,7 +766,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DEBIT_VALUE = 14;
+	public static final int DEBIT_VALUE = 11;
 
 	/**
 	 * The '<em><b>DEP</b></em>' literal value.
@@ -936,22 +781,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DEP_VALUE = 15;
-
-	/**
-	 * The '<em><b>DIAG</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>DIAG</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DIAG
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DIAG_VALUE = 16;
+	public static final int DEP_VALUE = 12;
 
 	/**
 	 * The '<em><b>DOC</b></em>' literal value.
@@ -966,7 +796,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DOC_VALUE = 17;
+	public static final int DOC_VALUE = 13;
 
 	/**
 	 * The '<em><b>DRIV</b></em>' literal value.
@@ -981,7 +811,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DRIV_VALUE = 18;
+	public static final int DRIV_VALUE = 14;
 
 	/**
 	 * The '<em><b>ELNK</b></em>' literal value.
@@ -996,22 +826,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ELNK_VALUE = 19;
-
-	/**
-	 * The '<em><b>EVID</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EVID</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EVID
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EVID_VALUE = 20;
+	public static final int ELNK_VALUE = 15;
 
 	/**
 	 * The '<em><b>EXPL</b></em>' literal value.
@@ -1026,7 +841,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EXPL_VALUE = 21;
+	public static final int EXPL_VALUE = 16;
 
 	/**
 	 * The '<em><b>FLFS</b></em>' literal value.
@@ -1041,7 +856,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FLFS_VALUE = 22;
+	public static final int FLFS_VALUE = 17;
 
 	/**
 	 * The '<em><b>GEN</b></em>' literal value.
@@ -1056,7 +871,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GEN_VALUE = 23;
+	public static final int GEN_VALUE = 18;
 
 	/**
 	 * The '<em><b>GEVL</b></em>' literal value.
@@ -1071,7 +886,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GEVL_VALUE = 24;
+	public static final int GEVL_VALUE = 19;
 
 	/**
 	 * The '<em><b>GOAL</b></em>' literal value.
@@ -1086,7 +901,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GOAL_VALUE = 25;
+	public static final int GOAL_VALUE = 20;
 
 	/**
 	 * The '<em><b>INST</b></em>' literal value.
@@ -1101,7 +916,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INST_VALUE = 26;
+	public static final int INST_VALUE = 21;
 
 	/**
 	 * The '<em><b>ITEMSLOC</b></em>' literal value.
@@ -1116,7 +931,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ITEMSLOC_VALUE = 27;
+	public static final int ITEMSLOC_VALUE = 22;
 
 	/**
 	 * The '<em><b>LIMIT</b></em>' literal value.
@@ -1131,7 +946,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LIMIT_VALUE = 28;
+	public static final int LIMIT_VALUE = 23;
 
 	/**
 	 * The '<em><b>MFST</b></em>' literal value.
@@ -1146,7 +961,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MFST_VALUE = 29;
+	public static final int MFST_VALUE = 24;
 
 	/**
 	 * The '<em><b>MITGT</b></em>' literal value.
@@ -1161,22 +976,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MITGT_VALUE = 30;
-
-	/**
-	 * The '<em><b>MOD</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>MOD</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #MOD
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MOD_VALUE = 31;
+	public static final int MITGT_VALUE = 25;
 
 	/**
 	 * The '<em><b>MTCH</b></em>' literal value.
@@ -1191,22 +991,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MTCH_VALUE = 32;
-
-	/**
-	 * The '<em><b>MTGTADJ</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>MTGTADJ</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #MTGTADJ
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MTGTADJ_VALUE = 33;
+	public static final int MTCH_VALUE = 26;
 
 	/**
 	 * The '<em><b>NAME</b></em>' literal value.
@@ -1221,7 +1006,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NAME_VALUE = 34;
+	public static final int NAME_VALUE = 27;
 
 	/**
 	 * The '<em><b>OBJC</b></em>' literal value.
@@ -1236,7 +1021,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OBJC_VALUE = 35;
+	public static final int OBJC_VALUE = 28;
 
 	/**
 	 * The '<em><b>OBJF</b></em>' literal value.
@@ -1251,7 +1036,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OBJF_VALUE = 36;
+	public static final int OBJF_VALUE = 29;
 
 	/**
 	 * The '<em><b>OCCR</b></em>' literal value.
@@ -1266,7 +1051,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OCCR_VALUE = 37;
+	public static final int OCCR_VALUE = 30;
 
 	/**
 	 * The '<em><b>OPTN</b></em>' literal value.
@@ -1281,7 +1066,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OPTN_VALUE = 38;
+	public static final int OPTN_VALUE = 31;
 
 	/**
 	 * The '<em><b>OREF</b></em>' literal value.
@@ -1296,7 +1081,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OREF_VALUE = 39;
+	public static final int OREF_VALUE = 32;
 
 	/**
 	 * The '<em><b>OUTC</b></em>' literal value.
@@ -1311,7 +1096,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OUTC_VALUE = 40;
+	public static final int OUTC_VALUE = 33;
 
 	/**
 	 * The '<em><b>PERT</b></em>' literal value.
@@ -1326,7 +1111,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PERT_VALUE = 41;
+	public static final int PERT_VALUE = 34;
 
 	/**
 	 * The '<em><b>PRCN</b></em>' literal value.
@@ -1341,7 +1126,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRCN_VALUE = 42;
+	public static final int PRCN_VALUE = 35;
 
 	/**
 	 * The '<em><b>PREV</b></em>' literal value.
@@ -1356,37 +1141,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PREV_VALUE = 43;
-
-	/**
-	 * The '<em><b>RCHAL</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>RCHAL</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #RCHAL
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RCHAL_VALUE = 44;
-
-	/**
-	 * The '<em><b>RCVY</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>RCVY</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #RCVY
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RCVY_VALUE = 45;
+	public static final int PREV_VALUE = 36;
 
 	/**
 	 * The '<em><b>REFR</b></em>' literal value.
@@ -1401,7 +1156,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REFR_VALUE = 46;
+	public static final int REFR_VALUE = 37;
 
 	/**
 	 * The '<em><b>REFV</b></em>' literal value.
@@ -1416,7 +1171,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REFV_VALUE = 47;
+	public static final int REFV_VALUE = 38;
 
 	/**
 	 * The '<em><b>REV</b></em>' literal value.
@@ -1431,7 +1186,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REV_VALUE = 48;
+	public static final int REV_VALUE = 39;
 
 	/**
 	 * The '<em><b>RISK</b></em>' literal value.
@@ -1446,7 +1201,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RISK_VALUE = 49;
+	public static final int RISK_VALUE = 40;
 
 	/**
 	 * The '<em><b>RPLC</b></em>' literal value.
@@ -1461,7 +1216,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RPLC_VALUE = 50;
+	public static final int RPLC_VALUE = 41;
 
 	/**
 	 * The '<em><b>RSON</b></em>' literal value.
@@ -1476,22 +1231,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RSON_VALUE = 51;
-
-	/**
-	 * The '<em><b>SAE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>SAE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SAE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SAE_VALUE = 52;
+	public static final int RSON_VALUE = 42;
 
 	/**
 	 * The '<em><b>SAS</b></em>' literal value.
@@ -1506,7 +1246,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SAS_VALUE = 53;
+	public static final int SAS_VALUE = 43;
 
 	/**
 	 * The '<em><b>SCH</b></em>' literal value.
@@ -1521,7 +1261,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SCH_VALUE = 54;
+	public static final int SCH_VALUE = 44;
 
 	/**
 	 * The '<em><b>SEQL</b></em>' literal value.
@@ -1536,7 +1276,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SEQL_VALUE = 55;
+	public static final int SEQL_VALUE = 45;
 
 	/**
 	 * The '<em><b>SPRT</b></em>' literal value.
@@ -1551,7 +1291,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPRT_VALUE = 56;
+	public static final int SPRT_VALUE = 46;
 
 	/**
 	 * The '<em><b>SPRTBND</b></em>' literal value.
@@ -1566,7 +1306,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPRTBND_VALUE = 57;
+	public static final int SPRTBND_VALUE = 47;
 
 	/**
 	 * The '<em><b>SUBJ</b></em>' literal value.
@@ -1581,7 +1321,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUBJ_VALUE = 58;
+	public static final int SUBJ_VALUE = 48;
 
 	/**
 	 * The '<em><b>SUCC</b></em>' literal value.
@@ -1596,7 +1336,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUCC_VALUE = 59;
+	public static final int SUCC_VALUE = 49;
 
 	/**
 	 * The '<em><b>SUMM</b></em>' literal value.
@@ -1611,22 +1351,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUMM_VALUE = 60;
-
-	/**
-	 * The '<em><b>SYMP</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>SYMP</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SYMP
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SYMP_VALUE = 61;
+	public static final int SUMM_VALUE = 50;
 
 	/**
 	 * The '<em><b>TRIG</b></em>' literal value.
@@ -1641,7 +1366,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRIG_VALUE = 62;
+	public static final int TRIG_VALUE = 51;
 
 	/**
 	 * The '<em><b>UPDT</b></em>' literal value.
@@ -1656,7 +1381,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UPDT_VALUE = 63;
+	public static final int UPDT_VALUE = 52;
 
 	/**
 	 * The '<em><b>VRXCRPT</b></em>' literal value.
@@ -1671,7 +1396,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VRXCRPT_VALUE = 64;
+	public static final int VRXCRPT_VALUE = 53;
 
 	/**
 	 * The '<em><b>XCRPT</b></em>' literal value.
@@ -1686,7 +1411,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int XCRPT_VALUE = 65;
+	public static final int XCRPT_VALUE = 54;
 
 	/**
 	 * The '<em><b>XFRM</b></em>' literal value.
@@ -1701,7 +1426,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int XFRM_VALUE = 66;
+	public static final int XFRM_VALUE = 55;
 
 	/**
 	 * An array of all the '<em><b>Act Relationship Type</b></em>' enumerators.
@@ -1714,7 +1439,6 @@ public enum ActRelationshipType implements Enumerator {
 			APND,
 			ARR,
 			AUTH,
-			BLOCK,
 			CAUS,
 			CHRG,
 			CIND,
@@ -1723,15 +1447,11 @@ public enum ActRelationshipType implements Enumerator {
 			COVBY,
 			CREDIT,
 			CTRLV,
-			CURE,
-			CUREADJ,
 			DEBIT,
 			DEP,
-			DIAG,
 			DOC,
 			DRIV,
 			ELNK,
-			EVID,
 			EXPL,
 			FLFS,
 			GEN,
@@ -1742,9 +1462,7 @@ public enum ActRelationshipType implements Enumerator {
 			LIMIT,
 			MFST,
 			MITGT,
-			MOD,
 			MTCH,
-			MTGTADJ,
 			NAME,
 			OBJC,
 			OBJF,
@@ -1755,15 +1473,12 @@ public enum ActRelationshipType implements Enumerator {
 			PERT,
 			PRCN,
 			PREV,
-			RCHAL,
-			RCVY,
 			REFR,
 			REFV,
 			REV,
 			RISK,
 			RPLC,
 			RSON,
-			SAE,
 			SAS,
 			SCH,
 			SEQL,
@@ -1772,7 +1487,6 @@ public enum ActRelationshipType implements Enumerator {
 			SUBJ,
 			SUCC,
 			SUMM,
-			SYMP,
 			TRIG,
 			UPDT,
 			VRXCRPT,
@@ -1831,7 +1545,6 @@ public enum ActRelationshipType implements Enumerator {
 			case APND_VALUE: return APND;
 			case ARR_VALUE: return ARR;
 			case AUTH_VALUE: return AUTH;
-			case BLOCK_VALUE: return BLOCK;
 			case CAUS_VALUE: return CAUS;
 			case CHRG_VALUE: return CHRG;
 			case CIND_VALUE: return CIND;
@@ -1840,15 +1553,11 @@ public enum ActRelationshipType implements Enumerator {
 			case COVBY_VALUE: return COVBY;
 			case CREDIT_VALUE: return CREDIT;
 			case CTRLV_VALUE: return CTRLV;
-			case CURE_VALUE: return CURE;
-			case CUREADJ_VALUE: return CUREADJ;
 			case DEBIT_VALUE: return DEBIT;
 			case DEP_VALUE: return DEP;
-			case DIAG_VALUE: return DIAG;
 			case DOC_VALUE: return DOC;
 			case DRIV_VALUE: return DRIV;
 			case ELNK_VALUE: return ELNK;
-			case EVID_VALUE: return EVID;
 			case EXPL_VALUE: return EXPL;
 			case FLFS_VALUE: return FLFS;
 			case GEN_VALUE: return GEN;
@@ -1859,9 +1568,7 @@ public enum ActRelationshipType implements Enumerator {
 			case LIMIT_VALUE: return LIMIT;
 			case MFST_VALUE: return MFST;
 			case MITGT_VALUE: return MITGT;
-			case MOD_VALUE: return MOD;
 			case MTCH_VALUE: return MTCH;
-			case MTGTADJ_VALUE: return MTGTADJ;
 			case NAME_VALUE: return NAME;
 			case OBJC_VALUE: return OBJC;
 			case OBJF_VALUE: return OBJF;
@@ -1872,15 +1579,12 @@ public enum ActRelationshipType implements Enumerator {
 			case PERT_VALUE: return PERT;
 			case PRCN_VALUE: return PRCN;
 			case PREV_VALUE: return PREV;
-			case RCHAL_VALUE: return RCHAL;
-			case RCVY_VALUE: return RCVY;
 			case REFR_VALUE: return REFR;
 			case REFV_VALUE: return REFV;
 			case REV_VALUE: return REV;
 			case RISK_VALUE: return RISK;
 			case RPLC_VALUE: return RPLC;
 			case RSON_VALUE: return RSON;
-			case SAE_VALUE: return SAE;
 			case SAS_VALUE: return SAS;
 			case SCH_VALUE: return SCH;
 			case SEQL_VALUE: return SEQL;
@@ -1889,7 +1593,6 @@ public enum ActRelationshipType implements Enumerator {
 			case SUBJ_VALUE: return SUBJ;
 			case SUCC_VALUE: return SUCC;
 			case SUMM_VALUE: return SUMM;
-			case SYMP_VALUE: return SYMP;
 			case TRIG_VALUE: return TRIG;
 			case UPDT_VALUE: return UPDT;
 			case VRXCRPT_VALUE: return VRXCRPT;

@@ -49,36 +49,6 @@ public enum RoleClass implements Enumerator {
 	ACTI(1, "ACTI", "ACTI"),
 
 	/**
-	 * The '<em><b>ACTIB</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ACTIB_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ACTIB(2, "ACTIB", "ACTIB"),
-
-	/**
-	 * The '<em><b>ACTIM</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ACTIM_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ACTIM(3, "ACTIM", "ACTIM"),
-
-	/**
-	 * The '<em><b>ACTIR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ACTIR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ACTIR(4, "ACTIR", "ACTIR"),
-
-	/**
 	 * The '<em><b>ACTM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,17 +56,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTM(5, "ACTM", "ACTM"),
-
-	/**
-	 * The '<em><b>ADMM</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ADMM_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ADMM(6, "ADMM", "ADMM"),
+	ACTM(2, "ACTM", "ACTM"),
 
 	/**
 	 * The '<em><b>ADTV</b></em>' literal object.
@@ -106,17 +66,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ADTV(7, "ADTV", "ADTV"),
-
-	/**
-	 * The '<em><b>AFFL</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AFFL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	AFFL(8, "AFFL", "AFFL"),
+	ADTV(3, "ADTV", "ADTV"),
 
 	/**
 	 * The '<em><b>AGNT</b></em>' literal object.
@@ -126,7 +76,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AGNT(9, "AGNT", "AGNT"),
+	AGNT(4, "AGNT", "AGNT"),
 
 	/**
 	 * The '<em><b>ALQT</b></em>' literal object.
@@ -136,7 +86,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ALQT(10, "ALQT", "ALQT"),
+	ALQT(5, "ALQT", "ALQT"),
 
 	/**
 	 * The '<em><b>ASSIGNED</b></em>' literal object.
@@ -146,7 +96,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ASSIGNED(11, "ASSIGNED", "ASSIGNED"),
+	ASSIGNED(6, "ASSIGNED", "ASSIGNED"),
 
 	/**
 	 * The '<em><b>BASE</b></em>' literal object.
@@ -156,7 +106,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BASE(12, "BASE", "BASE"),
+	BASE(7, "BASE", "BASE"),
 
 	/**
 	 * The '<em><b>BIRTHPL</b></em>' literal object.
@@ -166,7 +116,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BIRTHPL(13, "BIRTHPL", "BIRTHPL"),
+	BIRTHPL(8, "BIRTHPL", "BIRTHPL"),
 
 	/**
 	 * The '<em><b>CAREGIVER</b></em>' literal object.
@@ -176,19 +126,17 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CAREGIVER(14, "CAREGIVER", "CAREGIVER"),
+	CAREGIVER(9, "CAREGIVER", "CAREGIVER"),
 
 	/**
-	 * The '<em><b>CASEBJ</b></em>' literal object.
+	 * The '<em><b>CASESBJ</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CASEBJ_VALUE
+	 * @see #CASESBJ_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CASEBJ(15, "CASEBJ", "CASEBJ"),
-
-	/**
+	CASESBJ(10, "CASESBJ", "CASESBJ"), /**
 	 * The '<em><b>CIT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,17 +144,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CIT(16, "CIT", "CIT"),
-
-	/**
-	 * The '<em><b>CLAIM</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CLAIM_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CLAIM(17, "CLAIM", "CLAIM"),
+	CIT(11, "CIT", "CIT"),
 
 	/**
 	 * The '<em><b>COLR</b></em>' literal object.
@@ -216,7 +154,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COLR(18, "COLR", "COLR"),
+	COLR(12, "COLR", "COLR"),
 
 	/**
 	 * The '<em><b>COMPAR</b></em>' literal object.
@@ -226,7 +164,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COMPAR(19, "COMPAR", "COMPAR"),
+	COMPAR(13, "COMPAR", "COMPAR"),
 
 	/**
 	 * The '<em><b>CON</b></em>' literal object.
@@ -236,7 +174,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CON(20, "CON", "CON"),
+	CON(14, "CON", "CON"),
 
 	/**
 	 * The '<em><b>CONT</b></em>' literal object.
@@ -246,7 +184,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CONT(21, "CONT", "CONT"),
+	CONT(15, "CONT", "CONT"),
 
 	/**
 	 * The '<em><b>COVPTY</b></em>' literal object.
@@ -256,7 +194,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COVPTY(22, "COVPTY", "COVPTY"),
+	COVPTY(16, "COVPTY", "COVPTY"),
 
 	/**
 	 * The '<em><b>CRINV</b></em>' literal object.
@@ -266,7 +204,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CRINV(23, "CRINV", "CRINV"),
+	CRINV(17, "CRINV", "CRINV"),
 
 	/**
 	 * The '<em><b>CRSPNSR</b></em>' literal object.
@@ -276,27 +214,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CRSPNSR(24, "CRSPNSR", "CRSPNSR"),
-
-	/**
-	 * The '<em><b>DEATHPLC</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DEATHPLC_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DEATHPLC(25, "DEATHPLC", "DEATHPLC"),
-
-	/**
-	 * The '<em><b>DEPEN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DEPEN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DEPEN(26, "DEPEN", "DEPEN"),
+	CRSPNSR(18, "CRSPNSR", "CRSPNSR"),
 
 	/**
 	 * The '<em><b>DSDLOC</b></em>' literal object.
@@ -306,7 +224,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DSDLOC(27, "DSDLOC", "DSDLOC"),
+	DSDLOC(19, "DSDLOC", "DSDLOC"),
 
 	/**
 	 * The '<em><b>DST</b></em>' literal object.
@@ -316,7 +234,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DST(28, "DST", "DST"),
+	DST(20, "DST", "DST"),
 
 	/**
 	 * The '<em><b>ECON</b></em>' literal object.
@@ -326,7 +244,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ECON(29, "ECON", "ECON"),
+	ECON(21, "ECON", "ECON"),
 
 	/**
 	 * The '<em><b>EMP</b></em>' literal object.
@@ -336,27 +254,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EMP(30, "EMP", "EMP"),
-
-	/**
-	 * The '<em><b>EQUIV</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EQUIV_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EQUIV(31, "EQUIV", "EQUIV"),
-
-	/**
-	 * The '<em><b>EXPAGTCAR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EXPAGTCAR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EXPAGTCAR(32, "EXPAGTCAR", "EXPAGTCAR"),
+	EMP(22, "EMP", "EMP"),
 
 	/**
 	 * The '<em><b>EXPR</b></em>' literal object.
@@ -366,17 +264,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EXPR(33, "EXPR", "EXPR"),
-
-	/**
-	 * The '<em><b>EXPVECTOR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EXPVECTOR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EXPVECTOR(34, "EXPVECTOR", "EXPVECTOR"),
+	EXPR(23, "EXPR", "EXPR"),
 
 	/**
 	 * The '<em><b>FLVR</b></em>' literal object.
@@ -386,17 +274,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLVR(35, "FLVR", "FLVR"),
-
-	/**
-	 * The '<em><b>FOMITE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #FOMITE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	FOMITE(36, "FOMITE", "FOMITE"),
+	FLVR(24, "FLVR", "FLVR"),
 
 	/**
 	 * The '<em><b>GEN</b></em>' literal object.
@@ -406,7 +284,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GEN(37, "GEN", "GEN"),
+	GEN(25, "GEN", "GEN"),
 
 	/**
 	 * The '<em><b>GRIC</b></em>' literal object.
@@ -416,7 +294,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GRIC(38, "GRIC", "GRIC"),
+	GRIC(26, "GRIC", "GRIC"),
 
 	/**
 	 * The '<em><b>GUAR</b></em>' literal object.
@@ -426,7 +304,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GUAR(39, "GUAR", "GUAR"),
+	GUAR(27, "GUAR", "GUAR"),
 
 	/**
 	 * The '<em><b>GUARD</b></em>' literal object.
@@ -436,7 +314,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GUARD(40, "GUARD", "GUARD"),
+	GUARD(28, "GUARD", "GUARD"),
 
 	/**
 	 * The '<em><b>HLD</b></em>' literal object.
@@ -446,7 +324,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HLD(41, "HLD", "HLD"),
+	HLD(29, "HLD", "HLD"),
 
 	/**
 	 * The '<em><b>HLTHCHRT</b></em>' literal object.
@@ -456,7 +334,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HLTHCHRT(42, "HLTHCHRT", "HLTHCHRT"),
+	HLTHCHRT(30, "HLTHCHRT", "HLTHCHRT"),
 
 	/**
 	 * The '<em><b>IACT</b></em>' literal object.
@@ -466,7 +344,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IACT(43, "IACT", "IACT"),
+	IACT(31, "IACT", "IACT"),
 
 	/**
 	 * The '<em><b>IDENT</b></em>' literal object.
@@ -476,17 +354,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IDENT(44, "IDENT", "IDENT"),
-
-	/**
-	 * The '<em><b>INDIV</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INDIV_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	INDIV(45, "INDIV", "INDIV"),
+	IDENT(32, "IDENT", "IDENT"),
 
 	/**
 	 * The '<em><b>INGR</b></em>' literal object.
@@ -496,7 +364,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INGR(46, "INGR", "INGR"),
+	INGR(33, "INGR", "INGR"),
 
 	/**
 	 * The '<em><b>INST</b></em>' literal object.
@@ -506,7 +374,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INST(47, "INST", "INST"),
+	INST(34, "INST", "INST"),
 
 	/**
 	 * The '<em><b>INVSBJ</b></em>' literal object.
@@ -516,7 +384,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INVSBJ(48, "INVSBJ", "INVSBJ"),
+	INVSBJ(35, "INVSBJ", "INVSBJ"),
 
 	/**
 	 * The '<em><b>ISDLOC</b></em>' literal object.
@@ -526,7 +394,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ISDLOC(49, "ISDLOC", "ISDLOC"),
+	ISDLOC(36, "ISDLOC", "ISDLOC"),
 
 	/**
 	 * The '<em><b>ISLT</b></em>' literal object.
@@ -536,7 +404,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ISLT(50, "ISLT", "ISLT"),
+	ISLT(37, "ISLT", "ISLT"),
 
 	/**
 	 * The '<em><b>LIC</b></em>' literal object.
@@ -546,7 +414,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LIC(51, "LIC", "LIC"),
+	LIC(38, "LIC", "LIC"),
 
 	/**
 	 * The '<em><b>LOCE</b></em>' literal object.
@@ -556,7 +424,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LOCE(52, "LOCE", "LOCE"),
+	LOCE(39, "LOCE", "LOCE"),
 
 	/**
 	 * The '<em><b>MANU</b></em>' literal object.
@@ -566,7 +434,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MANU(53, "MANU", "MANU"),
+	MANU(40, "MANU", "MANU"),
 
 	/**
 	 * The '<em><b>MBR</b></em>' literal object.
@@ -576,7 +444,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MBR(54, "MBR", "MBR"),
+	MBR(41, "MBR", "MBR"),
 
 	/**
 	 * The '<em><b>MIL</b></em>' literal object.
@@ -586,7 +454,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MIL(55, "MIL", "MIL"),
+	MIL(42, "MIL", "MIL"),
 
 	/**
 	 * The '<em><b>MNT</b></em>' literal object.
@@ -596,17 +464,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MNT(56, "MNT", "MNT"),
-
-	/**
-	 * The '<em><b>NAMED</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #NAMED_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	NAMED(57, "NAMED", "NAMED"),
+	MNT(43, "MNT", "MNT"),
 
 	/**
 	 * The '<em><b>NOK</b></em>' literal object.
@@ -616,7 +474,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOK(58, "NOK", "NOK"),
+	NOK(44, "NOK", "NOK"),
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal object.
@@ -626,7 +484,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOT(59, "NOT", "NOT"),
+	NOT(45, "NOT", "NOT"),
 
 	/**
 	 * The '<em><b>OWN</b></em>' literal object.
@@ -636,7 +494,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OWN(60, "OWN", "OWN"),
+	OWN(46, "OWN", "OWN"),
 
 	/**
 	 * The '<em><b>PART</b></em>' literal object.
@@ -646,7 +504,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PART(61, "PART", "PART"),
+	PART(47, "PART", "PART"),
 
 	/**
 	 * The '<em><b>PAT</b></em>' literal object.
@@ -656,7 +514,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PAT(62, "PAT", "PAT"),
+	PAT(48, "PAT", "PAT"),
 
 	/**
 	 * The '<em><b>PAYEE</b></em>' literal object.
@@ -666,7 +524,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PAYEE(63, "PAYEE", "PAYEE"),
+	PAYEE(49, "PAYEE", "PAYEE"),
 
 	/**
 	 * The '<em><b>PAYOR</b></em>' literal object.
@@ -676,7 +534,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PAYOR(64, "PAYOR", "PAYOR"),
+	PAYOR(50, "PAYOR", "PAYOR"),
 
 	/**
 	 * The '<em><b>POLHOLD</b></em>' literal object.
@@ -686,17 +544,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POLHOLD(65, "POLHOLD", "POLHOLD"),
-
-	/**
-	 * The '<em><b>PROG</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PROG_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PROG(66, "PROG", "PROG"),
+	POLHOLD(51, "POLHOLD", "POLHOLD"),
 
 	/**
 	 * The '<em><b>PROV</b></em>' literal object.
@@ -706,7 +554,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROV(67, "PROV", "PROV"),
+	PROV(52, "PROV", "PROV"),
 
 	/**
 	 * The '<em><b>PRS</b></em>' literal object.
@@ -716,7 +564,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRS(68, "PRS", "PRS"),
+	PRS(53, "PRS", "PRS"),
 
 	/**
 	 * The '<em><b>PRSV</b></em>' literal object.
@@ -726,7 +574,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRSV(69, "PRSV", "PRSV"),
+	PRSV(54, "PRSV", "PRSV"),
 
 	/**
 	 * The '<em><b>QUAL</b></em>' literal object.
@@ -736,7 +584,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	QUAL(70, "QUAL", "QUAL"),
+	QUAL(55, "QUAL", "QUAL"),
 
 	/**
 	 * The '<em><b>RESBJ</b></em>' literal object.
@@ -746,7 +594,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESBJ(71, "RESBJ", "RESBJ"),
+	RESBJ(56, "RESBJ", "RESBJ"),
 
 	/**
 	 * The '<em><b>RET</b></em>' literal object.
@@ -756,7 +604,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RET(72, "RET", "RET"),
+	RET(57, "RET", "RET"),
 
 	/**
 	 * The '<em><b>RGPR</b></em>' literal object.
@@ -766,7 +614,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RGPR(73, "RGPR", "RGPR"),
+	RGPR(58, "RGPR", "RGPR"),
 
 	/**
 	 * The '<em><b>ROL</b></em>' literal object.
@@ -776,17 +624,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ROL(74, "ROL", "ROL"),
-
-	/**
-	 * The '<em><b>SAME</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SAME_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SAME(75, "SAME", "SAME"),
+	ROL(59, "ROL", "ROL"),
 
 	/**
 	 * The '<em><b>SDLOC</b></em>' literal object.
@@ -796,7 +634,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SDLOC(76, "SDLOC", "SDLOC"),
+	SDLOC(60, "SDLOC", "SDLOC"),
 
 	/**
 	 * The '<em><b>SGNOFF</b></em>' literal object.
@@ -806,7 +644,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SGNOFF(77, "SGNOFF", "SGNOFF"),
+	SGNOFF(61, "SGNOFF", "SGNOFF"),
 
 	/**
 	 * The '<em><b>SPEC</b></em>' literal object.
@@ -816,7 +654,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPEC(78, "SPEC", "SPEC"),
+	SPEC(62, "SPEC", "SPEC"),
 
 	/**
 	 * The '<em><b>SPNSR</b></em>' literal object.
@@ -826,7 +664,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPNSR(79, "SPNSR", "SPNSR"),
+	SPNSR(63, "SPNSR", "SPNSR"),
 
 	/**
 	 * The '<em><b>STBL</b></em>' literal object.
@@ -836,7 +674,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STBL(80, "STBL", "STBL"),
+	STBL(64, "STBL", "STBL"),
 
 	/**
 	 * The '<em><b>STD</b></em>' literal object.
@@ -846,7 +684,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STD(81, "STD", "STD"),
+	STD(65, "STD", "STD"),
 
 	/**
 	 * The '<em><b>STOR</b></em>' literal object.
@@ -856,7 +694,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STOR(82, "STOR", "STOR"),
+	STOR(66, "STOR", "STOR"),
 
 	/**
 	 * The '<em><b>SUBS</b></em>' literal object.
@@ -866,17 +704,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUBS(83, "SUBS", "SUBS"),
-
-	/**
-	 * The '<em><b>SUBSCR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SUBSCR(84, "SUBSCR", "SUBSCR"),
+	SUBS(67, "SUBS", "SUBS"),
 
 	/**
 	 * The '<em><b>SUBY</b></em>' literal object.
@@ -886,7 +714,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUBY(85, "SUBY", "SUBY"),
+	SUBY(68, "SUBY", "SUBY"),
 
 	/**
 	 * The '<em><b>TERR</b></em>' literal object.
@@ -896,7 +724,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TERR(86, "TERR", "TERR"),
+	TERR(69, "TERR", "TERR"),
 
 	/**
 	 * The '<em><b>THER</b></em>' literal object.
@@ -906,7 +734,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	THER(87, "THER", "THER"),
+	THER(70, "THER", "THER"),
 
 	/**
 	 * The '<em><b>UNDWRT</b></em>' literal object.
@@ -916,7 +744,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNDWRT(88, "UNDWRT", "UNDWRT"),
+	UNDWRT(71, "UNDWRT", "UNDWRT"),
 
 	/**
 	 * The '<em><b>WRTE</b></em>' literal object.
@@ -926,7 +754,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WRTE(89, "WRTE", "WRTE");
+	WRTE(72, "WRTE", "WRTE");
 
 	/**
 	 * The '<em><b>ACCESS</b></em>' literal value.
@@ -959,51 +787,6 @@ public enum RoleClass implements Enumerator {
 	public static final int ACTI_VALUE = 1;
 
 	/**
-	 * The '<em><b>ACTIB</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ACTIB</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #ACTIB
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ACTIB_VALUE = 2;
-
-	/**
-	 * The '<em><b>ACTIM</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ACTIM</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #ACTIM
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ACTIM_VALUE = 3;
-
-	/**
-	 * The '<em><b>ACTIR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ACTIR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #ACTIR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ACTIR_VALUE = 4;
-
-	/**
 	 * The '<em><b>ACTM</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -1016,22 +799,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ACTM_VALUE = 5;
-
-	/**
-	 * The '<em><b>ADMM</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ADMM</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #ADMM
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ADMM_VALUE = 6;
+	public static final int ACTM_VALUE = 2;
 
 	/**
 	 * The '<em><b>ADTV</b></em>' literal value.
@@ -1046,22 +814,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ADTV_VALUE = 7;
-
-	/**
-	 * The '<em><b>AFFL</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>AFFL</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #AFFL
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int AFFL_VALUE = 8;
+	public static final int ADTV_VALUE = 3;
 
 	/**
 	 * The '<em><b>AGNT</b></em>' literal value.
@@ -1076,7 +829,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AGNT_VALUE = 9;
+	public static final int AGNT_VALUE = 4;
 
 	/**
 	 * The '<em><b>ALQT</b></em>' literal value.
@@ -1091,7 +844,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ALQT_VALUE = 10;
+	public static final int ALQT_VALUE = 5;
 
 	/**
 	 * The '<em><b>ASSIGNED</b></em>' literal value.
@@ -1106,7 +859,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ASSIGNED_VALUE = 11;
+	public static final int ASSIGNED_VALUE = 6;
 
 	/**
 	 * The '<em><b>BASE</b></em>' literal value.
@@ -1121,7 +874,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BASE_VALUE = 12;
+	public static final int BASE_VALUE = 7;
 
 	/**
 	 * The '<em><b>BIRTHPL</b></em>' literal value.
@@ -1136,7 +889,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BIRTHPL_VALUE = 13;
+	public static final int BIRTHPL_VALUE = 8;
 
 	/**
 	 * The '<em><b>CAREGIVER</b></em>' literal value.
@@ -1151,22 +904,22 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CAREGIVER_VALUE = 14;
+	public static final int CAREGIVER_VALUE = 9;
 
 	/**
-	 * The '<em><b>CASEBJ</b></em>' literal value.
+	 * The '<em><b>CASESBJ</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CASEBJ</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>CASESBJ</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CASEBJ
+	 * @see #CASESBJ
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CASEBJ_VALUE = 15;
+	public static final int CASESBJ_VALUE = 10;
 
 	/**
 	 * The '<em><b>CIT</b></em>' literal value.
@@ -1181,22 +934,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CIT_VALUE = 16;
-
-	/**
-	 * The '<em><b>CLAIM</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CLAIM</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CLAIM
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CLAIM_VALUE = 17;
+	public static final int CIT_VALUE = 11;
 
 	/**
 	 * The '<em><b>COLR</b></em>' literal value.
@@ -1211,7 +949,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COLR_VALUE = 18;
+	public static final int COLR_VALUE = 12;
 
 	/**
 	 * The '<em><b>COMPAR</b></em>' literal value.
@@ -1226,7 +964,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COMPAR_VALUE = 19;
+	public static final int COMPAR_VALUE = 13;
 
 	/**
 	 * The '<em><b>CON</b></em>' literal value.
@@ -1241,7 +979,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CON_VALUE = 20;
+	public static final int CON_VALUE = 14;
 
 	/**
 	 * The '<em><b>CONT</b></em>' literal value.
@@ -1256,7 +994,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CONT_VALUE = 21;
+	public static final int CONT_VALUE = 15;
 
 	/**
 	 * The '<em><b>COVPTY</b></em>' literal value.
@@ -1271,7 +1009,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COVPTY_VALUE = 22;
+	public static final int COVPTY_VALUE = 16;
 
 	/**
 	 * The '<em><b>CRINV</b></em>' literal value.
@@ -1286,7 +1024,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CRINV_VALUE = 23;
+	public static final int CRINV_VALUE = 17;
 
 	/**
 	 * The '<em><b>CRSPNSR</b></em>' literal value.
@@ -1301,37 +1039,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CRSPNSR_VALUE = 24;
-
-	/**
-	 * The '<em><b>DEATHPLC</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>DEATHPLC</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DEATHPLC
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DEATHPLC_VALUE = 25;
-
-	/**
-	 * The '<em><b>DEPEN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>DEPEN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DEPEN
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DEPEN_VALUE = 26;
+	public static final int CRSPNSR_VALUE = 18;
 
 	/**
 	 * The '<em><b>DSDLOC</b></em>' literal value.
@@ -1346,7 +1054,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DSDLOC_VALUE = 27;
+	public static final int DSDLOC_VALUE = 19;
 
 	/**
 	 * The '<em><b>DST</b></em>' literal value.
@@ -1361,7 +1069,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DST_VALUE = 28;
+	public static final int DST_VALUE = 20;
 
 	/**
 	 * The '<em><b>ECON</b></em>' literal value.
@@ -1376,7 +1084,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ECON_VALUE = 29;
+	public static final int ECON_VALUE = 21;
 
 	/**
 	 * The '<em><b>EMP</b></em>' literal value.
@@ -1391,37 +1099,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMP_VALUE = 30;
-
-	/**
-	 * The '<em><b>EQUIV</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EQUIV</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EQUIV
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EQUIV_VALUE = 31;
-
-	/**
-	 * The '<em><b>EXPAGTCAR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EXPAGTCAR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EXPAGTCAR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EXPAGTCAR_VALUE = 32;
+	public static final int EMP_VALUE = 22;
 
 	/**
 	 * The '<em><b>EXPR</b></em>' literal value.
@@ -1436,22 +1114,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EXPR_VALUE = 33;
-
-	/**
-	 * The '<em><b>EXPVECTOR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EXPVECTOR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EXPVECTOR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EXPVECTOR_VALUE = 34;
+	public static final int EXPR_VALUE = 23;
 
 	/**
 	 * The '<em><b>FLVR</b></em>' literal value.
@@ -1466,22 +1129,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FLVR_VALUE = 35;
-
-	/**
-	 * The '<em><b>FOMITE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>FOMITE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #FOMITE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int FOMITE_VALUE = 36;
+	public static final int FLVR_VALUE = 24;
 
 	/**
 	 * The '<em><b>GEN</b></em>' literal value.
@@ -1496,7 +1144,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GEN_VALUE = 37;
+	public static final int GEN_VALUE = 25;
 
 	/**
 	 * The '<em><b>GRIC</b></em>' literal value.
@@ -1511,7 +1159,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GRIC_VALUE = 38;
+	public static final int GRIC_VALUE = 26;
 
 	/**
 	 * The '<em><b>GUAR</b></em>' literal value.
@@ -1526,7 +1174,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUAR_VALUE = 39;
+	public static final int GUAR_VALUE = 27;
 
 	/**
 	 * The '<em><b>GUARD</b></em>' literal value.
@@ -1541,7 +1189,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUARD_VALUE = 40;
+	public static final int GUARD_VALUE = 28;
 
 	/**
 	 * The '<em><b>HLD</b></em>' literal value.
@@ -1556,7 +1204,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HLD_VALUE = 41;
+	public static final int HLD_VALUE = 29;
 
 	/**
 	 * The '<em><b>HLTHCHRT</b></em>' literal value.
@@ -1571,7 +1219,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HLTHCHRT_VALUE = 42;
+	public static final int HLTHCHRT_VALUE = 30;
 
 	/**
 	 * The '<em><b>IACT</b></em>' literal value.
@@ -1586,7 +1234,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IACT_VALUE = 43;
+	public static final int IACT_VALUE = 31;
 
 	/**
 	 * The '<em><b>IDENT</b></em>' literal value.
@@ -1601,22 +1249,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IDENT_VALUE = 44;
-
-	/**
-	 * The '<em><b>INDIV</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>INDIV</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #INDIV
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INDIV_VALUE = 45;
+	public static final int IDENT_VALUE = 32;
 
 	/**
 	 * The '<em><b>INGR</b></em>' literal value.
@@ -1631,7 +1264,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INGR_VALUE = 46;
+	public static final int INGR_VALUE = 33;
 
 	/**
 	 * The '<em><b>INST</b></em>' literal value.
@@ -1646,7 +1279,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INST_VALUE = 47;
+	public static final int INST_VALUE = 34;
 
 	/**
 	 * The '<em><b>INVSBJ</b></em>' literal value.
@@ -1661,7 +1294,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INVSBJ_VALUE = 48;
+	public static final int INVSBJ_VALUE = 35;
 
 	/**
 	 * The '<em><b>ISDLOC</b></em>' literal value.
@@ -1676,7 +1309,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ISDLOC_VALUE = 49;
+	public static final int ISDLOC_VALUE = 36;
 
 	/**
 	 * The '<em><b>ISLT</b></em>' literal value.
@@ -1691,7 +1324,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ISLT_VALUE = 50;
+	public static final int ISLT_VALUE = 37;
 
 	/**
 	 * The '<em><b>LIC</b></em>' literal value.
@@ -1706,7 +1339,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LIC_VALUE = 51;
+	public static final int LIC_VALUE = 38;
 
 	/**
 	 * The '<em><b>LOCE</b></em>' literal value.
@@ -1721,7 +1354,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LOCE_VALUE = 52;
+	public static final int LOCE_VALUE = 39;
 
 	/**
 	 * The '<em><b>MANU</b></em>' literal value.
@@ -1736,7 +1369,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MANU_VALUE = 53;
+	public static final int MANU_VALUE = 40;
 
 	/**
 	 * The '<em><b>MBR</b></em>' literal value.
@@ -1751,7 +1384,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MBR_VALUE = 54;
+	public static final int MBR_VALUE = 41;
 
 	/**
 	 * The '<em><b>MIL</b></em>' literal value.
@@ -1766,7 +1399,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MIL_VALUE = 55;
+	public static final int MIL_VALUE = 42;
 
 	/**
 	 * The '<em><b>MNT</b></em>' literal value.
@@ -1781,22 +1414,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MNT_VALUE = 56;
-
-	/**
-	 * The '<em><b>NAMED</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>NAMED</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #NAMED
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int NAMED_VALUE = 57;
+	public static final int MNT_VALUE = 43;
 
 	/**
 	 * The '<em><b>NOK</b></em>' literal value.
@@ -1811,7 +1429,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOK_VALUE = 58;
+	public static final int NOK_VALUE = 44;
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal value.
@@ -1826,7 +1444,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_VALUE = 59;
+	public static final int NOT_VALUE = 45;
 
 	/**
 	 * The '<em><b>OWN</b></em>' literal value.
@@ -1841,7 +1459,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OWN_VALUE = 60;
+	public static final int OWN_VALUE = 46;
 
 	/**
 	 * The '<em><b>PART</b></em>' literal value.
@@ -1856,7 +1474,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PART_VALUE = 61;
+	public static final int PART_VALUE = 47;
 
 	/**
 	 * The '<em><b>PAT</b></em>' literal value.
@@ -1871,7 +1489,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PAT_VALUE = 62;
+	public static final int PAT_VALUE = 48;
 
 	/**
 	 * The '<em><b>PAYEE</b></em>' literal value.
@@ -1886,7 +1504,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PAYEE_VALUE = 63;
+	public static final int PAYEE_VALUE = 49;
 
 	/**
 	 * The '<em><b>PAYOR</b></em>' literal value.
@@ -1901,7 +1519,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PAYOR_VALUE = 64;
+	public static final int PAYOR_VALUE = 50;
 
 	/**
 	 * The '<em><b>POLHOLD</b></em>' literal value.
@@ -1916,22 +1534,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POLHOLD_VALUE = 65;
-
-	/**
-	 * The '<em><b>PROG</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>PROG</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PROG
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PROG_VALUE = 66;
+	public static final int POLHOLD_VALUE = 51;
 
 	/**
 	 * The '<em><b>PROV</b></em>' literal value.
@@ -1946,7 +1549,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROV_VALUE = 67;
+	public static final int PROV_VALUE = 52;
 
 	/**
 	 * The '<em><b>PRS</b></em>' literal value.
@@ -1961,7 +1564,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRS_VALUE = 68;
+	public static final int PRS_VALUE = 53;
 
 	/**
 	 * The '<em><b>PRSV</b></em>' literal value.
@@ -1976,7 +1579,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRSV_VALUE = 69;
+	public static final int PRSV_VALUE = 54;
 
 	/**
 	 * The '<em><b>QUAL</b></em>' literal value.
@@ -1991,7 +1594,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int QUAL_VALUE = 70;
+	public static final int QUAL_VALUE = 55;
 
 	/**
 	 * The '<em><b>RESBJ</b></em>' literal value.
@@ -2006,7 +1609,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RESBJ_VALUE = 71;
+	public static final int RESBJ_VALUE = 56;
 
 	/**
 	 * The '<em><b>RET</b></em>' literal value.
@@ -2021,7 +1624,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RET_VALUE = 72;
+	public static final int RET_VALUE = 57;
 
 	/**
 	 * The '<em><b>RGPR</b></em>' literal value.
@@ -2036,7 +1639,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RGPR_VALUE = 73;
+	public static final int RGPR_VALUE = 58;
 
 	/**
 	 * The '<em><b>ROL</b></em>' literal value.
@@ -2051,22 +1654,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROL_VALUE = 74;
-
-	/**
-	 * The '<em><b>SAME</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>SAME</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SAME
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SAME_VALUE = 75;
+	public static final int ROL_VALUE = 59;
 
 	/**
 	 * The '<em><b>SDLOC</b></em>' literal value.
@@ -2081,7 +1669,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SDLOC_VALUE = 76;
+	public static final int SDLOC_VALUE = 60;
 
 	/**
 	 * The '<em><b>SGNOFF</b></em>' literal value.
@@ -2096,7 +1684,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SGNOFF_VALUE = 77;
+	public static final int SGNOFF_VALUE = 61;
 
 	/**
 	 * The '<em><b>SPEC</b></em>' literal value.
@@ -2111,7 +1699,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPEC_VALUE = 78;
+	public static final int SPEC_VALUE = 62;
 
 	/**
 	 * The '<em><b>SPNSR</b></em>' literal value.
@@ -2126,7 +1714,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPNSR_VALUE = 79;
+	public static final int SPNSR_VALUE = 63;
 
 	/**
 	 * The '<em><b>STBL</b></em>' literal value.
@@ -2141,7 +1729,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STBL_VALUE = 80;
+	public static final int STBL_VALUE = 64;
 
 	/**
 	 * The '<em><b>STD</b></em>' literal value.
@@ -2156,7 +1744,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STD_VALUE = 81;
+	public static final int STD_VALUE = 65;
 
 	/**
 	 * The '<em><b>STOR</b></em>' literal value.
@@ -2171,7 +1759,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STOR_VALUE = 82;
+	public static final int STOR_VALUE = 66;
 
 	/**
 	 * The '<em><b>SUBS</b></em>' literal value.
@@ -2186,22 +1774,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUBS_VALUE = 83;
-
-	/**
-	 * The '<em><b>SUBSCR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>SUBSCR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SUBSCR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SUBSCR_VALUE = 84;
+	public static final int SUBS_VALUE = 67;
 
 	/**
 	 * The '<em><b>SUBY</b></em>' literal value.
@@ -2216,7 +1789,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUBY_VALUE = 85;
+	public static final int SUBY_VALUE = 68;
 
 	/**
 	 * The '<em><b>TERR</b></em>' literal value.
@@ -2231,7 +1804,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TERR_VALUE = 86;
+	public static final int TERR_VALUE = 69;
 
 	/**
 	 * The '<em><b>THER</b></em>' literal value.
@@ -2246,7 +1819,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int THER_VALUE = 87;
+	public static final int THER_VALUE = 70;
 
 	/**
 	 * The '<em><b>UNDWRT</b></em>' literal value.
@@ -2261,7 +1834,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNDWRT_VALUE = 88;
+	public static final int UNDWRT_VALUE = 71;
 
 	/**
 	 * The '<em><b>WRTE</b></em>' literal value.
@@ -2276,7 +1849,7 @@ public enum RoleClass implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WRTE_VALUE = 89;
+	public static final int WRTE_VALUE = 72;
 
 	/**
 	 * An array of all the '<em><b>Role Class</b></em>' enumerators.
@@ -2288,22 +1861,16 @@ public enum RoleClass implements Enumerator {
 		new RoleClass[] {
 			ACCESS,
 			ACTI,
-			ACTIB,
-			ACTIM,
-			ACTIR,
 			ACTM,
-			ADMM,
 			ADTV,
-			AFFL,
 			AGNT,
 			ALQT,
 			ASSIGNED,
 			BASE,
 			BIRTHPL,
 			CAREGIVER,
-			CASEBJ,
+			CASESBJ,
 			CIT,
-			CLAIM,
 			COLR,
 			COMPAR,
 			CON,
@@ -2311,18 +1878,12 @@ public enum RoleClass implements Enumerator {
 			COVPTY,
 			CRINV,
 			CRSPNSR,
-			DEATHPLC,
-			DEPEN,
 			DSDLOC,
 			DST,
 			ECON,
 			EMP,
-			EQUIV,
-			EXPAGTCAR,
 			EXPR,
-			EXPVECTOR,
 			FLVR,
-			FOMITE,
 			GEN,
 			GRIC,
 			GUAR,
@@ -2331,7 +1892,6 @@ public enum RoleClass implements Enumerator {
 			HLTHCHRT,
 			IACT,
 			IDENT,
-			INDIV,
 			INGR,
 			INST,
 			INVSBJ,
@@ -2343,7 +1903,6 @@ public enum RoleClass implements Enumerator {
 			MBR,
 			MIL,
 			MNT,
-			NAMED,
 			NOK,
 			NOT,
 			OWN,
@@ -2352,7 +1911,6 @@ public enum RoleClass implements Enumerator {
 			PAYEE,
 			PAYOR,
 			POLHOLD,
-			PROG,
 			PROV,
 			PRS,
 			PRSV,
@@ -2361,7 +1919,6 @@ public enum RoleClass implements Enumerator {
 			RET,
 			RGPR,
 			ROL,
-			SAME,
 			SDLOC,
 			SGNOFF,
 			SPEC,
@@ -2370,7 +1927,6 @@ public enum RoleClass implements Enumerator {
 			STD,
 			STOR,
 			SUBS,
-			SUBSCR,
 			SUBY,
 			TERR,
 			THER,
@@ -2428,22 +1984,16 @@ public enum RoleClass implements Enumerator {
 		switch (value) {
 			case ACCESS_VALUE: return ACCESS;
 			case ACTI_VALUE: return ACTI;
-			case ACTIB_VALUE: return ACTIB;
-			case ACTIM_VALUE: return ACTIM;
-			case ACTIR_VALUE: return ACTIR;
 			case ACTM_VALUE: return ACTM;
-			case ADMM_VALUE: return ADMM;
 			case ADTV_VALUE: return ADTV;
-			case AFFL_VALUE: return AFFL;
 			case AGNT_VALUE: return AGNT;
 			case ALQT_VALUE: return ALQT;
 			case ASSIGNED_VALUE: return ASSIGNED;
 			case BASE_VALUE: return BASE;
 			case BIRTHPL_VALUE: return BIRTHPL;
 			case CAREGIVER_VALUE: return CAREGIVER;
-			case CASEBJ_VALUE: return CASEBJ;
+			case CASESBJ_VALUE: return CASESBJ;
 			case CIT_VALUE: return CIT;
-			case CLAIM_VALUE: return CLAIM;
 			case COLR_VALUE: return COLR;
 			case COMPAR_VALUE: return COMPAR;
 			case CON_VALUE: return CON;
@@ -2451,18 +2001,12 @@ public enum RoleClass implements Enumerator {
 			case COVPTY_VALUE: return COVPTY;
 			case CRINV_VALUE: return CRINV;
 			case CRSPNSR_VALUE: return CRSPNSR;
-			case DEATHPLC_VALUE: return DEATHPLC;
-			case DEPEN_VALUE: return DEPEN;
 			case DSDLOC_VALUE: return DSDLOC;
 			case DST_VALUE: return DST;
 			case ECON_VALUE: return ECON;
 			case EMP_VALUE: return EMP;
-			case EQUIV_VALUE: return EQUIV;
-			case EXPAGTCAR_VALUE: return EXPAGTCAR;
 			case EXPR_VALUE: return EXPR;
-			case EXPVECTOR_VALUE: return EXPVECTOR;
 			case FLVR_VALUE: return FLVR;
-			case FOMITE_VALUE: return FOMITE;
 			case GEN_VALUE: return GEN;
 			case GRIC_VALUE: return GRIC;
 			case GUAR_VALUE: return GUAR;
@@ -2471,7 +2015,6 @@ public enum RoleClass implements Enumerator {
 			case HLTHCHRT_VALUE: return HLTHCHRT;
 			case IACT_VALUE: return IACT;
 			case IDENT_VALUE: return IDENT;
-			case INDIV_VALUE: return INDIV;
 			case INGR_VALUE: return INGR;
 			case INST_VALUE: return INST;
 			case INVSBJ_VALUE: return INVSBJ;
@@ -2483,7 +2026,6 @@ public enum RoleClass implements Enumerator {
 			case MBR_VALUE: return MBR;
 			case MIL_VALUE: return MIL;
 			case MNT_VALUE: return MNT;
-			case NAMED_VALUE: return NAMED;
 			case NOK_VALUE: return NOK;
 			case NOT_VALUE: return NOT;
 			case OWN_VALUE: return OWN;
@@ -2492,7 +2034,6 @@ public enum RoleClass implements Enumerator {
 			case PAYEE_VALUE: return PAYEE;
 			case PAYOR_VALUE: return PAYOR;
 			case POLHOLD_VALUE: return POLHOLD;
-			case PROG_VALUE: return PROG;
 			case PROV_VALUE: return PROV;
 			case PRS_VALUE: return PRS;
 			case PRSV_VALUE: return PRSV;
@@ -2501,7 +2042,6 @@ public enum RoleClass implements Enumerator {
 			case RET_VALUE: return RET;
 			case RGPR_VALUE: return RGPR;
 			case ROL_VALUE: return ROL;
-			case SAME_VALUE: return SAME;
 			case SDLOC_VALUE: return SDLOC;
 			case SGNOFF_VALUE: return SGNOFF;
 			case SPEC_VALUE: return SPEC;
@@ -2510,7 +2050,6 @@ public enum RoleClass implements Enumerator {
 			case STD_VALUE: return STD;
 			case STOR_VALUE: return STOR;
 			case SUBS_VALUE: return SUBS;
-			case SUBSCR_VALUE: return SUBSCR;
 			case SUBY_VALUE: return SUBY;
 			case TERR_VALUE: return TERR;
 			case THER_VALUE: return THER;
