@@ -74,14 +74,14 @@ public interface VocabPackage extends EPackage {
 	int ACT_CLASS = 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument <em>Act Class Clinical Document</em>}' enum.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument <em>Act Clinical Document</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument
-	 * @see org.openhealthtools.mdht.uml.hl7.vocab.internal.impl.VocabPackageImpl#getActClassClinicalDocument()
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.internal.impl.VocabPackageImpl#getActClinicalDocument()
 	 * @generated
 	 */
-	int ACT_CLASS_CLINICAL_DOCUMENT = 1;
+	int ACT_CLINICAL_DOCUMENT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClassDocument <em>Act Class Document</em>}' enum.
@@ -666,14 +666,14 @@ public interface VocabPackage extends EPackage {
 	EEnum getActClass();
 
 	/**
-	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument <em>Act Class Clinical Document</em>}'.
+	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument <em>Act Clinical Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Act Class Clinical Document</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument
+	 * @return the meta object for enum '<em>Act Clinical Document</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClinicalDocument
 	 * @generated
 	 */
-	EEnum getActClassClinicalDocument();
+	EEnum getActClinicalDocument();
 
 	/**
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClassDocument <em>Act Class Document</em>}'.

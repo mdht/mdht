@@ -7,8 +7,6 @@
  * 
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
  */
 package org.openhealthtools.mdht.uml.hl7.vocab;
 
@@ -20,14 +18,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Act Class Clinical Document</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Act Clinical Document</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage#getActClassClinicalDocument()
+ * @see org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage#getActClinicalDocument()
  * @model
  * @generated
  */
-public enum ActClassClinicalDocument implements Enumerator {
+public enum ActClinicalDocument implements Enumerator {
 	/**
 	 * The '<em><b>CDALVLONE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -79,34 +77,34 @@ public enum ActClassClinicalDocument implements Enumerator {
 	public static final int DOCCLIN_VALUE = 1;
 
 	/**
-	 * An array of all the '<em><b>Act Class Clinical Document</b></em>' enumerators.
+	 * An array of all the '<em><b>Act Clinical Document</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActClassClinicalDocument[] VALUES_ARRAY =
-		new ActClassClinicalDocument[] {
+	private static final ActClinicalDocument[] VALUES_ARRAY =
+		new ActClinicalDocument[] {
 			CDALVLONE,
 			DOCCLIN,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Act Class Clinical Document</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Act Clinical Document</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ActClassClinicalDocument> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ActClinicalDocument> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Act Class Clinical Document</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Act Clinical Document</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ActClassClinicalDocument get(String literal) {
+	public static ActClinicalDocument get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ActClassClinicalDocument result = VALUES_ARRAY[i];
+			ActClinicalDocument result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -115,14 +113,14 @@ public enum ActClassClinicalDocument implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Act Class Clinical Document</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Act Clinical Document</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ActClassClinicalDocument getByName(String name) {
+	public static ActClinicalDocument getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ActClassClinicalDocument result = VALUES_ARRAY[i];
+			ActClinicalDocument result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -131,12 +129,12 @@ public enum ActClassClinicalDocument implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Act Class Clinical Document</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Act Clinical Document</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ActClassClinicalDocument get(int value) {
+	public static ActClinicalDocument get(int value) {
 		switch (value) {
 			case CDALVLONE_VALUE: return CDALVLONE;
 			case DOCCLIN_VALUE: return DOCCLIN;
@@ -171,7 +169,7 @@ public enum ActClassClinicalDocument implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private ActClassClinicalDocument(int value, String name, String literal) {
+	private ActClinicalDocument(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -215,4 +213,4 @@ public enum ActClassClinicalDocument implements Enumerator {
 		return literal;
 	}
 	
-} //ActClassClinicalDocument
+} //ActClinicalDocument

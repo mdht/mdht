@@ -99,9 +99,9 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/VERIF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/XACT"/>
     </genEnums>
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//ActClassClinicalDocument">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassClinicalDocument/CDALVLONE"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassClinicalDocument/DOCCLIN"/>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//ActClinicalDocument">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClinicalDocument/CDALVLONE"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClinicalDocument/DOCCLIN"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//ActClassDocument">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassDocument/CDALVLONE"/>

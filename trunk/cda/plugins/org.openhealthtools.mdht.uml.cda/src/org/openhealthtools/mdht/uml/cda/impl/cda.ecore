@@ -230,7 +230,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//NullFlavor"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClassClinicalDocument"
+        eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClinicalDocument"
         defaultValueLiteral="DOCCLIN" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
@@ -2602,7 +2602,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//NullFlavor"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClassClinicalDocument"
+        eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClinicalDocument"
         defaultValueLiteral="DOCCLIN" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
