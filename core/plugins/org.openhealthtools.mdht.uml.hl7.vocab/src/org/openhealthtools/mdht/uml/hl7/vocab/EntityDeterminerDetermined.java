@@ -46,7 +46,7 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	QUANTIFIEDKIND(1, "QUANTIFIEDKIND", "QUANTIFIEDKIND");
+	QUANTIFIEDKIND(1, "QUANTIFIEDKIND", "QUANITFIED_KIND");
 
 	/**
 	 * The '<em><b>KIND</b></em>' literal value.
@@ -72,7 +72,7 @@ public enum EntityDeterminerDetermined implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #QUANTIFIEDKIND
-	 * @model
+	 * @model literal="QUANITFIED_KIND"
 	 * @generated
 	 * @ordered
 	 */

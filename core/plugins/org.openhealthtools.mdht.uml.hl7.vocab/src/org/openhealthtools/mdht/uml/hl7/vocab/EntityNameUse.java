@@ -99,16 +99,6 @@ public enum EntityNameUse implements Enumerator {
 	L(6, "L", "L"),
 
 	/**
-	 * The '<em><b>OR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #OR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	OR(7, "OR", "OR"),
-
-	/**
 	 * The '<em><b>P</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,7 +106,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	P(8, "P", "P"),
+	P(7, "P", "P"),
 
 	/**
 	 * The '<em><b>PHON</b></em>' literal object.
@@ -126,7 +116,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PHON(9, "PHON", "PHON"),
+	PHON(8, "PHON", "PHON"),
 
 	/**
 	 * The '<em><b>R</b></em>' literal object.
@@ -136,7 +126,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	R(10, "R", "R"),
+	R(9, "R", "R"),
 
 	/**
 	 * The '<em><b>SNDX</b></em>' literal object.
@@ -146,7 +136,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SNDX(11, "SNDX", "SNDX"),
+	SNDX(10, "SNDX", "SNDX"),
 
 	/**
 	 * The '<em><b>SRCH</b></em>' literal object.
@@ -156,7 +146,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SRCH(12, "SRCH", "SRCH"),
+	SRCH(11, "SRCH", "SRCH"),
 
 	/**
 	 * The '<em><b>SYL</b></em>' literal object.
@@ -166,7 +156,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SYL(13, "SYL", "SYL");
+	SYL(12, "SYL", "SYL");
 
 	/**
 	 * The '<em><b>A</b></em>' literal value.
@@ -274,21 +264,6 @@ public enum EntityNameUse implements Enumerator {
 	public static final int L_VALUE = 6;
 
 	/**
-	 * The '<em><b>OR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>OR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #OR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int OR_VALUE = 7;
-
-	/**
 	 * The '<em><b>P</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -301,7 +276,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int P_VALUE = 8;
+	public static final int P_VALUE = 7;
 
 	/**
 	 * The '<em><b>PHON</b></em>' literal value.
@@ -316,7 +291,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PHON_VALUE = 9;
+	public static final int PHON_VALUE = 8;
 
 	/**
 	 * The '<em><b>R</b></em>' literal value.
@@ -331,7 +306,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int R_VALUE = 10;
+	public static final int R_VALUE = 9;
 
 	/**
 	 * The '<em><b>SNDX</b></em>' literal value.
@@ -346,7 +321,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SNDX_VALUE = 11;
+	public static final int SNDX_VALUE = 10;
 
 	/**
 	 * The '<em><b>SRCH</b></em>' literal value.
@@ -361,7 +336,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SRCH_VALUE = 12;
+	public static final int SRCH_VALUE = 11;
 
 	/**
 	 * The '<em><b>SYL</b></em>' literal value.
@@ -376,7 +351,7 @@ public enum EntityNameUse implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SYL_VALUE = 13;
+	public static final int SYL_VALUE = 12;
 
 	/**
 	 * An array of all the '<em><b>Entity Name Use</b></em>' enumerators.
@@ -393,7 +368,6 @@ public enum EntityNameUse implements Enumerator {
 			I,
 			IDE,
 			L,
-			OR,
 			P,
 			PHON,
 			R,
@@ -457,7 +431,6 @@ public enum EntityNameUse implements Enumerator {
 			case I_VALUE: return I;
 			case IDE_VALUE: return IDE;
 			case L_VALUE: return L;
-			case OR_VALUE: return OR;
 			case P_VALUE: return P;
 			case PHON_VALUE: return PHON;
 			case R_VALUE: return R;

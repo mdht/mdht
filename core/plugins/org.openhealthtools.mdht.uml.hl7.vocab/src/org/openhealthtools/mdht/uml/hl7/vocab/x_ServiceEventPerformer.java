@@ -39,6 +39,14 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	PRF(0, "PRF", "PRF"),
 
 	/**
+	 * The '<em><b>PPRF</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PPRF_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PPRF(1, "PPRF", "PPRF"), /**
 	 * The '<em><b>SPRF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,7 +54,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPRF(1, "SPRF", "SPRF");
+	SPRF(2, "SPRF", "SPRF");
 
 	/**
 	 * The '<em><b>PRF</b></em>' literal value.
@@ -64,6 +72,21 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	public static final int PRF_VALUE = 0;
 
 	/**
+	 * The '<em><b>PPRF</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>PPRF</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PPRF
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PPRF_VALUE = 1;
+
+	/**
 	 * The '<em><b>SPRF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +99,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPRF_VALUE = 1;
+	public static final int SPRF_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>xService Event Performer</b></em>' enumerators.
@@ -87,6 +110,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	private static final x_ServiceEventPerformer[] VALUES_ARRAY =
 		new x_ServiceEventPerformer[] {
 			PRF,
+			PPRF,
 			SPRF,
 		};
 
@@ -139,6 +163,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	public static x_ServiceEventPerformer get(int value) {
 		switch (value) {
 			case PRF_VALUE: return PRF;
+			case PPRF_VALUE: return PPRF;
 			case SPRF_VALUE: return SPRF;
 		}
 		return null;

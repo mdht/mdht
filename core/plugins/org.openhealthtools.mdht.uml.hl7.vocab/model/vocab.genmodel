@@ -35,7 +35,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ACT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ACTN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ADJUD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/AEXPOS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ALRT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/BATTERY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/CACT"/>
@@ -52,7 +51,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/CONTREG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/COV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/CTTEVENT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/DETPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/DGIMG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/DIET"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/DISPACT"/>
@@ -63,46 +61,28 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/EHR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ENC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ENTRY"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/EXP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/EXPOS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/EXTRACT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/FCNTRCT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/FOLDER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/GEN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ImagingSubjectOrientation"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/INC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/INFO"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/INFRM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/INVE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/INVSTG"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/JURISPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/LIST"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/LLD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/LOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/MPROT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/OBS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/OBSCOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/OBSSER"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ORGANIZER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ORGPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/OUTB"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/PCPR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/PHN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/POL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/POLICY"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/POS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/POSACC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/POSCOORD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/PRN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/PROC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/REG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/REV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/RLD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ROIBND"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/ROIOVL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/RTRD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SBADM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SCOPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SEQ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SEQVAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SFWL"/>
@@ -113,13 +93,8 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SPLY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/STC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/STDPOL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/STN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SUBST"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/SUP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/TEXPOS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/TOPIC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/TRD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/TRFR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/TRNS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/VERIF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClass/XACT"/>
@@ -139,37 +114,15 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/CLNTRL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/CNOD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/COND"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/DETPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/DGIMG"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/EXP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/GEN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/ImagingSubjectOrientation"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/INVSTG"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/LLD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/LOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/OBS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/OBSCOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/OBSSER"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/OUTB"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/PHN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/POL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/POS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/POSACC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/POSCOORD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/PRN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/RLD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/ROIBND"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/ROIOVL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/RTRD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/SEQ"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/SEQVAR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/SFWL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/SIT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/SPCOBS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/STN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/SUP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/TRD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassObservation/VERIF"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//ActClassRoot">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ACCM"/>
@@ -178,7 +131,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ACT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ACTN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ADJUD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/AEXPOS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ALRT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/BATTERY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/CACT"/>
@@ -195,7 +147,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/CONTREG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/COV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/CTTEVENT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/DETPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/DGIMG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/DIET"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/DISPACT"/>
@@ -206,63 +157,34 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/EHR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ENC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ENTRY"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/EXP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/EXPOS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/EXTRACT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/FCNTRCT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/FOLDER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/GEN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ImagingSubjectOrientation"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/INC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/INFO"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/INFRM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/INVE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/INVSTG"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/JURISPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/LIST"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/LLD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/LOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/MPROT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/OBS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/OBSCOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/OBSSER"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ORGANIZER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ORGPOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/OUTB"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/PCPR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/PHN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/POL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/POLICY"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/POS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/POSACC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/POSCOORD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/PRN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/PROC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/REG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/REV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/RLD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ROIBND"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/ROIOVL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/RTRD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SBADM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SCOPOL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SEQ"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SEQVAR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SFWL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SIT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SPCOBS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SPCTRT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SPECCOLLECT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SPLY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/STC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/STDPOL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/STN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SUBST"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/SUP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/TEXPOS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/TOPIC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/TRD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/TRFR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/TRNS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/VERIF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActClassRoot/XACT"/>
@@ -274,11 +196,9 @@
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//ActMood">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/APT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/ARQ"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/CRT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/DEF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/EVN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/EVNCRT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/EXPEC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/GOL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/INT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/OPT"/>
@@ -286,9 +206,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/PERMRQ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/PRMS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/PRP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/RMD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/RQO"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/RSK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActMood/SLOT"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//ActRelationshipFulfills">
@@ -307,7 +225,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/APND"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/ARR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/AUTH"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/BLOCK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/CAUS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/CHRG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/CIND"/>
@@ -316,15 +233,11 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/COVBY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/CREDIT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/CTRLV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/CURE"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/CUREADJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/DEBIT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/DEP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/DIAG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/DOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/DRIV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/ELNK"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/EVID"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/EXPL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/FLFS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/GEN"/>
@@ -335,9 +248,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/LIMIT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/MFST"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/MITGT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/MOD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/MTCH"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/MTGTADJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/NAME"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/OBJC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/OBJF"/>
@@ -348,15 +259,12 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/PERT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/PRCN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/PREV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/RCHAL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/RCVY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/REFR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/REFV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/REV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/RISK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/RPLC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/RSON"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SAE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SAS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SCH"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SEQL"/>
@@ -365,7 +273,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SUBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SUCC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SUMM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/SYMP"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/TRIG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/UPDT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ActRelationshipType/VRXCRPT"/>
@@ -559,7 +466,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//EntityNameUse/I"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//EntityNameUse/IDE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//EntityNameUse/L"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//EntityNameUse/OR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//EntityNameUse/P"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//EntityNameUse/PHON"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//EntityNameUse/R"/>
@@ -581,10 +487,9 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/NINF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/OTH"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/PINF"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/QS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/TRC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/UNC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/UNK"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//NullFlavor/NP"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//ParticipationPhysicalPerformer">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationPhysicalPerformer/DIST"/>
@@ -611,7 +516,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/AUTHEN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/BBY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/BEN"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/CAGNT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/CALLBCK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/CON"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/COV"/>
@@ -626,11 +530,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/ELOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/ENT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/ESC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/EXPAGNT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/EXPART"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/EXPTRGT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/EXSRC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/GUAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/HLD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/IND"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/INF"/>
@@ -640,7 +539,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/NOT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/NRD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/ORG"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/PART"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/PPRF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/PRCP"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/PRD"/>
@@ -656,7 +554,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/SBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/SPC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/SPRF"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/TRANS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/TRC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/VIA"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//ParticipationType/VRF"/>
@@ -680,22 +577,16 @@
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//RoleClass">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ACCESS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ACTI"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ACTIB"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ACTIM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ACTIR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ACTM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ADMM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ADTV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/AFFL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/AGNT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ALQT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ASSIGNED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/BASE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/BIRTHPL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CAREGIVER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CASEBJ"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CASESBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CIT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CLAIM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/COLR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/COMPAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CON"/>
@@ -703,18 +594,12 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/COVPTY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CRINV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/CRSPNSR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/DEATHPLC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/DEPEN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/DSDLOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/DST"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ECON"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/EMP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/EQUIV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/EXPAGTCAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/EXPR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/EXPVECTOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/FLVR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/FOMITE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/GEN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/GRIC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/GUAR"/>
@@ -723,7 +608,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/HLTHCHRT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/IACT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/IDENT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/INDIV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/INGR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/INST"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/INVSBJ"/>
@@ -735,7 +619,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/MBR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/MIL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/MNT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/NAMED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/NOK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/NOT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/OWN"/>
@@ -744,7 +627,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/PAYEE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/PAYOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/POLHOLD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/PROG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/PROV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/PRS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/PRSV"/>
@@ -753,7 +635,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/RET"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/RGPR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/ROL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/SAME"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/SDLOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/SGNOFF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/SPEC"/>
@@ -762,7 +643,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/STD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/STOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/SUBS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/SUBSCR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/SUBY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/TERR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClass/THER"/>
@@ -779,22 +659,17 @@
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//RoleClassAssociative">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/ACCESS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/ADMM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/AFFL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/AGNT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/ASSIGNED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/BIRTHPL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CAREGIVER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CASEBJ"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CASESBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CIT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CLAIM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/COMPAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CON"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/COVPTY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CRINV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/CRSPNSR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/DEATHPLC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/DEPEN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/DSDLOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/DST"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/ECON"/>
@@ -805,14 +680,12 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/HLD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/HLTHCHRT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/IDENT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/INDIV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/INVSBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/ISDLOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/LIC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/MANU"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/MIL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/MNT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/NAMED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/NOK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/NOT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/OWN"/>
@@ -820,7 +693,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/PAYEE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/PAYOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/POLHOLD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/PROG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/PROV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/PRS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/QUAL"/>
@@ -831,7 +703,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/SGNOFF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/SPNSR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/STD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/SUBSCR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/TERR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/THER"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassAssociative/UNDWRT"/>
@@ -842,35 +713,29 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassManufacturedProduct/THER"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//RoleClassMutualRelationship">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/AFFL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/AGNT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/ASSIGNED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CAREGIVER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CASEBJ"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CASESBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CIT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CLAIM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/COMPAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CON"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/COVPTY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CRINV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/CRSPNSR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/DEPEN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/ECON"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/EMP"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/GUAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/GUARD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/INDIV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/INVSBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/LIC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/MIL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/NAMED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/NOK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/NOT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/PAT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/PAYEE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/PAYOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/POLHOLD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/PROG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/PROV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/PRS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/QUAL"/>
@@ -878,28 +743,21 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/SGNOFF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/SPNSR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/STD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/SUBSCR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassMutualRelationship/UNDWRT"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//RoleClassRoot">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ACCESS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ACTI"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ACTIB"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ACTIM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ACTIR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ACTM"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ADMM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ADTV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/AFFL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/AGNT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ALQT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ASSIGNED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/BASE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/BIRTHPL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CAREGIVER"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CASEBJ"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CASESBJ"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CIT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CLAIM"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/COLR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/COMPAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CON"/>
@@ -907,18 +765,12 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/COVPTY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CRINV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/CRSPNSR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/DEATHPLC"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/DEPEN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/DSDLOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/DST"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ECON"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/EMP"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/EQUIV"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/EXPAGTCAR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/EXPR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/EXPVECTOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/FLVR"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/FOMITE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/GEN"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/GRIC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/GUAR"/>
@@ -927,7 +779,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/HLTHCHRT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/IACT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/IDENT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/INDIV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/INGR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/INST"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/INVSBJ"/>
@@ -939,7 +790,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/MBR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/MIL"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/MNT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/NAMED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/NOK"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/NOT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/OWN"/>
@@ -948,7 +798,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/PAYEE"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/PAYOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/POLHOLD"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/PROG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/PROV"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/PRS"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/PRSV"/>
@@ -957,7 +806,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/RET"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/RGPR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/ROL"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/SAME"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/SDLOC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/SGNOFF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/SPEC"/>
@@ -966,7 +814,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/STD"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/STOR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/SUBS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/SUBSCR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/SUBY"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/TERR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//RoleClassRoot/THER"/>
@@ -989,7 +836,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//SetOperator/H"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//SetOperator/I"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//SetOperator/P"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//SetOperator/_ValueSetOperator"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//TelecommunicationAddressUse">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//TelecommunicationAddressUse/AS"/>
@@ -1015,7 +861,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ActClassDocumentEntryAct/PCPR"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ActClassDocumentEntryAct/REG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ActClassDocumentEntryAct/SPCTRT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ActClassDocumentEntryAct/TRNS"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//x_ActClassDocumentEntryOrganizer">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ActClassDocumentEntryOrganizer/BATTERY"/>
@@ -1116,6 +961,7 @@
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//x_ServiceEventPerformer">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ServiceEventPerformer/PRF"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ServiceEventPerformer/PPRF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="vocab.ecore#//x_ServiceEventPerformer/SPRF"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="vocab.ecore#//TimingEvent">

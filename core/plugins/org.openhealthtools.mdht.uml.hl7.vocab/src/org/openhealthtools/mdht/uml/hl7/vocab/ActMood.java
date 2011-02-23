@@ -49,16 +49,6 @@ public enum ActMood implements Enumerator {
 	ARQ(1, "ARQ", "ARQ"),
 
 	/**
-	 * The '<em><b>CRT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CRT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CRT(2, "CRT", "CRT"),
-
-	/**
 	 * The '<em><b>DEF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,7 +56,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEF(3, "DEF", "DEF"),
+	DEF(2, "DEF", "DEF"),
 
 	/**
 	 * The '<em><b>EVN</b></em>' literal object.
@@ -76,7 +66,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EVN(4, "EVN", "EVN"),
+	EVN(3, "EVN", "EVN"),
 
 	/**
 	 * The '<em><b>EVNCRT</b></em>' literal object.
@@ -86,17 +76,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EVNCRT(5, "EVNCRT", "EVN.CRT"),
-
-	/**
-	 * The '<em><b>EXPEC</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EXPEC_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EXPEC(6, "EXPEC", "EXPEC"),
+	EVNCRT(4, "EVNCRT", "EVN.CRT"),
 
 	/**
 	 * The '<em><b>GOL</b></em>' literal object.
@@ -106,7 +86,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GOL(7, "GOL", "GOL"),
+	GOL(5, "GOL", "GOL"),
 
 	/**
 	 * The '<em><b>INT</b></em>' literal object.
@@ -116,7 +96,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INT(8, "INT", "INT"),
+	INT(6, "INT", "INT"),
 
 	/**
 	 * The '<em><b>OPT</b></em>' literal object.
@@ -126,7 +106,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OPT(9, "OPT", "OPT"),
+	OPT(7, "OPT", "OPT"),
 
 	/**
 	 * The '<em><b>PERM</b></em>' literal object.
@@ -136,7 +116,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PERM(10, "PERM", "PERM"),
+	PERM(8, "PERM", "PERM"),
 
 	/**
 	 * The '<em><b>PERMRQ</b></em>' literal object.
@@ -146,7 +126,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PERMRQ(11, "PERMRQ", "PERMRQ"),
+	PERMRQ(9, "PERMRQ", "PERMRQ"),
 
 	/**
 	 * The '<em><b>PRMS</b></em>' literal object.
@@ -156,7 +136,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRMS(12, "PRMS", "PRMS"),
+	PRMS(10, "PRMS", "PRMS"),
 
 	/**
 	 * The '<em><b>PRP</b></em>' literal object.
@@ -166,17 +146,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRP(13, "PRP", "PRP"),
-
-	/**
-	 * The '<em><b>RMD</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RMD_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	RMD(14, "RMD", "RMD"),
+	PRP(11, "PRP", "PRP"),
 
 	/**
 	 * The '<em><b>RQO</b></em>' literal object.
@@ -186,17 +156,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RQO(15, "RQO", "RQO"),
-
-	/**
-	 * The '<em><b>RSK</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RSK_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	RSK(16, "RSK", "RSK"),
+	RQO(12, "RQO", "RQO"),
 
 	/**
 	 * The '<em><b>SLOT</b></em>' literal object.
@@ -206,7 +166,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SLOT(17, "SLOT", "SLOT");
+	SLOT(13, "SLOT", "SLOT");
 
 	/**
 	 * The '<em><b>APT</b></em>' literal value.
@@ -239,21 +199,6 @@ public enum ActMood implements Enumerator {
 	public static final int ARQ_VALUE = 1;
 
 	/**
-	 * The '<em><b>CRT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CRT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CRT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CRT_VALUE = 2;
-
-	/**
 	 * The '<em><b>DEF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -266,7 +211,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DEF_VALUE = 3;
+	public static final int DEF_VALUE = 2;
 
 	/**
 	 * The '<em><b>EVN</b></em>' literal value.
@@ -281,7 +226,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EVN_VALUE = 4;
+	public static final int EVN_VALUE = 3;
 
 	/**
 	 * The '<em><b>EVNCRT</b></em>' literal value.
@@ -296,22 +241,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EVNCRT_VALUE = 5;
-
-	/**
-	 * The '<em><b>EXPEC</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EXPEC</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EXPEC
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EXPEC_VALUE = 6;
+	public static final int EVNCRT_VALUE = 4;
 
 	/**
 	 * The '<em><b>GOL</b></em>' literal value.
@@ -326,7 +256,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GOL_VALUE = 7;
+	public static final int GOL_VALUE = 5;
 
 	/**
 	 * The '<em><b>INT</b></em>' literal value.
@@ -341,7 +271,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INT_VALUE = 8;
+	public static final int INT_VALUE = 6;
 
 	/**
 	 * The '<em><b>OPT</b></em>' literal value.
@@ -356,7 +286,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OPT_VALUE = 9;
+	public static final int OPT_VALUE = 7;
 
 	/**
 	 * The '<em><b>PERM</b></em>' literal value.
@@ -371,7 +301,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PERM_VALUE = 10;
+	public static final int PERM_VALUE = 8;
 
 	/**
 	 * The '<em><b>PERMRQ</b></em>' literal value.
@@ -386,7 +316,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PERMRQ_VALUE = 11;
+	public static final int PERMRQ_VALUE = 9;
 
 	/**
 	 * The '<em><b>PRMS</b></em>' literal value.
@@ -401,7 +331,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRMS_VALUE = 12;
+	public static final int PRMS_VALUE = 10;
 
 	/**
 	 * The '<em><b>PRP</b></em>' literal value.
@@ -416,22 +346,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRP_VALUE = 13;
-
-	/**
-	 * The '<em><b>RMD</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>RMD</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #RMD
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RMD_VALUE = 14;
+	public static final int PRP_VALUE = 11;
 
 	/**
 	 * The '<em><b>RQO</b></em>' literal value.
@@ -446,22 +361,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RQO_VALUE = 15;
-
-	/**
-	 * The '<em><b>RSK</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>RSK</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #RSK
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RSK_VALUE = 16;
+	public static final int RQO_VALUE = 12;
 
 	/**
 	 * The '<em><b>SLOT</b></em>' literal value.
@@ -476,7 +376,7 @@ public enum ActMood implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SLOT_VALUE = 17;
+	public static final int SLOT_VALUE = 13;
 
 	/**
 	 * An array of all the '<em><b>Act Mood</b></em>' enumerators.
@@ -488,11 +388,9 @@ public enum ActMood implements Enumerator {
 		new ActMood[] {
 			APT,
 			ARQ,
-			CRT,
 			DEF,
 			EVN,
 			EVNCRT,
-			EXPEC,
 			GOL,
 			INT,
 			OPT,
@@ -500,9 +398,7 @@ public enum ActMood implements Enumerator {
 			PERMRQ,
 			PRMS,
 			PRP,
-			RMD,
 			RQO,
-			RSK,
 			SLOT,
 		};
 
@@ -556,11 +452,9 @@ public enum ActMood implements Enumerator {
 		switch (value) {
 			case APT_VALUE: return APT;
 			case ARQ_VALUE: return ARQ;
-			case CRT_VALUE: return CRT;
 			case DEF_VALUE: return DEF;
 			case EVN_VALUE: return EVN;
 			case EVNCRT_VALUE: return EVNCRT;
-			case EXPEC_VALUE: return EXPEC;
 			case GOL_VALUE: return GOL;
 			case INT_VALUE: return INT;
 			case OPT_VALUE: return OPT;
@@ -568,9 +462,7 @@ public enum ActMood implements Enumerator {
 			case PERMRQ_VALUE: return PERMRQ;
 			case PRMS_VALUE: return PRMS;
 			case PRP_VALUE: return PRP;
-			case RMD_VALUE: return RMD;
 			case RQO_VALUE: return RQO;
-			case RSK_VALUE: return RSK;
 			case SLOT_VALUE: return SLOT;
 		}
 		return null;

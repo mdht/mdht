@@ -116,17 +116,7 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPCTRT(8, "SPCTRT", "SPCTRT"),
-
-	/**
-	 * The '<em><b>TRNS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #TRNS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	TRNS(9, "TRNS", "TRNS");
+	SPCTRT(8, "SPCTRT", "SPCTRT");
 
 	/**
 	 * The '<em><b>ACCM</b></em>' literal value.
@@ -264,21 +254,6 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 	public static final int SPCTRT_VALUE = 8;
 
 	/**
-	 * The '<em><b>TRNS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>TRNS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #TRNS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int TRNS_VALUE = 9;
-
-	/**
 	 * An array of all the '<em><b>xAct Class Document Entry Act</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,7 +270,6 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 			PCPR,
 			REG,
 			SPCTRT,
-			TRNS,
 		};
 
 	/**
@@ -355,7 +329,6 @@ public enum x_ActClassDocumentEntryAct implements Enumerator {
 			case PCPR_VALUE: return PCPR;
 			case REG_VALUE: return REG;
 			case SPCTRT_VALUE: return SPCTRT;
-			case TRNS_VALUE: return TRNS;
 		}
 		return null;
 	}

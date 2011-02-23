@@ -89,16 +89,6 @@ public enum ParticipationType implements Enumerator {
 	BEN(5, "BEN", "BEN"),
 
 	/**
-	 * The '<em><b>CAGNT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CAGNT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CAGNT(6, "CAGNT", "CAGNT"),
-
-	/**
 	 * The '<em><b>CALLBCK</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,7 +96,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CALLBCK(7, "CALLBCK", "CALLBCK"),
+	CALLBCK(6, "CALLBCK", "CALLBCK"),
 
 	/**
 	 * The '<em><b>CON</b></em>' literal object.
@@ -116,7 +106,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CON(8, "CON", "CON"),
+	CON(7, "CON", "CON"),
 
 	/**
 	 * The '<em><b>COV</b></em>' literal object.
@@ -126,7 +116,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COV(9, "COV", "COV"),
+	COV(8, "COV", "COV"),
 
 	/**
 	 * The '<em><b>CSM</b></em>' literal object.
@@ -136,7 +126,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CSM(10, "CSM", "CSM"),
+	CSM(9, "CSM", "CSM"),
 
 	/**
 	 * The '<em><b>CST</b></em>' literal object.
@@ -146,7 +136,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CST(11, "CST", "CST"),
+	CST(10, "CST", "CST"),
 
 	/**
 	 * The '<em><b>DEV</b></em>' literal object.
@@ -156,7 +146,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEV(12, "DEV", "DEV"),
+	DEV(11, "DEV", "DEV"),
 
 	/**
 	 * The '<em><b>DIR</b></em>' literal object.
@@ -166,7 +156,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DIR(13, "DIR", "DIR"),
+	DIR(12, "DIR", "DIR"),
 
 	/**
 	 * The '<em><b>DIS</b></em>' literal object.
@@ -176,7 +166,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DIS(14, "DIS", "DIS"),
+	DIS(13, "DIS", "DIS"),
 
 	/**
 	 * The '<em><b>DIST</b></em>' literal object.
@@ -186,7 +176,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DIST(15, "DIST", "DIST"),
+	DIST(14, "DIST", "DIST"),
 
 	/**
 	 * The '<em><b>DON</b></em>' literal object.
@@ -196,7 +186,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DON(16, "DON", "DON"),
+	DON(15, "DON", "DON"),
 
 	/**
 	 * The '<em><b>DST</b></em>' literal object.
@@ -206,7 +196,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DST(17, "DST", "DST"),
+	DST(16, "DST", "DST"),
 
 	/**
 	 * The '<em><b>ELOC</b></em>' literal object.
@@ -216,7 +206,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ELOC(18, "ELOC", "ELOC"),
+	ELOC(17, "ELOC", "ELOC"),
 
 	/**
 	 * The '<em><b>ENT</b></em>' literal object.
@@ -226,7 +216,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENT(19, "ENT", "ENT"),
+	ENT(18, "ENT", "ENT"),
 
 	/**
 	 * The '<em><b>ESC</b></em>' literal object.
@@ -236,57 +226,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ESC(20, "ESC", "ESC"),
-
-	/**
-	 * The '<em><b>EXPAGNT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EXPAGNT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EXPAGNT(21, "EXPAGNT", "EXPAGNT"),
-
-	/**
-	 * The '<em><b>EXPART</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EXPART_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EXPART(22, "EXPART", "EXPART"),
-
-	/**
-	 * The '<em><b>EXPTRGT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EXPTRGT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EXPTRGT(23, "EXPTRGT", "EXPTRGT"),
-
-	/**
-	 * The '<em><b>EXSRC</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EXSRC_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EXSRC(24, "EXSRC", "EXSRC"),
-
-	/**
-	 * The '<em><b>GUAR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #GUAR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	GUAR(25, "GUAR", "GUAR"),
+	ESC(19, "ESC", "ESC"),
 
 	/**
 	 * The '<em><b>HLD</b></em>' literal object.
@@ -296,7 +236,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HLD(26, "HLD", "HLD"),
+	HLD(20, "HLD", "HLD"),
 
 	/**
 	 * The '<em><b>IND</b></em>' literal object.
@@ -306,7 +246,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IND(27, "IND", "IND"),
+	IND(21, "IND", "IND"),
 
 	/**
 	 * The '<em><b>INF</b></em>' literal object.
@@ -316,7 +256,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INF(28, "INF", "INF"),
+	INF(22, "INF", "INF"),
 
 	/**
 	 * The '<em><b>IRCP</b></em>' literal object.
@@ -326,7 +266,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IRCP(29, "IRCP", "IRCP"),
+	IRCP(23, "IRCP", "IRCP"),
 
 	/**
 	 * The '<em><b>LA</b></em>' literal object.
@@ -336,7 +276,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LA(30, "LA", "LA"),
+	LA(24, "LA", "LA"),
 
 	/**
 	 * The '<em><b>LOC</b></em>' literal object.
@@ -346,7 +286,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LOC(31, "LOC", "LOC"),
+	LOC(25, "LOC", "LOC"),
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal object.
@@ -356,7 +296,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOT(32, "NOT", "NOT"),
+	NOT(26, "NOT", "NOT"),
 
 	/**
 	 * The '<em><b>NRD</b></em>' literal object.
@@ -366,7 +306,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NRD(33, "NRD", "NRD"),
+	NRD(27, "NRD", "NRD"),
 
 	/**
 	 * The '<em><b>ORG</b></em>' literal object.
@@ -376,17 +316,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ORG(34, "ORG", "ORG"),
-
-	/**
-	 * The '<em><b>PART</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PART_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PART(35, "PART", "PART"),
+	ORG(28, "ORG", "ORG"),
 
 	/**
 	 * The '<em><b>PPRF</b></em>' literal object.
@@ -396,7 +326,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PPRF(36, "PPRF", "PPRF"),
+	PPRF(29, "PPRF", "PPRF"),
 
 	/**
 	 * The '<em><b>PRCP</b></em>' literal object.
@@ -406,7 +336,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRCP(37, "PRCP", "PRCP"),
+	PRCP(30, "PRCP", "PRCP"),
 
 	/**
 	 * The '<em><b>PRD</b></em>' literal object.
@@ -416,7 +346,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRD(38, "PRD", "PRD"),
+	PRD(31, "PRD", "PRD"),
 
 	/**
 	 * The '<em><b>PRF</b></em>' literal object.
@@ -426,7 +356,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PRF(39, "PRF", "PRF"),
+	PRF(32, "PRF", "PRF"),
 
 	/**
 	 * The '<em><b>RCT</b></em>' literal object.
@@ -436,7 +366,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RCT(40, "RCT", "RCT"),
+	RCT(33, "RCT", "RCT"),
 
 	/**
 	 * The '<em><b>RCV</b></em>' literal object.
@@ -446,7 +376,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RCV(41, "RCV", "RCV"),
+	RCV(34, "RCV", "RCV"),
 
 	/**
 	 * The '<em><b>RDV</b></em>' literal object.
@@ -456,7 +386,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RDV(42, "RDV", "RDV"),
+	RDV(35, "RDV", "RDV"),
 
 	/**
 	 * The '<em><b>REF</b></em>' literal object.
@@ -466,7 +396,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REF(43, "REF", "REF"),
+	REF(36, "REF", "REF"),
 
 	/**
 	 * The '<em><b>REFB</b></em>' literal object.
@@ -476,7 +406,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REFB(44, "REFB", "REFB"),
+	REFB(37, "REFB", "REFB"),
 
 	/**
 	 * The '<em><b>REFT</b></em>' literal object.
@@ -486,7 +416,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REFT(45, "REFT", "REFT"),
+	REFT(38, "REFT", "REFT"),
 
 	/**
 	 * The '<em><b>RESP</b></em>' literal object.
@@ -496,7 +426,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESP(46, "RESP", "RESP"),
+	RESP(39, "RESP", "RESP"),
 
 	/**
 	 * The '<em><b>RML</b></em>' literal object.
@@ -506,7 +436,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RML(47, "RML", "RML"),
+	RML(40, "RML", "RML"),
 
 	/**
 	 * The '<em><b>SBJ</b></em>' literal object.
@@ -516,7 +446,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SBJ(48, "SBJ", "SBJ"),
+	SBJ(41, "SBJ", "SBJ"),
 
 	/**
 	 * The '<em><b>SPC</b></em>' literal object.
@@ -526,7 +456,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPC(49, "SPC", "SPC"),
+	SPC(42, "SPC", "SPC"),
 
 	/**
 	 * The '<em><b>SPRF</b></em>' literal object.
@@ -536,17 +466,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPRF(50, "SPRF", "SPRF"),
-
-	/**
-	 * The '<em><b>TRANS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #TRANS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	TRANS(51, "TRANS", "TRANS"),
+	SPRF(43, "SPRF", "SPRF"),
 
 	/**
 	 * The '<em><b>TRC</b></em>' literal object.
@@ -556,7 +476,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TRC(52, "TRC", "TRC"),
+	TRC(44, "TRC", "TRC"),
 
 	/**
 	 * The '<em><b>VIA</b></em>' literal object.
@@ -566,7 +486,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VIA(53, "VIA", "VIA"),
+	VIA(45, "VIA", "VIA"),
 
 	/**
 	 * The '<em><b>VRF</b></em>' literal object.
@@ -576,7 +496,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VRF(54, "VRF", "VRF"),
+	VRF(46, "VRF", "VRF"),
 
 	/**
 	 * The '<em><b>WIT</b></em>' literal object.
@@ -586,7 +506,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WIT(55, "WIT", "WIT");
+	WIT(47, "WIT", "WIT");
 
 	/**
 	 * The '<em><b>ADM</b></em>' literal value.
@@ -679,21 +599,6 @@ public enum ParticipationType implements Enumerator {
 	public static final int BEN_VALUE = 5;
 
 	/**
-	 * The '<em><b>CAGNT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CAGNT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CAGNT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CAGNT_VALUE = 6;
-
-	/**
 	 * The '<em><b>CALLBCK</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -706,7 +611,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CALLBCK_VALUE = 7;
+	public static final int CALLBCK_VALUE = 6;
 
 	/**
 	 * The '<em><b>CON</b></em>' literal value.
@@ -721,7 +626,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CON_VALUE = 8;
+	public static final int CON_VALUE = 7;
 
 	/**
 	 * The '<em><b>COV</b></em>' literal value.
@@ -736,7 +641,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COV_VALUE = 9;
+	public static final int COV_VALUE = 8;
 
 	/**
 	 * The '<em><b>CSM</b></em>' literal value.
@@ -751,7 +656,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CSM_VALUE = 10;
+	public static final int CSM_VALUE = 9;
 
 	/**
 	 * The '<em><b>CST</b></em>' literal value.
@@ -766,7 +671,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CST_VALUE = 11;
+	public static final int CST_VALUE = 10;
 
 	/**
 	 * The '<em><b>DEV</b></em>' literal value.
@@ -781,7 +686,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DEV_VALUE = 12;
+	public static final int DEV_VALUE = 11;
 
 	/**
 	 * The '<em><b>DIR</b></em>' literal value.
@@ -796,7 +701,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIR_VALUE = 13;
+	public static final int DIR_VALUE = 12;
 
 	/**
 	 * The '<em><b>DIS</b></em>' literal value.
@@ -811,7 +716,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIS_VALUE = 14;
+	public static final int DIS_VALUE = 13;
 
 	/**
 	 * The '<em><b>DIST</b></em>' literal value.
@@ -826,7 +731,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIST_VALUE = 15;
+	public static final int DIST_VALUE = 14;
 
 	/**
 	 * The '<em><b>DON</b></em>' literal value.
@@ -841,7 +746,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DON_VALUE = 16;
+	public static final int DON_VALUE = 15;
 
 	/**
 	 * The '<em><b>DST</b></em>' literal value.
@@ -856,7 +761,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DST_VALUE = 17;
+	public static final int DST_VALUE = 16;
 
 	/**
 	 * The '<em><b>ELOC</b></em>' literal value.
@@ -871,7 +776,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ELOC_VALUE = 18;
+	public static final int ELOC_VALUE = 17;
 
 	/**
 	 * The '<em><b>ENT</b></em>' literal value.
@@ -886,7 +791,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ENT_VALUE = 19;
+	public static final int ENT_VALUE = 18;
 
 	/**
 	 * The '<em><b>ESC</b></em>' literal value.
@@ -901,82 +806,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ESC_VALUE = 20;
-
-	/**
-	 * The '<em><b>EXPAGNT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EXPAGNT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EXPAGNT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EXPAGNT_VALUE = 21;
-
-	/**
-	 * The '<em><b>EXPART</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EXPART</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EXPART
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EXPART_VALUE = 22;
-
-	/**
-	 * The '<em><b>EXPTRGT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EXPTRGT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EXPTRGT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EXPTRGT_VALUE = 23;
-
-	/**
-	 * The '<em><b>EXSRC</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EXSRC</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EXSRC
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EXSRC_VALUE = 24;
-
-	/**
-	 * The '<em><b>GUAR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>GUAR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #GUAR
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int GUAR_VALUE = 25;
+	public static final int ESC_VALUE = 19;
 
 	/**
 	 * The '<em><b>HLD</b></em>' literal value.
@@ -991,7 +821,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HLD_VALUE = 26;
+	public static final int HLD_VALUE = 20;
 
 	/**
 	 * The '<em><b>IND</b></em>' literal value.
@@ -1006,7 +836,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IND_VALUE = 27;
+	public static final int IND_VALUE = 21;
 
 	/**
 	 * The '<em><b>INF</b></em>' literal value.
@@ -1021,7 +851,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INF_VALUE = 28;
+	public static final int INF_VALUE = 22;
 
 	/**
 	 * The '<em><b>IRCP</b></em>' literal value.
@@ -1036,7 +866,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IRCP_VALUE = 29;
+	public static final int IRCP_VALUE = 23;
 
 	/**
 	 * The '<em><b>LA</b></em>' literal value.
@@ -1051,7 +881,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LA_VALUE = 30;
+	public static final int LA_VALUE = 24;
 
 	/**
 	 * The '<em><b>LOC</b></em>' literal value.
@@ -1066,7 +896,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LOC_VALUE = 31;
+	public static final int LOC_VALUE = 25;
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal value.
@@ -1081,7 +911,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_VALUE = 32;
+	public static final int NOT_VALUE = 26;
 
 	/**
 	 * The '<em><b>NRD</b></em>' literal value.
@@ -1096,7 +926,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NRD_VALUE = 33;
+	public static final int NRD_VALUE = 27;
 
 	/**
 	 * The '<em><b>ORG</b></em>' literal value.
@@ -1111,22 +941,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORG_VALUE = 34;
-
-	/**
-	 * The '<em><b>PART</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>PART</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PART
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PART_VALUE = 35;
+	public static final int ORG_VALUE = 28;
 
 	/**
 	 * The '<em><b>PPRF</b></em>' literal value.
@@ -1141,7 +956,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PPRF_VALUE = 36;
+	public static final int PPRF_VALUE = 29;
 
 	/**
 	 * The '<em><b>PRCP</b></em>' literal value.
@@ -1156,7 +971,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRCP_VALUE = 37;
+	public static final int PRCP_VALUE = 30;
 
 	/**
 	 * The '<em><b>PRD</b></em>' literal value.
@@ -1171,7 +986,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRD_VALUE = 38;
+	public static final int PRD_VALUE = 31;
 
 	/**
 	 * The '<em><b>PRF</b></em>' literal value.
@@ -1186,7 +1001,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PRF_VALUE = 39;
+	public static final int PRF_VALUE = 32;
 
 	/**
 	 * The '<em><b>RCT</b></em>' literal value.
@@ -1201,7 +1016,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RCT_VALUE = 40;
+	public static final int RCT_VALUE = 33;
 
 	/**
 	 * The '<em><b>RCV</b></em>' literal value.
@@ -1216,7 +1031,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RCV_VALUE = 41;
+	public static final int RCV_VALUE = 34;
 
 	/**
 	 * The '<em><b>RDV</b></em>' literal value.
@@ -1231,7 +1046,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RDV_VALUE = 42;
+	public static final int RDV_VALUE = 35;
 
 	/**
 	 * The '<em><b>REF</b></em>' literal value.
@@ -1246,7 +1061,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REF_VALUE = 43;
+	public static final int REF_VALUE = 36;
 
 	/**
 	 * The '<em><b>REFB</b></em>' literal value.
@@ -1261,7 +1076,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REFB_VALUE = 44;
+	public static final int REFB_VALUE = 37;
 
 	/**
 	 * The '<em><b>REFT</b></em>' literal value.
@@ -1276,7 +1091,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REFT_VALUE = 45;
+	public static final int REFT_VALUE = 38;
 
 	/**
 	 * The '<em><b>RESP</b></em>' literal value.
@@ -1291,7 +1106,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RESP_VALUE = 46;
+	public static final int RESP_VALUE = 39;
 
 	/**
 	 * The '<em><b>RML</b></em>' literal value.
@@ -1306,7 +1121,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RML_VALUE = 47;
+	public static final int RML_VALUE = 40;
 
 	/**
 	 * The '<em><b>SBJ</b></em>' literal value.
@@ -1321,7 +1136,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SBJ_VALUE = 48;
+	public static final int SBJ_VALUE = 41;
 
 	/**
 	 * The '<em><b>SPC</b></em>' literal value.
@@ -1336,7 +1151,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPC_VALUE = 49;
+	public static final int SPC_VALUE = 42;
 
 	/**
 	 * The '<em><b>SPRF</b></em>' literal value.
@@ -1351,22 +1166,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPRF_VALUE = 50;
-
-	/**
-	 * The '<em><b>TRANS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>TRANS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #TRANS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int TRANS_VALUE = 51;
+	public static final int SPRF_VALUE = 43;
 
 	/**
 	 * The '<em><b>TRC</b></em>' literal value.
@@ -1381,7 +1181,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRC_VALUE = 52;
+	public static final int TRC_VALUE = 44;
 
 	/**
 	 * The '<em><b>VIA</b></em>' literal value.
@@ -1396,7 +1196,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VIA_VALUE = 53;
+	public static final int VIA_VALUE = 45;
 
 	/**
 	 * The '<em><b>VRF</b></em>' literal value.
@@ -1411,7 +1211,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VRF_VALUE = 54;
+	public static final int VRF_VALUE = 46;
 
 	/**
 	 * The '<em><b>WIT</b></em>' literal value.
@@ -1426,7 +1226,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WIT_VALUE = 55;
+	public static final int WIT_VALUE = 47;
 
 	/**
 	 * An array of all the '<em><b>Participation Type</b></em>' enumerators.
@@ -1442,7 +1242,6 @@ public enum ParticipationType implements Enumerator {
 			AUTHEN,
 			BBY,
 			BEN,
-			CAGNT,
 			CALLBCK,
 			CON,
 			COV,
@@ -1457,11 +1256,6 @@ public enum ParticipationType implements Enumerator {
 			ELOC,
 			ENT,
 			ESC,
-			EXPAGNT,
-			EXPART,
-			EXPTRGT,
-			EXSRC,
-			GUAR,
 			HLD,
 			IND,
 			INF,
@@ -1471,7 +1265,6 @@ public enum ParticipationType implements Enumerator {
 			NOT,
 			NRD,
 			ORG,
-			PART,
 			PPRF,
 			PRCP,
 			PRD,
@@ -1487,7 +1280,6 @@ public enum ParticipationType implements Enumerator {
 			SBJ,
 			SPC,
 			SPRF,
-			TRANS,
 			TRC,
 			VIA,
 			VRF,
@@ -1548,7 +1340,6 @@ public enum ParticipationType implements Enumerator {
 			case AUTHEN_VALUE: return AUTHEN;
 			case BBY_VALUE: return BBY;
 			case BEN_VALUE: return BEN;
-			case CAGNT_VALUE: return CAGNT;
 			case CALLBCK_VALUE: return CALLBCK;
 			case CON_VALUE: return CON;
 			case COV_VALUE: return COV;
@@ -1563,11 +1354,6 @@ public enum ParticipationType implements Enumerator {
 			case ELOC_VALUE: return ELOC;
 			case ENT_VALUE: return ENT;
 			case ESC_VALUE: return ESC;
-			case EXPAGNT_VALUE: return EXPAGNT;
-			case EXPART_VALUE: return EXPART;
-			case EXPTRGT_VALUE: return EXPTRGT;
-			case EXSRC_VALUE: return EXSRC;
-			case GUAR_VALUE: return GUAR;
 			case HLD_VALUE: return HLD;
 			case IND_VALUE: return IND;
 			case INF_VALUE: return INF;
@@ -1577,7 +1363,6 @@ public enum ParticipationType implements Enumerator {
 			case NOT_VALUE: return NOT;
 			case NRD_VALUE: return NRD;
 			case ORG_VALUE: return ORG;
-			case PART_VALUE: return PART;
 			case PPRF_VALUE: return PPRF;
 			case PRCP_VALUE: return PRCP;
 			case PRD_VALUE: return PRD;
@@ -1593,7 +1378,6 @@ public enum ParticipationType implements Enumerator {
 			case SBJ_VALUE: return SBJ;
 			case SPC_VALUE: return SPC;
 			case SPRF_VALUE: return SPRF;
-			case TRANS_VALUE: return TRANS;
 			case TRC_VALUE: return TRC;
 			case VIA_VALUE: return VIA;
 			case VRF_VALUE: return VRF;

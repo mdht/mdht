@@ -76,17 +76,7 @@ public enum SetOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	P(4, "P", "P"),
-
-	/**
-	 * The '<em><b>Value Set Operator</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #_VALUE_SET_OPERATOR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	_VALUE_SET_OPERATOR(5, "_ValueSetOperator", "_ValueSetOperator");
+	P(4, "P", "P");
 
 	/**
 	 * The '<em><b>A</b></em>' literal value.
@@ -164,21 +154,6 @@ public enum SetOperator implements Enumerator {
 	public static final int P_VALUE = 4;
 
 	/**
-	 * The '<em><b>Value Set Operator</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Value Set Operator</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #_VALUE_SET_OPERATOR
-	 * @model name="_ValueSetOperator"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int _VALUE_SET_OPERATOR_VALUE = 5;
-
-	/**
 	 * An array of all the '<em><b>Set Operator</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,7 +166,6 @@ public enum SetOperator implements Enumerator {
 			H,
 			I,
 			P,
-			_VALUE_SET_OPERATOR,
 		};
 
 	/**
@@ -247,7 +221,6 @@ public enum SetOperator implements Enumerator {
 			case H_VALUE: return H;
 			case I_VALUE: return I;
 			case P_VALUE: return P;
-			case _VALUE_SET_OPERATOR_VALUE: return _VALUE_SET_OPERATOR;
 		}
 		return null;
 	}

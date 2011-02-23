@@ -17,6 +17,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.ANYOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +33,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  *
  * @generated
  */
-public class InfrastructureRootTypeIdOperations {
+public class InfrastructureRootTypeIdOperations extends ANYOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->
