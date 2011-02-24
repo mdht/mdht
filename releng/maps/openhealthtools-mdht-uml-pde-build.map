@@ -31,7 +31,7 @@ feature@org.openhealthtools.mdht.uml.cda.models.doc=SVN,trunk,https://www.projec
 
 plugin@org.openhealthtools.mdht.cda.doc.user=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/doc/org.openhealthtools.mdht.cda.doc.user,force
 
-plugin@org.openhealthtools.mdht.uml.cda.cdt.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/doc/org.openhealthtools.mdht.uml.cda.cdt.doc,force
+plugin@org.openhealthtools.mdht.uml.cda.cdt.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.cdt.doc,force
 
 plugin@org.openhealthtools.mdht.uml.cda.ccd.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.ccd.doc,force
 
