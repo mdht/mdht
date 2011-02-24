@@ -22,7 +22,6 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
@@ -875,7 +874,7 @@ public class CDAModelUtil {
 	
 	protected static String computeXref(Element source, Class target) {
 		String href = null;
-		if (isSameModel(source, target)) {
+		if (UMLUtil.isSameModel(source, target)) {
 			href="../" + target.getName() + ".dita";
 		}
 		else if (isCDAModel(target)) {
@@ -919,27 +918,10 @@ public class CDAModelUtil {
 
 	protected static String computeTerminologyXref(Class source, Enumeration target) {
 		String href = null;
-		if (isSameProject(source, target)) {
+		if (UMLUtil.isSameProject(source, target)) {
 			href="../../terminology/" + validFileName(target.getName()) + ".dita";
 		}
 		return href;
-	}
-
-	protected static boolean isSameModel(Element first, Element second) {
-		if (first == null || second == null)
-			return false;
-		else
-			return UMLUtil.getTopPackage(first).equals(UMLUtil.getTopPackage(second))
-				|| UMLUtil.getTopPackage(first).getImportedElements().contains(second);
-	}
-
-	protected static boolean isSameProject(Element first, Element second) {
-		// get Resource, compare base path except for file name
-		// TODO also strip folder within project
-		URI firstURI = first.eResource().getURI();
-		URI secondURI = second.eResource().getURI();
-
-		return firstURI.trimSegments(1).equals(secondURI.trimSegments(1));
 	}
 
 	public static Property getNavigableEnd(Association association) {

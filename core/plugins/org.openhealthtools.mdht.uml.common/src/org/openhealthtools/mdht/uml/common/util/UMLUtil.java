@@ -269,6 +269,29 @@ public class UMLUtil {
 		return eObject instanceof Namespace ? (Namespace)eObject : null;
 	}
 
+	public static boolean isSameModel(Element first, Element second) {
+		if (first == null || second == null)
+			return false;
+
+		Package firstPackage = UMLUtil.getTopPackage(first);
+		Package secondPackage = UMLUtil.getTopPackage(second);
+		
+		if (firstPackage == null || secondPackage == null)
+			return first.eResource().getURI().equals(second.eResource().getURI());
+		else
+			return firstPackage.equals(secondPackage)
+				|| firstPackage.getImportedElements().contains(second);
+	}
+
+	public static boolean isSameProject(Element first, Element second) {
+		// get Resource, compare base path except for file name
+		// TODO also strip folder within project
+		URI firstURI = first.eResource().getURI();
+		URI secondURI = second.eResource().getURI();
+
+		return firstURI.trimSegments(1).equals(secondURI.trimSegments(1));
+	}
+
 	/**
 	 * Find next unused type name, using 'name' as the base.
 	 */
