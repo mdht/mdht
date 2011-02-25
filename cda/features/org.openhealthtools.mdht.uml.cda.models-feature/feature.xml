@@ -45,12 +45,7 @@
          version="0.0.0"
          unpack="false"/>
          
-     <plugin
-         id="org.openhealthtools.mdht.uml.cda.cdt.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+  
          
    
          
@@ -61,22 +56,10 @@
          version="0.0.0"
          unpack="false"/>
          
-	 <plugin
-         id="org.openhealthtools.mdht.uml.cda.ccd.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false" />         
+	
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.hitsp"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.cda.hitsp.doc"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -90,12 +73,6 @@
          unpack="false"/>
 
 
-   <plugin
-         id="org.openhealthtools.mdht.uml.cda.ihe.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
          
 
 
