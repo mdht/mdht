@@ -55,6 +55,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryAct;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
@@ -488,36 +489,20 @@ public class InstanceGenerator {
 		
 		return results;
 	}
-	
-	public void save(EObject eObject, Writer writer) {
-		boolean hasContent = false;
-		ClinicalDocument doc = null;
-		
-		if (eObject instanceof ClinicalDocument) {
-			doc = (ClinicalDocument) eObject;
-			hasContent = true;
+	public void save(EObject eObject, Writer writer)  {		
+		try {
+			if (eObject instanceof ClinicalDocument) {	
+				CDAUtil.save((ClinicalDocument) eObject, writer);
+		} else if (eObject instanceof InfrastructureRoot ) {
+				CDAUtil.saveSnippet((InfrastructureRoot)eObject, writer);
+		} else 
+		{
+			writer.write("Unable to create XML Snippet");
 		}
-		else {
-			doc = CDAFactory.eINSTANCE.createClinicalDocument();
-		
-			if (eObject instanceof Section) {
-				doc.addSection((Section)eObject);
-				hasContent = true;
-			}
-			else {
-				Section section = CDAFactory.eINSTANCE.createSection();
-				doc.addSection(section);
-				hasContent = addChild(section, eObject);
-			}
+		} catch (Exception e) {
+		e.printStackTrace();
 		}
-		
-		if (hasContent) {
-			try {
-				CDAUtil.save(doc, writer);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+
 	}
 	
 //	================================================
