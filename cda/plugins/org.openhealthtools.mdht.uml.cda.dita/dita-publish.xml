@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="Publish DITA"  >
 
-<!--default="all"
-basedir="/home/eclipse/runtime-New_configuration/org.openhealthtools.mdht.uml.cda.ccd.doc/ditatest/ditabasedir"
-	<property file="/home/eclipse/heliosworkspaceM7/org.openhealthtools.mdht.uml.cda.dita/dita.properties" />  -->
-	
 	<import file="${dita.dir}/integrator.xml"/>
-
-	
-	
-<!--	<target name="all"  depends="standards-pdf" >
-	</target>
-	-->
 	
 	<target name="standards-pdf">
 
@@ -61,7 +51,6 @@ basedir="/home/eclipse/runtime-New_configuration/org.openhealthtools.mdht.uml.cd
 			<property name="dita.eclipse.plugin" value="no" />
 		</ant>
 
-<!--		<delete dir="temp"/> -->
 		<delete file="${eclipsehelp.output}/dita.list"/>
 		<delete file="${eclipsehelp.output}/dita.xml.properties"/>
 		<delete file="${eclipsehelp.output}/delta.gif"/>
@@ -70,21 +59,18 @@ basedir="/home/eclipse/runtime-New_configuration/org.openhealthtools.mdht.uml.cd
 
 	<target name="pdf" depends="integrate">
 		
-	<!--	<property name="pdf.output" value="${pdfOutputLocation}/pdf" /> -->
-		
 		<delete file="${docProject}/${pdf.filename}" />
 		
-		<ant antfile="${dita.dir}/build.xml" target="init">
+		<ant antfile="${dita.dir}/build.xml" target="init" >
 				<property name="transtype" value="pdf" />
 				<property name="args.input" value="${ditaMapFile}" />
 				<property name="args.hdr" value="${ditaFilePath}/header.xml" />
-				<property name="output.dir" value="${pdf.output}" />
 				<property name="dita.temp.dir" location="${tempFilePath}" />
 				<property name="clean.temp" value="true" />
+			   <property name="output.dir" value="${pdf.output}" />
 		</ant>
-		
-		
-		<move file="${pdf.output}/${ditaMapFileRoot}.pdf" tofile="${docProject}/${pdf.filename}" />
+
+		<move file="${pdf.output}/${pdflocation}" tofile="${docProject}/${pdf.filename}" />
 		
 		<delete dir="${pdf.output}"/>
 		
