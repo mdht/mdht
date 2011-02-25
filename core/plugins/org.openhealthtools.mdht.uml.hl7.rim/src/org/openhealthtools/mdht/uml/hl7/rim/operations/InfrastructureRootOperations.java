@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#isNullFlavorDefined() <em>Is Null Flavor Defined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#isNullFlavorUndefined() <em>Is Null Flavor Undefined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#hasContent() <em>Has Content</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot#isDefined(java.lang.String) <em>Is Defined</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,6 +118,15 @@ public class InfrastructureRootOperations {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static  boolean isDefined(InfrastructureRoot infrastructureRoot, String featureName) {
+		return (infrastructureRoot.eIsSet(infrastructureRoot.eClass().getEStructuralFeature(featureName)));
 	}
 
 } // InfrastructureRootOperations

@@ -7,6 +7,7 @@
 package org.openhealthtools.mdht.uml.hl7.rim.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -316,6 +317,9 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		EOperation op = addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(participationEClass, Participation.class, "Participation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

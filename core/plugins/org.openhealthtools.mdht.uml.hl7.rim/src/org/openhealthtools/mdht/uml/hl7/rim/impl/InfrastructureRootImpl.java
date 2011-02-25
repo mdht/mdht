@@ -108,4 +108,13 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 		return InfrastructureRootOperations.hasContent(this);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDefined(String featureName) {
+		return InfrastructureRootOperations.isDefined(this, featureName);
+	}
+
 } //InfrastructureRootImpl
