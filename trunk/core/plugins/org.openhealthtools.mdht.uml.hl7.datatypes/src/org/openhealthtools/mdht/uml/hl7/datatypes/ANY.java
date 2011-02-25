@@ -112,4 +112,12 @@ public interface ANY extends EObject {
 	 */
 	boolean hasContent();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" featureNameRequired="true" featureNameOrdered="false"
+	 * @generated
+	 */
+	boolean isDefined(String featureName);
+
 } // ANY

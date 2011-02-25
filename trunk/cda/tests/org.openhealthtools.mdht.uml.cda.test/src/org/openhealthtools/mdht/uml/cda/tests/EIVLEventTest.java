@@ -50,6 +50,8 @@ public class EIVLEventTest
 			System.out.println("Everything is OK, no validation errors.");
 		}
 		
+		System.out.println("Note this test is successful if there are 5 specific validation errors displayed plus the one generic error.");
+		
 		
 		System.out.println();
 	}

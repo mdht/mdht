@@ -161,6 +161,15 @@ public abstract class ANYImpl extends EObjectImpl implements ANY {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isDefined(String featureName) {
+		return ANYOperations.isDefined(this, featureName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {

@@ -37,6 +37,9 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/isNullFlavorDefined"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/isNullFlavorUndefined"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/hasContent"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/isDefined">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ANY/isDefined/featureName"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//BIN">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//BIN/representation"/>
@@ -91,14 +94,21 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheck/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheck/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/compression">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/compression/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/compression/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/integrityCheckAlgorithm">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheckAlgorithm/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/integrityCheckAlgorithm/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/compression">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/compression/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/compression/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/representation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/representation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/representation/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/isCompressionDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/isIntegrityCheckAlgorithmDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/isRepresentationDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CD">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

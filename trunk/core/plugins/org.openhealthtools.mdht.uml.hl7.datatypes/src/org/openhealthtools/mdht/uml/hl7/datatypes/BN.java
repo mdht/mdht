@@ -31,11 +31,11 @@ public interface BN extends BL {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.nullFlavor.oclIsUndefined()
+	 * self.isNullFlavorUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.nullFlavor.oclIsUndefined()'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isNullFlavorUndefined()'"
 	 * @generated
 	 */
 	boolean validateNullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context);

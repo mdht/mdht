@@ -19,7 +19,13 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 	<languageCode code="en-US"/>
 	<setId extension="BB35" root="2.16.840.1.113883.19.7"/>
 	<versionNumber value="2"/>
+
+<!--
 	<recordTarget typeCode="RCT" contextControlCode="OP">
+	<recordTarget typeCode="ADM" contextControlCode="OP">
+-->
+ 	<recordTarget contextControlCode="OP">
+
 		<patientRole classCode="PAT">
 			<id extension="12345" root="2.16.840.1.113883.19.5"/>
 			<patient classCode="PSN" determinerCode="INSTANCE">

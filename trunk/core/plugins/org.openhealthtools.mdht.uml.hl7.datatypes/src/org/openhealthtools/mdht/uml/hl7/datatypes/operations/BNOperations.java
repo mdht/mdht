@@ -65,7 +65,7 @@ public class BNOperations extends ANYOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.nullFlavor.oclIsUndefined()";
+	protected static final String VALIDATE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isNullFlavorUndefined()";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateNullFlavor(BN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Null Flavor</em>}' invariant operation.
@@ -81,7 +81,7 @@ public class BNOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.nullFlavor.oclIsUndefined()
+	 * self.isNullFlavorUndefined()
 	 * @param bn The receiving '<em><b>BN</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

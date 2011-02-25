@@ -12,7 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
