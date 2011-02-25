@@ -365,11 +365,11 @@ public interface LegalAuthenticator extends Participation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::LA
+	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::LA
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::LA'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::LA'"
 	 * @generated
 	 */
 	boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -378,11 +378,11 @@ public interface LegalAuthenticator extends Participation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP
+	 * self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP'"
 	 * @generated
 	 */
 	boolean validateContextControlCode(DiagnosticChain diagnostics, Map<Object, Object> context);

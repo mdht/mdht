@@ -35,15 +35,6 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations;
  */
 public class OrderOperations extends ActOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -60,7 +51,7 @@ public class OrderOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::RQO";
+	protected static final String VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::RQO";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateMoodCode(Order, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}' invariant operation.
@@ -76,7 +67,7 @@ public class OrderOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::RQO
+	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::RQO
 	 * @param order The receiving '<em><b>Order</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

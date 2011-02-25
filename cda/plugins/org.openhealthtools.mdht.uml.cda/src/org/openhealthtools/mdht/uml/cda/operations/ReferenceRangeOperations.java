@@ -35,15 +35,6 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations
  */
 public class ReferenceRangeOperations extends ActRelationshipOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -60,7 +51,7 @@ public class ReferenceRangeOperations extends ActRelationshipOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::REFV";
+	protected static final String VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::REFV";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTypeCode(ReferenceRange, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Type Code</em>}' invariant operation.
@@ -76,7 +67,7 @@ public class ReferenceRangeOperations extends ActRelationshipOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::REFV
+	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::REFV
 	 * @param referenceRange The receiving '<em><b>Reference Range</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

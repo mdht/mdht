@@ -83,15 +83,6 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  */
 public class ProcedureOperations extends ClinicalStatementOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -231,7 +222,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<Act> getActs(Procedure procedure) {
 		if (GET_ACTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(24));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(30));
 			try {
 				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
 			}
@@ -286,7 +277,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<Encounter> getEncounters(Procedure procedure) {
 		if (GET_ENCOUNTERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(26));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(32));
 			try {
 				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
 			}
@@ -332,7 +323,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<Observation> getObservations(Procedure procedure) {
 		if (GET_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(27));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(33));
 			try {
 				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
 			}
@@ -378,7 +369,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<ObservationMedia> getObservationMedia(Procedure procedure) {
 		if (GET_OBSERVATION_MEDIA__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(28));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(34));
 			try {
 				GET_OBSERVATION_MEDIA__EOCL_QRY = helper.createQuery(GET_OBSERVATION_MEDIA__EOCL_EXP);
 			}
@@ -424,7 +415,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<Organizer> getOrganizers(Procedure procedure) {
 		if (GET_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(29));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(35));
 			try {
 				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
 			}
@@ -470,7 +461,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<Procedure> getProcedures(Procedure procedure) {
 		if (GET_PROCEDURES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(30));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(36));
 			try {
 				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
 			}
@@ -516,7 +507,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<RegionOfInterest> getRegionsOfInterest(Procedure procedure) {
 		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(31));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(37));
 			try {
 				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
 			}
@@ -571,7 +562,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<SubstanceAdministration> getSubstanceAdministrations(Procedure procedure) {
 		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(33));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(39));
 			try {
 				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
 			}
@@ -617,7 +608,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  EList<Supply> getSupplies(Procedure procedure) {
 		if (GET_SUPPLIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(34));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(40));
 			try {
 				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
 			}
@@ -663,7 +654,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasActTemplate(Procedure procedure, String templateId) {
 		if (HAS_ACT_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(35));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(41));
 			try {
 				HAS_ACT_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ACT_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -709,7 +700,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasCode(Procedure procedure, String code, String codeSystem, String codeSystemName) {
 		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(36));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(42));
 			try {
 				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
 			}
@@ -757,7 +748,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasEncounterTemplate(Procedure procedure, String templateId) {
 		if (HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(37));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(43));
 			try {
 				HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -803,7 +794,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasObservationMediaTemplate(Procedure procedure, String templateId) {
 		if (HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(38));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(44));
 			try {
 				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -849,7 +840,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasObservationTemplate(Procedure procedure, String templateId) {
 		if (HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(39));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(45));
 			try {
 				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -895,7 +886,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasOrganizerTemplate(Procedure procedure, String templateId) {
 		if (HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(40));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(46));
 			try {
 				HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -941,7 +932,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasProcedureTemplate(Procedure procedure, String templateId) {
 		if (HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(41));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(47));
 			try {
 				HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -987,7 +978,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasRegionOfInterestTemplate(Procedure procedure, String templateId) {
 		if (HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(42));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(48));
 			try {
 				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1033,7 +1024,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasSubstanceAdministrationTemplate(Procedure procedure, String templateId) {
 		if (HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(43));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(49));
 			try {
 				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1079,7 +1070,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasSupplyTemplate(Procedure procedure, String templateId) {
 		if (HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(44));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(50));
 			try {
 				HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1125,7 +1116,7 @@ public class ProcedureOperations extends ClinicalStatementOperations {
 	public static  boolean hasTemplateId(Procedure procedure, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(45));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(51));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}

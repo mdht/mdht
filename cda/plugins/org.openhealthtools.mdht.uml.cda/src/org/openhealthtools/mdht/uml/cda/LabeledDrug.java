@@ -338,11 +338,11 @@ public interface LabeledDrug extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT
+	 * self.isClassCodeDefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isClassCodeDefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT'"
 	 * @generated
 	 */
 	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -351,11 +351,11 @@ public interface LabeledDrug extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND
+	 * self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND'"
 	 * @generated
 	 */
 	boolean validateDeterminerCode(DiagnosticChain diagnostics, Map<Object, Object> context);

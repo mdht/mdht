@@ -345,11 +345,11 @@ public interface Component2 extends ActRelationship {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP
+	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP'"
 	 * @generated
 	 */
 	boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context);

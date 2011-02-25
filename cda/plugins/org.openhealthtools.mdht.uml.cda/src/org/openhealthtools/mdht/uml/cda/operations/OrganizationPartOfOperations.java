@@ -35,15 +35,6 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations;
  */
 public class OrganizationPartOfOperations extends RoleOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -60,7 +51,7 @@ public class OrganizationPartOfOperations extends RoleOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PART";
+	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PART";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateClassCode(OrganizationPartOf, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' invariant operation.
@@ -76,7 +67,7 @@ public class OrganizationPartOfOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PART
+	 * self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PART
 	 * @param organizationPartOf The receiving '<em><b>Organization Part Of</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

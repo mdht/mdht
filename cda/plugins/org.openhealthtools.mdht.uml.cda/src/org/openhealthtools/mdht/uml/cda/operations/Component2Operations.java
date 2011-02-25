@@ -43,15 +43,6 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.ActRelationshipOperations
  */
 public class Component2Operations extends ActRelationshipOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -125,7 +116,7 @@ public class Component2Operations extends ActRelationshipOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP";
+	protected static final String VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTypeCode(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Type Code</em>}' invariant operation.
@@ -141,7 +132,7 @@ public class Component2Operations extends ActRelationshipOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP
+	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP
 	 * @param component2 The receiving '<em><b>Component2</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

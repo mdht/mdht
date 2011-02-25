@@ -355,11 +355,11 @@ public interface StructuredBody extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY
+	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCBODY
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCBODY'"
 	 * @generated
 	 */
 	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -368,11 +368,11 @@ public interface StructuredBody extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN
+	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN'"
 	 * @generated
 	 */
 	boolean validateMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
