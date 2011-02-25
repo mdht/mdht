@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#isNullFlavorDefined() <em>Is Null Flavor Defined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#isNullFlavorUndefined() <em>Is Null Flavor Undefined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#hasContent() <em>Has Content</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#isDefined(java.lang.String) <em>Is Defined</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,6 +66,15 @@ public class ANYOperations {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static  boolean isDefined(ANY any, String featureName) {
+		return (any.eIsSet(any.eClass().getEStructuralFeature(featureName)));
 	}
 
 } // ANYOperations

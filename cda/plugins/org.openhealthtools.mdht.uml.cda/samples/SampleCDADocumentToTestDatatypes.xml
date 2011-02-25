@@ -13,7 +13,15 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 	<templateId root="2.16.840.1.113883.3.27.1776"/>
 	<id extension="c266" root="2.16.840.1.113883.19.4"/>
 	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
+<!--  
+	<title compression="DF" integrityCheckAlgorithm="SHA-1" representation="B64">Good Health Clinic Consultation Note</title>
+-->
+<!-- 
+	<title representation="TXT">Good Health Clinic Consultation Note</title>
+-->
+
 	<title>Good Health Clinic Consultation Note</title>
+
 	<effectiveTime value="20000407"/>
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
 	<languageCode code="en-US"/>

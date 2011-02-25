@@ -2147,10 +2147,7 @@
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BekDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_voM98UriEd6FXKclYGEDCw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_voM98EriEd6FXKclYGEDCw"/>
-        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_xQgYgEriEd6FXKclYGEDCw" name="RCT">
-          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BekDcEd6xYZuu1VKCVw"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BjEDcEd6xYZuu1VKCVw"/>
-        </defaultValue>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_tyRgsEEYEeCRlaE1u__gPQ" value="RCT"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_y4XuMEriEd6FXKclYGEDCw" name="contextControlCode" visibility="private">
         <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yenMkDcEd6xYZuu1VKCVw"/>

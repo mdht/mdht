@@ -31,6 +31,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_uM-fwEBUEeCRlaE1u__gPQ" name="isDefined">
+        <ownedParameter xmi:id="_07oJEEBUEeCRlaE1u__gPQ" name="featureName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5NgN8EBUEeCRlaE1u__gPQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Av5_kDxaEd6JwqSGecoePg" name="BIN" isAbstract="true">
       <generalization xmi:id="_F-I_ADxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>
@@ -118,14 +126,58 @@
           <body>self.integrityCheck.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_XIgGoDlFEeCzCsdl8TLd-w" name="compression" constrainedElement="_EaTNsDxaEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_RKUbgDlGEeCzCsdl8TLd-w">
-          <language>Analysis</language>
-          <body>Implemented in Java to verify that compression is not used.</body>
+      <ownedRule xmi:id="_55kcYDlGEeCzCsdl8TLd-w" name="integrityCheckAlgorithm" constrainedElement="_EaTNsDxaEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_e15JUEEKEeCRlaE1u__gPQ">
+          <language>OCL</language>
+          <body>not self.isIntegrityCheckAlgorithmDefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_55kcYDlGEeCzCsdl8TLd-w" name="integrityCheckAlgorithm" constrainedElement="_EaTNsDxaEd6JwqSGecoePg"/>
+      <ownedRule xmi:id="_f3md8EEKEeCRlaE1u__gPQ" name="compression" constrainedElement="_EaTNsDxaEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_jFPeoEEKEeCRlaE1u__gPQ">
+          <language>OCL</language>
+          <body>not self.isCompressionDefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_3gjPwEELEeCRlaE1u__gPQ" name="representation" constrainedElement="_EaTNsDxaEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_CqUZgEEMEeCRlaE1u__gPQ">
+          <language>OCL</language>
+          <body>self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_IY9boDxaEd6JwqSGecoePg" general="_CowXkDxaEd6JwqSGecoePg"/>
+      <ownedOperation xmi:id="_v0k6QEBVEeCRlaE1u__gPQ" name="isCompressionDefined" bodyCondition="_10kt0EBVEeCRlaE1u__gPQ">
+        <ownedRule xmi:id="_10kt0EBVEeCRlaE1u__gPQ" name="body" constrainedElement="_v0k6QEBVEeCRlaE1u__gPQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="__KtWwEBVEeCRlaE1u__gPQ">
+            <language>OCL</language>
+            <body>self.isDefined('compression')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_zeEwgEBVEeCRlaE1u__gPQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_AIIbgEEKEeCRlaE1u__gPQ" name="isIntegrityCheckAlgorithmDefined" bodyCondition="_G5T0YEEKEeCRlaE1u__gPQ">
+        <ownedRule xmi:id="_G5T0YEEKEeCRlaE1u__gPQ" name="body" constrainedElement="_AIIbgEEKEeCRlaE1u__gPQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_WxRLkEEKEeCRlaE1u__gPQ">
+            <language>OCL</language>
+            <body>self.isDefined('integrityCheckAlgorithm')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_EgHvcEEKEeCRlaE1u__gPQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_dRfh4EELEeCRlaE1u__gPQ" name="isRepresentationDefined" bodyCondition="_j5RuMEELEeCRlaE1u__gPQ">
+        <ownedRule xmi:id="_j5RuMEELEeCRlaE1u__gPQ" name="body" constrainedElement="_dRfh4EELEeCRlaE1u__gPQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_mTNaAEELEeCRlaE1u__gPQ">
+            <language>OCL</language>
+            <body>self.isDefined('representation')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_iKaYoEELEeCRlaE1u__gPQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_VKl7EDxaEd6JwqSGecoePg" name="CD">
       <generalization xmi:id="_YsWKkDxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>
@@ -210,7 +262,7 @@
       <ownedRule xmi:id="_Mpq3UDxkEd6JwqSGecoePg" name="nullFlavor" constrainedElement="_zLCg0DxjEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Mpq3UTxkEd6JwqSGecoePg">
           <language>OCL</language>
-          <body>self.nullFlavor.oclIsUndefined()</body>
+          <body>self.isNullFlavorUndefined()</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_0vLNEDxjEd6JwqSGecoePg" general="_r1WssDxjEd6JwqSGecoePg"/>

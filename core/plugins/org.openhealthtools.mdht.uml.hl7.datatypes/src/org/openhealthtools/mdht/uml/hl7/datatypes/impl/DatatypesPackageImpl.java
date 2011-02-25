@@ -2222,6 +2222,9 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		addEOperation(anyEClass, ecorePackage.getEBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		EOperation op = addEOperation(anyEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(binEClass, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, "BIN", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBIN_Representation(), this.getBinaryDataEncoding(), "representation", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -2235,7 +2238,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getED_IntegrityCheck(), ecorePackage.getEByteArray(), "integrityCheck", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getED_IntegrityCheckAlgorithm(), theVocabPackage.getIntegrityCheckAlgorithm(), "integrityCheckAlgorithm", "SHA-1", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		EOperation op = addEOperation(edEClass, ecorePackage.getEBoolean(), "validateThumbnailThumbnail", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(edEClass, ecorePackage.getEBoolean(), "validateThumbnailThumbnail", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2293,6 +2296,15 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(stEClass, ecorePackage.getEBoolean(), "validateIntegrityCheckAlgorithm", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(stEClass, ecorePackage.getEBoolean(), "validateCompression", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -2302,7 +2314,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(stEClass, ecorePackage.getEBoolean(), "validateIntegrityCheckAlgorithm", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stEClass, ecorePackage.getEBoolean(), "validateRepresentation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2310,6 +2322,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(stEClass, ecorePackage.getEBoolean(), "isCompressionDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(stEClass, ecorePackage.getEBoolean(), "isIntegrityCheckAlgorithmDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(stEClass, ecorePackage.getEBoolean(), "isRepresentationDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(cdEClass, org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, "CD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCD_OriginalText(), this.getED(), null, "originalText", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3214,7 +3232,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "kind", "mixed"
-		   });																				
+		   });																																
 		addAnnotation
 		  (getCD_OriginalText(), 
 		   source, 

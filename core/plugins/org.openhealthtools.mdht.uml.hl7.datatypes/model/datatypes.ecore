@@ -7,6 +7,9 @@
     <eOperations name="isNullFlavorDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="isNullFlavorUndefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="hasContent" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="isDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="featureName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
         unsettable="true"/>
@@ -185,12 +188,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="compression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="integrityCheckAlgorithm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="Implemented in Java to verify that compression is not used."/>
+        <details key="body" value="not self.isIntegrityCheckAlgorithmDefined()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Implemented in Java to verify that compression is not used."/>
+        <details key="documentation" value="not self.isIntegrityCheckAlgorithmDefined()"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -207,7 +210,13 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="integrityCheckAlgorithm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="compression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.isCompressionDefined()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.isCompressionDefined()"/>
+      </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
@@ -222,6 +231,53 @@
           <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
         </eGenericType>
       </eParameters>
+    </eOperations>
+    <eOperations name="representation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="isCompressionDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('compression')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('compression')"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isIntegrityCheckAlgorithmDefined" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('integrityCheckAlgorithm')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('integrityCheckAlgorithm')"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isRepresentationDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('representation')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('representation')"/>
+      </eAnnotations>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CD" eSuperTypes="#//ANY">
@@ -338,10 +394,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="BN" eSuperTypes="#//BL">
     <eOperations name="nullFlavor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.nullFlavor.oclIsUndefined()"/>
+        <details key="body" value="self.isNullFlavorUndefined()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.nullFlavor.oclIsUndefined()"/>
+        <details key="documentation" value="self.isNullFlavorUndefined()"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

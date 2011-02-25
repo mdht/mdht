@@ -132,7 +132,15 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ST__COMPRESSION = 5;
+	public static final int ST__COMPRESSION = 6;
+
+				/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Representation' of 'ST'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ST__REPRESENTATION = 7;
 
 				/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Integrity Check Algorithm' of 'ST'.
@@ -140,7 +148,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ST__INTEGRITY_CHECK_ALGORITHM = 6;
+	public static final int ST__INTEGRITY_CHECK_ALGORITHM = 5;
 
 				/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Translation' of 'CV'.
@@ -148,7 +156,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CV__TRANSLATION = 7;
+	public static final int CV__TRANSLATION = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Qualifier' of 'CE'.
@@ -156,7 +164,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CE__QUALIFIER = 8;
+	public static final int CE__QUALIFIER = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Null Flavor' of 'BN'.
@@ -164,7 +172,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BN__NULL_FLAVOR = 9;
+	public static final int BN__NULL_FLAVOR = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delimiter' of 'AD'.
@@ -172,7 +180,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DELIMITER = 10;
+	public static final int AD__DELIMITER = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Country' of 'AD'.
@@ -180,7 +188,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__COUNTRY = 11;
+	public static final int AD__COUNTRY = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate State' of 'AD'.
@@ -188,7 +196,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__STATE = 12;
+	public static final int AD__STATE = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate County' of 'AD'.
@@ -196,7 +204,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__COUNTY = 13;
+	public static final int AD__COUNTY = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate City' of 'AD'.
@@ -204,7 +212,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__CITY = 14;
+	public static final int AD__CITY = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Postal Code' of 'AD'.
@@ -212,7 +220,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__POSTAL_CODE = 15;
+	public static final int AD__POSTAL_CODE = 16;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Address Line' of 'AD'.
@@ -220,7 +228,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__STREET_ADDRESS_LINE = 16;
+	public static final int AD__STREET_ADDRESS_LINE = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate House Number' of 'AD'.
@@ -228,7 +236,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__HOUSE_NUMBER = 17;
+	public static final int AD__HOUSE_NUMBER = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate House Number Numeric' of 'AD'.
@@ -236,7 +244,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__HOUSE_NUMBER_NUMERIC = 18;
+	public static final int AD__HOUSE_NUMBER_NUMERIC = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Direction' of 'AD'.
@@ -244,7 +252,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DIRECTION = 19;
+	public static final int AD__DIRECTION = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Name' of 'AD'.
@@ -252,7 +260,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__STREET_NAME = 20;
+	public static final int AD__STREET_NAME = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Name Base' of 'AD'.
@@ -260,7 +268,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__STREET_NAME_BASE = 21;
+	public static final int AD__STREET_NAME_BASE = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Name Type' of 'AD'.
@@ -268,7 +276,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__STREET_NAME_TYPE = 22;
+	public static final int AD__STREET_NAME_TYPE = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Additional Locator' of 'AD'.
@@ -276,7 +284,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__ADDITIONAL_LOCATOR = 23;
+	public static final int AD__ADDITIONAL_LOCATOR = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Unit ID' of 'AD'.
@@ -284,7 +292,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__UNIT_ID = 24;
+	public static final int AD__UNIT_ID = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Unit Type' of 'AD'.
@@ -292,7 +300,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__UNIT_TYPE = 25;
+	public static final int AD__UNIT_TYPE = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Care Of' of 'AD'.
@@ -300,7 +308,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__CARE_OF = 26;
+	public static final int AD__CARE_OF = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Census Tract' of 'AD'.
@@ -308,7 +316,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__CENSUS_TRACT = 27;
+	public static final int AD__CENSUS_TRACT = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Address Line' of 'AD'.
@@ -316,7 +324,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DELIVERY_ADDRESS_LINE = 28;
+	public static final int AD__DELIVERY_ADDRESS_LINE = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Installation Type' of 'AD'.
@@ -324,7 +332,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DELIVERY_INSTALLATION_TYPE = 29;
+	public static final int AD__DELIVERY_INSTALLATION_TYPE = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Installation Area' of 'AD'.
@@ -332,7 +340,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DELIVERY_INSTALLATION_AREA = 30;
+	public static final int AD__DELIVERY_INSTALLATION_AREA = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Installation Qualifier' of 'AD'.
@@ -340,7 +348,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DELIVERY_INSTALLATION_QUALIFIER = 31;
+	public static final int AD__DELIVERY_INSTALLATION_QUALIFIER = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Mode' of 'AD'.
@@ -348,7 +356,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DELIVERY_MODE = 32;
+	public static final int AD__DELIVERY_MODE = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Mode Identifier' of 'AD'.
@@ -356,7 +364,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__DELIVERY_MODE_IDENTIFIER = 33;
+	public static final int AD__DELIVERY_MODE_IDENTIFIER = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Building Number Suffix' of 'AD'.
@@ -364,7 +372,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__BUILDING_NUMBER_SUFFIX = 34;
+	public static final int AD__BUILDING_NUMBER_SUFFIX = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Post Box' of 'AD'.
@@ -372,7 +380,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__POST_BOX = 35;
+	public static final int AD__POST_BOX = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Precinct' of 'AD'.
@@ -380,7 +388,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AD__PRECINCT = 36;
+	public static final int AD__PRECINCT = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delimiter' of 'EN'.
@@ -388,7 +396,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EN__DELIMITER = 37;
+	public static final int EN__DELIMITER = 38;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family' of 'EN'.
@@ -396,7 +404,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EN__FAMILY = 38;
+	public static final int EN__FAMILY = 39;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Given' of 'EN'.
@@ -404,7 +412,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EN__GIVEN = 39;
+	public static final int EN__GIVEN = 40;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Prefix' of 'EN'.
@@ -412,7 +420,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EN__PREFIX = 40;
+	public static final int EN__PREFIX = 41;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Suffix' of 'EN'.
@@ -420,7 +428,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EN__SUFFIX = 41;
+	public static final int EN__SUFFIX = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Low' of 'IVL TS'.
@@ -428,7 +436,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_TS__OPTIONS_CONTAINING_LOW = 42;
+    public static final int IVL_TS__OPTIONS_CONTAINING_LOW = 43;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Center' of 'IVL TS'.
@@ -436,7 +444,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_TS__OPTIONS_CONTAINING_CENTER = 43;
+    public static final int IVL_TS__OPTIONS_CONTAINING_CENTER = 44;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing High' of 'IVL TS'.
@@ -444,7 +452,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_TS__OPTIONS_CONTAINING_HIGH = 44;
+    public static final int IVL_TS__OPTIONS_CONTAINING_HIGH = 45;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Width' of 'IVL TS'.
@@ -452,7 +460,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_TS__OPTIONS_CONTAINING_WIDTH = 45;
+    public static final int IVL_TS__OPTIONS_CONTAINING_WIDTH = 46;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Invariant' of 'ON'.
@@ -460,7 +468,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ON__INVARIANT = 46;
+	public static final int ON__INVARIANT = 47;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Invariant' of 'PN'.
@@ -468,7 +476,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PN__INVARIANT = 47;
+	public static final int PN__INVARIANT = 48;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Invariant' of 'TN'.
@@ -476,7 +484,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TN__INVARIANT = 48;
+	public static final int TN__INVARIANT = 49;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Original Text' of 'CS'.
@@ -484,7 +492,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CS__ORIGINAL_TEXT = 49;
+	public static final int CS__ORIGINAL_TEXT = 50;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code System' of 'CS'.
@@ -492,7 +500,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CS__CODE_SYSTEM = 50;
+	public static final int CS__CODE_SYSTEM = 51;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code System Name' of 'CS'.
@@ -500,7 +508,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CS__CODE_SYSTEM_NAME = 51;
+	public static final int CS__CODE_SYSTEM_NAME = 52;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code System Version' of 'CS'.
@@ -508,7 +516,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CS__CODE_SYSTEM_VERSION = 52;
+	public static final int CS__CODE_SYSTEM_VERSION = 53;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Display Name' of 'CS'.
@@ -516,7 +524,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CS__DISPLAY_NAME = 53;
+	public static final int CS__DISPLAY_NAME = 54;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Denominator' of 'RTO QTY QTY'.
@@ -524,7 +532,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RTO_QTY_QTY__DENOMINATOR = 54;
+	public static final int RTO_QTY_QTY__DENOMINATOR = 55;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Low' of 'IVL INT'.
@@ -532,7 +540,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_INT__OPTIONS_CONTAINING_LOW = 55;
+	public static final int IVL_INT__OPTIONS_CONTAINING_LOW = 56;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Center' of 'IVL INT'.
@@ -540,7 +548,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_INT__OPTIONS_CONTAINING_CENTER = 56;
+	public static final int IVL_INT__OPTIONS_CONTAINING_CENTER = 57;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing High' of 'IVL INT'.
@@ -548,7 +556,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_INT__OPTIONS_CONTAINING_HIGH = 57;
+	public static final int IVL_INT__OPTIONS_CONTAINING_HIGH = 58;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Width' of 'IVL INT'.
@@ -556,7 +564,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IVL_INT__OPTIONS_CONTAINING_WIDTH = 58;
+	public static final int IVL_INT__OPTIONS_CONTAINING_WIDTH = 59;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Low' of 'IVL PQ'.
@@ -564,7 +572,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_PQ__OPTIONS_CONTAINING_LOW = 59;
+    public static final int IVL_PQ__OPTIONS_CONTAINING_LOW = 60;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Center' of 'IVL PQ'.
@@ -572,7 +580,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_PQ__OPTIONS_CONTAINING_CENTER = 60;
+    public static final int IVL_PQ__OPTIONS_CONTAINING_CENTER = 61;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing High' of 'IVL PQ'.
@@ -580,7 +588,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_PQ__OPTIONS_CONTAINING_HIGH = 61;
+    public static final int IVL_PQ__OPTIONS_CONTAINING_HIGH = 62;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Options Containing Width' of 'IVL PQ'.
@@ -588,7 +596,7 @@ public class DatatypesValidator extends EObjectValidator {
      * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final int IVL_PQ__OPTIONS_CONTAINING_WIDTH = 62;
+    public static final int IVL_PQ__OPTIONS_CONTAINING_WIDTH = 63;
 
     /**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Denominator' of 'RTO PQ PQ'.
@@ -596,7 +604,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RTO_PQ_PQ__DENOMINATOR = 63;
+	public static final int RTO_PQ_PQ__DENOMINATOR = 64;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Original Text' of 'EIVL event'.
@@ -604,7 +612,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__ORIGINAL_TEXT = 64;
+	public static final int EIVL_EVENT__ORIGINAL_TEXT = 65;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Translation' of 'EIVL event'.
@@ -612,7 +620,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__TRANSLATION = 65;
+	public static final int EIVL_EVENT__TRANSLATION = 66;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code System' of 'EIVL event'.
@@ -620,7 +628,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__CODE_SYSTEM = 66;
+	public static final int EIVL_EVENT__CODE_SYSTEM = 67;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code System Name' of 'EIVL event'.
@@ -628,7 +636,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EIVL_EVENT__CODE_SYSTEM_NAME = 67;
+	public static final int EIVL_EVENT__CODE_SYSTEM_NAME = 68;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -636,7 +644,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 67;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 68;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -884,8 +892,9 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateST_validateThumbnail(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateReference(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(st, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(st, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(st, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateCompression(st, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateRepresentation(st, diagnostics, context);
 		return result;
 	}
 
@@ -930,6 +939,16 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	public boolean validateST_validateCompression(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return st.validateCompression(diagnostics, context);
+	}
+
+				/**
+	 * Validates the validateRepresentation constraint of '<em>ST</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateST_validateRepresentation(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return st.validateRepresentation(diagnostics, context);
 	}
 
 				/**
@@ -1395,8 +1414,9 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateST_validateThumbnail(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateReference(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(adxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(adxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(adxp, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateCompression(adxp, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateRepresentation(adxp, diagnostics, context);
 		return result;
 	}
 
@@ -1592,8 +1612,9 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateST_validateThumbnail(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateReference(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(enxp, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(enxp, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(enxp, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateCompression(enxp, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateRepresentation(enxp, diagnostics, context);
 		return result;
 	}
 
@@ -1825,8 +1846,9 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateST_validateThumbnail(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateReference(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheck(sc, diagnostics, context);
-		if (result || diagnostics != null) result &= validateST_validateCompression(sc, diagnostics, context);
 		if (result || diagnostics != null) result &= validateST_validateIntegrityCheckAlgorithm(sc, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateCompression(sc, diagnostics, context);
+		if (result || diagnostics != null) result &= validateST_validateRepresentation(sc, diagnostics, context);
 		return result;
 	}
 
