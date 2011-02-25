@@ -46,6 +46,11 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isDefined">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="rim.ecore#//InfrastructureRoot/isDefined/featureName"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isClassCodeDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isTypeCodeDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isContextControlCodeDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isDeterminerCodeDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isMoodCodeDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Participation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getTypeCode"/>

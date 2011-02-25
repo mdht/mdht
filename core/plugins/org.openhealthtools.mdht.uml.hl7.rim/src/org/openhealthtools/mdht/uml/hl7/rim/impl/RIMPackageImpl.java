@@ -321,6 +321,16 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		EOperation op = addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isClassCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isContextControlCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isDeterminerCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isMoodCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(participationEClass, Participation.class, "Participation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(participationEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);

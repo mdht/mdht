@@ -117,4 +117,49 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 		return InfrastructureRootOperations.isDefined(this, featureName);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isClassCodeDefined() {
+		return InfrastructureRootOperations.isClassCodeDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isTypeCodeDefined() {
+		return InfrastructureRootOperations.isTypeCodeDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isContextControlCodeDefined() {
+		return InfrastructureRootOperations.isContextControlCodeDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDeterminerCodeDefined() {
+		return InfrastructureRootOperations.isDeterminerCodeDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isMoodCodeDefined() {
+		return InfrastructureRootOperations.isMoodCodeDefined(this);
+	}
+
 } //InfrastructureRootImpl
