@@ -43,6 +43,9 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isNullFlavorDefined"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isNullFlavorUndefined"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/hasContent"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isDefined">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="rim.ecore#//InfrastructureRoot/isDefined/featureName"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Participation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getTypeCode"/>
