@@ -52,11 +52,14 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
@@ -93,6 +96,7 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.w3c.dom.Document;
@@ -105,6 +109,7 @@ import org.xml.sax.SAXParseException;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
+    public static final String CDA_SAMPLE_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/sample";
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 
 	public static ClinicalDocument load(InputStream in) throws Exception {
@@ -221,6 +226,93 @@ public class CDAUtil {
 		return resource;
 	}
 
+	
+	public static void saveSnippet(InfrastructureRoot snippet, OutputStream out) throws Exception {
+		saveSnippet(snippet, out, true);
+	}
+	
+	public static void saveSnippet(InfrastructureRoot snippet, OutputStream out, boolean defaults) throws Exception {
+		CDAResource resource = prepare(snippet, defaults);
+		resource.save(out, null);
+	}
+	
+	public static void saveSnippet(InfrastructureRoot snippet, Writer writer) throws Exception {
+		CDAResource resource = prepare(snippet, true);
+		resource.save(writer, null);
+		
+	}
+	
+	/**
+	 * Creates a document root instance and adds the cda snippet to be streamed
+	 * @param cdaSnippet
+	 * @param defaults
+	 * @return
+	 */
+	private static CDAResource prepare(InfrastructureRoot cdaSnippet, boolean defaults) {
+
+		CDAResource resource =  (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+		
+		EClass documentRootEClass = EcoreFactory.eINSTANCE.createEClass();
+		documentRootEClass.setName("DocumentRoot");
+		ExtendedMetaData.INSTANCE.setName(documentRootEClass, "");
+		ExtendedMetaData.INSTANCE.setContentKind(documentRootEClass, ExtendedMetaData.MIXED_CONTENT);
+
+		EAttribute mixed = EcoreFactory.eINSTANCE.createEAttribute();
+		mixed.setName("mixed");
+		mixed.setEType(EcorePackage.eINSTANCE.getEFeatureMapEntry());
+		mixed.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);
+		ExtendedMetaData.INSTANCE.setName(mixed, ":mixed");
+		ExtendedMetaData.INSTANCE.setFeatureKind(mixed, ExtendedMetaData.ELEMENT_WILDCARD_FEATURE);
+		documentRootEClass.getEStructuralFeatures().add(mixed);
+
+		EReference xmlnsPrefixMap = EcoreFactory.eINSTANCE.createEReference();
+		xmlnsPrefixMap.setName("xMLNSPrefixMap");
+
+		xmlnsPrefixMap.setEType(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+
+		xmlnsPrefixMap.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);
+		xmlnsPrefixMap.setContainment(true);
+		xmlnsPrefixMap.setTransient(true);
+		ExtendedMetaData.INSTANCE.setName(xmlnsPrefixMap, "xmlns:prefix");
+		ExtendedMetaData.INSTANCE.setFeatureKind(xmlnsPrefixMap, ExtendedMetaData.ATTRIBUTE_FEATURE);
+		documentRootEClass.getEStructuralFeatures().add(xmlnsPrefixMap);
+
+		EReference xsiSchemaLocation = EcoreFactory.eINSTANCE.createEReference();
+		xsiSchemaLocation.setName("xSISchemaLocation");
+
+		xsiSchemaLocation.setEType(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+
+		xsiSchemaLocation.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);
+		xsiSchemaLocation.setContainment(true);
+		xsiSchemaLocation.setTransient(true);
+		ExtendedMetaData.INSTANCE.setName(xsiSchemaLocation, "xsi:schemaLocation");
+		ExtendedMetaData.INSTANCE.setFeatureKind(xsiSchemaLocation, ExtendedMetaData.ATTRIBUTE_FEATURE);
+		documentRootEClass.getEStructuralFeatures().add(xsiSchemaLocation);
+		
+		EReference snippetReference = EcoreFactory.eINSTANCE.createEReference();
+		snippetReference.setName(cdaSnippet.eClass().getName());		
+		snippetReference.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);		
+		snippetReference.setContainment(true);		
+		snippetReference.setEType(cdaSnippet.eClass());
+		
+		documentRootEClass.getEStructuralFeatures().add(snippetReference);
+		
+		EPackage documentRootPackage = EcoreFactory.eINSTANCE.createEPackage();		
+		documentRootPackage.setName(CDAPackage.eNAME);		
+		documentRootPackage.setNsPrefix(CDAPackage.eNS_PREFIX);
+		documentRootPackage.setNsURI(CDAPackage.eNS_URI);		
+		documentRootPackage.getEClassifiers().add(documentRootEClass);
+		EFactory documentRootFactoryInstance = documentRootPackage.getEFactoryInstance();		
+		EObject documentRootInstance = documentRootFactoryInstance.create(documentRootEClass);
+		
+		((List) documentRootInstance.eGet(snippetReference)).add(cdaSnippet);
+
+		resource.getContents().add(documentRootInstance);
+
+		return resource;
+	}
+
+	
 	// iterative breadth-first traversal using queue
 	@SuppressWarnings("unchecked")
 	private static void handleDefaults(EObject root) {
@@ -1412,5 +1504,31 @@ public class CDAUtil {
 
 	public static void loadPackages(String location) {
 		CDAPackageLoader.loadPackages(location);
+	}
+	
+	public static void sampleInstanceInitialization(EObject eObject) {
+
+		EObject container = eObject.eContainer();
+		int depth = 0;
+		while (container != null && depth < 10) {
+			System.out.println(depth + container.toString());
+			container = eObject.eContainer();
+			depth++;
+		}
+
+		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
+
+		classes.add(eObject.eClass());
+
+		for (EClass eClass : classes) {
+			EAnnotation annotation = eClass.getEAnnotation(CDA_ANNOTATION_SOURCE);
+			if (annotation != null) {
+				init(eObject, annotation.getDetails().map());
+			}
+			annotation = eClass.getEAnnotation(CDA_SAMPLE_SOURCE);
+			if (annotation != null) {
+				init(eObject, annotation.getDetails().map());
+			}
+		}
 	}
 }
