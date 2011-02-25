@@ -36,15 +36,6 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations;
  */
 public class ParentDocumentOperations extends ActOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -61,7 +52,7 @@ public class ParentDocumentOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN";
+	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isClassCodeDefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateClassCode(ParentDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' invariant operation.
@@ -77,7 +68,7 @@ public class ParentDocumentOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN
+	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN
 	 * @param parentDocument The receiving '<em><b>Parent Document</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -118,7 +109,7 @@ public class ParentDocumentOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN";
+	protected static final String VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateMoodCode(ParentDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}' invariant operation.
@@ -134,7 +125,7 @@ public class ParentDocumentOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN
+	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
 	 * @param parentDocument The receiving '<em><b>Parent Document</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

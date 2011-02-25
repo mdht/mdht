@@ -36,15 +36,6 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.ParticipationOperations;
  */
 public class LegalAuthenticatorOperations extends ParticipationOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -61,7 +52,7 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::LA";
+	protected static final String VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::LA";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTypeCode(LegalAuthenticator, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Type Code</em>}' invariant operation.
@@ -77,7 +68,7 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::LA
+	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::LA
 	 * @param legalAuthenticator The receiving '<em><b>Legal Authenticator</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -118,7 +109,7 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP";
+	protected static final String VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateContextControlCode(LegalAuthenticator, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Context Control Code</em>}' invariant operation.
@@ -134,7 +125,7 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP
+	 * self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP
 	 * @param legalAuthenticator The receiving '<em><b>Legal Authenticator</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

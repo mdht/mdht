@@ -355,11 +355,11 @@ public interface Order extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::RQO
+	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::RQO
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::RQO'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::RQO'"
 	 * @generated
 	 */
 	boolean validateMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);

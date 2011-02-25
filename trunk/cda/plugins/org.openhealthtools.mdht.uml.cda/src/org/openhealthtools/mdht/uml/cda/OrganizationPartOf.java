@@ -353,11 +353,11 @@ public interface OrganizationPartOf extends Role {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PART
+	 * self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PART
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PART'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PART'"
 	 * @generated
 	 */
 	boolean validateClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);

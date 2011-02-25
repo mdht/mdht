@@ -22,9 +22,11 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 
 <!--
 	<recordTarget typeCode="RCT" contextControlCode="OP">
-	<recordTarget typeCode="ADM" contextControlCode="OP">
--->
+	<recordTarget typeCode="ADM" contextControlCode="AN">
  	<recordTarget contextControlCode="OP">
+ 	<recordTarget>
+-->
+	<recordTarget typeCode="RCT" contextControlCode="OP">
 
 		<patientRole classCode="PAT">
 			<id extension="12345" root="2.16.840.1.113883.19.5"/>
@@ -51,6 +53,11 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 	</recordTarget>
 	<author typeCode="AUT" contextControlCode="OP">
 		<time value="2000040714"/>
+<!-- 
+		<assignedAuthor classCode="ASSIGNED">
+		<assignedAuthor classCode="COMPAR">
+		<assignedAuthor>
+ -->
 		<assignedAuthor classCode="ASSIGNED">
 			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
 			<assignedPerson>
@@ -60,7 +67,12 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 					<suffix>MD</suffix>
 				</name>
 			</assignedPerson>
-<!--
+<!-- 
+			<assignedAuthoringDevice classCode="DEV" determinerCode="INSTANCE">
+			<assignedAuthoringDevice>
+			<assignedAuthoringDevice determinerCode="KIND">
+-->
+<!-- 
 			<assignedAuthoringDevice classCode="DEV" determinerCode="INSTANCE">
 				<asMaintainedEntity classCode="MNT">
 					<maintainingPerson></maintainingPerson>
@@ -139,6 +151,11 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 		</parentDocument>
 	</relatedDocument>
 	<authorization typeCode="AUTH">
+<!-- 
+		<consent classCode="CONS" moodCode="EVN">
+		<consent classCode="CONS">
+		<consent classCode="CONS" moodCode="APT">
+ -->
 		<consent classCode="CONS" moodCode="EVN">
 			<statusCode/>
 		</consent>

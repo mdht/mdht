@@ -355,10 +355,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="RecordTarget" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::RCT"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::RCT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::RCT"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::RCT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -377,10 +377,10 @@
     </eOperations>
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -436,10 +436,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PatientRole" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Role">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PAT"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PAT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PAT"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PAT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -519,10 +519,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Patient" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClass::PSN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClass::PSN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -541,10 +541,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -749,10 +749,10 @@
     </eOperations>
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::GUARD"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::GUARD"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::GUARD"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::GUARD"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -834,10 +834,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClass::PSN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClass::PSN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -856,10 +856,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -948,10 +948,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -970,10 +970,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1064,10 +1064,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="OrganizationPartOf" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Role">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PART"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PART"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::PART"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::PART"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1147,10 +1147,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Birthplace" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Role">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::BIRTHPL"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::BIRTHPL"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::BIRTHPL"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::BIRTHPL"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1203,10 +1203,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassPlace::PLC"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassPlace::PLC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassPlace::PLC"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassPlace::PLC"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1225,10 +1225,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1359,10 +1359,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUT"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::AUT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUT"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::AUT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1381,10 +1381,10 @@
     </eOperations>
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1477,10 +1477,10 @@
     </eOperations>
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1572,10 +1572,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="AuthoringDevice" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassDevice::DEV"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassDevice::DEV"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassDevice::DEV"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassDevice::DEV"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1594,10 +1594,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1673,10 +1673,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="MaintainedEntity" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Role">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::MNT"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::MNT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClass::MNT"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClass::MNT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1736,10 +1736,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataEnterer" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::ENT"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::ENT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::ENT"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::ENT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1758,10 +1758,10 @@
     </eOperations>
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1824,10 +1824,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="AssignedEntity" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Role">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1982,10 +1982,10 @@
     </eOperations>
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::INF"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::INF"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::INF"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::INF"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2004,10 +2004,10 @@
     </eOperations>
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2162,10 +2162,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Custodian" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::CST"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::CST"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::CST"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::CST"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2218,10 +2218,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="AssignedCustodian" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Role">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2274,10 +2274,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="CustodianOrganization" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassOrganization::ORG"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2296,10 +2296,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2494,10 +2494,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="LegalAuthenticator" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::LA"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::LA"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::LA"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::LA"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2516,10 +2516,10 @@
     </eOperations>
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2589,10 +2589,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Authenticator" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUTHEN"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::AUTHEN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::AUTHEN"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::AUTHEN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2659,10 +2659,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Participant1" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2834,10 +2834,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="InFulfillmentOf" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2890,10 +2890,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Order" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::RQO"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::RQO"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::RQO"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::RQO"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2963,10 +2963,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="DocumentationOf" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::DOC"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::DOC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::DOC"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::DOC"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3019,10 +3019,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ServiceEvent" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3179,10 +3179,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ParentDocument" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClinicalDocument::DOCCLIN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3201,10 +3201,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3287,10 +3287,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Authorization" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::AUTH"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::AUTH"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::AUTH"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::AUTH"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3343,10 +3343,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Consent" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::CONS"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::CONS"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::CONS"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::CONS"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3365,10 +3365,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3438,10 +3438,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Component1" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3494,10 +3494,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="EncompassingEncounter" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ENC"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::ENC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ENC"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::ENC"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3516,10 +3516,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3614,10 +3614,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::RESP"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::RESP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::RESP"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::RESP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3710,10 +3710,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationTargetLocation::LOC"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationTargetLocation::LOC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationTargetLocation::LOC"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationTargetLocation::LOC"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3841,10 +3841,10 @@
     </eOperations>
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3928,10 +3928,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="NonXMLBody" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3950,10 +3950,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4024,10 +4024,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="StructuredBody" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCBODY"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4046,10 +4046,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4119,10 +4119,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Component3" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4200,10 +4200,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCSECT"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCSECT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::DOCSECT"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCSECT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4222,10 +4222,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4623,10 +4623,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Subject" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationTargetSubject::SBJ"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationTargetSubject::SBJ"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationTargetSubject::SBJ"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationTargetSubject::SBJ"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4645,10 +4645,10 @@
     </eOperations>
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4765,10 +4765,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="SubjectPerson" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClass::PSN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClass::PSN"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClass::PSN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4787,10 +4787,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5350,10 +5350,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Specimen" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::SPC"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::SPC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::SPC"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::SPC"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5406,10 +5406,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="SpecimenRole" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Role">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassSpecimen::SPEC"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassSpecimen::SPEC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassSpecimen::SPEC"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassSpecimen::SPEC"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5469,10 +5469,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PlayingEntity" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5586,10 +5586,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Performer2" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationPhysicalPerformer::PRF"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationPhysicalPerformer::PRF"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationPhysicalPerformer::PRF"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationPhysicalPerformer::PRF"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5655,10 +5655,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Participant2" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="contextControlCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="body" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.contextControlCode.oclIsUndefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
+        <details key="documentation" value="self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5822,10 +5822,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5895,10 +5895,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminer::INSTANCE"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6513,10 +6513,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalAct" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6585,10 +6585,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6657,10 +6657,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalProcedure" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::PROC"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::PROC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::PROC"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::PROC"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6679,10 +6679,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6751,10 +6751,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalDocument" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6837,10 +6837,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Precondition" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::PRCN"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::PRCN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::PRCN"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::PRCN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6893,10 +6893,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Criterion" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7362,10 +7362,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReferenceRange" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::REFV"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::REFV"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipType::REFV"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipType::REFV"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7418,10 +7418,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ObservationRange" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Act">
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVNCRT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -8172,10 +8172,10 @@
     </eOperations>
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -8684,10 +8684,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="RegionOfInterest" eSuperTypes="#//ClinicalStatement">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ROIOVL"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::ROIOVL"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::ROIOVL"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::ROIOVL"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -8706,10 +8706,10 @@
     </eOperations>
     <eOperations name="moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="body" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.moodCode.oclIsUndefined() implies self.moodCode=vocab::ActMood::EVN"/>
+        <details key="documentation" value="self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9056,10 +9056,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="SubstanceAdministration" eSuperTypes="#//ClinicalStatement">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::SBADM"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::SBADM"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClass::SBADM"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClass::SBADM"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9475,10 +9475,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Consumable" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::CSM"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::CSM"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::CSM"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::CSM"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9553,10 +9553,10 @@
     </eOperations>
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassManufacturedProduct::MANU"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassManufacturedProduct::MANU"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassManufacturedProduct::MANU"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::RoleClassManufacturedProduct::MANU"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9628,10 +9628,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="LabeledDrug" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9650,10 +9650,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9715,10 +9715,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Material" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Entity">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::EntityClassManufacturedMaterial::MMAT"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9737,10 +9737,10 @@
     </eOperations>
     <eOperations name="determinerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
+        <details key="body" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.determinerCode.oclIsUndefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
+        <details key="documentation" value="self.isDeterminerCodeDefined() implies self.determinerCode=vocab::EntityDeterminerDetermined::KIND"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -9809,10 +9809,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Supply" eSuperTypes="#//ClinicalStatement">
     <eOperations name="classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassSupply::SPLY"/>
+        <details key="body" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClassSupply::SPLY"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.classCode.oclIsUndefined() implies self.classCode=vocab::ActClassSupply::SPLY"/>
+        <details key="documentation" value="self.isClassCodeDefined() implies self.classCode=vocab::ActClassSupply::SPLY"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -10203,10 +10203,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::PRD"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::PRD"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ParticipationType::PRD"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::PRD"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -10259,10 +10259,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Component5" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.rim/model/rim.ecore#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="body" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
+        <details key="documentation" value="self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipHasComponent::COMP"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

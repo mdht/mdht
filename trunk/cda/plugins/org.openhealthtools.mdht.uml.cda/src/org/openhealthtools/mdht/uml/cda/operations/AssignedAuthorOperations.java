@@ -42,15 +42,6 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.RoleOperations;
  */
 public class AssignedAuthorOperations extends RoleOperations {
 	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -124,7 +115,7 @@ public class AssignedAuthorOperations extends RoleOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED";
+	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateClassCode(AssignedAuthor, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' invariant operation.
@@ -140,7 +131,7 @@ public class AssignedAuthorOperations extends RoleOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.classCode.oclIsUndefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED
+	 * self.isClassCodeDefined() implies self.classCode=vocab::RoleClassAssignedEntity::ASSIGNED
 	 * @param assignedAuthor The receiving '<em><b>Assigned Author</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

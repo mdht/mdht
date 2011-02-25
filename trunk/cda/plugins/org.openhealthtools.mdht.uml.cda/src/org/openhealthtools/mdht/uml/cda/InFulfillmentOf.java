@@ -249,11 +249,11 @@ public interface InFulfillmentOf extends ActRelationship {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS
+	 * self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.typeCode.oclIsUndefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isTypeCodeDefined() implies self.typeCode=vocab::ActRelationshipFulfills::FLFS'"
 	 * @generated
 	 */
 	boolean validateTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context);
