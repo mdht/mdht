@@ -218,11 +218,12 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 		Map<String, String> antProperties = new HashMap<String, String>();
 
-		antProperties.put("dita.dir", ditadirURL.toURI().getRawPath()); // "/home/eclipse/heliosworkspaceM7/org.openhealthtools.mdht.uml.cda.dita/DITA-OT");
+		antProperties.put("dita.dir", ditadirURL.toURI().getRawPath()); 
 		antProperties.put("ditaMapFile", ditaMapFile.getLocation().toOSString());
 		antProperties.put("outputLocation", ditaProject.getLocation().toOSString());
 		antProperties.put("pdf.output", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("pdf").toOSString());
 		antProperties.put("ditaMapFileRoot", ditaMapFileRoot);
+		
 		
 		
 		String fileName = getFileNameFromMap(ditaMapFile.getLocation().toOSString());
@@ -236,6 +237,10 @@ public class PublishModelAction implements IObjectActionDelegate {
 		antProperties.put("ditaFilePath", ditaFolder.getLocation().toOSString());
 		antProperties.put("tempFilePath", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("temp").toOSString());
 		antProperties.put("docProject", ditaProject.getLocation().toOSString());
+		
+		String pdfFileLocation= ditaMapFile.getProjectRelativePath().toOSString();
+		pdfFileLocation = pdfFileLocation.replaceFirst("ditamap", "pdf");		
+		antProperties.put("pdflocation", ditaProject.getName() +"/"+pdfFileLocation);
 		
 		
 		workingCopy.setAttribute( "process_factory_id", "org.eclipse.ant.ui.remoteAntProcessFactory");
