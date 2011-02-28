@@ -85,9 +85,9 @@ public class ClassExtItemProvider extends ClassItemProvider
 			}
 		}
 		children.addAll(clazz.getOwnedOperations());
+		children.addAll(clazz.getOwnedRules());
 		children.addAll(clazz.getNestedClassifiers());
 		children.addAll(clazz.getClientDependencies());
-		children.addAll(clazz.getOwnedRules());
 		children.addAll(clazz.getGeneralizations());
 		
 		return children;
