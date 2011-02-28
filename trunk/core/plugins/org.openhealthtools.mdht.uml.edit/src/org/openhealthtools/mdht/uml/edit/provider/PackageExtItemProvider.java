@@ -21,11 +21,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
+import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UseCase;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.PackageItemProvider;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
@@ -80,7 +82,9 @@ public class PackageExtItemProvider extends PackageItemProvider
 		for (Type type : pkg.getOwnedTypes()) {
 			if (type instanceof org.eclipse.uml2.uml.Class 
 					|| type instanceof Interface
-					|| type instanceof DataType)
+					|| type instanceof DataType
+					|| type instanceof Actor
+					|| type instanceof UseCase)
 				sortedTypes.add(type);
 		}
 		Collections.sort(sortedTypes, new NamedElementComparator());

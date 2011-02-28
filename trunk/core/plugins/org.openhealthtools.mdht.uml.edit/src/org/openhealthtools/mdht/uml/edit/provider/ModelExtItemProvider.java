@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.edit.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -32,11 +31,13 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.viewers.ICellModifier;
+import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UseCase;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.ModelItemProvider;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
@@ -77,22 +78,23 @@ public class ModelExtItemProvider extends ModelItemProvider
 	/* (non-Javadoc)
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
-	public Collection getChildren(Object object) {
+	public Collection<Object> getChildren(Object object) {
 		Model pkg = (Model) object;
-		List children = new ArrayList();
+		List<Object> children = new ArrayList<Object>();
 		children.addAll(pkg.getOwnedComments());
 		children.addAll(pkg.getOwnedRules());
 		
-		List sortedPackages = new ArrayList(pkg.getNestedPackages());
+		List<Package> sortedPackages = new ArrayList<Package>(pkg.getNestedPackages());
 		Collections.sort(sortedPackages, new NamedElementComparator());
 		children.addAll(sortedPackages);
 		
-		List sortedTypes = new ArrayList();
-		for (Iterator members = pkg.getOwnedTypes().iterator(); members.hasNext();) {
-			Type type = (Type) members.next();
+		List<Type> sortedTypes = new ArrayList<Type>();
+		for (Type type : pkg.getOwnedTypes()) {
 			if (type instanceof org.eclipse.uml2.uml.Class 
 					|| type instanceof Interface
-					|| type instanceof DataType)
+					|| type instanceof DataType
+					|| type instanceof Actor
+					|| type instanceof UseCase)
 				sortedTypes.add(type);
 		}
 		Collections.sort(sortedTypes, new NamedElementComparator());

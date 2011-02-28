@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,43 +19,49 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
-import org.eclipse.uml2.uml.edit.providers.DataTypeItemProvider;
+import org.eclipse.uml2.uml.edit.providers.ComponentItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.ClassNotationUtil;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 
 /**
  *
- * @version $Id: $
  */
-public class DataTypeExtItemProvider extends DataTypeItemProvider
+public class ComponentExtItemProvider extends ComponentItemProvider
 	implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
 	 */
-	public DataTypeExtItemProvider(AdapterFactory adapterFactory) {
+	public ComponentExtItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
 	/* (non-Javadoc)
-	 * @see org.eclipse.uml2.uml.provider.DataTypeItemProvider#getImage(java.lang.Object)
+	 * @see org.eclipse.uml2.uml.provider.ClassItemProvider#getImage(java.lang.Object)
 	 */
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	/* (non-Javadoc)
-	 * @see org.eclipse.uml2.uml.provider.DataTypeItemProvider#getText(java.lang.Object)
+	 * @see org.eclipse.uml2.uml.provider.ClassItemProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object object) {
-		String label = ((DataType)object).getName();
+		String label = ((org.eclipse.uml2.uml.Class)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DataType_type") : //$NON-NLS-1$
+			getString("_UI_Component_type") : //$NON-NLS-1$
 			label;
 	}
 
@@ -63,13 +69,26 @@ public class DataTypeExtItemProvider extends DataTypeItemProvider
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	public Collection<Element> getChildren(Object object) {
-		DataType datatype = (DataType) object;
+		Component component = (Component) object;
 		List<Element> children = new ArrayList<Element>();
-		children.addAll(datatype.getOwnedComments());
-		children.addAll(datatype.getOwnedRules());
-		children.addAll(datatype.getGeneralizations());
-		children.addAll(datatype.getOwnedAttributes());
-		children.addAll(datatype.getClientDependencies());
+		children.addAll(component.getOwnedComments());
+		for (Property property : component.getOwnedAttributes()) {
+			if (property.getAssociation() == null) {
+				children.add(property);
+			}
+		}
+		// include associations after attributes
+		for (Property property : component.getOwnedAttributes()) {
+			if (property.getAssociation() != null
+					&& property.getOtherEnd().getType() == component) {
+				children.add(property.getAssociation());
+			}
+		}
+		children.addAll(component.getOwnedOperations());
+		children.addAll(component.getNestedClassifiers());
+		children.addAll(component.getClientDependencies());
+		children.addAll(component.getOwnedRules());
+		children.addAll(component.getGeneralizations());
 		
 		return children;
 	}
@@ -84,7 +103,7 @@ public class DataTypeExtItemProvider extends DataTypeItemProvider
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
-		Classifier classifier = (Classifier) element;
+		Class classifier = (Class) element;
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
@@ -94,6 +113,22 @@ public class DataTypeExtItemProvider extends DataTypeItemProvider
 				return "";
 			else
 				return classifier.getVisibility().getName();
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : classifier.getNearestPackage().getAllAppliedProfiles()) {
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotation(classifier);
+					}
+				}
+			}
+			return ClassNotationUtil.getCustomLabel(classifier,
+					IUMLNotation.DEFAULT_UML_CLASS_ANNOTATIONS);
+		}
 		default:
 			return null;
 		}

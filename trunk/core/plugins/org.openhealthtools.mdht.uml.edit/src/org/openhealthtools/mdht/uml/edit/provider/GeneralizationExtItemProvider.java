@@ -31,6 +31,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.edit.providers.GeneralizationItemProvider;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
@@ -59,7 +60,8 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider
 	 */
 	public String getText(Object object) {
 		Classifier general = ((Generalization)object).getGeneral();
-		String label = general != null ? general.getQualifiedName() : null;
+		String label = UMLUtil.isSameModel((Generalization)object, general)
+			? general.getName() : general.getQualifiedName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Generalization_type") : //$NON-NLS-1$
 			label;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,24 +19,23 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
-import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.edit.providers.DependencyItemProvider;
+import org.eclipse.uml2.uml.edit.providers.InterfaceRealizationItemProvider;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
  *
- * @version $Id: $
  */
-public class DependencyExtItemProvider extends DependencyItemProvider
+public class InterfaceRealizationExtItemProvider extends InterfaceRealizationItemProvider
 	implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
 	 */
-	public DependencyExtItemProvider(AdapterFactory adapterFactory) {
+	public InterfaceRealizationExtItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,7 +50,7 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 	 * @see org.eclipse.uml2.uml.provider.DependencyItemProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object object) {
-		Dependency dependency = (Dependency) object;
+		InterfaceRealization dependency = (InterfaceRealization) object;
 		StringBuffer label = new StringBuffer();
 		for (NamedElement element : dependency.getSuppliers()) {
 			if (label.length() > 0)
@@ -61,7 +60,7 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 			label.append(qname);
 		}
 		return label.length() == 0 ?
-			getString("_UI_Dependency_type") : //$NON-NLS-1$
+			getString("_UI_InterfaceRealization_type") : //$NON-NLS-1$
 			label.toString();
 	}
 
@@ -69,7 +68,7 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	public Collection<Element> getChildren(Object object) {
-		Dependency dependency = (Dependency) object;
+		InterfaceRealization dependency = (InterfaceRealization) object;
 		List<Element> children = new ArrayList<Element>();
 
 		children.addAll(dependency.getOwnedComments());
