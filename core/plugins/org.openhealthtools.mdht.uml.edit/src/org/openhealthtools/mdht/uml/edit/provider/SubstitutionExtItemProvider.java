@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 20011 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,21 +22,20 @@ import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.edit.providers.DependencyItemProvider;
+import org.eclipse.uml2.uml.edit.providers.SubstitutionItemProvider;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
  *
- * @version $Id: $
  */
-public class DependencyExtItemProvider extends DependencyItemProvider
+public class SubstitutionExtItemProvider extends SubstitutionItemProvider
 	implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
 	 */
-	public DependencyExtItemProvider(AdapterFactory adapterFactory) {
+	public SubstitutionExtItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +60,7 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 			label.append(qname);
 		}
 		return label.length() == 0 ?
-			getString("_UI_Dependency_type") : //$NON-NLS-1$
+			getString("_UI_Substitution_type") : //$NON-NLS-1$
 			label.toString();
 	}
 

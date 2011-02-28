@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,24 +19,23 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
-import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.edit.providers.DependencyItemProvider;
+import org.eclipse.uml2.uml.Extend;
+import org.eclipse.uml2.uml.UseCase;
+import org.eclipse.uml2.uml.edit.providers.ExtendItemProvider;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
  *
- * @version $Id: $
  */
-public class DependencyExtItemProvider extends DependencyItemProvider
+public class ExtendExtItemProvider extends ExtendItemProvider
 	implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
 	 */
-	public DependencyExtItemProvider(AdapterFactory adapterFactory) {
+	public ExtendExtItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,17 +50,17 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 	 * @see org.eclipse.uml2.uml.provider.DependencyItemProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object object) {
-		Dependency dependency = (Dependency) object;
+		Extend extend = (Extend) object;
 		StringBuffer label = new StringBuffer();
-		for (NamedElement element : dependency.getSuppliers()) {
-			if (label.length() > 0)
-				label.append(", ");
-			String qname = UMLUtil.isSameModel(dependency, element)
-				? element.getName() : element.getQualifiedName();
+		if (extend.getExtendedCase() != null) {
+			UseCase extendedCase = extend.getExtendedCase();
+			String qname = UMLUtil.isSameModel(extend, extendedCase)
+				? extendedCase.getName() : extendedCase.getQualifiedName();
 			label.append(qname);
 		}
+
 		return label.length() == 0 ?
-			getString("_UI_Dependency_type") : //$NON-NLS-1$
+			getString("_UI_Extend_type") : //$NON-NLS-1$
 			label.toString();
 	}
 
@@ -69,10 +68,10 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	public Collection<Element> getChildren(Object object) {
-		Dependency dependency = (Dependency) object;
+		Extend extend = (Extend) object;
 		List<Element> children = new ArrayList<Element>();
 
-		children.addAll(dependency.getOwnedComments());
+		children.addAll(extend.getOwnedComments());
 		
 		return children;
 	}
@@ -99,7 +98,7 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
-//		Dependency dependency = (Dependency) element;
+//		Extend dependency = (Extend) element;
 //		
 //		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 //			
@@ -111,7 +110,7 @@ public class DependencyExtItemProvider extends DependencyItemProvider
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
-//		Dependency dependency = (Dependency) element;
+//		Extend dependency = (Extend) element;
 //		
 //		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 //			

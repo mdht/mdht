@@ -317,4 +317,60 @@ public class UML2ExtendedAdapterFactory extends
 		return stereotypeItemProvider;
 	}
 
+	public Adapter createSubstitutionAdapter() {
+		if (substitutionItemProvider == null) {
+			substitutionItemProvider = new SubstitutionExtItemProvider(this);
+		}
+
+		return substitutionItemProvider;
+	}
+
+	public Adapter createComponentAdapter() {
+		if (componentItemProvider == null) {
+			componentItemProvider = new ComponentExtItemProvider(this);
+		}
+
+		return componentItemProvider;
+	}
+
+	public Adapter createActorAdapter() {
+		if (actorItemProvider == null) {
+			actorItemProvider = new ActorExtItemProvider(this);
+		}
+
+		return actorItemProvider;
+	}
+
+	public Adapter createUseCaseAdapter() {
+		if (useCaseItemProvider == null) {
+			useCaseItemProvider = new UseCaseExtItemProvider(this);
+		}
+
+		return useCaseItemProvider;
+	}
+
+	public Adapter createIncludeAdapter() {
+		if (includeItemProvider == null) {
+			includeItemProvider = new IncludeExtItemProvider(this);
+		}
+
+		return includeItemProvider;
+	}
+
+	public Adapter createExtendAdapter() {
+		if (extendItemProvider == null) {
+			extendItemProvider = new ExtendExtItemProvider(this);
+		}
+
+		return extendItemProvider;
+	}
+
+	public Adapter createInterfaceRealizationAdapter() {
+		if (interfaceRealizationItemProvider == null) {
+			interfaceRealizationItemProvider = new InterfaceRealizationExtItemProvider(this);
+		}
+
+		return interfaceRealizationItemProvider;
+	}
+
 }
