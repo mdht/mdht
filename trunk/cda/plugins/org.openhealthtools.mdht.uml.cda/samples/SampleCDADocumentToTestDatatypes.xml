@@ -11,7 +11,34 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 -->
 	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
 	<templateId root="2.16.840.1.113883.3.27.1776"/>
+<!--
+	root - Valid uid example
 	<id extension="c266" root="2.16.840.1.113883.19.4"/>
+	root - invalid uid example - fails all three patterns.
+	<id extension="c266" root="100"/>
+	 
+ -->	
+	<id extension="c266" root="2.16.840.1.113883.19.4"/>
+<!--		Comment out for a bad value on CodeSystem - verifies the regular expression. 
+    - Valid codeSystem-uid (oid), matches first valid pattern. - 
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
+	- Invalid codeSystem, uid (oid)- first pattern and third pattern.
+	<code code="11488-4" codeSystem="100" codeSystemName="LOINC" displayName="Consultation note"/>
+	- Invalid codeSystem, uid (oid)- first pattern
+	<code code="11488-4" codeSystem="3.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
+	- Invalid codeSystem, uid (oid)- first pattern
+	<code code="11488-4" codeSystem="2.01.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
+	
+	- Valid codeSystem-uid (uuid), matches second pattern.
+	<code code="11488-4" codeSystem="0123abCD-1aBc-Z111-0111-0123456789zx" codeSystemName="LOINC" displayName="Consultation note"/>
+	- Valid codeSystem-uid (uuid), Fails second pattern.
+	<code code="11488-4" codeSystem="0123abCD-1aBc-Z111-0123456789zx" codeSystemName="LOINC" displayName="Consultation note"/>
+	
+	- Valid codeSystem-uid (ruid), matches third pattern
+	<code code="11488-4" codeSystem="Ax-0-a-1-x-p1" codeSystemName="LOINC" displayName="Consultation note"/>
+	- Valid codeSystem-uid (ruid), matches third pattern
+	<code code="11488-4" codeSystem="A100" codeSystemName="LOINC" displayName="Consultation note"/>
+ -->
 	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
 <!--  
 	<title compression="DF" integrityCheckAlgorithm="SHA-1" representation="B64">Good Health Clinic Consultation Note</title>
@@ -410,6 +437,15 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
  -->
 										</thumbnail>
 									</text>
+									<quantity>
+<!--
+										codeSystem - Valid uid 
+										<translation code="100" codeSystem="1.1"></translation>
+										codeSystem - Invalid uid - all three patterns 
+										<translation code="100" codeSystem="100"></translation>
+ -->
+										<translation code="100" codeSystem="1.1"></translation>
+									</quantity>
 								</supply>
 							</entryRelationship>
 							<reference typeCode="REFR">
@@ -1250,6 +1286,14 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 					</entry>
 					<entry>
 						<encounter classCode="ENC" moodCode="RQO">
+<!--
+							codeSystem: valid value 
+							<code code="185389009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Follow-up visit"/>
+							codeSystem: invalid value - Fails all three patterns.
+							<code code="185389009" codeSystem="100" codeSystemName="SNOMED CT" displayName="Follow-up visit"/>
+							
+
+ -->
 							<code code="185389009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Follow-up visit"/>
 							<effectiveTime>
 								<low value="20000412"/>
@@ -1259,6 +1303,14 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 							<participant typeCode="ADM">
 								<participantRole>
 									<playingDevice classCode="CER" determinerCode="INSTANCE">
+<!--
+										codeSystem - valid
+										<manufacturerModelName code="100" codeSystem="1.1"></manufacturerModelName>
+										codeSystem - inValid
+										<manufacturerModelName code="100" codeSystem="100"></manufacturerModelName>
+ 
+ -->
+										<manufacturerModelName code="100" codeSystem="1.1"></manufacturerModelName>
 									</playingDevice>
 									<scopingEntity classCode="ANM" determinerCode="INSTANCE">
 									</scopingEntity>

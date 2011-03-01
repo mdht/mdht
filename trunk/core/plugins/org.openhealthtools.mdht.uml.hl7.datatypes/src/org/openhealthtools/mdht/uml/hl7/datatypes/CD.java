@@ -136,7 +136,7 @@ public interface CD extends ANY {
 	 * @return the value of the '<em>Code System</em>' attribute.
 	 * @see #setCodeSystem(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_CodeSystem()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.uid" ordered="false"
 	 * @generated
 	 */
 	String getCodeSystem();
