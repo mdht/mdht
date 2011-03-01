@@ -121,9 +121,6 @@
       </propertySections>
    </extension> 
  
-	<!--
-      Template Editor Dialog
-   -->
 	<extension point="org.eclipse.ui.popupMenus">
 		<objectContribution adaptable="true"
 			objectClass="org.eclipse.uml2.uml.Element" 
@@ -134,21 +131,11 @@
 			<visibility>
 				<objectClass name="org.eclipse.uml2.uml.Class" />
 			</visibility>
-			<action label="%removeValidationMessages.label"
-				class="org.openhealthtools.mdht.uml.cda.ui.actions.RemoveValidationMessagesAction"
-				menubarPath="cdatools/edit" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.cda.ui.actions.removeValidationMessagesAction">
-			</action>
-			
-			
-			
 			<action label="%compareTemplateAction.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.CompareTemplateAction"
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.compareTemplateAction">
 			</action>
-			
-			
 			<action label="%generateSampleInstance.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.GenerateSampleInstanceAction"
 				menubarPath="cdatools/edit" enablesFor="1"
@@ -179,6 +166,7 @@
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.setRequiresParentIdAction">
 			</action>
+			<!--
 			<action label="%updateProfileVersion.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.UpdateProfileVersionAction"
 				menubarPath="cdatools/edit" enablesFor="1"
@@ -189,6 +177,7 @@
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignValidationMessageAction">
 			</action>
+			-->
 			<action label="%assignConformanceRuleIds.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignConformanceRuleIdsAction"
 				menubarPath="cdatools/edit" enablesFor="1"
@@ -210,6 +199,28 @@
 			</action>
 		</objectContribution>
 		
+        <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.uml2.uml.Element"
+            id="org.openhealthtools.mdht.uml.ui.dev.popup">
+          <menu label="%CDATools.menu.label" path="additions" id="cdatools">
+            <separator name="transform"/>
+          </menu>
+			<visibility>
+				<or>
+					<objectClass name="org.eclipse.uml2.uml.Package" />
+					<objectClass name="org.eclipse.uml2.uml.Class" />
+				</or>
+			</visibility>
+          <action
+               label="%consolidateTemplates.label"
+               class="org.openhealthtools.mdht.uml.cda.ui.actions.ConsolidateTemplatesAction"
+               menubarPath="cdatools/transform"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.ui.dev.actions.ConsolidateTemplatesAction">
+          </action>
+        </objectContribution>
+      
 		<!--
   <objectContribution
         adaptable="true"
