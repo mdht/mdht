@@ -246,8 +246,17 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="redefinedExtension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="redefinedRoot" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        lowerBound="1" eType="ecore:EDataType http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//uid"
         defaultValueLiteral="2.16.840.1.113883.1.3" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="root"/>
@@ -256,7 +265,7 @@
       <eAnnotations source="redefines" references="http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II/root"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="redefinedExtension" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        lowerBound="1" eType="ecore:EDataType http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//stType">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="extension"/>
         <details key="kind" value="attribute"/>

@@ -5267,11 +5267,17 @@
           <body>self.root='2.16.840.1.113883.1.3'</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_g-5q4EREEeCldOpAaJlPmA" name="redefinedExtension" constrainedElement="_sKX1MEb9Ed6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_lnu3MEREEeCldOpAaJlPmA">
+          <language>OCL</language>
+          <body>not self.extension.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_x2aK8Eb9Ed6besF9iFIJkQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_1Uur8Eb9Ed6besF9iFIJkQ" name="redefinedRoot" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <type xmi:type="uml:PrimitiveType" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_RpDqMDrsEeCN26jpCPaoAw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3SpKIUb9Ed6besF9iFIJkQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3SpKIEb9Ed6besF9iFIJkQ" value="1"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_hVUykDxaEd6JwqSGecoePg"/>
@@ -5281,7 +5287,7 @@
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_5SDdIEb9Ed6besF9iFIJkQ" name="redefinedExtension" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <type xmi:type="uml:PrimitiveType" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_d4N5sEQ3EeCldOpAaJlPmA"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iX7fEDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
