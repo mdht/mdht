@@ -168,6 +168,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 				return createBinaryDataEncodingFromString(eDataType, initialValue);
 			case DatatypesPackage.UID:
 				return createuidFromString(eDataType, initialValue);
+			case DatatypesPackage.ST_TYPE:
+				return createstTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -185,6 +187,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 				return convertBinaryDataEncodingToString(eDataType, instanceValue);
 			case DatatypesPackage.UID:
 				return convertuidToString(eDataType, instanceValue);
+			case DatatypesPackage.ST_TYPE:
+				return convertstTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -760,6 +764,24 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String convertuidToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createstTypeFromString(EDataType eDataType, String initialValue) {
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertstTypeToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

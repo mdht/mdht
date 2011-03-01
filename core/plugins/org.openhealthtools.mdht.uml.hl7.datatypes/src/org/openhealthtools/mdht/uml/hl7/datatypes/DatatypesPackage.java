@@ -3618,6 +3618,17 @@ public interface DatatypesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>st Type</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getstType()
+	 * @generated
+	 */
+	int ST_TYPE = 47;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY <em>ANY</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5355,6 +5366,18 @@ public interface DatatypesPackage extends EPackage {
 	EDataType getuid();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>st Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>st Type</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 *        extendedMetaData="pattern='.+'"
+	 * @generated
+	 */
+	EDataType getstType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6765,6 +6788,16 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType UID = eINSTANCE.getuid();
+
+		/**
+		 * The meta object literal for the '<em>st Type</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getstType()
+		 * @generated
+		 */
+		EDataType ST_TYPE = eINSTANCE.getstType();
 
 	}
 

@@ -16,10 +16,22 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 	<id extension="c266" root="2.16.840.1.113883.19.4"/>
 	root - invalid uid example - fails all three patterns.
 	<id extension="c266" root="100"/>
+	
+	extension, assigningAuthorityName - valid if not present
+	<id root="2.16.840.1.113883.19.4"/>
+	extension, assigningAuthorityName - invalid if present but empty
+	<id root="2.16.840.1.113883.19.4" extension="" assigningAuthorityName="" />
+	extension, assigningAuthorityName - valid if present but have 1 or more characters
+	<id root="2.16.840.1.113883.19.4" extension="c266" assigningAuthorityName="Test" />
 	 
  -->	
-	<id extension="c266" root="2.16.840.1.113883.19.4"/>
+	<id root="2.16.840.1.113883.19.4" extension="c266" assigningAuthorityName="Test" />
+	
 <!--		Comment out for a bad value on CodeSystem - verifies the regular expression. 
+
+	- Original working version.
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
+
     - Valid codeSystem-uid (oid), matches first valid pattern. - 
 	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
 	- Invalid codeSystem, uid (oid)- first pattern and third pattern.
@@ -38,8 +50,18 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 	<code code="11488-4" codeSystem="Ax-0-a-1-x-p1" codeSystemName="LOINC" displayName="Consultation note"/>
 	- Valid codeSystem-uid (ruid), matches third pattern
 	<code code="11488-4" codeSystem="A100" codeSystemName="LOINC" displayName="Consultation note"/>
+	
+	Checking codeSystemName, codeSystemVersion, displayName - Valid if all missing...
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1"/>
+	
+	Checking codeSystemName, codeSystemVersion, displayName - inValid if all present but empty...
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="" codeSystemVersion="" displayName=""/>
+	
+	Checking codeSystemName, codeSystemVersion, displayName - Valid if all present and have 1 or more characters...
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="1" displayName="Consultation Note"/>
+	
  -->
-	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="1" displayName="Consultation Note"/>
 <!--  
 	<title compression="DF" integrityCheckAlgorithm="SHA-1" representation="B64">Good Health Clinic Consultation Note</title>
 -->
@@ -279,6 +301,21 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 					</text>
 					<entry typeCode="DRIV" contextConductionInd="true">
 						<observation classCode="COND" moodCode="EVN">
+<!--
+							Original - Valid.
+							<code code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Asthma">
+
+							Checking codeSystemName, displayName, codeSystemVersion - all valid. 
+							<code code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="1" displayName="Asthma">
+
+							Checking codeSystemName, displayName, codeSystemVersion - all invalid - it should give three errors stating that the value '' must be march one of {'.+'} 
+							<code code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="" codeSystemVersion="" displayName="">
+							
+							Checking codeSystemName, displayName, codeSystemVersion - all valid - if not present at all, then it should not check regular expression support. 
+							<code code="195967001" codeSystem="2.16.840.1.113883.6.96">
+							
+
+ -->
 							<code code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Asthma">
 								<originalText>
 									<reference value="#a1"/>
@@ -440,11 +477,18 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 									<quantity>
 <!--
 										codeSystem - Valid uid 
-										<translation code="100" codeSystem="1.1"></translation>
+										<translation code="100" codeSystem="1.1"/>
 										codeSystem - Invalid uid - all three patterns 
-										<translation code="100" codeSystem="100"></translation>
+										<translation code="100" codeSystem="100"/>
+
+										codeSystemName, codeSystemVersion, displayName - Valid if all missing.
+										<translation code="100" codeSystem="1.1"/>
+										codeSystemName, codeSystemVersion, displayName - invalid if present but empty.
+										<translation code="100" codeSystem="1.1" codeSystemName="" codeSystemVersion="" displayName="" />
+										codeSystemName, codeSystemVersion, displayName - valid if present and have one or more characters.
+										<translation code="100" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="Test2" />
  -->
-										<translation code="100" codeSystem="1.1"></translation>
+										<translation code="100" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="Test2" />
 									</quantity>
 								</supply>
 							</entryRelationship>
@@ -1308,9 +1352,16 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 										<manufacturerModelName code="100" codeSystem="1.1"></manufacturerModelName>
 										codeSystem - inValid
 										<manufacturerModelName code="100" codeSystem="100"></manufacturerModelName>
+
+										codeSystemName, codeSystemVersion, displayName - valid if none present
+										<manufacturerModelName code="100" codeSystem="1.1"></manufacturerModelName>
+										codeSystemName, codeSystemVersion, displayName - invalid if present but empty
+										<manufacturerModelName code="100" codeSystem="1.1" codeSystemName="" codeSystemVersion="" displayName=""/>
+										codeSystemName, codeSystemVersion, displayName - valid if present and have one or more characters
+										<manufacturerModelName code="100" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="TestName"/>
  
  -->
-										<manufacturerModelName code="100" codeSystem="1.1"></manufacturerModelName>
+										<manufacturerModelName code="100" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="TestName"/>
 									</playingDevice>
 									<scopingEntity classCode="ANM" determinerCode="INSTANCE">
 									</scopingEntity>
