@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     Kenn Hussey - adjusting to handle containment proxies
+ *     Kenn Hussey - adjusted to handle containment proxies
  *     
  * $Id$
  *******************************************************************************/
@@ -16,12 +16,13 @@ package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.ListIterator;
 import java.util.Map;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /** Transform CDA conceptual model to UML with Ecore extensions.
  *
@@ -78,17 +80,20 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
     	EcoreUtil.resolveAll(umlResource.getResourceSet());
 
-    	for (TreeIterator<EObject> allContents = umlResource.getAllContents(); allContents.hasNext();) {
-			EObject eObject = allContents.next();
-			Resource eResource = eObject.eResource();
-			if (eResource != umlResource) {
-				if (eObject.eContainer() == null) {
-					umlResource.getContents().add(eObject);
-				} else {
-					eResource.getContents().remove(eObject);
+		EList<EObject> umlResourceContents = umlResource.getContents();
+
+		for (Resource controlledResource : UMLUtil.getControlledResources(umlResource)) {
+
+			for (ListIterator<EObject> contents = controlledResource.getContents().listIterator(); contents.hasNext(); ) {
+				EObject next = contents.next();
+				
+				contents.remove();
+
+				if (next.eContainer() == null) {
+					umlResourceContents.add(next);
 				}
-			}
-		}
+			}						
+		}					
 
 		URI ecoreModelURI = null;
 		if (ecoreModelPath != null) {

@@ -8,6 +8,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.apache.ant,
  org.eclipse.ant.core,
  org.eclipse.uml2.uml,
+ org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.cda.transform,
  org.openhealthtools.mdht.uml.cda.dita
 Bundle-Activator: org.openhealthtools.mdht.uml.cda.ant.CDAAntPlugin

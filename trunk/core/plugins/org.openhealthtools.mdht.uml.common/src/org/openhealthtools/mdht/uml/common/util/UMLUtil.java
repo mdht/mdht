@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - added utility to retrieve controlled (sub-)resources
  *     
  * $Id$
  *******************************************************************************/
@@ -979,9 +980,9 @@ public class UMLUtil {
 		List<Resource> controlledResources = new UniqueEList.FastCompare<Resource>();
 		if (resource != null) {
 			for (TreeIterator<EObject> allContents = resource.getAllContents(); allContents.hasNext();) {
-				Resource eResource = allContents.next().eResource();
-				if (eResource != resource) {
-					controlledResources.add(eResource);
+				Resource directResource = ((InternalEObject)allContents.next()).eDirectResource();
+				if (directResource != null && directResource != resource) {
+					controlledResources.add(directResource);
 				}
 			}
 		}
