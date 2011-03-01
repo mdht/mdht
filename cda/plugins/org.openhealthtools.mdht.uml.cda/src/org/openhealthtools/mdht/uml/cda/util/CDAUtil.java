@@ -290,7 +290,18 @@ public class CDAUtil {
 		documentRootEClass.getEStructuralFeatures().add(xsiSchemaLocation);
 		
 		EReference snippetReference = EcoreFactory.eINSTANCE.createEReference();
-		snippetReference.setName(cdaSnippet.eClass().getName());		
+		
+		String snippetName=cdaSnippet.eClass().getName();
+		
+		for (EClass eClass : cdaSnippet.eClass().getEAllSuperTypes())
+		{
+			if (CDAPackage.eINSTANCE.getNsURI().equals(eClass.getEPackage().getNsURI())) {
+				snippetName = eClass.getName();
+				break;
+			}
+		}
+		snippetReference.setName(snippetName.toLowerCase());		
+		
 		snippetReference.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);		
 		snippetReference.setContainment(true);		
 		snippetReference.setEType(cdaSnippet.eClass());
@@ -619,20 +630,25 @@ public class CDAUtil {
 		for (EClass eClass : classes) {
 			EAnnotation annotation = eClass.getEAnnotation(CDA_ANNOTATION_SOURCE);
 			if (annotation != null) {
-				init(eObject, annotation.getDetails().map());
+				init(eObject, annotation.getDetails().map(),false);
 			}
 		}
 	}
 
-	private static void init(EObject eObject, Map<String, String> details) {
+	private static void init(EObject eObject, Map<String, String> details,boolean sampleInit) {
 		List<String> created = new ArrayList<String>();
 		for (String key : details.keySet()) {
-			try {
+			try {			
 				String path = key.replace(".", "/");
 				if (path.contains("/")) {
 					String s = path.substring(0, path.lastIndexOf("/"));
 					if (!created.contains(s)) {
-						create(eObject, s);
+						if (sampleInit) {
+							sampleInstanceCreate(eObject, s);
+						} else
+						{
+							create(eObject, s);	
+						}
 						created.add(s);
 					}
 				}
@@ -678,7 +694,76 @@ public class CDAUtil {
 		}
 		return (T) current;
 	}
+	
+	public static <T> T sampleInstanceCreate(EObject root, String path) {
+		return sampleInstanceCreate(root, path, null);
+	}
+	
+	/**
+	 * 
+	 * sampleInstanceCreate will attempt to use existing ismany instances versus creating a new one
+	 * original init does not use existing ismany
+	 * TODO Combine with init versus having two init methods
+	 * @param <T>
+	 * @param root
+	 * @param path
+	 * @param eClass
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	private static <T> T sampleInstanceCreate(EObject root, String path, EClass eClass) {
+		EObject current = root;
+		String[] components = path.split("/");
+		int currentIndex = 0;
+		for (String component : components) {
+			
+			String[] featurePath = component.split("/[/]");
 
+			EStructuralFeature feature = current.eClass().getEStructuralFeature(featurePath[0]);
+			
+			if (feature instanceof EReference) {
+				EObject eObject = null;
+				
+				Object value = current.eGet(feature);
+				
+				boolean needToCreate = (value == null);
+
+				if (!needToCreate && feature.isMany()) {
+					List<EObject> list = (List<EObject>) value;
+					if (list.size() > 0) {
+						value = list.get(0);
+					} else {
+						needToCreate = true;
+					}
+				}
+				
+				if (needToCreate) {
+					EClass type = (EClass) feature.getEType();
+					if (currentIndex == components.length - 1 && eClass != null && type.isSuperTypeOf(eClass)) {
+						eObject = EcoreUtil.create(eClass);
+					} else {
+						eObject = EcoreUtil.create(type);
+					}
+					if (feature.isMany()) {
+						List<EObject> list = (List<EObject>) value;
+						list.add(eObject);
+					} else {
+						current.eSet(feature, eObject);
+					}
+				} else {
+					eObject = (EObject) value;
+				}
+				
+				
+				
+				
+				current = eObject;
+			}
+			currentIndex++;
+		}
+		return (T) current;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public static void set(EObject root, String path, Object value) {
 		String last = path.substring(path.lastIndexOf("/") + 1);
@@ -1523,11 +1608,11 @@ public class CDAUtil {
 		for (EClass eClass : classes) {
 			EAnnotation annotation = eClass.getEAnnotation(CDA_ANNOTATION_SOURCE);
 			if (annotation != null) {
-				init(eObject, annotation.getDetails().map());
+				init(eObject, annotation.getDetails().map(),false);
 			}
 			annotation = eClass.getEAnnotation(CDA_SAMPLE_SOURCE);
 			if (annotation != null) {
-				init(eObject, annotation.getDetails().map());
+				init(eObject, annotation.getDetails().map(),true);
 			}
 		}
 	}
