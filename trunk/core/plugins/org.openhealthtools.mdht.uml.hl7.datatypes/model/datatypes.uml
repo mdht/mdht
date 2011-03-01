@@ -202,18 +202,15 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CCcCQT56Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CCcCQD56Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_50froDxkEd6JwqSGecoePg" name="codeSystemName" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_50froDxkEd6JwqSGecoePg" name="codeSystemName" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CswxoT56Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CswxoD56Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_8ftUsDxkEd6JwqSGecoePg" name="codeSystemVersion" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_8ftUsDxkEd6JwqSGecoePg" name="codeSystemVersion" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DZAzoT56Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DZAzoD56Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_PZftgD57Ed6cla2oXsPtlA" name="displayName" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_PZftgD57Ed6cla2oXsPtlA" name="displayName" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qi93AT57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qi93AD57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -233,13 +230,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NXLzUT6CEd6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NXLzUD6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_iX7fEDxaEd6JwqSGecoePg" name="extension" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_iX7fEDxaEd6JwqSGecoePg" name="extension" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9BqAoTxjEd6JwqSGecoePg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9BqAoDxjEd6JwqSGecoePg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_IR5UgD6CEd6cla2oXsPtlA" name="assigningAuthorityName" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_IR5UgD6CEd6cla2oXsPtlA" name="assigningAuthorityName" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PEj7IT6CEd6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PEj7ID6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -1013,18 +1008,15 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dMZcsT57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dMZcsD57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_dM_SkD57Ed6cla2oXsPtlA" name="codeSystemName" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_dM_SkD57Ed6cla2oXsPtlA" name="codeSystemName" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eeDR0T57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eeDR0D57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_fP928D57Ed6cla2oXsPtlA" name="codeSystemVersion" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_fP928D57Ed6cla2oXsPtlA" name="codeSystemVersion" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gw1MwT57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gw1MwD57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_hAn8QD57Ed6cla2oXsPtlA" name="displayName" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_hAn8QD57Ed6cla2oXsPtlA" name="displayName" visibility="private" type="_d4N5sEQ3EeCldOpAaJlPmA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iVju4T57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iVju4D57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -1376,6 +1368,7 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_RpDqMDrsEeCN26jpCPaoAw" name="uid"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_d4N5sEQ3EeCldOpAaJlPmA" name="stType"/>
     <profileApplication xmi:id="_XgMSyDxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_XgMSyTxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -1551,4 +1544,7 @@
   </Ecore:EDataType>
   <Ecore:EReference xmi:id="_kIc-gD-eEeCJealO8mEEZw" xmlNamespace="urn:hl7-org:v3" base_Property="_1BffAD56Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_meDj8D-eEeCJealO8mEEZw" xmlNamespace="urn:hl7-org:v3" base_Property="_1Vdj4D56Ed6cla2oXsPtlA"/>
+  <Ecore:EDataType xmi:id="_qbPVYEQ3EeCldOpAaJlPmA" instanceClassName="java.lang.String" base_PrimitiveType="_d4N5sEQ3EeCldOpAaJlPmA" dataTypeName="stType">
+    <annotation> http:///org/eclipse/emf/ecore/util/ExtendedMetaData pattern='.+'</annotation>
+  </Ecore:EDataType>
 </xmi:XMI>

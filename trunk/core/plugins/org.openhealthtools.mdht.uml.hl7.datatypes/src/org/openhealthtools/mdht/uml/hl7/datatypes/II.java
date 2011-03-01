@@ -70,7 +70,7 @@ public interface II extends ANY {
 	 * @return the value of the '<em>Extension</em>' attribute.
 	 * @see #setExtension(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getII_Extension()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" ordered="false"
 	 * @generated
 	 */
 	String getExtension();
@@ -96,7 +96,7 @@ public interface II extends ANY {
 	 * @return the value of the '<em>Assigning Authority Name</em>' attribute.
 	 * @see #setAssigningAuthorityName(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getII_AssigningAuthorityName()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" ordered="false"
 	 * @generated
 	 */
 	String getAssigningAuthorityName();

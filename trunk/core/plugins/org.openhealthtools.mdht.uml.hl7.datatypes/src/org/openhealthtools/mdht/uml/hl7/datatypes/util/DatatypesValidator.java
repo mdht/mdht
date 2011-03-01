@@ -778,6 +778,8 @@ public class DatatypesValidator extends EObjectValidator {
 				return validateBinaryDataEncoding((BinaryDataEncoding)value, diagnostics, context);
 			case DatatypesPackage.UID:
 				return validateuid((String)value, diagnostics, context);
+			case DatatypesPackage.ST_TYPE:
+				return validatestType((String)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -2219,6 +2221,39 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	public boolean validateuid_Pattern(String uid, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validatePattern(DatatypesPackage.Literals.UID, uid, UID__PATTERN__VALUES, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatestType(String stType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validatestType_Pattern(stType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validatestType_Pattern
+	 */
+	public static final  PatternMatcher [][] ST_TYPE__PATTERN__VALUES =
+		new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher(".+")
+			}
+		};
+
+	/**
+	 * Validates the Pattern constraint of '<em>st Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatestType_Pattern(String stType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validatePattern(DatatypesPackage.Literals.ST_TYPE, stType, ST_TYPE__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**

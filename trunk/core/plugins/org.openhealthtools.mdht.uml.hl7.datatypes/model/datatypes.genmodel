@@ -32,6 +32,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="datatypes.ecore#//BinaryDataEncoding/TXT"/>
     </genEnums>
     <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="datatypes.ecore#//uid"/>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="datatypes.ecore#//stType"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//ANY">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ANY/nullFlavor"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/isNullFlavorDefined"/>

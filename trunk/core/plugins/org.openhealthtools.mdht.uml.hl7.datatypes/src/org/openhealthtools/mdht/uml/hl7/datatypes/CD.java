@@ -162,7 +162,7 @@ public interface CD extends ANY {
 	 * @return the value of the '<em>Code System Name</em>' attribute.
 	 * @see #setCodeSystemName(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_CodeSystemName()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" ordered="false"
 	 * @generated
 	 */
 	String getCodeSystemName();
@@ -188,7 +188,7 @@ public interface CD extends ANY {
 	 * @return the value of the '<em>Code System Version</em>' attribute.
 	 * @see #setCodeSystemVersion(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_CodeSystemVersion()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" ordered="false"
 	 * @generated
 	 */
 	String getCodeSystemVersion();
@@ -214,7 +214,7 @@ public interface CD extends ANY {
 	 * @return the value of the '<em>Display Name</em>' attribute.
 	 * @see #setDisplayName(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_DisplayName()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.stType" ordered="false"
 	 * @generated
 	 */
 	String getDisplayName();
