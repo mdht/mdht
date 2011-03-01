@@ -196,6 +196,15 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateRedefinedExtension(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return InfrastructureRootTypeIdOperations.validateRedefinedExtension(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {

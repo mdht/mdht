@@ -165,12 +165,20 @@ public class CDAValidator extends EObjectValidator {
 	public static final int INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOTROOT = 3;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Redefined Extension' of 'Infrastructure Root Type Id'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION = 4;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Record Target'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_TARGET__TYPE_CODE = 4;
+	public static final int RECORD_TARGET__TYPE_CODE = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Record Target'.
@@ -178,7 +186,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_TARGET__CONTEXT_CONTROL_CODE = 5;
+	public static final int RECORD_TARGET__CONTEXT_CONTROL_CODE = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Patient Role'.
@@ -186,7 +194,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_ROLE__CLASS_CODE = 6;
+	public static final int PATIENT_ROLE__CLASS_CODE = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Patient'.
@@ -194,7 +202,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT__CLASS_CODE = 7;
+	public static final int PATIENT__CLASS_CODE = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Patient'.
@@ -202,7 +210,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT__DETERMINER_CODE = 8;
+	public static final int PATIENT__DETERMINER_CODE = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Guardian Choice' of 'Guardian'.
@@ -210,7 +218,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GUARDIAN__GUARDIAN_CHOICE = 9;
+	public static final int GUARDIAN__GUARDIAN_CHOICE = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Guardian'.
@@ -218,7 +226,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int GUARDIAN__CLASS_CODE = 10;
+	public static final int GUARDIAN__CLASS_CODE = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Person'.
@@ -226,7 +234,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PERSON__CLASS_CODE = 11;
+	public static final int PERSON__CLASS_CODE = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Person'.
@@ -234,7 +242,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PERSON__DETERMINER_CODE = 12;
+	public static final int PERSON__DETERMINER_CODE = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Organization'.
@@ -242,7 +250,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ORGANIZATION__CLASS_CODE = 13;
+	public static final int ORGANIZATION__CLASS_CODE = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Organization'.
@@ -250,7 +258,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ORGANIZATION__DETERMINER_CODE = 14;
+	public static final int ORGANIZATION__DETERMINER_CODE = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Organization Part Of'.
@@ -258,7 +266,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ORGANIZATION_PART_OF__CLASS_CODE = 15;
+	public static final int ORGANIZATION_PART_OF__CLASS_CODE = 16;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Birthplace'.
@@ -266,7 +274,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BIRTHPLACE__CLASS_CODE = 16;
+	public static final int BIRTHPLACE__CLASS_CODE = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Place'.
@@ -274,7 +282,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLACE__CLASS_CODE = 17;
+	public static final int PLACE__CLASS_CODE = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Place'.
@@ -282,7 +290,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLACE__DETERMINER_CODE = 18;
+	public static final int PLACE__DETERMINER_CODE = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Author'.
@@ -290,7 +298,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHOR__TYPE_CODE = 19;
+	public static final int AUTHOR__TYPE_CODE = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Author'.
@@ -298,7 +306,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHOR__CONTEXT_CONTROL_CODE = 20;
+	public static final int AUTHOR__CONTEXT_CONTROL_CODE = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assigned Author Choice' of 'Assigned Author'.
@@ -306,7 +314,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSIGNED_AUTHOR__ASSIGNED_AUTHOR_CHOICE = 21;
+	public static final int ASSIGNED_AUTHOR__ASSIGNED_AUTHOR_CHOICE = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Assigned Author'.
@@ -314,7 +322,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSIGNED_AUTHOR__CLASS_CODE = 22;
+	public static final int ASSIGNED_AUTHOR__CLASS_CODE = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Authoring Device'.
@@ -322,7 +330,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHORING_DEVICE__CLASS_CODE = 23;
+	public static final int AUTHORING_DEVICE__CLASS_CODE = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Authoring Device'.
@@ -330,7 +338,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHORING_DEVICE__DETERMINER_CODE = 24;
+	public static final int AUTHORING_DEVICE__DETERMINER_CODE = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Maintained Entity'.
@@ -338,7 +346,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MAINTAINED_ENTITY__CLASS_CODE = 25;
+	public static final int MAINTAINED_ENTITY__CLASS_CODE = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Data Enterer'.
@@ -346,7 +354,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DATA_ENTERER__TYPE_CODE = 26;
+	public static final int DATA_ENTERER__TYPE_CODE = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Data Enterer'.
@@ -354,7 +362,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DATA_ENTERER__CONTEXT_CONTROL_CODE = 27;
+	public static final int DATA_ENTERER__CONTEXT_CONTROL_CODE = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Assigned Entity'.
@@ -362,7 +370,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSIGNED_ENTITY__CLASS_CODE = 28;
+	public static final int ASSIGNED_ENTITY__CLASS_CODE = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Informant Choice' of 'Informant12'.
@@ -370,7 +378,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int INFORMANT12__INFORMANT_CHOICE = 29;
+	public static final int INFORMANT12__INFORMANT_CHOICE = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Informant12'.
@@ -378,7 +386,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int INFORMANT12__TYPE_CODE = 30;
+	public static final int INFORMANT12__TYPE_CODE = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Informant12'.
@@ -386,7 +394,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int INFORMANT12__CONTEXT_CONTROL_CODE = 31;
+	public static final int INFORMANT12__CONTEXT_CONTROL_CODE = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Custodian'.
@@ -394,7 +402,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CUSTODIAN__TYPE_CODE = 32;
+	public static final int CUSTODIAN__TYPE_CODE = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Assigned Custodian'.
@@ -402,7 +410,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSIGNED_CUSTODIAN__CLASS_CODE = 33;
+	public static final int ASSIGNED_CUSTODIAN__CLASS_CODE = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Custodian Organization'.
@@ -410,7 +418,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CUSTODIAN_ORGANIZATION__CLASS_CODE = 34;
+	public static final int CUSTODIAN_ORGANIZATION__CLASS_CODE = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Custodian Organization'.
@@ -418,7 +426,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CUSTODIAN_ORGANIZATION__DETERMINER_CODE = 35;
+	public static final int CUSTODIAN_ORGANIZATION__DETERMINER_CODE = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Legal Authenticator'.
@@ -426,7 +434,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LEGAL_AUTHENTICATOR__TYPE_CODE = 36;
+	public static final int LEGAL_AUTHENTICATOR__TYPE_CODE = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Legal Authenticator'.
@@ -434,7 +442,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = 37;
+	public static final int LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = 38;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Authenticator'.
@@ -442,7 +450,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHENTICATOR__TYPE_CODE = 38;
+	public static final int AUTHENTICATOR__TYPE_CODE = 39;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Participant1'.
@@ -450,7 +458,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PARTICIPANT1__CONTEXT_CONTROL_CODE = 39;
+	public static final int PARTICIPANT1__CONTEXT_CONTROL_CODE = 40;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'In Fulfillment Of'.
@@ -458,7 +466,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IN_FULFILLMENT_OF__TYPE_CODE = 40;
+	public static final int IN_FULFILLMENT_OF__TYPE_CODE = 41;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Order'.
@@ -466,7 +474,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ORDER__MOOD_CODE = 41;
+	public static final int ORDER__MOOD_CODE = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Documentation Of'.
@@ -474,7 +482,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DOCUMENTATION_OF__TYPE_CODE = 42;
+	public static final int DOCUMENTATION_OF__TYPE_CODE = 43;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Service Event'.
@@ -482,7 +490,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SERVICE_EVENT__MOOD_CODE = 43;
+	public static final int SERVICE_EVENT__MOOD_CODE = 44;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Parent Document'.
@@ -490,7 +498,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PARENT_DOCUMENT__CLASS_CODE = 44;
+	public static final int PARENT_DOCUMENT__CLASS_CODE = 45;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Parent Document'.
@@ -498,7 +506,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PARENT_DOCUMENT__MOOD_CODE = 45;
+	public static final int PARENT_DOCUMENT__MOOD_CODE = 46;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Authorization'.
@@ -506,7 +514,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHORIZATION__TYPE_CODE = 46;
+	public static final int AUTHORIZATION__TYPE_CODE = 47;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Consent'.
@@ -514,7 +522,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSENT__CLASS_CODE = 47;
+	public static final int CONSENT__CLASS_CODE = 48;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Consent'.
@@ -522,7 +530,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSENT__MOOD_CODE = 48;
+	public static final int CONSENT__MOOD_CODE = 49;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component1'.
@@ -530,7 +538,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT1__TYPE_CODE = 49;
+	public static final int COMPONENT1__TYPE_CODE = 50;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Encompassing Encounter'.
@@ -538,7 +546,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOMPASSING_ENCOUNTER__CLASS_CODE = 50;
+	public static final int ENCOMPASSING_ENCOUNTER__CLASS_CODE = 51;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Encompassing Encounter'.
@@ -546,7 +554,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOMPASSING_ENCOUNTER__MOOD_CODE = 51;
+	public static final int ENCOMPASSING_ENCOUNTER__MOOD_CODE = 52;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Responsible Party'.
@@ -554,7 +562,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESPONSIBLE_PARTY__TYPE_CODE = 52;
+	public static final int RESPONSIBLE_PARTY__TYPE_CODE = 53;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Location'.
@@ -562,7 +570,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LOCATION__TYPE_CODE = 53;
+	public static final int LOCATION__TYPE_CODE = 54;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Body Choice' of 'Component2'.
@@ -570,7 +578,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT2__BODY_CHOICE = 54;
+	public static final int COMPONENT2__BODY_CHOICE = 55;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component2'.
@@ -578,7 +586,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT2__TYPE_CODE = 55;
+	public static final int COMPONENT2__TYPE_CODE = 56;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component2'.
@@ -586,7 +594,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT2__CONTEXT_CONDUCTION_IND = 56;
+	public static final int COMPONENT2__CONTEXT_CONDUCTION_IND = 57;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Non XML Body'.
@@ -594,7 +602,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NON_XML_BODY__CLASS_CODE = 57;
+	public static final int NON_XML_BODY__CLASS_CODE = 58;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Non XML Body'.
@@ -602,7 +610,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NON_XML_BODY__MOOD_CODE = 58;
+	public static final int NON_XML_BODY__MOOD_CODE = 59;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Structured Body'.
@@ -610,7 +618,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int STRUCTURED_BODY__CLASS_CODE = 59;
+	public static final int STRUCTURED_BODY__CLASS_CODE = 60;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Structured Body'.
@@ -618,7 +626,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int STRUCTURED_BODY__MOOD_CODE = 60;
+	public static final int STRUCTURED_BODY__MOOD_CODE = 61;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component3'.
@@ -626,7 +634,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT3__TYPE_CODE = 61;
+	public static final int COMPONENT3__TYPE_CODE = 62;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component3'.
@@ -634,7 +642,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT3__CONTEXT_CONDUCTION_IND = 62;
+	public static final int COMPONENT3__CONTEXT_CONDUCTION_IND = 63;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Section'.
@@ -642,7 +650,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SECTION__CLASS_CODE = 63;
+	public static final int SECTION__CLASS_CODE = 64;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Section'.
@@ -650,7 +658,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SECTION__MOOD_CODE = 64;
+	public static final int SECTION__MOOD_CODE = 65;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Subject'.
@@ -658,7 +666,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECT__TYPE_CODE = 65;
+	public static final int SUBJECT__TYPE_CODE = 66;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Subject'.
@@ -666,7 +674,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECT__CONTEXT_CONTROL_CODE = 66;
+	public static final int SUBJECT__CONTEXT_CONTROL_CODE = 67;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Subject Person'.
@@ -674,7 +682,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECT_PERSON__CLASS_CODE = 67;
+	public static final int SUBJECT_PERSON__CLASS_CODE = 68;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Subject Person'.
@@ -682,7 +690,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBJECT_PERSON__DETERMINER_CODE = 68;
+	public static final int SUBJECT_PERSON__DETERMINER_CODE = 69;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Entry'.
@@ -690,7 +698,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTRY__CLINICAL_STATEMENT = 69;
+	public static final int ENTRY__CLINICAL_STATEMENT = 70;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Entry'.
@@ -698,7 +706,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTRY__CONTEXT_CONDUCTION_IND = 70;
+	public static final int ENTRY__CONTEXT_CONDUCTION_IND = 71;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Specimen'.
@@ -706,7 +714,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SPECIMEN__TYPE_CODE = 71;
+	public static final int SPECIMEN__TYPE_CODE = 72;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Specimen Role'.
@@ -714,7 +722,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SPECIMEN_ROLE__CLASS_CODE = 72;
+	public static final int SPECIMEN_ROLE__CLASS_CODE = 73;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Playing Entity'.
@@ -722,7 +730,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAYING_ENTITY__DETERMINER_CODE = 73;
+	public static final int PLAYING_ENTITY__DETERMINER_CODE = 74;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Performer2'.
@@ -730,7 +738,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PERFORMER2__TYPE_CODE = 74;
+	public static final int PERFORMER2__TYPE_CODE = 75;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Participant2'.
@@ -738,7 +746,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PARTICIPANT2__CONTEXT_CONTROL_CODE = 75;
+	public static final int PARTICIPANT2__CONTEXT_CONTROL_CODE = 76;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Playing Entity Choice' of 'Participant Role'.
@@ -746,7 +754,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PARTICIPANT_ROLE__PLAYING_ENTITY_CHOICE = 76;
+	public static final int PARTICIPANT_ROLE__PLAYING_ENTITY_CHOICE = 77;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Device'.
@@ -754,7 +762,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DEVICE__DETERMINER_CODE = 77;
+	public static final int DEVICE__DETERMINER_CODE = 78;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Entity'.
@@ -762,7 +770,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__DETERMINER_CODE = 78;
+	public static final int ENTITY__DETERMINER_CODE = 79;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Entry Relationship'.
@@ -770,7 +778,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTRY_RELATIONSHIP__CLINICAL_STATEMENT = 79;
+	public static final int ENTRY_RELATIONSHIP__CLINICAL_STATEMENT = 80;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate External Act Choice' of 'Reference'.
@@ -778,7 +786,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REFERENCE__EXTERNAL_ACT_CHOICE = 80;
+	public static final int REFERENCE__EXTERNAL_ACT_CHOICE = 81;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Act'.
@@ -786,7 +794,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTERNAL_ACT__MOOD_CODE = 81;
+	public static final int EXTERNAL_ACT__MOOD_CODE = 82;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Observation'.
@@ -794,7 +802,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTERNAL_OBSERVATION__MOOD_CODE = 82;
+	public static final int EXTERNAL_OBSERVATION__MOOD_CODE = 83;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'External Procedure'.
@@ -802,7 +810,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTERNAL_PROCEDURE__CLASS_CODE = 83;
+	public static final int EXTERNAL_PROCEDURE__CLASS_CODE = 84;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Procedure'.
@@ -810,7 +818,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTERNAL_PROCEDURE__MOOD_CODE = 84;
+	public static final int EXTERNAL_PROCEDURE__MOOD_CODE = 85;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Document'.
@@ -818,7 +826,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTERNAL_DOCUMENT__MOOD_CODE = 85;
+	public static final int EXTERNAL_DOCUMENT__MOOD_CODE = 86;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Precondition'.
@@ -826,7 +834,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PRECONDITION__TYPE_CODE = 86;
+	public static final int PRECONDITION__TYPE_CODE = 87;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Criterion'.
@@ -834,7 +842,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CRITERION__MOOD_CODE = 87;
+	public static final int CRITERION__MOOD_CODE = 88;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Reference Range'.
@@ -842,7 +850,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REFERENCE_RANGE__TYPE_CODE = 88;
+	public static final int REFERENCE_RANGE__TYPE_CODE = 89;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Observation Range'.
@@ -850,7 +858,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OBSERVATION_RANGE__MOOD_CODE = 89;
+	public static final int OBSERVATION_RANGE__MOOD_CODE = 90;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Component4'.
@@ -858,7 +866,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT4__CLINICAL_STATEMENT = 90;
+	public static final int COMPONENT4__CLINICAL_STATEMENT = 91;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component4'.
@@ -866,7 +874,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT4__TYPE_CODE = 91;
+	public static final int COMPONENT4__TYPE_CODE = 92;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component4'.
@@ -874,7 +882,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT4__CONTEXT_CONDUCTION_IND = 92;
+	public static final int COMPONENT4__CONTEXT_CONDUCTION_IND = 93;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Region Of Interest'.
@@ -882,7 +890,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REGION_OF_INTEREST__CLASS_CODE = 93;
+	public static final int REGION_OF_INTEREST__CLASS_CODE = 94;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Region Of Interest'.
@@ -890,7 +898,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REGION_OF_INTEREST__MOOD_CODE = 94;
+	public static final int REGION_OF_INTEREST__MOOD_CODE = 95;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Substance Administration'.
@@ -898,7 +906,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUBSTANCE_ADMINISTRATION__CLASS_CODE = 95;
+	public static final int SUBSTANCE_ADMINISTRATION__CLASS_CODE = 96;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Consumable'.
@@ -906,7 +914,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSUMABLE__TYPE_CODE = 96;
+	public static final int CONSUMABLE__TYPE_CODE = 97;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Manufactured Drug Or Other Material' of 'Manufactured Product'.
@@ -914,7 +922,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MANUFACTURED_PRODUCT__MANUFACTURED_DRUG_OR_OTHER_MATERIAL = 97;
+	public static final int MANUFACTURED_PRODUCT__MANUFACTURED_DRUG_OR_OTHER_MATERIAL = 98;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Manufactured Product'.
@@ -922,7 +930,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MANUFACTURED_PRODUCT__CLASS_CODE = 98;
+	public static final int MANUFACTURED_PRODUCT__CLASS_CODE = 99;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Labeled Drug'.
@@ -930,7 +938,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LABELED_DRUG__CLASS_CODE = 99;
+	public static final int LABELED_DRUG__CLASS_CODE = 100;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Labeled Drug'.
@@ -938,7 +946,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LABELED_DRUG__DETERMINER_CODE = 100;
+	public static final int LABELED_DRUG__DETERMINER_CODE = 101;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Material'.
@@ -946,7 +954,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MATERIAL__CLASS_CODE = 101;
+	public static final int MATERIAL__CLASS_CODE = 102;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Material'.
@@ -954,7 +962,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MATERIAL__DETERMINER_CODE = 102;
+	public static final int MATERIAL__DETERMINER_CODE = 103;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Supply'.
@@ -962,7 +970,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SUPPLY__CLASS_CODE = 103;
+	public static final int SUPPLY__CLASS_CODE = 104;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Product'.
@@ -970,7 +978,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PRODUCT__TYPE_CODE = 104;
+	public static final int PRODUCT__TYPE_CODE = 105;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component5'.
@@ -978,7 +986,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT5__TYPE_CODE = 105;
+	public static final int COMPONENT5__TYPE_CODE = 106;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component5'.
@@ -986,7 +994,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COMPONENT5__CONTEXT_CONDUCTION_IND = 106;
+	public static final int COMPONENT5__CONTEXT_CONDUCTION_IND = 107;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -994,7 +1002,7 @@ public class CDAValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 106;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 107;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1279,6 +1287,7 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(infrastructureRootTypeId, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(infrastructureRootTypeId, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInfrastructureRootTypeId_validateRedefinedRootroot(infrastructureRootTypeId, diagnostics, context);
+		if (result || diagnostics != null) result &= validateInfrastructureRootTypeId_validateRedefinedExtension(infrastructureRootTypeId, diagnostics, context);
 		return result;
 	}
 
@@ -1290,6 +1299,16 @@ public class CDAValidator extends EObjectValidator {
 	 */
 	public boolean validateInfrastructureRootTypeId_validateRedefinedRootroot(InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return infrastructureRootTypeId.validateRedefinedRootroot(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateRedefinedExtension constraint of '<em>Infrastructure Root Type Id</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInfrastructureRootTypeId_validateRedefinedExtension(InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return infrastructureRootTypeId.validateRedefinedExtension(diagnostics, context);
 	}
 
 	/**
