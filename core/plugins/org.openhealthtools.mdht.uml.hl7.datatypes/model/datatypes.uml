@@ -198,8 +198,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BTzaoD56Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BTppoD56Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_3fx3ADxkEd6JwqSGecoePg" name="codeSystem" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_3fx3ADxkEd6JwqSGecoePg" name="codeSystem" visibility="private" type="_RpDqMDrsEeCN26jpCPaoAw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CCcCQT56Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CCcCQD56Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -1010,8 +1009,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b891IT57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b891ID57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_b9kSED57Ed6cla2oXsPtlA" name="codeSystem" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedAttribute xmi:id="_b9kSED57Ed6cla2oXsPtlA" name="codeSystem" visibility="private" type="_RpDqMDrsEeCN26jpCPaoAw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dMZcsT57Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dMZcsD57Ed6cla2oXsPtlA"/>
       </ownedAttribute>
