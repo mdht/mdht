@@ -42,6 +42,7 @@ import org.eclipse.ui.console.IConsoleView;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.uml2.uml.Class;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.osgi.framework.Bundle;
@@ -90,8 +91,11 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 				selectedElement = (Class) selected;
 			}
 		}
+//
+//		Class cdaClass = CDAModelUtil.getCDAClass(selectedElement);
 
-		if (selectedElement != null && CDAProfileUtil.getAppliedCDAProfile(selectedElement) != null) {
+
+		if (selectedElement != null && CDAProfileUtil.getAppliedCDAProfile(selectedElement) != null || (CDAModelUtil.getCDAClass(selectedElement) != null)) {
 			action.setEnabled(true);
 		} else {
 			action.setEnabled(false);

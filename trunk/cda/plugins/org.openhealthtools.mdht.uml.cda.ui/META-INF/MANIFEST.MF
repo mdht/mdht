@@ -26,11 +26,14 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.debug.ui;visibility:=reexport,
  org.eclipse.ant.launching;visibility:=reexport,
  org.eclipse.jdt.launching;visibility:=reexport,
- org.eclipse.debug.ui;visibility:=reexport
+ org.eclipse.debug.ui;visibility:=reexport,
+ org.openhealthtools.mdht.uml.ui;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.ui.filters,
  org.openhealthtools.mdht.uml.cda.ui.properties,
  org.openhealthtools.mdht.uml.cda.ui.providers,
  org.openhealthtools.mdht.uml.cda.ui.util
-Import-Package: org.eclipse.jdt.core
+Import-Package: org.eclipse.jdt.core,
+ org.eclipse.ui.ide,
+ org.openhealthtools.mdht.uml.ui.navigator
