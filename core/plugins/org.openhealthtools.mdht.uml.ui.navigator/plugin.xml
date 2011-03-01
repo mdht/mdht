@@ -31,8 +31,13 @@
                enablesFor="1+"
                id="org.openhealthtools.mdht.uml.ui.navigator.openModelAction"
                label="%openModelAction.label"
-               menubarPath="group.open">
-         </action>
+               menubarPath="group.open"/>
+         <action
+               class="org.openhealthtools.mdht.uml.ui.navigator.internal.actions.ExportToXMIAction"
+               enablesFor="1+"
+               id="org.openhealthtools.mdht.uml.ui.navigator.exportToXMIAction"
+               label="%exportToXMIAction.label"
+               menubarPath="group.port"/>
       </objectContribution>
    </extension>
    

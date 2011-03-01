@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - added messages for control/uncontrol action
+ *     Kenn Hussey - added messages for XMI export action
  *     
  * $Id$
  *******************************************************************************/
@@ -39,6 +41,11 @@ public class Messages extends NLS {
 
 	public static String ControlAction_label;
 	public static String UncontrolAction_label;
+
+	public static String ExportToXMIAction_dialogTitle;
+	public static String ExportToXMIAction_dialogMessage;
+	public static String ExportToXMIAction_errorTitle;
+	public static String ExportToXMIAction_errorMessage;
 
 	public static String ExistingControlledResource_dialogTitle;
 	public static String ExistingControlledResource_dialogMessage;
