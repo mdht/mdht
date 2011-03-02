@@ -91,12 +91,13 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 				selectedElement = (Class) selected;
 			}
 		}
-//
-//		Class cdaClass = CDAModelUtil.getCDAClass(selectedElement);
-
-
-		if (selectedElement != null && CDAProfileUtil.getAppliedCDAProfile(selectedElement) != null || (CDAModelUtil.getCDAClass(selectedElement) != null)) {
-			action.setEnabled(true);
+		if (selectedElement != null) {
+			if ( CDAProfileUtil.getAppliedCDAProfile(selectedElement) != null || CDAModelUtil.getCDAClass(selectedElement) != null) {
+				action.setEnabled(true);
+			} else
+			{
+				action.setEnabled(false);	
+			}
 		} else {
 			action.setEnabled(false);
 		}
