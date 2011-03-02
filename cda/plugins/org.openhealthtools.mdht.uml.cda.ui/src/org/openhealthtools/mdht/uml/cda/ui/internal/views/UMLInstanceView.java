@@ -225,6 +225,9 @@ public class UMLInstanceView extends ViewPart {
 
 			if (umlSelection != null && isDirty) {
 				isDirty = false;
+				
+				
+				getInstancePackage(); 
 
 				TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlSelection.getOwner());
 
