@@ -47,6 +47,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
@@ -315,6 +316,10 @@ public class CDAUtil {
 		documentRootPackage.getEClassifiers().add(documentRootEClass);
 		EFactory documentRootFactoryInstance = documentRootPackage.getEFactoryInstance();		
 		EObject documentRootInstance = documentRootFactoryInstance.create(documentRootEClass);
+
+		((EMap<String, String>) documentRootInstance.eGet(xmlnsPrefixMap)).put("", CDAPackage.eNS_URI);
+		
+		((EMap<String, String>) documentRootInstance.eGet(xsiSchemaLocation)).put(CDAPackage.eNS_URI, "CDA.xsd");
 		
 		((List) documentRootInstance.eGet(snippetReference)).add(cdaSnippet);
 
