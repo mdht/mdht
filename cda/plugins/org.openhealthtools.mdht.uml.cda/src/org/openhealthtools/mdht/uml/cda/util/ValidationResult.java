@@ -77,6 +77,7 @@ public class ValidationResult implements ValidationHandler {
 		return Collections.unmodifiableList(diagnostics);
 	}
 	
+	// filter out diagnostics produced during XML schema validation
 	public List<Diagnostic> getSchemaValidationDiagnostics() {
 		return getDiagnostics(new Filter<Diagnostic>() {
 			public boolean accept(Diagnostic item) {
@@ -85,6 +86,7 @@ public class ValidationResult implements ValidationHandler {
 		});
 	}
 	
+	// filter out diagnostics produced during EMF validation
 	public List<Diagnostic> getEMFValidationDiagnostics() {
 		return getDiagnostics(new Filter<Diagnostic>() {
 			public boolean accept(Diagnostic item) {
