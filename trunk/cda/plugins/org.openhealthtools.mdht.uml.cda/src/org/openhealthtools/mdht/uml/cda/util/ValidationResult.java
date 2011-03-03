@@ -51,6 +51,10 @@ public class ValidationResult implements ValidationHandler {
 		infoDiagnostics.add(diagnostic);
 	}
 	
+	public boolean hasErrors() {
+		return !errorDiagnostics.isEmpty();
+	}
+	
 	public List<Diagnostic> getAllDiagnostics() {
 		return Collections.unmodifiableList(allDiagnostics);
 	}
