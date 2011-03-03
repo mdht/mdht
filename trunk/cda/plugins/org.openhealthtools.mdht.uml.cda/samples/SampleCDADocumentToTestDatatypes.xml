@@ -84,6 +84,32 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 
 	<title>Good Health Clinic Consultation Note</title>
 
+<!--
+	value - Valid time pattern.. This one is valid.. 
+	<effectiveTime value="20000407"/>
+	
+	value - Valid time pattern.. This one is valid.. 
+	<effectiveTime value="20000407010101"/>
+
+	value - Valid time pattern.. This one is valid.. 
+	<effectiveTime value="20000407010101+1"/>
+		
+	value - Valid time pattern.. This one is valid.. 
+	<effectiveTime value="20000407010101-1000"/>
+
+	value - Valid time pattern.. This one is valid.. 
+	<effectiveTime value="20000407010101.100-1000"/>
+
+	value - invalid time pattern.. This one is invalid - it can only have 4 digits after the -. 
+	<effectiveTime value="20000407010101.100-10001"/>
+
+	value - invalid time pattern.. This one is invalid - it has too many numbers for any of the valid patterns. 
+	<effectiveTime value="2000040701010101"/>
+
+	value - invalid time pattern.. This one is invalid - it must have at least one digit. 
+	<effectiveTime value=""/>
+
+ -->
 	<effectiveTime value="20000407"/>
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
 	<languageCode code="en-US"/>
@@ -327,6 +353,12 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 							Checking codeSystemName, displayName, codeSystemVersion - all valid - if not present at all, then it should not check regular expression support. 
 							<code code="195967001" codeSystem="2.16.840.1.113883.6.96">
 							
+							code - valid - cannot have any spaces...
+							<code code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Asthma">
+							
+							code - invalid - code has spaces in it.
+							<code code="195967001 11" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Asthma">
+							
 
  -->
 							<code code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Asthma">
@@ -334,6 +366,14 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 									<reference value="#a1"/>
 								</originalText>
 							</code>
+<!-- 
+							languange, mediaType  Valid values for both.  Text with no spaces.
+							<text language="english" mediaType="text/xml"/>
+
+							languange, mediaType  invalid values for both.  These are tokens - they cannot have spaces.
+							<text language="english one" mediaType="text/xml one"/>
+
+ -->
 							<statusCode code="completed"/>
 							<effectiveTime value="1950"/>
 							<value xsi:type="EIVL.event" code="AC" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" codeSystemVersion="1" displayName="AC"/>
@@ -487,7 +527,15 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
  -->
 										</thumbnail>
 									</text>
-									<quantity>
+<!-- 
+									unit - Valid Value - Token - value can be set of any characters except white space.
+									<quantity unit="100">
+									
+									unit - invalid Value - Token - value can be set of any characters except white space.
+									<quantity unit="100 100">
+ -->
+
+									<quantity unit="1">
 <!--
 										codeSystem - Valid uid 
 										<translation code="100" codeSystem="1.1"/>
@@ -1372,6 +1420,11 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 										<manufacturerModelName code="100" codeSystem="1.1" codeSystemName="" codeSystemVersion="" displayName=""/>
 										codeSystemName, codeSystemVersion, displayName - valid if present and have one or more characters
 										<manufacturerModelName code="100" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="TestName"/>
+										
+										code - valid if value has no white space.
+										<manufacturerModelName code="100" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="TestName"/>
+										code - invalid if value has white space.
+										<manufacturerModelName code="100 11" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="TestName"/>
  
  -->
 										<manufacturerModelName code="100" codeSystem="1.1" codeSystemName="Test" codeSystemVersion="1" displayName="TestName"/>

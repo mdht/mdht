@@ -110,7 +110,7 @@ public interface CD extends ANY {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_Code()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.csType" ordered="false"
 	 * @generated
 	 */
 	String getCode();

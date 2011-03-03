@@ -68,7 +68,7 @@ public interface MO extends QTY {
 	 * @return the value of the '<em>Currency</em>' attribute.
 	 * @see #setCurrency(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getMO_Currency()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.csType" ordered="false"
 	 * @generated
 	 */
 	String getCurrency();

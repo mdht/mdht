@@ -41,7 +41,7 @@ public interface TS extends QTY {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getTS_Value()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.tsType" ordered="false"
 	 * @generated
 	 */
 	String getValue();

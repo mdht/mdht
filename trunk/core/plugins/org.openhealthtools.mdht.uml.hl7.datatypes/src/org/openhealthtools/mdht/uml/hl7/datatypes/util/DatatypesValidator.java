@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
+import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
@@ -655,6 +656,14 @@ public class DatatypesValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected XMLTypeValidator xmlTypeValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -662,6 +671,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	public DatatypesValidator() {
 		super();
+		xmlTypeValidator = XMLTypeValidator.INSTANCE;
 	}
 
 	/**
@@ -776,6 +786,10 @@ public class DatatypesValidator extends EObjectValidator {
 				return validateEIVL_TS((EIVL_TS)value, diagnostics, context);
 			case DatatypesPackage.BINARY_DATA_ENCODING:
 				return validateBinaryDataEncoding((BinaryDataEncoding)value, diagnostics, context);
+			case DatatypesPackage.TS_TYPE:
+				return validatetsType((String)value, diagnostics, context);
+			case DatatypesPackage.CS_TYPE:
+				return validatecsType((String)value, diagnostics, context);
 			case DatatypesPackage.UID:
 				return validateuid((String)value, diagnostics, context);
 			case DatatypesPackage.ST_TYPE:
@@ -2193,6 +2207,39 @@ public class DatatypesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatecsType(String csType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validatecsType_Pattern(csType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validatecsType_Pattern
+	 */
+	public static final  PatternMatcher [][] CS_TYPE__PATTERN__VALUES =
+		new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher("[^\\s]+")
+			}
+		};
+
+	/**
+	 * Validates the Pattern constraint of '<em>cs Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatecsType_Pattern(String csType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validatePattern(DatatypesPackage.Literals.CS_TYPE, csType, CS_TYPE__PATTERN__VALUES, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateuid(String uid, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validateuid_Pattern(uid, diagnostics, context);
 		return result;
@@ -2254,6 +2301,39 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	public boolean validatestType_Pattern(String stType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validatePattern(DatatypesPackage.Literals.ST_TYPE, stType, ST_TYPE__PATTERN__VALUES, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatetsType(String tsType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validatetsType_Pattern(tsType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validatetsType_Pattern
+	 */
+	public static final  PatternMatcher [][] TS_TYPE__PATTERN__VALUES =
+		new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher("[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\\.[0-9]+)([+\\-][0-9]{1,4})?")
+			}
+		};
+
+	/**
+	 * Validates the Pattern constraint of '<em>ts Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatetsType_Pattern(String tsType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validatePattern(DatatypesPackage.Literals.TS_TYPE, tsType, TS_TYPE__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**

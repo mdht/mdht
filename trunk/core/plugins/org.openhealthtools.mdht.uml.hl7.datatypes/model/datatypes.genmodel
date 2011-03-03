@@ -31,6 +31,8 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="datatypes.ecore#//BinaryDataEncoding/B64"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="datatypes.ecore#//BinaryDataEncoding/TXT"/>
     </genEnums>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="datatypes.ecore#//tsType"/>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="datatypes.ecore#//csType"/>
     <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="datatypes.ecore#//uid"/>
     <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="datatypes.ecore#//stType"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//ANY">
