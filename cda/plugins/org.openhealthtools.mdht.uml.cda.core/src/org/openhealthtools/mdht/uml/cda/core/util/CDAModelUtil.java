@@ -122,10 +122,6 @@ public class CDAModelUtil {
 	}
 
 	public static boolean isCDAModel(Element element) {
-		if (element.eResource() != null && element.eResource().getResourceSet()!= null ) {
-			EcoreUtil.resolveAll(element.eResource().getResourceSet());			
-		}
-
 		return CDA_PACKAGE_NAME.equals( (element.getNearestPackage()!=null) ?  element.getNearestPackage().getName(): "");
 	}
 	
