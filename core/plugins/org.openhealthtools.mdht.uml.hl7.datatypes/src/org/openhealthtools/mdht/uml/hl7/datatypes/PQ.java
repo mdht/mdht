@@ -61,6 +61,7 @@ public interface PQ extends QTY {
 
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Unit</em>' attribute isn't clear,
@@ -70,7 +71,7 @@ public interface PQ extends QTY {
 	 * @return the value of the '<em>Unit</em>' attribute.
 	 * @see #setUnit(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getPQ_Unit()
-	 * @model ordered="false"
+	 * @model default="1" dataType="org.openhealthtools.mdht.uml.hl7.datatypes.csType" ordered="false"
 	 * @generated
 	 */
 	String getUnit();

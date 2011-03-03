@@ -70,7 +70,7 @@ public class PQImpl extends QTYImpl implements PQ {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UNIT_EDEFAULT = null;
+	protected static final String UNIT_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.

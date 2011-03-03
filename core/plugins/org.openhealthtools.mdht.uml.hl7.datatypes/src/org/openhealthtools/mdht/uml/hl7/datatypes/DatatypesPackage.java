@@ -3607,6 +3607,16 @@ public interface DatatypesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>cs Type</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getcsType()
+	 * @generated
+	 */
+	int CS_TYPE = 47;
+
+	/**
 	 * The meta object id for the '<em>uid</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3614,7 +3624,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getuid()
 	 * @generated
 	 */
-	int UID = 46;
+	int UID = 48;
 
 
 	/**
@@ -3625,7 +3635,18 @@ public interface DatatypesPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getstType()
 	 * @generated
 	 */
-	int ST_TYPE = 47;
+	int ST_TYPE = 49;
+
+
+	/**
+	 * The meta object id for the '<em>ts Type</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#gettsType()
+	 * @generated
+	 */
+	int TS_TYPE = 46;
 
 
 	/**
@@ -5354,6 +5375,18 @@ public interface DatatypesPackage extends EPackage {
 	EEnum getBinaryDataEncoding();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>cs Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>cs Type</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 *        extendedMetaData="pattern='[^\\s]+' baseType='http://www.eclipse.org/emf/2003/XMLType#token'"
+	 * @generated
+	 */
+	EDataType getcsType();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>uid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5376,6 +5409,18 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getstType();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>ts Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>ts Type</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 *        extendedMetaData="pattern='[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\\.[0-9]+)([+\\-][0-9]{1,4})?'"
+	 * @generated
+	 */
+	EDataType gettsType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -6780,6 +6825,16 @@ public interface DatatypesPackage extends EPackage {
 		EEnum BINARY_DATA_ENCODING = eINSTANCE.getBinaryDataEncoding();
 
 		/**
+		 * The meta object literal for the '<em>cs Type</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#getcsType()
+		 * @generated
+		 */
+		EDataType CS_TYPE = eINSTANCE.getcsType();
+
+		/**
 		 * The meta object literal for the '<em>uid</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6798,6 +6853,16 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType ST_TYPE = eINSTANCE.getstType();
+
+		/**
+		 * The meta object literal for the '<em>ts Type</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.impl.DatatypesPackageImpl#gettsType()
+		 * @generated
+		 */
+		EDataType TS_TYPE = eINSTANCE.gettsType();
 
 	}
 

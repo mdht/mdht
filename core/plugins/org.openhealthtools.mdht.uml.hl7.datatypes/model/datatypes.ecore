@@ -77,9 +77,9 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="text/plain"/>
+        eType="#//csType" defaultValueLiteral="text/plain"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//csType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compression" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//CompressionAlgorithm"
         unsettable="true"/>
@@ -115,9 +115,20 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TS" eSuperTypes="#//QTY">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//tsType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QTY" abstract="true" eSuperTypes="#//ANY"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="tsType" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="pattern" value="[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\.[0-9]+)([+\-][0-9]{1,4})?"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="csType" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="pattern" value="[^\s]+"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#token"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ST" eSuperTypes="#//ED">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="kind" value="mixed"/>
@@ -299,7 +310,7 @@
         <details key="namespace" value="urn:hl7-org:v3"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="#//csType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystem" ordered="false"
         eType="#//uid"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystemName" ordered="false"
@@ -1733,7 +1744,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="PQ" eSuperTypes="#//QTY">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false" eType="#//csType"
+        defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="translation" ordered="false"
         upperBound="-1" eType="#//PQR" containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -1951,7 +1963,7 @@
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="kind" value="mixed"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="#//csType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystem" ordered="false"
         eType="#//uid"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystemName" ordered="false"
@@ -2001,7 +2013,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="currency" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//csType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RTO" eSuperTypes="#//RTO_QTY_QTY"/>
   <eClassifiers xsi:type="ecore:EClass" name="SXCM_INT" eSuperTypes="#//INT">

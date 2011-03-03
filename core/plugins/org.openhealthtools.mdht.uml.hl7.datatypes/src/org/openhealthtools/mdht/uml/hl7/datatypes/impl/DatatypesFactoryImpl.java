@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.xml.type.XMLTypeFactory;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
@@ -166,6 +168,10 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		switch (eDataType.getClassifierID()) {
 			case DatatypesPackage.BINARY_DATA_ENCODING:
 				return createBinaryDataEncodingFromString(eDataType, initialValue);
+			case DatatypesPackage.TS_TYPE:
+				return createtsTypeFromString(eDataType, initialValue);
+			case DatatypesPackage.CS_TYPE:
+				return createcsTypeFromString(eDataType, initialValue);
 			case DatatypesPackage.UID:
 				return createuidFromString(eDataType, initialValue);
 			case DatatypesPackage.ST_TYPE:
@@ -185,6 +191,10 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		switch (eDataType.getClassifierID()) {
 			case DatatypesPackage.BINARY_DATA_ENCODING:
 				return convertBinaryDataEncodingToString(eDataType, instanceValue);
+			case DatatypesPackage.TS_TYPE:
+				return converttsTypeToString(eDataType, instanceValue);
+			case DatatypesPackage.CS_TYPE:
+				return convertcsTypeToString(eDataType, instanceValue);
 			case DatatypesPackage.UID:
 				return convertuidToString(eDataType, instanceValue);
 			case DatatypesPackage.ST_TYPE:
@@ -754,6 +764,24 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String createcsTypeFromString(EDataType eDataType, String initialValue) {
+		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertcsTypeToString(EDataType eDataType, Object instanceValue) {
+		return XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.TOKEN, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String createuidFromString(EDataType eDataType, String initialValue) {
 		return (String)super.createFromString(eDataType, initialValue);
 	}
@@ -782,6 +810,24 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String convertstTypeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createtsTypeFromString(EDataType eDataType, String initialValue) {
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String converttsTypeToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

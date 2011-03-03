@@ -126,7 +126,7 @@ public interface ED extends BIN {
 	 * @return the value of the '<em>Media Type</em>' attribute.
 	 * @see #setMediaType(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_MediaType()
-	 * @model default="text/plain" ordered="false"
+	 * @model default="text/plain" dataType="org.openhealthtools.mdht.uml.hl7.datatypes.csType" ordered="false"
 	 * @generated
 	 */
 	String getMediaType();
@@ -152,7 +152,7 @@ public interface ED extends BIN {
 	 * @return the value of the '<em>Language</em>' attribute.
 	 * @see #setLanguage(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_Language()
-	 * @model ordered="false"
+	 * @model dataType="org.openhealthtools.mdht.uml.hl7.datatypes.csType" ordered="false"
 	 * @generated
 	 */
 	String getLanguage();
