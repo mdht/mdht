@@ -114,11 +114,47 @@ public class CDAUtil {
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 
 	public static ClinicalDocument load(InputStream in) throws Exception {
-		return load(in, null);
+		return load(in,(ValidationHandler) null);
 	}
 
 	public static ClinicalDocument load(InputSource is) throws Exception {
-		return load(is, null);
+		return load(is, (ValidationHandler) null);
+	}
+	
+	public static ClinicalDocument load(Document document) throws Exception {
+		return load(document, (ValidationHandler) null);
+	}
+	
+	public static ClinicalDocument load(InputStream in, ValidationHandler handler) throws Exception {
+		DocumentBuilder builder = newDocumentBuilder();
+		Document document = builder.parse(in);
+		return load(document, handler);
+	}
+
+	public static ClinicalDocument load(InputSource is, ValidationHandler handler) throws Exception {
+		DocumentBuilder builder = newDocumentBuilder();
+		Document document = builder.parse(is);
+		return load(document, handler);
+	}
+
+	public static ClinicalDocument load(Document document, ValidationHandler handler) throws Exception {
+		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+		
+		if (handler != null) {
+			// perform XML schema validation BEFORE load for base standard compliance (complete)
+			performSchemaValidation(document, handler);
+		}
+		
+		resource.load(document, null);
+		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
+		ClinicalDocument clinicalDocument = root.getClinicalDocument();
+		
+		if (handler != null) {
+			// perform EMF validation AFTER load for base standard compliance (subset) + IG-specific compliance
+			performEMFValidation(clinicalDocument, handler);
+		}
+		
+		return clinicalDocument;
 	}
 
 	public static ClinicalDocument load(InputStream in, LoadHandler handler) throws Exception {
@@ -382,7 +418,14 @@ public class CDAUtil {
 	public static void performSchemaValidation(ClinicalDocument clinicalDocument, ValidationHandler handler) {
 		try {
 			Document document = CDAUtil.save(clinicalDocument, (DOMHandler) null);
-
+			performSchemaValidation(document, handler);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void performSchemaValidation(Document document, ValidationHandler handler) {
+		try {
 			URL url = CDAUtil.class.getResource("/samples/CDA.xsd");
 			if (url == null) {
 				url = new File("samples/CDA.xsd").toURI().toURL();
@@ -397,6 +440,19 @@ public class CDAUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void performEMFValidation(Document document, ValidationHandler handler) {
+		try {
+			ClinicalDocument clinicalDocument = CDAUtil.load(document);
+			performEMFValidation(clinicalDocument, handler);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void performEMFValidation(ClinicalDocument clinicalDocument, ValidationHandler handler) {
+		validate(clinicalDocument, handler);
 	}
 	
 	public static class SchemaValidationHandler implements ErrorHandler {
