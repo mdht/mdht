@@ -102,7 +102,7 @@ public class Main {
 		CDAUtil.save(doc, System.out);
 		System.out.println();
 		
-		// create a validation result to collect diagnostics during validation
+		// create a validation result object to collect diagnostics produced during validation
 		ValidationResult result = new ValidationResult();
 		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("samples/SampleCDADocument.xml"), result);
 
