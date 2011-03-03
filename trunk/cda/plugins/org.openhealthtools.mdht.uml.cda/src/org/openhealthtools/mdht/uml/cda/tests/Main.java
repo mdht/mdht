@@ -25,9 +25,8 @@ import org.openhealthtools.mdht.uml.cda.Patient;
 import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RecordTarget;
-import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil.ValidationHandler;
+import org.openhealthtools.mdht.uml.cda.util.ValidationResult;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -102,8 +101,10 @@ public class Main {
 		System.out.println("***** Constructed example *****");
 		CDAUtil.save(doc, System.out);
 		System.out.println();
-
-		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("samples/SampleCDADocument.xml"));
+		
+		// create a validation result to collect diagnostics during validation
+		ValidationResult result = new ValidationResult();
+		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("samples/SampleCDADocument.xml"), result);
 
 		System.out.println("\n***** Reserialization of sample *****");
 		System.out.println(clinicalDocument);
@@ -111,22 +112,14 @@ public class Main {
 		System.out.println();
 
 		System.out.println("\n***** Sample validation results *****");
-		
-		ValidationHandler handler = new BasicValidationHandler() {
-			@Override
-			public void handleError(Diagnostic diagnostic) {
-				System.out.println("ERROR: " + diagnostic.getMessage());
-			}
-			@Override
-			public void handleWarning(Diagnostic diagnostic) {
-				System.out.println("WARNING: " + diagnostic.getMessage());
-			}
-		};
-		
-		CDAUtil.performSchemaValidation(clinicalDocument, handler);
-		boolean valid = CDAUtil.validate(clinicalDocument, handler);
-		
-		if (valid) {
+		for (Diagnostic diagnostic : result.getErrorDiagnostics()) {
+			System.out.println("ERROR: " + diagnostic.getMessage());
+		}
+		for (Diagnostic diagnostic : result.getWarningDiagnostics()) {
+			System.out.println("WARNING: " + diagnostic.getMessage());
+		}
+
+		if (!result.hasErrors()) {
 			System.out.println("Document is valid");
 		} else {
 			System.out.println("Document is invalid");
