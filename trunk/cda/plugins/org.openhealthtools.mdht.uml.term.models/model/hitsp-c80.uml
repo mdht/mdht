@@ -12,8 +12,8 @@
       <ownedLiteral xmi:id="_c2WxQKDqEd-dVeaMP0XXQw" name="M"/>
       <ownedLiteral xmi:id="_c2WxQqDqEd-dVeaMP0XXQw" name="UN"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1-coUCvAEd-LFp1hgdmc1w" name="Problem Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_RS-wgCvBEd-LFp1hgdmc1w" name="Problem Type Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1-coUCvAEd-LFp1hgdmc1w" name="Problem"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_RS-wgCvBEd-LFp1hgdmc1w" name="Problem Type">
       <ownedLiteral xmi:id="_ddqB0KDqEd-dVeaMP0XXQw" name="404684003"/>
       <ownedLiteral xmi:id="_ddqB0qDqEd-dVeaMP0XXQw" name="409586006"/>
       <ownedLiteral xmi:id="_ddqo4KDqEd-dVeaMP0XXQw" name="282291009"/>
@@ -22,12 +22,12 @@
       <ownedLiteral xmi:id="_ddqo5qDqEd-dVeaMP0XXQw" name="418799008"/>
       <ownedLiteral xmi:id="_ddrP8aDqEd-dVeaMP0XXQw" name="55607006"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_RJjnYCvEEd-1GpmIcz-YjA" name="DiagnosisType">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_RJjnYCvEEd-1GpmIcz-YjA" name="Diagnosis Type">
       <ownedLiteral xmi:id="_io-roCvEEd-1GpmIcz-YjA" name="A"/>
       <ownedLiteral xmi:id="_les7kCvEEd-1GpmIcz-YjA" name="F"/>
       <ownedLiteral xmi:id="_mHn8wCvEEd-1GpmIcz-YjA" name="W"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_UvVE0DISEd-saqiXO4OYhQ" name="Vital Sign Result Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_UvVE0DISEd-saqiXO4OYhQ" name="Vital Sign Result">
       <ownedLiteral xmi:id="_dlGGkKDqEd-dVeaMP0XXQw" name="8310-5"/>
       <ownedLiteral xmi:id="_dlGtoKDqEd-dVeaMP0XXQw" name="8462-4"/>
       <ownedLiteral xmi:id="_dlGtoqDqEd-dVeaMP0XXQw" name="8480-6"/>
@@ -59,7 +59,7 @@
       <ownedLiteral xmi:id="_c2n3BKDqEd-dVeaMP0XXQw" name="R"/>
       <ownedLiteral xmi:id="_c2oeEaDqEd-dVeaMP0XXQw" name="U"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c2q6UKDqEd-dVeaMP0XXQw" name="Advance Directive Type Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c2q6UKDqEd-dVeaMP0XXQw" name="Advance Directive Type">
       <ownedLiteral xmi:id="_c2svgKDqEd-dVeaMP0XXQw" name="281789004"/>
       <ownedLiteral xmi:id="_c2svgqDqEd-dVeaMP0XXQw" name="89666000"/>
       <ownedLiteral xmi:id="_c2tWkKDqEd-dVeaMP0XXQw" name="225204009"/>
@@ -67,7 +67,7 @@
       <ownedLiteral xmi:id="_c2tWlKDqEd-dVeaMP0XXQw" name="78823007"/>
       <ownedLiteral xmi:id="_c2t9oKDqEd-dVeaMP0XXQw" name="304251008"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c2vy0KDqEd-dVeaMP0XXQw" name="Allergy/Adverse Event Type Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c2vy0KDqEd-dVeaMP0XXQw" name="Allergy/Adverse Event Type">
       <ownedLiteral xmi:id="_c2xoAKDqEd-dVeaMP0XXQw" name="419199007"/>
       <ownedLiteral xmi:id="_c2xoAqDqEd-dVeaMP0XXQw" name="416098002"/>
       <ownedLiteral xmi:id="_c2yPEaDqEd-dVeaMP0XXQw" name="59037007"/>
@@ -78,8 +78,8 @@
       <ownedLiteral xmi:id="_c2y2JqDqEd-dVeaMP0XXQw" name="418471000"/>
       <ownedLiteral xmi:id="_c2zdMaDqEd-dVeaMP0XXQw" name="418038007"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c215cKDqEd-dVeaMP0XXQw" name="Body Site Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c5HKUKDqEd-dVeaMP0XXQw" name="Document Class Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c215cKDqEd-dVeaMP0XXQw" name="Body Site"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c5HKUKDqEd-dVeaMP0XXQw" name="Document Class">
       <ownedLiteral xmi:id="_c5JmkKDqEd-dVeaMP0XXQw" name="47039-3"/>
       <ownedLiteral xmi:id="_c5KNoKDqEd-dVeaMP0XXQw" name="11485-0"/>
       <ownedLiteral xmi:id="_c5KNoqDqEd-dVeaMP0XXQw" name="26441-6"/>
@@ -118,10 +118,10 @@
       <ownedLiteral xmi:id="_c5QURaDqEd-dVeaMP0XXQw" name="34140-4"/>
       <ownedLiteral xmi:id="_c5Q7UaDqEd-dVeaMP0XXQw" name="18761-7"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c5TXkKDqEd-dVeaMP0XXQw" name="Document Type Value Set"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_c5TXkKDqEd-dVeaMP0XXQw" name="Document Type"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_c5aFQKDqEd-dVeaMP0XXQw" name="Drug Active Ingredients"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_c6rQkKDqEd-dVeaMP0XXQw" name="Drug Product (NDC)"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dHiA0KDqEd-dVeaMP0XXQw" name="Family Member Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dHiA0KDqEd-dVeaMP0XXQw" name="Family Member">
       <ownedLiteral xmi:id="_dHkdEKDqEd-dVeaMP0XXQw" name="ADOPT"/>
       <ownedLiteral xmi:id="_dHkdEqDqEd-dVeaMP0XXQw" name="AUNT"/>
       <ownedLiteral xmi:id="_dHkdFKDqEd-dVeaMP0XXQw" name="CHILD"/>
@@ -160,7 +160,7 @@
       <ownedLiteral xmi:id="_dHqjtqDqEd-dVeaMP0XXQw" name="STPSIB"/>
       <ownedLiteral xmi:id="_dHrKwaDqEd-dVeaMP0XXQw" name="UNCLE"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dHuOEKDqEd-dVeaMP0XXQw" name="Financially Responsible Party Type Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dHuOEKDqEd-dVeaMP0XXQw" name="Financially Responsible Party Type">
       <ownedLiteral xmi:id="_dHx4cqDqEd-dVeaMP0XXQw" name="AFFL"/>
       <ownedLiteral xmi:id="_dHx4dKDqEd-dVeaMP0XXQw" name="AGNT"/>
       <ownedLiteral xmi:id="_dHyfgaDqEd-dVeaMP0XXQw" name="CIT"/>
@@ -192,7 +192,7 @@
       <ownedLiteral xmi:id="_dIIdw6DqEd-dVeaMP0XXQw" name="1"/>
       <ownedLiteral xmi:id="_dIIdxaDqEd-dVeaMP0XXQw" name="0"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dILhEKDqEd-dVeaMP0XXQw" name="Immunization Service Funding Eligibility Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dILhEKDqEd-dVeaMP0XXQw" name="Immunization Service Funding Eligibility">
       <ownedLiteral xmi:id="_dIPygqDqEd-dVeaMP0XXQw" name="H02"/>
       <ownedLiteral xmi:id="_dIQZkaDqEd-dVeaMP0XXQw" name="V01"/>
       <ownedLiteral xmi:id="_dIQZk6DqEd-dVeaMP0XXQw" name="CH02"/>
@@ -212,7 +212,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dIWgMKDqEd-dVeaMP0XXQw" name="Lab Test Result Name"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dLU7sKDqEd-dVeaMP0XXQw" name="Lab Test Result Qualitative"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dLqS4KDqEd-dVeaMP0XXQw" name="LanguageAbilityMode Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dLqS4KDqEd-dVeaMP0XXQw" name="LanguageAbilityMode">
       <ownedLiteral xmi:id="_dLvLYqDqEd-dVeaMP0XXQw" name="ESGN"/>
       <ownedLiteral xmi:id="_dLvLZKDqEd-dVeaMP0XXQw" name="ESP"/>
       <ownedLiteral xmi:id="_dLvycaDqEd-dVeaMP0XXQw" name="EWR"/>
@@ -260,7 +260,7 @@
       <ownedLiteral xmi:id="_dRIBsKDqEd-dVeaMP0XXQw" name="WAL"/>
       <ownedLiteral xmi:id="_dRIBsqDqEd-dVeaMP0XXQw" name="ZLB"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dRMTIKDqEd-dVeaMP0XXQw" name="Marital Status Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dRMTIKDqEd-dVeaMP0XXQw" name="Marital Status">
       <ownedLiteral xmi:id="_dRRLoKDqEd-dVeaMP0XXQw" name="A"/>
       <ownedLiteral xmi:id="_dRRLoqDqEd-dVeaMP0XXQw" name="D"/>
       <ownedLiteral xmi:id="_dRRLpKDqEd-dVeaMP0XXQw" name="T"/>
@@ -271,20 +271,20 @@
       <ownedLiteral xmi:id="_dRRyt6DqEd-dVeaMP0XXQw" name="P"/>
       <ownedLiteral xmi:id="_dRSZwaDqEd-dVeaMP0XXQw" name="W"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dRWEIKDqEd-dVeaMP0XXQw" name="Medication Brand Name Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dSQDEKDqEd-dVeaMP0XXQw" name="Medication Clinical Drug Name Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dU_1EKDqEd-dVeaMP0XXQw" name="Medication Drug Class Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dV8QQKDqEd-dVeaMP0XXQw" name="Medication Fill Status Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dRWEIKDqEd-dVeaMP0XXQw" name="Medication Brand Name"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dSQDEKDqEd-dVeaMP0XXQw" name="Medication Clinical Drug Name"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dU_1EKDqEd-dVeaMP0XXQw" name="Medication Drug Class"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dV8QQKDqEd-dVeaMP0XXQw" name="Medication Fill Status">
       <ownedLiteral xmi:id="_dV_6oKDqEd-dVeaMP0XXQw" name="aborted"/>
       <ownedLiteral xmi:id="_dV_6oqDqEd-dVeaMP0XXQw" name="completed"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWEMEKDqEd-dVeaMP0XXQw" name="Medication Product Form Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWOkIKDqEd-dVeaMP0XXQw" name="Medication Route FDA Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWV44KDqEd-dVeaMP0XXQw" name="Medication Type Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWEMEKDqEd-dVeaMP0XXQw" name="Medication Product Form"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWOkIKDqEd-dVeaMP0XXQw" name="Medication Route FDA"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWV44KDqEd-dVeaMP0XXQw" name="Medication Type">
       <ownedLiteral xmi:id="_dWZjQKDqEd-dVeaMP0XXQw" name="329505003"/>
       <ownedLiteral xmi:id="_dWaKUKDqEd-dVeaMP0XXQw" name="73639000"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWebwKDqEd-dVeaMP0XXQw" name="Medication Vehicle Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWebwKDqEd-dVeaMP0XXQw" name="Medication Vehicle">
       <ownedLiteral xmi:id="_dWiGIKDqEd-dVeaMP0XXQw" name="5955009"/>
       <ownedLiteral xmi:id="_dWiGIqDqEd-dVeaMP0XXQw" name="81886002"/>
       <ownedLiteral xmi:id="_dWitMaDqEd-dVeaMP0XXQw" name="301862003"/>
@@ -301,7 +301,7 @@
       <ownedLiteral xmi:id="_dWkiYaDqEd-dVeaMP0XXQw" name="412308004"/>
       <ownedLiteral xmi:id="_dWkiY6DqEd-dVeaMP0XXQw" name="7608003"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWoz0KDqEd-dVeaMP0XXQw" name="No Immunization Reason Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWoz0KDqEd-dVeaMP0XXQw" name="No Immunization Reason">
       <ownedLiteral xmi:id="_dWu6cKDqEd-dVeaMP0XXQw" name="IMMUNE"/>
       <ownedLiteral xmi:id="_dWu6cqDqEd-dVeaMP0XXQw" name="MEDPREC"/>
       <ownedLiteral xmi:id="_dWu6dKDqEd-dVeaMP0XXQw" name="OSTOCK"/>
@@ -313,12 +313,12 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dW0aAKDqEd-dVeaMP0XXQw" name="Non-Laboratory Intervention and Procedure"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dbKugKDqEd-dVeaMP0XXQw" name="Ordered Test"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ddEzAKDqEd-dVeaMP0XXQw" name="Patient Class Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ddEzAKDqEd-dVeaMP0XXQw" name="Patient Class">
       <ownedLiteral xmi:id="_ddIdYKDqEd-dVeaMP0XXQw" name="AMB"/>
       <ownedLiteral xmi:id="_ddJEcKDqEd-dVeaMP0XXQw" name="EMER"/>
       <ownedLiteral xmi:id="_ddJEcqDqEd-dVeaMP0XXQw" name="IMP"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ddN88KDqEd-dVeaMP0XXQw" name="Personal Relationship Role Type Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ddN88KDqEd-dVeaMP0XXQw" name="Personal Relationship Role Type">
       <ownedLiteral xmi:id="_ddRnUKDqEd-dVeaMP0XXQw" name="ADOPT"/>
       <ownedLiteral xmi:id="_ddRnUqDqEd-dVeaMP0XXQw" name="AUNT"/>
       <ownedLiteral xmi:id="_ddSOYKDqEd-dVeaMP0XXQw" name="CHILD"/>
@@ -360,7 +360,7 @@
       <ownedLiteral xmi:id="_ddYVAKDqEd-dVeaMP0XXQw" name="UNCLE"/>
       <ownedLiteral xmi:id="_ddYVAqDqEd-dVeaMP0XXQw" name="FRND"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ddcmcKDqEd-dVeaMP0XXQw" name="Problem Severity Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ddcmcKDqEd-dVeaMP0XXQw" name="Problem Severity">
       <ownedLiteral xmi:id="_ddgQ0KDqEd-dVeaMP0XXQw" name="399166001"/>
       <ownedLiteral xmi:id="_ddg34KDqEd-dVeaMP0XXQw" name="255604002"/>
       <ownedLiteral xmi:id="_ddg34qDqEd-dVeaMP0XXQw" name="371923003"/>
@@ -368,13 +368,13 @@
       <ownedLiteral xmi:id="_ddg35qDqEd-dVeaMP0XXQw" name="371924009"/>
       <ownedLiteral xmi:id="_ddhe8aDqEd-dVeaMP0XXQw" name="24484000"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfHaYKDqEd-dVeaMP0XXQw" name="Provider Role Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfHaYKDqEd-dVeaMP0XXQw" name="Provider Role">
       <ownedLiteral xmi:id="_dfNhAqDqEd-dVeaMP0XXQw" name="CP"/>
       <ownedLiteral xmi:id="_dfOIEaDqEd-dVeaMP0XXQw" name="PP"/>
       <ownedLiteral xmi:id="_dfOIE6DqEd-dVeaMP0XXQw" name="RP"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfTnoKDqEd-dVeaMP0XXQw" name="Race Value Set"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfhqEKDqEd-dVeaMP0XXQw" name="Religious Affiliation Value Set"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfTnoKDqEd-dVeaMP0XXQw" name="Race"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfhqEKDqEd-dVeaMP0XXQw" name="Religious Affiliation"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dftQQKDqEd-dVeaMP0XXQw" name="Result status (HL7)">
       <ownedLiteral xmi:id="_dfxhsKDqEd-dVeaMP0XXQw" name="C"/>
       <ownedLiteral xmi:id="_dfxhsqDqEd-dVeaMP0XXQw" name="F"/>
@@ -439,7 +439,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dgMYcKDqEd-dVeaMP0XXQw" name="Semantic Clinical Drug (Ingredient plus strength and dose form)"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_di68UKDqEd-dVeaMP0XXQw" name="Semantic Clinical Drug Form (Ingredient plus dose form)"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dj_6YKDqEd-dVeaMP0XXQw" name="Social History Type Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dj_6YKDqEd-dVeaMP0XXQw" name="Social History Type">
       <ownedLiteral xmi:id="_dkEL0KDqEd-dVeaMP0XXQw" name="160573003"/>
       <ownedLiteral xmi:id="_dkEL0qDqEd-dVeaMP0XXQw" name="363908000"/>
       <ownedLiteral xmi:id="_dkEL1KDqEd-dVeaMP0XXQw" name="364703007"/>
@@ -451,7 +451,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dkK5gKDqEd-dVeaMP0XXQw" name="State"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dkXt0KDqEd-dVeaMP0XXQw" name="Units of Measure"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dknlcKDqEd-dVeaMP0XXQw" name="V3 Result Status Value Set">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dknlcKDqEd-dVeaMP0XXQw" name="V3 Result Status">
       <ownedLiteral xmi:id="_dkr24KDqEd-dVeaMP0XXQw" name="aborted"/>
       <ownedLiteral xmi:id="_dkr24qDqEd-dVeaMP0XXQw" name="active"/>
       <ownedLiteral xmi:id="_dkr25KDqEd-dVeaMP0XXQw" name="cancelled"/>
