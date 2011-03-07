@@ -15,10 +15,12 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
@@ -173,6 +175,7 @@ public class TransformClassContent extends TransformAbstract {
 		allParents.add(0, umlClass);
 
 		List<Property> allProperties = new ArrayList<Property>();
+		List<Property> allAssociations = new ArrayList<Property>();
 		List<Property> allAttributes = new ArrayList<Property>();
 		List<Constraint> allConstraints = new ArrayList<Constraint>();
 		
@@ -186,22 +189,55 @@ public class TransformClassContent extends TransformAbstract {
 					continue;
 				}
 				
-				// if list contains this property name, replace it; else append
-				int index = findProperty(allProperties, property.getName());
-				if (index >= 0) {
-					allProperties.set(index, property);
+				if (property.getAssociation() != null) {
+					allAssociations.add(property);
 				}
 				else {
-					allProperties.add(property);
+					// if list contains this property name, replace it; else append
+					int index = findProperty(allProperties, property.getName());
+					if (index >= 0) {
+						allProperties.set(index, property);
+					}
+					else {
+						allProperties.add(property);
+					}
 				}
 			}
 		}
+		
+		/*
+		 * Include only associations that are not redefined in a subclass.
+		 * TODO There must be a better way... use UML property redefinition in model.
+		 */
+		List<Classifier> endTypes = new ArrayList<Classifier>();
+		for (Property property : allAssociations) {
+			endTypes.add((Classifier)property.getType());
+		}
+		for (int index=0; index<allAssociations.size(); index++) {
+			Classifier classifier = endTypes.get(index);
+			boolean hasSubclass = false;
+			List<DirectedRelationship>specializations = 
+				classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+			for (DirectedRelationship relationship : specializations) {
+				Classifier specific = ((Generalization)relationship).getSpecific();
+				if (endTypes.contains(specific)) {
+					hasSubclass = true;
+					break;
+				}
+			}
+			
+			if (!hasSubclass) {
+				allProperties.add(allAssociations.get(index));
+			}
+		}
 
+		// aggregate constraints
 		for (int i=allParents.size()-1; i>=0; i--) {
 			Class parent = (Class) allParents.get(i);
-			
-			for (Constraint constraint : parent.getOwnedRules()) {
-				allConstraints.add(constraint);
+			if (!CDAModelUtil.isCDAModel(parent)) {
+				for (Constraint constraint : parent.getOwnedRules()) {
+					allConstraints.add(constraint);
+				}
 			}
 		}
 
@@ -228,18 +264,24 @@ public class TransformClassContent extends TransformAbstract {
 		
 		// XML attributes
 		for (Property property : allAttributes) {
-			writer.println("<li>" + modelPrefix(property) +
-					CDAModelUtil.computeConformanceMessage(property, true, xrefSource) + "</li>");
+			writer.println("<li>" +
+					CDAModelUtil.computeConformanceMessage(property, true, xrefSource) 
+//					+ " " + modelPrefix(property) 
+					+ "</li>");
 		}
 		// XML elements
 		for (Property property : allProperties) {
-			writer.println("<li>" + modelPrefix(property) +
-					CDAModelUtil.computeConformanceMessage(property, true, xrefSource) + "</li>");
+			writer.println("<li>" +
+					CDAModelUtil.computeConformanceMessage(property, true, xrefSource) 
+//					+ " " + modelPrefix(property) 
+					+ "</li>");
 		}
 
 		for (Constraint constraint : allConstraints) {
-			writer.println("<li>" + modelPrefix(constraint) +
-					CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
+			writer.println("<li>" +
+					CDAModelUtil.computeConformanceMessage(constraint, true) 
+//					+ " " + modelPrefix(constraint) 
+					+ "</li>");
 		}
 		
 		// <ol> cannot be empty

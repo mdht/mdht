@@ -83,6 +83,7 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<!-- TODO: insert non-model class description markup here -->");
 		writer.println("<section conref=\"generated/_" + className + ".dita#classId/description\">");
 		writer.println("</section>");
+		writer.println("<!-- TODO: insert UML class diagram here -->");
 
 		writer.println();
 		writer.println("<ol audience=\"standards\" conref=\"generated/_" + className + ".dita#classId/conformance\">");
@@ -92,14 +93,15 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<li></li>");
 		writer.println("</ol>");
 
-		writer.println("<p></p>"); // need a blank line before example code block
-		writer.println("<fig>");
-		writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
+		writer.println("<p> </p>"); // need a blank line before example code block
+//		writer.println("<fig>");
+//		writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
+		writer.println("<p><b>" + UMLUtil.splitName(umlClass) + " example</b></p>");
 		writer.println("<!-- TODO: insert custom instance example here -->");
 		writer.println("<!-- generated instance example follows -->");
 		writer.println("<codeblock conref=\"generated/_" + className + ".dita#classId/example\">");
 		writer.println("</codeblock>");
-		writer.println("</fig>");
+//		writer.println("</fig>");
 
 		writer.println("</body>");
 		writer.println("</topic>");

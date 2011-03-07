@@ -651,10 +651,10 @@ public class CDAModelUtil {
 			if (name != null) {
 				message.append(" ").append(name);
 			}
-			message.append(" ").append(binding.getName().toUpperCase());
-			if (version != null) {
-				message.append(" ").append(version);
-			}
+//			message.append(" ").append(binding.getName().toUpperCase());
+//			if (version != null) {
+//				message.append(" ").append(version);
+//			}
 			message.append(")");
 		}
 		
@@ -703,22 +703,25 @@ public class CDAModelUtil {
 		message.append(markup?"<b>":"");
 		message.append(keyword);
 		message.append(markup?"</b>":"");
-		message.append(" be selected from ValueSet");
+		message.append(" be selected from");
 
-		if (id != null) {
-			message.append(" ").append(id);
-		}
 		if (name != null) {
 			message.append(" ");
 			message.append(showXref ? "<xref " + xrefFormat + "href=\"" + xref + "\">" : "");
 			message.append(name);
 			message.append(showXref?"</xref>":"");
 		}
-
-		message.append(" ").append(binding.getName().toUpperCase());
-		if (version != null) {
-			message.append(" ").append(version);
+		message.append(" Value Set");
+		
+		if (id != null) {
+			message.append(" (").append(id).append(")");
 		}
+
+//		message.append(" ").append(binding.getName().toUpperCase());
+		
+//		if (version != null) {
+//			message.append(" ").append(version);
+//		}
 		
 		return message.toString();
 	}
@@ -843,17 +846,17 @@ public class CDAModelUtil {
 			message.append("</ul>");
 		}
 		
-		if (markup && langBodyMap.size()>0) {
-			message.append("<ul>");
-			for (String lang : langBodyMap.keySet()) {
-				message.append("<li>");
-				message.append("<codeblock>[" + lang + "]: ");
-				message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
-				message.append("</codeblock>");
-				message.append("</li>");
-			}
-			message.append("</ul>");
-		}
+//		if (markup && langBodyMap.size()>0) {
+//			message.append("<ul>");
+//			for (String lang : langBodyMap.keySet()) {
+//				message.append("<li>");
+//				message.append("<codeblock>[" + lang + "]: ");
+//				message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
+//				message.append("</codeblock>");
+//				message.append("</li>");
+//			}
+//			message.append("</ul>");
+//		}
 		
 		if (!markup) {
 			// remove line feeds
@@ -978,11 +981,24 @@ public class CDAModelUtil {
 	}
 	
 	public static String getMultiplicityString(Property property) {
-		String lower = Integer.toString(property.getLower());
-		String upper = property.getUpper()==-1 ? "*" : Integer.toString(property.getUpper());
 		
 		StringBuffer message = new StringBuffer();
-		message.append("[").append(lower).append("..").append(upper).append("]");
+		if (property.getLower()==1 && property.getUpper()==1) {
+			message.append("exactly one");
+		}
+		else if (property.getLower()==0 && property.getUpper()==1) {
+			message.append("zero or one");
+		}
+		else if (property.getLower()==0 && property.getUpper()==-1) {
+			message.append("zero or more");
+		}
+		else if (property.getLower()==1 && property.getUpper()==-1) {
+			message.append("at least one");
+		}
+
+		String lower = Integer.toString(property.getLower());
+		String upper = property.getUpper()==-1 ? "*" : Integer.toString(property.getUpper());
+		message.append(" [").append(lower).append("..").append(upper).append("]");
 		
 		return message.toString();
 	}
@@ -1004,6 +1020,14 @@ public class CDAModelUtil {
 				template, ICDAProfileConstants.CDA_TEMPLATE);
 		if (hl7Template != null) {
 			templateId = (String) template.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+		}
+		else {
+			for (Classifier parent : template.getGenerals()) {
+				templateId = getTemplateId((Class)parent);
+				if (templateId != null) {
+					break;
+				}
+			}
 		}
 		
 		return templateId;
@@ -1314,8 +1338,4 @@ public class CDAModelUtil {
 		return validName.toString();
 	}
 
-	
-	
-	
-	
 }
