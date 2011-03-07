@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004, 2009 David A Carlson.
+ * Copyright (c) 2004, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Vector;
 
@@ -43,6 +45,7 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.Saveable;
+import org.eclipse.uml2.uml.resource.UMLResource;
 import org.openhealthtools.mdht.uml.common.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.common.ui.internal.l10n.Messages;
 
@@ -57,11 +60,11 @@ public class ModelManager {
 
 	private Map<URI,ModelDocument> uriToDocumentMap = new HashMap<URI,ModelDocument>();
 
-	private Collection<Resource> changedResources = new Vector<Resource>();
+	private List<Resource> changedResources = new Vector<Resource>();
 
-	private Collection<Resource> removedResources = new Vector<Resource>();
+	private List<Resource> removedResources = new Vector<Resource>();
 
-	private Collection<Resource> savedResources = new Vector<Resource>();
+	private List<Resource> savedResources = new Vector<Resource>();
 
 	private Shell shell;
 
@@ -114,8 +117,9 @@ public class ModelManager {
 
     public boolean isManageable(Resource resource) {
 		// manage only *.uml platform resources
-		if (resource.getURI().isPlatformResource()
-				&& resource.getURI().toString().endsWith(".uml")) {
+    	URI uri = resource.getURI();
+		if (uri.isPlatformResource()
+				&& UMLResource.FILE_EXTENSION.equals(uri.fileExtension())) {
 //				&& ResourceUtil.isModifiable(resource)) {
 			return true;
 		}
@@ -293,10 +297,11 @@ public class ModelManager {
 					shell.getDisplay().asyncExec(new Runnable() {
 
 						public void run() {
-							for (Resource resource : removedResources) {
+							for (ListIterator<Resource> resourceIterator = removedResources.listIterator(); resourceIterator.hasNext();) {
+								Resource resource = resourceIterator.next();
 								if (!isDirty(resource) || handleDirtyConflict(resource)) {
 									// unload
-									removedResources.remove(resource);
+									resourceIterator.remove();
 									resource.unload();
 								}
 							}
