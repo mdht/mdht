@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir.
+ * Copyright (c) 2010, 2011 Sean Muir and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -173,14 +173,9 @@ public class UMLOutlinePage extends ContentOutlinePage {
 	}
 
 	public void createControl(Composite parent) {
-	
 		super.createControl(parent);
 		
-		
 		contentOutlineViewer = getTreeViewer();
-		
-		// Register for selection events from MDHT table editor tree view
-		treeViewerWithColumns.addSelectionChangedListener(this);
 		
 		// Set the label and content view as well as initialize trees content
 		contentOutlineViewer.setContentProvider(new UMLContentProvider());
@@ -189,6 +184,8 @@ public class UMLOutlinePage extends ContentOutlinePage {
 
 		contentOutlineViewer.setInput(treeViewerWithColumns.getSelection());
 
+		// Register for selection events from MDHT table editor tree view
+		treeViewerWithColumns.addSelectionChangedListener(this);		
 	}
 
 }

@@ -746,14 +746,16 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			}
 		});
 
- 		if (viewSelection.size() > 1) {
+ 		// required to support resources with multiple root objects
+ 		// so that all are not expanded.
+ 		if (viewSelection != null && viewSelection.size() > 1) {
  			treeViewerWithColumns.setAutoExpandLevel(1);
  		}
 		
 		getEditorSite().setSelectionProvider(new SelectionProvider(tree));
 		updateViewContents();
 		
-		if (viewSelection.size() >= 1) {
+		if (viewSelection != null && viewSelection.size() >= 1) {
 			treeViewerWithColumns.setSelection(new StructuredSelection(viewSelection.getFirstElement()));
 		}
 
