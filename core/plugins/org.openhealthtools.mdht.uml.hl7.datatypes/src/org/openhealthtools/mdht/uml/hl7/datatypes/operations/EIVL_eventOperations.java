@@ -17,6 +17,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event;
 import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
+import org.openhealthtools.mdht.uml.hl7.vocab.TimingEvent;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event#validateTranslation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Translation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event#validateCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Code System</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event#validateCodeSystemName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Code System Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event#validateCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_event#init() <em>Init</em>}</li>
  * </ul>
  * </p>
@@ -263,6 +265,34 @@ public class EIVL_eventOperations extends CEOperations {
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.EIVL_EVENT__CODE_SYSTEM_NAME,
 						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCodeSystemName", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
+						 new Object [] { eivL_event }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * @param eivL_event The receiving '<em><b>EIVL event</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated NOT
+	 */
+	public static  boolean validateCode(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if ((eivL_event != null) && 
+			(eivL_event.getCode() != null) &&
+			(TimingEvent.get(eivL_event.getCode()) == null)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.EIVL_EVENT__CODE,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context)}),
 						 new Object [] { eivL_event }));
 			}
 			return false;

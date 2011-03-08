@@ -690,6 +690,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/codeSystemName/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/codeSystemName/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EIVL_event/code/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EIVL_event/init"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//EIVL_TS">

@@ -1345,6 +1345,7 @@
           <body>not self.codeSystemName.oclIsUndefined() implies self.codeSystemName='TimingEvent'</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_z5FHYEmeEeC4Q-xBrMK7fA" name="code" constrainedElement="_Cm05UKQLEd-QEohlUVMP5A"/>
       <generalization xmi:id="_E5AXUKQLEd-QEohlUVMP5A" general="_Z1EGIDxaEd6JwqSGecoePg"/>
       <ownedOperation xmi:id="_EX9qUKQMEd-QEohlUVMP5A" name="init">
         <ownedParameter xmi:id="_Fx9jIKQMEd-QEohlUVMP5A" name="return" type="_Cm05UKQLEd-QEohlUVMP5A" direction="return"/>

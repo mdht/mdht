@@ -84,6 +84,15 @@ public class EIVL_eventImpl extends CEImpl implements EIVL_event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EIVL_eventOperations.validateCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EIVL_event init() {
 		return EIVL_eventOperations.init(this);
 	}
