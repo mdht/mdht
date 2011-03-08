@@ -640,12 +640,20 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int EIVL_EVENT__CODE_SYSTEM_NAME = 68;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Code' of 'EIVL event'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EIVL_EVENT__CODE = 69;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 68;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 69;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -2141,6 +2149,7 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateEIVL_event_validateTranslation(eivL_event, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEIVL_event_validateCodeSystem(eivL_event, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEIVL_event_validateCodeSystemName(eivL_event, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEIVL_event_validateCode(eivL_event, diagnostics, context);
 		return result;
 	}
 
@@ -2182,6 +2191,16 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	public boolean validateEIVL_event_validateCodeSystemName(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return eivL_event.validateCodeSystemName(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCode constraint of '<em>EIVL event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEIVL_event_validateCode(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return eivL_event.validateCode(diagnostics, context);
 	}
 
 	/**

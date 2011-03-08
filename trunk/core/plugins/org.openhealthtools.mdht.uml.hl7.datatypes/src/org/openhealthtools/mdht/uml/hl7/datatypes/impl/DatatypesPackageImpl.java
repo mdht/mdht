@@ -3203,6 +3203,15 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(eivL_eventEClass, ecorePackage.getEBoolean(), "validateCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(eivL_eventEClass, this.getEIVL_event(), "init", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(eivL_TSEClass, org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS.class, "EIVL_TS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3821,7 +3830,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "name", "EIVL.event"
-		   });																		
+		   });																				
 		addAnnotation
 		  (getEIVL_TS_Event(), 
 		   source, 
