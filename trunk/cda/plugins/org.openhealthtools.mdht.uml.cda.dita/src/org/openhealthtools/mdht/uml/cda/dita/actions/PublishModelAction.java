@@ -238,9 +238,10 @@ public class PublishModelAction implements IObjectActionDelegate {
 		antProperties.put("tempFilePath", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("temp").toOSString());
 		antProperties.put("docProject", ditaProject.getLocation().toOSString());
 		
-		String pdfFileLocation= ditaMapFile.getProjectRelativePath().toOSString();
-		pdfFileLocation = pdfFileLocation.replaceFirst("ditamap", "pdf");		
-		antProperties.put("pdflocation", ditaProject.getName() +"/"+pdfFileLocation);
+		String pdfFileLocation= ditaMapFile.getName(); 
+		pdfFileLocation = pdfFileLocation.replaceFirst("ditamap", "pdf");	
+		
+		antProperties.put("pdflocation", pdfFileLocation);
 		
 		
 		workingCopy.setAttribute( "process_factory_id", "org.eclipse.ant.ui.remoteAntProcessFactory");
