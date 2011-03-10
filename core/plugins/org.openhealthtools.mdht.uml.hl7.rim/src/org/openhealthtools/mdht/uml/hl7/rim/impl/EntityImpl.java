@@ -79,4 +79,22 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 		return EntityOperations.getScopedRoles(this);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isClassCodeDefined() {
+		return EntityOperations.isClassCodeDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDeterminerCodeDefined() {
+		return EntityOperations.isDeterminerCodeDefined(this);
+	}
+
 } //EntityImpl

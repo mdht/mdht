@@ -98,4 +98,22 @@ public abstract class ActImpl extends InfrastructureRootImpl implements Act {
 		return ActOperations.getInboundRelationships(this);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isClassCodeDefined() {
+		return ActOperations.isClassCodeDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isMoodCodeDefined() {
+		return ActOperations.isMoodCodeDefined(this);
+	}
+
 } //ActImpl

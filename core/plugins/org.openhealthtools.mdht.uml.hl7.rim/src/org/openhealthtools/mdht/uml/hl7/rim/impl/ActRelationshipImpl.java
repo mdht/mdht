@@ -69,4 +69,13 @@ public abstract class ActRelationshipImpl extends InfrastructureRootImpl impleme
 		return ActRelationshipOperations.getSource(this);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isTypeCodeDefined() {
+		return ActRelationshipOperations.isTypeCodeDefined(this);
+	}
+
 } //ActRelationshipImpl

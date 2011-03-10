@@ -41,6 +41,28 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9jTWUIYUEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_cWLvwEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" bodyCondition="_cWLvwUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_cWLvwUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_cWLvwEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_cWLvwktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('classCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_cWLvw0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lsnToEtJEeCnuvdSvJ63SQ" name="isMoodCodeDefined" bodyCondition="_lsnToUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_lsnToUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_lsnToEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_lsnToktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('moodCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_lsnTo0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TNdfQIVdEd-AiaWHb2ykDw" name="InfrastructureRoot" isAbstract="true">
       <ownedOperation xmi:id="_N2kLcIX_Ed-kaPURbz5lmQ" name="getRealmCodes">
@@ -94,61 +116,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_0Hj4sEEhEeCRlaE1u__gPQ" name="isClassCodeDefined" bodyCondition="_5KeY8EEhEeCRlaE1u__gPQ">
-        <ownedRule xmi:id="_5KeY8EEhEeCRlaE1u__gPQ" name="body" constrainedElement="_0Hj4sEEhEeCRlaE1u__gPQ">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_7uFlMEEhEeCRlaE1u__gPQ">
-            <language>OCL</language>
-            <body>self.isDefined('classCode')</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_3Qk4EEEhEeCRlaE1u__gPQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_Anwp4EEiEeCRlaE1u__gPQ" name="isTypeCodeDefined" bodyCondition="_E1BUgEEiEeCRlaE1u__gPQ">
-        <ownedRule xmi:id="_E1BUgEEiEeCRlaE1u__gPQ" name="body" constrainedElement="_Anwp4EEiEeCRlaE1u__gPQ">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_HKn58EEiEeCRlaE1u__gPQ">
-            <language>OCL</language>
-            <body>self.isDefined('typeCode')</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_C5CwAEEiEeCRlaE1u__gPQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_LMRKcEEiEeCRlaE1u__gPQ" name="isContextControlCodeDefined" bodyCondition="_Pnib4EEiEeCRlaE1u__gPQ">
-        <ownedRule xmi:id="_Pnib4EEiEeCRlaE1u__gPQ" name="body" constrainedElement="_LMRKcEEiEeCRlaE1u__gPQ">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_SNr-wEEiEeCRlaE1u__gPQ">
-            <language>OCL</language>
-            <body>self.isDefined('contextControlCode')</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_NldPYEEiEeCRlaE1u__gPQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_UF750EEiEeCRlaE1u__gPQ" name="isDeterminerCodeDefined" bodyCondition="_XS1ToEEiEeCRlaE1u__gPQ">
-        <ownedRule xmi:id="_XS1ToEEiEeCRlaE1u__gPQ" name="body" constrainedElement="_UF750EEiEeCRlaE1u__gPQ">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Zff_gEEiEeCRlaE1u__gPQ">
-            <language>OCL</language>
-            <body>self.isDefined('determinerCode')</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_V7qFUEEiEeCRlaE1u__gPQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_cSKUYEEiEeCRlaE1u__gPQ" name="isMoodCodeDefined" bodyCondition="_faIx8EEiEeCRlaE1u__gPQ">
-        <ownedRule xmi:id="_faIx8EEiEeCRlaE1u__gPQ" name="body" constrainedElement="_cSKUYEEiEeCRlaE1u__gPQ">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_hOqqoEEiEeCRlaE1u__gPQ">
-            <language>OCL</language>
-            <body>self.isDefined('moodCode')</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_eJ0ZkEEiEeCRlaE1u__gPQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZWm84IVfEd-9G7Mk0NuIMg" name="Entity" isAbstract="true">
       <generalization xmi:id="_pJgN4IVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
@@ -172,6 +139,28 @@
         <ownedParameter xmi:id="_u56isIYiEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wi5SsIYiEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wi55wIYiEd-kaPURbz5lmQ"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_t__fEEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" bodyCondition="_t__fEUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_t__fEUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_t__fEEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_t__fEktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('classCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_t__fE0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wZBzAEtJEeCnuvdSvJ63SQ" name="isDeterminerCodeDefined" bodyCondition="_wZBzAUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_wZBzAUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_wZBzAEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_wZBzAktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('determinerCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_wZBzA0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -212,6 +201,17 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MoqJ4YYrEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_4Fz4gEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" bodyCondition="_4Fz4gUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_4Fz4gUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_4Fz4gEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_4Fz4gktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('classCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_4Fz4g0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_frJdEIVfEd-9G7Mk0NuIMg" name="ActRelationship" isAbstract="true">
       <generalization xmi:id="_n0lCUIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
@@ -225,6 +225,17 @@
       </ownedOperation>
       <ownedOperation xmi:id="_9lHdwIYgEd-kaPURbz5lmQ" name="getSource">
         <ownedParameter xmi:id="_CaLIMIYhEd-kaPURbz5lmQ" name="return" type="_YiANsDxYEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_qxdtkEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" bodyCondition="_qxdtkUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_qxdtkUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_qxdtkEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_qxdtkktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('typeCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_qxdtk0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hVk-kIVfEd-9G7Mk0NuIMg" name="Participation" isAbstract="true">
@@ -240,6 +251,28 @@
       <ownedOperation xmi:id="_kZ-fcIYqEd-kaPURbz5lmQ" name="getRole">
         <ownedParameter xmi:id="_osbMEIYqEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return"/>
       </ownedOperation>
+      <ownedOperation xmi:id="_z9djEEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" bodyCondition="_z9djEUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_z9djEUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_z9djEEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_z9djEktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('typeCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_z9djE0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1kH-4EtJEeCnuvdSvJ63SQ" name="isContextControlCodeDefined" bodyCondition="_1kH-4UtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_1kH-4UtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_1kH-4EtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_1kH-4ktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('contextControlCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_1kH-40tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_2qV8sIVfEd-9G7Mk0NuIMg" name="RoleLink" isAbstract="true">
       <generalization xmi:id="_4PgjsIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
@@ -253,6 +286,17 @@
       </ownedOperation>
       <ownedOperation xmi:id="_c1IYgIYrEd-kaPURbz5lmQ" name="getSource">
         <ownedParameter xmi:id="_gUhQgIYrEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_7FlcUEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" bodyCondition="_7FlcUUtJEeCnuvdSvJ63SQ">
+        <ownedRule xmi:id="_7FlcUUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_7FlcUEtJEeCnuvdSvJ63SQ">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_7FlcUktJEeCnuvdSvJ63SQ">
+            <language>OCL</language>
+            <body>self.isDefined('typeCode')</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_7FlcU0tJEeCnuvdSvJ63SQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <profileApplication xmi:id="_ii81lzxVEd6JwqSGecoePg">

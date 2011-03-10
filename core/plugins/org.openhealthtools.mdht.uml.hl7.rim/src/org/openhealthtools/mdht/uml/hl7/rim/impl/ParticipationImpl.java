@@ -70,4 +70,22 @@ public abstract class ParticipationImpl extends InfrastructureRootImpl implement
 		return ParticipationOperations.getRole(this);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isTypeCodeDefined() {
+		return ParticipationOperations.isTypeCodeDefined(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isContextControlCodeDefined() {
+		return ParticipationOperations.isContextControlCodeDefined(this);
+	}
+
 } //ParticipationImpl

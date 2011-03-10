@@ -10,6 +10,22 @@
     <eOperations name="getParticipations" ordered="false" upperBound="-1" eType="#//Participation"/>
     <eOperations name="getOutboundRelationships" ordered="false" upperBound="-1" eType="#//ActRelationship"/>
     <eOperations name="getInboundRelationships" ordered="false" upperBound="-1" eType="#//ActRelationship"/>
+    <eOperations name="isClassCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('classCode')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('classCode')"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isMoodCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('moodCode')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('moodCode')"/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InfrastructureRoot" abstract="true">
     <eOperations name="getRealmCodes" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"/>
@@ -22,14 +38,11 @@
     <eOperations name="isDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="featureName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="isClassCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.isDefined('classCode')"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.isDefined('classCode')"/>
-      </eAnnotations>
-    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Participation" abstract="true" eSuperTypes="#//InfrastructureRoot">
+    <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+    <eOperations name="getAct" ordered="false" lowerBound="1" eType="#//Act"/>
+    <eOperations name="getRole" ordered="false" lowerBound="1" eType="#//Role"/>
     <eOperations name="isTypeCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.isDefined('typeCode')"/>
@@ -47,27 +60,6 @@
         <details key="body" value="self.isDefined('contextControlCode')"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="isDeterminerCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.isDefined('determinerCode')"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.isDefined('determinerCode')"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="isMoodCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.isDefined('moodCode')"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.isDefined('moodCode')"/>
-      </eAnnotations>
-    </eOperations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Participation" abstract="true" eSuperTypes="#//InfrastructureRoot">
-    <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
-    <eOperations name="getAct" ordered="false" lowerBound="1" eType="#//Act"/>
-    <eOperations name="getRole" ordered="false" lowerBound="1" eType="#//Role"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
@@ -76,21 +68,61 @@
     <eOperations name="getParticipations" ordered="false" upperBound="-1" eType="#//Participation"/>
     <eOperations name="getOutboundLinks" ordered="false" upperBound="-1" eType="#//RoleLink"/>
     <eOperations name="getInboundLinks" ordered="false" upperBound="-1" eType="#//RoleLink"/>
+    <eOperations name="isClassCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('classCode')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('classCode')"/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getClassCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
     <eOperations name="getDeterminerCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
     <eOperations name="getPlayedRoles" ordered="false" upperBound="-1" eType="#//Role"/>
     <eOperations name="getScopedRoles" ordered="false" upperBound="-1" eType="#//Role"/>
+    <eOperations name="isClassCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('classCode')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('classCode')"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isDeterminerCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('determinerCode')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('determinerCode')"/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoleLink" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
     <eOperations name="getTarget" ordered="false" lowerBound="1" eType="#//Role"/>
     <eOperations name="getSource" ordered="false" lowerBound="1" eType="#//Role"/>
+    <eOperations name="isTypeCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('typeCode')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('typeCode')"/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActRelationship" abstract="true" eSuperTypes="#//InfrastructureRoot">
     <eOperations name="getTypeCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
     <eOperations name="getTarget" ordered="false" lowerBound="1" eType="#//Act"/>
     <eOperations name="getSource" ordered="false" lowerBound="1" eType="#//Act"/>
+    <eOperations name="isTypeCodeDefined" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.isDefined('typeCode')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.isDefined('typeCode')"/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
 </ecore:EPackage>
