@@ -105,11 +105,17 @@ public class UMLUtil {
 
 	/**
 	 * This method breaks element's name into words delimited by mixed-case naming
-	 * and returns a string with name words separated by space.
+	 * and returns a string with name words separated by space. If model element
+	 * name already contains spaces, return unchanged.
 	 */
 	public static String splitName(NamedElement element) {
+		String modelName = element.getName();
+		if (modelName.indexOf(' ') > 0) {
+			return modelName;
+		}
+
 		StringBuffer buffer = new StringBuffer();
-		for (String token : UMLUtil.splitName(element.getName())) {
+		for (String token : UMLUtil.splitName(modelName)) {
 			buffer.append(buffer.length()>0 ? " " : "");
 			buffer.append(token);
 		}
