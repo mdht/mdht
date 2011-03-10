@@ -115,9 +115,21 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 	<languageCode code="en-US"/>
 	<setId extension="BB35" root="2.16.840.1.113883.19.7"/>
 	<versionNumber value="2"/>
+<!-- 
+	<recordTarget>
 	<recordTarget typeCode="RCT" contextControlCode="OP">
+ -->
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+<!-- 
+		<patientRole classCode="PAT">
+		<patientRole>
+ -->
 		<patientRole classCode="PAT">
 			<id extension="12345" root="2.16.840.1.113883.19.5"/>
+<!-- 
+			<patient>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+ -->
 			<patient classCode="PSN" determinerCode="INSTANCE">
 				<name>
 					<given>Henry</given>
@@ -228,6 +240,10 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 		<associatedEntity classCode="ACCESS"></associatedEntity>
 	</participant>
 	<inFulfillmentOf typeCode="FLFS">
+<!-- 
+		<order>
+		<order classCode="ACT" moodCode="RQO">
+ -->
 		<order classCode="ACT" moodCode="RQO">
 			<id/>
 		</order>

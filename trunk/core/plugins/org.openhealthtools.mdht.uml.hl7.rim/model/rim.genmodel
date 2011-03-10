@@ -34,6 +34,8 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getParticipations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getOutboundRelationships"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/getInboundRelationships"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/isClassCodeDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Act/isMoodCodeDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//InfrastructureRoot">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/getRealmCodes"/>
@@ -46,16 +48,13 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isDefined">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="rim.ecore#//InfrastructureRoot/isDefined/featureName"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isClassCodeDefined"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isTypeCodeDefined"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isContextControlCodeDefined"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isDeterminerCodeDefined"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//InfrastructureRoot/isMoodCodeDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Participation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getTypeCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getAct"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/getRole"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/isTypeCodeDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Participation/isContextControlCodeDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Role">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getClassCode"/>
@@ -64,22 +63,27 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getParticipations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getOutboundLinks"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/getInboundLinks"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Role/isClassCodeDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//Entity">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getClassCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getDeterminerCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getPlayedRoles"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/getScopedRoles"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/isClassCodeDefined"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//Entity/isDeterminerCodeDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//RoleLink">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getTypeCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getTarget"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/getSource"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//RoleLink/isTypeCodeDefined"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="rim.ecore#//ActRelationship">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getTypeCode"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getTarget"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/getSource"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="rim.ecore#//ActRelationship/isTypeCodeDefined"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

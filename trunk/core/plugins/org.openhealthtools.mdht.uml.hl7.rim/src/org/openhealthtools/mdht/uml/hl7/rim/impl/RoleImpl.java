@@ -99,4 +99,13 @@ public abstract class RoleImpl extends InfrastructureRootImpl implements Role {
 		return RoleOperations.getInboundLinks(this);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isClassCodeDefined() {
+		return RoleOperations.isClassCodeDefined(this);
+	}
+
 } //RoleImpl
