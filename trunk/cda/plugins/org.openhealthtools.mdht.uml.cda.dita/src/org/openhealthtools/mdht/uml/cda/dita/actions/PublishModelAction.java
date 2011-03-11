@@ -96,6 +96,15 @@ public class PublishModelAction implements IObjectActionDelegate {
 		currentSelection = selection;
 	}
 
+	
+	private static boolean isWindows(){
+		
+		String os = System.getProperty("os.name").toLowerCase();
+	
+	    return (os.indexOf( "win" ) >= 0);
+
+	}
+
 	private void runPublishDita() throws IOException, CoreException, URISyntaxException {
 		IProject ditaProject = null;
 
@@ -209,7 +218,7 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_JRE_CONTAINER_PATH, jre.getName());
 
-		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "‐Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl");
+		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "-Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl");
 
 		Map<String, String> antProperties = new HashMap<String, String>();
 
@@ -230,10 +239,21 @@ public class PublishModelAction implements IObjectActionDelegate {
 		antProperties.put("tempFilePath", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("temp").toOSString());
 		antProperties.put("docProject", ditaProject.getLocation().toOSString());
 
-		String pdfFileLocation = ditaMapFile.getProjectRelativePath().toOSString();
+		/*
+		 *  diat ant scripts for windows and unix are producing 2 different location
+		 *  dita windows ant is not project relative
+		 *  dita unix ant is 
+		*/ 
+		String pdfFileLocation =  ditaMapFile.getName();
 		pdfFileLocation = pdfFileLocation.replaceFirst(".ditamap", ".pdf");
+		if (isWindows()) {
+			antProperties.put("pdflocation", pdfFileLocation);
+		} else
+		{
+			antProperties.put("pdflocation", ditaProject.getName() + "/" + pdfFileLocation);	
+		}
 
-		antProperties.put("pdflocation", ditaProject.getName() + "/" + pdfFileLocation);
+		
 
 		workingCopy.setAttribute("process_factory_id", "org.eclipse.ant.ui.remoteAntProcessFactory");
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.eclipse.ant.internal.ui.antsupport.InternalAntRunner");
