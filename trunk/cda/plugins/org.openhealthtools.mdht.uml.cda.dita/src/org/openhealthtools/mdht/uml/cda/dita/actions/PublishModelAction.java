@@ -244,7 +244,7 @@ public class PublishModelAction implements IObjectActionDelegate {
 		 *  dita windows ant is not project relative
 		 *  dita unix ant is 
 		*/ 
-		String pdfFileLocation =  ditaMapFile.getName();
+	    String pdfFileLocation = isWindows() ?  ditaMapFile.getName() :  ditaMapFile.getProjectRelativePath().toOSString();
 		pdfFileLocation = pdfFileLocation.replaceFirst(".ditamap", ".pdf");
 		if (isWindows()) {
 			antProperties.put("pdflocation", pdfFileLocation);
