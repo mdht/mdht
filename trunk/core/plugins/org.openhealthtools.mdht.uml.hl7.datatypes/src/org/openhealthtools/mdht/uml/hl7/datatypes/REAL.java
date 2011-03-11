@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.math.BigDecimal;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -39,12 +41,12 @@ public interface REAL extends QTY {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(Double)
+	 * @see #setValue(BigDecimal)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getREAL_Value()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	Double getValue();
+	BigDecimal getValue();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.REAL#getValue <em>Value</em>}' attribute.
@@ -54,6 +56,14 @@ public interface REAL extends QTY {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(Double value);
+	void setValue(BigDecimal value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model newValueRequired="true" newValueOrdered="false"
+	 * @generated
+	 */
+	void setValue(Double newValue);
 
 } // REAL

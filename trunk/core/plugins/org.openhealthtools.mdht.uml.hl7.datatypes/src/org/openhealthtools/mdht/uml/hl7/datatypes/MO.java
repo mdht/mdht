@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.math.BigDecimal;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -40,12 +42,12 @@ public interface MO extends QTY {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(Double)
+	 * @see #setValue(BigDecimal)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getMO_Value()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	Double getValue();
+	BigDecimal getValue();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.MO#getValue <em>Value</em>}' attribute.
@@ -55,7 +57,7 @@ public interface MO extends QTY {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(Double value);
+	void setValue(BigDecimal value);
 
 	/**
 	 * Returns the value of the '<em><b>Currency</b></em>' attribute.
@@ -82,5 +84,13 @@ public interface MO extends QTY {
 	 * @generated
 	 */
 	void setCurrency(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model newValueRequired="true" newValueOrdered="false"
+	 * @generated
+	 */
+	void setValue(Double newValue);
 
 } // MO

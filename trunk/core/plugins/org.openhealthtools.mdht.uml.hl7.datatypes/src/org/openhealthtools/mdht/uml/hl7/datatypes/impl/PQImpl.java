@@ -12,6 +12,7 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -50,7 +51,7 @@ public class PQImpl extends QTYImpl implements PQ {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double VALUE_EDEFAULT = null;
+	protected static final BigDecimal VALUE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -60,7 +61,7 @@ public class PQImpl extends QTYImpl implements PQ {
 	 * @generated
 	 * @ordered
 	 */
-	protected Double value = VALUE_EDEFAULT;
+	protected BigDecimal value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
@@ -116,7 +117,7 @@ public class PQImpl extends QTYImpl implements PQ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Double getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
@@ -125,11 +126,25 @@ public class PQImpl extends QTYImpl implements PQ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(Double newValue) {
-		Double oldValue = value;
+	public void setValue(BigDecimal newValue) {
+		BigDecimal oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.PQ__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setValue(Double newValue) {
+		if (newValue != null){
+			setValue(BigDecimal.valueOf(newValue.doubleValue()));
+		}
+		else {
+			setValue((BigDecimal) null);
+		}
 	}
 
 	/**
@@ -207,7 +222,7 @@ public class PQImpl extends QTYImpl implements PQ {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.PQ__VALUE:
-				setValue((Double)newValue);
+				setValue((BigDecimal)newValue);
 				return;
 			case DatatypesPackage.PQ__UNIT:
 				setUnit((String)newValue);
