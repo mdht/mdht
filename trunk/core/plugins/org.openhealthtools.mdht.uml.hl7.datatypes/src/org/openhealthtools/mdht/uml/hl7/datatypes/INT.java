@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.math.BigInteger;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -39,12 +41,12 @@ public interface INT extends QTY {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(Integer)
+	 * @see #setValue(BigInteger)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getINT_Value()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	Integer getValue();
+	BigInteger getValue();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.INT#getValue <em>Value</em>}' attribute.
@@ -54,6 +56,14 @@ public interface INT extends QTY {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(Integer value);
+	void setValue(BigInteger value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model newValueRequired="true" newValueOrdered="false"
+	 * @generated
+	 */
+	void setValue(Integer newValue);
 
 } // INT
