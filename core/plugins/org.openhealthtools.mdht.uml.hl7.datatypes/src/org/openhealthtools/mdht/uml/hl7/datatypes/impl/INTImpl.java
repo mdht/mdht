@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.math.BigInteger;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -40,7 +42,7 @@ public class INTImpl extends QTYImpl implements INT {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer VALUE_EDEFAULT = null;
+	protected static final BigInteger VALUE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -50,7 +52,7 @@ public class INTImpl extends QTYImpl implements INT {
 	 * @generated
 	 * @ordered
 	 */
-	protected Integer value = VALUE_EDEFAULT;
+	protected BigInteger value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +78,7 @@ public class INTImpl extends QTYImpl implements INT {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getValue() {
+	public BigInteger getValue() {
 		return value;
 	}
 
@@ -85,11 +87,25 @@ public class INTImpl extends QTYImpl implements INT {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(Integer newValue) {
-		Integer oldValue = value;
+	public void setValue(BigInteger newValue) {
+		BigInteger oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.INT__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setValue(Integer newValue) {
+		if (newValue != null){
+			setValue(BigInteger.valueOf(newValue.longValue()));
+		}
+		else {
+			setValue((BigInteger) null);
+		}
 	}
 
 	/**
@@ -115,7 +131,7 @@ public class INTImpl extends QTYImpl implements INT {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.INT__VALUE:
-				setValue((Integer)newValue);
+				setValue((BigInteger)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

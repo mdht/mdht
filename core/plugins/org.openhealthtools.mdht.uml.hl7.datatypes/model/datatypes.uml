@@ -919,10 +919,15 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_co8uMD53Ed6cla2oXsPtlA" name="INT">
       <generalization xmi:id="_dffUoD53Ed6cla2oXsPtlA" general="_O-oXcD5wEd6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_eUGBYD53Ed6cla2oXsPtlA" name="value" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigInteger"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oUj1MT6BEd6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oUj1MD6BEd6cla2oXsPtlA"/>
       </ownedAttribute>
+      <ownedOperation xmi:id="_0y27IEwnEeCqd-_0jMietg" name="setValue">
+        <ownedParameter xmi:id="_3LveEEwnEeCqd-_0jMietg" name="newValue">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EIntegerObject"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_oSKNAD53Ed6cla2oXsPtlA" name="REAL">
       <generalization xmi:id="_pktaAD53Ed6cla2oXsPtlA" general="_O-oXcD5wEd6cla2oXsPtlA"/>

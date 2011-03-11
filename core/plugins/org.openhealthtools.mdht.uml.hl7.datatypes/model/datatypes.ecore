@@ -1845,8 +1845,11 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="INT" eSuperTypes="#//QTY">
+    <eOperations name="setValue" ordered="false" lowerBound="1">
+      <eParameters name="newValue" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="REAL" eSuperTypes="#//QTY">
     <eOperations name="setValue" ordered="false" lowerBound="1">

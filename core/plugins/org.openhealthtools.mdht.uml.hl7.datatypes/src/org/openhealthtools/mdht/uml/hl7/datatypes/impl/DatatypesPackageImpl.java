@@ -2976,7 +2976,10 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(intEClass, org.openhealthtools.mdht.uml.hl7.datatypes.INT.class, "INT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getINT_Value(), ecorePackage.getEIntegerObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.INT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getINT_Value(), ecorePackage.getEBigInteger(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.INT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = addEOperation(intEClass, null, "setValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEIntegerObject(), "newValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(realEClass, org.openhealthtools.mdht.uml.hl7.datatypes.REAL.class, "REAL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getREAL_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.REAL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

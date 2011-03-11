@@ -548,6 +548,9 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//INT">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//INT/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//INT/setValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//INT/setValue/newValue"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//REAL">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//REAL/value"/>
