@@ -34,7 +34,6 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
-import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
@@ -55,7 +54,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-
 
 @SuppressWarnings("restriction")
 public class PublishModelAction implements IObjectActionDelegate {
@@ -79,7 +77,7 @@ public class PublishModelAction implements IObjectActionDelegate {
 	}
 
 	public PublishModelAction() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	/**
@@ -126,7 +124,7 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 		}
 
-//		ManagementFactory.getRuntimeMXBean().
+		// ManagementFactory.getRuntimeMXBean().
 		StringBuffer jvmArguments = new StringBuffer();
 		for (String arg : ManagementFactory.getRuntimeMXBean().getInputArguments()) {
 			if (arg.startsWith("-X")) {
@@ -134,10 +132,8 @@ public class PublishModelAction implements IObjectActionDelegate {
 				jvmArguments.append(" ");
 			}
 		}
-		
-		jvmArguments.append("-Dfile.encoding=UTF-8 ");
-		
 
+		jvmArguments.append("-Dfile.encoding=UTF-8 ");
 
 		String[] segments = ditaMapFile.getName().split("\\.");
 
@@ -187,13 +183,12 @@ public class PublishModelAction implements IObjectActionDelegate {
 			}
 		}
 
-		
-		ContributedClasspathEntriesEntry ccee = new ContributedClasspathEntriesEntry (); 
-		
+		ContributedClasspathEntriesEntry ccee = new ContributedClasspathEntriesEntry();
+
 		AntHomeClasspathEntry ace = new AntHomeClasspathEntry();
 
 		classpath.add(ace.getMemento());
-		
+
 		classpath.add(ccee.getMemento());
 
 		ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
@@ -205,7 +200,7 @@ public class PublishModelAction implements IObjectActionDelegate {
 		ditaPublishBuildFileURL = FileLocator.toFileURL(ditaPublishBuildFileURL);
 
 		String name = launchManager.generateLaunchConfigurationName("Publish CDA");
-		
+
 		ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, name);
 
 		workingCopy.setAttribute("org.eclipse.ui.externaltools.ATTR_LOCATION", ditaPublishBuildFileURL.getPath());
@@ -218,36 +213,32 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 		Map<String, String> antProperties = new HashMap<String, String>();
 
-		antProperties.put("dita.dir", ditadirURL.toURI().getRawPath()); 
+		antProperties.put("dita.dir", ditadirURL.toURI().getRawPath());
 		antProperties.put("ditaMapFile", ditaMapFile.getLocation().toOSString());
 		antProperties.put("outputLocation", ditaProject.getLocation().toOSString());
 		antProperties.put("pdf.output", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("pdf").toOSString());
 		antProperties.put("ditaMapFileRoot", ditaMapFileRoot);
-		
-		
-		
+
 		String fileName = getFileNameFromMap(ditaMapFile.getLocation().toOSString());
-		if (fileName == null)
-		{
+		if (fileName == null) {
 			fileName = ditaProject.getName();
 		}
-		
+
 		antProperties.put("fileName", fileName);
 		antProperties.put("args.debug", "no");
 		antProperties.put("ditaFilePath", ditaFolder.getLocation().toOSString());
 		antProperties.put("tempFilePath", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("temp").toOSString());
 		antProperties.put("docProject", ditaProject.getLocation().toOSString());
-		
-		String pdfFileLocation= ditaMapFile.getName(); 
-		pdfFileLocation = pdfFileLocation.replaceFirst("ditamap", "pdf");	
-		
-		antProperties.put("pdflocation", pdfFileLocation);
-		
-		
-		workingCopy.setAttribute( "process_factory_id", "org.eclipse.ant.ui.remoteAntProcessFactory");
-		workingCopy.setAttribute( IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.eclipse.ant.internal.ui.antsupport.InternalAntRunner");
 
-		workingCopy.setAttribute( org.eclipse.core.externaltools.internal.IExternalToolConstants.ATTR_WORKING_DIRECTORY, ditaProject.getLocation().toOSString());
+		String pdfFileLocation = ditaMapFile.getProjectRelativePath().toOSString();
+		pdfFileLocation = pdfFileLocation.replaceFirst(".ditamap", ".pdf");
+
+		antProperties.put("pdflocation", ditaProject.getName() + "/" + pdfFileLocation);
+
+		workingCopy.setAttribute("process_factory_id", "org.eclipse.ant.ui.remoteAntProcessFactory");
+		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.eclipse.ant.internal.ui.antsupport.InternalAntRunner");
+
+		workingCopy.setAttribute(org.eclipse.core.externaltools.internal.IExternalToolConstants.ATTR_WORKING_DIRECTORY, ditaProject.getLocation().toOSString());
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, jvmArguments.toString());
 		workingCopy.setAttribute(org.eclipse.ant.launching.IAntLaunchConstants.ATTR_ANT_TARGETS, antTargets);
 		workingCopy.setAttribute(IAntLaunchConstants.ATTR_ANT_PROPERTIES, antProperties);
@@ -256,21 +247,17 @@ public class PublishModelAction implements IObjectActionDelegate {
 		workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, false);
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_CLASSPATH_PROVIDER, "org.eclipse.ant.ui.AntClasspathProvider");
 		workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, true);
-		
+
 		workingCopy.setAttribute(DebugPlugin.ATTR_CONSOLE_ENCODING, "UTF-8");
-		
+
 		workingCopy.migrate();
-		
+
 		workingCopy.doSave();
-		
-		ILaunch launch = workingCopy.launch(ILaunchManager.RUN_MODE, null,false,true);
-		
-		
+
+		workingCopy.launch(ILaunchManager.RUN_MODE, null, false, true);
 
 	}
-	
-	
-	
+
 	private String getFileNameFromMap(String ditaMapPath) {
 
 		String fileName = null;
@@ -309,16 +296,16 @@ public class PublishModelAction implements IObjectActionDelegate {
 			expr = xpath.compile("//bookmap/booktitle/mainbooktitle");
 
 			Node result = (Node) expr.evaluate(doc, XPathConstants.NODE);
-			
-			if ( result != null ) {
 
-			fileName = result.getTextContent();
+			if (result != null) {
+
+				fileName = result.getTextContent();
 			} else {
 
 				expr = xpath.compile("/bookmap");
 
 				result = (Node) expr.evaluate(doc, XPathConstants.NODE);
-				
+
 				if (result != null) {
 					fileName = result.getAttributes().getNamedItem("id").getTextContent();
 				}
