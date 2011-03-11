@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.math.BigDecimal;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -41,7 +43,7 @@ public class MOImpl extends QTYImpl implements MO {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double VALUE_EDEFAULT = null;
+	protected static final BigDecimal VALUE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -51,7 +53,7 @@ public class MOImpl extends QTYImpl implements MO {
 	 * @generated
 	 * @ordered
 	 */
-	protected Double value = VALUE_EDEFAULT;
+	protected BigDecimal value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCurrency() <em>Currency</em>}' attribute.
@@ -97,7 +99,7 @@ public class MOImpl extends QTYImpl implements MO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Double getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
@@ -106,8 +108,8 @@ public class MOImpl extends QTYImpl implements MO {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(Double newValue) {
-		Double oldValue = value;
+	public void setValue(BigDecimal newValue) {
+		BigDecimal oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.MO__VALUE, oldValue, value));
@@ -137,6 +139,20 @@ public class MOImpl extends QTYImpl implements MO {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setValue(Double newValue) {
+		if (newValue != null){
+			setValue(BigDecimal.valueOf(newValue.doubleValue()));
+		}
+		else {
+			setValue((BigDecimal) null);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -159,7 +175,7 @@ public class MOImpl extends QTYImpl implements MO {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.MO__VALUE:
-				setValue((Double)newValue);
+				setValue((BigDecimal)newValue);
 				return;
 			case DatatypesPackage.MO__CURRENCY:
 				setCurrency((String)newValue);

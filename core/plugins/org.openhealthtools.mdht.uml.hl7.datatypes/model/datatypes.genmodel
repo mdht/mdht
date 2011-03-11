@@ -518,9 +518,15 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PQ/unit"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//PQ/translation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//PQ/setValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//PQ/setValue/newValue"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//PQR">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//PQR/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//PQR/setValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//PQR/setValue/newValue"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ON">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ON/invariant">
@@ -545,6 +551,9 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//REAL">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//REAL/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//REAL/setValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//REAL/setValue/newValue"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CS">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CS/originalText">
@@ -589,6 +598,9 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//MO">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//MO/value"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//MO/currency"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//MO/setValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//MO/setValue/newValue"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//RTO"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//SXCM_INT">

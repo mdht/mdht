@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.math.BigDecimal;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -40,7 +42,7 @@ public class REALImpl extends QTYImpl implements REAL {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double VALUE_EDEFAULT = null;
+	protected static final BigDecimal VALUE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -50,7 +52,7 @@ public class REALImpl extends QTYImpl implements REAL {
 	 * @generated
 	 * @ordered
 	 */
-	protected Double value = VALUE_EDEFAULT;
+	protected BigDecimal value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +78,7 @@ public class REALImpl extends QTYImpl implements REAL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Double getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
@@ -85,11 +87,25 @@ public class REALImpl extends QTYImpl implements REAL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(Double newValue) {
-		Double oldValue = value;
+	public void setValue(BigDecimal newValue) {
+		BigDecimal oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.REAL__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setValue(Double newValue) {
+		if (newValue != null){
+			setValue(BigDecimal.valueOf(newValue.doubleValue()));
+		}
+		else {
+			setValue((BigDecimal) null);
+		}
 	}
 
 	/**
@@ -115,7 +131,7 @@ public class REALImpl extends QTYImpl implements REAL {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.REAL__VALUE:
-				setValue((Double)newValue);
+				setValue((BigDecimal)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

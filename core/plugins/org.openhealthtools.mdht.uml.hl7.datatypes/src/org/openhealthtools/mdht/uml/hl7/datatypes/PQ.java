@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.math.BigDecimal;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -42,12 +44,12 @@ public interface PQ extends QTY {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(Double)
+	 * @see #setValue(BigDecimal)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getPQ_Value()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	Double getValue();
+	BigDecimal getValue();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getValue <em>Value</em>}' attribute.
@@ -57,7 +59,15 @@ public interface PQ extends QTY {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(Double value);
+	void setValue(BigDecimal value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model newValueRequired="true" newValueOrdered="false"
+	 * @generated
+	 */
+	void setValue(Double newValue);
 
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.

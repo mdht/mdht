@@ -2929,12 +2929,18 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getIVXB_TS_Inclusive(), ecorePackage.getEBooleanObject(), "inclusive", "true", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pqEClass, org.openhealthtools.mdht.uml.hl7.datatypes.PQ.class, "PQ", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPQ_Value(), ecorePackage.getEDoubleObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPQ_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPQ_Unit(), this.getcsType(), "unit", "1", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPQ_Translation(), this.getPQR(), null, "translation", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		op = addEOperation(pqEClass, null, "setValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDoubleObject(), "newValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(pqrEClass, org.openhealthtools.mdht.uml.hl7.datatypes.PQR.class, "PQR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPQR_Value(), ecorePackage.getEDoubleObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PQR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPQR_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PQR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = addEOperation(pqrEClass, null, "setValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDoubleObject(), "newValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(onEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ON.class, "ON", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2973,7 +2979,10 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getINT_Value(), ecorePackage.getEIntegerObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.INT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(realEClass, org.openhealthtools.mdht.uml.hl7.datatypes.REAL.class, "REAL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getREAL_Value(), ecorePackage.getEDoubleObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.REAL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getREAL_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.REAL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = addEOperation(realEClass, null, "setValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDoubleObject(), "newValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(csEClass, org.openhealthtools.mdht.uml.hl7.datatypes.CS.class, "CS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3045,8 +3054,11 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(moEClass, org.openhealthtools.mdht.uml.hl7.datatypes.MO.class, "MO", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMO_Value(), ecorePackage.getEDoubleObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.MO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getMO_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.MO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMO_Currency(), this.getcsType(), "currency", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.MO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = addEOperation(moEClass, null, "setValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDoubleObject(), "newValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(rtoEClass, org.openhealthtools.mdht.uml.hl7.datatypes.RTO.class, "RTO", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
