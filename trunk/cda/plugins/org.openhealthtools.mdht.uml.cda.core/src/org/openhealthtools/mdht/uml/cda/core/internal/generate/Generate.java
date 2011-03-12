@@ -2,6 +2,7 @@ package org.openhealthtools.mdht.uml.cda.core.internal.generate;
 
 import java.io.PrintWriter;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -26,14 +27,13 @@ public class Generate {
 
 	public static void main(String[] args) {
 
-		
+
 		if (args.length != 4) 
 		{
 			System.out.println("Error running XML Generate, Invalid arguments");			
 			return ;
 		}
 
-		
 		System.out.println("XML Sample Snippet generated for "+ args[1]);
 		System.out.println();
 		System.out.println();
@@ -83,15 +83,19 @@ public class Generate {
 		Resource umlResource = resourceSet.getResource(modelFile, true);
 
 		Package umlPackage = (Package) EcoreUtil.getObjectByType(umlResource.getContents(), UMLPackage.eINSTANCE.getPackage());
-
+		
+	
+		
 		if (umlPackage != null) {
+	
+			EcoreUtil.resolveAll(umlPackage);
 			
 			Class generationTarget = UMLUtil.getClassByName(umlPackage, umlClassName);
 
 			if (generationTarget != null )
 			{
 
-				InstanceGenerator generator = new InstanceGenerator();
+				InstanceGenerator generator = new InstanceGenerator(true);
 
 	
 
