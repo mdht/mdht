@@ -2,7 +2,6 @@ package org.openhealthtools.mdht.uml.cda.core.internal.generate;
 
 import java.io.PrintWriter;
 import java.util.Map;
-import java.util.StringTokenizer;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -27,18 +26,16 @@ public class Generate {
 
 	public static void main(String[] args) {
 
-
-		if (args.length != 4) 
-		{
-			System.out.println("Error running XML Generate, Invalid arguments");			
-			return ;
+		if (args.length != 4) {
+			System.out.println("Error running XML Generate, Invalid arguments");
+			return;
 		}
 
-		System.out.println("XML Sample Snippet generated for "+ args[1]);
+		System.out.println("XML Sample Snippet generated for " + args[1]);
 		System.out.println();
 		System.out.println();
 		System.out.println();
-		
+
 		ResourceSet resourceSet = new ResourceSetImpl();
 
 		// Initialize registry
@@ -49,18 +46,18 @@ public class Generate {
 
 		// CDA Profile to registry
 		packageRegistry.put(CDAPackage.eNS_URI, CDAPackage.eINSTANCE);
-		
-		String umlPluginLocation = args[2]; 
-		String cdaResourcePluginLocation = args[3]; 		
-		String cdaProfileLocation = org.openhealthtools.mdht.uml.cda.resources.util.CDAResource.CDA_PROFILE_URI+"#_cxOJEIEVEd6H8o-hO3-B4Q";
-		
-		String umlModelLocation=args[0];
+
+		String umlPluginLocation = args[2];
+		String cdaResourcePluginLocation = args[3];
+		String cdaProfileLocation = org.openhealthtools.mdht.uml.cda.resources.util.CDAResource.CDA_PROFILE_URI + "#_cxOJEIEVEd6H8o-hO3-B4Q";
+
+		String umlModelLocation = args[0];
 		String umlClassName = args[1];
-	
+
 		// Initialize pathmaps
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
 		Map<URI, URI> uriMap = resourceSet.getURIConverter().getURIMap();
-		
+
 		// Create and Add UML PathMaps
 		URI uri = URI.createURI(umlPluginLocation);
 		uriMap.put(URI.createURI(UMLResource.LIBRARIES_PATHMAP), uri.appendSegment("libraries").appendSegment(""));
@@ -69,51 +66,42 @@ public class Generate {
 
 		// Create and Add CDA Profile PathMaps
 		URI cdaresourceURI = URI.createURI(cdaResourcePluginLocation);
-		URI cdaPathmap = URI.createURI(org.openhealthtools.mdht.uml.cda.resources.util.CDAResource.PROFILES_PATHMAP);		
+		URI cdaPathmap = URI.createURI(org.openhealthtools.mdht.uml.cda.resources.util.CDAResource.PROFILES_PATHMAP);
 		uriMap.put(cdaPathmap, cdaresourceURI.appendSegment("profiles").appendSegment(""));
-		UMLPlugin.getEPackageNsURIToProfileLocationMap().put(org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage.eNS_URI,URI.createURI(cdaProfileLocation));
-		
+		UMLPlugin.getEPackageNsURIToProfileLocationMap().put(org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage.eNS_URI, URI.createURI(cdaProfileLocation));
 
 		// Load the CDA Packages
 		CDAUtil.loadPackages();
-		
+
 		// Open the model
 		URI modelFile = URI.createFileURI(umlModelLocation);
 
 		Resource umlResource = resourceSet.getResource(modelFile, true);
 
 		Package umlPackage = (Package) EcoreUtil.getObjectByType(umlResource.getContents(), UMLPackage.eINSTANCE.getPackage());
-		
-	
-		
+
 		if (umlPackage != null) {
-	
+
 			EcoreUtil.resolveAll(umlPackage);
-			
+
 			Class generationTarget = UMLUtil.getClassByName(umlPackage, umlClassName);
 
-			if (generationTarget != null )
-			{
+			if (generationTarget != null) {
 
 				InstanceGenerator generator = new InstanceGenerator(true);
 
-	
-
 				EObject instance = generator.createInstance(generationTarget, 5);
-				
+
 				PrintWriter writer = new PrintWriter(System.out);
-	
-				
+
 				generator.save(instance, writer);
-				
-		
-				
+
 				writer.close();
-				
+
 			}
 
 		}
-	
+
 	}
 
 }
