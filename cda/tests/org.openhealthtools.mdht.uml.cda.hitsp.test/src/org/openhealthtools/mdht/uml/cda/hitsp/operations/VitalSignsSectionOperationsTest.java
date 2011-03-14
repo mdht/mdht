@@ -68,7 +68,7 @@ CodedVitalSignsSectionOperationsTest {
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return VitalSignsSectionOperations
-				.validateHITSPVitalSignsSectionVitalSigns(
+				.validateHITSPVitalSignsSectionVitalSignEntry(
 						(VitalSignsSection) objectToTest,
 						diagnostician, map);
 			}
