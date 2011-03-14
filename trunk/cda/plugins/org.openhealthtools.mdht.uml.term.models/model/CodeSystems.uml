@@ -67,7 +67,7 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWKSsKDqEd-dVeaMP0XXQw" name="NCI Thesaurus"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dWuTYKDqEd-dVeaMP0XXQw" name="ActReason"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfNhAKDqEd-dVeaMP0XXQw" name="Provider Role (HL7)"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfcxkKDqEd-dVeaMP0XXQw" name="Race &amp; Ethnicity - CDC"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfcxkKDqEd-dVeaMP0XXQw" name="Race and Ethnicity - CDC"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dfoXwKDqEd-dVeaMP0XXQw" name="ReligiousAffiliation"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_df-9EKDqEd-dVeaMP0XXQw" name="Route of administration (HL7)"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_dkSOQKDqEd-dVeaMP0XXQw" name="FIPS 5-2 (State)"/>
