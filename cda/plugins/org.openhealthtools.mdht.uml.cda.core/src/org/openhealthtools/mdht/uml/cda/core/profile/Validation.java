@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getMessage <em>Message</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#getRuleId <em>Rule Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isMandatory <em>Mandatory</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,5 +99,32 @@ public interface Validation extends EObject {
 	 * @generated
 	 */
 	EList<String> getRuleId();
+
+	/**
+	 * Returns the value of the '<em><b>Mandatory</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mandatory</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mandatory</em>' attribute.
+	 * @see #setMandatory(boolean)
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getValidation_Mandatory()
+	 * @model default="false" ordered="false"
+	 * @generated
+	 */
+	boolean isMandatory();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isMandatory <em>Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mandatory</em>' attribute.
+	 * @see #isMandatory()
+	 * @generated
+	 */
+	void setMandatory(boolean value);
 
 } // Validation

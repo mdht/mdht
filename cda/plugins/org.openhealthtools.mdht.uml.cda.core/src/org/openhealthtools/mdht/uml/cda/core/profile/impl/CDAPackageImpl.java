@@ -341,6 +341,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getValidation_Mandatory() {
+		return (EAttribute)validationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntryRelationship() {
 		return entryRelationshipEClass;
 	}
@@ -806,6 +815,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		createEAttribute(validationEClass, VALIDATION__MESSAGE);
 		createEAttribute(validationEClass, VALIDATION__SEVERITY);
 		createEAttribute(validationEClass, VALIDATION__RULE_ID);
+		createEAttribute(validationEClass, VALIDATION__MANDATORY);
 
 		entryRelationshipEClass = createEClass(ENTRY_RELATIONSHIP);
 		createEAttribute(entryRelationshipEClass, ENTRY_RELATIONSHIP__TYPE_CODE);
@@ -934,6 +944,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		initEAttribute(getValidation_Message(), ecorePackage.getEString(), "message", null, 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidation_Severity(), this.getSeverityKind(), "severity", null, 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValidation_RuleId(), ecorePackage.getEString(), "ruleId", null, 0, -1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValidation_Mandatory(), ecorePackage.getEBoolean(), "mandatory", "false", 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(entryRelationshipEClass, EntryRelationship.class, "EntryRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntryRelationship_TypeCode(), this.getEntryRelationshipKind(), "typeCode", null, 0, 1, EntryRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

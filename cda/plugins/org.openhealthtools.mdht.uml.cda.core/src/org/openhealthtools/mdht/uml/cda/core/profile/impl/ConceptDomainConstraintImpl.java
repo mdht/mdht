@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#getRuleId <em>Rule Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl#isMandatory <em>Mandatory</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +80,25 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 	 * @ordered
 	 */
 	protected EList<String> ruleId;
+
+	/**
+	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean MANDATORY_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean mandatory = MANDATORY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,6 +178,27 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isMandatory() {
+		return mandatory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMandatory(boolean newMandatory) {
+		boolean oldMandatory = mandatory;
+		mandatory = newMandatory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY, oldMandatory, mandatory));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -167,6 +208,8 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 				return getSeverity();
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID:
 				return getRuleId();
+			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY:
+				return isMandatory();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,6 +233,9 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 				getRuleId().clear();
 				getRuleId().addAll((Collection<? extends String>)newValue);
 				return;
+			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY:
+				setMandatory((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -211,6 +257,9 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID:
 				getRuleId().clear();
 				return;
+			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY:
+				setMandatory(MANDATORY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -229,6 +278,8 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 				return severity != SEVERITY_EDEFAULT;
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID:
 				return ruleId != null && !ruleId.isEmpty();
+			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY:
+				return mandatory != MANDATORY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -245,6 +296,7 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE: return CDAPackage.VALIDATION__MESSAGE;
 				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY: return CDAPackage.VALIDATION__SEVERITY;
 				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID: return CDAPackage.VALIDATION__RULE_ID;
+				case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY: return CDAPackage.VALIDATION__MANDATORY;
 				default: return -1;
 			}
 		}
@@ -263,6 +315,7 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 				case CDAPackage.VALIDATION__MESSAGE: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MESSAGE;
 				case CDAPackage.VALIDATION__SEVERITY: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__SEVERITY;
 				case CDAPackage.VALIDATION__RULE_ID: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__RULE_ID;
+				case CDAPackage.VALIDATION__MANDATORY: return CDAPackage.CONCEPT_DOMAIN_CONSTRAINT__MANDATORY;
 				default: return -1;
 			}
 		}
@@ -285,6 +338,8 @@ public class ConceptDomainConstraintImpl extends org.openhealthtools.mdht.uml.te
 		result.append(severity);
 		result.append(", ruleId: ");
 		result.append(ruleId);
+		result.append(", mandatory: ");
+		result.append(mandatory);
 		result.append(')');
 		return result.toString();
 	}

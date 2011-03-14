@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
@@ -85,6 +86,8 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	private Text messageDisplay;
 	private Text messageText;
 	private boolean messageModified = false;
+	private Button mandatoryButton;
+	private boolean mandatoryModified = false;
 
     private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -119,7 +122,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	};
 	
 	private void modifyFields() {
-		if (!(messageModified || ruleIdModified || severityModified)) {
+		if (!(messageModified || ruleIdModified || severityModified || mandatoryModified)) {
 			return;
 		}
 		
@@ -173,6 +176,11 @@ public class ValidationSection extends AbstractModelerPropertySection {
 						while (tokenizer.hasMoreTokens()) {
 							validation.getRuleId().add(tokenizer.nextToken());
 						}
+					}
+					else if (mandatoryModified) {
+						mandatoryModified = false;
+						this.setLabel("Set Validation Mandatory");
+						modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_MANDATORY, mandatoryButton.getSelection());
 					}
 					else if (messageModified) {
 						messageModified = false;
@@ -304,6 +312,24 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
 		ruleIdText.setLayoutData(data);
 
+		/* ---- mandatory checkbox ---- */
+		mandatoryButton = getWidgetFactory().createButton(composite, 
+				"Mandatory", SWT.CHECK);
+		data = new FormData();
+		data.left = new FormAttachment(ruleIdText, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(ruleIdText, 0, SWT.CENTER);
+		mandatoryButton.setLayoutData(data);
+		mandatoryButton.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				mandatoryModified = true;
+				modifyFields();
+			}
+			public void widgetSelected(SelectionEvent e) {
+				mandatoryModified = true;
+				modifyFields();
+			}
+		});
+
 		/* ---- message display ---- */
 		messageDisplay = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP | SWT.READ_ONLY); //$NON-NLS-1$
 		data = new FormData();
@@ -334,7 +360,6 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(messageDisplay, 0, SWT.BOTTOM);
 		data.height = charHeight * 4;
 		messageText.setLayoutData(data);
-
 	}
 
 	protected boolean isReadOnly() {
@@ -448,13 +473,23 @@ public class ValidationSection extends AbstractModelerPropertySection {
 			}
 		}
 
+		if (stereotype != null) {
+			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_MANDATORY);
+			mandatoryButton.setSelection(Boolean.TRUE.equals(value));
+		}
+		else {
+			mandatoryButton.setSelection(false);
+		}
+		
 		if (isReadOnly()) {
 			severityCombo.setEnabled(false);
 			messageText.setEnabled(false);
+			mandatoryButton.setEnabled(false);
 		}
 		else {
 			severityCombo.setEnabled(true);
 			messageText.setEnabled(true);
+			mandatoryButton.setEnabled(true);
 		}
 
 	}
