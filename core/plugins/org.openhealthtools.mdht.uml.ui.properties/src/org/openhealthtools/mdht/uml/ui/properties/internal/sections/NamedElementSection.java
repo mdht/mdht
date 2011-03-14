@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for "business name"
  *     
  * $Id$
  *******************************************************************************/
@@ -47,8 +48,8 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
-
 
 /**
  * The general properties section for NamedElement.
@@ -58,7 +59,7 @@ import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 public class NamedElementSection extends AbstractModelerPropertySection {
 
 	/**
-	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * Duplicate copy of private field in superclass. I'd like to remove this,
 	 * but can't find another way to refresh page title.
 	 */
 	private TabbedPropertySheetPage tabbedPropertySheetPage;
@@ -67,11 +68,17 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 
 	private Text localNameText;
 	private boolean localNameModified = false;
-	
-    private ModifyListener modifyListener = new ModifyListener() {
+
+	private Text businessNameText;
+	private boolean businessNameModified = false;
+
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (localNameText == event.getSource()) {
 				localNameModified = true;
+			}
+			if (businessNameText == event.getSource()) {
+				businessNameModified = true;
 			}
 		}
 	};
@@ -86,7 +93,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 				modifyFields();
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -96,62 +103,83 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
-		if (!(localNameModified)) {
+		if (!(localNameModified || businessNameModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			TransactionalEditingDomain editingDomain = TransactionUtil
+					.getEditingDomain(namedElement);
+
+			IUndoableOperation operation = new AbstractEMFOperation(
+					editingDomain, "temp") {
+				protected IStatus doExecute(IProgressMonitor monitor,
+						IAdaptable info) {
 					if (localNameModified) {
 						localNameModified = false;
 						this.setLabel("Set Name");
+						String businessName = NamedElementUtil
+								.removeBusinessName(namedElement);
 						namedElement.setName(localNameText.getText());
-					}
-					else {
+						if (businessName != null) {
+							NamedElementUtil.setBusinessName(namedElement,
+									businessName);
+						}
+						refreshBusinessText();
+					} else if (businessNameModified) {
+						businessNameModified = false;
+						this.setLabel("Set Business Name");
+
+						if (!NamedElementUtil.setBusinessName(namedElement,
+								businessNameText.getText())) {
+							businessNameText.setText(NamedElementUtil
+									.getBusinessName(namedElement));
+							return Status.CANCEL_STATUS;
+						}
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
-				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain
+						.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation,
+						new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
+
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 		this.tabbedPropertySheetPage = aTabbedPropertySheetPage;
-		
+
 		Composite composite = getWidgetFactory()
 				.createFlatFormComposite(parent);
 		FormData data = null;
 
 		localNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
 		data = new FormData();
-		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
+		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(0,1, ITabbedPropertyConstants.VSPACE + 2);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE + 2);
 		localNameText.setLayoutData(data);
 
-		CLabel localNameLabel = getWidgetFactory()
-				.createCLabel(composite, "Name:"); //$NON-NLS-1$
+		CLabel localNameLabel = getWidgetFactory().createCLabel(composite,
+				"Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.right = new FormAttachment(localNameText,
@@ -159,25 +187,45 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(localNameText, 0, SWT.CENTER);
 		localNameLabel.setLayoutData(data);
 
+		businessNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(1, 2, ITabbedPropertyConstants.VSPACE + 2);
+		businessNameText.setLayoutData(data);
+
+		CLabel businessNameLabel = getWidgetFactory().createCLabel(composite,
+				"Business Name:"); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.right = new FormAttachment(businessNameText,
+				-ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(businessNameText, 0, SWT.CENTER);
+		businessNameLabel.setLayoutData(data);
+
 	}
 
 	protected boolean isReadOnly() {
 		if (namedElement != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
+			TransactionalEditingDomain editingDomain = TransactionUtil
+					.getEditingDomain(namedElement);
+			if (editingDomain != null
+					&& editingDomain.isReadOnly(namedElement.eResource())) {
 				return true;
 			}
 		}
 
 		return super.isReadOnly();
 	}
-	
+
 	/*
-	 * Override super implementation to allow for objects that are not IAdaptable.
+	 * Override super implementation to allow for objects that are not
+	 * IAdaptable.
 	 * 
 	 * (non-Javadoc)
-	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
+	 * 
+	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.
+	 * AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
@@ -192,7 +240,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof NamedElement);
 		this.namedElement = (NamedElement) element;
@@ -201,6 +249,22 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 	public void dispose() {
 		super.dispose();
 		namedElement = null;
+	}
+
+	protected void refreshBusinessText() {
+		businessNameText.removeModifyListener(modifyListener);
+		businessNameText.removeKeyListener(keyListener);
+		businessNameText.removeFocusListener(focusListener);
+		if (namedElement.getName() != null)
+			businessNameText.setText(NamedElementUtil
+					.getBusinessName(namedElement));
+		else
+			businessNameText.setText("");
+		businessNameText.addModifyListener(modifyListener);
+		businessNameText.addKeyListener(keyListener);
+		businessNameText.addFocusListener(focusListener);
+
+		businessNameText.setEnabled(!isReadOnly());
 	}
 
 	public void refresh() {
@@ -215,16 +279,14 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		localNameText.addKeyListener(keyListener);
 		localNameText.addFocusListener(focusListener);
 
-		// TODO there should be a better way to force tabbed page label update
-		tabbedPropertySheetPage.labelProviderChanged(
-				new LabelProviderChangedEvent(new LabelProvider()));
+		localNameText.setEnabled(!isReadOnly());
 
-		if (isReadOnly()) {
-			localNameText.setEnabled(false);
-		}
-		else {
-			localNameText.setEnabled(true);
-		}
+		refreshBusinessText();
+
+		// TODO there should be a better way to force tabbed page label update
+		tabbedPropertySheetPage
+				.labelProviderChanged(new LabelProviderChangedEvent(
+						new LabelProvider()));
 	}
 
 }

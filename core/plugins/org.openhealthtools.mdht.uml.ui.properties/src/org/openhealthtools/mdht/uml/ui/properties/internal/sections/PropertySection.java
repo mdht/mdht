@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adjusting alignmnent of field labels
  *     
  * $Id$
  *******************************************************************************/
@@ -282,7 +283,7 @@ public class PropertySection extends AbstractModelerPropertySection {
         typeLabel.setLayoutData(data);
 
         data = new FormData();
-        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
+        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
         data.right = new FormAttachment(typeButton,
             -ITabbedPropertyConstants.HSPACE);
         data.top = new FormAttachment(0, 0);
