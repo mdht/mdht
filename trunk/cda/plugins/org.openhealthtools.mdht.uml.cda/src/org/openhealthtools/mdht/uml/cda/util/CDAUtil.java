@@ -332,7 +332,7 @@ public class CDAUtil {
 		
 		for (EClass eClass : cdaSnippet.eClass().getEAllSuperTypes())
 		{
-			if (CDAPackage.eINSTANCE.getNsURI().equals(eClass.getEPackage().getNsURI())) {
+			if (CDAPackage.eINSTANCE.getNsURI().equals(eClass.getEPackage().getNsURI())  && !"ClinicalStatement".equals(eClass.getName())) {
 				snippetName = eClass.getName();
 				break;
 			}
