@@ -602,8 +602,8 @@ public class RegionOfInterestOperationsTest extends ClinicalStatementOperationsT
 			@Override
 			protected boolean doHas(final EObject objectToTest,
 					final String templateId) {
-				return RegionOfInterestOperations.hasCode((RegionOfInterest) objectToTest,
-						CODE);
+				return ClinicalStatementOperations.hasCode((RegionOfInterest) objectToTest,
+						CODE, null, null);
 			}
 
 			@Override

@@ -55,7 +55,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addAct((Observation) objectToTest,
+					ClinicalStatementOperations.addAct((Observation) objectToTest,
 							(Act) eObjectToAdd);
 				}
 
@@ -77,7 +77,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addEncounter(
+					ClinicalStatementOperations.addEncounter(
 							(Observation) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
@@ -101,7 +101,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addObservation(
+					ClinicalStatementOperations.addObservation(
 							(Observation) objectToTest,
 							(Observation) eObjectToAdd);
 
@@ -126,7 +126,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addObservationMedia(
+					ClinicalStatementOperations.addObservationMedia(
 							(Observation) objectToTest,
 							(ObservationMedia) eObjectToAdd);
 
@@ -151,7 +151,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addOrganizer(
+					ClinicalStatementOperations.addOrganizer(
 							(Observation) objectToTest,
 							(Organizer) eObjectToAdd);
 				}
@@ -175,7 +175,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addProcedure(
+					ClinicalStatementOperations.addProcedure(
 							(Observation) objectToTest,
 							(Procedure) eObjectToAdd);
 				}
@@ -199,7 +199,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addRegionOfInterest(
+					ClinicalStatementOperations.addRegionOfInterest(
 							(Observation) objectToTest,
 							(RegionOfInterest) eObjectToAdd);
 				}
@@ -223,7 +223,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addSubstanceAdministration(
+					ClinicalStatementOperations.addSubstanceAdministration(
 							(Observation) objectToTest,
 							(SubstanceAdministration) eObjectToAdd);
 				}
@@ -247,7 +247,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addSupply(
+					ClinicalStatementOperations.addSupply(
 							(Observation) objectToTest, (Supply) eObjectToAdd);
 				}
 
@@ -269,13 +269,13 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addAct((Observation) objectToTest,
+					ClinicalStatementOperations.addAct((Observation) objectToTest,
 							(Act) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getActs((Observation) objectToTest);
 				}
 			},
@@ -292,14 +292,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addEncounter(
+					ClinicalStatementOperations.addEncounter(
 							(Observation) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getEncounters((Observation) objectToTest);
 				}
 
@@ -317,14 +317,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addObservation(
+					ClinicalStatementOperations.addObservation(
 							(Observation) objectToTest,
 							(Observation) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getObservations((Observation) objectToTest);
 				}
 			},
@@ -341,14 +341,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addObservationMedia(
+					ClinicalStatementOperations.addObservationMedia(
 							(Observation) objectToTest,
 							(ObservationMedia) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getObservationMedia((Observation) objectToTest);
 				}
 			},
@@ -365,14 +365,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addOrganizer(
+					ClinicalStatementOperations.addOrganizer(
 							(Observation) objectToTest,
 							(Organizer) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getOrganizers((Observation) objectToTest);
 				}
 			},
@@ -389,14 +389,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addProcedure(
+					ClinicalStatementOperations.addProcedure(
 							(Observation) objectToTest,
 							(Procedure) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getProcedures((Observation) objectToTest);
 				}
 			},
@@ -413,14 +413,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addRegionOfInterest(
+					ClinicalStatementOperations.addRegionOfInterest(
 							(Observation) objectToTest,
 							(RegionOfInterest) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getRegionsOfInterest((Observation) objectToTest);
 				}
 			},
@@ -437,14 +437,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addSubstanceAdministration(
+					ClinicalStatementOperations.addSubstanceAdministration(
 							(Observation) objectToTest,
 							(SubstanceAdministration) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getSubstanceAdministrations((Observation) objectToTest);
 				}
 			},
@@ -461,13 +461,13 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addSupply(
+					ClinicalStatementOperations.addSupply(
 							(Observation) objectToTest, (Supply) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getSupplies((Observation) objectToTest);
 				}
 			},
@@ -494,7 +494,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getClinicalDocument((Observation) objectToTest);
 				}
 
@@ -525,7 +525,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.getSection((Observation) objectToTest);
 				}
 
@@ -548,14 +548,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addAct((Observation) objectToTest,
+					ClinicalStatementOperations.addAct((Observation) objectToTest,
 							(Act) eObjectToAdd);
 				}
 
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasActTemplate(
+					return ClinicalStatementOperations.hasActTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -578,7 +578,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addEncounter(
+					ClinicalStatementOperations.addEncounter(
 							(Observation) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
@@ -586,7 +586,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasEncounterTemplate(
+					return ClinicalStatementOperations.hasEncounterTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -621,7 +621,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addEncounter(
+					ClinicalStatementOperations.addEncounter(
 							(Observation) objectToTest,
 							(Encounter) eObjectToAdd);
 				}
@@ -629,7 +629,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasCode(
+					return ClinicalStatementOperations.hasCode(
 							(Observation) objectToTest, CODE, CODE_SYSTEM,
 							CODE_SYSTEM_NAME);
 				}
@@ -653,7 +653,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addObservation(
+					ClinicalStatementOperations.addObservation(
 							(Observation) objectToTest,
 							(Observation) eObjectToAdd);
 				}
@@ -661,7 +661,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasObservationTemplate(
+					return ClinicalStatementOperations.hasObservationTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -684,7 +684,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addObservationMedia(
+					ClinicalStatementOperations.addObservationMedia(
 							(Observation) objectToTest,
 							(ObservationMedia) eObjectToAdd);
 
@@ -693,7 +693,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasObservationMediaTemplate(
+					return ClinicalStatementOperations.hasObservationMediaTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -717,7 +717,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addOrganizer(
+					ClinicalStatementOperations.addOrganizer(
 							(Observation) objectToTest,
 							(Organizer) eObjectToAdd);
 				}
@@ -725,7 +725,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasOrganizerTemplate(
+					return ClinicalStatementOperations.hasOrganizerTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -748,7 +748,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addProcedure(
+					ClinicalStatementOperations.addProcedure(
 							(Observation) objectToTest,
 							(Procedure) eObjectToAdd);
 				}
@@ -756,7 +756,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasProcedureTemplate(
+					return ClinicalStatementOperations.hasProcedureTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -779,7 +779,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addRegionOfInterest(
+					ClinicalStatementOperations.addRegionOfInterest(
 							(Observation) objectToTest,
 							(RegionOfInterest) eObjectToAdd);
 				}
@@ -787,7 +787,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasRegionOfInterestTemplate(
+					return ClinicalStatementOperations.hasRegionOfInterestTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -812,7 +812,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addSubstanceAdministration(
+					ClinicalStatementOperations.addSubstanceAdministration(
 							(Observation) objectToTest,
 							(SubstanceAdministration) eObjectToAdd);
 				}
@@ -820,7 +820,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations
+					return ClinicalStatementOperations
 							.hasSubstanceAdministrationTemplate(
 									(Observation) objectToTest, templateId);
 				}
@@ -845,14 +845,14 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected void doAdd(final EObject objectToTest,
 						final EObject eObjectToAdd) {
-					ObservationOperations.addSupply(
+					ClinicalStatementOperations.addSupply(
 							(Observation) objectToTest, (Supply) eObjectToAdd);
 				}
 
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasSupplyTemplate(
+					return ClinicalStatementOperations.hasSupplyTemplate(
 							(Observation) objectToTest, templateId);
 				}
 
@@ -893,7 +893,7 @@ public class ObservationOperationsTest extends ClinicalStatementOperationsTest {
 				@Override
 				protected boolean doHas(final EObject objectToTest,
 						final String templateId) {
-					return ObservationOperations.hasTemplateId(
+					return ClinicalStatementOperations.hasTemplateId(
 							(Observation) objectToTest, templateId);
 				}
 
