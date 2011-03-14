@@ -3854,90 +3854,6 @@
         defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Act" eSuperTypes="#//ClinicalStatement">
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="newAct" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4074,6 +3990,37 @@
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClinicalStatement" abstract="true" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Act">
+    <eOperations name="addAct" ordered="false" lowerBound="1">
+      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
+    </eOperations>
+    <eOperations name="addEncounter" ordered="false" lowerBound="1">
+      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
+    </eOperations>
+    <eOperations name="addObservation" ordered="false" lowerBound="1">
+      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
+    </eOperations>
+    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
+      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
+    </eOperations>
+    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
+      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
+    </eOperations>
+    <eOperations name="addProcedure" ordered="false" lowerBound="1">
+      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
+    </eOperations>
+    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
+      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
+    </eOperations>
+    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
+      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
+    </eOperations>
+    <eOperations name="addSupply" ordered="false" lowerBound="1">
+      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
+    </eOperations>
+    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
+    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
+        eType="#//Encounter"/>
     <eOperations name="getEntryRelationshipTargets" ordered="false" upperBound="-1"
         eType="#//ClinicalStatement">
       <eParameters name="typeCode" ordered="false" lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActRelationshipEntryRelationship"/>
@@ -4083,6 +4030,184 @@
         eType="#//ClinicalStatement">
       <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     </eOperations>
+    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
+        eType="#//Observation"/>
+    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
+        eType="#//ObservationMedia"/>
+    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
+        eType="#//Organizer"/>
+    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
+        eType="#//Procedure"/>
+    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
+        eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
+    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
+        upperBound="-1" eType="#//SubstanceAdministration"/>
+    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
+        eType="#//Supply"/>
+    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Encounter" eSuperTypes="#//ClinicalStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
+        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeId" ordered="false"
+        eType="#//InfrastructureRootTypeId" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateId" ordered="false"
+        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" ordered="false" upperBound="-1"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="code" ordered="false" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CD"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//ED"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statusCode" ordered="false"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effectiveTime" ordered="false"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//IVL_TS"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="priorityCode" ordered="false"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" ordered="false"
+        eType="#//Subject" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specimen" ordered="false"
+        upperBound="-1" eType="#//Specimen" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="performer" ordered="false"
+        upperBound="-1" eType="#//Performer2" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" ordered="false"
+        upperBound="-1" eType="#//Author" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="informant" ordered="false"
+        upperBound="-1" eType="#//Informant12" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participant" ordered="false"
+        upperBound="-1" eType="#//Participant2" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryRelationship" ordered="false"
+        upperBound="-1" eType="#//EntryRelationship" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" ordered="false"
+        upperBound="-1" eType="#//Reference" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
+        upperBound="-1" eType="#//Precondition" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
+        eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//NullFlavor"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
+        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClass"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
+        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_DocumentEncounterMood"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specimen" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//Participation">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -4711,91 +4836,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Encounter" eSuperTypes="#//ClinicalStatement">
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="newEncounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
+  <eClassifiers xsi:type="ecore:EClass" name="Observation" eSuperTypes="#//ClinicalStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -4823,7 +4864,15 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="code" ordered="false" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CD"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="code" ordered="false" lowerBound="1"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CD"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivationExpr" ordered="false"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//ST"
         containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="namespace" value="##targetNamespace"/>
@@ -4851,6 +4900,48 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="priorityCode" ordered="false"
         eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repeatNumber" ordered="false"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//IVL_INT"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="languageCode" ordered="false"
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//ANY"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interpretationCode" ordered="false"
+        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methodCode" ordered="false"
+        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSiteCode" ordered="false"
+        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CD"
         containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="namespace" value="##targetNamespace"/>
@@ -4910,14 +5001,23 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceRange" ordered="false"
+        upperBound="-1" eType="#//ReferenceRange" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//NullFlavor"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClass"
+        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClassObservation"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_DocumentEncounterMood"
+        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActMoodDocumentObservation"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
@@ -5349,274 +5449,6 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActMood"
         defaultValueLiteral="EVN.CRT" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Observation" eSuperTypes="#//ClinicalStatement">
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="newObservation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typeId" ordered="false"
-        eType="#//InfrastructureRootTypeId" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="templateId" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id" ordered="false" upperBound="-1"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="code" ordered="false" lowerBound="1"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CD"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="derivationExpr" ordered="false"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//ST"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//ED"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statusCode" ordered="false"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="effectiveTime" ordered="false"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//IVL_TS"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="priorityCode" ordered="false"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="repeatNumber" ordered="false"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//IVL_INT"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="languageCode" ordered="false"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//ANY"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interpretationCode" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="methodCode" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSiteCode" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CD"
-        containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" ordered="false"
-        eType="#//Subject" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specimen" ordered="false"
-        upperBound="-1" eType="#//Specimen" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="performer" ordered="false"
-        upperBound="-1" eType="#//Performer2" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="author" ordered="false"
-        upperBound="-1" eType="#//Author" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="informant" ordered="false"
-        upperBound="-1" eType="#//Informant12" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="participant" ordered="false"
-        upperBound="-1" eType="#//Participant2" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entryRelationship" ordered="false"
-        upperBound="-1" eType="#//EntryRelationship" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" ordered="false"
-        upperBound="-1" eType="#//Reference" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
-        upperBound="-1" eType="#//Precondition" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceRange" ordered="false"
-        upperBound="-1" eType="#//ReferenceRange" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//NullFlavor"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ActClassObservation"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActMoodDocumentObservation"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferenceRange" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/rim#//ActRelationship">
     <eOperations name="typeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
@@ -5727,85 +5559,6 @@
         defaultValueLiteral="EVN.CRT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObservationMedia" eSuperTypes="#//ClinicalStatement">
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="newObservationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -5920,6 +5673,79 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Organizer" eSuperTypes="#//ClinicalStatement">
     <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="addAct" ordered="false" lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addAct"/>
+        <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="addEncounter" ordered="false" lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addEncounter"/>
+        <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="addObservation" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addObservation"/>
+        <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="addObservationMedia" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addObservationMedia"/>
+        <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="addProcedure" ordered="false" lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addProcedure"/>
+        <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="addRegionOfInterest" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addRegionOfInterest"/>
+        <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="addSubstanceAdministration" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addSubstanceAdministration"/>
+        <eParameters name="substanceAdministration" ordered="false" lowerBound="1"
+            eType="#//SubstanceAdministration"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="addSupply" ordered="false" lowerBound="1">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/addSupply"/>
+        <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getActs" ordered="false" unique="false"
+          upperBound="-1" eType="#//Act">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getActs"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getEncounters" ordered="false" unique="false"
+          upperBound="-1" eType="#//Encounter">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getEncounters"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getObservations" ordered="false"
+          unique="false" upperBound="-1" eType="#//Observation">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getObservations"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getObservationMedia" ordered="false"
+          unique="false" upperBound="-1" eType="#//ObservationMedia">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getObservationMedia"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getOrganizers" ordered="false" unique="false"
+          upperBound="-1" eType="#//Organizer">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getOrganizers"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getProcedures" ordered="false" unique="false"
+          upperBound="-1" eType="#//Procedure">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getProcedures"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getRegionsOfInterest" ordered="false"
+          unique="false" upperBound="-1" eType="#//RegionOfInterest">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getRegionsOfInterest"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getSubstanceAdministrations" ordered="false"
+          unique="false" upperBound="-1" eType="#//SubstanceAdministration">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getSubstanceAdministrations"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getSupplies" ordered="false" unique="false"
+          upperBound="-1" eType="#//Supply">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getSupplies"/>
+      </contents>
       <contents xsi:type="ecore:EOperation" name="getEntryRelationshipTargets" ordered="false"
           upperBound="-1" eType="#//ClinicalStatement">
         <eAnnotations source="redefines" references="#//ClinicalStatement/getEntryRelationshipTargets"/>
@@ -5932,89 +5758,8 @@
         <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </contents>
     </eAnnotations>
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
     <eOperations name="addOrganizer" ordered="false" lowerBound="1">
       <eParameters name="newOrganizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
@@ -6254,90 +5999,6 @@
         defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Procedure" eSuperTypes="#//ClinicalStatement">
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="newProcedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -6512,88 +6173,6 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="newRegionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -6719,91 +6298,6 @@
           <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
         </eGenericType>
       </eParameters>
-    </eOperations>
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="newSubstanceAdministration" ordered="false" lowerBound="1"
-          eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
@@ -7239,90 +6733,6 @@
           <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
         </eGenericType>
       </eParameters>
-    </eOperations>
-    <eOperations name="addAct" ordered="false" lowerBound="1">
-      <eParameters name="act" ordered="false" lowerBound="1" eType="#//Act"/>
-    </eOperations>
-    <eOperations name="addEncounter" ordered="false" lowerBound="1">
-      <eParameters name="encounter" ordered="false" lowerBound="1" eType="#//Encounter"/>
-    </eOperations>
-    <eOperations name="addObservation" ordered="false" lowerBound="1">
-      <eParameters name="observation" ordered="false" lowerBound="1" eType="#//Observation"/>
-    </eOperations>
-    <eOperations name="addObservationMedia" ordered="false" lowerBound="1">
-      <eParameters name="observationMedia" ordered="false" lowerBound="1" eType="#//ObservationMedia"/>
-    </eOperations>
-    <eOperations name="addOrganizer" ordered="false" lowerBound="1">
-      <eParameters name="organizer" ordered="false" lowerBound="1" eType="#//Organizer"/>
-    </eOperations>
-    <eOperations name="addProcedure" ordered="false" lowerBound="1">
-      <eParameters name="procedure" ordered="false" lowerBound="1" eType="#//Procedure"/>
-    </eOperations>
-    <eOperations name="addRegionOfInterest" ordered="false" lowerBound="1">
-      <eParameters name="regionOfInterest" ordered="false" lowerBound="1" eType="#//RegionOfInterest"/>
-    </eOperations>
-    <eOperations name="addSubstanceAdministration" ordered="false" lowerBound="1">
-      <eParameters name="substanceAdministration" ordered="false" lowerBound="1" eType="#//SubstanceAdministration"/>
-    </eOperations>
-    <eOperations name="addSupply" ordered="false" lowerBound="1">
-      <eParameters name="newSupply" ordered="false" lowerBound="1" eType="#//Supply"/>
-    </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
-    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply"/>
-    <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationMediaTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"

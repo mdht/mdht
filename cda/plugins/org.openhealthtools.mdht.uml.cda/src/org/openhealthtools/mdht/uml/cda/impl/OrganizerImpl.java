@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
-import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Component4;
 import org.openhealthtools.mdht.uml.cda.Encounter;
@@ -40,7 +39,6 @@ import org.openhealthtools.mdht.uml.cda.Precondition;
 import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
-import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
@@ -843,6 +841,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addAct(Act act) {
 		OrganizerOperations.addAct(this, act);
 	}
@@ -852,6 +851,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addEncounter(Encounter encounter) {
 		OrganizerOperations.addEncounter(this, encounter);
 	}
@@ -861,6 +861,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addObservation(Observation observation) {
 		OrganizerOperations.addObservation(this, observation);
 	}
@@ -870,6 +871,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addObservationMedia(ObservationMedia observationMedia) {
 		OrganizerOperations.addObservationMedia(this, observationMedia);
 	}
@@ -888,6 +890,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addProcedure(Procedure procedure) {
 		OrganizerOperations.addProcedure(this, procedure);
 	}
@@ -897,6 +900,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addRegionOfInterest(RegionOfInterest regionOfInterest) {
 		OrganizerOperations.addRegionOfInterest(this, regionOfInterest);
 	}
@@ -906,6 +910,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addSubstanceAdministration(SubstanceAdministration substanceAdministration) {
 		OrganizerOperations.addSubstanceAdministration(this, substanceAdministration);
 	}
@@ -915,6 +920,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addSupply(Supply supply) {
 		OrganizerOperations.addSupply(this, supply);
 	}
@@ -924,6 +930,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Act> getActs() {
 		return OrganizerOperations.getActs(this);
 	}
@@ -933,15 +940,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClinicalDocument getClinicalDocument() {
-		return OrganizerOperations.getClinicalDocument(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EList<Encounter> getEncounters() {
 		return OrganizerOperations.getEncounters(this);
 	}
@@ -951,6 +950,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Observation> getObservations() {
 		return OrganizerOperations.getObservations(this);
 	}
@@ -960,6 +960,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ObservationMedia> getObservationMedia() {
 		return OrganizerOperations.getObservationMedia(this);
 	}
@@ -969,6 +970,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Organizer> getOrganizers() {
 		return OrganizerOperations.getOrganizers(this);
 	}
@@ -978,6 +980,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Procedure> getProcedures() {
 		return OrganizerOperations.getProcedures(this);
 	}
@@ -987,6 +990,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RegionOfInterest> getRegionsOfInterest() {
 		return OrganizerOperations.getRegionsOfInterest(this);
 	}
@@ -996,15 +1000,7 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Section getSection() {
-		return OrganizerOperations.getSection(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public EList<SubstanceAdministration> getSubstanceAdministrations() {
 		return OrganizerOperations.getSubstanceAdministrations(this);
 	}
@@ -1014,107 +1010,9 @@ public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Supply> getSupplies() {
 		return OrganizerOperations.getSupplies(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasActTemplate(String templateId) {
-		return OrganizerOperations.hasActTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasCode(String code, String codeSystem, String codeSystemName) {
-		return OrganizerOperations.hasCode(this, code, codeSystem, codeSystemName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasEncounterTemplate(String templateId) {
-		return OrganizerOperations.hasEncounterTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasObservationMediaTemplate(String templateId) {
-		return OrganizerOperations.hasObservationMediaTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasObservationTemplate(String templateId) {
-		return OrganizerOperations.hasObservationTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasOrganizerTemplate(String templateId) {
-		return OrganizerOperations.hasOrganizerTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasProcedureTemplate(String templateId) {
-		return OrganizerOperations.hasProcedureTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasRegionOfInterestTemplate(String templateId) {
-		return OrganizerOperations.hasRegionOfInterestTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasSubstanceAdministrationTemplate(String templateId) {
-		return OrganizerOperations.hasSubstanceAdministrationTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasSupplyTemplate(String templateId) {
-		return OrganizerOperations.hasSupplyTemplate(this, templateId);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean hasTemplateId(String templateId) {
-		return OrganizerOperations.hasTemplateId(this, templateId);
 	}
 
 	/**

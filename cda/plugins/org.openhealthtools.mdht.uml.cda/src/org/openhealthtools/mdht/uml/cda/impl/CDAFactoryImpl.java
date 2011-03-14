@@ -211,6 +211,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.SUBJECT_PERSON: return createSubjectPerson();
 			case CDAPackage.ENTRY: return createEntry();
 			case CDAPackage.ACT: return createAct();
+			case CDAPackage.ENCOUNTER: return createEncounter();
 			case CDAPackage.SPECIMEN: return createSpecimen();
 			case CDAPackage.SPECIMEN_ROLE: return createSpecimenRole();
 			case CDAPackage.PLAYING_ENTITY: return createPlayingEntity();
@@ -220,7 +221,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.DEVICE: return createDevice();
 			case CDAPackage.ENTITY: return createEntity();
 			case CDAPackage.ENTRY_RELATIONSHIP: return createEntryRelationship();
-			case CDAPackage.ENCOUNTER: return createEncounter();
+			case CDAPackage.OBSERVATION: return createObservation();
 			case CDAPackage.REFERENCE: return createReference();
 			case CDAPackage.EXTERNAL_ACT: return createExternalAct();
 			case CDAPackage.EXTERNAL_OBSERVATION: return createExternalObservation();
@@ -228,7 +229,6 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
 			case CDAPackage.PRECONDITION: return createPrecondition();
 			case CDAPackage.CRITERION: return createCriterion();
-			case CDAPackage.OBSERVATION: return createObservation();
 			case CDAPackage.REFERENCE_RANGE: return createReferenceRange();
 			case CDAPackage.OBSERVATION_RANGE: return createObservationRange();
 			case CDAPackage.OBSERVATION_MEDIA: return createObservationMedia();
