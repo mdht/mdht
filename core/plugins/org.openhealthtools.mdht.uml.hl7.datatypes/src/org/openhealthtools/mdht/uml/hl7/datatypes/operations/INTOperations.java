@@ -6,6 +6,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
+import java.math.BigInteger;
+
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 
 /**
@@ -35,12 +37,14 @@ public class INTOperations extends ANYOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void setValue(INT int_, Integer newValue) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (newValue != null){
+			int_.setValue(BigInteger.valueOf(newValue.longValue()));
+		} else {
+			int_.setValue((BigInteger) null);
+		}
 	}
 
 } // INTOperations

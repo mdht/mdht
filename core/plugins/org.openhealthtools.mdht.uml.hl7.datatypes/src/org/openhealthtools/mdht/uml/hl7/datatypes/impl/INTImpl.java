@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.INTOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,15 +98,10 @@ public class INTImpl extends QTYImpl implements INT {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setValue(Integer newValue) {
-		if (newValue != null){
-			setValue(BigInteger.valueOf(newValue.longValue()));
-		}
-		else {
-			setValue((BigInteger) null);
-		}
+		INTOperations.setValue(this, newValue);
 	}
 
 	/**

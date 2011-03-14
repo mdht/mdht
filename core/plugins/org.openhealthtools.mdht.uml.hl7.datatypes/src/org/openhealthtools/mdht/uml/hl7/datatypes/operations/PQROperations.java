@@ -6,6 +6,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
+import java.math.BigDecimal;
+
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQR;
 
 /**
@@ -35,12 +37,14 @@ public class PQROperations extends CVOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void setValue(PQR pqr, Double newValue) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (newValue != null){
+			pqr.setValue(BigDecimal.valueOf(newValue.doubleValue()));
+		} else {
+			pqr.setValue((BigDecimal) null);
+		}
 	}
 
 } // PQROperations

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQR;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.PQROperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,15 +98,10 @@ public class PQRImpl extends CVImpl implements PQR {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setValue(Double newValue) {
-		if (newValue != null){
-			setValue(BigDecimal.valueOf(newValue.doubleValue()));
-		}
-		else {
-			setValue((BigDecimal) null);
-		}
+		PQROperations.setValue(this, newValue);
 	}
 
 	/**
