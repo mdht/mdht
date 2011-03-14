@@ -27,7 +27,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ant.launching;visibility:=reexport,
  org.eclipse.jdt.launching;visibility:=reexport,
  org.eclipse.debug.ui;visibility:=reexport,
- org.openhealthtools.mdht.uml.ui;visibility:=reexport
+ org.openhealthtools.mdht.uml.ui;visibility:=reexport,
+ org.eclipse.pde.ui
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.ui.filters,
