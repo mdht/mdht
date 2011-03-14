@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.MO;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.MOOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,15 +140,10 @@ public class MOImpl extends QTYImpl implements MO {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setValue(Double newValue) {
-		if (newValue != null){
-			setValue(BigDecimal.valueOf(newValue.doubleValue()));
-		}
-		else {
-			setValue((BigDecimal) null);
-		}
+		MOOperations.setValue(this, newValue);
 	}
 
 	/**

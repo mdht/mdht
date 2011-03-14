@@ -6,6 +6,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
+import java.math.BigDecimal;
+
 import org.openhealthtools.mdht.uml.hl7.datatypes.MO;
 
 /**
@@ -35,12 +37,14 @@ public class MOOperations extends ANYOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void setValue(MO mo, Double newValue) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (newValue != null){
+			mo.setValue(BigDecimal.valueOf(newValue.doubleValue()));
+		} else {
+			mo.setValue((BigDecimal) null);
+		}
 	}
 
 } // MOOperations

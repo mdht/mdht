@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQR;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.PQOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,15 +137,10 @@ public class PQImpl extends QTYImpl implements PQ {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setValue(Double newValue) {
-		if (newValue != null){
-			setValue(BigDecimal.valueOf(newValue.doubleValue()));
-		}
-		else {
-			setValue((BigDecimal) null);
-		}
+		PQOperations.setValue(this, newValue);
 	}
 
 	/**

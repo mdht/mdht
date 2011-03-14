@@ -6,6 +6,8 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.operations;
 
+import java.math.BigDecimal;
+
 import org.openhealthtools.mdht.uml.hl7.datatypes.REAL;
 
 /**
@@ -35,12 +37,14 @@ public class REALOperations extends ANYOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void setValue(REAL real, Double newValue) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (newValue != null){
+			real.setValue(BigDecimal.valueOf(newValue.doubleValue()));
+		} else {
+			real.setValue((BigDecimal) null);
+		}
 	}
 
 } // REALOperations
