@@ -12,12 +12,19 @@
 package org.openhealthtools.mdht.uml.cda.core.util;
 
 import java.io.Writer;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -27,21 +34,30 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.LiteralString;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Property;
@@ -49,52 +65,488 @@ import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.cda.Act;
-import org.openhealthtools.mdht.uml.cda.AssignedEntity;
-import org.openhealthtools.mdht.uml.cda.Author;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
-import org.openhealthtools.mdht.uml.cda.DataEnterer;
-import org.openhealthtools.mdht.uml.cda.Encounter;
-import org.openhealthtools.mdht.uml.cda.Observation;
-import org.openhealthtools.mdht.uml.cda.Organizer;
-import org.openhealthtools.mdht.uml.cda.Participant2;
-import org.openhealthtools.mdht.uml.cda.ParticipantRole;
-import org.openhealthtools.mdht.uml.cda.Performer2;
-import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.Section;
-import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
-import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
+@SuppressWarnings("rawtypes")
 public class InstanceGenerator {
 
-	private Map<String,EPackage> packageURIMap = new HashMap<String,EPackage>();
+	public static final String CDA_SAMPLE_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/sample";
+
+	public static <T> T sampleInstanceCreate(EObject root, String path, ResourceSet resourceSet) {
+		return sampleInstanceCreate(root, path, null, resourceSet);
+	}
+
+	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
+
+	@SuppressWarnings("unchecked")
+	public static <T> T get(EObject root, String path) {
+		Object result = null;
+		EObject current = root;
+		String[] components = path.split("/");
+		for (String component : components) {
+			if (current != null) {
+				String name = null;
+				Integer index = null;
+				Matcher matcher = COMPONENT_PATTERN.matcher(component);
+				if (matcher.matches()) {
+					name = matcher.group(1);
+					if (matcher.group(3) != null) {
+						index = Integer.valueOf(matcher.group(3)) - 1;
+					}
+					EStructuralFeature feature = current.eClass().getEStructuralFeature(name);
+					if (feature != null) {
+						if (feature.isMany()) {
+							List<Object> list = (List<Object>) current.eGet(feature);
+							if (index == null) {
+								index = list.size() - 1;
+							}
+							result = (index >= 0 && index < list.size()) ? list.get(index) : null;
+						} else {
+							result = current.eGet(feature);
+						}
+						if (feature instanceof EReference) {
+							current = (EObject) result;
+						}
+					} else {
+						result = current = null;
+					}
+				}
+			}
+		}
+		return (T) result;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static void set(EObject root, String path, Object value) {
+		String last = path.substring(path.lastIndexOf("/") + 1);
+		EObject target = path.equals(last) ? root : (EObject) get(root, path.substring(0, path.lastIndexOf("/")));
+		if (target != null) {
+			String name = null;
+			Integer index = null;
+			Matcher matcher = COMPONENT_PATTERN.matcher(last);
+			if (matcher.matches()) {
+				name = matcher.group(1);
+				if (matcher.group(3) != null) {
+					index = Integer.valueOf(matcher.group(3)) - 1;
+				}
+				EStructuralFeature feature = target.eClass().getEStructuralFeature(name);
+				if (feature != null && value != null) {
+					if (FeatureMapUtil.isFeatureMap(feature) && value instanceof String) {
+						FeatureMap featureMap = (FeatureMap) target.eGet(feature);
+						FeatureMapUtil.addText(featureMap, (String) value);
+					} else {
+						if (feature instanceof EAttribute) {
+							EDataType type = (EDataType) feature.getEType();
+							if (value instanceof String && !type.isInstance(value)) {
+								value = EcoreUtil.createFromString(type, (String) value);
+							}
+						}
+						if (feature.isMany()) {
+							List<Object> list = (List<Object>) target.eGet(feature);
+							if (index != null) {
+								if (index >= 0 && index < list.size()) {
+									list.set(index, value);
+								}
+							} else {
+								list.add(value);
+							}
+						} else {
+							target.eSet(feature, value);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * 
+	 * sampleInstanceCreate will attempt to use existing ismany instances versus
+	 * creating a new one original init does not use existing ismany 
+	 * @param <T>
+	 * @param root
+	 * @param path
+	 * @param eClass
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	private static <T> T sampleInstanceCreate(EObject root, String path, EClass eClass, ResourceSet resourceSet) {
+		EObject current = root;
+		String[] components = path.split("/");
+		int currentIndex = 0;
+		for (String component : components) {
+
+			String[] featurePath = component.split("/[/]");
+
+			EStructuralFeature feature = current.eClass().getEStructuralFeature(featurePath[0]);
+
+			if (feature instanceof EReference) {
+				EObject eObject = null;
+
+				Object value = current.eGet(feature);
+
+				boolean needToCreate = (value == null);
+
+				if (!needToCreate && feature.isMany()) {
+					List<EObject> list = (List<EObject>) value;
+					if (list.size() > 0) {
+						value = list.get(0);
+					} else {
+						needToCreate = true;
+					}
+				}
+
+				if (needToCreate) {
+					EClass type = (EClass) feature.getEType();
+
+					if (type.isAbstract()) {
+						String searchName = current.eClass().getEPackage().getNsPrefix() + "::" + current.eClass().getName();
+						Collection<NamedElement> results = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(resourceSet, searchName);
+						if (results.size() == 1) {
+							NamedElement ne = results.iterator().next();
+							if (ne instanceof Class) {
+								for (Property p : ((Class) ne).getOwnedAttributes()) {
+									if (feature.getName().equals(p.getName())) {
+										for (EObject c : type.getEPackage().eContents()) {
+											if (c instanceof EClass && p.getType().getName().equals(((EClass) c).getName())) {
+												type = (EClass) c;
+												break;
+											}
+										}
+										break;
+									}
+
+								}
+							}
+						}
+					}
+
+					if (!type.isAbstract()) {
+
+						if (currentIndex == components.length - 1 && eClass != null && type.isSuperTypeOf(eClass)) {
+							eObject = EcoreUtil.create(eClass);
+						} else {
+							eObject = EcoreUtil.create(type);
+						}
+						if (feature.isMany()) {
+							List<EObject> list = (List<EObject>) value;
+							list.add(eObject);
+						} else {
+							current.eSet(feature, eObject);
+						}
+					}
+				} else {
+					eObject = (EObject) value;
+				}
+
+				current = eObject;
+			}
+			currentIndex++;
+		}
+		return (T) current;
+	}
+
+	private static void init(EObject eObject, Map<String, String> details, boolean sampleInit, ResourceSet resourceSet) {
+		List<String> created = new ArrayList<String>();
+		for (String key : details.keySet()) {
+			try {
+				String path = key.replace(".", "/");
+				if (path.contains("/")) {
+					String s = path.substring(0, path.lastIndexOf("/"));
+					if (!created.contains(s)) {
+
+						sampleInstanceCreate(eObject, s, resourceSet);
+
+						created.add(s);
+					}
+				}
+				set(eObject, path, details.get(key));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void sampleInstanceInitialization(EObject eObject, ResourceSet resourceSet, HashMap<String, String> shallShouldMayProperties) {
+
+		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
+
+		classes.add(eObject.eClass());
+
+		try {
+
+			Method initMethod = eObject.getClass().getDeclaredMethod("init", new java.lang.Class[0]);
+			if (initMethod != null) {
+				initMethod.invoke(eObject, new Object[0]);
+			}
+		} catch (Exception e) {
+			// ignore if no init() method
+		}
+
+		for (EClass eClass : classes) {
+			EAnnotation annotation = eClass.getEAnnotation(CDA_SAMPLE_SOURCE);
+			if (annotation != null) {
+				init(eObject, annotation.getDetails().map(), true, resourceSet);
+			}
+		}
+
+		HashMap<String, EOperation> gets = new HashMap<String, EOperation>();
+
+		for (EClass eClass : classes) {
+		for (EOperation eOperation : eClass.getEOperations()) {
+			if (eOperation.getName().startsWith("get") && !gets.containsKey(eOperation.getName())) {
+				if ((!eOperation.getEContainingClass().getEPackage().getNsURI().equals(RIMPackage.eINSTANCE.getNsURI()))
+						&& (!eOperation.getEContainingClass().getEPackage().getNsURI().equals(CDAPackage.eINSTANCE.getNsURI()))) {
+					for (EOperation addOperation : eClass.getEAllOperations()) {
+						if (addOperation.getName().startsWith("add")) {
+							for (EParameter eParameter : addOperation.getEParameters()) {
+								for (EClass superTypes : ((EClass) eOperation.getEType()).getEAllSuperTypes()) {
+									if (superTypes.equals(eParameter.getEType())) {
+
+										gets.put(eOperation.getName(), eOperation);
+
+										EObject objectToAdd = null;
+										/*
+										 * If abstract - search the current
+										 * package for class that implements
+										 * abstract type
+										 */
+										if (((EClass) eOperation.getEGenericType().getEClassifier()).isAbstract()) {
+											for (EClassifier e2 : eClass.getEPackage().getEClassifiers()) {
+												if (e2 instanceof EClass) {
+													EClass e3 = (EClass) e2;
+													if (e3.getEAllSuperTypes().contains(eOperation.getEGenericType().getEClassifier())) {
+														objectToAdd = e3.getEPackage().getEFactoryInstance().create(e3);
+													}
+												}
+											}
+
+										} else {
+											objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance()
+													.create((EClass) eOperation.getEGenericType().getEClassifier());
+										}
+
+										if (objectToAdd != null) {
+
+											HashMap<String, String> ssmprops = new HashMap<String, String>();
+
+											ssmprops.put("id", "id");
+											ssmprops.put("effectiveTime", "effectiveTime");
+											ssmprops.put("time", "time");
+
+											String searchName = objectToAdd.eClass().getEPackage().getNsPrefix() + "::" + objectToAdd.eClass().getName();
+
+											Collection<NamedElement> results = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(resourceSet, searchName);
+
+											if (results.size() == 1) {
+												NamedElement ne = results.iterator().next();
+												if (ne instanceof Class) {
+													createvalueSetProperies((Class) ne, ssmprops);
+												}
+											}
+											sampleInstanceInitialization(objectToAdd, resourceSet, ssmprops);
+										}
+
+										try {
+
+											for (Method m : eClass.getInstanceClass().getMethods()) {
+												if (addOperation.getName().equals(m.getName())) {
+													m.invoke(eObject, objectToAdd);
+													break;
+
+												}
+											}
+
+										} catch (SecurityException e) {
+										} catch (IllegalArgumentException e) {
+										} catch (IllegalAccessException e) {
+										} catch (InvocationTargetException e) {
+										}
+
+									}
+
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+			DatatypesInit datatypesInit = new DatatypesInit();
+
+			for (EClass eClass2 : classes) {
+				for (EStructuralFeature feature : eClass2.getEStructuralFeatures()) {
+					if (feature.getEType() != null && feature.getEType() instanceof EClass) {
+						EClass ec = (EClass) feature.getEType();
+						if (DatatypesPackage.eINSTANCE.getNsURI().equals(ec.getEPackage().getNsURI())) {
+							if (shallShouldMayProperties.containsKey(feature.getName())) {
+								Object currentValue = eObject.eGet(feature);
+								if (currentValue == null || (currentValue instanceof EList && ((EList) currentValue).isEmpty())) {
+									// If we have abstract type - use
+									// corresponding uml class to get type
+									if (ec.isAbstract()) {
+										String searchName = eObject.eClass().getEPackage().getNsPrefix() + "::" + eObject.eClass().getName();
+										Collection<NamedElement> results = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(resourceSet, searchName);
+										if (results.size() == 1) {
+											NamedElement ne = results.iterator().next();
+											if (ne instanceof Class) {
+												for (Property p : ((Class) ne).getOwnedAttributes()) {
+													if (feature.getName().equals(p.getName())) {
+														for (EObject c : ec.getEPackage().eContents()) {
+															if (c instanceof EClass && p.getType().getName().equals(((EClass) c).getName())) {
+																ec = (EClass) c;
+																break;
+															}
+														}
+														break;
+													}
+
+												}
+											}
+										}
+
+									}
+									// If we are not abstract at this point;
+									// create instance
+									if (!ec.isAbstract()) {
+
+										EObject value = ec.getEPackage().getEFactoryInstance().create(ec);
+
+										datatypesInit.doSwitch(value);
+
+										if (feature.isMany()) {
+											eObject.eSet(feature, Collections.singletonList(value));
+										} else {
+											eObject.eSet(feature, value);
+										}
+									}
+								} else {
+									if (feature.isMany()) {
+										datatypesInit.doSwitch((EObject) ((EList) currentValue).get(0));
+									} else {
+										datatypesInit.doSwitch((EObject) currentValue);
+									}
+								}
+
+							}
+						}
+					}
+
+				}
+			}
+
+		}
+
+	}
+
+	private static class DatatypesInit extends org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch<Object> {
+
+		@Override
+		public Object caseST(ST object) {
+			
+			if ( (object.getText() != null && object.getText().length() == 0) &&   object.eContainer() != null)
+			{
+				if (object.eContainer() instanceof Section){					
+					Section s = (Section)object.eContainer();					
+					object.addText(s.getCode().getDisplayName());	
+				}
+					
+			}
 		
-//	private CDARegistry cdaRegistry;
-	
+			
+			
+			return object;
+		}
+
+		public static String now(String dateFormat) {
+			Calendar cal = Calendar.getInstance();
+			SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+			return sdf.format(cal.getTime());
+
+		}
+
+		@Override
+		public Object caseSXCM_TS(SXCM_TS object) {
+			object.setValue(now("yyyyMMdd"));
+			return object;
+		}
+
+		@Override
+		public Object caseIVL_TS(IVL_TS object) {
+			IVXB_TS lowValue = DatatypesFactory.eINSTANCE.createIVXB_TS();
+			lowValue.setValue(now("yyyy"));
+			IVXB_TS highValue = DatatypesFactory.eINSTANCE.createIVXB_TS();
+			highValue.setValue(now("yyyy"));
+
+			object.setLow(lowValue);
+			object.setHigh(highValue);
+			return object;
+		}
+
+		@Override
+		public Object caseII(II ii) {
+			ii.setRoot(UUID.randomUUID().toString());
+			return ii;
+		}
+
+		@Override
+		public Object caseCD(CD object) {
+			if (!object.getNullFlavor().equals(NullFlavor.NA)) {
+				// if ( ( object.getCode() == null || (object.getCode() != null
+				// && object.getCode().length() == 0))) {
+				// object.setCode("GetCodeFromTerminlogyHere");
+				// }
+			}
+
+			return object;
+		}
+
+		@Override
+		public Object defaultCase(EObject object) {
+			return super.defaultCase(object);
+		}
+
+	}
+
+	private Map<String, EPackage> packageURIMap = new HashMap<String, EPackage>();
+
+	boolean standalone = false;
+
 	public InstanceGenerator() {
 		CDAUtil.loadPackages();
-//		cdaRegistry = new CDARegistry();
 	}
-	
+
+	public InstanceGenerator(boolean standalone) {
+		this.standalone = standalone;
+		CDAUtil.loadPackages();
+	}
+
 	private EPackage getEPackageForURI(String ePackageURI) {
 		EPackage ePackage = packageURIMap.get(ePackageURI);
-		if (! packageURIMap.containsKey(ePackageURI)) {
+		if (!packageURIMap.containsKey(ePackageURI)) {
 			ePackage = EPackage.Registry.INSTANCE.getEPackage(ePackageURI);
 			packageURIMap.put(ePackageURI, ePackage);
-			
+
 			if (ePackage == null) {
 				System.err.println("Cannot load EPackage for: " + ePackageURI);
 			}
 		}
-		
+
 		return ePackage;
 	}
 
@@ -109,689 +561,218 @@ public class InstanceGenerator {
 				}
 			}
 		}
-		
+
 		return null;
 	}
-	
-	private Package getInstancePackage(Class umlClass)
-	{
+
+	private Package getInstancePackage(Package modelPackage) {
 		Package instancePackage = null;
-		if (umlClass != null) {
-			if (umlClass.getNearestPackage() != null) {			
-				if (umlClass.getNearestPackage().eResource() !=  null) {
-					if (umlClass.getNearestPackage().eResource().getURI() != null) {			
-						
-						final String[] segments = umlClass.getNearestPackage().eResource().getURI().segments();
+		if (modelPackage != null) {
+			if (modelPackage.eResource() != null) {
+				if (modelPackage.eResource().getURI() != null) {
+
+					final String[] segments = modelPackage.eResource().getURI().segments();
+
+					String instanceURIPath = "";
+
+					Resource umlInstanceResource = null;
+
+					if (!standalone) {
 						IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(segments[1]);
 						IFolder folder = project.getFolder("model");
-						String instancePath = segments[segments.length-1].replace(".uml", "-instances.uml");
+						String instancePath = segments[segments.length - 1].replace(".uml", "-instances.uml");
 						IFile file = folder.getFile(instancePath);
-						final URI instanceURI =	URI.createPlatformResourceURI(file.getFullPath().toOSString(),false);
-						
-						Resource umlInstanceResource = null;
-						
-//						if (!umlInstancePackages.containsKey(umlSelection.getNearestPackage().getName()) ){
-//							Resource umlInstanceResource = null; 
-//
-//							if (!file.exists()) {
-//								createUMLInstanceModel(instanceURI, segments[segments.length-1]);
-//								
-//							}
-						
-							try {
-									umlInstanceResource = umlClass.eResource().getResourceSet().getResource(instanceURI, true);
-								} catch (Exception e) {
-									umlInstanceResource = umlClass.eResource().getResourceSet().getResource(instanceURI, false);
-								}
-								instancePackage = (Package) EcoreUtil.getObjectByType(umlInstanceResource.getContents(), UMLPackage.eINSTANCE.getPackage());
-//								if (umlPackage != null)
-//								{
-//									umlInstancePackages.put(umlSelection.getNearestPackage().getName(), umlPackage);
-//									instancePackage = umlPackage;
-//								}
-//						}  else
-//						{
-//							instancePackage = umlInstancePackages.get(umlSelection.getNearestPackage().getName());
-//						}
-					} 
+						instanceURIPath = file.getFullPath().toOSString();
+
+						final URI instanceURI = URI.createPlatformResourceURI(instanceURIPath, false);
+
+						try {
+							umlInstanceResource = modelPackage.eResource().getResourceSet().getResource(instanceURI, true);
+						} catch (Exception e) {
+							umlInstanceResource = modelPackage.eResource().getResourceSet().getResource(instanceURI, false);
+						}
+
+					} else {
+						instanceURIPath = modelPackage.getNearestPackage().eResource().getURI().toFileString();
+
+						String umlModelName = segments[segments.length - 1].replace(".uml", "-instances.uml");
+
+						instanceURIPath = instanceURIPath.replace(segments[segments.length - 1], umlModelName);
+
+						final URI instanceURI = URI.createFileURI(instanceURIPath);
+
+						try {
+							umlInstanceResource = modelPackage.eResource().getResourceSet().getResource(instanceURI, true);
+						} catch (Exception e) {
+							umlInstanceResource = modelPackage.eResource().getResourceSet().getResource(instanceURI, false);
+						}
+
+					}
+
+					if (umlInstanceResource != null) {
+						instancePackage = (Package) EcoreUtil.getObjectByType(umlInstanceResource.getContents(), UMLPackage.eINSTANCE.getPackage());
+					}
+				}
 
 			}
 		}
-			
-		}			
 		return instancePackage;
-	
+
 	}
-	
+
+	static void createvalueSetProperies(Class umlClass, HashMap<String, String> shouldShallMayProperties) {
+
+		for (Property umlProperty : umlClass.getOwnedAttributes()) {
+
+			if (CDAModelUtil.getValidationSeverity(umlProperty) != null) {
+				if (!shouldShallMayProperties.containsKey(umlProperty.getName())) {
+					shouldShallMayProperties.put(umlProperty.getName(), umlProperty.getName());
+				}
+			}
+		}
+
+		for (Classifier c : umlClass.getGenerals()) {
+			if (c instanceof Class && c.getGenerals().size() > 0) {
+				createvalueSetProperies((Class) c, shouldShallMayProperties);
+			}
+
+		}
+
+	}
+
 	public EObject createInstance(Class umlClass, int levels) {
-	
-		Package instancePackage = getInstancePackage(umlClass);
-		
-		
-		setSampleAnnotations(instancePackage ,umlClass.getName());
-		
+
+		HashMap<String, String> shallShouldMayProperties = new HashMap<String, String>();
+
+		shallShouldMayProperties.put("id", "id");
+		shallShouldMayProperties.put("effectiveTime", "effectiveTime");
+		shallShouldMayProperties.put("time", "time");
+
+		createvalueSetProperies(umlClass, shallShouldMayProperties);
+
+		Package topPackage = UMLUtil.getTopPackage(umlClass);
+
+		for (Package p : topPackage.getImportedPackages()) {
+			Package instancePackage = getInstancePackage(p);
+
+			if (instancePackage != null) { // umlClass.getName()
+				setSampleAnnotations(instancePackage);
+			}
+
+		}
+
+		Package instancePackage = getInstancePackage(topPackage);
+
+		if (instancePackage != null) { // umlClass.getName()
+			setSampleAnnotations(instancePackage);
+		}
+
 		EObject eObject = null;
-		
+
 		EClass eClass = getEClass(umlClass);
 
 		if (eClass != null && !eClass.isAbstract()) {
-			
 			eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
-			
-			CDAUtil.sampleInstanceInitialization( eObject);
-			
-//			
-//			try {
-//				Method initMethod = eObject.getClass().getDeclaredMethod("init", new java.lang.Class[0]);
-//				if (initMethod != null) {
-//					initMethod.invoke(eObject, new Object[0]);
-//				}
-//			} catch (Exception e) {
-//				// ignore if no init() method
-//			}
-
-//			//add assigningAuthorityName to all templateId elements
-//			List<EObject> templateIds = getChildElements(eObject, "templateId");
-//			for (EObject templateId : templateIds) {
-//				if (templateId instanceof II) {
-//					EClass templateClass = cdaRegistry.getEClass(
-//							((II) templateId).getRoot(), eObject);
-//					if (templateClass != null) {
-//						StringBuffer className = new StringBuffer();
-//						className.append(templateClass.getEPackage().getName().toUpperCase());
-//						for (String token : UMLUtil.splitName(templateClass.getName())) {
-//							className.append(" ").append(token);
-//						}
-//						
-//						((II)templateId).setAssigningAuthorityName(className.toString());
-//					}
-//				}
-//			}
-			
-			// for draft IGs, template IDs may not be filled
-			// don't insert templateId if class is from base CDA model
-//			String thisTemplateId = CDAModelUtil.getTemplateId(umlClass);
-//			if (thisTemplateId == null && !CDAModelUtil.isCDAModel(umlClass)) {
-//				// insert new element without root attribute
-//				II templateId = DatatypesFactory.eINSTANCE.createII();
-//				templateId.setAssigningAuthorityName(CDAModelUtil.getPrefixedSplitName(umlClass));
-//
-//				EStructuralFeature feature = eClass.getEStructuralFeature("templateId");
-//				if (feature != null) {
-////					EList<II> ids = new BasicEList<II>();
-////					ids.add(templateId);
-////					eObject.eSet(feature, ids);
-//					
-//					Object ids = eObject.eGet(feature);
-//					if (ids instanceof EList<?>) {
-//						((EList)ids).add(templateId);
-//					}
-//				}
-//			}
-
-			//If section has no 'title' and does have 'code', set title to code.displayName
-//			if (eObject instanceof Section) {
-//				Section section = (Section)eObject;
-//				if (section.getTitle() == null && section.getCode() != null
-//						&& section.getCode().getDisplayName() != null) {
-//					section.setTitle(DatatypesFactory.eINSTANCE.createST(
-//							section.getCode().getDisplayName()));
-//				}
-//			}
-//			
-//			List<Property> conformanceRules = getAllConformanceRules(umlClass);
-//			for (Property property : conformanceRules) {
-//				if (property.getType() != null) {
-//					EClass typeEClass = getEClass(property.getType());
-//					if (typeEClass != null && typeEClass.getEPackage().getName().equals("datatypes")) {
-//						setDatatypeValue(property, eObject, typeEClass);
-//					}
-//				}
-//			}
-//			if (levels > 0) {
-//				for (Property property : conformanceRules) {
-//					boolean isInherited = umlClass != property.getClass_();
-//					
-//					// for now, only include inherited associations from same model, to exclude overridden
-////					if (property.getType() != null && property.getAssociation() != null
-////							&& UMLUtil.getTopPackage(property).equals(UMLUtil.getTopPackage(umlClass))) {
-//					if (property.getType() != null && property.getAssociation() != null) {
-//						String severity = CDAModelUtil.getValidationSeverity(property.getAssociation());
-//						
-//						// omit optional associations that don't have validation severity (e.g. only documentation)
-//						if (!isInherited && (severity != null || property.getLower() > 0)) {
-//							EObject type = createInstance((Class)property.getType(), --levels);
-//							addChild(eObject, type);
-//						}
-//						
-//						// if inherited, include only associations that are required
-//						else if (isInherited && CDAModelUtil.SEVERITY_ERROR.equals(severity)) {
-//							
-//							EObject type = createInstance((Class)property.getType(), --levels);
-//							addChild(eObject, type);
-//						}
-//					}
-//				}
-//			}
-
-			// if not specified, set a reasonable default value for classCode and moodCode
-//			if (eObject instanceof Act) {
-//				Act act = (Act)eObject;
-//				if (!act.isSetClassCode()) {
-//					act.setClassCode(x_ActClassDocumentEntryAct.ACT);
-//				}
-//				if (!act.isSetMoodCode()) {
-//					act.setMoodCode(x_DocumentActMood.EVN);
-//				}
-//			}
-//			else if (eObject instanceof Observation) {
-//				Observation observation = (Observation)eObject;
-//				if (!observation.isSetClassCode()) {
-//					observation.setClassCode(ActClassObservation.OBS);
-//				}
-//				if (!observation.isSetMoodCode()) {
-//					observation.setMoodCode(x_ActMoodDocumentObservation.EVN);
-//				}
-//			}
+			sampleInstanceInitialization(eObject, topPackage.eResource().getResourceSet(), shallShouldMayProperties);
 		}
-		
 		return eObject;
 	}
-	
-	public List<Property> getAllConformanceRules(Class umlClass) {
-		List<Property> allProperties = new ArrayList<Property>();
 
-		List<Classifier> classes = new ArrayList<Classifier>();
-		classes.add(umlClass);
-		classes.addAll(umlClass.allParents());
-		for (Classifier parent : classes) {
-			// exclude CDA model properties
-			if (parent.getNearestPackage() != null &&  (! CDAModelUtil.CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()))) {
-				for (Property property : parent.getAttributes()) {
-					allProperties.add(property);
-				}
-			}
-		}
-		
-		return allProperties;
-	}
-
-	public boolean addChild(EObject parent, EObject child) {
-		//TODO change to ALL reflection using feature name
-		EClass cdaSection = (EClass) CDAPackage.eINSTANCE.getEClassifier("Section");
-		EClass cdaOrganizer = (EClass) CDAPackage.eINSTANCE.getEClassifier("Organizer");
-
-		if (parent instanceof ClinicalDocument) {
-			if (child instanceof Section) {
-				((ClinicalDocument)parent).addSection((Section)child);
-			}
-			if (child instanceof Author) {
-				((ClinicalDocument)parent).getAuthors().add((Author)child);
-			}
-			if (child instanceof DataEnterer) {
-				((ClinicalDocument)parent).setDataEnterer((DataEnterer)child);
-			}
-			else {
-				return false;
-			}
-		}
-		else if (parent instanceof Section) {
-			if (child instanceof Section) {
-				((Section)parent).addSection((Section)child);
-			}
-			else if (child instanceof Organizer) {
-//		if (cdaSection.isSuperTypeOf(parent.eClass())) {
-//			if (cdaOrganizer.isSuperTypeOf(child.eClass())) {
-				((Section)parent).addOrganizer((Organizer)child);
-				
-//				EClass entryClass = (EClass) cdaPackage.getEClassifier("Entry");
-//				EObject entry = cdaPackage.getEFactoryInstance().create(entryClass);
-//				EStructuralFeature entryFeature = parent.eClass().getEStructuralFeature("entry");
-//				EList entries = (EList) parent.eGet(entryFeature);
-//				entries.add(entry);
-				
-				
-//				Entry entry = CDAFactory.eINSTANCE.createEntry();
-//				EStructuralFeature organizerFeature = entry.eClass().getEStructuralFeature("organizer");
-//				entry.eSet(organizerFeature, child);
-//
-//				section.getEntries().add(entry);
-				
-			}
-			else if (child instanceof Act) {
-				((Section)parent).addAct((Act)child);
-			}
-			else if (child instanceof Observation) {
-				((Section)parent).addObservation((Observation)child);
-			}
-			else if (child instanceof Encounter) {
-				((Section)parent).addEncounter((Encounter)child);
-			}
-			else if (child instanceof Procedure) {
-				((Section)parent).addProcedure((Procedure)child);
-			}
-			else if (child instanceof SubstanceAdministration) {
-				((Section)parent).addSubstanceAdministration((SubstanceAdministration)child);
-			}
-			else if (child instanceof Supply) {
-				((Section)parent).addSupply((Supply)child);
-			}
-			else {
-				return false;
-			}
-		}
-		else if (parent instanceof Act) {
-			if (child instanceof Act) {
-				((Act)parent).addAct((Act)child);
-			}
-			else if (child instanceof Observation) {
-				((Act)parent).addObservation((Observation)child);
-			}
-			else if (child instanceof ParticipantRole) {
-				Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
-				((Act)parent).getParticipants().add(participant);
-				participant.setParticipantRole((ParticipantRole)child);
-			}
-			else if (child instanceof AssignedEntity) {
-				Performer2 performer = CDAFactory.eINSTANCE.createPerformer2();
-				((Act)parent).getPerformers().add(performer);
-				performer.setAssignedEntity((AssignedEntity)child);
-			}
-			else {
-				return false;
-			}
-		}
-		else if (parent instanceof Observation) {
-			if (child instanceof Act) {
-				((Observation)parent).addAct((Act)child);
-			}
-			else if (child instanceof Observation) {
-				((Observation)parent).addObservation((Observation)child);
-			}
-			else {
-				return false;
-			}
-		}
-		else if (parent instanceof Organizer) {
-			if (child instanceof Observation) {
-				((Organizer)parent).addObservation((Observation)child);
-			}
-			else if (child instanceof Procedure) {
-				((Organizer)parent).addProcedure((Procedure)child);
-			}
-			else {
-				return false;
-			}
-		}
-		else if (parent instanceof SubstanceAdministration) {
-			if (child instanceof Observation) {
-				((SubstanceAdministration)parent).addObservation((Observation)child);
-			}
-			else if (child instanceof Procedure) {
-				((SubstanceAdministration)parent).addProcedure((Procedure)child);
-			}
-			else if (child instanceof Supply) {
-				((SubstanceAdministration)parent).addSupply((Supply)child);
-			}
-			else if (child instanceof SubstanceAdministration) {
-				((SubstanceAdministration)parent).addSubstanceAdministration((SubstanceAdministration)child);
-			}
-			else {
-				return false;
-			}
-		}
-		else {
-			return false;
-		}
-		
-		return true;
-	}
-
-	@SuppressWarnings("unchecked")
-	public void setDatatypeValue(Property property, EObject owner, EClass typeClass) {
-		Property cdaProperty = CDAModelUtil.getCDAProperty(property);
-		if (cdaProperty == null) {
-			return;
-		}
-
-		EClass ownerClass = owner.eClass();
-		EStructuralFeature feature = ownerClass.getEStructuralFeature(cdaProperty.getName());
-
-		Object currentValue = owner.eGet(feature);
-		if (currentValue == null ||
-				(currentValue instanceof EList && ((EList)currentValue).isEmpty())) {
-			try {
-				EObject value = typeClass.getEPackage().getEFactoryInstance().create(typeClass);
-
-				setDefaultValues(property, value);
-				
-				if (currentValue instanceof EList) {
-					owner.eSet(feature, Collections.singletonList(value));
-				}
-				else {
-					try {
-						owner.eSet(feature, value);
-					}
-					catch (ClassCastException e) {
-						System.err.println("InstanceGenerator: " + 
-								property.getQualifiedName() + ": " + e.getMessage());
-					}
-				}
-			}
-			catch (IllegalArgumentException e) {
-				// occurs for invalid typeClass on factory
-			}
-		}
-	}
-	
-	public void setDefaultValues(Property property, EObject dataValue) {
-		if (dataValue instanceof IVL_TS) {
-			IVXB_TS lowValue = DatatypesFactory.eINSTANCE.createIVXB_TS();
-			lowValue.setValue("1972");
-			IVXB_TS highValue = DatatypesFactory.eINSTANCE.createIVXB_TS();
-			highValue.setValue("2008");
-			
-			((IVL_TS)dataValue).setLow(lowValue);
-			((IVL_TS)dataValue).setHigh(highValue);
-		}
-		else if(dataValue instanceof II) {
-			((II)dataValue).setRoot(UUID.randomUUID().toString());
-		}
-
-// This is already done by init() method.
-//		else if(dataValue instanceof ED) {
-//			TextValue textValue = CDAProfileUtil.getTextValue(property);
-//			if (textValue != null && textValue.getValue() != null) {
-//				((ED)dataValue).addText(textValue.getValue());
-//			}
-//		}
-		
-// This is already done by init() method.
-//		else if(dataValue instanceof CD) {
-//			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
-//			CodeSystemVersion codeSystemVersion = codeSystemConstraint==null ? null : codeSystemConstraint.getReference();
-//			
-//			ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
-//			ValueSetVersion valueSetVersion = valueSetConstraint==null ? null : valueSetConstraint.getReference();
-//
-//			String codeSystemName = null;
-//			String codeSystemId = null;
-//			if (codeSystemConstraint != null) {
-//				if (codeSystemConstraint.getCode() != null) {
-//					((CD)dataValue).setCode(codeSystemConstraint.getCode());
-//				}
-//				codeSystemName = codeSystemVersion==null ? codeSystemConstraint.getName() : codeSystemVersion.getBase_Enumeration().getName();
-//				codeSystemId = codeSystemVersion==null ? codeSystemConstraint.getIdentifier() : codeSystemVersion.getIdentifier();
-//			}
-//			else if (valueSetConstraint != null) {
-//				if (valueSetVersion != null) {
-//					codeSystemVersion = valueSetVersion.getCodeSystem();
-//					
-//					codeSystemName = codeSystemVersion==null ? null : codeSystemVersion.getBase_Enumeration().getName();
-//					codeSystemId = codeSystemVersion==null ? null : codeSystemVersion.getIdentifier();
-//				}
-//			}
-//
-//			if (codeSystemName != null) {
-//				((CD)dataValue).setCodeSystemName(codeSystemName);
-//			}
-//			if (codeSystemId != null) {
-//				((CD)dataValue).setCodeSystem(codeSystemId);
-//			}
-//		}
-	}
-
-	@SuppressWarnings("unchecked")
-	private List<EObject> getChildElements(EObject eObject, String name) {
-		List<EObject> results = new ArrayList<EObject>();
-
-		EStructuralFeature feature = eObject.eClass().getEStructuralFeature(name);
-		if (feature != null) {
-			if (feature.isMany()) {
-				for (Object object : (List<Object>)eObject.eGet(feature)) {
-					if (object instanceof EObject)
-						results.add((EObject)object);
-				}
-			} else {
-				Object object = eObject.eGet(feature);
-				if (object instanceof EObject)
-					results.add((EObject)object);
-			}
-		}
-		
-		return results;
-	}
-	public void save(EObject eObject, Writer writer)  {		
+	public void save(EObject eObject, Writer writer) {
 		try {
-			if (eObject instanceof ClinicalDocument) {	
+			if (eObject instanceof ClinicalDocument) {
 				CDAUtil.save((ClinicalDocument) eObject, writer);
-		} else if (eObject instanceof InfrastructureRoot ) {
-				CDAUtil.saveSnippet((InfrastructureRoot)eObject, writer);
-		} else 
-		{
-			writer.write("Unable to create XML Snippet");
-		}
+			} else if (eObject instanceof InfrastructureRoot) {
+				CDAUtil.saveSnippet((InfrastructureRoot) eObject, writer);
+			} else {
+				writer.write("Unable to create XML Snippet");
+			}
 		} catch (Exception e) {
-		e.printStackTrace();
+			e.printStackTrace();
 		}
 
 	}
-	
-	
-	
-	
-	 private static void addAnnotation(ENamedElement eNamedElement, int depth, String source, String [] details, URI [] references)
-	  {
-//	    EAnnotation eAnnotation = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEAnnotation();
-		 
-			EAnnotation eAnnotation  = eNamedElement.getEAnnotation(CDAUtil.CDA_SAMPLE_SOURCE);
-			if (eAnnotation  == null) {
-				eAnnotation = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEAnnotation();
-			    eAnnotation.setSource(source);
-			} else
-			{
-				eAnnotation.getDetails().clear();
+
+	private static void addAnnotation(ENamedElement eNamedElement, int depth, String source, String[] details, URI[] references) {
+
+		EAnnotation eAnnotation = eNamedElement.getEAnnotation(CDA_SAMPLE_SOURCE);
+		if (eAnnotation == null) {
+			eAnnotation = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEAnnotation();
+			eAnnotation.setSource(source);
+		} else {
+			eAnnotation.getDetails().clear();
+		}
+
+		EMap<String, String> theDetails = eAnnotation.getDetails();
+		for (int i = 1; i < details.length; i += 2) {
+			theDetails.put(details[i - 1], details[i]);
+		}
+		EList<EAnnotation> annotations = eNamedElement.getEAnnotations();
+		for (int i = 0; i < depth; ++i) {
+			@SuppressWarnings("unchecked")
+			EList<EAnnotation> childAnnotations = (EList<EAnnotation>) (EList<?>) annotations.get(annotations.size() - 1).getContents();
+			annotations = childAnnotations;
+		}
+		annotations.add(eAnnotation);
+		if (references != null) {
+			InternalEList<EObject> eAnnotationReferences = (InternalEList<EObject>) eAnnotation.getReferences();
+			for (URI reference : references) {
+				InternalEObject internalEObject = (InternalEObject) org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEObject();
+				internalEObject.eSetProxyURI(reference);
+				eAnnotationReferences.addUnique(internalEObject);
 			}
-		 
-		 
-	    EMap<String, String> theDetails = eAnnotation.getDetails();
-	    for (int i = 1; i < details.length; i += 2)
-	    {
-	      theDetails.put(details[i - 1], details[i]);
-	    }
-	    EList<EAnnotation> annotations = eNamedElement.getEAnnotations();
-	    for (int i = 0; i < depth; ++i)
-	    {
-	      @SuppressWarnings("unchecked") EList<EAnnotation> childAnnotations = 
-	        (EList<EAnnotation>)(EList<?>)annotations.get(annotations.size() - 1).getContents();
-	      annotations = childAnnotations;
-	    }
-	    annotations.add(eAnnotation);
-	    if (references != null)
-	    {
-	      InternalEList<EObject> eAnnotationReferences = (InternalEList<EObject>)eAnnotation.getReferences();
-	      for (URI reference : references)
-	      {
-	        InternalEObject internalEObject = (InternalEObject)org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEObject();
-	        internalEObject.eSetProxyURI(reference);
-	        eAnnotationReferences.addUnique(internalEObject);
-	      }
-	    }
-	  }
-	
-	 
-	 private static void addAnnotation(ENamedElement eNamedElement, String source, String [] details)
-	  {
-	    addAnnotation(eNamedElement, source, details, null);
-	  }
+		}
+	}
 
-	  private static void addAnnotation(ENamedElement eNamedElement, String source, String [] details, URI [] references)
-	  {
-	    addAnnotation(eNamedElement, 0, source, details, references);
-	  }
+	private static void addAnnotation(ENamedElement eNamedElement, String source, String[] details) {
+		addAnnotation(eNamedElement, source, details, null);
+	}
 
-	  private static  void addAnnotation(ENamedElement eNamedElement, int depth, String source, String [] details)
-	  {
-	    addAnnotation(eNamedElement, depth, source, details, null);
-	  }
+	private static void addAnnotation(ENamedElement eNamedElement, String source, String[] details, URI[] references) {
+		addAnnotation(eNamedElement, 0, source, details, references);
+	}
 
-
-	private static void createValues(InstanceSpecification instanceSpecification,ArrayList<String> annotations) {
+	private static void createValues(InstanceSpecification instanceSpecification, ArrayList<String> annotations) {
 		for (Slot slot : instanceSpecification.getSlots()) {
-			
-//			String currentPath= String.format(  (path.length()==0 ? "%s%s" : "%s.%s" )  , path,slot.getDefiningFeature().getName());;
 
 			for (ValueSpecification vs : slot.getValues()) {
-				if (vs instanceof InstanceValue)
-				{
-					InstanceValue instanceValue = (InstanceValue)vs;				
-					createValues(instanceValue.getInstance(),annotations );
-				} else
-				{
-					if (vs instanceof LiteralString)
-					{
-						LiteralString literalString = (LiteralString)vs;
-						if (literalString.getValue()!=null && literalString.getValue().length()>0) {
+				if (vs instanceof InstanceValue) {
+					InstanceValue instanceValue = (InstanceValue) vs;
+					createValues(instanceValue.getInstance(), annotations);
+				} else {
+					if (vs instanceof LiteralString) {
+						LiteralString literalString = (LiteralString) vs;
+						if (literalString.getValue() != null && literalString.getValue().length() > 0) {
 							annotations.add(vs.getName());
 							annotations.add(literalString.getValue());
 						}
 					}
-					
 
-				}				
-			}
-		}
-
-	}
-	  
-//	static void createValuesMap(InstanceSpecification instanceSpecification,HashMap<String,String> valuesMap) {
-//		for (Slot slot : instanceSpecification.getSlots()) {
-//			
-////			String currentPath= String.format(  (path.length()==0 ? "%s%s" : "%s.%s" )  , path,slot.getDefiningFeature().getName());;
-//
-//			for (ValueSpecification vs : slot.getValues()) {
-//				if (vs instanceof InstanceValue)
-//				{
-//					InstanceValue instanceValue = (InstanceValue)vs;				
-//					createValuesMap(instanceValue.getInstance(),valuesMap );
-//				} else
-//				{
-//					if (vs instanceof LiteralString)
-//					{
-//						LiteralString literalString = (LiteralString)vs;		
-//						valuesMap.put(vs.getName(), literalString.getValue());
-//					}
-//					
-//
-//				}				
-//			}
-//		}
-//
-//	}
-
-	
-	public  void setSampleAnnotations(Package umlPackage,String umlClassName)
-	{
-		for (PackageableElement packageableElement : umlPackage.getPackagedElements())
-		{
-			if (packageableElement instanceof InstanceSpecification)
-			{
-				InstanceSpecification instanceSpecification = (InstanceSpecification)packageableElement;
-				
-				for (Classifier classifier : instanceSpecification.getClassifiers())
-				{
-					EClass eclass = getEClass(classifier);
-					if (eclass != null && eclass.getName().equals(umlClassName) )
-					{
-						ArrayList<String> annotations = new ArrayList<String>();
-//						String path="";
-						createValues(instanceSpecification,annotations );
-						String[] values = new String[]{};						
-						values = annotations.toArray(values);
-						addAnnotation
-						  (eclass, 
-						   CDAUtil.CDA_SAMPLE_SOURCE, 
-						   values);							
-						
-					}					
 				}
-				
+			}
+		}
+
+	}
+
+	public void setSampleAnnotations(Package umlPackage) {
+
+		for (PackageableElement packageableElement : umlPackage.getPackagedElements()) {
+			if (packageableElement instanceof InstanceSpecification) {
+				InstanceSpecification instanceSpecification = (InstanceSpecification) packageableElement;
+
+				for (Classifier classifier : instanceSpecification.getClassifiers()) {
+					EClass eclass = getEClass(classifier);
+					if (eclass != null) {
+						ArrayList<String> annotations = new ArrayList<String>();
+						createValues(instanceSpecification, annotations);
+						String[] values = new String[] {};
+						values = annotations.toArray(values);
+						addAnnotation(eclass, CDA_SAMPLE_SOURCE, values);
+
+					}
+				}
+
 			}
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	================================================
-// copied from CDA model internal package, for use here
-//	protected class CDARegistry {
-//		private Map<String, EClass> classes = null;
-//		private Map<EClass, RegistryDelegate> delegates = null;
-//		private static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
-//		private static final String TEMPLATE_ID_ROOT = "templateId.root";
-//		private static final String CONTEXT_DEPENDENT = "contextDependent";
-//		private static final String REGISTRY_DELEGATE = "registryDelegate";
-//
-//		private CDARegistry() {
-//			classes = new HashMap<String, EClass>();
-//			delegates = new HashMap<EClass, RegistryDelegate>();
-//			load();
-//		}
-//
-//		private void load() {
-//			EPackage.Registry registry = EPackage.Registry.INSTANCE;
-//			for (String key : registry.keySet().toArray(new String[registry.size()])) {
-//				try {
-//					EPackage ePackage = registry.getEPackage(key);
-//					for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-//						String templateId = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
-//						if (templateId != null) {
-//							String contextDependent = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
-//							if ("true".equals(contextDependent)) {
-//								String registryDelegate = EcoreUtil.getAnnotation(ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
-//								EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
-//								classes.put(templateId, eClass);
-//								if (!delegates.containsKey(eClass)) {
-//									delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
-//								}
-//							} else {
-//								classes.put(templateId, (EClass) eClassifier);
-//							}
-//						}
-//					}
-//				}
-//				catch (java.lang.NoClassDefFoundError e1) {}
-//				catch (Exception e2) {}
-//			}
-//		}
-//
-//		public EClass getEClass(String templateId, Object context) {
-//			EClass eClass = classes.get(templateId);
-//			if (delegates.containsKey(eClass)) {
-//				RegistryDelegate delegate = delegates.get(eClass);
-//				eClass = delegate.getEClass(templateId, context);
-//			}
-//			return eClass;
-//		}
-//	}
 }
