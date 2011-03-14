@@ -485,6 +485,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R2QcEB1wEd-DaIarnYb4TQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qn-EAB1wEd-DaIarnYb4TQ"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_n7pd0EhmEeCAwtsXrgwZCA" name="mandatory">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qN47UEhoEeCAwtsXrgwZCA"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_r_988EhoEeCAwtsXrgwZCA"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_x6N6EJmVEd6OiP9GTesZug" name="PropertyValidation">
       <generalization xmi:id="_0PhkkJmVEd6OiP9GTesZug" general="_e_WLgJmVEd6OiP9GTesZug"/>
@@ -566,7 +571,7 @@
       <ownedAttribute xmi:id="_s3P10B1zEd-N4c96fT7fpQ" name="ignoreCase">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wRWlMB1zEd-N4c96fT7fpQ"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_xmDuUB1zEd-N4c96fT7fpQ" value="false"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_xmDuUB1zEd-N4c96fT7fpQ"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_CQsccJmaEd6OiP9GTesZug" name="CDATemplate">
@@ -582,7 +587,7 @@
       <ownedAttribute xmi:id="_9e6vgB1vEd-DaIarnYb4TQ" name="contextDependent">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Cje1kB1wEd-DaIarnYb4TQ"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_EZiYQB1wEd-DaIarnYb4TQ" value="false"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_EZiYQB1wEd-DaIarnYb4TQ"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_4AuRwKFKEd6NOYTVzzK9uw" name="ConstraintValidation">
@@ -602,7 +607,7 @@
       <ownedAttribute xmi:id="_e-XwwE5jEd-4ecWC1FvfLA" name="requiresParentId">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_is7tME5jEd-4ecWC1FvfLA"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_mQn2YE5jEd-4ecWC1FvfLA" value="false"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_mQn2YE5jEd-4ecWC1FvfLA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_UyauYB10Ed-N4c96fT7fpQ" name="Generalization_ConformsTo" memberEnd="_UyauYR10Ed-N4c96fT7fpQ _UybVcB10Ed-N4c96fT7fpQ">
@@ -668,5 +673,5 @@
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
   </uml:Profile>
-  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
+  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/5" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
 </xmi:XMI>

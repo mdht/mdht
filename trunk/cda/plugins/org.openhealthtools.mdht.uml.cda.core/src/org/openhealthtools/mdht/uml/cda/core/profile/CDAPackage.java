@@ -43,7 +43,7 @@ public interface CDAPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.openhealthtools.org/mdht/schemas/cda/4";
+	String eNS_URI = "http://www.openhealthtools.org/mdht/schemas/cda/5";
 
 	/**
 	 * The package namespace name.
@@ -99,13 +99,22 @@ public interface CDAPackage extends EPackage {
 	int VALIDATION__RULE_ID = 2;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION__MANDATORY = 3;
+
+	/**
 	 * The number of structural features of the '<em>Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALIDATION_FEATURE_COUNT = 3;
+	int VALIDATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.AssociationValidationImpl <em>Association Validation</em>}' class.
@@ -143,6 +152,15 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_VALIDATION__RULE_ID = VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -198,6 +216,15 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY__RULE_ID = ASSOCIATION_VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY__MANDATORY = ASSOCIATION_VALIDATION__MANDATORY;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -262,6 +289,15 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY_RELATIONSHIP__RULE_ID = ASSOCIATION_VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_RELATIONSHIP__MANDATORY = ASSOCIATION_VALIDATION__MANDATORY;
 
 	/**
 	 * The feature id for the '<em><b>Base Association</b></em>' reference.
@@ -401,6 +437,15 @@ public interface CDAPackage extends EPackage {
 	int PROPERTY_VALIDATION__RULE_ID = VALIDATION__RULE_ID;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -456,6 +501,15 @@ public interface CDAPackage extends EPackage {
 	int CLASS_VALIDATION__RULE_ID = VALIDATION__RULE_ID;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -509,6 +563,15 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int VOCAB_SPECIFICATION__RULE_ID = PROPERTY_VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VOCAB_SPECIFICATION__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -611,6 +674,15 @@ public interface CDAPackage extends EPackage {
 	int NULL_FLAVOR__RULE_ID = PROPERTY_VALIDATION__RULE_ID;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_FLAVOR__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
+
+	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -673,6 +745,15 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_VALUE__RULE_ID = PROPERTY_VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_VALUE__MANDATORY = PROPERTY_VALIDATION__MANDATORY;
 
 	/**
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
@@ -746,6 +827,15 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int CDA_TEMPLATE__RULE_ID = CLASS_VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CDA_TEMPLATE__MANDATORY = CLASS_VALIDATION__MANDATORY;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -830,6 +920,15 @@ public interface CDAPackage extends EPackage {
 	int CONSTRAINT_VALIDATION__RULE_ID = VALIDATION__RULE_ID;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_VALIDATION__MANDATORY = VALIDATION__MANDATORY;
+
+	/**
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -883,6 +982,15 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONFORMS_TO__RULE_ID = VALIDATION__RULE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__MANDATORY = VALIDATION__MANDATORY;
 
 	/**
 	 * The feature id for the '<em><b>Base Generalization</b></em>' reference.
@@ -985,13 +1093,22 @@ public interface CDAPackage extends EPackage {
 	int CONCEPT_DOMAIN_CONSTRAINT__RULE_ID = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_DOMAIN_CONSTRAINT__MANDATORY = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Concept Domain Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 3;
+	int CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT = TermPackage.CONCEPT_DOMAIN_CONSTRAINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CodeSystemConstraintImpl <em>Code System Constraint</em>}' class.
@@ -1112,13 +1229,22 @@ public interface CDAPackage extends EPackage {
 	int CODE_SYSTEM_CONSTRAINT__RULE_ID = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_SYSTEM_CONSTRAINT__MANDATORY = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Code System Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 3;
+	int CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT = TermPackage.CODE_SYSTEM_CONSTRAINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValueSetConstraintImpl <em>Value Set Constraint</em>}' class.
@@ -1212,13 +1338,22 @@ public interface CDAPackage extends EPackage {
 	int VALUE_SET_CONSTRAINT__RULE_ID = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SET_CONSTRAINT__MANDATORY = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Value Set Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SET_CONSTRAINT_FEATURE_COUNT = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 3;
+	int VALUE_SET_CONSTRAINT_FEATURE_COUNT = TermPackage.VALUE_SET_CONSTRAINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ActRelationshipImpl <em>Act Relationship</em>}' class.
@@ -1437,6 +1572,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getValidation_RuleId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.Validation#isMandatory <em>Mandatory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mandatory</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.Validation#isMandatory()
+	 * @see #getValidation()
+	 * @generated
+	 */
+	EAttribute getValidation_Mandatory();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship <em>Entry Relationship</em>}'.
@@ -2038,6 +2184,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALIDATION__RULE_ID = eINSTANCE.getValidation_RuleId();
+
+		/**
+		 * The meta object literal for the '<em><b>Mandatory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALIDATION__MANDATORY = eINSTANCE.getValidation_Mandatory();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.EntryRelationshipImpl <em>Entry Relationship</em>}' class.

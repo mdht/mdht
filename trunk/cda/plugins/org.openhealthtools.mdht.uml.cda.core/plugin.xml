@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 
 <!--
- Copyright (c) 2010 David A Carlson, IBM Corporation
+ Copyright (c) 2010, 2011 David A Carlson, IBM Corporation, and others.
  All rights reserved. This program and the accompanying materials
  are made available under the terms of the Eclipse Public License v1.0
  which accompanies this distribution, and is available at
@@ -19,11 +19,19 @@
             uri="http://www.openhealthtools.org/mdht/schemas/cda/4"
             location="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
       </profile>
+      <profile
+            uri="http://www.openhealthtools.org/mdht/schemas/cda/5"
+            location="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
+      </profile>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.openhealthtools.org/mdht/schemas/cda/4"
+            class="org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage"
+            genModel="model/CDA.profile.genmodel"/>
+      <package
+            uri="http://www.openhealthtools.org/mdht/schemas/cda/5"
             class="org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage"
             genModel="model/CDA.profile.genmodel"/>
    </extension>

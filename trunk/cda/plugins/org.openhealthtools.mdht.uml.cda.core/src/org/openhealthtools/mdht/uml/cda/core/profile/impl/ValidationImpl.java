@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#getRuleId <em>Rule Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ValidationImpl#isMandatory <em>Mandatory</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,6 +85,26 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * @ordered
 	 */
 	protected EList<String> ruleId;
+
+	/**
+	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean MANDATORY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean mandatory = MANDATORY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,6 +184,27 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isMandatory() {
+		return mandatory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMandatory(boolean newMandatory) {
+		boolean oldMandatory = mandatory;
+		mandatory = newMandatory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.VALIDATION__MANDATORY, oldMandatory, mandatory));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -172,6 +214,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				return getSeverity();
 			case CDAPackage.VALIDATION__RULE_ID:
 				return getRuleId();
+			case CDAPackage.VALIDATION__MANDATORY:
+				return isMandatory();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,18 +232,20 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 			case CDAPackage.VALIDATION__MESSAGE:
 				setMessage((String)newValue);
 				return;
-			case CDAPackage.VALIDATION__SEVERITY: {
-				if (newValue instanceof EEnumLiteral) {
+			case CDAPackage.VALIDATION__SEVERITY:
+				if (featureID == CDAPackage.VALIDATION__SEVERITY && newValue instanceof EEnumLiteral) {
 					setSeverity(SeverityKind.getByName(((EEnumLiteral)newValue).getName()));
 				}
 				else {
 					setSeverity((SeverityKind)newValue);
 				}
 				return;
-			}
 			case CDAPackage.VALIDATION__RULE_ID:
 				getRuleId().clear();
 				getRuleId().addAll((Collection<? extends String>)newValue);
+				return;
+			case CDAPackage.VALIDATION__MANDATORY:
+				setMandatory((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,6 +268,9 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 			case CDAPackage.VALIDATION__RULE_ID:
 				getRuleId().clear();
 				return;
+			case CDAPackage.VALIDATION__MANDATORY:
+				setMandatory(MANDATORY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -240,6 +289,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 				return severity != SEVERITY_EDEFAULT;
 			case CDAPackage.VALIDATION__RULE_ID:
 				return ruleId != null && !ruleId.isEmpty();
+			case CDAPackage.VALIDATION__MANDATORY:
+				return mandatory != MANDATORY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -260,6 +311,8 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 		result.append(severity);
 		result.append(", ruleId: ");
 		result.append(ruleId);
+		result.append(", mandatory: ");
+		result.append(mandatory);
 		result.append(')');
 		return result.toString();
 	}

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+//import org.openhealthtools.mdht.uml.cda.core.profile.*;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory;
@@ -51,7 +52,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 */
 	public static CDAFactory init() {
 		try {
-			CDAFactory theCDAFactory = (CDAFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/schemas/cda/4"); 
+			CDAFactory theCDAFactory = (CDAFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/schemas/cda/5"); 
 			if (theCDAFactory != null) {
 				return theCDAFactory;
 			}
