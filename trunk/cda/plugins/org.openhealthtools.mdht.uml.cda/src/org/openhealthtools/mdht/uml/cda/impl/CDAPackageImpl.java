@@ -6131,7 +6131,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getSpecimen() {
 		if (specimenEClass == null) {
-			specimenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(57);
+			specimenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(58);
 		}
 		return specimenEClass;
 	}
@@ -6197,7 +6197,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getSpecimenRole() {
 		if (specimenRoleEClass == null) {
-			specimenRoleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(58);
+			specimenRoleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(59);
 		}
 		return specimenRoleEClass;
 	}
@@ -6272,7 +6272,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getPlayingEntity() {
 		if (playingEntityEClass == null) {
-			playingEntityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(59);
+			playingEntityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(60);
 		}
 		return playingEntityEClass;
 	}
@@ -6383,7 +6383,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getPerformer2() {
 		if (performer2EClass == null) {
-			performer2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(60);
+			performer2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(61);
 		}
 		return performer2EClass;
 	}
@@ -6467,7 +6467,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getParticipant2() {
 		if (participant2EClass == null) {
-			participant2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(61);
+			participant2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(62);
 		}
 		return participant2EClass;
 	}
@@ -6560,7 +6560,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getParticipantRole() {
 		if (participantRoleEClass == null) {
-			participantRoleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(62);
+			participantRoleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(63);
 		}
 		return participantRoleEClass;
 	}
@@ -6680,7 +6680,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getDevice() {
 		if (deviceEClass == null) {
-			deviceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(63);
+			deviceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(64);
 		}
 		return deviceEClass;
 	}
@@ -6773,7 +6773,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getEntity() {
 		if (entityEClass == null) {
-			entityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(64);
+			entityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(65);
 		}
 		return entityEClass;
 	}
@@ -6866,7 +6866,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getEntryRelationship() {
 		if (entryRelationshipEClass == null) {
-			entryRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(65);
+			entryRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(66);
 		}
 		return entryRelationshipEClass;
 	}
@@ -7049,7 +7049,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getEncounter() {
 		if (encounterEClass == null) {
-			encounterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(66);
+			encounterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(57);
 		}
 		return encounterEClass;
 	}
@@ -7250,7 +7250,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getReference() {
 		if (referenceEClass == null) {
-			referenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(67);
+			referenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(68);
 		}
 		return referenceEClass;
 	}
@@ -7352,7 +7352,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getExternalAct() {
 		if (externalActEClass == null) {
-			externalActEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(68);
+			externalActEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(69);
 		}
 		return externalActEClass;
 	}
@@ -7445,7 +7445,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getExternalObservation() {
 		if (externalObservationEClass == null) {
-			externalObservationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(69);
+			externalObservationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(70);
 		}
 		return externalObservationEClass;
 	}
@@ -7538,7 +7538,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getExternalProcedure() {
 		if (externalProcedureEClass == null) {
-			externalProcedureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(70);
+			externalProcedureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(71);
 		}
 		return externalProcedureEClass;
 	}
@@ -7631,7 +7631,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getExternalDocument() {
 		if (externalDocumentEClass == null) {
-			externalDocumentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(71);
+			externalDocumentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(72);
 		}
 		return externalDocumentEClass;
 	}
@@ -7742,7 +7742,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getPrecondition() {
 		if (preconditionEClass == null) {
-			preconditionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(72);
+			preconditionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(73);
 		}
 		return preconditionEClass;
 	}
@@ -7808,7 +7808,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getCriterion() {
 		if (criterionEClass == null) {
-			criterionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(73);
+			criterionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(74);
 		}
 		return criterionEClass;
 	}
@@ -7901,7 +7901,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EClass getObservation() {
 		if (observationEClass == null) {
-			observationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(74);
+			observationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(67);
 		}
 		return observationEClass;
 	}

@@ -638,6 +638,15 @@ public class CDASwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CDAPackage.ENCOUNTER: {
+				Encounter encounter = (Encounter)theEObject;
+				T result = caseEncounter(encounter);
+				if (result == null) result = caseClinicalStatement(encounter);
+				if (result == null) result = caseRIM_Act(encounter);
+				if (result == null) result = caseInfrastructureRoot(encounter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CDAPackage.SPECIMEN: {
 				Specimen specimen = (Specimen)theEObject;
 				T result = caseSpecimen(specimen);
@@ -710,12 +719,12 @@ public class CDASwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CDAPackage.ENCOUNTER: {
-				Encounter encounter = (Encounter)theEObject;
-				T result = caseEncounter(encounter);
-				if (result == null) result = caseClinicalStatement(encounter);
-				if (result == null) result = caseRIM_Act(encounter);
-				if (result == null) result = caseInfrastructureRoot(encounter);
+			case CDAPackage.OBSERVATION: {
+				Observation observation = (Observation)theEObject;
+				T result = caseObservation(observation);
+				if (result == null) result = caseClinicalStatement(observation);
+				if (result == null) result = caseRIM_Act(observation);
+				if (result == null) result = caseInfrastructureRoot(observation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -772,15 +781,6 @@ public class CDASwitch<T> {
 				T result = caseCriterion(criterion);
 				if (result == null) result = caseRIM_Act(criterion);
 				if (result == null) result = caseInfrastructureRoot(criterion);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CDAPackage.OBSERVATION: {
-				Observation observation = (Observation)theEObject;
-				T result = caseObservation(observation);
-				if (result == null) result = caseClinicalStatement(observation);
-				if (result == null) result = caseRIM_Act(observation);
-				if (result == null) result = caseInfrastructureRoot(observation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

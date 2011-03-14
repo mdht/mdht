@@ -201,7 +201,7 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	public static  EList<EN> getNames(CustodianOrganization custodianOrganization) {
 		if (GET_NAMES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(19));
+			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(16));
 			try {
 				GET_NAMES__EOCL_QRY = helper.createQuery(GET_NAMES__EOCL_EXP);
 			}
@@ -247,7 +247,7 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	public static  EList<TEL> getTelecoms(CustodianOrganization custodianOrganization) {
 		if (GET_TELECOMS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(20));
+			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(17));
 			try {
 				GET_TELECOMS__EOCL_QRY = helper.createQuery(GET_TELECOMS__EOCL_EXP);
 			}
@@ -293,7 +293,7 @@ public class CustodianOrganizationOperations extends EntityOperations {
 	public static  EList<AD> getAddrs(CustodianOrganization custodianOrganization) {
 		if (GET_ADDRS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(21));
+			helper.setOperationContext(CDAPackage.Literals.CUSTODIAN_ORGANIZATION, CDAPackage.Literals.CUSTODIAN_ORGANIZATION.getEAllOperations().get(18));
 			try {
 				GET_ADDRS__EOCL_QRY = helper.createQuery(GET_ADDRS__EOCL_EXP);
 			}

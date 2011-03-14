@@ -398,6 +398,10 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 				return createClinicalStatementAdapter();
 			}
 			@Override
+			public Adapter caseEncounter(Encounter object) {
+				return createEncounterAdapter();
+			}
+			@Override
 			public Adapter caseSpecimen(Specimen object) {
 				return createSpecimenAdapter();
 			}
@@ -434,8 +438,8 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 				return createEntryRelationshipAdapter();
 			}
 			@Override
-			public Adapter caseEncounter(Encounter object) {
-				return createEncounterAdapter();
+			public Adapter caseObservation(Observation object) {
+				return createObservationAdapter();
 			}
 			@Override
 			public Adapter caseReference(Reference object) {
@@ -464,10 +468,6 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCriterion(Criterion object) {
 				return createCriterionAdapter();
-			}
-			@Override
-			public Adapter caseObservation(Observation object) {
-				return createObservationAdapter();
 			}
 			@Override
 			public Adapter caseReferenceRange(ReferenceRange object) {

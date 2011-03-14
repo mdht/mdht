@@ -1156,6 +1156,8 @@ public class CDAValidator extends EObjectValidator {
 				return validateAct((Act)value, diagnostics, context);
 			case CDAPackage.CLINICAL_STATEMENT:
 				return validateClinicalStatement((ClinicalStatement)value, diagnostics, context);
+			case CDAPackage.ENCOUNTER:
+				return validateEncounter((Encounter)value, diagnostics, context);
 			case CDAPackage.SPECIMEN:
 				return validateSpecimen((Specimen)value, diagnostics, context);
 			case CDAPackage.SPECIMEN_ROLE:
@@ -1174,8 +1176,8 @@ public class CDAValidator extends EObjectValidator {
 				return validateEntity((Entity)value, diagnostics, context);
 			case CDAPackage.ENTRY_RELATIONSHIP:
 				return validateEntryRelationship((EntryRelationship)value, diagnostics, context);
-			case CDAPackage.ENCOUNTER:
-				return validateEncounter((Encounter)value, diagnostics, context);
+			case CDAPackage.OBSERVATION:
+				return validateObservation((Observation)value, diagnostics, context);
 			case CDAPackage.REFERENCE:
 				return validateReference((Reference)value, diagnostics, context);
 			case CDAPackage.EXTERNAL_ACT:
@@ -1190,8 +1192,6 @@ public class CDAValidator extends EObjectValidator {
 				return validatePrecondition((Precondition)value, diagnostics, context);
 			case CDAPackage.CRITERION:
 				return validateCriterion((Criterion)value, diagnostics, context);
-			case CDAPackage.OBSERVATION:
-				return validateObservation((Observation)value, diagnostics, context);
 			case CDAPackage.REFERENCE_RANGE:
 				return validateReferenceRange((ReferenceRange)value, diagnostics, context);
 			case CDAPackage.OBSERVATION_RANGE:
