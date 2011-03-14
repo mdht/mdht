@@ -110,7 +110,6 @@ import org.xml.sax.SAXParseException;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
-    public static final String CDA_SAMPLE_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/sample";
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 
 	public static ClinicalDocument load(InputStream in) throws Exception {
@@ -285,6 +284,7 @@ public class CDAUtil {
 	 * @param defaults
 	 * @return
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static CDAResource prepare(InfrastructureRoot cdaSnippet, boolean defaults) {
 
 		CDAResource resource =  (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
@@ -691,12 +691,12 @@ public class CDAUtil {
 		for (EClass eClass : classes) {
 			EAnnotation annotation = eClass.getEAnnotation(CDA_ANNOTATION_SOURCE);
 			if (annotation != null) {
-				init(eObject, annotation.getDetails().map(),false);
+				init(eObject, annotation.getDetails().map());
 			}
 		}
 	}
 
-	private static void init(EObject eObject, Map<String, String> details,boolean sampleInit) {
+	private static void init(EObject eObject, Map<String, String> details) {
 		List<String> created = new ArrayList<String>();
 		for (String key : details.keySet()) {
 			try {			
@@ -704,12 +704,7 @@ public class CDAUtil {
 				if (path.contains("/")) {
 					String s = path.substring(0, path.lastIndexOf("/"));
 					if (!created.contains(s)) {
-						if (sampleInit) {
-							sampleInstanceCreate(eObject, s);
-						} else
-						{
-							create(eObject, s);	
-						}
+						create(eObject, s);	
 						created.add(s);
 					}
 				}
@@ -756,74 +751,7 @@ public class CDAUtil {
 		return (T) current;
 	}
 	
-	public static <T> T sampleInstanceCreate(EObject root, String path) {
-		return sampleInstanceCreate(root, path, null);
-	}
-	
-	/**
-	 * 
-	 * sampleInstanceCreate will attempt to use existing ismany instances versus creating a new one
-	 * original init does not use existing ismany
-	 * TODO Combine with init versus having two init methods
-	 * @param <T>
-	 * @param root
-	 * @param path
-	 * @param eClass
-	 * @return
-	 */
-	@SuppressWarnings("unchecked")
-	private static <T> T sampleInstanceCreate(EObject root, String path, EClass eClass) {
-		EObject current = root;
-		String[] components = path.split("/");
-		int currentIndex = 0;
-		for (String component : components) {
-			
-			String[] featurePath = component.split("/[/]");
 
-			EStructuralFeature feature = current.eClass().getEStructuralFeature(featurePath[0]);
-			
-			if (feature instanceof EReference) {
-				EObject eObject = null;
-				
-				Object value = current.eGet(feature);
-				
-				boolean needToCreate = (value == null);
-
-				if (!needToCreate && feature.isMany()) {
-					List<EObject> list = (List<EObject>) value;
-					if (list.size() > 0) {
-						value = list.get(0);
-					} else {
-						needToCreate = true;
-					}
-				}
-				
-				if (needToCreate) {
-					EClass type = (EClass) feature.getEType();
-					if (currentIndex == components.length - 1 && eClass != null && type.isSuperTypeOf(eClass)) {
-						eObject = EcoreUtil.create(eClass);
-					} else {
-						eObject = EcoreUtil.create(type);
-					}
-					if (feature.isMany()) {
-						List<EObject> list = (List<EObject>) value;
-						list.add(eObject);
-					} else {
-						current.eSet(feature, eObject);
-					}
-				} else {
-					eObject = (EObject) value;
-				}
-				
-				
-				
-				
-				current = eObject;
-			}
-			currentIndex++;
-		}
-		return (T) current;
-	}
 	
 	@SuppressWarnings("unchecked")
 	public static void set(EObject root, String path, Object value) {
@@ -1651,30 +1579,5 @@ public class CDAUtil {
 	public static void loadPackages(String location) {
 		CDAPackageLoader.loadPackages(location);
 	}
-	
-	public static void sampleInstanceInitialization(EObject eObject) {
 
-		EObject container = eObject.eContainer();
-		int depth = 0;
-		while (container != null && depth < 10) {
-			System.out.println(depth + container.toString());
-			container = eObject.eContainer();
-			depth++;
-		}
-
-		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
-
-		classes.add(eObject.eClass());
-
-		for (EClass eClass : classes) {
-			EAnnotation annotation = eClass.getEAnnotation(CDA_ANNOTATION_SOURCE);
-			if (annotation != null) {
-				init(eObject, annotation.getDetails().map(),false);
-			}
-			annotation = eClass.getEAnnotation(CDA_SAMPLE_SOURCE);
-			if (annotation != null) {
-				init(eObject, annotation.getDetails().map(),true);
-			}
-		}
-	}
 }
