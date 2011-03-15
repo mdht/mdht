@@ -339,9 +339,9 @@ public class CDAModelUtil {
 		message.append(getMultiplicityString(property)).append(" ");
 
 		String elementName = getCDAElementName(property);
-		message.append(markup?"<tt>":"");
+		message.append(markup?"<tt><b>":"");
 		message.append(elementName);
-		message.append(markup?"</tt>":"");
+		message.append(markup?"</b></tt>":"");
 
 		Class endType = (property.getType() instanceof Class) 
 				? (Class)property.getType() : null;
@@ -419,9 +419,9 @@ public class CDAModelUtil {
 		
 		message.append(getMultiplicityString(property)).append(" ");
 
-		message.append(markup?"<tt>":"");
+		message.append(markup?"<tt><b>":"");
 		message.append(elementName);
-		message.append(markup?"</tt>":"");
+		message.append(markup?"</b></tt>":"");
 
 		if (typeCode != null || endType != null) {
 			message.append(", such that it");
@@ -429,8 +429,12 @@ public class CDAModelUtil {
 			
 			if (typeCode != null) {
 				message.append(markup?"\n<li>":" ");
-				message.append("has @typeCode=\"");
+				message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
+				message.append(" contain ");
+				message.append(markup?"<tt><b>":"").append("@typeCode=\"").append(markup?"</b>":"");
 				message.append(typeCode).append("\" ");
+				message.append(markup?"</tt>":"");
+				
 				message.append(markup?"<i>":"");
 				message.append(typeCodeDisplay);
 				message.append(markup?"</i>":"");
@@ -439,7 +443,8 @@ public class CDAModelUtil {
 	
 			if (endType != null) {
 				message.append(markup?"\n<li>":" ");
-				message.append("contains ");
+				message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
+				message.append(" contain ");
 	
 //				String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
 				String prefix = getModelPrefix(endType)+" ";
@@ -512,16 +517,17 @@ public class CDAModelUtil {
 		
 		message.append(getMultiplicityString(property)).append(" ");
 		
-		message.append(markup?"<tt>":"");
+		message.append(markup?"<tt><b>":"");
 		if (isXMLAttribute(property)) {
 			message.append("@");
 		}
 		message.append(property.getName());
-		message.append(markup?"</tt>":"");
+		message.append(markup?"</b>":"");
 		
 		if (isXMLAttribute(property) && property.getDefault() != null) {
-			message.append(" = \"").append(property.getDefault()).append("\"");
+			message.append("=\"").append(property.getDefault()).append("\" ");
 		}
+		message.append(markup?"</tt>":"");
 		
 		Stereotype nullFlavorSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.NULL_FLAVOR);
@@ -573,6 +579,10 @@ public class CDAModelUtil {
 			String vocab = computeVocabSpecificationMessage(property, markup);
 			message.append(vocab);
 		}
+		else if (isHL7VocabAttribute(property) && property.getDefault() != null) {
+			String vocab = computeHL7VocabAttributeMessage(property, markup);
+			message.append(vocab);
+		}
 
 		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
 		Property redefinedProperty = redefinedProperties.isEmpty() ? null : redefinedProperties.get(0);
@@ -598,7 +608,63 @@ public class CDAModelUtil {
 
 		return message.toString();
 	}
+	
+	private static boolean isHL7VocabAttribute(Property property) {
+		String name = property.getName();
+		return "classCode".equals(name) || "moodCode".equals(name) || "typeCode".equals(name);
+	}
 
+	private static String computeHL7VocabAttributeMessage(Property property, boolean markup) {
+		StringBuffer message = new StringBuffer();
+		Class rimClass = RIMModelUtil.getRIMClass(property.getClass_());
+		String code = property.getDefault();
+		String displayName = null;
+		String codeSystemId = null;
+		String codeSystemName = null;
+
+		if (rimClass != null) {
+			if ("Act".equals(rimClass.getName())) {
+				if ("classCode".equals(property.getName())) {
+					codeSystemName = "HL7ActClass";
+					codeSystemId = "2.16.840.1.113883.5.6";
+					
+					if ("ACT".equals(code))
+						displayName = "Act";
+					else if ("OBS".equals(code))
+						displayName = "Observation";
+				}
+				else if ("moodCode".equals(property.getName())) {
+					codeSystemName = "HL7ActMood";
+					codeSystemId = "2.16.840.1.113883.5.1001";
+					
+					if ("EVN".equals(code))
+						displayName = "Event";
+				}
+			}
+		}
+
+		if (displayName != null) {
+			message.append(markup?"<i>":"");
+			message.append(displayName);
+			message.append(markup?"</i>":"");
+		}
+
+		if (codeSystemId != null || codeSystemName != null) {
+			message.append(" (CodeSystem:");
+			message.append(markup?"<tt>":"");
+			if (codeSystemId != null) {
+				message.append(" ").append(codeSystemId);
+			}
+			if (codeSystemName != null) {
+				message.append(" ").append(codeSystemName);
+			}
+			message.append(markup?"</tt>":"");
+			message.append(")");
+		}
+		
+		return message.toString();
+	}
+	
 	private static String computeCodeSystemMessage(Property property, boolean markup) {
 		Stereotype codeSystemConstraintStereotype = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
@@ -630,12 +696,13 @@ public class CDAModelUtil {
 		
 		StringBuffer message = new StringBuffer();
 		if (code != null) {
-			message.append(markup?"<tt>":"");
+			message.append(markup?"<tt><b>":"");
 			message.append("/@code");
-			message.append(markup?"</tt>":"");
+			message.append(markup?"</b>":"");
 
-			message.append(" = \"").append(code).append("\" ");
+			message.append("=\"").append(code).append("\" ");
 		}
+		message.append(markup?"</tt>":"");
 			
 		if (displayName != null) {
 			message.append(markup?"<i>":"");
@@ -645,12 +712,15 @@ public class CDAModelUtil {
 
 		if (id !=null || name != null) {
 			message.append(" (CodeSystem:");
+			message.append(markup?"<tt>":"");
 			if (id != null) {
 				message.append(" ").append(id);
 			}
 			if (name != null) {
 				message.append(" ").append(name);
 			}
+			message.append(markup?"</tt>":"");
+			
 //			message.append(" ").append(binding.getName().toUpperCase());
 //			if (version != null) {
 //				message.append(" ").append(version);
@@ -703,25 +773,27 @@ public class CDAModelUtil {
 		message.append(markup?"<b>":"");
 		message.append(keyword);
 		message.append(markup?"</b>":"");
-		message.append(" be selected from");
+		message.append(" be selected from ValueSet");
 
+		message.append(markup?"<tt>":"");
+		if (id != null) {
+			message.append(" ").append(id);
+		}
 		if (name != null) {
 			message.append(" ");
 			message.append(showXref ? "<xref " + xrefFormat + "href=\"" + xref + "\">" : "");
 			message.append(name);
 			message.append(showXref?"</xref>":"");
 		}
-		message.append(" Value Set");
-		
-		if (id != null) {
-			message.append(" (").append(id).append(")");
-		}
+		message.append(markup?"</tt>":"");
 
-//		message.append(" ").append(binding.getName().toUpperCase());
+		message.append(markup?"<b>":"");
+		message.append(" ").append(binding.getName().toUpperCase());
+		message.append(markup?"</b>":"");
 		
-//		if (version != null) {
-//			message.append(" ").append(version);
-//		}
+		if (BindingKind.STATIC == binding && version != null) {
+			message.append(" ").append(version);
+		}
 		
 		return message.toString();
 	}
@@ -817,21 +889,34 @@ public class CDAModelUtil {
 		if (!markup) {
 			message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
 		}
-		
-		String keyword = getValidationKeyword(constraint);
-		if (keyword == null) {
-			keyword = "SHALL";
+
+		if (analysisBody == null || !containsSeverityWord(analysisBody)) {
+			String keyword = getValidationKeyword(constraint);
+			if (keyword == null) {
+				keyword = "SHALL";
+			}
+			
+			message.append(markup?"<b>":"");
+			message.append(keyword);
+			message.append(markup?"</b>":"");
+			message.append(" satisfy: ");
 		}
-		message.append(markup?"<b>":"");
-		message.append(keyword);
-		message.append(markup?"</b>":"");
-		message.append(" satisfy: ");
 		
 		if (analysisBody == null) {
 			message.append(constraint.getName());
 		}
 		else {
-			message.append(escapeMarkupCharacters(analysisBody));
+			if (markup) {
+				// escape non-dita markup in analysis text
+				String analysisBodyMarkup = escapeMarkupCharacters(analysisBody);
+				// change severity words to bold text
+				analysisBodyMarkup = replaceSeverityWithBold(analysisBodyMarkup);
+				
+				message.append(analysisBodyMarkup);
+			}
+			else {
+				message.append(analysisBody);
+			}
 		}
 		appendConformanceRuleIds(constraint, message, markup);
 
@@ -873,6 +958,24 @@ public class CDAModelUtil {
 		}
 
 		return message.toString();
+	}
+	
+	private static boolean containsSeverityWord(String text) {
+		return text.indexOf("SHALL") >= 0
+			|| text.indexOf("SHOULD") >= 0
+			|| text.indexOf("MAY") >= 0;
+	}
+	
+	private static String replaceSeverityWithBold(String input) {
+		String output;
+		output = input.replaceAll("SHALL", "<b>SHALL</b>");
+		output = output.replaceAll("SHOULD", "<b>SHOULD</b>");
+		output = output.replaceAll("MAY", "<b>MAY</b>");
+		
+		output = output.replaceAll("\\<b>SHALL\\</b> NOT", "<b>SHALL NOT</b>");
+		output = output.replaceAll("\\<b>SHOULD\\</b> NOT", "<b>SHOULD NOT</b>");
+		
+		return output;
 	}
 	
 	protected static String computeXref(Element source, Class target) {

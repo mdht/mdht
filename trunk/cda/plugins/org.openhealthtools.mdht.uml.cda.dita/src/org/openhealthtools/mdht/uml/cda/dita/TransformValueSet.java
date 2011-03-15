@@ -128,6 +128,11 @@ public class TransformValueSet extends TransformAbstract {
 				writer.println("</entry></row>");
 			}
 
+			if (valueSetVersion.getVersion() != null) {
+				writer.print("<row><entry>Version</entry><entry>");
+				writer.print(valueSetVersion.getVersion());
+				writer.println("</entry></row>");
+			}
 			if (valueSetVersion.getSource() != null) {
 				writer.print("<row><entry>Source</entry><entry>");
 				writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getSource()));
