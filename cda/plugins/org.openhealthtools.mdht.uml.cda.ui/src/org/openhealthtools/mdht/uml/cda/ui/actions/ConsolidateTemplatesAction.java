@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda.ui.actions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -118,6 +119,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		allParents.add(0, umlClass);
 
 		List<Property> allProperties = new ArrayList<Property>();
+		List<Property> allAssociations = new ArrayList<Property>();
 		List<Property> allAttributes = new ArrayList<Property>();
 		List<Constraint> allConstraints = new ArrayList<Constraint>();
 		
@@ -126,27 +128,49 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			Class parent = (Class) allParents.get(i);
 			
 			for (Property property : parent.getOwnedAttributes()) {
-				if (CDAModelUtil.isCDAModel(parent) && property.getLower() == 0) {
-					// include only required CDA class properties
-					continue;
-				}
-				
-				// if list contains this property name, replace it; else append
-				int index = findProperty(allProperties, property.getName());
-				if (index >= 0) {
-					allProperties.set(index, property);
+				if (property.getAssociation() != null) {
+					allAssociations.add(property);
 				}
 				else {
-					allProperties.add(property);
+					// if list contains this property name, replace it; else append
+					int index = findProperty(allProperties, property.getName());
+					if (index >= 0) {
+						allProperties.set(index, property);
+					}
+					else {
+						allProperties.add(property);
+					}
 				}
 			}
 		}
 
+		Iterator<Property> propertyIterator = allProperties.iterator();
+		while (propertyIterator.hasNext()) {
+			Property property = propertyIterator.next();
+			if (CDAModelUtil.isCDAModel(property) && property.getLower() == 0) {
+				// include only required CDA class properties
+				propertyIterator.remove();
+			}
+		}
+
+		Iterator<Property> associationIterator = allAssociations.iterator();
+		while (associationIterator.hasNext()) {
+			Property property = associationIterator.next();
+			if (CDAModelUtil.isCDAModel(property) && property.getLower() == 0) {
+				// include only required CDA class properties
+				associationIterator.remove();
+			}
+		}
+		
+		allProperties.addAll(allAssociations);
+
 		for (int i=allParents.size()-1; i>=0; i--) {
 			Class parent = (Class) allParents.get(i);
-			
-			for (Constraint constraint : parent.getOwnedRules()) {
-				allConstraints.add(constraint);
+
+			if (!CDAModelUtil.isCDAModel(parent)) {
+				for (Constraint constraint : parent.getOwnedRules()) {
+					allConstraints.add(constraint);
+				}
 			}
 		}
 		
