@@ -673,5 +673,5 @@
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
   </uml:Profile>
-  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/5" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
+  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
 </xmi:XMI>

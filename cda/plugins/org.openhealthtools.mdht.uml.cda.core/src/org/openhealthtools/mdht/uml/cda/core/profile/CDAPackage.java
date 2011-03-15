@@ -43,7 +43,7 @@ public interface CDAPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.openhealthtools.org/mdht/schemas/cda/5";
+	String eNS_URI = "http://www.openhealthtools.org/mdht/schemas/cda/4";
 
 	/**
 	 * The package namespace name.

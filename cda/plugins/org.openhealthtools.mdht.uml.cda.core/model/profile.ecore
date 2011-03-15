@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="profile"
-    nsURI="http://www.openhealthtools.org/mdht/schemas/cda/5" nsPrefix="CDA">
+    nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" nsPrefix="CDA">
   <eClassifiers xsi:type="ecore:EEnum" name="SeverityKind">
     <eLiterals name="ERROR"/>
     <eLiterals name="WARNING" value="1"/>
