@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateIntegrityCheckAlgorithm(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integrity Check Algorithm</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateCompression(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateRepresentation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Representation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#validateST(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate ST</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#isCompressionDefined() <em>Is Compression Defined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#isIntegrityCheckAlgorithmDefined() <em>Is Integrity Check Algorithm Defined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ST#isRepresentationDefined() <em>Is Representation Defined</em>}</li>
@@ -362,6 +363,63 @@ public class STOperations extends EDOperations
 	}
 
 				/**
+	 * The cached OCL expression body for the '{@link #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate ST</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "(self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')";
+
+				/**
+	 * The cached OCL invariant for the '{@link #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate ST</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * (self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateST(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(DatatypesPackage.Literals.ST);
+			try {
+				VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(st)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 DatatypesValidator.DIAGNOSTIC_SOURCE,
+						 DatatypesValidator.ST__ST,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateST", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(st, context) }),
+						 new Object [] { st }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+				/**
 	 * The cached OCL expression body for the '{@link #isCompressionDefined(ST) <em>Is Compression Defined</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -393,7 +451,7 @@ public class STOperations extends EDOperations
 	public static  boolean isCompressionDefined(ST st) {
 		if (IS_COMPRESSION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(13));
+			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(14));
 			try {
 				IS_COMPRESSION_DEFINED__EOCL_QRY = helper.createQuery(IS_COMPRESSION_DEFINED__EOCL_EXP);
 			}
@@ -437,7 +495,7 @@ public class STOperations extends EDOperations
 	public static  boolean isIntegrityCheckAlgorithmDefined(ST st) {
 		if (IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(14));
+			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(15));
 			try {
 				IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY = helper.createQuery(IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_EXP);
 			}
@@ -481,7 +539,7 @@ public class STOperations extends EDOperations
 	public static  boolean isRepresentationDefined(ST st) {
 		if (IS_REPRESENTATION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(15));
+			helper.setOperationContext(DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(16));
 			try {
 				IS_REPRESENTATION_DEFINED__EOCL_QRY = helper.createQuery(IS_REPRESENTATION_DEFINED__EOCL_EXP);
 			}

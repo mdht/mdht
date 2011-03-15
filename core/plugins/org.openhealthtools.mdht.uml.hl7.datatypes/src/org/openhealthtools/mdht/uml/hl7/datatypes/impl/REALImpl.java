@@ -13,8 +13,10 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -93,6 +95,15 @@ public class REALImpl extends QTYImpl implements REAL {
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.REAL__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateREAL(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return REALOperations.validateREAL(this, diagnostics, context);
 	}
 
 	/**

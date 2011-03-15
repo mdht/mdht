@@ -12,6 +12,10 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -112,5 +116,18 @@ public interface CR extends ANY {
 	 * @generated
 	 */
 	void setInverted(boolean value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * (self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(self.isNullFlavorDefined() or self.isDefined(\'value\')) and not(self.isNullFlavorDefined() and self.isDefined(\'value\'))'"
+	 * @generated
+	 */
+	boolean validateCR(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // CR

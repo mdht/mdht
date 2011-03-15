@@ -13,8 +13,10 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -135,6 +137,15 @@ public class MOImpl extends QTYImpl implements MO {
 		currency = newCurrency;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.MO__CURRENCY, oldCurrency, currency));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMO(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MOOperations.validateMO(this, diagnostics, context);
 	}
 
 	/**

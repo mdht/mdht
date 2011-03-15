@@ -13,6 +13,9 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
 import java.math.BigDecimal;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 
 
 /**
@@ -84,6 +87,19 @@ public interface MO extends QTY {
 	 * @generated
 	 */
 	void setCurrency(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not(self.isNullFlavorDefined() and (self.isDefined('value') or self.isDefined('currency')))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not(self.isNullFlavorDefined() and (self.isDefined(\'value\') or self.isDefined(\'currency\')))'"
+	 * @generated
+	 */
+	boolean validateMO(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
