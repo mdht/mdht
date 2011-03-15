@@ -12,11 +12,15 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.IIOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -216,6 +220,15 @@ public class IIImpl extends ANYImpl implements II {
 		displayable = newDisplayable;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.II__DISPLAYABLE, oldDisplayable, displayable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateII(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return IIOperations.validateII(this, diagnostics, context);
 	}
 
 	/**

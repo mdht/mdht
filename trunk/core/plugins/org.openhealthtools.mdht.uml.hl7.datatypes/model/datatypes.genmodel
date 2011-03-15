@@ -76,6 +76,10 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//URL">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//URL/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//URL/URL">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//URL/URL/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//URL/URL/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//SXCM_TS">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//SXCM_TS/operator"/>
@@ -109,6 +113,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/representation/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/representation/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/ST">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/ST/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ST/ST/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/isCompressionDefined"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/isIntegrityCheckAlgorithmDefined"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ST/isRepresentationDefined"/>
@@ -132,6 +140,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//CR/value"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//CR/inverted"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CR/CR">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CR/CR/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//CR/CR/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//CV">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//CV/translation">
@@ -150,9 +162,17 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/extension"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/assigningAuthorityName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//II/displayable"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//II/II">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//II/II/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//II/II/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//BL">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//BL/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//BL/BL">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//BL/BL/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//BL/BL/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//BN">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//BN/nullFlavor">
@@ -548,12 +568,20 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//INT">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//INT/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//INT/INT">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//INT/INT/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//INT/INT/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//INT/setValue">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//INT/setValue/newValue"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//REAL">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//REAL/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//REAL/REAL">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//REAL/REAL/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//REAL/REAL/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//REAL/setValue">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//REAL/setValue/newValue"/>
       </genOperations>
@@ -601,6 +629,10 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//MO">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//MO/value"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//MO/currency"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//MO/MO">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//MO/MO/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//MO/MO/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//MO/setValue">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//MO/setValue/newValue"/>
       </genOperations>

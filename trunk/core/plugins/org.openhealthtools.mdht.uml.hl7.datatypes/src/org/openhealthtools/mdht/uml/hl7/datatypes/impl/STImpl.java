@@ -102,6 +102,15 @@ public class STImpl extends EDImpl implements ST {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateST(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return STOperations.validateST(this, diagnostics, context);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isCompressionDefined() {
 		return STOperations.isCompressionDefined(this);
 	}

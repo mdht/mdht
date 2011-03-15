@@ -12,11 +12,15 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.URL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.URLOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,6 +94,15 @@ public abstract class URLImpl extends ANYImpl implements URL {
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.URL__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateURL(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return URLOperations.validateURL(this, diagnostics, context);
 	}
 
 	/**

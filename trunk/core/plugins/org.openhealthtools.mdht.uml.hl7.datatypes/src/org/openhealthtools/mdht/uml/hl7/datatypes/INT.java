@@ -13,6 +13,9 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
 import java.math.BigInteger;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 
 
 /**
@@ -57,6 +60,19 @@ public interface INT extends QTY {
 	 * @generated
 	 */
 	void setValue(BigInteger value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * (self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(self.isNullFlavorDefined() or self.isDefined(\'value\')) and not(self.isNullFlavorDefined() and self.isDefined(\'value\'))'"
+	 * @generated
+	 */
+	boolean validateINT(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

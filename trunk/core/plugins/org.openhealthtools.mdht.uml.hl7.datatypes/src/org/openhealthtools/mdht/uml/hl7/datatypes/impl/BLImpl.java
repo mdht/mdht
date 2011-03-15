@@ -12,11 +12,15 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.BLOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,6 +94,15 @@ public class BLImpl extends ANYImpl implements BL {
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.BL__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBL(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return BLOperations.validateBL(this, diagnostics, context);
 	}
 
 	/**

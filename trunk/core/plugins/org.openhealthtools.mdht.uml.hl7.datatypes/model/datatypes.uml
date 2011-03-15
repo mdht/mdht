@@ -142,6 +142,12 @@
           <body>self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_9gmV0E8xEeCPKdtRJ_I6Zg" name="ST">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_-UwWoE8xEeCPKdtRJ_I6Zg">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.getText() &lt;> '') and not(self.isNullFlavorDefined() and self.getText() &lt;> '')</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_IY9boDxaEd6JwqSGecoePg" general="_CowXkDxaEd6JwqSGecoePg"/>
       <ownedOperation xmi:id="_v0k6QEBVEeCRlaE1u__gPQ" name="isCompressionDefined" bodyCondition="_10kt0EBVEeCRlaE1u__gPQ">
         <ownedRule xmi:id="_10kt0EBVEeCRlaE1u__gPQ" name="body" constrainedElement="_v0k6QEBVEeCRlaE1u__gPQ">
@@ -222,6 +228,12 @@
       <generalization xmi:id="_bw45oDxaEd6JwqSGecoePg" general="_VKl7EDxaEd6JwqSGecoePg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_culQ8DxaEd6JwqSGecoePg" name="II">
+      <ownedRule xmi:id="_5OACwE8yEeCPKdtRJ_I6Zg" name="II">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_6crcYE8yEeCPKdtRJ_I6Zg">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.isDefined('root')) and not(self.isNullFlavorDefined() and self.isDefined('root'))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_fJZtkDxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_hVUykDxaEd6JwqSGecoePg" name="root" visibility="private" type="_RpDqMDrsEeCN26jpCPaoAw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NXLzUT6CEd6cla2oXsPtlA" value="1"/>
@@ -242,6 +254,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_r1WssDxjEd6JwqSGecoePg" name="BL">
+      <ownedRule xmi:id="_n-ZYoE8xEeCPKdtRJ_I6Zg" name="BL">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r0jx4E8xEeCPKdtRJ_I6Zg">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_wyAM4DxjEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_tPgWgDxjEd6JwqSGecoePg" name="value" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
@@ -897,6 +915,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_2Kr4gD52Ed6cla2oXsPtlA" name="URL" isAbstract="true">
+      <ownedRule xmi:id="_GgHZEE8zEeCPKdtRJ_I6Zg" name="URL">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_H1yykE8zEeCPKdtRJ_I6Zg">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_9OyNYD52Ed6cla2oXsPtlA" general="__I8BwDxZEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_TBfLED5_Ed6cla2oXsPtlA" name="value" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -917,6 +941,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_co8uMD53Ed6cla2oXsPtlA" name="INT">
+      <ownedRule xmi:id="_d7xLME8zEeCPKdtRJ_I6Zg" name="INT">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_fQs90E8zEeCPKdtRJ_I6Zg">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_dffUoD53Ed6cla2oXsPtlA" general="_O-oXcD5wEd6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_eUGBYD53Ed6cla2oXsPtlA" name="value" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigInteger"/>
@@ -930,6 +960,12 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_oSKNAD53Ed6cla2oXsPtlA" name="REAL">
+      <ownedRule xmi:id="_l0Bg4E8zEeCPKdtRJ_I6Zg" name="REAL">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_nN4PwE8zEeCPKdtRJ_I6Zg">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_pktaAD53Ed6cla2oXsPtlA" general="_O-oXcD5wEd6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_p6UdoD53Ed6cla2oXsPtlA" name="value" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
@@ -943,6 +979,12 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_gokTgD55Ed6cla2oXsPtlA" name="CR">
+      <ownedRule xmi:id="_wCTIME8yEeCPKdtRJ_I6Zg" name="CR">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_x21A4E8yEeCPKdtRJ_I6Zg" name="">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_x1pOED56Ed6cla2oXsPtlA" general="__I8BwDxZEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_1BffAD56Ed6cla2oXsPtlA" name="name" visibility="private" type="_hSvR4D55Ed6cla2oXsPtlA" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GjG7oT57Ed6cla2oXsPtlA" value="1"/>
@@ -1130,6 +1172,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_liPl8D5-Ed6cla2oXsPtlA" name="MO">
+      <ownedRule xmi:id="_6c3NIE8zEeCPKdtRJ_I6Zg" name="MO">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_7y2IoE8zEeCPKdtRJ_I6Zg">
+          <language>OCL</language>
+          <body>not(self.isNullFlavorDefined() and (self.isDefined('value') or self.isDefined('currency')))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_o1_OoD5-Ed6cla2oXsPtlA" general="_O-oXcD5wEd6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_mFjuYD5-Ed6cla2oXsPtlA" name="value" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
