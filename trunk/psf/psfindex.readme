@@ -1,0 +1,17 @@
+The MDHT Project Set Files are as follows
+
+models.psf - Imports all the model projects supporting standards 
+			 development - HL7, CCD, IHE, HITPS, and Consolidated
+			 
+generated.psf - Imports all the standards model projects generated code project
+
+publishing.psf - Imports all the standards model projects publishing project
+
+example.psf - Imports the model, generated, and publishing project for the basic example project
+
+pilot.psf - Imports the model, generated, and publishing project for the HL7 pilot project
+
+************************ Development Only Imports *************************
+features/umlfeature.psf - Imports all the required eclipse plugin projects to build the MDHT UML Feature
+
+features/cdafeature.psf - Imports all the required eclipse plugin projects to build the MDHT CDA Feature
