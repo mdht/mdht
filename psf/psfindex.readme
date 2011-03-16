@@ -7,6 +7,8 @@ generated.psf - Imports all the standards model projects generated code project
 
 publishing.psf - Imports all the standards model projects publishing project
 
+c32api.psf - Imports all the required java projects and source code to create a c32 cda document
+
 example.psf - Imports the model, generated, and publishing project for the basic example project
 
 pilot.psf - Imports the model, generated, and publishing project for the HL7 pilot project
