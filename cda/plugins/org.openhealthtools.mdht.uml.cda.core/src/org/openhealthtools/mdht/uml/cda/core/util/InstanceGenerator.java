@@ -343,11 +343,7 @@ public class InstanceGenerator {
 
 										if (objectToAdd != null) {
 
-											HashMap<String, String> ssmprops = new HashMap<String, String>();
-
-											ssmprops.put("id", "id");
-											ssmprops.put("effectiveTime", "effectiveTime");
-											ssmprops.put("time", "time");
+											HashMap<String, String> ssmprops = createshallShouldMayProperties();
 
 											String searchName = objectToAdd.eClass().getEPackage().getNsPrefix() + "::" + objectToAdd.eClass().getName();
 
@@ -461,9 +457,11 @@ public class InstanceGenerator {
 			
 			if ( (object.getText() != null && object.getText().length() == 0) &&   object.eContainer() != null)
 			{
-				if (object.eContainer() instanceof Section){					
-					Section s = (Section)object.eContainer();					
-					object.addText(s.getCode().getDisplayName());	
+				if (object.eContainer() instanceof Section && object.eContainingFeature().getName().equals("title") ){					
+					Section s = (Section)object.eContainer();	
+					if (s.getCode() != null && s.getCode().getDisplayName() != null) {
+						object.addText(s.getCode().getDisplayName());
+					}
 				}
 					
 			}
@@ -639,14 +637,23 @@ public class InstanceGenerator {
 		}
 
 	}
-
-	public EObject createInstance(Class umlClass, int levels) {
-
+	
+	private static HashMap<String, String> createshallShouldMayProperties()
+	{
 		HashMap<String, String> shallShouldMayProperties = new HashMap<String, String>();
 
 		shallShouldMayProperties.put("id", "id");
 		shallShouldMayProperties.put("effectiveTime", "effectiveTime");
 		shallShouldMayProperties.put("time", "time");
+		shallShouldMayProperties.put("title", "title");
+		
+		return shallShouldMayProperties;
+		
+	}
+
+	public EObject createInstance(Class umlClass, int levels) {
+
+		HashMap<String, String> shallShouldMayProperties = createshallShouldMayProperties();
 
 		createvalueSetProperies(umlClass, shallShouldMayProperties);
 
