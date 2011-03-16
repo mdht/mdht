@@ -70,7 +70,18 @@
 			   <property name="output.dir" value="${pdf.output}" />
 		</ant>
 
-		<move file="${pdf.output}/${pdflocation}" tofile="${docProject}/${pdf.filename}" />
+<!--		<move file="${pdf.output}/${pdflocation}" tofile="${docProject}/${pdf.filename}" /> -->
+		
+		<!-- Seem to end up with the pdf file in different file dirs; so now we just move all pdfs, which there should be only one to the project directory then rename it there -->
+		
+	  <move todir="${docProject}" flatten="true">
+	    <fileset dir="${pdf.output}">
+	      <include name="**/${pdflocation}"/>
+	    </fileset>
+	  </move>
+		
+		<move file="${docProject}/${pdflocation}" tofile="${docProject}/${pdf.filename}" />
+
 		
 		<delete dir="${pdf.output}"/>
 		

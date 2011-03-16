@@ -97,13 +97,6 @@ public class PublishModelAction implements IObjectActionDelegate {
 	}
 
 	
-	private static boolean isWindows(){
-		
-		String os = System.getProperty("os.name").toLowerCase();
-	
-	    return (os.indexOf( "win" ) >= 0);
-
-	}
 
 	private void runPublishDita() throws IOException, CoreException, URISyntaxException {
 		IProject ditaProject = null;
@@ -239,20 +232,10 @@ public class PublishModelAction implements IObjectActionDelegate {
 		antProperties.put("tempFilePath", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("temp").toOSString());
 		antProperties.put("docProject", ditaProject.getLocation().toOSString());
 
-		/*
-		 *  diat ant scripts for windows and unix are producing 2 different location
-		 *  dita windows ant is not project relative
-		 *  dita unix ant is 
-		*/ 
-	    String pdfFileLocation = isWindows() ?  ditaMapFile.getName() :  ditaMapFile.getProjectRelativePath().toOSString();
-		pdfFileLocation = pdfFileLocation.replaceFirst(".ditamap", ".pdf");
-		if (isWindows()) {
-			antProperties.put("pdflocation", pdfFileLocation);
-		} else
-		{
-			antProperties.put("pdflocation", ditaProject.getName() + "/" + pdfFileLocation);	
-		}
 
+	    String pdfFileLocation =  ditaMapFile.getName();
+		pdfFileLocation = pdfFileLocation.replaceFirst(".ditamap", ".pdf");
+		antProperties.put("pdflocation", pdfFileLocation);
 		
 
 		workingCopy.setAttribute("process_factory_id", "org.eclipse.ant.ui.remoteAntProcessFactory");
