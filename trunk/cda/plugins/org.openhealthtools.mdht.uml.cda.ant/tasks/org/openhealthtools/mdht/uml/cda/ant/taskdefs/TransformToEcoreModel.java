@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adjusted to handle containment proxies
+ *     Kenn Hussey - adjusted to handle (model) properties files
  *     
  * $Id$
  *******************************************************************************/
@@ -16,6 +17,7 @@ package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.ListIterator;
 import java.util.Map;
 
@@ -78,11 +80,21 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	Package umlModel = getHL7ModelingTask().getDefaultModel();
     	Resource umlResource = umlModel.eResource();
 
+    	URI propertiesURI = UMLUtil.getPropertiesURI(umlResource);
+    	String properties = UMLUtil.readProperties(propertiesURI);
+    	Map<String, String> parsedProperties = properties != null ? UMLUtil.parseProperties(properties) : new LinkedHashMap<String, String>();
+    	
     	EcoreUtil.resolveAll(umlResource.getResourceSet());
 
 		EList<EObject> umlResourceContents = umlResource.getContents();
 
 		for (Resource controlledResource : UMLUtil.getControlledResources(umlResource)) {
+	    	URI controlledPropertiesURI = UMLUtil.getPropertiesURI(controlledResource);
+	    	String controlledProperties = UMLUtil.readProperties(controlledPropertiesURI);
+	    	
+	    	if (controlledProperties != null) {
+	    		parsedProperties.putAll(UMLUtil.parseProperties(controlledProperties));
+	    	}
 
 			for (ListIterator<EObject> contents = controlledResource.getContents().listIterator(); contents.hasNext(); ) {
 				EObject next = contents.next();
@@ -92,8 +104,8 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 				if (next.eContainer() == null) {
 					umlResourceContents.add(next);
 				}
-			}						
-		}					
+			}
+		}
 
 		URI ecoreModelURI = null;
 		if (ecoreModelPath != null) {
@@ -132,6 +144,9 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 			Map<String, String> saveOptions = new HashMap<String, String>();
 			umlResource.save(saveOptions);
 			
+			if (!parsedProperties.isEmpty()) {
+				UMLUtil.writeProperties(UMLUtil.getPropertiesURI(umlResource), parsedProperties);				
+			}
 		} catch (IOException e) {
 			throw new BuildException(e);
 		}

@@ -7,20 +7,27 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - added a new action for (un)controlling elements
+ *     Kenn Hussey - adjusted the (un)control action to handle properties files
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.navigator.actions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.ui.dialogs.DiagnosticDialog;
@@ -28,9 +35,11 @@ import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
@@ -49,6 +58,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.service.ModelValidationService;
 import org.eclipse.emf.validation.service.ValidationEvent;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.CompositeEMFOperation;
 import org.eclipse.emf.workspace.EMFCommandOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
@@ -74,12 +84,14 @@ import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.part.ISetSelectionTarget;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
@@ -304,7 +316,7 @@ public class EditCommandsFactory implements IPropertyListener {
 					Resource eResource = eObject.eResource();
 					operation.addContext(new ResourceUndoContext(ted, eResource));
 
-					List<Element> controlledElements = new ArrayList<Element>();
+					final List<Element> controlledElements = new ArrayList<Element>();
 
 					EList<EObject> resourceContents = resource.getContents();
 					operation.add(new EMFCommandOperation(ted, new AddCommand(
@@ -331,7 +343,7 @@ public class EditCommandsFactory implements IPropertyListener {
 					}
 
 					for (Element element : controlledElements) {
-
+						
 						for (EObject stereotypeApplication : element
 								.getStereotypeApplications()) {
 							operation.add(new EMFCommandOperation(ted,
@@ -356,6 +368,94 @@ public class EditCommandsFactory implements IPropertyListener {
 							}
 						}
 					}
+
+					final URI eResourcePropertiesURI = UMLUtil.getPropertiesURI(eResource);
+					final String eResourceProperties = UMLUtil.readProperties(eResourcePropertiesURI);
+					
+					if (eResourceProperties != null) {
+						final URI resourcePropertiesURI = UMLUtil
+								.getPropertiesURI(resource);
+						final String resourceProperties = UMLUtil
+								.readProperties(resourcePropertiesURI);
+
+						operation.add(new AbstractEMFOperation(ted,
+								UML2Util.EMPTY_STRING) {
+
+							@Override
+							protected IStatus doExecute(
+									IProgressMonitor monitor, IAdaptable info)
+									throws ExecutionException {
+								Map<String, String> eResourceParsedProperties = UMLUtil
+										.parseProperties(eResourceProperties);
+								Map<String, String> resourceParsedProperties = resourceProperties != null ? UMLUtil
+										.parseProperties(resourceProperties)
+										: new LinkedHashMap<String, String>();
+
+								for (TreeIterator<EObject> allProperContents = EcoreUtil
+										.getAllProperContents(
+												controlledElements, true); allProperContents
+										.hasNext();) {
+									EObject next = allProperContents.next();
+
+									if (next instanceof NamedElement) {
+										String propertyKey = NamedElementUtil
+												.getPropertyKey((NamedElement) next);
+										String property = eResourceParsedProperties
+												.remove(propertyKey);
+
+										if (property != null) {
+											resourceParsedProperties.put(
+													propertyKey, property);
+										}
+									}
+								}
+
+								UMLUtil.writeProperties(eResourcePropertiesURI,
+										eResourceParsedProperties);
+
+								if (!resourceParsedProperties.isEmpty()) {
+									UMLUtil.writeProperties(
+											resourcePropertiesURI,
+											resourceParsedProperties);
+								}
+
+								return Status.OK_STATUS;
+							}
+
+							@Override
+							protected IStatus doUndo(IProgressMonitor monitor,
+									IAdaptable info) throws ExecutionException {
+								UMLUtil.writeProperties(
+										eResourcePropertiesURI,
+										UMLUtil.parseProperties(eResourceProperties));
+
+								URIConverter uriConverter = getEditingDomain().getResourceSet().getURIConverter();
+								
+								if (uriConverter
+										.exists(resourcePropertiesURI, null)) {
+									
+									if (resourceProperties == null) {
+										try {
+											uriConverter.delete(resourcePropertiesURI, null);											
+										} catch (IOException ioe) {
+											return Status.CANCEL_STATUS;
+										}
+									} else {
+										UMLUtil.writeProperties(resourcePropertiesURI, UMLUtil
+														.parseProperties(resourceProperties));										
+									}
+								}
+
+								return Status.OK_STATUS;
+							}
+
+							@Override
+							protected IStatus doRedo(IProgressMonitor monitor,
+									IAdaptable info) throws ExecutionException {
+								return doExecute(monitor, info);
+							}
+						});
+					}
 				} else { // uncontrol
 					operation = new CompositeEMFOperation(ted,
 							Messages.UncontrolAction_label);
@@ -366,7 +466,7 @@ public class EditCommandsFactory implements IPropertyListener {
 					Resource eResource = eObject.eResource();
 					operation.addContext(new ResourceUndoContext(ted, eResource));
 
-					List<Element> uncontrolledElements = new ArrayList<Element>();
+					final List<Element> uncontrolledElements = new ArrayList<Element>();
 
 					EList<EObject> eResourceContents = eResource.getContents();
 					operation.add(new EMFCommandOperation(ted,
@@ -420,6 +520,99 @@ public class EditCommandsFactory implements IPropertyListener {
 								}
 							}
 						}
+					}
+
+					final URI eResourcePropertiesURI = UMLUtil.getPropertiesURI(eResource);
+					final String eResourceProperties = UMLUtil.readProperties(eResourcePropertiesURI);
+					
+					if (eResourceProperties != null) {
+						final URI eContainerResourcePropertiesURI = UMLUtil
+								.getPropertiesURI(eContainerResource);
+						final String eContainerResourceProperties = UMLUtil
+								.readProperties(eContainerResourcePropertiesURI);
+
+						operation.add(new AbstractEMFOperation(ted,
+								UML2Util.EMPTY_STRING) {
+
+							@Override
+							protected IStatus doExecute(
+									IProgressMonitor monitor, IAdaptable info)
+									throws ExecutionException {
+								Map<String, String> eResourceParsedProperties = UMLUtil
+										.parseProperties(eResourceProperties);
+								Map<String, String> eContainerResourceParsedProperties = eContainerResourceProperties != null ? UMLUtil
+										.parseProperties(eContainerResourceProperties)
+										: new LinkedHashMap<String, String>();
+
+								for (TreeIterator<EObject> allProperContents = EcoreUtil
+										.getAllProperContents(
+												uncontrolledElements, true); allProperContents
+										.hasNext();) {
+									EObject next = allProperContents.next();
+
+									if (next instanceof NamedElement) {
+										String propertyKey = NamedElementUtil
+												.getPropertyKey((NamedElement) next);
+										String property = eResourceParsedProperties
+												.remove(propertyKey);
+
+										if (property != null) {
+											eContainerResourceParsedProperties
+													.put(propertyKey, property);
+										}
+									}
+								}
+
+								UMLUtil.writeProperties(eResourcePropertiesURI,
+										eResourceParsedProperties);
+
+								if (!eContainerResourceParsedProperties
+										.isEmpty()) {
+									UMLUtil.writeProperties(
+											eContainerResourcePropertiesURI,
+											eContainerResourceParsedProperties);
+								}
+
+								return Status.OK_STATUS;
+							}
+
+							@Override
+							protected IStatus doUndo(IProgressMonitor monitor,
+									IAdaptable info) throws ExecutionException {
+								UMLUtil.writeProperties(
+										eResourcePropertiesURI,
+										UMLUtil.parseProperties(eResourceProperties));
+
+								URIConverter uriConverter = getEditingDomain()
+										.getResourceSet().getURIConverter();
+
+								if (uriConverter.exists(
+										eContainerResourcePropertiesURI, null)) {
+
+									if (eContainerResourceProperties == null) {
+										try {
+											uriConverter
+													.delete(eContainerResourcePropertiesURI,
+															null);
+										} catch (IOException ioe) {
+											return Status.CANCEL_STATUS;
+										}
+									} else {
+										UMLUtil.writeProperties(
+												eContainerResourcePropertiesURI,
+												UMLUtil.parseProperties(eContainerResourceProperties));
+									}
+								}
+
+								return Status.OK_STATUS;
+							}
+
+							@Override
+							protected IStatus doRedo(IProgressMonitor monitor,
+									IAdaptable info) throws ExecutionException {
+								return doExecute(monitor, info);
+							}
+						});
 					}
 				}
 

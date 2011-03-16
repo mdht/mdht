@@ -7,11 +7,15 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     Kenn Hussey - adding support for "business name"
+ *     Kenn Hussey - adding support for "business name" values
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
+
+import java.io.IOException;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -21,7 +25,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
@@ -49,6 +55,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 
 /**
@@ -115,34 +122,104 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 
 			IUndoableOperation operation = new AbstractEMFOperation(
 					editingDomain, "temp") {
+
+				URI propertiesURI = null;
+				String properties = null;
+
+				@Override
 				protected IStatus doExecute(IProgressMonitor monitor,
 						IAdaptable info) {
+
+					if (!(localNameModified || businessNameModified)) {
+						return Status.CANCEL_STATUS;
+					}
+
+					propertiesURI = UMLUtil.getPropertiesURI(namedElement.eResource());
+					properties = UMLUtil.readProperties(propertiesURI);
+
 					if (localNameModified) {
 						localNameModified = false;
 						this.setLabel("Set Name");
-						String businessName = NamedElementUtil
-								.removeBusinessName(namedElement);
+
+						String oldPropertyKey = NamedElementUtil.getPropertyKey(namedElement);
+						Map<String, String> parsedProperties = properties != null ? UMLUtil.parseProperties(properties) : new LinkedHashMap<String, String>();
+						String oldProperty = parsedProperties.remove(oldPropertyKey);
+
 						namedElement.setName(localNameText.getText());
-						if (businessName != null) {
-							NamedElementUtil.setBusinessName(namedElement,
-									businessName);
+
+						if (oldProperty != null) {
+							String newPropertyKey = NamedElementUtil.getPropertyKey(namedElement);
+							parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
+							
+							UMLUtil.writeProperties(propertiesURI, parsedProperties);
 						}
-						refreshBusinessText();
+
+						refreshBusinessNameText();
 					} else if (businessNameModified) {
 						businessNameModified = false;
 						this.setLabel("Set Business Name");
 
 						if (!NamedElementUtil.setBusinessName(namedElement,
 								businessNameText.getText())) {
-							businessNameText.setText(NamedElementUtil
-									.getBusinessName(namedElement));
+							refreshBusinessNameText();
 							return Status.CANCEL_STATUS;
 						}
-					} else {
-						return Status.CANCEL_STATUS;
 					}
 
 					return Status.OK_STATUS;
+				}
+
+				@Override
+				protected IStatus doUndo(IProgressMonitor monitor,
+						IAdaptable info) throws ExecutionException {
+					IStatus result = super.doUndo(monitor, info);
+
+					if (result.isOK()) {
+						URIConverter uriConverter = getEditingDomain().getResourceSet().getURIConverter();
+						
+						if (uriConverter
+								.exists(propertiesURI, null)) {
+							
+							if (properties == null) {
+								properties = UMLUtil.readProperties(propertiesURI);
+
+								try {
+									uriConverter.delete(propertiesURI, null);											
+								} catch (IOException ioe) {
+									return Status.CANCEL_STATUS;
+								}
+							} else {
+								Map<String, String> parsedProperties = UMLUtil
+								.parseProperties(properties);
+								properties = UMLUtil.readProperties(propertiesURI);
+								UMLUtil.writeProperties(propertiesURI, parsedProperties);										
+							}
+						}
+
+						refreshBusinessNameText();
+					}
+
+					return result;
+				}
+
+				@Override
+				protected IStatus doRedo(IProgressMonitor monitor,
+						IAdaptable info) throws ExecutionException {
+					IStatus result = super.doRedo(monitor, info);
+					
+					if (result.isOK()) {
+						
+						if (properties != null) {
+							Map<String, String> parsedProperties = UMLUtil
+							.parseProperties(properties);
+							properties = UMLUtil.readProperties(propertiesURI);
+							UMLUtil.writeProperties(propertiesURI, parsedProperties);
+						}
+
+						refreshBusinessNameText();
+					}
+					
+					return result;
 				}
 			};
 
@@ -251,7 +328,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		namedElement = null;
 	}
 
-	protected void refreshBusinessText() {
+	protected void refreshBusinessNameText() {
 		businessNameText.removeModifyListener(modifyListener);
 		businessNameText.removeKeyListener(keyListener);
 		businessNameText.removeFocusListener(focusListener);
@@ -281,7 +358,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 
 		localNameText.setEnabled(!isReadOnly());
 
-		refreshBusinessText();
+		refreshBusinessNameText();
 
 		// TODO there should be a better way to force tabbed page label update
 		tabbedPropertySheetPage
