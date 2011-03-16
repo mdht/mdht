@@ -523,7 +523,7 @@ public class InstanceGenerator {
 
 	private Map<String, EPackage> packageURIMap = new HashMap<String, EPackage>();
 
-	boolean standalone = false;
+	boolean standalone = true;
 
 	public InstanceGenerator() {
 		CDAUtil.loadPackages();
@@ -575,14 +575,14 @@ public class InstanceGenerator {
 
 					Resource umlInstanceResource = null;
 
-					if (!standalone) {
-						IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(segments[1]);
-						IFolder folder = project.getFolder("model");
-						String instancePath = segments[segments.length - 1].replace(".uml", "-instances.uml");
-						IFile file = folder.getFile(instancePath);
-						instanceURIPath = file.getFullPath().toOSString();
+					if (standalone) {
+						instanceURIPath = modelPackage.getNearestPackage().eResource().getURI().toFileString();
 
-						final URI instanceURI = URI.createPlatformResourceURI(instanceURIPath, false);
+						String umlModelName = segments[segments.length - 1].replace(".uml", "-instances.uml");
+
+						instanceURIPath = instanceURIPath.replace(segments[segments.length - 1], umlModelName);
+
+						final URI instanceURI = URI.createFileURI(instanceURIPath);
 
 						try {
 							umlInstanceResource = modelPackage.eResource().getResourceSet().getResource(instanceURI, true);
@@ -591,13 +591,13 @@ public class InstanceGenerator {
 						}
 
 					} else {
-						instanceURIPath = modelPackage.getNearestPackage().eResource().getURI().toFileString();
+						IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(segments[1]);
+						IFolder folder = project.getFolder("model");
+						String instancePath = segments[segments.length - 1].replace(".uml", "-instances.uml");
+						IFile file = folder.getFile(instancePath);
+						instanceURIPath = file.getFullPath().toOSString();
 
-						String umlModelName = segments[segments.length - 1].replace(".uml", "-instances.uml");
-
-						instanceURIPath = instanceURIPath.replace(segments[segments.length - 1], umlModelName);
-
-						final URI instanceURI = URI.createFileURI(instanceURIPath);
+						final URI instanceURI = URI.createPlatformResourceURI(instanceURIPath, false);
 
 						try {
 							umlInstanceResource = modelPackage.eResource().getResourceSet().getResource(instanceURI, true);
