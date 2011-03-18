@@ -6,12 +6,12 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IProjectNature;
 import org.eclipse.core.runtime.CoreException;
 
-public class CDAModelNature implements IProjectNature {
+public class CDANature implements IProjectNature {
 
 	/**
 	 * ID of this project nature
 	 */
-	public static final String NATURE_ID = "org.openhealthtools.mdht.uml.cda.ui.CDA sampleNature";
+	public static final String NATURE_ID = "org.openhealthtools.mdht.uml.cda.ui.org.openhealthtools.mdht.uml.cda.nature.id";
 
 	private IProject project;
 
@@ -25,7 +25,7 @@ public class CDAModelNature implements IProjectNature {
 		ICommand[] commands = desc.getBuildSpec();
 
 		for (int i = 0; i < commands.length; ++i) {
-			if (commands[i].getBuilderName().equals(CDAModelBuilder.BUILDER_ID)) {
+			if (commands[i].getBuilderName().equals(CDABuilder.BUILDER_ID)) {
 				return;
 			}
 		}
@@ -33,7 +33,7 @@ public class CDAModelNature implements IProjectNature {
 		ICommand[] newCommands = new ICommand[commands.length + 1];
 		System.arraycopy(commands, 0, newCommands, 0, commands.length);
 		ICommand command = desc.newCommand();
-		command.setBuilderName(CDAModelBuilder.BUILDER_ID);
+		command.setBuilderName(CDABuilder.BUILDER_ID);
 		newCommands[newCommands.length - 1] = command;
 		desc.setBuildSpec(newCommands);
 		project.setDescription(desc, null);
@@ -48,7 +48,7 @@ public class CDAModelNature implements IProjectNature {
 		IProjectDescription description = getProject().getDescription();
 		ICommand[] commands = description.getBuildSpec();
 		for (int i = 0; i < commands.length; ++i) {
-			if (commands[i].getBuilderName().equals(CDAModelBuilder.BUILDER_ID)) {
+			if (commands[i].getBuilderName().equals(CDABuilder.BUILDER_ID)) {
 				ICommand[] newCommands = new ICommand[commands.length - 1];
 				System.arraycopy(commands, 0, newCommands, 0, i);
 				System.arraycopy(commands, i + 1, newCommands, i,

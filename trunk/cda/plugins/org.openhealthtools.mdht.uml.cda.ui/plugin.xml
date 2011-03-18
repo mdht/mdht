@@ -220,15 +220,30 @@
                id="org.openhealthtools.mdht.uml.ui.dev.actions.ConsolidateTemplatesAction">
           </action>
         </objectContribution>
+        <objectContribution
+              adaptable="true"
+              id="org.openhealthtools.mdht.uml.cda.ui.contribution1"
+              nameFilter="*"
+              objectClass="org.eclipse.core.resources.IProject">
+           <action
+                 class="org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction"
+                 enablesFor="+"
+                 id="org.openhealthtools.mdht.uml.cda.ui.addRemoveNatureAction"
+                 label="Add/Remove Sample Nature"
+                 menubarPath="additions">
+           </action>
+        </objectContribution>
       
-		<!--
+	
+	
+	<!--
   <objectContribution
         adaptable="true"
         id="org.openhealthtools.mdht.uml.cda.ui.contribution1"
         nameFilter="*"
         objectClass="org.eclipse.core.resources.IProject">
      <action
-           class="org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction"
+           class="org.openhealthtools.mdht.uml.cda.ui.builderxxx.ToggleCDAModelNatureAction"
            enablesFor="+"
            id="org.openhealthtools.mdht.uml.cda.ui.addRemoveNatureAction"
            label="Add/Remove CDA Nature"
@@ -236,6 +251,7 @@
      </action>
   </objectContribution>
   -->
+  
   
 	</extension>
 	
@@ -327,31 +343,32 @@
       </objectContribution>
    </extension>
    
-   <!--
-   <extension
-         id="CDAsampleBuilder"
-         name="CDA Sample Project Builder"
+<!--
+     <extension
+         id="CDAModelBuilder"
+         name="CDA Model Project Builder"
          point="org.eclipse.core.resources.builders">
       <builder
             hasNature="true">
          <run
-               class="org.openhealthtools.mdht.uml.cda.ui.builder.CDASampleBuilder">
+               class="org.openhealthtools.mdht.uml.cda.ui.builderxxx.CDAModelBuilder">
          </run>
       </builder>
    </extension>
    <extension
-         id="CDA sampleNature"
-         name="CDA Sample Project Nature"
+         id="CDAModelNature"
+         name="CDA Model Project Nature"
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="org.openhealthtools.mdht.uml.cda.ui.builder.CDASampleNature">
+               class="org.openhealthtools.mdht.uml.cda.ui.builderxxx.CDAModelNature">
          </run>
       </runtime>
       <builder
-            id="org.openhealthtools.mdht.uml.cda.ui.CDAsampleBuilder">
+            id="org.openhealthtools.mdht.uml.cda.ui.CDAModelBuilder">
       </builder>
    </extension>
+
    -->
    
    
@@ -390,6 +407,41 @@
                id="org.openhealthtools.mdht.uml.cda.ui.instance.view.id">
          </view>
       </perspectiveExtension>
+   </extension>
+   <extension
+         id="org.openhealthtools.mdht.uml.cda.builder.id"
+         name="CDA Project Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="org.openhealthtools.mdht.uml.cda.nature.id"
+         name="CDA Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.openhealthtools.mdht.uml.cda.ui.builder.CDANature">
+         </run>
+      </runtime>
+      <builder
+            id="org.openhealthtools.mdht.uml.cda.ui.org.openhealthtools.mdht.uml.cda.builder.id">
+      </builder>
+   </extension>
+   <extension
+         id="xmlProblem"
+         name="XML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
    </extension>
    
             
