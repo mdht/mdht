@@ -12,6 +12,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
+import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -44,7 +45,23 @@ import org.eclipse.uml2.uml.util.UMLUtil.UML2EcoreConverter;
 
 public class CDABuilder extends IncrementalProjectBuilder {
 
+	class CheckForModelChanged implements IResourceDeltaVisitor 
+	{
+		public boolean hasModelChanged = false;
+		
+		public boolean visit(IResourceDelta delta) throws CoreException {
 
+			IResource resource = delta.getResource();
+
+			if (delta.getKind() == IResourceDelta.CHANGED && resource.getName().endsWith(".uml") ) {
+				hasModelChanged = true;
+			}
+			
+			return true;
+			
+		}
+	}
+	
 	public static final String BUILDER_ID = "org.openhealthtools.mdht.uml.cda.ui.org.openhealthtools.mdht.uml.cda.builder.id";
 	
 	@SuppressWarnings("rawtypes") 
@@ -62,9 +79,17 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		
 		if (modelProjectDelta != null)
 		{
-			runTransformation(getProject(), monitor);
-			runUML2Ecore(getProject(), monitor);
-			runGeneration(getProject(), monitor);
+			
+			CheckForModelChanged cfmc = new CheckForModelChanged();
+			
+			modelProjectDelta.accept(cfmc);
+			
+			if (cfmc.hasModelChanged) {
+				runTransformation(getProject(), monitor);
+				runUML2Ecore(getProject(), monitor);
+				runGeneration(getProject(), monitor);				
+			}
+
 		}
 
 		return projects ;
