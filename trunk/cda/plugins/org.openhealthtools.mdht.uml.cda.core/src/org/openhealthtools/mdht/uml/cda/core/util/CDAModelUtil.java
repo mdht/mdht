@@ -287,8 +287,8 @@ public class CDAModelUtil {
 	public static String computeGeneralizationConformanceMessage(Class general, boolean markup, Package xrefSource) {
 		StringBuffer message = new StringBuffer();
 
-//		String prefix = !isSameModel(xrefSource, general) ? getModelPrefix(general)+" " : "";
-		String prefix = getModelPrefix(general)+" ";
+		String prefix = !UMLUtil.isSameModel(xrefSource, general) ? getModelPrefix(general)+" " : "";
+//		String prefix = getModelPrefix(general)+" ";
 		String xref = computeXref(xrefSource, general);
 		boolean showXref = markup && (xref != null);
 		String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -349,8 +349,8 @@ public class CDAModelUtil {
 		if (endType != null) {
 			message.append(", where its type is ");
 			
-//			String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
-			String prefix = getModelPrefix(endType)+" ";
+			String prefix = !UMLUtil.isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+//			String prefix = getModelPrefix(endType)+" ";
 			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
@@ -446,8 +446,8 @@ public class CDAModelUtil {
 				message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
 				message.append(" contain ");
 	
-//				String prefix = !isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
-				String prefix = getModelPrefix(endType)+" ";
+				String prefix = !UMLUtil.isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+//				String prefix = getModelPrefix(endType)+" ";
 				String xref = computeXref(xrefSource, endType);
 				boolean showXref = markup && (xref != null);
 				String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";

@@ -15,11 +15,9 @@ package org.openhealthtools.mdht.uml.cda.ui.actions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -48,8 +46,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.DirectedRelationship;
-import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
@@ -63,17 +60,31 @@ import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class ConsolidateTemplatesAction implements IObjectActionDelegate {
-	private Resource sourceResource;
+	// command invoked on this model element
 	private NamedElement namedElement;
-	private Set<Class> pendingClasses = new HashSet<Class>();
+	
+	// resource and package containing the model element to be consolidated
+	private Resource sourceResource;
+	private Package sourcePackage;
+	private Map<Classifier, List<Classifier>> sourceInheritance = new HashMap<Classifier, List<Classifier>>();
 
+	// output model for template consolidation
 	private String consolPath = "org.openhealthtools.mdht.uml.cda.toc.model/model/toc.uml";
 	private Resource consolResource;
 	private Package consolPackage;
-	
 	private Map<Class, Class> consolMapping = new HashMap<Class, Class>();
+	private Map<Classifier, List<Classifier>> consolInheritance = new HashMap<Classifier, List<Classifier>>();
+	
+	// output model for vocab consolidation
+	private String vocabPath = "org.openhealthtools.mdht.uml.cda.toc.model/model/toc-vocab.uml";
+	private Resource vocabResource;
+	private Package vocabPackage;
+	private Map<Enumeration, Enumeration> vocabMapping = new HashMap<Enumeration, Enumeration>();
 	
 	public ConsolidateTemplatesAction() {
 		super();
@@ -87,6 +98,10 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			URI consolURI = URI.createPlatformResourceURI(consolPath, true);
 			consolResource = sourceResource.getResourceSet().getResource(consolURI, true);
 			consolPackage = (Package) consolResource.getContents().get(0);
+
+			URI vocabURI = URI.createPlatformResourceURI(vocabPath, true);
+			vocabResource = sourceResource.getResourceSet().getResource(vocabURI, true);
+			vocabPackage = (Package) vocabResource.getContents().get(0);
 			
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 			IUndoableOperation operation = new AbstractEMFOperation(
@@ -110,22 +125,6 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 						}
 					}
 					
-					// Add copied classes into current resource, and consolidate them
-					// TODO exclude classes that have been redefined in consolidated model
-//					while (!pendingClasses.isEmpty()) {
-//						List<Class> classesToCopy = new ArrayList<Class>(pendingClasses);
-//						pendingClasses.clear();
-//						
-//						for (Class umlClass : classesToCopy) {
-//							if (!consolPackage.getOwnedTypes().contains(umlClass)) {
-//								// TODO rename class if same name already exists
-//								System.out.println("Copy class: " + umlClass.getQualifiedName());
-//								Class clonedClass = copyToConsolPackage(umlClass);
-//								mergeInheritedProperties(clonedClass);
-//							}
-//						}
-//					}
-
 			        return Status.OK_STATUS;
 			    }};
 
@@ -139,6 +138,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		    }
 		    
 		    consolResource.save(null);
+		    vocabResource.save(null);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -235,19 +235,9 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		}
 		for (int index=0; index<allAssociations.size(); index++) {
 			Classifier classifier = endTypes.get(index);
-//			boolean hasSubclass = false;
-//			List<DirectedRelationship>specializations = 
-//				classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
-//			for (DirectedRelationship relationship : specializations) {
-//				Classifier specific = ((Generalization)relationship).getSpecific();
-//				if (endTypes.contains(specific)) {
-//					hasSubclass = true;
-//					break;
-//				}
-//			}
 			
 			boolean hasSubclass = false;
-			for(Classifier specific : getAllSpecializations(classifier)) {
+			for(Classifier specific : UMLUtil.getAllSpecializations(classifier)) {
 				if (endTypes.contains(specific)) {
 					hasSubclass = true;
 					break;
@@ -320,11 +310,28 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 				umlClass.getOwnedAttributes().add(mergedProperty);
 				UMLUtil.cloneStereotypes(property, mergedProperty);
 			}
+			
+			ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(mergedProperty);
+			if (valueSetConstraint != null) {
+				ValueSetVersion valueSetVersion = valueSetConstraint.getReference();
+				if (valueSetVersion != null) {
+					Enumeration mappedValueSet = copyToConsolVocab(valueSetVersion.getBase_Enumeration());
+					
+					if (mappedValueSet != null) {
+						ValueSetVersion mappedValueSetVersion = TermProfileUtil.getValueSetVersion(mappedValueSet);
+						valueSetConstraint.setReference(mappedValueSetVersion);
+					}
+				}
+			}
 
 			if (property.getAssociation() != null) {
 				Type endType = property.getType();
 				if (endType instanceof Class) {
-					Class mappedEndType = consolidateClass((Class)endType);
+					// if a more specific type defined in source model, use it
+					Class sourceSpecialization = findSourceSpecialization((Class)endType);
+					Class consolEndType = sourceSpecialization!=null ? sourceSpecialization : (Class)endType;
+					Class mappedEndType = consolidateClass(consolEndType);
+					
 					mergedProperty.setType(mappedEndType);
 
 					Association assocClone = (Association) umlClass.getNearestPackage()
@@ -337,32 +344,6 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
 				}
 			}
-			
-//			// clone association if from a different model
-//			if (property.getAssociation() != null
-//					&& !UMLUtil.isSameModel(umlClass, property.getAssociation())) {
-//				
-//				Association assocClone = (Association) umlClass.getNearestPackage()
-//					.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
-//				assocClone.getMemberEnds().add(mergedProperty);
-//				Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
-//				ownedEnd.setType(umlClass);
-//				assocClone.getOwnedEnds().add(ownedEnd);
-//
-//				UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
-//			}
-//
-//			if (property.getAssociation() != null) {
-//				// if associated class is not in this package, copy it
-//				Type endType = property.getType();
-//				if (!UMLUtil.isSameModel(umlClass, endType) && endType instanceof Class
-//						&& !CDAModelUtil.isCDAModel(endType)) {
-//					if (!pendingClasses.contains(endType)) {
-//						pendingClasses.add((Class)endType);
-//					}
-//				}
-//			}
-
 		}
 
 		// Constraints
@@ -423,38 +404,46 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		
 		return mappedClass;
 	}
-
-	private void copyAssocToConsolPackage(Class umlClass) {
-		for (Property property : umlClass.getOwnedAttributes()) {
-			if (property.getAssociation() != null) {
-				Association assocClone = (Association) umlClass.getNearestPackage()
-					.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
-				assocClone.getMemberEnds().add(property);
-				Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
-				ownedEnd.setType(umlClass);
-				assocClone.getOwnedEnds().add(ownedEnd);
 	
-				UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+	private Enumeration copyToConsolVocab(Enumeration vocabEnum) {
+		Enumeration mappedEnum = vocabMapping.get(vocabEnum);
+		if (mappedEnum == null) {
+			mappedEnum = EcoreUtil.copy(vocabEnum);
+
+			vocabPackage.getOwnedTypes().add(mappedEnum);
+			UMLUtil.cloneStereotypes(vocabEnum, mappedEnum);
+			vocabMapping.put(vocabEnum, mappedEnum);
+			System.out.println("Consolidate Vocab: " + vocabEnum.getQualifiedName());
+		}
+		
+		return mappedEnum;
+	}
+	
+	private void mapClassInheritance(Package umlPackage, Map<Classifier, List<Classifier>> map) {
+		for (Type type : umlPackage.getOwnedTypes()) {
+			// do not include Association
+			if (type instanceof Class) {
+				mapClassInheritance((Class)type, map);
 			}
 		}
 	}
 	
-	private List<Classifier> getAllSpecializations(Classifier classifier) {
-		List<Classifier> allSpecializations = new ArrayList<Classifier>();
-
-		List<DirectedRelationship>specializations = 
-			classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
-		for (DirectedRelationship relationship : specializations) {
-			Classifier specific = ((Generalization)relationship).getSpecific();
-			if (specific != null) {
-				allSpecializations.add(specific);
-				allSpecializations.addAll(getAllSpecializations(specific));
+	private void mapClassInheritance(Class umlClass, Map<Classifier, List<Classifier>> map) {
+		map.put(umlClass, UMLUtil.getAllGeneralizations(umlClass));
+	}
+	
+	private Class findSourceSpecialization(Class umlClass) {
+		Class specific = null;
+		for (Classifier classifier : sourceInheritance.keySet()) {
+			if (sourceInheritance.get(classifier).contains(umlClass)) {
+				// must be a Class or UML model is invalid
+				return (Class)classifier;
 			}
 		}
 		
-		return allSpecializations;
+		return specific;
 	}
-	
+
 	private int findProperty(List<Property> properties, String name) {
 		if (name != null) {
 			for (int i=0; i<properties.size(); i++) {
@@ -486,6 +475,8 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			if (selected instanceof NamedElement) {
 				namedElement = (NamedElement) selected;
 				sourceResource = namedElement.eResource();
+				sourcePackage = namedElement.getNearestPackage();
+				mapClassInheritance(sourcePackage, sourceInheritance);
 			}
 		}
 		

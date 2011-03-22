@@ -45,9 +45,12 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ClassifierTemplateParameter;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
@@ -153,6 +156,47 @@ public class UMLUtil {
 		return parentNames;
 	}
 
+	/**
+	 * Accumulate a list containing general classifiers of all generalizations
+	 * for the given classifier, including the given classfier.
+	 * 
+	 * @param classifier
+	 * @return a List with zero or more classifiers
+	 */
+	public static List<Classifier> getAllGeneralizations(Classifier classifier) {
+		List<Classifier> parents = new ArrayList<Classifier>();
+		parents.add(classifier);
+
+		for (Classifier parent : classifier.getGenerals()) {
+			parents.addAll(getAllGeneralizations(parent));
+		}
+		return parents;
+	}
+
+	/**
+	 * Accumulate a list containing specific classifiers of all subclass generalizations
+	 * for the given classifier, including the given classfier. This list will include
+	 * only classifier from models loaded into the current ResourceSet.
+	 * 
+	 * @param classifier
+	 * @return a List with zero or more classifiers
+	 */
+	public static List<Classifier> getAllSpecializations(Classifier classifier) {
+		List<Classifier> allSpecializations = new ArrayList<Classifier>();
+
+		List<DirectedRelationship>specializations = 
+			classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+		for (DirectedRelationship relationship : specializations) {
+			Classifier specific = ((Generalization)relationship).getSpecific();
+			if (specific != null) {
+				allSpecializations.add(specific);
+				allSpecializations.addAll(getAllSpecializations(specific));
+			}
+		}
+		
+		return allSpecializations;
+	}
+	
 	/**
 	 * Search all nested packages for the given classifier name. This search
 	 * does not consider qualified names, but only looks for a matching local
@@ -407,8 +451,26 @@ public class UMLUtil {
 
 		for (Property p1 : first.getOwnedAttributes()) {
 			Property p2 = second.getOwnedAttribute(p1.getName(), p1.getType());
-			if (p2 != null)
+			if (p2 != null) {
 				cloneStereotypes(p1, p2);
+			}
+		}
+		for (Constraint constraint1 : first.getOwnedRules()) {
+			Constraint constraint2 = second.getOwnedRule(constraint1.getName());
+			if (constraint2 != null) {
+				cloneStereotypes(constraint1, constraint2);
+			}
+		}
+	}
+
+	public static void cloneStereotypes(Enumeration first, Enumeration second) {
+		cloneStereotypes((Element) first, (Element) second);
+
+		for (EnumerationLiteral literal1 : first.getOwnedLiterals()) {
+			EnumerationLiteral literal2 = second.getOwnedLiteral(literal1.getName());
+			if (literal2 != null) {
+				cloneStereotypes(literal1, literal2);
+			}
 		}
 	}
 
