@@ -14,9 +14,11 @@ package org.openhealthtools.mdht.uml.cda.ui.actions;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -27,7 +29,9 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -42,20 +46,34 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.DirectedRelationship;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class ConsolidateTemplatesAction implements IObjectActionDelegate {
+	private Resource sourceResource;
 	private NamedElement namedElement;
-	private Set<Class> copiedClasses = new HashSet<Class>();
+	private Set<Class> pendingClasses = new HashSet<Class>();
+
+	private String consolPath = "org.openhealthtools.mdht.uml.cda.toc.model/model/toc.uml";
+	private Resource consolResource;
+	private Package consolPackage;
+	
+	private Map<Class, Class> consolMapping = new HashMap<Class, Class>();
 	
 	public ConsolidateTemplatesAction() {
 		super();
@@ -66,34 +84,46 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	 */
 	public void run(IAction action) {
 		try {
+			URI consolURI = URI.createPlatformResourceURI(consolPath, true);
+			consolResource = sourceResource.getResourceSet().getResource(consolURI, true);
+			consolPackage = (Package) consolResource.getContents().get(0);
+			
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 			IUndoableOperation operation = new AbstractEMFOperation(
 					editingDomain, "Consolidate Templates") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
 			    	// assure that all proxies are resolved.
-			    	EcoreUtil.resolveAll(namedElement.eResource());
-			    	
-					TreeIterator<Object> iterator = EcoreUtil.getAllContents(
-							Collections.singletonList(namedElement));
-					
+			    	EcoreUtil.resolveAll(sourceResource);
+			    	List<EObject> eObjectList = new ArrayList<EObject>(sourceResource.getContents());
+
+					TreeIterator<Object> iterator = EcoreUtil.getAllContents(eObjectList);
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
 						if (child instanceof Class
 								&& CDAModelUtil.getCDAClass((Class)child) != null) {
-							Class template = (Class) child;
 							
-							mergeInheritedProperties(template);
+							Class template = (Class) child;
+							consolidateClass(template);
+							
 							iterator.prune();
 						}
 					}
 					
-//					for (Class umlClass : copiedClasses) {
-//						// TODO rename class if same name already exists
-//						System.out.println("Copy class: " + umlClass.getQualifiedName());
-//						Class clonedClass = EcoreUtil.copy(umlClass);
-//						namedElement.getNearestPackage().getOwnedTypes().add(clonedClass);
-//						UMLUtil.cloneStereotypes(umlClass, clonedClass);
+					// Add copied classes into current resource, and consolidate them
+					// TODO exclude classes that have been redefined in consolidated model
+//					while (!pendingClasses.isEmpty()) {
+//						List<Class> classesToCopy = new ArrayList<Class>(pendingClasses);
+//						pendingClasses.clear();
+//						
+//						for (Class umlClass : classesToCopy) {
+//							if (!consolPackage.getOwnedTypes().contains(umlClass)) {
+//								// TODO rename class if same name already exists
+//								System.out.println("Copy class: " + umlClass.getQualifiedName());
+//								Class clonedClass = copyToConsolPackage(umlClass);
+//								mergeInheritedProperties(clonedClass);
+//							}
+//						}
 //					}
 
 			        return Status.OK_STATUS;
@@ -107,10 +137,43 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		    } catch (ExecutionException ee) {
 		    	ee.printStackTrace();
 		    }
+		    
+		    consolResource.save(null);
 
 		} catch (Exception e) {
-			throw new RuntimeException(e.getCause());
+			e.printStackTrace();
 		}
+	}
+	
+	private Class consolidateClass(Class umlClass) {
+		if (CDAModelUtil.isCDAModel(umlClass)) {
+			return umlClass;
+		}
+		
+		Class consolidatedClass = consolMapping.get(umlClass);
+		if (consolidatedClass == null) {
+			System.out.println("Consolidate: " + umlClass.getQualifiedName());
+			consolidatedClass = copyToConsolPackage(umlClass);
+			mergeInheritedProperties(consolidatedClass);
+
+			// if no templateId, copy from nearest parent
+			String templateId = null;
+			Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(
+					umlClass, ICDAProfileConstants.CDA_TEMPLATE);
+			if (hl7Template != null) {
+				templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+			}
+			if (templateId == null) {
+				// this method gets inherited templateId, if missing
+				templateId = CDAModelUtil.getTemplateId(umlClass);
+				if (templateId != null) {
+					hl7Template = CDAProfileUtil.applyCDAStereotype(consolidatedClass, ICDAProfileConstants.CDA_TEMPLATE);
+					consolidatedClass.setValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID, templateId);
+				}
+			}
+		}
+		
+		return consolidatedClass;
 	}
 
 	private void mergeInheritedProperties(Class umlClass) {
@@ -161,9 +224,42 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 				associationIterator.remove();
 			}
 		}
-		
-		allProperties.addAll(allAssociations);
 
+		/*
+		 * Include only associations that are not redefined in a subclass.
+		 * TODO There must be a better way... use UML property redefinition in model.
+		 */
+		List<Classifier> endTypes = new ArrayList<Classifier>();
+		for (Property property : allAssociations) {
+			endTypes.add((Classifier)property.getType());
+		}
+		for (int index=0; index<allAssociations.size(); index++) {
+			Classifier classifier = endTypes.get(index);
+//			boolean hasSubclass = false;
+//			List<DirectedRelationship>specializations = 
+//				classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+//			for (DirectedRelationship relationship : specializations) {
+//				Classifier specific = ((Generalization)relationship).getSpecific();
+//				if (endTypes.contains(specific)) {
+//					hasSubclass = true;
+//					break;
+//				}
+//			}
+			
+			boolean hasSubclass = false;
+			for(Classifier specific : getAllSpecializations(classifier)) {
+				if (endTypes.contains(specific)) {
+					hasSubclass = true;
+					break;
+				}
+			}
+			
+			if (!hasSubclass) {
+				allProperties.add(allAssociations.get(index));
+			}
+		}
+
+		// collect all inherited constraints
 		for (int i=allParents.size()-1; i>=0; i--) {
 			Class parent = (Class) allParents.get(i);
 
@@ -174,7 +270,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			}
 		}
 		
-		// use i>0 to omit this class
+		// use i>0 to omit the consolidated class
 		for (int i=allParents.size()-1; i>0; i--) {
 			Class parent = (Class) allParents.get(i);
 			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent)) {
@@ -225,29 +321,47 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 				UMLUtil.cloneStereotypes(property, mergedProperty);
 			}
 
-			// clone association if from a different model
-			if (property.getAssociation() != null
-					&& !UMLUtil.isSameModel(umlClass, property.getAssociation())) {
-				
-				Association assocClone = (Association) umlClass.getNearestPackage()
-					.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
-				assocClone.getMemberEnds().add(mergedProperty);
-				Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
-				ownedEnd.setType(umlClass);
-				assocClone.getOwnedEnds().add(ownedEnd);
-
-				UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
-			}
-
 			if (property.getAssociation() != null) {
-				// if associated class is not in this package, copy it
-				// TODO exclude classes that have been redefined in consolidated model
 				Type endType = property.getType();
-				if (!UMLUtil.isSameModel(umlClass, endType) && endType instanceof Class
-						&& !CDAModelUtil.isCDAModel(endType)) {
-					copiedClasses.add((Class)endType);
+				if (endType instanceof Class) {
+					Class mappedEndType = consolidateClass((Class)endType);
+					mergedProperty.setType(mappedEndType);
+
+					Association assocClone = (Association) umlClass.getNearestPackage()
+						.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
+					assocClone.getMemberEnds().add(mergedProperty);
+					Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
+					ownedEnd.setType(umlClass);
+					assocClone.getOwnedEnds().add(ownedEnd);
+
+					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
 				}
 			}
+			
+//			// clone association if from a different model
+//			if (property.getAssociation() != null
+//					&& !UMLUtil.isSameModel(umlClass, property.getAssociation())) {
+//				
+//				Association assocClone = (Association) umlClass.getNearestPackage()
+//					.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
+//				assocClone.getMemberEnds().add(mergedProperty);
+//				Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
+//				ownedEnd.setType(umlClass);
+//				assocClone.getOwnedEnds().add(ownedEnd);
+//
+//				UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+//			}
+//
+//			if (property.getAssociation() != null) {
+//				// if associated class is not in this package, copy it
+//				Type endType = property.getType();
+//				if (!UMLUtil.isSameModel(umlClass, endType) && endType instanceof Class
+//						&& !CDAModelUtil.isCDAModel(endType)) {
+//					if (!pendingClasses.contains(endType)) {
+//						pendingClasses.add((Class)endType);
+//					}
+//				}
+//			}
 
 		}
 
@@ -260,11 +374,85 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			}
 			else {
 				Constraint clone = EcoreUtil.copy(constraint);
-				umlClass.getOwnedRules().add(constraint);
+				umlClass.getOwnedRules().add(clone);
 				UMLUtil.cloneStereotypes(constraint, clone);
 			}
 		}
+
+		// Comments
+		List<Comment> currentComments = new ArrayList<Comment>(umlClass.getOwnedComments());
+		umlClass.getOwnedComments().clear();
+
+		// use i>0 to omit the consolidated class
+		for (int i=allParents.size()-1; i>0; i--) {
+			Classifier parent = allParents.get(i);
+			List<Comment> comments = new ArrayList<Comment>(parent.getOwnedComments());
+			
+			for (Comment comment : comments) {
+				Comment clone = EcoreUtil.copy(comment);
+				umlClass.getOwnedComments().add(clone);
+				UMLUtil.cloneStereotypes(comment, clone);
+			}
+		}
+		umlClass.getOwnedComments().addAll(currentComments);
+	}
+	
+	private Class copyToConsolPackage(Class umlClass) {
+		Class mappedClass = consolMapping.get(umlClass);
+		if (mappedClass == null) {
+			mappedClass = EcoreUtil.copy(umlClass);
+			consolPackage.getOwnedTypes().add(mappedClass);
+			UMLUtil.cloneStereotypes(umlClass, mappedClass);
+			consolMapping.put(umlClass, mappedClass);
+			
+			for (Property property : umlClass.getOwnedAttributes()) {
+				if (property.getAssociation() != null) {
+					Property mappedProperty = mappedClass.getOwnedAttribute(property.getName(), property.getType());
+					
+					Association assocClone = (Association) umlClass.getNearestPackage()
+						.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
+					assocClone.getMemberEnds().add(mappedProperty);
+					Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
+					ownedEnd.setType(umlClass);
+					assocClone.getOwnedEnds().add(ownedEnd);
 		
+					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+				}
+			}
+		}
+		
+		return mappedClass;
+	}
+
+	private void copyAssocToConsolPackage(Class umlClass) {
+		for (Property property : umlClass.getOwnedAttributes()) {
+			if (property.getAssociation() != null) {
+				Association assocClone = (Association) umlClass.getNearestPackage()
+					.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
+				assocClone.getMemberEnds().add(property);
+				Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
+				ownedEnd.setType(umlClass);
+				assocClone.getOwnedEnds().add(ownedEnd);
+	
+				UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+			}
+		}
+	}
+	
+	private List<Classifier> getAllSpecializations(Classifier classifier) {
+		List<Classifier> allSpecializations = new ArrayList<Classifier>();
+
+		List<DirectedRelationship>specializations = 
+			classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+		for (DirectedRelationship relationship : specializations) {
+			Classifier specific = ((Generalization)relationship).getSpecific();
+			if (specific != null) {
+				allSpecializations.add(specific);
+				allSpecializations.addAll(getAllSpecializations(specific));
+			}
+		}
+		
+		return allSpecializations;
 	}
 	
 	private int findProperty(List<Property> properties, String name) {
@@ -287,6 +475,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
+		sourceResource = null;
 		namedElement = null;
 		
 		if (((IStructuredSelection)selection).size() == 1) {
@@ -296,6 +485,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			}
 			if (selected instanceof NamedElement) {
 				namedElement = (NamedElement) selected;
+				sourceResource = namedElement.eResource();
 			}
 		}
 		
