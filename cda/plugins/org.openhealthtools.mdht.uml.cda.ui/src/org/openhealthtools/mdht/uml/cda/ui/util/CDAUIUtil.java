@@ -66,6 +66,8 @@ public class CDAUIUtil {
 	public static IPath MANIFEST_PATH = new Path(BUNDLE_FILENAME_DESCRIPTOR);
 
 	public static IPath MODEL_PATH = new Path("model");
+	
+	public static IPath DITA_PATH = new Path("dita");
 
 	/**
 	 * Returns the resource in the specified project corresponding to its
@@ -123,7 +125,7 @@ public class CDAUIUtil {
 	}
 
 	public static URI getGeneratorModel(IProject project) {
-		IFile generatorModelFile = getProjectFile(project, ".genmodel");
+		IFile generatorModelFile = getProjectFile(project,MODEL_PATH, ".genmodel");
 		if (generatorModelFile != null) {
 			return URI.createFileURI(generatorModelFile.getRawLocation().toOSString());
 		} else {
@@ -132,7 +134,7 @@ public class CDAUIUtil {
 	}
 
 	public static IPath getGeneratorModelFile(IProject project) {
-		IFile generatorModelFile = getProjectFile(project, ".genmodel");
+		IFile generatorModelFile = getProjectFile(project,MODEL_PATH, ".genmodel");
 		if (generatorModelFile != null) {
 			return generatorModelFile.getFullPath();
 		} else {
@@ -141,12 +143,35 @@ public class CDAUIUtil {
 
 	}
 
-	public static IFile getProjectFile(IProject project, String fileExtension) {
+//	public static IFile getProjectFile(IProject project, String fileExtension) {
+//		
+//		return getProjectFile( project,MODEL_PATH,fileExtension);
+////		IFile fileResource = null;
+////
+////		if (project.exists(MODEL_PATH)) {
+////
+////			IFolder folder = project.getFolder(MODEL_PATH);
+////
+////			try {
+////				for (IResource resource : folder.members()) {
+////					if (resource.getName().endsWith(fileExtension)) {
+////						fileResource = (IFile) resource;
+////					}
+////				}
+////			} catch (CoreException e) {
+////
+////			}
+////		}
+////
+////		return fileResource;
+//	}
+	
+	public static IFile getProjectFile(IProject project,IPath folderPath, String fileExtension) {
 		IFile fileResource = null;
 
-		if (project.exists(MODEL_PATH)) {
+		if (project.exists(folderPath)) {
 
-			IFolder folder = project.getFolder(MODEL_PATH);
+			IFolder folder = project.getFolder(folderPath);
 
 			try {
 				for (IResource resource : folder.members()) {

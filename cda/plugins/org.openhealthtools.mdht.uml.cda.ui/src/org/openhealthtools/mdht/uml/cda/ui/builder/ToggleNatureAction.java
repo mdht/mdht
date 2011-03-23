@@ -5,8 +5,10 @@ import java.util.Iterator;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
+import org.eclipse.core.resources.ICommand;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.action.IAction;
@@ -16,7 +18,6 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
-import org.eclipse.core.resources.ICommand;
 
 public class ToggleNatureAction implements IObjectActionDelegate {
 
@@ -62,14 +63,14 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 				if (structuredSelection.getFirstElement() instanceof IProject) {
 					IProject project = (IProject) structuredSelection.getFirstElement();
 					try {
-						if (project.hasNature(CDANature.NATURE_ID)) {
+						if (project.hasNature(CDANature.NATURE_ID) || project.getName().endsWith(".doc")) {
 							enabled = true;
 						} else {
 							Manifest projectManifest;
 							projectManifest = new Manifest(CDAUIUtil.getManifest(project).getContents());
 							Attributes attributes = projectManifest.getMainAttributes();
 							String requiredBundles = attributes.getValue("Require-Bundle");
-							if (requiredBundles.contains("org.openhealthtools.mdht.uml.cda") && CDAUIUtil.getProjectFile(project, ".genmodel") != null) {
+							if (requiredBundles.contains("org.openhealthtools.mdht.uml.cda") && CDAUIUtil.getGeneratorModelFile(project) != null) {
 								enabled = true;
 							}
 						}
@@ -137,7 +138,42 @@ public class ToggleNatureAction implements IObjectActionDelegate {
 
 			description.setBuildSpec(newCommands);
 
-			project.setDescription(description, null);
+		
+			
+			
+			if (project.getName().endsWith(".doc")) {
+				String generateProject = project.getName().substring(0, project.getName().lastIndexOf(".doc"));
+				
+				IProject[] referencedProjects = description.getReferencedProjects();
+				boolean hasGenerateReference=false;
+				for (IProject rproject : referencedProjects )
+				{
+					if (rproject.getName().equals(generateProject))
+					{
+						hasGenerateReference=true;
+						break;
+					}
+					
+				}
+				if (!hasGenerateReference)
+				{
+					IProject[] newReferencedProjects = new IProject[referencedProjects.length+1];					
+					System.arraycopy(referencedProjects, 0, newReferencedProjects, 0, referencedProjects.length);
+					newReferencedProjects[newReferencedProjects.length-1] = ResourcesPlugin.getWorkspace().getRoot().getProject(generateProject);;					
+					description.setReferencedProjects(newReferencedProjects);
+					
+				}
+	
+				
+				
+				
+			}
+			
+			
+			
+			project.setDescription(description, null);	
+			
+			
 		} catch (CoreException e) {
 		}
 	}
