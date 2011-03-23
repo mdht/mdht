@@ -144,7 +144,6 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			
 			for (EPackage ePackage : umlImporter.getEPackages())
 			{
-				System.out.println(ePackage.toString());
 				EcoreUtil.resolveAll(ePackage);				
 			}
 			
