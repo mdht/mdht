@@ -21,18 +21,11 @@ import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.ui.IDebugUIConstants;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
-import org.eclipse.emf.codegen.ecore.generator.GeneratorAdapterFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.common.util.BasicMonitor;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
-import org.eclipse.uml2.codegen.ecore.genmodel.GenModel;
-import org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage;
-import org.eclipse.uml2.codegen.ecore.genmodel.generator.GenModelGeneratorAdapterFactory;
 import org.eclipse.uml2.uml.ecore.importer.UMLImporter;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 
@@ -75,8 +68,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 			if (cfmc.hasModelChanged) {			
 				runTransformation(getProject(), monitor);
-				runUML2Importer(getProject(), monitor);
-				runGeneration(getProject(), monitor);
+				runGenerate(getProject(), monitor);
 			}
 
 		}
@@ -120,19 +112,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 	}
 
-	private void runGeneration(IProject project, IProgressMonitor monitor) {
-		monitor.subTask("Run Code Generation");
-		ResourceSet resourceSet = new ResourceSetImpl();
-		URI genmodelFile = CDAUIUtil.getGeneratorModel(project);
-		GenModel genmodel = (GenModel) EcoreUtil.getObjectByType(resourceSet.getResource(genmodelFile, true).getContents(), GenModelPackage.eINSTANCE.getGenModel());
-		GeneratorAdapterFactory.Descriptor.Registry.INSTANCE.addDescriptor(GenModelPackage.eNS_URI, GenModelGeneratorAdapterFactory.DESCRIPTOR);
-		Generator generator = new Generator();
-		generator.setInput(genmodel);
-		genmodel.setCanGenerate(true);
-		generator.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, org.eclipse.emf.common.util.BasicMonitor.toMonitor(monitor));
-	}
-
-	private void runUML2Importer(IProject project, IProgressMonitor monitor) {
+	private void runGenerate(IProject project, IProgressMonitor monitor) {
 
 		UMLImporter umlImporter = new UMLImporter();
 
@@ -149,6 +129,15 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			
 			umlImporter.prepareGenModelAndEPackages(umlImportMonitor);
 			umlImporter.saveGenModelAndEPackages(umlImportMonitor);
+			org.eclipse.emf.codegen.ecore.genmodel.GenModel genmodel = umlImporter.getGenModel();
+			genmodel.setCanGenerate(true);
+			Generator generator = new Generator();
+			generator.setInput(umlImporter.getGenModel());
+			genmodel.setCanGenerate(true);
+			generator.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, org.eclipse.emf.common.util.BasicMonitor.toMonitor(monitor));
+			
+			
+			
 		} catch (Exception e) {
 	
 		}
