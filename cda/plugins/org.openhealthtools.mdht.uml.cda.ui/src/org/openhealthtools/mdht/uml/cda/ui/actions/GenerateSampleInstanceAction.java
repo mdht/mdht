@@ -55,6 +55,7 @@ import org.eclipse.uml2.uml.Class;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
+import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.osgi.framework.Bundle;
 
 @SuppressWarnings("restriction")
@@ -188,7 +189,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 						boolean hasCDACore = false;
 
 						if (generateProject.exists() && generateProject.isOpen()) {
-							Manifest projectManifest = new Manifest(getManifest(generateProject).getContents());
+							Manifest projectManifest = new Manifest(CDAUIUtil.getManifest(generateProject).getContents());
 
 							Attributes attributes = projectManifest.getMainAttributes();
 
@@ -292,113 +293,4 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 		conMan.addConsoles(new IConsole[] { myConsole });
 		return myConsole;
 	}
-
-	/*******************************************************************************
-	 * Copyright (c) 2010 IBM Corporation and others. All rights reserved. This
-	 * program and the accompanying materials are made available under the terms
-	 * of the Eclipse Public License v1.0 which accompanies this distribution,
-	 * and is available at http://www.eclipse.org/legal/epl-v10.html
-	 * 
-	 * Contributors: IBM Corporation - initial API and implementation
-	 *******************************************************************************/
-
-	/**
-	 * Utility class to resolve plug-in and bundle files relative to a project
-	 * specific bundle root location.
-	 * 
-	 * @since 3.6
-	 */
-
-	/**
-	 * Preference key for the project relative bundle root path
-	 */
-	public static final String BUNDLE_ROOT_PATH = "BUNDLE_ROOT_PATH"; //$NON-NLS-1$
-
-	/**
-	 * Returns the container in the specified project that corresponds to the
-	 * root of bundle related artifacts. May return the project itself or a
-	 * folder within the project.
-	 * 
-	 * @param project
-	 *            project
-	 * @return container corresponding to the bundle root
-	 */
-	public static IContainer getBundleRoot(IProject project) {
-		ProjectScope scope = new ProjectScope(project);
-		IEclipsePreferences node = scope.getNode(PDECore.PLUGIN_ID);
-		if (node != null) {
-			String string = node.get(BUNDLE_ROOT_PATH, null);
-			if (string != null) {
-				IPath path = Path.fromPortableString(string);
-				return project.getFolder(path);
-			}
-		}
-		return project;
-	}
-
-	/** Constant for the string <code>META-INF/MANIFEST.MF</code> */
-	public final static String BUNDLE_FILENAME_DESCRIPTOR = "META-INF/MANIFEST.MF"; //$NON-NLS-1$
-
-	public static IPath MANIFEST_PATH = new Path(BUNDLE_FILENAME_DESCRIPTOR);
-
-	/**
-	 * Returns the resource in the specified project corresponding to its
-	 * <code>MANIFEST.MF</code> file.
-	 * 
-	 * @param project
-	 *            project
-	 * @return <code>MANIFEST.MF</code> file that may or may not exist
-	 */
-	public static IFile getManifest(IProject project) {
-		return getBundleRelativeFile(project, MANIFEST_PATH);
-	}
-
-	public static IFile getGenModel(IProject project, IPath genmodelPath) {
-
-		return getBundleRelativeFile(project, genmodelPath);
-	}
-
-	public static IFile getECoreModel(IProject project, IPath genmodelPath) {
-
-		return getBundleRelativeFile(project, genmodelPath);
-	}
-
-	/**
-	 * Returns the resource in the specified project corresponding to its
-	 * <code>plugin.xml</code>file.
-	 * 
-	 * @param project
-	 *            project
-	 * @return <code>plugin.xml</code> file that may or may not exist
-	 */
-	public static IFile getPluginXml(IProject project) {
-		return getBundleRelativeFile(project, ICoreConstants.PLUGIN_PATH);
-	}
-
-	/**
-	 * Returns a file relative to the bundle root of the specified project.
-	 * 
-	 * @param project
-	 *            project
-	 * @param path
-	 *            bundle root relative path
-	 * @return file that may or may not exist
-	 */
-	public static IFile getBundleRelativeFile(IProject project, IPath path) {
-		return getBundleRoot(project).getFile(path);
-	}
-
-	/**
-	 * Returns a folder relative to the bundle root of the specified project.
-	 * 
-	 * @param project
-	 *            project
-	 * @param path
-	 *            bundle root relative path
-	 * @return folder that may or may not exist
-	 */
-	public static IFolder getBundleRelativeFolder(IProject project, IPath path) {
-		return getBundleRoot(project).getFolder(path);
-	}
-
 }
