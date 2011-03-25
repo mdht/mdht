@@ -28,8 +28,11 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -66,25 +69,26 @@ import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	// command invoked on this model element
-	private NamedElement namedElement;
+	protected NamedElement namedElement;
 	
 	// resource and package containing the model element to be consolidated
-	private Resource sourceResource;
+	private ResourceSet resourceSet;
+	protected Resource sourceResource;
 	private Package sourcePackage;
-	private Map<Classifier, List<Classifier>> sourceInheritance = new HashMap<Classifier, List<Classifier>>();
+	private Map<Classifier, List<Classifier>> sourceInheritance;
 
 	// output model for template consolidation
-	private String consolPath = "org.openhealthtools.mdht.uml.cda.toc.model/model/toc.uml";
+	private String consolPath = "org.openhealthtools.mdht.uml.cda.consol.model/model/consol.uml";
 	private Resource consolResource;
 	private Package consolPackage;
-	private Map<Class, Class> consolMapping = new HashMap<Class, Class>();
-	private Map<Classifier, List<Classifier>> consolInheritance = new HashMap<Classifier, List<Classifier>>();
+	private Map<String, Class> consolMapping;
+	private Map<Classifier, List<Classifier>> consolInheritance;
 	
 	// output model for vocab consolidation
-	private String vocabPath = "org.openhealthtools.mdht.uml.cda.toc.model/model/toc-vocab.uml";
+	private String vocabPath = "org.openhealthtools.mdht.uml.cda.consol.model/model/consol-vocab.uml";
 	private Resource vocabResource;
 	private Package vocabPackage;
-	private Map<Enumeration, Enumeration> vocabMapping = new HashMap<Enumeration, Enumeration>();
+	private Map<String, Enumeration> vocabMapping;
 	
 	public ConsolidateTemplatesAction() {
 		super();
@@ -95,31 +99,48 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	 */
 	public void run(IAction action) {
 		try {
+			sourceInheritance = new HashMap<Classifier, List<Classifier>>();
+			consolMapping = new HashMap<String, Class>();
+			consolInheritance = new HashMap<Classifier, List<Classifier>>();
+			vocabMapping = new HashMap<String, Enumeration>();
+
+			resourceSet = namedElement.eResource().getResourceSet();
+			
 			URI consolURI = URI.createPlatformResourceURI(consolPath, true);
-			consolResource = sourceResource.getResourceSet().getResource(consolURI, true);
+			consolResource = resourceSet.getResource(consolURI, true);
 			consolPackage = (Package) consolResource.getContents().get(0);
 
 			URI vocabURI = URI.createPlatformResourceURI(vocabPath, true);
-			vocabResource = sourceResource.getResourceSet().getResource(vocabURI, true);
+			vocabResource = resourceSet.getResource(vocabURI, true);
 			vocabPackage = (Package) vocabResource.getContents().get(0);
+
+	    	// assure that all proxies are resolved.
+	    	EcoreUtil.resolveAll(sourcePackage.eResource());
+	    	EcoreUtil.resolveAll(consolPackage.eResource());
+	    	EcoreUtil.resolveAll(vocabPackage.eResource());
+	    	
+			mapExistingConsolidation();
+			mapClassInheritance(sourcePackage, sourceInheritance);
+			mapConsolInheritance(consolPackage, consolInheritance);
 			
-			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(consolPackage);
 			IUndoableOperation operation = new AbstractEMFOperation(
 					editingDomain, "Consolidate Templates") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
-			    	// assure that all proxies are resolved.
-			    	EcoreUtil.resolveAll(sourceResource);
-			    	List<EObject> eObjectList = new ArrayList<EObject>(sourceResource.getContents());
+			    	List<EObject> eObjectList = new ArrayList<EObject>();
+			    	if (sourceResource != null) {
+			    		eObjectList.addAll(sourceResource.getContents());
+			    	}
+			    	else {
+			    		eObjectList.add(namedElement);
+			    	}
 
 					TreeIterator<Object> iterator = EcoreUtil.getAllContents(eObjectList);
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
-						if (child instanceof Class
-								&& CDAModelUtil.getCDAClass((Class)child) != null) {
-							
-							Class template = (Class) child;
-							consolidateClass(template);
+						if (child instanceof Class) {
+							consolidateClass((Class) child);
 							
 							iterator.prune();
 						}
@@ -145,27 +166,27 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		}
 	}
 	
-	private Class consolidateClass(Class umlClass) {
-		if (CDAModelUtil.isCDAModel(umlClass)) {
-			return umlClass;
+	private Class consolidateClass(Class sourceClass) {
+		if (CDAModelUtil.isCDAModel(sourceClass)) {
+			return sourceClass;
 		}
 		
-		Class consolidatedClass = consolMapping.get(umlClass);
+		Class consolidatedClass = consolMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (consolidatedClass == null) {
-			System.out.println("Consolidate: " + umlClass.getQualifiedName());
-			consolidatedClass = copyToConsolPackage(umlClass);
+			System.out.println("Consolidate: " + sourceClass.getQualifiedName());
+			consolidatedClass = copyToConsolPackage(sourceClass);
 			mergeInheritedProperties(consolidatedClass);
 
 			// if no templateId, copy from nearest parent
 			String templateId = null;
 			Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(
-					umlClass, ICDAProfileConstants.CDA_TEMPLATE);
+					sourceClass, ICDAProfileConstants.CDA_TEMPLATE);
 			if (hl7Template != null) {
-				templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+				templateId = (String) sourceClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 			}
 			if (templateId == null) {
 				// this method gets inherited templateId, if missing
-				templateId = CDAModelUtil.getTemplateId(umlClass);
+				templateId = CDAModelUtil.getTemplateId(sourceClass);
 				if (templateId != null) {
 					hl7Template = CDAProfileUtil.applyCDAStereotype(consolidatedClass, ICDAProfileConstants.CDA_TEMPLATE);
 					consolidatedClass.setValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID, templateId);
@@ -178,17 +199,42 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 
 	private void mergeInheritedProperties(Class umlClass) {
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
-		List<Classifier> allParents = new ArrayList<Classifier>(umlClass.allParents());
-		allParents.add(0, umlClass);
+//		List<Classifier> allParents = new ArrayList<Classifier>(sourceClass.allParents());
+//		allParents.add(0, sourceClass);
+		List<Classifier> allParents = UMLUtil.getAllGeneralizations(umlClass);
 
 		List<Property> allProperties = new ArrayList<Property>();
 		List<Property> allAssociations = new ArrayList<Property>();
 		List<Property> allAttributes = new ArrayList<Property>();
 		List<Constraint> allConstraints = new ArrayList<Constraint>();
+
+		// remove non-consolidated superclasses
+		Class consolidationStop = null;
+//		umlClass.getGeneralizations().clear();
+		for (Classifier classifier : allParents) {
+			if (CDAModelUtil.isCDAModel(classifier)) {
+				break;
+			}
+			Class consolClass = consolMapping.get(EcoreUtil.getURI(classifier).toString());
+			if (consolClass != null && consolClass != umlClass) {
+//				umlClass.createGeneralization(consolClass);
+				consolidationStop = consolClass;
+				break;
+			}
+			Class consolSpecial = findConsolSpecialization((Class)classifier);
+			if (consolSpecial != null && consolClass != umlClass) {
+//				umlClass.createGeneralization(consolSpecial);
+				consolidationStop = consolSpecial;
+				break;
+			}
+		}
+
+		List<Classifier> consolidatedParents = getConsolidatedGeneralizations(
+				umlClass, getConsolSource(consolidationStop));
 		
 		// process parents in reverse order, CDA base class first
-		for (int i=allParents.size()-1; i>=0; i--) {
-			Class parent = (Class) allParents.get(i);
+		for (int i=consolidatedParents.size()-1; i>=0; i--) {
+			Class parent = (Class) consolidatedParents.get(i);
 			
 			for (Property property : parent.getOwnedAttributes()) {
 				if (property.getAssociation() != null) {
@@ -250,8 +296,8 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		}
 
 		// collect all inherited constraints
-		for (int i=allParents.size()-1; i>=0; i--) {
-			Class parent = (Class) allParents.get(i);
+		for (int i=consolidatedParents.size()-1; i>=0; i--) {
+			Class parent = (Class) consolidatedParents.get(i);
 
 			if (!CDAModelUtil.isCDAModel(parent)) {
 				for (Constraint constraint : parent.getOwnedRules()) {
@@ -260,18 +306,6 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			}
 		}
 		
-		// use i>0 to omit the consolidated class
-		for (int i=allParents.size()-1; i>0; i--) {
-			Class parent = (Class) allParents.get(i);
-			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent)) {
-				// add Substitution
-				umlClass.createSubstitution(null, parent);
-			}
-		}
-		// change generalization to CDA base class
-		umlClass.getGeneralizations().clear();
-		umlClass.createGeneralization(cdaClass);
-
 		for (Property property : allProperties) {
 			if (CDAModelUtil.isXMLAttribute(property)) {
 				allAttributes.add(property);
@@ -327,12 +361,24 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			if (property.getAssociation() != null) {
 				Type endType = property.getType();
 				if (endType instanceof Class) {
-					// if a more specific type defined in source model, use it
-					Class sourceSpecialization = findSourceSpecialization((Class)endType);
-					Class consolEndType = sourceSpecialization!=null ? sourceSpecialization : (Class)endType;
-					Class mappedEndType = consolidateClass(consolEndType);
+					Class consolType = null;
+					// if association to CDA type, leave it unchanged
+					if (!CDAModelUtil.isCDAModel(endType)) {
+						// if a more specific type defined in consol or source model, use it
+						consolType = findConsolSpecialization((Class)endType);
+						
+						if (consolType == null) {
+							Class sourceType = findSourceSpecialization((Class)endType);
+							if (sourceType != null) {
+								consolType = consolidateClass(sourceType);
+							}
+						}
+					}
+					if (consolType == null) {
+						consolType = consolidateClass((Class)endType);
+					}
 					
-					mergedProperty.setType(mappedEndType);
+					mergedProperty.setType(consolType);
 
 					Association assocClone = (Association) umlClass.getNearestPackage()
 						.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
@@ -365,8 +411,8 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		umlClass.getOwnedComments().clear();
 
 		// use i>0 to omit the consolidated class
-		for (int i=allParents.size()-1; i>0; i--) {
-			Classifier parent = allParents.get(i);
+		for (int i=consolidatedParents.size()-1; i>0; i--) {
+			Classifier parent = consolidatedParents.get(i);
 			List<Comment> comments = new ArrayList<Comment>(parent.getOwnedComments());
 			
 			for (Comment comment : comments) {
@@ -376,15 +422,65 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			}
 		}
 		umlClass.getOwnedComments().addAll(currentComments);
+
+		// update generalizations
+		umlClass.getGeneralizations().clear();
+		if (consolidationStop != null) {
+			umlClass.createGeneralization(consolidationStop);
+		}
+		if (umlClass.getGeneralizations().isEmpty()) {
+			umlClass.createGeneralization(cdaClass);
+		}
+
+		// add Substitition for all source model generalizations
+		for (int i=allParents.size()-1; i>0; i--) {
+			Class parent = (Class) allParents.get(i);
+			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent)) {
+				// add Substitution
+				umlClass.createSubstitution(null, parent);
+			}
+		}
+	}
+	
+	private void mapExistingConsolidation() {
+		for (Type consolType : consolPackage.getOwnedTypes()) {
+			if (consolType instanceof Class) {
+				EAnnotation annotation = consolType.getEAnnotation("sourceClass");
+				if (annotation != null && !annotation.getReferences().isEmpty()) {
+					for (EObject reference : annotation.getReferences()) {
+						if (reference instanceof Class)
+							consolMapping.put(EcoreUtil.getURI((Class)reference).toString(), (Class)consolType);
+					}
+				}
+			}
+		}
+
+		for (Type consolType : vocabPackage.getOwnedTypes()) {
+			if (consolType instanceof Enumeration) {
+				EAnnotation annotation = consolType.getEAnnotation("sourceClass");
+				if (annotation != null && !annotation.getReferences().isEmpty()) {
+					for (EObject reference : annotation.getReferences()) {
+						if (reference instanceof Enumeration)
+							vocabMapping.put(EcoreUtil.getURI((Enumeration)reference).toString(), (Enumeration)consolType);
+					}
+				}
+			}
+		}
 	}
 	
 	private Class copyToConsolPackage(Class umlClass) {
-		Class mappedClass = consolMapping.get(umlClass);
+		Class mappedClass = consolMapping.get(EcoreUtil.getURI(umlClass).toString());
 		if (mappedClass == null) {
 			mappedClass = EcoreUtil.copy(umlClass);
 			consolPackage.getOwnedTypes().add(mappedClass);
 			UMLUtil.cloneStereotypes(umlClass, mappedClass);
-			consolMapping.put(umlClass, mappedClass);
+			consolMapping.put(EcoreUtil.getURI(umlClass).toString(), mappedClass);
+			
+			// add Ecore annotation with source UML class reference
+			EAnnotation sourceAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+			sourceAnnotation.setSource("sourceClass");
+			sourceAnnotation.getReferences().add(umlClass);
+			mappedClass.getEAnnotations().add(sourceAnnotation);
 			
 			for (Property property : umlClass.getOwnedAttributes()) {
 				if (property.getAssociation() != null) {
@@ -406,19 +502,44 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	}
 	
 	private Enumeration copyToConsolVocab(Enumeration vocabEnum) {
-		Enumeration mappedEnum = vocabMapping.get(vocabEnum);
+		Enumeration mappedEnum = vocabMapping.get(EcoreUtil.getURI(vocabEnum).toString());
 		if (mappedEnum == null) {
 			mappedEnum = EcoreUtil.copy(vocabEnum);
 
 			vocabPackage.getOwnedTypes().add(mappedEnum);
 			UMLUtil.cloneStereotypes(vocabEnum, mappedEnum);
-			vocabMapping.put(vocabEnum, mappedEnum);
+			vocabMapping.put(EcoreUtil.getURI(vocabEnum).toString(), mappedEnum);
 			System.out.println("Consolidate Vocab: " + vocabEnum.getQualifiedName());
+
+			// add Ecore annotation with source UML classifier reference
+			EAnnotation sourceAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+			sourceAnnotation.setSource("sourceClass");
+			sourceAnnotation.getReferences().add(vocabEnum);
+			mappedEnum.getEAnnotations().add(sourceAnnotation);
 		}
 		
 		return mappedEnum;
 	}
-	
+
+	/*
+	 * Stop when reaching a previously consolidated class.
+	 * TODO: doesn't support multiple inheritance
+	 */
+	private List<Classifier> getConsolidatedGeneralizations(Classifier classifier, Class consolidationStop) {
+		List<Classifier> parents = new ArrayList<Classifier>();
+		parents.add(classifier);
+
+		for (Classifier parent : classifier.getGenerals()) {
+			if (consolidationStop == null || 
+					(!parent.equals(consolidationStop) && !parents.contains(parent))) {
+//			if (consolMapping.get(EcoreUtil.getURI(parent).toString()) == null) {
+				parents.addAll(getConsolidatedGeneralizations(parent, consolidationStop));
+			}
+		}
+		
+		return parents;
+	}
+
 	private void mapClassInheritance(Package umlPackage, Map<Classifier, List<Classifier>> map) {
 		for (Type type : umlPackage.getOwnedTypes()) {
 			// do not include Association
@@ -427,11 +548,55 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			}
 		}
 	}
+
+	private void mapConsolInheritance(Package umlPackage, Map<Classifier, List<Classifier>> map) {
+		for (Type type : umlPackage.getOwnedTypes()) {
+			// do not include Association
+			if (type instanceof Class) {
+				mapConsolInheritance((Class)type, map);
+			}
+		}
+	}
 	
 	private void mapClassInheritance(Class umlClass, Map<Classifier, List<Classifier>> map) {
 		map.put(umlClass, UMLUtil.getAllGeneralizations(umlClass));
 	}
+
+	private void mapConsolInheritance(Class umlClass, Map<Classifier, List<Classifier>> map) {
+		EAnnotation annotation = umlClass.getEAnnotation("sourceClass");
+		if (annotation != null && !annotation.getReferences().isEmpty()) {
+			for (EObject reference : annotation.getReferences()) {
+				if (reference instanceof Class)
+					map.put((Class)reference, UMLUtil.getAllGeneralizations((Class)reference));
+			}
+		}
+	}
 	
+	private Class getConsolSource(Class umlClass) {
+		if (umlClass != null) {
+			EAnnotation annotation = umlClass.getEAnnotation("sourceClass");
+			if (annotation != null && !annotation.getReferences().isEmpty()) {
+				for (EObject reference : annotation.getReferences()) {
+					if (reference instanceof Class)
+						return (Class)reference;
+				}
+			}
+		}
+		return null;
+	}
+
+	private Class findConsolSpecialization(Class umlClass) {
+		Class specific = null;
+		for (Classifier classifier : consolInheritance.keySet()) {
+			if (consolInheritance.get(classifier).contains(umlClass)) {
+				// must be a Class or UML model is invalid
+				return (Class)classifier;
+			}
+		}
+		
+		return specific;
+	}
+
 	private Class findSourceSpecialization(Class umlClass) {
 		Class specific = null;
 		for (Classifier classifier : sourceInheritance.keySet()) {
@@ -474,9 +639,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 			}
 			if (selected instanceof NamedElement) {
 				namedElement = (NamedElement) selected;
-				sourceResource = namedElement.eResource();
 				sourcePackage = namedElement.getNearestPackage();
-				mapClassInheritance(sourcePackage, sourceInheritance);
 			}
 		}
 		
