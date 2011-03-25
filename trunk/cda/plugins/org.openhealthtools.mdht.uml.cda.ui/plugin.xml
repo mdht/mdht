@@ -213,6 +213,13 @@
 				</or>
 			</visibility>
           <action
+               label="%consolidateResource.label"
+               class="org.openhealthtools.mdht.uml.cda.ui.actions.ConsolidateResourceAction"
+               menubarPath="cdatools/transform"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.ui.dev.actions.ConsolidateResourceAction">
+          </action>
+          <action
                label="%consolidateTemplates.label"
                class="org.openhealthtools.mdht.uml.cda.ui.actions.ConsolidateTemplatesAction"
                menubarPath="cdatools/transform"
