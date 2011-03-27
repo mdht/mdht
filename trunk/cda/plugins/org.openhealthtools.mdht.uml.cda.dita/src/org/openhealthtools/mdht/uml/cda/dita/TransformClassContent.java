@@ -6,17 +6,21 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DirectedRelationship;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -131,10 +135,31 @@ public class TransformClassContent extends TransformAbstract {
 		
 		boolean hasRules = false;
 		for (Generalization generalization : umlClass.getGeneralizations()) {
-			String message = CDAModelUtil.computeConformanceMessage(generalization, true);
-			if (message.length() > 0) {
-				hasRules = true;
-				writer.println("<li>" + message + "</li>");
+			Classifier general = generalization.getGeneral();
+			if (!RIMModelUtil.isRIMModel(general) && !CDAModelUtil.isCDAModel(general)) {
+				String message = CDAModelUtil.computeConformanceMessage(generalization, true);
+				if (message.length() > 0) {
+					hasRules = true;
+					writer.println("<li>" + message + "</li>");
+				}
+			}
+		}
+		
+		// categorize constraints by constrainedElement name
+		List<Constraint> unprocessedConstraints = new ArrayList<Constraint>();
+		Map<String,List<Constraint>> constraintMap = new HashMap<String,List<Constraint>>();
+		for (Constraint constraint : umlClass.getOwnedRules()) {
+			unprocessedConstraints.add(constraint);
+			for (Element element : constraint.getConstrainedElements()) {
+				if (element instanceof Property) {
+					String name = ((Property)element).getName();
+					List<Constraint> rules = constraintMap.get(name);
+					if (rules == null) {
+						rules = new ArrayList<Constraint>();
+						constraintMap.put(name, rules);
+					}
+					rules.add(constraint);
+				}
 			}
 		}
 
@@ -150,15 +175,21 @@ public class TransformClassContent extends TransformAbstract {
 		// XML attributes
 		for (Property property : allAttributes) {
 			hasRules = true;
-			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true) + "</li>");
+			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
+			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyComments(writer, property);
+			writer.println("</li>");
 		}
 		// XML elements
 		for (Property property : allProperties) {
 			hasRules = true;
-			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true) + "</li>");
+			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
+			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyComments(writer, property);
+			writer.println("</li>");
 		}
 
-		for (Constraint constraint : umlClass.getOwnedRules()) {
+		for (Constraint constraint : unprocessedConstraints) {
 			hasRules = true;
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
 		}
@@ -169,7 +200,56 @@ public class TransformClassContent extends TransformAbstract {
 
 		writer.println("</ol>");
 	}
+	
+	private void appendPropertyRules(PrintWriter writer, Property property, 
+			Map<String,List<Constraint>> constraintMap, 
+			List<Constraint> unprocessedConstraints) {
+		
+		StringBuffer message = new StringBuffer();
+		
+		// association typeCode and property type
+		if (property.getAssociation() != null) {
+			CDAModelUtil.appendAssociationConstraints(message, property, true);
+		}
+		
+		List<Constraint> rules = constraintMap.get(property.getName());
+		if (rules != null && !rules.isEmpty()) {
+			for (Constraint constraint : rules) {
+				message.append("\n<li>" + CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
+				unprocessedConstraints.remove(constraint);
+			}
+		}
+		
+		if (message.length() > 0) {
+			writer.append("<ol>");
+			writer.append(message);
+			writer.append("</ol>");
+		}
+	}
 
+	private void appendPropertyComments(PrintWriter writer, Property property) {
+		Association association = property.getAssociation();
+		if (association != null && association.getOwnedComments().size() > 0) {
+			writer.append("<ul>");
+			for (Comment comment : association.getOwnedComments()) {
+				writer.append("<li>");
+				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
+				writer.append("</li>");
+			}
+			writer.append("</ul>");
+		}
+
+		if (property.getOwnedComments().size() > 0) {
+			writer.append("<ul>");
+			for (Comment comment : property.getOwnedComments()) {
+				writer.append("<li>");
+				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
+				writer.append("</li>");
+			}
+			writer.append("</ul>");
+		}
+	}
+	
 	private void appendAggregateRules(PrintWriter writer, Class umlClass) {
 		Package xrefSource = UMLUtil.getTopPackage(umlClass);
 		List<Classifier> allParents = new ArrayList<Classifier>(umlClass.allParents());
@@ -179,7 +259,25 @@ public class TransformClassContent extends TransformAbstract {
 		List<Property> allAssociations = new ArrayList<Property>();
 		List<Property> allAttributes = new ArrayList<Property>();
 		List<Constraint> allConstraints = new ArrayList<Constraint>();
-		
+
+		// categorize constraints by constrainedElement name
+		List<Constraint> unprocessedConstraints = new ArrayList<Constraint>();
+		Map<String,List<Constraint>> constraintMap = new HashMap<String,List<Constraint>>();
+		for (Constraint constraint : umlClass.getOwnedRules()) {
+			unprocessedConstraints.add(constraint);
+			for (Element element : constraint.getConstrainedElements()) {
+				if (element instanceof Property) {
+					String name = ((Property)element).getName();
+					List<Constraint> rules = constraintMap.get(name);
+					if (rules == null) {
+						rules = new ArrayList<Constraint>();
+						constraintMap.put(name, rules);
+					}
+					rules.add(constraint);
+				}
+			}
+		}
+
 		// process parents in reverse order, CDA base class first
 		for (int i=allParents.size()-1; i>=0; i--) {
 			Class parent = (Class) allParents.get(i);
@@ -260,7 +358,7 @@ public class TransformClassContent extends TransformAbstract {
 		// use i>0 to omit this class
 		for (int i=allParents.size()-1; i>0; i--) {
 			Class parent = (Class) allParents.get(i);
-			if (!RIMModelUtil.isRIMModel(parent)) {
+			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent)) {
 				String message = CDAModelUtil.computeGeneralizationConformanceMessage(parent, true, xrefSource);
 				if (message.length() > 0) {
 					writer.println("<li>" + message + "</li>");
@@ -278,17 +376,17 @@ public class TransformClassContent extends TransformAbstract {
 		
 		// XML attributes
 		for (Property property : allAttributes) {
-			writer.println("<li>" +
-					CDAModelUtil.computeConformanceMessage(property, true, xrefSource) 
-//					+ " " + modelPrefix(property) 
-					+ "</li>");
+			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
+			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyComments(writer, property);
+			writer.println("</li>");
 		}
 		// XML elements
 		for (Property property : allProperties) {
-			writer.println("<li>" +
-					CDAModelUtil.computeConformanceMessage(property, true, xrefSource) 
-//					+ " " + modelPrefix(property) 
-					+ "</li>");
+			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
+			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyComments(writer, property);
+			writer.println("</li>");
 		}
 
 		for (Constraint constraint : allConstraints) {

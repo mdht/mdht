@@ -362,17 +362,6 @@ public class CDAModelUtil {
 
 		appendConformanceRuleIds(association, message, markup);
 		
-		// include comment text only in markup output
-		if (markup && association.getOwnedComments().size() > 0) {
-			message.append("<ul>");
-			for (Comment comment : association.getOwnedComments()) {
-				message.append("<li>");
-				message.append(fixNonXMLCharacters(comment.getBody()));
-				message.append("</li>");
-			}
-			message.append("</ul>");
-		}
-
 		return message.toString();
 	}
 
@@ -380,28 +369,8 @@ public class CDAModelUtil {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 		
-		Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				association, ICDAProfileConstants.ENTRY);
-		Stereotype entryRelationshipStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
-
-		String typeCode = null;
-		String typeCodeDisplay = null;
-		if (entryStereotype != null) {
-			typeCode = getLiteralValue(association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE);
-			Enumeration profileEnum = (Enumeration) entryStereotype.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_KIND);
-			typeCodeDisplay = getLiteralValueLabel(association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE, profileEnum);
-		}
-		else if (entryRelationshipStereotype != null) {
-			typeCode = getLiteralValue(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
-			Enumeration profileEnum = (Enumeration) entryRelationshipStereotype.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_RELATIONSHIP_KIND);
-			typeCodeDisplay = getLiteralValueLabel(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE, profileEnum);
-		}
-
 		String elementName = getCDAElementName(property);
-		Class endType = (property.getType() instanceof Class) 
-				? (Class)property.getType() : null;
-
+		
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
@@ -423,67 +392,80 @@ public class CDAModelUtil {
 		message.append(elementName);
 		message.append(markup?"</b></tt>":"");
 
-		if (typeCode != null || endType != null) {
-			message.append(", such that it");
-			message.append(markup?"<ol>":"");
-			
-			if (typeCode != null) {
-				message.append(markup?"\n<li>":" ");
-				message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
-				message.append(" contain ");
-				message.append(markup?"<tt><b>":"").append("@typeCode=\"").append(markup?"</b>":"");
-				message.append(typeCode).append("\" ");
-				message.append(markup?"</tt>":"");
-				
-				message.append(markup?"<i>":"");
-				message.append(typeCodeDisplay);
-				message.append(markup?"</i>":"");
-				message.append(markup?"</li>":", and");
-			}
-	
-			if (endType != null) {
-				message.append(markup?"\n<li>":" ");
-				message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
-				message.append(" contain ");
-	
-				String prefix = !UMLUtil.isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
-//				String prefix = getModelPrefix(endType)+" ";
-				String xref = computeXref(xrefSource, endType);
-				boolean showXref = markup && (xref != null);
-				String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
-				
-				message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-				message.append(prefix).append(UMLUtil.splitName(endType));
-				message.append(showXref?"</xref>":"");
-				
-				String templateId = getTemplateId(endType);
-				if (templateId != null) {
-					message.append(" (templateId: ");
-					message.append(markup?"<tt>":"");
-					message.append(templateId);
-					message.append(markup?"</tt>":"");
-					message.append(")");
-				}
-				
-				appendConformanceRuleIds(association, message, markup);
-				message.append(markup?"</li>":"");
-			}
-	
-			message.append(markup?"</ol>":"");
-		}
-
-		// include comment text only in markup output
-		if (markup && association.getOwnedComments().size() > 0) {
-			message.append("<ul>");
-			for (Comment comment : association.getOwnedComments()) {
-				message.append("<li>");
-				message.append(fixNonXMLCharacters(comment.getBody()));
-				message.append("</li>");
-			}
-			message.append("</ul>");
+		message.append(", such that it");
+		if (!markup) {
+			appendAssociationConstraints(message, property, markup);
 		}
 
 		return message.toString();
+	}
+	
+	public static void appendAssociationConstraints(StringBuffer message, Property property, boolean markup) {
+		Association association = property.getAssociation();
+		Package xrefSource = UMLUtil.getTopPackage(property);
+		
+		Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				association, ICDAProfileConstants.ENTRY);
+		Stereotype entryRelationshipStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
+
+		String typeCode = null;
+		String typeCodeDisplay = null;
+		if (entryStereotype != null) {
+			typeCode = getLiteralValue(association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE);
+			Enumeration profileEnum = (Enumeration) entryStereotype.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_KIND);
+			typeCodeDisplay = getLiteralValueLabel(association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE, profileEnum);
+		}
+		else if (entryRelationshipStereotype != null) {
+			typeCode = getLiteralValue(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
+			Enumeration profileEnum = (Enumeration) entryRelationshipStereotype.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_RELATIONSHIP_KIND);
+			typeCodeDisplay = getLiteralValueLabel(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE, profileEnum);
+		}
+
+		Class endType = (property.getType() instanceof Class) 
+				? (Class)property.getType() : null;
+
+		if (typeCode != null) {
+			message.append(markup?"\n<li>":" ");
+			message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
+			message.append(" contain ");
+			message.append(markup?"<tt><b>":"").append("@typeCode=\"").append(markup?"</b>":"");
+			message.append(typeCode).append("\" ");
+			message.append(markup?"</tt>":"");
+			
+			message.append(markup?"<i>":"");
+			message.append(typeCodeDisplay);
+			message.append(markup?"</i>":"");
+			message.append(markup?"</li>":", and");
+		}
+
+		if (endType != null) {
+			message.append(markup?"\n<li>":" ");
+			message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
+			message.append(" contain exactly one [1..1] ");
+
+			String prefix = !UMLUtil.isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
+//			String prefix = getModelPrefix(endType)+" ";
+			String xref = computeXref(xrefSource, endType);
+			boolean showXref = markup && (xref != null);
+			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
+			
+			message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
+			message.append(prefix).append(UMLUtil.splitName(endType));
+			message.append(showXref?"</xref>":"");
+			
+			String templateId = getTemplateId(endType);
+			if (templateId != null) {
+				message.append(" (templateId: ");
+				message.append(markup?"<tt>":"");
+				message.append(templateId);
+				message.append(markup?"</tt>":"");
+				message.append(")");
+			}
+			
+			appendConformanceRuleIds(association, message, markup);
+			message.append(markup?"</li>":"");
+		}
 	}
 
 	public static String computeConformanceMessage(Property property, boolean markup) {
@@ -595,17 +577,6 @@ public class CDAModelUtil {
 
 		appendConformanceRuleIds(property, message, markup);
 		
-		// include comment text only in markup output
-		if (markup && property.getOwnedComments().size() > 0) {
-			message.append("<ul>");
-			for (Comment comment : property.getOwnedComments()) {
-				message.append("<li>");
-				message.append(fixNonXMLCharacters(comment.getBody()));
-				message.append("</li>");
-			}
-			message.append("</ul>");
-		}
-
 		return message.toString();
 	}
 	
