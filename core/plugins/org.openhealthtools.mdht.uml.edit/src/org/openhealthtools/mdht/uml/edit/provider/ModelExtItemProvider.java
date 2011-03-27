@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for showing business names (or not)
  *     
  * $Id$
  *******************************************************************************/
@@ -35,12 +36,14 @@ import org.eclipse.uml2.uml.Actor;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UseCase;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.ModelItemProvider;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 
@@ -65,11 +68,19 @@ public class ModelExtItemProvider extends ModelItemProvider
 		return super.getImage(object);
 	}
 
+	protected String getName(NamedElement namedElement) {
+		AdapterFactory adapterFactory = getAdapterFactory();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory
+				&& ((UML2ExtendedAdapterFactory) adapterFactory)
+						.isShowBusinessNames() ? NamedElementUtil
+				.getBusinessName(namedElement) : namedElement.getName();
+	}
+
 	/* (non-Javadoc)
 	 * @see org.eclipse.uml2.uml.provider.ModelItemProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object object) {
-		String label = ((Model)object).getName();
+		String label = getName((Model) object);
 		return label == null || label.length() == 0 ?
 			getString("_UI_Model_type") : //$NON-NLS-1$
 			label;
@@ -120,7 +131,7 @@ public class ModelExtItemProvider extends ModelItemProvider
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
-			return pkg.getName();
+			return getName(pkg);
 		case IUMLTableProperties.VISIBILITY_INDEX:
 			if (VisibilityKind.PUBLIC_LITERAL == pkg.getVisibility())
 				return "";

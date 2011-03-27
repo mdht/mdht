@@ -373,4 +373,13 @@ public class UML2ExtendedAdapterFactory extends
 		return interfaceRealizationItemProvider;
 	}
 
+	protected boolean showBusinessNames = false;
+	
+	public boolean isShowBusinessNames() {
+		return showBusinessNames;
+	}
+	
+	public void setShowBusinessNames(boolean showBusinessNames) {
+		this.showBusinessNames = showBusinessNames;
+	}
 }

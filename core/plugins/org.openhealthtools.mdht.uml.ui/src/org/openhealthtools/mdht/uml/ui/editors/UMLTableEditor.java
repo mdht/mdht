@@ -385,6 +385,10 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		}
 	}
 
+	void refresh() {
+		treeViewerWithColumns.refresh();		
+	}
+
 	public UMLTableEditor() {
 		super();
 

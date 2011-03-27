@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for showing business names (or not)
  *     
  * $Id$
  *******************************************************************************/
@@ -20,10 +21,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.edit.providers.EnumerationLiteralItemProvider;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
@@ -49,11 +52,19 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 		return super.getImage(object);
 	}
 
+	protected String getName(NamedElement namedElement) {
+		AdapterFactory adapterFactory = getAdapterFactory();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory
+				&& ((UML2ExtendedAdapterFactory) adapterFactory)
+						.isShowBusinessNames() ? NamedElementUtil
+				.getBusinessName(namedElement) : namedElement.getName();
+	}
+
 	/* (non-Javadoc)
 	 * @see org.eclipse.uml2.uml.provider.EnumerationLiteralItemProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object object) {
-		String label = ((EnumerationLiteral)object).getName();
+		String label = getName((EnumerationLiteral) object);
 		return label == null || label.length() == 0 ?
 			getString("_UI_EnumerationLiteral_type") : //$NON-NLS-1$
 			label;
@@ -84,7 +95,7 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
-			return literal.getName();
+			return getName(literal);
 		case IUMLTableProperties.ANNOTATION_INDEX: {
 			for (Profile profile : literal.getNearestPackage().getAllAppliedProfiles()) {
 				// eResource is null for unresolved eProxyURI, missing profiles
