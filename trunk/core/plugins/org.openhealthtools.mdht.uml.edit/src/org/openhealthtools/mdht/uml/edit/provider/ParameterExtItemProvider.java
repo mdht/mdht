@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for showing business names (or not)
  *     
  * $Id$
  *******************************************************************************/
@@ -39,12 +40,14 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.edit.providers.ParameterItemProvider;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -78,12 +81,20 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		return super.getImage(object);
 	}
 
+	protected String getName(NamedElement namedElement) {
+		AdapterFactory adapterFactory = getAdapterFactory();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory
+				&& ((UML2ExtendedAdapterFactory) adapterFactory)
+						.isShowBusinessNames() ? NamedElementUtil
+				.getBusinessName(namedElement) : namedElement.getName();
+	}
+
 	/* (non-Javadoc)
 	 * @see org.eclipse.uml2.uml.provider.GeneralizationItemProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object object) {
 		Parameter parameter = (Parameter) object;
-		String name = parameter.getName();
+		String name = getName(parameter);
 		if (name == null || name.length() == 0) {
 			name = getString("_UI_Parameter_type");
 		}
@@ -91,7 +102,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		StringBuffer label = new StringBuffer();
 		label.append(name);
 		if (parameter.getType() != null) {
-			label.append(" : ").append(parameter.getType().getName());
+			label.append(" : ").append(getName(parameter.getType()));
 		}
 		
 		label.append(displayMultiplicity(parameter));
@@ -185,10 +196,10 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
-			return parameter.getName();
+			return getName(parameter);
 		case IUMLTableProperties.TYPE_INDEX:
 			return (parameter.getType() == null) ? null :
-					parameter.getType().getName();
+					getName(parameter.getType());
 		case IUMLTableProperties.MULTIPLICITY_INDEX:
 			return displayColumnMultiplicity(parameter);
 		case IUMLTableProperties.DEFAULT_VALUE_INDEX:

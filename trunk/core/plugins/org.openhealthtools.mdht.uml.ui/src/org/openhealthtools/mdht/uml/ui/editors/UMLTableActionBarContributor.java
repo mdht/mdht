@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,12 +7,15 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding check box action to show business names (or not)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.editors;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
@@ -25,6 +28,7 @@ import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.part.EditorActionBarContributor;
 import org.eclipse.ui.part.IPage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.openhealthtools.mdht.uml.edit.provider.UML2ExtendedAdapterFactory;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 import org.openhealthtools.mdht.uml.ui.navigator.actions.EditCommandsFactory;
 
@@ -79,6 +83,13 @@ implements IMenuListener {
 				editCommandsFactory.setActivePart(activeEditor);
 
 			}
+			
+			if (activeEditor instanceof UMLTableEditor) {
+				AdapterFactory adapterFactory = ((UMLTableEditor)activeEditor).getAdapterFactory();
+				if (adapterFactory instanceof UML2ExtendedAdapterFactory) {
+					showBusinessNamesAction.setChecked(((UML2ExtendedAdapterFactory)adapterFactory).isShowBusinessNames());
+				}
+			}
 		}
 	}
 
@@ -94,6 +105,34 @@ implements IMenuListener {
     	editCommandsFactory.shareGlobalActions(getActionBars(), false);
     }
 
+    protected class ShowBusinessNamesAction extends Action {
+    	
+    	protected ShowBusinessNamesAction() {
+    		super(UML2UIMessages.ShowBusinessNames_title, AS_CHECK_BOX);
+    	}
+
+		@Override
+		public void setChecked(boolean checked) {
+			boolean wasChecked = isChecked();
+			super.setChecked(checked);
+			if (wasChecked != checked) {
+				if (activeEditor instanceof UMLTableEditor) {
+					UMLTableEditor umlTableEditor = (UMLTableEditor) activeEditor;
+					AdapterFactory adapterFactory = umlTableEditor
+							.getAdapterFactory();
+					if (adapterFactory instanceof UML2ExtendedAdapterFactory) {
+						((UML2ExtendedAdapterFactory) adapterFactory)
+								.setShowBusinessNames(checked);
+						umlTableEditor.refresh();
+					}
+				}
+			}
+		}
+
+    }
+
+    protected ShowBusinessNamesAction showBusinessNamesAction = new ShowBusinessNamesAction();
+
 	/**
 	 * This adds to the menu bar a menu and some separators for editor additions,
 	 * as well as the sub-menus for object creation items.
@@ -106,6 +145,9 @@ implements IMenuListener {
 		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
 		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
 		submenuManager.add(new Separator("actions")); //$NON-NLS-1$
+		
+		submenuManager.add(showBusinessNamesAction);
+		
 		submenuManager.add(new Separator("additions")); //$NON-NLS-1$
 		submenuManager.add(new Separator("additions-end")); //$NON-NLS-1$
 	}

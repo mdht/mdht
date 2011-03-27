@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for filtering by resource
+ *     Kenn Hussey - adding support for showing business names (or not)
  *     
  * $Id$
  *******************************************************************************/
@@ -91,6 +93,8 @@ public class UML2UIMessages extends NLS {
 	public static String _UI_ApplyStereotypeActionCommand_label;
 	public static String _UI_UnapplyProfileActionCommand_label;
 	public static String _UI_UnapplyStereotypeActionCommand_label;
+
+	public static String ShowBusinessNames_title;
 
 	// ==============================================================================
 	// Property page sections

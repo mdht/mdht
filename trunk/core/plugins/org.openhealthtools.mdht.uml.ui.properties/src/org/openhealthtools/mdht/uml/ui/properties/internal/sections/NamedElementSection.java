@@ -196,7 +196,9 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 							}
 						}
 
-						refreshBusinessNameText();
+						if (!businessNameText.isDisposed()) {
+							refreshBusinessNameText();							
+						}
 					}
 
 					return result;
@@ -216,7 +218,9 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 							UMLUtil.writeProperties(propertiesURI, parsedProperties);
 						}
 
-						refreshBusinessNameText();
+						if (!businessNameText.isDisposed()) {
+							refreshBusinessNameText();							
+						}
 					}
 					
 					return result;

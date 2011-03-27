@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for showing business names (or not)
  *     
  * $Id$
  *******************************************************************************/
@@ -36,12 +37,14 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
@@ -79,8 +82,16 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		}
 	}
 
+	protected String getName(NamedElement namedElement) {
+		AdapterFactory adapterFactory = getAdapterFactory();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory
+				&& ((UML2ExtendedAdapterFactory) adapterFactory)
+						.isShowBusinessNames() ? NamedElementUtil
+				.getBusinessName(namedElement) : namedElement.getName();
+	}
+
 	public String getText(Object object) {
-		String label = ((Association)object).getName();
+		String label = getName((Association)object);
 		if (label == null) {
 			StringBuffer labelBuffer = new StringBuffer();
 			for (Property end : ((Association)object).getMemberEnds()) {

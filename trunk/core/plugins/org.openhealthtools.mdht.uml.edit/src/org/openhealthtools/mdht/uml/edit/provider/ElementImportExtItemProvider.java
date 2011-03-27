@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - using qualified name in text if different model
  *     
  * $Id$
  *******************************************************************************/
@@ -20,7 +21,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.edit.providers.ElementImportItemProvider;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
@@ -46,8 +49,14 @@ public class ElementImportExtItemProvider extends ElementImportItemProvider
 		StringBuffer label = new StringBuffer();
 		label.append("(");
 		try {
-		if (elementImport.getImportedElement() != null)
-			label.append(elementImport.getImportedElement().getName());
+			if (elementImport.getImportedElement() != null) {
+				PackageableElement importedElement = elementImport
+						.getImportedElement();
+				String qname = UMLUtil.isSameModel(elementImport,
+						importedElement) ? importedElement.getName()
+						: importedElement.getQualifiedName();
+				label.append(qname);
+			}
 		} catch (Exception e) {
 			
 		}
