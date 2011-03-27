@@ -175,7 +175,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		if (consolidatedClass == null) {
 			System.out.println("Consolidate: " + sourceClass.getQualifiedName());
 			consolidatedClass = copyToConsolPackage(sourceClass);
-			mergeInheritedProperties(consolidatedClass);
+			mergeInheritedProperties(sourceClass, consolidatedClass);
 
 			// if no templateId, copy from nearest parent
 			String templateId = null;
@@ -197,10 +197,11 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		return consolidatedClass;
 	}
 
-	private void mergeInheritedProperties(Class umlClass) {
+	private void mergeInheritedProperties(Class sourceClass, Class umlClass) {
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 //		List<Classifier> allParents = new ArrayList<Classifier>(sourceClass.allParents());
 //		allParents.add(0, sourceClass);
+		List<Classifier> allSourceParents = UMLUtil.getAllGeneralizations(sourceClass);
 		List<Classifier> allParents = UMLUtil.getAllGeneralizations(umlClass);
 
 		List<Property> allProperties = new ArrayList<Property>();
@@ -208,7 +209,6 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		List<Property> allAttributes = new ArrayList<Property>();
 		List<Constraint> allConstraints = new ArrayList<Constraint>();
 
-		// remove non-consolidated superclasses
 		Class consolidationStop = null;
 //		umlClass.getGeneralizations().clear();
 		for (Classifier classifier : allParents) {
@@ -424,6 +424,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		umlClass.getOwnedComments().addAll(currentComments);
 
 		// update generalizations
+		// remove non-consolidated superclasses
 		umlClass.getGeneralizations().clear();
 		if (consolidationStop != null) {
 			umlClass.createGeneralization(consolidationStop);
@@ -433,8 +434,8 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		}
 
 		// add Substitition for all source model generalizations
-		for (int i=allParents.size()-1; i>0; i--) {
-			Class parent = (Class) allParents.get(i);
+		for (int i=allSourceParents.size()-1; i>=0; i--) {
+			Class parent = (Class) allSourceParents.get(i);
 			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent)) {
 				// add Substitution
 				umlClass.createSubstitution(null, parent);
@@ -525,15 +526,20 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	 * Stop when reaching a previously consolidated class.
 	 * TODO: doesn't support multiple inheritance
 	 */
-	private List<Classifier> getConsolidatedGeneralizations(Classifier classifier, Class consolidationStop) {
+	private List<Classifier> getConsolidatedGeneralizations(Class classifier, Class consolidationStop) {
 		List<Classifier> parents = new ArrayList<Classifier>();
 		parents.add(classifier);
 
 		for (Classifier parent : classifier.getGenerals()) {
-			if (consolidationStop == null || 
-					(!parent.equals(consolidationStop) && !parents.contains(parent))) {
-//			if (consolMapping.get(EcoreUtil.getURI(parent).toString()) == null) {
-				parents.addAll(getConsolidatedGeneralizations(parent, consolidationStop));
+			Class special = findConsolSpecialization((Class)parent);
+			if (special != null) {
+				special = getConsolSource(special);
+			}
+			if (consolidationStop == null || (!parents.contains(parent)
+					&& !consolidationStop.equals(parent) 
+					&& !consolidationStop.equals(special))) {
+				
+				parents.addAll(getConsolidatedGeneralizations((Class)parent, consolidationStop));
 			}
 		}
 		
@@ -567,7 +573,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		if (annotation != null && !annotation.getReferences().isEmpty()) {
 			for (EObject reference : annotation.getReferences()) {
 				if (reference instanceof Class)
-					map.put((Class)reference, UMLUtil.getAllGeneralizations((Class)reference));
+					map.put(umlClass, UMLUtil.getAllGeneralizations((Class)reference));
 			}
 		}
 	}
