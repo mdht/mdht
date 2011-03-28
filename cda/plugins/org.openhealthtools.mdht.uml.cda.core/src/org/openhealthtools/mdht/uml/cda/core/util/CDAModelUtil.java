@@ -672,8 +672,8 @@ public class CDAModelUtil {
 			message.append(markup?"</b>":"");
 
 			message.append("=\"").append(code).append("\" ");
+			message.append(markup?"</tt>":"");
 		}
-		message.append(markup?"</tt>":"");
 			
 		if (displayName != null) {
 			message.append(markup?"<i>":"");
