@@ -15,9 +15,11 @@ package org.openhealthtools.mdht.uml.cda.ui.actions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -434,11 +436,14 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 		}
 
 		// add Substitition for all source model generalizations
+		Set<Class> substitutions = new HashSet<Class>();
 		for (int i=allSourceParents.size()-1; i>=0; i--) {
 			Class parent = (Class) allSourceParents.get(i);
-			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent)) {
+			if (!RIMModelUtil.isRIMModel(parent) && !CDAModelUtil.isCDAModel(parent)
+					&& !substitutions.contains(parent)) {
 				// add Substitution
 				umlClass.createSubstitution(null, parent);
+				substitutions.add(parent);
 			}
 		}
 	}
