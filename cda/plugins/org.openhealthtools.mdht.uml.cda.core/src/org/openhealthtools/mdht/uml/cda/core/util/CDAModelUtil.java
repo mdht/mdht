@@ -392,15 +392,24 @@ public class CDAModelUtil {
 		message.append(elementName);
 		message.append(markup?"</b></tt>":"");
 
-		message.append(", such that it");
+		appendConformanceRuleIds(association, message, markup);
+		message.append(", such that");
+
 		if (!markup) {
-			appendAssociationConstraints(message, property, markup);
+			String assocConstraints = computeAssociationConstraints(property, markup);
+			if (assocConstraints.length() > 0) {
+//				message.append(", such that ");
+//				message.append(property.upperBound()==1 ? "it" : "each");
+				message.append(assocConstraints);
+			}
 		}
 
 		return message.toString();
 	}
 	
-	public static void appendAssociationConstraints(StringBuffer message, Property property, boolean markup) {
+	public static String computeAssociationConstraints(Property property, boolean markup) {
+		StringBuffer message = new StringBuffer();
+		
 		Association association = property.getAssociation();
 		Package xrefSource = UMLUtil.getTopPackage(property);
 		
@@ -427,8 +436,9 @@ public class CDAModelUtil {
 
 		if (typeCode != null) {
 			message.append(markup?"\n<li>":" ");
-			message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
-			message.append(" contain ");
+//			message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
+//			message.append(" contain ");
+			message.append("Contains ");
 			message.append(markup?"<tt><b>":"").append("@typeCode=\"").append(markup?"</b>":"");
 			message.append(typeCode).append("\" ");
 			message.append(markup?"</tt>":"");
@@ -439,10 +449,12 @@ public class CDAModelUtil {
 			message.append(markup?"</li>":", and");
 		}
 
-		if (endType != null) {
+		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
+		if (endType != null && !CDAModelUtil.isCDAModel(endType)) {
 			message.append(markup?"\n<li>":" ");
-			message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
-			message.append(" contain exactly one [1..1] ");
+//			message.append(markup?"<b>":"").append("SHALL").append(markup?"</b>":"");
+//			message.append(" contain exactly one [1..1] ");
+			message.append("Contains exactly one [1..1] ");
 
 			String prefix = !UMLUtil.isSameModel(xrefSource, endType) ? getModelPrefix(endType)+" " : "";
 //			String prefix = getModelPrefix(endType)+" ";
@@ -463,9 +475,10 @@ public class CDAModelUtil {
 				message.append(")");
 			}
 			
-			appendConformanceRuleIds(association, message, markup);
 			message.append(markup?"</li>":"");
 		}
+		
+		return message.toString();
 	}
 
 	public static String computeConformanceMessage(Property property, boolean markup) {

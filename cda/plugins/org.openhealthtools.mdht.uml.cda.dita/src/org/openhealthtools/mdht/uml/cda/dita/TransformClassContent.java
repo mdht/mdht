@@ -176,16 +176,16 @@ public class TransformClassContent extends TransformAbstract {
 		for (Property property : allAttributes) {
 			hasRules = true;
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
-			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
 			appendPropertyComments(writer, property);
+			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
 			writer.println("</li>");
 		}
 		// XML elements
 		for (Property property : allProperties) {
 			hasRules = true;
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
-			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
 			appendPropertyComments(writer, property);
+			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
 			writer.println("</li>");
 		}
 
@@ -205,24 +205,28 @@ public class TransformClassContent extends TransformAbstract {
 			Map<String,List<Constraint>> constraintMap, 
 			List<Constraint> unprocessedConstraints) {
 		
-		StringBuffer message = new StringBuffer();
-		
 		// association typeCode and property type
+		String assocConstraints = "";
 		if (property.getAssociation() != null) {
-			CDAModelUtil.appendAssociationConstraints(message, property, true);
+			assocConstraints = CDAModelUtil.computeAssociationConstraints(property, true);
 		}
-		
+
+		StringBuffer ruleConstraints = new StringBuffer();
 		List<Constraint> rules = constraintMap.get(property.getName());
 		if (rules != null && !rules.isEmpty()) {
 			for (Constraint constraint : rules) {
-				message.append("\n<li>" + CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
+				ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
 				unprocessedConstraints.remove(constraint);
 			}
 		}
 		
-		if (message.length() > 0) {
+		if (assocConstraints.length() > 0 || ruleConstraints.length() > 0) {
+//			writer.append(", such that ");
+//			writer.append(property.upperBound()==1 ? "it" : "each");
+				
 			writer.append("<ol>");
-			writer.append(message);
+			writer.append(assocConstraints);
+			writer.append(ruleConstraints);
 			writer.append("</ol>");
 		}
 	}
