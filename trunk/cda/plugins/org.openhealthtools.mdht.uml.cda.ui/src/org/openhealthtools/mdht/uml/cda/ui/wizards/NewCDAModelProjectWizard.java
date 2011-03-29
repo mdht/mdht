@@ -279,7 +279,7 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		while (entries.hasMoreElements()) {
 			try {
 				java.net.URL url = (java.net.URL) entries.nextElement();
-				elements.add(FileLocator.resolve(url).toURI());
+				elements.add(FileLocator.toFileURL(FileLocator.resolve(url)).toURI());
 			} catch (URISyntaxException e1) {
 			} catch (IOException es) {
 
@@ -295,7 +295,7 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		while (entries.hasMoreElements()) {
 			try {
 				java.net.URL url = (java.net.URL) entries.nextElement();
-				elements.add(FileLocator.resolve(url).toURI());
+				elements.add(FileLocator.toFileURL(FileLocator.resolve(url)).toURI());
 			} catch (URISyntaxException e1) {
 			} catch (IOException es) {
 
@@ -312,7 +312,7 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		while (entries.hasMoreElements()) {
 			try {
 				java.net.URL url = (java.net.URL) entries.nextElement();
-				elements.add(FileLocator.resolve(url).toURI());
+				elements.add(FileLocator.toFileURL(FileLocator.resolve(url)).toURI());
 			} catch (URISyntaxException e1) {
 			} catch (IOException es) {
 

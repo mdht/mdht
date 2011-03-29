@@ -410,7 +410,7 @@
   
    <extension point="org.eclipse.ui.newWizards">
       <category
-            name="MDHT Model Wizards"
+            name="Model Driven Health Tools"
             id="mdhtmodelwizards">
       </category>
       <wizard
