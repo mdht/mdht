@@ -124,6 +124,31 @@ public class CDAUIUtil {
 		return getBundleRoot(project).getFolder(path);
 	}
 
+	
+	public static URI getUMLEcoreModel(IProject project) {
+		IFile generatorModelFile = getProjectFile(project,MODEL_PATH, "_Ecore.uml");
+		if (generatorModelFile != null) {
+			return URI.createFileURI(generatorModelFile.getRawLocation().toOSString());
+		} else {
+			return null;
+		}
+	}
+	
+	public static IPath getUMLEcoreModelFile(IProject project) {
+		IFile generatorModelFile = getProjectFile(project,MODEL_PATH, "_Ecore.uml");
+		if (generatorModelFile != null) {
+			return generatorModelFile.getFullPath();
+		} else {
+			return null;
+		}
+
+	}
+	
+	public static IFile getGenModel(IProject project, IPath genmodelPath) {
+		return getBundleRelativeFile(project, genmodelPath);
+	}
+	
+	
 	public static URI getGeneratorModel(IProject project) {
 		IFile generatorModelFile = getProjectFile(project,MODEL_PATH, ".genmodel");
 		if (generatorModelFile != null) {
@@ -142,29 +167,6 @@ public class CDAUIUtil {
 		}
 
 	}
-
-//	public static IFile getProjectFile(IProject project, String fileExtension) {
-//		
-//		return getProjectFile( project,MODEL_PATH,fileExtension);
-////		IFile fileResource = null;
-////
-////		if (project.exists(MODEL_PATH)) {
-////
-////			IFolder folder = project.getFolder(MODEL_PATH);
-////
-////			try {
-////				for (IResource resource : folder.members()) {
-////					if (resource.getName().endsWith(fileExtension)) {
-////						fileResource = (IFile) resource;
-////					}
-////				}
-////			} catch (CoreException e) {
-////
-////			}
-////		}
-////
-////		return fileResource;
-//	}
 	
 	public static IFile getProjectFile(IProject project,IPath folderPath, String fileExtension) {
 		IFile fileResource = null;
@@ -172,11 +174,18 @@ public class CDAUIUtil {
 		if (project.exists(folderPath)) {
 
 			IFolder folder = project.getFolder(folderPath);
+			
+			try {
+				folder.refreshLocal(IResource.DEPTH_INFINITE, null);
+			} catch (CoreException e1) {
+			
+			}
 
 			try {
-				for (IResource resource : folder.members()) {
+				for (IResource resource : folder.members()) {				
 					if (resource.getName().endsWith(fileExtension)) {
 						fileResource = (IFile) resource;
+						break;
 					}
 				}
 			} catch (CoreException e) {
