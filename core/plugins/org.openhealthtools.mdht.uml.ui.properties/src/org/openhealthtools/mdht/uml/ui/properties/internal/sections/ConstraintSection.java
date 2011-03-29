@@ -72,7 +72,7 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 	
 	private Constraint constraint;
 	
-	private String[] languages = {"Analysis", "OCL", "XPath"};
+	private String[] languages = {"Analysis", "OCL", "XPath", "StrucText"};
 
 	private CCombo languageCombo;
 	private boolean languageModified = false;
