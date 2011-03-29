@@ -7,6 +7,7 @@ Bundle-Activator: org.openhealthtools.mdht.uml.cda.ui.internal.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.ide,
  org.eclipse.core.runtime,
  org.eclipse.emf.transaction,
  org.eclipse.emf.workspace,
@@ -32,7 +33,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.eclipse.uml2.uml.ecore.importer,
  org.eclipse.emf.importer,
- org.eclipse.core.externaltools
+ org.eclipse.core.externaltools,
+ org.eclipse.core.filesystem
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.ui.filters,

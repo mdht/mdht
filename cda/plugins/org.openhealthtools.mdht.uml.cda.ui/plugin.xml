@@ -406,6 +406,22 @@
             value="true">
       </persistent>
    </extension>
-   
+
+  
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            name="MDHT Model Wizards"
+            id="mdhtmodelwizards">
+      </category>
+      <wizard
+            category="mdhtmodelwizards"
+            class="org.openhealthtools.mdht.uml.cda.ui.wizards.NewCDAModelProjectWizard"
+            icon="icons/full/obj16/Class.gif"
+            id="org.openhealthtools.mdht.uml.cda.wizards.cdamodelproject"
+            name="New CDA Model"
+            project="true">
+      </wizard>
+   </extension>
+      
             
 </plugin>
