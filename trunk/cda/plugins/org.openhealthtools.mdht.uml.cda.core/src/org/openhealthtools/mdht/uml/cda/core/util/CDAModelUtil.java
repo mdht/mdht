@@ -852,6 +852,7 @@ public class CDAModelUtil {
 
 	public static String computeConformanceMessage(Constraint constraint, boolean markup) {
 		StringBuffer message = new StringBuffer();
+		String strucTextBody = null;
 		String analysisBody = null;
 		Map<String,String> langBodyMap = new HashMap<String,String>();
 		
@@ -861,7 +862,10 @@ public class CDAModelUtil {
 				String lang = ((OpaqueExpression) spec).getLanguages().get(i);
 				String body = ((OpaqueExpression) spec).getBodies().get(i);
 
-				if ("Analysis".equals(lang)) {
+				if ("StrucText".equals(lang)) {
+					strucTextBody = body;
+				}
+				else if ("Analysis".equals(lang)) {
 					analysisBody = body;
 				}
 				else {
@@ -869,12 +873,29 @@ public class CDAModelUtil {
 				}
 			}
 		}
+		
+		String displayBody = null;
+		if (strucTextBody != null && strucTextBody.trim().length() > 0) {
+			//TODO if markup, parse strucTextBody and insert DITA markup
+			displayBody = strucTextBody;
+		}
+		else if (analysisBody != null && analysisBody.trim().length() > 0) {
+			if (markup) {
+				// escape non-dita markup in analysis text
+				displayBody = escapeMarkupCharacters(analysisBody);
+				// change severity words to bold text
+				displayBody = replaceSeverityWithBold(displayBody);
+			}
+			else {
+				displayBody = analysisBody;
+			}
+		}
 
 		if (!markup) {
 			message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
 		}
 
-		if (analysisBody == null || !containsSeverityWord(analysisBody)) {
+		if (displayBody == null || !containsSeverityWord(displayBody)) {
 			String keyword = getValidationKeyword(constraint);
 			if (keyword == null) {
 				keyword = "SHALL";
@@ -886,21 +907,11 @@ public class CDAModelUtil {
 			message.append(" satisfy: ");
 		}
 		
-		if (analysisBody == null) {
+		if (displayBody == null) {
 			message.append(constraint.getName());
 		}
 		else {
-			if (markup) {
-				// escape non-dita markup in analysis text
-				String analysisBodyMarkup = escapeMarkupCharacters(analysisBody);
-				// change severity words to bold text
-				analysisBodyMarkup = replaceSeverityWithBold(analysisBodyMarkup);
-				
-				message.append(analysisBodyMarkup);
-			}
-			else {
-				message.append(analysisBody);
-			}
+			message.append(displayBody);
 		}
 		appendConformanceRuleIds(constraint, message, markup);
 
@@ -915,6 +926,7 @@ public class CDAModelUtil {
 			message.append("</ul>");
 		}
 		
+		// Include other constraint languages, e.g. OCL or XPath
 //		if (markup && langBodyMap.size()>0) {
 //			message.append("<ul>");
 //			for (String lang : langBodyMap.keySet()) {

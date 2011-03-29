@@ -147,7 +147,11 @@ public class TransformClassContent extends TransformAbstract {
 		
 		// categorize constraints by constrainedElement name
 		List<Constraint> unprocessedConstraints = new ArrayList<Constraint>();
+		// propertyName -> constraints
 		Map<String,List<Constraint>> constraintMap = new HashMap<String,List<Constraint>>();
+		// constraint -> sub-constraints
+		Map<Constraint,List<Constraint>> subConstraintMap = new HashMap<Constraint,List<Constraint>>();
+		
 		for (Constraint constraint : umlClass.getOwnedRules()) {
 			unprocessedConstraints.add(constraint);
 			for (Element element : constraint.getConstrainedElements()) {
@@ -157,6 +161,15 @@ public class TransformClassContent extends TransformAbstract {
 					if (rules == null) {
 						rules = new ArrayList<Constraint>();
 						constraintMap.put(name, rules);
+					}
+					rules.add(constraint);
+				}
+				else if (element instanceof Constraint) {
+					Constraint subConstraint = (Constraint)element;
+					List<Constraint> rules = subConstraintMap.get(subConstraint);
+					if (rules == null) {
+						rules = new ArrayList<Constraint>();
+						subConstraintMap.put(subConstraint, rules);
 					}
 					rules.add(constraint);
 				}
@@ -177,7 +190,7 @@ public class TransformClassContent extends TransformAbstract {
 			hasRules = true;
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
 			appendPropertyComments(writer, property);
-			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
 			writer.println("</li>");
 		}
 		// XML elements
@@ -185,7 +198,7 @@ public class TransformClassContent extends TransformAbstract {
 			hasRules = true;
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
 			appendPropertyComments(writer, property);
-			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
 			writer.println("</li>");
 		}
 
@@ -203,6 +216,7 @@ public class TransformClassContent extends TransformAbstract {
 	
 	private void appendPropertyRules(PrintWriter writer, Property property, 
 			Map<String,List<Constraint>> constraintMap, 
+			Map<Constraint,List<Constraint>> subConstraintMap, 
 			List<Constraint> unprocessedConstraints) {
 		
 		// association typeCode and property type
@@ -215,8 +229,20 @@ public class TransformClassContent extends TransformAbstract {
 		List<Constraint> rules = constraintMap.get(property.getName());
 		if (rules != null && !rules.isEmpty()) {
 			for (Constraint constraint : rules) {
-				ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
 				unprocessedConstraints.remove(constraint);
+				ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(constraint, true));
+				appendSubConstraintRules(ruleConstraints, constraint, subConstraintMap, unprocessedConstraints);
+				
+//				List<Constraint> subConstraints = subConstraintMap.get(constraint);
+//				if (subConstraints != null && subConstraints.size() > 0) {
+//					ruleConstraints.append("<ol>");
+//					for (Constraint subConstraint : subConstraints) {
+//						unprocessedConstraints.remove(subConstraint);
+//						ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(subConstraint, true) + "</li>");
+//					}
+//					ruleConstraints.append("</ol>");
+//				}
+				ruleConstraints.append("</li>");
 			}
 		}
 		
@@ -228,6 +254,23 @@ public class TransformClassContent extends TransformAbstract {
 			writer.append(assocConstraints);
 			writer.append(ruleConstraints);
 			writer.append("</ol>");
+		}
+	}
+
+	private void appendSubConstraintRules(StringBuffer ruleConstraints, Constraint constraint,
+			Map<Constraint,List<Constraint>> subConstraintMap, 
+			List<Constraint> unprocessedConstraints) {
+
+		List<Constraint> subConstraints = subConstraintMap.get(constraint);
+		if (subConstraints != null && subConstraints.size() > 0) {
+			ruleConstraints.append("<ol>");
+			for (Constraint subConstraint : subConstraints) {
+				unprocessedConstraints.remove(subConstraint);
+				ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(subConstraint, true));
+				appendSubConstraintRules(ruleConstraints, subConstraint, subConstraintMap, unprocessedConstraints);
+				ruleConstraints.append("</li>");
+			}
+			ruleConstraints.append("</ol>");
 		}
 	}
 
@@ -266,7 +309,11 @@ public class TransformClassContent extends TransformAbstract {
 
 		// categorize constraints by constrainedElement name
 		List<Constraint> unprocessedConstraints = new ArrayList<Constraint>();
+		// propertyName -> constraints
 		Map<String,List<Constraint>> constraintMap = new HashMap<String,List<Constraint>>();
+		// constraint -> sub-constraints
+		Map<Constraint,List<Constraint>> subConstraintMap = new HashMap<Constraint,List<Constraint>>();
+		
 		for (Constraint constraint : umlClass.getOwnedRules()) {
 			unprocessedConstraints.add(constraint);
 			for (Element element : constraint.getConstrainedElements()) {
@@ -276,6 +323,15 @@ public class TransformClassContent extends TransformAbstract {
 					if (rules == null) {
 						rules = new ArrayList<Constraint>();
 						constraintMap.put(name, rules);
+					}
+					rules.add(constraint);
+				}
+				else if (element instanceof Constraint) {
+					Constraint subConstraint = (Constraint)element;
+					List<Constraint> rules = subConstraintMap.get(subConstraint);
+					if (rules == null) {
+						rules = new ArrayList<Constraint>();
+						subConstraintMap.put(subConstraint, rules);
 					}
 					rules.add(constraint);
 				}
@@ -381,14 +437,14 @@ public class TransformClassContent extends TransformAbstract {
 		// XML attributes
 		for (Property property : allAttributes) {
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
-			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
 			appendPropertyComments(writer, property);
 			writer.println("</li>");
 		}
 		// XML elements
 		for (Property property : allProperties) {
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
-			appendPropertyRules(writer, property, constraintMap, unprocessedConstraints);
+			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
 			appendPropertyComments(writer, property);
 			writer.println("</li>");
 		}
