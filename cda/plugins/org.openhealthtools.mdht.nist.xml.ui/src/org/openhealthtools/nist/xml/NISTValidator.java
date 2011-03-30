@@ -387,6 +387,9 @@ public class NISTValidator extends AbstractNestedValidator {
 
 						if ("error".equalsIgnoreCase(validationResult.getSeverity())) {
 							valreport.addError(validationResult.getMessage(), eld.line, eld.column, cdauri);
+							
+							ValidationMessage[] asdf = valreport.getValidationMessages();
+							
 						} else {
 							valreport.addWarning(validationResult.getMessage(), eld.line, eld.column, cdauri);
 						}

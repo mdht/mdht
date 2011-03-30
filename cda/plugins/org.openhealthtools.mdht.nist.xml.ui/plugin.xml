@@ -45,5 +45,27 @@ implementation * * $Id$
 		<super type="org.eclipse.wst.validation.problemmarker" />
 		<persistent value="false" />
 	</extension>
+	
+ <extension
+       point="org.eclipse.ui.decorators">
+    <decorator
+          adaptable="true"
+          class="org.openhealthtools.nist.xml.ui.NistLabelDecorator"
+          icon="icons/sample_decorator.gif"
+          id="org.openhealthtools.mdht.nist.xml.ui.decorator"
+          label="Resource Decorator"
+          lightweight="true"
+          location="BOTTOM_RIGHT"
+          objectClass="org.eclipse.core.resources.IMarker"
+          state="true">
+       <enablement>
+        
+             <objectClass
+                   name="org.eclipse.wst.validation.problemmarker">
+             </objectClass>
+        
+       </enablement>
+    </decorator>
+ </extension>
 
 </plugin>
