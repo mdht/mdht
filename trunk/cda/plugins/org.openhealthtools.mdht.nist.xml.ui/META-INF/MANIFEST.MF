@@ -12,11 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ocl.ecore,
  org.eclipse.wst.xml.core,
  org.eclipse.wst.validation,
- org.openhealthtools.mdht.uml.cda,
- org.apache.commons.cli;bundle-version="1.0.0",
- org.apache.axis;bundle-version="1.4.0",
- org.apache.axis2.eclipse.codegen.plugin;bundle-version="1.5.4",
- org.apache.axis2.eclipse.service.plugin;bundle-version="1.5.4"
+ org.openhealthtools.mdht.uml.cda
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: axiom-api-1.2.5.jar,
