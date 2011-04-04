@@ -927,17 +927,17 @@ public class CDAModelUtil {
 		}
 		
 		// Include other constraint languages, e.g. OCL or XPath
-//		if (markup && langBodyMap.size()>0) {
-//			message.append("<ul>");
-//			for (String lang : langBodyMap.keySet()) {
-//				message.append("<li>");
-//				message.append("<codeblock>[" + lang + "]: ");
-//				message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
-//				message.append("</codeblock>");
-//				message.append("</li>");
-//			}
-//			message.append("</ul>");
-//		}
+		if (markup && langBodyMap.size()>0) {
+			message.append("<ul>");
+			for (String lang : langBodyMap.keySet()) {
+				message.append("<li>");
+				message.append("<codeblock>[" + lang + "]: ");
+				message.append(escapeMarkupCharacters(langBodyMap.get(lang)));
+				message.append("</codeblock>");
+				message.append("</li>");
+			}
+			message.append("</ul>");
+		}
 		
 		if (!markup) {
 			// remove line feeds
@@ -1008,12 +1008,12 @@ public class CDAModelUtil {
 				prefix += ".";
 			}
 
-//			href = INFOCENTER_URL + "/topic/" + basePackage + "."
-//				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".html";
+			href = INFOCENTER_URL + "/topic/" + basePackage + "."
+				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".html";
 
-			pathFolder = "dita/classes";
-			href = "../../../../" + basePackage + "."
-				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".dita";
+//			pathFolder = "dita/classes";
+//			href = "../../../../" + basePackage + "."
+//				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".dita";
 		}
 		return href;
 	}
