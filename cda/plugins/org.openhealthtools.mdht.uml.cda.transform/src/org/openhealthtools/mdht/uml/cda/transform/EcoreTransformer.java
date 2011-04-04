@@ -40,6 +40,8 @@ public class EcoreTransformer {
 
 		UMLSwitch<Object> transformPackage = 
 			new TransformPackage(transformerOptions);
+		UMLSwitch<Object> transformClass = 
+			new TransformClass(transformerOptions);
 		UMLSwitch<Object> transformConstraint = 
 			new TransformConstraint(transformerOptions);
 		UMLSwitch<Object> transformClinicalDocument = 
@@ -66,6 +68,7 @@ public class EcoreTransformer {
 				transformVocabConstraint.doSwitch(child);
 				transformPropertyConstraint.doSwitch(child);
 				transformAssociation.doSwitch(child);
+				transformClass.doSwitch(child);
 			}
 		}
 		catch (IndexOutOfBoundsException e) {
