@@ -100,9 +100,9 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 						labelBuffer.append("_");
 					
 					if (end.getName() != null)
-						labelBuffer.append(end.getName());
+						labelBuffer.append(getName(end));
 					else if (end.getType() != null)
-						labelBuffer.append(end.getType().getName());
+						labelBuffer.append(getName(end.getType()));
 					else
 						labelBuffer.append("NULL");
 				}
