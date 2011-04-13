@@ -13,8 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.builder.cda,
+Export-Package: org.openhealthtools.mdht.builder.ccd.helpers,
+ org.openhealthtools.mdht.builder.cda,
  org.openhealthtools.mdht.builder.cda.helpers,
- org.openhealthtools.mdht.builder.ccd,
- org.openhealthtools.mdht.builder.ccd.helpers,
- org.openhealthtools.mdht.builder.hitsp
+ org.openhealthtools.mdht.builder.hitsp,
+ org.openhealthtools.mdht.uml.cda.ccd.builder
