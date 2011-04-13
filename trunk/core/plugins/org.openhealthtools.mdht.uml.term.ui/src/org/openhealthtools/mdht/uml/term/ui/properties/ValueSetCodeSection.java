@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
@@ -26,7 +27,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -61,16 +61,18 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for Value Set Code.
  */
-public class ValueSetCodeSection extends AbstractModelerPropertySection {
+public class ValueSetCodeSection extends ResettableModelerPropertySection {
 
 	private EnumerationLiteral umlEnumerationLiteral;
 
@@ -166,6 +168,44 @@ public class ValueSetCodeSection extends AbstractModelerPropertySection {
 
 					updateViews();
 
+					
+			        return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(umlEnumerationLiteral);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	ValueSetCode valueSetCode = TermProfileUtil.getValueSetCode(umlEnumerationLiteral);
+			    	
+					if (valueSetCode == null) {
+						return Status.CANCEL_STATUS;
+					}
+
+					valueSetCode.eUnset(TermPackage.Literals.VALUE_SET_CODE__CONCEPT_NAME);
+					valueSetCode.eUnset(TermPackage.Literals.VALUE_SET_CODE__CODE_SYSTEM);
+					valueSetCode.eUnset(TermPackage.Literals.VALUE_SET_CODE__USAGE_NOTE);
+
+					updateViews();
+					refresh();
 					
 			        return Status.OK_STATUS;
 			    }};
@@ -373,9 +413,16 @@ public class ValueSetCodeSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
         codeSystemRefDeleteButton.setLayoutData(data);
 
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(codeSystemRefLabel, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
+
         data = new FormData();
         data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
-        data.right = new FormAttachment(100, 0);
+        data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
         codeSystemRefLabel.setLayoutData(data);
 
@@ -550,12 +597,14 @@ public class ValueSetCodeSection extends AbstractModelerPropertySection {
 			conceptNameText.setEnabled(false);
 			conceptCodeText.setEnabled(false);
 			usageNoteText.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			codeSystemRefLabel.setEnabled(true);
 			conceptNameText.setEnabled(true);
 			conceptCodeText.setEnabled(true);
 			usageNoteText.setEnabled(true);
+			restoreDefaultsButton.setEnabled(valueSetCode != null);
 		}
 
 	}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
@@ -26,7 +27,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
@@ -63,16 +63,18 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetType;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for Value Set Version.
  */
-public class ValueSetVersionSection extends AbstractModelerPropertySection {
+public class ValueSetVersionSection extends ResettableModelerPropertySection {
 
 	private Enumeration umlEnumeration;
 	
@@ -298,6 +300,51 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(umlEnumeration);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+			    	
+					if (valueSetVersion == null) {
+						return Status.CANCEL_STATUS;
+					}
+
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__IDENTIFIER);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__FULL_NAME);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__VERSION);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__SOURCE);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__URL);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__EFFECTIVE_DATE);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__RELEASE_DATE);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__DEFINITION);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__TYPE);
+					valueSetVersion.eUnset(TermPackage.Literals.VALUE_SET_VERSION__BINDING);
+
+					updateViews();
+					refresh();
+					
+			        return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	private void addCodeSystemReference() {
 		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
 		if (ctsProfile == null) {
@@ -451,9 +498,16 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
         codeSystemRefDeleteButton.setLayoutData(data);
 
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(codeSystemRefLabel, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
+
         data = new FormData();
         data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
-        data.right = new FormAttachment(100, 0);
+        data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
         codeSystemRefLabel.setLayoutData(data);
 
@@ -880,6 +934,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 			definitionText.setEnabled(false);
 			typeCombo.setEnabled(false);
 			bindingCombo.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			codeSystemRefLabel.setEnabled(true);
@@ -894,6 +949,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 			definitionText.setEnabled(true);
 			typeCombo.setEnabled(true);
 			bindingCombo.setEnabled(true);
+			restoreDefaultsButton.setEnabled(valueSetVersion != null);
 		}
 
 	}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  * $Id$
  *******************************************************************************/
@@ -26,14 +27,15 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
@@ -46,6 +48,7 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 
 /**
@@ -53,12 +56,18 @@ import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
  * 
  * $Id: $
  */
-public class GeneralizationSection extends AbstractModelerPropertySection {
+public class GeneralizationSection extends ResettableModelerPropertySection {
 
 	private Generalization generalization;
 
 	private Button isParentIdRequired;
 	private boolean isParentIdRequiredModified = false;
+
+	/**
+	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * but can't find another way to refresh all page sections.
+	 */
+	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
 	private void modifyFields() {
 		if (!(isParentIdRequiredModified)) {
@@ -111,12 +120,63 @@ public class GeneralizationSection extends AbstractModelerPropertySection {
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(generalization);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	Stereotype conformsToStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+							generalization, ICDAProfileConstants.CONFORMS_TO);
+
+			    	if (conformsToStereotype == null) {
+			    		return Status.CANCEL_STATUS;
+			    	}
+
+			    	generalization.unapplyStereotype(conformsToStereotype);
+
+					/*
+					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
+					 * To force this, I had to change the selection to empty, then back to current object.
+					 */
+					ISelection currentSelection = getSelection();
+					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
+					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
+
+			    	return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+
+		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
+
 		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
-		FormData data = null;
+				.createGroup(parent, "Generalization");
+        FormLayout layout = new FormLayout();
+        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+        composite.setLayout(layout);
+
+        FormData data = null;
 
 		// Parent required checkbox
 		isParentIdRequired = getWidgetFactory().createButton(composite, 
@@ -135,7 +195,14 @@ public class GeneralizationSection extends AbstractModelerPropertySection {
 				modifyFields();
 			}
 		});
-		
+
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(isParentIdRequired, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
+
 	}
 
 	protected boolean isReadOnly() {
@@ -191,9 +258,11 @@ public class GeneralizationSection extends AbstractModelerPropertySection {
 		
 		if (isReadOnly()) {
 			isParentIdRequired.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			isParentIdRequired.setEnabled(true);
+			restoreDefaultsButton.setEnabled(conformsTo != null);
 		}
 	}
 

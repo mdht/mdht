@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
@@ -26,7 +27,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
@@ -51,13 +51,15 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for Code System Version.
  */
-public class CodeSystemVersionSection extends AbstractModelerPropertySection {
+public class CodeSystemVersionSection extends ResettableModelerPropertySection {
 
 	private Enumeration umlEnumeration;
 	
@@ -228,6 +230,48 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(umlEnumeration);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	CodeSystemVersion codeSystemVersion = TermProfileUtil.getCodeSystemVersion(umlEnumeration);
+			    	
+					if (codeSystemVersion == null) {
+						return Status.CANCEL_STATUS;
+					}
+
+					codeSystemVersion.eUnset(TermPackage.Literals.CODE_SYSTEM_VERSION__IDENTIFIER);
+					codeSystemVersion.eUnset(TermPackage.Literals.CODE_SYSTEM_VERSION__FULL_NAME);
+					codeSystemVersion.eUnset(TermPackage.Literals.CODE_SYSTEM_VERSION__VERSION);
+					codeSystemVersion.eUnset(TermPackage.Literals.CODE_SYSTEM_VERSION__SOURCE);
+					codeSystemVersion.eUnset(TermPackage.Literals.CODE_SYSTEM_VERSION__URL);
+					codeSystemVersion.eUnset(TermPackage.Literals.CODE_SYSTEM_VERSION__EFFECTIVE_DATE);
+					codeSystemVersion.eUnset(TermPackage.Literals.CODE_SYSTEM_VERSION__RELEASE_DATE);
+
+					updateViews();
+					refresh();
+					
+			        return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
@@ -275,9 +319,16 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
 		idLabel.setLayoutData(data);
 
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(idText, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
+
 		data = new FormData();
 		data.left = new FormAttachment(idLabel, 0);
-		data.right = new FormAttachment(100, 0);
+		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(0,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		idText.setLayoutData(data);
 
@@ -535,6 +586,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 			versionText.setEnabled(false);
 			releaseDateText.setEnabled(false);
 			effectiveDateText.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			idText.setEnabled(true);
@@ -545,6 +597,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 			versionText.setEnabled(true);
 			releaseDateText.setEnabled(true);
 			effectiveDateText.setEnabled(true);
+			restoreDefaultsButton.setEnabled(codeSystemVersion != null);
 		}
 
 	}
