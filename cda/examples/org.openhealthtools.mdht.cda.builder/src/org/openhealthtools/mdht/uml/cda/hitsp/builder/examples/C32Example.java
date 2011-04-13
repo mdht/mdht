@@ -324,6 +324,7 @@ public class C32Example {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public static AllergiesReactionsSection getAllergiesSection() {
 		SectionBuilder<AllergiesReactionsSection> sectionBuilder = HITSPBuilderFactory.createAllergiesReactionsSectionBuilder();
 
