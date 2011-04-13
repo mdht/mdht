@@ -1,7 +1,5 @@
 package org.openhealthtools.mdht.uml.cda.builder.test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
@@ -9,9 +7,6 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.builder.CDABuilderFactory;
 import org.openhealthtools.mdht.uml.cda.builder.DocumentBuilder;
 import org.openhealthtools.mdht.uml.cda.builder.SectionBuilder;
-import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
-import org.openhealthtools.mdht.uml.cda.ccd.builder.CCDBuilderFactory;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 public class TestCDABuilderFactory {

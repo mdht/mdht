@@ -3,7 +3,37 @@ package org.openhealthtools.mdht.uml.cda.ihe.builder;
 import org.openhealthtools.mdht.uml.cda.builder.impl.SectionBuilderImpl;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
-import org.openhealthtools.mdht.uml.cda.ihe.*;
+import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
+import org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection;
+import org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection;
 
 public class IHEBuilderFactory {
 

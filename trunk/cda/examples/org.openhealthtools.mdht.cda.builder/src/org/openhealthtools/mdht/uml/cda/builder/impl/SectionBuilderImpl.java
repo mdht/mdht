@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
+@SuppressWarnings("rawtypes")
 public abstract class SectionBuilderImpl<SectionTarget> implements SectionBuilder{
 
 	List<Act> acts = new ArrayList<Act>();

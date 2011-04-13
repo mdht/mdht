@@ -1,15 +1,39 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.builder.test;
 
-import static org.junit.Assert.*;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.builder.DocumentBuilder;
 import org.openhealthtools.mdht.uml.cda.builder.SectionBuilder;
-import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
-import org.openhealthtools.mdht.uml.cda.ccd.builder.CCDBuilderFactory;
-import org.openhealthtools.mdht.uml.cda.hitsp.*;
+import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsAdministeredSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
+import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.builder.HITSPBuilderFactory;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 

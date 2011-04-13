@@ -22,11 +22,12 @@ import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.builder.CCDBuilderFactory;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
+@SuppressWarnings("unchecked")
 public class TestCCDBuilderFactory {
 
 	@Test
 	public void testCreateAdvanceDirectivesSectionBuilder() throws Exception {		
-			DocumentBuilder<ContinuityOfCareDocument> clinicalDocumentBuilder = CCDBuilderFactory.createContinuityOfCareDocumentBuilder();			
+			DocumentBuilder<ContinuityOfCareDocument> clinicalDocumentBuilder = CCDBuilderFactory.createContinuityOfCareDocumentBuilder();					
 			SectionBuilder<AdvanceDirectivesSection> sectionBuilder = CCDBuilderFactory.createAdvanceDirectivesSectionBuilder();			
 			AdvanceDirectivesSection section = sectionBuilder.buildSection();			
 			Assert.assertNotNull(section);
