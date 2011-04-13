@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  * $Id$
  *******************************************************************************/
@@ -31,8 +32,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -40,8 +41,10 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
@@ -52,16 +55,23 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for CDA Entry.
  */
-public class EntrySection extends AbstractModelerPropertySection {
+public class EntrySection extends ResettableModelerPropertySection {
 
 	private NamedElement namedElement;
 
 	private CCombo typeCodeCombo;
 	private boolean typeCodeModified = false;
+
+	/**
+	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * but can't find another way to refresh all page sections.
+	 */
+	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
 	private void modifyFields() {
 		if (!(typeCodeModified)) {
@@ -132,6 +142,48 @@ public class EntrySection extends AbstractModelerPropertySection {
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(namedElement);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+							namedElement, ICDAProfileConstants.ENTRY);
+			    	
+			    	if (entryStereotype == null) {
+			    		return Status.CANCEL_STATUS;
+			    	}
+
+			    	namedElement.unapplyStereotype(entryStereotype);
+					
+					/*
+					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
+					 * To force this, I had to change the selection to empty, then back to current object.
+					 */
+					ISelection currentSelection = getSelection();
+					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
+					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
+
+			    	return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	private void fillTypeCodeCombo() {
 		Enumeration entryKind = null;
 		if (namedElement != null) {
@@ -157,11 +209,19 @@ public class EntrySection extends AbstractModelerPropertySection {
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
-		FormData data = null;
+		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
+
+		Composite composite = getWidgetFactory().createGroup(parent, "Entry");
+        FormLayout layout = new FormLayout();
+        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+        composite.setLayout(layout);
+
+        FormData data = null;
 
 		/* ---- literals combo ---- */
-        typeCodeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
+        typeCodeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
         fillTypeCodeCombo();
         typeCodeCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
@@ -175,16 +235,23 @@ public class EntrySection extends AbstractModelerPropertySection {
 		});
 
 		CLabel typeCodeLabel = getWidgetFactory()
-				.createCLabel(composite, "Entry Type Code:"); //$NON-NLS-1$
+				.createCLabel(composite, "Type Code:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.top = new FormAttachment(typeCodeCombo, 0, SWT.CENTER);
+		data.top = new FormAttachment(0, 1);
 		typeCodeLabel.setLayoutData(data);
 
 		data = new FormData();
         data.left = new FormAttachment(typeCodeLabel, 0);
-		data.top = new FormAttachment(typeCodeCombo, 0, SWT.CENTER);
+		data.top = new FormAttachment(typeCodeLabel, 0, SWT.CENTER);
 		typeCodeCombo.setLayoutData(data);
+
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(typeCodeLabel, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
 
 	}
 
@@ -261,9 +328,11 @@ public class EntrySection extends AbstractModelerPropertySection {
 
 		if (isReadOnly()) {
 			typeCodeCombo.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			typeCodeCombo.setEnabled(true);
+			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
 
 	}

@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  * $Id$
  *******************************************************************************/
@@ -30,8 +31,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -71,11 +72,12 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for CDA Validation.
  */
-public class ValidationSection extends AbstractModelerPropertySection {
+public class ValidationSection extends ResettableModelerPropertySection {
 
 	private Element modelElement;
 
@@ -88,6 +90,12 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	private boolean messageModified = false;
 	private Button mandatoryButton;
 	private boolean mandatoryModified = false;
+
+	/**
+	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * but can't find another way to refresh all page sections.
+	 */
+	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
     private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -212,6 +220,48 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		}
 	}
 	
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(modelElement);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+							modelElement, ICDAProfileConstants.VALIDATION);
+			    	
+			    	if (validationStereotype == null) {
+			    		return Status.CANCEL_STATUS;
+			    	}
+
+			    	modelElement.unapplyStereotype(validationStereotype);
+
+			    	/*
+					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
+					 * To force this, I had to change the selection to empty, then back to current object.
+					 */
+					ISelection currentSelection = getSelection();
+					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
+					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
+
+			    	return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	private Stereotype applyValidationStereotype(Element element) {
 		Profile cdaProfile = CDAProfileUtil.getCDAProfile(element.eResource().getResourceSet());
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
@@ -247,6 +297,8 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+
+		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
 
         Shell shell = new Shell();
         GC gc = new GC(shell);
@@ -329,6 +381,13 @@ public class ValidationSection extends AbstractModelerPropertySection {
 				modifyFields();
 			}
 		});
+		
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(mandatoryButton, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
 
 		/* ---- message display ---- */
 		messageDisplay = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP | SWT.READ_ONLY); //$NON-NLS-1$
@@ -485,11 +544,13 @@ public class ValidationSection extends AbstractModelerPropertySection {
 			severityCombo.setEnabled(false);
 			messageText.setEnabled(false);
 			mandatoryButton.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			severityCombo.setEnabled(true);
 			messageText.setEnabled(true);
 			mandatoryButton.setEnabled(true);
+			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
 
 	}

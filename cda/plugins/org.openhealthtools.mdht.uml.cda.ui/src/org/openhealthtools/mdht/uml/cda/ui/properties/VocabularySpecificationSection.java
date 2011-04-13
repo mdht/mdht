@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  * $Id$
  *******************************************************************************/
@@ -28,8 +29,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.FocusEvent;
@@ -51,16 +52,19 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for VocabSpecification.
  * 
  * $Id: $
  */
-public class VocabularySpecificationSection extends AbstractModelerPropertySection {
+public class VocabularySpecificationSection extends ResettableModelerPropertySection {
 
 	private Property property;
 	 
@@ -74,6 +78,12 @@ public class VocabularySpecificationSection extends AbstractModelerPropertySecti
 	private boolean codeModified = false;
 	private Text displayNameText;
 	private boolean displayNameModified = false;
+
+	/**
+	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * but can't find another way to refresh all page sections.
+	 */
+	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
     private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -213,10 +223,54 @@ public class VocabularySpecificationSection extends AbstractModelerPropertySecti
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(property);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	Stereotype vocabSpecificationStereotype = CDAProfileUtil.applyCDAStereotype(
+							property, ICDAProfileConstants.VOCAB_SPECIFICATION);
+			    	
+			    	if (vocabSpecificationStereotype == null) {
+			    		return Status.CANCEL_STATUS;
+			    	}
+
+			    	property.unapplyStereotype(vocabSpecificationStereotype);
+
+					/*
+					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
+					 * To force this, I had to change the selection to empty, then back to current object.
+					 */
+					ISelection currentSelection = getSelection();
+					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
+					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
+
+			    	return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 		
+		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
+
 		Composite composite = getWidgetFactory()
 				.createGroup(parent, "Vocabulary Specification");
         FormLayout layout = new FormLayout();
@@ -267,9 +321,16 @@ public class VocabularySpecificationSection extends AbstractModelerPropertySecti
 		data.top = new FormAttachment(versionDateText, 0, SWT.CENTER);
 		versionLabel.setLayoutData(data);
 
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(versionDateText, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
+
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
-		data.right = new FormAttachment(100, 0);
+		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(0,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		versionDateText.setLayoutData(data);
 
@@ -424,6 +485,7 @@ public class VocabularySpecificationSection extends AbstractModelerPropertySecti
 			versionDateText.setEnabled(false);
 			codeText.setEnabled(false);
 			displayNameText.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			idText.setEnabled(true);
@@ -431,6 +493,7 @@ public class VocabularySpecificationSection extends AbstractModelerPropertySecti
 			versionDateText.setEnabled(true);
 			codeText.setEnabled(true);
 			displayNameText.setEnabled(true);
+			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
 
 	}

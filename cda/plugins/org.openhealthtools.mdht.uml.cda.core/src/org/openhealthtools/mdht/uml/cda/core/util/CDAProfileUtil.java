@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - added missing utilities
  *     
  * $Id$
  *******************************************************************************/
@@ -28,9 +29,14 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
 import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
+import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
+import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.Participation;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAResource;
 
 public class CDAProfileUtil {
@@ -73,6 +79,54 @@ public class CDAProfileUtil {
 			conformsTo = (ConformsTo) generalization.getStereotypeApplication(stereotype);
 		}
 		return conformsTo;
+	}
+
+	public static EntryRelationship getEntryRelationship(Association association) {
+		EntryRelationship entryRelationship = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
+		if (stereotype != null) {
+			entryRelationship = (EntryRelationship) association.getStereotypeApplication(stereotype);
+		}
+		return entryRelationship;
+	}
+
+	public static Entry getEntry(Association association) {
+		Entry entry = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				association, ICDAProfileConstants.ENTRY);
+		if (stereotype != null) {
+			entry = (Entry) association.getStereotypeApplication(stereotype);
+		}
+		return entry;
+	}
+
+	public static CDATemplate getCDATemplate(org.eclipse.uml2.uml.Class clazz) {
+		CDATemplate cdaTemplate = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(clazz, ICDAProfileConstants.CDA_TEMPLATE);
+		if (stereotype != null) {
+			cdaTemplate = (CDATemplate) clazz.getStereotypeApplication(stereotype);
+		}
+		return cdaTemplate;
+	}
+
+	public static Validation getValidation(Element element) {
+		Validation validation = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		if (stereotype != null) {
+			validation = (Validation) element.getStereotypeApplication(stereotype);
+		}
+		return validation;
+	}
+
+	public static VocabSpecification getVocabSpecification(Property property) {
+		VocabSpecification vocabSpecification = null;
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
+		if (stereotype != null) {
+			vocabSpecification = (VocabSpecification) property.getStereotypeApplication(stereotype);
+		}
+		return vocabSpecification;
 	}
 
 	/**

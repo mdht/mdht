@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2011 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - making section groups consistent
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
@@ -35,6 +36,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
@@ -156,8 +158,14 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
 		
 		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
-		FormData data = null;
+				.createGroup(parent, "Vocabulary Constraints");
+        FormLayout layout = new FormLayout();
+        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+        composite.setLayout(layout);
+
+        FormData data = null;
 
 		/* ---- Concept Domain checkbox ---- */
 		isConceptDomainConstraint = getWidgetFactory().createButton(composite, 
@@ -201,14 +209,7 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 			}
 		});
 
-		CLabel constraintsLabel = getWidgetFactory()
-				.createCLabel(composite, "Vocabulary Constraints:  "); //$NON-NLS-1$
 		data = new FormData();
-		data.top = new FormAttachment(isConceptDomainConstraint, 0, SWT.CENTER);
-		constraintsLabel.setLayoutData(data);
-
-		data = new FormData();
-		data.left = new FormAttachment(constraintsLabel, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(0, 0);
 		isConceptDomainConstraint.setLayoutData(data);
 

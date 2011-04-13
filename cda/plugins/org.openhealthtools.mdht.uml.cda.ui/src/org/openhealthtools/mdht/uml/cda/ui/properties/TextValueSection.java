@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  * $Id$
  *******************************************************************************/
@@ -27,8 +28,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.FocusEvent;
@@ -39,6 +40,7 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
@@ -50,16 +52,23 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for CDA TextValue.
  */
-public class TextValueSection extends AbstractModelerPropertySection {
+public class TextValueSection extends ResettableModelerPropertySection {
 
 	private NamedElement namedElement;
 
 	private Text valueText;
 	private boolean valueModified = false;
+
+	/**
+	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * but can't find another way to refresh all page sections.
+	 */
+	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
     private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -141,27 +150,83 @@ public class TextValueSection extends AbstractModelerPropertySection {
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(namedElement);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype textValueStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+							namedElement, ICDAProfileConstants.TEXT_VALUE);
+			    	
+			    	if (textValueStereotype == null) {
+			    		return Status.CANCEL_STATUS;
+			    	}
+
+			    	namedElement.unapplyStereotype(textValueStereotype);
+
+					/*
+					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
+					 * To force this, I had to change the selection to empty, then back to current object.
+					 */
+					ISelection currentSelection = getSelection();
+					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
+					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
+
+			    	return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
-		FormData data = null;
+		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
+
+		Composite composite = getWidgetFactory().createGroup(parent, "Text Value");
+        FormLayout layout = new FormLayout();
+        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+        composite.setLayout(layout);
+
+        FormData data = null;
 
 		valueText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
 		CLabel valueLabel = getWidgetFactory()
-				.createCLabel(composite, "Text Value Constraint:"); //$NON-NLS-1$
+				.createCLabel(composite, "Constraint:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(valueText, 0, SWT.CENTER);
 		valueLabel.setLayoutData(data);
 
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(valueText, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
+
 		data = new FormData();
 		data.left = new FormAttachment(valueLabel, 0);
-		data.right = new FormAttachment(100, 0);
+		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(0,1, ITabbedPropertyConstants.VSPACE);
 		valueText.setLayoutData(data);
-
 	}
 
 	protected boolean isReadOnly() {
@@ -223,9 +288,11 @@ public class TextValueSection extends AbstractModelerPropertySection {
 
 		if (isReadOnly()) {
 			valueText.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			valueText.setEnabled(true);
+			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
 
 	}

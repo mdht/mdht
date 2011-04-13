@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  * $Id$
  *******************************************************************************/
@@ -28,7 +29,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
@@ -68,14 +68,16 @@ import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for Code System Constraint.
  */
-public class CodeSystemConstraintSection extends AbstractModelerPropertySection {
+public class CodeSystemConstraintSection extends ResettableModelerPropertySection {
 
 	private Property property;
 	
@@ -256,6 +258,47 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(property);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+			    	
+					if (codeSystemConstraint == null) {
+						return Status.CANCEL_STATUS;
+					}
+
+					codeSystemConstraint.eUnset(TermPackage.Literals.CODE_SYSTEM_CONSTRAINT__IDENTIFIER);
+					codeSystemConstraint.eUnset(TermPackage.Literals.CODE_SYSTEM_CONSTRAINT__NAME);
+					codeSystemConstraint.eUnset(TermPackage.Literals.CODE_SYSTEM_CONSTRAINT__VERSION);
+					codeSystemConstraint.eUnset(TermPackage.Literals.CODE_SYSTEM_CONSTRAINT__CODE);
+					codeSystemConstraint.eUnset(TermPackage.Literals.CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME);
+					codeSystemConstraint.eUnset(TermPackage.Literals.CODE_SYSTEM_CONSTRAINT__BINDING);
+
+					updateViews();
+					refresh();
+					
+			        return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	private void addCodeSystemReference() {
 		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 		if (ctsProfile == null) {
@@ -418,9 +461,15 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 
         data = new FormData();
         data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
-        data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
 		codeSystemRefLabel.setLayoutData(data);
+
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(codeSystemRefLabel, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
 
 		/* ------ Name field ------ */
 		nameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
@@ -580,6 +629,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		Enumeration referenceEnum = null;
 		if (codeSystemConstraint != null && codeSystemConstraint.getReference() != null) {
 			codeSystem = codeSystemConstraint.getReference();
+			referenceEnum = (Enumeration) codeSystem.getBase_Enumeration();
 			codeSystemRefLabel.setText(codeSystem.getEnumerationQualifiedName());
 		} else {
 			codeSystemRefLabel.setText("");
@@ -669,24 +719,22 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		}
 
 		if (isReadOnly()) {
+			codeSystemRefLabel.setEnabled(false);
 			idText.setEnabled(false);
 			nameText.setEnabled(false);
 			versionText.setEnabled(false);
 			codeText.setEnabled(false);
 			displayNameText.setEnabled(false);
-		}
-		else if (referenceEnum != null) {
-			codeSystemRefLabel.setEnabled(true);
-			idText.setEnabled(false);
-			nameText.setEnabled(false);
-			versionText.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
-			idText.setEnabled(true);
-			nameText.setEnabled(true);
-			versionText.setEnabled(true);
-			codeText.setEnabled(true);
-			displayNameText.setEnabled(true);
+			codeSystemRefLabel.setEnabled(true);
+			idText.setEnabled(referenceEnum == null);
+			nameText.setEnabled(referenceEnum == null);
+			versionText.setEnabled(referenceEnum == null);
+			codeText.setEnabled(referenceEnum == null);
+			displayNameText.setEnabled(referenceEnum == null);
+			restoreDefaultsButton.setEnabled(codeSystemConstraint != null);
 		}
 
 	}

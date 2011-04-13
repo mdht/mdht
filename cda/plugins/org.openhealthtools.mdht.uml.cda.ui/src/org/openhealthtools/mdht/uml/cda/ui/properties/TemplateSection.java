@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *     
  * $Id$
  *******************************************************************************/
@@ -27,8 +28,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.FocusEvent;
@@ -51,11 +52,12 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for CDA Template.
  */
-public class TemplateSection extends AbstractModelerPropertySection {
+public class TemplateSection extends ResettableModelerPropertySection {
 
 	private NamedElement namedElement;
 
@@ -63,6 +65,12 @@ public class TemplateSection extends AbstractModelerPropertySection {
 	private boolean templateIdModified = false;
 	private Text assigningAuthorityText;
 	private boolean assigningAuthorityModified = false;
+
+	/**
+	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * but can't find another way to refresh all page sections.
+	 */
+	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
     private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -159,10 +167,54 @@ public class TemplateSection extends AbstractModelerPropertySection {
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(namedElement);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype cdaTemplateStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+							namedElement, ICDAProfileConstants.CDA_TEMPLATE);
+			    	
+			    	if (cdaTemplateStereotype == null) {
+			    		return Status.CANCEL_STATUS;
+			    	}
+
+			    	namedElement.unapplyStereotype(cdaTemplateStereotype);
+
+					/*
+					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
+					 * To force this, I had to change the selection to empty, then back to current object.
+					 */
+					ISelection currentSelection = getSelection();
+					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
+					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
+
+			    	return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 		
+		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
+
 		Composite composite = getWidgetFactory()
 				.createGroup(parent, "CDA Template");
         FormLayout layout = new FormLayout();
@@ -201,6 +253,12 @@ public class TemplateSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
 		assigningAuthorityText.setLayoutData(data);
 
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(assigningAuthorityText, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
 	}
 
 	protected boolean isReadOnly() {
@@ -277,10 +335,12 @@ public class TemplateSection extends AbstractModelerPropertySection {
 		if (isReadOnly()) {
 			templateIdText.setEnabled(false);
 			assigningAuthorityText.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			templateIdText.setEnabled(true);
 			assigningAuthorityText.setEnabled(true);
+			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
 
 	}

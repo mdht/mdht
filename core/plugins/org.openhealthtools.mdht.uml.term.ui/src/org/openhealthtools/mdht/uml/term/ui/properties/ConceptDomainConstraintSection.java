@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Kenn Hussey - adding support for restoring defaults
  *    
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
@@ -26,7 +27,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
@@ -49,14 +49,17 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for Concept Domain Constraint.
  */
-public class ConceptDomainConstraintSection extends AbstractModelerPropertySection {
+public class ConceptDomainConstraintSection extends ResettableModelerPropertySection {
 
 	private Property property;
 
@@ -143,6 +146,42 @@ public class ConceptDomainConstraintSection extends AbstractModelerPropertySecti
 		}
 	}
 
+	protected void resetFields() {
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(property);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	ConceptDomainConstraint conceptDomainConstraint = TermProfileUtil.getConceptDomainConstraint(property);
+			    	
+					if (conceptDomainConstraint == null) {
+						return Status.CANCEL_STATUS;
+					}
+
+					conceptDomainConstraint.eUnset(TermPackage.Literals.CONCEPT_DOMAIN_CONSTRAINT__NAME);
+
+					updateViews();
+					refresh();
+					
+			        return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
@@ -170,7 +209,14 @@ public class ConceptDomainConstraintSection extends AbstractModelerPropertySecti
 		data.width = 200;
 		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
 		conceptDomainNameText.setLayoutData(data);
-		
+
+		/* ---- Restore Defaults button ---- */
+		createRestoreDefaultsButton(composite);
+		data = new FormData();
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(conceptDomainNameText, 0, SWT.CENTER);
+		restoreDefaultsButton.setLayoutData(data);
+
 	}
 
 	protected boolean isReadOnly() {
@@ -224,9 +270,11 @@ public class ConceptDomainConstraintSection extends AbstractModelerPropertySecti
 
 		if (isReadOnly()) {
 			conceptDomainNameText.setEnabled(false);
+			restoreDefaultsButton.setEnabled(false);
 		}
 		else {
 			conceptDomainNameText.setEnabled(true);
+			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
 
 	}
