@@ -95,7 +95,6 @@ public class TransformAssociation extends TransformAbstract {
 		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
 		String cdaTargetQName = cdaTargetClass.getQualifiedName();
 		
-		String targetName = targetClass.getName();
 		String constraintTargetQName = constraintTarget.getQualifiedName();
 		
 		StringBuffer constraintBody = new StringBuffer();
@@ -206,7 +205,7 @@ public class TransformAssociation extends TransformAbstract {
 
 		String severity = CDAModelUtil.getValidationSeverity(association);
 		if (severity != null) {
-			String constraintName = createConstraintName(sourceClass, targetName);
+			String constraintName = createConstraintName(sourceProperty);
 			Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 			constraint.getConstrainedElements().add(sourceClass);
 			
