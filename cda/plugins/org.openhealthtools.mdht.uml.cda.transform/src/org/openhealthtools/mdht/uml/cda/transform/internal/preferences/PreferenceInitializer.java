@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2011 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,8 +12,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform.internal.preferences;
 
-import org.eclipse.core.runtime.Preferences;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
+import org.eclipse.core.runtime.preferences.DefaultScope;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Activator;
 
@@ -23,16 +24,11 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Activator;
  */
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
-	 */
 	public void initializeDefaultPreferences() {
-		Preferences store = Activator.getDefault()
-				.getPluginPreferences();
+		IEclipsePreferences node = new DefaultScope().getNode(Activator.PLUGIN_ID);
 		
-		store.setDefault(EcoreTransformerOptions.INCLUDE_VOCABULARY_CONSTRAINTS, false);
+		node.putBoolean(EcoreTransformerOptions.GENERATE_DOMAIN_INTERFACE, false);
+		node.putBoolean(EcoreTransformerOptions.INCLUDE_FIXED_VALUE_GETTERS, false);
 	}
 	
 }

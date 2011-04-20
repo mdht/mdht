@@ -253,17 +253,4 @@ public class TransformAssociation extends TransformAbstract {
 		return association;
 	}
 
-	private String pluralize(String name) {
-		if (name.endsWith("y")) {
-			return name.substring(0, name.length() - 1) + "ies";
-		}
-		if (name.endsWith("ia")) {
-			return name;
-		}
-		return name + "s";
-	}
-	
-	private String capitalize(String name) {
-		return name.substring(0, 1).toUpperCase() + name.substring(1);
-	}
 }

@@ -38,6 +38,11 @@ public class EcoreTransformer {
 		PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(element.eResource());
 		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
+		UMLSwitch<Object> genDomainInterface = 
+			new GenDomainInterface(transformerOptions);
+		UMLSwitch<Object> genDomainProperty = 
+			new GenDomainProperty(transformerOptions);
+
 		UMLSwitch<Object> transformPackage = 
 			new TransformPackage(transformerOptions);
 		UMLSwitch<Object> transformClass = 
@@ -54,13 +59,18 @@ public class EcoreTransformer {
 			new TransformPropertyConstraint(transformerOptions);
 		UMLSwitch<Object> transformAssociation = 
 			new TransformAssociation(transformerOptions);
-
+		
 		try {
 			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
 					Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = iterator.next();
 
+				if (transformerOptions.isGenerateDomainInterface()) {
+					genDomainInterface.doSwitch(child);
+					genDomainProperty.doSwitch(child);
+				}
+				
 				transformPackage.doSwitch(child);
 				transformConstraint.doSwitch(child);
 				transformClinicalDocument.doSwitch(child);
