@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson and others.
+ * Copyright (c) 2009, 2011 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,10 +20,12 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -289,5 +291,48 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 			result += part.substring(0, 1).toUpperCase() + part.substring(1);
 		}
 		return result;
+	}
+
+	protected String normalizeCodeName(String name) {
+		String result = "";
+		String[] parts = name.split(" ");
+		for (String part : parts) {
+			result += part.substring(0, 1).toUpperCase() + part.substring(1);
+		}
+		return result;
+	}
+
+	protected String pluralize(String name) {
+		if (name.endsWith("y")) {
+			return name.substring(0, name.length() - 1) + "ies";
+		}
+		if (name.endsWith("ia")) {
+			return name;
+		}
+		return name + "s";
+	}
+	
+	protected String capitalize(String name) {
+		return name.substring(0, 1).toUpperCase() + name.substring(1);
+	}
+	protected Package getDomainInterfacePackage(Element element) {
+		Package modelPkg = element.getNearestPackage();
+		Package domainPkg = transformerOptions.getDomainInterfacePackage();
+		
+		if (domainPkg == null) {
+			domainPkg = modelPkg.getNestedPackage("domain");
+		}
+		if (domainPkg == null) {
+			domainPkg = modelPkg.createNestedPackage("domain");
+			transformerOptions.setDomainInterfacePackage(domainPkg);
+		}
+		
+		return domainPkg;
+	}
+	
+	protected Interface getDomainInterface(Type modelType) {
+		Package domainPkg = getDomainInterfacePackage(modelType);
+		return (Interface) domainPkg.getOwnedType(modelType.getName(), false, 
+				UMLPackage.eINSTANCE.getInterface(), true);
 	}
 }

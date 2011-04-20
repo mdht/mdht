@@ -42,7 +42,8 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
     /* attributes of this Ant task */
 	private String ecoreModelPath = null;
-	private Boolean includeVocabularyConstraints = null;
+	private Boolean generateDomainInterface = null;
+	private Boolean includeFixedValueGetters = null;
 
 	/* child elements of this Ant task */
 //	private List<ModelElement> elements = new ArrayList<ModelElement>();
@@ -62,8 +63,11 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	if (ecoreModelPath == null && project.getProperty("ecoreModel") != null) {
     		ecoreModelPath = project.getProperty("ecoreModel");
     	}
-    	if (includeVocabularyConstraints == null && project.getProperty("includeVocabularyConstraints") != null) {
-    		includeVocabularyConstraints = Boolean.valueOf(project.getProperty("includeVocabularyConstraints"));
+    	if (generateDomainInterface == null && project.getProperty("generateDomainInterface") != null) {
+    		generateDomainInterface = Boolean.valueOf(project.getProperty("generateDomainInterface"));
+    	}
+    	if (includeFixedValueGetters == null && project.getProperty("includeFixedValueGetters") != null) {
+    		includeFixedValueGetters = Boolean.valueOf(project.getProperty("includeFixedValueGetters"));
     	}
 
     }
@@ -125,8 +129,12 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		umlResource.setURI(ecoreModelURI);
 		
     	EcoreTransformerOptions options = new EcoreTransformerOptions();
-    	if (includeVocabularyConstraints != null)
-    		options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
+    	if (generateDomainInterface != null) {
+    		options.setGenerateDomainInterface(generateDomainInterface);
+    	}
+    	if (includeFixedValueGetters != null) {
+    		options.setIncludeFixedValueGetters(includeFixedValueGetters);
+    	}
 
     	EcoreTransformer transformer = new EcoreTransformer(options);
     	transformer.transformElement(umlModel);
@@ -159,8 +167,12 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		ecoreModelPath = path;
 	}
 
-	public void setIncludeVocabularyConstraints(boolean include) {
-		includeVocabularyConstraints = new Boolean(include);
+	public void setGenerateDomainInterface(boolean include) {
+		generateDomainInterface = new Boolean(include);
+	}
+
+	public void setIncludeFixedValueGetters(boolean include) {
+		includeFixedValueGetters = new Boolean(include);
 	}
 
 
