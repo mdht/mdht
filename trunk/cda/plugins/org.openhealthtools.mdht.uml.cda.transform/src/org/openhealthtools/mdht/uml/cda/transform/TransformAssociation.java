@@ -222,30 +222,32 @@ public class TransformAssociation extends TransformAbstract {
 				addValidationError(sourceClass, constraintName, validationMessage);
 			}
 		}
+
+		// create "getter" operation (only if not producing a domain interface)
+		if (!transformerOptions.isGenerateDomainInterface()) {
+			// finish building "getter" operation body
+			if (sourceProperty.getUpper() == 1) {
+				operationBody.append("->asSequence()->first()");
+			}
+			operationBody.append(".oclAsType(" + constraintTargetQName + ")");
 		
-		// finish building "getter" operation body
-		if (sourceProperty.getUpper() == 1) {
-			operationBody.append("->asSequence()->first()");
+			String operationName = "get";
+			if (!UMLUtil.getRedefinedProperties(sourceProperty).isEmpty()) {
+				operationName += CDAModelUtil.getModelPrefix(sourceProperty);
+			}
+			operationName += ((sourceProperty.getUpper() == 1) ? capitalize(sourceProperty.getName()) : capitalize(pluralize(sourceProperty.getName())));
+			Operation operation = sourceClass.createOwnedOperation(operationName, null, null, constraintTarget);
+			operation.setIsQuery(true);	// make this a query method
+			operation.setUpper(sourceProperty.getUpper());
+			
+			// create body constraint for "getter" operation
+			Constraint bodyConstraint = operation.createBodyCondition("body");
+			bodyConstraint.getConstrainedElements().add(operation);
+			
+			OpaqueExpression bodyExpression = (OpaqueExpression) bodyConstraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+			bodyExpression.getLanguages().add("OCL");
+			bodyExpression.getBodies().add(operationBody.toString());
 		}
-		operationBody.append(".oclAsType(" + constraintTargetQName + ")");
-		
-		// create "getter" operation
-		String operationName = "get";
-		if (!UMLUtil.getRedefinedProperties(sourceProperty).isEmpty()) {
-			operationName += CDAModelUtil.getModelPrefix(sourceProperty);
-		}
-		operationName += ((sourceProperty.getUpper() == 1) ? capitalize(sourceProperty.getName()) : capitalize(pluralize(sourceProperty.getName())));
-		Operation operation = sourceClass.createOwnedOperation(operationName, null, null, constraintTarget);
-		operation.setIsQuery(true);	// make this a query method
-		operation.setUpper(sourceProperty.getUpper());
-		
-		// create body constraint for "getter" operation
-		Constraint bodyConstraint = operation.createBodyCondition("body");
-		bodyConstraint.getConstrainedElements().add(operation);
-		
-		OpaqueExpression bodyExpression = (OpaqueExpression) bodyConstraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
-		bodyExpression.getLanguages().add("OCL");
-		bodyExpression.getBodies().add(operationBody.toString());
 		
 		removeModelElement(sourceProperty);
 		removeModelElement(association);

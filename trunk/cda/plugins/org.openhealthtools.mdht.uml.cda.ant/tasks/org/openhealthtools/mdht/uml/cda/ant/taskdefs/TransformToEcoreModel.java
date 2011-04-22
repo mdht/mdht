@@ -44,6 +44,7 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 	private String ecoreModelPath = null;
 	private Boolean generateDomainInterface = null;
 	private Boolean includeFixedValueGetters = null;
+	private Boolean includeInterfaceRealization = null;
 
 	/* child elements of this Ant task */
 //	private List<ModelElement> elements = new ArrayList<ModelElement>();
@@ -68,6 +69,9 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	}
     	if (includeFixedValueGetters == null && project.getProperty("includeFixedValueGetters") != null) {
     		includeFixedValueGetters = Boolean.valueOf(project.getProperty("includeFixedValueGetters"));
+    	}
+    	if (includeInterfaceRealization == null && project.getProperty("includeInterfaceRealization") != null) {
+    		includeInterfaceRealization = Boolean.valueOf(project.getProperty("includeInterfaceRealization"));
     	}
 
     }
@@ -135,6 +139,9 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	if (includeFixedValueGetters != null) {
     		options.setIncludeFixedValueGetters(includeFixedValueGetters);
     	}
+    	if (includeInterfaceRealization != null) {
+    		options.setIncludeInterfaceRealization(includeInterfaceRealization);
+    	}
 
     	EcoreTransformer transformer = new EcoreTransformer(options);
     	transformer.transformElement(umlModel);
@@ -173,6 +180,10 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	public void setIncludeFixedValueGetters(boolean include) {
 		includeFixedValueGetters = new Boolean(include);
+	}
+
+	public void setIncludeInterfaceRealization(boolean include) {
+		includeInterfaceRealization = new Boolean(include);
 	}
 
 

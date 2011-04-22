@@ -16,11 +16,14 @@ import org.eclipse.emf.common.util.BasicEList.UnmodifiableEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
@@ -47,6 +50,12 @@ public class GenDomainProperty extends TransformAbstract {
 			return null;
 		}
 		
+		// TODO omit classCode, moodCode for now due to incompatible enum types with CDA base model
+		// also, most or all class/mood codes should be defaulted in greenCDA
+		if (property.getType() instanceof Enumeration) {
+			return null;
+		}
+		
 		Interface domainInterface = getDomainInterface(property.getClass_());
 		Type domainType = property.getType();
 		if (UMLUtil.isSameModel(property.getType(), property.getClass_())) {
@@ -60,22 +69,60 @@ public class GenDomainProperty extends TransformAbstract {
 		 */
 		
 		// "getter" operation
-		String getOperationName = "get";
-		getOperationName += ((property.getUpper() == 1) ? capitalize(businessName) : capitalize(pluralize(businessName)));
-		Operation getOperation = domainInterface.createOwnedOperation(getOperationName, null, null, domainType);
-		getOperation.setIsQuery(true);	// make this a query method
-		getOperation.setUpper(property.getUpper());
+		Operation getOperation = null;
+		if (property.getAssociation() != null) {
+			getOperation = GenMethodHelper.genAssociationGetterOperation(property, domainType);
+			if (getOperation != null) {
+				domainInterface.getOwnedOperations().add(getOperation);
 
-		// copy comments for use in Javadoc
-		for (Comment comment : property.getOwnedComments()) {
-			Comment clone = EcoreUtil.copy(comment);
-			clone.getAnnotatedElements().add(getOperation);
-			getOperation.getOwnedComments().add(clone);
+				// copy comments for use in Javadoc
+				for (Comment comment : property.getAssociation().getOwnedComments()) {
+					Comment clone = EcoreUtil.copy(comment);
+					clone.getAnnotatedElements().add(getOperation);
+					getOperation.getOwnedComments().add(clone);
+				}
+			}
+		}
+		else {
+			String getOperationName = "get";
+			getOperationName += ((property.getUpper() == 1) ? capitalize(businessName) : capitalize(pluralize(businessName)));
+			getOperation = domainInterface.createOwnedOperation(getOperationName, null, null, domainType);
+			getOperation.setIsQuery(true);	// make this a query method
+			getOperation.setUpper(property.getUpper());
+
+			// copy comments for use in Javadoc
+			for (Comment comment : property.getOwnedComments()) {
+				Comment clone = EcoreUtil.copy(comment);
+				clone.getAnnotatedElements().add(getOperation);
+				getOperation.getOwnedComments().add(clone);
+			}
+		}
+		
+		if (getOperation != null) {
+			// TODO get full XPath of this element in CDA
+			// add simple comment so that OCL does not display as short javadoc summary
+			// add as first comment so that it is always displayed as method summary
+			Property docProperty = CDAModelUtil.getCDAProperty(property);
+			if (docProperty == null) {
+				docProperty = property;
+			}
+			Comment comment = UMLFactory.eINSTANCE.createComment();
+			getOperation.getOwnedComments().add(0, comment);
+			comment.getAnnotatedElements().add(getOperation);
+			String xpath = docProperty.getQualifiedName();
+			comment.setBody(xpath + ".");
 		}
 		
 		// update operations
 		if (!isFixedValue(property)) {
+			Operation createOperation = null;
 			Operation updateOperation = null;
+
+			// "create" operation for non-datatype properties
+			if (!CDAModelUtil.isDatatypeModel(domainType)) {
+				String operationName = "create" + capitalize(businessName);
+				createOperation = domainInterface.createOwnedOperation(operationName, null, null, domainType);
+			}
 			
 			// "setter" operation
 			if (property.getUpper() == 1) {
@@ -86,7 +133,8 @@ public class GenDomainProperty extends TransformAbstract {
 				EList<Type> parmTypes = new UnmodifiableEList<Type>(1, paramTypesArray);
 				
 				// "fluent" API style, returns self
-				updateOperation = domainInterface.createOwnedOperation(operationName, parmNames, parmTypes, domainInterface);
+//				updateOperation = domainInterface.createOwnedOperation(operationName, parmNames, parmTypes, domainInterface);
+				updateOperation = domainInterface.createOwnedOperation(operationName, parmNames, parmTypes, null);
 			}
 			
 			// "add" operation
@@ -100,12 +148,22 @@ public class GenDomainProperty extends TransformAbstract {
 				// "fluent" API style, returns self
 				updateOperation = domainInterface.createOwnedOperation(operationName, parmNames, parmTypes, domainInterface);
 			}
-			
+
+			// add UML comment with CDA conformance rule expression
+			String conformanceText = CDAModelUtil.computeConformanceMessage(property, true);
+			if (!conformanceText.endsWith(".")) {
+				// for Javadoc to terminate short description
+				conformanceText += ".";
+			}
+			if (createOperation != null) {
+				Comment conformanceRule = createOperation.createOwnedComment();
+				conformanceRule.getAnnotatedElements().add(createOperation);
+				conformanceRule.setBody(conformanceText);
+			}
 			if (updateOperation != null) {
-				// add comment with CDA conformance rule expression
 				Comment conformanceRule = updateOperation.createOwnedComment();
 				conformanceRule.getAnnotatedElements().add(updateOperation);
-				conformanceRule.setBody("<p>"+CDAModelUtil.computeConformanceMessage(property, true)+"</p>");
+				conformanceRule.setBody(conformanceText);
 			}
 		}
 		

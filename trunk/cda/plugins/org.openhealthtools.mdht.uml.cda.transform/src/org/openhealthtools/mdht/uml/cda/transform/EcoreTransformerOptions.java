@@ -27,9 +27,11 @@ public class EcoreTransformerOptions {
 
 	public static final String GENERATE_DOMAIN_INTERFACE = "generateDomainInterface";
 	public static final String INCLUDE_FIXED_VALUE_GETTERS = "includeFixedValueGetters";
+	public static final String INCLUDE_INTERFACE_REALIZATION = "includeInterfaceRealization";
 	
 	private boolean generateDomainInterface;
 	private boolean includeFixedValueGetters;
+	private boolean includeInterfaceRealization;
 	
 	// use Vector for a thread-safe synchronized List
 	private List<Element> deletedElementList = new Vector<Element>();
@@ -47,6 +49,8 @@ public class EcoreTransformerOptions {
 				Activator.PLUGIN_ID, GENERATE_DOMAIN_INTERFACE, false, null);
 		includeFixedValueGetters = Platform.getPreferencesService().getBoolean(
 				Activator.PLUGIN_ID, INCLUDE_FIXED_VALUE_GETTERS, false, null);
+		includeInterfaceRealization = Platform.getPreferencesService().getBoolean(
+				Activator.PLUGIN_ID, INCLUDE_INTERFACE_REALIZATION, false, null);
 	}
 
 	public boolean isGenerateDomainInterface() {
@@ -63,6 +67,14 @@ public class EcoreTransformerOptions {
 
 	public void setIncludeFixedValueGetters(boolean includeFixedValueGetters) {
 		this.includeFixedValueGetters = includeFixedValueGetters;
+	}
+
+	public boolean isIncludeInterfaceRealization() {
+		return includeInterfaceRealization;
+	}
+
+	public void setIncludeInterfaceRealization(boolean includeInterfaceRealization) {
+		this.includeInterfaceRealization = includeInterfaceRealization;
 	}
 
 	protected List<Element> getDeletedElementList() {

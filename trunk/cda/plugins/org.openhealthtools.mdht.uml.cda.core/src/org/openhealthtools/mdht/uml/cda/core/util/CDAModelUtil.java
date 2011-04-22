@@ -53,6 +53,7 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 public class CDAModelUtil {
 
 	public static final String CDA_PACKAGE_NAME = "cda";
+	public static final String DATATYPES_NS_URI = "http://www.openhealthtools.org/mdht/uml/hl7/datatypes";
 
 	/** This base URL may be set from preferences or Ant task options. */
 	public static String INFOCENTER_URL = "http://www.cdatools.org/infocenter";
@@ -121,6 +122,15 @@ public class CDAModelUtil {
 		return null;
 	}
 
+	public static boolean isDatatypeModel(Element element) {
+		Stereotype ePackage = element.getNearestPackage().getAppliedStereotype("Ecore::EPackage");
+		if (ePackage != null) {
+			return DATATYPES_NS_URI.equals(element.getNearestPackage().getValue(ePackage, "nsURI"));
+		}
+		
+		return false;
+	}
+	
 	public static boolean isCDAModel(Element element) {
 		return CDA_PACKAGE_NAME.equals( (element.getNearestPackage()!=null) ?  element.getNearestPackage().getName(): "");
 	}
