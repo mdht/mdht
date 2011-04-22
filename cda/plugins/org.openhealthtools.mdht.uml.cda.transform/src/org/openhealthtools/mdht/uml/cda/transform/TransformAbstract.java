@@ -332,7 +332,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	
 	protected Interface getDomainInterface(Type modelType) {
 		Package domainPkg = getDomainInterfacePackage(modelType);
-		return (Interface) domainPkg.getOwnedType(modelType.getName(), false, 
+		return (Interface) domainPkg.getOwnedType("I"+modelType.getName(), false, 
 				UMLPackage.eINSTANCE.getInterface(), true);
 	}
 }

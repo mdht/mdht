@@ -29,6 +29,10 @@ public class GenDomainInterface extends TransformAbstract {
 	public Object caseClass(Class umlClass) {
 		Interface domainInterface = getDomainInterface(umlClass);
 		
+		if (transformerOptions.isIncludeInterfaceRealization()) {
+			umlClass.createInterfaceRealization(null, domainInterface);
+		}
+		
 		// copy comments for use in Javadoc
 		for (Comment comment : umlClass.getOwnedComments()) {
 			Comment clone = EcoreUtil.copy(comment);
