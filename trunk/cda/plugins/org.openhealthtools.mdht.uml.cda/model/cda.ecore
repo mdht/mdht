@@ -5173,24 +5173,10 @@
     <eOperations name="addSupply" ordered="false" lowerBound="1">
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
-    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
     <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        eType="#//Encounter"/>
     <eOperations name="getEntryRelationshipTargets" ordered="false" upperBound="-1"
         eType="#//ClinicalStatement">
       <eParameters name="typeCode" ordered="false" lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipEntryRelationship"/>
@@ -5201,69 +5187,20 @@
       <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaObject"/>
     </eOperations>
     <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        eType="#//Observation"/>
     <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        eType="#//ObservationMedia"/>
     <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        eType="#//Organizer"/>
     <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        eType="#//Procedure"/>
     <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        eType="#//RegionOfInterest"/>
     <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
-        eType="#//Supply">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())"/>
-      </eAnnotations>
-    </eOperations>
+        eType="#//Supply"/>
     <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))"/>
@@ -5274,12 +5211,6 @@
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName"/>
-      </eAnnotations>
       <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -5360,12 +5291,6 @@
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = templateId)"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = templateId)"/>
-      </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
@@ -7244,93 +7169,39 @@
       </contents>
       <contents xsi:type="ecore:EOperation" name="getActs" ordered="false" unique="false"
           upperBound="-1" eType="#//Act">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.act->select(act : cda::Act | not act.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getActs"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.act->select(act : cda::Act | not act.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getEncounters" ordered="false" unique="false"
           upperBound="-1" eType="#//Encounter">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getEncounters"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getObservations" ordered="false"
           unique="false" upperBound="-1" eType="#//Observation">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.observation->select(obs : cda::Observation | not obs.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getObservations"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.observation->select(obs : cda::Observation | not obs.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getObservationMedia" ordered="false"
           unique="false" upperBound="-1" eType="#//ObservationMedia">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getObservationMedia"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getOrganizers" ordered="false" unique="false"
           upperBound="-1" eType="#//Organizer">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.organizer->select(org : cda::Organizer | not org.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getOrganizers"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.organizer->select(org : cda::Organizer | not org.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getProcedures" ordered="false" unique="false"
           upperBound="-1" eType="#//Procedure">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getProcedures"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getRegionsOfInterest" ordered="false"
           unique="false" upperBound="-1" eType="#//RegionOfInterest">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getRegionsOfInterest"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getSubstanceAdministrations" ordered="false"
           unique="false" upperBound="-1" eType="#//SubstanceAdministration">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getSubstanceAdministrations"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getSupplies" ordered="false" unique="false"
           upperBound="-1" eType="#//Supply">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.component.supply->select(sup : cda::Supply | not sup.oclIsUndefined())"/>
-        </eAnnotations>
         <eAnnotations source="redefines" references="#//ClinicalStatement/getSupplies"/>
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.component.supply->select(sup : cda::Supply | not sup.oclIsUndefined())"/>
-        </eAnnotations>
       </contents>
       <contents xsi:type="ecore:EOperation" name="getEntryRelationshipTargets" ordered="false"
           upperBound="-1" eType="#//ClinicalStatement">
