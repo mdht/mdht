@@ -62,12 +62,12 @@ public class CDAModelUtil {
 	public static final String SEVERITY_WARNING = "WARNING";
 	public static final String SEVERITY_INFO = "INFO";
 
-	public static Class getCDAClass(Class templateClass) {
+	public static Class getCDAClass(Classifier templateClass) {
 		Class cdaClass = null;
 		
 		// if the provided class is from CDA and not a template
-		if (isCDAModel(templateClass))
-			return templateClass;
+		if (isCDAModel(templateClass) && templateClass instanceof Class)
+			return (Class)templateClass;
 		
 		for (Classifier parent : templateClass.allParents()) {
 			// nearest package may be null if CDA model is not available
