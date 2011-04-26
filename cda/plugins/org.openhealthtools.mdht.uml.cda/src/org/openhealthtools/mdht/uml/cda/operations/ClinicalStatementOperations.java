@@ -12,7 +12,7 @@
  */
 package org.openhealthtools.mdht.uml.cda.operations;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -39,6 +39,8 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.operations.ActOperations;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
@@ -203,48 +205,18 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getActs(ClinicalStatement) <em>Get Acts</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActs(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_ACTS__EOCL_EXP = "self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getActs(ClinicalStatement) <em>Get Acts</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActs(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_ACTS__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<Act> getActs(ClinicalStatement clinicalStatement) {
-		if (GET_ACTS__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(25));
-			try {
-				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<Act> acts = new ArrayList<Act>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getAct() != null) {
+				acts.add(entryRelationship.getAct());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ACTS__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<Act> result = (Collection<Act>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<Act>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<Act>(acts.size(), acts.toArray());
 	}
 
 	/**
@@ -257,48 +229,18 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getEncounters(ClinicalStatement) <em>Get Encounters</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncounters(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_ENCOUNTERS__EOCL_EXP = "self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getEncounters(ClinicalStatement) <em>Get Encounters</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEncounters(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_ENCOUNTERS__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<Encounter> getEncounters(ClinicalStatement clinicalStatement) {
-		if (GET_ENCOUNTERS__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(27));
-			try {
-				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<Encounter> encounters = new ArrayList<Encounter>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getEncounter() != null) {
+				encounters.add(entryRelationship.getEncounter());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ENCOUNTERS__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<Encounter> result = (Collection<Encounter>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<Encounter>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<Encounter>(encounters.size(), encounters.toArray());
 	}
 
 	/**
@@ -323,228 +265,78 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getObservations(ClinicalStatement) <em>Get Observations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getObservations(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_OBSERVATIONS__EOCL_EXP = "self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getObservations(ClinicalStatement) <em>Get Observations</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getObservations(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_OBSERVATIONS__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<Observation> getObservations(ClinicalStatement clinicalStatement) {
-		if (GET_OBSERVATIONS__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(30));
-			try {
-				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<Observation> observations = new ArrayList<Observation>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getObservation() != null) {
+				observations.add(entryRelationship.getObservation());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_OBSERVATIONS__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<Observation> result = (Collection<Observation>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<Observation>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<Observation>(observations.size(), observations.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getObservationMedia(ClinicalStatement) <em>Get Observation Media</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getObservationMedia(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_OBSERVATION_MEDIA__EOCL_EXP = "self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getObservationMedia(ClinicalStatement) <em>Get Observation Media</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getObservationMedia(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_OBSERVATION_MEDIA__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<ObservationMedia> getObservationMedia(ClinicalStatement clinicalStatement) {
-		if (GET_OBSERVATION_MEDIA__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(31));
-			try {
-				GET_OBSERVATION_MEDIA__EOCL_QRY = helper.createQuery(GET_OBSERVATION_MEDIA__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<ObservationMedia> observationMedia = new ArrayList<ObservationMedia>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getObservationMedia() != null) {
+				observationMedia.add(entryRelationship.getObservationMedia());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_OBSERVATION_MEDIA__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<ObservationMedia> result = (Collection<ObservationMedia>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<ObservationMedia>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<ObservationMedia>(observationMedia.size(), observationMedia.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getOrganizers(ClinicalStatement) <em>Get Organizers</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOrganizers(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_ORGANIZERS__EOCL_EXP = "self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getOrganizers(ClinicalStatement) <em>Get Organizers</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizers(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_ORGANIZERS__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<Organizer> getOrganizers(ClinicalStatement clinicalStatement) {
-		if (GET_ORGANIZERS__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(32));
-			try {
-				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<Organizer> organizers = new ArrayList<Organizer>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getOrganizer() != null) {
+				organizers.add(entryRelationship.getOrganizer());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ORGANIZERS__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<Organizer> result = (Collection<Organizer>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<Organizer>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<Organizer>(organizers.size(), organizers.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getProcedures(ClinicalStatement) <em>Get Procedures</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProcedures(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_PROCEDURES__EOCL_EXP = "self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getProcedures(ClinicalStatement) <em>Get Procedures</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProcedures(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_PROCEDURES__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<Procedure> getProcedures(ClinicalStatement clinicalStatement) {
-		if (GET_PROCEDURES__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(33));
-			try {
-				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<Procedure> procedures = new ArrayList<Procedure>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getProcedure() != null) {
+				procedures.add(entryRelationship.getProcedure());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PROCEDURES__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<Procedure> result = (Collection<Procedure>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<Procedure>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<Procedure>(procedures.size(), procedures.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getRegionsOfInterest(ClinicalStatement) <em>Get Regions Of Interest</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRegionsOfInterest(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_REGIONS_OF_INTEREST__EOCL_EXP = "self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getRegionsOfInterest(ClinicalStatement) <em>Get Regions Of Interest</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRegionsOfInterest(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_REGIONS_OF_INTEREST__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<RegionOfInterest> getRegionsOfInterest(ClinicalStatement clinicalStatement) {
-		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(34));
-			try {
-				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<RegionOfInterest> regionsOfInterest = new ArrayList<RegionOfInterest>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getRegionOfInterest() != null) {
+				regionsOfInterest.add(entryRelationship.getRegionOfInterest());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_REGIONS_OF_INTEREST__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<RegionOfInterest> result = (Collection<RegionOfInterest>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<RegionOfInterest>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<RegionOfInterest>(regionsOfInterest.size(), regionsOfInterest.toArray());
 	}
 
 	/**
@@ -557,93 +349,33 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getSubstanceAdministrations(ClinicalStatement) <em>Get Substance Administrations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubstanceAdministrations(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP = "self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getSubstanceAdministrations(ClinicalStatement) <em>Get Substance Administrations</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubstanceAdministrations(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<SubstanceAdministration> getSubstanceAdministrations(ClinicalStatement clinicalStatement) {
-		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(36));
-			try {
-				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<SubstanceAdministration> substanceAdministrations = new ArrayList<SubstanceAdministration>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getSubstanceAdministration() != null) {
+				substanceAdministrations.add(entryRelationship.getSubstanceAdministration());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<SubstanceAdministration> result = (Collection<SubstanceAdministration>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<SubstanceAdministration>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<SubstanceAdministration>(substanceAdministrations.size(), substanceAdministrations.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getSupplies(ClinicalStatement) <em>Get Supplies</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSupplies(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GET_SUPPLIES__EOCL_EXP = "self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())";
-	/**
-	 * The cached OCL query for the '{@link #getSupplies(ClinicalStatement) <em>Get Supplies</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplies(ClinicalStatement)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> GET_SUPPLIES__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EList<Supply> getSupplies(ClinicalStatement clinicalStatement) {
-		if (GET_SUPPLIES__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(37));
-			try {
-				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		List<Supply> supplies = new ArrayList<Supply>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getSupply() != null) {
+				supplies.add(entryRelationship.getSupply());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_SUPPLIES__EOCL_QRY);
-		@SuppressWarnings("unchecked")
-		Collection<Supply> result = (Collection<Supply>) query.evaluate(clinicalStatement);
-		return new BasicEList.UnmodifiableEList<Supply>(result.size(), result.toArray());
+		return new BasicEList.UnmodifiableEList<Supply>(supplies.size(), supplies.toArray());
 	}
 
 	/**
@@ -692,50 +424,16 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasCode(ClinicalStatement, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #hasCode(ClinicalStatement, java.lang.String, java.lang.String, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_CODE__STRING_STRING_STRING__EOCL_EXP = "self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName";
-	/**
-	 * The cached OCL query for the '{@link #hasCode(ClinicalStatement, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #hasCode(ClinicalStatement, java.lang.String, java.lang.String, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_CODE__STRING_STRING_STRING__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  boolean hasCode(ClinicalStatement clinicalStatement, String code, String codeSystem, String codeSystemName) {
-		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(39));
-			try {
-				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
+		CD cd = (CD) clinicalStatement.eGet(clinicalStatement.eClass().getEStructuralFeature("code"));
+		if (cd == null || code == null || codeSystem == null || codeSystemName == null) {
+			return false;
 		}
-		OCL.Query query = EOCL_ENV.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_QRY);
-		EvaluationEnvironment<?, ?, ?, ?, ?> environment = query.getEvaluationEnvironment();
-		environment.add("code", code);
-		environment.add("codeSystem", codeSystem);
-		environment.add("codeSystemName", codeSystemName);
-		return ((Boolean) query.evaluate(clinicalStatement)).booleanValue();
+		return code.equals(cd.getCode()) && codeSystem.equals(cd.getCodeSystem()) && codeSystemName.equals(cd.getCodeSystemName());
 	}
 
 	/**
@@ -1099,48 +797,18 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasTemplateId(ClinicalStatement, java.lang.String) <em>Has Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #hasTemplateId(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
+	 * @generated NOT
 	 */
-	protected static final String HAS_TEMPLATE_ID__STRING__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = templateId)";
-	/**
-	 * The cached OCL query for the '{@link #hasTemplateId(ClinicalStatement, java.lang.String) <em>Has Template Id</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #hasTemplateId(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_TEMPLATE_ID__STRING__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
-	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	public static  boolean hasTemplateId(ClinicalStatement clinicalStatement, String templateId) {
-		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_STATEMENT, CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(48));
-			try {
-				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		for (II ii : (List<II>) clinicalStatement.eGet(clinicalStatement.eClass().getEStructuralFeature("templateId"))) {
+			if (templateId.equals(ii.getRoot())) {
+				return true;
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_QRY);
-		EvaluationEnvironment<?, ?, ?, ?, ?> environment = query.getEvaluationEnvironment();
-		environment.add("templateId", templateId);
-		return ((Boolean) query.evaluate(clinicalStatement)).booleanValue();
+		return false;
 	}
 
 } // ClinicalStatementOperations

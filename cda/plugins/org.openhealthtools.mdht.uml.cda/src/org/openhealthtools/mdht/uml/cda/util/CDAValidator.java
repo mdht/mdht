@@ -113,6 +113,7 @@ import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.cda.SubjectPerson;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -1013,6 +1014,14 @@ public class CDAValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DatatypesValidator datatypesValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1020,6 +1029,7 @@ public class CDAValidator extends EObjectValidator {
 	 */
 	public CDAValidator() {
 		super();
+		datatypesValidator = DatatypesValidator.INSTANCE;
 	}
 
 	/**
@@ -1286,6 +1296,7 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(infrastructureRootTypeId, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(infrastructureRootTypeId, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(infrastructureRootTypeId, diagnostics, context);
+		if (result || diagnostics != null) result &= datatypesValidator.validateII_validateII(infrastructureRootTypeId, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInfrastructureRootTypeId_validateRedefinedRootroot(infrastructureRootTypeId, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInfrastructureRootTypeId_validateRedefinedExtension(infrastructureRootTypeId, diagnostics, context);
 		return result;
@@ -3526,7 +3537,16 @@ public class CDAValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRegionOfInterestValue(RegionOfInterestValue regionOfInterestValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(regionOfInterestValue, diagnostics, context);
+		if (!validate_NoCircularContainment(regionOfInterestValue, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(regionOfInterestValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(regionOfInterestValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(regionOfInterestValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(regionOfInterestValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(regionOfInterestValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(regionOfInterestValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(regionOfInterestValue, diagnostics, context);
+		if (result || diagnostics != null) result &= datatypesValidator.validateINT_validateINT(regionOfInterestValue, diagnostics, context);
+		return result;
 	}
 
 	/**
