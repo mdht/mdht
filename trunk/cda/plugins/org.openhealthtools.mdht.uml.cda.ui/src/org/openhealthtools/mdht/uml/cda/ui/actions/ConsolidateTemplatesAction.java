@@ -79,15 +79,18 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 	private Package sourcePackage;
 	private Map<Classifier, List<Classifier>> sourceInheritance;
 
+	private String projectName = "demo";
+	private String modelPath = "org.openhealthtools.mdht.uml.cda." + projectName +".model/model/";
+	
 	// output model for template consolidation
-	private String consolPath = "org.openhealthtools.mdht.uml.cda.consol.model/model/consol.uml";
+	private String consolPath =  modelPath + projectName + ".uml";
 	private Resource consolResource;
 	private Package consolPackage;
 	private Map<String, Class> consolMapping;
 	private Map<Classifier, List<Classifier>> consolInheritance;
 	
 	// output model for vocab consolidation
-	private String vocabPath = "org.openhealthtools.mdht.uml.cda.consol.model/model/consol-vocab.uml";
+	private String vocabPath = modelPath + projectName + "-vocab.uml";
 	private Resource vocabResource;
 	private Package vocabPackage;
 	private Map<String, Enumeration> vocabMapping;
