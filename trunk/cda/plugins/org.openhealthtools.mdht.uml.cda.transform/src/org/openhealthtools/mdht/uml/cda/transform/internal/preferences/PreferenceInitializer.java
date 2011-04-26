@@ -28,7 +28,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		IEclipsePreferences node = new DefaultScope().getNode(Activator.PLUGIN_ID);
 		
 		node.putBoolean(EcoreTransformerOptions.GENERATE_DOMAIN_INTERFACE, false);
+		node.putBoolean(EcoreTransformerOptions.GENERATE_DOMAIN_CLASSES, false);
 		node.putBoolean(EcoreTransformerOptions.INCLUDE_FIXED_VALUE_GETTERS, false);
+		node.putBoolean(EcoreTransformerOptions.INCLUDE_INTERFACE_REALIZATION, false);
+		node.putBoolean(EcoreTransformerOptions.USE_BUSINESS_NAMES, true);
 	}
 	
 }

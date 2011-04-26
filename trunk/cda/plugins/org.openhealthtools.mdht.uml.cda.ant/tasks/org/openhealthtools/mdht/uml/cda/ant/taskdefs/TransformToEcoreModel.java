@@ -45,6 +45,8 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 	private Boolean generateDomainInterface = null;
 	private Boolean includeFixedValueGetters = null;
 	private Boolean includeInterfaceRealization = null;
+	private Boolean generateDomainClasses = null;
+	private Boolean useBusinessNames = null;
 
 	/* child elements of this Ant task */
 //	private List<ModelElement> elements = new ArrayList<ModelElement>();
@@ -67,11 +69,17 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	if (generateDomainInterface == null && project.getProperty("generateDomainInterface") != null) {
     		generateDomainInterface = Boolean.valueOf(project.getProperty("generateDomainInterface"));
     	}
+    	if (generateDomainClasses == null && project.getProperty("generateDomainClasses") != null) {
+    		generateDomainClasses = Boolean.valueOf(project.getProperty("generateDomainClasses"));
+    	}
     	if (includeFixedValueGetters == null && project.getProperty("includeFixedValueGetters") != null) {
     		includeFixedValueGetters = Boolean.valueOf(project.getProperty("includeFixedValueGetters"));
     	}
     	if (includeInterfaceRealization == null && project.getProperty("includeInterfaceRealization") != null) {
     		includeInterfaceRealization = Boolean.valueOf(project.getProperty("includeInterfaceRealization"));
+    	}
+    	if (useBusinessNames == null && project.getProperty("useBusinessNames") != null) {
+    		useBusinessNames = Boolean.valueOf(project.getProperty("useBusinessNames"));
     	}
 
     }
@@ -136,11 +144,17 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	if (generateDomainInterface != null) {
     		options.setGenerateDomainInterface(generateDomainInterface);
     	}
+    	if (generateDomainClasses != null) {
+    		options.setGenerateDomainClasses(generateDomainClasses);
+    	}
     	if (includeFixedValueGetters != null) {
     		options.setIncludeFixedValueGetters(includeFixedValueGetters);
     	}
     	if (includeInterfaceRealization != null) {
     		options.setIncludeInterfaceRealization(includeInterfaceRealization);
+    	}
+    	if (useBusinessNames != null) {
+    		options.setUseBusinessNames(useBusinessNames);
     	}
 
     	EcoreTransformer transformer = new EcoreTransformer(options);
@@ -178,12 +192,20 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		generateDomainInterface = new Boolean(include);
 	}
 
+	public void setGenerateDomainClasses(boolean include) {
+		generateDomainClasses = new Boolean(include);
+	}
+
 	public void setIncludeFixedValueGetters(boolean include) {
 		includeFixedValueGetters = new Boolean(include);
 	}
 
 	public void setIncludeInterfaceRealization(boolean include) {
 		includeInterfaceRealization = new Boolean(include);
+	}
+
+	public void setUseBusinessNames(boolean include) {
+		useBusinessNames = new Boolean(include);
 	}
 
 
