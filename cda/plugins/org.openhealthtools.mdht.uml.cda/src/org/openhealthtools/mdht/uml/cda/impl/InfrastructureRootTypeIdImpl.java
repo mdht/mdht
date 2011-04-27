@@ -187,8 +187,8 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRedefinedRootroot(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return InfrastructureRootTypeIdOperations.validateRedefinedRootroot(this, diagnostics, context);
+	public boolean validateRedefinedRoot(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return InfrastructureRootTypeIdOperations.validateRedefinedRoot(this, diagnostics, context);
 	}
 
 	/**
@@ -198,6 +198,16 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 */
 	public boolean validateRedefinedExtension(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return InfrastructureRootTypeIdOperations.validateRedefinedExtension(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateII(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return InfrastructureRootTypeIdOperations.validateII(this, diagnostics, context);
 	}
 
 	/**

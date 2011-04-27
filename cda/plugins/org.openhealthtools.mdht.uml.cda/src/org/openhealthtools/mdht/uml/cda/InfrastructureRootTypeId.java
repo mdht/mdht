@@ -49,7 +49,7 @@ public interface InfrastructureRootTypeId extends II {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.root=\'2.16.840.1.113883.1.3\''"
 	 * @generated
 	 */
-	boolean validateRedefinedRootroot(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateRedefinedRoot(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
