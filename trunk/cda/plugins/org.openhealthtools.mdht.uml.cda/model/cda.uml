@@ -2659,7 +2659,7 @@
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_sKX1MEb9Ed6besF9iFIJkQ" name="InfrastructureRootTypeId">
-      <ownedRule xmi:id="_W3KzwCV1EeCrtN9McWFciw" name="redefinedRoot (root)" constrainedElement="_sKX1MEb9Ed6besF9iFIJkQ">
+      <ownedRule xmi:id="_W3KzwCV1EeCrtN9McWFciw" name="redefinedRoot" constrainedElement="_sKX1MEb9Ed6besF9iFIJkQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_fYG6ECV1EeCrtN9McWFciw">
           <language>OCL</language>
           <body>self.root='2.16.840.1.113883.1.3'</body>
@@ -2669,6 +2669,12 @@
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_lnu3MEREEeCldOpAaJlPmA">
           <language>OCL</language>
           <body>not self.extension.oclIsUndefined()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_LLhMIHD8EeCQw9jC9V9bEw" name="II" constrainedElement="_sKX1MEb9Ed6besF9iFIJkQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_NUK6sHD8EeCQw9jC9V9bEw">
+          <language>OCL</language>
+          <body>(self.isNullFlavorDefined() or self.isDefined('redefinedRoot') and not(self.isNullFlavorDefined() and self.isDefined('redefinedRoot')))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_x2aK8Eb9Ed6besF9iFIJkQ">

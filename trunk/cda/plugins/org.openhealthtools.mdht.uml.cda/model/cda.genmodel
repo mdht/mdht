@@ -123,11 +123,11 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//InfrastructureRootTypeId">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InfrastructureRootTypeId/redefinedRoot"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InfrastructureRootTypeId/redefinedRoot.1"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//InfrastructureRootTypeId/redefinedExtension.1"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//InfrastructureRootTypeId/redefinedRootroot">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InfrastructureRootTypeId/redefinedRootroot/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InfrastructureRootTypeId/redefinedRootroot/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//InfrastructureRootTypeId/redefinedRoot">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InfrastructureRootTypeId/redefinedRoot/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InfrastructureRootTypeId/redefinedRoot/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//InfrastructureRootTypeId/redefinedExtension">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//InfrastructureRootTypeId/redefinedExtension/diagnostics"/>
