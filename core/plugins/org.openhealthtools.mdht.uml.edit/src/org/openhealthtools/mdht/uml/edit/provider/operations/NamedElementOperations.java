@@ -29,47 +29,46 @@ import org.eclipse.uml2.uml.VisibilityKind;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 
 /**
- *
+ * 
  * @version $Id: $
  */
 public class NamedElementOperations {
 	public static final String nameFeature = UMLPackage.eINSTANCE.getNamedElement_Name().getName();
+
 	public static final String visibilityFeature = UMLPackage.eINSTANCE.getNamedElement_Visibility().getName();
 
 	public static void modify(final Object element, final String property, final Object value) {
 		final NamedElement namedElement = (NamedElement) element;
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (nameFeature.equals(property)) {
 						setLabel("Set Name");
 						namedElement.setName(value.toString());
-					}
-					else if (visibilityFeature.equals(property) 
-							&& value instanceof Integer) {
+					} else if (visibilityFeature.equals(property) && value instanceof Integer) {
 						setLabel("Set Visibility");
-						namedElement.setVisibility(VisibilityKind.get(((Integer)value).intValue()));
-					}
-					else {
+						namedElement.setVisibility(VisibilityKind.get(((Integer) value).intValue()));
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}

@@ -50,13 +50,12 @@ import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
-public class AssociationExtItemProvider extends AssociationItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class AssociationExtItemProvider extends AssociationItemProvider implements ITableItemLabelProvider,
+		ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -65,46 +64,49 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		super(adapterFactory);
 	}
 
+	@Override
 	public Object getImage(Object object) {
 		boolean navigable = false;
 
 		for (Property memberEnd : ((Association) object).getMemberEnds()) {
-			if (memberEnd.isNavigable())
+			if (memberEnd.isNavigable()) {
 				navigable = true;
+			}
 		}
 
 		if (navigable) {
-			return overlayImage(object,UMLExtEditPlugin.INSTANCE.getImage(
-					"full/obj16/Association_navigable")); //$NON-NLS-1$
-		}
-		else {
+			return overlayImage(object, UMLExtEditPlugin.INSTANCE.getImage("full/obj16/Association_navigable")); //$NON-NLS-1$
+		} else {
 			return super.getImage(object);
 		}
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
+	@Override
 	public String getText(Object object) {
-		String label = getName((Association)object);
+		String label = getName((Association) object);
 		if (label == null) {
 			StringBuffer labelBuffer = new StringBuffer();
-			for (Property end : ((Association)object).getMemberEnds()) {
+			for (Property end : ((Association) object).getMemberEnds()) {
 				if (end.isNavigable()) {
-					if (labelBuffer.length() > 0)
+					if (labelBuffer.length() > 0) {
 						labelBuffer.append("_");
-					
-					if (end.getName() != null)
+					}
+
+					if (end.getName() != null) {
 						labelBuffer.append(getName(end));
-					else if (end.getType() != null)
+					} else if (end.getType() != null) {
 						labelBuffer.append(getName(end.getType()));
-					else
+					} else {
 						labelBuffer.append("NULL");
+					}
 				}
 			}
 			label = labelBuffer.toString();
@@ -112,14 +114,17 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		return label;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection<Element> getChildren(Object object) {
 		Association association = (Association) object;
 		List<Element> children = new ArrayList<Element>();
 		children.addAll(association.getOwnedComments());
-		
+
 		Property navigableEnd = getNavigableEnd(association);
 		if (navigableEnd != null && navigableEnd.getType() instanceof Class) {
 			Class endType = (Class) navigableEnd.getType();
@@ -130,27 +135,27 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 			}
 			// include associations after attributes
 			for (Property property : endType.getOwnedAttributes()) {
-				if (property.getAssociation() != null && property.getOtherEnd() != null
-						&& property.getOtherEnd().getType() == endType) {
+				if (property.getAssociation() != null && property.getOtherEnd() != null &&
+						property.getOtherEnd().getType() == endType) {
 					children.add(property.getAssociation());
 				}
 			}
-//			children.addAll(endType.getOwnedRules());
-//			children.addAll(endType.getGeneralizations());
+			// children.addAll(endType.getOwnedRules());
+			// children.addAll(endType.getGeneralizations());
 		}
-		
+
 		children.addAll(association.getOwnedRules());
-//		children.addAll(association.getGeneralizations());
-//		// show only navigable ends
-//		for (Property end : association.getMemberEnds()) {
-//			if (end.isNavigable())
-//				children.add(end);
-//		}
-//		children.addAll(association.getClientDependencies());
-		
+		// children.addAll(association.getGeneralizations());
+		// // show only navigable ends
+		// for (Property end : association.getMemberEnds()) {
+		// if (end.isNavigable())
+		// children.add(end);
+		// }
+		// children.addAll(association.getClientDependencies());
+
 		return children;
 	}
-	
+
 	private Property getNavigableEnd(Association association) {
 		Property navigableEnd = null;
 		for (Property end : association.getMemberEnds()) {
@@ -161,10 +166,11 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 				navigableEnd = end;
 			}
 		}
-		
+
 		return navigableEnd;
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		Association association = (Association) object;
 		if (association.getNearestPackage() == null) {
@@ -176,37 +182,37 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		if (navigableEnd != null && navigableEnd.getType() instanceof Class) {
 			endType = (Class) navigableEnd.getType();
 		}
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		case IUMLTableProperties.TYPE_INDEX:
-			if (endType != null) {
-				IItemLabelProvider provider = 
-					(IItemLabelProvider) getAdapterFactory().adapt(
-							endType, IItemLabelProvider.class);
-				if (provider != null)
-					return provider.getImage(endType);
-			}
-		case IUMLTableProperties.ANNOTATION_INDEX: {
-			for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
-				// eResource is null for unresolved eProxyURI, missing profiles
-				if (profile.eResource() != null) {
-					// use the first notation provider found for an applied profile, ignore others
-					String profileURI = profile.eResource().getURI().toString();
-					INotationProvider provider = 
-						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			case IUMLTableProperties.TYPE_INDEX:
+				if (endType != null) {
+					IItemLabelProvider provider = (IItemLabelProvider) getAdapterFactory().adapt(
+						endType, IItemLabelProvider.class);
 					if (provider != null) {
-						return provider.getAnnotationImage(association);
+						return provider.getImage(endType);
+					}
+				}
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
+					// eResource is null for unresolved eProxyURI, missing profiles
+					if (profile.eResource() != null) {
+						// use the first notation provider found for an applied profile, ignore others
+						String profileURI = profile.eResource().getURI().toString();
+						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+						if (provider != null) {
+							return provider.getAnnotationImage(association);
+						}
 					}
 				}
 			}
-		}
-		default:
-			return null;
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		Association association = (Association) element;
 		if (association.getNearestPackage() == null) {
@@ -218,138 +224,136 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		if (navigableEnd != null && navigableEnd.getType() instanceof Class) {
 			endType = (Class) navigableEnd.getType();
 		}
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getText(element);
-		case IUMLTableProperties.TYPE_INDEX:
-			return (endType == null) ? null : endType.getName();
-		case IUMLTableProperties.MULTIPLICITY_INDEX:
-			return PropertyExtItemProvider.displayColumnMultiplicity(navigableEnd);
-		case IUMLTableProperties.VISIBILITY_INDEX:
-			if (VisibilityKind.PUBLIC_LITERAL == association.getVisibility())
-				return "";
-			else
-				return association.getVisibility().getName();
-		case IUMLTableProperties.ANNOTATION_INDEX: {
-			for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
-				// eResource is null for unresolved eProxyURI, missing profiles
-				if (profile.eResource() != null) {
-					// use the first notation provider found for an applied profile, ignore others
-					String profileURI = profile.eResource().getURI().toString();
-					INotationProvider provider = 
-						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-					if (provider != null) {
-						return provider.getAnnotation(association);
+			case IUMLTableProperties.NAME_INDEX:
+				return getText(element);
+			case IUMLTableProperties.TYPE_INDEX:
+				return (endType == null)
+						? null
+						: endType.getName();
+			case IUMLTableProperties.MULTIPLICITY_INDEX:
+				return PropertyExtItemProvider.displayColumnMultiplicity(navigableEnd);
+			case IUMLTableProperties.VISIBILITY_INDEX:
+				if (VisibilityKind.PUBLIC_LITERAL == association.getVisibility()) {
+					return "";
+				} else {
+					return association.getVisibility().getName();
+				}
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
+					// eResource is null for unresolved eProxyURI, missing profiles
+					if (profile.eResource() != null) {
+						// use the first notation provider found for an applied profile, ignore others
+						String profileURI = profile.eResource().getURI().toString();
+						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+						if (provider != null) {
+							return provider.getAnnotation(association);
+						}
 					}
 				}
 			}
-		}
-		default:
-			return null;
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return true;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
-		Property navigableEnd = getNavigableEnd((Association)element);
-		
+		Property navigableEnd = getNavigableEnd((Association) element);
+
 		if (navigableEnd != null) {
 			if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 				return navigableEnd.getName();
-			}
-			else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+			} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 				return new Integer(navigableEnd.getVisibility().getValue());
-			}
-			else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
+			} else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 				return navigableEnd.getType();
-			}
-			else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+			} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
 				return PropertyExtItemProvider.displayColumnMultiplicity(navigableEnd);
 			}
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
-		final Association association = (Association)element;
+		final Association association = (Association) element;
 		final Property navigableEnd = getNavigableEnd(association);
-		if (navigableEnd == null)
+		if (navigableEnd == null) {
 			return;
+		}
 
-		if (IUMLTableProperties.NAME_PROPERTY.equals(property) 
-				|| IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		if (IUMLTableProperties.NAME_PROPERTY.equals(property) ||
+				IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			NamedElementOperations.modify(navigableEnd, property, value);
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(navigableEnd);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(navigableEnd);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					if (IUMLTableProperties.TYPE_PROPERTY.equals(property) 
-							&& value instanceof Classifier) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					if (IUMLTableProperties.TYPE_PROPERTY.equals(property) && value instanceof Classifier) {
 						setLabel("Set Type");
-						navigableEnd.setType((Classifier)value);
-						
+						navigableEnd.setType((Classifier) value);
+
 						// refresh children, cause change notification to be sent
 						Class owner = navigableEnd.getClass_();
 						int position = owner.getOwnedAttributes().lastIndexOf(navigableEnd);
 						owner.getOwnedAttributes().remove(navigableEnd);
 						owner.getOwnedAttributes().add(position, navigableEnd);
-					}
-					else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property) 
-							&& value instanceof Integer) {
+					} else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property) && value instanceof Integer) {
 						setLabel("Set Aggregation");
-						navigableEnd.setAggregation(AggregationKind.get(((Integer)value).intValue()));
-					}
-					else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property) 
-							&& value instanceof String) {
+						navigableEnd.setAggregation(AggregationKind.get(((Integer) value).intValue()));
+					} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property) && value instanceof String) {
 						setLabel("Set Multiplicity");
 						PropertyExtItemProvider.setMultiplicity(navigableEnd, value.toString());
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}

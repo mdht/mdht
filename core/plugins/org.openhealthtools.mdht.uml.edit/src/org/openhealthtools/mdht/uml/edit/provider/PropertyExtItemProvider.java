@@ -61,12 +61,11 @@ import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- *
+ * 
  * @version $Id: $
  */
-public class PropertyExtItemProvider extends
-		org.eclipse.uml2.uml.edit.providers.PropertyItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers.PropertyItemProvider implements
+		ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -75,44 +74,50 @@ public class PropertyExtItemProvider extends
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
-		Property property = (Property)object;
+		Property property = (Property) object;
 		String name = getName(property);
 		if (name == null || name.length() == 0) {
 			name = getString("_UI_Property_type");
 		}
-				
+
 		StringBuffer label = new StringBuffer();
 		label.append(name);
-//		if (property.getAssociation() instanceof AssociationClass
-//				&& property.isNavigable()) {
-//			label.append(" : ").append(property.getAssociation().getName());
-//		}
-//		else 
+		// if (property.getAssociation() instanceof AssociationClass
+		// && property.isNavigable()) {
+		// label.append(" : ").append(property.getAssociation().getName());
+		// }
+		// else
 		if (property.getType() != null) {
 			label.append(" : ").append(getName(property.getType()));
 		}
-		
+
 		label.append(displayMultiplicity(property));
-		
+
 		String defaultValue = property.getDefault();
 		if (defaultValue != null && defaultValue.length() > 0) {
 			label.append(" = ");
@@ -134,12 +139,12 @@ public class PropertyExtItemProvider extends
 			multDisplay.append(" [");
 			multDisplay.append(multElement.getLower());
 			multDisplay.append("..");
-			multDisplay.append(
-				multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED 
-					? "*" : Integer.toString(multElement.getUpper()));
+			multDisplay.append(multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED
+					? "*"
+					: Integer.toString(multElement.getUpper()));
 			multDisplay.append("]");
 		}
-		
+
 		return multDisplay.toString();
 	}
 
@@ -147,22 +152,26 @@ public class PropertyExtItemProvider extends
 		return multElement.getLower() != 1 || multElement.getUpper() != 1;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection<Element> getChildren(Object object) {
 		Property property = (Property) object;
 		List<Element> children = new ArrayList<Element>();
-//		if (XSDProfileHelper.isNestedGroup(property)) {
-//			children.addAll(TypeOperations.getOwnedAttributes(property.getType()));
-//		}
+		// if (XSDProfileHelper.isNestedGroup(property)) {
+		// children.addAll(TypeOperations.getOwnedAttributes(property.getType()));
+		// }
 
 		children.addAll(property.getOwnedComments());
 		children.addAll(property.getClientDependencies());
-		
+
 		return children;
 	}
 
+	@Override
 	public Collection<EStructuralFeature> getChildrenFeatures(Object object) {
 		// disallow other add/move commands
 		if (childrenFeatures == null) {
@@ -174,9 +183,12 @@ public class PropertyExtItemProvider extends
 		return childrenFeatures;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
@@ -191,85 +203,88 @@ public class PropertyExtItemProvider extends
 		super.notifyChanged(notification);
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		Property property = (Property) object;
 		Type type = property.getType();
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(property);
-		case IUMLTableProperties.TYPE_INDEX:
-			if (type != null) {
-				IItemLabelProvider provider = 
-					(IItemLabelProvider) getAdapterFactory().adapt(
-							type, IItemLabelProvider.class);
-				if (provider != null)
-					return provider.getImage(type);
-			}
-		case IUMLTableProperties.ANNOTATION_INDEX: {
-			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
-				// eResource is null for unresolved eProxyURI, missing profiles
-				if (profile.eResource() != null) {
-					// use the first notation provider found for an applied profile, ignore others
-					String profileURI = profile.eResource().getURI().toString();
-					INotationProvider provider = 
-						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(property);
+			case IUMLTableProperties.TYPE_INDEX:
+				if (type != null) {
+					IItemLabelProvider provider = (IItemLabelProvider) getAdapterFactory().adapt(
+						type, IItemLabelProvider.class);
 					if (provider != null) {
-						return provider.getAnnotationImage(property);
+						return provider.getImage(type);
+					}
+				}
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
+					// eResource is null for unresolved eProxyURI, missing profiles
+					if (profile.eResource() != null) {
+						// use the first notation provider found for an applied profile, ignore others
+						String profileURI = profile.eResource().getURI().toString();
+						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+						if (provider != null) {
+							return provider.getAnnotationImage(property);
+						}
 					}
 				}
 			}
-		}
-		default:
-			return null;
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		Property property = (Property) object;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getName(property);
-		case IUMLTableProperties.TYPE_INDEX:
-			return (property.getType() == null) ? null :
-					getName(property.getType());
-		case IUMLTableProperties.MULTIPLICITY_INDEX:
-			return displayColumnMultiplicity(property);
-		case IUMLTableProperties.AGGREGATION_INDEX:
-			if (AggregationKind.NONE_LITERAL == property.getAggregation())
-				return "";
-			else
-				return property.getAggregation().getName();
-		case IUMLTableProperties.VISIBILITY_INDEX:
-			if (VisibilityKind.PUBLIC_LITERAL == property.getVisibility())
-				return "";
-			else
-				return property.getVisibility().getName();
-		case IUMLTableProperties.ANNOTATION_INDEX: {
-			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
-				// eResource is null for unresolved eProxyURI, missing profiles
-				if (profile.eResource() != null) {
-					// use the first notation provider found for an applied profile, ignore others
-					String profileURI = profile.eResource().getURI().toString();
-					INotationProvider provider = 
-						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-					if (provider != null) {
-						return provider.getAnnotation(property);
+			case IUMLTableProperties.NAME_INDEX:
+				return getName(property);
+			case IUMLTableProperties.TYPE_INDEX:
+				return (property.getType() == null)
+						? null
+						: getName(property.getType());
+			case IUMLTableProperties.MULTIPLICITY_INDEX:
+				return displayColumnMultiplicity(property);
+			case IUMLTableProperties.AGGREGATION_INDEX:
+				if (AggregationKind.NONE_LITERAL == property.getAggregation()) {
+					return "";
+				} else {
+					return property.getAggregation().getName();
+				}
+			case IUMLTableProperties.VISIBILITY_INDEX:
+				if (VisibilityKind.PUBLIC_LITERAL == property.getVisibility()) {
+					return "";
+				} else {
+					return property.getVisibility().getName();
+				}
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
+					// eResource is null for unresolved eProxyURI, missing profiles
+					if (profile.eResource() != null) {
+						// use the first notation provider found for an applied profile, ignore others
+						String profileURI = profile.eResource().getURI().toString();
+						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+						if (provider != null) {
+							return provider.getAnnotation(property);
+						}
 					}
 				}
+				// return default UML standard annotations, if no extensions found
+				return PropertyNotationUtil.getCustomLabel(property, IUMLNotation.DEFAULT_UML_PROPERTY_ANNOTATIONS);
 			}
-			// return default UML standard annotations, if no extensions found
-			return PropertyNotationUtil.getCustomLabel(property,
-					IUMLNotation.DEFAULT_UML_PROPERTY_ANNOTATIONS);
-		}
-		case IUMLTableProperties.DEFAULT_VALUE_INDEX:
-			if (property.getDefaultValue() != null)
-				return property.getDefaultValue().stringValue();
-			else
-				return "";
-		default:
-			return null;
+			case IUMLTableProperties.DEFAULT_VALUE_INDEX:
+				if (property.getDefaultValue() != null) {
+					return property.getDefaultValue().stringValue();
+				} else {
+					return "";
+				}
+			default:
+				return null;
 		}
 	}
 
@@ -280,140 +295,130 @@ public class PropertyExtItemProvider extends
 	 * @return
 	 */
 	protected static String displayColumnMultiplicity(MultiplicityElement multElement) {
-		if (multElement == null)
+		if (multElement == null) {
 			return "";
-			
+		}
+
 		StringBuffer multDisplay = new StringBuffer();
 		multDisplay.append(multElement.getLower());
 		multDisplay.append("..");
-		multDisplay.append(
-			multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED 
-				? "*" : Integer.toString(multElement.getUpper()));
-		
+		multDisplay.append(multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED
+				? "*"
+				: Integer.toString(multElement.getUpper()));
+
 		return multDisplay.toString();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.ANNOTATION_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.ANNOTATION_PROPERTY.equals(property)) {
 			return false;
-		}
-		else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
 			return true;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
 		Property umlProperty = (Property) element;
-		
+
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return umlProperty.getName();
-		}
-		else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 			return umlProperty.getType();
-		}
-		else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
 			return displayColumnMultiplicity(umlProperty);
-		}
-		else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property)) {
 			return new Integer(umlProperty.getAggregation().getValue());
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return new Integer(umlProperty.getVisibility().getValue());
-		}
-		else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
-			if (umlProperty.getDefaultValue() != null)
+		} else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
+			if (umlProperty.getDefaultValue() != null) {
 				return umlProperty.getDefaultValue().stringValue();
-			else
+			} else {
 				return "";
+			}
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
 		final Property umlProperty = (Property) element;
-		
-		if (IUMLTableProperties.NAME_PROPERTY.equals(property) 
-				|| IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+
+		if (IUMLTableProperties.NAME_PROPERTY.equals(property) ||
+				IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			NamedElementOperations.modify(element, property, value);
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlProperty);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlProperty);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					if (IUMLTableProperties.TYPE_PROPERTY.equals(property) 
-							&& value instanceof Classifier) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					if (IUMLTableProperties.TYPE_PROPERTY.equals(property) && value instanceof Classifier) {
 						setLabel("Set Type");
-						umlProperty.setType((Classifier)value);
-					}
-					else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property) 
-							&& value instanceof Integer) {
+						umlProperty.setType((Classifier) value);
+					} else if (IUMLTableProperties.AGGREGATION_PROPERTY.equals(property) && value instanceof Integer) {
 						setLabel("Set Aggregation");
-						umlProperty.setAggregation(AggregationKind.get(((Integer)value).intValue()));
-					}
-					else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property) 
-							&& value instanceof String) {
+						umlProperty.setAggregation(AggregationKind.get(((Integer) value).intValue()));
+					} else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property) && value instanceof String) {
 						this.setLabel("Set Default Value");
 						if (umlProperty.getDefaultValue() != null) {
 							umlProperty.getDefaultValue().destroy();
 						}
 						String newValue = (String) value;
 						if (newValue != null && newValue.trim().length() > 0) {
-							//TODO check property type and create appropriate literal type
+							// TODO check property type and create appropriate literal type
 							LiteralString literal = UMLFactory.eINSTANCE.createLiteralString();
 							literal.setValue(newValue);
 							umlProperty.setDefaultValue(literal);
 						}
-					}
-					else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property) 
-							&& value instanceof String) {
+					} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property) && value instanceof String) {
 						setLabel("Set Multiplicity");
 						setMultiplicity(umlProperty, value.toString());
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -423,35 +428,35 @@ public class PropertyExtItemProvider extends
 	 * Set multiplicity parsed from a string value, e.g. "0..1" or "1..*".
 	 * Must be called from within a transaction.
 	 */
-	protected static void setMultiplicity(MultiplicityElement multiplicityElement, String value ) {
+	protected static void setMultiplicity(MultiplicityElement multiplicityElement, String value) {
 		int lower = 1;
 		int upper = 1;
-		
+
 		StringTokenizer stk = new StringTokenizer(value, ". ");
 		if (stk.hasMoreTokens()) {
 			lower = parseMultiplicityRangeToken(stk.nextToken());
 			if (!stk.hasMoreTokens()) {
-				if( lower == LiteralUnlimitedNatural.UNLIMITED ) {
+				if (lower == LiteralUnlimitedNatural.UNLIMITED) {
 					lower = 0;
 					upper = LiteralUnlimitedNatural.UNLIMITED;
-				}
-				else {
+				} else {
 					upper = lower;
 				}
-			} 
-			else {
+			} else {
 				upper = parseMultiplicityRangeToken(stk.nextToken());
 				if (stk.hasMoreTokens()) {
 					throw new IllegalArgumentException("illegal range specification: " + value);
 				}
 			}
 		}
-		
+
 		// remove existing values so that we get change notification to update view
-		if (multiplicityElement.getLowerValue() != null)
+		if (multiplicityElement.getLowerValue() != null) {
 			multiplicityElement.getLowerValue().destroy();
-		if (multiplicityElement.getUpperValue() != null)
+		}
+		if (multiplicityElement.getUpperValue() != null) {
 			multiplicityElement.getUpperValue().destroy();
+		}
 
 		multiplicityElement.setUpper(upper);
 		multiplicityElement.setLower(lower);
@@ -460,12 +465,13 @@ public class PropertyExtItemProvider extends
 	/**
 	 * Parse an multiplicity range token; map 'n', '*', or "unbounded" to -1
 	 */
-	protected static int parseMultiplicityRangeToken( String token ) {
+	protected static int parseMultiplicityRangeToken(String token) {
 		try {
-			if (token.equalsIgnoreCase("n") || token.equals("*") || token.equalsIgnoreCase("unbounded"))
+			if (token.equalsIgnoreCase("n") || token.equals("*") || token.equalsIgnoreCase("unbounded")) {
 				return LiteralUnlimitedNatural.UNLIMITED;
-			else
+			} else {
 				return Integer.parseInt(token);
+			}
 		} catch (Exception ex) {
 			throw new IllegalArgumentException("illegal range bound: " + token);
 		}

@@ -35,11 +35,10 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- *
+ * 
  * @version $Id: $
  */
-public class ConstraintExtItemProvider extends ConstraintItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class ConstraintExtItemProvider extends ConstraintItemProvider implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -48,82 +47,94 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.CommentItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.CommentItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
 		String label = getName((Constraint) object);
-		return label == null || label.length() == 0 ?
-			getString("_UI_Constraint_type") : //$NON-NLS-1$
-			label;
+		return label == null || label.length() == 0
+				? getString("_UI_Constraint_type") : //$NON-NLS-1$
+				label;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection getChildren(Object object) {
 		Constraint constraint = (Constraint) object;
 		List children = new ArrayList();
 		children.addAll(constraint.getOwnedComments());
-		
+
 		return children;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.CommentItemProvider#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		// any change to Constraint should refresh the view 
+		// any change to Constraint should refresh the view
 		// (e.g. stereotype assigned or stereotype property changed)
-		fireNotifyChanged(new ViewerNotification(notification, notification
-				.getNotifier(), true, true));
+		fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, true));
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		Constraint constraint = (Constraint) object;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		case IUMLTableProperties.ANNOTATION_INDEX: {
-			// eResource is null for deleted elements
-			if (constraint.eResource() != null) {
-				for (Profile profile : constraint.getNearestPackage().getAllAppliedProfiles()) {
-					// eResource is null for unresolved eProxyURI, missing profiles
-					if (profile.eResource() != null) {
-						// use the first notation provider found for an applied profile, ignore others
-						String profileURI = profile.eResource().getURI().toString();
-						INotationProvider provider = 
-							NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-						if (provider != null) {
-							return provider.getAnnotationImage(constraint);
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				// eResource is null for deleted elements
+				if (constraint.eResource() != null) {
+					for (Profile profile : constraint.getNearestPackage().getAllAppliedProfiles()) {
+						// eResource is null for unresolved eProxyURI, missing profiles
+						if (profile.eResource() != null) {
+							// use the first notation provider found for an applied profile, ignore others
+							String profileURI = profile.eResource().getURI().toString();
+							INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+							if (provider != null) {
+								return provider.getAnnotationImage(constraint);
+							}
 						}
 					}
 				}
 			}
-		}
-		default:
-			return null;
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		Constraint constraint = (Constraint) object;
 
@@ -131,29 +142,35 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 		String languages = "";
 		ValueSpecification spec = constraint.getSpecification();
 		if (spec instanceof OpaqueExpression) {
-			for (int i=0; i<((OpaqueExpression) spec).getLanguages().size(); i++) {
+			for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
 				String lang = ((OpaqueExpression) spec).getLanguages().get(i);
-				if (languages.length() > 0)
+				if (languages.length() > 0) {
 					languages += ", ";
+				}
 				languages += lang;
-				if (body == null)
+				if (body == null) {
 					body = ((OpaqueExpression) spec).getBodies().get(i);
+				}
 			}
 		}
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getText(object);
-		case IUMLTableProperties.ANNOTATION_INDEX:
-			return languages;
-		case IUMLTableProperties.DEFAULT_VALUE_INDEX:
-			return (body != null) ? body : "";
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getText(object);
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return languages;
+			case IUMLTableProperties.DEFAULT_VALUE_INDEX:
+				return (body != null)
+						? body
+						: "";
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -163,7 +180,9 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
@@ -175,7 +194,9 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

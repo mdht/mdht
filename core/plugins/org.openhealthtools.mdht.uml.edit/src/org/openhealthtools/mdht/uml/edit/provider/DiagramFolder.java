@@ -13,7 +13,7 @@
 package org.openhealthtools.mdht.uml.edit.provider;
 
 /**
- *
+ * 
  * @version $Id: $
  */
 public class DiagramFolder {

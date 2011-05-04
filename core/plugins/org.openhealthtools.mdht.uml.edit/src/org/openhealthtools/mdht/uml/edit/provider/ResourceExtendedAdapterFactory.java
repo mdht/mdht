@@ -16,28 +16,33 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 
 /**
- *
+ * 
  * @version $Id: $
  */
-public class ResourceExtendedAdapterFactory extends
-		ResourceItemProviderAdapterFactory {
+public class ResourceExtendedAdapterFactory extends ResourceItemProviderAdapterFactory {
 
 	public ResourceExtendedAdapterFactory() {
 		super();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory#createResourceAdapter()
 	 */
+	@Override
 	public Adapter createResourceAdapter() {
-	    return new ResourceExtItemProvider(this);
+		return new ResourceExtItemProvider(this);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory#createResourceSetAdapter()
 	 */
+	@Override
 	public Adapter createResourceSetAdapter() {
-	    return new ResourceSetExtItemProvider(this);
+		return new ResourceSetExtItemProvider(this);
 	}
 
 }

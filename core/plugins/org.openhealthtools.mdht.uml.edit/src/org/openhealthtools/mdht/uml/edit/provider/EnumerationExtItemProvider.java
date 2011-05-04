@@ -32,13 +32,12 @@ import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
-public class EnumerationExtItemProvider extends EnumerationItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class EnumerationExtItemProvider extends EnumerationItemProvider implements ITableItemLabelProvider,
+		ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -47,34 +46,43 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.EnumerationItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.EnumerationItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
-		String label = getName((Enumeration)object);
-		return label == null || label.length() == 0 ?
-			getString("_UI_Enumeration_type") : //$NON-NLS-1$
-			label;
+		String label = getName((Enumeration) object);
+		return label == null || label.length() == 0
+				? getString("_UI_Enumeration_type") : //$NON-NLS-1$
+				label;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection getChildren(Object object) {
 		Enumeration datatype = (Enumeration) object;
 		List children = new ArrayList();
@@ -84,78 +92,84 @@ public class EnumerationExtItemProvider extends EnumerationItemProvider
 		children.addAll(datatype.getOwnedAttributes());
 		children.addAll(datatype.getOwnedLiterals());
 		children.addAll(datatype.getClientDependencies());
-		
+
 		return children;
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		Classifier classifier = (Classifier) element;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getName(classifier);
-		case IUMLTableProperties.VISIBILITY_INDEX:
-			if (VisibilityKind.PUBLIC_LITERAL == classifier.getVisibility())
-				return "";
-			else
-				return classifier.getVisibility().getName();
-		case IUMLTableProperties.ANNOTATION_INDEX: {
-			for (Profile profile : classifier.getNearestPackage().getAllAppliedProfiles()) {
-				// eResource is null for unresolved eProxyURI, missing profiles
-				if (profile.eResource() != null) {
-					// use the first notation provider found for an applied profile, ignore others
-					String profileURI = profile.eResource().getURI().toString();
-					INotationProvider provider = 
-						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-					if (provider != null) {
-						return provider.getAnnotation(classifier);
+			case IUMLTableProperties.NAME_INDEX:
+				return getName(classifier);
+			case IUMLTableProperties.VISIBILITY_INDEX:
+				if (VisibilityKind.PUBLIC_LITERAL == classifier.getVisibility()) {
+					return "";
+				} else {
+					return classifier.getVisibility().getName();
+				}
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				for (Profile profile : classifier.getNearestPackage().getAllAppliedProfiles()) {
+					// eResource is null for unresolved eProxyURI, missing profiles
+					if (profile.eResource() != null) {
+						// use the first notation provider found for an applied profile, ignore others
+						String profileURI = profile.eResource().getURI().toString();
+						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+						if (provider != null) {
+							return provider.getAnnotation(classifier);
+						}
 					}
 				}
 			}
-		}
-		default:
-			return null;
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return true;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
 		Classifier classifier = (Classifier) element;
-		
+
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return classifier.getName();
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return new Integer(classifier.getVisibility().getValue());
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

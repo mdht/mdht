@@ -53,11 +53,10 @@ import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- *
+ * 
  * @version $Id: $
  */
-public class ParameterExtItemProvider extends ParameterItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class ParameterExtItemProvider extends ParameterItemProvider implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -66,47 +65,53 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.GeneralizationItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
-//		Parameter parameter = (Parameter) object;
-//		if (ParameterDirectionKind.IN_LITERAL == parameter.getDirection())
-//			return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ParameterIn");
-//		if (ParameterDirectionKind.RETURN_LITERAL == parameter.getDirection())
-//			return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ParameterReturn");
-//		else
-//			return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/Parameter");
-		
+		// Parameter parameter = (Parameter) object;
+		// if (ParameterDirectionKind.IN_LITERAL == parameter.getDirection())
+		// return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ParameterIn");
+		// if (ParameterDirectionKind.RETURN_LITERAL == parameter.getDirection())
+		// return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ParameterReturn");
+		// else
+		// return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/Parameter");
+
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.GeneralizationItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
 		Parameter parameter = (Parameter) object;
 		String name = getName(parameter);
 		if (name == null || name.length() == 0) {
 			name = getString("_UI_Parameter_type");
 		}
-				
+
 		StringBuffer label = new StringBuffer();
 		label.append(name);
 		if (parameter.getType() != null) {
 			label.append(" : ").append(getName(parameter.getType()));
 		}
-		
+
 		label.append(displayMultiplicity(parameter));
-		
+
 		String defaultValue = parameter.getDefault();
 		if (defaultValue != null && defaultValue.length() > 0) {
 			label.append(" = ");
@@ -128,12 +133,12 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 			multDisplay.append(" [");
 			multDisplay.append(multElement.getLower());
 			multDisplay.append("..");
-			multDisplay.append(
-				multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED 
-					? "*" : Integer.toString(multElement.getUpper()));
+			multDisplay.append(multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED
+					? "*"
+					: Integer.toString(multElement.getUpper()));
 			multDisplay.append("]");
 		}
-		
+
 		return multDisplay.toString();
 	}
 
@@ -141,21 +146,27 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		return multElement.getLower() != 1 || multElement.getUpper() != 1;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection getChildren(Object object) {
 		Parameter parameter = (Parameter) object;
 		List<Element> children = new ArrayList<Element>();
 
 		children.addAll(parameter.getOwnedComments());
-		
+
 		return children;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PropertyItemProvider#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
@@ -170,45 +181,49 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		super.notifyChanged(notification);
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		Parameter parameter = (Parameter) object;
 		Type type = parameter.getType();
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(parameter);
-		case IUMLTableProperties.TYPE_INDEX: {
-			if (type != null) {
-				IItemLabelProvider provider = 
-					(IItemLabelProvider) getAdapterFactory().adapt(
-							type, IItemLabelProvider.class);
-				if (provider != null)
-					return provider.getImage(type);
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(parameter);
+			case IUMLTableProperties.TYPE_INDEX: {
+				if (type != null) {
+					IItemLabelProvider provider = (IItemLabelProvider) getAdapterFactory().adapt(
+						type, IItemLabelProvider.class);
+					if (provider != null) {
+						return provider.getImage(type);
+					}
+				}
 			}
 		}
-		}
-		
+
 		return null;
 	}
 
+	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		Parameter parameter = (Parameter) object;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getName(parameter);
-		case IUMLTableProperties.TYPE_INDEX:
-			return (parameter.getType() == null) ? null :
-					getName(parameter.getType());
-		case IUMLTableProperties.MULTIPLICITY_INDEX:
-			return displayColumnMultiplicity(parameter);
-		case IUMLTableProperties.DEFAULT_VALUE_INDEX:
-			if (parameter.getDefaultValue() != null)
-				return parameter.getDefaultValue().stringValue();
-			else
-				return "";
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getName(parameter);
+			case IUMLTableProperties.TYPE_INDEX:
+				return (parameter.getType() == null)
+						? null
+						: getName(parameter.getType());
+			case IUMLTableProperties.MULTIPLICITY_INDEX:
+				return displayColumnMultiplicity(parameter);
+			case IUMLTableProperties.DEFAULT_VALUE_INDEX:
+				if (parameter.getDefaultValue() != null) {
+					return parameter.getDefaultValue().stringValue();
+				} else {
+					return "";
+				}
+			default:
+				return null;
 		}
 	}
 
@@ -222,114 +237,110 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		StringBuffer multDisplay = new StringBuffer();
 		multDisplay.append(multElement.getLower());
 		multDisplay.append("..");
-		multDisplay.append(
-			multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED 
-				? "*" : Integer.toString(multElement.getUpper()));
-		
+		multDisplay.append(multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED
+				? "*"
+				: Integer.toString(multElement.getUpper()));
+
 		return multDisplay.toString();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
 			return true;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
 		Parameter parameter = (Parameter) element;
-		
+
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return parameter.getName();
-		}
-		else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 			return parameter.getType();
-		}
-		else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
 			return displayColumnMultiplicity(parameter);
-		}
-		else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
-			if (parameter.getDefaultValue() != null)
+		} else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
+			if (parameter.getDefaultValue() != null) {
 				return parameter.getDefaultValue().stringValue();
-			else
+			} else {
 				return "";
+			}
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
 		final Parameter parameter = (Parameter) element;
-		
-		if (IUMLTableProperties.NAME_PROPERTY.equals(property) 
-				|| IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+
+		if (IUMLTableProperties.NAME_PROPERTY.equals(property) ||
+				IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			NamedElementOperations.modify(element, property, value);
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(parameter);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(parameter);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					if (IUMLTableProperties.TYPE_PROPERTY.equals(property) 
-							&& value instanceof Classifier) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					if (IUMLTableProperties.TYPE_PROPERTY.equals(property) && value instanceof Classifier) {
 						setLabel("Set Parameter Type");
-						parameter.setType((Classifier)value);
-					}
-					else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property) 
-							&& value instanceof String) {
+						parameter.setType((Classifier) value);
+					} else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property) && value instanceof String) {
 						this.setLabel("Set Default Value");
 						if (parameter.getDefaultValue() != null) {
 							parameter.getDefaultValue().destroy();
 						}
 						String newValue = (String) value;
 						if (newValue != null && newValue.trim().length() > 0) {
-							//TODO check property type and create appropriate literal type
+							// TODO check property type and create appropriate literal type
 							LiteralString literal = UMLFactory.eINSTANCE.createLiteralString();
 							literal.setValue(newValue);
 							parameter.setDefaultValue(literal);
 						}
-					}
-					else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property) 
-							&& value instanceof String) {
+					} else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property) && value instanceof String) {
 						setLabel("Set Multiplicity");
 						setMultiplicity(parameter, value.toString());
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -339,35 +350,35 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 	 * Set multiplicity parsed from a string value, e.g. "0..1" or "1..*".
 	 * Must be called from within a transaction.
 	 */
-	private void setMultiplicity(MultiplicityElement multiplicityElement, String value ) {
+	private void setMultiplicity(MultiplicityElement multiplicityElement, String value) {
 		int lower = 1;
 		int upper = 1;
-		
+
 		StringTokenizer stk = new StringTokenizer(value, ". ");
 		if (stk.hasMoreTokens()) {
 			lower = parseMultiplicityRangeToken(stk.nextToken());
 			if (!stk.hasMoreTokens()) {
-				if( lower == LiteralUnlimitedNatural.UNLIMITED ) {
+				if (lower == LiteralUnlimitedNatural.UNLIMITED) {
 					lower = 0;
 					upper = LiteralUnlimitedNatural.UNLIMITED;
-				}
-				else {
+				} else {
 					upper = lower;
 				}
-			} 
-			else {
+			} else {
 				upper = parseMultiplicityRangeToken(stk.nextToken());
 				if (stk.hasMoreTokens()) {
 					throw new IllegalArgumentException("illegal range specification: " + value);
 				}
 			}
 		}
-		
+
 		// remove existing values so that we get change notification to update view
-		if (multiplicityElement.getLowerValue() != null)
+		if (multiplicityElement.getLowerValue() != null) {
 			multiplicityElement.getLowerValue().destroy();
-		if (multiplicityElement.getUpperValue() != null)
+		}
+		if (multiplicityElement.getUpperValue() != null) {
 			multiplicityElement.getUpperValue().destroy();
+		}
 
 		multiplicityElement.setUpper(upper);
 		multiplicityElement.setLower(lower);
@@ -376,12 +387,13 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 	/**
 	 * Parse an multiplicity range token; map 'n', '*', or "unbounded" to -1
 	 */
-	private int parseMultiplicityRangeToken( String token ) {
+	private int parseMultiplicityRangeToken(String token) {
 		try {
-			if (token.equalsIgnoreCase("n") || token.equals("*") || token.equalsIgnoreCase("unbounded"))
+			if (token.equalsIgnoreCase("n") || token.equals("*") || token.equalsIgnoreCase("unbounded")) {
 				return LiteralUnlimitedNatural.UNLIMITED;
-			else
+			} else {
 				return Integer.parseInt(token);
+			}
 		} catch (Exception ex) {
 			throw new IllegalArgumentException("illegal range bound: " + token);
 		}

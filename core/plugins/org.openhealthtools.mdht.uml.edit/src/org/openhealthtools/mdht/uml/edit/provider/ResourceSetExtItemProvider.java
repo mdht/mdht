@@ -18,7 +18,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceSetItemProvider;
 
 /**
- *
+ * 
  * @version $Id: $
  */
 public class ResourceSetExtItemProvider extends ResourceSetItemProvider {
@@ -30,26 +30,35 @@ public class ResourceSetExtItemProvider extends ResourceSetItemProvider {
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceSetItemProvider#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection getChildren(Object object) {
 		return super.getChildren(object);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceSetItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
-//		return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ResourceSet");
+		// return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ResourceSet");
 		return super.getImage(object);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceSetItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
-	    return super.getText(object);
+		return super.getText(object);
 	}
 
 }
