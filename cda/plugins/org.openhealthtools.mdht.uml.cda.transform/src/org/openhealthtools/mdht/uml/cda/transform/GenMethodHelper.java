@@ -226,10 +226,10 @@ public class GenMethodHelper {
 						+ "(" + domainType.getName() + ") eObject;" + LF);
 				
 				if (cdaProperty.getUpper() == 1) {
-					operationBody.append("set" + cdaTargetClass.getName() + "(value);" + LF);
+					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
 				}
 				else {
-					operationBody.append("get" + pluralize(cdaTargetClass.getName()) + "().add(value);" + LF);
+					operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
 				}
 				operationBody.append("return value;");
 			}

@@ -40,6 +40,7 @@ public class EcoreTransformerOptions {
 	// use Vector for a thread-safe synchronized List
 	private List<Element> deletedElementList = new Vector<Element>();
 	
+	private String domainModelPath;
 	private Package domainInterfacePackage;
 	
 	private PluginPropertiesUtil pluginPropertiesUtil = null;
@@ -119,6 +120,14 @@ public class EcoreTransformerOptions {
 
 	public void setDomainInterfacePackage(Package domainInterfacePackage) {
 		this.domainInterfacePackage = domainInterfacePackage;
+	}
+
+	public String getDomainModelPath() {
+		return domainModelPath;
+	}
+
+	public void setDomainModelPath(String domainModelPath) {
+		this.domainModelPath = domainModelPath;
 	}
 
 }
