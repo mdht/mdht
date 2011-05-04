@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.actions;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -31,11 +43,13 @@ import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.term.ui.internal.l10n.Messages;
 
 public class AddValueSetVersionAction implements IObjectActionDelegate {
-	
+
 	protected IWorkbenchPart activePart;
+
 	protected ISelection currentSelection;
+
 	protected Package selectedPackage;
-	
+
 	public AddValueSetVersionAction() {
 		super();
 	}
@@ -46,44 +60,39 @@ public class AddValueSetVersionAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(selectedPackage);
-			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, Messages.AddValueSetVersion_operation_title) {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+
+			IUndoableOperation operation = new AbstractEMFOperation(
+				editingDomain, Messages.AddValueSetVersion_operation_title) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
 					Enumeration enumeration = UMLFactory.eINSTANCE.createEnumeration();
-					
-					String name = UMLUtil.getUniqueTypeName(selectedPackage, 
-							Messages.AddValueSetVersion_default_name);
+
+					String name = UMLUtil.getUniqueTypeName(selectedPackage, Messages.AddValueSetVersion_default_name);
 					enumeration.setName(name);
 					selectedPackage.getOwnedTypes().add(enumeration);
 					TermProfileUtil.applyStereotype(enumeration, ITermProfileConstants.VALUE_SET_VERSION);
 
 					if (activePart instanceof ISetSelectionTarget) {
-						((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(enumeration));
+						((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(enumeration));
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
 
-		    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-		    }
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
-	}
-	
-	/**
-	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		activePart = targetPart;
 	}
 
 	/**
@@ -92,28 +101,33 @@ public class AddValueSetVersionAction implements IObjectActionDelegate {
 	public void selectionChanged(IAction action, ISelection selection) {
 		currentSelection = selection;
 		selectedPackage = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof View) {
-				selected = ((View)selected).getElement();
+				selected = ((View) selected).getElement();
 			}
-			
+
 			if (selected instanceof Package) {
 				selectedPackage = (Package) selected;
 			}
 		}
-		
-		if (selectedPackage != null &&
-				TermProfileUtil.getAppliedProfile(selectedPackage) != null) {
+
+		if (selectedPackage != null && TermProfileUtil.getAppliedProfile(selectedPackage) != null) {
 			action.setEnabled(true);
-		}
-		else {
+		} else {
 			action.setEnabled(false);
 		}
+	}
+
+	/**
+	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
+	 */
+	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		activePart = targetPart;
 	}
 
 }

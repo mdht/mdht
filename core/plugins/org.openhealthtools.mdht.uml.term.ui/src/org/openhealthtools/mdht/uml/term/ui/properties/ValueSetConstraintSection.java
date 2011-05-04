@@ -78,21 +78,30 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerProp
 public class ValueSetConstraintSection extends ResettableModelerPropertySection {
 
 	private Property property;
-	
+
 	private Text idText;
+
 	private boolean idModified = false;
+
 	private Text nameText;
+
 	private boolean nameModified = false;
+
 	private Text versionText;
+
 	private boolean versionModified = false;
+
 	private CCombo bindingCombo;
+
 	private boolean bindingModified = false;
 
 	private CLabel valueSetRefLabel;
+
 	private Button valueSetRefButton;
+
 	private Button valueSetRefDeleteButton;
-	
-    private ModifyListener modifyListener = new ModifyListener() {
+
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (idText == event.getSource()) {
 				idModified = true;
@@ -112,11 +121,12 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -126,117 +136,114 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
-		if (!(idModified || nameModified || versionModified
-				|| bindingModified)) {
+		if (!(idModified || nameModified || versionModified || bindingModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 					if (ctsProfile == null) {
 						return Status.CANCEL_STATUS;
 					}
-					Enumeration bindingKind = (Enumeration)
-						ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
-					
+					Enumeration bindingKind = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+
 					Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-							property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
-					
+						property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
+
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
-					}
-					else if (idModified) {
+					} else if (idModified) {
 						idModified = false;
 						this.setLabel("Set Value Set ID");
 
 						if (stereotype != null) {
 							String value = idText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.VALUE_SET_CONSTRAINT_ID,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_ID, value.length() > 0
+										? value
+										: null);
 
 						}
-					}
-					else if (nameModified) {
+					} else if (nameModified) {
 						nameModified = false;
 						this.setLabel("Set Value Set Name");
 
 						if (stereotype != null) {
 							String value = nameText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.VALUE_SET_CONSTRAINT_NAME,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_NAME, value.length() > 0
+										? value
+										: null);
 
 						}
-					}
-					else if (versionModified) {
+					} else if (versionModified) {
 						versionModified = false;
 						this.setLabel("Set Value Set Version");
 
 						if (stereotype != null) {
 							String value = versionText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.VALUE_SET_CONSTRAINT_VERSION,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_VERSION, value.length() > 0
+										? value
+										: null);
 
 						}
-					}
-					else if (bindingModified) {
+					} else if (bindingModified) {
 						bindingModified = false;
 						this.setLabel("Set Binding");
 						if (stereotype != null && bindingKind != null) {
 							if (bindingCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
 								property.setValue(stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_BINDING, null);
-							}
-							else {
-								EnumerationLiteral literal = (EnumerationLiteral) bindingKind.getOwnedLiterals()
-									.get(bindingCombo.getSelectionIndex());
-								property.setValue(stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_BINDING, literal);
+							} else {
+								EnumerationLiteral literal = bindingKind.getOwnedLiterals().get(
+									bindingCombo.getSelectionIndex());
+								property.setValue(
+									stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_BINDING, literal);
 							}
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					updateViews();
 
-					
-			        return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
-			    	
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
+
 					if (valueSetConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -248,19 +255,20 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 
 					updateViews();
 					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -271,65 +279,62 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		if (ctsProfile == null) {
 			return;
 		}
-		final Stereotype valueSetVersionStereotype = (Stereotype)
-			ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_VERSION);
+		final Stereotype valueSetVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_VERSION);
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
-				return (element instanceof Enumeration)
-					&& element.isStereotypeApplied(valueSetVersionStereotype);
+				return (element instanceof Enumeration) && element.isStereotypeApplied(valueSetVersionStereotype);
 			}
 		};
-		
+
 		final Enumeration valueSetEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-				filter,
-				property.eResource().getResourceSet(), 
-				getPart().getSite().getShell(), null,
-				"Select a Value Set");
+			filter, property.eResource().getResourceSet(), getPart().getSite().getShell(), null, "Select a Value Set");
 		if (valueSetEnum == null) {
 			return;
 		}
 
 		final Stereotype valueSetStereotype = TermProfileUtil.getAppliedStereotype(
-				valueSetEnum, ITermProfileConstants.VALUE_SET_VERSION);
+			valueSetEnum, ITermProfileConstants.VALUE_SET_VERSION);
 		if (valueSetStereotype == null) {
-			MessageDialog.openError(getPart().getSite().getShell(), 
-					"Invalid Enumeration", "The selected Enumertion must be a <<ValueSetVersion>>");
+			MessageDialog.openError(
+				getPart().getSite().getShell(), "Invalid Enumeration",
+				"The selected Enumertion must be a <<ValueSetVersion>>");
 			return;
 		}
 		final ValueSetVersion valueSet = (ValueSetVersion) valueSetEnum.getStereotypeApplication(valueSetStereotype);
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 					if (valueSetConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
 					this.setLabel("Set ValueSet reference");
 					valueSetConstraint.setReference(valueSet);
-					
+
 					valueSetConstraint.setIdentifier(null);
 					valueSetConstraint.setName(null);
 					valueSetConstraint.setVersion(null);
 					valueSetConstraint.setBinding(null);
-						
-					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					refresh();
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -337,96 +342,96 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 
 	private void deleteValueSetReference() {
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 					if (valueSetConstraint == null || valueSetConstraint.getReference() == null) {
 						return Status.CANCEL_STATUS;
 					}
-					
+
 					this.setLabel("Remove ValueSet reference");
 					valueSetConstraint.setReference(null);
-					
+
 					valueSetConstraint.setIdentifier(null);
 					valueSetConstraint.setName(null);
 					valueSetConstraint.setVersion(null);
 					valueSetConstraint.setBinding(null);
-					
-					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					refresh();
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Value Set");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
+		Composite composite = getWidgetFactory().createGroup(parent, "Value Set");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
 
-        int numberOfRows = 3;
+		int numberOfRows = 3;
 		FormData data = null;
 
 		/* ------ ValueSet reference ------ */
 		valueSetRefLabel = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 
-        valueSetRefButton = getWidgetFactory().createButton(composite,
-            "Select Value Set...", SWT.PUSH); //$NON-NLS-1$
-        valueSetRefButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	addValueSetReference();
-            }
-        });
-        
-        valueSetRefDeleteButton = getWidgetFactory().createButton(composite,
-                "X", SWT.PUSH); //$NON-NLS-1$
-        valueSetRefDeleteButton.addSelectionListener(new SelectionAdapter() {
-                public void widgetSelected(SelectionEvent event) {
-                	deleteValueSetReference();
-                }
-            });
+		valueSetRefButton = getWidgetFactory().createButton(composite, "Select Value Set...", SWT.PUSH); //$NON-NLS-1$
+		valueSetRefButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				addValueSetReference();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.height = buttonHeight;
-		data.top = new FormAttachment(0,numberOfRows);
-        valueSetRefButton.setLayoutData(data);
+		valueSetRefDeleteButton = getWidgetFactory().createButton(composite, "X", SWT.PUSH); //$NON-NLS-1$
+		valueSetRefDeleteButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				deleteValueSetReference();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(valueSetRefButton, 0);
-        data.height = buttonHeight;
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.height = buttonHeight;
+		data.top = new FormAttachment(0, numberOfRows);
+		valueSetRefButton.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(valueSetRefButton, 0);
+		data.height = buttonHeight;
 		data.top = new FormAttachment(valueSetRefButton, 0, SWT.CENTER);
-        valueSetRefDeleteButton.setLayoutData(data);
+		valueSetRefDeleteButton.setLayoutData(data);
 
 		/* ---- Restore Defaults button ---- */
 		createRestoreDefaultsButton(composite);
@@ -435,16 +440,15 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		data.top = new FormAttachment(valueSetRefLabel, 0, SWT.CENTER);
 		restoreDefaultsButton.setLayoutData(data);
 
-        data = new FormData();
-        data.left = new FormAttachment(valueSetRefDeleteButton, 0);
-        data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
+		data = new FormData();
+		data.left = new FormAttachment(valueSetRefDeleteButton, 0);
+		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(valueSetRefButton, 0, SWT.CENTER);
-        valueSetRefLabel.setLayoutData(data);
+		valueSetRefLabel.setLayoutData(data);
 
 		/* ------ Name field ------ */
 		nameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel nameLabel = getWidgetFactory()
-				.createCLabel(composite, "Name:"); //$NON-NLS-1$
+		CLabel nameLabel = getWidgetFactory().createCLabel(composite, "Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
@@ -453,13 +457,12 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
 		data.right = new FormAttachment(50, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		nameText.setLayoutData(data);
 
 		/* ------ ID field ------ */
 		idText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel idLabel = getWidgetFactory()
-				.createCLabel(composite, "ID:"); //$NON-NLS-1$
+		CLabel idLabel = getWidgetFactory().createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(nameText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
@@ -468,42 +471,38 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		data = new FormData();
 		data.left = new FormAttachment(idLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		idText.setLayoutData(data);
 
 		/* ---- binding combo ---- */
 		bindingCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
-		bindingCombo.setItems(new String[] {
-				"Static", 
-				"Dynamic"
-		});
+		bindingCombo.setItems(new String[] { "Static", "Dynamic" });
 		bindingCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				bindingModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				bindingModified = true;
 				modifyFields();
 			}
 		});
 
-		CLabel bindingLabel = getWidgetFactory()
-				.createCLabel(composite, "Binding:"); //$NON-NLS-1$
+		CLabel bindingLabel = getWidgetFactory().createCLabel(composite, "Binding:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(bindingCombo, 0, SWT.CENTER);
 		bindingLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(bindingLabel, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.left = new FormAttachment(bindingLabel, 0);
+		data.top = new FormAttachment(2, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		bindingCombo.setLayoutData(data);
 
 		/* ------ Version field ------ */
 		versionText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel versionLabel = getWidgetFactory()
-				.createCLabel(composite, "Version:"); //$NON-NLS-1$
+		CLabel versionLabel = getWidgetFactory().createCLabel(composite, "Version:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(bindingCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(versionText, 0, SWT.CENTER);
@@ -512,15 +511,15 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
 		data.right = new FormAttachment(50, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(2, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		versionText.setLayoutData(data);
 
 	}
-	
+
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -533,8 +532,10 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -544,6 +545,7 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -551,30 +553,30 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
-		Enumeration bindingKind = (Enumeration)
-			ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+		Enumeration bindingKind = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
 
-    	ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
-		
+		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
+
 		ValueSetVersion valueSet = null;
 		Enumeration referenceEnum = null;
 		if (valueSetConstraint != null && valueSetConstraint.getReference() != null) {
 			valueSet = valueSetConstraint.getReference();
-			referenceEnum = (Enumeration) valueSet.getBase_Enumeration();
-			valueSetRefLabel.setText(valueSet.getEnumerationQualifiedName() );
+			referenceEnum = valueSet.getBase_Enumeration();
+			valueSetRefLabel.setText(valueSet.getEnumerationQualifiedName());
 			valueSetRefLabel.layout();
-		}
-		else {
+		} else {
 			valueSetRefLabel.setText("");
 		}
 
@@ -582,10 +584,13 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		idText.removeKeyListener(keyListener);
 		idText.removeFocusListener(focusListener);
 		if (valueSetConstraint != null) {
-			String id = valueSet==null ? valueSetConstraint.getIdentifier() : valueSet.getIdentifier();
-			idText.setText(id!=null ? id : "");
-		}
-		else {
+			String id = valueSet == null
+					? valueSetConstraint.getIdentifier()
+					: valueSet.getIdentifier();
+			idText.setText(id != null
+					? id
+					: "");
+		} else {
 			idText.setText("");
 		}
 		idText.addModifyListener(modifyListener);
@@ -596,10 +601,13 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
 		if (valueSetConstraint != null) {
-			String name = valueSet==null ? valueSetConstraint.getName() : valueSet.getEnumerationName();
-			nameText.setText(name!=null ? name : "");
-		}
-		else {
+			String name = valueSet == null
+					? valueSetConstraint.getName()
+					: valueSet.getEnumerationName();
+			nameText.setText(name != null
+					? name
+					: "");
+		} else {
 			nameText.setText("");
 		}
 		nameText.addModifyListener(modifyListener);
@@ -610,10 +618,13 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		versionText.removeKeyListener(keyListener);
 		versionText.removeFocusListener(focusListener);
 		if (valueSetConstraint != null) {
-			String version = valueSet==null ? valueSetConstraint.getVersion() : valueSet.getVersion();
-			versionText.setText(version!=null ? version : "");
-		}
-		else {
+			String version = valueSet == null
+					? valueSetConstraint.getVersion()
+					: valueSet.getVersion();
+			versionText.setText(version != null
+					? version
+					: "");
+		} else {
 			versionText.setText("");
 		}
 		versionText.addModifyListener(modifyListener);
@@ -622,8 +633,10 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 
 		bindingCombo.select(0);
 		if (valueSetConstraint != null) {
-			BindingKind binding = valueSet==null ? valueSetConstraint.getBinding() : valueSet.getBinding();
-			
+			BindingKind binding = valueSet == null
+					? valueSetConstraint.getBinding()
+					: valueSet.getBinding();
+
 			if (bindingKind != null && binding != null) {
 				EnumerationLiteral literal = bindingKind.getOwnedLiteral(binding.getName());
 				int index = bindingKind.getOwnedLiterals().indexOf(literal);
@@ -637,8 +650,7 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 			nameText.setEnabled(false);
 			versionText.setEnabled(false);
 			bindingCombo.setEnabled(false);
-		}
-		else {
+		} else {
 			valueSetRefLabel.setEnabled(true);
 			idText.setEnabled(referenceEnum == null);
 			nameText.setEnabled(referenceEnum == null);
@@ -654,19 +666,23 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}
@@ -676,10 +692,12 @@ public class ValueSetConstraintSection extends ResettableModelerPropertySection 
 		// fire notification for any stereotype property changes to update views
 		// this is a bogus notification of change to property name, but can't find a better option
 		Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+			@Override
 			public Object getNotifier() {
 				return property;
 			}
 
+			@Override
 			public int getFeatureID(Class expectedClass) {
 				return UMLPackage.PROPERTY__NAME;
 			}

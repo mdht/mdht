@@ -18,17 +18,17 @@ import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 /**
- * Selects an object if it is a UML Property with 
+ * Selects an object if it is a UML Property with
  * CodeSystemConstraint stereotype applied.
  */
 public class CodeSystemConstraintFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
+
 		if (element instanceof Property) {
 			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-					element, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+				element, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 			return stereotype != null;
 		}
 		return false;

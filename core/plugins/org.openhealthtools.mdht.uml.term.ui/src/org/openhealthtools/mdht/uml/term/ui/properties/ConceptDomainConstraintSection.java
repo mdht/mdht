@@ -64,9 +64,10 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 	private Property property;
 
 	private Text conceptDomainNameText;
+
 	private boolean conceptDomainNameModified = false;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (conceptDomainNameText == event.getSource()) {
 				conceptDomainNameModified = true;
@@ -80,11 +81,12 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -94,21 +96,21 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(conceptDomainNameModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-							property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
-					
+						property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -118,44 +120,46 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 
 						if (stereotype != null) {
 							String value = conceptDomainNameText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT_NAME,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT_NAME, value.length() > 0
+										? value
+										: null);
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					updateViews();
 
 					return Status.OK_STATUS;
-			    }};
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ConceptDomainConstraint conceptDomainConstraint = TermProfileUtil.getConceptDomainConstraint(property);
-			    	
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					ConceptDomainConstraint conceptDomainConstraint = TermProfileUtil.getConceptDomainConstraint(property);
+
 					if (conceptDomainConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -164,50 +168,49 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 
 					updateViews();
 					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Concept Domain");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
-		
+		Composite composite = getWidgetFactory().createGroup(parent, "Concept Domain");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
 		FormData data = null;
 
 		conceptDomainNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel nameLabel = getWidgetFactory()
-				.createCLabel(composite, "Name:"); //$NON-NLS-1$
+		CLabel nameLabel = getWidgetFactory().createCLabel(composite, "Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(conceptDomainNameText, 0, SWT.CENTER);
 		nameLabel.setLayoutData(data);
-		
+
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
 		data.width = 200;
-		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		conceptDomainNameText.setLayoutData(data);
 
 		/* ---- Restore Defaults button ---- */
@@ -219,10 +222,10 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -234,6 +237,7 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 	/*
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -243,6 +247,7 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -250,18 +255,20 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void refresh() {
 		Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-				property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+			property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 
 		conceptDomainNameText.removeModifyListener(modifyListener);
 		conceptDomainNameText.removeKeyListener(keyListener);
 		conceptDomainNameText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = (String) property.getValue(stereotype, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT_NAME);
-			conceptDomainNameText.setText(name!=null ? name : "");
-		}
-		else {
+			conceptDomainNameText.setText(name != null
+					? name
+					: "");
+		} else {
 			conceptDomainNameText.setText("");
 		}
 		conceptDomainNameText.addModifyListener(modifyListener);
@@ -271,8 +278,7 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 		if (isReadOnly()) {
 			conceptDomainNameText.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
-		}
-		else {
+		} else {
 			conceptDomainNameText.setEnabled(true);
 			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
@@ -284,30 +290,36 @@ public class ConceptDomainConstraintSection extends ResettableModelerPropertySec
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}
 	}
-	
+
 	protected void updateViews() {
 		Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+			@Override
 			public Object getNotifier() {
 				return property;
 			}
 
+			@Override
 			public int getFeatureID(Class expectedClass) {
 				return UMLPackage.PROPERTY__NAME;
 			}

@@ -77,35 +77,58 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerProp
 public class ValueSetVersionSection extends ResettableModelerPropertySection {
 
 	private Enumeration umlEnumeration;
-	
+
 	private Text idText;
+
 	private boolean idModified = false;
+
 	private Text nameText;
+
 	private boolean nameModified = false;
+
 	private Text fullNameText;
+
 	private boolean fullNameModified = false;
+
 	private Text versionText;
+
 	private boolean versionModified = false;
+
 	private Text sourceText;
+
 	private boolean sourceModified = false;
+
 	private Text urlText;
+
 	private boolean urlModified = false;
+
 	private CCombo typeCombo;
+
 	private boolean typeModified = false;
+
 	private CCombo bindingCombo;
+
 	private boolean bindingModified = false;
+
 	private Text effectiveDateText;
+
 	private boolean effectiveDateModified = false;
+
 	private Text releaseDateText;
+
 	private boolean releaseDateModified = false;
+
 	private Text definitionText;
+
 	private boolean definitionModified = false;
 
 	private CLabel codeSystemRefLabel;
+
 	private Button codeSystemRefButton;
+
 	private Button codeSystemRefDeleteButton;
-	
-    private ModifyListener modifyListener = new ModifyListener() {
+
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (idText == event.getSource()) {
 				idModified = true;
@@ -143,11 +166,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -157,159 +181,160 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
-		if (!(idModified || nameModified || versionModified
-				|| fullNameModified || sourceModified || urlModified
-				|| effectiveDateModified || releaseDateModified
-				|| typeModified || bindingModified || definitionModified)) {
+		if (!(idModified || nameModified || versionModified || fullNameModified || sourceModified || urlModified ||
+				effectiveDateModified || releaseDateModified || typeModified || bindingModified || definitionModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlEnumeration);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlEnumeration);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
 					if (ctsProfile == null) {
 						return Status.CANCEL_STATUS;
 					}
-					Enumeration bindingKind = (Enumeration)
-						ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
-					Enumeration valueSetType = (Enumeration)
-					ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_TYPE);
-					
+					Enumeration bindingKind = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+					Enumeration valueSetType = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_TYPE);
+
 					ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
-					
+
 					if (valueSetVersion == null) {
 						return Status.CANCEL_STATUS;
-					}
-					else if (idModified) {
+					} else if (idModified) {
 						idModified = false;
 						this.setLabel("Set ValueSet ID");
 						String value = idText.getText().trim();
-						valueSetVersion.setIdentifier(value.length()>0 ? value : null);
+						valueSetVersion.setIdentifier(value.length() > 0
+								? value
+								: null);
 
-					}
-					else if (nameModified) {
+					} else if (nameModified) {
 						nameModified = false;
 						this.setLabel("Set ValueSet Name");
 						String value = nameText.getText().trim();
 						// set the Enumeration name
-						valueSetVersion.setEnumerationName(value.length()>0 ? value : null);
-						
-					}
-					else if (fullNameModified) {
+						valueSetVersion.setEnumerationName(value.length() > 0
+								? value
+								: null);
+
+					} else if (fullNameModified) {
 						fullNameModified = false;
 						this.setLabel("Set ValueSet Full Name");
 						String value = fullNameText.getText().trim();
-						valueSetVersion.setFullName(value.length()>0 ? value : null);
-						
-					}
-					else if (versionModified) {
+						valueSetVersion.setFullName(value.length() > 0
+								? value
+								: null);
+
+					} else if (versionModified) {
 						versionModified = false;
 						this.setLabel("Set Value Set Version");
 						String value = versionText.getText().trim();
-						valueSetVersion.setVersion(value.length()>0 ? value : null);
-						
-					}
-					else if (sourceModified) {
+						valueSetVersion.setVersion(value.length() > 0
+								? value
+								: null);
+
+					} else if (sourceModified) {
 						sourceModified = false;
 						this.setLabel("Set ValueSet Source");
 						String value = sourceText.getText().trim();
-						valueSetVersion.setSource(value.length()>0 ? value : null);
-						
-					}
-					else if (urlModified) {
+						valueSetVersion.setSource(value.length() > 0
+								? value
+								: null);
+
+					} else if (urlModified) {
 						urlModified = false;
 						this.setLabel("Set ValueSet URL");
 						String value = urlText.getText().trim();
-						valueSetVersion.setUrl(value.length()>0 ? value : null);
-						
-					}
-					else if (effectiveDateModified) {
+						valueSetVersion.setUrl(value.length() > 0
+								? value
+								: null);
+
+					} else if (effectiveDateModified) {
 						effectiveDateModified = false;
 						this.setLabel("Set ValueSet Effective Date");
 						String value = effectiveDateText.getText().trim();
-						valueSetVersion.setEffectiveDate(value.length()>0 ? value : null);
-						
-					}
-					else if (releaseDateModified) {
+						valueSetVersion.setEffectiveDate(value.length() > 0
+								? value
+								: null);
+
+					} else if (releaseDateModified) {
 						releaseDateModified = false;
 						this.setLabel("Set ValueSet Release Date");
 						String value = releaseDateText.getText().trim();
-						valueSetVersion.setReleaseDate(value.length()>0 ? value : null);
-						
-					}
-					else if (definitionModified) {
+						valueSetVersion.setReleaseDate(value.length() > 0
+								? value
+								: null);
+
+					} else if (definitionModified) {
 						definitionModified = false;
 						this.setLabel("Set ValueSet Definition");
 						String value = definitionText.getText().trim();
-						valueSetVersion.setDefinition(value.length()>0 ? value : null);
-						
-					}
-					else if (typeModified && valueSetType != null) {
+						valueSetVersion.setDefinition(value.length() > 0
+								? value
+								: null);
+
+					} else if (typeModified && valueSetType != null) {
 						typeModified = false;
 						this.setLabel("Set Value Set Type");
-							if (typeCombo.getSelectionIndex() == 0) {
-								// remove stereotype umlEnumeration
-								valueSetVersion.setType(null);
-							}
-							else {
-								EnumerationLiteral literal = (EnumerationLiteral) valueSetType.getOwnedLiterals()
-									.get(typeCombo.getSelectionIndex());
-								valueSetVersion.setType(ValueSetType.getByName(literal.getName()));
-							}
-					}
-					else if (bindingModified && bindingKind != null) {
+						if (typeCombo.getSelectionIndex() == 0) {
+							// remove stereotype umlEnumeration
+							valueSetVersion.setType(null);
+						} else {
+							EnumerationLiteral literal = valueSetType.getOwnedLiterals().get(
+								typeCombo.getSelectionIndex());
+							valueSetVersion.setType(ValueSetType.getByName(literal.getName()));
+						}
+					} else if (bindingModified && bindingKind != null) {
 						bindingModified = false;
 						this.setLabel("Set Binding");
-							if (bindingCombo.getSelectionIndex() == 0) {
-								// remove stereotype umlEnumeration
-								valueSetVersion.setBinding(null);
-							}
-							else {
-								EnumerationLiteral literal = (EnumerationLiteral) bindingKind.getOwnedLiterals()
-									.get(bindingCombo.getSelectionIndex());
-								valueSetVersion.setBinding(BindingKind.getByName(literal.getName()));
-							}
-					}
-					else {
+						if (bindingCombo.getSelectionIndex() == 0) {
+							// remove stereotype umlEnumeration
+							valueSetVersion.setBinding(null);
+						} else {
+							EnumerationLiteral literal = bindingKind.getOwnedLiterals().get(
+								bindingCombo.getSelectionIndex());
+							valueSetVersion.setBinding(BindingKind.getByName(literal.getName()));
+						}
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					updateViews();
 
-					
-			        return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlEnumeration);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlEnumeration);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
-			    	
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+
 					if (valueSetVersion == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -327,19 +352,20 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 
 					updateViews();
 					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -350,60 +376,58 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		if (ctsProfile == null) {
 			return;
 		}
-		final Stereotype codeSystemVersionStereotype = (Stereotype)
-			ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
+		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
-				return (element instanceof Enumeration)
-					&& element.isStereotypeApplied(codeSystemVersionStereotype);
+				return (element instanceof Enumeration) && element.isStereotypeApplied(codeSystemVersionStereotype);
 			}
 		};
-		
+
 		final Enumeration codeSystemEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-				filter,
-				umlEnumeration.eResource().getResourceSet(), 
-				getPart().getSite().getShell(), null,
-				"Select a Code System");
-		
+			filter, umlEnumeration.eResource().getResourceSet(), getPart().getSite().getShell(), null,
+			"Select a Code System");
+
 		if (codeSystemEnum == null) {
 			return;
 		}
 		final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(
-				codeSystemEnum, ITermProfileConstants.CODE_SYSTEM_VERSION);
+			codeSystemEnum, ITermProfileConstants.CODE_SYSTEM_VERSION);
 		if (codeSystemStereotype == null) {
-			MessageDialog.openError(getPart().getSite().getShell(), 
-					"Invalid Enumeration", "The selected Enumertion must be a <<CodeSystemVersion>>");
+			MessageDialog.openError(
+				getPart().getSite().getShell(), "Invalid Enumeration",
+				"The selected Enumertion must be a <<CodeSystemVersion>>");
 			return;
 		}
 		final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnum.getStereotypeApplication(codeSystemStereotype);
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlEnumeration);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlEnumeration);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 					if (valueSetVersion == null) {
 						return Status.CANCEL_STATUS;
 					}
 					this.setLabel("Set CodeSystem reference");
 					valueSetVersion.setCodeSystem(codeSystem);
-					
-					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					refresh();
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -411,92 +435,92 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 
 	private void deleteCodeSystemReference() {
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlEnumeration);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlEnumeration);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 					if (valueSetVersion == null) {
 						return Status.CANCEL_STATUS;
 					}
-					
+
 					this.setLabel("Remove CodeSystem reference");
 					valueSetVersion.setCodeSystem(null);
-					
-					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					refresh();
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        int charHeight = point.y;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		int charHeight = point.y;
+		gc.dispose();
+		shell.dispose();
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Value Set Version");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
+		Composite composite = getWidgetFactory().createGroup(parent, "Value Set Version");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
 
-        int numberOfRows = 10;
+		int numberOfRows = 10;
 		FormData data = null;
 
 		/* ------ CodeSystem reference ------ */
 		codeSystemRefLabel = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 
-        codeSystemRefButton = getWidgetFactory().createButton(composite,
-            "Select Code System...", SWT.PUSH); //$NON-NLS-1$
-        codeSystemRefButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	addCodeSystemReference();
-            }
-        });
-        
-        codeSystemRefDeleteButton = getWidgetFactory().createButton(composite,
-                "X", SWT.PUSH); //$NON-NLS-1$
-        codeSystemRefDeleteButton.addSelectionListener(new SelectionAdapter() {
-                public void widgetSelected(SelectionEvent event) {
-                	deleteCodeSystemReference();
-                }
-            });
+		codeSystemRefButton = getWidgetFactory().createButton(composite, "Select Code System...", SWT.PUSH); //$NON-NLS-1$
+		codeSystemRefButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				addCodeSystemReference();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.height = buttonHeight;
-//		data.top = new FormAttachment(0,numberOfRows);
-        codeSystemRefButton.setLayoutData(data);
+		codeSystemRefDeleteButton = getWidgetFactory().createButton(composite, "X", SWT.PUSH); //$NON-NLS-1$
+		codeSystemRefDeleteButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				deleteCodeSystemReference();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(codeSystemRefButton, 0);
-        data.height = buttonHeight;
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.height = buttonHeight;
+		// data.top = new FormAttachment(0,numberOfRows);
+		codeSystemRefButton.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(codeSystemRefButton, 0);
+		data.height = buttonHeight;
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
-        codeSystemRefDeleteButton.setLayoutData(data);
+		codeSystemRefDeleteButton.setLayoutData(data);
 
 		/* ---- Restore Defaults button ---- */
 		createRestoreDefaultsButton(composite);
@@ -505,16 +529,15 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data.top = new FormAttachment(codeSystemRefLabel, 0, SWT.CENTER);
 		restoreDefaultsButton.setLayoutData(data);
 
-        data = new FormData();
-        data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
-        data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
+		data = new FormData();
+		data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
+		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
-        codeSystemRefLabel.setLayoutData(data);
+		codeSystemRefLabel.setLayoutData(data);
 
 		/* ------ Name field ------ */
 		nameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel nameLabel = getWidgetFactory()
-				.createCLabel(composite, "Name:"); //$NON-NLS-1$
+		CLabel nameLabel = getWidgetFactory().createCLabel(composite, "Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
@@ -523,13 +546,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
 		data.right = new FormAttachment(50, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		nameText.setLayoutData(data);
 
 		/* ------ ID field ------ */
 		idText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel idLabel = getWidgetFactory()
-				.createCLabel(composite, "ID:"); //$NON-NLS-1$
+		CLabel idLabel = getWidgetFactory().createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(nameText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
@@ -538,13 +560,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(idLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		idText.setLayoutData(data);
 
 		/* ------ Full Name field ------ */
 		fullNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel fullNameLabel = getWidgetFactory()
-				.createCLabel(composite, "Full Name:"); //$NON-NLS-1$
+		CLabel fullNameLabel = getWidgetFactory().createCLabel(composite, "Full Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(fullNameText, 0, SWT.CENTER);
@@ -553,13 +574,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(fullNameLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(2, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		fullNameText.setLayoutData(data);
 
 		/* ------ Source field ------ */
 		sourceText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel sourceLabel = getWidgetFactory()
-				.createCLabel(composite, "Source:"); //$NON-NLS-1$
+		CLabel sourceLabel = getWidgetFactory().createCLabel(composite, "Source:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(sourceText, 0, SWT.CENTER);
@@ -568,13 +588,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(sourceLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(3,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(3, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		sourceText.setLayoutData(data);
 
 		/* ------ URL field ------ */
 		urlText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel urlLabel = getWidgetFactory()
-				.createCLabel(composite, "URL:"); //$NON-NLS-1$
+		CLabel urlLabel = getWidgetFactory().createCLabel(composite, "URL:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(urlText, 0, SWT.CENTER);
@@ -583,71 +602,64 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(urlLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(4, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		urlText.setLayoutData(data);
 
 		/* ---- type combo ---- */
 		typeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
-		typeCombo.setItems(new String[] {
-				"Extensional", 
-				"Intensional"
-		});
+		typeCombo.setItems(new String[] { "Extensional", "Intensional" });
 		typeCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				typeModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				typeModified = true;
 				modifyFields();
 			}
 		});
 
-		CLabel typeLabel = getWidgetFactory()
-				.createCLabel(composite, "Type:"); //$NON-NLS-1$
+		CLabel typeLabel = getWidgetFactory().createCLabel(composite, "Type:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(typeCombo, 0, SWT.CENTER);
 		typeLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(typeLabel, 0);
-		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.left = new FormAttachment(typeLabel, 0);
+		data.top = new FormAttachment(5, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		typeCombo.setLayoutData(data);
 
 		/* ---- binding combo ---- */
 		bindingCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
-		bindingCombo.setItems(new String[] {
-				"Static", 
-				"Dynamic"
-		});
+		bindingCombo.setItems(new String[] { "Static", "Dynamic" });
 		bindingCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				bindingModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				bindingModified = true;
 				modifyFields();
 			}
 		});
 
-		CLabel bindingLabel = getWidgetFactory()
-				.createCLabel(composite, "Binding:"); //$NON-NLS-1$
+		CLabel bindingLabel = getWidgetFactory().createCLabel(composite, "Binding:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(typeCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(bindingCombo, 0, SWT.CENTER);
 		bindingLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(bindingLabel, 0);
-		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.left = new FormAttachment(bindingLabel, 0);
+		data.top = new FormAttachment(5, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		bindingCombo.setLayoutData(data);
 
 		/* ------ Version field ------ */
 		versionText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel versionLabel = getWidgetFactory()
-				.createCLabel(composite, "Version:"); //$NON-NLS-1$
+		CLabel versionLabel = getWidgetFactory().createCLabel(composite, "Version:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(bindingCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(versionText, 0, SWT.CENTER);
@@ -656,13 +668,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
 		data.right = new FormAttachment(70, 0);
-		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(5, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		versionText.setLayoutData(data);
 
 		/* ------ Release Date field ------ */
 		releaseDateText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel releaseDateLabel = getWidgetFactory()
-				.createCLabel(composite, "Release Date:"); //$NON-NLS-1$
+		CLabel releaseDateLabel = getWidgetFactory().createCLabel(composite, "Release Date:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(releaseDateText, 0, SWT.CENTER);
@@ -671,13 +682,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(releaseDateLabel, 0);
 		data.right = new FormAttachment(25, 0);
-		data.top = new FormAttachment(6,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(6, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		releaseDateText.setLayoutData(data);
 
 		/* ------ Effective Date field ------ */
 		effectiveDateText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel effectiveDateLabel = getWidgetFactory()
-				.createCLabel(composite, "Effective Date:"); //$NON-NLS-1$
+		CLabel effectiveDateLabel = getWidgetFactory().createCLabel(composite, "Effective Date:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(releaseDateText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(releaseDateText, 0, SWT.CENTER);
@@ -686,14 +696,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(effectiveDateLabel, 0);
 		data.right = new FormAttachment(50, 0);
-		data.top = new FormAttachment(6,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(6, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		effectiveDateText.setLayoutData(data);
 
 		/* ---- definition text ---- */
-		definitionText = getWidgetFactory().createText(composite, "", 
-				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
-		CLabel definitionLabel = getWidgetFactory()
-				.createCLabel(composite, "Definition:"); //$NON-NLS-1$
+		definitionText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
+		CLabel definitionLabel = getWidgetFactory().createCLabel(composite, "Definition:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(releaseDateText, 0, SWT.BOTTOM);
@@ -711,11 +719,11 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		definitionText.setLayoutData(data);
 
 	}
-	
+
+	@Override
 	protected boolean isReadOnly() {
 		if (umlEnumeration != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlEnumeration);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlEnumeration);
 			if (editingDomain != null && editingDomain.isReadOnly(umlEnumeration.eResource())) {
 				return true;
 			}
@@ -728,8 +736,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -739,6 +749,7 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -746,30 +757,29 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		this.umlEnumeration = (Enumeration) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
-		Enumeration bindingKindEnum = (Enumeration)
-			ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
-		Enumeration valueSetTypeEnum = (Enumeration)
-			ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_TYPE);
+		Enumeration bindingKindEnum = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+		Enumeration valueSetTypeEnum = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_TYPE);
 
-    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
-		
+		ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+
 		CodeSystemVersion codeSystem = null;
 		if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null) {
-			codeSystem = valueSetVersion.getCodeSystem();			
+			codeSystem = valueSetVersion.getCodeSystem();
 			codeSystemRefLabel.setText(codeSystem.getEnumerationQualifiedName());
 			codeSystemRefLabel.layout();
-		}
-		else {
+		} else {
 			codeSystemRefLabel.setText("");
 		}
 
@@ -778,9 +788,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		idText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String id = valueSetVersion.getIdentifier();
-			idText.setText(id!=null ? id : "");
-		}
-		else {
+			idText.setText(id != null
+					? id
+					: "");
+		} else {
 			idText.setText("");
 		}
 		idText.addModifyListener(modifyListener);
@@ -792,9 +803,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		nameText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String name = valueSetVersion.getEnumerationName();
-			nameText.setText(name!=null ? name : "");
-		}
-		else {
+			nameText.setText(name != null
+					? name
+					: "");
+		} else {
 			nameText.setText("");
 		}
 		nameText.addModifyListener(modifyListener);
@@ -806,9 +818,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		fullNameText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String name = valueSetVersion.getFullName();
-			fullNameText.setText(name!=null ? name : "");
-		}
-		else {
+			fullNameText.setText(name != null
+					? name
+					: "");
+		} else {
 			fullNameText.setText("");
 		}
 		fullNameText.addModifyListener(modifyListener);
@@ -820,9 +833,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		sourceText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String source = valueSetVersion.getSource();
-			sourceText.setText(source!=null ? source : "");
-		}
-		else {
+			sourceText.setText(source != null
+					? source
+					: "");
+		} else {
 			sourceText.setText("");
 		}
 		sourceText.addModifyListener(modifyListener);
@@ -834,9 +848,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		urlText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String url = valueSetVersion.getUrl();
-			urlText.setText(url!=null ? url : "");
-		}
-		else {
+			urlText.setText(url != null
+					? url
+					: "");
+		} else {
 			urlText.setText("");
 		}
 		urlText.addModifyListener(modifyListener);
@@ -848,9 +863,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		versionText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String version = valueSetVersion.getVersion();
-			versionText.setText(version!=null ? version : "");
-		}
-		else {
+			versionText.setText(version != null
+					? version
+					: "");
+		} else {
 			versionText.setText("");
 		}
 		versionText.addModifyListener(modifyListener);
@@ -862,9 +878,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		releaseDateText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String date = valueSetVersion.getReleaseDate();
-			releaseDateText.setText(date!=null ? date : "");
-		}
-		else {
+			releaseDateText.setText(date != null
+					? date
+					: "");
+		} else {
 			releaseDateText.setText("");
 		}
 		releaseDateText.addModifyListener(modifyListener);
@@ -876,9 +893,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		effectiveDateText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String date = valueSetVersion.getEffectiveDate();
-			effectiveDateText.setText(date!=null ? date : "");
-		}
-		else {
+			effectiveDateText.setText(date != null
+					? date
+					: "");
+		} else {
 			effectiveDateText.setText("");
 		}
 		effectiveDateText.addModifyListener(modifyListener);
@@ -890,9 +908,10 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		definitionText.removeFocusListener(focusListener);
 		if (valueSetVersion != null) {
 			String definition = valueSetVersion.getDefinition();
-			definitionText.setText(definition!=null ? definition : "");
-		}
-		else {
+			definitionText.setText(definition != null
+					? definition
+					: "");
+		} else {
 			definitionText.setText("");
 		}
 		definitionText.addModifyListener(modifyListener);
@@ -902,7 +921,7 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		typeCombo.select(0);
 		if (valueSetVersion != null) {
 			ValueSetType valueSetType = valueSetVersion.getType();
-			
+
 			if (valueSetTypeEnum != null && valueSetType != null) {
 				EnumerationLiteral literal = valueSetTypeEnum.getOwnedLiteral(valueSetType.getName());
 				int index = valueSetTypeEnum.getOwnedLiterals().indexOf(literal);
@@ -913,7 +932,7 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		bindingCombo.select(0);
 		if (valueSetVersion != null) {
 			BindingKind binding = valueSetVersion.getBinding();
-			
+
 			if (bindingKindEnum != null && binding != null) {
 				EnumerationLiteral literal = bindingKindEnum.getOwnedLiteral(binding.getName());
 				int index = bindingKindEnum.getOwnedLiterals().indexOf(literal);
@@ -935,8 +954,7 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 			typeCombo.setEnabled(false);
 			bindingCombo.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
-		}
-		else {
+		} else {
 			codeSystemRefLabel.setEnabled(true);
 			idText.setEnabled(true);
 			nameText.setEnabled(true);
@@ -959,19 +977,23 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && umlEnumeration.eResource() != null)
+					if (!isDisposed() && umlEnumeration.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}
@@ -981,10 +1003,12 @@ public class ValueSetVersionSection extends ResettableModelerPropertySection {
 		// fire notification for any stereotype umlEnumeration changes to update views
 		// this is a bogus notification of change to umlEnumeration name, but can't find a better option
 		Notification notification = new NotificationImpl(Notification.SET, null, umlEnumeration.getName()) {
+			@Override
 			public Object getNotifier() {
 				return umlEnumeration;
 			}
 
+			@Override
 			public int getFeatureID(Class expectedClass) {
 				return UMLPackage.PROPERTY__NAME;
 			}

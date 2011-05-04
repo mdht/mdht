@@ -19,17 +19,17 @@ import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 /**
- * Selects an object if it is a UML Enumeration with 
+ * Selects an object if it is a UML Enumeration with
  * CodeSystemVersion stereotype applied.
  */
 public class CodeSystemVersionFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
+
 		if (element instanceof Enumeration) {
 			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-					element, ITermProfileConstants.CODE_SYSTEM_VERSION);
+				element, ITermProfileConstants.CODE_SYSTEM_VERSION);
 			return stereotype != null;
 		}
 		return false;

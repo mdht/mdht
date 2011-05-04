@@ -23,12 +23,17 @@ public class Messages extends NLS {
 	// ==============================================================================
 
 	public static String AddCodeSystemVersion_operation_title;
+
 	public static String AddCodeSystemVersion_default_name;
+
 	public static String AddValueSetVersion_operation_title;
+
 	public static String AddValueSetVersion_default_name;
+
 	public static String AddValueSetCode_operation_title;
+
 	public static String AddValueSetCode_default_name;
-	
+
 	static {
 		// load message values from bundle file
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

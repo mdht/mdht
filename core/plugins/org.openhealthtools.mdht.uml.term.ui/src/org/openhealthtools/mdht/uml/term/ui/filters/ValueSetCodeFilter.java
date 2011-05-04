@@ -19,17 +19,16 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 /**
- * Selects an object if it is a UML EnumerationLiteral with 
+ * Selects an object if it is a UML EnumerationLiteral with
  * ValueSetCode stereotype applied.
  */
 public class ValueSetCodeFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
+
 		if (element instanceof EnumerationLiteral) {
-			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-					element, ITermProfileConstants.VALUE_SET_CODE);
+			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(element, ITermProfileConstants.VALUE_SET_CODE);
 			return stereotype != null;
 		}
 		return false;

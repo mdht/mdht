@@ -13,7 +13,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -80,25 +79,38 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerProp
 public class CodeSystemConstraintSection extends ResettableModelerPropertySection {
 
 	private Property property;
-	
+
 	private Text idText;
+
 	private boolean idModified = false;
+
 	private Text nameText;
+
 	private boolean nameModified = false;
+
 	private Text versionText;
+
 	private boolean versionModified = false;
+
 	private Text codeText;
+
 	private boolean codeModified = false;
+
 	private Text displayNameText;
+
 	private boolean displayNameModified = false;
+
 	private CCombo bindingCombo;
+
 	private boolean bindingModified = false;
 
 	private CLabel codeSystemRefLabel;
+
 	private Button codeSystemRefButton;
+
 	private Button codeSystemRefDeleteButton;
-	
-    private ModifyListener modifyListener = new ModifyListener() {
+
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (idText == event.getSource()) {
 				idModified = true;
@@ -124,11 +136,12 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -138,136 +151,136 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
-		if (!(idModified || nameModified || versionModified
-				|| codeModified || displayNameModified || bindingModified)) {
+		if (!(idModified || nameModified || versionModified || codeModified || displayNameModified || bindingModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 					if (ctsProfile == null) {
 						return Status.CANCEL_STATUS;
 					}
-					Enumeration bindingKind = (Enumeration)
-						ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
-					
+					Enumeration bindingKind = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+
 					Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-							property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
-					
+						property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
-					}
-					else if (idModified) {
+					} else if (idModified) {
 						idModified = false;
 						this.setLabel("Set Code System ID");
 
 						if (stereotype != null) {
 							String value = idText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_ID,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_ID, value.length() > 0
+										? value
+										: null);
 						}
-					}
-					else if (nameModified) {
+					} else if (nameModified) {
 						nameModified = false;
 						this.setLabel("Set Code System Name");
 
 						if (stereotype != null) {
 							String value = nameText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME, value.length() > 0
+										? value
+										: null);
 						}
-					}
-					else if (versionModified) {
+					} else if (versionModified) {
 						versionModified = false;
 						this.setLabel("Set Code System Version");
 
 						if (stereotype != null) {
 							String value = versionText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION, value.length() > 0
+										? value
+										: null);
 						}
-					}
-					else if (codeModified) {
+					} else if (codeModified) {
 						codeModified = false;
 						this.setLabel("Set Code");
 
 						if (stereotype != null) {
 							String value = codeText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE, value.length() > 0
+										? value
+										: null);
 						}
-					}
-					else if (displayNameModified) {
+					} else if (displayNameModified) {
 						displayNameModified = false;
 						this.setLabel("Set Code Display Name");
 
 						if (stereotype != null) {
 							String value = displayNameText.getText().trim();
-							property.setValue(stereotype, 
-									ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_DISPLAY_NAME,
-									value.length()>0 ? value : null);
+							property.setValue(
+								stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_DISPLAY_NAME,
+								value.length() > 0
+										? value
+										: null);
 						}
-					}
-					else if (bindingModified) {
+					} else if (bindingModified) {
 						bindingModified = false;
 						this.setLabel("Set Binding");
 						if (stereotype != null && bindingKind != null) {
 							if (bindingCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
-								property.setValue(stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_BINDING, null);
-							}
-							else {
-								EnumerationLiteral literal = (EnumerationLiteral) bindingKind.getOwnedLiterals()
-									.get(bindingCombo.getSelectionIndex());
-								property.setValue(stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_BINDING, literal);
+								property.setValue(
+									stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_BINDING, null);
+							} else {
+								EnumerationLiteral literal = bindingKind.getOwnedLiterals().get(
+									bindingCombo.getSelectionIndex());
+								property.setValue(
+									stereotype, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_BINDING, literal);
 							}
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					// fire notification for any stereotype property changes to update views
 					updateViews();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
-			    	
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+
 					if (codeSystemConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -281,19 +294,20 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 
 					updateViews();
 					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -304,64 +318,61 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		if (ctsProfile == null) {
 			return;
 		}
-		final Stereotype codeSystemVersionStereotype = (Stereotype)
-			ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
+		final Stereotype codeSystemVersionStereotype = (Stereotype) ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
-				return (element instanceof Enumeration)
-					&& element.isStereotypeApplied(codeSystemVersionStereotype);
+				return (element instanceof Enumeration) && element.isStereotypeApplied(codeSystemVersionStereotype);
 			}
 		};
-		
+
 		final Enumeration codeSystemEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-				filter,
-				property.eResource().getResourceSet(), 
-				getPart().getSite().getShell(), null,
-				"Select a Code System");
-		
+			filter, property.eResource().getResourceSet(), getPart().getSite().getShell(), null, "Select a Code System");
+
 		if (codeSystemEnum == null) {
 			return;
 		}
 		final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(
-				codeSystemEnum, ITermProfileConstants.CODE_SYSTEM_VERSION);
+			codeSystemEnum, ITermProfileConstants.CODE_SYSTEM_VERSION);
 		if (codeSystemStereotype == null) {
-			MessageDialog.openError(getPart().getSite().getShell(), 
-					"Invalid Enumeration", "The selected Enumertion must be a <<CodeSystemVersion>>");
+			MessageDialog.openError(
+				getPart().getSite().getShell(), "Invalid Enumeration",
+				"The selected Enumertion must be a <<CodeSystemVersion>>");
 			return;
 		}
 		final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnum.getStereotypeApplication(codeSystemStereotype);
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 					if (codeSystemConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
 					this.setLabel("Set CodeSystem reference");
 					codeSystemConstraint.setReference(codeSystem);
-					
+
 					codeSystemConstraint.setIdentifier(null);
 					codeSystemConstraint.setName(null);
 					codeSystemConstraint.setVersion(null);
-						
-					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					refresh();
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -369,98 +380,98 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 
 	private void deleteCodeSystemReference() {
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 					if (codeSystemConstraint == null || codeSystemConstraint.getReference() == null) {
 						return Status.CANCEL_STATUS;
 					}
-					
+
 					this.setLabel("Remove CodeSystem reference");
 					codeSystemConstraint.setReference(null);
-					
+
 					codeSystemConstraint.setIdentifier(null);
 					codeSystemConstraint.setName(null);
 					codeSystemConstraint.setVersion(null);
-					
-					refresh();
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					refresh();
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Code System");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
+		Composite composite = getWidgetFactory().createGroup(parent, "Code System");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
 
-        int numberOfRows = 3;
+		int numberOfRows = 3;
 		FormData data = null;
 
 		/* ------ CodeSystem reference ------ */
 		codeSystemRefLabel = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 
-        codeSystemRefButton = getWidgetFactory().createButton(composite,
-            "Select Code System...", SWT.PUSH); //$NON-NLS-1$
-        codeSystemRefButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	addCodeSystemReference();
-            }
-        });
-        
-        codeSystemRefDeleteButton = getWidgetFactory().createButton(composite,
-                "X", SWT.PUSH); //$NON-NLS-1$
-        codeSystemRefDeleteButton.addSelectionListener(new SelectionAdapter() {
-                public void widgetSelected(SelectionEvent event) {
-                	deleteCodeSystemReference();
-                }
-            });
+		codeSystemRefButton = getWidgetFactory().createButton(composite, "Select Code System...", SWT.PUSH); //$NON-NLS-1$
+		codeSystemRefButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				addCodeSystemReference();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.height = buttonHeight;
-		data.top = new FormAttachment(0,numberOfRows);
-        codeSystemRefButton.setLayoutData(data);
+		codeSystemRefDeleteButton = getWidgetFactory().createButton(composite, "X", SWT.PUSH); //$NON-NLS-1$
+		codeSystemRefDeleteButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				deleteCodeSystemReference();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(codeSystemRefButton, 0);
-        data.height = buttonHeight;
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.height = buttonHeight;
+		data.top = new FormAttachment(0, numberOfRows);
+		codeSystemRefButton.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(codeSystemRefButton, 0);
+		data.height = buttonHeight;
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
-        codeSystemRefDeleteButton.setLayoutData(data);
+		codeSystemRefDeleteButton.setLayoutData(data);
 
-        data = new FormData();
-        data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
+		data = new FormData();
+		data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
 		codeSystemRefLabel.setLayoutData(data);
 
@@ -473,8 +484,7 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 
 		/* ------ Name field ------ */
 		nameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel nameLabel = getWidgetFactory()
-				.createCLabel(composite, "Name:"); //$NON-NLS-1$
+		CLabel nameLabel = getWidgetFactory().createCLabel(composite, "Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
@@ -483,13 +493,12 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
 		data.right = new FormAttachment(35, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		nameText.setLayoutData(data);
 
 		/* ------ ID field ------ */
 		idText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel idLabel = getWidgetFactory()
-				.createCLabel(composite, "ID:"); //$NON-NLS-1$
+		CLabel idLabel = getWidgetFactory().createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(nameText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(idText, 0, SWT.CENTER);
@@ -498,13 +507,12 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		data = new FormData();
 		data.left = new FormAttachment(idLabel, 0);
 		data.right = new FormAttachment(70, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		idText.setLayoutData(data);
 
 		/* ------ Version field ------ */
 		versionText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel versionLabel = getWidgetFactory()
-				.createCLabel(composite, "Version:"); //$NON-NLS-1$
+		CLabel versionLabel = getWidgetFactory().createCLabel(composite, "Version:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(idText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(versionText, 0, SWT.CENTER);
@@ -513,42 +521,38 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		versionText.setLayoutData(data);
 
 		/* ---- binding combo ---- */
 		bindingCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
-		bindingCombo.setItems(new String[] {
-				"Static", 
-				"Dynamic"
-		});
+		bindingCombo.setItems(new String[] { "Static", "Dynamic" });
 		bindingCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				bindingModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				bindingModified = true;
 				modifyFields();
 			}
 		});
 
-		CLabel bindingLabel = getWidgetFactory()
-				.createCLabel(composite, "Binding:"); //$NON-NLS-1$
+		CLabel bindingLabel = getWidgetFactory().createCLabel(composite, "Binding:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(bindingCombo, 0, SWT.CENTER);
 		bindingLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(bindingLabel, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.left = new FormAttachment(bindingLabel, 0);
+		data.top = new FormAttachment(2, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		bindingCombo.setLayoutData(data);
 
 		/* ------ Code field ------ */
 		codeText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel codeLabel = getWidgetFactory()
-				.createCLabel(composite, "Code:"); //$NON-NLS-1$
+		CLabel codeLabel = getWidgetFactory().createCLabel(composite, "Code:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(bindingCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(codeText, 0, SWT.CENTER);
@@ -557,13 +561,12 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		data = new FormData();
 		data.left = new FormAttachment(codeLabel, 0);
 		data.right = new FormAttachment(50, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(2, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		codeText.setLayoutData(data);
 
 		/* ------ Code Display Name field ------ */
 		displayNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel codeNameLabel = getWidgetFactory()
-				.createCLabel(composite, "Code Display Name:"); //$NON-NLS-1$
+		CLabel codeNameLabel = getWidgetFactory().createCLabel(composite, "Code Display Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(codeText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(displayNameText, 0, SWT.CENTER);
@@ -572,15 +575,15 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		data = new FormData();
 		data.left = new FormAttachment(codeNameLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(2, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		displayNameText.setLayoutData(data);
-		
+
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -593,8 +596,10 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -604,6 +609,7 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -611,40 +617,44 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
-		Enumeration bindingKind = (Enumeration)
-			ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+		Enumeration bindingKind = (Enumeration) ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
 
-    	CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+		CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 		CodeSystemVersion codeSystem = null;
 		Enumeration referenceEnum = null;
 		if (codeSystemConstraint != null && codeSystemConstraint.getReference() != null) {
 			codeSystem = codeSystemConstraint.getReference();
-			referenceEnum = (Enumeration) codeSystem.getBase_Enumeration();
+			referenceEnum = codeSystem.getBase_Enumeration();
 			codeSystemRefLabel.setText(codeSystem.getEnumerationQualifiedName());
 		} else {
 			codeSystemRefLabel.setText("");
 		}
-		
+
 		codeSystemRefLabel.layout();
 
 		idText.removeModifyListener(modifyListener);
 		idText.removeKeyListener(keyListener);
 		idText.removeFocusListener(focusListener);
 		if (codeSystemConstraint != null) {
-			String id = codeSystem==null ? codeSystemConstraint.getIdentifier() : codeSystem.getIdentifier();
-			idText.setText(id!=null ? id : "");
-		}
-		else {
+			String id = codeSystem == null
+					? codeSystemConstraint.getIdentifier()
+					: codeSystem.getIdentifier();
+			idText.setText(id != null
+					? id
+					: "");
+		} else {
 			idText.setText("");
 		}
 		idText.addModifyListener(modifyListener);
@@ -655,10 +665,13 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
 		if (codeSystemConstraint != null) {
-			String name = codeSystem==null ? codeSystemConstraint.getName() : codeSystem.getEnumerationName();
-			nameText.setText(name!=null ? name : "");
-		}
-		else {
+			String name = codeSystem == null
+					? codeSystemConstraint.getName()
+					: codeSystem.getEnumerationName();
+			nameText.setText(name != null
+					? name
+					: "");
+		} else {
 			nameText.setText("");
 		}
 		nameText.addModifyListener(modifyListener);
@@ -669,10 +682,13 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		versionText.removeKeyListener(keyListener);
 		versionText.removeFocusListener(focusListener);
 		if (codeSystemConstraint != null) {
-			String version = codeSystem==null ? codeSystemConstraint.getVersion() : codeSystem.getVersion();
-			versionText.setText(version!=null ? version : "");
-		}
-		else {
+			String version = codeSystem == null
+					? codeSystemConstraint.getVersion()
+					: codeSystem.getVersion();
+			versionText.setText(version != null
+					? version
+					: "");
+		} else {
 			versionText.setText("");
 		}
 		versionText.addModifyListener(modifyListener);
@@ -684,9 +700,10 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		codeText.removeFocusListener(focusListener);
 		if (codeSystemConstraint != null) {
 			String code = codeSystemConstraint.getCode();
-			codeText.setText(code!=null ? code : "");
-		}
-		else {
+			codeText.setText(code != null
+					? code
+					: "");
+		} else {
 			codeText.setText("");
 		}
 		codeText.addModifyListener(modifyListener);
@@ -698,9 +715,10 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		displayNameText.removeFocusListener(focusListener);
 		if (codeSystemConstraint != null) {
 			String displayName = codeSystemConstraint.getDisplayName();
-			displayNameText.setText(displayName!=null ? displayName : "");
-		}
-		else {
+			displayNameText.setText(displayName != null
+					? displayName
+					: "");
+		} else {
 			displayNameText.setText("");
 		}
 		displayNameText.addModifyListener(modifyListener);
@@ -710,7 +728,7 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 		bindingCombo.select(0);
 		if (codeSystemConstraint != null) {
 			BindingKind binding = codeSystemConstraint.getBinding();
-			
+
 			if (bindingKind != null && binding != null) {
 				EnumerationLiteral literal = bindingKind.getOwnedLiteral(binding.getName());
 				int index = bindingKind.getOwnedLiterals().indexOf(literal);
@@ -726,8 +744,7 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 			codeText.setEnabled(false);
 			displayNameText.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
-		}
-		else {
+		} else {
 			codeSystemRefLabel.setEnabled(true);
 			idText.setEnabled(referenceEnum == null);
 			nameText.setEnabled(referenceEnum == null);
@@ -744,19 +761,23 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}
@@ -764,10 +785,12 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 
 	protected void updateViews() {
 		Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+			@Override
 			public Object getNotifier() {
 				return property;
 			}
 
+			@Override
 			public int getFeatureID(Class expectedClass) {
 				return UMLPackage.PROPERTY__NAME;
 			}
