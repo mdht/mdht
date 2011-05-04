@@ -158,7 +158,7 @@ public class PropertyNotationUtil {
 	 */
 	public static String getCustomLabel(Property property, int style) {
 		StringBuffer buffer = new StringBuffer();
-		
+
 		// visibility
 		if ((style & IUMLNotation.DISP_VISIBILITY) != 0) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(property));
@@ -170,7 +170,7 @@ public class PropertyNotationUtil {
 				buffer.append("/");
 			}
 		}
-		
+
 		// name
 		if ((style & IUMLNotation.DISP_NAME) != 0) {
 			buffer.append(" ");
@@ -203,7 +203,7 @@ public class PropertyNotationUtil {
 		}
 
 		boolean showBrackets = buffer.length() > 0;
-		
+
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// property modifiers
@@ -212,15 +212,19 @@ public class PropertyNotationUtil {
 				if (multiLine) {
 					buffer.append("\n");
 				}
-				buffer.append(showBrackets ? " {" : "");
+				buffer.append(showBrackets
+						? " {"
+						: "");
 				buffer.append(modifiers);
-				buffer.append(showBrackets ? "}" : "");
+				buffer.append(showBrackets
+						? "}"
+						: "");
 			}
 		}
-		
+
 		return buffer.toString();
 	}
-	
+
 	/**
 	 * Returns the modifier of the property, separated by a comma, as as single
 	 * line if <code>multiline</code> is <code>false</code> or as a multiline
@@ -228,15 +232,16 @@ public class PropertyNotationUtil {
 	 * 
 	 * @param multiLine
 	 *            boolean that indicates if the string should have several lines
-	 *            when set to <code>true</code> or only one line when set to
-	 *            <code>false</code>.
+	 *            when set to <code>true</code> or only one line when set to <code>false</code>.
 	 * 
 	 * @return a string giving all modifiers for the property
 	 */
 	protected static String getModifiersAsString(Property property, boolean multiLine) {
 		StringBuffer buffer = new StringBuffer();
 		boolean needsComma = false;
-		String NL = (multiLine) ? "\n" : "";
+		String NL = (multiLine)
+				? "\n"
+				: "";
 
 		// Return property modifiers
 		if (property.isReadOnly()) {

@@ -20,7 +20,7 @@ public interface INotationProvider {
 	 * Returns the complete print string for displaying a model element.
 	 */
 	public String getPrintString(Element element);
-	
+
 	/**
 	 * Returns only the annotations for a model element.
 	 */

@@ -25,16 +25,20 @@ import org.openhealthtools.mdht.uml.common.internal.Logger;
 
 public class NotationRegistry {
 	public static final NotationRegistry INSTANCE = new NotationRegistry();
+
 	private Map<String, INotationProvider> providers = null;
-	
+
 	private static final String EXTENSION_POINT = "org.openhealthtools.mdht.uml.common.notation";
+
 	private static final String PROVIDER_ELEMENT = "provider";
+
 	private static final String ATT_PROFILE_URI = "profileURI";
+
 	private static final String ATT_CLASS = "class";
-	
+
 	private NotationRegistry() {
 	}
-	
+
 	private void load() {
 		providers = new HashMap<String, INotationProvider>();
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
@@ -49,9 +53,8 @@ public class NotationRegistry {
 								if (providerInstance instanceof INotationProvider) {
 									String profileURI = element.getAttribute(ATT_PROFILE_URI);
 									// Always put and get profile URI in all lower case
-									providers.put(profileURI.toLowerCase(), (INotationProvider)providerInstance);
-								}
-								else {
+									providers.put(profileURI.toLowerCase(), (INotationProvider) providerInstance);
+								} else {
 									String className = element.getAttribute(ATT_CLASS);
 									Logger.log(Logger.ERROR, className + " is not instanceof INotationProvider.");
 								}
@@ -65,11 +68,11 @@ public class NotationRegistry {
 			}
 		}
 	}
-	
+
 	private boolean validateProvider(IConfigurationElement element) {
 		return (element.getAttribute(ATT_PROFILE_URI) != null && element.getAttribute(ATT_CLASS) != null);
 	}
-	
+
 	public INotationProvider getProviderInstance(String profileURI) {
 		if (providers == null) {
 			load();

@@ -27,7 +27,7 @@ public class ClassNotationUtil {
 	 */
 	public static String getLabel(Class clazz) {
 		StringBuffer buffer = new StringBuffer();
-		
+
 		// name
 		buffer.append(" ");
 		buffer.append(clazz.getName());
@@ -52,7 +52,7 @@ public class ClassNotationUtil {
 	 */
 	public static String getCustomLabel(Class clazz, int style) {
 		StringBuffer buffer = new StringBuffer();
-		
+
 		// visibility
 		if ((style & IUMLNotation.DISP_VISIBILITY) != 0) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(clazz));
@@ -65,7 +65,7 @@ public class ClassNotationUtil {
 		}
 
 		boolean showBrackets = buffer.length() > 0;
-		
+
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// class modifiers
@@ -74,15 +74,19 @@ public class ClassNotationUtil {
 				if (multiLine) {
 					buffer.append("\n");
 				}
-				buffer.append(showBrackets ? " {" : "");
+				buffer.append(showBrackets
+						? " {"
+						: "");
 				buffer.append(modifiers);
-				buffer.append(showBrackets ? "}" : "");
+				buffer.append(showBrackets
+						? "}"
+						: "");
 			}
 		}
-		
+
 		return buffer.toString();
 	}
-	
+
 	/**
 	 * Returns the modifier of the class, separated by a comma, as as single
 	 * line if <code>multiline</code> is <code>false</code> or as a multiline
@@ -90,8 +94,7 @@ public class ClassNotationUtil {
 	 * 
 	 * @param multiLine
 	 *            boolean that indicates if the string should have several lines
-	 *            when set to <code>true</code> or only one line when set to
-	 *            <code>false</code>.
+	 *            when set to <code>true</code> or only one line when set to <code>false</code>.
 	 * 
 	 * @return a string giving all modifiers for the class
 	 */
@@ -117,7 +120,7 @@ public class ClassNotationUtil {
 			buffer.append("active");
 			needsComma = true;
 		}
-		
+
 		return buffer.toString();
 	}
 }

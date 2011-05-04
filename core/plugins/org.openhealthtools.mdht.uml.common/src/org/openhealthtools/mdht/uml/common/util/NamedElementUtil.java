@@ -27,9 +27,13 @@ import org.eclipse.uml2.uml.NamedElement;
 public class NamedElementUtil extends UMLUtil {
 
 	public static final String QUALIFIED_NAME_SEPARATOR = "::";
+
 	private final static String PUBLIC_STRING = "+";
+
 	private final static String PROTECTED_STRING = "#";
+
 	private final static String PRIVATE_STRING = "-";
+
 	private final static String PACKAGE_STRING = "~";
 
 	/**
@@ -70,18 +74,18 @@ public class NamedElementUtil extends UMLUtil {
 		String vKindValue = "";
 
 		switch (element.getVisibility().getValue()) {
-		case org.eclipse.uml2.uml.VisibilityKind.PUBLIC:
-			vKindValue = PUBLIC_STRING;
-			break;
-		case org.eclipse.uml2.uml.VisibilityKind.PRIVATE:
-			vKindValue = PRIVATE_STRING;
-			break;
-		case org.eclipse.uml2.uml.VisibilityKind.PACKAGE:
-			vKindValue = PACKAGE_STRING;
-			break;
-		case org.eclipse.uml2.uml.VisibilityKind.PROTECTED:
-			vKindValue = PROTECTED_STRING;
-			break;
+			case org.eclipse.uml2.uml.VisibilityKind.PUBLIC:
+				vKindValue = PUBLIC_STRING;
+				break;
+			case org.eclipse.uml2.uml.VisibilityKind.PRIVATE:
+				vKindValue = PRIVATE_STRING;
+				break;
+			case org.eclipse.uml2.uml.VisibilityKind.PACKAGE:
+				vKindValue = PACKAGE_STRING;
+				break;
+			case org.eclipse.uml2.uml.VisibilityKind.PROTECTED:
+				vKindValue = PROTECTED_STRING;
+				break;
 		}
 		return vKindValue;
 	}
@@ -95,10 +99,9 @@ public class NamedElementUtil extends UMLUtil {
 	 */
 	public static String getPropertyKey(NamedElement namedElement) {
 		String qualifiedName = namedElement.getQualifiedName();
-		return "_label_"
-				+ UML2Util.getValidJavaIdentifier(UML2Util
-						.isEmpty(qualifiedName) ? UML2Util.EMPTY_STRING
-						: qualifiedName.replace(':', '_'));
+		return "_label_" + UML2Util.getValidJavaIdentifier(UML2Util.isEmpty(qualifiedName)
+				? UML2Util.EMPTY_STRING
+				: qualifiedName.replace(':', '_'));
 	}
 
 	/**
@@ -113,12 +116,10 @@ public class NamedElementUtil extends UMLUtil {
 	 *         the name of the element.
 	 */
 	public static String getBusinessName(NamedElement namedElement) {
-		String properties = readProperties(getPropertiesURI(namedElement
-				.eResource()));
+		String properties = readProperties(getPropertiesURI(namedElement.eResource()));
 
 		if (properties != null) {
-			String property = parseProperties(properties).get(
-					getPropertyKey(namedElement));
+			String property = parseProperties(properties).get(getPropertyKey(namedElement));
 
 			if (property != null) {
 				int index = property.indexOf('=');
@@ -147,8 +148,7 @@ public class NamedElementUtil extends UMLUtil {
 
 		if (properties != null) {
 			Map<String, String> parsedProperties = parseProperties(properties);
-			String property = parsedProperties
-					.remove(getPropertyKey(namedElement));
+			String property = parsedProperties.remove(getPropertyKey(namedElement));
 
 			if (property != null && writeProperties(uri, parsedProperties)) {
 				int index = property.indexOf('=');
@@ -172,20 +172,20 @@ public class NamedElementUtil extends UMLUtil {
 	 *            The new "business name" for the element.
 	 * @return Whether the "business name" was successfully set.
 	 */
-	public static boolean setBusinessName(NamedElement namedElement,
-			String businessName) {
+	public static boolean setBusinessName(NamedElement namedElement, String businessName) {
 		URI uri = getPropertiesURI(namedElement.eResource());
 		String properties = readProperties(uri);
-		Map<String, String> parsedProperties = properties != null ? parseProperties(properties)
+		Map<String, String> parsedProperties = properties != null
+				? parseProperties(properties)
 				: new LinkedHashMap<String, String>();
 		String key = getPropertyKey(namedElement);
 		String property = parsedProperties.get(key);
-		int index = property != null ? property.indexOf('=') : -1;
-		parsedProperties.put(
-				key,
-				(index != -1 && property.indexOf('#') != -1 ? "#" : "") + key
-						+ " = " + businessName
-						+ System.getProperty("line.separator"));
+		int index = property != null
+				? property.indexOf('=')
+				: -1;
+		parsedProperties.put(key, (index != -1 && property.indexOf('#') != -1
+				? "#"
+				: "") + key + " = " + businessName + System.getProperty("line.separator"));
 		return writeProperties(uri, parsedProperties);
 	}
 
