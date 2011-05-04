@@ -19,8 +19,9 @@ public class SubclassEditorComposedAdapterFactory {
 	private static ComposedAdapterFactory adapterFactory;
 
 	public final static ComposedAdapterFactory getAdapterFactory() {
-		if (adapterFactory == null)
+		if (adapterFactory == null) {
 			adapterFactory = new ComposedAdapterFactory(createFactoryList());
+		}
 		return adapterFactory;
 	}
 

@@ -20,17 +20,18 @@ import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 
-public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider implements
-		ILabelProvider {
+public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider implements ILabelProvider {
 
 	public SubclassEditorViewLabelProvider() {
 		super(SubclassEditorComposedAdapterFactory.getAdapterFactory());
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		return super.getImage(element);
 	}
 
+	@Override
 	public String getText(Object element) {
 		String text = null;
 		if (element instanceof Property) {
@@ -38,8 +39,7 @@ public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider
 			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
 				// use the first notation provider found for an applied profile, ignore others
 				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
 				if (provider != null) {
 					text = provider.getPrintString(property);
 					break;
@@ -47,11 +47,9 @@ public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider
 			}
 			if (text == null) {
 				// return default UML standard annotations, if no extensions found
-				text = PropertyNotationUtil.getCustomLabel(property,
-						IUMLNotation.DEFAULT_UML_PROPERTY);
+				text = PropertyNotationUtil.getCustomLabel(property, IUMLNotation.DEFAULT_UML_PROPERTY);
 			}
-		} 
-		else {
+		} else {
 			text = super.getText(element);
 		}
 		return text;

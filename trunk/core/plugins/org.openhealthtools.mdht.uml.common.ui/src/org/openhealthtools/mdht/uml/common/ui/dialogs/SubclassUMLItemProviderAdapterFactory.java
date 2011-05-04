@@ -14,19 +14,24 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.uml2.uml.edit.providers.ClassItemProvider;
 import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 
-public class SubclassUMLItemProviderAdapterFactory extends
-		UMLItemProviderAdapterFactory {
+public class SubclassUMLItemProviderAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	private boolean showKeywords() {
 		return false;
 	}
-	
+
+	@Override
 	public Adapter createClassAdapter() {
 		if (classItemProvider == null) {
 			classItemProvider = new ClassItemProvider(this) {
+				@Override
 				protected StringBuffer appendKeywords(StringBuffer text, Object object) {
-					return showKeywords() ? super.appendKeywords(text, object) : text;
+					return showKeywords()
+							? super.appendKeywords(text, object)
+							: text;
 				}
+
+				@Override
 				protected StringBuffer appendType(StringBuffer text, String key) {
 					return text;
 				}

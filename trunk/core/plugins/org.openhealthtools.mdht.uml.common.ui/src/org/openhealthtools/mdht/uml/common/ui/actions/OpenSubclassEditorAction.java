@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2011 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.actions;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -26,12 +38,21 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler;
 import org.openhealthtools.mdht.uml.common.ui.internal.Logger;
 
 public class OpenSubclassEditorAction implements IObjectActionDelegate {
-	
+
 	protected IWorkbenchPart activePart;
+
 	protected Class selectedClass;
-	
+
 	public OpenSubclassEditorAction() {
 		super();
+	}
+
+	protected SubclassEditorViewContentProvider getContentProvider() {
+		return new SubclassEditorViewContentProvider();
+	}
+
+	protected SubclassEditorViewLabelProvider getLabelProvider() {
+		return new SubclassEditorViewLabelProvider();
 	}
 
 	/**
@@ -40,36 +61,30 @@ public class OpenSubclassEditorAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(selectedClass);
-		
-			final SubclassHandler subclassHandler = new SubclassHandler(
-					activePart.getSite().getShell(), selectedClass,
-					getContentProvider(), getLabelProvider());
-			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Edit subclass properties") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					subclassHandler.openSubclassDialog();
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+			final SubclassHandler subclassHandler = new SubclassHandler(
+				activePart.getSite().getShell(), selectedClass, getContentProvider(), getLabelProvider());
+
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Edit subclass properties") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					subclassHandler.openSubclassDialog();
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
 
-		    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-		    }
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
-	}
-	
-	/**
-	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		activePart = targetPart;
 	}
 
 	/**
@@ -77,34 +92,32 @@ public class OpenSubclassEditorAction implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		selectedClass = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof View) {
-				selected = ((View)selected).getElement();
+				selected = ((View) selected).getElement();
 			}
-			
+
 			if (selected instanceof Class) {
 				selectedClass = (Class) selected;
 			}
 		}
-		
+
 		if (selectedClass != null) {
 			action.setEnabled(true);
-		}
-		else {
+		} else {
 			action.setEnabled(false);
 		}
 	}
-	
-	protected SubclassEditorViewContentProvider getContentProvider() {
-		return new SubclassEditorViewContentProvider();
-	}
 
-	protected SubclassEditorViewLabelProvider getLabelProvider() {
-		return new SubclassEditorViewLabelProvider();
+	/**
+	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
+	 */
+	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		activePart = targetPart;
 	}
 }

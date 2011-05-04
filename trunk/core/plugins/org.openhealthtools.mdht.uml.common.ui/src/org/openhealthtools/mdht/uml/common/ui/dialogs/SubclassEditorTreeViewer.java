@@ -30,10 +30,14 @@ import org.eclipse.uml2.uml.Property;
 public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	private Class currentSelection;
+
 	private boolean modifyMode = false;
+
 	private boolean doneInitialSelections = false;
+
 	private Property initProperty = null;
-//	private String initStereotypeName = null;
+
+	// private String initStereotypeName = null;
 
 	/**
 	 * Constructor for ContainerCheckedTreeViewer.
@@ -202,6 +206,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 		}
 	}
 
+	@Override
 	public boolean setChecked(Object element, boolean state) {
 		if (super.setChecked(element, state)) {
 			doCheckStateChanged(element);
@@ -210,6 +215,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 		return false;
 	}
 
+	@Override
 	public void setCheckedElements(Object[] elements) {
 		super.setCheckedElements(elements);
 		for (int i = 0; i < elements.length; i++) {
@@ -225,7 +231,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 	private void disableNodesForModify(TreeItem[] treeItems) {
 		TreeItem item = null;
 		for (int i = 0; i < treeItems.length; i++) {
-			item = (TreeItem) treeItems[i];
+			item = treeItems[i];
 			if (item.getData() instanceof Property) {
 				// if the Property or parent class is not checked, then set the item to gray
 				if (item.getChecked() == false) {
@@ -240,6 +246,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 		}
 	}
 
+	@Override
 	protected void setExpanded(Item item, boolean expand) {
 		super.setExpanded(item, expand);
 		if (expand && item instanceof TreeItem) {
@@ -247,6 +254,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 		}
 	}
 
+	@Override
 	public Object[] getCheckedElements() {
 		Object[] checked = super.getCheckedElements();
 		// add all items that are children of a checked node but not created yet
@@ -288,6 +296,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 	 * @param event
 	 *            the SWT tree event
 	 */
+	@Override
 	protected void handleTreeExpand(TreeEvent event) {
 		createChildren(event.item);
 		if (event.item.getData() != null) {
@@ -326,8 +335,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 			for (int i = 0; i < treeChildren.length; i++) {
 				child = treeChildren[i];
 				// if the parent tree has already a child class checked
-				if ((child.getData() instanceof Class && child.getChecked() && !child
-						.equals(inputItem))) {
+				if ((child.getData() instanceof Class && child.getChecked() && !child.equals(inputItem))) {
 					hasSelection = true;
 					inputItem.setChecked(false);
 					inputItem.setGrayed(true);
@@ -398,13 +406,11 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 						if (propertyList == null || propertyList.size() <= 0) {
 							propertyList = aCheckedClass.getOwnedAttributes();
 						} else {
-							propertyList.addAll(propertyList.size(), aCheckedClass
-									.getOwnedAttributes());
+							propertyList.addAll(propertyList.size(), aCheckedClass.getOwnedAttributes());
 						}
 					}
 				}
-				if (propertyList != null && !propertyList.isEmpty()
-						&& !propertyList.contains(inputItem.getData())) {
+				if (propertyList != null && !propertyList.isEmpty() && !propertyList.contains(inputItem.getData())) {
 					hasSelection = true;
 					inputItem.setChecked(false);
 					inputItem.setGrayed(true);
@@ -423,7 +429,7 @@ public class SubclassEditorTreeViewer extends CheckboxTreeViewer {
 
 	private void recordCheckedClass(TreeItem[] treeItems) {
 		for (int j = 0; j < treeItems.length; j++) {
-			TreeItem item = (TreeItem) treeItems[j];
+			TreeItem item = treeItems[j];
 			if (item.getData() instanceof Class && item.getChecked()) {
 				currentSelection = (Class) item.getData();
 				recordCheckedClass(item.getItems());

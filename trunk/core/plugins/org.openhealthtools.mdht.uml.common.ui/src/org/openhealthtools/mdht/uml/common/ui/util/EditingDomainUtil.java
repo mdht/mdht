@@ -30,10 +30,8 @@ public class EditingDomainUtil {
 		while (it.hasNext() && (editingDomain == null)) {
 			Object element = unwrap(it.next());
 			editingDomain = TransactionUtil.getEditingDomain(element);
-			if (editingDomain == null && element instanceof EObject
-					&& ((EObject)element).eResource() != null) {
-				editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain(
-						((EObject)element).eResource().getResourceSet());
+			if (editingDomain == null && element instanceof EObject && ((EObject) element).eResource() != null) {
+				editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain(((EObject) element).eResource().getResourceSet());
 			}
 		}
 		return editingDomain;
@@ -45,8 +43,9 @@ public class EditingDomainUtil {
 		}
 		if (element instanceof IAdaptable) {
 			EObject eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
-			if (eObject != null)
+			if (eObject != null) {
 				return eObject;
+			}
 		}
 		return element;
 	}

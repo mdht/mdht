@@ -37,34 +37,36 @@ import org.openhealthtools.mdht.uml.common.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.common.ui.internal.l10n.Messages;
 
 public class ModelDocument extends Saveable {
-	
+
 	private Resource resource;
+
 	private TransactionalEditingDomain editingDomain;
+
 	private boolean dirty = false;
+
 	private ResourceSetListenerImpl domainDirtyListener;
-	
+
 	public ModelDocument(final Resource resource, final TransactionalEditingDomain domain) {
 		this.resource = resource;
 		this.editingDomain = domain;
 		Assert.isNotNull(resource);
 
 		domainDirtyListener = new ResourceSetListenerImpl(NotificationFilter.NOT_TOUCH) {
-		        public void resourceSetChanged(ResourceSetChangeEvent event) {
-		        	for (Notification notification : event.getNotifications()) {
-						Object notifier = notification.getNotifier();
-						if (notifier instanceof EObject
-								&& resource == ((EObject) notifier).eResource()) {
-							dirty = true;
-						} else if (notifier instanceof Resource
-								&& resource == notifier
-								&& Resource.RESOURCE__IS_MODIFIED == notification.getFeatureID(null)) {
-							dirty = resource.isModified();
-						}
+			@Override
+			public void resourceSetChanged(ResourceSetChangeEvent event) {
+				for (Notification notification : event.getNotifications()) {
+					Object notifier = notification.getNotifier();
+					if (notifier instanceof EObject && resource == ((EObject) notifier).eResource()) {
+						dirty = true;
+					} else if (notifier instanceof Resource && resource == notifier &&
+							Resource.RESOURCE__IS_MODIFIED == notification.getFeatureID(null)) {
+						dirty = resource.isModified();
 					}
-		        }
-		    };
+				}
+			}
+		};
 		editingDomain.addResourceSetListener(domainDirtyListener);
-		
+
 	}
 
 	public TransactionalEditingDomain getEditingDomain() {
@@ -75,12 +77,13 @@ public class ModelDocument extends Saveable {
 		return resource;
 	}
 
+	@Override
 	public void doSave(IProgressMonitor monitor) throws CoreException {
 		monitor.beginTask(Messages.ModelSave_task, 1);
 
-		// must set this before saving, because view updates are triggered by save 
+		// must set this before saving, because view updates are triggered by save
 		dirty = false;
-		
+
 		saveResource(monitor);
 		resource.setModified(false);
 		monitor.done();
@@ -91,39 +94,46 @@ public class ModelDocument extends Saveable {
 
 		resource.setModified(false);
 		dirty = false;
-		
+
 		closeResource(monitor);
 		monitor.done();
 	}
 
+	@Override
 	public boolean equals(Object object) {
-		if (object != null && object instanceof ModelDocument)
-			return resource.equals(((ModelDocument)object).resource);
-		else
+		if (object != null && object instanceof ModelDocument) {
+			return resource.equals(((ModelDocument) object).resource);
+		} else {
 			return false;
+		}
 	}
 
+	@Override
 	public ImageDescriptor getImageDescriptor() {
 		return null;
 	}
 
+	@Override
 	public String getName() {
 		return resource.getURI().lastSegment();
 	}
 
+	@Override
 	public String getToolTipText() {
-        return resource.getURI().toString();
+		return resource.getURI().toString();
 	}
 
+	@Override
 	public int hashCode() {
 		return resource.hashCode();
 	}
 
+	@Override
 	public boolean isDirty() {
 		return dirty;
 	}
-	
-	/* package */ void setDirty(boolean dirty) {
+
+	/* package */void setDirty(boolean dirty) {
 		this.dirty = dirty;
 		resource.setModified(dirty);
 	}
@@ -131,10 +141,11 @@ public class ModelDocument extends Saveable {
 	public IFile getFile() {
 		if (resource != null) {
 			IResource iResource = getIResource(resource);
-			if (iResource instanceof IFile)
+			if (iResource instanceof IFile) {
 				return (IFile) iResource;
+			}
 		}
-		
+
 		return null;
 	}
 
@@ -144,8 +155,7 @@ public class ModelDocument extends Saveable {
 	 * 
 	 * @param resource
 	 *            the EMF resource
-	 * @return the <code>IResource</code> that contains the EMF resource, or
-	 *         <code>null</code>
+	 * @return the <code>IResource</code> that contains the EMF resource, or <code>null</code>
 	 */
 	private IResource getIResource(Resource resource) {
 		if (resource != null) {
@@ -153,12 +163,9 @@ public class ModelDocument extends Saveable {
 			if (uri != null) {
 				if (uri.isPlatformResource()) {
 					IPath path = new Path(URI.decode(uri.path()));
-					return ResourcesPlugin.getWorkspace().getRoot().findMember(
-							path.removeFirstSegments(1));
-				}
-				else {
-					return ResourcesPlugin.getWorkspace().getRoot().findMember(
-							uri.toString());
+					return ResourcesPlugin.getWorkspace().getRoot().findMember(path.removeFirstSegments(1));
+				} else {
+					return ResourcesPlugin.getWorkspace().getRoot().findMember(uri.toString());
 				}
 			}
 		}
@@ -169,7 +176,7 @@ public class ModelDocument extends Saveable {
 		try {
 			ModelManager.getManager().getSavedResources().add(resource);
 			resource.save(Collections.EMPTY_MAP);
-			
+
 		} catch (IOException e) {
 			Logger.logException(e);
 		}
@@ -178,7 +185,7 @@ public class ModelDocument extends Saveable {
 	private void closeResource(IProgressMonitor monitor) {
 		// remove from changed resources, if present
 		ModelManager.getManager().getChangedResources().remove(resource);
-		
+
 		resource.unload();
 	}
 

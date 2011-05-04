@@ -48,6 +48,7 @@ public class SubclassEditorViewContentProvider extends AdapterFactoryContentProv
 		// TODO need to save these preferences on close with user state
 	}
 
+	@Override
 	public Object[] getChildren(Object parentElement) {
 		List<NamedElement> children = new ArrayList<NamedElement>();
 
@@ -57,24 +58,25 @@ public class SubclassEditorViewContentProvider extends AdapterFactoryContentProv
 			PropertyList attrList = new PropertyList((Class) parentElement);
 			children.addAll(attrList.getAttributes());
 
-//			List<DirectedRelationship>specializations = 
-//				((Class)parentElement).getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
-//			if(specializations!=null && !specializations.isEmpty()){
-//				for (DirectedRelationship relationship : specializations) {
-//					Generalization generalization = (Generalization)relationship;
-//					
-//					// don't include <<subsets>> specializations
-//					Stereotype subsets = HL7ResourceUtil.getAppliedHDFStereotype(generalization, 
-//							IHDFProfileConstants.SUBSETS_GENERALIZATION);
-//					if (subsets == null) {
-//						children.add(generalization.getSpecific());
-//					}
-//				}
-//			}
+			// List<DirectedRelationship>specializations =
+			// ((Class)parentElement).getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+			// if(specializations!=null && !specializations.isEmpty()){
+			// for (DirectedRelationship relationship : specializations) {
+			// Generalization generalization = (Generalization)relationship;
+			//
+			// // don't include <<subsets>> specializations
+			// Stereotype subsets = HL7ResourceUtil.getAppliedHDFStereotype(generalization,
+			// IHDFProfileConstants.SUBSETS_GENERALIZATION);
+			// if (subsets == null) {
+			// children.add(generalization.getSpecific());
+			// }
+			// }
+			// }
 		}
 		return children.toArray();
 	}
 
+	@Override
 	public Object getParent(Object element) {
 		Object parent = null;
 		if (element instanceof NamedElement) {
@@ -84,18 +86,22 @@ public class SubclassEditorViewContentProvider extends AdapterFactoryContentProv
 		return parent;// super.getParent(element);
 	}
 
+	@Override
 	public boolean hasChildren(Object element) {
 		return getChildren(element).length > 0;
 	}
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 		return getChildren(inputElement);
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 	}
 
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		fViewer = (SubclassEditorTreeViewer) viewer;
 	}
@@ -108,8 +114,9 @@ public class SubclassEditorViewContentProvider extends AdapterFactoryContentProv
 		if (fShowTypes != showTypes) {
 			fShowTypes = showTypes;
 			fSettings.put(SETTINGS_SHOWTYPES, showTypes);
-			if (fViewer != null)
+			if (fViewer != null) {
 				fViewer.refresh();
+			}
 		}
 	}
 
@@ -127,9 +134,9 @@ public class SubclassEditorViewContentProvider extends AdapterFactoryContentProv
 				// leave all structural attributes in model
 				filteredList.add(element);
 
-//				 if (!CloneEditorRIMUtil.isStructuralAttribute((Property)element)) {
-//				 	filteredList.add((Property)element);
-//				 }
+				// if (!CloneEditorRIMUtil.isStructuralAttribute((Property)element)) {
+				// filteredList.add((Property)element);
+				// }
 			} else {
 				filteredList.add(element);
 			}

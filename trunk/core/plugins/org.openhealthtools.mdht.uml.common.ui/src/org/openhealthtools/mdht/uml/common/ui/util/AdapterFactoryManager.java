@@ -16,18 +16,16 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 
 /**
- * This class provides access to EMF adapter factories registered 
- * via extension point.  Explicitly registered adapter factories
+ * This class provides access to EMF adapter factories registered
+ * via extension point. Explicitly registered adapter factories
  * are returned before searching extension-point factories.
  */
 
 public class AdapterFactoryManager {
-	
-	public static ComposedAdapterFactory.Descriptor.Registry adapterRegistry =
-		ComposedAdapterFactory.Descriptor.Registry.INSTANCE;
 
-	private static ComposedAdapterFactory adapterFactory = 
-		new ComposedAdapterFactory(adapterRegistry);
+	public static ComposedAdapterFactory.Descriptor.Registry adapterRegistry = ComposedAdapterFactory.Descriptor.Registry.INSTANCE;
+
+	private static ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(adapterRegistry);
 
 	/**
 	 * Get the composed factory.
@@ -43,6 +41,6 @@ public class AdapterFactoryManager {
 
 		adapterFactory.removeAdapterFactory(factory);
 		adapterFactory.addAdapterFactory(factory);
-		
+
 	}
 }
