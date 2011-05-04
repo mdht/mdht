@@ -2,6 +2,7 @@
 	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
 	<property name="modelPath.uml" location="${basedir}.model/model/${modelName}.uml"/>
 	<property name="ecoreModelPath.uml" location="${basedir}/model/${modelName}_Ecore.uml"/>
+	<property name="domainModelPath.uml" location="${basedir}/model/${modelName}_domain_Ecore.uml"/>
 	
 	<target name="all">
 		<antcall target="transformModel"></antcall>
@@ -9,7 +10,7 @@
 
     <target name="transformModel" description="Transform Ecore UML model.">
         <cdatools model="${modelPath.uml}">
-            <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" />
+            <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" domainModel="${domainModelPath.uml}" />
         </cdatools>
 
     	<convertEcorePaths filePath="${ecoreModelPath.uml}"/>
