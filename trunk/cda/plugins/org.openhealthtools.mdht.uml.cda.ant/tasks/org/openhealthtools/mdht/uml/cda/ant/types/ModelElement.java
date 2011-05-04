@@ -15,15 +15,17 @@ package org.openhealthtools.mdht.uml.cda.ant.types;
 /**
  * Holds a UML QName (e.g. Model::pack1::pack2::class1 )
  * 
- * @version $id:  $
- *
+ * @version $id: $
+ * 
  */
 public class ModelElement {
-	
+
 	private String modelId;
+
 	private String qname;
+
 	private boolean nested = false;
-	
+
 	public String getModelId() {
 		return modelId;
 	}
@@ -31,7 +33,7 @@ public class ModelElement {
 	public void setModelId(String modelId) {
 		this.modelId = modelId;
 	}
-	
+
 	public boolean isNested() {
 		return nested;
 	}

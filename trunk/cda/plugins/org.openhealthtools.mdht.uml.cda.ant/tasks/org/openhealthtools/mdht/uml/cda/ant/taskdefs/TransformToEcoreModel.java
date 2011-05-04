@@ -14,7 +14,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -34,93 +33,102 @@ import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
-/** Transform CDA conceptual model to UML with Ecore extensions.
- *
+/**
+ * Transform CDA conceptual model to UML with Ecore extensions.
+ * 
  * @version $Id: $
  */
 public class TransformToEcoreModel extends CDAModelingSubTask {
 
-    /* attributes of this Ant task */
+	/* attributes of this Ant task */
 	private String ecoreModelPath = null;
+
 	private String domainModelPath = null;
-	
+
 	private Boolean generateDomainInterface = null;
+
 	private Boolean includeFixedValueGetters = null;
+
 	private Boolean includeInterfaceRealization = null;
+
 	private Boolean generateDomainClasses = null;
+
 	private Boolean useBusinessNames = null;
 
 	/* child elements of this Ant task */
-//	private List<ModelElement> elements = new ArrayList<ModelElement>();
-	
-    public TransformToEcoreModel(CDAModelingTask parentTask) {
-    	super(parentTask);
-    }
+	// private List<ModelElement> elements = new ArrayList<ModelElement>();
 
-	protected void checkAttributes() throws BuildException {
-		assertTrue("The 'model' attribute must be specified.",
-				getHL7ModelingTask().getDefaultModel() != null);
+	public TransformToEcoreModel(CDAModelingTask parentTask) {
+		super(parentTask);
 	}
 
-    private void initializeProperties() {
-    	Project project = getProject();
+	@Override
+	protected void checkAttributes() throws BuildException {
+		assertTrue("The 'model' attribute must be specified.", getHL7ModelingTask().getDefaultModel() != null);
+	}
 
-    	if (ecoreModelPath == null && project.getProperty("ecoreModel") != null) {
-    		ecoreModelPath = project.getProperty("ecoreModel");
-    	}
-    	if (domainModelPath == null && project.getProperty("domainModel") != null) {
-    		domainModelPath = project.getProperty("domainModel");
-    	}
-    	
-    	if (generateDomainInterface == null && project.getProperty("generateDomainInterface") != null) {
-    		generateDomainInterface = Boolean.valueOf(project.getProperty("generateDomainInterface"));
-    	}
-    	if (generateDomainClasses == null && project.getProperty("generateDomainClasses") != null) {
-    		generateDomainClasses = Boolean.valueOf(project.getProperty("generateDomainClasses"));
-    	}
-    	if (includeFixedValueGetters == null && project.getProperty("includeFixedValueGetters") != null) {
-    		includeFixedValueGetters = Boolean.valueOf(project.getProperty("includeFixedValueGetters"));
-    	}
-    	if (includeInterfaceRealization == null && project.getProperty("includeInterfaceRealization") != null) {
-    		includeInterfaceRealization = Boolean.valueOf(project.getProperty("includeInterfaceRealization"));
-    	}
-    	if (useBusinessNames == null && project.getProperty("useBusinessNames") != null) {
-    		useBusinessNames = Boolean.valueOf(project.getProperty("useBusinessNames"));
-    	}
+	private void initializeProperties() {
+		Project project = getProject();
 
-    }
-    
-    public void doExecute() throws Exception {
-    	// initial values from Ant global project properties
-    	initializeProperties();
-    	
+		if (ecoreModelPath == null && project.getProperty("ecoreModel") != null) {
+			ecoreModelPath = project.getProperty("ecoreModel");
+		}
+		if (domainModelPath == null && project.getProperty("domainModel") != null) {
+			domainModelPath = project.getProperty("domainModel");
+		}
+
+		if (generateDomainInterface == null && project.getProperty("generateDomainInterface") != null) {
+			generateDomainInterface = Boolean.valueOf(project.getProperty("generateDomainInterface"));
+		}
+		if (generateDomainClasses == null && project.getProperty("generateDomainClasses") != null) {
+			generateDomainClasses = Boolean.valueOf(project.getProperty("generateDomainClasses"));
+		}
+		if (includeFixedValueGetters == null && project.getProperty("includeFixedValueGetters") != null) {
+			includeFixedValueGetters = Boolean.valueOf(project.getProperty("includeFixedValueGetters"));
+		}
+		if (includeInterfaceRealization == null && project.getProperty("includeInterfaceRealization") != null) {
+			includeInterfaceRealization = Boolean.valueOf(project.getProperty("includeInterfaceRealization"));
+		}
+		if (useBusinessNames == null && project.getProperty("useBusinessNames") != null) {
+			useBusinessNames = Boolean.valueOf(project.getProperty("useBusinessNames"));
+		}
+
+	}
+
+	@Override
+	public void doExecute() throws Exception {
+		// initial values from Ant global project properties
+		initializeProperties();
+
 		IProgressMonitor monitor = getProgressMonitor();
 		transformToUML(monitor);
-    }
+	}
 
-    private void transformToUML(IProgressMonitor monitor) {
-    	Package umlModel = getHL7ModelingTask().getDefaultModel();
-    	Resource umlResource = umlModel.eResource();
+	private void transformToUML(IProgressMonitor monitor) {
+		Package umlModel = getHL7ModelingTask().getDefaultModel();
+		Resource umlResource = umlModel.eResource();
 
-    	URI propertiesURI = UMLUtil.getPropertiesURI(umlResource);
-    	String properties = UMLUtil.readProperties(propertiesURI);
-    	Map<String, String> parsedProperties = properties != null ? UMLUtil.parseProperties(properties) : new LinkedHashMap<String, String>();
-    	
-    	EcoreUtil.resolveAll(umlResource.getResourceSet());
+		URI propertiesURI = UMLUtil.getPropertiesURI(umlResource);
+		String properties = UMLUtil.readProperties(propertiesURI);
+		Map<String, String> parsedProperties = properties != null
+				? UMLUtil.parseProperties(properties)
+				: new LinkedHashMap<String, String>();
+
+		EcoreUtil.resolveAll(umlResource.getResourceSet());
 
 		EList<EObject> umlResourceContents = umlResource.getContents();
 
 		for (Resource controlledResource : UMLUtil.getControlledResources(umlResource)) {
-	    	URI controlledPropertiesURI = UMLUtil.getPropertiesURI(controlledResource);
-	    	String controlledProperties = UMLUtil.readProperties(controlledPropertiesURI);
-	    	
-	    	if (controlledProperties != null) {
-	    		parsedProperties.putAll(UMLUtil.parseProperties(controlledProperties));
-	    	}
+			URI controlledPropertiesURI = UMLUtil.getPropertiesURI(controlledResource);
+			String controlledProperties = UMLUtil.readProperties(controlledPropertiesURI);
 
-			for (ListIterator<EObject> contents = controlledResource.getContents().listIterator(); contents.hasNext(); ) {
+			if (controlledProperties != null) {
+				parsedProperties.putAll(UMLUtil.parseProperties(controlledProperties));
+			}
+
+			for (ListIterator<EObject> contents = controlledResource.getContents().listIterator(); contents.hasNext();) {
 				EObject next = contents.next();
-				
+
 				contents.remove();
 
 				if (next.eContainer() == null) {
@@ -146,7 +154,8 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		if (domainModelURI == null) {
 			domainModelURI = umlResource.getURI();
 			domainModelURI = domainModelURI.trimFileExtension();
-			domainModelURI = domainModelURI.trimSegments(1).appendSegment(domainModelURI.lastSegment() + "_domain_Ecore");
+			domainModelURI = domainModelURI.trimSegments(1).appendSegment(
+				domainModelURI.lastSegment() + "_domain_Ecore");
 		}
 
 		String fileExtension = umlResource.getURI().fileExtension();
@@ -156,54 +165,54 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		if (!fileExtension.equals(domainModelURI.fileExtension())) {
 			domainModelURI = domainModelURI.appendFileExtension(fileExtension);
 		}
-		
-		umlResource.setURI(ecoreModelURI);
-		
-    	EcoreTransformerOptions options = new EcoreTransformerOptions();
-    	options.setDomainModelPath(domainModelPath);
-    	
-    	if (generateDomainInterface != null) {
-    		options.setGenerateDomainInterface(generateDomainInterface);
-    	}
-    	if (generateDomainClasses != null) {
-    		options.setGenerateDomainClasses(generateDomainClasses);
-    	}
-    	if (includeFixedValueGetters != null) {
-    		options.setIncludeFixedValueGetters(includeFixedValueGetters);
-    	}
-    	if (includeInterfaceRealization != null) {
-    		options.setIncludeInterfaceRealization(includeInterfaceRealization);
-    	}
-    	if (useBusinessNames != null) {
-    		options.setUseBusinessNames(useBusinessNames);
-    	}
 
-    	EcoreTransformer transformer = new EcoreTransformer(options);
-    	transformer.transformElement(umlModel);
-    	
+		umlResource.setURI(ecoreModelURI);
+
+		EcoreTransformerOptions options = new EcoreTransformerOptions();
+		options.setDomainModelPath(domainModelPath);
+
+		if (generateDomainInterface != null) {
+			options.setGenerateDomainInterface(generateDomainInterface);
+		}
+		if (generateDomainClasses != null) {
+			options.setGenerateDomainClasses(generateDomainClasses);
+		}
+		if (includeFixedValueGetters != null) {
+			options.setIncludeFixedValueGetters(includeFixedValueGetters);
+		}
+		if (includeInterfaceRealization != null) {
+			options.setIncludeInterfaceRealization(includeInterfaceRealization);
+		}
+		if (useBusinessNames != null) {
+			options.setUseBusinessNames(useBusinessNames);
+		}
+
+		EcoreTransformer transformer = new EcoreTransformer(options);
+		transformer.transformElement(umlModel);
+
 		monitor.worked(1);
-		if( monitor.isCanceled() )
+		if (monitor.isCanceled()) {
 			return;
-		
+		}
+
 		/* Save */
 		monitor.setTaskName("Saving model");
 
 		logInfo("Saving model: " + ecoreModelURI.toString());
-		
+
 		try {
 			Map<String, String> saveOptions = new HashMap<String, String>();
 			umlResource.save(saveOptions);
-			
+
 			if (!parsedProperties.isEmpty()) {
-				UMLUtil.writeProperties(UMLUtil.getPropertiesURI(umlResource), parsedProperties);				
+				UMLUtil.writeProperties(UMLUtil.getPropertiesURI(umlResource), parsedProperties);
 			}
 		} catch (IOException e) {
 			throw new BuildException(e);
 		}
-    }
-    
-    
-    // ANT task attributes -----------------------------------------------------
+	}
+
+	// ANT task attributes -----------------------------------------------------
 
 	public void setEcoreModel(String path) {
 		ecoreModelPath = path;
@@ -233,9 +242,7 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		useBusinessNames = new Boolean(include);
 	}
 
-
 	// ANT task child elements
 	// --------------------------------------------------
-	
-    
+
 }

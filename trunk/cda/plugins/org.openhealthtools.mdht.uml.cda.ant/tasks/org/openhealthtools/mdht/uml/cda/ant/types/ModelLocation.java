@@ -15,9 +15,11 @@ package org.openhealthtools.mdht.uml.cda.ant.types;
 import java.io.File;
 
 public class ModelLocation {
-	
+
 	private String id;
+
 	private File file;
+
 	private String uri;
 
 	public String getId() {
@@ -27,7 +29,7 @@ public class ModelLocation {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 	public File getFile() {
 		return file;
 	}
