@@ -25,5 +25,5 @@ public class EPackageClass {
 	public void setQname(Class<EPackage> ePackage) {
 		this.qname = ePackage;
 	}
-	
+
 }

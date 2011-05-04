@@ -14,23 +14,19 @@ package org.openhealthtools.mdht.uml.cda.ant;
 
 import org.eclipse.core.runtime.Plugin;
 
+public class CDAAntPlugin extends Plugin {
+	// The shared instance.
+	private static CDAAntPlugin plugin;
 
-public class CDAAntPlugin extends Plugin
-{
-  //The shared instance.
-  private static CDAAntPlugin plugin;
+	public CDAAntPlugin() {
+		super();
+		plugin = this;
+	}
 
-  public CDAAntPlugin()
-  {
-    super();
-    plugin = this;
-  }
-
-  /**
-   * Returns the shared instance.
-   */
-  public static CDAAntPlugin getDefault()
-  {
-    return plugin;
-  }
+	/**
+	 * Returns the shared instance.
+	 */
+	public static CDAAntPlugin getDefault() {
+		return plugin;
+	}
 }

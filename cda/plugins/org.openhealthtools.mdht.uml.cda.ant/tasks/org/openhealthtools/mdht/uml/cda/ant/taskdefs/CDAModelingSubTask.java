@@ -37,7 +37,8 @@ public abstract class CDAModelingSubTask extends Task {
 	public CDAModelingTask getHL7ModelingTask() {
 		return hl7modelingTask;
 	}
-	
+
+	@Override
 	public final void execute() throws BuildException {
 		checkAttributes();
 
@@ -71,18 +72,21 @@ public abstract class CDAModelingSubTask extends Task {
 	// Helper methods ----------------------------------------------------------
 
 	protected void logError(String message) {
-		if (getProject() != null)
+		if (getProject() != null) {
 			log(message, Project.MSG_ERR);
+		}
 	}
 
 	protected void logWarning(String message) {
-		if (getProject() != null)
+		if (getProject() != null) {
 			log(message, Project.MSG_WARN);
+		}
 	}
 
 	protected void logInfo(String message) {
-		if (getProject() != null)
+		if (getProject() != null) {
 			log(message, Project.MSG_INFO);
+		}
 	}
 
 	protected void logDiagnostics(Diagnostic diagnostics) {
@@ -90,11 +94,12 @@ public abstract class CDAModelingSubTask extends Task {
 			Diagnostic diagnostic = (Diagnostic) children.next();
 			StringBuffer message = new StringBuffer(diagnostic.getMessage());
 			for (Iterator diagData = diagnostic.getData().iterator(); diagData.hasNext();) {
-				Object data = (Object) diagData.next();
+				Object data = diagData.next();
 				if (NamedElement.class.isInstance(data)) {
-					String qname = getPackageQualifiedName((NamedElement)data);
-					if (qname == null)
-						qname = EcoreUtil.getURI((NamedElement)data).toString();
+					String qname = getPackageQualifiedName((NamedElement) data);
+					if (qname == null) {
+						qname = EcoreUtil.getURI((NamedElement) data).toString();
+					}
 					message.append(" '");
 					message.append(qname);
 					message.append("'");
@@ -111,18 +116,19 @@ public abstract class CDAModelingSubTask extends Task {
 					logInfo(message.toString());
 			}
 		}
-		
+
 	}
 
 	protected String getPackageQualifiedName(NamedElement namedElement) {
-		if (namedElement.getName() == null)
+		if (namedElement.getName() == null) {
 			return null;
-		
+		}
+
 		StringBuffer qname = new StringBuffer(namedElement.getName());
 		Element container = namedElement.getOwner();
 		while (container instanceof NamedElement) {
 			qname.insert(0, NamedElement.SEPARATOR);
-			qname.insert(0, ((NamedElement)container).getName());
+			qname.insert(0, ((NamedElement) container).getName());
 			if (container instanceof Package) {
 				break;
 			}
@@ -130,7 +136,7 @@ public abstract class CDAModelingSubTask extends Task {
 		}
 		return qname.toString();
 	}
-	
+
 	/**
 	 * Throws a <tt>BuildException</tt> if <tt>expression</tt> is false.
 	 * 
@@ -138,8 +144,7 @@ public abstract class CDAModelingSubTask extends Task {
 	 * @param expression
 	 * @throws BuildException
 	 */
-	protected void assertTrue(String message, boolean expression)
-			throws BuildException {
+	protected void assertTrue(String message, boolean expression) throws BuildException {
 		if (!expression) {
 			throw new BuildException(message);
 		}
@@ -148,8 +153,8 @@ public abstract class CDAModelingSubTask extends Task {
 	protected IProgressMonitor getProgressMonitor() {
 		try {
 			if (hl7modelingTask.getProject() != null) {
-				IProgressMonitor progressMonitor = (IProgressMonitor) hl7modelingTask.getProject()
-						.getReferences().get(AntCorePlugin.ECLIPSE_PROGRESS_MONITOR);
+				IProgressMonitor progressMonitor = (IProgressMonitor) hl7modelingTask.getProject().getReferences().get(
+					AntCorePlugin.ECLIPSE_PROGRESS_MONITOR);
 				if (progressMonitor != null) {
 					return progressMonitor;
 				}

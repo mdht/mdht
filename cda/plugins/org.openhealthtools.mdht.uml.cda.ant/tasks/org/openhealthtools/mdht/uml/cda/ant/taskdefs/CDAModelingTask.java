@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,15 +30,16 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.ant.types.ModelLocation;
 
-
 /**
- * Base class for the tasks that are defined in this plugin.  Provides common behavior 
+ * Base class for the tasks that are defined in this plugin. Provides common behavior
  * and facilities.
  * 
  * @version $id: $
@@ -53,8 +53,11 @@ public class CDAModelingTask extends Task {
 	private ResourceSet resourceSet;
 
 	private File model;
+
 	private List<ModelLocation> modelLocations;
+
 	private Package defaultModel = null;
+
 	private List<Package> rootPackages = new ArrayList<Package>();
 
 	/** Creates a new instance of this task. */
@@ -64,11 +67,11 @@ public class CDAModelingTask extends Task {
 	public final ResourceSet getResourceSet() {
 		return resourceSet;
 	}
-	
+
 	public final Package getDefaultModel() {
 		return defaultModel;
 	}
-	
+
 	public final List<Package> getRootPackages() {
 		return rootPackages;
 	}
@@ -77,8 +80,8 @@ public class CDAModelingTask extends Task {
 
 	protected boolean supportMultipleURIs() {
 		return true;
-	}  
-	  
+	}
+
 	public ModelLocation createModel() {
 		if (supportMultipleURIs()) {
 			ModelLocation modelLocation = new ModelLocation();
@@ -88,13 +91,13 @@ public class CDAModelingTask extends Task {
 			} else {
 				modelLocations.add(0, modelLocation);
 			}
-	
+
 			return modelLocation;
-			
+
 		} else {
 			throw new BuildException("This task doesn't support multiple models");
 		}
-	}  
+	}
 
 	/**
 	 * All the attribute checks should be performed in this method.
@@ -104,14 +107,13 @@ public class CDAModelingTask extends Task {
 	 */
 	protected void checkAttributes() throws BuildException {
 		if (modelLocations == null) {
-			assertTrue("The 'model' attribute or child element must be specified.",
-					model != null && modelLocations == null);
+			assertTrue("The 'model' attribute or child element must be specified.", model != null &&
+					modelLocations == null);
 		} else {
 			for (ModelLocation modelLocation : modelLocations) {
 				assertTrue(
-						"Either the 'file' or the 'uri' attributes of a 'model' element must be specified.",
-						modelLocation.getFile() != null
-								|| modelLocation.getUri() != null);
+					"Either the 'file' or the 'uri' attributes of a 'model' element must be specified.",
+					modelLocation.getFile() != null || modelLocation.getUri() != null);
 			}
 		}
 	}
@@ -119,51 +121,47 @@ public class CDAModelingTask extends Task {
 	/**
 	 * Executes all subtasks
 	 */
+	@Override
 	public void execute() throws BuildException {
 		checkAttributes();
-		
+
 		try {
 			resourceSet = new ResourceSetImpl();
-			resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+			resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 
 			// load the models
 			URI uri = null;
-		    if (model != null) {
+			if (model != null) {
 				uri = URI.createFileURI(model.getAbsolutePath());
-				Package pkg = (Package) UMLUtil.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
+				Package pkg = (Package) UML2Util.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
 				if (pkg != null) {
 					rootPackages.add(pkg);
 					logInfo("Loaded model: " + uri);
-					
+
 					if (defaultModel == null) {
 						defaultModel = pkg;
 					}
-				}
-				else {
+				} else {
 					createNewModel(uri);
 				}
 			}
-		    
-		    if (modelLocations != null) {
+
+			if (modelLocations != null) {
 				for (ModelLocation modelLocation : modelLocations) {
 					if (modelLocation.getUri() != null) {
 						uri = URI.createURI(modelLocation.getUri());
-					}
-					else if (modelLocation.getFile() != null) {
+					} else if (modelLocation.getFile() != null) {
 						try {
-							uri = URI.createFileURI(
-									modelLocation.getFile().getCanonicalPath());
+							uri = URI.createFileURI(modelLocation.getFile().getCanonicalPath());
 						} catch (IOException e) {
-							uri = URI.createFileURI(
-									modelLocation.getFile().getAbsolutePath());
+							uri = URI.createFileURI(modelLocation.getFile().getAbsolutePath());
 						}
 					}
-					Package pkg = (Package) UMLUtil.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
+					Package pkg = (Package) UML2Util.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
 					if (pkg != null) {
 						rootPackages.add(pkg);
 						logInfo("Loaded model: " + pkg.getQualifiedName());
-					}
-					else {
+					} else {
 						logError("Error loading model: " + modelLocation.getFile());
 					}
 				}
@@ -176,23 +174,23 @@ public class CDAModelingTask extends Task {
 		// execute subtasks
 		for (Iterator<Task> it = subtasks.iterator(); it.hasNext();) {
 			Task subtask = it.next();
-			
+
 			try {
 				subtask.execute();
-				
+
 			} catch (Throwable t) {
 				t.printStackTrace();
 				throw new BuildException(t);
 			}
 		}
 	}
-	
+
 	private void createNewModel(URI uri) {
 		logInfo("Creating new model: " + uri.toString());
-		
+
 		String modelName = uri.lastSegment();
 		modelName = modelName.substring(0, modelName.lastIndexOf("."));
-		
+
 		defaultModel = UMLFactory.eINSTANCE.createModel();
 		defaultModel.setName(modelName);
 		Resource modelResource = resourceSet.createResource(uri);
@@ -207,22 +205,22 @@ public class CDAModelingTask extends Task {
 
 	// ANT task child elements
 	// --------------------------------------------------
-	
+
 	public void addCopy(Copy task) {
-        subtasks.add(task);
-    }
+		subtasks.add(task);
+	}
 
 	public void addDelete(Delete task) {
-        subtasks.add(task);
-    }
+		subtasks.add(task);
+	}
 
 	public void addEcho(Echo task) {
-        subtasks.add(task);
-    }
+		subtasks.add(task);
+	}
 
 	public void addProperty(Property task) {
-        subtasks.add(task);
-    }
+		subtasks.add(task);
+	}
 
 	// Creation and addition of subtasks ---------------------------------------
 
@@ -239,20 +237,23 @@ public class CDAModelingTask extends Task {
 	}
 
 	// Helper methods ----------------------------------------------------------
-	
+
 	protected void logError(String message) {
-		if (getProject() != null)
+		if (getProject() != null) {
 			log(message, Project.MSG_ERR);
+		}
 	}
 
 	protected void logWarning(String message) {
-		if (getProject() != null)
+		if (getProject() != null) {
 			log(message, Project.MSG_WARN);
+		}
 	}
 
 	protected void logInfo(String message) {
-		if (getProject() != null)
+		if (getProject() != null) {
 			log(message, Project.MSG_INFO);
+		}
 	}
 
 	/**
@@ -262,8 +263,7 @@ public class CDAModelingTask extends Task {
 	 * @param expression
 	 * @throws BuildException
 	 */
-	public void assertTrue(String message, boolean expression)
-			throws BuildException {
+	public void assertTrue(String message, boolean expression) throws BuildException {
 		if (!expression) {
 			throw new BuildException(message);
 		}
