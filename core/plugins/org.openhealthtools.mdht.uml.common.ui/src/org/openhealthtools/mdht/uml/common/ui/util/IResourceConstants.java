@@ -15,5 +15,5 @@ package org.openhealthtools.mdht.uml.common.ui.util;
 public interface IResourceConstants {
 
 	public static final String EDITING_DOMAIN_ID = "org.openhealthtools.mdht.uml.common.ui.EditingDomain";
-	
+
 }

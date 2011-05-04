@@ -46,54 +46,56 @@ public class DialogLaunchUtil {
 	 */
 	protected static class PackagesListLabelProvider extends LabelProvider {
 		private static final AdapterFactory adapterFactory = new UMLItemProviderAdapterFactory();
+
 		private static final ILabelProvider labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
-		
+
+		@Override
 		public Image getImage(Object element) {
 			return labelProvider.getImage(element);
 		}
-		
+
+		@Override
 		public String getText(Object element) {
-			if( element instanceof NamedElement )
-				return ((NamedElement)element).getQualifiedName();
-			else
+			if (element instanceof NamedElement) {
+				return ((NamedElement) element).getQualifiedName();
+			} else {
 				return "";
+			}
 		}
-	}	
+	}
 
 	/**
 	 * 
 	 */
-	public static Type chooseType( ResourceSet resourceSet, Shell shell ) {
-		Class[] filter = {Type.class};
+	public static Type chooseType(ResourceSet resourceSet, Shell shell) {
+		Class[] filter = { Type.class };
 		return (Type) chooseElement(filter, resourceSet, shell);
 	}
 
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement( Class[] filter, ResourceSet resourceSet, Shell shell ) {
-		return chooseElement(filter, resourceSet, shell,
-				Messages.ElementSelectionDialog_title,
-				Messages.ElementSelectionDialog_message);
+	public static NamedElement chooseElement(Class[] filter, ResourceSet resourceSet, Shell shell) {
+		return chooseElement(
+			filter, resourceSet, shell, Messages.ElementSelectionDialog_title, Messages.ElementSelectionDialog_message);
 	}
 
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement( Class[] filter, Package umlPackage, Shell shell ) {
-		return chooseElement(filter, umlPackage, shell,
-				Messages.ElementSelectionDialog_title,
-				Messages.ElementSelectionDialog_message);
+	public static NamedElement chooseElement(Class[] filter, Package umlPackage, Shell shell) {
+		return chooseElement(
+			filter, umlPackage, shell, Messages.ElementSelectionDialog_title, Messages.ElementSelectionDialog_message);
 	}
 
-	public static NamedElement chooseElement( Class[] filter, Package umlPackage, 
-			Shell shell, String title, String message) {
+	public static NamedElement chooseElement(Class[] filter, Package umlPackage, Shell shell, String title,
+			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
 			typeList.addAll(ModelSearch.findAllOf(umlPackage, filter[i]));
 		}
 
-		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
+		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
 		dialog.setTitle(title);
 		dialog.setMessage(message);
 
@@ -103,14 +105,14 @@ public class DialogLaunchUtil {
 		return null;
 	}
 
-	public static NamedElement chooseElement( Class[] filter, Resource resource, 
-			Shell shell, String title, String message) {
+	public static NamedElement chooseElement(Class[] filter, Resource resource, Shell shell, String title,
+			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
 			typeList.addAll(ModelSearch.findAllOf(resource, filter[i]));
 		}
 
-		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
+		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
 		dialog.setTitle(title);
 		dialog.setMessage(message);
 
@@ -123,14 +125,14 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement( Class[] filter, ResourceSet resourceSet, 
-			Shell shell, String title, String message) {
+	public static NamedElement chooseElement(Class[] filter, ResourceSet resourceSet, Shell shell, String title,
+			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
 			typeList.addAll(ModelSearch.findAllOf(resourceSet, filter[i]));
 		}
 
-		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
+		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
 		dialog.setTitle(title);
 		dialog.setMessage(message);
 
@@ -143,8 +145,8 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement( IElementFilter filter, ResourceSet resourceSet, 
-			Shell shell, String title, String message) {
+	public static NamedElement chooseElement(IElementFilter filter, ResourceSet resourceSet, Shell shell, String title,
+			String message) {
 		if (title == null) {
 			title = Messages.ElementSelectionDialog_title;
 		}
@@ -153,7 +155,7 @@ public class DialogLaunchUtil {
 		}
 		List<Element> typeList = ModelSearch.findAllOf(resourceSet, filter);
 
-		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
+		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
 		dialog.setTitle(title);
 		dialog.setMessage(message);
 
@@ -166,11 +168,11 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
-	public static Package choosePackage( ResourceSet resourceSet, Shell shell ) {
+	public static Package choosePackage(ResourceSet resourceSet, Shell shell) {
 		List packagesList = ModelSearch.findAllOf(resourceSet, Package.class);
-		Package[] packages= (Package[])packagesList.toArray(new Package[packagesList.size()]);
-		
-		ElementListSelectionDialog dialog= new ElementListSelectionDialog(shell, new PackagesListLabelProvider());
+		Package[] packages = (Package[]) packagesList.toArray(new Package[packagesList.size()]);
+
+		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, new PackagesListLabelProvider());
 		dialog.setIgnoreCase(false);
 		dialog.setTitle(Messages.PackageSelectionDialog_title);
 		dialog.setMessage(Messages.PackageSelectionDialog_description);

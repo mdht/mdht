@@ -26,5 +26,5 @@ public interface IElementFilter {
 	 * @return true if accepted
 	 */
 	public boolean accept(Element element);
-	
+
 }

@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.Element;
 public class HDFFilterUtil {
 
 	public static Element getElement(Object object) {
-		
+
 		Element element = null;
 
 		if (object instanceof IAdaptable) {

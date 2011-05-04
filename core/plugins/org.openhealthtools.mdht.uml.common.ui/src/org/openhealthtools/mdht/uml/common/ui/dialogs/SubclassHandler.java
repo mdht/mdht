@@ -17,6 +17,7 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -32,12 +33,12 @@ public class SubclassHandler {
 	private Class subclass;
 
 	private SubclassEditorViewContentProvider contentProvider;
+
 	private SubclassEditorViewLabelProvider labelProvider;
 
 	private SubclassEditorDialog subclassDialog;
 
-	public SubclassHandler(Shell shell, Class subclass,
-			SubclassEditorViewContentProvider contentProvider,
+	public SubclassHandler(Shell shell, Class subclass, SubclassEditorViewContentProvider contentProvider,
 			SubclassEditorViewLabelProvider labelProvider) {
 		this.shell = shell;
 		this.subclass = subclass;
@@ -46,8 +47,7 @@ public class SubclassHandler {
 	}
 
 	public SubclassHandler(Shell shell, Class subclass) {
-		this(shell, subclass, new SubclassEditorViewContentProvider(),
-				new SubclassEditorViewLabelProvider());
+		this(shell, subclass, new SubclassEditorViewContentProvider(), new SubclassEditorViewLabelProvider());
 	}
 
 	public Class getSubclass() {
@@ -59,19 +59,19 @@ public class SubclassHandler {
 		subclassDialog = createSubclassDialog();
 		int resultStatus = subclassDialog.open();
 		// OK button is pressed
-		if (subclassDialog.getReturnCode() == Dialog.OK) {
+		if (subclassDialog.getReturnCode() == Window.OK) {
 			// get user selections
 			Object[] selectionArray = subclassDialog.getResult();
 			// set the new property selection
 			populateSubclassWithSelection(selectionArray, getSubclass());
 		}
-		
+
 		return resultStatus;
 	}
 
 	private SubclassEditorDialog createSubclassDialog() {
-		SubclassEditorDialog subclassDialog = new SubclassEditorDialog(shell, labelProvider,
-				contentProvider, getSubclass());
+		SubclassEditorDialog subclassDialog = new SubclassEditorDialog(
+			shell, labelProvider, contentProvider, getSubclass());
 		// set the subclass attributes based on the tree viewer checked elements.
 		EList<Property> subclassAttributes = getSubclass().getOwnedAttributes();
 		if (subclassAttributes != null && !subclassAttributes.isEmpty()) {
@@ -90,8 +90,9 @@ public class SubclassHandler {
 		if (selectionArray != null) {
 			List<Property> selectedAttributes = new ArrayList<Property>();
 			for (int i = 0; i < selectionArray.length; i++) {
-				if (selectionArray[i] instanceof Property)
+				if (selectionArray[i] instanceof Property) {
 					selectedAttributes.add((Property) selectionArray[i]);
+				}
 			}
 
 			List<Property> cleanList = cleanUpSelection(selectedAttributes);
@@ -99,7 +100,7 @@ public class SubclassHandler {
 			// iterate through the result,
 			// and create the class attributes with the selected Properties.
 			for (Property property : cleanList) {
-				Property clonedProperty = (Property) EcoreUtil.copy(property);
+				Property clonedProperty = EcoreUtil.copy(property);
 				// don't copy comments
 				clonedProperty.getOwnedComments().clear();
 
@@ -109,11 +110,11 @@ public class SubclassHandler {
 
 				// add redefinition relationship
 				clonedProperty.getRedefinedProperties().add(property);
-				
+
 				// add association
 				if (property.getAssociation() != null) {
-					Association association = (Association) selectedClass.getNearestPackage()
-							.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
+					Association association = (Association) selectedClass.getNearestPackage().createOwnedType(
+						null, UMLPackage.Literals.ASSOCIATION);
 					association.getMemberEnds().add(clonedProperty);
 					Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
 					ownedEnd.setType(selectedClass);
@@ -129,14 +130,13 @@ public class SubclassHandler {
 		List<Property> newAttrList = new ArrayList<Property>(newSelectionList);
 
 		// remove the unselected attributes and add new selections to the subclass
-		List<Property> existingAttrList = new ArrayList<Property>(getSubclass()
-				.getOwnedAttributes());
+		List<Property> existingAttrList = new ArrayList<Property>(getSubclass().getOwnedAttributes());
 		HashMap<String, Property> selectedAttrMap = new HashMap<String, Property>();
 		// get a list of selected attribute names
 		for (Property newProp : newSelectionList) {
 			selectedAttrMap.put(newProp.getName(), newProp);
 		}
-		
+
 		for (Property existingProp : existingAttrList) {
 			// Checking on the attribute name, assuming that the RIM core class (Act, Entity, etc.)
 			// does not have attribute names as its subclass attributes
@@ -146,8 +146,7 @@ public class SubclassHandler {
 					existingProp.getAssociation().destroy();
 				}
 				getSubclass().getOwnedAttributes().remove(existingProp);
-			} 
-			else {
+			} else {
 				// user did not uncheck the existing attribute, remove it from the
 				// user selection list, so we won't add duplicate attribute.
 				newAttrList.remove(selectedAttrMap.get(existingProp.getName()));

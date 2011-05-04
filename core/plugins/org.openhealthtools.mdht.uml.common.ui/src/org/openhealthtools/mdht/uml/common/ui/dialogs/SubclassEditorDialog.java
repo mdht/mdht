@@ -91,27 +91,27 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 			super("Select Type...", IAction.AS_PUSH_BUTTON);
 			setToolTipText("Select template base type");
 
-			URL enableURL = Activator.getDefault().getBundle().getEntry(
-					ICONS_PATH + "/elcl16/Class.gif");
+			URL enableURL = Activator.getDefault().getBundle().getEntry(ICONS_PATH + "/elcl16/Class.gif");
 			ImageDescriptor enableImage = ImageDescriptor.createFromURL(enableURL);
 			setHoverImageDescriptor(enableImage);
 			setImageDescriptor(enableImage);
 
 		}
 
+		@Override
 		public void run() {
 			if (subclass instanceof Class) {
 				Class baseClass = (Class) DialogLaunchUtil.chooseElement(
-						new java.lang.Class[] { Class.class }, ((EObject) subclass).eResource()
-								.getResourceSet(), getShell());
+					new java.lang.Class[] { Class.class }, ((EObject) subclass).eResource().getResourceSet(),
+					getShell());
 
 				if (baseClass != null) {
 					// create new generalization
-					 subclass.getGenerals().clear();
-					 subclass.createGeneralization(baseClass);
-					 
-					 // update attribute list
-					 fViewer.refresh();
+					subclass.getGenerals().clear();
+					subclass.createGeneralization(baseClass);
+
+					// update attribute list
+					fViewer.refresh();
 
 					// update UI to set viewer base type
 					updateMessage();
@@ -127,13 +127,11 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 		public OverrideFlatTreeAction() {
 			setToolTipText("Show superclass hierarchy");
-			URL disableURL = Activator.getDefault().getBundle().getEntry(
-					ICONS_PATH + "/dlcl16/impl_co.gif");
+			URL disableURL = Activator.getDefault().getBundle().getEntry(ICONS_PATH + "/dlcl16/impl_co.gif");
 			ImageDescriptor disableImage = ImageDescriptor.createFromURL(disableURL);
 			setDisabledImageDescriptor(disableImage);
 
-			URL enableURL = Activator.getDefault().getBundle().getEntry(
-					ICONS_PATH + "/elcl16/impl_co.gif");
+			URL enableURL = Activator.getDefault().getBundle().getEntry(ICONS_PATH + "/elcl16/impl_co.gif");
 			ImageDescriptor enableImage = ImageDescriptor.createFromURL(enableURL);
 			setHoverImageDescriptor(enableImage);
 			setImageDescriptor(enableImage);
@@ -146,6 +144,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 			return fContentProvider;
 		}
 
+		@Override
 		public void run() {
 			fToggle = !fToggle;
 			setChecked(fToggle);
@@ -297,7 +296,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 				updateStatus(fCurrStatus);
 			} else if (!fCurrStatus.isOK()) {
 				fCurrStatus = new Status(IStatus.OK, PlatformUI.PLUGIN_ID, IStatus.OK, "", //$NON-NLS-1$
-						null);
+				null);
 			}
 		} else {
 			// fCurrStatus = new Status(IStatus.ERROR, PlatformUI.PLUGIN_ID,
@@ -306,6 +305,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 		updateStatus(fCurrStatus);
 	}
 
+	@Override
 	public int open() {
 		fIsEmpty = evaluateIfTreeEmpty(subclass);
 		super.open();
@@ -319,15 +319,18 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 	/**
 	 * Handles cancel button pressed event.
 	 */
+	@Override
 	protected void cancelPressed() {
 		setResult(null);
 		super.cancelPressed();
 	}
 
+	@Override
 	protected void computeResult() {
 		setResult(Arrays.asList(fViewer.getCheckedElements()));
 	}
 
+	@Override
 	public void create() {
 		BusyIndicator.showWhile(null, new Runnable() {
 			public void run() {
@@ -344,6 +347,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 		});
 	}
 
+	@Override
 	protected Control createDialogArea(Composite parent) {
 		Composite composite = (Composite) super.createDialogArea(parent);
 		messageLabel = createMessageArea(composite);
@@ -363,6 +367,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 		return composite;
 	}
 
+	@Override
 	public void setMessage(String text) {
 		super.setMessage(text);
 		if (messageLabel != null) {
@@ -370,7 +375,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 			messageLabel.pack(true);
 		}
 	}
-	
+
 	protected void updateMessage() {
 		StringBuffer message = new StringBuffer();
 		message.append(subclass.getQualifiedName());
@@ -385,7 +390,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 				message.append(general.getQualifiedName());
 			}
 		}
-		
+
 		setMessage(message.toString());
 	}
 
@@ -400,8 +405,8 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 		initializeDialogUnits(parent);
 		ViewerPane pane = new ViewerPane(parent, SWT.BORDER | SWT.FLAT);
 
-//		String subclassName = (subclass instanceof Class) ? ((Class) subclass).getQualifiedName() : "";
-//		pane.setText(subclassName);
+		// String subclassName = (subclass instanceof Class) ? ((Class) subclass).getQualifiedName() : "";
+		// pane.setText(subclassName);
 		updateMessage();
 
 		// //////////////////////////////////
@@ -499,6 +504,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 		Link link = new Link(composite, SWT.WRAP);
 		link.setText("Link control message");
 		link.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// openCodeTemplatePage(CodeTemplateContextType.OVERRIDECOMMENT_ID);
 			}
@@ -512,7 +518,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 	}
 
 	public Class getSelectedClass() {
-		return ((SubclassEditorTreeViewer) fContentProvider.getViewer()).getSelectedClass();
+		return (fContentProvider.getViewer()).getSelectedClass();
 	}
 
 }

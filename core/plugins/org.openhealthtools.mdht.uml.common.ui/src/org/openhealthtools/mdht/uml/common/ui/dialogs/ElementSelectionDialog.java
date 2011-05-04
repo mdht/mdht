@@ -36,23 +36,24 @@ public class ElementSelectionDialog extends TwoPaneElementSelector {
 	private static class TypeFilterMatcher implements FilteredList.FilterMatcher {
 
 		private StringMatcher fMatcher;
+
 		private StringMatcher fQualifierMatcher;
-		
+
 		/*
 		 * @see FilteredList.FilterMatcher#setFilter(String, boolean)
 		 */
 		public void setFilter(String pattern, boolean ignoreCase, boolean igoreWildCards) {
-			int qualifierIndex= pattern.lastIndexOf(NamedElement.SEPARATOR);
+			int qualifierIndex = pattern.lastIndexOf(NamedElement.SEPARATOR);
 
-			// type			
+			// type
 			if (qualifierIndex == -1) {
-				fQualifierMatcher= null;
-				fMatcher= new StringMatcher(pattern + '*', ignoreCase, igoreWildCards);
-				
-			// qualified type
+				fQualifierMatcher = null;
+				fMatcher = new StringMatcher(pattern + '*', ignoreCase, igoreWildCards);
+
+				// qualified type
 			} else {
-				fQualifierMatcher= new StringMatcher(pattern.substring(0, qualifierIndex), ignoreCase, igoreWildCards);
-				fMatcher= new StringMatcher(pattern.substring(qualifierIndex + 1), ignoreCase, igoreWildCards);
+				fQualifierMatcher = new StringMatcher(pattern.substring(0, qualifierIndex), ignoreCase, igoreWildCards);
+				fMatcher = new StringMatcher(pattern.substring(qualifierIndex + 1), ignoreCase, igoreWildCards);
 			}
 		}
 
@@ -60,67 +61,73 @@ public class ElementSelectionDialog extends TwoPaneElementSelector {
 		 * @see FilteredList.FilterMatcher#match(Object)
 		 */
 		public boolean match(Object element) {
-			if (!(element instanceof NamedElement))
+			if (!(element instanceof NamedElement)) {
 				return false;
+			}
 
-			NamedElement type= (NamedElement) element;
+			NamedElement type = (NamedElement) element;
 
-			if (type.getName() != null && !fMatcher.match(type.getName()))
+			if (type.getName() != null && !fMatcher.match(type.getName())) {
 				return false;
+			}
 
-			if (fQualifierMatcher == null)
+			if (fQualifierMatcher == null) {
 				return true;
+			}
 
 			return fQualifierMatcher.match(type.getNearestPackage().getQualifiedName());
-		}	
+		}
 	}
-	
+
 	/*
 	 * A string comparator which is aware of obfuscated code
 	 * (type names starting with lower case characters).
 	 */
 	private static class StringComparator implements Comparator {
-	    public int compare(Object left, Object right) {
-	     	String leftString= (String) left;
-	     	String rightString= (String) right;
-	     	
-	     	if (left == null || right == null
-	     			|| leftString.length() == 0
-	     			|| rightString.length() == 0) {
-	     		return 0;
-	     	}
-	     		     	
-	     	if (Character.isLowerCase(leftString.charAt(0)) &&
-	     		!Character.isLowerCase(rightString.charAt(0)))
-	     		return +1;
+		public int compare(Object left, Object right) {
+			String leftString = (String) left;
+			String rightString = (String) right;
 
-	     	if (Character.isLowerCase(rightString.charAt(0)) &&
-	     		!Character.isLowerCase(leftString.charAt(0)))
-	     		return -1;
-	     	
-			int result= leftString.compareToIgnoreCase(rightString);			
-			if (result == 0)
-				result= leftString.compareTo(rightString);
+			if (left == null || right == null || leftString.length() == 0 || rightString.length() == 0) {
+				return 0;
+			}
+
+			if (Character.isLowerCase(leftString.charAt(0)) && !Character.isLowerCase(rightString.charAt(0))) {
+				return +1;
+			}
+
+			if (Character.isLowerCase(rightString.charAt(0)) && !Character.isLowerCase(leftString.charAt(0))) {
+				return -1;
+			}
+
+			int result = leftString.compareToIgnoreCase(rightString);
+			if (result == 0) {
+				result = leftString.compareTo(rightString);
+			}
 
 			return result;
-	    }
+		}
 	}
 
 	private List typeList;
-	
+
 	/**
 	 * Constructs a type selection dialog.
-	 * @param parent  the parent shell.
-	 * @param context the runnable context.
-	 * @param typeList list of elements to be displayed in the dialog
+	 * 
+	 * @param parent
+	 *            the parent shell.
+	 * @param context
+	 *            the runnable context.
+	 * @param typeList
+	 *            list of elements to be displayed in the dialog
 	 */
 	public ElementSelectionDialog(Shell parent, IRunnableContext context, List typeList) {
-		super(parent, new ElementLabelProvider(ElementLabelProvider.SHOW_TYPE_ONLY),
-			new ElementLabelProvider(ElementLabelProvider.SHOW_TYPE_CONTAINER_ONLY + ElementLabelProvider.SHOW_ROOT_POSTFIX));
+		super(parent, new ElementLabelProvider(ElementLabelProvider.SHOW_TYPE_ONLY), new ElementLabelProvider(
+			ElementLabelProvider.SHOW_TYPE_CONTAINER_ONLY + ElementLabelProvider.SHOW_ROOT_POSTFIX));
 
 		Assert.isNotNull(context);
 		this.typeList = typeList;
-		
+
 		setUpperListLabel(Messages.ElementSelectionDialog_upperLabel);
 		setLowerListLabel(Messages.ElementSelectionDialog_lowerLabel);
 	}
@@ -128,30 +135,32 @@ public class ElementSelectionDialog extends TwoPaneElementSelector {
 	/*
 	 * @see AbstractElementListSelectionDialog#createFilteredList(Composite)
 	 */
- 	protected FilteredList createFilteredList(Composite parent) {
- 		FilteredList list= super.createFilteredList(parent);
- 		
+	@Override
+	protected FilteredList createFilteredList(Composite parent) {
+		FilteredList list = super.createFilteredList(parent);
+
 		fFilteredList.setFilterMatcher(new TypeFilterMatcher());
 		fFilteredList.setComparator(new StringComparator());
-		
+
 		return list;
 	}
-	
+
 	/*
 	 * @see org.eclipse.jface.window.Window#open()
 	 */
+	@Override
 	public int open() {
 		if (typeList.isEmpty()) {
-			String title= Messages.ElementSelectionDialog_notypes_title;
-			String message= Messages.ElementSelectionDialog_notypes_message;
+			String title = Messages.ElementSelectionDialog_notypes_title;
+			String message = Messages.ElementSelectionDialog_notypes_message;
 			MessageDialog.openInformation(getShell(), title, message);
 			return CANCEL;
 		}
-			
+
 		Object[] typeArray = typeList.toArray(new Object[typeList.size()]);
 		setElements(typeArray);
 
 		return super.open();
 	}
-	
+
 }
