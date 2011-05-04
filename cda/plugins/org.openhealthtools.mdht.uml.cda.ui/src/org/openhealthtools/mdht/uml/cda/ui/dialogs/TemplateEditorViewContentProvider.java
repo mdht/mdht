@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewContentP
  */
 public class TemplateEditorViewContentProvider extends SubclassEditorViewContentProvider {
 
+	@Override
 	public Object[] getChildren(Object parentElement) {
 		List<NamedElement> children = new ArrayList<NamedElement>();
 

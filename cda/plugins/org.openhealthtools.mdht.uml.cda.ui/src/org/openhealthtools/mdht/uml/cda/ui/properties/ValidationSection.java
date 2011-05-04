@@ -13,7 +13,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
 
-
 import java.util.StringTokenizer;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -82,22 +81,30 @@ public class ValidationSection extends ResettableModelerPropertySection {
 	private Element modelElement;
 
 	private CCombo severityCombo;
+
 	private boolean severityModified = false;
+
 	private Text ruleIdText;
+
 	private boolean ruleIdModified = false;
+
 	private Text messageDisplay;
+
 	private Text messageText;
+
 	private boolean messageModified = false;
+
 	private Button mandatoryButton;
+
 	private boolean mandatoryModified = false;
 
 	/**
-	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * Duplicate copy of private field in superclass. I'd like to remove this,
 	 * but can't find another way to refresh all page sections.
 	 */
 	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (messageText == event.getSource()) {
 				messageModified = true;
@@ -114,11 +121,12 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -128,35 +136,34 @@ public class ValidationSection extends ResettableModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(messageModified || ruleIdModified || severityModified || mandatoryModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(modelElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(modelElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							modelElement, ICDAProfileConstants.VALIDATION);
+						modelElement, ICDAProfileConstants.VALIDATION);
 
 					Enumeration severityKind = null;
 					Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
 					if (cdaProfile != null) {
-						severityKind = (Enumeration)
-								cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
+						severityKind = (Enumeration) cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
 					}
-					
+
 					if (stereotype == null) {
 						stereotype = applyValidationStereotype(modelElement);
 					}
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
 					}
-					
+
 					if (severityModified) {
 						severityModified = false;
 						this.setLabel("Set Validation Severity");
@@ -164,80 +171,78 @@ public class ValidationSection extends ResettableModelerPropertySection {
 							if (severityCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
 								modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, null);
-							}
-							else {
-								EnumerationLiteral literal = (EnumerationLiteral) severityKind.getOwnedLiterals()
-									.get(severityCombo.getSelectionIndex() - 1);
+							} else {
+								EnumerationLiteral literal = severityKind.getOwnedLiterals().get(
+									severityCombo.getSelectionIndex() - 1);
 								modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, literal);
 							}
 						}
-					}
-					else if (ruleIdModified) {
+					} else if (ruleIdModified) {
 						ruleIdModified = false;
 						this.setLabel("Set Validation Rule ID");
 
 						Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
 						validation.getRuleId().clear();
-						
+
 						String value = ruleIdText.getText().trim();
 						StringTokenizer tokenizer = new StringTokenizer(value, ",; ");
 						while (tokenizer.hasMoreTokens()) {
 							validation.getRuleId().add(tokenizer.nextToken());
 						}
-					}
-					else if (mandatoryModified) {
+					} else if (mandatoryModified) {
 						mandatoryModified = false;
 						this.setLabel("Set Validation Mandatory");
-						modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_MANDATORY, mandatoryButton.getSelection());
-					}
-					else if (messageModified) {
+						modelElement.setValue(
+							stereotype, ICDAProfileConstants.VALIDATION_MANDATORY, mandatoryButton.getSelection());
+					} else if (messageModified) {
 						messageModified = false;
 						this.setLabel("Set Validation Message");
 
 						String value = messageText.getText().trim();
-						modelElement.setValue(stereotype, 
-								ICDAProfileConstants.VALIDATION_MESSAGE,
-								value.length()>0 ? value : null);
-					}
-					else {
+						modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_MESSAGE, value.length() > 0
+								? value
+								: null);
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
+
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(modelElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(modelElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							modelElement, ICDAProfileConstants.VALIDATION);
-			    	
-			    	if (validationStereotype == null) {
-			    		return Status.CANCEL_STATUS;
-			    	}
+						modelElement, ICDAProfileConstants.VALIDATION);
 
-			    	modelElement.unapplyStereotype(validationStereotype);
+					if (validationStereotype == null) {
+						return Status.CANCEL_STATUS;
+					}
 
-			    	/*
+					modelElement.unapplyStereotype(validationStereotype);
+
+					/*
 					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
 					 * To force this, I had to change the selection to empty, then back to current object.
 					 */
@@ -245,18 +250,19 @@ public class ValidationSection extends ResettableModelerPropertySection {
 					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
 					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
 
-			    	return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -264,95 +270,84 @@ public class ValidationSection extends ResettableModelerPropertySection {
 
 	private Stereotype applyValidationStereotype(Element element) {
 		Profile cdaProfile = CDAProfileUtil.getCDAProfile(element.eResource().getResourceSet());
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				element, ICDAProfileConstants.VALIDATION);
-		
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+
 		if (stereotype == null && cdaProfile != null) {
 			if (element instanceof Association) {
 				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.ASSOCIATION_VALIDATION);
-			}
-			else if (element instanceof Class) {
+			} else if (element instanceof Class) {
 				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CLASS_VALIDATION);
-			}
-			else if (element instanceof Constraint) {
+			} else if (element instanceof Constraint) {
 				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-			}
-			else if (element instanceof Generalization) {
+			} else if (element instanceof Generalization) {
 				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CONFORMS_TO);
-			}
-			else if (element instanceof Property) {
-//				if (new CodedAttributeFilter().select(element))
-//					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.VOCAB_SPECIFICATION);
-//				else 
-				if (new TextAttributeFilter().select(element))
+			} else if (element instanceof Property) {
+				// if (new CodedAttributeFilter().select(element))
+				// stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.VOCAB_SPECIFICATION);
+				// else
+				if (new TextAttributeFilter().select(element)) {
 					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.TEXT_VALUE);
-				else
+				} else {
 					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.PROPERTY_VALIDATION);
+				}
 			}
 		}
-		
+
 		return stereotype;
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
 		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int charHeight = point.y;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int charHeight = point.y;
+		gc.dispose();
+		shell.dispose();
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Validation");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
-		
+		Composite composite = getWidgetFactory().createGroup(parent, "Validation");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
 		FormData data = null;
 
 		/* ---- severity combo ---- */
 		severityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
-		severityCombo.setItems(new String[] {
-				"",
-				"SHALL",
-				"SHOULD",
-				"MAY"
-		});
+		severityCombo.setItems(new String[] { "", "SHALL", "SHOULD", "MAY" });
 		severityCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				severityModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				severityModified = true;
 				modifyFields();
 			}
 		});
 
-		CLabel severityLabel = getWidgetFactory()
-				.createCLabel(composite, "Severity:"); //$NON-NLS-1$
+		CLabel severityLabel = getWidgetFactory().createCLabel(composite, "Severity:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
 		severityLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(severityLabel, 0);
-		data.top = new FormAttachment(0,4);
+		data.left = new FormAttachment(severityLabel, 0);
+		data.top = new FormAttachment(0, 4);
 		severityCombo.setLayoutData(data);
 
 		/* ---- Rule Id text ---- */
 		ruleIdText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel ruleIdLabel = getWidgetFactory()
-				.createCLabel(composite, "Rule ID(s):"); //$NON-NLS-1$
+		CLabel ruleIdLabel = getWidgetFactory().createCLabel(composite, "Rule ID(s):"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(severityCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
@@ -365,8 +360,7 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		ruleIdText.setLayoutData(data);
 
 		/* ---- mandatory checkbox ---- */
-		mandatoryButton = getWidgetFactory().createButton(composite, 
-				"Mandatory", SWT.CHECK);
+		mandatoryButton = getWidgetFactory().createButton(composite, "Mandatory", SWT.CHECK);
 		data = new FormData();
 		data.left = new FormAttachment(ruleIdText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(ruleIdText, 0, SWT.CENTER);
@@ -376,12 +370,13 @@ public class ValidationSection extends ResettableModelerPropertySection {
 				mandatoryModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				mandatoryModified = true;
 				modifyFields();
 			}
 		});
-		
+
 		/* ---- Restore Defaults button ---- */
 		createRestoreDefaultsButton(composite);
 		data = new FormData();
@@ -399,12 +394,10 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		data.top = new FormAttachment(severityCombo, 0, SWT.BOTTOM);
 		data.height = charHeight * 3;
 		messageDisplay.setLayoutData(data);
-		
+
 		/* ---- custom message text ---- */
-		messageText = getWidgetFactory().createText(composite, "", 
-				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
-		CLabel messageLabel = getWidgetFactory()
-				.createCLabel(composite, "Custom Message:"); //$NON-NLS-1$
+		messageText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
+		CLabel messageLabel = getWidgetFactory().createCLabel(composite, "Custom Message:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(messageDisplay, 0, SWT.BOTTOM);
@@ -421,10 +414,10 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		messageText.setLayoutData(data);
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (modelElement != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(modelElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(modelElement);
 			if (editingDomain != null && editingDomain.isReadOnly(modelElement.eResource())) {
 				return true;
 			}
@@ -437,8 +430,10 @@ public class ValidationSection extends ResettableModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -448,6 +443,7 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -455,33 +451,36 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		this.modelElement = (Element) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				modelElement, ICDAProfileConstants.VALIDATION);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(modelElement, ICDAProfileConstants.VALIDATION);
 
 		Enumeration severityKind = null;
 		Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
 		if (cdaProfile != null) {
-			severityKind = (Enumeration)
-					cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
+			severityKind = (Enumeration) cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
 		}
-		
+
 		String computedMessage = CDAModelUtil.computeConformanceMessage(modelElement, false);
-		messageDisplay.setText(computedMessage != null ? computedMessage : "");
+		messageDisplay.setText(computedMessage != null
+				? computedMessage
+				: "");
 
 		messageText.removeModifyListener(modifyListener);
 		messageText.removeKeyListener(keyListener);
 		messageText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String message = (String) modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_MESSAGE);
-			messageText.setText(message!=null ? message : "");
-		}
-		else {
+			messageText.setText(message != null
+					? message
+					: "");
+		} else {
 			messageText.setText("");
 		}
 		messageText.addModifyListener(modifyListener);
@@ -499,13 +498,13 @@ public class ValidationSection extends ResettableModelerPropertySection {
 			StringBuffer ruleIdDisplay = new StringBuffer();
 			Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
 			for (String ruleId : validation.getRuleId()) {
-				if (ruleIdDisplay.length() > 0)
+				if (ruleIdDisplay.length() > 0) {
 					ruleIdDisplay.append(", ");
+				}
 				ruleIdDisplay.append(ruleId);
 			}
 			ruleIdText.setText(ruleIdDisplay.toString());
-		}
-		else {
+		} else {
 			ruleIdText.setText("");
 		}
 		ruleIdText.addModifyListener(modifyListener);
@@ -517,12 +516,11 @@ public class ValidationSection extends ResettableModelerPropertySection {
 			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
 			String severity = null;
 			if (value instanceof EnumerationLiteral) {
-				severity = ((EnumerationLiteral)value).getName();
+				severity = ((EnumerationLiteral) value).getName();
+			} else if (value instanceof Enumerator) {
+				severity = ((Enumerator) value).getName();
 			}
-			else if (value instanceof Enumerator) {
-				severity = ((Enumerator)value).getName();
-			}
-			
+
 			if (severityKind != null && severity != null) {
 				EnumerationLiteral literal = severityKind.getOwnedLiteral(severity);
 				if (literal != null) {
@@ -535,18 +533,16 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		if (stereotype != null) {
 			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_MANDATORY);
 			mandatoryButton.setSelection(Boolean.TRUE.equals(value));
-		}
-		else {
+		} else {
 			mandatoryButton.setSelection(false);
 		}
-		
+
 		if (isReadOnly()) {
 			severityCombo.setEnabled(false);
 			messageText.setEnabled(false);
 			mandatoryButton.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
-		}
-		else {
+		} else {
 			severityCombo.setEnabled(true);
 			messageText.setEnabled(true);
 			mandatoryButton.setEnabled(true);
@@ -560,19 +556,23 @@ public class ValidationSection extends ResettableModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && modelElement.eResource() != null)
+					if (!isDisposed() && modelElement.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

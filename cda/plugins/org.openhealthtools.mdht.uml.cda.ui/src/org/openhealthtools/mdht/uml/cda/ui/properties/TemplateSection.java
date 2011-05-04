@@ -13,7 +13,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -62,17 +61,20 @@ public class TemplateSection extends ResettableModelerPropertySection {
 	private NamedElement namedElement;
 
 	private Text templateIdText;
+
 	private boolean templateIdModified = false;
+
 	private Text assigningAuthorityText;
+
 	private boolean assigningAuthorityModified = false;
 
 	/**
-	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * Duplicate copy of private field in superclass. I'd like to remove this,
 	 * but can't find another way to refresh all page sections.
 	 */
 	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (templateIdText == event.getSource()) {
 				templateIdModified = true;
@@ -89,11 +91,12 @@ public class TemplateSection extends ResettableModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -103,24 +106,23 @@ public class TemplateSection extends ResettableModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(templateIdModified || assigningAuthorityModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							namedElement, ICDAProfileConstants.CDA_TEMPLATE);
-					
+						namedElement, ICDAProfileConstants.CDA_TEMPLATE);
+
 					if (stereotype == null) {
-						stereotype = CDAProfileUtil.applyCDAStereotype(
-								namedElement, ICDAProfileConstants.CDA_TEMPLATE);
+						stereotype = CDAProfileUtil.applyCDAStereotype(namedElement, ICDAProfileConstants.CDA_TEMPLATE);
 					}
 					if (templateIdModified) {
 						templateIdModified = false;
@@ -128,61 +130,64 @@ public class TemplateSection extends ResettableModelerPropertySection {
 
 						if (stereotype != null) {
 							String value = templateIdText.getText().trim();
-							namedElement.setValue(stereotype, 
-									ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID,
-									value.length()>0 ? value : null);
+							namedElement.setValue(
+								stereotype, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID, value.length() > 0
+										? value
+										: null);
 
 						}
-					}
-					else if (assigningAuthorityModified) {
+					} else if (assigningAuthorityModified) {
 						assigningAuthorityModified = false;
 						this.setLabel("Set CDA Template Authority");
 
 						if (stereotype != null) {
 							String value = assigningAuthorityText.getText().trim();
-							namedElement.setValue(stereotype, 
-									ICDAProfileConstants.CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME,
-									value.length()>0 ? value : null);
+							namedElement.setValue(
+								stereotype, ICDAProfileConstants.CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME,
+								value.length() > 0
+										? value
+										: null);
 
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype cdaTemplateStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							namedElement, ICDAProfileConstants.CDA_TEMPLATE);
-			    	
-			    	if (cdaTemplateStereotype == null) {
-			    		return Status.CANCEL_STATUS;
-			    	}
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 
-			    	namedElement.unapplyStereotype(cdaTemplateStereotype);
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype cdaTemplateStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+						namedElement, ICDAProfileConstants.CDA_TEMPLATE);
+
+					if (cdaTemplateStereotype == null) {
+						return Status.CANCEL_STATUS;
+					}
+
+					namedElement.unapplyStereotype(cdaTemplateStereotype);
 
 					/*
 					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
@@ -192,42 +197,41 @@ public class TemplateSection extends ResettableModelerPropertySection {
 					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
 					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
 
-			    	return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		
+
 		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "CDA Template");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
-		
+		Composite composite = getWidgetFactory().createGroup(parent, "CDA Template");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
 		FormData data = null;
 
 		templateIdText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel templateIdLabel = getWidgetFactory()
-				.createCLabel(composite, "ID:"); //$NON-NLS-1$
+		CLabel templateIdLabel = getWidgetFactory().createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(templateIdText, 0, SWT.CENTER);
@@ -236,12 +240,11 @@ public class TemplateSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(templateIdLabel, 0);
 		data.width = 200;
-		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		templateIdText.setLayoutData(data);
 
 		assigningAuthorityText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel assigningAuthorityLabel = getWidgetFactory()
-				.createCLabel(composite, "Assigning Authority:"); //$NON-NLS-1$
+		CLabel assigningAuthorityLabel = getWidgetFactory().createCLabel(composite, "Assigning Authority:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(templateIdText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(assigningAuthorityText, 0, SWT.CENTER);
@@ -250,7 +253,7 @@ public class TemplateSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(assigningAuthorityLabel, 0);
 		data.width = 200;
-		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		assigningAuthorityText.setLayoutData(data);
 
 		/* ---- Restore Defaults button ---- */
@@ -261,10 +264,10 @@ public class TemplateSection extends ResettableModelerPropertySection {
 		restoreDefaultsButton.setLayoutData(data);
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (namedElement != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
 				return true;
 			}
@@ -277,8 +280,10 @@ public class TemplateSection extends ResettableModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -288,6 +293,7 @@ public class TemplateSection extends ResettableModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -295,23 +301,25 @@ public class TemplateSection extends ResettableModelerPropertySection {
 		this.namedElement = (NamedElement) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				namedElement, ICDAProfileConstants.CDA_TEMPLATE);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(namedElement, ICDAProfileConstants.CDA_TEMPLATE);
 
 		templateIdText.removeModifyListener(modifyListener);
 		templateIdText.removeKeyListener(keyListener);
 		templateIdText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String id = (String) namedElement.getValue(stereotype, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
-			templateIdText.setText(id!=null ? id : "");
-		}
-		else {
+			templateIdText.setText(id != null
+					? id
+					: "");
+		} else {
 			templateIdText.setText("");
 		}
 		templateIdText.addModifyListener(modifyListener);
@@ -322,10 +330,12 @@ public class TemplateSection extends ResettableModelerPropertySection {
 		assigningAuthorityText.removeKeyListener(keyListener);
 		assigningAuthorityText.removeFocusListener(focusListener);
 		if (stereotype != null) {
-			String id = (String) namedElement.getValue(stereotype, ICDAProfileConstants.CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME);
-			assigningAuthorityText.setText(id!=null ? id : "");
-		}
-		else {
+			String id = (String) namedElement.getValue(
+				stereotype, ICDAProfileConstants.CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME);
+			assigningAuthorityText.setText(id != null
+					? id
+					: "");
+		} else {
 			assigningAuthorityText.setText("");
 		}
 		assigningAuthorityText.addModifyListener(modifyListener);
@@ -336,8 +346,7 @@ public class TemplateSection extends ResettableModelerPropertySection {
 			templateIdText.setEnabled(false);
 			assigningAuthorityText.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
-		}
-		else {
+		} else {
 			templateIdText.setEnabled(true);
 			assigningAuthorityText.setEnabled(true);
 			restoreDefaultsButton.setEnabled(stereotype != null);
@@ -350,19 +359,23 @@ public class TemplateSection extends ResettableModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && namedElement.eResource() != null)
+					if (!isDisposed() && namedElement.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

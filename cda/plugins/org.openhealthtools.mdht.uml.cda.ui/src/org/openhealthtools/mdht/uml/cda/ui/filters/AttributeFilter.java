@@ -21,13 +21,14 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
  */
 public class AttributeFilter extends CDAFilter {
 
+	@Override
 	public boolean select(Object object) {
-		
+
 		Element element = getElement(object);
-		
+
 		if (element instanceof Property) {
-			return ((Property)element).getAssociation() == null
-				&& CDAModelUtil.getCDAClass(((Property)element).getClass_()) != null;
+			return ((Property) element).getAssociation() == null &&
+					CDAModelUtil.getCDAClass(((Property) element).getClass_()) != null;
 		}
 		return false;
 	}

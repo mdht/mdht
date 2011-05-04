@@ -24,29 +24,32 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
  * Selects an object if it is an association applicable to <<Entry>> stereotype.
  */
 public class EntryFilter extends CDAFilter {
-	
+
+	@Override
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
+
 		if (element instanceof Association && isEntry((Association) element)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	private boolean isEntry(Association association) {
 		Type srcType = null;
 		Type targetType = null;
 		for (Property property : association.getMemberEnds()) {
-			if (property.isNavigable())
+			if (property.isNavigable()) {
 				targetType = property.getType();
-			else
+			} else {
 				srcType = property.getType();
+			}
 		}
-		
-//		return CDAModelUtil.isSection(srcType) && 
-//			(CDAModelUtil.isSection(targetType) || CDAModelUtil.isClinicalStatement(targetType));
-		return CDAModelUtil.isSection(srcType) && (CDAModelUtil.isClinicalStatement(targetType) || CDAModelUtil.isEntry(targetType));
+
+		// return CDAModelUtil.isSection(srcType) &&
+		// (CDAModelUtil.isSection(targetType) || CDAModelUtil.isClinicalStatement(targetType));
+		return CDAModelUtil.isSection(srcType) &&
+				(CDAModelUtil.isClinicalStatement(targetType) || CDAModelUtil.isEntry(targetType));
 	}
 
 }

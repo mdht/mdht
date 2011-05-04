@@ -50,7 +50,6 @@ import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
-
 /**
  * The properties section for Generalization.
  * 
@@ -61,10 +60,11 @@ public class GeneralizationSection extends ResettableModelerPropertySection {
 	private Generalization generalization;
 
 	private Button isParentIdRequired;
+
 	private boolean isParentIdRequiredModified = false;
 
 	/**
-	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * Duplicate copy of private field in superclass. I'd like to remove this,
 	 * but can't find another way to refresh all page sections.
 	 */
 	private TabbedPropertySheetPage myTabbedPropertySheetPage;
@@ -73,69 +73,69 @@ public class GeneralizationSection extends ResettableModelerPropertySection {
 		if (!(isParentIdRequiredModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(generalization);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(generalization);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype conformsToStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							generalization, ICDAProfileConstants.CONFORMS_TO);
+						generalization, ICDAProfileConstants.CONFORMS_TO);
 
 					if (conformsToStereotype == null) {
 						conformsToStereotype = CDAProfileUtil.applyCDAStereotype(
-								generalization, ICDAProfileConstants.CONFORMS_TO);
+							generalization, ICDAProfileConstants.CONFORMS_TO);
 					}
 					ConformsTo conformsTo = CDAProfileUtil.getConformsTo(generalization);
-					
+
 					if (conformsTo != null) {
 						if (isParentIdRequiredModified) {
 							isParentIdRequiredModified = false;
 							this.setLabel("Set RequiresParentId");
 							conformsTo.setRequiresParentId(isParentIdRequired.getSelection());
-						}
-						else {
+						} else {
 							return Status.CANCEL_STATUS;
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(generalization);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(generalization);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	Stereotype conformsToStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							generalization, ICDAProfileConstants.CONFORMS_TO);
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype conformsToStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+						generalization, ICDAProfileConstants.CONFORMS_TO);
 
-			    	if (conformsToStereotype == null) {
-			    		return Status.CANCEL_STATUS;
-			    	}
+					if (conformsToStereotype == null) {
+						return Status.CANCEL_STATUS;
+					}
 
-			    	generalization.unapplyStereotype(conformsToStereotype);
+					generalization.unapplyStereotype(conformsToStereotype);
 
 					/*
 					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
@@ -145,51 +145,51 @@ public class GeneralizationSection extends ResettableModelerPropertySection {
 					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
 					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
 
-			    	return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
 		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Generalization");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
+		Composite composite = getWidgetFactory().createGroup(parent, "Generalization");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
 
-        FormData data = null;
+		FormData data = null;
 
 		// Parent required checkbox
-		isParentIdRequired = getWidgetFactory().createButton(composite, 
-				"Requires Parent Template ID", SWT.CHECK);
+		isParentIdRequired = getWidgetFactory().createButton(composite, "Requires Parent Template ID", SWT.CHECK);
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.top = new FormAttachment(0,1, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 1, ITabbedPropertyConstants.VSPACE);
 		isParentIdRequired.setLayoutData(data);
 		isParentIdRequired.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isParentIdRequiredModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isParentIdRequiredModified = true;
 				modifyFields();
@@ -205,10 +205,10 @@ public class GeneralizationSection extends ResettableModelerPropertySection {
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (generalization != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(generalization);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(generalization);
 			if (editingDomain != null && editingDomain.isReadOnly(generalization.eResource())) {
 				return true;
 			}
@@ -221,8 +221,10 @@ public class GeneralizationSection extends ResettableModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -232,35 +234,36 @@ public class GeneralizationSection extends ResettableModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Generalization);
 		this.generalization = (Generalization) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		generalization = null;
 	}
 
+	@Override
 	public void refresh() {
 		ConformsTo conformsTo = CDAProfileUtil.getConformsTo(generalization);
 		if (conformsTo != null) {
 			isParentIdRequired.setSelection(conformsTo.isRequiresParentId());
-		}
-		else {
+		} else {
 			isParentIdRequired.setSelection(false);
 		}
-		
+
 		if (isReadOnly()) {
 			isParentIdRequired.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
-		}
-		else {
+		} else {
 			isParentIdRequired.setEnabled(true);
 			restoreDefaultsButton.setEnabled(conformsTo != null);
 		}
@@ -271,18 +274,22 @@ public class GeneralizationSection extends ResettableModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
-					if (!isDisposed() && !isNotifierDeleted(notification))
+					if (!isDisposed() && !isNotifierDeleted(notification)) {
 						refresh();
+					}
 				}
 			});
 		}

@@ -35,7 +35,7 @@ public class CDAClassNotation extends ClassNotationUtil {
 	 */
 	public static String getCustomLabel(Class clazz, int style) {
 		StringBuffer buffer = new StringBuffer();
-		
+
 		// visibility
 		if ((style & IUMLNotation.DISP_VISIBILITY) != 0) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(clazz));
@@ -48,7 +48,7 @@ public class CDAClassNotation extends ClassNotationUtil {
 		}
 
 		boolean showBrackets = buffer.length() > 0;
-		
+
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// class modifiers
@@ -57,19 +57,27 @@ public class CDAClassNotation extends ClassNotationUtil {
 				if (multiLine) {
 					buffer.append("\n");
 				}
-				buffer.append(showBrackets ? " {" : "");
+				buffer.append(showBrackets
+						? " {"
+						: "");
 				buffer.append(modifiers);
-				buffer.append(showBrackets ? "}" : "");
+				buffer.append(showBrackets
+						? "}"
+						: "");
 			}
 		}
 
 		String hl7Metadata = getHL7Metadata(clazz, style);
 		if (hl7Metadata.length() > 0) {
-			buffer.append(showBrackets ? " {" : "");
+			buffer.append(showBrackets
+					? " {"
+					: "");
 			buffer.append(hl7Metadata);
-			buffer.append(showBrackets ? "}" : "");
+			buffer.append(showBrackets
+					? "}"
+					: "");
 		}
-		
+
 		return buffer.toString();
 	}
 
@@ -80,8 +88,9 @@ public class CDAClassNotation extends ClassNotationUtil {
 		if ((style & IHL7Appearance.DISP_TEMPLATE_ID) != 0) {
 			String templateId = getTemplateId(clazz);
 			if (templateId != null && templateId.length() > 0) {
-				if (buffer.length() > 0)
+				if (buffer.length() > 0) {
 					buffer.append(" ");
+				}
 				buffer.append(templateId);
 			}
 		}
@@ -91,9 +100,8 @@ public class CDAClassNotation extends ClassNotationUtil {
 
 	private static String getTemplateId(Class clazz) {
 		StringBuffer value = new StringBuffer();
-		Stereotype cdaTemplate = CDAProfileUtil.getAppliedCDAStereotype(
-				clazz, ICDAProfileConstants.CDA_TEMPLATE);
-		
+		Stereotype cdaTemplate = CDAProfileUtil.getAppliedCDAStereotype(clazz, ICDAProfileConstants.CDA_TEMPLATE);
+
 		try {
 			if (cdaTemplate != null) {
 				String templateId = (String) clazz.getValue(cdaTemplate, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
@@ -102,11 +110,10 @@ public class CDAClassNotation extends ClassNotationUtil {
 					value.append(templateId);
 				}
 			}
-		}
-		catch (IllegalArgumentException ex) {
+		} catch (IllegalArgumentException ex) {
 			// ignore invalid property names
 		}
-		
+
 		return value.toString();
 	}
 

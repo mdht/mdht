@@ -23,27 +23,30 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
  * Selects an object if it is an association applicable to <<EntryRelationship>> stereotype.
  */
 public class EntryRelationshipFilter extends CDAFilter {
-	
+
+	@Override
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
+
 		if (element instanceof Association && isEntryRelationship((Association) element)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	private boolean isEntryRelationship(Association association) {
 		Type srcType = null;
 		Type targetType = null;
 		for (Property property : association.getMemberEnds()) {
-			if (property.isNavigable())
+			if (property.isNavigable()) {
 				targetType = property.getType();
-			else
+			} else {
 				srcType = property.getType();
+			}
 		}
-		
-		return CDAModelUtil.isClinicalStatement(srcType) && CDAModelUtil.isClinicalStatement(targetType) && !CDAModelUtil.isOrganizer(srcType);
+
+		return CDAModelUtil.isClinicalStatement(srcType) && CDAModelUtil.isClinicalStatement(targetType) &&
+				!CDAModelUtil.isOrganizer(srcType);
 	}
 
 }

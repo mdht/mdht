@@ -56,17 +56,15 @@ import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
 
 @SuppressWarnings("restriction")
-public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
+public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 
 	protected HashMap<String, Package> cdaPackages = new HashMap<String, Package>();
 
-	
 	protected HashMap<String, Type> cdaDocuments = new HashMap<String, Type>();
-	
+
 	protected HashMap<String, IFile> cdaDocumentsManfiest = new HashMap<String, IFile>();
-	
+
 	protected HashMap<String, IFile> cdaDocumentsGenModels = new HashMap<String, IFile>();
-		
 
 	protected HashMap<String, PluginReference> references = new HashMap<String, PluginReference>();
 
@@ -219,18 +217,19 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 	};
 
 	protected IProjectProvider fProjectProvider;
+
 	protected PluginFieldData fPluginData;
 
 	IProject modelProject;
-	
+
 	IProject generatedProject;
-	
+
 	IProject docProject;
 
 	String modelProjectName;
-	
+
 	String generateProjectName;
-	
+
 	String docProjectName;
 
 	public CDAWizard() {
@@ -246,7 +245,7 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 		fPluginData.setHasBundleStructure(true);
 		fPluginData.setTargetVersion("3.5");
 		fPluginData.setExecutionEnvironment("J2SE-1.5");
-		
+
 		fPluginData.setVersion("0.7.0.qualifier");
 
 		fProjectProvider = new IProjectProvider() {
@@ -267,7 +266,7 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 			}
 
 		};
-	
+
 	}
 
 	IFolder createFolder(IProject project, String name) {
@@ -302,46 +301,50 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 		return null;
 	}
 
-	
-	void loadCDAModels()
-	{
+	void loadCDAModels() {
 		loadCDAModelsfromWorkspace();
 	}
-	
+
 	void loadCDAModelsfromWorkspace() {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		
+
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
 		IWorkspaceRoot root = workspace.getRoot();
-		
+
 		Path model = new Path("model");
-		
-		for (IProject project : root.getProjects())	{			
+
+		for (IProject project : root.getProjects()) {
 			if (project.exists(model)) {
 				IFolder folder = project.getFolder(model);
 				try {
-					for (IResource resource : folder.members())	{						
-						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore"))	{
-							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());							
-							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(modelFile, true).getContents(),UMLPackage.eINSTANCE.getPackageableElement());							
+					for (IResource resource : folder.members()) {
+						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore")) {
+							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(
+								resourceSet.getResource(modelFile, true).getContents(),
+								UMLPackage.eINSTANCE.getPackageableElement());
 							if (pe != null) {
 								if (pe instanceof Package) {
 									Package p = (Package) pe;
-									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {				
-					
+									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {
+
 										IProject generatedProject = project;
 										if (project.getName().endsWith(".model")) {
 											generatedProject = root.getProject(project.getName().replace(".model", ""));
 										}
-										
-											cdaPackages.put(p.getQualifiedName(), p);
-											cdaDocumentsManfiest.put(p.getQualifiedName(),CDAUIUtil.getManifest(generatedProject) );
+
+										cdaPackages.put(p.getQualifiedName(), p);
+										cdaDocumentsManfiest.put(
+											p.getQualifiedName(), CDAUIUtil.getManifest(generatedProject));
 
 										if (generatedProject.getFolder(model).exists()) {
 											for (IResource genmodel : generatedProject.getFolder(model).members()) {
 												if (genmodel.getName().endsWith(".genmodel")) {
-													cdaDocumentsGenModels.put(p.getQualifiedName(), CDAUIUtil.getGenModel(generatedProject, genmodel.getProjectRelativePath()));
+													cdaDocumentsGenModels.put(
+														p.getQualifiedName(),
+														CDAUIUtil.getGenModel(
+															generatedProject, genmodel.getProjectRelativePath()));
 												}
 											}
 										}
@@ -349,23 +352,19 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 									}
 
 								}
-								
+
 							}
-							
+
 						}
-						
+
 					}
 				} catch (CoreException e) {
 					e.printStackTrace();
 				}
-			
+
 			}
-			
-			
-			
+
 		}
-
-
 
 		Package cdaPackage = cdaPackages.get("cda");
 
@@ -377,8 +376,10 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 				for (Type type : ps.getOwnedTypes()) {
 					if (type.conformsTo(clinicalDocument)) {
 						cdaDocuments.put(type.getQualifiedName(), type);
-						cdaDocumentsManfiest.put(type.getQualifiedName(),cdaDocumentsManfiest.get(ps.getQualifiedName()));
-						cdaDocumentsGenModels.put(type.getQualifiedName(),cdaDocumentsGenModels.get(ps.getQualifiedName()));
+						cdaDocumentsManfiest.put(
+							type.getQualifiedName(), cdaDocumentsManfiest.get(ps.getQualifiedName()));
+						cdaDocumentsGenModels.put(
+							type.getQualifiedName(), cdaDocumentsGenModels.get(ps.getQualifiedName()));
 					}
 				}
 
@@ -388,7 +389,6 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 
 	}
 
-	
 	@SuppressWarnings("unchecked")
 	void loadCDAModelsfromPlugins() {
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -413,15 +413,17 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 
 						while (umlFiles.hasMoreElements()) {
 
-							java.net.URL umlFileURL = (java.net.URL) umlFiles.nextElement();
+							java.net.URL umlFileURL = umlFiles.nextElement();
 
 							// filter out cda uml_ecore models
 							if (!umlFileURL.getFile().contains("_Ecore")) {
 
-								URI foo = URI.createPlatformPluginURI(extension.getContributor().getName() + umlFileURL.getPath(), false);
+								URI foo = URI.createPlatformPluginURI(
+									extension.getContributor().getName() + umlFileURL.getPath(), false);
 
-								PackageableElement foo2 = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(foo, true).getContents(),
-										UMLPackage.eINSTANCE.getPackageableElement());
+								PackageableElement foo2 = (PackageableElement) EcoreUtil.getObjectByType(
+									resourceSet.getResource(foo, true).getContents(),
+									UMLPackage.eINSTANCE.getPackageableElement());
 
 								if (foo2 instanceof Package) {
 
@@ -434,16 +436,21 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 										cdaPackages.put(p.getQualifiedName(), p);
 
 										// Add model plugin to required bundles
-										references.put(bundle.getSymbolicName(), new PluginReference(bundle.getSymbolicName(), null, 0));
+										references.put(
+											bundle.getSymbolicName(), new PluginReference(
+												bundle.getSymbolicName(), null, 0));
 
-										references.put("org.openhealthtools.mdht.builder.cda", new PluginReference("org.openhealthtools.mdht.builder.cda", null, 0));
+										references.put("org.openhealthtools.mdht.builder.cda", new PluginReference(
+											"org.openhealthtools.mdht.builder.cda", null, 0));
 
 										// Add model plugin required bundles to
 										// the plugin
 										Object header = bundle.getHeaders().get(Constants.REQUIRE_BUNDLE);
 										try {
-											for (ManifestElement manifestElement : ManifestElement.parseHeader(Constants.REQUIRE_BUNDLE, (String) header)) {
-												references.put(manifestElement.getValue(), new PluginReference(manifestElement.getValue(), null, 0));
+											for (ManifestElement manifestElement : ManifestElement.parseHeader(
+												Constants.REQUIRE_BUNDLE, (String) header)) {
+												references.put(manifestElement.getValue(), new PluginReference(
+													manifestElement.getValue(), null, 0));
 											}
 										} catch (BundleException e1) {
 
@@ -478,10 +485,9 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard  {
 		}
 
 	}
-	
+
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		
-		
+
 	}
-	
+
 }

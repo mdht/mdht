@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.Element;
 public abstract class CDAFilter implements IFilter {
 
 	public static final String CDA_PACKAGE_NAME = "cda";
-	
+
 	public abstract boolean select(Object object);
 
 	/**
@@ -37,11 +37,10 @@ public abstract class CDAFilter implements IFilter {
 		Element element = null;
 		if (object instanceof IAdaptable) {
 			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
-		} 
-		else if (object instanceof Element) {
+		} else if (object instanceof Element) {
 			element = (Element) object;
 		}
-		
+
 		return element;
 	}
 

@@ -24,14 +24,14 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
  */
 public class TextAttributeFilter extends CDAFilter {
 
+	@Override
 	public boolean select(Object object) {
-		
+
 		Element element = getElement(object);
-		
-		if (element instanceof Property
-				&& ((Property)element).getType() instanceof Classifier) {
-			Classifier type = (Classifier) ((Property)element).getType();
-			
+
+		if (element instanceof Property && ((Property) element).getType() instanceof Classifier) {
+			Classifier type = (Classifier) ((Property) element).getType();
+
 			List<String> allParentNames = UMLUtil.getAllParentNames(type);
 			return allParentNames.contains("ED");
 		}

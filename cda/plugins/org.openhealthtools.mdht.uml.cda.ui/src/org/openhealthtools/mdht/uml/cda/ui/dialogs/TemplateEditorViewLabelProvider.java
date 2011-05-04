@@ -24,33 +24,33 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelPro
  */
 public class TemplateEditorViewLabelProvider extends SubclassEditorViewLabelProvider {
 
+	@Override
 	public Image getImage(Object element) {
 		if (element instanceof Property) {
-			for (Profile profile : ((Property)element).getNearestPackage().getAllAppliedProfiles()) {
+			for (Profile profile : ((Property) element).getNearestPackage().getAllAppliedProfiles()) {
 				// use the first notation provider found for an applied profile, ignore others
 				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
 				if (provider != null) {
-					Property property = (Property)element;
+					Property property = (Property) element;
 					Object image = null;
 					if (property.getAssociation() != null) {
 						image = provider.getAnnotationImage(property.getAssociation());
-					}
-					else {
+					} else {
 						image = provider.getAnnotationImage(property);
 					}
-					
+
 					if (image instanceof Image) {
 						return (Image) image;
 					}
 				}
 			}
 		}
-		
+
 		return super.getImage(element);
 	}
 
+	@Override
 	public String getText(Object element) {
 		return super.getText(element);
 	}

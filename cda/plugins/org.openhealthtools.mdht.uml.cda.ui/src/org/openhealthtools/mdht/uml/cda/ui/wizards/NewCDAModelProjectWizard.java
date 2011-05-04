@@ -60,12 +60,11 @@ import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.osgi.framework.Bundle;
 
 @SuppressWarnings("restriction")
-public class NewCDAModelProjectWizard extends CDAWizard  {
-
+public class NewCDAModelProjectWizard extends CDAWizard {
 
 	NewCDAModelPage newCDATemplatePage;
 
-
+	@Override
 	public void addPages() {
 
 		loadCDAModels();
@@ -76,6 +75,7 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		addPage(newCDATemplatePage);
 	}
 
+	@Override
 	public boolean performFinish() {
 
 		try {
@@ -85,8 +85,8 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 			IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
 			IWorkspaceRoot root = workspace.getRoot();
-			
-			final String modelName=newCDATemplatePage.getModelName().toLowerCase();
+
+			final String modelName = newCDATemplatePage.getModelName().toLowerCase();
 
 			modelProject = root.getProject(String.format("org.openhealthtools.mdht.uml.cda.%s.model", modelName));
 			generatedProject = root.getProject(String.format("org.openhealthtools.mdht.uml.cda.%s", modelName));
@@ -94,15 +94,17 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 
 			int modelVersionCounter = 1;
 			while (modelProject.exists() || generatedProject.exists() || docProject.exists()) {
-				modelProject = root.getProject(String.format("org.openhealthtools.mdht.uml.cda.%s%d.model", modelName, modelVersionCounter));
-				generatedProject = root.getProject(String.format("org.openhealthtools.mdht.uml.cda.%s%d", modelName, modelVersionCounter));
-				docProject = root.getProject(String.format("org.openhealthtools.mdht.uml.cda.%s%d.doc", modelName, modelVersionCounter));
+				modelProject = root.getProject(String.format(
+					"org.openhealthtools.mdht.uml.cda.%s%d.model", modelName, modelVersionCounter));
+				generatedProject = root.getProject(String.format(
+					"org.openhealthtools.mdht.uml.cda.%s%d", modelName, modelVersionCounter));
+				docProject = root.getProject(String.format(
+					"org.openhealthtools.mdht.uml.cda.%s%d.doc", modelName, modelVersionCounter));
 				modelVersionCounter++;
 			}
 
 			pd.run(false, false, new IRunnableWithProgress() {
 
-				
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 
 					monitor.beginTask("Creating Projects", 9);
@@ -117,11 +119,11 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 						generatedProject.open(monitor);
 
 						docProject.create(monitor);
-						
+
 						docProject.open(monitor);
 
 						// Use pde internal functionality to create plugin
-						
+
 						IProjectProvider generatedProjectProvider = new IProjectProvider() {
 
 							public IProject getProject() {
@@ -140,11 +142,11 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 							}
 
 						};
-						
-						getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, generatedProjectProvider, contentWizard));
-						
-						
-						
+
+						getContainer().run(
+							false, true,
+							new NewProjectCreationOperation(fPluginData, generatedProjectProvider, contentWizard));
+
 						IProjectProvider docProjectProvider = new IProjectProvider() {
 
 							public IProject getProject() {
@@ -163,68 +165,66 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 							}
 
 						};
-						
-						getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, docProjectProvider, contentWizard));
+
+						getContainer().run(
+							false, true,
+							new NewProjectCreationOperation(fPluginData, docProjectProvider, contentWizard));
 
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Manifest for Generated Project");
-						createManifest(generatedProject,modelName);
+						createManifest(generatedProject, modelName);
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Manifest for Doc Project");
-						createManifest(docProject,modelName);
+						createManifest(docProject, modelName);
 						monitor.worked(1);
-						
+
 						monitor.setTaskName("Create css");
 						createFolder(docProject, "css");
-						
+
 						monitor.setTaskName("Create dita");
 						createFolder(docProject, "dita");
-						
-						createDocProject(docProject,modelName);
-						
-						createDitaProperties(docProject,modelName);
-						
+
+						createDocProject(docProject, modelName);
+
+						createDitaProperties(docProject, modelName);
+
 						monitor.setTaskName("Create UML Model");
 						createFolder(modelProject, "model");
 
-						createUMLModel(modelProject,modelName);
+						createUMLModel(modelProject, modelName);
 						monitor.worked(1);
 
 						monitor.setTaskName("Create Transformation XML");
-						createTransformation(generatedProject,modelName);
+						createTransformation(generatedProject, modelName);
 						monitor.worked(1);
-					
-						monitor.setTaskName("Add Properties");
-						createPluginProperties(generatedProject,modelName);
 
+						monitor.setTaskName("Add Properties");
+						createPluginProperties(generatedProject, modelName);
 
 						monitor.setTaskName("Run MDHT Transformation");
-						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runTransformation(generatedProject, monitor);
+						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runTransformation(
+							generatedProject, monitor);
 						monitor.worked(1);
 
 						monitor.setTaskName("Create GenModel");
 						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.createGenModel(generatedProject, monitor);
 						monitor.worked(1);
 
-						
 						monitor.setTaskName("Generate");
 						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runGenerate(generatedProject, monitor);
 						monitor.worked(1);
 						generatedProject.build(IncrementalProjectBuilder.INCREMENTAL_BUILD, monitor);
 
-						
 						monitor.setTaskName("Toggle Build Nature");
 						org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction.toggleNature(generatedProject);
 						org.openhealthtools.mdht.uml.cda.ui.builder.ToggleNatureAction.toggleNature(docProject);
 						monitor.worked(1);
-						
-						
-						
-						setupWorkspace(modelProject,modelName);
-						
-//						generatedProject.build(IncrementalProjectBuilder.FULL_BUILD, monitor);
+
+						setupWorkspace(modelProject, modelName);
+
+						// generatedProject.build(IncrementalProjectBuilder.FULL_BUILD, monitor);
 
 					} catch (CoreException e) {
 						monitor.setCanceled(true);
@@ -243,34 +243,31 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		} catch (InterruptedException e) {
 
 			e.printStackTrace();
-		} catch (CoreException e) {			
+		} catch (CoreException e) {
 			e.printStackTrace();
 		}
 
 		return true;
 	}
-	
-	
-	private void setupWorkspace(IProject modelProject, String modelName)
-	{
+
+	private void setupWorkspace(IProject modelProject, String modelName) {
 		IWorkbench workbench = PlatformUI.getWorkbench();
 		final IWorkbenchPage activePage = workbench.getActiveWorkbenchWindow().getActivePage();
-        activePage.closeEditors( activePage.getEditorReferences(), true);
-		
-            IFileStore fileStore = EFS.getLocalFileSystem().getStore(modelProject.getFolder("model").getFile(modelName + ".uml").getLocation());
-            IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-         
-            try {
-                IDE.openEditorOnFileStore( page, fileStore );
-            } catch ( PartInitException e ) {
-            }
+		activePage.closeEditors(activePage.getEditorReferences(), true);
+
+		IFileStore fileStore = EFS.getLocalFileSystem().getStore(
+			modelProject.getFolder("model").getFile(modelName + ".uml").getLocation());
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+
+		try {
+			IDE.openEditorOnFileStore(page, fileStore);
+		} catch (PartInitException e) {
+		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	void createDocProject(IProject project,String modelName)
-	{
-		
-		
+	void createDocProject(IProject project, String modelName) {
+
 		CopyFilesAndFoldersOperation copyOperation = new CopyFilesAndFoldersOperation(this.getShell());
 		Bundle bundle = Platform.getBundle(org.openhealthtools.mdht.uml.cda.ui.internal.Activator.PLUGIN_ID);
 		ArrayList<java.net.URI> elements = new ArrayList<java.net.URI>();
@@ -279,7 +276,8 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 
 		while (entries.hasMoreElements()) {
 			try {
-				elements.add(FileLocator.toFileURL(new URL(bundle.getEntry("/"),((java.net.URL) entries.nextElement()).getPath())).toURI());
+				elements.add(FileLocator.toFileURL(
+					new URL(bundle.getEntry("/"), ((java.net.URL) entries.nextElement()).getPath())).toURI());
 			} catch (URISyntaxException e1) {
 			} catch (IOException es) {
 
@@ -294,7 +292,8 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		elements.clear();
 		while (entries.hasMoreElements()) {
 			try {
-				elements.add(FileLocator.toFileURL(new URL(bundle.getEntry("/"),((java.net.URL) entries.nextElement()).getPath())).toURI());
+				elements.add(FileLocator.toFileURL(
+					new URL(bundle.getEntry("/"), ((java.net.URL) entries.nextElement()).getPath())).toURI());
 			} catch (URISyntaxException e1) {
 			} catch (IOException es) {
 
@@ -310,7 +309,8 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		elements.clear();
 		while (entries.hasMoreElements()) {
 			try {
-				elements.add(FileLocator.toFileURL(new URL(bundle.getEntry("/"),((java.net.URL) entries.nextElement()).getPath())).toURI());
+				elements.add(FileLocator.toFileURL(
+					new URL(bundle.getEntry("/"), ((java.net.URL) entries.nextElement()).getPath())).toURI());
 			} catch (URISyntaxException e1) {
 			} catch (IOException es) {
 
@@ -320,19 +320,21 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		java.net.URI[] transformuris = new java.net.URI[elements.size()];
 		elements.toArray(transformuris);
 		copyOperation.copyFiles(transformuris, project);
-		
+
 	}
 
-	void createUMLModel(IProject project,String modelName) {
+	void createUMLModel(IProject project, String modelName) {
 
 		try {
 
 			ResourceSet resourceSet = new ResourceSetImpl();
 
-			URI cdaTemplateModelURI = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/resources/model/example.uml", false);
+			URI cdaTemplateModelURI = URI.createPlatformPluginURI(
+				Activator.PLUGIN_ID + "/resources/model/example.uml", false);
 
-			PackageableElement cdaTemplateModel = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(cdaTemplateModelURI, true).getContents(),
-					UMLPackage.eINSTANCE.getPackageableElement());
+			PackageableElement cdaTemplateModel = (PackageableElement) EcoreUtil.getObjectByType(
+				resourceSet.getResource(cdaTemplateModelURI, true).getContents(),
+				UMLPackage.eINSTANCE.getPackageableElement());
 
 			PackageableElement clonedModel = EcoreUtil.copy(cdaTemplateModel);
 
@@ -391,12 +393,11 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 				if (t instanceof Class) {
 					Class documentClass = (Class) t;
 
-					cdaClass.createGeneralization((Classifier) documentClass);				
+					cdaClass.createGeneralization(documentClass);
 					Package documentPackage = documentClass.getNearestPackage();
-					EcoreUtil.resolveAll(documentPackage); 					
+					EcoreUtil.resolveAll(documentPackage);
 					clonePackage.createPackageImport(documentClass.getNearestPackage());
-					for (Package importedPackage : documentPackage.getImportedPackages())
-					{
+					for (Package importedPackage : documentPackage.getImportedPackages()) {
 						clonePackage.createPackageImport(importedPackage);
 					}
 				}
@@ -412,7 +413,7 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 
 	}
 
-	void createTransformation(IProject project,String modelName) {
+	void createTransformation(IProject project, String modelName) {
 
 		try {
 
@@ -428,15 +429,18 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 			writer.println("<attribute name=\"filePath\"/>");
 			writer.println("<sequential>");
 
-			for (String cdaPackage : cdaPackages.keySet()) {			
+			for (String cdaPackage : cdaPackages.keySet()) {
 				if (!"cda".equals(cdaPackage)) {
-					writer.println("<replace file=\"@{filePath}\" token=\".model/model/" + cdaPackage + ".uml\" value=\"/model/" + cdaPackage + "_Ecore.uml\"/>");
+					writer.println("<replace file=\"@{filePath}\" token=\".model/model/" + cdaPackage +
+							".uml\" value=\"/model/" + cdaPackage + "_Ecore.uml\"/>");
 
 					if (cdaPackages.get(cdaPackage).eResource() != null) {
-						for (Resource controlledResource : org.openhealthtools.mdht.uml.common.util.UMLUtil.getControlledResources(cdaPackages.get(cdaPackage).eResource())) {
+						for (Resource controlledResource : org.openhealthtools.mdht.uml.common.util.UMLUtil.getControlledResources(cdaPackages.get(
+							cdaPackage).eResource())) {
 
-							writer.println(String.format("<replace file=\"@{filePath}\" token=\".model/model/.controlled/%s.uml\" value=\"/model/%s_Ecore.uml\"/>",
-									controlledResource.getURI().lastSegment(), cdaPackage));							
+							writer.println(String.format(
+								"<replace file=\"@{filePath}\" token=\".model/model/.controlled/%s.uml\" value=\"/model/%s_Ecore.uml\"/>",
+								controlledResource.getURI().lastSegment(), cdaPackage));
 						}
 					}
 
@@ -464,8 +468,7 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 
 	}
 
-
-	void createDitaProperties(IProject project,String modelName) {
+	void createDitaProperties(IProject project, String modelName) {
 
 		try {
 
@@ -489,9 +492,8 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		}
 
 	}
-	
 
-	void createPluginProperties(IProject project,String modelName) {
+	void createPluginProperties(IProject project, String modelName) {
 
 		try {
 
@@ -517,8 +519,7 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 
 	}
 
-
-	void createManifest(IProject project,String modelName) {
+	void createManifest(IProject project, String modelName) {
 
 		try {
 
@@ -538,7 +539,8 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 
 			writer.println("Bundle-Name: %pluginName");
 
-			writer.println( String.format("Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s;singleton:=true",modelName ));
+			writer.println(String.format(
+				"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s;singleton:=true", modelName));
 
 			writer.println("Bundle-Version: 0.7.0.qualifier");
 
@@ -548,40 +550,38 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 			writer.println("Bundle-RequiredExecutionEnvironment: J2SE-1.5");
 
 			String requiredBundles = attributes.getValue("Require-Bundle");
-			
+
 			if (!project.getName().endsWith(".doc")) {
 
-			String sourceBundle = attributes.getValue("Bundle-SymbolicName");
+				String sourceBundle = attributes.getValue("Bundle-SymbolicName");
 
-			String rb[] = requiredBundles.split(",");
+				String rb[] = requiredBundles.split(",");
 
-			String sb[] = sourceBundle.split(";");
+				String sb[] = sourceBundle.split(";");
 
-			for (int index = 0; index < rb.length; index++) {
+				for (int index = 0; index < rb.length; index++) {
 
-				if (index == 0) {
-					writer.print("Require-Bundle: " + rb[index]);
-				} else {
+					if (index == 0) {
+						writer.print("Require-Bundle: " + rb[index]);
+					} else {
 
-					if (index > 0) {
-						writer.println(",");
-						writer.print(" " + rb[index]);
+						if (index > 0) {
+							writer.println(",");
+							writer.print(" " + rb[index]);
+						}
 					}
+
 				}
 
-			}
-			
+				if (sb.length > 0) {
+					writer.println(",");
+					writer.println(" " + sb[0] + ";visibility:=reexport");
+				}
 
-			if (sb.length > 0) {
-				writer.println(",");
-				writer.println(" " + sb[0] + ";visibility:=reexport");
-			}
-			
-			
-			writer.println(String.format("Export-Package: org.openhealthtools.mdht.uml.cda.%s,", modelName ));
-			writer.println(String.format(" org.openhealthtools.mdht.uml.cda.%s.impl,",modelName));
-			writer.println(String.format(" org.openhealthtools.mdht.uml.cda.%s.operations,",modelName));
-			writer.println(String.format(" org.openhealthtools.mdht.uml.cda.%s.util",modelName));
+				writer.println(String.format("Export-Package: org.openhealthtools.mdht.uml.cda.%s,", modelName));
+				writer.println(String.format(" org.openhealthtools.mdht.uml.cda.%s.impl,", modelName));
+				writer.println(String.format(" org.openhealthtools.mdht.uml.cda.%s.operations,", modelName));
+				writer.println(String.format(" org.openhealthtools.mdht.uml.cda.%s.util", modelName));
 			}
 
 			writer.flush();
@@ -601,7 +601,5 @@ public class NewCDAModelProjectWizard extends CDAWizard  {
 		}
 
 	}
-
-
 
 }

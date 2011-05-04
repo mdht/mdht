@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *    
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
 import java.util.Iterator;
@@ -16,11 +27,11 @@ import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -37,135 +48,15 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelPro
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler;
 
 public class CreateNewTemplateAction implements IObjectActionDelegate {
-	
+
 	protected IWorkbenchPart activePart;
+
 	protected ISelection currentSelection;
+
 	protected Package selectedPackage;
-	
+
 	public CreateNewTemplateAction() {
 		super();
-	}
-
-	/**
-	 * @see IActionDelegate#run(IAction)
-	 */
-	public void run(IAction action) {
-		try {
-			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(selectedPackage);
-			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Create New Template") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-
-					// prompt for new class name
-					String className = null;
-					InputDialog inputDialog = new InputDialog(activePart.getSite().getShell(), 
-							"New Template", "Enter template name", "", null);
-					if (inputDialog.open() == InputDialog.OK) {
-						className = inputDialog.getValue();
-					}
-					if (className == null || className.length() == 0) {
-						return Status.CANCEL_STATUS;
-					}
-					
-					Class newClass = null;
-					// prompt for base class and create generalization
-					Class baseClass = (Class) DialogLaunchUtil.chooseElement(
-							new java.lang.Class[] { Class.class }, selectedPackage.eResource()
-									.getResourceSet(), activePart.getSite().getShell());
-					if (baseClass != null) {
-						newClass = selectedPackage.createOwnedClass(className, false);
-						
-						// create new generalization
-						newClass.getGenerals().clear();
-						newClass.createGeneralization(baseClass);
-					}
-					else {
-						return Status.CANCEL_STATUS;
-					}
-
-					SubclassHandler subclassHandler = new SubclassHandler(
-							activePart.getSite().getShell(), newClass,
-							getContentProvider(), getLabelProvider());
-					int resultStatus = subclassHandler.openSubclassDialog();
-					if (Dialog.OK != resultStatus) {
-						// can't figure out how to rollback operation transaction if canceled, so destroy here
-						newClass.destroy();
-						return Status.CANCEL_STATUS;
-					}
-					
-					//TODO this does not select in CommonNavigator.  maybe need a refresh first?
-					if (activePart instanceof ISetSelectionTarget) {
-						((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(newClass));
-					}
-					
-			        return Status.OK_STATUS;
-			    }};
-
-		    try {
-				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
-				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
-
-		    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-		    }
-
-		} catch (Exception e) {
-			throw new RuntimeException(e.getCause());
-		}
-	}
-	
-	/**
-	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		activePart = targetPart;
-	}
-
-	/**
-	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
-	 */
-	public void selectionChanged(IAction action, ISelection selection) {
-		currentSelection = selection;
-		selectedPackage = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
-			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
-			}
-			if (selected instanceof View) {
-				selected = ((View)selected).getElement();
-			}
-			
-			if (selected instanceof Package) {
-				selectedPackage = (Package) selected;
-			}
-		}
-		
-		if (selectedPackage != null &&
-				CDAProfileUtil.getAppliedCDAProfile(selectedPackage) != null) {
-			action.setEnabled(true);
-		}
-		else {
-			action.setEnabled(false);
-		}
-	}
-
-	protected View getSelectedView() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection)
-				.iterator(); elements.hasNext();) {
-
-			Object element = elements.next();
-			View view = (View) ((IAdaptable) element)
-					.getAdapter(View.class);
-
-			if (view != null) {
-				return view;
-			}
-		}
-		
-		return null;
 	}
 
 	protected SubclassEditorViewContentProvider getContentProvider() {
@@ -174,5 +65,123 @@ public class CreateNewTemplateAction implements IObjectActionDelegate {
 
 	protected SubclassEditorViewLabelProvider getLabelProvider() {
 		return new TemplateEditorViewLabelProvider();
+	}
+
+	protected View getSelectedView() {
+		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
+
+			Object element = elements.next();
+			View view = (View) ((IAdaptable) element).getAdapter(View.class);
+
+			if (view != null) {
+				return view;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * @see IActionDelegate#run(IAction)
+	 */
+	public void run(IAction action) {
+		try {
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(selectedPackage);
+
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Create New Template") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+
+					// prompt for new class name
+					String className = null;
+					InputDialog inputDialog = new InputDialog(
+						activePart.getSite().getShell(), "New Template", "Enter template name", "", null);
+					if (inputDialog.open() == Window.OK) {
+						className = inputDialog.getValue();
+					}
+					if (className == null || className.length() == 0) {
+						return Status.CANCEL_STATUS;
+					}
+
+					Class newClass = null;
+					// prompt for base class and create generalization
+					Class baseClass = (Class) DialogLaunchUtil.chooseElement(
+						new java.lang.Class[] { Class.class }, selectedPackage.eResource().getResourceSet(),
+						activePart.getSite().getShell());
+					if (baseClass != null) {
+						newClass = selectedPackage.createOwnedClass(className, false);
+
+						// create new generalization
+						newClass.getGenerals().clear();
+						newClass.createGeneralization(baseClass);
+					} else {
+						return Status.CANCEL_STATUS;
+					}
+
+					SubclassHandler subclassHandler = new SubclassHandler(
+						activePart.getSite().getShell(), newClass, getContentProvider(), getLabelProvider());
+					int resultStatus = subclassHandler.openSubclassDialog();
+					if (Window.OK != resultStatus) {
+						// can't figure out how to rollback operation transaction if canceled, so destroy here
+						newClass.destroy();
+						return Status.CANCEL_STATUS;
+					}
+
+					// TODO this does not select in CommonNavigator. maybe need a refresh first?
+					if (activePart instanceof ISetSelectionTarget) {
+						((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(newClass));
+					}
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+
+	/**
+	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
+	 */
+	public void selectionChanged(IAction action, ISelection selection) {
+		currentSelection = selection;
+		selectedPackage = null;
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
+			if (selected instanceof IAdaptable) {
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
+			}
+			if (selected instanceof View) {
+				selected = ((View) selected).getElement();
+			}
+
+			if (selected instanceof Package) {
+				selectedPackage = (Package) selected;
+			}
+		}
+
+		if (selectedPackage != null && CDAProfileUtil.getAppliedCDAProfile(selectedPackage) != null) {
+			action.setEnabled(true);
+		} else {
+			action.setEnabled(false);
+		}
+	}
+
+	/**
+	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
+	 */
+	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		activePart = targetPart;
 	}
 }
