@@ -30,25 +30,25 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getFullName <em>Full Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getUrl <em>Url</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getDefinition <em>Definition</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getEffectiveDate <em>Effective Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getExpirationDate <em>Expiration Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getReleaseDate <em>Release Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getRevisionDate <em>Revision Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getBinding <em>Binding</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getCodeSystem <em>Code System</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getVersion <em>Version</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getFullName <em>Full Name</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getUrl <em>Url</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getDefinition <em>Definition</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getEffectiveDate <em>Effective Date</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getExpirationDate <em>Expiration Date</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getReleaseDate <em>Release Date</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getRevisionDate <em>Revision Date</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getStatus <em>Status</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getStatusDate <em>Status Date</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getBinding <em>Binding</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getCodeSystem <em>Code System</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.term.core.profile.impl.ValueSetVersionImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion {
@@ -56,6 +56,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -66,6 +67,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -76,6 +78,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -86,6 +89,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -96,6 +100,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getFullName() <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFullName()
 	 * @generated
 	 * @ordered
@@ -106,6 +111,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getFullName() <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFullName()
 	 * @generated
 	 * @ordered
@@ -116,6 +122,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -126,6 +133,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -136,6 +144,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -146,6 +155,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -156,6 +166,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDefinition()
 	 * @generated
 	 * @ordered
@@ -166,6 +177,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDefinition()
 	 * @generated
 	 * @ordered
@@ -176,6 +188,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getEffectiveDate() <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEffectiveDate()
 	 * @generated
 	 * @ordered
@@ -186,6 +199,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getEffectiveDate() <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEffectiveDate()
 	 * @generated
 	 * @ordered
@@ -196,6 +210,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getExpirationDate() <em>Expiration Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExpirationDate()
 	 * @generated
 	 * @ordered
@@ -206,6 +221,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getExpirationDate() <em>Expiration Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExpirationDate()
 	 * @generated
 	 * @ordered
@@ -216,6 +232,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getReleaseDate() <em>Release Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getReleaseDate()
 	 * @generated
 	 * @ordered
@@ -226,6 +243,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getReleaseDate() <em>Release Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getReleaseDate()
 	 * @generated
 	 * @ordered
@@ -236,6 +254,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getRevisionDate() <em>Revision Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRevisionDate()
 	 * @generated
 	 * @ordered
@@ -246,6 +265,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getRevisionDate() <em>Revision Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRevisionDate()
 	 * @generated
 	 * @ordered
@@ -256,6 +276,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -266,6 +287,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -276,6 +298,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -286,6 +309,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -296,6 +320,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -306,6 +331,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -316,6 +342,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The default value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -326,6 +353,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -336,6 +364,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getCodeSystem() <em>Code System</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCodeSystem()
 	 * @generated
 	 * @ordered
@@ -346,6 +375,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * The cached value of the '{@link #getBase_Enumeration() <em>Base Enumeration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 * @ordered
@@ -355,6 +385,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ValueSetVersionImpl() {
@@ -364,6 +395,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -374,6 +406,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -383,18 +416,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__IDENTIFIER, oldIdentifier, identifier));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__IDENTIFIER, oldIdentifier, identifier));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getVersion() {
@@ -404,18 +441,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__VERSION, oldVersion, version));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__VERSION, oldVersion, version));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getFullName() {
@@ -425,18 +466,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFullName(String newFullName) {
 		String oldFullName = fullName;
 		fullName = newFullName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__FULL_NAME, oldFullName, fullName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__FULL_NAME, oldFullName, fullName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getSource() {
@@ -446,18 +491,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSource(String newSource) {
 		String oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__SOURCE, oldSource, source));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__SOURCE, oldSource, source));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getUrl() {
@@ -467,18 +516,21 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setUrl(String newUrl) {
 		String oldUrl = url;
 		url = newUrl;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__URL, oldUrl, url));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDefinition() {
@@ -488,18 +540,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDefinition(String newDefinition) {
 		String oldDefinition = definition;
 		definition = newDefinition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__DEFINITION, oldDefinition, definition));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__DEFINITION, oldDefinition, definition));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getEffectiveDate() {
@@ -509,18 +565,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setEffectiveDate(String newEffectiveDate) {
 		String oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getExpirationDate() {
@@ -530,18 +590,23 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setExpirationDate(String newExpirationDate) {
 		String oldExpirationDate = expirationDate;
 		expirationDate = newExpirationDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE, oldExpirationDate, expirationDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE, oldExpirationDate,
+				expirationDate));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getReleaseDate() {
@@ -551,18 +616,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setReleaseDate(String newReleaseDate) {
 		String oldReleaseDate = releaseDate;
 		releaseDate = newReleaseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__RELEASE_DATE, oldReleaseDate, releaseDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__RELEASE_DATE, oldReleaseDate, releaseDate));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getRevisionDate() {
@@ -572,18 +641,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRevisionDate(String newRevisionDate) {
 		String oldRevisionDate = revisionDate;
 		revisionDate = newRevisionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__REVISION_DATE, oldRevisionDate, revisionDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__REVISION_DATE, oldRevisionDate, revisionDate));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StatusKind getStatus() {
@@ -593,18 +666,24 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStatus(StatusKind newStatus) {
 		StatusKind oldStatus = status;
-		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS, oldStatus, status));
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS, oldStatus, status));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getStatusDate() {
@@ -614,18 +693,22 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStatusDate(String newStatusDate) {
 		String oldStatusDate = statusDate;
 		statusDate = newStatusDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS_DATE, oldStatusDate, statusDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS_DATE, oldStatusDate, statusDate));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetType getType() {
@@ -635,18 +718,23 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setType(ValueSetType newType) {
 		ValueSetType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
+		type = newType == null
+				? TYPE_EDEFAULT
+				: newType;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__TYPE, oldType, type));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BindingKind getBinding() {
@@ -656,27 +744,36 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBinding(BindingKind newBinding) {
 		BindingKind oldBinding = binding;
-		binding = newBinding == null ? BINDING_EDEFAULT : newBinding;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__BINDING, oldBinding, binding));
+		binding = newBinding == null
+				? BINDING_EDEFAULT
+				: newBinding;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__BINDING, oldBinding, binding));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CodeSystemVersion getCodeSystem() {
 		if (codeSystem != null && codeSystem.eIsProxy()) {
-			InternalEObject oldCodeSystem = (InternalEObject)codeSystem;
-			codeSystem = (CodeSystemVersion)eResolveProxy(oldCodeSystem);
+			InternalEObject oldCodeSystem = (InternalEObject) codeSystem;
+			codeSystem = (CodeSystemVersion) eResolveProxy(oldCodeSystem);
 			if (codeSystem != oldCodeSystem) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem, codeSystem));
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem,
+						codeSystem));
+				}
 			}
 		}
 		return codeSystem;
@@ -685,6 +782,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CodeSystemVersion basicGetCodeSystem() {
@@ -694,27 +792,34 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCodeSystem(CodeSystemVersion newCodeSystem) {
 		CodeSystemVersion oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Enumeration getBase_Enumeration() {
 		if (base_Enumeration != null && base_Enumeration.eIsProxy()) {
-			InternalEObject oldBase_Enumeration = (InternalEObject)base_Enumeration;
-			base_Enumeration = (Enumeration)eResolveProxy(oldBase_Enumeration);
+			InternalEObject oldBase_Enumeration = (InternalEObject) base_Enumeration;
+			base_Enumeration = (Enumeration) eResolveProxy(oldBase_Enumeration);
 			if (base_Enumeration != oldBase_Enumeration) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION, oldBase_Enumeration, base_Enumeration));
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION,
+						oldBase_Enumeration, base_Enumeration));
+				}
 			}
 		}
 		return base_Enumeration;
@@ -723,6 +828,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Enumeration basicGetBase_Enumeration() {
@@ -732,18 +838,23 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBase_Enumeration(Enumeration newBase_Enumeration) {
 		Enumeration oldBase_Enumeration = base_Enumeration;
 		base_Enumeration = newBase_Enumeration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION, oldBase_Enumeration, base_Enumeration));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION, oldBase_Enumeration,
+				base_Enumeration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public String getEnumerationName() {
@@ -757,6 +868,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void setEnumerationName(String name) {
@@ -768,6 +880,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public String getEnumerationQualifiedName() {
@@ -781,6 +894,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -815,10 +929,14 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 			case TermPackage.VALUE_SET_VERSION__BINDING:
 				return getBinding();
 			case TermPackage.VALUE_SET_VERSION__CODE_SYSTEM:
-				if (resolve) return getCodeSystem();
+				if (resolve) {
+					return getCodeSystem();
+				}
 				return basicGetCodeSystem();
 			case TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION:
-				if (resolve) return getBase_Enumeration();
+				if (resolve) {
+					return getBase_Enumeration();
+				}
 				return basicGetBase_Enumeration();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -827,58 +945,59 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_VERSION__IDENTIFIER:
-				setIdentifier((String)newValue);
+				setIdentifier((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__VERSION:
-				setVersion((String)newValue);
+				setVersion((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__FULL_NAME:
-				setFullName((String)newValue);
+				setFullName((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__SOURCE:
-				setSource((String)newValue);
+				setSource((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__URL:
-				setUrl((String)newValue);
+				setUrl((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__DEFINITION:
-				setDefinition((String)newValue);
+				setDefinition((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE:
-				setEffectiveDate((String)newValue);
+				setEffectiveDate((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE:
-				setExpirationDate((String)newValue);
+				setExpirationDate((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__RELEASE_DATE:
-				setReleaseDate((String)newValue);
+				setReleaseDate((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__REVISION_DATE:
-				setRevisionDate((String)newValue);
+				setRevisionDate((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__STATUS:
-				setStatus((StatusKind)newValue);
+				setStatus((StatusKind) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__STATUS_DATE:
-				setStatusDate((String)newValue);
+				setStatusDate((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__TYPE:
-				setType((ValueSetType)newValue);
+				setType((ValueSetType) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__BINDING:
-				setBinding((BindingKind)newValue);
+				setBinding((BindingKind) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__CODE_SYSTEM:
-				setCodeSystem((CodeSystemVersion)newValue);
+				setCodeSystem((CodeSystemVersion) newValue);
 				return;
 			case TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION:
-				setBase_Enumeration((Enumeration)newValue);
+				setBase_Enumeration((Enumeration) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -887,6 +1006,7 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -935,10 +1055,10 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 				setBinding(BINDING_EDEFAULT);
 				return;
 			case TermPackage.VALUE_SET_VERSION__CODE_SYSTEM:
-				setCodeSystem((CodeSystemVersion)null);
+				setCodeSystem((CodeSystemVersion) null);
 				return;
 			case TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION:
-				setBase_Enumeration((Enumeration)null);
+				setBase_Enumeration((Enumeration) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -947,35 +1067,58 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_VERSION__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+				return IDENTIFIER_EDEFAULT == null
+						? identifier != null
+						: !IDENTIFIER_EDEFAULT.equals(identifier);
 			case TermPackage.VALUE_SET_VERSION__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+				return VERSION_EDEFAULT == null
+						? version != null
+						: !VERSION_EDEFAULT.equals(version);
 			case TermPackage.VALUE_SET_VERSION__FULL_NAME:
-				return FULL_NAME_EDEFAULT == null ? fullName != null : !FULL_NAME_EDEFAULT.equals(fullName);
+				return FULL_NAME_EDEFAULT == null
+						? fullName != null
+						: !FULL_NAME_EDEFAULT.equals(fullName);
 			case TermPackage.VALUE_SET_VERSION__SOURCE:
-				return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
+				return SOURCE_EDEFAULT == null
+						? source != null
+						: !SOURCE_EDEFAULT.equals(source);
 			case TermPackage.VALUE_SET_VERSION__URL:
-				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+				return URL_EDEFAULT == null
+						? url != null
+						: !URL_EDEFAULT.equals(url);
 			case TermPackage.VALUE_SET_VERSION__DEFINITION:
-				return DEFINITION_EDEFAULT == null ? definition != null : !DEFINITION_EDEFAULT.equals(definition);
+				return DEFINITION_EDEFAULT == null
+						? definition != null
+						: !DEFINITION_EDEFAULT.equals(definition);
 			case TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE:
-				return EFFECTIVE_DATE_EDEFAULT == null ? effectiveDate != null : !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
+				return EFFECTIVE_DATE_EDEFAULT == null
+						? effectiveDate != null
+						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
 			case TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE:
-				return EXPIRATION_DATE_EDEFAULT == null ? expirationDate != null : !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
+				return EXPIRATION_DATE_EDEFAULT == null
+						? expirationDate != null
+						: !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
 			case TermPackage.VALUE_SET_VERSION__RELEASE_DATE:
-				return RELEASE_DATE_EDEFAULT == null ? releaseDate != null : !RELEASE_DATE_EDEFAULT.equals(releaseDate);
+				return RELEASE_DATE_EDEFAULT == null
+						? releaseDate != null
+						: !RELEASE_DATE_EDEFAULT.equals(releaseDate);
 			case TermPackage.VALUE_SET_VERSION__REVISION_DATE:
-				return REVISION_DATE_EDEFAULT == null ? revisionDate != null : !REVISION_DATE_EDEFAULT.equals(revisionDate);
+				return REVISION_DATE_EDEFAULT == null
+						? revisionDate != null
+						: !REVISION_DATE_EDEFAULT.equals(revisionDate);
 			case TermPackage.VALUE_SET_VERSION__STATUS:
 				return status != STATUS_EDEFAULT;
 			case TermPackage.VALUE_SET_VERSION__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+				return STATUS_DATE_EDEFAULT == null
+						? statusDate != null
+						: !STATUS_DATE_EDEFAULT.equals(statusDate);
 			case TermPackage.VALUE_SET_VERSION__TYPE:
 				return type != TYPE_EDEFAULT;
 			case TermPackage.VALUE_SET_VERSION__BINDING:
@@ -991,45 +1134,48 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-		
+		if (eIsProxy()) {
+			return super.toString();
+		}
+
 		return base_Enumeration.getQualifiedName();
 
-//		StringBuffer result = new StringBuffer(super.toString());
-//		result.append(" (identifier: ");
-//		result.append(identifier);
-//		result.append(", version: ");
-//		result.append(version);
-//		result.append(", fullName: ");
-//		result.append(fullName);
-//		result.append(", source: ");
-//		result.append(source);
-//		result.append(", url: ");
-//		result.append(url);
-//		result.append(", definition: ");
-//		result.append(definition);
-//		result.append(", effectiveDate: ");
-//		result.append(effectiveDate);
-//		result.append(", expirationDate: ");
-//		result.append(expirationDate);
-//		result.append(", releaseDate: ");
-//		result.append(releaseDate);
-//		result.append(", revisionDate: ");
-//		result.append(revisionDate);
-//		result.append(", status: ");
-//		result.append(status);
-//		result.append(", statusDate: ");
-//		result.append(statusDate);
-//		result.append(", type: ");
-//		result.append(type);
-//		result.append(", binding: ");
-//		result.append(binding);
-//		result.append(')');
-//		return result.toString();
+		// StringBuffer result = new StringBuffer(super.toString());
+		// result.append(" (identifier: ");
+		// result.append(identifier);
+		// result.append(", version: ");
+		// result.append(version);
+		// result.append(", fullName: ");
+		// result.append(fullName);
+		// result.append(", source: ");
+		// result.append(source);
+		// result.append(", url: ");
+		// result.append(url);
+		// result.append(", definition: ");
+		// result.append(definition);
+		// result.append(", effectiveDate: ");
+		// result.append(effectiveDate);
+		// result.append(", expirationDate: ");
+		// result.append(expirationDate);
+		// result.append(", releaseDate: ");
+		// result.append(releaseDate);
+		// result.append(", revisionDate: ");
+		// result.append(revisionDate);
+		// result.append(", status: ");
+		// result.append(status);
+		// result.append(", statusDate: ");
+		// result.append(statusDate);
+		// result.append(", type: ");
+		// result.append(type);
+		// result.append(", binding: ");
+		// result.append(binding);
+		// result.append(')');
+		// return result.toString();
 	}
 
-} //ValueSetVersionImpl
+} // ValueSetVersionImpl

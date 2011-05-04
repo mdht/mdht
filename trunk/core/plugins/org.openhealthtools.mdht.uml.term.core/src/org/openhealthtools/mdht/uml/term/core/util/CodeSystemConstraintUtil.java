@@ -24,30 +24,30 @@ public class CodeSystemConstraintUtil {
 	public static final String getOCL(Property property) {
 		StringBuffer body = new StringBuffer();
 		boolean needsAnd = false;
-		
+
 		CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 		if (codeSystemConstraint == null) {
 			return null;
 		}
-		
+
 		String id = codeSystemConstraint.getIdentifier();
 		String name = codeSystemConstraint.getName();
 		String code = codeSystemConstraint.getCode();
-//		String version = codeSystemConstraint.getVersion();
-		
+		// String version = codeSystemConstraint.getVersion();
+
 		if (codeSystemConstraint.getReference() != null) {
 			id = codeSystemConstraint.getReference().getIdentifier();
 			name = codeSystemConstraint.getReference().getEnumerationName();
-//			version = codeSystemConstraint.getReference().getVersion();
+			// version = codeSystemConstraint.getReference().getVersion();
 		}
-		
+
 		if (code != null && code.length() > 0) {
 			body.append("value.code = '");
 			body.append(code);
 			body.append("'");
 			needsAnd = true;
 		}
-		
+
 		if (id != null && id.length() > 0 && !isCSType(property)) {
 			if (needsAnd) {
 				body.append(" and ");
@@ -57,12 +57,11 @@ public class CodeSystemConstraintUtil {
 			body.append("'");
 			needsAnd = true;
 		}
-		
+
 		/*
 		 * Only add this constraint if codeSystem is not specified.
 		 */
-		if ((id == null || id.length() == 0)
-				&& name != null && name.length() > 0 && !isCSType(property)) {
+		if ((id == null || id.length() == 0) && name != null && name.length() > 0 && !isCSType(property)) {
 			if (needsAnd) {
 				body.append(" and ");
 			}
@@ -71,19 +70,19 @@ public class CodeSystemConstraintUtil {
 			body.append("'");
 			needsAnd = true;
 		}
-		
-//		if (version != null && version.length() > 0) {
-//			if (needsAnd) {
-//				body.append(" and ");
-//			}
-//			body.append("value.codeSystemVersion = '");
-//			body.append(version);
-//			body.append("'");
-//		}
-		
+
+		// if (version != null && version.length() > 0) {
+		// if (needsAnd) {
+		// body.append(" and ");
+		// }
+		// body.append("value.codeSystemVersion = '");
+		// body.append(version);
+		// body.append("'");
+		// }
+
 		return body.toString();
 	}
-	
+
 	public static boolean isCSType(Property property) {
 		Classifier type = (Classifier) property.getType();
 		if (type != null) {

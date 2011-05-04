@@ -15,10 +15,11 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 
 public interface TermResource {
 	public static final String PROFILE_FILE_EXTENSION = "profile." //$NON-NLS-1$
-		+ UMLResource.FILE_EXTENSION;
+			+
+			UMLResource.FILE_EXTENSION;
 
 	public static final String PROFILES_PATHMAP = "pathmap://MDHT_TERM_PROFILES/"; //$NON-NLS-1$
 
 	public static final String TERM_PROFILE_URI = PROFILES_PATHMAP + "Terminology." //$NON-NLS-1$
-		+ PROFILE_FILE_EXTENSION;
+			+ PROFILE_FILE_EXTENSION;
 }
