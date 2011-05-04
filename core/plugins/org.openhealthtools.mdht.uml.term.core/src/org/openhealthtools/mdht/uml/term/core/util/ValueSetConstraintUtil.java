@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 
 public class ValueSetConstraintUtil {
-	
+
 	public static final String getOCL(Property property) {
 		StringBuffer body = new StringBuffer();
 		boolean needsAnd = false;
@@ -28,13 +28,12 @@ public class ValueSetConstraintUtil {
 		if (valueSetConstraint == null) {
 			return null;
 		}
-		
-		if (valueSetConstraint.getReference() != null 
-				&& valueSetConstraint.getReference().getCodeSystem() != null) {
+
+		if (valueSetConstraint.getReference() != null && valueSetConstraint.getReference().getCodeSystem() != null) {
 			CodeSystemVersion codeSystem = valueSetConstraint.getReference().getCodeSystem();
 			String id = codeSystem.getIdentifier();
 			String name = codeSystem.getEnumerationName();
-//			String version = codeSystem.getVersion();
+			// String version = codeSystem.getVersion();
 
 			if (id != null && id.length() > 0) {
 				if (needsAnd) {
@@ -45,12 +44,11 @@ public class ValueSetConstraintUtil {
 				body.append("'");
 				needsAnd = true;
 			}
-			
+
 			/*
 			 * Only add this constraint if codeSystem is not specified.
 			 */
-			if ((id == null || id.length() == 0)
-					&& name != null && name.length() > 0) {
+			if ((id == null || id.length() == 0) && name != null && name.length() > 0) {
 				if (needsAnd) {
 					body.append(" and ");
 				}
@@ -59,29 +57,26 @@ public class ValueSetConstraintUtil {
 				body.append("'");
 				needsAnd = true;
 			}
-			
-//			if (version != null && version.length() > 0) {
-//				if (needsAnd) {
-//					body.append(" and ");
-//				}
-//				body.append("value.codeSystemVersion = '");
-//				body.append(version);
-//				body.append("'");
-//			}
 
-			List<EnumerationLiteral> literals = valueSetConstraint.getReference()
-					.getBase_Enumeration().getOwnedLiterals();
+			// if (version != null && version.length() > 0) {
+			// if (needsAnd) {
+			// body.append(" and ");
+			// }
+			// body.append("value.codeSystemVersion = '");
+			// body.append(version);
+			// body.append("'");
+			// }
+
+			List<EnumerationLiteral> literals = valueSetConstraint.getReference().getBase_Enumeration().getOwnedLiterals();
 			if (literals.size() > 0 && literals.size() < 20) {
 				if (needsAnd) {
 					body.append(" and (");
 				}
 				boolean firstCode = true;
-				for (EnumerationLiteral literal : valueSetConstraint.getReference()
-						.getBase_Enumeration().getOwnedLiterals()) {
+				for (EnumerationLiteral literal : valueSetConstraint.getReference().getBase_Enumeration().getOwnedLiterals()) {
 					if (firstCode) {
 						firstCode = false;
-					}
-					else {
+					} else {
 						body.append(" or ");
 					}
 					body.append("value.code = '");
@@ -89,16 +84,15 @@ public class ValueSetConstraintUtil {
 					body.append("'");
 				}
 				body.append(")");
-			}
-			else {
+			} else {
 				if (needsAnd) {
 					body.append(" and ");
 				}
 				body.append("not value.code.oclIsUndefined()");
 			}
-			
+
 		}
-		
+
 		return body.toString();
 	}
 }
