@@ -32,7 +32,6 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
 public class AddUMLEnumerationAction extends UML2AbstractAction {
 
 	public AddUMLEnumerationAction() {
@@ -47,31 +46,33 @@ public class AddUMLEnumerationAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (Package.class.isInstance(element)) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLEnumeration_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-				    	
+					editingDomain, UML2UIMessages.AddUMLEnumeration_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+
 						Enumeration enumeration = UMLFactory.eINSTANCE.createEnumeration();
-						
-						String name = getUniqueTypeName((Package)element, 
-								UML2UIMessages.AddUMLEnumeration_default_name);
+
+						String name = getUniqueTypeName(
+							(Package) element, UML2UIMessages.AddUMLEnumeration_default_name);
 						enumeration.setName(name);
-						((Package)element).getOwnedTypes().add(enumeration);
+						((Package) element).getOwnedTypes().add(enumeration);
 
 						if (activePart instanceof ISetSelectionTarget) {
-							((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(enumeration));
+							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(enumeration));
 						}
 
-				        return Status.OK_STATUS;
-				    }};
+						return Status.OK_STATUS;
+					}
+				};
 
-			    try {
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
-			        
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

@@ -50,44 +50,46 @@ public class AddElementImportAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element != null) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLElementImport_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLElementImport_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						if (Package.class.isInstance(element)) {
 							Package umlPackage = (Package) element;
-							
+
 							// prompt for element
 							Classifier element = (Classifier) DialogLaunchUtil.chooseElement(
-									new java.lang.Class[] { Class.class, Enumeration.class }, umlPackage.eResource()
-											.getResourceSet(), activePart.getSite().getShell(),
-									UML2UIMessages.ElementImportSelectionDialog_title,
-									UML2UIMessages.ElementImportSelectionDialog_message);
+								new java.lang.Class[] { Class.class, Enumeration.class },
+								umlPackage.eResource().getResourceSet(), activePart.getSite().getShell(),
+								UML2UIMessages.ElementImportSelectionDialog_title,
+								UML2UIMessages.ElementImportSelectionDialog_message);
 							if (element == null) {
 								return Status.CANCEL_STATUS;
 							}
-							
+
 							ElementImport elementImport = UMLFactory.eINSTANCE.createElementImport();
 							elementImport.setImportingNamespace(umlPackage);
 							elementImport.setImportedElement(element);
 
 							if (activePart instanceof ISetSelectionTarget) {
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(umlPackage));
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(elementImport));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(umlPackage));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(elementImport));
 							}
 
-					        return Status.OK_STATUS;
+							return Status.OK_STATUS;
 						}
-						
-						return Status.CANCEL_STATUS;
-				    }};
 
-			    try {
+						return Status.CANCEL_STATUS;
+					}
+				};
+
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

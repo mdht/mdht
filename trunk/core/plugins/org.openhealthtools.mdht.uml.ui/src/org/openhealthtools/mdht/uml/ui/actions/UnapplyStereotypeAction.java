@@ -23,34 +23,34 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
-public class UnapplyStereotypeAction
-		extends UMLCommandAction {
+public class UnapplyStereotypeAction extends UMLCommandAction {
 
 	public UnapplyStereotypeAction() {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
-		
+
 		if (action.isEnabled()) {
 			Element element = (Element) collection.iterator().next();
-			if (element.getAppliedStereotypes().isEmpty())
+			if (element.getAppliedStereotypes().isEmpty()) {
 				action.setEnabled(false);
+			}
 		}
 	}
 
-	protected Command createActionCommand(EditingDomain editingDomain,
-			Collection collection) {
+	@Override
+	protected Command createActionCommand(EditingDomain editingDomain, Collection collection) {
 
-		if (collection.size() == 1
-			&& collection.iterator().next() instanceof Element) {
+		if (collection.size() == 1 && collection.iterator().next() instanceof Element) {
 
 			return IdentityCommand.INSTANCE;
 		}
@@ -58,6 +58,7 @@ public class UnapplyStereotypeAction
 		return UnexecutableCommand.INSTANCE;
 	}
 
+	@Override
 	public void run(IAction action) {
 
 		if (command != UnexecutableCommand.INSTANCE) {
@@ -65,8 +66,7 @@ public class UnapplyStereotypeAction
 
 			List choiceOfValues = new ArrayList();
 
-			for (Iterator appliedStereotypes = element.getAppliedStereotypes()
-				.iterator(); appliedStereotypes.hasNext();) {
+			for (Iterator appliedStereotypes = element.getAppliedStereotypes().iterator(); appliedStereotypes.hasNext();) {
 
 				Stereotype stereotype = (Stereotype) appliedStereotypes.next();
 
@@ -80,26 +80,21 @@ public class UnapplyStereotypeAction
 			String label = UML2UIMessages._UI_UnapplyStereotypeActionCommand_label;
 
 			final FeatureEditorDialog dialog = new FeatureEditorDialog(
-				workbenchPart.getSite().getShell(), getLabelProvider(),
-				element, UMLPackage.Literals.ELEMENT, Collections.EMPTY_LIST,
-				label, choiceOfValues);
+				workbenchPart.getSite().getShell(), getLabelProvider(), element, UMLPackage.Literals.ELEMENT,
+				Collections.EMPTY_LIST, label, choiceOfValues);
 			dialog.open();
 
-			if (dialog.getReturnCode() == FeatureEditorDialog.OK) {
-				editingDomain.getCommandStack().execute(
-					new RefreshingChangeCommand(editingDomain, new Runnable() {
+			if (dialog.getReturnCode() == Window.OK) {
+				editingDomain.getCommandStack().execute(new RefreshingChangeCommand(editingDomain, new Runnable() {
 
-						public void run() {
+					public void run() {
 
-							for (Iterator stereotypes = dialog.getResult()
-								.iterator(); stereotypes.hasNext();) {
+						for (Iterator stereotypes = dialog.getResult().iterator(); stereotypes.hasNext();) {
 
-								element
-									.unapplyStereotype((Stereotype) stereotypes
-										.next());
-							}
+							element.unapplyStereotype((Stereotype) stereotypes.next());
 						}
-					}, label));
+					}
+				}, label));
 			}
 		}
 	}

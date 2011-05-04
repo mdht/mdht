@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- *
+ * 
  * @version $Id: $
  */
 public class CustomPropertyDescriptor extends PropertyDescriptor {
@@ -31,20 +31,22 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 	 * @param object
 	 * @param itemPropertyDescriptor
 	 */
-	public CustomPropertyDescriptor(Object object,
-			IItemPropertyDescriptor itemPropertyDescriptor) {
+	public CustomPropertyDescriptor(Object object, IItemPropertyDescriptor itemPropertyDescriptor) {
 		super(object, itemPropertyDescriptor);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.ui.provider.PropertyDescriptor#createPropertyEditor(org.eclipse.swt.widgets.Composite)
 	 */
+	@Override
 	public CellEditor createPropertyEditor(final Composite composite) {
-	    if (!itemPropertyDescriptor.canSetProperty(object)) {
+		if (!itemPropertyDescriptor.canSetProperty(object)) {
 			return null;
 		}
-		
-		/* 
+
+		/*
 		 * Executing this method forces loading of all Resources into ResourceSet.
 		 * This is the same method called by default EMF impl when filling combo boxes.
 		 */
@@ -53,25 +55,24 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		EStructuralFeature feature = (EStructuralFeature) itemPropertyDescriptor.getFeature(object);
 
 		if (UMLPackage.eINSTANCE.getGeneralization_General().equals(feature)) {
-			final Generalization gen = (Generalization)object;
+			final Generalization gen = (Generalization) object;
 			if (gen.getSpecific() instanceof Classifier) {
-				
-				//TODO
-				
-//				result = new ComponentsExtendedDialogCellEditor() {
-//					String getInitialDialogMessageName() { return "Generalization-GeneralType_SemanticComponent"; }
-//					AbstractSelectionPage getSelectionPage() { return new GeneralizationSelectBaseTypePage((SemanticComponent)gen.getSpecific()); }
-//					void storeResult(ComponentsSelectionDialog dialog) { new CommandManager(gen).setGeneral(gen, (Type)dialog.getFirstResult()).execute(); }
-//				};
+
+				// TODO
+
+				// result = new ComponentsExtendedDialogCellEditor() {
+				// String getInitialDialogMessageName() { return "Generalization-GeneralType_SemanticComponent"; }
+				// AbstractSelectionPage getSelectionPage() { return new GeneralizationSelectBaseTypePage((SemanticComponent)gen.getSpecific()); }
+				// void storeResult(ComponentsSelectionDialog dialog) { new CommandManager(gen).setGeneral(gen,
+				// (Type)dialog.getFirstResult()).execute(); }
+				// };
 			}
-		}
-		else if (UMLPackage.eINSTANCE.getClassifier_Attribute().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getClassifier_Attribute().equals(feature)) {
 			System.out.println("class attribute");
-		}
-		else {
+		} else {
 			result = super.createPropertyEditor(composite);
 		}
-		
+
 		return result;
 	}
 }

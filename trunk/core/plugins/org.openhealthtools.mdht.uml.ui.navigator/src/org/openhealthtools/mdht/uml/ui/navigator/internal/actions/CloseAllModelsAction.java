@@ -25,28 +25,35 @@ import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
  *
  */
 public class CloseAllModelsAction extends CloseModelAction {
-	
+
 	/**
-	 * Construct this Action with the given page. 
-	 * @param p The page to use as context to open the editor.
-	 * @param selectionProvider The selection provider 
+	 * Construct this Action with the given page.
+	 * 
+	 * @param p
+	 *            The page to use as context to open the editor.
+	 * @param selectionProvider
+	 *            The selection provider
 	 */
 	public CloseAllModelsAction(IWorkbenchPage p, ISelectionProvider selectionProvider) {
 		super(p, selectionProvider);
 		setText(Messages.CloseAllModelsAction_label);
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.action.Action#run()
 	 */
-	public void run() { 
+	@Override
+	public void run() {
 		ResourceSet rset = getResource().getResourceSet();
 		for (Iterator iterator = rset.getResources().iterator(); iterator.hasNext();) {
 			Resource resource = (Resource) iterator.next();
-			
+
 			// close only platform resources, e.g. not pathmap libraries
-			if (resource.getURI().isPlatformResource())
+			if (resource.getURI().isPlatformResource()) {
 				closeModel(resource);
+			}
 		}
 	}
 }

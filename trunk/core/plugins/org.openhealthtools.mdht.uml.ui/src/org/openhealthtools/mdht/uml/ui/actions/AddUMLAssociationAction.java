@@ -50,21 +50,21 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element != null) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLAssociation_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLAssociation_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						if (Class.class.isInstance(element)) {
 							Class source = (Class) element;
-							
+
 							// prompt for target class
 							Class target = (Class) DialogLaunchUtil.chooseElement(
-									new java.lang.Class[] { Class.class }, source.eResource()
-											.getResourceSet(), activePart.getSite().getShell(),
-									UML2UIMessages.TargetSelectionDialog_title,
-									UML2UIMessages.TargetSelectionDialog_message);
+								new java.lang.Class[] { Class.class }, source.eResource().getResourceSet(),
+								activePart.getSite().getShell(), UML2UIMessages.TargetSelectionDialog_title,
+								UML2UIMessages.TargetSelectionDialog_message);
 							if (target == null) {
 								return Status.CANCEL_STATUS;
 							}
-							
+
 							String typeName = target.getName();
 							String endName = Character.toLowerCase(typeName.charAt(0)) + typeName.substring(1);
 							String propertyName = getUniqueMemberName(source, endName);
@@ -76,33 +76,34 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 							property.setLower(0);
 							property.setAggregation(AggregationKind.NONE_LITERAL);
 
-							Association association = (Association) source.getNearestPackage()
-								.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
+							Association association = (Association) source.getNearestPackage().createOwnedType(
+								null, UMLPackage.Literals.ASSOCIATION);
 							association.getMemberEnds().add(property);
 							Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
 							ownedEnd.setType(source);
 							association.getOwnedEnds().add(ownedEnd);
 
 							if (activePart instanceof ISetSelectionTarget) {
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(source));
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(association));
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(property));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(source));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(association));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(property));
 							}
 
-					        return Status.OK_STATUS;
+							return Status.OK_STATUS;
 						}
-						
-						return Status.CANCEL_STATUS;
-				    }};
 
-			    try {
+						return Status.CANCEL_STATUS;
+					}
+				};
+
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

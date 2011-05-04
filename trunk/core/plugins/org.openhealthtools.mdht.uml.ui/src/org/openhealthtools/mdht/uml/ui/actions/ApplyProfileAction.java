@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.window.Window;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -33,19 +34,16 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
-public class ApplyProfileAction
-		extends UMLCommandAction {
+public class ApplyProfileAction extends UMLCommandAction {
 
 	public ApplyProfileAction() {
 		super();
 	}
 
-	protected Command createActionCommand(EditingDomain editingDomain,
-			Collection collection) {
+	@Override
+	protected Command createActionCommand(EditingDomain editingDomain, Collection collection) {
 
-		if (collection.size() == 1
-			&& collection.iterator().next() instanceof org.eclipse.uml2.uml.Package) {
+		if (collection.size() == 1 && collection.iterator().next() instanceof org.eclipse.uml2.uml.Package) {
 
 			return IdentityCommand.INSTANCE;
 		}
@@ -53,46 +51,40 @@ public class ApplyProfileAction
 		return UnexecutableCommand.INSTANCE;
 	}
 
+	@Override
 	public void run(IAction action) {
 
 		if (command != UnexecutableCommand.INSTANCE) {
-			final org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) collection
-				.iterator().next();
+			final org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) collection.iterator().next();
 
 			final List choiceOfValues = new ArrayList();
 
 			ResourceSet resourceSet = package_.eResource().getResourceSet();
 
 			try {
-				resourceSet.getResource(URI
-					.createURI(UMLResource.STANDARD_PROFILE_URI), true);
+				resourceSet.getResource(URI.createURI(UMLResource.STANDARD_PROFILE_URI), true);
 
-				resourceSet.getResource(URI
-					.createURI(UMLResource.ECORE_PROFILE_URI), true);
+				resourceSet.getResource(URI.createURI(UMLResource.ECORE_PROFILE_URI), true);
 			} catch (Exception e) {
 				// ignore
 			}
 
-			for (Iterator resources = resourceSet.getResources().iterator(); resources
-				.hasNext();) {
+			for (Iterator resources = resourceSet.getResources().iterator(); resources.hasNext();) {
 
-				Iterator allContents = ((Resource) resources.next())
-					.getAllContents();
+				Iterator allContents = ((Resource) resources.next()).getAllContents();
 
 				while (allContents.hasNext()) {
 
 					new UMLSwitch() {
 
+						@Override
 						public Object caseProfile(Profile profile) {
 
 							if (profile.isDefined()) {
-								ProfileApplication profileApplication = package_
-									.getProfileApplication(profile);
+								ProfileApplication profileApplication = package_.getProfileApplication(profile);
 
-								if (profileApplication == null
-									|| profileApplication
-										.getAppliedDefinition() != profile
-										.getDefinition()) {
+								if (profileApplication == null ||
+										profileApplication.getAppliedDefinition() != profile.getDefinition()) {
 
 									choiceOfValues.add(profile);
 								}
@@ -109,25 +101,21 @@ public class ApplyProfileAction
 			String label = UML2UIMessages._UI_ApplyProfileActionCommand_label;
 
 			final FeatureEditorDialog dialog = new FeatureEditorDialog(
-				workbenchPart.getSite().getShell(), getLabelProvider(),
-				package_, UMLPackage.Literals.PROFILE, Collections.EMPTY_LIST,
-				label, choiceOfValues);
+				workbenchPart.getSite().getShell(), getLabelProvider(), package_, UMLPackage.Literals.PROFILE,
+				Collections.EMPTY_LIST, label, choiceOfValues);
 			dialog.open();
 
-			if (dialog.getReturnCode() == FeatureEditorDialog.OK) {
-				editingDomain.getCommandStack().execute(
-					new RefreshingChangeCommand(editingDomain, new Runnable() {
+			if (dialog.getReturnCode() == Window.OK) {
+				editingDomain.getCommandStack().execute(new RefreshingChangeCommand(editingDomain, new Runnable() {
 
-						public void run() {
+					public void run() {
 
-							for (Iterator profiles = dialog.getResult()
-								.iterator(); profiles.hasNext();) {
+						for (Iterator profiles = dialog.getResult().iterator(); profiles.hasNext();) {
 
-								package_
-									.applyProfile((Profile) profiles.next());
-							}
+							package_.applyProfile((Profile) profiles.next());
 						}
-					}, label));
+					}
+				}, label));
 			}
 		}
 	}

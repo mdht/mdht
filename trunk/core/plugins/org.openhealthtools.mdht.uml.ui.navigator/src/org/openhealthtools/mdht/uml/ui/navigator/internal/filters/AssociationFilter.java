@@ -21,16 +21,19 @@ import org.eclipse.uml2.uml.Element;
 
 public class AssociationFilter extends ViewerFilter {
 
+	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
 		Element umlElement = null;
-		if (element instanceof IAdaptableSelection)
-			umlElement = (Element) ((IAdaptableSelection)element).getAdapter(Element.class);
-		
+		if (element instanceof IAdaptableSelection) {
+			umlElement = (Element) ((IAdaptableSelection) element).getAdapter(Element.class);
+		}
+
 		// do not filter subclasses of Association, e.g. AssociationClass
-		if (umlElement instanceof Association && !(umlElement instanceof AssociationClass))
+		if (umlElement instanceof Association && !(umlElement instanceof AssociationClass)) {
 			return false;
-		else
+		} else {
 			return true;
+		}
 	}
 
 }

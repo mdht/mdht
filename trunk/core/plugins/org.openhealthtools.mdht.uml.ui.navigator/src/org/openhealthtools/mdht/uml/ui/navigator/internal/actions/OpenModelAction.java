@@ -27,6 +27,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -41,8 +42,9 @@ import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
  *
  */
 public class OpenModelAction implements IObjectActionDelegate {
-	
+
 	private IWorkbenchPart activePart;
+
 	private List files = new ArrayList();
 
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
@@ -56,7 +58,7 @@ public class OpenModelAction implements IObjectActionDelegate {
 			IFile file = (IFile) iterator.next();
 			files.add(file);
 		}
-		
+
 		action.setEnabled(!files.isEmpty());
 	}
 
@@ -65,31 +67,28 @@ public class OpenModelAction implements IObjectActionDelegate {
 	}
 
 	public void run(IAction action) {
-		EditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
-				IResourceConstants.EDITING_DOMAIN_ID);
-		
+		EditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+
 		for (Iterator iterator = files.iterator(); iterator.hasNext();) {
 			IFile modelFile = (IFile) iterator.next();
 
 			try {
 				Resource resource = editingDomain.getResourceSet().getResource(
-						URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true), true);
-				
+					URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true), true);
+
 				if (activePart instanceof CommonNavigator) {
 					// expose the model contents in Project Explorer
 					List items = wrapItems(resource.getContents(), modelFile);
 					IStructuredSelection selection = new StructuredSelection(items);
-					((CommonNavigator)activePart).getCommonViewer().setSelection(selection, true);
+					((CommonNavigator) activePart).getCommonViewer().setSelection(selection, true);
 				}
-					
-			} catch (Exception e) { 
-				String message = Messages.bind(
-						 Messages.OpenModelAction_errorMessage, 
-						 new String []{ e.getLocalizedMessage() });
+
+			} catch (Exception e) {
+				String message = NLS.bind(
+					Messages.OpenModelAction_errorMessage, new String[] { e.getLocalizedMessage() });
 				Logger.logException(message, e);
-				MessageDialog.openError(Display.getDefault().getActiveShell(), 
-						Messages.OpenModelAction_errorTitle,
-						message);
+				MessageDialog.openError(
+					Display.getDefault().getActiveShell(), Messages.OpenModelAction_errorTitle, message);
 			}
 		}
 	}
@@ -98,10 +97,11 @@ public class OpenModelAction implements IObjectActionDelegate {
 		List wrappedItems = new ArrayList();
 		for (Iterator iter = items.iterator(); iter.hasNext();) {
 			Object item = iter.next();
-			if (item instanceof Element)
-				wrappedItems.add(new UMLDomainNavigatorItem((Element)item, parentElement, null));
+			if (item instanceof Element) {
+				wrappedItems.add(new UMLDomainNavigatorItem((Element) item, parentElement, null));
+			}
 		}
 		return wrappedItems;
 	}
-	
+
 }

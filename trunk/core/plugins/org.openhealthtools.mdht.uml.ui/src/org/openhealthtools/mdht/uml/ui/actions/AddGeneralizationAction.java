@@ -46,42 +46,43 @@ public class AddGeneralizationAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element != null) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLGeneralization_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLGeneralization_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						if (Class.class.isInstance(element)) {
 							Class child = (Class) element;
-							
+
 							// prompt for parent class
 							Class parent = (Class) DialogLaunchUtil.chooseElement(
-									new java.lang.Class[] { Class.class }, child.eResource()
-											.getResourceSet(), activePart.getSite().getShell(),
-									UML2UIMessages.GeneralizationSelectionDialog_title,
-									UML2UIMessages.GeneralizationSelectionDialog_message);
+								new java.lang.Class[] { Class.class }, child.eResource().getResourceSet(),
+								activePart.getSite().getShell(), UML2UIMessages.GeneralizationSelectionDialog_title,
+								UML2UIMessages.GeneralizationSelectionDialog_message);
 							if (parent == null) {
 								return Status.CANCEL_STATUS;
 							}
-							
+
 							Generalization generalization = child.createGeneralization(parent);
 
 							if (activePart instanceof ISetSelectionTarget) {
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(child));
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(generalization));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(child));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(generalization));
 							}
 
-					        return Status.OK_STATUS;
+							return Status.OK_STATUS;
 						}
-						
-						return Status.CANCEL_STATUS;
-				    }};
 
-			    try {
+						return Status.CANCEL_STATUS;
+					}
+				};
+
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

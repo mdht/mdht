@@ -31,19 +31,20 @@ import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
 public class AddCommentAction extends UML2AbstractAction {
 
 	public AddCommentAction() {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
-		if (isReadOnly())
+		if (isReadOnly()) {
 			action.setEnabled(false);
+		}
 	}
-	
+
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
@@ -52,25 +53,27 @@ public class AddCommentAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element instanceof Element) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLComment_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLComment_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						Comment comment = element.createOwnedComment();
 
 						if (activePart instanceof ISetSelectionTarget) {
-							((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(comment));
+							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(comment));
 						}
-						
-				        return Status.OK_STATUS;
-				    }};
 
-			    try {
+						return Status.OK_STATUS;
+					}
+				};
+
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

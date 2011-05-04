@@ -51,7 +51,6 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 
-
 /**
  * The general properties section for ElementImport.
  * 
@@ -62,90 +61,86 @@ public class ElementImportSection extends AbstractModelerPropertySection {
 	private ElementImport elementImport;
 
 	private CLabel importedElementName;
+
 	private Button importButton;
 
 	private void openImportedElementDialog() {
-		TransactionalEditingDomain editingDomain = 
-			TransactionUtil.getEditingDomain(elementImport);
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(elementImport);
 
-		final Classifier type = (Classifier) DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {Class.class, Enumeration.class},
-				editingDomain.getResourceSet(), 
-				getPart().getSite().getShell());
-		
+		final Classifier type = (Classifier) DialogLaunchUtil.chooseElement(new java.lang.Class[] {
+				Class.class, Enumeration.class }, editingDomain.getResourceSet(), getPart().getSite().getShell());
+
 		if (type != null) {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Imported Element") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	elementImport.setImportedElement(type);
-			    	
-			        return Status.OK_STATUS;
-			    }};
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					elementImport.setImportedElement(type);
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
 
 		// Base type
-		CLabel elementLabel = getWidgetFactory()
-				.createCLabel(composite, "Element:"); //$NON-NLS-1$
+		CLabel elementLabel = getWidgetFactory().createCLabel(composite, "Element:"); //$NON-NLS-1$
 		importedElementName = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 
-        importButton = getWidgetFactory().createButton(composite,
-            "Select Element...", SWT.PUSH); //$NON-NLS-1$
-        importButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	openImportedElementDialog();
-            }
-        });
+		importButton = getWidgetFactory().createButton(composite, "Select Element...", SWT.PUSH); //$NON-NLS-1$
+		importButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				openImportedElementDialog();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.right = new FormAttachment(importedElementName,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0,1, 0);
-        elementLabel.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.right = new FormAttachment(importedElementName, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 1, 0);
+		elementLabel.setLayoutData(data);
 
-        data = new FormData();
-        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 2);
-        data.right = new FormAttachment(importButton,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0,1, 0);
-        importedElementName.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 2);
+		data.right = new FormAttachment(importButton, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 1, 0);
+		importedElementName.setLayoutData(data);
 
-        data = new FormData();
-        data.right = new FormAttachment(80, 0);
-        data.top = new FormAttachment(0,1, 0);
-        data.height = buttonHeight;
-        importButton.setLayoutData(data);
+		data = new FormData();
+		data.right = new FormAttachment(80, 0);
+		data.top = new FormAttachment(0, 1, 0);
+		data.height = buttonHeight;
+		importButton.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (elementImport != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(elementImport);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(elementImport);
 			if (editingDomain != null && editingDomain.isReadOnly(elementImport.eResource())) {
 				return true;
 			}
@@ -158,8 +153,10 @@ public class ElementImportSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -169,31 +166,34 @@ public class ElementImportSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof ElementImport);
 		this.elementImport = (ElementImport) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		elementImport = null;
 	}
 
+	@Override
 	public void refresh() {
-		if (elementImport.getImportedElement() != null)
+		if (elementImport.getImportedElement() != null) {
 			importedElementName.setText(elementImport.getImportedElement().getQualifiedName());
-		else
+		} else {
 			importedElementName.setText("");
+		}
 
 		if (isReadOnly()) {
 			importButton.setEnabled(false);
-		}
-		else {
+		} else {
 			importButton.setEnabled(true);
 		}
 	}
@@ -203,18 +203,22 @@ public class ElementImportSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
-					if (!isDisposed() && !isNotifierDeleted(notification))
+					if (!isDisposed() && !isNotifierDeleted(notification)) {
 						refresh();
+					}
 				}
 			});
 		}

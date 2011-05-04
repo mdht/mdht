@@ -25,6 +25,7 @@ import org.eclipse.core.commands.operations.IOperationHistory;
 import org.eclipse.core.commands.operations.IOperationHistoryListener;
 import org.eclipse.core.commands.operations.OperationHistoryEvent;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -73,8 +74,7 @@ import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.providers.NavigatorUMLItemProviderAdapterFactory;
 
-public class UMLNavigatorContentProvider extends SaveablesProvider
-implements ICommonContentProvider, IAdaptable {
+public class UMLNavigatorContentProvider extends SaveablesProvider implements ICommonContentProvider, IAdaptable {
 
 	private static final Object[] EMPTY_ARRAY = new Object[0];
 
@@ -83,44 +83,43 @@ implements ICommonContentProvider, IAdaptable {
 
 	/** This is the one adapter factory used for providing views of the model. */
 	private ComposedAdapterFactory adapterFactory;
-	
+
 	private AdapterFactoryContentProvider treeContentProvider;
 
 	private StructuredViewer viewer;
 
 	/** a flag indicating if this viewer got disposed */
 	protected boolean disposed = false;
-    
+
 	/**
 	 * model event listener
 	 */
 	protected DemultiplexingListener eventListener = new DemultiplexingListener(getFilter()) {
 
-		protected void handleNotification(TransactionalEditingDomain domain,
-				Notification notification) {
+		@Override
+		protected void handleNotification(TransactionalEditingDomain domain, Notification notification) {
 			update(domain, notification);
 		}
 	};
 
 	private IOperationHistoryListener historyListener = new IOperationHistoryListener() {
 		public void historyNotification(final OperationHistoryEvent event) {
-			if (event.getEventType() == OperationHistoryEvent.DONE
-					|| event.getEventType() == OperationHistoryEvent.UNDONE
-					|| event.getEventType() == OperationHistoryEvent.REDONE) {
+			if (event.getEventType() == OperationHistoryEvent.DONE ||
+					event.getEventType() == OperationHistoryEvent.UNDONE ||
+					event.getEventType() == OperationHistoryEvent.REDONE) {
 
-				final Set<Resource> affectedResources = ResourceUndoContext.getAffectedResources(
-						event.getOperation());
-				
+				final Set<Resource> affectedResources = ResourceUndoContext.getAffectedResources(event.getOperation());
+
 				if (!affectedResources.isEmpty()) {
-//					final IUndoableOperation operation = event.getOperation();
-					
-					//TODO getResource() is null when object is deleted; how to setModified?
+					// final IUndoableOperation operation = event.getOperation();
+
+					// TODO getResource() is null when object is deleted; how to setModified?
 					for (Resource resource : affectedResources) {
 						resource.setModified(true);
 
 						Saveable saveable = ModelManager.getManager().getModelDocument(resource);
 						if (saveable != null) {
-							fireSaveablesDirtyChanged(new Saveable[] {saveable});
+							fireSaveablesDirtyChanged(new Saveable[] { saveable });
 							viewer.refresh();
 						}
 					}
@@ -128,59 +127,60 @@ implements ICommonContentProvider, IAdaptable {
 			}
 		}
 	};
-		
-	/** Support for saveables. 
+
+	/**
+	 * Support for saveables.
 	 * fire SaveablesLifecycleEvent from this ISaveablesSource
 	 */
 	private ResourceSetListener resourceLoadListener = new ResourceSetListenerImpl(
-			NotificationFilter.RESOURCE_LOADED.or(NotificationFilter.RESOURCE_UNLOADED)) {
-        public void resourceSetChanged(ResourceSetChangeEvent event) {
+		NotificationFilter.RESOURCE_LOADED.or(NotificationFilter.RESOURCE_UNLOADED)) {
+		@Override
+		public void resourceSetChanged(ResourceSetChangeEvent event) {
 			for (Notification notification : event.getNotifications()) {
 				final Resource resource = (Resource) notification.getNotifier();
 				final ModelDocument saveable = ModelManager.getManager().getModelDocument(resource);
-		
+
 				if (NotificationFilter.RESOURCE_LOADED.matches(notification)) {
 
 					Display.getDefault().asyncExec(new Runnable() {
 						public void run() {
-							
+
 							if (saveable != null) {
 								if (ModelManager.getManager().getChangedResources().contains(resource)) {
-									fireSaveablesDirtyChanged(new Saveable[] {saveable});
+									fireSaveablesDirtyChanged(new Saveable[] { saveable });
+								} else {
+									fireSaveablesOpened(new Saveable[] { saveable });
 								}
-								else {
-									fireSaveablesOpened(new Saveable[] {saveable});
-								}
-								
+
 								IFile file = saveable.getFile();
 								if (file != null) {
 									try {
-										file.getParent().refreshLocal(IFile.DEPTH_INFINITE, new NullProgressMonitor());
+										file.getParent().refreshLocal(
+											IResource.DEPTH_INFINITE, new NullProgressMonitor());
 									} catch (CoreException e) {
 									}
 									viewer.refresh(file, true);
-									
+
 									/*
 									 * If used, causes ALL dependent models to be expanded and shown
 									 */
 									// expose the model contents in Project Explorer
-//									List items = wrapItems(resource.getContents(), file);
-//									IStructuredSelection selection = new StructuredSelection(items);
-//									viewer.setSelection(selection, true);
+									// List items = wrapItems(resource.getContents(), file);
+									// IStructuredSelection selection = new StructuredSelection(items);
+									// viewer.setSelection(selection, true);
 								}
 							}
 						}
 					});
-				}
-				else if (NotificationFilter.RESOURCE_UNLOADED.matches(notification)) {
+				} else if (NotificationFilter.RESOURCE_UNLOADED.matches(notification)) {
 					Display.getDefault().asyncExec(new Runnable() {
 						public void run() {
 							if (saveable != null) {
 								if (!ModelManager.getManager().getChangedResources().contains(resource)) {
-									fireSaveablesClosed(new Saveable[] {saveable});
+									fireSaveablesClosed(new Saveable[] { saveable });
 								}
 							}
-							
+
 							if (!viewer.getControl().isDisposed()) {
 								viewer.refresh();
 							}
@@ -189,28 +189,24 @@ implements ICommonContentProvider, IAdaptable {
 				}
 			}
 		}
-    };
-    
+	};
+
 	public UMLNavigatorContentProvider() {
-		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
-				IResourceConstants.EDITING_DOMAIN_ID);
-		
-		if ((editingDomain instanceof AdapterFactoryEditingDomain)
-				&& ((AdapterFactoryEditingDomain)editingDomain).getResourceToReadOnlyMap() == null) {
-			((AdapterFactoryEditingDomain)editingDomain).setResourceToReadOnlyMap(new Hashtable<Resource, Boolean>());
+		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(IResourceConstants.EDITING_DOMAIN_ID);
+
+		if ((editingDomain instanceof AdapterFactoryEditingDomain) &&
+				((AdapterFactoryEditingDomain) editingDomain).getResourceToReadOnlyMap() == null) {
+			((AdapterFactoryEditingDomain) editingDomain).setResourceToReadOnlyMap(new Hashtable<Resource, Boolean>());
 		}
 
 		ModelManager.getManager().manage(editingDomain);
 
 		// add support for .xmi files and legacy .uml2 files
 		ResourceSet resourceSet = editingDomain.getResourceSet();
-		Map<String,Object> extensionToFactoryMap = resourceSet.getResourceFactoryRegistry()
-			.getExtensionToFactoryMap();
-		extensionToFactoryMap.put(UML22UMLResource.FILE_EXTENSION,
-			UML22UMLResource.Factory.INSTANCE);
-		extensionToFactoryMap.put(XMI2UMLResource.FILE_EXTENSION,
-			XMI2UMLResource.Factory.INSTANCE);
-		
+		Map<String, Object> extensionToFactoryMap = resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap();
+		extensionToFactoryMap.put(UML22UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
+		extensionToFactoryMap.put(XMI2UMLResource.FILE_EXTENSION, XMI2UMLResource.Factory.INSTANCE);
+
 		adapterFactory = createAdapterFactory();
 
 		treeContentProvider = new AdapterFactoryContentProvider(adapterFactory);
@@ -222,8 +218,7 @@ implements ICommonContentProvider, IAdaptable {
 
 		try {
 			loadUMLProfiles();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			// don't let missing profiles interfere with initialization
 			Logger.logException(e);
 		}
@@ -243,7 +238,7 @@ implements ICommonContentProvider, IAdaptable {
 	}
 
 	/**
-	 * This is a both helper and hack.  
+	 * This is a both helper and hack.
 	 * 
 	 * Helpful to preload profiles and datatypes so that they are available.
 	 * 
@@ -253,16 +248,15 @@ implements ICommonContentProvider, IAdaptable {
 	protected void loadUMLProfiles() {
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 
-		//TODO temporary hack until I write an extension point for UML profile and library registration
+		// TODO temporary hack until I write an extension point for UML profile and library registration
 		String umlProfileURI = UMLResource.STANDARD_PROFILE_URI;
 		String umlLibURI = UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI;
-		
+
 		try {
 			resourceSet.getResource(URI.createURI(umlProfileURI), true);
 			resourceSet.getResource(URI.createURI(umlLibURI), true);
-		}
-		catch (Exception e) {
-			//ignore if missing
+		} catch (Exception e) {
+			// ignore if missing
 		}
 	}
 
@@ -270,11 +264,12 @@ implements ICommonContentProvider, IAdaptable {
 		return ((IWorkspaceCommandStack) editingDomain.getCommandStack()).getOperationHistory();
 	}
 
+	@Override
 	public void dispose() {
 		adapterFactory.dispose();
 		editingDomain.removeResourceSetListener(getEventListener());
 		editingDomain.removeResourceSetListener(resourceLoadListener);
-		
+
 		getOperationHistory().removeOperationHistoryListener(historyListener);
 
 		disposed = true;
@@ -291,13 +286,14 @@ implements ICommonContentProvider, IAdaptable {
 		this.viewer = (StructuredViewer) viewer;
 
 		ModelManager.getManager().setShell(viewer.getControl().getShell());
-		
+
 		// gets rid of '+' expansion icons on all unopened model files
 		// only needed first time navigator is opened, but don't know where to put this...
 		Display.getDefault().asyncExec(new Runnable() {
 			public void run() {
-				if (!viewer.getControl().isDisposed())
+				if (!viewer.getControl().isDisposed()) {
 					viewer.refresh();
+				}
 			}
 		});
 	}
@@ -308,26 +304,24 @@ implements ICommonContentProvider, IAdaptable {
 
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
-			Resource resource = ModelManager.getManager().getResource((IFile)parentElement);
+			Resource resource = ModelManager.getManager().getResource((IFile) parentElement);
 			if (resource != null) {
 				Collection result = wrapItems(resource.getContents(), parentElement);
 				return result.toArray();
 			}
-		}
-		else if (parentElement instanceof UMLAbstractNavigatorItem) {
+		} else if (parentElement instanceof UMLAbstractNavigatorItem) {
 			UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) parentElement;
-			
+
 			if (abstractNavigatorItem instanceof UMLDomainNavigatorItem) {
 				UMLDomainNavigatorItem navigatorItem = (UMLDomainNavigatorItem) abstractNavigatorItem;
 				Object[] children = treeContentProvider.getChildren(navigatorItem.getEObject());
 				return wrapItems(children, parentElement);
 
-			} 
-			else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
+			} else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
 				UMLNavigatorGroup group = (UMLNavigatorGroup) parentElement;
 				return group.getChildren();
 			}
-			
+
 		}
 		return EMPTY_ARRAY;
 	}
@@ -335,25 +329,29 @@ implements ICommonContentProvider, IAdaptable {
 	public Object getParent(Object element) {
 		if (element instanceof UMLDomainNavigatorItem) {
 			UMLDomainNavigatorItem abstractNavigatorItem = (UMLDomainNavigatorItem) element;
-			
+
 			return abstractNavigatorItem.getParent();
 		}
 		return null;
 	}
 
 	public boolean hasChildren(Object element) {
-		if (element instanceof IFile)
-			return ModelManager.getManager().getModelDocument((IFile)element) != null;
-		else
+		if (element instanceof IFile) {
+			return ModelManager.getManager().getModelDocument((IFile) element) != null;
+		} else {
 			return getChildren(element).length > 0;
+		}
 	}
 
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#doInit()
 	 */
+	@Override
 	protected void doInit() {
 		super.doInit();
 	}
@@ -365,51 +363,61 @@ implements ICommonContentProvider, IAdaptable {
 	}
 
 	public Object getAdapter(Class adapter) {
-		if (SaveablesProvider.class == adapter)
+		if (SaveablesProvider.class == adapter) {
 			return this;
-		
+		}
+
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#getElements(org.eclipse.ui.Saveable)
 	 */
+	@Override
 	public Object[] getElements(Saveable saveable) {
 		// This method MUST return an object that is in the navigator tree,
 		// returning Resource does not work.
 		if (saveable instanceof ModelDocument) {
-			IFile file = ((ModelDocument)saveable).getFile();
+			IFile file = ((ModelDocument) saveable).getFile();
 			if (file != null) {
-				return new Object[] {file};
+				return new Object[] { file };
 			}
 		}
 		return EMPTY_ARRAY;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#getSaveable(java.lang.Object)
 	 */
+	@Override
 	public Saveable getSaveable(Object element) {
 		EObject eObject = null;
-		if (element instanceof EObject)
+		if (element instanceof EObject) {
 			eObject = (EObject) element;
-		else if (element instanceof IAdaptable)
-			eObject = (EObject) ((IAdaptable)element).getAdapter(EObject.class);
-		
+		} else if (element instanceof IAdaptable) {
+			eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
+		}
+
 		ModelDocument saveable = null;
 		if (eObject != null) {
 			Resource resource = eObject.eResource();
 			saveable = ModelManager.getManager().getModelDocument(resource);
-		}
-		else if (element instanceof Resource) {
-			saveable = ModelManager.getManager().getModelDocument((Resource)element);
+		} else if (element instanceof Resource) {
+			saveable = ModelManager.getManager().getModelDocument((Resource) element);
 		}
 		return saveable;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.navigator.SaveablesProvider#getSaveables()
 	 */
+	@Override
 	public Saveable[] getSaveables() {
 		// returns all writable resources
 		Collection saveables = ModelManager.getManager().getDocuments();
@@ -422,23 +430,27 @@ implements ICommonContentProvider, IAdaptable {
 		List wrappedItems = new ArrayList();
 		for (Iterator iter = items.iterator(); iter.hasNext();) {
 			Object item = iter.next();
-			if (item instanceof Element)
-				wrappedItems.add(new UMLDomainNavigatorItem((Element)item, parentElement, treeContentProvider));
+			if (item instanceof Element) {
+				wrappedItems.add(new UMLDomainNavigatorItem((Element) item, parentElement, treeContentProvider));
+			}
 		}
 		return wrappedItems;
 	}
-	
+
 	private Object[] wrapItems(Object[] items, Object parentElement) {
 		List wrappedItems = new ArrayList();
-		if (parentElement instanceof UMLDomainNavigatorItem
-				&& ((UMLDomainNavigatorItem)parentElement).getEObject() instanceof Package) {
-			UMLNavigatorGroup group = getAssociations((Package)((UMLDomainNavigatorItem)parentElement).getEObject(), parentElement);
-			if (group != null)
+		if (parentElement instanceof UMLDomainNavigatorItem &&
+				((UMLDomainNavigatorItem) parentElement).getEObject() instanceof Package) {
+			UMLNavigatorGroup group = getAssociations(
+				(Package) ((UMLDomainNavigatorItem) parentElement).getEObject(), parentElement);
+			if (group != null) {
 				wrappedItems.add(group);
+			}
 		}
 		for (int i = 0; i < items.length; i++) {
-			if (items[i] instanceof Element && !(items[i] instanceof Association))
-				wrappedItems.add(new UMLDomainNavigatorItem((Element)items[i], parentElement, treeContentProvider));
+			if (items[i] instanceof Element && !(items[i] instanceof Association)) {
+				wrappedItems.add(new UMLDomainNavigatorItem((Element) items[i], parentElement, treeContentProvider));
+			}
 		}
 		return wrappedItems.toArray();
 	}
@@ -448,11 +460,13 @@ implements ICommonContentProvider, IAdaptable {
 		List associations = new ArrayList();
 		for (Iterator iterator = umlPackage.getOwnedMembers().iterator(); iterator.hasNext();) {
 			NamedElement element = (NamedElement) iterator.next();
-			if (element instanceof Association)
+			if (element instanceof Association) {
 				associations.add(element);
+			}
 		}
 		if (!associations.isEmpty()) {
-			group = new UMLNavigatorGroup(Messages.NavigatorGroupName_associations, "icons/associationsNavigatorGroup.gif", parentElement);
+			group = new UMLNavigatorGroup(
+				Messages.NavigatorGroupName_associations, "icons/associationsNavigatorGroup.gif", parentElement);
 			group.addChildren(wrapItems(associations, group));
 		}
 		return group;
@@ -466,21 +480,19 @@ implements ICommonContentProvider, IAdaptable {
 	}
 
 	/**
-	 * Subclasses overriding this method should remember to override
-	 * {@link #update(TransactionalEditingDomain, Notification)} as required.
-	 * The default implementation of
-	 * {@link #update(TransactionalEditingDomain, Notification)} will only
+	 * Subclasses overriding this method should remember to override {@link #update(TransactionalEditingDomain, Notification)} as required.
+	 * The default implementation of {@link #update(TransactionalEditingDomain, Notification)} will only
 	 * update if the notifier is an <code>EObject</code>.
 	 * 
 	 * @return the filter for events used by my <code>eventListener</code>.
 	 */
 	public NotificationFilter getFilter() {
-//        return NotificationFilter.createEventTypeFilter(Notification.SET).or(
-//            NotificationFilter.createEventTypeFilter(Notification.UNSET)).and(
-//            NotificationFilter.createNotifierTypeFilter(EObject.class));
-        
-        return NotificationFilter.NOT_TOUCH;
-    }
+		// return NotificationFilter.createEventTypeFilter(Notification.SET).or(
+		// NotificationFilter.createEventTypeFilter(Notification.UNSET)).and(
+		// NotificationFilter.createNotifierTypeFilter(EObject.class));
+
+		return NotificationFilter.NOT_TOUCH;
+	}
 
 	/**
 	 * Update if necessary, upon receiving the model event. This event will only
@@ -498,25 +510,25 @@ implements ICommonContentProvider, IAdaptable {
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
 	 * 
-	 * @param notification notification object
-	 * @param element element that has changed
+	 * @param notification
+	 *            notification object
+	 * @param element
+	 *            element that has changed
 	 */
 	public void update(final Notification notification, final EObject element) {
 		if (!isDisposed() && !isNotifierDeleted(notification)) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
-					if (!isDisposed() && !viewer.getControl().isDisposed()
-						&& !isNotifierDeleted(notification))
-					{
+					if (!isDisposed() && !viewer.getControl().isDisposed() && !isNotifierDeleted(notification)) {
 						try {
-							if (element instanceof Element)
-								viewer.refresh(new UMLDomainNavigatorItem((Element)element, null, treeContentProvider));
-							else
+							if (element instanceof Element) {
+								viewer.refresh(new UMLDomainNavigatorItem(element, null, treeContentProvider));
+							} else {
 								viewer.refresh(element);
-						}
-						catch(SWTException e) {
-							// ignore tree item widget disposed exception.  
+							}
+						} catch (SWTException e) {
+							// ignore tree item widget disposed exception.
 							// cannot find its source when some tree items are deleted
 						}
 					}
@@ -525,10 +537,9 @@ implements ICommonContentProvider, IAdaptable {
 			});
 		}
 	}
-	
+
 	/**
-	 * Updates me if the notifier is an <code>EObject</code> by calling
-	 * {@link #update(Notification, EObject)}. Does nothing otherwise.
+	 * Updates me if the notifier is an <code>EObject</code> by calling {@link #update(Notification, EObject)}. Does nothing otherwise.
 	 * Subclasses should override this method if they need to update based on
 	 * non-EObject notifiers.
 	 * 
@@ -540,16 +551,15 @@ implements ICommonContentProvider, IAdaptable {
 	protected void update(TransactionalEditingDomain domain, Notification notification) {
 
 		Object notifier = notification.getNotifier();
-		
+
 		if (notifier instanceof EObject) {
 			update(notification, (EObject) notifier);
-		}
-		else if (notifier instanceof Resource) {
+		} else if (notifier instanceof Resource) {
 			if (Resource.RESOURCE__IS_MODIFIED == notification.getFeatureID(null)) {
 				// toggle the '*' dirty flag
-				Saveable saveable = ModelManager.getManager().getModelDocument((Resource)notifier);
+				Saveable saveable = ModelManager.getManager().getModelDocument((Resource) notifier);
 				if (saveable != null) {
-					fireSaveablesDirtyChanged(new Saveable[] {saveable});
+					fireSaveablesDirtyChanged(new Saveable[] { saveable });
 				}
 				if (viewer != null && !viewer.getControl().isDisposed()) {
 					viewer.refresh();
@@ -562,12 +572,12 @@ implements ICommonContentProvider, IAdaptable {
 	 * Returns whether or not the notifier for a particular notification has been
 	 * deleted from its parent.
 	 * 
-	 * This is a fix for RATLC00535181.  What happens is that during deletion of
+	 * This is a fix for RATLC00535181. What happens is that during deletion of
 	 * an element from the diagram, the element first deletes related elements
-	 * which causes a modification of the element itself.  When the modification occurs
+	 * which causes a modification of the element itself. When the modification occurs
 	 * the event handling mechanism posts a request to the UI queue to refresh the UI.
 	 * A race condition occurs where by the time the posted request runs, the element
-	 * in question may or may not have already been deleted from its container.  If
+	 * in question may or may not have already been deleted from its container. If
 	 * the element has been deleted from its container, we should not refresh the
 	 * property section.
 	 * 
@@ -578,25 +588,28 @@ implements ICommonContentProvider, IAdaptable {
 		if (!(notification.getNotifier() instanceof EObject)) {
 			return false;
 		}
-		EObject obj = (EObject)notification.getNotifier();
+		EObject obj = (EObject) notification.getNotifier();
 		return obj.eResource() == null;
 	}
-	
+
 	/**
 	 * Execute request in the UI thread.
 	 * 
-	 * @param updateRequest -
+	 * @param updateRequest
+	 *            -
 	 *            runnable update code
 	 */
 	protected void postUpdateRequest(Runnable updateRequest) {
 		Display.getDefault().syncExec(updateRequest);
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.gmf.runtime.emf.core.edit.IDemuxedMListener#handleElementModifiedEvent(org.eclipse.emf.common.notify.Notification, org.eclipse.emf.ecore.EObject)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.gmf.runtime.emf.core.edit.IDemuxedMListener#handleElementModifiedEvent(org.eclipse.emf.common.notify.Notification,
+	 * org.eclipse.emf.ecore.EObject)
 	 */
-	public void handleElementModifiedEvent(final Notification notification,
-			final EObject element) {
+	public void handleElementModifiedEvent(final Notification notification, final EObject element) {
 		update(notification, element);
 	}
 

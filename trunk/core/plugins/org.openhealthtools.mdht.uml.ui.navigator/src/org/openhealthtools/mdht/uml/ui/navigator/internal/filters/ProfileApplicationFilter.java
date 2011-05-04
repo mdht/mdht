@@ -20,12 +20,16 @@ import org.eclipse.uml2.uml.ProfileApplication;
 
 public class ProfileApplicationFilter extends ViewerFilter {
 
+	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
 		Element umlElement = null;
-		if (element instanceof IAdaptableSelection)
-			umlElement = (Element) ((IAdaptableSelection)element).getAdapter(Element.class);
-		
-		return umlElement instanceof ProfileApplication ? false : true;
+		if (element instanceof IAdaptableSelection) {
+			umlElement = (Element) ((IAdaptableSelection) element).getAdapter(Element.class);
+		}
+
+		return umlElement instanceof ProfileApplication
+				? false
+				: true;
 	}
 
 }

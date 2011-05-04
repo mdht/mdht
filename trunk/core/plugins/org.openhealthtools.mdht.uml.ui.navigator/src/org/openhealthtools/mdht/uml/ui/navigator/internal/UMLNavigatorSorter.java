@@ -18,11 +18,11 @@ import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.uml2.uml.Association;
 import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 
-
 public class UMLNavigatorSorter extends ViewerSorter {
 
 	private static final int ASSOCIATIONS_CATEGORY = 1001;
 
+	@Override
 	public int category(Object element) {
 		if (element instanceof UMLDomainNavigatorItem) {
 			UMLDomainNavigatorItem item = (UMLDomainNavigatorItem) element;
@@ -33,13 +33,14 @@ public class UMLNavigatorSorter extends ViewerSorter {
 		return 0;
 	}
 
+	@Override
 	public int compare(Viewer viewer, Object e1, Object e2) {
 		if (e1 instanceof UMLNavigatorGroup && e2 instanceof UMLDomainNavigatorItem) {
 			return -1;
 		}
 		if (e1 instanceof UMLDomainNavigatorItem && e2 instanceof UMLDomainNavigatorItem) {
-			EClass e1Class = ((UMLDomainNavigatorItem)e1).getEObject().eClass();
-			EClass e2Class = ((UMLDomainNavigatorItem)e2).getEObject().eClass();
+			EClass e1Class = ((UMLDomainNavigatorItem) e1).getEObject().eClass();
+			EClass e2Class = ((UMLDomainNavigatorItem) e2).getEObject().eClass();
 			if (e1Class != e2Class) {
 				return getComparator().compare(e1Class.getName(), e2Class.getName());
 			}

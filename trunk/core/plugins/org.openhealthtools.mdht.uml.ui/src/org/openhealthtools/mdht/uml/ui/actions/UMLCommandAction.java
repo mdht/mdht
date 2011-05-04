@@ -38,9 +38,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.ui.util.AdapterFactoryManager;
 import org.openhealthtools.mdht.uml.common.ui.util.EditingDomainUtil;
 
-public class UMLCommandAction
-		extends CommandAction
-		implements IObjectActionDelegate {
+public class UMLCommandAction extends CommandAction implements IObjectActionDelegate {
 
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
@@ -49,86 +47,81 @@ public class UMLCommandAction
 		workbenchPart = targetPart;
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		ISelection unwrappedSelection = null;
-		
-	    if (selection instanceof IStructuredSelection) {
-	    	List unwrapped = new ArrayList();
-			for (Iterator elements = ((IStructuredSelection) selection)
-					.iterator(); elements.hasNext();) {
-	
+
+		if (selection instanceof IStructuredSelection) {
+			List unwrapped = new ArrayList();
+			for (Iterator elements = ((IStructuredSelection) selection).iterator(); elements.hasNext();) {
+
 				Object element = elements.next();
 				EObject eObject = null;
 				if (element instanceof IAdaptable) {
 					// Try to adapt to View first, since Notation OK
-					eObject = (EObject) ((IAdaptable) element)
-							.getAdapter(View.class);
-		
+					eObject = (EObject) ((IAdaptable) element).getAdapter(View.class);
+
 					if (eObject == null) {
-						eObject = (EObject) ((IAdaptable) element)
-								.getAdapter(EObject.class);
+						eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
 					}
-				}
-				else if (element instanceof EObject) {
+				} else if (element instanceof EObject) {
 					eObject = (EObject) element;
 				}
 
 				if (View.class.isInstance(eObject)) {
-					eObject = ((View)eObject).getElement();
+					eObject = ((View) eObject).getElement();
 				}
-				
+
 				if (eObject != null) {
 					unwrapped.add(eObject);
 				}
 			}
-			
+
 			unwrappedSelection = new StructuredSelection(unwrapped);
 			if (editingDomain == null) {
 				editingDomain = EditingDomainUtil.getEditingDomain(unwrapped);
 			}
-	    }
-	    else {
-	    	unwrappedSelection = selection;
-	    }
-		
+		} else {
+			unwrappedSelection = selection;
+		}
+
 		super.selectionChanged(action, unwrappedSelection);
 	}
-	
-	protected class TextComparator
-			implements Comparator {
+
+	protected class TextComparator implements Comparator {
 
 		public int compare(Object o1, Object o2) {
-			if (getLabelProvider() != null)
-				return getLabelProvider().getText(o1).compareTo(
-					getLabelProvider().getText(o2));
-			else if (o1 instanceof NamedElement && o2 instanceof NamedElement)
-				return ((NamedElement)o1).getQualifiedName().compareTo(
-						((NamedElement)o2).getQualifiedName());
-			else
+			if (getLabelProvider() != null) {
+				return getLabelProvider().getText(o1).compareTo(getLabelProvider().getText(o2));
+			} else if (o1 instanceof NamedElement && o2 instanceof NamedElement) {
+				return ((NamedElement) o1).getQualifiedName().compareTo(((NamedElement) o2).getQualifiedName());
+			} else {
 				return 0;
+			}
 		}
 	}
 
-	protected class RefreshingChangeCommand
-			extends ChangeCommand {
+	protected class RefreshingChangeCommand extends ChangeCommand {
 
-		public RefreshingChangeCommand(EditingDomain editingDomain,
-				Runnable runnable, String label) {
+		public RefreshingChangeCommand(EditingDomain editingDomain, Runnable runnable, String label) {
 			super(editingDomain, runnable, label);
 		}
 
+		@Override
 		public void execute() {
 			super.execute();
 
 			refreshViewer();
 		}
 
+		@Override
 		public void undo() {
 			super.undo();
 
 			refreshViewer();
 		}
 
+		@Override
 		public void redo() {
 			super.redo();
 
@@ -147,35 +140,38 @@ public class UMLCommandAction
 		if (labelProvider == null && getAdapterFactory() != null) {
 			labelProvider = new AdapterFactoryLabelProvider(getAdapterFactory()) {
 
+				@Override
 				public String getColumnText(Object object, int columnIndex) {
-					IItemQualifiedTextProvider itemQualifiedTextProvider = (IItemQualifiedTextProvider) adapterFactory
-						.adapt(object, IItemQualifiedTextProvider.class);
+					IItemQualifiedTextProvider itemQualifiedTextProvider = (IItemQualifiedTextProvider) adapterFactory.adapt(
+						object, IItemQualifiedTextProvider.class);
 
 					return itemQualifiedTextProvider != null
-						? itemQualifiedTextProvider.getQualifiedText(object)
-						: super.getColumnText(object, columnIndex);
+							? itemQualifiedTextProvider.getQualifiedText(object)
+							: super.getColumnText(object, columnIndex);
 				}
 
+				@Override
 				public String getText(Object object) {
-					IItemQualifiedTextProvider itemQualifiedTextProvider = (IItemQualifiedTextProvider) adapterFactory
-						.adapt(object, IItemQualifiedTextProvider.class);
+					IItemQualifiedTextProvider itemQualifiedTextProvider = (IItemQualifiedTextProvider) adapterFactory.adapt(
+						object, IItemQualifiedTextProvider.class);
 
 					return itemQualifiedTextProvider != null
-						? itemQualifiedTextProvider.getQualifiedText(object)
-						: super.getText(object);
+							? itemQualifiedTextProvider.getQualifiedText(object)
+							: super.getText(object);
 				}
 			};
 		}
-		
+
 		return labelProvider;
 	}
 
 	protected AdapterFactory getAdapterFactory() {
 		return editingDomain instanceof AdapterFactoryEditingDomain
-			? ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory()
-			: AdapterFactoryManager.getAdapterFactory();
+				? ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory()
+				: AdapterFactoryManager.getAdapterFactory();
 	}
 
+	@Override
 	public void setActiveEditor(IAction action, IEditorPart editorPart) {
 		super.setActiveEditor(action, editorPart);
 	}

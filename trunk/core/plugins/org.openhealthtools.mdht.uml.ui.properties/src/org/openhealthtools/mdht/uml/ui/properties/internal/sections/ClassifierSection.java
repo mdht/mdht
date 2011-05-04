@@ -53,7 +53,6 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 
-
 /**
  * The general properties section for Classifier.
  * 
@@ -64,163 +63,159 @@ public class ClassifierSection extends AbstractModelerPropertySection {
 	private Classifier classifier;
 
 	private Button isAbstract;
+
 	private boolean isAbstractModified = false;
+
 	private CLabel baseTypeName;
+
 	private Button typeButton;
 
 	private void modifyFields() {
 		if (!(isAbstractModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(classifier);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(classifier);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (isAbstractModified) {
 						isAbstractModified = false;
 						this.setLabel("Set Abstract");
 						classifier.setIsAbstract(isAbstract.getSelection());
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
 	private void openBaseTypeDialog() {
-		TransactionalEditingDomain editingDomain = 
-			TransactionUtil.getEditingDomain(classifier);
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(classifier);
 
 		java.lang.Class baseClass = org.eclipse.uml2.uml.Class.class;
 		if (classifier instanceof DataType) {
 			baseClass = DataType.class;
 		}
 		final NamedElement type = DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {baseClass},
-				editingDomain.getResourceSet(), 
-				getPart().getSite().getShell());
-		
+			new java.lang.Class[] { baseClass }, editingDomain.getResourceSet(), getPart().getSite().getShell());
+
 		if (type != null) {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Base Type") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (classifier.getGeneralizations().isEmpty()) {
-			    		classifier.createGeneralization((Classifier)type);
-					}
-					else {
-						Generalization generalization = 
-							(Generalization) classifier.getGeneralizations().get(0);
-			    		generalization.setGeneral((Classifier)type);
-						
+						classifier.createGeneralization((Classifier) type);
+					} else {
+						Generalization generalization = classifier.getGeneralizations().get(0);
+						generalization.setGeneral((Classifier) type);
+
 						// refresh children, cause change notification to be sent
 						Classifier owner = generalization.getSpecific();
 						int position = owner.getGeneralizations().lastIndexOf(generalization);
 						owner.getGeneralizations().remove(generalization);
 						owner.getGeneralizations().add(position, generalization);
 					}
-			        return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
 
 		// Base type
-		CLabel typeLabel = getWidgetFactory()
-				.createCLabel(composite, "Base Type:"); //$NON-NLS-1$
+		CLabel typeLabel = getWidgetFactory().createCLabel(composite, "Base Type:"); //$NON-NLS-1$
 		baseTypeName = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 
-        typeButton = getWidgetFactory().createButton(composite,
-            "Select Type...", SWT.PUSH); //$NON-NLS-1$
-        typeButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	openBaseTypeDialog();
-            }
-        });
+		typeButton = getWidgetFactory().createButton(composite, "Select Type...", SWT.PUSH); //$NON-NLS-1$
+		typeButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				openBaseTypeDialog();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.right = new FormAttachment(baseTypeName,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0,2, 0);
-        typeLabel.setLayoutData(data);
-
-        data = new FormData();
-        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
-        data.right = new FormAttachment(typeButton,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0,2, 0);
-        baseTypeName.setLayoutData(data);
-
-        data = new FormData();
-        data.right = new FormAttachment(60, 0);
-        data.top = new FormAttachment(0,2, 0);
-        data.height = buttonHeight;
-        typeButton.setLayoutData(data);
-
-		// Is Abstract checkbox
-		isAbstract = getWidgetFactory().createButton(composite, 
-				"Abstract", SWT.CHECK);
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.top = new FormAttachment(1,2, ITabbedPropertyConstants.VSPACE + 2);
+		data.right = new FormAttachment(baseTypeName, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 2, 0);
+		typeLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
+		data.right = new FormAttachment(typeButton, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 2, 0);
+		baseTypeName.setLayoutData(data);
+
+		data = new FormData();
+		data.right = new FormAttachment(60, 0);
+		data.top = new FormAttachment(0, 2, 0);
+		data.height = buttonHeight;
+		typeButton.setLayoutData(data);
+
+		// Is Abstract checkbox
+		isAbstract = getWidgetFactory().createButton(composite, "Abstract", SWT.CHECK);
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.top = new FormAttachment(1, 2, ITabbedPropertyConstants.VSPACE + 2);
 		isAbstract.setLayoutData(data);
 		isAbstract.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isAbstractModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isAbstractModified = true;
 				modifyFields();
 			}
 		});
-		
+
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (classifier != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(classifier);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(classifier);
 			if (editingDomain != null && editingDomain.isReadOnly(classifier.eResource())) {
 				return true;
 			}
@@ -233,8 +228,10 @@ public class ClassifierSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -244,40 +241,42 @@ public class ClassifierSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Classifier);
 		this.classifier = (Classifier) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		classifier = null;
 	}
 
+	@Override
 	public void refresh() {
 		isAbstract.setSelection(classifier.isAbstract());
-		
+
 		Classifier general = null;
 		if (!classifier.getGeneralizations().isEmpty()) {
-			Generalization generalization = 
-				(Generalization) classifier.getGeneralizations().get(0);
+			Generalization generalization = classifier.getGeneralizations().get(0);
 			general = generalization.getGeneral();
 		}
-		if (general != null)
+		if (general != null) {
 			baseTypeName.setText(general.getQualifiedName());
-		else
+		} else {
 			baseTypeName.setText("");
+		}
 
 		if (isReadOnly()) {
 			isAbstract.setEnabled(false);
 			typeButton.setEnabled(false);
-		}
-		else {
+		} else {
 			isAbstract.setEnabled(true);
 			typeButton.setEnabled(true);
 		}
@@ -288,18 +287,22 @@ public class ClassifierSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
-					if (!isDisposed() && !isNotifierDeleted(notification))
+					if (!isDisposed() && !isNotifierDeleted(notification)) {
 						refresh();
+					}
 				}
 			});
 		}

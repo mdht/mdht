@@ -69,7 +69,6 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 
-
 /**
  * The general properties section for Property.
  * 
@@ -80,23 +79,38 @@ public class PropertySection extends AbstractModelerPropertySection {
 	private Property property;
 
 	private CLabel typeName;
+
 	private Button typeButton;
+
 	private Text defaultValueText;
+
 	private boolean defaultValueModified = false;
+
 	private CCombo multiplicityCombo;
+
 	private boolean multiplicityModified = false;
+
 	private CCombo aggregationCombo;
+
 	private boolean aggregationModified = false;
+
 	private Button isDerived;
+
 	private boolean isDerivedModified = false;
+
 	private Button isReadOnly;
+
 	private boolean isReadOnlyModified = false;
+
 	private Button isOrdered;
+
 	private boolean isOrderedModified = false;
+
 	private Button isUnique;
+
 	private boolean isUniqueModified = false;
-	
-    private ModifyListener modifyListener = new ModifyListener() {
+
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (defaultValueText == event.getSource()) {
 				defaultValueModified = true;
@@ -110,11 +124,12 @@ public class PropertySection extends AbstractModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -124,19 +139,19 @@ public class PropertySection extends AbstractModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
-		if (!(defaultValueModified || multiplicityModified || aggregationModified
-				|| isDerivedModified || isReadOnlyModified || isUniqueModified || isOrderedModified)) {
+		if (!(defaultValueModified || multiplicityModified || aggregationModified || isDerivedModified ||
+				isReadOnlyModified || isUniqueModified || isOrderedModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (defaultValueModified) {
 						defaultValueModified = false;
 						this.setLabel("Set Default Value");
@@ -145,88 +160,80 @@ public class PropertySection extends AbstractModelerPropertySection {
 						}
 						String newValue = defaultValueText.getText();
 						if (newValue != null && newValue.trim().length() > 0) {
-							//TODO check property type and create appropriate literal type
+							// TODO check property type and create appropriate literal type
 							LiteralString literal = UMLFactory.eINSTANCE.createLiteralString();
 							literal.setValue(newValue);
 							property.setDefaultValue(literal);
 						}
-					}
-					else if (multiplicityModified) {
+					} else if (multiplicityModified) {
 						multiplicityModified = false;
 						this.setLabel("Set Multiplicity");
 						try {
 							setMultiplicity(property, multiplicityCombo.getText());
-							
+
 						} catch (IllegalArgumentException e) {
 							return Status.CANCEL_STATUS;
 						}
-					}
-					else if (aggregationModified) {
+					} else if (aggregationModified) {
 						aggregationModified = false;
 						this.setLabel("Set Aggregation");
 						try {
-							property.setAggregation(AggregationKind
-									.get(aggregationCombo.getText()));
-							
+							property.setAggregation(AggregationKind.get(aggregationCombo.getText()));
+
 						} catch (IllegalArgumentException e) {
 							return Status.CANCEL_STATUS;
 						}
-					}
-					else if (isDerivedModified) {
+					} else if (isDerivedModified) {
 						isDerivedModified = false;
 						this.setLabel("Set Derived");
 						property.setIsDerived(isDerived.getSelection());
-					}
-					else if (isReadOnlyModified) {
+					} else if (isReadOnlyModified) {
 						isReadOnlyModified = false;
 						this.setLabel("Set ReadOnly");
 						property.setIsReadOnly(isReadOnly.getSelection());
-					}
-					else if (isUniqueModified) {
+					} else if (isUniqueModified) {
 						isUniqueModified = false;
 						this.setLabel("Set Unique");
 						property.setIsUnique(isUnique.getSelection());
-					}
-					else if (isOrderedModified) {
+					} else if (isOrderedModified) {
 						isOrderedModified = false;
 						this.setLabel("Set Ordered");
 						property.setIsOrdered(isOrdered.getSelection());
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
 	private void openPropertyTypeDialog(final Property property) {
-		TransactionalEditingDomain editingDomain = 
-			TransactionUtil.getEditingDomain(property);
-		
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 		final NamedElement type = DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {org.eclipse.uml2.uml.Class.class, DataType.class},
-				editingDomain.getResourceSet(), 
-				getPart().getSite().getShell());
-		
+			new java.lang.Class[] { org.eclipse.uml2.uml.Class.class, DataType.class }, editingDomain.getResourceSet(),
+			getPart().getSite().getShell());
+
 		if (type != null) {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Type") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					property.setType((Classifier) type);
-					
+
 					// refresh children, cause change notification to be sent
 					Class owner = property.getClass_();
 					int position = owner.getOwnedAttributes().lastIndexOf(property);
@@ -237,74 +244,70 @@ public class PropertySection extends AbstractModelerPropertySection {
 				}
 			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
 
-		CLabel typeLabel = getWidgetFactory()
-				.createCLabel(composite, "Type:"); //$NON-NLS-1$
+		CLabel typeLabel = getWidgetFactory().createCLabel(composite, "Type:"); //$NON-NLS-1$
 		typeName = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 
-        typeButton = getWidgetFactory().createButton(composite,
-            "Select Type...", SWT.PUSH); //$NON-NLS-1$
-        typeButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	openPropertyTypeDialog(property);
-            }
-        });
+		typeButton = getWidgetFactory().createButton(composite, "Select Type...", SWT.PUSH); //$NON-NLS-1$
+		typeButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				openPropertyTypeDialog(property);
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.right = new FormAttachment(typeName,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0, 0);
-        typeLabel.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.right = new FormAttachment(typeName, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 0);
+		typeLabel.setLayoutData(data);
 
-        data = new FormData();
-        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
-        data.right = new FormAttachment(typeButton,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0, 0);
-        typeName.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
+		data.right = new FormAttachment(typeButton, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 0);
+		typeName.setLayoutData(data);
 
-        data = new FormData();
-        data.right = new FormAttachment(80, 0);
-        data.top = new FormAttachment(0, 0);
-        data.height = buttonHeight;
-        typeButton.setLayoutData(data);
+		data = new FormData();
+		data.right = new FormAttachment(80, 0);
+		data.top = new FormAttachment(0, 0);
+		data.height = buttonHeight;
+		typeButton.setLayoutData(data);
 
 		/* ---- Multiplicity combo ---- */
-		CLabel multiplicityLabel = getWidgetFactory()
-				.createCLabel(composite, "Multiplicity:"); //$NON-NLS-1$
+		CLabel multiplicityLabel = getWidgetFactory().createCLabel(composite, "Multiplicity:"); //$NON-NLS-1$
 		multiplicityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
-		multiplicityCombo.setItems(new String[] {"*", "0..1", "1", "1..*"});
+		multiplicityCombo.setItems(new String[] { "*", "0..1", "1", "1..*" });
 		multiplicityCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				multiplicityModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				multiplicityModified = true;
 				modifyFields();
@@ -313,8 +316,7 @@ public class PropertySection extends AbstractModelerPropertySection {
 
 		data = new FormData();
 		data.left = new FormAttachment(typeButton, ITabbedPropertyConstants.HSPACE);
-		data.right = new FormAttachment(multiplicityCombo,
-				-ITabbedPropertyConstants.HSPACE);
+		data.right = new FormAttachment(multiplicityCombo, -ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(0, 0);
 		multiplicityLabel.setLayoutData(data);
 
@@ -327,29 +329,27 @@ public class PropertySection extends AbstractModelerPropertySection {
 		/* ------------------------------- */
 		defaultValueText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
 		data = new FormData();
-		//TODO figure out how to set correct wider label width
+		// TODO figure out how to set correct wider label width
 		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
 		data.right = new FormAttachment(70, 0);
-		data.top = new FormAttachment(1,3, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, 3, ITabbedPropertyConstants.VSPACE);
 		defaultValueText.setLayoutData(data);
 
-		CLabel defaultValueLabel = getWidgetFactory()
-				.createCLabel(composite, "Default Value:"); //$NON-NLS-1$
+		CLabel defaultValueLabel = getWidgetFactory().createCLabel(composite, "Default Value:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(defaultValueText,
-				-ITabbedPropertyConstants.HSPACE);
+		data.right = new FormAttachment(defaultValueText, -ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(defaultValueText, 0, SWT.CENTER);
 		defaultValueLabel.setLayoutData(data);
 
 		/* ---- Is Derived checkbox ---- */
-		isDerived = getWidgetFactory().createButton(composite, 
-				"Derived", SWT.CHECK);
+		isDerived = getWidgetFactory().createButton(composite, "Derived", SWT.CHECK);
 		isDerived.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isDerivedModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isDerivedModified = true;
 				modifyFields();
@@ -357,13 +357,13 @@ public class PropertySection extends AbstractModelerPropertySection {
 		});
 
 		/* ---- Is ReadOnly checkbox ---- */
-		isReadOnly = getWidgetFactory().createButton(composite, 
-				"Read Only", SWT.CHECK);
+		isReadOnly = getWidgetFactory().createButton(composite, "Read Only", SWT.CHECK);
 		isReadOnly.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isReadOnlyModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isReadOnlyModified = true;
 				modifyFields();
@@ -371,13 +371,13 @@ public class PropertySection extends AbstractModelerPropertySection {
 		});
 
 		/* ---- Is Unique checkbox ---- */
-		isUnique = getWidgetFactory().createButton(composite, 
-				"Unique", SWT.CHECK);
+		isUnique = getWidgetFactory().createButton(composite, "Unique", SWT.CHECK);
 		isUnique.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isUniqueModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isUniqueModified = true;
 				modifyFields();
@@ -385,31 +385,30 @@ public class PropertySection extends AbstractModelerPropertySection {
 		});
 
 		/* ---- Is Ordered checkbox ---- */
-		isOrdered = getWidgetFactory().createButton(composite, 
-				"Ordered", SWT.CHECK);
+		isOrdered = getWidgetFactory().createButton(composite, "Ordered", SWT.CHECK);
 		isOrdered.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isOrderedModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isOrderedModified = true;
 				modifyFields();
 			}
 		});
-		
+
 		/* ---- Aggregation combo ---- */
 		aggregationCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
 		aggregationCombo.setItems(new String[] {
-				AggregationKind.NONE_LITERAL.getName(),
-				AggregationKind.SHARED_LITERAL.getName(),
-				AggregationKind.COMPOSITE_LITERAL.getName()
-		});
+				AggregationKind.NONE_LITERAL.getName(), AggregationKind.SHARED_LITERAL.getName(),
+				AggregationKind.COMPOSITE_LITERAL.getName() });
 		aggregationCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				aggregationModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				aggregationModified = true;
 				modifyFields();
@@ -417,7 +416,7 @@ public class PropertySection extends AbstractModelerPropertySection {
 		});
 
 		data = new FormData();
-		data.left = new FormAttachment(0,5);
+		data.left = new FormAttachment(0, 5);
 		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
 		isDerived.setLayoutData(data);
 
@@ -435,24 +434,23 @@ public class PropertySection extends AbstractModelerPropertySection {
 		data.left = new FormAttachment(isUnique, 5);
 		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
 		isOrdered.setLayoutData(data);
-		
-		CLabel aggregationLabel = getWidgetFactory()
-				.createCLabel(composite, "Aggregation:"); //$NON-NLS-1$
+
+		CLabel aggregationLabel = getWidgetFactory().createCLabel(composite, "Aggregation:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(isOrdered, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
 		aggregationLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(isOrdered, STANDARD_LABEL_WIDTH + 5);
-		data.top = new FormAttachment(2,3, ITabbedPropertyConstants.VSPACE + 2);
+		data.left = new FormAttachment(isOrdered, STANDARD_LABEL_WIDTH + 5);
+		data.top = new FormAttachment(2, 3, ITabbedPropertyConstants.VSPACE + 2);
 		aggregationCombo.setLayoutData(data);
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -465,8 +463,10 @@ public class PropertySection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -476,43 +476,43 @@ public class PropertySection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Property);
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		property = null;
 	}
 
+	@Override
 	public void refresh() {
-		if (property.getType() != null
-				&& property.getType().getName() != null)
+		if (property.getType() != null && property.getType().getName() != null) {
 			typeName.setText(property.getType().getQualifiedName());
-		else
+		} else {
 			typeName.setText("");
-		
+		}
+
 		defaultValueText.removeModifyListener(modifyListener);
 		defaultValueText.removeKeyListener(keyListener);
 		defaultValueText.removeFocusListener(focusListener);
 		if (property.getType() == null) {
 			defaultValueText.setEditable(false);
-		}
-		else {
+		} else {
 			defaultValueText.setEditable(true);
 		}
-		
-		if (property.getDefaultValue() != null
-				&& property.getDefaultValue().stringValue() != null) {
+
+		if (property.getDefaultValue() != null && property.getDefaultValue().stringValue() != null) {
 			defaultValueText.setText(property.getDefaultValue().stringValue());
-		}
-		else {
+		} else {
 			defaultValueText.setText("");
 		}
 		defaultValueText.addModifyListener(modifyListener);
@@ -535,8 +535,7 @@ public class PropertySection extends AbstractModelerPropertySection {
 			multiplicityCombo.setEnabled(false);
 			defaultValueText.setEnabled(false);
 			aggregationCombo.setEnabled(false);
-		}
-		else {
+		} else {
 			isDerived.setEnabled(true);
 			isReadOnly.setEnabled(true);
 			isUnique.setEnabled(true);
@@ -553,18 +552,22 @@ public class PropertySection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
-					if (!isDisposed() && !isNotifierDeleted(notification))
+					if (!isDisposed() && !isNotifierDeleted(notification)) {
 						refresh();
+					}
 				}
 			});
 		}
@@ -581,9 +584,10 @@ public class PropertySection extends AbstractModelerPropertySection {
 		StringBuffer multDisplay = new StringBuffer();
 		multDisplay.append(multElement.getLower());
 		multDisplay.append("..");
-		multDisplay.append(multElement.getUpper() == -1 ? "*" : 
-			Integer.toString(multElement.getUpper()));
-		
+		multDisplay.append(multElement.getUpper() == -1
+				? "*"
+				: Integer.toString(multElement.getUpper()));
+
 		return multDisplay.toString();
 	}
 
@@ -591,23 +595,21 @@ public class PropertySection extends AbstractModelerPropertySection {
 	 * Set multiplicity parsed from a string value, e.g. "0..1" or "1..*".
 	 * Must be called from within a transaction.
 	 */
-	private void setMultiplicity(MultiplicityElement multiplicityElement, String value ) {
+	private void setMultiplicity(MultiplicityElement multiplicityElement, String value) {
 		int lower = 1;
 		int upper = 1;
-		
+
 		StringTokenizer stk = new StringTokenizer(value, ". ");
 		if (stk.hasMoreTokens()) {
 			lower = parseMultiplicityRangeToken(stk.nextToken());
 			if (!stk.hasMoreTokens()) {
-				if( lower == LiteralUnlimitedNatural.UNLIMITED ) {
+				if (lower == LiteralUnlimitedNatural.UNLIMITED) {
 					lower = 0;
 					upper = LiteralUnlimitedNatural.UNLIMITED;
-				}
-				else {
+				} else {
 					upper = lower;
 				}
-			} 
-			else {
+			} else {
 				upper = parseMultiplicityRangeToken(stk.nextToken());
 				if (stk.hasMoreTokens()) {
 					throw new IllegalArgumentException("illegal range specification: " + value);
@@ -616,10 +618,12 @@ public class PropertySection extends AbstractModelerPropertySection {
 		}
 
 		// remove existing values so that we get change notification to update view
-		if (multiplicityElement.getLowerValue() != null)
+		if (multiplicityElement.getLowerValue() != null) {
 			multiplicityElement.getLowerValue().destroy();
-		if (multiplicityElement.getUpperValue() != null)
+		}
+		if (multiplicityElement.getUpperValue() != null) {
 			multiplicityElement.getUpperValue().destroy();
+		}
 
 		multiplicityElement.setUpper(upper);
 		multiplicityElement.setLower(lower);
@@ -628,12 +632,13 @@ public class PropertySection extends AbstractModelerPropertySection {
 	/**
 	 * Parse an multiplicity range token; map 'n', '*', or "unbounded" to -1
 	 */
-	private int parseMultiplicityRangeToken( String token ) {
+	private int parseMultiplicityRangeToken(String token) {
 		try {
-			if (token.equalsIgnoreCase("n") || token.equals("*") || token.equalsIgnoreCase("unbounded"))
+			if (token.equalsIgnoreCase("n") || token.equals("*") || token.equalsIgnoreCase("unbounded")) {
 				return LiteralUnlimitedNatural.UNLIMITED;
-			else
+			} else {
 				return Integer.parseInt(token);
+			}
 		} catch (Exception ex) {
 			throw new IllegalArgumentException("illegal range bound: " + token);
 		}

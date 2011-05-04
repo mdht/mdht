@@ -17,10 +17,9 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 
 /**
  * An adapter factory for UMLDomainNavigatorItem.
- *  
+ * 
  */
-public class UMLDomainNavigatorItemAdapterFactory
-    implements IAdapterFactory {
+public class UMLDomainNavigatorItemAdapterFactory implements IAdapterFactory {
 
 	final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 
@@ -28,30 +27,28 @@ public class UMLDomainNavigatorItemAdapterFactory
 			return "org.openhealthtools.mdht.uml.ui.properties"; //$NON-NLS-1$
 		}
 	};
-	
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.core.runtime.IAdapterFactory#getAdapter(java.lang.Object,
-     *      java.lang.Class)
-     */
-    public Object getAdapter(Object adaptableObject, java.lang.Class adapterType) {
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.core.runtime.IAdapterFactory#getAdapter(java.lang.Object,
+	 * java.lang.Class)
+	 */
+	public Object getAdapter(Object adaptableObject, java.lang.Class adapterType) {
 		if (adapterType == ITabbedPropertySheetPageContributor.class) {
 			return propertySheetPageContributor;
 		}
 
-        return null;
-    }
+		return null;
+	}
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.core.runtime.IAdapterFactory#getAdapterList()
-     */
-    public java.lang.Class[] getAdapterList() {
-        return new java.lang.Class[] {
-        		ITabbedPropertySheetPageContributor.class
-        	};
-    }
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.core.runtime.IAdapterFactory#getAdapterList()
+	 */
+	public java.lang.Class[] getAdapterList() {
+		return new java.lang.Class[] { ITabbedPropertySheetPageContributor.class };
+	}
 
 }

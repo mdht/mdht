@@ -18,7 +18,7 @@ import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 
 /**
- *
+ * 
  * $Id: $
  */
 public class CustomPropertySource extends PropertySource {
@@ -27,16 +27,18 @@ public class CustomPropertySource extends PropertySource {
 	 * @param object
 	 * @param itemPropertySource
 	 */
-	public CustomPropertySource(Object object,
-			IItemPropertySource itemPropertySource) {
+	public CustomPropertySource(Object object, IItemPropertySource itemPropertySource) {
 		super(object, itemPropertySource);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.ui.provider.PropertySource#createPropertyDescriptor(org.eclipse.emf.edit.provider.IItemPropertyDescriptor)
 	 */
+	@Override
 	protected IPropertyDescriptor createPropertyDescriptor(IItemPropertyDescriptor itemPropertyDescriptor) {
-		//return super.createPropertyDescriptor(itemPropertyDescriptor);
+		// return super.createPropertyDescriptor(itemPropertyDescriptor);
 		return new CustomPropertyDescriptor(object, itemPropertyDescriptor);
 	}
 

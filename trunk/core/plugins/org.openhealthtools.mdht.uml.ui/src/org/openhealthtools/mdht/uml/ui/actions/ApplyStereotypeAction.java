@@ -22,24 +22,22 @@ import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.window.Window;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
-public class ApplyStereotypeAction
-		extends UMLCommandAction {
+public class ApplyStereotypeAction extends UMLCommandAction {
 
 	public ApplyStereotypeAction() {
 		super();
 	}
 
-	protected Command createActionCommand(EditingDomain editingDomain,
-			Collection collection) {
+	@Override
+	protected Command createActionCommand(EditingDomain editingDomain, Collection collection) {
 
-		if (collection.size() == 1
-			&& collection.iterator().next() instanceof Element) {
+		if (collection.size() == 1 && collection.iterator().next() instanceof Element) {
 
 			return IdentityCommand.INSTANCE;
 		}
@@ -47,6 +45,7 @@ public class ApplyStereotypeAction
 		return UnexecutableCommand.INSTANCE;
 	}
 
+	@Override
 	public void run(IAction action) {
 
 		if (command != UnexecutableCommand.INSTANCE) {
@@ -54,12 +53,9 @@ public class ApplyStereotypeAction
 
 			List choiceOfValues = new ArrayList();
 
-			for (Iterator applicableStereotypes = element
-				.getApplicableStereotypes().iterator(); applicableStereotypes
-				.hasNext();) {
+			for (Iterator applicableStereotypes = element.getApplicableStereotypes().iterator(); applicableStereotypes.hasNext();) {
 
-				Stereotype stereotype = (Stereotype) applicableStereotypes
-					.next();
+				Stereotype stereotype = (Stereotype) applicableStereotypes.next();
 
 				if (!element.isStereotypeApplied(stereotype)) {
 					choiceOfValues.add(stereotype);
@@ -71,26 +67,21 @@ public class ApplyStereotypeAction
 			String label = UML2UIMessages._UI_ApplyStereotypeActionCommand_label;
 
 			final FeatureEditorDialog dialog = new FeatureEditorDialog(
-				workbenchPart.getSite().getShell(), getLabelProvider(),
-				element, UMLPackage.Literals.ELEMENT, Collections.EMPTY_LIST,
-				label, choiceOfValues);
+				workbenchPart.getSite().getShell(), getLabelProvider(), element, UMLPackage.Literals.ELEMENT,
+				Collections.EMPTY_LIST, label, choiceOfValues);
 			dialog.open();
 
-			if (dialog.getReturnCode() == FeatureEditorDialog.OK) {
-				editingDomain.getCommandStack().execute(
-					new RefreshingChangeCommand(editingDomain, new Runnable() {
+			if (dialog.getReturnCode() == Window.OK) {
+				editingDomain.getCommandStack().execute(new RefreshingChangeCommand(editingDomain, new Runnable() {
 
-						public void run() {
+					public void run() {
 
-							for (Iterator stereotypes = dialog.getResult()
-								.iterator(); stereotypes.hasNext();) {
+						for (Iterator stereotypes = dialog.getResult().iterator(); stereotypes.hasNext();) {
 
-								element
-									.applyStereotype((Stereotype) stereotypes
-										.next());
-							}
+							element.applyStereotype((Stereotype) stereotypes.next());
 						}
-					}, label));
+					}
+				}, label));
 			}
 		}
 	}

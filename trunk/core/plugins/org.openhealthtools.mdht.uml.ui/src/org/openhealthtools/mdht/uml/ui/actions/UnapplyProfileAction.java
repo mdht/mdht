@@ -23,34 +23,33 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
-public class UnapplyProfileAction
-		extends UMLCommandAction {
+public class UnapplyProfileAction extends UMLCommandAction {
 
 	public UnapplyProfileAction() {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
-		
+
 		if (action.isEnabled()) {
-			org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) collection
-				.iterator().next();
-			if (package_.getAppliedProfiles().isEmpty())
+			org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) collection.iterator().next();
+			if (package_.getAppliedProfiles().isEmpty()) {
 				action.setEnabled(false);
+			}
 		}
 	}
 
-	protected Command createActionCommand(EditingDomain editingDomain,
-			Collection collection) {
+	@Override
+	protected Command createActionCommand(EditingDomain editingDomain, Collection collection) {
 
-		if (collection.size() == 1
-			&& collection.iterator().next() instanceof org.eclipse.uml2.uml.Package) {
+		if (collection.size() == 1 && collection.iterator().next() instanceof org.eclipse.uml2.uml.Package) {
 
 			return IdentityCommand.INSTANCE;
 		}
@@ -58,11 +57,11 @@ public class UnapplyProfileAction
 		return UnexecutableCommand.INSTANCE;
 	}
 
+	@Override
 	public void run(IAction action) {
 
 		if (command != UnexecutableCommand.INSTANCE) {
-			final org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) collection
-				.iterator().next();
+			final org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) collection.iterator().next();
 
 			List choiceOfValues = new ArrayList(package_.getAppliedProfiles());
 
@@ -71,25 +70,21 @@ public class UnapplyProfileAction
 			String label = UML2UIMessages._UI_UnapplyProfileActionCommand_label;
 
 			final FeatureEditorDialog dialog = new FeatureEditorDialog(
-				workbenchPart.getSite().getShell(), getLabelProvider(),
-				package_, UMLPackage.Literals.PROFILE, Collections.EMPTY_LIST,
-				label, choiceOfValues);
+				workbenchPart.getSite().getShell(), getLabelProvider(), package_, UMLPackage.Literals.PROFILE,
+				Collections.EMPTY_LIST, label, choiceOfValues);
 			dialog.open();
 
-			if (dialog.getReturnCode() == FeatureEditorDialog.OK) {
-				editingDomain.getCommandStack().execute(
-					new RefreshingChangeCommand(editingDomain, new Runnable() {
+			if (dialog.getReturnCode() == Window.OK) {
+				editingDomain.getCommandStack().execute(new RefreshingChangeCommand(editingDomain, new Runnable() {
 
-						public void run() {
+					public void run() {
 
-							for (Iterator profiles = dialog.getResult()
-								.iterator(); profiles.hasNext();) {
+						for (Iterator profiles = dialog.getResult().iterator(); profiles.hasNext();) {
 
-								package_.unapplyProfile((Profile) profiles
-									.next());
-							}
+							package_.unapplyProfile((Profile) profiles.next());
 						}
-					}, label));
+					}
+				}, label));
 			}
 		}
 	}

@@ -33,51 +33,53 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
 public class AddInputParameterAction extends UML2AbstractAction {
 
 	public AddInputParameterAction() {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
 		if (isReadOnly()) {
 			action.setEnabled(false);
 		}
 	}
-	
+
 	public void run(final IAction action) {
 		try {
 			final Element element = getSelectedElement();
 			if (Operation.class.isInstance(element)) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLInputParameter_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLInputParameter_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						Parameter parameter = UMLFactory.eINSTANCE.createParameter();
 						parameter.setDirection(ParameterDirectionKind.IN_LITERAL);
-						
+
 						String name = UML2UIMessages.AddUMLInputParameter_default_name;
 						parameter.setName(name);
-						((Operation)element).getOwnedParameters().add(parameter);
+						((Operation) element).getOwnedParameters().add(parameter);
 
 						if (activePart instanceof ISetSelectionTarget) {
-							((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(parameter));
+							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(parameter));
 						}
-						
+
 						// without this, user must click away and back to fire selectionChanged()
 						action.setEnabled(false);
-				        return Status.OK_STATUS;
-				    }};
+						return Status.OK_STATUS;
+					}
+				};
 
-			    try {
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

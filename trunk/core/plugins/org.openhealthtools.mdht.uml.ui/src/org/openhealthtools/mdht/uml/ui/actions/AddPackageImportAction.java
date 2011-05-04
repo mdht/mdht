@@ -47,41 +47,43 @@ public class AddPackageImportAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element != null) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLPackageImport_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLPackageImport_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						if (Package.class.isInstance(element)) {
 							Package umlPackage = (Package) element;
-							
+
 							// prompt for element
 							Package element = DialogLaunchUtil.choosePackage(
-									umlPackage.eResource().getResourceSet(), activePart.getSite().getShell());
+								umlPackage.eResource().getResourceSet(), activePart.getSite().getShell());
 							if (element == null) {
 								return Status.CANCEL_STATUS;
 							}
-							
+
 							PackageImport packageImport = UMLFactory.eINSTANCE.createPackageImport();
 							packageImport.setImportingNamespace(umlPackage);
 							packageImport.setImportedPackage(element);
 
 							if (activePart instanceof ISetSelectionTarget) {
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(umlPackage));
-								((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(packageImport));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(umlPackage));
+								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(packageImport));
 							}
 
-					        return Status.OK_STATUS;
+							return Status.OK_STATUS;
 						}
-						
-						return Status.CANCEL_STATUS;
-				    }};
 
-			    try {
+						return Status.CANCEL_STATUS;
+					}
+				};
+
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

@@ -64,6 +64,7 @@ public class UMLDomainNavigatorItem extends UMLAbstractNavigatorItem {
 		return myPropertySourceProvider;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof UMLDomainNavigatorItem) {
 			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(((UMLDomainNavigatorItem) obj).getEObject()));
@@ -71,6 +72,7 @@ public class UMLDomainNavigatorItem extends UMLAbstractNavigatorItem {
 		return super.equals(obj);
 	}
 
+	@Override
 	public int hashCode() {
 		return EcoreUtil.getURI(getEObject()).hashCode();
 	}

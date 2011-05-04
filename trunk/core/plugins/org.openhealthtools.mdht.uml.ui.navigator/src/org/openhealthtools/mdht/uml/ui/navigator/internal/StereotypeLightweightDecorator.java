@@ -30,26 +30,24 @@ import org.eclipse.uml2.uml.Stereotype;
  */
 public class StereotypeLightweightDecorator implements ILightweightLabelDecorator {
 
-    public void decorate(Object object, IDecoration decoration) {
+	public void decorate(Object object, IDecoration decoration) {
 		Element element = null;
 		if (object instanceof Element) {
 			element = (Element) object;
-		}
-		else if (object instanceof IAdaptable) {
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
+		} else if (object instanceof IAdaptable) {
+			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
 		}
 		if (element != null && !element.getAppliedStereotypes().isEmpty()) {
 			StringBuilder decorator = new StringBuilder();
 			for (Iterator iterator = element.getAppliedStereotypes().iterator(); iterator.hasNext();) {
 				Stereotype stereotype = (Stereotype) iterator.next();
 				EAnnotation extensions = stereotype.getEAnnotation("uml2.extensions");
-				boolean suppressed = extensions != null && extensions.getDetails() != null
-						&& "true".equals(extensions.getDetails().get("suppressed"));
+				boolean suppressed = extensions != null && extensions.getDetails() != null &&
+						"true".equals(extensions.getDetails().get("suppressed"));
 				if (!suppressed) {
 					if (decorator.length() == 0) {
 						decorator.append("<<");
-					}
-					else {
+					} else {
 						decorator.append(", ");
 					}
 					// keyword gets localized name, or lowerCamelCase of Stereotype name
@@ -61,10 +59,10 @@ public class StereotypeLightweightDecorator implements ILightweightLabelDecorato
 				decoration.addPrefix(decorator.toString());
 			}
 		}
-    }
+	}
 
 	public void dispose() {
-		
+
 	}
 
 	public boolean isLabelProperty(Object element, String property) {
@@ -72,11 +70,11 @@ public class StereotypeLightweightDecorator implements ILightweightLabelDecorato
 	}
 
 	public void addListener(ILabelProviderListener listener) {
-		
+
 	}
 
 	public void removeListener(ILabelProviderListener listener) {
-		
+
 	}
-    
+
 }

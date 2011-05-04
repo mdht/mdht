@@ -51,7 +51,6 @@ import org.eclipse.uml2.uml.Parameter;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 
-
 /**
  * The general properties section for Property.
  * 
@@ -62,90 +61,86 @@ public class ParameterSection extends AbstractModelerPropertySection {
 	private Parameter parameter;
 
 	private CLabel typeName;
+
 	private Button typeButton;
-	
+
 	private void openPropertyTypeDialog(final Parameter param) {
-		TransactionalEditingDomain editingDomain = 
-			TransactionUtil.getEditingDomain(param);
-		
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(param);
+
 		final NamedElement type = DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {org.eclipse.uml2.uml.Class.class, DataType.class},
-				editingDomain.getResourceSet(), 
-				getPart().getSite().getShell());
-		
+			new java.lang.Class[] { org.eclipse.uml2.uml.Class.class, DataType.class }, editingDomain.getResourceSet(),
+			getPart().getSite().getShell());
+
 		if (type != null) {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Type") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					param.setType((Classifier) type);
 
 					return Status.OK_STATUS;
 				}
 			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
 
-		CLabel typeLabel = getWidgetFactory()
-				.createCLabel(composite, "Type:"); //$NON-NLS-1$
+		CLabel typeLabel = getWidgetFactory().createCLabel(composite, "Type:"); //$NON-NLS-1$
 		typeName = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 
-        typeButton = getWidgetFactory().createButton(composite,
-            "Select Type...", SWT.PUSH); //$NON-NLS-1$
-        typeButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	openPropertyTypeDialog(parameter);
-            }
-        });
+		typeButton = getWidgetFactory().createButton(composite, "Select Type...", SWT.PUSH); //$NON-NLS-1$
+		typeButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				openPropertyTypeDialog(parameter);
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.right = new FormAttachment(typeName,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0, 0);
-        typeLabel.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.right = new FormAttachment(typeName, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 0);
+		typeLabel.setLayoutData(data);
 
-        data = new FormData();
-        data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
-        data.right = new FormAttachment(typeButton,
-            -ITabbedPropertyConstants.HSPACE);
-        data.top = new FormAttachment(0, 0);
-        typeName.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH);
+		data.right = new FormAttachment(typeButton, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(0, 0);
+		typeName.setLayoutData(data);
 
-        data = new FormData();
-        data.right = new FormAttachment(70, 0);
-        data.top = new FormAttachment(0, 0);
-        data.height = buttonHeight;
-        typeButton.setLayoutData(data);
+		data = new FormData();
+		data.right = new FormAttachment(70, 0);
+		data.top = new FormAttachment(0, 0);
+		data.height = buttonHeight;
+		typeButton.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (parameter != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(parameter);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(parameter);
 			if (editingDomain != null && editingDomain.isReadOnly(parameter.eResource())) {
 				return true;
 			}
@@ -158,8 +153,10 @@ public class ParameterSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -169,32 +166,34 @@ public class ParameterSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Parameter);
 		this.parameter = (Parameter) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
-		if (parameter.getType() != null 
-				&& parameter.getType().getQualifiedName() != null)
+		if (parameter.getType() != null && parameter.getType().getQualifiedName() != null) {
 			typeName.setText(parameter.getType().getQualifiedName());
-		else
+		} else {
 			typeName.setText("");
-		
+		}
+
 		if (isReadOnly()) {
 			typeButton.setEnabled(false);
-		}
-		else {
+		} else {
 			typeButton.setEnabled(true);
 		}
 	}
@@ -204,18 +203,22 @@ public class ParameterSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
-					if (!isDisposed() && !isNotifierDeleted(notification))
+					if (!isDisposed() && !isNotifierDeleted(notification)) {
 						refresh();
+					}
 				}
 			});
 		}

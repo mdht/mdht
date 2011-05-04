@@ -30,31 +30,35 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.util.EditingDomainUtil;
 
-public abstract class UML2AbstractAction
-		implements IObjectActionDelegate, IViewActionDelegate, IEditorActionDelegate {
+public abstract class UML2AbstractAction implements IObjectActionDelegate, IViewActionDelegate, IEditorActionDelegate {
 
 	protected IWorkbenchPart activePart;
+
 	protected ISelection currentSelection;
+
 	protected TransactionalEditingDomain editingDomain;
-	
+
 	public UML2AbstractAction() {
 		super();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.IViewActionDelegate#init(org.eclipse.ui.IViewPart)
 	 */
 	public void init(IViewPart view) {
 		activePart = view;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.IEditorActionDelegate#setActiveEditor(org.eclipse.jface.action.IAction, org.eclipse.ui.IEditorPart)
 	 */
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
@@ -74,72 +78,63 @@ public abstract class UML2AbstractAction
 	public void selectionChanged(IAction action, ISelection selection) {
 		currentSelection = selection;
 
-		editingDomain = EditingDomainUtil.getEditingDomain(
-				((IStructuredSelection)selection).toList());
+		editingDomain = EditingDomainUtil.getEditingDomain(((IStructuredSelection) selection).toList());
 		action.setEnabled(editingDomain != null);
 	}
 
 	protected boolean isReadOnly() {
 		if (editingDomain != null) {
-			for (Iterator elements = ((IStructuredSelection) currentSelection)
-					.iterator(); elements.hasNext();) {
-	
+			for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
+
 				Object element = elements.next();
-				if (element instanceof EObject
-						&& editingDomain.isReadOnly(((EObject)element).eResource())) {
+				if (element instanceof EObject && editingDomain.isReadOnly(((EObject) element).eResource())) {
 					return true;
 				}
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	protected View getSelectedView() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection)
-				.iterator(); elements.hasNext();) {
+		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
-			View view = (View) ((IAdaptable) element)
-					.getAdapter(View.class);
+			View view = (View) ((IAdaptable) element).getAdapter(View.class);
 
 			if (view != null) {
 				return view;
 			}
 		}
-		
+
 		return null;
 	}
 
 	protected Element getSelectedElement() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection)
-				.iterator(); elements.hasNext();) {
+		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
 
 			Object element = elements.next();
 			EObject eObject = null;
 			if (element instanceof IAdaptable) {
 				// Try to adapt to View first, since Notation OK
-				eObject = (EObject) ((IAdaptable) element)
-						.getAdapter(View.class);
-	
+				eObject = (EObject) ((IAdaptable) element).getAdapter(View.class);
+
 				if (eObject == null) {
-					eObject = (EObject) ((IAdaptable) element)
-							.getAdapter(EObject.class);
+					eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
 				}
-			}
-			else if (element instanceof EObject) {
+			} else if (element instanceof EObject) {
 				eObject = (EObject) element;
 			}
-			
+
 			if (View.class.isInstance(eObject)) {
-				eObject = ((View)eObject).getElement();
+				eObject = ((View) eObject).getElement();
 			}
-			
+
 			if (Element.class.isInstance(eObject)) {
 				return (Element) eObject;
 			}
 		}
-		
+
 		return null;
 	}
 
@@ -184,7 +179,7 @@ public abstract class UML2AbstractAction
 
 		return uniqueName;
 	}
-	
+
 	/**
 	 * Find next unused package name, using 'name' as the base.
 	 */
@@ -198,5 +193,5 @@ public abstract class UML2AbstractAction
 
 		return uniqueName;
 	}
-	
+
 }

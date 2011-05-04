@@ -29,28 +29,41 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_associations;
 
 	public static String OpenModelAction_label;
+
 	public static String OpenModelAction_errorTitle;
+
 	public static String OpenModelAction_errorMessage;
-	
+
 	public static String CloseAllModelsAction_label;
+
 	public static String CloseModelAction_label;
+
 	public static String CloseModelAction_dialogTitle;
+
 	public static String CloseModelAction_dialogMessage;
+
 	public static String CloseModelAction_errorTitle;
+
 	public static String CloseModelAction_errorMessage;
 
 	public static String ControlAction_label;
+
 	public static String UncontrolAction_label;
 
 	public static String ExportToXMIAction_dialogTitle;
+
 	public static String ExportToXMIAction_dialogMessage;
+
 	public static String ExportToXMIAction_errorTitle;
+
 	public static String ExportToXMIAction_errorMessage;
 
 	public static String ExistingControlledResource_dialogTitle;
+
 	public static String ExistingControlledResource_dialogMessage;
 
 	public static String SelectControlledResource_dialogTitle;
+
 	public static String SelectControlledResource_dialogMessage;
 
 	static {
