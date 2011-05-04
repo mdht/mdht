@@ -19,13 +19,11 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 
-
 /**
  * 
  * $Id: $
  */
-public class UML2ExtendedAdapterFactory extends
-		UMLItemProviderAdapterFactory {
+public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 
 	/**
 	 * 
@@ -37,27 +35,28 @@ public class UML2ExtendedAdapterFactory extends
 		supportedTypes.add(ICellModifier.class);
 	}
 
+	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object instanceof SimpleListNotifier)
+		if (object instanceof SimpleListNotifier) {
 			return true;
-		else if (object instanceof DiagramFolder)
+		} else if (object instanceof DiagramFolder) {
 			return true;
-		else
+		} else {
 			return super.isFactoryForType(object);
+		}
 	}
 
-    public Adapter createAdapter(Notifier target) {
-    	if (target instanceof SimpleListNotifier) {
-    		return createListAdapter();
-    	}
-    	else if (target instanceof EObject) {
-    		return super.createAdapter(target);
-    	}
-    	else {
-    		// if Resource is selected
-    		return null;
-    	}
-    }
+	@Override
+	public Adapter createAdapter(Notifier target) {
+		if (target instanceof SimpleListNotifier) {
+			return createListAdapter();
+		} else if (target instanceof EObject) {
+			return super.createAdapter(target);
+		} else {
+			// if Resource is selected
+			return null;
+		}
+	}
 
 	protected SimpleListItemProvider listItemProvider;
 
@@ -71,24 +70,27 @@ public class UML2ExtendedAdapterFactory extends
 
 	protected DiagramFolderAdapter diagramFolderItemProvider;
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.common.notify.impl.AdapterFactoryImpl#resolve(java.lang.Object, java.lang.Object)
 	 */
-//	protected Object resolve(Object object, Object type) {
-//		if (object instanceof DiagramFolder) {
-//			return createDiagramFolderItemProvider();
-//		}
-//		return super.resolve(object, type);
-//	}
+	// protected Object resolve(Object object, Object type) {
+	// if (object instanceof DiagramFolder) {
+	// return createDiagramFolderItemProvider();
+	// }
+	// return super.resolve(object, type);
+	// }
 
-//	public Adapter createDiagramFolderItemProvider() {
-//		if (diagramFolderItemProvider == null) {
-//			diagramFolderItemProvider = new DiagramFolderAdapter(this);
-//		}
-//
-//		return diagramFolderItemProvider;
-//	}
+	// public Adapter createDiagramFolderItemProvider() {
+	// if (diagramFolderItemProvider == null) {
+	// diagramFolderItemProvider = new DiagramFolderAdapter(this);
+	// }
+	//
+	// return diagramFolderItemProvider;
+	// }
 
+	@Override
 	public Adapter createAssociationAdapter() {
 		if (associationItemProvider == null) {
 			associationItemProvider = new AssociationExtItemProvider(this);
@@ -97,9 +99,12 @@ public class UML2ExtendedAdapterFactory extends
 		return associationItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createAssociationClassAdapter()
 	 */
+	@Override
 	public Adapter createAssociationClassAdapter() {
 		if (associationClassItemProvider == null) {
 			associationClassItemProvider = new AssociationClassExtItemProvider(this);
@@ -108,9 +113,12 @@ public class UML2ExtendedAdapterFactory extends
 		return associationClassItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createClassAdapter()
 	 */
+	@Override
 	public Adapter createClassAdapter() {
 		if (classItemProvider == null) {
 			classItemProvider = new ClassExtItemProvider(this);
@@ -119,9 +127,12 @@ public class UML2ExtendedAdapterFactory extends
 		return classItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createDataTypeAdapter()
 	 */
+	@Override
 	public Adapter createDataTypeAdapter() {
 		if (dataTypeItemProvider == null) {
 			dataTypeItemProvider = new DataTypeExtItemProvider(this);
@@ -130,9 +141,12 @@ public class UML2ExtendedAdapterFactory extends
 		return dataTypeItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createCommentAdapter()
 	 */
+	@Override
 	public Adapter createCommentAdapter() {
 		if (commentItemProvider == null) {
 			commentItemProvider = new CommentExtItemProvider(this);
@@ -141,9 +155,12 @@ public class UML2ExtendedAdapterFactory extends
 		return commentItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory#createConstraintAdapter()
 	 */
+	@Override
 	public Adapter createConstraintAdapter() {
 		if (constraintItemProvider == null) {
 			constraintItemProvider = new ConstraintExtItemProvider(this);
@@ -152,9 +169,12 @@ public class UML2ExtendedAdapterFactory extends
 		return constraintItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createDependencyAdapter()
 	 */
+	@Override
 	public Adapter createDependencyAdapter() {
 		if (dependencyItemProvider == null) {
 			dependencyItemProvider = new DependencyExtItemProvider(this);
@@ -163,6 +183,7 @@ public class UML2ExtendedAdapterFactory extends
 		return dependencyItemProvider;
 	}
 
+	@Override
 	public Adapter createElementImportAdapter() {
 		if (elementImportItemProvider == null) {
 			elementImportItemProvider = new ElementImportExtItemProvider(this);
@@ -171,9 +192,12 @@ public class UML2ExtendedAdapterFactory extends
 		return elementImportItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createEnumerationAdapter()
 	 */
+	@Override
 	public Adapter createEnumerationAdapter() {
 		if (enumerationItemProvider == null) {
 			enumerationItemProvider = new EnumerationExtItemProvider(this);
@@ -182,9 +206,12 @@ public class UML2ExtendedAdapterFactory extends
 		return enumerationItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createEnumerationLiteralAdapter()
 	 */
+	@Override
 	public Adapter createEnumerationLiteralAdapter() {
 		if (enumerationLiteralItemProvider == null) {
 			enumerationLiteralItemProvider = new EnumerationLiteralExtItemProvider(this);
@@ -193,9 +220,12 @@ public class UML2ExtendedAdapterFactory extends
 		return enumerationLiteralItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createGeneralizationAdapter()
 	 */
+	@Override
 	public Adapter createGeneralizationAdapter() {
 		if (generalizationItemProvider == null) {
 			generalizationItemProvider = new GeneralizationExtItemProvider(this);
@@ -204,9 +234,12 @@ public class UML2ExtendedAdapterFactory extends
 		return generalizationItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createInterfaceAdapter()
 	 */
+	@Override
 	public Adapter createInterfaceAdapter() {
 		if (interfaceItemProvider == null) {
 			interfaceItemProvider = new InterfaceExtItemProvider(this);
@@ -215,9 +248,12 @@ public class UML2ExtendedAdapterFactory extends
 		return interfaceItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createModelAdapter()
 	 */
+	@Override
 	public Adapter createModelAdapter() {
 		if (modelItemProvider == null) {
 			modelItemProvider = new ModelExtItemProvider(this);
@@ -226,16 +262,22 @@ public class UML2ExtendedAdapterFactory extends
 		return modelItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createOperationAdapter()
 	 */
+	@Override
 	public Adapter createOperationAdapter() {
 		return new OperationExtItemProvider(this);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPackageAdapter()
 	 */
+	@Override
 	public Adapter createPackageAdapter() {
 		if (packageItemProvider == null) {
 			packageItemProvider = new PackageExtItemProvider(this);
@@ -244,9 +286,12 @@ public class UML2ExtendedAdapterFactory extends
 		return packageItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPackageImportAdapter()
 	 */
+	@Override
 	public Adapter createPackageImportAdapter() {
 		if (packageImportItemProvider == null) {
 			packageImportItemProvider = new PackageImportExtItemProvider(this);
@@ -255,9 +300,12 @@ public class UML2ExtendedAdapterFactory extends
 		return packageImportItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createParameterAdapter()
 	 */
+	@Override
 	public Adapter createParameterAdapter() {
 		if (parameterItemProvider == null) {
 			parameterItemProvider = new ParameterExtItemProvider(this);
@@ -266,9 +314,12 @@ public class UML2ExtendedAdapterFactory extends
 		return parameterItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPrimitiveTypeAdapter()
 	 */
+	@Override
 	public Adapter createPrimitiveTypeAdapter() {
 		if (primitiveTypeItemProvider == null) {
 			primitiveTypeItemProvider = new PrimitiveTypeExtItemProvider(this);
@@ -277,9 +328,12 @@ public class UML2ExtendedAdapterFactory extends
 		return primitiveTypeItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createProfileAdapter()
 	 */
+	@Override
 	public Adapter createProfileAdapter() {
 		if (profileItemProvider == null) {
 			profileItemProvider = new ProfileExtItemProvider(this);
@@ -288,16 +342,22 @@ public class UML2ExtendedAdapterFactory extends
 		return profileItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createProfileApplicationAdapter()
 	 */
+	@Override
 	public Adapter createProfileApplicationAdapter() {
 		return super.createProfileApplicationAdapter();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createPropertyAdapter()
 	 */
+	@Override
 	public Adapter createPropertyAdapter() {
 		if (propertyItemProvider == null) {
 			propertyItemProvider = new PropertyExtItemProvider(this);
@@ -306,9 +366,12 @@ public class UML2ExtendedAdapterFactory extends
 		return propertyItemProvider;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.UML2ItemProviderAdapterFactory#createStereotypeAdapter()
 	 */
+	@Override
 	public Adapter createStereotypeAdapter() {
 		if (stereotypeItemProvider == null) {
 			stereotypeItemProvider = new StereotypeExtItemProvider(this);
@@ -317,6 +380,7 @@ public class UML2ExtendedAdapterFactory extends
 		return stereotypeItemProvider;
 	}
 
+	@Override
 	public Adapter createSubstitutionAdapter() {
 		if (substitutionItemProvider == null) {
 			substitutionItemProvider = new SubstitutionExtItemProvider(this);
@@ -325,6 +389,7 @@ public class UML2ExtendedAdapterFactory extends
 		return substitutionItemProvider;
 	}
 
+	@Override
 	public Adapter createComponentAdapter() {
 		if (componentItemProvider == null) {
 			componentItemProvider = new ComponentExtItemProvider(this);
@@ -333,6 +398,7 @@ public class UML2ExtendedAdapterFactory extends
 		return componentItemProvider;
 	}
 
+	@Override
 	public Adapter createActorAdapter() {
 		if (actorItemProvider == null) {
 			actorItemProvider = new ActorExtItemProvider(this);
@@ -341,6 +407,7 @@ public class UML2ExtendedAdapterFactory extends
 		return actorItemProvider;
 	}
 
+	@Override
 	public Adapter createUseCaseAdapter() {
 		if (useCaseItemProvider == null) {
 			useCaseItemProvider = new UseCaseExtItemProvider(this);
@@ -349,6 +416,7 @@ public class UML2ExtendedAdapterFactory extends
 		return useCaseItemProvider;
 	}
 
+	@Override
 	public Adapter createIncludeAdapter() {
 		if (includeItemProvider == null) {
 			includeItemProvider = new IncludeExtItemProvider(this);
@@ -357,6 +425,7 @@ public class UML2ExtendedAdapterFactory extends
 		return includeItemProvider;
 	}
 
+	@Override
 	public Adapter createExtendAdapter() {
 		if (extendItemProvider == null) {
 			extendItemProvider = new ExtendExtItemProvider(this);
@@ -365,6 +434,7 @@ public class UML2ExtendedAdapterFactory extends
 		return extendItemProvider;
 	}
 
+	@Override
 	public Adapter createInterfaceRealizationAdapter() {
 		if (interfaceRealizationItemProvider == null) {
 			interfaceRealizationItemProvider = new InterfaceRealizationExtItemProvider(this);
@@ -374,11 +444,11 @@ public class UML2ExtendedAdapterFactory extends
 	}
 
 	protected boolean showBusinessNames = false;
-	
+
 	public boolean isShowBusinessNames() {
 		return showBusinessNames;
 	}
-	
+
 	public void setShowBusinessNames(boolean showBusinessNames) {
 		this.showBusinessNames = showBusinessNames;
 	}

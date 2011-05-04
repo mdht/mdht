@@ -22,8 +22,7 @@ import org.eclipse.emf.edit.EMFEditPlugin;
 /**
  * This is the central singleton for the UML edit plugin.
  */
-public final class UMLExtEditPlugin
-		extends EMFPlugin {
+public final class UMLExtEditPlugin extends EMFPlugin {
 
 	/**
 	 * Keep track of the singleton.
@@ -39,12 +38,12 @@ public final class UMLExtEditPlugin
 	 * Create the instance.
 	 */
 	public UMLExtEditPlugin() {
-		super(new ResourceLocator[]{EcoreEditPlugin.INSTANCE,
-			EMFEditPlugin.INSTANCE});
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, EMFEditPlugin.INSTANCE });
 	}
 
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
+	 * 
 	 * @return the singleton instance.
 	 */
 	@Override
@@ -54,6 +53,7 @@ public final class UMLExtEditPlugin
 
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
+	 * 
 	 * @return the singleton instance.
 	 */
 	public static Implementation getPlugin() {
@@ -63,8 +63,7 @@ public final class UMLExtEditPlugin
 	/**
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 */
-	public static class Implementation
-			extends EclipsePlugin {
+	public static class Implementation extends EclipsePlugin {
 
 		/**
 		 * Creates an instance.

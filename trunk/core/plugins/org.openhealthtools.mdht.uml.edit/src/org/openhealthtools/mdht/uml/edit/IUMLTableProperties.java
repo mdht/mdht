@@ -15,30 +15,37 @@ package org.openhealthtools.mdht.uml.edit;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- *
+ * 
  * @version $Id: $
  */
 public class IUMLTableProperties {
 
 	public static final int NAME_INDEX = 0;
+
 	public static final int TYPE_INDEX = 1;
+
 	public static final int MULTIPLICITY_INDEX = 2;
+
 	public static final int AGGREGATION_INDEX = 3;
+
 	public static final int VISIBILITY_INDEX = 4;
+
 	public static final int ANNOTATION_INDEX = 5;
+
 	public static final int DEFAULT_VALUE_INDEX = 6;
-	
-	public static final String NAME_PROPERTY = 
-		UMLPackage.eINSTANCE.getNamedElement_Name().getName();
-	public static final String TYPE_PROPERTY = 
-		UMLPackage.eINSTANCE.getTypedElement_Type().getName();
+
+	public static final String NAME_PROPERTY = UMLPackage.eINSTANCE.getNamedElement_Name().getName();
+
+	public static final String TYPE_PROPERTY = UMLPackage.eINSTANCE.getTypedElement_Type().getName();
+
 	public static final String MULTIPLICITY_PROPERTY = "multiplicity";
-	public static final String AGGREGATION_PROPERTY = 
-		UMLPackage.eINSTANCE.getProperty_Aggregation().getName();
-	public static final String VISIBILITY_PROPERTY = 
-		UMLPackage.eINSTANCE.getNamedElement_Visibility().getName();
+
+	public static final String AGGREGATION_PROPERTY = UMLPackage.eINSTANCE.getProperty_Aggregation().getName();
+
+	public static final String VISIBILITY_PROPERTY = UMLPackage.eINSTANCE.getNamedElement_Visibility().getName();
+
 	public static final String ANNOTATION_PROPERTY = "annotation";
-	public static final String DEFAULT_VALUE_PROPERTY = 
-		UMLPackage.eINSTANCE.getProperty_DefaultValue().getName();
+
+	public static final String DEFAULT_VALUE_PROPERTY = UMLPackage.eINSTANCE.getProperty_DefaultValue().getName();
 
 }

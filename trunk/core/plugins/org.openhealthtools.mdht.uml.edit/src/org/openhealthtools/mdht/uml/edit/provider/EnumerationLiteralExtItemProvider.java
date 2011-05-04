@@ -30,13 +30,12 @@ import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
-public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemProvider implements
+		ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -45,77 +44,89 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.EnumerationLiteralItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.EnumerationLiteralItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
 		String label = getName((EnumerationLiteral) object);
-		return label == null || label.length() == 0 ?
-			getString("_UI_EnumerationLiteral_type") : //$NON-NLS-1$
-			label;
+		return label == null || label.length() == 0
+				? getString("_UI_EnumerationLiteral_type") : //$NON-NLS-1$
+				label;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection getChildren(Object object) {
 		EnumerationLiteral literal = (EnumerationLiteral) object;
 		List children = new ArrayList();
 		children.addAll(literal.getOwnedComments());
-		
+
 		return children;
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		EnumerationLiteral literal = (EnumerationLiteral) element;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getName(literal);
-		case IUMLTableProperties.ANNOTATION_INDEX: {
-			for (Profile profile : literal.getNearestPackage().getAllAppliedProfiles()) {
-				// eResource is null for unresolved eProxyURI, missing profiles
-				if (profile.eResource() != null) {
-					// use the first notation provider found for an applied profile, ignore others
-					String profileURI = profile.eResource().getURI().toString();
-					INotationProvider provider = 
-						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-					if (provider != null) {
-						return provider.getAnnotation(literal);
+			case IUMLTableProperties.NAME_INDEX:
+				return getName(literal);
+			case IUMLTableProperties.ANNOTATION_INDEX: {
+				for (Profile profile : literal.getNearestPackage().getAllAppliedProfiles()) {
+					// eResource is null for unresolved eProxyURI, missing profiles
+					if (profile.eResource() != null) {
+						// use the first notation provider found for an applied profile, ignore others
+						String profileURI = profile.eResource().getURI().toString();
+						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+						if (provider != null) {
+							return provider.getAnnotation(literal);
+						}
 					}
 				}
 			}
-		}
-		default:
-			return null;
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -125,19 +136,23 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
 		EnumerationLiteral literal = (EnumerationLiteral) element;
-		
+
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return literal.getName();
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

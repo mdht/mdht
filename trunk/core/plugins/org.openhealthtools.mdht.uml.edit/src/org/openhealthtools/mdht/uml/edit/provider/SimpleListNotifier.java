@@ -24,25 +24,28 @@ import org.eclipse.emf.common.util.EList;
  * 
  */
 public class SimpleListNotifier extends BasicNotifierImpl {
-	
+
 	/**
 	 * The list of {@link org.eclipse.emf.common.notify.Adapter}s
 	 * associated with the notifier.
 	 */
 	protected BasicEList eAdapters;
-	
+
 	private List members = new Vector();
 
 	public SimpleListNotifier() {
 	}
-	
+
 	public List getMembers() {
 		return members;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof SimpleListNotifier) {
 			return true;
@@ -50,6 +53,7 @@ public class SimpleListNotifier extends BasicNotifierImpl {
 		return false;
 	}
 
+	@Override
 	public EList eAdapters() {
 		if (eAdapters == null) {
 			eAdapters = new EAdapterList(this);
@@ -57,6 +61,7 @@ public class SimpleListNotifier extends BasicNotifierImpl {
 		return eAdapters;
 	}
 
+	@Override
 	protected BasicEList eBasicAdapters() {
 		return eAdapters;
 	}

@@ -25,9 +25,8 @@ import org.eclipse.emf.ecore.impl.DynamicEObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProvider;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
 public class ResourceExtItemProvider extends ResourceItemProvider {
@@ -39,57 +38,69 @@ public class ResourceExtItemProvider extends ResourceItemProvider {
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProvider#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection getChildren(Object object) {
 		Collection allChildren = super.getChildren(object);
 		List children = new ArrayList();
 		for (Iterator iter = allChildren.iterator(); iter.hasNext();) {
 			Object child = iter.next();
 			// filter out DynamicEObjectImpl used for stereotype instances
-			if (!(child instanceof DynamicEObjectImpl))
+			if (!(child instanceof DynamicEObjectImpl)) {
 				children.add(child);
+			}
 		}
 		return children;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
-	    Resource resource = (Resource)object;
-	    URI uri = resource.getURI();
-	    if (uri != null) {
-	    	if ("uml".equals(uri.fileExtension())) {
-//	    	    return URI.createURI(getResourceLocator().getImage("full/obj16/ResourceUML").toString() + "#" + resource.getURI().fileExtension());
-	    	}
-	    }
-	    
-	    return super.getImage(object);
+		Resource resource = (Resource) object;
+		URI uri = resource.getURI();
+		if (uri != null) {
+			if ("uml".equals(uri.fileExtension())) {
+				// return URI.createURI(getResourceLocator().getImage("full/obj16/ResourceUML").toString() + "#" + resource.getURI().fileExtension());
+			}
+		}
+
+		return super.getImage(object);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
-	    Resource resource = (Resource)object;
-	    //return resource.getURI() == null ? "" : resource.getURI().toString();
-	    String label = resource.getURI() == null ? "" : resource.getURI().lastSegment();
-	    if (label == null) {
-	    	// case where lastSegment() is null...
-	    	label = resource.getURI().toString();
-	    }
-	    try {
+		Resource resource = (Resource) object;
+		// return resource.getURI() == null ? "" : resource.getURI().toString();
+		String label = resource.getURI() == null
+				? ""
+				: resource.getURI().lastSegment();
+		if (label == null) {
+			// case where lastSegment() is null...
+			label = resource.getURI().toString();
+		}
+		try {
 			label = URLDecoder.decode(label, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// ignore and don't decode
 		}
-		
+
 		if (resource.isModified()) {
 			label = "* " + label;
 		}
-	    return label;
+		return label;
 	}
 
 }

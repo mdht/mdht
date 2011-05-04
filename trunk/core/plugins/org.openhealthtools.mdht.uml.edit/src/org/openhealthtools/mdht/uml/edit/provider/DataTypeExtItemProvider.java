@@ -30,13 +30,11 @@ import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
-public class DataTypeExtItemProvider extends DataTypeItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class DataTypeExtItemProvider extends DataTypeItemProvider implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -45,34 +43,43 @@ public class DataTypeExtItemProvider extends DataTypeItemProvider
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.DataTypeItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.DataTypeItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
 		String label = getName((DataType) object);
-		return label == null || label.length() == 0 ?
-			getString("_UI_DataType_type") : //$NON-NLS-1$
-			label;
+		return label == null || label.length() == 0
+				? getString("_UI_DataType_type") : //$NON-NLS-1$
+				label;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection<Element> getChildren(Object object) {
 		DataType datatype = (DataType) object;
 		List<Element> children = new ArrayList<Element>();
@@ -81,64 +88,71 @@ public class DataTypeExtItemProvider extends DataTypeItemProvider
 		children.addAll(datatype.getGeneralizations());
 		children.addAll(datatype.getOwnedAttributes());
 		children.addAll(datatype.getClientDependencies());
-		
+
 		return children;
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		Classifier classifier = (Classifier) element;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getName(classifier);
-		case IUMLTableProperties.VISIBILITY_INDEX:
-			if (VisibilityKind.PUBLIC_LITERAL == classifier.getVisibility())
-				return "";
-			else
-				return classifier.getVisibility().getName();
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getName(classifier);
+			case IUMLTableProperties.VISIBILITY_INDEX:
+				if (VisibilityKind.PUBLIC_LITERAL == classifier.getVisibility()) {
+					return "";
+				} else {
+					return classifier.getVisibility().getName();
+				}
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return true;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
 		Classifier classifier = (Classifier) element;
-		
+
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return classifier.getName();
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return new Integer(classifier.getVisibility().getValue());
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

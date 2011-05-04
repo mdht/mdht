@@ -22,14 +22,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-public class SimpleListItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class SimpleListItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * @param adapterFactory
@@ -38,41 +32,54 @@ public class SimpleListItemProvider
 		super(adapterFactory);
 	}
 
-
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object element) {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object element) {
 		return "root";
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getParent(java.lang.Object)
 	 */
+	@Override
 	public Object getParent(Object object) {
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#hasChildren(java.lang.Object)
 	 */
+	@Override
 	public boolean hasChildren(Object element) {
-		return SimpleListNotifier.class.isInstance(element) 
-			&& !((SimpleListNotifier)element).getMembers().isEmpty();
+		return SimpleListNotifier.class.isInstance(element) && !((SimpleListNotifier) element).getMembers().isEmpty();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProvider#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection getChildren(Object parentElement) {
-		return ((SimpleListNotifier)parentElement).getMembers();
+		return ((SimpleListNotifier) parentElement).getMembers();
 	}
 
 }

@@ -48,11 +48,10 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 
 /**
- *
+ * 
  * @version $Id: $
  */
-public class ProfileExtItemProvider extends ProfileItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class ProfileExtItemProvider extends ProfileItemProvider implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -61,78 +60,85 @@ public class ProfileExtItemProvider extends ProfileItemProvider
 		super(adapterFactory);
 	}
 
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
+	@Override
 	public String getText(Object object) {
 		String label = getName((Model) object);
-		return label == null || label.length() == 0 ?
-			getString("_UI_Profile_type") : //$NON-NLS-1$
-			label;
+		return label == null || label.length() == 0
+				? getString("_UI_Profile_type") : //$NON-NLS-1$
+				label;
 	}
 
+	@Override
 	public Collection getChildren(Object object) {
 		Profile pkg = (Profile) object;
 		List children = new ArrayList();
 		children.addAll(pkg.getOwnedComments());
 		children.addAll(pkg.getOwnedRules());
-		
+
 		List sortedPackages = new ArrayList(pkg.getNestedPackages());
 		Collections.sort(sortedPackages, new NamedElementComparator());
 		children.addAll(sortedPackages);
-		
+
 		List sortedTypes = new ArrayList();
 		for (Iterator members = pkg.getOwnedTypes().iterator(); members.hasNext();) {
 			Type type = (Type) members.next();
-			if (type instanceof org.eclipse.uml2.uml.Class 
-					|| type instanceof Interface
-					|| type instanceof DataType)
+			if (type instanceof org.eclipse.uml2.uml.Class || type instanceof Interface || type instanceof DataType) {
 				sortedTypes.add(type);
+			}
 		}
 		Collections.sort(sortedTypes, new NamedElementComparator());
 		children.addAll(sortedTypes);
 
 		children.addAll(pkg.getPackageImports());
 		children.addAll(pkg.getClientDependencies());
-		
+
 		return children;
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		Package pkg = (Package) object;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getName(pkg);
-		case IUMLTableProperties.VISIBILITY_INDEX:
-			if (VisibilityKind.PUBLIC_LITERAL == pkg.getVisibility())
-				return "";
-			else
-				return pkg.getVisibility().getName();
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getName(pkg);
+			case IUMLTableProperties.VISIBILITY_INDEX:
+				if (VisibilityKind.PUBLIC_LITERAL == pkg.getVisibility()) {
+					return "";
+				} else {
+					return pkg.getVisibility().getName();
+				}
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
@@ -142,50 +148,54 @@ public class ProfileExtItemProvider extends ProfileItemProvider
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
 		Package pkg = (Package) element;
-		
+
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return pkg.getName();
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
 		final Package pkg = (Package) element;
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(pkg);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(pkg);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 						setLabel("Set Name");
 						pkg.setName(value.toString());
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}

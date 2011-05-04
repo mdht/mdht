@@ -38,11 +38,10 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
- *
+ * 
  * @version $Id: $
  */
-public class PackageExtItemProvider extends PackageItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class PackageExtItemProvider extends PackageItemProvider implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -51,133 +50,149 @@ public class PackageExtItemProvider extends PackageItemProvider
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PackageItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
 	protected String getName(NamedElement namedElement) {
 		AdapterFactory adapterFactory = getAdapterFactory();
-		return adapterFactory instanceof UML2ExtendedAdapterFactory
-				&& ((UML2ExtendedAdapterFactory) adapterFactory)
-						.isShowBusinessNames() ? NamedElementUtil
-				.getBusinessName(namedElement) : namedElement.getName();
+		return adapterFactory instanceof UML2ExtendedAdapterFactory &&
+				((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames()
+				? NamedElementUtil.getBusinessName(namedElement)
+				: namedElement.getName();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.PackageItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
 		String label = getName((org.eclipse.uml2.uml.Package) object);
-		return label == null || label.length() == 0 ?
-			getString("_UI_Package_type") : //$NON-NLS-1$
-			label;
+		return label == null || label.length() == 0
+				? getString("_UI_Package_type") : //$NON-NLS-1$
+				label;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection<Object> getChildren(Object object) {
 		Package pkg = (Package) object;
 		List<Object> children = new ArrayList<Object>();
 		children.addAll(pkg.getOwnedComments());
 		children.addAll(pkg.getOwnedRules());
-		
+
 		List<Package> sortedPackages = new ArrayList<Package>(pkg.getNestedPackages());
 		Collections.sort(sortedPackages, new NamedElementComparator());
 		children.addAll(sortedPackages);
-		
+
 		List<Type> sortedTypes = new ArrayList<Type>();
 		for (Type type : pkg.getOwnedTypes()) {
-			if (type instanceof org.eclipse.uml2.uml.Class 
-					|| type instanceof Interface
-					|| type instanceof DataType
-					|| type instanceof Actor
-					|| type instanceof UseCase)
+			if (type instanceof org.eclipse.uml2.uml.Class || type instanceof Interface || type instanceof DataType ||
+					type instanceof Actor || type instanceof UseCase) {
 				sortedTypes.add(type);
+			}
 		}
 		Collections.sort(sortedTypes, new NamedElementComparator());
 		children.addAll(sortedTypes);
 
-//		List sortedAssociations = new ArrayList();
-//		for (Iterator members = pkg.getOwnedTypes().iterator(); members.hasNext();) {
-//			Type type = (Type) members.next();
-//			if (type instanceof Association)
-//				sortedAssociations.add(type);
-//		}
-//		Collections.sort(sortedAssociations, new NamedElementComparator());
-//		children.addAll(sortedAssociations);
+		// List sortedAssociations = new ArrayList();
+		// for (Iterator members = pkg.getOwnedTypes().iterator(); members.hasNext();) {
+		// Type type = (Type) members.next();
+		// if (type instanceof Association)
+		// sortedAssociations.add(type);
+		// }
+		// Collections.sort(sortedAssociations, new NamedElementComparator());
+		// children.addAll(sortedAssociations);
 
 		children.addAll(pkg.getPackageImports());
 		children.addAll(pkg.getElementImports());
 		children.addAll(pkg.getClientDependencies());
-		
+
 		return children;
 	}
 
+	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		if (child instanceof Model)
+		if (child instanceof Model) {
 			return null;
-		else
+		} else {
 			return super.getChildFeature(object, child);
+		}
 	}
-	
+
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		Package pkg = (Package) object;
-		
+
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getName(pkg);
-		case IUMLTableProperties.VISIBILITY_INDEX:
-			if (VisibilityKind.PUBLIC_LITERAL == pkg.getVisibility())
-				return "";
-			else
-				return pkg.getVisibility().getName();
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getName(pkg);
+			case IUMLTableProperties.VISIBILITY_INDEX:
+				if (VisibilityKind.PUBLIC_LITERAL == pkg.getVisibility()) {
+					return "";
+				} else {
+					return pkg.getVisibility().getName();
+				}
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return true;
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return true;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
 		Package pkg = (Package) element;
-		
+
 		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
 			return pkg.getName();
-		}
-		else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
+		} else if (IUMLTableProperties.VISIBILITY_PROPERTY.equals(property)) {
 			return new Integer(pkg.getVisibility().getValue());
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {

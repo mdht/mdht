@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 /**
  *
  */
-public class IncludeExtItemProvider extends IncludeItemProvider
-	implements ITableItemLabelProvider, ICellModifier {
+public class IncludeExtItemProvider extends IncludeItemProvider implements ITableItemLabelProvider, ICellModifier {
 
 	/**
 	 * @param adapterFactory
@@ -39,90 +38,108 @@ public class IncludeExtItemProvider extends IncludeItemProvider
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.DependencyItemProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return super.getImage(object);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.provider.DependencyItemProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
 		Include include = (Include) object;
 		StringBuffer label = new StringBuffer();
 		if (include.getAddition() != null) {
 			UseCase addition = include.getAddition();
 			String qname = UMLUtil.isSameModel(include, addition)
-				? addition.getName() : addition.getQualifiedName();
+					? addition.getName()
+					: addition.getQualifiedName();
 			label.append(qname);
 		}
 
-		return label.length() == 0 ?
-			getString("_UI_Include_type") : //$NON-NLS-1$
-			label.toString();
+		return label.length() == 0
+				? getString("_UI_Include_type") : //$NON-NLS-1$
+				label.toString();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Collection<Element> getChildren(Object object) {
 		Include include = (Include) object;
 		List<Element> children = new ArrayList<Element>();
 
 		children.addAll(include.getOwnedComments());
-		
+
 		return children;
 	}
 
+	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getImage(object);
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getImage(object);
+			default:
+				return null;
 		}
 	}
 
+	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		switch (columnIndex) {
-		case IUMLTableProperties.NAME_INDEX:
-			return getText(object);
-		default:
-			return null;
+			case IUMLTableProperties.NAME_INDEX:
+				return getText(object);
+			default:
+				return null;
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#canModify(java.lang.Object, java.lang.String)
 	 */
 	public boolean canModify(Object element, String property) {
-//		Include dependency = (Include) element;
-//		
-//		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
-//			
-//		}
+		// Include dependency = (Include) element;
+		//
+		// if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
+		//
+		// }
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
-//		Include dependency = (Include) element;
-//		
-//		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
-//			
-//		}
+		// Include dependency = (Include) element;
+		//
+		// if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
+		//
+		// }
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
-		
+
 	}
 
 }
