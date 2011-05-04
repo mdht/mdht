@@ -31,7 +31,6 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
 public class AddUMLEnumerationLiteralAction extends UML2AbstractAction {
 
 	public AddUMLEnumerationLiteralAction() {
@@ -46,27 +45,28 @@ public class AddUMLEnumerationLiteralAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (Enumeration.class.isInstance(element)) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLEnumerationLiteral_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-				    	
-						EnumerationLiteral literal = ((Enumeration)element).createOwnedLiteral(
-								UML2UIMessages.AddUMLEnumerationLiteral_default_name);
+					editingDomain, UML2UIMessages.AddUMLEnumerationLiteral_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+
+						EnumerationLiteral literal = ((Enumeration) element).createOwnedLiteral(UML2UIMessages.AddUMLEnumerationLiteral_default_name);
 
 						if (activePart instanceof ISetSelectionTarget) {
-							((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(literal));
+							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(literal));
 						}
 
-				        return Status.OK_STATUS;
-				    }};
+						return Status.OK_STATUS;
+					}
+				};
 
-			    try {
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

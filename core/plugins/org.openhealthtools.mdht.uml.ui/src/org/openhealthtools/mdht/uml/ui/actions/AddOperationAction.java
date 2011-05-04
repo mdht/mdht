@@ -41,54 +41,54 @@ public class AddOperationAction extends UML2AbstractAction {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
 		if (isReadOnly()) {
 			action.setEnabled(false);
 		}
 	}
-	
+
 	public void run(IAction action) {
 		try {
 			final Element element = getSelectedElement();
 			if (Classifier.class.isInstance(element)) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLOperation_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLOperation_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						Operation umlOperation = UMLFactory.eINSTANCE.createOperation();
-						
-						String name = getUniqueMemberName((Classifier)element, 
-								UML2UIMessages.AddUMLOperation_default_name);
+
+						String name = getUniqueMemberName(
+							(Classifier) element, UML2UIMessages.AddUMLOperation_default_name);
 						umlOperation.setName(name);
-						
+
 						if (element instanceof Class) {
-							((Class)element).getOwnedOperations().add(umlOperation);
-						}
-						else if (element instanceof Interface) {
-							((Interface)element).getOwnedOperations().add(umlOperation);
-						}
-						else if (element instanceof DataType) {
-							((DataType)element).getOwnedOperations().add(umlOperation);
-						}
-						else {
+							((Class) element).getOwnedOperations().add(umlOperation);
+						} else if (element instanceof Interface) {
+							((Interface) element).getOwnedOperations().add(umlOperation);
+						} else if (element instanceof DataType) {
+							((DataType) element).getOwnedOperations().add(umlOperation);
+						} else {
 							return Status.CANCEL_STATUS;
 						}
-						
-						if (activePart instanceof ISetSelectionTarget) {
-							((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(umlOperation));
-						}
-						
-						return Status.OK_STATUS;
-				    }};
 
-			    try {
+						if (activePart instanceof ISetSelectionTarget) {
+							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(umlOperation));
+						}
+
+						return Status.OK_STATUS;
+					}
+				};
+
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

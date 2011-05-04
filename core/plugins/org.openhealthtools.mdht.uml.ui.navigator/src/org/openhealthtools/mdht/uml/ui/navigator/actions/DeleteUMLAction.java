@@ -37,13 +37,13 @@ public class DeleteUMLAction extends DeleteAction {
 				Association association = (Association) object;
 				elements.addAll(association.getMemberEnds());
 				elements.add(association);
-			}
-			else {
+			} else {
 				elements.add(object);
 			}
 		}
-		
-		return removeAllReferences ? DeleteCommand.create(domain, elements)
+
+		return removeAllReferences
+				? DeleteCommand.create(domain, elements)
 				: RemoveCommand.create(domain, elements);
 	}
 

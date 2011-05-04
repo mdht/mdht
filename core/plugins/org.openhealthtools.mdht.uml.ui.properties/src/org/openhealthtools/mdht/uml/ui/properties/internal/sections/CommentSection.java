@@ -45,7 +45,6 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 
-
 /**
  * The properties section for a Comment.
  * 
@@ -56,9 +55,10 @@ public class CommentSection extends AbstractModelerPropertySection {
 	private Element umlElement;
 
 	private Text bodyText;
+
 	private boolean bodyModified = false;
-	
-    private ModifyListener modifyListener = new ModifyListener() {
+
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (bodyText == event.getSource()) {
 				bodyModified = true;
@@ -75,34 +75,33 @@ public class CommentSection extends AbstractModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(bodyModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (bodyModified) {
 						bodyModified = false;
 						String commentText = removeNonXMLCharacters(bodyText.getText().trim());
-						
+
 						Comment comment = null;
 						if (umlElement instanceof Comment) {
-							comment = (Comment)umlElement;
-						}
-						else {
+							comment = (Comment) umlElement;
+						} else {
 							// get first comment
 							for (Comment c : umlElement.getOwnedComments()) {
 								comment = c;
 								break;
 							}
 						}
-						
+
 						if (comment != null && commentText.length() == 0) {
 							comment.destroy();
 							comment = null;
@@ -114,63 +113,63 @@ public class CommentSection extends AbstractModelerPropertySection {
 						if (comment == null) {
 							comment = umlElement.createOwnedComment();
 						}
-						
+
 						this.setLabel("Set Comment Text");
 						comment.setBody(commentText);
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
+
 	private String removeNonXMLCharacters(String text) {
 		StringBuffer newText = new StringBuffer();
-		for (int i=0; i<text.length(); i++) {
+		for (int i = 0; i < text.length(); i++) {
 			// test for unicode characters from copy/paste of MS Word text
-			if (text.charAt(i) == '\u201D')			// right double quote
+			if (text.charAt(i) == '\u201D') {
 				newText.append("\"");
-			else if (text.charAt(i) == '\u201C')	// left double quote
+			} else if (text.charAt(i) == '\u201C') {
 				newText.append("\"");
-			else if (text.charAt(i) == '\u2019')	// right single quote
+			} else if (text.charAt(i) == '\u2019') {
 				newText.append("'");
-			else if (text.charAt(i) == '\u2018')	// left single quote
+			} else if (text.charAt(i) == '\u2018') {
 				newText.append("'");
-			else
+			} else {
 				newText.append(text.charAt(i));
+			}
 		}
-		
+
 		return newText.toString();
 	}
 
+	@Override
 	public boolean shouldUseExtraSpace() {
 		return true;
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
-		bodyText = getWidgetFactory().createText(composite, "", 
-				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
+		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		// if I set the width AND right, then I get proper wrapping for long text... whatever.
@@ -184,10 +183,10 @@ public class CommentSection extends AbstractModelerPropertySection {
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (umlElement != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(umlElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlElement);
 			if (editingDomain != null && editingDomain.isReadOnly(umlElement.eResource())) {
 				return true;
 			}
@@ -200,8 +199,10 @@ public class CommentSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -211,27 +212,29 @@ public class CommentSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Element);
 		this.umlElement = (Element) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Comment comment = null;
 		if (umlElement instanceof Comment) {
-			comment = (Comment)umlElement;
-		}
-		else {
+			comment = (Comment) umlElement;
+		} else {
 			// get first comment
 			for (Comment c : umlElement.getOwnedComments()) {
 				comment = c;
@@ -246,18 +249,18 @@ public class CommentSection extends AbstractModelerPropertySection {
 		if (commentText == null) {
 			commentText = "";
 		}
-		
+
 		bodyText.removeModifyListener(modifyListener);
 		bodyText.removeFocusListener(focusListener);
-		if (commentText != null)
+		if (commentText != null) {
 			bodyText.setText(commentText);
+		}
 		bodyText.addModifyListener(modifyListener);
 		bodyText.addFocusListener(focusListener);
 
 		if (isReadOnly()) {
 			bodyText.setEnabled(false);
-		}
-		else {
+		} else {
 			bodyText.setEnabled(true);
 		}
 	}
@@ -267,18 +270,22 @@ public class CommentSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
-					if (!isDisposed() && !isNotifierDeleted(notification))
+					if (!isDisposed() && !isNotifierDeleted(notification)) {
 						refresh();
+					}
 				}
 			});
 		}

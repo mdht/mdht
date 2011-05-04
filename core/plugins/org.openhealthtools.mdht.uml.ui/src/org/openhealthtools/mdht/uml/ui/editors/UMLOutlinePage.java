@@ -41,6 +41,7 @@ public class UMLOutlinePage extends ContentOutlinePage {
 
 	Class currentClassFocus = null;
 
+	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
 
 		if (treeViewerWithColumns.getSelection() instanceof TreeSelection) {
@@ -56,7 +57,7 @@ public class UMLOutlinePage extends ContentOutlinePage {
 
 					currentClassFocus = clazz;
 
-					// Set Top level Content of tree view 
+					// Set Top level Content of tree view
 					contentOutlineViewer.setInput(currentClassFocus);
 
 					// Expands the hierarchy
@@ -114,13 +115,13 @@ public class UMLOutlinePage extends ContentOutlinePage {
 	}
 
 	/**
-	 * UMLContentProvider populates tree view with class hierarchy 
-	 *
+	 * UMLContentProvider populates tree view with class hierarchy
+	 * 
 	 */
 	private class UMLContentProvider implements ITreeContentProvider {
 
 		final List<Object> NONE = new ArrayList<Object>();
-		
+
 		private Object[] children = null;
 
 		public void dispose() {
@@ -132,10 +133,9 @@ public class UMLOutlinePage extends ContentOutlinePage {
 
 		public Object[] getChildren(Object parentElement) {
 
-			
 			if (parentElement instanceof Class) {
 				// If Class - top selection and return generalizations
-				Class clazz = (Class) parentElement;				
+				Class clazz = (Class) parentElement;
 				children = clazz.getGeneralizations().toArray();
 			} else if (parentElement instanceof Generalization) {
 				// If generalization - this is expanding the hierarchy for the to level template
@@ -172,20 +172,21 @@ public class UMLOutlinePage extends ContentOutlinePage {
 		this.treeViewerWithColumns = treeViewerWithColumns;
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		
+
 		contentOutlineViewer = getTreeViewer();
-		
+
 		// Set the label and content view as well as initialize trees content
 		contentOutlineViewer.setContentProvider(new UMLContentProvider());
-		
+
 		contentOutlineViewer.setLabelProvider(new UMLContentLabelProvider());
 
 		contentOutlineViewer.setInput(treeViewerWithColumns.getSelection());
 
 		// Register for selection events from MDHT table editor tree view
-		treeViewerWithColumns.addSelectionChangedListener(this);		
+		treeViewerWithColumns.addSelectionChangedListener(this);
 	}
 
 }

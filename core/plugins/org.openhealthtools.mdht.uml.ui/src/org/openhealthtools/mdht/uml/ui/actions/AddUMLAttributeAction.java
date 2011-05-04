@@ -34,19 +34,20 @@ import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
 public class AddUMLAttributeAction extends UML2AbstractAction {
 
 	public AddUMLAttributeAction() {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
-		if (isReadOnly())
+		if (isReadOnly()) {
 			action.setEnabled(false);
+		}
 	}
-	
+
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
@@ -55,35 +56,36 @@ public class AddUMLAttributeAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element instanceof Classifier) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLAttribute_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-				    	Property newProperty = null;
+					editingDomain, UML2UIMessages.AddUMLAttribute_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+						Property newProperty = null;
 						if (element instanceof Class) {
-							String name = getUniqueMemberName((Class)element, 
-									UML2UIMessages.AddUMLAttribute_default_name);
-							newProperty = ((Class)element).createOwnedAttribute(name, null);
-						}
-						else if (element instanceof DataType) {
-							String name = getUniqueMemberName((DataType)element, 
-									UML2UIMessages.AddUMLAttribute_default_name);
-							newProperty = ((DataType)element).createOwnedAttribute(name, null);
+							String name = getUniqueMemberName(
+								(Class) element, UML2UIMessages.AddUMLAttribute_default_name);
+							newProperty = ((Class) element).createOwnedAttribute(name, null);
+						} else if (element instanceof DataType) {
+							String name = getUniqueMemberName(
+								(DataType) element, UML2UIMessages.AddUMLAttribute_default_name);
+							newProperty = ((DataType) element).createOwnedAttribute(name, null);
 						}
 
 						if (newProperty != null && activePart instanceof ISetSelectionTarget) {
-							((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(newProperty));
+							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(newProperty));
 						}
-						
-				        return Status.OK_STATUS;
-				    }};
 
-			    try {
+						return Status.OK_STATUS;
+					}
+				};
+
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

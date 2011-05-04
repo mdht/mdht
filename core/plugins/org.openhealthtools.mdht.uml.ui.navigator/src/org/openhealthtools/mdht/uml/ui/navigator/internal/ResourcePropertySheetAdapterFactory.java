@@ -19,11 +19,10 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 
 /**
  * An property sheet page adapter factory for the Project Explorer.
- *  
+ * 
  */
-public class ResourcePropertySheetAdapterFactory
-    implements IAdapterFactory {
-	
+public class ResourcePropertySheetAdapterFactory implements IAdapterFactory {
+
 	final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 
 		public String getContributorId() {
@@ -31,28 +30,27 @@ public class ResourcePropertySheetAdapterFactory
 		}
 	};
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.core.runtime.IAdapterFactory#getAdapter(java.lang.Object,
-     *      java.lang.Class)
-     */
-    public Object getAdapter(Object adaptableObject, Class adapterType) {
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.core.runtime.IAdapterFactory#getAdapter(java.lang.Object,
+	 * java.lang.Class)
+	 */
+	public Object getAdapter(Object adaptableObject, Class adapterType) {
 
-        if (adaptableObject instanceof IResource
-        		&&ITabbedPropertySheetPageContributor.class == adapterType) {
-            return propertySheetPageContributor;
-        }
-        return null;
-    }
+		if (adaptableObject instanceof IResource && ITabbedPropertySheetPageContributor.class == adapterType) {
+			return propertySheetPageContributor;
+		}
+		return null;
+	}
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.core.runtime.IAdapterFactory#getAdapterList()
-     */
-    public Class[] getAdapterList() {
-        return new Class[] {ITabbedPropertySheetPageContributor.class};
-    }
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.core.runtime.IAdapterFactory#getAdapterList()
+	 */
+	public Class[] getAdapterList() {
+		return new Class[] { ITabbedPropertySheetPageContributor.class };
+	}
 
 }

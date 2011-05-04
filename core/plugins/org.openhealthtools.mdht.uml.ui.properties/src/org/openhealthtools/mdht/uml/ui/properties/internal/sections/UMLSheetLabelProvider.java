@@ -48,14 +48,16 @@ public class UMLSheetLabelProvider extends DecoratingLabelProvider {
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
 
+	@Override
 	public String getText(Object element) {
 		Object selected = unwrap(element);
-//		if (selected instanceof UMLNavigatorGroup) {
-//			return ((UMLNavigatorGroup) selected).getGroupName();
-//		}
+		// if (selected instanceof UMLNavigatorGroup) {
+		// return ((UMLNavigatorGroup) selected).getGroupName();
+		// }
 		return super.getText(selected);
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		return super.getImage(unwrap(element));
 	}
@@ -70,10 +72,11 @@ public class UMLSheetLabelProvider extends DecoratingLabelProvider {
 		if (element instanceof IAdaptable) {
 			EObject eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
 			if (eObject instanceof View) {
-				eObject = unwrapView((View)eObject);
+				eObject = unwrapView((View) eObject);
 			}
-			if (eObject != null)
+			if (eObject != null) {
 				return eObject;
+			}
 		}
 		return element;
 	}
@@ -86,6 +89,8 @@ public class UMLSheetLabelProvider extends DecoratingLabelProvider {
 	}
 
 	private EObject unwrapView(View view) {
-		return view.getElement() == null ? view : view.getElement();
+		return view.getElement() == null
+				? view
+				: view.getElement();
 	}
 }

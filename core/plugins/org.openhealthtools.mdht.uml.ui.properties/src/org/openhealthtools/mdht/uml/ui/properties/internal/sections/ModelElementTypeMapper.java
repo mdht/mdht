@@ -23,8 +23,7 @@ import org.eclipse.uml2.uml.Element;
  * propertySection extension point.
  * 
  */
-public class ModelElementTypeMapper
-	implements ITypeMapper {
+public class ModelElementTypeMapper implements ITypeMapper {
 
 	/**
 	 * Constructor for ModelElementTypeMapper.
@@ -33,16 +32,16 @@ public class ModelElementTypeMapper
 		super();
 	}
 
-
 	public Class mapType(Object input) {
 		Object mapped = null;
 		if (input instanceof IAdaptable) {
-			mapped = (Element) ((IAdaptable) input).getAdapter(Element.class);
-			if (mapped == null)
-				mapped = (EObject) ((IAdaptable) input).getAdapter(EObject.class);
+			mapped = ((IAdaptable) input).getAdapter(Element.class);
+			if (mapped == null) {
+				mapped = ((IAdaptable) input).getAdapter(EObject.class);
+			}
 		}
 		if (mapped instanceof View) {
-			mapped = (EObject) ((View) mapped).getElement();
+			mapped = ((View) mapped).getElement();
 		}
 		if (mapped == null) {
 			mapped = input;

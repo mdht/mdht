@@ -29,7 +29,7 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static Activator plugin;
-	
+
 	/**
 	 * The constructor
 	 */
@@ -39,16 +39,20 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 	}
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
@@ -56,7 +60,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 *
+	 * 
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -66,8 +70,9 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * Returns an image descriptor for the image file at the given
 	 * plug-in relative path.
-	 *
-	 * @param path the path
+	 * 
+	 * @param path
+	 *            the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getBundledImageDescriptor(String path) {
@@ -76,16 +81,18 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Respects images residing in any plug-in. If path is relative,
-	 * then this bundle is looked up for the image, otherwise, for absolute 
+	 * then this bundle is looked up for the image, otherwise, for absolute
 	 * path, first segment is taken as id of plug-in with image
-	 *
-	 * @param path the path to image, either absolute (with plug-in id as first segment), or relative for bundled images
+	 * 
+	 * @param path
+	 *            the path to image, either absolute (with plug-in id as first segment), or relative for bundled images
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p.removeFirstSegments(1).makeAbsolute().toString());
+			return AbstractUIPlugin.imageDescriptorFromPlugin(
+				p.segment(0), p.removeFirstSegments(1).makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}
@@ -94,8 +101,9 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * Returns an image for the image file at the given plug-in relative path.
 	 * Client do not need to dispose this image. Images will be disposed automatically.
-	 *
-	 * @param path the path
+	 * 
+	 * @param path
+	 *            the path
 	 * @return image instance
 	 */
 	public Image getBundledImage(String path) {

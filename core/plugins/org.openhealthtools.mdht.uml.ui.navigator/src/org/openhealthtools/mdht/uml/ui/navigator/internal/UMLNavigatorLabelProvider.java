@@ -39,27 +39,29 @@ import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Activator;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.providers.NavigatorUMLItemProviderAdapterFactory;
 
-
 public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider {
 
 	static {
-		Activator.getDefault().getImageRegistry().put("Navigator?InvalidElement", ImageDescriptor.getMissingImageDescriptor());
-		Activator.getDefault().getImageRegistry().put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor());
-		Activator.getDefault().getImageRegistry().put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor());
+		Activator.getDefault().getImageRegistry().put(
+			"Navigator?InvalidElement", ImageDescriptor.getMissingImageDescriptor());
+		Activator.getDefault().getImageRegistry().put(
+			"Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor());
+		Activator.getDefault().getImageRegistry().put(
+			"Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/** This is the one adapter factory used for providing views of the model. */
 	private ComposedAdapterFactory adapterFactory;
-	
+
 	private ILabelProvider labelProvider;
 
-    /*
-     * Adds validation problem markers to the model elements.
-     */
-    private IValidationListener validationListener = new IValidationListener() {
+	/*
+	 * Adds validation problem markers to the model elements.
+	 */
+	private IValidationListener validationListener = new IValidationListener() {
 		public void validationOccurred(final ValidationEvent event) {
-			if (event.getClientContextIds().contains("org.openhealthtools.mdht.uml.ui.validation.refresh")
-					&& event.getEvaluationMode() == EvaluationMode.BATCH) {
+			if (event.getClientContextIds().contains("org.openhealthtools.mdht.uml.ui.validation.refresh") &&
+					event.getEvaluationMode() == EvaluationMode.BATCH) {
 				// Decorate using current UI thread
 				Display.getDefault().asyncExec(new Runnable() {
 					public void run() {
@@ -70,8 +72,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 				});
 			}
 		}
-    };
-	
+	};
+
 	public UMLNavigatorLabelProvider() {
 		adapterFactory = createAdapterFactory();
 		labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
@@ -79,6 +81,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		ModelValidationService.getInstance().addValidationListener(validationListener);
 	}
 
+	@Override
 	public void dispose() {
 		adapterFactory.dispose();
 		ModelValidationService.getInstance().removeValidationListener(validationListener);
@@ -97,6 +100,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		if (false == element instanceof UMLAbstractNavigatorItem) {
 			return super.getImage(element);
@@ -106,32 +110,31 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		if (abstractNavigatorItem instanceof UMLDomainNavigatorItem) {
 			UMLDomainNavigatorItem navigatorItem = (UMLDomainNavigatorItem) abstractNavigatorItem;
 			return labelProvider.getImage(navigatorItem.getEObject());
-			
-		} 
-		else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
+
+		} else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
 			UMLNavigatorGroup group = (UMLNavigatorGroup) element;
 			return Activator.getDefault().getBundledImage(group.getIcon());
 		}
 		return super.getImage(element);
 	}
 
+	@Override
 	public String getText(Object element) {
 		if (element instanceof IFile) {
 			return "(" + super.getText(element) + ")";
-		}
-		else if (element instanceof UMLAbstractNavigatorItem) {
+		} else if (element instanceof UMLAbstractNavigatorItem) {
 			UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) element;
 			if (abstractNavigatorItem instanceof UMLDomainNavigatorItem) {
 				UMLDomainNavigatorItem navigatorItem = (UMLDomainNavigatorItem) abstractNavigatorItem;
 				return labelProvider.getText(navigatorItem.getEObject());
 			}
-	
+
 			else if (abstractNavigatorItem instanceof UMLNavigatorGroup) {
 				UMLNavigatorGroup group = (UMLNavigatorGroup) element;
 				return group.getGroupName();
 			}
 		}
-		
+
 		return super.getText(element);
 	}
 

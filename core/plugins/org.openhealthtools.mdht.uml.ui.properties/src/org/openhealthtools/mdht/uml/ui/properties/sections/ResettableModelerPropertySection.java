@@ -21,27 +21,27 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Abstract parent class for properties sections whose fields can be reset (i.e., 
+ * Abstract parent class for properties sections whose fields can be reset (i.e.,
  * their values restored to their defaults) via a "Restore Default Values" button.
  */
-public abstract class ResettableModelerPropertySection extends
-		AbstractModelerPropertySection {
+public abstract class ResettableModelerPropertySection extends AbstractModelerPropertySection {
 
 	protected Button restoreDefaultsButton;
 
 	protected abstract void resetFields();
 
 	protected void createRestoreDefaultsButton(Composite parent) {
-		restoreDefaultsButton = getWidgetFactory().createButton(parent, 
-				null, SWT.PUSH);
+		restoreDefaultsButton = getWidgetFactory().createButton(parent, null, SWT.PUSH);
 
 		restoreDefaultsButton.setToolTipText("Restore Default Values");
-		restoreDefaultsButton.setImage(AbstractUIPlugin.imageDescriptorFromPlugin("org.openhealthtools.mdht.uml.ui.properties", "icons/full/elcl16/restore_defaults.gif").createImage());
+		restoreDefaultsButton.setImage(AbstractUIPlugin.imageDescriptorFromPlugin(
+			"org.openhealthtools.mdht.uml.ui.properties", "icons/full/elcl16/restore_defaults.gif").createImage());
 
 		restoreDefaultsButton.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent se) {
 				resetFields();
 			}
+
 			public void widgetSelected(SelectionEvent se) {
 				resetFields();
 			}

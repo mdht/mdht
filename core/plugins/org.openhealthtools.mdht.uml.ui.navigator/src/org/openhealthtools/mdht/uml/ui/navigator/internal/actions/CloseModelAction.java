@@ -22,6 +22,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.uml.Element;
@@ -31,52 +32,60 @@ import org.openhealthtools.mdht.uml.common.ui.saveable.ModelManager;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
 
-
 /**
  *
  */
 public class CloseModelAction extends Action {
-	
-	private Element modelElement;
-	private ISelectionProvider provider; 
 
+	private Element modelElement;
+
+	private ISelectionProvider provider;
 
 	/**
-	 * Construct this Action with the given page. 
-	 * @param p The page to use as context to open the editor.
-	 * @param selectionProvider The selection provider 
+	 * Construct this Action with the given page.
+	 * 
+	 * @param p
+	 *            The page to use as context to open the editor.
+	 * @param selectionProvider
+	 *            The selection provider
 	 */
 	public CloseModelAction(IWorkbenchPage p, ISelectionProvider selectionProvider) {
 		setText(Messages.CloseModelAction_label);
 		provider = selectionProvider;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.action.Action#isEnabled()
 	 */
+	@Override
 	public boolean isEnabled() {
 		ISelection selection = provider.getSelection();
-		if(!selection.isEmpty() && ((IStructuredSelection) selection).size() == 1) {
+		if (!selection.isEmpty() && ((IStructuredSelection) selection).size() == 1) {
 			Object selected = ((IStructuredSelection) selection).getFirstElement();
-			if (selected instanceof IAdaptable)
-				selected = ((IAdaptable)selected).getAdapter(Element.class);
-			
-			if(selected instanceof Package) 
-			{
-				modelElement = (Element) selected; 				
+			if (selected instanceof IAdaptable) {
+				selected = ((IAdaptable) selected).getAdapter(Element.class);
+			}
+
+			if (selected instanceof Package) {
+				modelElement = (Element) selected;
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.action.Action#run()
 	 */
-	public void run() { 
+	@Override
+	public void run() {
 		closeModel(getResource());
 	}
-	
+
 	protected Resource getResource() {
 		return modelElement.eResource();
 	}
@@ -87,16 +96,16 @@ public class CloseModelAction extends Action {
 			if (saveable != null) {
 				if (saveable.isDirty()) {
 					String fileName = resource.getURI().lastSegment();
-					String message = Messages.bind(
-							 Messages.CloseModelAction_dialogMessage, fileName);
+					String message = NLS.bind(Messages.CloseModelAction_dialogMessage, fileName);
 					// Yes, No, Cancel
-			        MessageDialog dialog = new MessageDialog(
-			        		Display.getDefault().getActiveShell(), 
-			        		Messages.CloseModelAction_dialogTitle, null, // accept
-			                message, MessageDialog.QUESTION, new String[] { IDialogConstants.YES_LABEL,
-			                        IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL }, 0); // yes is the default
-			        
-			        int result = dialog.open();
+					MessageDialog dialog = new MessageDialog(
+						Display.getDefault().getActiveShell(), Messages.CloseModelAction_dialogTitle,
+						null, // accept
+						message, MessageDialog.QUESTION, new String[] {
+								IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL },
+						0); // yes is the default
+
+					int result = dialog.open();
 					if (2 == result) {
 						// Cancel
 						return;
@@ -109,21 +118,18 @@ public class CloseModelAction extends Action {
 
 				// if not canceled, the resource is closed
 				saveable.doClose(new NullProgressMonitor());
-				
+
 				return;
 			}
 
 			// if saveable not found, the resource is unloaded
 			resource.unload();
-			
-		} catch (Exception e) { 
-			String message = Messages.bind(
-					 Messages.CloseModelAction_errorMessage, 
-					 new String []{ e.getLocalizedMessage() });
+
+		} catch (Exception e) {
+			String message = NLS.bind(Messages.CloseModelAction_errorMessage, new String[] { e.getLocalizedMessage() });
 			Logger.logException(message, e);
-			MessageDialog.openError(Display.getDefault().getActiveShell(), 
-					Messages.CloseModelAction_errorTitle,
-					message);
+			MessageDialog.openError(
+				Display.getDefault().getActiveShell(), Messages.CloseModelAction_errorTitle, message);
 		}
 	}
 }

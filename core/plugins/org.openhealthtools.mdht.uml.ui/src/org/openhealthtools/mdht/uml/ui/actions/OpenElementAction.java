@@ -19,7 +19,6 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 
-
 public class OpenElementAction extends UML2AbstractAction {
 
 	public OpenElementAction() {
@@ -32,15 +31,12 @@ public class OpenElementAction extends UML2AbstractAction {
 	public void run(IAction action) {
 
 		final NamedElement element = DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {Classifier.class},
-				editingDomain.getResourceSet(), 
-				activePart.getSite().getShell());
-		
+			new java.lang.Class[] { Classifier.class }, editingDomain.getResourceSet(), activePart.getSite().getShell());
+
 		if (element != null) {
-			activePart.getSite().getSelectionProvider().setSelection(
-					new StructuredSelection(element));
+			activePart.getSite().getSelectionProvider().setSelection(new StructuredSelection(element));
 		}
-		
+
 	}
 
 }

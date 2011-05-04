@@ -32,22 +32,20 @@ public class StereotypeDecorator implements ILabelDecorator {
 		Element element = null;
 		if (object instanceof Element) {
 			element = (Element) object;
-		}
-		else if (object instanceof IAdaptable) {
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
+		} else if (object instanceof IAdaptable) {
+			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
 		}
 		if (element != null && !element.getAppliedStereotypes().isEmpty()) {
 			StringBuilder decorator = new StringBuilder();
 			for (Iterator iterator = element.getAppliedStereotypes().iterator(); iterator.hasNext();) {
 				Stereotype stereotype = (Stereotype) iterator.next();
 				EAnnotation extensions = stereotype.getEAnnotation("uml2.extensions");
-				boolean suppressed = extensions != null && extensions.getDetails() != null
-						&& "true".equals(extensions.getDetails().get("suppressed"));
+				boolean suppressed = extensions != null && extensions.getDetails() != null &&
+						"true".equals(extensions.getDetails().get("suppressed"));
 				if (!suppressed) {
 					if (decorator.length() == 0) {
 						decorator.append("<<");
-					}
-					else {
+					} else {
 						decorator.append(", ");
 					}
 					// keyword gets localized name, or lowerCamelCase of Stereotype name

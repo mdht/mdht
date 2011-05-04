@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -69,18 +68,22 @@ import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 public class ConstraintSection extends AbstractModelerPropertySection {
 
 	protected static final OCL EOCL_ENV = OCL.newInstance();
-	
+
 	private Constraint constraint;
-	
-	private String[] languages = {"Analysis", "OCL", "XPath", "StrucText"};
+
+	private String[] languages = { "Analysis", "OCL", "XPath", "StrucText" };
 
 	private CCombo languageCombo;
+
 	private boolean languageModified = false;
+
 	private CLabel currentLanguagesLabel;
+
 	private Text bodyText;
+
 	private boolean bodyModified = false;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (bodyText == event.getSource()) {
 				bodyModified = true;
@@ -94,11 +97,12 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -108,7 +112,7 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void validateOCL() {
 
 		EPackage ePackage = null;
@@ -118,7 +122,7 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		String ocl = bodyText.getText().trim();
 
 		String nsuri = "";
-		
+
 		for (org.eclipse.uml2.uml.Package p : constraint.allOwningPackages()) {
 
 			if (p.getAppliedStereotype("CDA::CodegenSupport") != null) {
@@ -133,10 +137,8 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 					break;
 				}
 
-			} else
-			{				
-				if (p.getAppliedStereotype("Ecore::EPackage") != null)
-				{
+			} else {
+				if (p.getAppliedStereotype("Ecore::EPackage") != null) {
 					Stereotype s = p.getAppliedStereotype("Ecore::EPackage");
 
 					nsuri = (String) p.getValue(s, "nsURI");
@@ -145,7 +147,7 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 
 						ePackage = EPackage.Registry.INSTANCE.getEPackage(nsuri);
 						break;
-					}	
+					}
 				}
 			}
 
@@ -177,26 +179,25 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		}
 
 	}
-	
+
 	private void modifyFields() {
 		if (!(bodyModified || languageModified)) {
 			return;
 		}
-		
-		
+
 		if (languageCombo.getSelectionIndex() == 1) {
 			validateOCL();
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(constraint);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(constraint);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					int languageIndex = languageCombo.getSelectionIndex();
 					if (languageIndex == -1) {
-						languageIndex = 0;	// default to Analysis
+						languageIndex = 0; // default to Analysis
 					}
 					String language = languages[languageIndex];
 					String body = bodyText.getText().trim();
@@ -207,11 +208,12 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 
 						ValueSpecification spec = constraint.getSpecification();
 						if (spec == null) {
-							spec = constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+							spec = constraint.createSpecification(
+								null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 						}
 						if (spec instanceof OpaqueExpression) {
 							int specIndex = -1;
-							for (int i=0; i<((OpaqueExpression) spec).getLanguages().size(); i++) {
+							for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
 								String lang = ((OpaqueExpression) spec).getLanguages().get(i);
 								if (language.equals(lang)) {
 									specIndex = i;
@@ -222,53 +224,50 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 									// remove language and body from specification
 									((OpaqueExpression) spec).getLanguages().remove(specIndex);
 									((OpaqueExpression) spec).getBodies().remove(specIndex);
-								}
-								else {
+								} else {
 									((OpaqueExpression) spec).getBodies().set(specIndex, body);
 								}
-							}
-							else if (body.length() > 0) {
+							} else if (body.length() > 0) {
 								// create new specification entry
 								((OpaqueExpression) spec).getLanguages().add(language);
 								((OpaqueExpression) spec).getBodies().add(body);
 							}
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-					refresh();
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					refresh();
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
-	 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-		 Shell shell = new Shell();
-		
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int charHeight = point.y;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int charHeight = point.y;
+		gc.dispose();
+		shell.dispose();
 
 		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
@@ -280,32 +279,30 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				refresh();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				refresh();
 			}
 		});
 
-		CLabel languageLabel = getWidgetFactory()
-				.createCLabel(composite, "Language:"); //$NON-NLS-1$
+		CLabel languageLabel = getWidgetFactory().createCLabel(composite, "Language:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(languageCombo, 0, SWT.CENTER);
 		languageLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(languageLabel, 0);
-		data.top = new FormAttachment(0,4);
+		data.left = new FormAttachment(languageLabel, 0);
+		data.top = new FormAttachment(0, 4);
 		languageCombo.setLayoutData(data);
 
-		CLabel assignedLabel = getWidgetFactory()
-				.createCLabel(composite, "Assigned Expressions:"); //$NON-NLS-1$
+		CLabel assignedLabel = getWidgetFactory().createCLabel(composite, "Assigned Expressions:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(languageCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(languageCombo, 0, SWT.CENTER);
 		assignedLabel.setLayoutData(data);
-		
-		currentLanguagesLabel = getWidgetFactory()
-				.createCLabel(composite, ""); //$NON-NLS-1$
+
+		currentLanguagesLabel = getWidgetFactory().createCLabel(composite, ""); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(assignedLabel, 0);
 		data.right = new FormAttachment(100, 0);
@@ -313,10 +310,8 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		currentLanguagesLabel.setLayoutData(data);
 
 		/* ---- body text ---- */
-		bodyText = getWidgetFactory().createText(composite, "", 
-				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
-		CLabel bodyLabel = getWidgetFactory()
-				.createCLabel(composite, "Body:"); //$NON-NLS-1$
+		bodyText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
+		CLabel bodyLabel = getWidgetFactory().createCLabel(composite, "Body:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(languageCombo, 0, SWT.BOTTOM);
@@ -334,10 +329,10 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (constraint != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(constraint);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(constraint);
 			if (editingDomain != null && editingDomain.isReadOnly(constraint.eResource())) {
 				return true;
 			}
@@ -350,8 +345,10 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -361,6 +358,7 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -368,23 +366,25 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		this.constraint = (Constraint) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		int languageIndex = languageCombo.getSelectionIndex();
 		if (languageIndex == -1) {
-			languageIndex = 0;	// default to Analysis
+			languageIndex = 0; // default to Analysis
 		}
 		String language = languages[languageIndex];
 		String languagesList = "";
 		String body = null;
-		
+
 		ValueSpecification spec = constraint.getSpecification();
 		if (spec instanceof OpaqueExpression) {
-			for (int i=0; i<((OpaqueExpression) spec).getLanguages().size(); i++) {
+			for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
 				String lang = ((OpaqueExpression) spec).getLanguages().get(i);
 				if (languagesList.length() > 0) {
 					languagesList += ", ";
@@ -397,7 +397,7 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 				}
 			}
 		}
-		
+
 		languageCombo.select(languageIndex);
 
 		currentLanguagesLabel.setText(languagesList);
@@ -405,7 +405,9 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		bodyText.removeModifyListener(modifyListener);
 		bodyText.removeKeyListener(keyListener);
 		bodyText.removeFocusListener(focusListener);
-		bodyText.setText(body!=null ? body : "");
+		bodyText.setText(body != null
+				? body
+				: "");
 		bodyText.addModifyListener(modifyListener);
 		bodyText.addKeyListener(keyListener);
 		bodyText.addFocusListener(focusListener);
@@ -413,8 +415,7 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 		if (isReadOnly()) {
 			languageCombo.setEnabled(false);
 			bodyText.setEnabled(false);
-		}
-		else {
+		} else {
 			languageCombo.setEnabled(true);
 			bodyText.setEnabled(true);
 		}
@@ -426,19 +427,23 @@ public class ConstraintSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && constraint.eResource() != null)
+					if (!isDisposed() && constraint.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

@@ -74,9 +74,11 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 	private NamedElement namedElement;
 
 	private Text localNameText;
+
 	private boolean localNameModified = false;
 
 	private Text businessNameText;
+
 	private boolean businessNameModified = false;
 
 	private ModifyListener modifyListener = new ModifyListener() {
@@ -96,8 +98,9 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
 
@@ -117,18 +120,16 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		}
 
 		try {
-			TransactionalEditingDomain editingDomain = TransactionUtil
-					.getEditingDomain(namedElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 
-			IUndoableOperation operation = new AbstractEMFOperation(
-					editingDomain, "temp") {
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 
 				URI propertiesURI = null;
+
 				String properties = null;
 
 				@Override
-				protected IStatus doExecute(IProgressMonitor monitor,
-						IAdaptable info) {
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
 					if (!(localNameModified || businessNameModified)) {
 						return Status.CANCEL_STATUS;
@@ -142,7 +143,9 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 						this.setLabel("Set Name");
 
 						String oldPropertyKey = NamedElementUtil.getPropertyKey(namedElement);
-						Map<String, String> parsedProperties = properties != null ? UMLUtil.parseProperties(properties) : new LinkedHashMap<String, String>();
+						Map<String, String> parsedProperties = properties != null
+								? UMLUtil.parseProperties(properties)
+								: new LinkedHashMap<String, String>();
 						String oldProperty = parsedProperties.remove(oldPropertyKey);
 
 						namedElement.setName(localNameText.getText());
@@ -150,7 +153,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 						if (oldProperty != null) {
 							String newPropertyKey = NamedElementUtil.getPropertyKey(namedElement);
 							parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
-							
+
 							UMLUtil.writeProperties(propertiesURI, parsedProperties);
 						}
 
@@ -159,8 +162,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 						businessNameModified = false;
 						this.setLabel("Set Business Name");
 
-						if (!NamedElementUtil.setBusinessName(namedElement,
-								businessNameText.getText())) {
+						if (!NamedElementUtil.setBusinessName(namedElement, businessNameText.getText())) {
 							refreshBusinessNameText();
 							return Status.CANCEL_STATUS;
 						}
@@ -170,34 +172,31 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 				}
 
 				@Override
-				protected IStatus doUndo(IProgressMonitor monitor,
-						IAdaptable info) throws ExecutionException {
+				protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 					IStatus result = super.doUndo(monitor, info);
 
 					if (result.isOK()) {
 						URIConverter uriConverter = getEditingDomain().getResourceSet().getURIConverter();
-						
-						if (uriConverter
-								.exists(propertiesURI, null)) {
-							
+
+						if (uriConverter.exists(propertiesURI, null)) {
+
 							if (properties == null) {
 								properties = UMLUtil.readProperties(propertiesURI);
 
 								try {
-									uriConverter.delete(propertiesURI, null);											
+									uriConverter.delete(propertiesURI, null);
 								} catch (IOException ioe) {
 									return Status.CANCEL_STATUS;
 								}
 							} else {
-								Map<String, String> parsedProperties = UMLUtil
-								.parseProperties(properties);
+								Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
 								properties = UMLUtil.readProperties(propertiesURI);
-								UMLUtil.writeProperties(propertiesURI, parsedProperties);										
+								UMLUtil.writeProperties(propertiesURI, parsedProperties);
 							}
 						}
 
 						if (!businessNameText.isDisposed()) {
-							refreshBusinessNameText();							
+							refreshBusinessNameText();
 						}
 					}
 
@@ -205,34 +204,30 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 				}
 
 				@Override
-				protected IStatus doRedo(IProgressMonitor monitor,
-						IAdaptable info) throws ExecutionException {
+				protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 					IStatus result = super.doRedo(monitor, info);
-					
+
 					if (result.isOK()) {
-						
+
 						if (properties != null) {
-							Map<String, String> parsedProperties = UMLUtil
-							.parseProperties(properties);
+							Map<String, String> parsedProperties = UMLUtil.parseProperties(properties);
 							properties = UMLUtil.readProperties(propertiesURI);
 							UMLUtil.writeProperties(propertiesURI, parsedProperties);
 						}
 
 						if (!businessNameText.isDisposed()) {
-							refreshBusinessNameText();							
+							refreshBusinessNameText();
 						}
 					}
-					
+
 					return result;
 				}
 			};
 
 			try {
-				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain
-						.getCommandStack();
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-				commandStack.getOperationHistory().execute(operation,
-						new NullProgressMonitor(), getPart());
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
 
 			} catch (ExecutionException ee) {
 				Logger.logException(ee);
@@ -243,13 +238,12 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 		this.tabbedPropertySheetPage = aTabbedPropertySheetPage;
 
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
 		localNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
@@ -259,12 +253,10 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE + 2);
 		localNameText.setLayoutData(data);
 
-		CLabel localNameLabel = getWidgetFactory().createCLabel(composite,
-				"Name:"); //$NON-NLS-1$
+		CLabel localNameLabel = getWidgetFactory().createCLabel(composite, "Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(localNameText,
-				-ITabbedPropertyConstants.HSPACE);
+		data.right = new FormAttachment(localNameText, -ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(localNameText, 0, SWT.CENTER);
 		localNameLabel.setLayoutData(data);
 
@@ -275,23 +267,20 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(1, 2, ITabbedPropertyConstants.VSPACE + 2);
 		businessNameText.setLayoutData(data);
 
-		CLabel businessNameLabel = getWidgetFactory().createCLabel(composite,
-				"Business Name:"); //$NON-NLS-1$
+		CLabel businessNameLabel = getWidgetFactory().createCLabel(composite, "Business Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(businessNameText,
-				-ITabbedPropertyConstants.HSPACE);
+		data.right = new FormAttachment(businessNameText, -ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(businessNameText, 0, SWT.CENTER);
 		businessNameLabel.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (namedElement != null) {
-			TransactionalEditingDomain editingDomain = TransactionUtil
-					.getEditingDomain(namedElement);
-			if (editingDomain != null
-					&& editingDomain.isReadOnly(namedElement.eResource())) {
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
+			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
 				return true;
 			}
 		}
@@ -308,6 +297,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -317,6 +307,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -327,6 +318,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		this.namedElement = (NamedElement) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		namedElement = null;
@@ -336,11 +328,11 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		businessNameText.removeModifyListener(modifyListener);
 		businessNameText.removeKeyListener(keyListener);
 		businessNameText.removeFocusListener(focusListener);
-		if (namedElement.getName() != null)
-			businessNameText.setText(NamedElementUtil
-					.getBusinessName(namedElement));
-		else
+		if (namedElement.getName() != null) {
+			businessNameText.setText(NamedElementUtil.getBusinessName(namedElement));
+		} else {
 			businessNameText.setText("");
+		}
 		businessNameText.addModifyListener(modifyListener);
 		businessNameText.addKeyListener(keyListener);
 		businessNameText.addFocusListener(focusListener);
@@ -348,14 +340,16 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		businessNameText.setEnabled(!isReadOnly());
 	}
 
+	@Override
 	public void refresh() {
 		localNameText.removeModifyListener(modifyListener);
 		localNameText.removeKeyListener(keyListener);
 		localNameText.removeFocusListener(focusListener);
-		if (namedElement.getName() != null)
+		if (namedElement.getName() != null) {
 			localNameText.setText(namedElement.getName());
-		else
+		} else {
 			localNameText.setText("");
+		}
 		localNameText.addModifyListener(modifyListener);
 		localNameText.addKeyListener(keyListener);
 		localNameText.addFocusListener(focusListener);
@@ -365,9 +359,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 		refreshBusinessNameText();
 
 		// TODO there should be a better way to force tabbed page label update
-		tabbedPropertySheetPage
-				.labelProviderChanged(new LabelProviderChangedEvent(
-						new LabelProvider()));
+		tabbedPropertySheetPage.labelProviderChanged(new LabelProviderChangedEvent(new LabelProvider()));
 	}
 
 }

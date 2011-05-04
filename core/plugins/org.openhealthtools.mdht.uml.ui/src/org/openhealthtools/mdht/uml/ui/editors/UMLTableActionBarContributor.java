@@ -32,13 +32,10 @@ import org.openhealthtools.mdht.uml.edit.provider.UML2ExtendedAdapterFactory;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 import org.openhealthtools.mdht.uml.ui.navigator.actions.EditCommandsFactory;
 
-
 /**
  * 
  */
-public class UMLTableActionBarContributor 
-extends EditorActionBarContributor
-implements IMenuListener {
+public class UMLTableActionBarContributor extends EditorActionBarContributor implements IMenuListener {
 
 	/**
 	 * This keeps track of the current editor part.
@@ -59,6 +56,7 @@ implements IMenuListener {
 	 * 
 	 * @see org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor#init(org.eclipse.ui.IActionBars)
 	 */
+	@Override
 	public void init(IActionBars actionBars) {
 		super.init(actionBars);
 
@@ -69,6 +67,7 @@ implements IMenuListener {
 		return activeEditor;
 	}
 
+	@Override
 	public void setActiveEditor(IEditorPart part) {
 		super.setActiveEditor(part);
 
@@ -83,11 +82,11 @@ implements IMenuListener {
 				editCommandsFactory.setActivePart(activeEditor);
 
 			}
-			
+
 			if (activeEditor instanceof UMLTableEditor) {
-				AdapterFactory adapterFactory = ((UMLTableEditor)activeEditor).getAdapterFactory();
+				AdapterFactory adapterFactory = ((UMLTableEditor) activeEditor).getAdapterFactory();
 				if (adapterFactory instanceof UML2ExtendedAdapterFactory) {
-					showBusinessNamesAction.setChecked(((UML2ExtendedAdapterFactory)adapterFactory).isShowBusinessNames());
+					showBusinessNamesAction.setChecked(((UML2ExtendedAdapterFactory) adapterFactory).isShowBusinessNames());
 				}
 			}
 		}
@@ -97,19 +96,19 @@ implements IMenuListener {
 	}
 
 	public void shareGlobalActions(IPage page, IActionBars actionBars) {
-		editCommandsFactory.shareGlobalActions(actionBars, 
-				(page instanceof IPropertySheetPage));
+		editCommandsFactory.shareGlobalActions(actionBars, (page instanceof IPropertySheetPage));
 	}
 
-    public void contributeToToolBar(IToolBarManager toolBarManager) {
-    	editCommandsFactory.shareGlobalActions(getActionBars(), false);
-    }
+	@Override
+	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		editCommandsFactory.shareGlobalActions(getActionBars(), false);
+	}
 
-    protected class ShowBusinessNamesAction extends Action {
-    	
-    	protected ShowBusinessNamesAction() {
-    		super(UML2UIMessages.ShowBusinessNames_title, AS_CHECK_BOX);
-    	}
+	protected class ShowBusinessNamesAction extends Action {
+
+		protected ShowBusinessNamesAction() {
+			super(UML2UIMessages.ShowBusinessNames_title, AS_CHECK_BOX);
+		}
 
 		@Override
 		public void setChecked(boolean checked) {
@@ -118,42 +117,41 @@ implements IMenuListener {
 			if (wasChecked != checked) {
 				if (activeEditor instanceof UMLTableEditor) {
 					UMLTableEditor umlTableEditor = (UMLTableEditor) activeEditor;
-					AdapterFactory adapterFactory = umlTableEditor
-							.getAdapterFactory();
+					AdapterFactory adapterFactory = umlTableEditor.getAdapterFactory();
 					if (adapterFactory instanceof UML2ExtendedAdapterFactory) {
-						((UML2ExtendedAdapterFactory) adapterFactory)
-								.setShowBusinessNames(checked);
+						((UML2ExtendedAdapterFactory) adapterFactory).setShowBusinessNames(checked);
 						umlTableEditor.refresh();
 					}
 				}
 			}
 		}
 
-    }
+	}
 
-    protected ShowBusinessNamesAction showBusinessNamesAction = new ShowBusinessNamesAction();
+	protected ShowBusinessNamesAction showBusinessNamesAction = new ShowBusinessNamesAction();
 
 	/**
 	 * This adds to the menu bar a menu and some separators for editor additions,
 	 * as well as the sub-menus for object creation items.
 	 */
+	@Override
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(UML2UIMessages._UI_UMLEditor_menu
-				, "org.openhealthtools.mdht.uml.ui.umlMenuID"); //$NON-NLS-1$
+		IMenuManager submenuManager = new MenuManager(
+			UML2UIMessages._UI_UMLEditor_menu, "org.openhealthtools.mdht.uml.ui.umlMenuID"); //$NON-NLS-1$
 		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
 		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
 		submenuManager.add(new Separator("actions")); //$NON-NLS-1$
-		
+
 		submenuManager.add(showBusinessNamesAction);
-		
+
 		submenuManager.add(new Separator("additions")); //$NON-NLS-1$
 		submenuManager.add(new Separator("additions-end")); //$NON-NLS-1$
 	}
-	
+
 	/**
-	 * This implements {@link org.eclipse.jface.action.IMenuListener} to help 
+	 * This implements {@link org.eclipse.jface.action.IMenuListener} to help
 	 * fill the context menus with contributions from the Edit menu.
 	 */
 	public void menuAboutToShow(IMenuManager menuManager) {
@@ -176,8 +174,8 @@ implements IMenuListener {
 		manager.add(new Separator(ICommonMenuConstants.GROUP_BUILD));
 		manager.add(new Separator(ICommonMenuConstants.GROUP_ADDITIONS));
 		manager.add(new Separator(ICommonMenuConstants.GROUP_PROPERTIES));
-		
+
 		editCommandsFactory.fillContextMenu(manager);
 	}
-	
+
 }

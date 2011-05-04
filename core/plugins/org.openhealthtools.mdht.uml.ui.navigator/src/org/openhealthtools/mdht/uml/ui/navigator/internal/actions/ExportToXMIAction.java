@@ -30,6 +30,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Display;
@@ -43,10 +44,10 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
 
-public class ExportToXMIAction extends ActionDelegate implements
-		IObjectActionDelegate {
+public class ExportToXMIAction extends ActionDelegate implements IObjectActionDelegate {
 
 	protected IWorkbenchPart activePart = null;
+
 	protected List<URI> resourceURIs = new ArrayList<URI>();
 
 	@Override
@@ -58,8 +59,7 @@ public class ExportToXMIAction extends ActionDelegate implements
 
 	@Override
 	public void run(IAction action) {
-		DirectoryDialog dialog = new DirectoryDialog(activePart.getSite()
-				.getShell(), SWT.NONE);
+		DirectoryDialog dialog = new DirectoryDialog(activePart.getSite().getShell(), SWT.NONE);
 		dialog.setMessage(Messages.ExportToXMIAction_dialogMessage);
 		dialog.setText(Messages.ExportToXMIAction_dialogTitle);
 		final String directoryPath = dialog.open();
@@ -71,16 +71,12 @@ public class ExportToXMIAction extends ActionDelegate implements
 
 				// register XMI content type and extended metadata
 
-				Map<String, Object> contentTypeToFactoryMap = resourceSet
-						.getResourceFactoryRegistry()
-						.getContentTypeToFactoryMap();
+				Map<String, Object> contentTypeToFactoryMap = resourceSet.getResourceFactoryRegistry().getContentTypeToFactoryMap();
 
 				contentTypeToFactoryMap.put(
-						XMI2UMLResource.UML_CONTENT_TYPE_IDENTIFIER,
-						XMI2UMLResource.Factory.INSTANCE);
+					XMI2UMLResource.UML_CONTENT_TYPE_IDENTIFIER, XMI2UMLResource.Factory.INSTANCE);
 
-				Map<URI, URI> uriMap = resourceSet.getURIConverter()
-						.getURIMap();
+				Map<URI, URI> uriMap = resourceSet.getURIConverter().getURIMap();
 
 				uriMap.putAll(XMI2UMLExtendedMetaData.getURIMap());
 
@@ -99,12 +95,9 @@ public class ExportToXMIAction extends ActionDelegate implements
 				for (Resource resource : resources) {
 					EList<EObject> resourceContents = resource.getContents();
 
-					for (Resource controlledResource : UMLUtil
-							.getControlledResources(resource)) {
+					for (Resource controlledResource : UMLUtil.getControlledResources(resource)) {
 
-						for (ListIterator<EObject> contentsIterator = controlledResource
-								.getContents().listIterator(); contentsIterator
-								.hasNext();) {
+						for (ListIterator<EObject> contentsIterator = controlledResource.getContents().listIterator(); contentsIterator.hasNext();) {
 							EObject next = contentsIterator.next();
 
 							contentsIterator.remove();
@@ -118,8 +111,7 @@ public class ExportToXMIAction extends ActionDelegate implements
 
 				// discard empty resources
 
-				for (ListIterator<Resource> resourcesIterator = resources
-						.listIterator(); resourcesIterator.hasNext();) {
+				for (ListIterator<Resource> resourcesIterator = resources.listIterator(); resourcesIterator.hasNext();) {
 
 					if (resourcesIterator.next().getContents().isEmpty()) {
 						resourcesIterator.remove();
@@ -136,8 +128,7 @@ public class ExportToXMIAction extends ActionDelegate implements
 					Resource resource = resources.get(i);
 
 					if (shouldExport(resource)) {
-						exportedResources.add(exportResource(resourceSet,
-								resource, destinationURI));
+						exportedResources.add(exportResource(resourceSet, resource, destinationURI));
 					}
 				}
 
@@ -147,12 +138,11 @@ public class ExportToXMIAction extends ActionDelegate implements
 					resource.save(null);
 				}
 			} catch (Exception e) {
-				String message = Messages.bind(
-						Messages.ExportToXMIAction_errorMessage,
-						new String[] { e.getLocalizedMessage() });
+				String message = NLS.bind(
+					Messages.ExportToXMIAction_errorMessage, new String[] { e.getLocalizedMessage() });
 				Logger.logException(message, e);
-				MessageDialog.openError(Display.getDefault().getActiveShell(),
-						Messages.ExportToXMIAction_errorTitle, message);
+				MessageDialog.openError(
+					Display.getDefault().getActiveShell(), Messages.ExportToXMIAction_errorTitle, message);
 			}
 		}
 	}
@@ -160,27 +150,19 @@ public class ExportToXMIAction extends ActionDelegate implements
 	protected boolean shouldExport(Resource resource) {
 		URI resourceURI = resource.getURI();
 
-		return UMLResource.FILE_EXTENSION.equals(resourceURI.fileExtension())
-				&& !URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI)
-						.equals(resourceURI)
-				&& !URI.createURI(UMLResource.UML_METAMODEL_URI).equals(
-						resourceURI)
-				&& !URI.createURI(UMLResource.STANDARD_PROFILE_URI).equals(
-						resourceURI);
+		return UMLResource.FILE_EXTENSION.equals(resourceURI.fileExtension()) &&
+				!URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI).equals(resourceURI) &&
+				!URI.createURI(UMLResource.UML_METAMODEL_URI).equals(resourceURI) &&
+				!URI.createURI(UMLResource.STANDARD_PROFILE_URI).equals(resourceURI);
 	}
 
-	protected Resource exportResource(ResourceSet resourceSet,
-			Resource resource, URI destinationURI) {
-		URI xmiURI = destinationURI
-				.appendSegment(resource.getURI().lastSegment())
-				.trimFileExtension()
-				.appendFileExtension(XMI2UMLResource.FILE_EXTENSION);
-		Resource xmiResource = resourceSet.createResource(xmiURI,
-				XMI2UMLResource.UML_CONTENT_TYPE_IDENTIFIER);
+	protected Resource exportResource(ResourceSet resourceSet, Resource resource, URI destinationURI) {
+		URI xmiURI = destinationURI.appendSegment(resource.getURI().lastSegment()).trimFileExtension().appendFileExtension(
+			XMI2UMLResource.FILE_EXTENSION);
+		Resource xmiResource = resourceSet.createResource(xmiURI, XMI2UMLResource.UML_CONTENT_TYPE_IDENTIFIER);
 		EList<EObject> xmiContents = xmiResource.getContents();
 
-		for (Iterator<EObject> contents = resource.getContents().iterator(); contents
-				.hasNext();) {
+		for (Iterator<EObject> contents = resource.getContents().iterator(); contents.hasNext();) {
 
 			EObject next = contents.next();
 			contents.remove();
@@ -205,8 +187,7 @@ public class ExportToXMIAction extends ActionDelegate implements
 			for (Object element : ((IStructuredSelection) selection).toList()) {
 
 				try {
-					resourceURIs.add(URI.createPlatformResourceURI(
-							((IFile) element).getFullPath().toString(), true));
+					resourceURIs.add(URI.createPlatformResourceURI(((IFile) element).getFullPath().toString(), true));
 				} catch (Exception e) {
 					// ignore
 				}

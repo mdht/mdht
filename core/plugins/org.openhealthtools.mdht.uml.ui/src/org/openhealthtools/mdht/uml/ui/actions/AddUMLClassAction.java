@@ -33,19 +33,20 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
-
 public class AddUMLClassAction extends UML2AbstractAction {
 
 	public AddUMLClassAction() {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
-		if (isReadOnly())
+		if (isReadOnly()) {
 			action.setEnabled(false);
+		}
 	}
-	
+
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
@@ -54,38 +55,37 @@ public class AddUMLClassAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element != null) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLClass_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLClass_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						Class class_ = UMLFactory.eINSTANCE.createClass();
-						
+
 						if (element instanceof Package) {
-							String name = getUniqueTypeName((Package)element, 
-									UML2UIMessages.AddUMLClass_default_name);
+							String name = getUniqueTypeName((Package) element, UML2UIMessages.AddUMLClass_default_name);
 							class_.setName(name);
-							((Package)element).getOwnedTypes().add(class_);
-						}
-						else if (element instanceof Class) {
-							String name = getUniqueTypeName((Class)element, 
-									UML2UIMessages.AddUMLClass_default_name);
+							((Package) element).getOwnedTypes().add(class_);
+						} else if (element instanceof Class) {
+							String name = getUniqueTypeName((Class) element, UML2UIMessages.AddUMLClass_default_name);
 							class_.setName(name);
-							((Class)element).getNestedClassifiers().add(class_);
+							((Class) element).getNestedClassifiers().add(class_);
 						}
 
-				        if (activePart instanceof ISetSelectionTarget) {
-				        	((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(class_));
-				        }
+						if (activePart instanceof ISetSelectionTarget) {
+							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(class_));
+						}
 
-				        return Status.OK_STATUS;
-				    }};
+						return Status.OK_STATUS;
+					}
+				};
 
-			    try {
+				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

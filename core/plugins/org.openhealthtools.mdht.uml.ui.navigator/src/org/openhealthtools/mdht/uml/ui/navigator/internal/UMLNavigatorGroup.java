@@ -17,7 +17,6 @@ import java.util.LinkedList;
 
 import org.openhealthtools.mdht.uml.ui.navigator.UMLAbstractNavigatorItem;
 
-
 public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 
 	private String myGroupName;
@@ -56,6 +55,7 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 		return myChildren.size() == 0;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof UMLNavigatorGroup) {
 			UMLNavigatorGroup anotherGroup = (UMLNavigatorGroup) obj;
@@ -66,6 +66,7 @@ public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 		return super.equals(obj);
 	}
 
+	@Override
 	public int hashCode() {
 		return getGroupName().hashCode();
 	}

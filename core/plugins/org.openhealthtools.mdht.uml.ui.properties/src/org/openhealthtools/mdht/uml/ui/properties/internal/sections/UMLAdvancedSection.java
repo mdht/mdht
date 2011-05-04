@@ -44,112 +44,100 @@ import org.openhealthtools.mdht.uml.common.ui.util.AdapterFactoryManager;
 
 public class UMLAdvancedSection extends AdvancedPropertySection implements IPropertySourceProvider {
 
-	protected static class UMLPropertySource
-			extends PropertySource {
+	protected static class UMLPropertySource extends PropertySource {
 
 		protected List stereotypeApplicationItemPropertyDescriptors = null;
 
-		protected UMLPropertySource(Object object,
-				IItemPropertySource itemPropertySource) {
+		protected UMLPropertySource(Object object, IItemPropertySource itemPropertySource) {
 			super(object, itemPropertySource);
 		}
 
-		protected IPropertyDescriptor createPropertyDescriptor(
-				IItemPropertyDescriptor itemPropertyDescriptor) {
+		@Override
+		protected IPropertyDescriptor createPropertyDescriptor(IItemPropertyDescriptor itemPropertyDescriptor) {
 			return new UMLPropertyDescriptor(object, itemPropertyDescriptor);
 		}
 
+		@Override
 		public IPropertyDescriptor[] getPropertyDescriptors() {
 			List propertyDescriptors = new ArrayList();
 
-			List itemPropertyDescriptors = itemPropertySource
-				.getPropertyDescriptors(object);
+			List itemPropertyDescriptors = itemPropertySource.getPropertyDescriptors(object);
 
 			if (itemPropertyDescriptors != null) {
 
-				for (Iterator i = itemPropertyDescriptors.iterator(); i
-					.hasNext();) {
+				for (Iterator i = itemPropertyDescriptors.iterator(); i.hasNext();) {
 
-					propertyDescriptors
-						.add(createPropertyDescriptor((IItemPropertyDescriptor) i
-							.next()));
+					propertyDescriptors.add(createPropertyDescriptor((IItemPropertyDescriptor) i.next()));
 				}
 			}
 
 			if (itemPropertySource instanceof ElementItemProvider) {
-				stereotypeApplicationItemPropertyDescriptors = ((ElementItemProvider) itemPropertySource)
-					.getStereotypeApplicationPropertyDescriptors(object);
+				stereotypeApplicationItemPropertyDescriptors = ((ElementItemProvider) itemPropertySource).getStereotypeApplicationPropertyDescriptors(object);
 
 				if (stereotypeApplicationItemPropertyDescriptors != null) {
 
-					for (Iterator i = stereotypeApplicationItemPropertyDescriptors
-						.iterator(); i.hasNext();) {
+					for (Iterator i = stereotypeApplicationItemPropertyDescriptors.iterator(); i.hasNext();) {
 
-						propertyDescriptors
-							.add(createPropertyDescriptor((IItemPropertyDescriptor) i
-								.next()));
+						propertyDescriptors.add(createPropertyDescriptor((IItemPropertyDescriptor) i.next()));
 					}
 				}
 			}
 
-			return (IPropertyDescriptor[]) propertyDescriptors
-				.toArray(new IPropertyDescriptor[propertyDescriptors.size()]);
+			return (IPropertyDescriptor[]) propertyDescriptors.toArray(new IPropertyDescriptor[propertyDescriptors.size()]);
 		}
 
-		protected IItemPropertyDescriptor getItemPropertyDescriptor(
-				Object propertyId) {
-			IItemPropertyDescriptor itemPropertyDescriptor = itemPropertySource
-				.getPropertyDescriptor(object, propertyId);
+		protected IItemPropertyDescriptor getItemPropertyDescriptor(Object propertyId) {
+			IItemPropertyDescriptor itemPropertyDescriptor = itemPropertySource.getPropertyDescriptor(
+				object, propertyId);
 
-			return itemPropertyDescriptor == null
-				&& itemPropertySource instanceof ElementItemProvider
-				? ((ElementItemProvider) itemPropertySource)
-					.getStereotypeApplicationPropertyDescriptor(object,
-						propertyId)
-				: itemPropertyDescriptor;
+			return itemPropertyDescriptor == null && itemPropertySource instanceof ElementItemProvider
+					? ((ElementItemProvider) itemPropertySource).getStereotypeApplicationPropertyDescriptor(
+						object, propertyId)
+					: itemPropertyDescriptor;
 		}
 
+		@Override
 		public Object getPropertyValue(Object propertyId) {
-			return getItemPropertyDescriptor(propertyId).getPropertyValue(
-				object);
+			return getItemPropertyDescriptor(propertyId).getPropertyValue(object);
 		}
 
+		@Override
 		public boolean isPropertySet(Object propertyId) {
 			return getItemPropertyDescriptor(propertyId).isPropertySet(object);
 		}
 
+		@Override
 		public void resetPropertyValue(Object propertyId) {
 			getItemPropertyDescriptor(propertyId).resetPropertyValue(object);
 		}
 
+		@Override
 		public void setPropertyValue(Object propertyId, Object value) {
-			getItemPropertyDescriptor(propertyId).setPropertyValue(object,
-				value);
+			getItemPropertyDescriptor(propertyId).setPropertyValue(object, value);
 		}
 
 	}
 
-	protected static class UMLPropertyDescriptor
-			extends PropertyDescriptor {
+	protected static class UMLPropertyDescriptor extends PropertyDescriptor {
 
-		protected UMLPropertyDescriptor(Object object,
-				IItemPropertyDescriptor itemPropertyDescriptor) {
+		protected UMLPropertyDescriptor(Object object, IItemPropertyDescriptor itemPropertyDescriptor) {
 			super(object, itemPropertyDescriptor);
 		}
 
+		@Override
 		protected ILabelProvider getEditLabelProvider() {
-			final ILabelProvider editLabelProvider = super
-				.getEditLabelProvider();
+			final ILabelProvider editLabelProvider = super.getEditLabelProvider();
 
 			return new LabelProvider() {
 
+				@Override
 				public String getText(Object object) {
 					return itemPropertyDescriptor instanceof IItemQualifiedTextProvider
-						? ((IItemQualifiedTextProvider) itemPropertyDescriptor)
-							.getQualifiedText(object)
-						: editLabelProvider.getText(object);
+							? ((IItemQualifiedTextProvider) itemPropertyDescriptor).getQualifiedText(object)
+							: editLabelProvider.getText(object);
 				}
 
+				@Override
 				public Image getImage(Object object) {
 					return editLabelProvider.getImage(object);
 				}
@@ -175,12 +163,14 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 	}
 
 	/**
-	 * Modify/unwrap selection.  
+	 * Modify/unwrap selection.
 	 */
 	protected Object transformSelection(Object selected) {
 		if (selected instanceof EditPart) {
 			Object model = ((EditPart) selected).getModel();
-			return model instanceof View ? ((View) model).getElement() : null;
+			return model instanceof View
+					? ((View) model).getElement()
+					: null;
 		}
 		if (selected instanceof View) {
 			return ((View) selected).getElement();
@@ -194,10 +184,12 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 		return selected;
 	}
 
+	@Override
 	protected IPropertySourceProvider getPropertySourceProvider() {
 		return this;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		if (selection.isEmpty() || false == selection instanceof StructuredSelection) {
 			super.setInput(part, selection);
@@ -222,8 +214,7 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 
 		if (editingDomain instanceof AdapterFactoryEditingDomain) {
 			return ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
-		}
-		else {
+		} else {
 			return AdapterFactoryManager.getAdapterFactory();
 		}
 	}

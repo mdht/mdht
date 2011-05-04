@@ -20,9 +20,9 @@ import org.osgi.framework.BundleContext;
  */
 public class UML2UIPlugin extends AbstractUIPlugin {
 
-	//The shared instance.
+	// The shared instance.
 	private static UML2UIPlugin plugin;
-	
+
 	/**
 	 * The constructor.
 	 */
@@ -33,19 +33,21 @@ public class UML2UIPlugin extends AbstractUIPlugin {
 	/**
 	 * This method is called upon plug-in activation
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 
-//		AdapterFactoryManager.register(new UML2ExtendedAdapterFactory() {
-//			protected IPropertySource createPropertySource(Object object, IItemPropertySource itemPropertySource) {
-//				return new CustomPropertySource(object, itemPropertySource);
-//			}
-//		});
+		// AdapterFactoryManager.register(new UML2ExtendedAdapterFactory() {
+		// protected IPropertySource createPropertySource(Object object, IItemPropertySource itemPropertySource) {
+		// return new CustomPropertySource(object, itemPropertySource);
+		// }
+		// });
 	}
 
 	/**
 	 * This method is called when the plug-in is stopped
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		super.stop(context);
 		plugin = null;
@@ -58,16 +60,16 @@ public class UML2UIPlugin extends AbstractUIPlugin {
 		return plugin;
 	}
 
-//	/**
-//	 * Returns an image descriptor for the image file at the given
-//	 * plug-in relative path.
-//	 *
-//	 * @param path the path
-//	 * @return the image descriptor
-//	 */
-//	public static ImageDescriptor getImageDescriptor(String path) {
-//		return AbstractUIPlugin.imageDescriptorFromPlugin("org.openhealthtools.mdht.uml.ui.properties", path);
-//	}
+	// /**
+	// * Returns an image descriptor for the image file at the given
+	// * plug-in relative path.
+	// *
+	// * @param path the path
+	// * @return the image descriptor
+	// */
+	// public static ImageDescriptor getImageDescriptor(String path) {
+	// return AbstractUIPlugin.imageDescriptorFromPlugin("org.openhealthtools.mdht.uml.ui.properties", path);
+	// }
 
 	/**
 	 * Retrieves the unique identifier of this plug-in.

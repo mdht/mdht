@@ -35,12 +35,14 @@ public class AddUMLPackageAction extends UML2AbstractAction {
 		super();
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		super.selectionChanged(action, selection);
-		if (isReadOnly())
+		if (isReadOnly()) {
 			action.setEnabled(false);
+		}
 	}
-	
+
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
@@ -49,27 +51,29 @@ public class AddUMLPackageAction extends UML2AbstractAction {
 			final Element element = getSelectedElement();
 			if (element != null) {
 				IUndoableOperation operation = new AbstractEMFOperation(
-						editingDomain, UML2UIMessages.AddUMLPackage_operation_title) {
-				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					editingDomain, UML2UIMessages.AddUMLPackage_operation_title) {
+					@Override
+					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 						if (Package.class.isInstance(element)) {
-							String name = getUniquePackageName((Package)element, 
-									UML2UIMessages.AddUMLPackage_default_name);
-							((Package)element).createNestedPackage(name);
+							String name = getUniquePackageName(
+								(Package) element, UML2UIMessages.AddUMLPackage_default_name);
+							((Package) element).createNestedPackage(name);
 
-					        return Status.OK_STATUS;
+							return Status.OK_STATUS;
 						}
-						
+
 						return Status.CANCEL_STATUS;
-				}};
+					}
+				};
 
 				try {
 					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 					operation.addContext(commandStack.getDefaultUndoContext());
-			        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
+					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), activePart);
 
-			    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-			    }
+				} catch (ExecutionException ee) {
+					Logger.logException(ee);
+				}
 			}
 
 		} catch (Exception e) {

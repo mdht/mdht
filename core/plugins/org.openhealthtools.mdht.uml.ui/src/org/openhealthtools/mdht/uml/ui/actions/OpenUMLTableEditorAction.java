@@ -30,14 +30,15 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.openhealthtools.mdht.uml.ui.editors.UMLTableEditor;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
 public class OpenUMLTableEditorAction extends UML2AbstractAction {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
@@ -47,22 +48,20 @@ public class OpenUMLTableEditorAction extends UML2AbstractAction {
 
 		Resource resource = getSelectedElement().eResource();
 		try {
-			String path = URI.decode(resource.getURI().toString().substring(
-					"platform:/resource/".length()));
-			IResource workspaceResource = ResourcesPlugin.getWorkspace()
-					.getRoot().findMember(new Path(path));
-			
+			String path = URI.decode(resource.getURI().toString().substring("platform:/resource/".length()));
+			IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
+
 			if (workspaceResource instanceof IFile) {
 				IEditorInput editorInput = new FileEditorInput((IFile) workspaceResource);
-				IEditorPart editor = activePage.openEditor(editorInput, UMLTableEditor.EDITOR_ID,
-						true, IWorkbenchPage.MATCH_ID|IWorkbenchPage.MATCH_INPUT);
-				
+				IEditorPart editor = activePage.openEditor(
+					editorInput, UMLTableEditor.EDITOR_ID, true, IWorkbenchPage.MATCH_ID | IWorkbenchPage.MATCH_INPUT);
+
 				if (editor != null) {
 					editor.getSite().getSelectionProvider().setSelection(currentSelection);
 					activePage.activate(editor);
 				}
 			}
-			
+
 		} catch (PartInitException e) {
 			Logger.logException(e);
 		}

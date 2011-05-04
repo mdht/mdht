@@ -22,62 +22,69 @@ import org.eclipse.ui.navigator.ICommonViewerSite;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.openhealthtools.mdht.uml.ui.navigator.actions.EditCommandsFactory;
 
-
 /**
  *
  */
 public class ModelActionProvider extends CommonActionProvider {
 
 	private EditCommandsFactory editCommandsFactory = new EditCommandsFactory();
-	
+
 	private CloseModelAction closeAction;
+
 	private CloseModelAction closeAllAction;
 
 	/**
 	 * Construct Property Action provider.
 	 */
-	public ModelActionProvider() { 		
+	public ModelActionProvider() {
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.navigator.CommonActionProvider#init(org.eclipse.ui.navigator.ICommonActionExtensionSite)
 	 */
+	@Override
 	public void init(ICommonActionExtensionSite aSite) {
 		ICommonViewerSite viewSite = aSite.getViewSite();
-		if(viewSite instanceof ICommonViewerWorkbenchSite) {
-			ICommonViewerWorkbenchSite workbenchSite = 
-				(ICommonViewerWorkbenchSite) viewSite;
-			closeAction = new CloseModelAction(workbenchSite.getPage(), 
-							workbenchSite.getSelectionProvider());
-			closeAllAction = new CloseAllModelsAction(workbenchSite.getPage(), 
-							workbenchSite.getSelectionProvider());
+		if (viewSite instanceof ICommonViewerWorkbenchSite) {
+			ICommonViewerWorkbenchSite workbenchSite = (ICommonViewerWorkbenchSite) viewSite;
+			closeAction = new CloseModelAction(workbenchSite.getPage(), workbenchSite.getSelectionProvider());
+			closeAllAction = new CloseAllModelsAction(workbenchSite.getPage(), workbenchSite.getSelectionProvider());
 
 			editCommandsFactory.setActivePart(workbenchSite.getPart());
 		}
-	}	
+	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.actions.ActionGroup#fillActionBars(org.eclipse.ui.IActionBars)
 	 */
-	public void fillActionBars(IActionBars actionBars) { 
+	@Override
+	public void fillActionBars(IActionBars actionBars) {
 		editCommandsFactory.shareGlobalActions(actionBars, false);
-		
+
 		// the action bars Close is for editors...
-//		if(closeAction.isEnabled())
-//			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, closeAction);
+		// if(closeAction.isEnabled())
+		// actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, closeAction);
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.actions.ActionGroup#fillContextMenu(org.eclipse.jface.action.IMenuManager)
 	 */
+	@Override
 	public void fillContextMenu(IMenuManager menu) {
 		editCommandsFactory.fillContextMenu(menu);
-		
-		if(closeAction.isEnabled())
-			menu.appendToGroup(ICommonMenuConstants.GROUP_OPEN, closeAction);	
-		if(closeAllAction.isEnabled())
-			menu.appendToGroup(ICommonMenuConstants.GROUP_OPEN, closeAllAction);		
+
+		if (closeAction.isEnabled()) {
+			menu.appendToGroup(ICommonMenuConstants.GROUP_OPEN, closeAction);
+		}
+		if (closeAllAction.isEnabled()) {
+			menu.appendToGroup(ICommonMenuConstants.GROUP_OPEN, closeAllAction);
+		}
 	}
-	
-	
+
 }
