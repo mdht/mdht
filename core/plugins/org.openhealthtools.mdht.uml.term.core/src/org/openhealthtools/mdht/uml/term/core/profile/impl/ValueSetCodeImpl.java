@@ -1,23 +1,25 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.uml2.uml.EnumerationLiteral;
-
-import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
 
 /**
@@ -119,133 +121,6 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * 
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TermPackage.Literals.VALUE_SET_CODE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getConceptName() {
-		return conceptName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setConceptName(String newConceptName) {
-		String oldConceptName = conceptName;
-		conceptName = newConceptName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__CONCEPT_NAME, oldConceptName, conceptName));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getUsageNote() {
-		return usageNote;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setUsageNote(String newUsageNote) {
-		String oldUsageNote = usageNote;
-		usageNote = newUsageNote;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__USAGE_NOTE, oldUsageNote, usageNote));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public CodeSystemVersion getCodeSystem() {
-		if (codeSystem != null && codeSystem.eIsProxy()) {
-			InternalEObject oldCodeSystem = (InternalEObject) codeSystem;
-			codeSystem = (CodeSystemVersion) eResolveProxy(oldCodeSystem);
-			if (codeSystem != oldCodeSystem) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CODE__CODE_SYSTEM, oldCodeSystem, codeSystem));
-				}
-			}
-		}
-		return codeSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public CodeSystemVersion basicGetCodeSystem() {
-		return codeSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setCodeSystem(CodeSystemVersion newCodeSystem) {
-		CodeSystemVersion oldCodeSystem = codeSystem;
-		codeSystem = newCodeSystem;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__CODE_SYSTEM, oldCodeSystem, codeSystem));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EnumerationLiteral getBase_EnumerationLiteral() {
-		if (base_EnumerationLiteral != null && base_EnumerationLiteral.eIsProxy()) {
-			InternalEObject oldBase_EnumerationLiteral = (InternalEObject) base_EnumerationLiteral;
-			base_EnumerationLiteral = (EnumerationLiteral) eResolveProxy(oldBase_EnumerationLiteral);
-			if (base_EnumerationLiteral != oldBase_EnumerationLiteral) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL,
-						oldBase_EnumerationLiteral, base_EnumerationLiteral));
-				}
-			}
-		}
-		return base_EnumerationLiteral;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public EnumerationLiteral basicGetBase_EnumerationLiteral() {
 		return base_EnumerationLiteral;
 	}
@@ -256,14 +131,8 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * 
 	 * @generated
 	 */
-	public void setBase_EnumerationLiteral(EnumerationLiteral newBase_EnumerationLiteral) {
-		EnumerationLiteral oldBase_EnumerationLiteral = base_EnumerationLiteral;
-		base_EnumerationLiteral = newBase_EnumerationLiteral;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL,
-				oldBase_EnumerationLiteral, base_EnumerationLiteral));
-		}
+	public CodeSystemVersion basicGetCodeSystem() {
+		return codeSystem;
 	}
 
 	/**
@@ -300,6 +169,31 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * @generated
 	 */
 	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case TermPackage.VALUE_SET_CODE__CONCEPT_NAME:
+				return CONCEPT_NAME_EDEFAULT == null
+						? conceptName != null
+						: !CONCEPT_NAME_EDEFAULT.equals(conceptName);
+			case TermPackage.VALUE_SET_CODE__USAGE_NOTE:
+				return USAGE_NOTE_EDEFAULT == null
+						? usageNote != null
+						: !USAGE_NOTE_EDEFAULT.equals(usageNote);
+			case TermPackage.VALUE_SET_CODE__CODE_SYSTEM:
+				return codeSystem != null;
+			case TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL:
+				return base_EnumerationLiteral != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_CODE__CONCEPT_NAME:
@@ -316,6 +210,17 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 				return;
 		}
 		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TermPackage.Literals.VALUE_SET_CODE;
 	}
 
 	/**
@@ -349,23 +254,120 @@ public class ValueSetCodeImpl extends EObjectImpl implements ValueSetCode {
 	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.VALUE_SET_CODE__CONCEPT_NAME:
-				return CONCEPT_NAME_EDEFAULT == null
-						? conceptName != null
-						: !CONCEPT_NAME_EDEFAULT.equals(conceptName);
-			case TermPackage.VALUE_SET_CODE__USAGE_NOTE:
-				return USAGE_NOTE_EDEFAULT == null
-						? usageNote != null
-						: !USAGE_NOTE_EDEFAULT.equals(usageNote);
-			case TermPackage.VALUE_SET_CODE__CODE_SYSTEM:
-				return codeSystem != null;
-			case TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL:
-				return base_EnumerationLiteral != null;
+	public EnumerationLiteral getBase_EnumerationLiteral() {
+		if (base_EnumerationLiteral != null && base_EnumerationLiteral.eIsProxy()) {
+			InternalEObject oldBase_EnumerationLiteral = (InternalEObject) base_EnumerationLiteral;
+			base_EnumerationLiteral = (EnumerationLiteral) eResolveProxy(oldBase_EnumerationLiteral);
+			if (base_EnumerationLiteral != oldBase_EnumerationLiteral) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL,
+						oldBase_EnumerationLiteral, base_EnumerationLiteral));
+				}
+			}
 		}
-		return super.eIsSet(featureID);
+		return base_EnumerationLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public CodeSystemVersion getCodeSystem() {
+		if (codeSystem != null && codeSystem.eIsProxy()) {
+			InternalEObject oldCodeSystem = (InternalEObject) codeSystem;
+			codeSystem = (CodeSystemVersion) eResolveProxy(oldCodeSystem);
+			if (codeSystem != oldCodeSystem) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_CODE__CODE_SYSTEM, oldCodeSystem, codeSystem));
+				}
+			}
+		}
+		return codeSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getConceptName() {
+		return conceptName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getUsageNote() {
+		return usageNote;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBase_EnumerationLiteral(EnumerationLiteral newBase_EnumerationLiteral) {
+		EnumerationLiteral oldBase_EnumerationLiteral = base_EnumerationLiteral;
+		base_EnumerationLiteral = newBase_EnumerationLiteral;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CODE__BASE_ENUMERATION_LITERAL,
+				oldBase_EnumerationLiteral, base_EnumerationLiteral));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCodeSystem(CodeSystemVersion newCodeSystem) {
+		CodeSystemVersion oldCodeSystem = codeSystem;
+		codeSystem = newCodeSystem;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CODE__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setConceptName(String newConceptName) {
+		String oldConceptName = conceptName;
+		conceptName = newConceptName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CODE__CONCEPT_NAME, oldConceptName, conceptName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setUsageNote(String newUsageNote) {
+		String oldUsageNote = usageNote;
+		usageNote = newUsageNote;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CODE__USAGE_NOTE, oldUsageNote, usageNote));
+		}
 	}
 
 	/**

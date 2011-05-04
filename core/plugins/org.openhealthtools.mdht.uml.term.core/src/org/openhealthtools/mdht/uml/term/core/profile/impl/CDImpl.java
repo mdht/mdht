@@ -1,27 +1,28 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.term.core.profile.CD;
 import org.openhealthtools.mdht.uml.term.core.profile.CR;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
@@ -195,158 +196,24 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
-		return TermPackage.Literals.CD;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<CR> getQualifier() {
-		if (qualifier == null) {
-			qualifier = new EObjectContainmentEList<CR>(CR.class, this, TermPackage.CD__QUALIFIER);
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case TermPackage.CD__QUALIFIER:
+				return getQualifier();
+			case TermPackage.CD__TRANSLATION:
+				return getTranslation();
+			case TermPackage.CD__CODE:
+				return getCode();
+			case TermPackage.CD__CODE_SYSTEM:
+				return getCodeSystem();
+			case TermPackage.CD__CODE_SYSTEM_NAME:
+				return getCodeSystemName();
+			case TermPackage.CD__CODE_SYSTEM_VERSION:
+				return getCodeSystemVersion();
+			case TermPackage.CD__DISPLAY_NAME:
+				return getDisplayName();
 		}
-		return qualifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<CD> getTranslation() {
-		if (translation == null) {
-			translation = new EObjectContainmentEList<CD>(CD.class, this, TermPackage.CD__TRANSLATION);
-		}
-		return translation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setCode(String newCode) {
-		String oldCode = code;
-		code = newCode;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CD__CODE, oldCode, code));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getCodeSystem() {
-		return codeSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setCodeSystem(String newCodeSystem) {
-		String oldCodeSystem = codeSystem;
-		codeSystem = newCodeSystem;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__CODE_SYSTEM, oldCodeSystem, codeSystem));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getCodeSystemName() {
-		return codeSystemName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setCodeSystemName(String newCodeSystemName) {
-		String oldCodeSystemName = codeSystemName;
-		codeSystemName = newCodeSystemName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getCodeSystemVersion() {
-		return codeSystemVersion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setCodeSystemVersion(String newCodeSystemVersion) {
-		String oldCodeSystemVersion = codeSystemVersion;
-		codeSystemVersion = newCodeSystemVersion;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__CODE_SYSTEM_VERSION, oldCodeSystemVersion, codeSystemVersion));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getDisplayName() {
-		return displayName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setDisplayName(String newDisplayName) {
-		String oldDisplayName = displayName;
-		displayName = newDisplayName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CD__DISPLAY_NAME, oldDisplayName, displayName));
-		}
+		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
@@ -373,24 +240,34 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TermPackage.CD__QUALIFIER:
-				return getQualifier();
+				return qualifier != null && !qualifier.isEmpty();
 			case TermPackage.CD__TRANSLATION:
-				return getTranslation();
+				return translation != null && !translation.isEmpty();
 			case TermPackage.CD__CODE:
-				return getCode();
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 			case TermPackage.CD__CODE_SYSTEM:
-				return getCodeSystem();
+				return CODE_SYSTEM_EDEFAULT == null
+						? codeSystem != null
+						: !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
 			case TermPackage.CD__CODE_SYSTEM_NAME:
-				return getCodeSystemName();
+				return CODE_SYSTEM_NAME_EDEFAULT == null
+						? codeSystemName != null
+						: !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
 			case TermPackage.CD__CODE_SYSTEM_VERSION:
-				return getCodeSystemVersion();
+				return CODE_SYSTEM_VERSION_EDEFAULT == null
+						? codeSystemVersion != null
+						: !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
 			case TermPackage.CD__DISPLAY_NAME:
-				return getDisplayName();
+				return DISPLAY_NAME_EDEFAULT == null
+						? displayName != null
+						: !DISPLAY_NAME_EDEFAULT.equals(displayName);
 		}
-		return super.eGet(featureID, resolve, coreType);
+		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -437,6 +314,17 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * @generated
 	 */
 	@Override
+	protected EClass eStaticClass() {
+		return TermPackage.Literals.CD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.CD__QUALIFIER:
@@ -470,35 +358,148 @@ public class CDImpl extends EObjectImpl implements CD {
 	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.CD__QUALIFIER:
-				return qualifier != null && !qualifier.isEmpty();
-			case TermPackage.CD__TRANSLATION:
-				return translation != null && !translation.isEmpty();
-			case TermPackage.CD__CODE:
-				return CODE_EDEFAULT == null
-						? code != null
-						: !CODE_EDEFAULT.equals(code);
-			case TermPackage.CD__CODE_SYSTEM:
-				return CODE_SYSTEM_EDEFAULT == null
-						? codeSystem != null
-						: !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
-			case TermPackage.CD__CODE_SYSTEM_NAME:
-				return CODE_SYSTEM_NAME_EDEFAULT == null
-						? codeSystemName != null
-						: !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
-			case TermPackage.CD__CODE_SYSTEM_VERSION:
-				return CODE_SYSTEM_VERSION_EDEFAULT == null
-						? codeSystemVersion != null
-						: !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
-			case TermPackage.CD__DISPLAY_NAME:
-				return DISPLAY_NAME_EDEFAULT == null
-						? displayName != null
-						: !DISPLAY_NAME_EDEFAULT.equals(displayName);
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getCodeSystem() {
+		return codeSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getCodeSystemName() {
+		return codeSystemName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getCodeSystemVersion() {
+		return codeSystemVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<CR> getQualifier() {
+		if (qualifier == null) {
+			qualifier = new EObjectContainmentEList<CR>(CR.class, this, TermPackage.CD__QUALIFIER);
 		}
-		return super.eIsSet(featureID);
+		return qualifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<CD> getTranslation() {
+		if (translation == null) {
+			translation = new EObjectContainmentEList<CD>(CD.class, this, TermPackage.CD__TRANSLATION);
+		}
+		return translation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCode(String newCode) {
+		String oldCode = code;
+		code = newCode;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CD__CODE, oldCode, code));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCodeSystem(String newCodeSystem) {
+		String oldCodeSystem = codeSystem;
+		codeSystem = newCodeSystem;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CD__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCodeSystemName(String newCodeSystemName) {
+		String oldCodeSystemName = codeSystemName;
+		codeSystemName = newCodeSystemName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CD__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCodeSystemVersion(String newCodeSystemVersion) {
+		String oldCodeSystemVersion = codeSystemVersion;
+		codeSystemVersion = newCodeSystemVersion;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CD__CODE_SYSTEM_VERSION, oldCodeSystemVersion, codeSystemVersion));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDisplayName(String newDisplayName) {
+		String oldDisplayName = displayName;
+		displayName = newDisplayName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CD__DISPLAY_NAME, oldDisplayName, displayName));
+		}
 	}
 
 	/**

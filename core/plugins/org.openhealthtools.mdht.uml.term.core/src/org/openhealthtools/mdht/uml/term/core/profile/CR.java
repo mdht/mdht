@@ -1,9 +1,15 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile;
 
 import org.eclipse.emf.ecore.EObject;
@@ -44,18 +50,6 @@ public interface CR extends EObject {
 	CD getName();
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CR#getName <em>Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Name</em>' containment reference.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(CD value);
-
-	/**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -70,18 +64,6 @@ public interface CR extends EObject {
 	 * @generated
 	 */
 	CD getValue();
-
-	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CR#getValue <em>Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Value</em>' containment reference.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(CD value);
 
 	/**
 	 * Returns the value of the '<em><b>Inverted</b></em>' attribute.
@@ -110,5 +92,29 @@ public interface CR extends EObject {
 	 * @generated
 	 */
 	void setInverted(boolean value);
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CR#getName <em>Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' containment reference.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(CD value);
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CR#getValue <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Value</em>' containment reference.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(CD value);
 
 } // CR

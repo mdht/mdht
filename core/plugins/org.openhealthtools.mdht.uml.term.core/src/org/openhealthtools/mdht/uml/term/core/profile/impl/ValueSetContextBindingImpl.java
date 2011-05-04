@@ -1,21 +1,24 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.UsageContext;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
@@ -120,56 +123,8 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * 
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TermPackage.Literals.VALUE_SET_CONTEXT_BINDING;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getEffectiveDate() {
-		return effectiveDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setEffectiveDate(String newEffectiveDate) {
-		String oldEffectiveDate = effectiveDate;
-		effectiveDate = newEffectiveDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE, oldEffectiveDate,
-				effectiveDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ConceptDomain getConceptDomain() {
-		if (conceptDomain != null && conceptDomain.eIsProxy()) {
-			InternalEObject oldConceptDomain = (InternalEObject) conceptDomain;
-			conceptDomain = (ConceptDomain) eResolveProxy(oldConceptDomain);
-			if (conceptDomain != oldConceptDomain) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN,
-						oldConceptDomain, conceptDomain));
-				}
-			}
-		}
-		return conceptDomain;
+	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
+		return base_Class;
 	}
 
 	/**
@@ -188,89 +143,6 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * 
 	 * @generated
 	 */
-	public void setConceptDomain(ConceptDomain newConceptDomain) {
-		ConceptDomain oldConceptDomain = conceptDomain;
-		conceptDomain = newConceptDomain;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN, oldConceptDomain,
-				conceptDomain));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ValueSetVersion getValueSet() {
-		if (valueSet != null && valueSet.eIsProxy()) {
-			InternalEObject oldValueSet = (InternalEObject) valueSet;
-			valueSet = (ValueSetVersion) eResolveProxy(oldValueSet);
-			if (valueSet != oldValueSet) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET, oldValueSet,
-						valueSet));
-				}
-			}
-		}
-		return valueSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ValueSetVersion basicGetValueSet() {
-		return valueSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setValueSet(ValueSetVersion newValueSet) {
-		ValueSetVersion oldValueSet = valueSet;
-		valueSet = newValueSet;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET, oldValueSet, valueSet));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public UsageContext getUsageContext() {
-		if (usageContext != null && usageContext.eIsProxy()) {
-			InternalEObject oldUsageContext = (InternalEObject) usageContext;
-			usageContext = (UsageContext) eResolveProxy(oldUsageContext);
-			if (usageContext != oldUsageContext) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT,
-						oldUsageContext, usageContext));
-				}
-			}
-		}
-		return usageContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public UsageContext basicGetUsageContext() {
 		return usageContext;
 	}
@@ -281,60 +153,8 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * 
 	 * @generated
 	 */
-	public void setUsageContext(UsageContext newUsageContext) {
-		UsageContext oldUsageContext = usageContext;
-		usageContext = newUsageContext;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT, oldUsageContext,
-				usageContext));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject) base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
-			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS, oldBase_Class,
-						base_Class));
-				}
-			}
-		}
-		return base_Class;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
-		return base_Class;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
-		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
-		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS, oldBase_Class, base_Class));
-		}
+	public ValueSetVersion basicGetValueSet() {
+		return valueSet;
 	}
 
 	/**
@@ -379,6 +199,31 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * @generated
 	 */
 	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case TermPackage.VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE:
+				return EFFECTIVE_DATE_EDEFAULT == null
+						? effectiveDate != null
+						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
+			case TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN:
+				return conceptDomain != null;
+			case TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET:
+				return valueSet != null;
+			case TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT:
+				return usageContext != null;
+			case TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS:
+				return base_Class != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE:
@@ -398,6 +243,17 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 				return;
 		}
 		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TermPackage.Literals.VALUE_SET_CONTEXT_BINDING;
 	}
 
 	/**
@@ -434,23 +290,170 @@ public class ValueSetContextBindingImpl extends EObjectImpl implements ValueSetC
 	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE:
-				return EFFECTIVE_DATE_EDEFAULT == null
-						? effectiveDate != null
-						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
-			case TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN:
-				return conceptDomain != null;
-			case TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET:
-				return valueSet != null;
-			case TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT:
-				return usageContext != null;
-			case TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS:
-				return base_Class != null;
+	public org.eclipse.uml2.uml.Class getBase_Class() {
+		if (base_Class != null && base_Class.eIsProxy()) {
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
+			if (base_Class != oldBase_Class) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS, oldBase_Class,
+						base_Class));
+				}
+			}
 		}
-		return super.eIsSet(featureID);
+		return base_Class;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ConceptDomain getConceptDomain() {
+		if (conceptDomain != null && conceptDomain.eIsProxy()) {
+			InternalEObject oldConceptDomain = (InternalEObject) conceptDomain;
+			conceptDomain = (ConceptDomain) eResolveProxy(oldConceptDomain);
+			if (conceptDomain != oldConceptDomain) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN,
+						oldConceptDomain, conceptDomain));
+				}
+			}
+		}
+		return conceptDomain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getEffectiveDate() {
+		return effectiveDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public UsageContext getUsageContext() {
+		if (usageContext != null && usageContext.eIsProxy()) {
+			InternalEObject oldUsageContext = (InternalEObject) usageContext;
+			usageContext = (UsageContext) eResolveProxy(oldUsageContext);
+			if (usageContext != oldUsageContext) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT,
+						oldUsageContext, usageContext));
+				}
+			}
+		}
+		return usageContext;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ValueSetVersion getValueSet() {
+		if (valueSet != null && valueSet.eIsProxy()) {
+			InternalEObject oldValueSet = (InternalEObject) valueSet;
+			valueSet = (ValueSetVersion) eResolveProxy(oldValueSet);
+			if (valueSet != oldValueSet) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET, oldValueSet,
+						valueSet));
+				}
+			}
+		}
+		return valueSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
+		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
+		base_Class = newBase_Class;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__BASE_CLASS, oldBase_Class, base_Class));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setConceptDomain(ConceptDomain newConceptDomain) {
+		ConceptDomain oldConceptDomain = conceptDomain;
+		conceptDomain = newConceptDomain;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__CONCEPT_DOMAIN, oldConceptDomain,
+				conceptDomain));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setEffectiveDate(String newEffectiveDate) {
+		String oldEffectiveDate = effectiveDate;
+		effectiveDate = newEffectiveDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__EFFECTIVE_DATE, oldEffectiveDate,
+				effectiveDate));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setUsageContext(UsageContext newUsageContext) {
+		UsageContext oldUsageContext = usageContext;
+		usageContext = newUsageContext;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__USAGE_CONTEXT, oldUsageContext,
+				usageContext));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setValueSet(ValueSetVersion newValueSet) {
+		ValueSetVersion oldValueSet = valueSet;
+		valueSet = newValueSet;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_CONTEXT_BINDING__VALUE_SET, oldValueSet, valueSet));
+		}
 	}
 
 	/**

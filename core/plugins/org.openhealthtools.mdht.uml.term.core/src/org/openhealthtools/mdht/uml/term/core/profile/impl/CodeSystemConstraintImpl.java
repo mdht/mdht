@@ -1,32 +1,32 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.uml2.uml.Property;
-
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CR;
-import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -231,249 +231,6 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * 
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TermPackage.Literals.CODE_SYSTEM_CONSTRAINT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public CodeSystemVersion getReference() {
-		if (reference != null && reference.eIsProxy()) {
-			InternalEObject oldReference = (InternalEObject) reference;
-			reference = (CodeSystemVersion) eResolveProxy(oldReference);
-			if (reference != oldReference) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE, oldReference,
-						reference));
-				}
-			}
-		}
-		return reference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public CodeSystemVersion basicGetReference() {
-		return reference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setReference(CodeSystemVersion newReference) {
-		CodeSystemVersion oldReference = reference;
-		reference = newReference;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE, oldReference, reference));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getIdentifier() {
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setIdentifier(String newIdentifier) {
-		String oldIdentifier = identifier;
-		identifier = newIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__IDENTIFIER, oldIdentifier, identifier));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__NAME, oldName, name));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getVersion() {
-		return version;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setVersion(String newVersion) {
-		String oldVersion = version;
-		version = newVersion;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__VERSION, oldVersion, version));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public BindingKind getBinding() {
-		return binding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setBinding(BindingKind newBinding) {
-		BindingKind oldBinding = binding;
-		binding = newBinding == null
-				? BINDING_EDEFAULT
-				: newBinding;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BINDING, oldBinding, binding));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getCode() {
-		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setCode(String newCode) {
-		String oldCode = code;
-		code = newCode;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__CODE, oldCode, code));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getDisplayName() {
-		return displayName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setDisplayName(String newDisplayName) {
-		String oldDisplayName = displayName;
-		displayName = newDisplayName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME, oldDisplayName, displayName));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EList<CR> getQualifier() {
-		if (qualifier == null) {
-			qualifier = new EObjectResolvingEList<CR>(CR.class, this, TermPackage.CODE_SYSTEM_CONSTRAINT__QUALIFIER);
-		}
-		return qualifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Property getBase_Property() {
-		if (base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject) base_Property;
-			base_Property = (Property) eResolveProxy(oldBase_Property);
-			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY,
-						oldBase_Property, base_Property));
-				}
-			}
-		}
-		return base_Property;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public Property basicGetBase_Property() {
 		return base_Property;
 	}
@@ -484,14 +241,8 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * 
 	 * @generated
 	 */
-	public void setBase_Property(Property newBase_Property) {
-		Property oldBase_Property = base_Property;
-		base_Property = newBase_Property;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY, oldBase_Property,
-				base_Property));
-		}
+	public CodeSystemVersion basicGetReference() {
+		return reference;
 	}
 
 	/**
@@ -529,6 +280,47 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 				return basicGetBase_Property();
 		}
 		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE:
+				return reference != null;
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__IDENTIFIER:
+				return IDENTIFIER_EDEFAULT == null
+						? identifier != null
+						: !IDENTIFIER_EDEFAULT.equals(identifier);
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__NAME:
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__VERSION:
+				return VERSION_EDEFAULT == null
+						? version != null
+						: !VERSION_EDEFAULT.equals(version);
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__BINDING:
+				return binding != BINDING_EDEFAULT;
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__CODE:
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME:
+				return DISPLAY_NAME_EDEFAULT == null
+						? displayName != null
+						: !DISPLAY_NAME_EDEFAULT.equals(displayName);
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__QUALIFIER:
+				return qualifier != null && !qualifier.isEmpty();
+			case TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY:
+				return base_Property != null;
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -580,6 +372,17 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * @generated
 	 */
 	@Override
+	protected EClass eStaticClass() {
+		return TermPackage.Literals.CODE_SYSTEM_CONSTRAINT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE:
@@ -619,39 +422,236 @@ public class CodeSystemConstraintImpl extends EObjectImpl implements CodeSystemC
 	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE:
-				return reference != null;
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null
-						? identifier != null
-						: !IDENTIFIER_EDEFAULT.equals(identifier);
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__VERSION:
-				return VERSION_EDEFAULT == null
-						? version != null
-						: !VERSION_EDEFAULT.equals(version);
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__BINDING:
-				return binding != BINDING_EDEFAULT;
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__CODE:
-				return CODE_EDEFAULT == null
-						? code != null
-						: !CODE_EDEFAULT.equals(code);
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME:
-				return DISPLAY_NAME_EDEFAULT == null
-						? displayName != null
-						: !DISPLAY_NAME_EDEFAULT.equals(displayName);
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__QUALIFIER:
-				return qualifier != null && !qualifier.isEmpty();
-			case TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY:
-				return base_Property != null;
+	public Property getBase_Property() {
+		if (base_Property != null && base_Property.eIsProxy()) {
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
+			if (base_Property != oldBase_Property) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY,
+						oldBase_Property, base_Property));
+				}
+			}
 		}
-		return super.eIsSet(featureID);
+		return base_Property;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public BindingKind getBinding() {
+		return binding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<CR> getQualifier() {
+		if (qualifier == null) {
+			qualifier = new EObjectResolvingEList<CR>(CR.class, this, TermPackage.CODE_SYSTEM_CONSTRAINT__QUALIFIER);
+		}
+		return qualifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public CodeSystemVersion getReference() {
+		if (reference != null && reference.eIsProxy()) {
+			InternalEObject oldReference = (InternalEObject) reference;
+			reference = (CodeSystemVersion) eResolveProxy(oldReference);
+			if (reference != oldReference) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE, oldReference,
+						reference));
+				}
+			}
+		}
+		return reference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getVersion() {
+		return version;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBase_Property(Property newBase_Property) {
+		Property oldBase_Property = base_Property;
+		base_Property = newBase_Property;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BASE_PROPERTY, oldBase_Property,
+				base_Property));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBinding(BindingKind newBinding) {
+		BindingKind oldBinding = binding;
+		binding = newBinding == null
+				? BINDING_EDEFAULT
+				: newBinding;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__BINDING, oldBinding, binding));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCode(String newCode) {
+		String oldCode = code;
+		code = newCode;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__CODE, oldCode, code));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDisplayName(String newDisplayName) {
+		String oldDisplayName = displayName;
+		displayName = newDisplayName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__DISPLAY_NAME, oldDisplayName, displayName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setIdentifier(String newIdentifier) {
+		String oldIdentifier = identifier;
+		identifier = newIdentifier;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__IDENTIFIER, oldIdentifier, identifier));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__NAME, oldName, name));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setReference(CodeSystemVersion newReference) {
+		CodeSystemVersion oldReference = reference;
+		reference = newReference;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__REFERENCE, oldReference, reference));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setVersion(String newVersion) {
+		String oldVersion = version;
+		version = newVersion;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CODE_SYSTEM_CONSTRAINT__VERSION, oldVersion, version));
+		}
 	}
 
 	/**

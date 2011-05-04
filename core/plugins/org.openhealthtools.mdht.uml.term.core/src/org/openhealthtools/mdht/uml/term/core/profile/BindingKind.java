@@ -1,9 +1,15 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile;
 
 import java.util.Arrays;
@@ -94,6 +100,23 @@ public enum BindingKind implements Enumerator {
 	public static final List<BindingKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
+	 * Returns the '<em><b>Binding Kind</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static BindingKind get(int value) {
+		switch (value) {
+			case STATIC_VALUE:
+				return STATIC;
+			case DYNAMIC_VALUE:
+				return DYNAMIC;
+		}
+		return null;
+	}
+
+	/**
 	 * Returns the '<em><b>Binding Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,23 +146,6 @@ public enum BindingKind implements Enumerator {
 			if (result.getName().equals(name)) {
 				return result;
 			}
-		}
-		return null;
-	}
-
-	/**
-	 * Returns the '<em><b>Binding Kind</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public static BindingKind get(int value) {
-		switch (value) {
-			case STATIC_VALUE:
-				return STATIC;
-			case DYNAMIC_VALUE:
-				return DYNAMIC;
 		}
 		return null;
 	}
@@ -187,8 +193,8 @@ public enum BindingKind implements Enumerator {
 	 * 
 	 * @generated
 	 */
-	public int getValue() {
-		return value;
+	public String getLiteral() {
+		return literal;
 	}
 
 	/**
@@ -207,8 +213,8 @@ public enum BindingKind implements Enumerator {
 	 * 
 	 * @generated
 	 */
-	public String getLiteral() {
-		return literal;
+	public int getValue() {
+		return value;
 	}
 
 	/**

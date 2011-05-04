@@ -1,22 +1,25 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain;
 import org.openhealthtools.mdht.uml.term.core.profile.StatusKind;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,155 +154,8 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * 
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TermPackage.Literals.CONCEPT_DOMAIN;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getIdentifier() {
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setIdentifier(String newIdentifier) {
-		String oldIdentifier = identifier;
-		identifier = newIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__IDENTIFIER, oldIdentifier, identifier));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getFullName() {
-		return fullName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setFullName(String newFullName) {
-		String oldFullName = fullName;
-		fullName = newFullName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__FULL_NAME, oldFullName, fullName));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public StatusKind getStatus() {
-		return status;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setStatus(StatusKind newStatus) {
-		StatusKind oldStatus = status;
-		status = newStatus == null
-				? STATUS_EDEFAULT
-				: newStatus;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS, oldStatus, status));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getStatusDate() {
-		return statusDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setStatusDate(String newStatusDate) {
-		String oldStatusDate = statusDate;
-		statusDate = newStatusDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS_DATE, oldStatusDate, statusDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject) base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
-			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class, base_Class));
-				}
-			}
-		}
-		return base_Class;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
 		return base_Class;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
-		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
-		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -326,6 +182,35 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 				return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case TermPackage.CONCEPT_DOMAIN__IDENTIFIER:
+				return IDENTIFIER_EDEFAULT == null
+						? identifier != null
+						: !IDENTIFIER_EDEFAULT.equals(identifier);
+			case TermPackage.CONCEPT_DOMAIN__FULL_NAME:
+				return FULL_NAME_EDEFAULT == null
+						? fullName != null
+						: !FULL_NAME_EDEFAULT.equals(fullName);
+			case TermPackage.CONCEPT_DOMAIN__STATUS:
+				return status != STATUS_EDEFAULT;
+			case TermPackage.CONCEPT_DOMAIN__STATUS_DATE:
+				return STATUS_DATE_EDEFAULT == null
+						? statusDate != null
+						: !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case TermPackage.CONCEPT_DOMAIN__BASE_CLASS:
+				return base_Class != null;
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -363,6 +248,17 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * @generated
 	 */
 	@Override
+	protected EClass eStaticClass() {
+		return TermPackage.Literals.CONCEPT_DOMAIN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.CONCEPT_DOMAIN__IDENTIFIER:
@@ -390,27 +286,134 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.CONCEPT_DOMAIN__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null
-						? identifier != null
-						: !IDENTIFIER_EDEFAULT.equals(identifier);
-			case TermPackage.CONCEPT_DOMAIN__FULL_NAME:
-				return FULL_NAME_EDEFAULT == null
-						? fullName != null
-						: !FULL_NAME_EDEFAULT.equals(fullName);
-			case TermPackage.CONCEPT_DOMAIN__STATUS:
-				return status != STATUS_EDEFAULT;
-			case TermPackage.CONCEPT_DOMAIN__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null
-						? statusDate != null
-						: !STATUS_DATE_EDEFAULT.equals(statusDate);
-			case TermPackage.CONCEPT_DOMAIN__BASE_CLASS:
-				return base_Class != null;
+	public org.eclipse.uml2.uml.Class getBase_Class() {
+		if (base_Class != null && base_Class.eIsProxy()) {
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
+			if (base_Class != oldBase_Class) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class, base_Class));
+				}
+			}
 		}
-		return super.eIsSet(featureID);
+		return base_Class;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getFullName() {
+		return fullName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public StatusKind getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getStatusDate() {
+		return statusDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
+		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
+		base_Class = newBase_Class;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class, base_Class));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setFullName(String newFullName) {
+		String oldFullName = fullName;
+		fullName = newFullName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__FULL_NAME, oldFullName, fullName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setIdentifier(String newIdentifier) {
+		String oldIdentifier = identifier;
+		identifier = newIdentifier;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__IDENTIFIER, oldIdentifier, identifier));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setStatus(StatusKind newStatus) {
+		StatusKind oldStatus = status;
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS, oldStatus, status));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setStatusDate(String newStatusDate) {
+		String oldStatusDate = statusDate;
+		statusDate = newStatusDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS_DATE, oldStatusDate, statusDate));
+		}
 	}
 
 	/**
