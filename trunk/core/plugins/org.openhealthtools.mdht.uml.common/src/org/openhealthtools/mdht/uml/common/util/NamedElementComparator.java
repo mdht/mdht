@@ -23,16 +23,19 @@ import org.eclipse.uml2.uml.NamedElement;
  */
 public class NamedElementComparator implements Comparator<NamedElement> {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	public int compare(NamedElement o1, NamedElement o2) {
-        String name1 = ((NamedElement) o1).getName();
-        String name2 = ((NamedElement) o2).getName();
-		if (name1 != null && name2 != null)
+		String name1 = (o1).getName();
+		String name2 = (o2).getName();
+		if (name1 != null && name2 != null) {
 			return name1.compareToIgnoreCase(name2);
-		else
+		} else {
 			return 0;
+		}
 	}
 
 }
