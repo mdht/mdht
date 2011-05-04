@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.util;
 
 import org.eclipse.core.runtime.CoreException;
@@ -14,42 +26,6 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class TermAnnotationProvider implements INotationProvider, IExecutableExtension {
-	
-	public String getPrintString(Element element) {
-		String printString = null;
-
-		if (element instanceof NamedElement) {
-			printString = ((NamedElement)element).getName();
-		}
-		
-		return printString;
-	}
-
-	public String getAnnotation(Element element) {
-		String annotation = null;
-		
-		if (element instanceof Enumeration) {
-			annotation = getMetadata((Enumeration)element);
-		}
-		else if (element instanceof EnumerationLiteral) {
-			annotation = getMetadata((EnumerationLiteral)element);
-		}
-		
-		return annotation;
-	}
-
-	public Object getElementImage(Element element) {
-		return null;
-	}
-
-	public Object getAnnotationImage(Element element) {
-		return null;
-	}
-
-	public void setInitializationData(IConfigurationElement config, String propertyName, Object data)
-			throws CoreException {
-		// do nothing
-	}
 
 	private static String getMetadata(Enumeration enumeration) {
 		StringBuffer value = new StringBuffer();
@@ -59,15 +35,14 @@ public class TermAnnotationProvider implements INotationProvider, IExecutableExt
 		String identifier = null;
 		if (codeSystemVersion != null) {
 			identifier = codeSystemVersion.getIdentifier();
-		}
-		else if (valueSetVersion != null) {
+		} else if (valueSetVersion != null) {
 			identifier = valueSetVersion.getIdentifier();
 		}
-		
+
 		if (identifier != null) {
 			value.append(identifier);
 		}
-		
+
 		return value.toString();
 	}
 
@@ -78,8 +53,43 @@ public class TermAnnotationProvider implements INotationProvider, IExecutableExt
 		if (valueSetCode != null && valueSetCode.getConceptName() != null) {
 			value.append(valueSetCode.getConceptName());
 		}
-		
+
 		return value.toString();
+	}
+
+	public String getAnnotation(Element element) {
+		String annotation = null;
+
+		if (element instanceof Enumeration) {
+			annotation = getMetadata((Enumeration) element);
+		} else if (element instanceof EnumerationLiteral) {
+			annotation = getMetadata((EnumerationLiteral) element);
+		}
+
+		return annotation;
+	}
+
+	public Object getAnnotationImage(Element element) {
+		return null;
+	}
+
+	public Object getElementImage(Element element) {
+		return null;
+	}
+
+	public String getPrintString(Element element) {
+		String printString = null;
+
+		if (element instanceof NamedElement) {
+			printString = ((NamedElement) element).getName();
+		}
+
+		return printString;
+	}
+
+	public void setInitializationData(IConfigurationElement config, String propertyName, Object data)
+			throws CoreException {
+		// do nothing
 	}
 
 }

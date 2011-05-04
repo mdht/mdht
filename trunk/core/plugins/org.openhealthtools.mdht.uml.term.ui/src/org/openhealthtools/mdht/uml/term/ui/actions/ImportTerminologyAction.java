@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -156,7 +157,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 			}
 
 		} catch (InvocationTargetException invocationTargetException) {
-			MessageDialog.openError(shell, ActionTitle, "Error Processing Export " + invocationTargetException.getMessage());
+			MessageDialog.openError(
+				shell, ActionTitle, "Error Processing Export " + invocationTargetException.getMessage());
 
 		} catch (InterruptedException interruptedException) {
 			MessageDialog.openError(shell, ActionTitle, "Error Processing Export " + interruptedException.getMessage());
@@ -181,10 +183,15 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 	static final int MAXCODES = 50;
 
 	int codeSystemsCreated;
+
 	int valueSetsCreated;
+
 	int valueSetsUpdated;
+
 	int codesCreated;
+
 	int codesUpdated;
+
 	int valueSetsAboveMaxCode;
 
 	private String popCleanValue(String values[], int index) {
@@ -209,18 +216,18 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 		valueSetsUpdated = 0;
 		codesCreated = 0;
 		codesUpdated = 0;
-		
-		valueSetsAboveMaxCode=0;
-		
+
+		valueSetsAboveMaxCode = 0;
 
 		resourceSet = new ResourceSetImpl();
-		resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-		resourceSet.getLoadOptions().put(XMIResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
-		resourceSet.getLoadOptions().put(XMIResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
 
 		URI umlModelURI = URI.createFileURI(umlPath);
 
-		umlPackage = (Package) EcoreUtil.getObjectByType(resourceSet.getResource(umlModelURI, true).getContents(), UMLPackage.Literals.PACKAGE);
+		umlPackage = (Package) EcoreUtil.getObjectByType(
+			resourceSet.getResource(umlModelURI, true).getContents(), UMLPackage.Literals.PACKAGE);
 
 		codeSystemPackage = null;
 
@@ -228,8 +235,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 		// with CodeSystems
 		for (Package p : umlPackage.getImportedPackages()) {
 			if (p.getName().contains("CodeSystems")) {
-				codeSystemPackage = (Package) EcoreUtil.getObjectByType(resourceSet.getResource(p.eResource().getURI(), true).getContents(),
-						UMLPackage.Literals.PACKAGE);
+				codeSystemPackage = (Package) EcoreUtil.getObjectByType(
+					resourceSet.getResource(p.eResource().getURI(), true).getContents(), UMLPackage.Literals.PACKAGE);
 				break;
 			}
 
@@ -307,12 +314,14 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 							IElementFilter filter = new IElementFilter() {
 								public boolean accept(Element element) {
-									return (element instanceof Enumeration) && element.isStereotypeApplied(valueSetVersionStereotype)
-											&& valueSetID.equals(element.getValue(valueSetVersionStereotype, "identifier"));
+									return (element instanceof Enumeration) &&
+											element.isStereotypeApplied(valueSetVersionStereotype) &&
+											valueSetID.equals(element.getValue(valueSetVersionStereotype, "identifier"));
 								}
 							};
 
-							List<Element> typeList = ModelSearch.findAllOf(umlPackage.eResource().getResourceSet(), filter);
+							List<Element> typeList = ModelSearch.findAllOf(
+								umlPackage.eResource().getResourceSet(), filter);
 
 							// Are we updating/refreshing or adding new value
 							// set using id
@@ -368,9 +377,9 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 						lineCtr++;
 
-//						if (lineCtr >= MAXCODES) {
-//							break;
-//						}
+						// if (lineCtr >= MAXCODES) {
+						// break;
+						// }
 
 					} // end while
 
@@ -380,8 +389,9 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 					e.printStackTrace();
 				}
 
-				if (valueSet == null)
+				if (valueSet == null) {
 					continue;
+				}
 
 				ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(valueSet);
 
@@ -391,8 +401,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 					Enumeration codeSystemEnumeration = (Enumeration) getCodeSystem(umlPackage, valuSetCodeResult);
 
-					final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(codeSystemEnumeration,
-							ITermProfileConstants.CODE_SYSTEM_VERSION);
+					final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(
+						codeSystemEnumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);
 
 					final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(codeSystemStereotype);
 
@@ -412,7 +422,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 						valueSet.getOwnedLiterals().add(valueSetCode);
 
-						Stereotype valueSetStereotype = TermProfileUtil.applyStereotype(valueSetCode, ITermProfileConstants.VALUE_SET_CODE);
+						Stereotype valueSetStereotype = TermProfileUtil.applyStereotype(
+							valueSetCode, ITermProfileConstants.VALUE_SET_CODE);
 
 						ValueSetCode vcs = (ValueSetCode) valueSetCode.getStereotypeApplication(valueSetStereotype);
 
@@ -424,13 +435,14 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 							String id = popCleanValue(valuSetCodeResult, 4);
 
-							if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null
-									&& !id.equals(valueSetVersion.getCodeSystem().getIdentifier())) {
+							if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null &&
+									!id.equals(valueSetVersion.getCodeSystem().getIdentifier())) {
 
-								Enumeration codeSystemEnumeration = (Enumeration) getCodeSystem(umlPackage, valuSetCodeResult);
+								Enumeration codeSystemEnumeration = (Enumeration) getCodeSystem(
+									umlPackage, valuSetCodeResult);
 
-								final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(codeSystemEnumeration,
-										ITermProfileConstants.CODE_SYSTEM_VERSION);
+								final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(
+									codeSystemEnumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);
 
 								final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(codeSystemStereotype);
 
@@ -441,8 +453,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 					}
 
 					monitor.worked(1);
-				} else
-				{
+				} else {
 					valueSetsAboveMaxCode++;
 				}
 
@@ -477,8 +488,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
-				return (element instanceof Enumeration) && element.isStereotypeApplied(codeSystemVersionStereotype)
-						&& codeSystemID.equals(element.getValue(codeSystemVersionStereotype, "identifier"));
+				return (element instanceof Enumeration) && element.isStereotypeApplied(codeSystemVersionStereotype) &&
+						codeSystemID.equals(element.getValue(codeSystemVersionStereotype, "identifier"));
 			}
 		};
 
@@ -490,8 +501,9 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 				codeSystemEnumeration = (Enumeration) typeList.get(0);
 				if (codeSystemPackage == null) {
-					codeSystemPackage = (Package) EcoreUtil.getObjectByType(resourceSet.getResource(p.eResource().getURI(), true).getContents(),
-							UMLPackage.Literals.PACKAGE);
+					codeSystemPackage = (Package) EcoreUtil.getObjectByType(
+						resourceSet.getResource(p.eResource().getURI(), true).getContents(),
+						UMLPackage.Literals.PACKAGE);
 
 				}
 			}
@@ -519,7 +531,8 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 			} else {
 				umlPackage.getOwnedTypes().add(codeSystemEnumeration);
 			}
-			Stereotype stereotype = TermProfileUtil.applyStereotype(codeSystemEnumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);
+			Stereotype stereotype = TermProfileUtil.applyStereotype(
+				codeSystemEnumeration, ITermProfileConstants.CODE_SYSTEM_VERSION);
 
 			CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnumeration.getStereotypeApplication(stereotype);
 
@@ -559,6 +572,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		}
 
+		@Override
 		public void create() {
 			super.create();
 			setTitle("HL7 DSL to UML");
@@ -568,6 +582,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		}
 
+		@Override
 		protected Control createDialogArea(Composite parent) {
 
 			final Composite area = new Composite(parent, SWT.NULL);
@@ -601,24 +616,27 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 				final TableItem valueSetsUpdatedItem = new TableItem(table, SWT.NONE);
 				valueSetsUpdatedItem.setText(new String[] { "Value Sets Updated", String.valueOf(valueSetsUpdated) });
-				
-				
-				final TableItem valueSetsAboveMax= new TableItem(table, SWT.NONE);
-				valueSetsAboveMax.setText(new String[] { "Value Sets Codes to Large", String.valueOf(valueSetsAboveMaxCode) });
+
+				final TableItem valueSetsAboveMax = new TableItem(table, SWT.NONE);
+				valueSetsAboveMax.setText(new String[] {
+						"Value Sets Codes to Large", String.valueOf(valueSetsAboveMaxCode) });
 
 				final TableItem codeSystemsCreatedItem = new TableItem(table, SWT.NONE);
-				codeSystemsCreatedItem.setText(new String[] { "New Code Systems Defined", String.valueOf(codeSystemsCreated) });
+				codeSystemsCreatedItem.setText(new String[] {
+						"New Code Systems Defined", String.valueOf(codeSystemsCreated) });
 
 			}
 
 			return area;
 		}
 
+		@Override
 		protected void createButtonsForButtonBar(Composite parent) {
 
 			Button okButton = createButton(parent, OK, "Ok", false);
 
 			okButton.addSelectionListener(new SelectionAdapter() {
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					setReturnCode(OK);
 					close();
@@ -641,6 +659,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		}
 
+		@Override
 		public void create() {
 			super.create();
 			setTitle("Model Driven Health Tools");
@@ -650,6 +669,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		}
 
+		@Override
 		protected Control createDialogArea(Composite parent) {
 
 			final Composite area = new Composite(parent, SWT.NULL);
@@ -666,11 +686,13 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 			return area;
 		}
 
+		@Override
 		protected void createButtonsForButtonBar(Composite parent) {
 
 			Button okButton = createButton(parent, OK, "Ok", false);
 
 			okButton.addSelectionListener(new SelectionAdapter() {
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					setReturnCode(OK);
 					close();

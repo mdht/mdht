@@ -31,7 +31,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FormAttachment;
@@ -55,75 +54,70 @@ import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 public class VocabularyConstraintsSection extends AbstractModelerPropertySection {
 
 	/**
-	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * Duplicate copy of private field in superclass. I'd like to remove this,
 	 * but can't find another way to refresh all page sections.
 	 */
 	private TabbedPropertySheetPage myTabbedPropertySheetPage;
-	
+
 	private Property property;
 
 	private Button isConceptDomainConstraint;
+
 	private boolean isConceptDomainConstraintModified = false;
+
 	private Button isCodeSystemConstraint;
+
 	private boolean isCodeSystemConstraintModified = false;
+
 	private Button isValueSetConstraint;
+
 	private boolean isValueSetConstraintModified = false;
 
 	private void modifyFields() {
-		if (!(isConceptDomainConstraintModified || isCodeSystemConstraintModified
-				|| isValueSetConstraintModified)) {
+		if (!(isConceptDomainConstraintModified || isCodeSystemConstraintModified || isValueSetConstraintModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					if (isConceptDomainConstraintModified) {
 						isConceptDomainConstraintModified = false;
 						this.setLabel("Add ConceptDomainConstraint");
 						Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-								property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+							property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 						if (isConceptDomainConstraint.getSelection() && stereotype == null) {
-							TermProfileUtil.applyStereotype(
-								property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+							TermProfileUtil.applyStereotype(property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 						}
 						if (!isConceptDomainConstraint.getSelection() && stereotype != null) {
-							TermProfileUtil.unapplyStereotype(
-									property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+							TermProfileUtil.unapplyStereotype(property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 						}
-					}
-					else if (isCodeSystemConstraintModified) {
+					} else if (isCodeSystemConstraintModified) {
 						isCodeSystemConstraintModified = false;
 						this.setLabel("Add CodeSystemConstraint");
 						Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-								property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+							property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 						if (isCodeSystemConstraint.getSelection() && stereotype == null) {
-							TermProfileUtil.applyStereotype(
-								property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+							TermProfileUtil.applyStereotype(property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 						}
 						if (!isCodeSystemConstraint.getSelection() && stereotype != null) {
-							TermProfileUtil.unapplyStereotype(
-									property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+							TermProfileUtil.unapplyStereotype(property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 						}
-					}
-					else if (isValueSetConstraintModified) {
+					} else if (isValueSetConstraintModified) {
 						isValueSetConstraintModified = false;
 						this.setLabel("Add ValueSetConstraint");
 						Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-								property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
+							property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 						if (isValueSetConstraint.getSelection() && stereotype == null) {
-							TermProfileUtil.applyStereotype(
-								property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
+							TermProfileUtil.applyStereotype(property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 						}
 						if (!isValueSetConstraint.getSelection() && stereotype != null) {
-							TermProfileUtil.unapplyStereotype(
-									property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
+							TermProfileUtil.unapplyStereotype(property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
@@ -134,47 +128,47 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 					ISelection currentSelection = getSelection();
 					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
 					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
-		
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Vocabulary Constraints");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
 
-        FormData data = null;
+		Composite composite = getWidgetFactory().createGroup(parent, "Vocabulary Constraints");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
+		FormData data = null;
 
 		/* ---- Concept Domain checkbox ---- */
-		isConceptDomainConstraint = getWidgetFactory().createButton(composite, 
-				"Concept Domain", SWT.CHECK);
+		isConceptDomainConstraint = getWidgetFactory().createButton(composite, "Concept Domain", SWT.CHECK);
 		isConceptDomainConstraint.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isConceptDomainConstraintModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isConceptDomainConstraintModified = true;
 				modifyFields();
@@ -182,13 +176,13 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 		});
 
 		/* ---- Code System checkbox ---- */
-		isCodeSystemConstraint = getWidgetFactory().createButton(composite, 
-				"Code System", SWT.CHECK);
+		isCodeSystemConstraint = getWidgetFactory().createButton(composite, "Code System", SWT.CHECK);
 		isCodeSystemConstraint.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isCodeSystemConstraintModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isCodeSystemConstraintModified = true;
 				modifyFields();
@@ -196,13 +190,13 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 		});
 
 		/* ----Value Set checkbox ---- */
-		isValueSetConstraint = getWidgetFactory().createButton(composite, 
-				"Value Set", SWT.CHECK);
+		isValueSetConstraint = getWidgetFactory().createButton(composite, "Value Set", SWT.CHECK);
 		isValueSetConstraint.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isValueSetConstraintModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isValueSetConstraintModified = true;
 				modifyFields();
@@ -222,13 +216,13 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 		data.left = new FormAttachment(isCodeSystemConstraint, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(0, 0);
 		isValueSetConstraint.setLayoutData(data);
-		
+
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -241,8 +235,10 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -252,40 +248,40 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Property);
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		property = null;
 	}
 
+	@Override
 	public void refresh() {
 		boolean isChecked = TermProfileUtil.getAppliedStereotype(
-				property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT) != null;
+			property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT) != null;
 		isConceptDomainConstraint.setSelection(isChecked);
 
-		isChecked = TermProfileUtil.getAppliedStereotype(
-				property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT) != null;
+		isChecked = TermProfileUtil.getAppliedStereotype(property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT) != null;
 		isCodeSystemConstraint.setSelection(isChecked);
 
-		isChecked = TermProfileUtil.getAppliedStereotype(
-				property, ITermProfileConstants.VALUE_SET_CONSTRAINT) != null;
+		isChecked = TermProfileUtil.getAppliedStereotype(property, ITermProfileConstants.VALUE_SET_CONSTRAINT) != null;
 		isValueSetConstraint.setSelection(isChecked);
 
 		if (isReadOnly()) {
 			isConceptDomainConstraint.setEnabled(false);
 			isCodeSystemConstraint.setEnabled(false);
 			isValueSetConstraint.setEnabled(false);
-		}
-		else {
+		} else {
 			isConceptDomainConstraint.setEnabled(true);
 			isCodeSystemConstraint.setEnabled(true);
 			isValueSetConstraint.setEnabled(true);
@@ -297,19 +293,23 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

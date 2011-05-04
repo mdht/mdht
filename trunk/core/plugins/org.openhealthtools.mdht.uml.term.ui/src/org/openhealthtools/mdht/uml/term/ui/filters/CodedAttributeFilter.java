@@ -26,19 +26,18 @@ public class CodedAttributeFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
-		if (element instanceof Property
-				&& ((Property)element).getType() instanceof Classifier) {
-			Classifier type = (Classifier) ((Property)element).getType();
+
+		if (element instanceof Property && ((Property) element).getType() instanceof Classifier) {
+			Classifier type = (Classifier) ((Property) element).getType();
 			if (UMLUtil.isTemplateBinding(type)) {
 				List<Classifier> params = UMLUtil.getTemplateBindingParameters(type);
-				if (params.size() == 1)
+				if (params.size() == 1) {
 					type = params.get(0);
+				}
 			}
-			
+
 			List<String> allParentNames = UMLUtil.getAllParentNames(type);
-			return allParentNames.contains("CD")
-					|| allParentNames.contains("SC");
+			return allParentNames.contains("CD") || allParentNames.contains("SC");
 		}
 		return false;
 	}
