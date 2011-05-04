@@ -42,6 +42,8 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
     /* attributes of this Ant task */
 	private String ecoreModelPath = null;
+	private String domainModelPath = null;
+	
 	private Boolean generateDomainInterface = null;
 	private Boolean includeFixedValueGetters = null;
 	private Boolean includeInterfaceRealization = null;
@@ -66,6 +68,10 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
     	if (ecoreModelPath == null && project.getProperty("ecoreModel") != null) {
     		ecoreModelPath = project.getProperty("ecoreModel");
     	}
+    	if (domainModelPath == null && project.getProperty("domainModel") != null) {
+    		domainModelPath = project.getProperty("domainModel");
+    	}
+    	
     	if (generateDomainInterface == null && project.getProperty("generateDomainInterface") != null) {
     		generateDomainInterface = Boolean.valueOf(project.getProperty("generateDomainInterface"));
     	}
@@ -133,14 +139,29 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 			ecoreModelURI = ecoreModelURI.trimSegments(1).appendSegment(ecoreModelURI.lastSegment() + "_Ecore");
 		}
 
+		URI domainModelURI = null;
+		if (domainModelPath != null) {
+			domainModelURI = URI.createFileURI(domainModelPath);
+		}
+		if (domainModelURI == null) {
+			domainModelURI = umlResource.getURI();
+			domainModelURI = domainModelURI.trimFileExtension();
+			domainModelURI = domainModelURI.trimSegments(1).appendSegment(domainModelURI.lastSegment() + "_domain_Ecore");
+		}
+
 		String fileExtension = umlResource.getURI().fileExtension();
 		if (!fileExtension.equals(ecoreModelURI.fileExtension())) {
 			ecoreModelURI = ecoreModelURI.appendFileExtension(fileExtension);
+		}
+		if (!fileExtension.equals(domainModelURI.fileExtension())) {
+			domainModelURI = domainModelURI.appendFileExtension(fileExtension);
 		}
 		
 		umlResource.setURI(ecoreModelURI);
 		
     	EcoreTransformerOptions options = new EcoreTransformerOptions();
+    	options.setDomainModelPath(domainModelPath);
+    	
     	if (generateDomainInterface != null) {
     		options.setGenerateDomainInterface(generateDomainInterface);
     	}
@@ -186,6 +207,10 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	public void setEcoreModel(String path) {
 		ecoreModelPath = path;
+	}
+
+	public void setDomainModel(String path) {
+		domainModelPath = path;
 	}
 
 	public void setGenerateDomainInterface(boolean include) {

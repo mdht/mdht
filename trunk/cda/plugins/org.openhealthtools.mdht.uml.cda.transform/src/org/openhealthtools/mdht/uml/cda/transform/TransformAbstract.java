@@ -15,6 +15,8 @@ package org.openhealthtools.mdht.uml.cda.transform;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
@@ -26,6 +28,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -315,15 +318,63 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	protected String capitalize(String name) {
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
-	protected Package getDomainInterfacePackage(Element element) {
+	
+	private Package initializeDomainPackageFrom(Element element) {
 		Package modelPkg = element.getNearestPackage();
+		Package domainPkg = null;
+		
+		if (transformerOptions.getDomainModelPath() == null) {
+			// create a nested package
+			domainPkg = modelPkg.getNestedPackage("domain");
+			
+			if (domainPkg == null) {
+				domainPkg = modelPkg.createNestedPackage("domain");
+			}
+		}
+		else {
+			// create model if necessary, assign default CodeGen stereotype values
+			URI domainModelURI = URI.createFileURI(transformerOptions.getDomainModelPath());
+			Resource domainResource = element.eResource().getResourceSet().createResource(domainModelURI);
+			if (domainResource.getContents().isEmpty() || !(domainResource.getContents().get(0) instanceof Package)) {
+				domainPkg = UMLFactory.eINSTANCE.createPackage();
+				domainResource.getContents().add(domainPkg);
+				domainPkg.setName("domain");
+				
+				Stereotype codeGen = CDAProfileUtil.getAppliedCDAStereotype(modelPkg, ICDAProfileConstants.CODEGEN_SUPPORT);
+				if (codeGen != null) {
+					//assign Ecore EPackage stereotype
+					Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(modelPkg, UMLUtil.STEREOTYPE__E_PACKAGE);
+					UMLUtil.safeApplyStereotype(domainPkg, ePackage);
+					
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_PREFIX, "domain");
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, "domain");
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, "Domain");
+
+					String packageName = (String)modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
+					String nsURI = (String)modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
+					String basePackage = (String)modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
+					
+					if (basePackage != null && packageName != null) {
+						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, basePackage+"."+packageName);
+					}
+					if (nsURI != null) {
+						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, nsURI+"/domain");
+					}
+				}
+			}
+			else {
+				domainPkg = (Package) domainResource.getContents().get(0);
+			}
+		}
+		
+		return domainPkg;
+	}
+	
+	protected Package getDomainInterfacePackage(Element element) {
 		Package domainPkg = transformerOptions.getDomainInterfacePackage();
 		
 		if (domainPkg == null) {
-			domainPkg = modelPkg.getNestedPackage("domain");
-		}
-		if (domainPkg == null) {
-			domainPkg = modelPkg.createNestedPackage("domain");
+			domainPkg = initializeDomainPackageFrom(element);
 			transformerOptions.setDomainInterfacePackage(domainPkg);
 		}
 		

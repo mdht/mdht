@@ -13,7 +13,10 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.io.IOException;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -66,7 +69,7 @@ public class EcoreTransformer {
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = iterator.next();
 
-				if (transformerOptions.isGenerateDomainInterface()) {
+				if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
 					genDomainInterface.doSwitch(child);
 					genDomainProperty.doSwitch(child);
 				}
@@ -83,6 +86,16 @@ public class EcoreTransformer {
 		}
 		catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
+		}
+		
+
+		if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
+			try {
+				Map<String, String> saveOptions = new HashMap<String, String>();
+				transformerOptions.getDomainInterfacePackage().eResource().save(saveOptions);
+			} catch (IOException e) {
+				Logger.logException(e);
+			}
 		}
 		
 		// save the updated plugin.properties file
