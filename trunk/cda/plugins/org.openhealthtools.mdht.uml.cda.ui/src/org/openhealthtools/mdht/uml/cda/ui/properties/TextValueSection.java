@@ -13,7 +13,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -62,15 +61,16 @@ public class TextValueSection extends ResettableModelerPropertySection {
 	private NamedElement namedElement;
 
 	private Text valueText;
+
 	private boolean valueModified = false;
 
 	/**
-	 * Duplicate copy of private field in superclass.  I'd like to remove this,
+	 * Duplicate copy of private field in superclass. I'd like to remove this,
 	 * but can't find another way to refresh all page sections.
 	 */
 	private TabbedPropertySheetPage myTabbedPropertySheetPage;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (valueText == event.getSource()) {
 				valueModified = true;
@@ -84,11 +84,12 @@ public class TextValueSection extends ResettableModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -98,24 +99,23 @@ public class TextValueSection extends ResettableModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(valueModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							namedElement, ICDAProfileConstants.TEXT_VALUE);
-					
+						namedElement, ICDAProfileConstants.TEXT_VALUE);
+
 					if (stereotype == null) {
-						stereotype = CDAProfileUtil.applyCDAStereotype(
-								namedElement, ICDAProfileConstants.TEXT_VALUE);
+						stereotype = CDAProfileUtil.applyCDAStereotype(namedElement, ICDAProfileConstants.TEXT_VALUE);
 					}
 					if (valueModified) {
 						valueModified = false;
@@ -123,49 +123,50 @@ public class TextValueSection extends ResettableModelerPropertySection {
 
 						if (stereotype != null) {
 							String value = valueText.getText().trim();
-							namedElement.setValue(stereotype, 
-									ICDAProfileConstants.TEXT_VALUE_VALUE,
-									value.length()>0 ? value : null);
+							namedElement.setValue(stereotype, ICDAProfileConstants.TEXT_VALUE_VALUE, value.length() > 0
+									? value
+									: null);
 
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
+	@Override
 	protected void resetFields() {
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype textValueStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							namedElement, ICDAProfileConstants.TEXT_VALUE);
-			    	
-			    	if (textValueStereotype == null) {
-			    		return Status.CANCEL_STATUS;
-			    	}
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 
-			    	namedElement.unapplyStereotype(textValueStereotype);
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype textValueStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+						namedElement, ICDAProfileConstants.TEXT_VALUE);
+
+					if (textValueStereotype == null) {
+						return Status.CANCEL_STATUS;
+					}
+
+					namedElement.unapplyStereotype(textValueStereotype);
 
 					/*
 					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
@@ -175,41 +176,41 @@ public class TextValueSection extends ResettableModelerPropertySection {
 					myTabbedPropertySheetPage.selectionChanged(getPart(), new StructuredSelection());
 					myTabbedPropertySheetPage.selectionChanged(getPart(), currentSelection);
 
-			    	return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
 		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
 
 		Composite composite = getWidgetFactory().createGroup(parent, "Text Value");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
 
-        FormData data = null;
+		FormData data = null;
 
 		valueText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel valueLabel = getWidgetFactory()
-				.createCLabel(composite, "Constraint:"); //$NON-NLS-1$
+		CLabel valueLabel = getWidgetFactory().createCLabel(composite, "Constraint:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(valueText, 0, SWT.CENTER);
@@ -225,14 +226,14 @@ public class TextValueSection extends ResettableModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(valueLabel, 0);
 		data.right = new FormAttachment(restoreDefaultsButton, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(0,1, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 1, ITabbedPropertyConstants.VSPACE);
 		valueText.setLayoutData(data);
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (namedElement != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
 				return true;
 			}
@@ -245,8 +246,10 @@ public class TextValueSection extends ResettableModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -256,6 +259,7 @@ public class TextValueSection extends ResettableModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -263,23 +267,25 @@ public class TextValueSection extends ResettableModelerPropertySection {
 		this.namedElement = (NamedElement) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				namedElement, ICDAProfileConstants.TEXT_VALUE);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(namedElement, ICDAProfileConstants.TEXT_VALUE);
 
 		valueText.removeModifyListener(modifyListener);
 		valueText.removeKeyListener(keyListener);
 		valueText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String value = (String) namedElement.getValue(stereotype, ICDAProfileConstants.TEXT_VALUE_VALUE);
-			valueText.setText(value!=null ? value : "");
-		}
-		else {
+			valueText.setText(value != null
+					? value
+					: "");
+		} else {
 			valueText.setText("");
 		}
 		valueText.addModifyListener(modifyListener);
@@ -289,8 +295,7 @@ public class TextValueSection extends ResettableModelerPropertySection {
 		if (isReadOnly()) {
 			valueText.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
-		}
-		else {
+		} else {
 			valueText.setEnabled(true);
 			restoreDefaultsButton.setEnabled(stereotype != null);
 		}
@@ -302,19 +307,23 @@ public class TextValueSection extends ResettableModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && namedElement.eResource() != null)
+					if (!isDisposed() && namedElement.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

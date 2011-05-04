@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Sean Muir.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir - initial API and implementation
+ *    
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.internal.views;
 
 import java.io.IOException;
@@ -64,13 +75,56 @@ import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 
 public class UMLInstanceView extends ViewPart {
 
-	private static boolean isDirty = false;
+	public static class FooExampleTaskList {
+	}
 
-	
+	public static class PropertyCellModifier implements ICellModifier {
+
+		public PropertyCellModifier(UMLInstanceView tableViewerExample) {
+			super();
+		}
+
+		public boolean canModify(Object element, String property) {
+			return true;
+		}
+
+		public Object getValue(Object element, String property) {
+			if ("Value".equals(property)) {
+				if (element instanceof PropertyValuePair) {
+					PropertyValuePair pvp = (PropertyValuePair) element;
+					return pvp.getValue();
+
+				}
+			}
+
+			return "";
+		}
+
+		public void modify(Object element, String property, Object value) {
+
+			if ("Value".equals(property)) {
+
+				TableItem item = (TableItem) element;
+
+				if (item != null && item.getData() instanceof PropertyValuePair) {
+					PropertyValuePair pvp = (PropertyValuePair) item.getData();
+					pvp.setValue((String) value);
+
+					pvp.refreshTable();
+
+				}
+			}
+
+		}
+	}
+
 	static public class PropertyValuePair {
 		Property property;
+
 		String value;
+
 		TableViewer tableViewer;
+
 		String propertyName;
 
 		public PropertyValuePair(TableViewer tableViewer, String propertyName, Property property, String value) {
@@ -84,14 +138,6 @@ public class UMLInstanceView extends ViewPart {
 			this.propertyName = propertyName;
 		}
 
-		public String getValue() {
-			return value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
 		public Property getProperty() {
 			return property;
 		}
@@ -100,112 +146,24 @@ public class UMLInstanceView extends ViewPart {
 			return propertyName;
 		}
 
+		public String getValue() {
+			return value;
+		}
+
 		public void refreshTable() {
 			isDirty = true;
 			tableViewer.update(this, null);
 		}
 
+		public void setValue(String value) {
+			this.value = value;
+		}
+
 	}
-
-	public static final String ID = "org.openhealthtools.mdht.uml.cda.ui.instance.view.id";
-
-	private TableViewer viewer;
-
-	private final String PROPERTY_COLUMN = "Property";
-	private final String VALUE_COLUMN = "Value";
-
-	private String[] columnNames = new String[] { PROPERTY_COLUMN, VALUE_COLUMN };
-	
-	
 
 	class ViewContentProvider implements IStructuredContentProvider {
 
-		private void createUMLInstanceModel(final URI instanceURI, final String packageName)
-		{
-			
-			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlSelection.getOwner());
-
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, umlSelection.getName()){
-
-				@Override
-				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {					
-					Resource umlInstanceResource = umlSelection.eResource().getResourceSet().createResource(instanceURI);
-					Package instancesPackage = UMLFactory.eINSTANCE.createPackage();
-					instancesPackage.setName(packageName+" instances");
-					umlInstanceResource.getContents().add(instancesPackage);
-					
-					try {
-						umlInstanceResource.save(null);
-					} catch (IOException e) {						
-						e.printStackTrace();
-					}
-					
-					return Status.OK_STATUS;
-				}};
-				
-				
-				try {
-					IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
-					operation.addContext(commandStack.getDefaultUndoContext());
-					commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
-
-				} catch (ExecutionException ee) {
-					ee.printStackTrace();
-				}
-		}
-		
-		HashMap<String,Package> umlInstancePackages = new HashMap<String,Package>();
-
-		
-		private Package getInstancePackage()
-		{
-			Package instancePackage = null;
-			if (umlSelection != null) {
-				if (umlSelection.getNearestPackage() != null) {			
-					if (umlSelection.getNearestPackage().eResource() !=  null) {
-						if (umlSelection.getNearestPackage().eResource().getURI() != null) {			
-							
-							final String[] segments = umlSelection.getNearestPackage().eResource().getURI().segments();
-							IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(segments[1]);
-							IFolder folder = project.getFolder("model");
-							String instancePath = segments[segments.length-1].replace(".uml", "-instances.uml");
-							IFile file = folder.getFile(instancePath);
-							final URI instanceURI =	URI.createPlatformResourceURI(file.getFullPath().toOSString(),false);
-							
-							if (!umlInstancePackages.containsKey(umlSelection.getNearestPackage().getName()) ){
-								Resource umlInstanceResource = null; 
-	
-								if (!file.exists()) {
-									createUMLInstanceModel(instanceURI, segments[segments.length-1]);
-									
-								}
-							
-								try {
-										umlInstanceResource = umlSelection.eResource().getResourceSet().getResource(instanceURI, true);
-									} catch (Exception e) {
-										umlInstanceResource = umlSelection.eResource().getResourceSet().getResource(instanceURI, false);
-									}
-									Package umlPackage = (Package) EcoreUtil.getObjectByType(umlInstanceResource.getContents(), UMLPackage.eINSTANCE.getPackage());
-									if (umlPackage != null)
-									{
-										umlInstancePackages.put(umlSelection.getNearestPackage().getName(), umlPackage);
-										instancePackage = umlPackage;
-									}
-							}  else
-							{
-								instancePackage = umlInstancePackages.get(umlSelection.getNearestPackage().getName());
-							}
-						} 
-
-				}
-			}
-				
-			}			
-			return instancePackage;
-		
-		}
-
-		
+		HashMap<String, Package> umlInstancePackages = new HashMap<String, Package>();
 
 		org.eclipse.uml2.uml.Class umlSelection;
 
@@ -218,33 +176,64 @@ public class UMLInstanceView extends ViewPart {
 			this.tableViewer = tableViewer;
 		}
 
-		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
+		private void createUMLInstanceModel(final URI instanceURI, final String packageName) {
+
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlSelection.getOwner());
+
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, umlSelection.getName()) {
+
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+					Resource umlInstanceResource = umlSelection.eResource().getResourceSet().createResource(instanceURI);
+					Package instancesPackage = UMLFactory.eINSTANCE.createPackage();
+					instancesPackage.setName(packageName + " instances");
+					umlInstanceResource.getContents().add(instancesPackage);
+
+					try {
+						umlInstanceResource.save(null);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+
+			} catch (ExecutionException ee) {
+				ee.printStackTrace();
+			}
 		}
 
 		public void dispose() {
 
 			if (umlSelection != null && isDirty) {
 				isDirty = false;
-				
-				
-				getInstancePackage(); 
+
+				getInstancePackage();
 
 				TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(umlSelection.getOwner());
 
-				IUndoableOperation operation = new AbstractEMFOperation(editingDomain, umlSelection.getName() + "Transaction") {
+				IUndoableOperation operation = new AbstractEMFOperation(editingDomain, umlSelection.getName() +
+						"Transaction") {
 
 					@Override
 					protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 						try {
-							org.eclipse.uml2.uml.Package p = getInstancePackage(); //(org.eclipse.uml2.uml.Package) umlSelection.getOwner();
+							org.eclipse.uml2.uml.Package p = getInstancePackage(); // (org.eclipse.uml2.uml.Package) umlSelection.getOwner();
 
-							Collection<NamedElement> currentInstance = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(umlSelection.eResource().getResourceSet(),
-									umlSelection.getQualifiedName(), true, UMLPackage.eINSTANCE.getInstanceSpecification());
+							Collection<NamedElement> currentInstance = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(
+								umlSelection.eResource().getResourceSet(), umlSelection.getQualifiedName(), true,
+								UMLPackage.eINSTANCE.getInstanceSpecification());
 							org.eclipse.uml2.uml.InstanceSpecification instanceSpecification = null;
 							if (currentInstance.isEmpty()) {
 
-								instanceSpecification = (org.eclipse.uml2.uml.InstanceSpecification) p.createPackagedElement(umlSelection.getName(),
-										UMLPackage.eINSTANCE.getInstanceSpecification());
+								instanceSpecification = (org.eclipse.uml2.uml.InstanceSpecification) p.createPackagedElement(
+									umlSelection.getName(), UMLPackage.eINSTANCE.getInstanceSpecification());
 
 								instanceSpecification.setName(umlSelection.getName());
 								instanceSpecification.getClassifiers().add(umlSelection);
@@ -259,7 +248,9 @@ public class UMLInstanceView extends ViewPart {
 							for (PropertyValuePair pvp : c) {
 								Slot slot = instanceSpecification.createSlot();
 								slot.setDefiningFeature(pvp.getProperty());
-								LiteralString ls = (LiteralString) slot.createValue(pvp.getPropertyName(), pvp.getProperty().getType(), UMLPackage.eINSTANCE.getLiteralString());
+								LiteralString ls = (LiteralString) slot.createValue(
+									pvp.getPropertyName(), pvp.getProperty().getType(),
+									UMLPackage.eINSTANCE.getLiteralString());
 								ls.setValue(pvp.getValue());
 							}
 
@@ -297,20 +288,19 @@ public class UMLInstanceView extends ViewPart {
 				if (umlSelection.eResource() != null && umlSelection.eResource().getResourceSet() != null) {
 
 					Package p = getInstancePackage();
-					
-			
+
 					NamedElement currentInstance = p.getOwnedMember(umlSelection.getName());
 					if (currentInstance instanceof InstanceSpecification) {
 						createValuesMap((InstanceSpecification) currentInstance, valuesMap);
 					}
-					
-					
+
 				}
 
-				PropertyList propertyList = new PropertyList((Class) umlSelection);
+				PropertyList propertyList = new PropertyList(umlSelection);
 
 				for (Property p : propertyList.getAttributes()) {
-					if (p.getType() != null && p.getType().getQualifiedName().startsWith("datatypes::") && p.getType() instanceof Class) {
+					if (p.getType() != null && p.getType().getQualifiedName().startsWith("datatypes::") &&
+							p.getType() instanceof Class) {
 						PropertyList datatypeslist = new PropertyList((Class) p.getType());
 
 						for (Property datatypesProperty : datatypeslist.getAttributes()) {
@@ -322,13 +312,10 @@ public class UMLInstanceView extends ViewPart {
 							if ("datatypes::ED".equals(datatypesProperty.getType().getQualifiedName())) {
 								propertyXPath = propertyXPath + ".mixed";
 							} else
-								
-								if ("datatypes::ADXP".equals(datatypesProperty.getType().getQualifiedName())){
-									propertyXPath = propertyXPath + ".mixed";
-								}
-							
-							
-							
+
+							if ("datatypes::ADXP".equals(datatypesProperty.getType().getQualifiedName())) {
+								propertyXPath = propertyXPath + ".mixed";
+							}
 
 							if (valuesMap.containsKey(propertyXPath)) {
 								value = valuesMap.get(propertyXPath);
@@ -352,7 +339,88 @@ public class UMLInstanceView extends ViewPart {
 			}
 
 		}
+
+		private Package getInstancePackage() {
+			Package instancePackage = null;
+			if (umlSelection != null) {
+				if (umlSelection.getNearestPackage() != null) {
+					if (umlSelection.getNearestPackage().eResource() != null) {
+						if (umlSelection.getNearestPackage().eResource().getURI() != null) {
+
+							final String[] segments = umlSelection.getNearestPackage().eResource().getURI().segments();
+							IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(segments[1]);
+							IFolder folder = project.getFolder("model");
+							String instancePath = segments[segments.length - 1].replace(".uml", "-instances.uml");
+							IFile file = folder.getFile(instancePath);
+							final URI instanceURI = URI.createPlatformResourceURI(
+								file.getFullPath().toOSString(), false);
+
+							if (!umlInstancePackages.containsKey(umlSelection.getNearestPackage().getName())) {
+								Resource umlInstanceResource = null;
+
+								if (!file.exists()) {
+									createUMLInstanceModel(instanceURI, segments[segments.length - 1]);
+
+								}
+
+								try {
+									umlInstanceResource = umlSelection.eResource().getResourceSet().getResource(
+										instanceURI, true);
+								} catch (Exception e) {
+									umlInstanceResource = umlSelection.eResource().getResourceSet().getResource(
+										instanceURI, false);
+								}
+								Package umlPackage = (Package) EcoreUtil.getObjectByType(
+									umlInstanceResource.getContents(), UMLPackage.eINSTANCE.getPackage());
+								if (umlPackage != null) {
+									umlInstancePackages.put(umlSelection.getNearestPackage().getName(), umlPackage);
+									instancePackage = umlPackage;
+								}
+							} else {
+								instancePackage = umlInstancePackages.get(umlSelection.getNearestPackage().getName());
+							}
+						}
+
+					}
+				}
+
+			}
+			return instancePackage;
+
+		}
+
+		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
+		}
 	}
+
+	class ViewLabelProvider extends LabelProvider implements ITableLabelProvider {
+		public Image getColumnImage(Object obj, int index) {
+			return null;
+		}
+
+		public String getColumnText(Object obj, int index) {
+			if (obj instanceof PropertyValuePair) {
+				PropertyValuePair pvp = (PropertyValuePair) obj;
+				if (index == 0) {
+					return pvp.getPropertyName();
+				} else {
+					return pvp.getValue();
+				}
+			} else {
+
+				return getText(obj);
+			}
+		}
+
+		@Override
+		public Image getImage(Object obj) {
+			return null;
+		}
+	}
+
+	private static boolean isDirty = false;
+
+	public static final String ID = "org.openhealthtools.mdht.uml.cda.ui.instance.view.id";
 
 	static void createValuesMap(InstanceSpecification instanceSpecification, HashMap<String, String> valuesMap) {
 		for (Slot slot : instanceSpecification.getSlots()) {
@@ -372,60 +440,17 @@ public class UMLInstanceView extends ViewPart {
 
 	}
 
-	class ViewLabelProvider extends LabelProvider implements ITableLabelProvider {
-		public String getColumnText(Object obj, int index) {
-			if (obj instanceof PropertyValuePair) {
-				PropertyValuePair pvp = (PropertyValuePair) obj;
-				if (index == 0) {
-					return pvp.getPropertyName();
-				} else {
-					return pvp.getValue();
-				}
-			} else {
+	private TableViewer viewer;
 
-				return getText(obj);
-			}
-		}
+	private final String PROPERTY_COLUMN = "Property";
 
-		public Image getColumnImage(Object obj, int index) {
-			return null;
-		}
+	private final String VALUE_COLUMN = "Value";
 
-		public Image getImage(Object obj) {
-			return null;
-		}
-	}
+	private String[] columnNames = new String[] { PROPERTY_COLUMN, VALUE_COLUMN };
 
-	private void createTable(Composite parent) {
+	private Table table;;
 
-		int style = SWT.SINGLE | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.HIDE_SELECTION;
-
-		table = new Table(parent, style);
-
-		GridData gridData = new GridData(GridData.FILL_BOTH);
-		gridData.grabExcessVerticalSpace = true;
-		gridData.horizontalSpan = 3;
-		table.setLayoutData(gridData);
-
-		table.setLinesVisible(true);
-		table.setHeaderVisible(true);
-
-	
-		TableColumn column = new TableColumn(table, SWT.LEFT, 0);
-		column.setText("Property");
-		column.setWidth(200);
-
-		column = new TableColumn(table, SWT.LEFT, 1);
-		column.setText("Value");
-		column.setWidth(400);
-
-	}
-
-	private Table table;
-
-	public static class FooExampleTaskList {
-	};
-
+	@Override
 	public void createPartControl(Composite parent) {
 
 		CDAUtil.loadPackages();
@@ -474,48 +499,33 @@ public class UMLInstanceView extends ViewPart {
 		iss.addSelectionListener(aaa);
 	}
 
-	public void setFocus() {
-		viewer.getControl().setFocus();
+	private void createTable(Composite parent) {
+
+		int style = SWT.SINGLE | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.HIDE_SELECTION;
+
+		table = new Table(parent, style);
+
+		GridData gridData = new GridData(GridData.FILL_BOTH);
+		gridData.grabExcessVerticalSpace = true;
+		gridData.horizontalSpan = 3;
+		table.setLayoutData(gridData);
+
+		table.setLinesVisible(true);
+		table.setHeaderVisible(true);
+
+		TableColumn column = new TableColumn(table, SWT.LEFT, 0);
+		column.setText("Property");
+		column.setWidth(200);
+
+		column = new TableColumn(table, SWT.LEFT, 1);
+		column.setText("Value");
+		column.setWidth(400);
+
 	}
 
-	public static class PropertyCellModifier implements ICellModifier {
-
-		public PropertyCellModifier(UMLInstanceView tableViewerExample) {
-			super();
-		}
-
-		public boolean canModify(Object element, String property) {
-			return true;
-		}
-
-		public Object getValue(Object element, String property) {
-			if ("Value".equals(property)) {
-				if (element instanceof PropertyValuePair) {
-					PropertyValuePair pvp = (PropertyValuePair) element;
-					return pvp.getValue();
-
-				}
-			}
-
-			return "";
-		}
-
-		public void modify(Object element, String property, Object value) {
-
-			if ("Value".equals(property)) {
-
-				TableItem item = (TableItem) element;
-
-				if (item != null && item.getData() instanceof PropertyValuePair) {
-					PropertyValuePair pvp = (PropertyValuePair) item.getData();
-					pvp.setValue((String) value);
-
-					pvp.refreshTable();
-
-				}
-			}
-
-		}
+	@Override
+	public void setFocus() {
+		viewer.getControl().setFocus();
 	}
 
 }

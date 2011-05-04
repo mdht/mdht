@@ -18,18 +18,20 @@ import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 /**
- * Selects an object if it is a UML Class or Package with 
+ * Selects an object if it is a UML Class or Package with
  * HL7Template stereotype applied.
  */
 public class TemplateFilter extends CDAFilter {
-	
+
+	@Override
 	public boolean select(Object object) {
 		Element element = null;
-		if (object instanceof Element)
+		if (object instanceof Element) {
 			element = (Element) object;
-		else if (object instanceof IAdaptable)
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
-		
+		} else if (object instanceof IAdaptable) {
+			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
+		}
+
 		if (element instanceof Class && CDAModelUtil.getCDAClass((Class) element) != null) {
 			return true;
 		}

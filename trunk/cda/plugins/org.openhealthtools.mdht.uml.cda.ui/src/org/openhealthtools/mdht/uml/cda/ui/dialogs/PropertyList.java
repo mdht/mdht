@@ -26,22 +26,26 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 public class PropertyList {
 
 	private Class clazz;
+
 	private List<Property> attributes;
+
 	private List<Property> associationEnds;
-	
+
 	private boolean isOmitAssociations = false;
+
 	private boolean isAllSuperclasses = true;
+
 	private boolean isSorted = true;
-	
+
 	public PropertyList(Class clazz) {
 		this.clazz = clazz;
 	}
-	
+
 	public List<Property> getAttributes() {
 		if (attributes == null) {
 			fillPropertyLists();
 		}
-		
+
 		return attributes;
 	}
 
@@ -49,7 +53,7 @@ public class PropertyList {
 		if (associationEnds == null) {
 			fillPropertyLists();
 		}
-		
+
 		return associationEnds;
 	}
 
@@ -66,22 +70,22 @@ public class PropertyList {
 				}
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	private void fillPropertyLists() {
 		attributes = new ArrayList<Property>();
 		associationEnds = new ArrayList<Property>();
-		
+
 		addProperties(clazz);
-		
+
 		if (isSorted) {
 			Collections.sort(attributes, new NamedElementComparator());
 			Collections.sort(associationEnds, new NamedElementComparator());
 		}
 	}
-	
+
 	private void addProperties(Class aClass) {
 		for (Property property : aClass.getOwnedAttributes()) {
 			if (property.getAssociation() != null) {
@@ -90,37 +94,36 @@ public class PropertyList {
 				}
 
 				// omit association properties from base CDA model
-				if (CDAModelUtil.CDA_PACKAGE_NAME.equals(
-						UMLUtil.getTopPackage(aClass).getName())) {
+				if (CDAModelUtil.CDA_PACKAGE_NAME.equals(UMLUtil.getTopPackage(aClass).getName())) {
 					continue;
 				}
 			}
-			
+
 			// filter some CDA attributes
 			if ("templateId".equals(property.getName())) {
 				continue;
 			}
-			
+
 			// skip implicit redefinitions
 			if (getForName(property.getName()) == null) {
 				if (property.getAssociation() == null) {
 					attributes.add(property);
-				}
-				else {
+				} else {
 					associationEnds.add(property);
 				}
 			}
-			
-			//TODO skip explicit redefinitions
-			
+
+			// TODO skip explicit redefinitions
+
 		}
 
 		if (isAllSuperclasses) {
 			for (Classifier general : aClass.getGenerals()) {
-				if (general instanceof Class)
-					addProperties((Class)general);
+				if (general instanceof Class) {
+					addProperties((Class) general);
+				}
 			}
 		}
 	}
-	
+
 }

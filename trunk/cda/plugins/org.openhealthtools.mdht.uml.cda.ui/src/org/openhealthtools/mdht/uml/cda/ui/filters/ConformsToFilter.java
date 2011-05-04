@@ -21,21 +21,21 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
  * Selects an object if it is an association applicable to <<ActRelationship>> stereotype.
  */
 public class ConformsToFilter extends CDAFilter {
-	
+
+	@Override
 	public boolean select(Object object) {
 		Element element = getElement(object);
 
 		Class templateClass = null;
-		if (element instanceof Generalization
-				&& ((Generalization)element).getSpecific() instanceof Class) {
-			templateClass = (Class) ((Generalization)element).getSpecific();
+		if (element instanceof Generalization && ((Generalization) element).getSpecific() instanceof Class) {
+			templateClass = (Class) ((Generalization) element).getSpecific();
 		}
-		
+
 		if (templateClass != null && CDAModelUtil.getCDAClass(templateClass) != null) {
 			return true;
 		}
 
 		return false;
 	}
-	
+
 }

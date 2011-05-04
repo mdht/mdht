@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.ui.parsers;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
@@ -34,22 +35,19 @@ public class PropertyParser implements IParser {
 
 	public String getEditString(final IAdaptable element, int flags) {
 		if (element instanceof EObjectAdapter) {
-			final Property property = ((Property) ((EObjectAdapter) element)
-					.getRealObject());
+			final Property property = ((Property) ((EObjectAdapter) element).getRealObject());
 			return new CDAAnnotationProvider().getPrintString(property);
 		}
 		return "";
 	}
 
-	public ICommand getParseCommand(IAdaptable element, String newString,
-			int flags) {
+	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		return null;
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
 		if (element instanceof EObjectAdapter) {
-			Property property = ((Property) ((EObjectAdapter) element)
-					.getRealObject());
+			Property property = ((Property) ((EObjectAdapter) element).getRealObject());
 			return new CDAAnnotationProvider().getPrintString(property);
 		}
 		return null;
@@ -59,10 +57,8 @@ public class PropertyParser implements IParser {
 		return true;
 	}
 
-	public IParserEditStatus isValidEditString(IAdaptable element,
-			String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 
-		return new ParserEditStatus(Activator.PLUGIN_ID,
-				IParserEditStatus.ERROR, "Not Supported");
+		return new ParserEditStatus(Activator.PLUGIN_ID, IStatus.ERROR, "Not Supported");
 	}
 }

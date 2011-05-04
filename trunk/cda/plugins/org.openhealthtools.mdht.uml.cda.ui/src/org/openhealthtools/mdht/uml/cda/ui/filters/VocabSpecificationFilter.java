@@ -19,17 +19,18 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 /**
- * Selects an object if it is a UML Property with 
+ * Selects an object if it is a UML Property with
  * VocabularySpecification stereotype applied.
  */
 public class VocabSpecificationFilter extends CDAFilter {
 
+	@Override
 	public boolean select(Object object) {
 		Element element = getElement(object);
-		
+
 		if (element instanceof Property) {
 			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-					element, ICDAProfileConstants.VOCAB_SPECIFICATION);
+				element, ICDAProfileConstants.VOCAB_SPECIFICATION);
 			return stereotype != null;
 		}
 		return false;

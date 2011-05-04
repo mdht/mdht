@@ -22,19 +22,18 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 /**
  * Selects an object if it is a UML Property where type is specialization of HL7 CD.
  */
-public class CodedAttributeFilter extends CDAFilter  {
+public class CodedAttributeFilter extends CDAFilter {
 
+	@Override
 	public boolean select(Object object) {
-		
+
 		Element element = getElement(object);
-		
-		if (element instanceof Property
-				&& ((Property)element).getType() instanceof Classifier) {
-			Classifier type = (Classifier) ((Property)element).getType();
-			
+
+		if (element instanceof Property && ((Property) element).getType() instanceof Classifier) {
+			Classifier type = (Classifier) ((Property) element).getType();
+
 			List<String> allParentNames = UMLUtil.getAllParentNames(type);
-			return allParentNames.contains("CD")
-					|| allParentNames.contains("SC");
+			return allParentNames.contains("CD") || allParentNames.contains("SC");
 		}
 		return false;
 	}
