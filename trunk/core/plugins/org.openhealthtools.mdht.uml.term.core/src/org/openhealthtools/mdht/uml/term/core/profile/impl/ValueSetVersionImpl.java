@@ -1,25 +1,27 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.uml2.uml.Enumeration;
-
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
-import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.StatusKind;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetType;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 
@@ -398,439 +400,6 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * 
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TermPackage.Literals.VALUE_SET_VERSION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getIdentifier() {
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setIdentifier(String newIdentifier) {
-		String oldIdentifier = identifier;
-		identifier = newIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__IDENTIFIER, oldIdentifier, identifier));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getVersion() {
-		return version;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setVersion(String newVersion) {
-		String oldVersion = version;
-		version = newVersion;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__VERSION, oldVersion, version));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getFullName() {
-		return fullName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setFullName(String newFullName) {
-		String oldFullName = fullName;
-		fullName = newFullName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__FULL_NAME, oldFullName, fullName));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setSource(String newSource) {
-		String oldSource = source;
-		source = newSource;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__SOURCE, oldSource, source));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getUrl() {
-		return url;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setUrl(String newUrl) {
-		String oldUrl = url;
-		url = newUrl;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__URL, oldUrl, url));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getDefinition() {
-		return definition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setDefinition(String newDefinition) {
-		String oldDefinition = definition;
-		definition = newDefinition;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__DEFINITION, oldDefinition, definition));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getEffectiveDate() {
-		return effectiveDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setEffectiveDate(String newEffectiveDate) {
-		String oldEffectiveDate = effectiveDate;
-		effectiveDate = newEffectiveDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getExpirationDate() {
-		return expirationDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setExpirationDate(String newExpirationDate) {
-		String oldExpirationDate = expirationDate;
-		expirationDate = newExpirationDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE, oldExpirationDate,
-				expirationDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getReleaseDate() {
-		return releaseDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setReleaseDate(String newReleaseDate) {
-		String oldReleaseDate = releaseDate;
-		releaseDate = newReleaseDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__RELEASE_DATE, oldReleaseDate, releaseDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getRevisionDate() {
-		return revisionDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setRevisionDate(String newRevisionDate) {
-		String oldRevisionDate = revisionDate;
-		revisionDate = newRevisionDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__REVISION_DATE, oldRevisionDate, revisionDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public StatusKind getStatus() {
-		return status;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setStatus(StatusKind newStatus) {
-		StatusKind oldStatus = status;
-		status = newStatus == null
-				? STATUS_EDEFAULT
-				: newStatus;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS, oldStatus, status));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getStatusDate() {
-		return statusDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setStatusDate(String newStatusDate) {
-		String oldStatusDate = statusDate;
-		statusDate = newStatusDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS_DATE, oldStatusDate, statusDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ValueSetType getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setType(ValueSetType newType) {
-		ValueSetType oldType = type;
-		type = newType == null
-				? TYPE_EDEFAULT
-				: newType;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__TYPE, oldType, type));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public BindingKind getBinding() {
-		return binding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setBinding(BindingKind newBinding) {
-		BindingKind oldBinding = binding;
-		binding = newBinding == null
-				? BINDING_EDEFAULT
-				: newBinding;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__BINDING, oldBinding, binding));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public CodeSystemVersion getCodeSystem() {
-		if (codeSystem != null && codeSystem.eIsProxy()) {
-			InternalEObject oldCodeSystem = (InternalEObject) codeSystem;
-			codeSystem = (CodeSystemVersion) eResolveProxy(oldCodeSystem);
-			if (codeSystem != oldCodeSystem) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem,
-						codeSystem));
-				}
-			}
-		}
-		return codeSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public CodeSystemVersion basicGetCodeSystem() {
-		return codeSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setCodeSystem(CodeSystemVersion newCodeSystem) {
-		CodeSystemVersion oldCodeSystem = codeSystem;
-		codeSystem = newCodeSystem;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem, codeSystem));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Enumeration getBase_Enumeration() {
-		if (base_Enumeration != null && base_Enumeration.eIsProxy()) {
-			InternalEObject oldBase_Enumeration = (InternalEObject) base_Enumeration;
-			base_Enumeration = (Enumeration) eResolveProxy(oldBase_Enumeration);
-			if (base_Enumeration != oldBase_Enumeration) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION,
-						oldBase_Enumeration, base_Enumeration));
-				}
-			}
-		}
-		return base_Enumeration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public Enumeration basicGetBase_Enumeration() {
 		return base_Enumeration;
 	}
@@ -841,54 +410,8 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * 
 	 * @generated
 	 */
-	public void setBase_Enumeration(Enumeration newBase_Enumeration) {
-		Enumeration oldBase_Enumeration = base_Enumeration;
-		base_Enumeration = newBase_Enumeration;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION, oldBase_Enumeration,
-				base_Enumeration));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public String getEnumerationName() {
-		if (base_Enumeration != null) {
-			return base_Enumeration.getName();
-		} else {
-			return "";
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void setEnumerationName(String name) {
-		if (base_Enumeration != null) {
-			base_Enumeration.setName(name);
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public String getEnumerationQualifiedName() {
-		if (base_Enumeration != null) {
-			return base_Enumeration.getQualifiedName();
-		} else {
-			return "";
-		}
+	public CodeSystemVersion basicGetCodeSystem() {
+		return codeSystem;
 	}
 
 	/**
@@ -940,6 +463,73 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 				return basicGetBase_Enumeration();
 		}
 		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case TermPackage.VALUE_SET_VERSION__IDENTIFIER:
+				return IDENTIFIER_EDEFAULT == null
+						? identifier != null
+						: !IDENTIFIER_EDEFAULT.equals(identifier);
+			case TermPackage.VALUE_SET_VERSION__VERSION:
+				return VERSION_EDEFAULT == null
+						? version != null
+						: !VERSION_EDEFAULT.equals(version);
+			case TermPackage.VALUE_SET_VERSION__FULL_NAME:
+				return FULL_NAME_EDEFAULT == null
+						? fullName != null
+						: !FULL_NAME_EDEFAULT.equals(fullName);
+			case TermPackage.VALUE_SET_VERSION__SOURCE:
+				return SOURCE_EDEFAULT == null
+						? source != null
+						: !SOURCE_EDEFAULT.equals(source);
+			case TermPackage.VALUE_SET_VERSION__URL:
+				return URL_EDEFAULT == null
+						? url != null
+						: !URL_EDEFAULT.equals(url);
+			case TermPackage.VALUE_SET_VERSION__DEFINITION:
+				return DEFINITION_EDEFAULT == null
+						? definition != null
+						: !DEFINITION_EDEFAULT.equals(definition);
+			case TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE:
+				return EFFECTIVE_DATE_EDEFAULT == null
+						? effectiveDate != null
+						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
+			case TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE:
+				return EXPIRATION_DATE_EDEFAULT == null
+						? expirationDate != null
+						: !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
+			case TermPackage.VALUE_SET_VERSION__RELEASE_DATE:
+				return RELEASE_DATE_EDEFAULT == null
+						? releaseDate != null
+						: !RELEASE_DATE_EDEFAULT.equals(releaseDate);
+			case TermPackage.VALUE_SET_VERSION__REVISION_DATE:
+				return REVISION_DATE_EDEFAULT == null
+						? revisionDate != null
+						: !REVISION_DATE_EDEFAULT.equals(revisionDate);
+			case TermPackage.VALUE_SET_VERSION__STATUS:
+				return status != STATUS_EDEFAULT;
+			case TermPackage.VALUE_SET_VERSION__STATUS_DATE:
+				return STATUS_DATE_EDEFAULT == null
+						? statusDate != null
+						: !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case TermPackage.VALUE_SET_VERSION__TYPE:
+				return type != TYPE_EDEFAULT;
+			case TermPackage.VALUE_SET_VERSION__BINDING:
+				return binding != BINDING_EDEFAULT;
+			case TermPackage.VALUE_SET_VERSION__CODE_SYSTEM:
+				return codeSystem != null;
+			case TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION:
+				return base_Enumeration != null;
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -1010,6 +600,17 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * @generated
 	 */
 	@Override
+	protected EClass eStaticClass() {
+		return TermPackage.Literals.VALUE_SET_VERSION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_VERSION__IDENTIFIER:
@@ -1070,65 +671,466 @@ public class ValueSetVersionImpl extends EObjectImpl implements ValueSetVersion 
 	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.VALUE_SET_VERSION__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null
-						? identifier != null
-						: !IDENTIFIER_EDEFAULT.equals(identifier);
-			case TermPackage.VALUE_SET_VERSION__VERSION:
-				return VERSION_EDEFAULT == null
-						? version != null
-						: !VERSION_EDEFAULT.equals(version);
-			case TermPackage.VALUE_SET_VERSION__FULL_NAME:
-				return FULL_NAME_EDEFAULT == null
-						? fullName != null
-						: !FULL_NAME_EDEFAULT.equals(fullName);
-			case TermPackage.VALUE_SET_VERSION__SOURCE:
-				return SOURCE_EDEFAULT == null
-						? source != null
-						: !SOURCE_EDEFAULT.equals(source);
-			case TermPackage.VALUE_SET_VERSION__URL:
-				return URL_EDEFAULT == null
-						? url != null
-						: !URL_EDEFAULT.equals(url);
-			case TermPackage.VALUE_SET_VERSION__DEFINITION:
-				return DEFINITION_EDEFAULT == null
-						? definition != null
-						: !DEFINITION_EDEFAULT.equals(definition);
-			case TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE:
-				return EFFECTIVE_DATE_EDEFAULT == null
-						? effectiveDate != null
-						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
-			case TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE:
-				return EXPIRATION_DATE_EDEFAULT == null
-						? expirationDate != null
-						: !EXPIRATION_DATE_EDEFAULT.equals(expirationDate);
-			case TermPackage.VALUE_SET_VERSION__RELEASE_DATE:
-				return RELEASE_DATE_EDEFAULT == null
-						? releaseDate != null
-						: !RELEASE_DATE_EDEFAULT.equals(releaseDate);
-			case TermPackage.VALUE_SET_VERSION__REVISION_DATE:
-				return REVISION_DATE_EDEFAULT == null
-						? revisionDate != null
-						: !REVISION_DATE_EDEFAULT.equals(revisionDate);
-			case TermPackage.VALUE_SET_VERSION__STATUS:
-				return status != STATUS_EDEFAULT;
-			case TermPackage.VALUE_SET_VERSION__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null
-						? statusDate != null
-						: !STATUS_DATE_EDEFAULT.equals(statusDate);
-			case TermPackage.VALUE_SET_VERSION__TYPE:
-				return type != TYPE_EDEFAULT;
-			case TermPackage.VALUE_SET_VERSION__BINDING:
-				return binding != BINDING_EDEFAULT;
-			case TermPackage.VALUE_SET_VERSION__CODE_SYSTEM:
-				return codeSystem != null;
-			case TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION:
-				return base_Enumeration != null;
+	public Enumeration getBase_Enumeration() {
+		if (base_Enumeration != null && base_Enumeration.eIsProxy()) {
+			InternalEObject oldBase_Enumeration = (InternalEObject) base_Enumeration;
+			base_Enumeration = (Enumeration) eResolveProxy(oldBase_Enumeration);
+			if (base_Enumeration != oldBase_Enumeration) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION,
+						oldBase_Enumeration, base_Enumeration));
+				}
+			}
 		}
-		return super.eIsSet(featureID);
+		return base_Enumeration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public BindingKind getBinding() {
+		return binding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public CodeSystemVersion getCodeSystem() {
+		if (codeSystem != null && codeSystem.eIsProxy()) {
+			InternalEObject oldCodeSystem = (InternalEObject) codeSystem;
+			codeSystem = (CodeSystemVersion) eResolveProxy(oldCodeSystem);
+			if (codeSystem != oldCodeSystem) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem,
+						codeSystem));
+				}
+			}
+		}
+		return codeSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getDefinition() {
+		return definition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getEffectiveDate() {
+		return effectiveDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public String getEnumerationName() {
+		if (base_Enumeration != null) {
+			return base_Enumeration.getName();
+		} else {
+			return "";
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public String getEnumerationQualifiedName() {
+		if (base_Enumeration != null) {
+			return base_Enumeration.getQualifiedName();
+		} else {
+			return "";
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getExpirationDate() {
+		return expirationDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getFullName() {
+		return fullName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getRevisionDate() {
+		return revisionDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getSource() {
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public StatusKind getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getStatusDate() {
+		return statusDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ValueSetType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getUrl() {
+		return url;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getVersion() {
+		return version;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBase_Enumeration(Enumeration newBase_Enumeration) {
+		Enumeration oldBase_Enumeration = base_Enumeration;
+		base_Enumeration = newBase_Enumeration;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__BASE_ENUMERATION, oldBase_Enumeration,
+				base_Enumeration));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBinding(BindingKind newBinding) {
+		BindingKind oldBinding = binding;
+		binding = newBinding == null
+				? BINDING_EDEFAULT
+				: newBinding;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__BINDING, oldBinding, binding));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setCodeSystem(CodeSystemVersion newCodeSystem) {
+		CodeSystemVersion oldCodeSystem = codeSystem;
+		codeSystem = newCodeSystem;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDefinition(String newDefinition) {
+		String oldDefinition = definition;
+		definition = newDefinition;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__DEFINITION, oldDefinition, definition));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setEffectiveDate(String newEffectiveDate) {
+		String oldEffectiveDate = effectiveDate;
+		effectiveDate = newEffectiveDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public void setEnumerationName(String name) {
+		if (base_Enumeration != null) {
+			base_Enumeration.setName(name);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setExpirationDate(String newExpirationDate) {
+		String oldExpirationDate = expirationDate;
+		expirationDate = newExpirationDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__EXPIRATION_DATE, oldExpirationDate,
+				expirationDate));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setFullName(String newFullName) {
+		String oldFullName = fullName;
+		fullName = newFullName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__FULL_NAME, oldFullName, fullName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setIdentifier(String newIdentifier) {
+		String oldIdentifier = identifier;
+		identifier = newIdentifier;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__IDENTIFIER, oldIdentifier, identifier));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setReleaseDate(String newReleaseDate) {
+		String oldReleaseDate = releaseDate;
+		releaseDate = newReleaseDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__RELEASE_DATE, oldReleaseDate, releaseDate));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setRevisionDate(String newRevisionDate) {
+		String oldRevisionDate = revisionDate;
+		revisionDate = newRevisionDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__REVISION_DATE, oldRevisionDate, revisionDate));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setSource(String newSource) {
+		String oldSource = source;
+		source = newSource;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__SOURCE, oldSource, source));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setStatus(StatusKind newStatus) {
+		StatusKind oldStatus = status;
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS, oldStatus, status));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setStatusDate(String newStatusDate) {
+		String oldStatusDate = statusDate;
+		statusDate = newStatusDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__STATUS_DATE, oldStatusDate, statusDate));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setType(ValueSetType newType) {
+		ValueSetType oldType = type;
+		type = newType == null
+				? TYPE_EDEFAULT
+				: newType;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__TYPE, oldType, type));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setUrl(String newUrl) {
+		String oldUrl = url;
+		url = newUrl;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_VERSION__URL, oldUrl, url));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setVersion(String newVersion) {
+		String oldVersion = version;
+		version = newVersion;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.VALUE_SET_VERSION__VERSION, oldVersion, version));
+		}
 	}
 
 	/**

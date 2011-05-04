@@ -1,21 +1,39 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.openhealthtools.mdht.uml.term.core.profile.*;
+import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
+import org.openhealthtools.mdht.uml.term.core.profile.CD;
+import org.openhealthtools.mdht.uml.term.core.profile.CR;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain;
+import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.StatusKind;
+import org.openhealthtools.mdht.uml.term.core.profile.TermFactory;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
+import org.openhealthtools.mdht.uml.term.core.profile.UsageContext;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetType;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +43,18 @@ import org.openhealthtools.mdht.uml.term.core.profile.*;
  * @generated
  */
 public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static TermPackage getPackage() {
+		return TermPackage.eINSTANCE;
+	}
+
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -53,6 +83,63 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 */
 	public TermFactoryImpl() {
 		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertBindingKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertStatusKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case TermPackage.BINDING_KIND:
+				return convertBindingKindToString(eDataType, instanceValue);
+			case TermPackage.VALUE_SET_TYPE:
+				return convertValueSetTypeToString(eDataType, instanceValue);
+			case TermPackage.STATUS_KIND:
+				return convertStatusKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertValueSetTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -97,40 +184,13 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * 
 	 * @generated
 	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case TermPackage.BINDING_KIND:
-				return createBindingKindFromString(eDataType, initialValue);
-			case TermPackage.VALUE_SET_TYPE:
-				return createValueSetTypeFromString(eDataType, initialValue);
-			case TermPackage.STATUS_KIND:
-				return createStatusKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
+	public BindingKind createBindingKindFromString(EDataType eDataType, String initialValue) {
+		BindingKind result = BindingKind.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case TermPackage.BINDING_KIND:
-				return convertBindingKindToString(eDataType, instanceValue);
-			case TermPackage.VALUE_SET_TYPE:
-				return convertValueSetTypeToString(eDataType, instanceValue);
-			case TermPackage.STATUS_KIND:
-				return convertStatusKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
-						"' is not a valid classifier");
-		}
+		return result;
 	}
 
 	/**
@@ -142,39 +202,6 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	public CD createCD() {
 		CDImpl cd = new CDImpl();
 		return cd;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public CR createCR() {
-		CRImpl cr = new CRImpl();
-		return cr;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ConceptDomainConstraint createConceptDomainConstraint() {
-		ConceptDomainConstraintImpl conceptDomainConstraint = new ConceptDomainConstraintImpl();
-		return conceptDomainConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ConceptDomain createConceptDomain() {
-		ConceptDomainImpl conceptDomain = new ConceptDomainImpl();
-		return conceptDomain;
 	}
 
 	/**
@@ -205,9 +232,9 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * 
 	 * @generated
 	 */
-	public ValueSetConstraint createValueSetConstraint() {
-		ValueSetConstraintImpl valueSetConstraint = new ValueSetConstraintImpl();
-		return valueSetConstraint;
+	public ConceptDomain createConceptDomain() {
+		ConceptDomainImpl conceptDomain = new ConceptDomainImpl();
+		return conceptDomain;
 	}
 
 	/**
@@ -216,9 +243,9 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * 
 	 * @generated
 	 */
-	public ValueSetVersion createValueSetVersion() {
-		ValueSetVersionImpl valueSetVersion = new ValueSetVersionImpl();
-		return valueSetVersion;
+	public ConceptDomainConstraint createConceptDomainConstraint() {
+		ConceptDomainConstraintImpl conceptDomainConstraint = new ConceptDomainConstraintImpl();
+		return conceptDomainConstraint;
 	}
 
 	/**
@@ -227,9 +254,9 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * 
 	 * @generated
 	 */
-	public ValueSetCode createValueSetCode() {
-		ValueSetCodeImpl valueSetCode = new ValueSetCodeImpl();
-		return valueSetCode;
+	public CR createCR() {
+		CRImpl cr = new CRImpl();
+		return cr;
 	}
 
 	/**
@@ -238,74 +265,19 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * 
 	 * @generated
 	 */
-	public ValueSetContextBinding createValueSetContextBinding() {
-		ValueSetContextBindingImpl valueSetContextBinding = new ValueSetContextBindingImpl();
-		return valueSetContextBinding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public UsageContext createUsageContext() {
-		UsageContextImpl usageContext = new UsageContextImpl();
-		return usageContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public BindingKind createBindingKindFromString(EDataType eDataType, String initialValue) {
-		BindingKind result = BindingKind.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
-					eDataType.getName() + "'");
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case TermPackage.BINDING_KIND:
+				return createBindingKindFromString(eDataType, initialValue);
+			case TermPackage.VALUE_SET_TYPE:
+				return createValueSetTypeFromString(eDataType, initialValue);
+			case TermPackage.STATUS_KIND:
+				return createStatusKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String convertBindingKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null
-				? null
-				: instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public ValueSetType createValueSetTypeFromString(EDataType eDataType, String initialValue) {
-		ValueSetType result = ValueSetType.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
-					eDataType.getName() + "'");
-		}
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String convertValueSetTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null
-				? null
-				: instanceValue.toString();
 	}
 
 	/**
@@ -329,10 +301,68 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * 
 	 * @generated
 	 */
-	public String convertStatusKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null
-				? null
-				: instanceValue.toString();
+	public UsageContext createUsageContext() {
+		UsageContextImpl usageContext = new UsageContextImpl();
+		return usageContext;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ValueSetCode createValueSetCode() {
+		ValueSetCodeImpl valueSetCode = new ValueSetCodeImpl();
+		return valueSetCode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ValueSetConstraint createValueSetConstraint() {
+		ValueSetConstraintImpl valueSetConstraint = new ValueSetConstraintImpl();
+		return valueSetConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ValueSetContextBinding createValueSetContextBinding() {
+		ValueSetContextBindingImpl valueSetContextBinding = new ValueSetContextBindingImpl();
+		return valueSetContextBinding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ValueSetType createValueSetTypeFromString(EDataType eDataType, String initialValue) {
+		ValueSetType result = ValueSetType.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public ValueSetVersion createValueSetVersion() {
+		ValueSetVersionImpl valueSetVersion = new ValueSetVersionImpl();
+		return valueSetVersion;
 	}
 
 	/**
@@ -343,18 +373,6 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 */
 	public TermPackage getTermPackage() {
 		return (TermPackage) getEPackage();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @deprecated
-	 * @generated
-	 */
-	@Deprecated
-	public static TermPackage getPackage() {
-		return TermPackage.eINSTANCE;
 	}
 
 } // TermFactoryImpl

@@ -1,13 +1,18 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -33,6 +38,86 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface CD extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Code</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Code</em>' attribute.
+	 * @see #setCode(String)
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_Code()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getCode();
+
+	/**
+	 * Returns the value of the '<em><b>Code System</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Code System</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Code System</em>' attribute.
+	 * @see #setCodeSystem(String)
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystem()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getCodeSystem();
+
+	/**
+	 * Returns the value of the '<em><b>Code System Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Code System Name</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Code System Name</em>' attribute.
+	 * @see #setCodeSystemName(String)
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystemName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getCodeSystemName();
+
+	/**
+	 * Returns the value of the '<em><b>Code System Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Code System Version</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Code System Version</em>' attribute.
+	 * @see #setCodeSystemVersion(String)
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystemVersion()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getCodeSystemVersion();
+
+	/**
+	 * Returns the value of the '<em><b>Display Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Display Name</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Display Name</em>' attribute.
+	 * @see #setDisplayName(String)
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_DisplayName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getDisplayName();
+
 	/**
 	 * Returns the value of the '<em><b>Qualifier</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.term.core.profile.CR}.
@@ -66,22 +151,6 @@ public interface CD extends EObject {
 	EList<CD> getTranslation();
 
 	/**
-	 * Returns the value of the '<em><b>Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(String)
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_Code()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getCode();
-
-	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,22 +161,6 @@ public interface CD extends EObject {
 	 * @generated
 	 */
 	void setCode(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Code System</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code System</em>' attribute isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Code System</em>' attribute.
-	 * @see #setCodeSystem(String)
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystem()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getCodeSystem();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystem <em>Code System</em>}' attribute.
@@ -122,22 +175,6 @@ public interface CD extends EObject {
 	void setCodeSystem(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Code System Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code System Name</em>' attribute isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Code System Name</em>' attribute.
-	 * @see #setCodeSystemName(String)
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystemName()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getCodeSystemName();
-
-	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemName <em>Code System Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,22 +187,6 @@ public interface CD extends EObject {
 	void setCodeSystemName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Code System Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code System Version</em>' attribute isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Code System Version</em>' attribute.
-	 * @see #setCodeSystemVersion(String)
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystemVersion()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getCodeSystemVersion();
-
-	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getCodeSystemVersion <em>Code System Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -176,22 +197,6 @@ public interface CD extends EObject {
 	 * @generated
 	 */
 	void setCodeSystemVersion(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Display Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Display Name</em>' attribute isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Display Name</em>' attribute.
-	 * @see #setDisplayName(String)
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.TermPackage#getCD_DisplayName()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getDisplayName();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.term.core.profile.CD#getDisplayName <em>Display Name</em>}' attribute.

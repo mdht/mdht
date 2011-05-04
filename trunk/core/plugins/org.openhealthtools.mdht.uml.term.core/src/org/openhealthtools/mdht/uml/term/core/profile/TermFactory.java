@@ -1,9 +1,15 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile;
 
 import org.eclipse.emf.ecore.EFactory;
@@ -38,36 +44,6 @@ public interface TermFactory extends EFactory {
 	CD createCD();
 
 	/**
-	 * Returns a new object of class '<em>CR</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>CR</em>'.
-	 * @generated
-	 */
-	CR createCR();
-
-	/**
-	 * Returns a new object of class '<em>Concept Domain Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>Concept Domain Constraint</em>'.
-	 * @generated
-	 */
-	ConceptDomainConstraint createConceptDomainConstraint();
-
-	/**
-	 * Returns a new object of class '<em>Concept Domain</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>Concept Domain</em>'.
-	 * @generated
-	 */
-	ConceptDomain createConceptDomain();
-
-	/**
 	 * Returns a new object of class '<em>Code System Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,24 +64,44 @@ public interface TermFactory extends EFactory {
 	CodeSystemVersion createCodeSystemVersion();
 
 	/**
-	 * Returns a new object of class '<em>Value Set Constraint</em>'.
+	 * Returns a new object of class '<em>Concept Domain</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return a new object of class '<em>Value Set Constraint</em>'.
+	 * @return a new object of class '<em>Concept Domain</em>'.
 	 * @generated
 	 */
-	ValueSetConstraint createValueSetConstraint();
+	ConceptDomain createConceptDomain();
 
 	/**
-	 * Returns a new object of class '<em>Value Set Version</em>'.
+	 * Returns a new object of class '<em>Concept Domain Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return a new object of class '<em>Value Set Version</em>'.
+	 * @return a new object of class '<em>Concept Domain Constraint</em>'.
 	 * @generated
 	 */
-	ValueSetVersion createValueSetVersion();
+	ConceptDomainConstraint createConceptDomainConstraint();
+
+	/**
+	 * Returns a new object of class '<em>CR</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>CR</em>'.
+	 * @generated
+	 */
+	CR createCR();
+
+	/**
+	 * Returns a new object of class '<em>Usage Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Usage Context</em>'.
+	 * @generated
+	 */
+	UsageContext createUsageContext();
 
 	/**
 	 * Returns a new object of class '<em>Value Set Code</em>'.
@@ -118,6 +114,16 @@ public interface TermFactory extends EFactory {
 	ValueSetCode createValueSetCode();
 
 	/**
+	 * Returns a new object of class '<em>Value Set Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Value Set Constraint</em>'.
+	 * @generated
+	 */
+	ValueSetConstraint createValueSetConstraint();
+
+	/**
 	 * Returns a new object of class '<em>Value Set Context Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,14 +134,14 @@ public interface TermFactory extends EFactory {
 	ValueSetContextBinding createValueSetContextBinding();
 
 	/**
-	 * Returns a new object of class '<em>Usage Context</em>'.
+	 * Returns a new object of class '<em>Value Set Version</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return a new object of class '<em>Usage Context</em>'.
+	 * @return a new object of class '<em>Value Set Version</em>'.
 	 * @generated
 	 */
-	UsageContext createUsageContext();
+	ValueSetVersion createValueSetVersion();
 
 	/**
 	 * Returns the package supported by this factory.

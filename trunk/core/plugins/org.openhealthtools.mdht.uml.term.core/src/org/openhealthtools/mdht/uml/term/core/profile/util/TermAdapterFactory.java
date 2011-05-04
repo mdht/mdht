@@ -1,19 +1,33 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.openhealthtools.mdht.uml.term.core.profile.*;
+import org.openhealthtools.mdht.uml.term.core.profile.CD;
+import org.openhealthtools.mdht.uml.term.core.profile.CR;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain;
+import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
+import org.openhealthtools.mdht.uml.term.core.profile.UsageContext;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetContextBinding;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,39 +49,6 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 	protected static TermPackage modelPackage;
 
 	/**
-	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public TermAdapterFactory() {
-		if (modelPackage == null) {
-			modelPackage = TermPackage.eINSTANCE;
-		}
-	}
-
-	/**
-	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return whether this factory is applicable for the type of the object.
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
-			return true;
-		}
-		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
-		}
-		return false;
-	}
-
-	/**
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,21 +62,6 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCR(CR object) {
-			return createCRAdapter();
-		}
-
-		@Override
-		public Adapter caseConceptDomainConstraint(ConceptDomainConstraint object) {
-			return createConceptDomainConstraintAdapter();
-		}
-
-		@Override
-		public Adapter caseConceptDomain(ConceptDomain object) {
-			return createConceptDomainAdapter();
-		}
-
-		@Override
 		public Adapter caseCodeSystemConstraint(CodeSystemConstraint object) {
 			return createCodeSystemConstraintAdapter();
 		}
@@ -106,23 +72,18 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseValueSetConstraint(ValueSetConstraint object) {
-			return createValueSetConstraintAdapter();
+		public Adapter caseConceptDomain(ConceptDomain object) {
+			return createConceptDomainAdapter();
 		}
 
 		@Override
-		public Adapter caseValueSetVersion(ValueSetVersion object) {
-			return createValueSetVersionAdapter();
+		public Adapter caseConceptDomainConstraint(ConceptDomainConstraint object) {
+			return createConceptDomainConstraintAdapter();
 		}
 
 		@Override
-		public Adapter caseValueSetCode(ValueSetCode object) {
-			return createValueSetCodeAdapter();
-		}
-
-		@Override
-		public Adapter caseValueSetContextBinding(ValueSetContextBinding object) {
-			return createValueSetContextBindingAdapter();
+		public Adapter caseCR(CR object) {
+			return createCRAdapter();
 		}
 
 		@Override
@@ -131,10 +92,43 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseValueSetCode(ValueSetCode object) {
+			return createValueSetCodeAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetConstraint(ValueSetConstraint object) {
+			return createValueSetConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetContextBinding(ValueSetContextBinding object) {
+			return createValueSetContextBindingAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetVersion(ValueSetVersion object) {
+			return createValueSetVersionAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
 	};
+
+	/**
+	 * Creates an instance of the adapter factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public TermAdapterFactory() {
+		if (modelPackage == null) {
+			modelPackage = TermPackage.eINSTANCE;
+		}
+	}
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -163,52 +157,6 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCDAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.CR <em>CR</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.CR
-	 * @generated
-	 */
-	public Adapter createCRAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
-	 * <em>Concept Domain Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
-	 * @generated
-	 */
-	public Adapter createConceptDomainConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain <em>Concept Domain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain
-	 * @generated
-	 */
-	public Adapter createConceptDomainAdapter() {
 		return null;
 	}
 
@@ -245,34 +193,76 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint
-	 * <em>Value Set Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain <em>Concept Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomain
 	 * @generated
 	 */
-	public Adapter createValueSetConstraintAdapter() {
+	public Adapter createConceptDomainAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion <em>Value Set Version</em>}
-	 * '.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
+	 * <em>Concept Domain Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
 	 * @generated
 	 */
-	public Adapter createValueSetVersionAdapter() {
+	public Adapter createConceptDomainConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.CR <em>CR</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.CR
+	 * @generated
+	 */
+	public Adapter createCRAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for the default case.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @generated
+	 */
+	public Adapter createEObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext <em>Usage Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.UsageContext
+	 * @generated
+	 */
+	public Adapter createUsageContextAdapter() {
 		return null;
 	}
 
@@ -288,6 +278,22 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createValueSetCodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint
+	 * <em>Value Set Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint
+	 * @generated
+	 */
+	public Adapter createValueSetConstraintAdapter() {
 		return null;
 	}
 
@@ -308,31 +314,39 @@ public class TermAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.UsageContext <em>Usage Context</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion <em>Value Set Version</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.term.core.profile.UsageContext
+	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion
 	 * @generated
 	 */
-	public Adapter createUsageContextAdapter() {
+	public Adapter createValueSetVersionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for the default case.
+	 * Returns whether this factory is applicable for the type of the object.
 	 * <!-- begin-user-doc -->
-	 * This default implementation returns null.
+	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return the new adapter.
+	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
-	public Adapter createEObjectAdapter() {
-		return null;
+	@Override
+	public boolean isFactoryForType(Object object) {
+		if (object == modelPackage) {
+			return true;
+		}
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
+		}
+		return false;
 	}
 
 } // TermAdapterFactory

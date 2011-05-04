@@ -1,21 +1,24 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.StatusKind;
+import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 import org.openhealthtools.mdht.uml.term.core.profile.UsageContext;
 
 /**
@@ -128,130 +131,8 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * 
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TermPackage.Literals.USAGE_CONTEXT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getIdentifier() {
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setIdentifier(String newIdentifier) {
-		String oldIdentifier = identifier;
-		identifier = newIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__IDENTIFIER, oldIdentifier, identifier));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public StatusKind getStatus() {
-		return status;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setStatus(StatusKind newStatus) {
-		StatusKind oldStatus = status;
-		status = newStatus == null
-				? STATUS_EDEFAULT
-				: newStatus;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS, oldStatus, status));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getStatusDate() {
-		return statusDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setStatusDate(String newStatusDate) {
-		String oldStatusDate = statusDate;
-		statusDate = newStatusDate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS_DATE, oldStatusDate, statusDate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject) base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
-			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(
-						this, Notification.RESOLVE, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
-				}
-			}
-		}
-		return base_Class;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
 		return base_Class;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
-		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
-		base_Class = newBase_Class;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(
-				this, Notification.SET, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
-		}
 	}
 
 	/**
@@ -276,6 +157,31 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 				return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case TermPackage.USAGE_CONTEXT__IDENTIFIER:
+				return IDENTIFIER_EDEFAULT == null
+						? identifier != null
+						: !IDENTIFIER_EDEFAULT.equals(identifier);
+			case TermPackage.USAGE_CONTEXT__STATUS:
+				return status != STATUS_EDEFAULT;
+			case TermPackage.USAGE_CONTEXT__STATUS_DATE:
+				return STATUS_DATE_EDEFAULT == null
+						? statusDate != null
+						: !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case TermPackage.USAGE_CONTEXT__BASE_CLASS:
+				return base_Class != null;
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -310,6 +216,17 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * @generated
 	 */
 	@Override
+	protected EClass eStaticClass() {
+		return TermPackage.Literals.USAGE_CONTEXT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.USAGE_CONTEXT__IDENTIFIER:
@@ -334,23 +251,109 @@ public class UsageContextImpl extends EObjectImpl implements UsageContext {
 	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.USAGE_CONTEXT__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null
-						? identifier != null
-						: !IDENTIFIER_EDEFAULT.equals(identifier);
-			case TermPackage.USAGE_CONTEXT__STATUS:
-				return status != STATUS_EDEFAULT;
-			case TermPackage.USAGE_CONTEXT__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null
-						? statusDate != null
-						: !STATUS_DATE_EDEFAULT.equals(statusDate);
-			case TermPackage.USAGE_CONTEXT__BASE_CLASS:
-				return base_Class != null;
+	public org.eclipse.uml2.uml.Class getBase_Class() {
+		if (base_Class != null && base_Class.eIsProxy()) {
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
+			if (base_Class != oldBase_Class) {
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(
+						this, Notification.RESOLVE, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
+				}
+			}
 		}
-		return super.eIsSet(featureID);
+		return base_Class;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public StatusKind getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getStatusDate() {
+		return statusDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
+		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
+		base_Class = newBase_Class;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.USAGE_CONTEXT__BASE_CLASS, oldBase_Class, base_Class));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setIdentifier(String newIdentifier) {
+		String oldIdentifier = identifier;
+		identifier = newIdentifier;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.USAGE_CONTEXT__IDENTIFIER, oldIdentifier, identifier));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setStatus(StatusKind newStatus) {
+		StatusKind oldStatus = status;
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS, oldStatus, status));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setStatusDate(String newStatusDate) {
+		String oldStatusDate = statusDate;
+		statusDate = newStatusDate;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, TermPackage.USAGE_CONTEXT__STATUS_DATE, oldStatusDate, statusDate));
+		}
 	}
 
 	/**

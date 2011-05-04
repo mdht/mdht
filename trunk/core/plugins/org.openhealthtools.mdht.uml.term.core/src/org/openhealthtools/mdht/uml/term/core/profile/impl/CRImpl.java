@@ -1,20 +1,23 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.openhealthtools.mdht.uml.term.core.profile.CD;
 import org.openhealthtools.mdht.uml.term.core.profile.CR;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
@@ -95,9 +98,150 @@ public class CRImpl extends EObjectImpl implements CR {
 	 * 
 	 * @generated
 	 */
+	public NotificationChain basicSetName(CD newName, NotificationChain msgs) {
+		CD oldName = name;
+		name = newName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, TermPackage.CR__NAME, oldName, newName);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public NotificationChain basicSetValue(CD newValue, NotificationChain msgs) {
+		CD oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, TermPackage.CR__VALUE, oldValue, newValue);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case TermPackage.CR__NAME:
+				return getName();
+			case TermPackage.CR__VALUE:
+				return getValue();
+			case TermPackage.CR__INVERTED:
+				return isInverted();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case TermPackage.CR__NAME:
+				return basicSetName(null, msgs);
+			case TermPackage.CR__VALUE:
+				return basicSetValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case TermPackage.CR__NAME:
+				return name != null;
+			case TermPackage.CR__VALUE:
+				return value != null;
+			case TermPackage.CR__INVERTED:
+				return inverted != INVERTED_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case TermPackage.CR__NAME:
+				setName((CD) newValue);
+				return;
+			case TermPackage.CR__VALUE:
+				setValue((CD) newValue);
+				return;
+			case TermPackage.CR__INVERTED:
+				setInverted((Boolean) newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
 		return TermPackage.Literals.CR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case TermPackage.CR__NAME:
+				setName((CD) null);
+				return;
+			case TermPackage.CR__VALUE:
+				setValue((CD) null);
+				return;
+			case TermPackage.CR__INVERTED:
+				setInverted(INVERTED_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
 	}
 
 	/**
@@ -116,19 +260,32 @@ public class CRImpl extends EObjectImpl implements CR {
 	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetName(CD newName, NotificationChain msgs) {
-		CD oldName = name;
-		name = newName;
+	public CD getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isInverted() {
+		return inverted;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setInverted(boolean newInverted) {
+		boolean oldInverted = inverted;
+		inverted = newInverted;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, TermPackage.CR__NAME, oldName, newName);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CR__INVERTED, oldInverted, inverted));
 		}
-		return msgs;
 	}
 
 	/**
@@ -163,37 +320,6 @@ public class CRImpl extends EObjectImpl implements CR {
 	 * 
 	 * @generated
 	 */
-	public CD getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public NotificationChain basicSetValue(CD newValue, NotificationChain msgs) {
-		CD oldValue = value;
-		value = newValue;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, TermPackage.CR__VALUE, oldValue, newValue);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public void setValue(CD newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
@@ -212,129 +338,6 @@ public class CRImpl extends EObjectImpl implements CR {
 		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CR__VALUE, newValue, newValue));
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public boolean isInverted() {
-		return inverted;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setInverted(boolean newInverted) {
-		boolean oldInverted = inverted;
-		inverted = newInverted;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CR__INVERTED, oldInverted, inverted));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case TermPackage.CR__NAME:
-				return basicSetName(null, msgs);
-			case TermPackage.CR__VALUE:
-				return basicSetValue(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case TermPackage.CR__NAME:
-				return getName();
-			case TermPackage.CR__VALUE:
-				return getValue();
-			case TermPackage.CR__INVERTED:
-				return isInverted();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case TermPackage.CR__NAME:
-				setName((CD) newValue);
-				return;
-			case TermPackage.CR__VALUE:
-				setValue((CD) newValue);
-				return;
-			case TermPackage.CR__INVERTED:
-				setInverted((Boolean) newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case TermPackage.CR__NAME:
-				setName((CD) null);
-				return;
-			case TermPackage.CR__VALUE:
-				setValue((CD) null);
-				return;
-			case TermPackage.CR__INVERTED:
-				setInverted(INVERTED_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case TermPackage.CR__NAME:
-				return name != null;
-			case TermPackage.CR__VALUE:
-				return value != null;
-			case TermPackage.CR__INVERTED:
-				return inverted != INVERTED_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
 	}
 
 	/**
