@@ -44,7 +44,7 @@ public class CDAProfileUtil {
 	public static ActRelationship getActRelationship(Association association) {
 		ActRelationship actRelationship = null;
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				association, ICDAProfileConstants.ACT_RELATIONSHIP);
+			association, ICDAProfileConstants.ACT_RELATIONSHIP);
 		if (stereotype != null) {
 			actRelationship = (ActRelationship) association.getStereotypeApplication(stereotype);
 		}
@@ -53,18 +53,16 @@ public class CDAProfileUtil {
 
 	public static Participation getParticipation(Association association) {
 		Participation participation = null;
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				association, ICDAProfileConstants.PARTICIPATION);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.PARTICIPATION);
 		if (stereotype != null) {
 			participation = (Participation) association.getStereotypeApplication(stereotype);
 		}
 		return participation;
 	}
-	
+
 	public static TextValue getTextValue(Property property) {
 		TextValue textValue = null;
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				property, ICDAProfileConstants.TEXT_VALUE);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.TEXT_VALUE);
 		if (stereotype != null) {
 			textValue = (TextValue) property.getStereotypeApplication(stereotype);
 		}
@@ -73,8 +71,7 @@ public class CDAProfileUtil {
 
 	public static ConformsTo getConformsTo(Generalization generalization) {
 		ConformsTo conformsTo = null;
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				generalization, ICDAProfileConstants.CONFORMS_TO);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(generalization, ICDAProfileConstants.CONFORMS_TO);
 		if (stereotype != null) {
 			conformsTo = (ConformsTo) generalization.getStereotypeApplication(stereotype);
 		}
@@ -84,7 +81,7 @@ public class CDAProfileUtil {
 	public static EntryRelationship getEntryRelationship(Association association) {
 		EntryRelationship entryRelationship = null;
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
+			association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
 		if (stereotype != null) {
 			entryRelationship = (EntryRelationship) association.getStereotypeApplication(stereotype);
 		}
@@ -93,8 +90,7 @@ public class CDAProfileUtil {
 
 	public static Entry getEntry(Association association) {
 		Entry entry = null;
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				association, ICDAProfileConstants.ENTRY);
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
 		if (stereotype != null) {
 			entry = (Entry) association.getStereotypeApplication(stereotype);
 		}
@@ -122,7 +118,7 @@ public class CDAProfileUtil {
 	public static VocabSpecification getVocabSpecification(Property property) {
 		VocabSpecification vocabSpecification = null;
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
+			property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 		if (stereotype != null) {
 			vocabSpecification = (VocabSpecification) property.getStereotypeApplication(stereotype);
 		}
@@ -134,15 +130,13 @@ public class CDAProfileUtil {
 	 */
 	public static Profile getCDAProfile(ResourceSet resourceSet) {
 		Profile profile = null;
-		Resource profileResource = resourceSet.getResource(URI
-				.createURI(CDAResource.CDA_PROFILE_URI), true);
-		
+		Resource profileResource = resourceSet.getResource(URI.createURI(CDAResource.CDA_PROFILE_URI), true);
+
 		if (profileResource != null) {
 			profile = (Profile) EcoreUtil.getObjectByType(
-					profileResource.getContents(), 
-					UMLPackage.eINSTANCE.getProfile());
+				profileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
 		}
-		
+
 		return profile;
 	}
 
@@ -152,7 +146,7 @@ public class CDAProfileUtil {
 	 * 
 	 * @return stereotype, or null if not applied
 	 */
-	public static Stereotype getAppliedCDAStereotype(Element element, String stereotypeName) {	
+	public static Stereotype getAppliedCDAStereotype(Element element, String stereotypeName) {
 		Stereotype stereotype = null;
 		if (element.eResource() == null) {
 			// this occurs when resource is unloaded or element was removed
@@ -169,9 +163,11 @@ public class CDAProfileUtil {
 					}
 				}
 			}
-		}	
-		
-		return element.isStereotypeApplied(stereotype) ? stereotype : null;
+		}
+
+		return element.isStereotypeApplied(stereotype)
+				? stereotype
+				: null;
 	}
 
 	/**
@@ -197,13 +193,12 @@ public class CDAProfileUtil {
 			element.unapplyStereotype(stereotype);
 		}
 	}
-	
-	
+
 	/**
 	 * Check all containing packages for applied profile.
 	 */
-	public static Profile getAppliedCDAProfile(Element element) {		
-		return org.openhealthtools.mdht.uml.common.util.UMLUtil.getAppliedProfile(CDAResource.CDA_PROFILE_URI,element);
-				
+	public static Profile getAppliedCDAProfile(Element element) {
+		return org.openhealthtools.mdht.uml.common.util.UMLUtil.getAppliedProfile(CDAResource.CDA_PROFILE_URI, element);
+
 	}
 }

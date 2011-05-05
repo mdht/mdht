@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson and others.
+ * Copyright (c) 2010 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,13 +29,41 @@ public class RIMModelUtil {
 
 	public static final String RIM_PACKAGE_NAME = "rim";
 
+	public static List<Class> getAssociationTypes(Association association) {
+		List<Class> associationTypes = new ArrayList<Class>();
+		Type srcType = null;
+		for (Property property : association.getMemberEnds()) {
+			if (property.isNavigable()) {
+				property.getType();
+			} else {
+				srcType = property.getType();
+			}
+		}
+
+		if (srcType instanceof Class) {
+			PropertyList propertyList = new PropertyList((Class) srcType);
+			List<Property> associationEnds = propertyList.getAssociationEnds();
+
+			for (Property property : associationEnds) {
+				if (isActRelationship(association) && isActRelationship(property.getType())) {
+					associationTypes.add((Class) property.getType());
+				} else if (isParticipation(association) && isParticipation(property.getType())) {
+					associationTypes.add((Class) property.getType());
+				}
+			}
+		}
+
+		return associationTypes;
+	}
+
 	public static Class getRIMClass(Class umlClass) {
 		Class cdaClass = null;
-		
+
 		// if the provided class is from RIM and not a template
-		if (isRIMModel(umlClass))
+		if (isRIMModel(umlClass)) {
 			return umlClass;
-		
+		}
+
 		for (Classifier parent : umlClass.allParents()) {
 			// nearest package may be null if RIM model is not available
 			if (parent.getNearestPackage() != null) {
@@ -45,110 +73,84 @@ public class RIMModelUtil {
 				}
 			}
 		}
-		
+
 		return cdaClass;
 	}
 
-	public static boolean isRIMModel(Element element) {
-		return RIM_PACKAGE_NAME.equals(element.getNearestPackage().getName());
-	}
-	
-	public static boolean isRIMType(Type umlClass, String typeName) {
-		if (umlClass instanceof Class && typeName != null) {
-			Class rimClass = getRIMClass((Class)umlClass);
-			if (rimClass != null && typeName.equals(rimClass.getName()))
-				return true;
+	public static List<EnumerationLiteral> getTypeCodes(Class associationType) {
+		List<EnumerationLiteral> typeCodes = new ArrayList<EnumerationLiteral>();
+		if (associationType != null) {
+			Property typeCode = associationType.getOwnedAttribute("typeCode", null);
+			if (typeCode != null && typeCode.getType() instanceof Enumeration) {
+				typeCodes.addAll(((Enumeration) typeCode.getType()).getOwnedLiterals());
+			}
 		}
-		
-		return false;
+
+		return typeCodes;
 	}
 
 	public static boolean isAct(Type umlClass) {
 		return isRIMType(umlClass, "Act");
 	}
 
-	public static boolean isEntity(Type umlClass) {
-		return isRIMType(umlClass, "Entity");
-	}
+	public static boolean isActRelationship(Association association) {
+		Type srcType = null;
+		Type targetType = null;
+		for (Property property : association.getMemberEnds()) {
+			if (property.isNavigable()) {
+				targetType = property.getType();
+			} else {
+				srcType = property.getType();
+			}
+		}
 
-	public static boolean isRole(Type umlClass) {
-		return isRIMType(umlClass, "Role");
+		return isAct(srcType) && isAct(targetType);
 	}
 
 	public static boolean isActRelationship(Type umlClass) {
 		return isRIMType(umlClass, "ActRelationship");
 	}
 
-	public static boolean isParticipation(Type umlClass) {
-		return isRIMType(umlClass, "Participation");
-	}
-
-	public static boolean isActRelationship(Association association) {
-		Type srcType = null;
-		Type targetType = null;
-		for (Property property : association.getMemberEnds()) {
-			if (property.isNavigable())
-				targetType = property.getType();
-			else
-				srcType = property.getType();
-		}
-		
-		return isAct(srcType) && isAct(targetType);
+	public static boolean isEntity(Type umlClass) {
+		return isRIMType(umlClass, "Entity");
 	}
 
 	public static boolean isParticipation(Association association) {
 		Type act = null;
 		Type role = null;
 		for (Property property : association.getMemberEnds()) {
-			if (isAct(property.getType()))
+			if (isAct(property.getType())) {
 				act = property.getType();
-			if (isRole(property.getType()))
+			}
+			if (isRole(property.getType())) {
 				role = property.getType();
+			}
 		}
-		
+
 		return act != null && role != null;
 	}
 
-	public static List<Class> getAssociationTypes(Association association) {
-		List<Class> associationTypes = new ArrayList<Class>();
-		Type srcType = null;
-		Type targetType = null;
-		for (Property property : association.getMemberEnds()) {
-			if (property.isNavigable())
-				targetType = property.getType();
-			else
-				srcType = property.getType();
-		}
-		
-		if (srcType instanceof Class) {
-			PropertyList propertyList = new PropertyList((Class)srcType);
-			List<Property> associationEnds = propertyList.getAssociationEnds();
-			
-			for (Property property : associationEnds) {
-				if (isActRelationship(association) 
-						&& isActRelationship(property.getType())) {
-					associationTypes.add((Class)property.getType());
-				}
-				else if (isParticipation(association) 
-						&& isParticipation(property.getType())) {
-					associationTypes.add((Class)property.getType());
-				}
+	public static boolean isParticipation(Type umlClass) {
+		return isRIMType(umlClass, "Participation");
+	}
+
+	public static boolean isRIMModel(Element element) {
+		return RIM_PACKAGE_NAME.equals(element.getNearestPackage().getName());
+	}
+
+	public static boolean isRIMType(Type umlClass, String typeName) {
+		if (umlClass instanceof Class && typeName != null) {
+			Class rimClass = getRIMClass((Class) umlClass);
+			if (rimClass != null && typeName.equals(rimClass.getName())) {
+				return true;
 			}
 		}
-		
-		return associationTypes;
+
+		return false;
 	}
-	
-	public static List<EnumerationLiteral> getTypeCodes(Class associationType) {
-		List<EnumerationLiteral> typeCodes = new ArrayList<EnumerationLiteral>();
-		if (associationType != null) {
-			Property typeCode = associationType.getOwnedAttribute("typeCode", null);
-			if (typeCode != null && typeCode.getType() instanceof Enumeration) {
-				typeCodes.addAll(((Enumeration)typeCode.getType()).getOwnedLiterals());
-			}
-		}
-		
-		return typeCodes;		
+
+	public static boolean isRole(Type umlClass) {
+		return isRIMType(umlClass, "Role");
 	}
-	
+
 }

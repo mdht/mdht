@@ -1,9 +1,15 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile;
 
 import java.util.Arrays;
@@ -17,6 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Entry Relationship Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getEntryRelationshipKind()
  * @model
  * @generated
@@ -26,6 +33,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>CAUS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CAUS_VALUE
 	 * @generated
 	 * @ordered
@@ -36,6 +44,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>COMP</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COMP_VALUE
 	 * @generated
 	 * @ordered
@@ -46,6 +55,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>GEVL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #GEVL_VALUE
 	 * @generated
 	 * @ordered
@@ -56,6 +66,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>MFST</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MFST_VALUE
 	 * @generated
 	 * @ordered
@@ -66,6 +77,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>REFR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #REFR_VALUE
 	 * @generated
 	 * @ordered
@@ -76,6 +88,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>RSON</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RSON_VALUE
 	 * @generated
 	 * @ordered
@@ -86,6 +99,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>SAS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SAS_VALUE
 	 * @generated
 	 * @ordered
@@ -96,6 +110,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>SPRT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SPRT_VALUE
 	 * @generated
 	 * @ordered
@@ -106,6 +121,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>SUBJ</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SUBJ_VALUE
 	 * @generated
 	 * @ordered
@@ -116,6 +132,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>XCRPT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #XCRPT_VALUE
 	 * @generated
 	 * @ordered
@@ -126,10 +143,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>CAUS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CAUS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>CAUS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CAUS
 	 * @model
 	 * @generated
@@ -141,10 +158,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>COMP</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>COMP</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>COMP</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COMP
 	 * @model
 	 * @generated
@@ -156,10 +173,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>GEVL</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>GEVL</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>GEVL</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #GEVL
 	 * @model
 	 * @generated
@@ -171,10 +188,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>MFST</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>MFST</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>MFST</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MFST
 	 * @model
 	 * @generated
@@ -186,10 +203,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>REFR</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>REFR</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>REFR</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #REFR
 	 * @model
 	 * @generated
@@ -201,10 +218,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>RSON</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>RSON</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>RSON</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RSON
 	 * @model
 	 * @generated
@@ -216,10 +233,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>SAS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SAS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>SAS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SAS
 	 * @model
 	 * @generated
@@ -231,10 +248,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>SPRT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SPRT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>SPRT</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SPRT
 	 * @model
 	 * @generated
@@ -246,10 +263,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>SUBJ</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SUBJ</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>SUBJ</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SUBJ
 	 * @model
 	 * @generated
@@ -261,10 +278,10 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * The '<em><b>XCRPT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>XCRPT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>XCRPT</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #XCRPT
 	 * @model
 	 * @generated
@@ -276,34 +293,59 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * An array of all the '<em><b>Entry Relationship Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final EntryRelationshipKind[] VALUES_ARRAY =
-		new EntryRelationshipKind[] {
-			CAUS,
-			COMP,
-			GEVL,
-			MFST,
-			REFR,
-			RSON,
-			SAS,
-			SPRT,
-			SUBJ,
-			XCRPT,
-		};
+	private static final EntryRelationshipKind[] VALUES_ARRAY = new EntryRelationshipKind[] {
+			CAUS, COMP, GEVL, MFST, REFR, RSON, SAS, SPRT, SUBJ, XCRPT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Entry Relationship Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<EntryRelationshipKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
+	 * Returns the '<em><b>Entry Relationship Kind</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static EntryRelationshipKind get(int value) {
+		switch (value) {
+			case CAUS_VALUE:
+				return CAUS;
+			case COMP_VALUE:
+				return COMP;
+			case GEVL_VALUE:
+				return GEVL;
+			case MFST_VALUE:
+				return MFST;
+			case REFR_VALUE:
+				return REFR;
+			case RSON_VALUE:
+				return RSON;
+			case SAS_VALUE:
+				return SAS;
+			case SPRT_VALUE:
+				return SPRT;
+			case SUBJ_VALUE:
+				return SUBJ;
+			case XCRPT_VALUE:
+				return XCRPT;
+		}
+		return null;
+	}
+
+	/**
 	 * Returns the '<em><b>Entry Relationship Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static EntryRelationshipKind get(String literal) {
@@ -320,6 +362,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * Returns the '<em><b>Entry Relationship Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static EntryRelationshipKind getByName(String name) {
@@ -333,30 +376,9 @@ public enum EntryRelationshipKind implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Entry Relationship Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static EntryRelationshipKind get(int value) {
-		switch (value) {
-			case CAUS_VALUE: return CAUS;
-			case COMP_VALUE: return COMP;
-			case GEVL_VALUE: return GEVL;
-			case MFST_VALUE: return MFST;
-			case REFR_VALUE: return REFR;
-			case RSON_VALUE: return RSON;
-			case SAS_VALUE: return SAS;
-			case SPRT_VALUE: return SPRT;
-			case SUBJ_VALUE: return SUBJ;
-			case XCRPT_VALUE: return XCRPT;
-		}
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -364,6 +386,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -371,6 +394,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -379,6 +403,7 @@ public enum EntryRelationshipKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EntryRelationshipKind(int value, String name, String literal) {
@@ -390,39 +415,43 @@ public enum EntryRelationshipKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getValue() {
-	  return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-	  return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public int getValue() {
+		return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //EntryRelationshipKind
+
+} // EntryRelationshipKind
