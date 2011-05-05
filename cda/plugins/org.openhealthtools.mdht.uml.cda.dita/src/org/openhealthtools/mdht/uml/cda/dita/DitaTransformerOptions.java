@@ -28,36 +28,43 @@ import org.openhealthtools.mdht.uml.cda.dita.internal.Activator;
 public class DitaTransformerOptions {
 
 	public static final String BASE_URL = "baseURL";
+
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
-	
+
 	private IPath outputPath = null;
+
 	private String baseURL = null;
+
 	private boolean includeVocabularyConstraints = false;
+
 	private List<EPackage> ePackages = new Vector<EPackage>();
-	
+
 	// use Vector for a thread-safe synchronized List
 	private List<Element> deletedElementList = new Vector<Element>();
 
 	private List<String> documentList = new Vector<String>();
+
 	private List<String> sectionList = new Vector<String>();
+
 	private List<String> clinicalStatementList = new Vector<String>();
+
 	private List<String> classList = new Vector<String>();
+
 	private List<String> valueSetList = new Vector<String>();
-	
+
 	private List<Classifier> pubClassifiers = new Vector<Classifier>();
-	
+
 	public DitaTransformerOptions() {
 		initializePreferences();
 	}
-	
+
 	private void initializePreferences() {
 		Preferences store = Activator.getDefault().getPluginPreferences();
 
 		if (store.getString(BASE_URL) != null && store.getString(BASE_URL).length() > 0) {
 			baseURL = store.getString(BASE_URL);
 		}
-		includeVocabularyConstraints = 
-			store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
+		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
 	}
 
 	public boolean isIncludeVocabularyConstraints() {
@@ -118,14 +125,14 @@ public class DitaTransformerOptions {
 	public List<EPackage> getEPackages() {
 		return ePackages;
 	}
-	
+
 	public void setEPackages(List<EPackage> packages) {
 		this.ePackages = packages;
 	}
 
 	public void addEPackage(Class<EPackage> ePackageClass) {
 		try {
-			EPackage ePackage = (EPackage)ePackageClass.getField("eINSTANCE").get(null);
+			EPackage ePackage = (EPackage) ePackageClass.getField("eINSTANCE").get(null);
 			ePackages.add(ePackage);
 		} catch (Exception e) {
 			// ignore, leave as null

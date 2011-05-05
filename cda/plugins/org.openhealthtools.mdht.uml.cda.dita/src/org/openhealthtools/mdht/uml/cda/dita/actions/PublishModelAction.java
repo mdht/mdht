@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sean Muir.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita.actions;
 
 import java.io.FileInputStream;
@@ -59,7 +71,75 @@ import org.xml.sax.SAXException;
 public class PublishModelAction implements IObjectActionDelegate {
 
 	protected IWorkbenchPart activePart;
+
 	protected ISelection currentSelection;
+
+	public PublishModelAction() {
+
+	}
+
+	private String getFileNameFromMap(String ditaMapPath) {
+
+		String fileName = null;
+
+		try {
+
+			FileInputStream ditaMapStream;
+
+			ditaMapStream = new FileInputStream(ditaMapPath);
+
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+			factory.setNamespaceAware(true);
+
+			factory.setValidating(false);
+
+			factory.setFeature("http://xml.org/sax/features/namespaces", false);
+			factory.setFeature("http://xml.org/sax/features/validation", false);
+			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
+			DocumentBuilder builder;
+
+			Document doc = null;
+
+			XPathExpression expr = null;
+
+			builder = factory.newDocumentBuilder();
+
+			doc = builder.parse(new InputSource(ditaMapStream)); // zipFile.getInputStream(pluginEntry)));
+
+			XPathFactory xFactory = XPathFactory.newInstance();
+
+			XPath xpath = xFactory.newXPath();
+
+			expr = xpath.compile("//bookmap/booktitle/mainbooktitle");
+
+			Node result = (Node) expr.evaluate(doc, XPathConstants.NODE);
+
+			if (result != null) {
+
+				fileName = result.getTextContent();
+			} else {
+
+				expr = xpath.compile("/bookmap");
+
+				result = (Node) expr.evaluate(doc, XPathConstants.NODE);
+
+				if (result != null) {
+					fileName = result.getAttributes().getNamedItem("id").getTextContent();
+				}
+			}
+
+			// If there is any issue parsing - we use the project name
+		} catch (FileNotFoundException e) {
+		} catch (ParserConfigurationException e) {
+		} catch (SAXException e) {
+		} catch (IOException e) {
+		} catch (XPathExpressionException e) {
+		}
+		return fileName;
+	}
 
 	public void run(IAction action) {
 		try {
@@ -75,28 +155,6 @@ public class PublishModelAction implements IObjectActionDelegate {
 		}
 
 	}
-
-	public PublishModelAction() {
-
-	}
-
-	/**
-	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		activePart = targetPart;
-
-	}
-
-	/**
-	 * @throws URISyntaxException
-	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
-	 */
-	public void selectionChanged(IAction action, ISelection selection) {
-		currentSelection = selection;
-	}
-
-	
 
 	private void runPublishDita() throws IOException, CoreException, URISyntaxException {
 		IProject ditaProject = null;
@@ -174,7 +232,8 @@ public class PublishModelAction implements IObjectActionDelegate {
 			if (".".equals(classPath)) {
 				URL url = FileLocator.find(bundle, new Path(""), null);
 				url = FileLocator.toFileURL(url);
-				IRuntimeClasspathEntry pluginEntry = JavaRuntime.newRuntimeContainerClasspathEntry(new Path(url.getPath()), IRuntimeClasspathEntry.USER_CLASSES);
+				IRuntimeClasspathEntry pluginEntry = JavaRuntime.newRuntimeContainerClasspathEntry(
+					new Path(url.getPath()), IRuntimeClasspathEntry.USER_CLASSES);
 				classpath.add(pluginEntry.getMemento());
 			} else {
 				URL url = FileLocator.find(bundle, new Path(classPath), null);
@@ -211,14 +270,18 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_JRE_CONTAINER_PATH, jre.getName());
 
-		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, "-Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl");
+		workingCopy.setAttribute(
+			IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS,
+			"-Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl");
 
 		Map<String, String> antProperties = new HashMap<String, String>();
 
 		antProperties.put("dita.dir", ditadirURL.toURI().getRawPath());
 		antProperties.put("ditaMapFile", ditaMapFile.getLocation().toOSString());
 		antProperties.put("outputLocation", ditaProject.getLocation().toOSString());
-		antProperties.put("pdf.output", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("pdf").toOSString());
+		antProperties.put(
+			"pdf.output",
+			org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("pdf").toOSString());
 		antProperties.put("ditaMapFileRoot", ditaMapFileRoot);
 
 		String fileName = getFileNameFromMap(ditaMapFile.getLocation().toOSString());
@@ -229,26 +292,31 @@ public class PublishModelAction implements IObjectActionDelegate {
 		antProperties.put("fileName", fileName);
 		antProperties.put("args.debug", "no");
 		antProperties.put("ditaFilePath", ditaFolder.getLocation().toOSString());
-		antProperties.put("tempFilePath", org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("temp").toOSString());
+		antProperties.put(
+			"tempFilePath",
+			org.openhealthtools.mdht.uml.cda.dita.internal.Activator.getDefault().getStateLocation().append("temp").toOSString());
 		antProperties.put("docProject", ditaProject.getLocation().toOSString());
 
-
-	    String pdfFileLocation =  ditaMapFile.getName();
+		String pdfFileLocation = ditaMapFile.getName();
 		pdfFileLocation = pdfFileLocation.replaceFirst(".ditamap", ".pdf");
 		antProperties.put("pdflocation", pdfFileLocation);
-		
 
 		workingCopy.setAttribute("process_factory_id", "org.eclipse.ant.ui.remoteAntProcessFactory");
-		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "org.eclipse.ant.internal.ui.antsupport.InternalAntRunner");
+		workingCopy.setAttribute(
+			IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME,
+			"org.eclipse.ant.internal.ui.antsupport.InternalAntRunner");
 
-		workingCopy.setAttribute(org.eclipse.core.externaltools.internal.IExternalToolConstants.ATTR_WORKING_DIRECTORY, ditaProject.getLocation().toOSString());
+		workingCopy.setAttribute(
+			org.eclipse.core.externaltools.internal.IExternalToolConstants.ATTR_WORKING_DIRECTORY,
+			ditaProject.getLocation().toOSString());
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, jvmArguments.toString());
 		workingCopy.setAttribute(org.eclipse.ant.launching.IAntLaunchConstants.ATTR_ANT_TARGETS, antTargets);
 		workingCopy.setAttribute(IAntLaunchConstants.ATTR_ANT_PROPERTIES, antProperties);
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_CLASSPATH, classpath);
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, false);
 		workingCopy.setAttribute(IDebugUIConstants.ATTR_CONSOLE_PROCESS, false);
-		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_CLASSPATH_PROVIDER, "org.eclipse.ant.ui.AntClasspathProvider");
+		workingCopy.setAttribute(
+			IJavaLaunchConfigurationConstants.ATTR_CLASSPATH_PROVIDER, "org.eclipse.ant.ui.AntClasspathProvider");
 		workingCopy.setAttribute(IDebugUIConstants.ATTR_LAUNCH_IN_BACKGROUND, true);
 
 		workingCopy.setAttribute(DebugPlugin.ATTR_CONSOLE_ENCODING, "UTF-8");
@@ -261,67 +329,20 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 	}
 
-	private String getFileNameFromMap(String ditaMapPath) {
+	/**
+	 * @throws URISyntaxException
+	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
+	 */
+	public void selectionChanged(IAction action, ISelection selection) {
+		currentSelection = selection;
+	}
 
-		String fileName = null;
+	/**
+	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
+	 */
+	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		activePart = targetPart;
 
-		try {
-
-			FileInputStream ditaMapStream;
-
-			ditaMapStream = new FileInputStream(ditaMapPath);
-
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
-			factory.setNamespaceAware(true);
-
-			factory.setValidating(false);
-
-			factory.setFeature("http://xml.org/sax/features/namespaces", false);
-			factory.setFeature("http://xml.org/sax/features/validation", false);
-			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
-			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
-
-			DocumentBuilder builder;
-
-			Document doc = null;
-
-			XPathExpression expr = null;
-
-			builder = factory.newDocumentBuilder();
-
-			doc = builder.parse(new InputSource(ditaMapStream)); // zipFile.getInputStream(pluginEntry)));
-
-			XPathFactory xFactory = XPathFactory.newInstance();
-
-			XPath xpath = xFactory.newXPath();
-
-			expr = xpath.compile("//bookmap/booktitle/mainbooktitle");
-
-			Node result = (Node) expr.evaluate(doc, XPathConstants.NODE);
-
-			if (result != null) {
-
-				fileName = result.getTextContent();
-			} else {
-
-				expr = xpath.compile("/bookmap");
-
-				result = (Node) expr.evaluate(doc, XPathConstants.NODE);
-
-				if (result != null) {
-					fileName = result.getAttributes().getNamedItem("id").getTextContent();
-				}
-			}
-
-			// If there is any issue parsing - we use the project name
-		} catch (FileNotFoundException e) {
-		} catch (ParserConfigurationException e) {
-		} catch (SAXException e) {
-		} catch (IOException e) {
-		} catch (XPathExpressionException e) {
-		}
-		return fileName;
 	}
 
 }
