@@ -20,21 +20,21 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
  * Abstract base class for model transformations.
  */
 public abstract class TransformAbstract extends UMLSwitch<Object> {
-	
+
 	public static final String LF = System.getProperty("line.separator");
-	
+
 	protected DitaTransformerOptions transformerOptions;
 
 	public TransformAbstract(DitaTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
 	protected void removeModelElement(Element element) {
 		if (!isRemoved(element)) {
 			transformerOptions.getDeletedElementList().add(element);
 		}
 	}
-	
+
 	protected boolean isRemoved(Element element) {
 		return transformerOptions.getDeletedElementList().contains(element);
 	}

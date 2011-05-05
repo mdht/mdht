@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 
 public class DitaTransformer {
-	
+
 	private DitaTransformerOptions transformerOptions;
 
 	public DitaTransformer() {
@@ -41,49 +41,46 @@ public class DitaTransformer {
 
 	public DitaTransformer(DitaTransformerOptions options) {
 		transformerOptions = options;
-		
+
 		if (transformerOptions.getBaseURL() != null) {
 			CDAModelUtil.INFOCENTER_URL = transformerOptions.getBaseURL();
 		}
 	}
-	
+
 	public void transformElement(Element element) {
 		// get list of published classifiers
 		UMLSwitch<Object> pubList = new UMLSwitch<Object>() {
+			@Override
 			public Object caseClassifier(Classifier classifier) {
 				transformerOptions.getPubClassifiers().add(classifier);
 				return classifier;
 			}
+
+			@Override
 			public Object caseElementImport(ElementImport elementImport) {
 				if (elementImport.getImportedElement() instanceof Classifier) {
-					transformerOptions.getPubClassifiers().add((Classifier)elementImport.getImportedElement());
+					transformerOptions.getPubClassifiers().add((Classifier) elementImport.getImportedElement());
 				}
 				return elementImport;
 			}
 		};
-		TreeIterator<EObject> pubListIterator = EcoreUtil.getAllContents(
-				Collections.singletonList(element));
+		TreeIterator<EObject> pubListIterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 		while (pubListIterator != null && pubListIterator.hasNext()) {
 			EObject child = pubListIterator.next();
 			pubList.doSwitch(child);
 		}
 
-		UMLSwitch<Object> transformPackage = 
-			new TransformPackage(transformerOptions);
-		UMLSwitch<Object> transformClass = 
-			new TransformClass(transformerOptions);
-		UMLSwitch<Object> transformClassProperties = 
-			new TransformClassContent(transformerOptions);
-		UMLSwitch<Object> transformValueSet = 
-			new TransformValueSet(transformerOptions);
+		UMLSwitch<Object> transformPackage = new TransformPackage(transformerOptions);
+		UMLSwitch<Object> transformClass = new TransformClass(transformerOptions);
+		UMLSwitch<Object> transformClassProperties = new TransformClassContent(transformerOptions);
+		UMLSwitch<Object> transformValueSet = new TransformValueSet(transformerOptions);
 
 		try {
-			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
-					Collections.singletonList(element));
+			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = iterator.next();
 				if (child instanceof ElementImport) {
-					child = ((ElementImport)child).getImportedElement();
+					child = ((ElementImport) child).getImportedElement();
 				}
 
 				if (child != null) {
@@ -93,24 +90,25 @@ public class DitaTransformer {
 					transformValueSet.doSwitch(child);
 				}
 			}
-		}
-		catch (IndexOutOfBoundsException e) {
+		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
-		
+
 		writeMapFile("classes", "document", "Document Templates", transformerOptions.getDocumentList());
 		writeMapFile("classes", "section", "Section Templates", transformerOptions.getSectionList());
-		writeMapFile("classes", "clinicalstatement", "Clinical Statement Templates", transformerOptions.getClinicalStatementList());
+		writeMapFile(
+			"classes", "clinicalstatement", "Clinical Statement Templates",
+			transformerOptions.getClinicalStatementList());
 		writeMapFile("classes", "classes", "Other Classes", transformerOptions.getClassList());
 		writeMapFile("terminology", "valueset", "Value Sets", transformerOptions.getValueSetList());
 
 	}
-	
+
 	private void writeMapFile(String folder, String name, String title, List<String> fileNames) {
 		Collections.sort(fileNames);
-		
-		IPath filePath = transformerOptions.getOutputPath().append(folder)
-				.addTrailingSeparator().append(name).addFileExtension("ditamap");
+
+		IPath filePath = transformerOptions.getOutputPath().append(folder).addTrailingSeparator().append(name).addFileExtension(
+			"ditamap");
 		File file = filePath.toFile();
 		PrintWriter writer = null;
 
@@ -125,7 +123,7 @@ public class DitaTransformer {
 			for (String fileName : fileNames) {
 				writer.println("<topicref href=\"" + fileName + "\" type=\"topic\" />");
 			}
-			
+
 			writer.println("</map>");
 
 		} catch (FileNotFoundException e) {
@@ -138,5 +136,5 @@ public class DitaTransformer {
 			}
 		}
 	}
-	
+
 }
