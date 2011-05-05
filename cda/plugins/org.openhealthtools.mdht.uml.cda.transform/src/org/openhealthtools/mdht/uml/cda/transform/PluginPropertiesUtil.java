@@ -39,12 +39,14 @@ public class PluginPropertiesUtil {
 	private static String CONSTRAINT_MESSAGE_MARKER = "# Constraint messages";
 
 	private IFile pluginProperties;
+
 	private Properties properties;
+
 	private List<String> newProperties = new ArrayList<String>();
-	
+
 	public PluginPropertiesUtil(IFile pluginProperties) {
 		this.pluginProperties = pluginProperties;
-		
+
 		properties = new Properties();
 		try {
 			properties.load(pluginProperties.getContents());
@@ -52,7 +54,7 @@ public class PluginPropertiesUtil {
 			Logger.logException(e);
 		}
 	}
-	
+
 	public PluginPropertiesUtil(Resource resource) {
 		this(findPluginProperties(resource));
 	}
@@ -62,11 +64,11 @@ public class PluginPropertiesUtil {
 		if (!properties.containsKey(key)) {
 			newProperties.add(key);
 		}
-		
+
 		// update existing property with new value or add new property key
 		properties.setProperty(key, value);
 	}
-	
+
 	public String getProperty(String key) {
 		return properties.getProperty(key);
 	}
@@ -79,7 +81,7 @@ public class PluginPropertiesUtil {
 	 */
 	private static IFile findPluginProperties(Resource resource) {
 		IFile pluginProperties = null;
-		
+
 		// get project file path
 		IProject project = null;
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -89,23 +91,23 @@ public class PluginPropertiesUtil {
 			if (files.length > 0) {
 				project = files[0].getProject();
 			}
-		}
-		else if (resource.getURI().isPlatformResource()) {
-			IResource iResource = workspace.getRoot().findMember(new Path(resource.getURI().path()).removeFirstSegments(1));
-			if (iResource != null)
+		} else if (resource.getURI().isPlatformResource()) {
+			IResource iResource = workspace.getRoot().findMember(
+				new Path(resource.getURI().path()).removeFirstSegments(1));
+			if (iResource != null) {
 				project = iResource.getProject();
+			}
 		}
-		
+
 		if (project != null) {
 			IResource file = project.findMember("plugin.properties");
 			if (file instanceof IFile) {
-				pluginProperties = (IFile)file;
-			}
-			else {
+				pluginProperties = (IFile) file;
+			} else {
 				// create new plugin.properties
 				pluginProperties = project.getFile("plugin.properties");
 			}
-			
+
 			if (!pluginProperties.exists()) {
 				ByteArrayInputStream is = new ByteArrayInputStream(new byte[0]);
 				try {
@@ -115,33 +117,32 @@ public class PluginPropertiesUtil {
 				}
 			}
 		}
-		
+
 		return pluginProperties;
 	}
-	
+
 	public void save() {
 		FileOutputStream out = null;
 		PrintStream printStream = null;
 		List<String> propertyKeys = new ArrayList<String>();
-		
+
 		try {
 			if (hasConstraintMessageMarker()) {
 				// append all keys after comment tag
 				String header = copyFileHeader();
-				
+
 				out = new FileOutputStream(pluginProperties.getLocation().toFile(), false);
 				printStream = new PrintStream(out);
 				printStream.print(header);
-				
+
 				for (Object key : properties.keySet()) {
 					propertyKeys.add(key.toString());
 				}
-			}
-			else {
+			} else {
 				// append only new keys
 				out = new FileOutputStream(pluginProperties.getLocation().toFile(), true);
 				printStream = new PrintStream(out);
-				
+
 				propertyKeys.addAll(newProperties);
 			}
 
@@ -152,11 +153,10 @@ public class PluginPropertiesUtil {
 					printStream.println(key + " = " + value);
 				}
 			}
-			
+
 		} catch (FileNotFoundException e) {
 			Logger.logException(e);
-		}
-		finally {
+		} finally {
 			if (out != null) {
 				try {
 					out.close();
@@ -166,17 +166,17 @@ public class PluginPropertiesUtil {
 			}
 		}
 
-        // refresh the workspace file
+		// refresh the workspace file
 		try {
 			pluginProperties.getParent().refreshLocal(IResource.DEPTH_ONE, null);
 		} catch (CoreException e) {
 			Logger.logException(e);
 		}
 	}
-	
+
 	private boolean hasConstraintMessageMarker() {
 		BufferedReader reader = null;
-		
+
 		try {
 			reader = new BufferedReader(new FileReader(pluginProperties.getLocation().toFile()));
 			while (reader.ready()) {
@@ -185,25 +185,26 @@ public class PluginPropertiesUtil {
 					return true;
 				}
 			}
-			
+
 		} catch (Exception e) {
 			// ignore and return false
 		} finally {
-			if (reader != null)
+			if (reader != null) {
 				try {
 					reader.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+			}
 		}
-		
+
 		return false;
 	}
-	
+
 	private String copyFileHeader() {
 		StringBuffer header = new StringBuffer();
 		BufferedReader reader = null;
-		
+
 		try {
 			reader = new BufferedReader(new FileReader(pluginProperties.getLocation().toFile()));
 			while (reader.ready()) {
@@ -213,18 +214,19 @@ public class PluginPropertiesUtil {
 					break;
 				}
 			}
-			
+
 		} catch (Exception e) {
 			// ignore and allow save to create a new file
 		} finally {
-			if (reader != null)
+			if (reader != null) {
 				try {
 					reader.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+			}
 		}
-		
+
 		return header.toString();
 	}
 }

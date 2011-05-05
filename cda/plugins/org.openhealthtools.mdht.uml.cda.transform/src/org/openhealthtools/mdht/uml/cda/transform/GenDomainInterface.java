@@ -25,14 +25,15 @@ public class GenDomainInterface extends TransformAbstract {
 	public GenDomainInterface(EcoreTransformerOptions options) {
 		super(options);
 	}
-	
+
+	@Override
 	public Object caseClass(Class umlClass) {
 		Interface domainInterface = getDomainInterface(umlClass);
-		
+
 		if (transformerOptions.isIncludeInterfaceRealization()) {
 			umlClass.createInterfaceRealization(null, domainInterface);
 		}
-		
+
 		// copy comments for use in Javadoc
 		for (Comment comment : umlClass.getOwnedComments()) {
 			Comment clone = EcoreUtil.copy(comment);
@@ -43,13 +44,13 @@ public class GenDomainInterface extends TransformAbstract {
 		// add hyperlink to implementation guide
 		Comment igLink = domainInterface.createOwnedComment();
 		igLink.getAnnotatedElements().add(domainInterface);
-		//String igURL = "http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.hitsp.doc/classes/DiagnosticResultsSection.html";
+		// String igURL = "http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.hitsp.doc/classes/DiagnosticResultsSection.html";
 		String igURL = "http://www.cdatools.org/infocenter/index.jsp";
-		igLink.setBody("<p>Refer to full implementation guide <a href=\""+igURL+"\"/>specification</a>.</p>");
-		
+		igLink.setBody("<p>Refer to full implementation guide <a href=\"" + igURL + "\"/>specification</a>.</p>");
+
 		// interface generalization
 		for (Generalization generalization : umlClass.getGeneralizations()) {
-			//TODO ultimately want to support domain interfaces in other models
+			// TODO ultimately want to support domain interfaces in other models
 			if (UMLUtil.isSameModel(umlClass, generalization.getGeneral())) {
 				Interface extendsInterface = getDomainInterface(generalization.getGeneral());
 				if (extendsInterface != null) {
@@ -63,10 +64,10 @@ public class GenDomainInterface extends TransformAbstract {
 			// toCDAType() operation
 			String operationName = "toCDAType";
 			Operation operation = domainInterface.createOwnedOperation(operationName, null, null, cdaType);
-			operation.setIsQuery(true);	// make this a query method
+			operation.setIsQuery(true); // make this a query method
 		}
-		
+
 		return domainInterface;
 	}
-	
+
 }

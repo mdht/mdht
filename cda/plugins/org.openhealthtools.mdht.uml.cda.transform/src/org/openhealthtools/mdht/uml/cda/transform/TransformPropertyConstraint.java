@@ -37,12 +37,13 @@ public class TransformPropertyConstraint extends TransformAbstract {
 	public TransformPropertyConstraint(EcoreTransformerOptions options) {
 		super(options);
 	}
-	
+
+	@Override
 	public Object caseProperty(Property property) {
 		if (isRemoved(property)) {
 			return null;
 		}
-		
+
 		// only process properties that are owned by a Class
 		if (property.getClass_() == null) {
 			return null;
@@ -52,7 +53,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		if (property.getAssociation() != null) {
 			return null;
 		}
-		
+
 		Property cdaProperty = getCDAProperty(property);
 		Property inheritedProperty = getInheritedProperty(property);
 		if (cdaProperty == null) {
@@ -76,55 +77,50 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		StringBuffer body = new StringBuffer();
 		String selfName = "self." + cdaProperty.getName();
 		String inheritedTypeQName = inheritedProperty.getType().getQualifiedName();
-		String templateTypeQName = property.getType() == null ? 
-				inheritedTypeQName : property.getType().getQualifiedName();
+		String templateTypeQName = property.getType() == null
+				? inheritedTypeQName
+				: property.getType().getQualifiedName();
 
 		// inherited property may also have non-conformant type
 		if (!inheritedProperty.getType().conformsTo(cdaProperty.getType())) {
 			// use the CDA property type
 			inheritedTypeQName = cdaProperty.getType().getQualifiedName();
 			templateTypeQName = inheritedTypeQName;
-		}
-		else if (property.getType() != null
-				&& !property.getType().conformsTo(inheritedProperty.getType())) {
+		} else if (property.getType() != null && !property.getType().conformsTo(inheritedProperty.getType())) {
 			// don't log error for structural attributes with enumeration type
 			if (!(property.getType() instanceof Enumeration)) {
-				String message = "Property type does not conform to redefined property type: " + property.getQualifiedName();
+				String message = "Property type does not conform to redefined property type: " +
+						property.getQualifiedName();
 				Logger.log(Logger.ERROR, message);
 			}
-			
+
 			// use the inherited property type
 			templateTypeQName = inheritedTypeQName;
 		}
 
-		/* 
+		/*
 		 * Test for multiplicity restriction
 		 */
-		if (property.getLower() != inheritedProperty.getLower()
-				|| property.getUpper() != inheritedProperty.getUpper()) {
-			
+		if (property.getLower() != inheritedProperty.getLower() || property.getUpper() != inheritedProperty.getUpper()) {
+
 			if (property.getUpper() == 0) {
 				// element is prohibited in redefinition
 				// place-holder for when this is supported in UML 2.2
-			}
-			else if (cdaProperty.getUpper() == 1) {
+			} else if (cdaProperty.getUpper() == 1) {
 				// single-valued CDA property
 				if (property.getLower() == 1) {
 					body.append("not " + selfName + ".oclIsUndefined()");
 				}
-			}
-			else if (cdaProperty.getUpper() > 0 
-					|| cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
+			} else if (cdaProperty.getUpper() > 0 || cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
 				// multi-valued CDA property
 				if (property.getLower() == 1 && property.getUpper() == 1) {
 					body.append(selfName + "->size() = 1");
-				}
-				else if (property.getLower() >= 1) {
+				} else if (property.getLower() >= 1) {
 					body.append("not " + selfName + "->isEmpty()");
 				}
 			}
 		}
-		
+
 		/*
 		 * Test for type restriction
 		 */
@@ -132,22 +128,20 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			if (body.length() > 0) {
 				body.append(" and ");
 			}
-			
+
 			if (cdaProperty.getUpper() == 1) {
 				body.append(selfName + ".oclIsTypeOf(" + templateTypeQName + ")");
-			}
-			else {
+			} else {
 				body.append(selfName + "->forAll(element | element.oclIsTypeOf(" + templateTypeQName + "))");
 			}
 		}
-		
+
 		/*
 		 * Test for enumeration or primitive type with default value.
 		 */
-		if ((property.getType() instanceof Enumeration
-					|| property.getType() instanceof PrimitiveType)
-				&& property.getDefault() != null) {
-			
+		if ((property.getType() instanceof Enumeration || property.getType() instanceof PrimitiveType) &&
+				property.getDefault() != null) {
+
 			AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
 			annotationsUtil.setAnnotation(property.getName(), property.getDefault());
 			annotationsUtil.saveAnnotations();
@@ -157,14 +151,15 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				if (body.length() > 0) {
 					body.append(" and ");
 				}
-				if (property.getType() instanceof Enumeration)
+				if (property.getType() instanceof Enumeration) {
 					body.append(selfName + "=" + templateTypeQName + "::" + property.getDefault());
-				else
+				} else {
 					body.append(selfName + "='" + property.getDefault() + "'");
+				}
 			}
-			
+
 		}
-		
+
 		/*
 		 * Test for <<nullFlavor>> stereotype
 		 */
@@ -174,10 +169,9 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			Object value = property.getValue(nullFlavor, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
 			String nullFlavorValue = null;
 			if (value instanceof EnumerationLiteral) {
-				nullFlavorValue = ((EnumerationLiteral)value).getName();
-			}
-			else if (value instanceof Enumerator) {
-				nullFlavorValue = ((Enumerator)value).getName();
+				nullFlavorValue = ((EnumerationLiteral) value).getName();
+			} else if (value instanceof Enumerator) {
+				nullFlavorValue = ((Enumerator) value).getName();
 			}
 			if (nullFlavorValue != null) {
 				Class class_ = property.getClass_();
@@ -186,15 +180,15 @@ public class TransformPropertyConstraint extends TransformAbstract {
 						body.append(" and ");
 					}
 					body.append("self." + property.getName() + ".nullFlavor = vocab::NullFlavor::" + nullFlavorValue);
-					
+
 					AnnotationsUtil annotationUtil = new AnnotationsUtil(class_);
 					annotationUtil.setAnnotation(property.getName() + ".nullFlavor", nullFlavorValue);
 					annotationUtil.saveAnnotations();
-					
-//					constraintName = class_.getName() + "_" + property.getName() + "_nullFlavor";
-//					constraintName = class_.getName() + property.getName().substring(0, 1).toUpperCase() + 
-//							property.getName().substring(1) + "NullFlavor";
-					constraintName = createConstraintName(class_, property.getName().substring(0, 1).toUpperCase() + 
+
+					// constraintName = class_.getName() + "_" + property.getName() + "_nullFlavor";
+					// constraintName = class_.getName() + property.getName().substring(0, 1).toUpperCase() +
+					// property.getName().substring(1) + "NullFlavor";
+					constraintName = createConstraintName(class_, property.getName().substring(0, 1).toUpperCase() +
 							property.getName().substring(1) + "NullFlavor");
 				}
 			}
@@ -227,49 +221,48 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		String severity = CDAModelUtil.getValidationSeverity(property);
 		if (severity != null) {
 			if (body.length() > 0) {
-//				addOCLConstraint(property, body);
+				// addOCLConstraint(property, body);
 				addOCLConstraint(property, body, constraintName);
-			}
-			else {
+			} else {
 				// Constraints that have no multiplicity or type restriction
-				//TODO is this adequate to catch MAY or SHOULD constraints?
+				// TODO is this adequate to catch MAY or SHOULD constraints?
 				if (cdaProperty.getUpper() == 1) {
 					body.append("not " + selfName + ".oclIsUndefined()");
-				}
-				else {
-//					body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
+				} else {
+					// body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
 					body.append("not " + selfName + "->isEmpty()");
 				}
 				addOCLConstraint(property, body);
 			}
 		}
-		
+
 		// test for redefinition
 		// else remove the property
 		removeModelElement(property);
-		
+
 		return property;
 	}
-	
+
 	private boolean isEDType(Property property) {
 		Classifier type = (Classifier) property.getType();
 		if (type == null) {
 			Property cdaProperty = getCDAProperty(property);
-			if (cdaProperty != null)
+			if (cdaProperty != null) {
 				type = (Classifier) cdaProperty.getType();
-			else
+			} else {
 				return false;
+			}
 		}
-		
+
 		List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
 		allTypes.add(0, type);
-		
+
 		for (Classifier classifier : allTypes) {
 			if ("datatypes::ED".equals(classifier.getQualifiedName())) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 }

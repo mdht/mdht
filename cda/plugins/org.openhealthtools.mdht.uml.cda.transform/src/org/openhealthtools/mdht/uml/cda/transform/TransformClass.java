@@ -24,25 +24,26 @@ public class TransformClass extends TransformAbstract {
 	public TransformClass(EcoreTransformerOptions options) {
 		super(options);
 	}
-	
+
+	@Override
 	public Object caseClass(Class umlClass) {
 		/*
-		 * Remove annotations added into the  CDA Consolidation model.
+		 * Remove annotations added into the CDA Consolidation model.
 		 * There were to support consolidation process, not runtime code.
 		 */
 		EAnnotation annotation = umlClass.getEAnnotation("sourceClass");
 		if (annotation != null) {
 			umlClass.getEAnnotations().remove(annotation);
 		}
-		
+
 		/*
-		 * Remove relationships added into the  CDA Consolidation model.
+		 * Remove relationships added into the CDA Consolidation model.
 		 * There were to support consolidation process, not runtime code.
 		 */
 		for (Substitution substitution : umlClass.getSubstitutions()) {
 			removeModelElement(substitution);
 		}
-		
+
 		/*
 		 * Scan for and remove invalid property redefines relationships.
 		 * These cause error in Ecore genmodel reload.
@@ -54,14 +55,14 @@ public class TransformClass extends TransformAbstract {
 				if (redef.eIsProxy() || !umlClass.getGenerals().contains(redef.getClass_())) {
 					redefines.remove(redef);
 				}
-				
-				//TODO isConsistentWith() seems to return false when OK
-//				if (redef.eIsProxy() || !property.isConsistentWith(redef)) {
-//					redefines.remove(redef);
-//				}
+
+				// TODO isConsistentWith() seems to return false when OK
+				// if (redef.eIsProxy() || !property.isConsistentWith(redef)) {
+				// redefines.remove(redef);
+				// }
 			}
 		}
-		
+
 		return umlClass;
 	}
 }

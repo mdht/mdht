@@ -30,37 +30,37 @@ public class GenMethodHelper {
 	public static final String LF = System.getProperty("line.separator");
 
 	protected EcoreTransformerOptions transformerOptions;
-	
+
 	public GenMethodHelper(EcoreTransformerOptions options) {
 		this.transformerOptions = options;
 	}
-	
+
 	public Operation genPropertyGetterOperation(Classifier classifier, Property property, Classifier domainType) {
 		if (property.getAssociation() != null) {
 			return genAssociationGetterOperation(classifier, property, domainType);
 		}
-		
+
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
 			businessName = normalizeCodeName(property.getLabel(false));
-		}
-		else {
+		} else {
 			businessName = normalizeCodeName(property.getName());
 		}
 
-		String operationName = "get" + ((property.getUpper() == 1) ? capitalize(businessName) : capitalize(pluralize(businessName)));
+		String operationName = "get" + ((property.getUpper() == 1)
+				? capitalize(businessName)
+				: capitalize(pluralize(businessName)));
 		StringBuffer operationBody = new StringBuffer();
-		
+
 		if (classifier instanceof Interface) {
-			operation = ((Interface)classifier).createOwnedOperation(operationName, null, null, domainType);
+			operation = ((Interface) classifier).createOwnedOperation(operationName, null, null, domainType);
+		} else if (classifier instanceof Class) {
+			operation = ((Class) classifier).createOwnedOperation(operationName, null, null, domainType);
 		}
-		else if (classifier instanceof Class) {
-			operation = ((Class)classifier).createOwnedOperation(operationName, null, null, domainType);
-		}
-		
+
 		if (operation != null) {
-			operation.setIsQuery(true);	// make this a query method
+			operation.setIsQuery(true); // make this a query method
 			operation.setUpper(property.getUpper());
 
 			Property cdaProperty = CDAModelUtil.getCDAProperty(property);
@@ -79,7 +79,7 @@ public class GenMethodHelper {
 	public Operation genAssociationGetterOperation(Classifier classifier, Property sourceProperty, Classifier domainType) {
 		Class sourceClass = sourceProperty.getClass_();
 		Class targetClass = (Class) sourceProperty.getType();
-		
+
 		if (sourceClass == null || targetClass == null || sourceProperty == null) {
 			return null;
 		}
@@ -87,18 +87,19 @@ public class GenMethodHelper {
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
 			businessName = normalizeCodeName(sourceProperty.getLabel(false));
-		}
-		else {
+		} else {
 			businessName = normalizeCodeName(sourceProperty.getName());
 		}
-		
+
 		String operationName = "get";
-//		if (!UMLUtil.getRedefinedProperties(sourceProperty).isEmpty()) {
-//			operationName += CDAModelUtil.getModelPrefix(sourceProperty);
-//		}
-		operationName += ((sourceProperty.getUpper() == 1) ? capitalize(businessName) : capitalize(pluralize(businessName)));
+		// if (!UMLUtil.getRedefinedProperties(sourceProperty).isEmpty()) {
+		// operationName += CDAModelUtil.getModelPrefix(sourceProperty);
+		// }
+		operationName += ((sourceProperty.getUpper() == 1)
+				? capitalize(businessName)
+				: capitalize(pluralize(businessName)));
 		Operation operation = sourceClass.createOwnedOperation(operationName, null, null, domainType);
-		operation.setIsQuery(true);	// make this a query method
+		operation.setIsQuery(true); // make this a query method
 		operation.setUpper(sourceProperty.getUpper());
 
 		String domainTypeQName = domainType.getQualifiedName();
@@ -107,17 +108,17 @@ public class GenMethodHelper {
 		String cdaTargetName = cdaTargetClass.getName();
 		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
 		String cdaTargetQName = cdaTargetClass.getQualifiedName();
-		
+
 		StringBuffer operationBody = new StringBuffer();
 
-		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass))
-				&& CDAModelUtil.isSection(targetClass)) {
+		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass)) &&
+				CDAModelUtil.isSection(targetClass)) {
 			// ClinicalDocument -> Section || Section -> Section
 			operationBody.append("self.getAllSections()->select(");
-			operationBody.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" + domainTypeQName + "))");
-			
-		}
-		else {
+			operationBody.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" +
+					domainTypeQName + "))");
+
+		} else {
 			operationBody.append("self.get" + pluralize(cdaTargetName) + "()->select(");
 			operationBody.append(cdaTargetLowerName + " : " + cdaTargetQName + " | ");
 			operationBody.append("not " + cdaTargetLowerName + ".oclIsUndefined() and ");
@@ -128,112 +129,108 @@ public class GenMethodHelper {
 			operationBody.append("->asSequence()->first()");
 		}
 		operationBody.append(".oclAsType(" + domainTypeQName + ")");
-	
+
 		// create body constraint to implement the operation
 		addBodyExpression(operation, "OCL", operationBody.toString());
-		
+
 		return operation;
 	}
-	
+
 	public Operation genCreateOperation(Classifier classifier, Property property, Classifier domainType) {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
 			businessName = normalizeCodeName(property.getLabel(false));
-		}
-		else {
+		} else {
 			businessName = normalizeCodeName(property.getName());
 		}
-		
-		String operationVerb = (property.getUpper() == 1) ? "with" : "add";
+
+		String operationVerb = (property.getUpper() == 1)
+				? "with"
+				: "add";
 		String operationName = operationVerb + capitalize(businessName);
 		StringBuffer operationBody = new StringBuffer();
 
 		if (classifier instanceof Interface) {
-			operation = ((Interface)classifier).createOwnedOperation(operationName, null, null, domainType);
-		}
-		else if (classifier instanceof Class) {
-			operation = ((Class)classifier).createOwnedOperation(operationName, null, null, domainType);
+			operation = ((Interface) classifier).createOwnedOperation(operationName, null, null, domainType);
+		} else if (classifier instanceof Class) {
+			operation = ((Class) classifier).createOwnedOperation(operationName, null, null, domainType);
 		}
 
 		if (operation != null) {
 			// create instance of appropriate domainType
 			Class sourceClass = property.getClass_();
-			Class cdaTargetClass = CDAModelUtil.getCDAClass((Classifier)property.getType());
+			Class cdaTargetClass = CDAModelUtil.getCDAClass((Classifier) property.getType());
 			Property cdaProperty = CDAModelUtil.getCDAProperty(property);
 			String nsURI = null;
 
 			if (CDAModelUtil.isDatatypeModel(property.getType())) {
-				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage.eINSTANCE;" + LF);
-				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory.eINSTANCE;" + LF);
-			}
-			else if (CDAModelUtil.isCDAModel(property.getType())) {
-				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.cda.CDAPackage.eINSTANCE;" + LF);
-				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE;" + LF);
-			}
-			else {
+				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage.eINSTANCE;" +
+						LF);
+				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory.eINSTANCE;" +
+						LF);
+			} else if (CDAModelUtil.isCDAModel(property.getType())) {
+				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.cda.CDAPackage.eINSTANCE;" +
+						LF);
+				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE;" +
+						LF);
+			} else {
 				Stereotype ePackage = property.getType().getNearestPackage().getAppliedStereotype("Ecore::EPackage");
 				if (ePackage != null) {
 					nsURI = (String) property.getType().getNearestPackage().getValue(ePackage, "nsURI");
-				}
-				else {
+				} else {
 					return null;
 				}
-				
-				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEPackage(\"" 
-						+ nsURI + "\");" + LF);
-				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEFactory(\"" 
-						+ nsURI + "\");" + LF);
+
+				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEPackage(\"" +
+						nsURI + "\");" + LF);
+				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEFactory(\"" +
+						nsURI + "\");" + LF);
 			}
 
-			operationBody.append("org.eclipse.emf.ecore.EClass eClass = (org.eclipse.emf.ecore.EClass) ePackage.getEClassifier(\"" 
-					+ property.getType().getName() + "\");" + LF);
+			operationBody.append("org.eclipse.emf.ecore.EClass eClass = (org.eclipse.emf.ecore.EClass) ePackage.getEClassifier(\"" +
+					property.getType().getName() + "\");" + LF);
 			operationBody.append("org.eclipse.emf.ecore.EObject eObject = eFactory.create(eClass);" + LF);
-			
-			if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass))
-					&& CDAModelUtil.isSection(cdaTargetClass)) {
-				operationBody.append(domainType.getName() + " section = " 
-						+ "(" + domainType.getName() + ") eObject;" + LF);
+
+			if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass)) &&
+					CDAModelUtil.isSection(cdaTargetClass)) {
+				operationBody.append(domainType.getName() + " section = " + "(" + domainType.getName() + ") eObject;" +
+						LF);
 				operationBody.append("section.init();" + LF);
 
 				operationBody.append("addSection((org.openhealthtools.mdht.uml.cda.Section)section);" + LF);
 				operationBody.append("return (" + domainType.getName() + ")section;");
-			}
-			else if ((CDAModelUtil.isSection(sourceClass) || CDAModelUtil.isClinicalStatement(sourceClass))
-					&& CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-				operationBody.append(domainType.getName() + " clinicalStatement = " 
-						+ "(" + domainType.getName() + ") eObject;" + LF);
+			} else if ((CDAModelUtil.isSection(sourceClass) || CDAModelUtil.isClinicalStatement(sourceClass)) &&
+					CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+				operationBody.append(domainType.getName() + " clinicalStatement = " + "(" + domainType.getName() +
+						") eObject;" + LF);
 				operationBody.append("clinicalStatement.init();" + LF);
-				
-				operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." 
-						+ cdaTargetClass.getName() + ")clinicalStatement);" + LF);
+
+				operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
+						cdaTargetClass.getName() + ")clinicalStatement);" + LF);
 				operationBody.append("return clinicalStatement;");
-			}
-			else if (CDAModelUtil.isDatatypeModel(property.getType())) {
-				operationBody.append(domainType.getName() + " value = " 
-						+ "(" + domainType.getName() + ") eObject;" + LF);
-				
+			} else if (CDAModelUtil.isDatatypeModel(property.getType())) {
+				operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
+						LF);
+
 				if (cdaProperty.getUpper() == 1) {
 					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
+				} else {
+					operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
 				}
-				else {
+				operationBody.append("return value;");
+			} else if (CDAModelUtil.isCDAModel(property.getType())) {
+				operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
+						LF);
+
+				if (cdaProperty.getUpper() == 1) {
+					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
+				} else {
 					operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
 				}
 				operationBody.append("return value;");
 			}
-			else if (CDAModelUtil.isCDAModel(property.getType())) {
-				operationBody.append(domainType.getName() + " value = " 
-						+ "(" + domainType.getName() + ") eObject;" + LF);
-				
-				if (cdaProperty.getUpper() == 1) {
-					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
-				}
-				else {
-					operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
-				}
-				operationBody.append("return value;");
-			}
-			
+
 			// create body constraint to implement the operation
 			if (operationBody.length() > 0) {
 				addBodyExpression(operation, "Java", operationBody.toString());
@@ -248,26 +245,24 @@ public class GenMethodHelper {
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
 			businessName = normalizeCodeName(property.getLabel(false));
-		}
-		else {
+		} else {
 			businessName = normalizeCodeName(property.getName());
 		}
-		
+
 		String operationName = "add" + capitalize(businessName);
 
-		String[] paramNamesArray = {"value"};
+		String[] paramNamesArray = { "value" };
 		EList<String> parmNames = new UnmodifiableEList<String>(1, paramNamesArray);
-		Type[] paramTypesArray = {domainType};
+		Type[] paramTypesArray = { domainType };
 		EList<Type> parmTypes = new UnmodifiableEList<Type>(1, paramTypesArray);
-		
+
 		// "fluent" API style, returns self
 		if (classifier instanceof Interface) {
-			operation = ((Interface)classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
+			operation = ((Interface) classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
+		} else if (classifier instanceof Class) {
+			operation = ((Class) classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
 		}
-		else if (classifier instanceof Class) {
-			operation = ((Class)classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
-		}
-		
+
 		return operation;
 	}
 
@@ -276,78 +271,76 @@ public class GenMethodHelper {
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
 			businessName = normalizeCodeName(property.getLabel(false));
-		}
-		else {
+		} else {
 			businessName = normalizeCodeName(property.getName());
 		}
-		
-		
+
 		String operationName = "with" + capitalize(businessName);
 		StringBuffer operationBody = new StringBuffer();
 
-		String[] paramNamesArray = {"value"};
+		String[] paramNamesArray = { "value" };
 		EList<String> parmNames = new UnmodifiableEList<String>(1, paramNamesArray);
-		Type[] paramTypesArray = {domainType};
+		Type[] paramTypesArray = { domainType };
 		EList<Type> parmTypes = new UnmodifiableEList<Type>(1, paramTypesArray);
-		
+
 		// "fluent" API style, returns self
 		if (classifier instanceof Interface) {
-			operation = ((Interface)classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
-		}
-		else if (classifier instanceof Class) {
-			operation = ((Class)classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
+			operation = ((Interface) classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
+		} else if (classifier instanceof Class) {
+			operation = ((Class) classifier).createOwnedOperation(operationName, parmNames, parmTypes, classifier);
 		}
 
 		// create instance of appropriate domainType
 		Class sourceClass = property.getClass_();
-		Class cdaTargetClass = CDAModelUtil.getCDAClass((Classifier)property.getType());
+		Class cdaTargetClass = CDAModelUtil.getCDAClass((Classifier) property.getType());
 		String nsURI = null;
-		
+
 		if (CDAModelUtil.isDatatypeModel(property.getType())) {
-			operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage.eINSTANCE;" + LF);
-			operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory.eINSTANCE;" + LF);
-		}
-		else if (CDAModelUtil.isCDAModel(property.getType())) {
-			operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.cda.CDAPackage.eINSTANCE;" + LF);
-			operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE;" + LF);
-		}
-		else {
+			operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage.eINSTANCE;" +
+					LF);
+			operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory.eINSTANCE;" +
+					LF);
+		} else if (CDAModelUtil.isCDAModel(property.getType())) {
+			operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.cda.CDAPackage.eINSTANCE;" +
+					LF);
+			operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE;" +
+					LF);
+		} else {
 			Stereotype ePackage = property.getType().getNearestPackage().getAppliedStereotype("Ecore::EPackage");
 			if (ePackage != null) {
 				nsURI = (String) property.getType().getNearestPackage().getValue(ePackage, "nsURI");
-			}
-			else {
+			} else {
 				return null;
 			}
-			
-			operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEPackage(\"" 
-					+ nsURI + "\");" + LF);
-			operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEFactory(\"" 
-					+ nsURI + "\");" + LF);
+
+			operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEPackage(\"" +
+					nsURI + "\");" + LF);
+			operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.getEFactory(\"" +
+					nsURI + "\");" + LF);
 		}
 
-		operationBody.append("org.eclipse.emf.ecore.EClass eClass = (org.eclipse.emf.ecore.EClass) ePackage.getEClassifier(\"" 
-				+ property.getType().getName() + "\");" + LF);
+		operationBody.append("org.eclipse.emf.ecore.EClass eClass = (org.eclipse.emf.ecore.EClass) ePackage.getEClassifier(\"" +
+				property.getType().getName() + "\");" + LF);
 		operationBody.append("org.eclipse.emf.ecore.EObject eObject = eFactory.create(eClass);" + LF);
-		
+
 		// TODO add to classifier
 
 		if (CDAModelUtil.isClinicalStatement(sourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-			operationBody.append(domainType.getName() + " clinicalStatement = " 
-					+ "(" + domainType.getName() + ") eObject;" + LF);
+			operationBody.append(domainType.getName() + " clinicalStatement = " + "(" + domainType.getName() +
+					") eObject;" + LF);
 			operationBody.append("clinicalStatement.init();" + LF);
-			
-			operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." 
-					+ cdaTargetClass.getName() + ")clinicalStatement);" + LF);
+
+			operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
+					cdaTargetClass.getName() + ")clinicalStatement);" + LF);
 		}
-		
+
 		operationBody.append("return this;");
 
 		// create body constraint to implement the operation
 		if (operationBody.length() > 0) {
 			addBodyExpression(operation, "Java", operationBody.toString());
 		}
-		
+
 		return operation;
 	}
 
@@ -360,7 +353,7 @@ public class GenMethodHelper {
 		}
 		return name + "s";
 	}
-	
+
 	protected static String capitalize(String name) {
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
@@ -377,8 +370,9 @@ public class GenMethodHelper {
 	protected void addBodyExpression(Operation operation, String language, String body) {
 		Constraint bodyConstraint = operation.createBodyCondition("body");
 		bodyConstraint.getConstrainedElements().add(operation);
-		
-		OpaqueExpression bodyExpression = (OpaqueExpression) bodyConstraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+
+		OpaqueExpression bodyExpression = (OpaqueExpression) bodyConstraint.createSpecification(
+			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		bodyExpression.getLanguages().add(language);
 		bodyExpression.getBodies().add(body);
 	}

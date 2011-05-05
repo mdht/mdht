@@ -37,21 +37,22 @@ import org.w3c.dom.Text;
 
 public class PluginXMLUtil {
 	public static final String CDA_EXTENSION_POINT = "org.openhealthtools.mdht.uml.cda.extension";
+
 	public static final String CDA_ENTRY = "entry";
-	
+
 	private IFile pluginXML;
-	
+
 	public PluginXMLUtil(IFile pluginXML) {
 		this.pluginXML = pluginXML;
 	}
 
 	/*
-   <extension point="org.openhealthtools.mdht.uml.cda.extension">
-      <entry
-            eClass="MedicalDocument"
-            id="1.3.6.1.4.1.19376.1.5.3.1.1.1"
-            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd/ihe"/>
-   </extension>
+	 * <extension point="org.openhealthtools.mdht.uml.cda.extension">
+	 * <entry
+	 * eClass="MedicalDocument"
+	 * id="1.3.6.1.4.1.19376.1.5.3.1.1.1"
+	 * nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd/ihe"/>
+	 * </extension>
 	 */
 	public void addTemplateExtension(String eClass, String templateId, String nsURI) {
 		try {
@@ -59,12 +60,11 @@ public class PluginXMLUtil {
 			Document document = null;
 			if (pluginXML.exists()) {
 				document = docBuilder.parse(pluginXML.getLocation().toFile());
-			}
-			else {
+			} else {
 				// create a new file
 				document = docBuilder.newDocument();
 			}
-			
+
 			Element plugin = document.getDocumentElement();
 			if (plugin == null) {
 				plugin = document.createElement("plugin");
@@ -73,10 +73,10 @@ public class PluginXMLUtil {
 			if (!"plugin".equals(plugin.getNodeName())) {
 				throw new IllegalArgumentException("File is not valid plugin.xml: " + pluginXML.getFullPath());
 			}
-			
+
 			// find CDA extenion point element in DOM
 			Element cdaExtensionPoint = findCDAExtensionPoint(document);
-	
+
 			// add entry to existing extension point, if it exists
 			// don't duplicate tempateId entry, modify if different
 			Element entry = findEntry(document, cdaExtensionPoint, eClass);
@@ -86,8 +86,7 @@ public class PluginXMLUtil {
 				entry.setAttribute("eClass", eClass);
 				entry.setAttribute("id", templateId);
 				entry.setAttribute("nsURI", nsURI);
-			}
-			else {
+			} else {
 				if (!templateId.equals(entry.getAttribute("id"))) {
 					// update the templateiId
 					entry.setAttribute("id", templateId);
@@ -99,25 +98,25 @@ public class PluginXMLUtil {
 					System.out.println(eClass + ": Change nsURI to: " + nsURI);
 				}
 			}
-			
-			//save the document
+
+			// save the document
 			save(document, pluginXML.getLocation());
-		
-		}
-		catch (Exception e) {
+
+		} catch (Exception e) {
 			Logger.logException(e);
 		}
 	}
-	
+
 	/**
 	 * Find CDA extension point, or add new element if not found.
+	 * 
 	 * @param document
 	 * @return DOM element for CDA extension point
 	 */
 	private Element findCDAExtensionPoint(Document document) {
 		Element extPoint = null;
 		NodeList nodeList = document.getElementsByTagName("extension");
-		for (int i=0; i<nodeList.getLength(); i++) {
+		for (int i = 0; i < nodeList.getLength(); i++) {
 			if (nodeList.item(i) instanceof Element) {
 				Element element = (Element) nodeList.item(i);
 				if (CDA_EXTENSION_POINT.equals(element.getAttribute("point"))) {
@@ -125,20 +124,20 @@ public class PluginXMLUtil {
 				}
 			}
 		}
-		
+
 		if (extPoint == null) {
 			extPoint = document.createElement("extension");
 			extPoint.setAttribute("point", CDA_EXTENSION_POINT);
 			document.getDocumentElement().appendChild(extPoint);
 		}
-		
+
 		return extPoint;
 	}
-	
+
 	private Element findEntry(Document document, Element extPoint, String eClass) {
 		Element entry = null;
 		NodeList nodeList = extPoint.getElementsByTagName("entry");
-		for (int i=0; i<nodeList.getLength(); i++) {
+		for (int i = 0; i < nodeList.getLength(); i++) {
 			if (nodeList.item(i) instanceof Element) {
 				Element element = (Element) nodeList.item(i);
 				if (eClass.equals(element.getAttribute("eClass"))) {
@@ -146,33 +145,31 @@ public class PluginXMLUtil {
 				}
 			}
 		}
-		
+
 		return entry;
 	}
-	
+
 	private void save(Document document, IPath filePath) {
 		try {
 			removeWhitespaceNodes(document);
-			
+
 			TransformerFactory factory = TransformerFactory.newInstance();
 			factory.setAttribute("indent-number", new Integer(3));
 			Transformer transformer = factory.newTransformer();
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-			
+
 			FileOutputStream out = new FileOutputStream(filePath.toFile());
-			transformer.transform(new DOMSource(document), new StreamResult(
-					new OutputStreamWriter(out, "utf-8")));
+			transformer.transform(new DOMSource(document), new StreamResult(new OutputStreamWriter(out, "utf-8")));
 			out.close();
-			
-            // refresh the workspace file
-            pluginXML.getParent().refreshLocal(IResource.DEPTH_ONE, null);
-		}
-		catch (Exception e) {
+
+			// refresh the workspace file
+			pluginXML.getParent().refreshLocal(IResource.DEPTH_ONE, null);
+		} catch (Exception e) {
 			Logger.logException(e);
 		}
 	}
-	
+
 	/**
 	 * Remove whitespace-only text nodes.
 	 */

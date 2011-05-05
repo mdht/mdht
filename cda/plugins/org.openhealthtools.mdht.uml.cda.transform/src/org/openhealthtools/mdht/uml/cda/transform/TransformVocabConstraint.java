@@ -35,12 +35,13 @@ public class TransformVocabConstraint extends TransformAbstract {
 	public TransformVocabConstraint(EcoreTransformerOptions options) {
 		super(options);
 	}
-	
+
+	@Override
 	public Object caseProperty(Property property) {
 		if (isRemoved(property)) {
 			return null;
 		}
-		
+
 		// only process properties that are owned by a Class
 		if (property.getClass_() == null) {
 			return null;
@@ -49,7 +50,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 		CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
-				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
+			property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 
 		String codeSystem = null;
 		String codeSystemName = null;
@@ -61,105 +62,103 @@ public class TransformVocabConstraint extends TransformAbstract {
 			if (codeSystemConstraint.getReference() != null) {
 				codeSystem = codeSystemConstraint.getReference().getIdentifier();
 				codeSystemName = codeSystemConstraint.getReference().getEnumerationName();
-//				codeSystemVersion = codeSystemConstraint.getReference().getVersion();
+				// codeSystemVersion = codeSystemConstraint.getReference().getVersion();
+			} else {
+				codeSystem = codeSystemConstraint.getIdentifier();
+				codeSystemName = codeSystemConstraint.getName();
+				// codeSystemVersion= codeSystemConstraint.getVersion();
 			}
-			else {
-				codeSystem= codeSystemConstraint.getIdentifier();
-				codeSystemName= codeSystemConstraint.getName();
-//				codeSystemVersion= codeSystemConstraint.getVersion();
-			}
-			code= codeSystemConstraint.getCode();
-			displayName= codeSystemConstraint.getDisplayName();
+			code = codeSystemConstraint.getCode();
+			displayName = codeSystemConstraint.getDisplayName();
 
 			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
 			addConstraint(property);
 			removeModelElement(property);
-		}
-		else if (valueSetConstraint != null) {
-			if (valueSetConstraint.getReference() != null 
-					&& valueSetConstraint.getReference().getCodeSystem() != null) {
+		} else if (valueSetConstraint != null) {
+			if (valueSetConstraint.getReference() != null && valueSetConstraint.getReference().getCodeSystem() != null) {
 				CodeSystemVersion codeSystemDef = valueSetConstraint.getReference().getCodeSystem();
 				codeSystem = codeSystemDef.getIdentifier();
 				codeSystemName = codeSystemDef.getEnumerationName();
-//				codeSystemVersion = codeSystemDef.getVersion();
+				// codeSystemVersion = codeSystemDef.getVersion();
 			}
 
 			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
 			addConstraint(property);
 			removeModelElement(property);
-		}
-		else if (vocabSpecification != null) {
-			codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-			codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
-			codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+		} else if (vocabSpecification != null) {
+			codeSystem = (String) property.getValue(
+				vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+			codeSystemName = (String) property.getValue(
+				vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+			codeSystemVersion = (String) property.getValue(
+				vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
 			code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
-			displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
+			displayName = (String) property.getValue(
+				vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
 
 			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
 			addConstraint(property);
 			removeModelElement(property);
 		}
-		
+
 		return property;
 	}
 
-	private void addAnnotation(Property property, String codeSystem, String codeSystemName,
-			String code, String displayName, String codeSystemVersion) {
-		
+	private void addAnnotation(Property property, String codeSystem, String codeSystemName, String code,
+			String displayName, String codeSystemVersion) {
+
 		if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property))) {
 			// omit annotation for MAY constraints
 			return;
 		}
 
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
-		
+
 		if (code != null) {
-			annotationsUtil.setAnnotation(property.getName()+".code", code);
+			annotationsUtil.setAnnotation(property.getName() + ".code", code);
 		}
-		
+
 		if (!CodeSystemConstraintUtil.isCSType(property)) {
 			if (codeSystem != null) {
-				annotationsUtil.setAnnotation(property.getName()+".codeSystem", codeSystem);
+				annotationsUtil.setAnnotation(property.getName() + ".codeSystem", codeSystem);
 			}
 			if (codeSystemName != null) {
-				annotationsUtil.setAnnotation(property.getName()+".codeSystemName", codeSystemName);
+				annotationsUtil.setAnnotation(property.getName() + ".codeSystemName", codeSystemName);
 			}
 			if (codeSystemVersion != null) {
-				annotationsUtil.setAnnotation(property.getName()+".codeSystemVersion", codeSystemVersion);
+				annotationsUtil.setAnnotation(property.getName() + ".codeSystemVersion", codeSystemVersion);
 			}
 			if (displayName != null) {
-				annotationsUtil.setAnnotation(property.getName()+".displayName", displayName);
+				annotationsUtil.setAnnotation(property.getName() + ".displayName", displayName);
 			}
 		}
-		
+
 		annotationsUtil.saveAnnotations();
 	}
 
 	private void addConstraint(Property property) {
 		String ocl = null;
-//		if (conceptDomainConstraint != null) {
-//			ocl = ConceptDomainConstraintUtil.getOCL(property);
-//		}
-//		else 
+		// if (conceptDomainConstraint != null) {
+		// ocl = ConceptDomainConstraintUtil.getOCL(property);
+		// }
+		// else
 		if (TermProfileUtil.getCodeSystemConstraint(property) != null) {
 			ocl = CodeSystemConstraintUtil.getOCL(property);
-		}
-		else if (TermProfileUtil.getValueSetConstraint(property) != null) {
+		} else if (TermProfileUtil.getValueSetConstraint(property) != null) {
 			ocl = ValueSetConstraintUtil.getOCL(property);
-		}
-		else {
+		} else {
 			Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
-					property, ICDAProfileConstants.VOCAB_SPECIFICATION);
+				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 			if (vocabSpecification != null) {
 				ocl = getVocabSpecificationOCL(property, vocabSpecification);
 			}
 		}
-		
+
 		if (ocl == null || ocl.length() == 0) {
 			// no vocabulary specified
 			return;
 		}
-		
+
 		StringBuffer body = getValueExpression(property);
 		if (body == null) {
 			return;
@@ -168,14 +167,13 @@ public class TransformVocabConstraint extends TransformAbstract {
 		if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property))) {
 			// constraint only applies if code system is undefined
 			body.append("not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined()");
-		}
-		else {
+		} else {
 			body.append(ocl);
 		}
 
 		if (body.length() > 0) {
 			body.append(")");
-			
+
 			// if redefining parent template constraint, use parent constraint name to override
 			String constraintName = createInheritedConstraintName(property);
 			addOCLConstraint(property, body, constraintName);
@@ -194,7 +192,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 			Logger.log(Logger.WARNING, message);
 			// if property type is null, use type from redefined property
 		}
-		
+
 		// check property type, including if redefined with restricted type
 		if (!isCDType(property)) {
 			String message = "Property is not CD type: " + property.getQualifiedName();
@@ -205,14 +203,14 @@ public class TransformVocabConstraint extends TransformAbstract {
 		StringBuffer body = new StringBuffer();
 		String selfName = "self." + cdaProperty.getName();
 		String cdaTypeQName = cdaProperty.getType().getQualifiedName();
-		String templateTypeQName = property.getType() == null ? 
-				cdaTypeQName : property.getType().getQualifiedName();
-		
+		String templateTypeQName = property.getType() == null
+				? cdaTypeQName
+				: property.getType().getQualifiedName();
+
 		if (property.getUpper() == 0) {
 			// element is prohibited in redefinition
 			// place-holder for when this is supported in UML 2.2
-		}
-		else if (cdaProperty.getUpper() == 1) {
+		} else if (cdaProperty.getUpper() == 1) {
 			// single-valued CDA property
 			if (property.getLower() == 1) {
 				body.append("not ");
@@ -225,42 +223,43 @@ public class TransformVocabConstraint extends TransformAbstract {
 			// add final opening paren because there is always a closing paren
 			body.append(selfName + ".oclAsType(" + templateTypeQName + ") in (");
 			body.append(LF);
-		}
-		else if (cdaProperty.getUpper() > 0 
-				|| cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
+		} else if (cdaProperty.getUpper() > 0 || cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
 			// multi-valued property
-			
+
 			if (property.getLower() == 1 && property.getUpper() == 1) {
 				body.append(selfName);
 				body.append("->size() = 1 and ");
-			}
-			else if (property.getLower() >= 1) {
+			} else if (property.getLower() >= 1) {
 				body.append("not ");
 				body.append(selfName);
 				body.append("->isEmpty() and ");
 			}
 
 			body.append(selfName);
-			body.append("->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(" + templateTypeQName + ") and ");
+			body.append("->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(" + templateTypeQName +
+					") and ");
 			body.append(LF);
-			
+
 			body.append("let value : " + templateTypeQName);
 			body.append(" = element.oclAsType(" + templateTypeQName + ") in ");
 			body.append(LF);
 		}
-		
+
 		return body;
 	}
-	
+
 	/**
 	 * @deprecated
 	 */
+	@Deprecated
 	private String getVocabSpecificationOCL(Property property, Stereotype vocabSpecification) {
-		String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-		String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
-//		String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+		String codeSystem = (String) property.getValue(
+			vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+		String codeSystemName = (String) property.getValue(
+			vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+		// String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
 		String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
-//		String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
+		// String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
 
 		StringBuffer body = new StringBuffer();
 		boolean needsAnd = false;
@@ -279,12 +278,11 @@ public class TransformVocabConstraint extends TransformAbstract {
 			body.append("'");
 			needsAnd = true;
 		}
-		
+
 		/*
 		 * Only add this constraint if codeSystem is not specified.
 		 */
-		if ((codeSystem == null || codeSystem.length() == 0)
-				&& codeSystemName != null && codeSystemName.length() > 0) {
+		if ((codeSystem == null || codeSystem.length() == 0) && codeSystemName != null && codeSystemName.length() > 0) {
 			if (needsAnd) {
 				body.append(" and ");
 			}
@@ -293,16 +291,16 @@ public class TransformVocabConstraint extends TransformAbstract {
 			body.append("'");
 			needsAnd = true;
 		}
-		
-//		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
-//			if (needsAnd) {
-//				body.append(" and ");
-//			}
-//			body.append("value.codeSystemVersion = '");
-//			body.append(codeSystemVersion);
-//			body.append("'");
-//		}
-		
+
+		// if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
+		// if (needsAnd) {
+		// body.append(" and ");
+		// }
+		// body.append("value.codeSystemVersion = '");
+		// body.append(codeSystemVersion);
+		// body.append("'");
+		// }
+
 		return body.toString();
 	}
 
@@ -310,21 +308,22 @@ public class TransformVocabConstraint extends TransformAbstract {
 		Classifier type = (Classifier) property.getType();
 		if (type == null) {
 			Property cdaProperty = getCDAProperty(property);
-			if (cdaProperty != null)
+			if (cdaProperty != null) {
 				type = (Classifier) cdaProperty.getType();
-			else
+			} else {
 				return false;
+			}
 		}
-		
+
 		List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
 		allTypes.add(0, type);
-		
+
 		for (Classifier classifier : allTypes) {
 			if ("datatypes::CD".equals(classifier.getQualifiedName())) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 }

@@ -18,20 +18,20 @@ import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Activator;
 
-
 /**
  * Class used to initialize default preference values.
  */
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
+	@Override
 	public void initializeDefaultPreferences() {
 		IEclipsePreferences node = new DefaultScope().getNode(Activator.PLUGIN_ID);
-		
+
 		node.putBoolean(EcoreTransformerOptions.GENERATE_DOMAIN_INTERFACE, false);
 		node.putBoolean(EcoreTransformerOptions.GENERATE_DOMAIN_CLASSES, false);
 		node.putBoolean(EcoreTransformerOptions.INCLUDE_FIXED_VALUE_GETTERS, false);
 		node.putBoolean(EcoreTransformerOptions.INCLUDE_INTERFACE_REALIZATION, false);
 		node.putBoolean(EcoreTransformerOptions.USE_BUSINESS_NAMES, true);
 	}
-	
+
 }

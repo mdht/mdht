@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
@@ -24,21 +25,20 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
-
 public abstract class EcoreTransformUtil {
 
-	public static Stereotype getAppliedEcoreStereotype(Element element,
-			String name) {
+	public static Stereotype getAppliedEcoreStereotype(Element element, String name) {
 		return element.getAppliedStereotype("Ecore" //$NON-NLS-1$
-			+ NamedElement.SEPARATOR + name);
+				+
+				NamedElement.SEPARATOR + name);
 	}
 
 	public static Stereotype getEcoreStereotype(EObject eObject, String name) {
 		Profile ecoreProfile = getEcoreProfile(eObject);
 
 		return ecoreProfile != null
-			? ecoreProfile.getOwnedStereotype(name)
-			: null;
+				? ecoreProfile.getOwnedStereotype(name)
+				: null;
 	}
 
 	public static Profile getEcoreProfile(EObject eObject) {
@@ -48,9 +48,8 @@ public abstract class EcoreTransformUtil {
 			ResourceSet resourceSet = eResource.getResourceSet();
 
 			if (resourceSet != null) {
-				return (Profile) UMLUtil.load(resourceSet, URI
-					.createURI(UMLResource.ECORE_PROFILE_URI),
-					UMLPackage.Literals.PROFILE);
+				return (Profile) UML2Util.load(
+					resourceSet, URI.createURI(UMLResource.ECORE_PROFILE_URI), UMLPackage.Literals.PROFILE);
 			}
 		}
 

@@ -27,44 +27,44 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
-
 public class GenDomainProperty extends TransformAbstract {
-	
+
 	protected GenMethodHelper methodHelper;
-	
+
 	public GenDomainProperty(EcoreTransformerOptions options) {
 		super(options);
-		
+
 		methodHelper = new GenMethodHelper(transformerOptions);
 	}
-	
+
+	@Override
 	public Object caseProperty(Property property) {
 		if (isRemoved(property)) {
 			return null;
 		}
-		
+
 		// only process properties that are owned by a Class
 		if (property.getClass_() == null) {
 			return null;
 		}
-		
+
 		// if greenCDA style interfaces, omit all operations for fixed values
 		if (isFixedValue(property) && !transformerOptions.isIncludeFixedValueGetters()) {
 			return null;
 		}
-		
+
 		// TODO omit classCode, moodCode for now due to incompatible enum types with CDA base model
 		// also, most or all class/mood codes should be defaulted in greenCDA
 		if (property.getType() instanceof Enumeration) {
 			return null;
 		}
-		
+
 		Interface domainInterface = getDomainInterface(property.getClass_());
-		Classifier domainType = (Classifier)property.getType();
+		Classifier domainType = (Classifier) property.getType();
 		if (UMLUtil.isSameModel(property.getType(), property.getClass_())) {
 			domainType = getDomainInterface(property.getType());
 		}
-		
+
 		// "getter" operation
 		Operation getOperation = methodHelper.genPropertyGetterOperation(domainInterface, property, domainType);
 
@@ -73,11 +73,10 @@ public class GenDomainProperty extends TransformAbstract {
 			List<Comment> comments = null;
 			if (property.getAssociation() != null) {
 				comments = property.getAssociation().getOwnedComments();
-			}
-			else {
+			} else {
 				comments = property.getOwnedComments();
 			}
-			
+
 			for (Comment comment : comments) {
 				Comment clone = EcoreUtil.copy(comment);
 				clone.getAnnotatedElements().add(getOperation);
@@ -97,7 +96,7 @@ public class GenDomainProperty extends TransformAbstract {
 			String xpath = docProperty.getQualifiedName();
 			comment.setBody(xpath + ".");
 		}
-		
+
 		// update operations
 		if (!isFixedValue(property)) {
 			Operation createOperation = null;
@@ -115,7 +114,7 @@ public class GenDomainProperty extends TransformAbstract {
 			if (property.getUpper() == 1) {
 				updateOperation = methodHelper.genSetOperation(domainInterface, property, domainType);
 			}
-			
+
 			// add UML comment with CDA conformance rule expression
 			String conformanceText = CDAModelUtil.computeConformanceMessage(property, false);
 			if (!conformanceText.endsWith(".")) {
@@ -133,25 +132,24 @@ public class GenDomainProperty extends TransformAbstract {
 				conformanceRule.setBody(conformanceText);
 			}
 		}
-		
+
 		return property;
 	}
-	
+
 	private boolean isFixedValue(Property property) {
 		if (property.isReadOnly()) {
 			return true;
-		}
-		else if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(property))) {
+		} else if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(property))) {
 			// SHALL contain a specific code
 			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 			if (codeSystemConstraint != null) {
-				String code= codeSystemConstraint.getCode();
+				String code = codeSystemConstraint.getCode();
 				if (code != null) {
 					return true;
 				}
 			}
 		}
-		
+
 		return false;
 	}
 }
