@@ -1,9 +1,15 @@
-/**
- * <copyright>
- * </copyright>
- *
+/*******************************************************************************
+ * Copyright (c) 2010 David A Carlson.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     
  * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,12 +25,12 @@ import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getAssigningAuthorityName <em>Assigning Authority Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#isContextDependent <em>Context Dependent</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getTemplateId <em>Template Id</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#getAssigningAuthorityName <em>Assigning Authority Name</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.CDATemplateImpl#isContextDependent <em>Context Dependent</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate {
@@ -32,6 +38,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #getTemplateId() <em>Template Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTemplateId()
 	 * @generated
 	 * @ordered
@@ -42,6 +49,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTemplateId()
 	 * @generated
 	 * @ordered
@@ -52,6 +60,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #getAssigningAuthorityName() <em>Assigning Authority Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAssigningAuthorityName()
 	 * @generated
 	 * @ordered
@@ -62,6 +71,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #getAssigningAuthorityName() <em>Assigning Authority Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAssigningAuthorityName()
 	 * @generated
 	 * @ordered
@@ -72,6 +82,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The default value of the '{@link #isContextDependent() <em>Context Dependent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isContextDependent()
 	 * @generated
 	 * @ordered
@@ -82,6 +93,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	 * The cached value of the '{@link #isContextDependent() <em>Context Dependent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isContextDependent()
 	 * @generated
 	 * @ordered
@@ -91,6 +103,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CDATemplateImpl() {
@@ -100,79 +113,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return CDAPackage.Literals.CDA_TEMPLATE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTemplateId() {
-		return templateId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTemplateId(String newTemplateId) {
-		String oldTemplateId = templateId;
-		templateId = newTemplateId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_ID, oldTemplateId, templateId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getAssigningAuthorityName() {
-		return assigningAuthorityName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAssigningAuthorityName(String newAssigningAuthorityName) {
-		String oldAssigningAuthorityName = assigningAuthorityName;
-		assigningAuthorityName = newAssigningAuthorityName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME, oldAssigningAuthorityName, assigningAuthorityName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isContextDependent() {
-		return contextDependent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setContextDependent(boolean newContextDependent) {
-		boolean oldContextDependent = contextDependent;
-		contextDependent = newContextDependent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT, oldContextDependent, contextDependent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,19 +132,43 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case CDAPackage.CDA_TEMPLATE__TEMPLATE_ID:
+				return TEMPLATE_ID_EDEFAULT == null
+						? templateId != null
+						: !TEMPLATE_ID_EDEFAULT.equals(templateId);
+			case CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME:
+				return ASSIGNING_AUTHORITY_NAME_EDEFAULT == null
+						? assigningAuthorityName != null
+						: !ASSIGNING_AUTHORITY_NAME_EDEFAULT.equals(assigningAuthorityName);
+			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
+				return contextDependent != CONTEXT_DEPENDENT_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.CDA_TEMPLATE__TEMPLATE_ID:
-				setTemplateId((String)newValue);
+				setTemplateId((String) newValue);
 				return;
 			case CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME:
-				setAssigningAuthorityName((String)newValue);
+				setAssigningAuthorityName((String) newValue);
 				return;
 			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
-				setContextDependent((Boolean)newValue);
+				setContextDependent((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,6 +177,18 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CDAPackage.Literals.CDA_TEMPLATE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -233,29 +210,91 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CDAPackage.CDA_TEMPLATE__TEMPLATE_ID:
-				return TEMPLATE_ID_EDEFAULT == null ? templateId != null : !TEMPLATE_ID_EDEFAULT.equals(templateId);
-			case CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME:
-				return ASSIGNING_AUTHORITY_NAME_EDEFAULT == null ? assigningAuthorityName != null : !ASSIGNING_AUTHORITY_NAME_EDEFAULT.equals(assigningAuthorityName);
-			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
-				return contextDependent != CONTEXT_DEPENDENT_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
+	public String getAssigningAuthorityName() {
+		return assigningAuthorityName;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getTemplateId() {
+		return templateId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isContextDependent() {
+		return contextDependent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setAssigningAuthorityName(String newAssigningAuthorityName) {
+		String oldAssigningAuthorityName = assigningAuthorityName;
+		assigningAuthorityName = newAssigningAuthorityName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME, oldAssigningAuthorityName,
+				assigningAuthorityName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setContextDependent(boolean newContextDependent) {
+		boolean oldContextDependent = contextDependent;
+		contextDependent = newContextDependent;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT, oldContextDependent,
+				contextDependent));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setTemplateId(String newTemplateId) {
+		String oldTemplateId = templateId;
+		templateId = newTemplateId;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CDA_TEMPLATE__TEMPLATE_ID, oldTemplateId, templateId));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (templateId: ");
@@ -268,4 +307,4 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 		return result.toString();
 	}
 
-} //CDATemplateImpl
+} // CDATemplateImpl
