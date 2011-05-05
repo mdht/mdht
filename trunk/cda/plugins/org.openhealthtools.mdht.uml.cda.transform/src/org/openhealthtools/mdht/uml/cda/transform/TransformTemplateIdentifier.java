@@ -30,29 +30,30 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 	public TransformTemplateIdentifier(EcoreTransformerOptions options) {
 		super(options);
 	}
-	
+
+	@Override
 	public Object caseClass(Class umlClass) {
-		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(
-				umlClass, ICDAProfileConstants.CDA_TEMPLATE);
+		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(umlClass, ICDAProfileConstants.CDA_TEMPLATE);
 		if (hl7Template != null) {
 			addConstraint(umlClass, hl7Template);
 			addAnnotation(umlClass, hl7Template);
-//			addExtensionPoint(umlClass, hl7Template);
+			// addExtensionPoint(umlClass, hl7Template);
 		}
 
 		return umlClass;
 	}
-	
+
 	private void addConstraint(Class umlClass, Stereotype hl7Template) {
 		String constraintName = createTemplateConstraintName(umlClass);
-		
+
 		Constraint constraint = umlClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(umlClass);
 
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
-		OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(
+			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
-//		String body = "self.hasTemplateId('" + templateId + "')";
+		// String body = "self.hasTemplateId('" + templateId + "')";
 		String body = "self.templateId->exists(id : datatypes::II | id.root = '" + templateId + "')";
 		expression.getBodies().add(body);
 
@@ -60,7 +61,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		if (message == null) {
 			message = "The template identifier for " + umlClass.getName() + " must be " + templateId + ".";
 		}
-//		addValidationError(umlClass, constraintName, message);
+		// addValidationError(umlClass, constraintName, message);
 		addValidationError(umlClass, createConstraintName(umlClass, "TemplateId"), message);
 	}
 
@@ -68,16 +69,18 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 		Boolean contextDependent = false;
 		try {
-			contextDependent = (Boolean) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_CONTEXT_DEPENDENT);
-		} catch (IllegalArgumentException e) {}
-		
+			contextDependent = (Boolean) umlClass.getValue(
+				hl7Template, ICDAProfileConstants.CDA_TEMPLATE_CONTEXT_DEPENDENT);
+		} catch (IllegalArgumentException e) {
+		}
+
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlClass);
 		annotationsUtil.setAnnotation("templateId.root", templateId);
 		if (contextDependent) {
 			createRegistryDelegate(umlClass);
 			annotationsUtil.setAnnotation("contextDependent", "true");
 		}
-		
+
 		annotationsUtil.saveAnnotations();
 	}
 
@@ -102,64 +105,64 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 			}
 		}
 	}
-	
-//	@SuppressWarnings("unused")
-//	private void addExtensionPoint(Class umlClass, Stereotype hl7Template) {
-//		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
-//		String nsURI = null;
-//
-//		// get nsURI from the ePackage stereotype
-//		org.eclipse.uml2.uml.Package umlPackage = umlClass.getNearestPackage();
-//		Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
-//		if (umlPackage.isStereotypeApplied(ePackage)) {
-//			nsURI = (String) umlPackage.getValue(ePackage, "nsURI");
-//		}
-//		else {
-//			UMLUtil.safeApplyStereotype(umlPackage, ePackage);
-//		}
-//		if (nsURI == null) {
-//			nsURI = "http://www.openhealthtools.org/" + umlPackage.eResource().getURI().lastSegment();
-//			umlPackage.setValue(ePackage, "nsURI", nsURI);
-//		}
-//
-//		IFile pluginXML = findPluginXML(umlClass);
-//		
-//		if (pluginXML != null && templateId != null) {
-//			//insert extension point into plugin.xml
-//			PluginXMLUtil pluginUtil = new PluginXMLUtil(pluginXML);
-//			pluginUtil.addTemplateExtension(umlClass.getName(), templateId, nsURI);
-//		}
-//	}
-	
-//	private IFile findPluginXML(Element element) {
-//		IFile pluginXML = null;
-//		
-//		// get project file path
-//		String modelFilePath = element.eResource().getURI().toFileString();
-//		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-//		IPath modelLocation = Path.fromOSString(modelFilePath);
-//		IFile[] files = workspace.getRoot().findFilesForLocation(modelLocation);
-//		if (files.length > 0) {
-//			IProject project = files[0].getProject();
-//			IResource file = project.findMember("plugin.xml");
-//			if (file instanceof IFile) {
-//				pluginXML = (IFile)file;
-//			}
-//			else {
-//				// create new plugin.xml
-//				pluginXML = project.getFile("plugin.xml");
-//			}
-//			
-//			if (!pluginXML.exists()) {
-//				ByteArrayInputStream is = new ByteArrayInputStream(new byte[0]);
-//				try {
-//					pluginXML.create(is, true, null);
-//				} catch (CoreException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}
-//		
-//		return pluginXML;
-//	}
+
+	// @SuppressWarnings("unused")
+	// private void addExtensionPoint(Class umlClass, Stereotype hl7Template) {
+	// String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+	// String nsURI = null;
+	//
+	// // get nsURI from the ePackage stereotype
+	// org.eclipse.uml2.uml.Package umlPackage = umlClass.getNearestPackage();
+	// Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+	// if (umlPackage.isStereotypeApplied(ePackage)) {
+	// nsURI = (String) umlPackage.getValue(ePackage, "nsURI");
+	// }
+	// else {
+	// UMLUtil.safeApplyStereotype(umlPackage, ePackage);
+	// }
+	// if (nsURI == null) {
+	// nsURI = "http://www.openhealthtools.org/" + umlPackage.eResource().getURI().lastSegment();
+	// umlPackage.setValue(ePackage, "nsURI", nsURI);
+	// }
+	//
+	// IFile pluginXML = findPluginXML(umlClass);
+	//
+	// if (pluginXML != null && templateId != null) {
+	// //insert extension point into plugin.xml
+	// PluginXMLUtil pluginUtil = new PluginXMLUtil(pluginXML);
+	// pluginUtil.addTemplateExtension(umlClass.getName(), templateId, nsURI);
+	// }
+	// }
+
+	// private IFile findPluginXML(Element element) {
+	// IFile pluginXML = null;
+	//
+	// // get project file path
+	// String modelFilePath = element.eResource().getURI().toFileString();
+	// IWorkspace workspace = ResourcesPlugin.getWorkspace();
+	// IPath modelLocation = Path.fromOSString(modelFilePath);
+	// IFile[] files = workspace.getRoot().findFilesForLocation(modelLocation);
+	// if (files.length > 0) {
+	// IProject project = files[0].getProject();
+	// IResource file = project.findMember("plugin.xml");
+	// if (file instanceof IFile) {
+	// pluginXML = (IFile)file;
+	// }
+	// else {
+	// // create new plugin.xml
+	// pluginXML = project.getFile("plugin.xml");
+	// }
+	//
+	// if (!pluginXML.exists()) {
+	// ByteArrayInputStream is = new ByteArrayInputStream(new byte[0]);
+	// try {
+	// pluginXML.create(is, true, null);
+	// } catch (CoreException e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// }
+	//
+	// return pluginXML;
+	// }
 }

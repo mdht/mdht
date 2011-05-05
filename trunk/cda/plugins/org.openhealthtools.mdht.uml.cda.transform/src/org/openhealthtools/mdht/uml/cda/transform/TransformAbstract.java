@@ -43,13 +43,17 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
  */
 public abstract class TransformAbstract extends UMLSwitch<Object> {
 	public static final String LF = System.getProperty("line.separator");
-	
+
 	public static final String VALIDATION_ERROR = "constraints.validation.error";
+
 	public static final String VALIDATION_WARNING = "constraints.validation.warning";
+
 	public static final String VALIDATION_INFO = "constraints.validation.info";
 
 	public static final String SEVERITY_ERROR = "ERROR";
+
 	public static final String SEVERITY_WARNING = "WARNING";
+
 	public static final String SEVERITY_INFO = "INFO";
 
 	public static final String CDA_PACKAGE_NAME = "cda";
@@ -59,17 +63,17 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	public TransformAbstract(EcoreTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
 	public void removeModelElement(Element element) {
 		if (element != null && !isRemoved(element)) {
 			transformerOptions.getDeletedElementList().add(element);
 		}
 	}
-	
+
 	public boolean isRemoved(Element element) {
 		return transformerOptions.getDeletedElementList().contains(element);
 	}
-	
+
 	public boolean hasValidationSupport(Element element) {
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
 		return validationSupport != null;
@@ -88,12 +92,12 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 			addValidationError(constrainedClass, constraintName, message);
 		}
 	}
-	
+
 	public void addValidationError(Class constrainedClass, String constraintName, String message) {
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
 		annotationsUtil.addAnnotation(VALIDATION_ERROR, constraintName);
 		annotationsUtil.saveAnnotations();
-		
+
 		addValidationMessage(constrainedClass, constraintName, message);
 	}
 
@@ -101,7 +105,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
 		annotationsUtil.addAnnotation(VALIDATION_WARNING, constraintName);
 		annotationsUtil.saveAnnotations();
-		
+
 		addValidationMessage(constrainedClass, constraintName, message);
 	}
 
@@ -109,15 +113,15 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
 		annotationsUtil.addAnnotation(VALIDATION_INFO, constraintName);
 		annotationsUtil.saveAnnotations();
-		
+
 		addValidationMessage(constrainedClass, constraintName, message);
 	}
-	
+
 	public void addValidationMessage(Class constrainedClass, String constraintName, String message) {
 		if (message == null) {
 			message = constraintName + " error message";
 		}
-		
+
 		PluginPropertiesUtil properties = transformerOptions.getPluginPropertiesUtil();
 		if (properties != null) {
 			properties.addProperty(constraintName, message);
@@ -127,7 +131,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	protected Class getCDAClass(Class templateClass) {
 		return CDAModelUtil.getCDAClass(templateClass);
 	}
-	
+
 	protected Package getCDAPackage(Class templateClass) {
 		for (Package package_ : templateClass.getNearestPackage().getImportedPackages()) {
 			if (CDA_PACKAGE_NAME.equals(package_.getName())) {
@@ -136,35 +140,35 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		}
 		return null;
 	}
-	
+
 	protected Property getCDAProperty(Property templateProperty) {
 		return CDAModelUtil.getCDAProperty(templateProperty);
 	}
-	
+
 	/**
 	 * Returns the nearest inherited property with the same name, or null if not found.
 	 */
 	protected Property getInheritedProperty(Property templateProperty) {
 		return CDAModelUtil.getInheritedProperty(templateProperty);
 	}
-	
+
 	protected void addOCLConstraint(Property property, StringBuffer body) {
 		addOCLConstraint(property, body, null);
 	}
-	
+
 	protected void addOCLConstraint(Property property, StringBuffer body, String constraintName) {
 		if (constraintName == null) {
 			constraintName = createConstraintName(property);
 		}
-		
+
 		if (property.getClass_().getOwnedRule(constraintName) != null) {
-			String message = "Constraint name already defined: '" + constraintName 
-					+ "' in " + property.getClass_().getQualifiedName();
+			String message = "Constraint name already defined: '" + constraintName + "' in " +
+					property.getClass_().getQualifiedName();
 			Logger.log(Logger.WARNING, message);
-			
+
 			// add validation message, if included in the model
 			addValidationSupport(property, constraintName);
-			
+
 			return;
 		}
 
@@ -174,43 +178,44 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		String nullFlavorBody = body.toString();
 		boolean hasNullFlavor = false;
 		if (cdaProperty.getType() instanceof Class) {
-			List<String> parentNames = org.openhealthtools.mdht.uml.common.util.UMLUtil.getAllParentNames((Class)cdaProperty.getType());
-			if (parentNames.contains("ANY"))
+			List<String> parentNames = org.openhealthtools.mdht.uml.common.util.UMLUtil.getAllParentNames((Class) cdaProperty.getType());
+			if (parentNames.contains("ANY")) {
 				hasNullFlavor = true;
+			}
 		}
 		if (hasNullFlavor) {
 			if (cdaProperty.upperBound() == 1) {
-				nullFlavorBody = "(" + selfName + ".oclIsUndefined() or "
-					+ selfName + ".isNullFlavorUndefined()) implies (" + body + ")";
-			}
-			else {
+				nullFlavorBody = "(" + selfName + ".oclIsUndefined() or " + selfName +
+						".isNullFlavorUndefined()) implies (" + body + ")";
+			} else {
 				// must have size()==1 to have nullFlavor
-				nullFlavorBody = "(" + selfName + "->isEmpty() or " 
-					+ selfName + "->exists(element | element.isNullFlavorUndefined()))"
-					+ " implies (" + body + ")";
+				nullFlavorBody = "(" + selfName + "->isEmpty() or " + selfName +
+						"->exists(element | element.isNullFlavorUndefined()))" + " implies (" + body + ")";
 			}
 		}
-		
-		Constraint constraint = property.getClass_().createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
+
+		Constraint constraint = property.getClass_().createOwnedRule(
+			constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(property.getClass_());
 
-		OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(
+			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
 		expression.getBodies().add(nullFlavorBody);
 
 		addValidationSupport(property, constraintName);
 	}
-	
+
 	protected String createInheritedConstraintName(Property property) {
 		String constraintName = null;
 		if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(property))) {
 			Property inheritedProperty = CDAModelUtil.getInheritedProperty(property);
 			if (CDAModelUtil.getTemplateId(inheritedProperty.getClass_()) != null) {
 				constraintName = createInheritedConstraintName(inheritedProperty);
-//				System.out.println("inheritedConstraintName for " + property.getQualifiedName() + " = " + constraintName);
+				// System.out.println("inheritedConstraintName for " + property.getQualifiedName() + " = " + constraintName);
 			}
 		}
-		
+
 		if (constraintName == null) {
 			constraintName = createConstraintName(property);
 		}
@@ -222,51 +227,54 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		Generalization generalization = null;
 		String severity = null;
 		boolean requiresParentId = false;
-		
+
 		if (template.getGeneralizations().size() > 0) {
 			// use the first generalization, assuming it is used for implementation class extension
 			generalization = template.getGeneralizations().get(0);
 			severity = CDAModelUtil.getValidationSeverity(generalization);
-			severity = severity == null ? SEVERITY_ERROR : severity;
+			severity = severity == null
+					? SEVERITY_ERROR
+					: severity;
 		}
-		
+
 		// if general class is a template and conformsTo is ERROR severity
-		if (SEVERITY_ERROR.equals(severity)
-				&& CDAModelUtil.getTemplateId((Class)generalization.getGeneral()) != null) {
+		if (SEVERITY_ERROR.equals(severity) && CDAModelUtil.getTemplateId((Class) generalization.getGeneral()) != null) {
 			Stereotype stereotype = CDAProfileUtil.applyCDAStereotype(generalization, ICDAProfileConstants.CONFORMS_TO);
 			if (stereotype != null) {
-				ConformsTo conformsTo = (ConformsTo)generalization.getStereotypeApplication(stereotype);
+				ConformsTo conformsTo = (ConformsTo) generalization.getStereotypeApplication(stereotype);
 				requiresParentId = conformsTo.isRequiresParentId();
 			}
 
 			if (!requiresParentId) {
 				// use constraint name of parent class
-				constraintName = createTemplateConstraintName((Class)generalization.getGeneral());
+				constraintName = createTemplateConstraintName((Class) generalization.getGeneral());
 			}
-//			else {
-//				System.out.println("requiresParentId: " + template.getQualifiedName() + " = " + constraintName);
-//			}
+			// else {
+			// System.out.println("requiresParentId: " + template.getQualifiedName() + " = " + constraintName);
+			// }
 		}
-		
+
 		if (constraintName == null) {
 			constraintName = createConstraintName(template, "TemplateId");
 		}
 		return constraintName;
 	}
-	
+
 	protected String createConstraintName(Property property) {
-		return createConstraintName(property.getClass_(), property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1));
+		return createConstraintName(property.getClass_(), property.getName().substring(0, 1).toUpperCase() +
+				property.getName().substring(1));
 	}
-	
+
 	protected String createConstraintName(Class umlClass, String suffix) {
 		String prefix = null;
-		
+
 		for (Classifier classifier : umlClass.allParents()) {
 			if (classifier instanceof Class) {
 				Class class_ = (Class) classifier;
 				if (umlClass.getName().equals(class_.getName())) {
 					Package umlPackage = umlClass.getPackage();
-					Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+					Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(
+						umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
 					if (ePackage != null) {
 						prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
 						break;
@@ -274,7 +282,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 				}
 			}
 		}
-		
+
 		String constraintName = "";
 		if (prefix != null) {
 			constraintName += prefix;
@@ -283,10 +291,10 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		if (suffix != null) {
 			constraintName += suffix;
 		}
-		
+
 		return constraintName;
 	}
-	
+
 	protected String normalizeConstraintName(String constraintName) {
 		String result = "";
 		String[] parts = constraintName.split("_");
@@ -314,24 +322,23 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		}
 		return name + "s";
 	}
-	
+
 	protected String capitalize(String name) {
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
-	
+
 	private Package initializeDomainPackageFrom(Element element) {
 		Package modelPkg = element.getNearestPackage();
 		Package domainPkg = null;
-		
+
 		if (transformerOptions.getDomainModelPath() == null) {
 			// create a nested package
 			domainPkg = modelPkg.getNestedPackage("domain");
-			
+
 			if (domainPkg == null) {
 				domainPkg = modelPkg.createNestedPackage("domain");
 			}
-		}
-		else {
+		} else {
 			// create model if necessary, assign default CodeGen stereotype values
 			URI domainModelURI = URI.createFileURI(transformerOptions.getDomainModelPath());
 			Resource domainResource = element.eResource().getResourceSet().createResource(domainModelURI);
@@ -339,56 +346,59 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 				domainPkg = UMLFactory.eINSTANCE.createPackage();
 				domainResource.getContents().add(domainPkg);
 				domainPkg.setName("domain");
-				
-				Stereotype codeGen = CDAProfileUtil.getAppliedCDAStereotype(modelPkg, ICDAProfileConstants.CODEGEN_SUPPORT);
+
+				Stereotype codeGen = CDAProfileUtil.getAppliedCDAStereotype(
+					modelPkg, ICDAProfileConstants.CODEGEN_SUPPORT);
 				if (codeGen != null) {
-					//assign Ecore EPackage stereotype
+					// assign Ecore EPackage stereotype
 					Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(modelPkg, UMLUtil.STEREOTYPE__E_PACKAGE);
 					UMLUtil.safeApplyStereotype(domainPkg, ePackage);
-					
+
 					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_PREFIX, "domain");
 					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, "domain");
 					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, "Domain");
 
-					String packageName = (String)modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
-					String nsURI = (String)modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
-					String basePackage = (String)modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
-					
+					String packageName = (String) modelPkg.getValue(
+						codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
+					String nsURI = (String) modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
+					String basePackage = (String) modelPkg.getValue(
+						codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
+
 					if (basePackage != null && packageName != null) {
-						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, basePackage+"."+packageName);
+						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, basePackage + "." +
+								packageName);
 					}
 					if (nsURI != null) {
-						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, nsURI+"/domain");
+						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, nsURI + "/domain");
 					}
 				}
-			}
-			else {
+			} else {
 				domainPkg = (Package) domainResource.getContents().get(0);
 			}
 		}
-		
+
 		return domainPkg;
 	}
-	
+
 	protected Package getDomainInterfacePackage(Element element) {
 		Package domainPkg = transformerOptions.getDomainInterfacePackage();
-		
+
 		if (domainPkg == null) {
 			domainPkg = initializeDomainPackageFrom(element);
 			transformerOptions.setDomainInterfacePackage(domainPkg);
 		}
-		
+
 		return domainPkg;
 	}
-	
+
 	protected Interface getDomainInterface(Type modelType) {
 		String classifierName = normalizeCodeName(modelType.getName());
 		if (transformerOptions.isUseBusinessNames()) {
 			classifierName = normalizeCodeName(modelType.getLabel(false));
 		}
-		
+
 		Package domainPkg = getDomainInterfacePackage(modelType);
-		return (Interface) domainPkg.getOwnedType("I"+classifierName, false, 
-				UMLPackage.eINSTANCE.getInterface(), true);
+		return (Interface) domainPkg.getOwnedType(
+			"I" + classifierName, false, UMLPackage.eINSTANCE.getInterface(), true);
 	}
 }

@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 public class EcoreTransformer {
-	
+
 	private EcoreTransformerOptions transformerOptions;
 
 	public EcoreTransformer() {
@@ -36,36 +36,25 @@ public class EcoreTransformer {
 	public EcoreTransformer(EcoreTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
 	public void transformElement(Element element) {
 		PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(element.eResource());
 		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
-		UMLSwitch<Object> genDomainInterface = 
-			new GenDomainInterface(transformerOptions);
-		UMLSwitch<Object> genDomainProperty = 
-			new GenDomainProperty(transformerOptions);
+		UMLSwitch<Object> genDomainInterface = new GenDomainInterface(transformerOptions);
+		UMLSwitch<Object> genDomainProperty = new GenDomainProperty(transformerOptions);
 
-		UMLSwitch<Object> transformPackage = 
-			new TransformPackage(transformerOptions);
-		UMLSwitch<Object> transformClass = 
-			new TransformClass(transformerOptions);
-		UMLSwitch<Object> transformConstraint = 
-			new TransformConstraint(transformerOptions);
-		UMLSwitch<Object> transformClinicalDocument = 
-			new TransformClinicalDocument(transformerOptions);
-		UMLSwitch<Object> transformTemplateIdentifier = 
-			new TransformTemplateIdentifier(transformerOptions);
-		UMLSwitch<Object> transformVocabConstraint = 
-			new TransformVocabConstraint(transformerOptions);
-		UMLSwitch<Object> transformPropertyConstraint = 
-			new TransformPropertyConstraint(transformerOptions);
-		UMLSwitch<Object> transformAssociation = 
-			new TransformAssociation(transformerOptions);
-		
+		UMLSwitch<Object> transformPackage = new TransformPackage(transformerOptions);
+		UMLSwitch<Object> transformClass = new TransformClass(transformerOptions);
+		UMLSwitch<Object> transformConstraint = new TransformConstraint(transformerOptions);
+		UMLSwitch<Object> transformClinicalDocument = new TransformClinicalDocument(transformerOptions);
+		UMLSwitch<Object> transformTemplateIdentifier = new TransformTemplateIdentifier(transformerOptions);
+		UMLSwitch<Object> transformVocabConstraint = new TransformVocabConstraint(transformerOptions);
+		UMLSwitch<Object> transformPropertyConstraint = new TransformPropertyConstraint(transformerOptions);
+		UMLSwitch<Object> transformAssociation = new TransformAssociation(transformerOptions);
+
 		try {
-			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
-					Collections.singletonList(element));
+			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = iterator.next();
 
@@ -73,7 +62,7 @@ public class EcoreTransformer {
 					genDomainInterface.doSwitch(child);
 					genDomainProperty.doSwitch(child);
 				}
-				
+
 				transformPackage.doSwitch(child);
 				transformConstraint.doSwitch(child);
 				transformClinicalDocument.doSwitch(child);
@@ -83,11 +72,9 @@ public class EcoreTransformer {
 				transformAssociation.doSwitch(child);
 				transformClass.doSwitch(child);
 			}
-		}
-		catch (IndexOutOfBoundsException e) {
+		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
-		
 
 		if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
 			try {
@@ -97,14 +84,14 @@ public class EcoreTransformer {
 				Logger.logException(e);
 			}
 		}
-		
+
 		// save the updated plugin.properties file
 		propertiesUtil.save();
-		
+
 		for (Element deleted : transformerOptions.getDeletedElementList()) {
 			deleted.destroy();
 		}
 
 	}
-	
+
 }

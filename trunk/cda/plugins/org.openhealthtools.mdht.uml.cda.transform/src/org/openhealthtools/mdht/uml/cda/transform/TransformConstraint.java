@@ -25,48 +25,46 @@ public class TransformConstraint extends TransformAbstract {
 	public TransformConstraint(EcoreTransformerOptions options) {
 		super(options);
 	}
-	
+
+	@Override
 	public Object caseConstraint(Constraint constraint) {
 		// ignore generated templateId constraints
-		if (constraint.getName() == null
-				|| constraint.getName().endsWith("TemplateId")) {
+		if (constraint.getName() == null || constraint.getName().endsWith("TemplateId")) {
 			return null;
 		}
 
 		// must get message before Analysis lang is removed
 		String severity = CDAModelUtil.getValidationSeverity(constraint);
 		String message = CDAModelUtil.getValidationMessage(constraint);
-		
+
 		// remove all spec languages other than the first OCL expression
 		ValueSpecification spec = constraint.getSpecification();
 		if (spec instanceof OpaqueExpression) {
 			List<String> languages = new ArrayList<String>(((OpaqueExpression) spec).getLanguages());
 			String oclBody = null;
-			for (int i=0; i<languages.size(); i++) {
+			for (int i = 0; i < languages.size(); i++) {
 				String lang = languages.get(i);
 				if ("OCL".equals(lang)) {
 					oclBody = ((OpaqueExpression) spec).getBodies().get(i);
 					break;
 				}
 			}
-			
+
 			if (oclBody == null) {
 				removeModelElement(constraint);
 				return null;
-			}
-			else {
+			} else {
 				((OpaqueExpression) spec).getLanguages().clear();
 				((OpaqueExpression) spec).getBodies().clear();
 				((OpaqueExpression) spec).getLanguages().add("OCL");
 				((OpaqueExpression) spec).getBodies().add(oclBody);
 			}
 		}
-		
+
 		Class constrainedClass = null;
 		if (constraint.getContext() instanceof Class) {
 			constrainedClass = (Class) constraint.getContext();
-		}
-		else {
+		} else {
 			return null;
 		}
 
@@ -76,7 +74,7 @@ public class TransformConstraint extends TransformAbstract {
 			constraintName = constraintPrefix + constraintName;
 		}
 		constraint.setName(constraintName);
-		
+
 		if (SEVERITY_INFO.equals(severity)) {
 			addValidationInfo(constrainedClass, constraint.getName(), message);
 		} else if (SEVERITY_WARNING.equals(severity)) {
