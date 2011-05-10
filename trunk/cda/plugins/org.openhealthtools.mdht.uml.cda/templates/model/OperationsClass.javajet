@@ -3,7 +3,7 @@
 /**
  * <copyright>
  *
- * Copyright (c) 2005, 2008 IBM Corporation, Embarcadero Technologies, and others.
+ * Copyright (c) 2005, 2011 IBM Corporation, Embarcadero Technologies, and others.
  * All rights reserved.   This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@
  * Contributors:
  *   IBM - initial API and implementation
  *   Kenn Hussey (Embarcadero Technologies) - 206636, 224693
+ *   Kenn Hussey - ensuring methods aren't generated for operations with Java bodies
  *
  * </copyright>
  */
@@ -29,12 +30,14 @@ package <%=UML2GenModelUtil.getOperationsPackageName(genPackage)%>;
  *
 <%if (!UML2GenModelUtil.getOperationsClassGenOperations(genClass).isEmpty()) { boolean first = true;%>
   <%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+  <%if (!genOperation.hasBody()) {%>
     <%if (first) { first = false;%>
  * <p>
  * The following operations are supported:
  * <ul>
     <%}%>
  *   <li>{@link <%=genOperation.getGenClass().getQualifiedInterfaceName()%>#<%=genOperation.getName()%>(<%=genOperation.getParameterTypes(", ")%>) <em><%=genOperation.getFormattedName()%></em>}</li>
+  <%}%>
   <%}%>
   <% if (!first) {%>
  * </ul>
@@ -76,6 +79,7 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 	}
 
 <%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+<%if (!genOperation.hasBody()) {%>
 <%@ include file="Operations/genOperation.override.javajetinc" fail="alternative" %>
 <%@ start %>
 <%if (UML2GenModelUtil.hasOCLBody(genOperation)) {%>
@@ -138,9 +142,7 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 	 */
 	public static <%=genClass.getTypeParameters().length() > 0 && genOperation.getTypeParameters(genClass).length() > 0 ? genClass.getTypeParameters().substring(0, genClass.getTypeParameters().length() - 2) + ", " + genOperation.getTypeParameters(genClass).trim().substring(1) : genClass.getTypeParameters().trim() + genOperation.getTypeParameters(genClass).trim()%> <%=genOperation.getImportedType(genClass)%> <%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%=genClass.getTypeParameters().trim()%> <%=genClass.safeName(genClass.getUncapName())%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameters(genClass)%>)<%=genOperation.getThrows(genClass)%>
 	{
-  <%if (genOperation.hasBody()) {%>
-		<%=genOperation.getBody(genModel.getIndentation(stringBuffer))%>
-  <%} else if (genOperation.isInvariant()) {GenClass opClass = genOperation.getGenClass(); String diagnostics = genOperation.getGenParameters().get(0).getName(); String context = genOperation.getGenParameters().get(1).getName();%>
+  <%if (genOperation.isInvariant()) {GenClass opClass = genOperation.getGenClass(); String diagnostics = genOperation.getGenParameters().get(0).getName(); String context = genOperation.getGenParameters().get(1).getName();%>
       <%if (UML2GenModelUtil.hasOCLBody(genOperation)) { String oclInv = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_INV";%>
 		if (<%=oclInv%> == null)
 		{
@@ -225,6 +227,7 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 
 <%@ include file="Operations/genOperation.insert.javajetinc" fail="silent" %>
 <%@ end %><%//Operations/genOperation.override.javajetinc%>
+<%}%>
 <%}%>
 } // <%=UML2GenModelUtil.getOperationsClassName(genClass)%>
 <%genModel.emitSortedImports();%>
