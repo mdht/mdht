@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2010 Sean Muir
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     IBM Corporation - initial API and implementation
+ *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.validate;
 
@@ -40,6 +40,24 @@ import org.xml.sax.helpers.XMLReaderFactory;
  * 
  */
 public class Validate {
+
+	public static String getPath(EObject eObject) {
+		String path = "";
+		while (eObject != null && !(eObject instanceof DocumentRoot)) {
+			EStructuralFeature feature = eObject.eContainingFeature();
+			EObject container = eObject.eContainer();
+			Object value = container.eGet(feature);
+			if (feature.isMany()) {
+				List<?> list = (List<?>) value;
+				int index = list.indexOf(eObject) + 1;
+				path = "/" + feature.getName() + "[" + index + "]" + path;
+			} else {
+				path = "/" + feature.getName() + "[1]" + path;
+			}
+			eObject = eObject.eContainer();
+		}
+		return path;
+	}
 
 	public static void main(String[] args) {
 
@@ -80,6 +98,7 @@ public class Validate {
 
 					CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 
+						@Override
 						public void handleError(Diagnostic diagnostic) {
 
 							String path = "";
@@ -91,9 +110,11 @@ public class Validate {
 
 							try {
 								if (eld != null) {
-									out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
+									out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+											diagnostic.getMessage() + "\n");
 								} else {
-									out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
+									out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
+											diagnostic.getMessage() + "(" + path + ")" + "\n");
 								}
 
 							} catch (IOException e) {
@@ -102,10 +123,12 @@ public class Validate {
 
 						}
 
+						@Override
 						public void handleInfo(Diagnostic diagnostic) {
 
 						}
 
+						@Override
 						public void handleWarning(Diagnostic diagnostic) {
 
 							String path = "";
@@ -118,9 +141,11 @@ public class Validate {
 
 							try {
 								if (eld != null) {
-									out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + diagnostic.getMessage() + "\n");
+									out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+											diagnostic.getMessage() + "\n");
 								} else {
-									out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER + diagnostic.getMessage() + "(" + path + ")" + "\n");
+									out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
+											diagnostic.getMessage() + "(" + path + ")" + "\n");
 								}
 							} catch (IOException e) {
 								e.printStackTrace();
@@ -155,9 +180,11 @@ public class Validate {
 					}
 
 					if (eld != null) {
-						out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER + "CDA document load error : " + rootMessage + "\n");
+						out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+								"CDA document load error : " + rootMessage + "\n");
 					} else {
-						out.write("error" + DELIMITER + 1 + DELIMITER + 1 + DELIMITER + "CDA document load error : " + rootMessage + "\n");
+						out.write("error" + DELIMITER + 1 + DELIMITER + 1 + DELIMITER + "CDA document load error : " +
+								rootMessage + "\n");
 					}
 
 				}
@@ -170,24 +197,6 @@ public class Validate {
 		} catch (Exception e1) {
 		}
 
-	}
-
-	public static String getPath(EObject eObject) {
-		String path = "";
-		while (eObject != null && !(eObject instanceof DocumentRoot)) {
-			EStructuralFeature feature = eObject.eContainingFeature();
-			EObject container = eObject.eContainer();
-			Object value = container.eGet(feature);
-			if (feature.isMany()) {
-				List<?> list = (List<?>) value;
-				int index = list.indexOf(eObject) + 1;
-				path = "/" + feature.getName() + "[" + index + "]" + path;
-			} else {
-				path = "/" + feature.getName() + "[1]" + path;
-			}
-			eObject = eObject.eContainer();
-		}
-		return path;
 	}
 
 }

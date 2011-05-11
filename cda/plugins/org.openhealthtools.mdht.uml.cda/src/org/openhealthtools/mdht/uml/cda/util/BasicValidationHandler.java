@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2009 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,11 +18,11 @@ public class BasicValidationHandler implements ValidationHandler {
 		// do nothing
 	}
 
-	public void handleWarning(Diagnostic diagnostic) {
+	public void handleInfo(Diagnostic diagnostic) {
 		// do nothing
 	}
-	
-	public void handleInfo(Diagnostic diagnostic) {
+
+	public void handleWarning(Diagnostic diagnostic) {
 		// do nothing
 	}
 }
