@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2010 Sean Muir
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     IBM Corporation - initial API and implementation
+ *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.util;
 
@@ -41,7 +41,6 @@ import org.xml.sax.SAXException;
  */
 public class CDAPackageLoader {
 
-	
 	private static boolean packagesLoaded = false;
 
 	public static boolean isPackagesLoaded() {
@@ -55,13 +54,13 @@ public class CDAPackageLoader {
 	protected static final void loadPackages() {
 
 		if (!packagesLoaded) {
-			
+
 			final String PATH_SEPARATOR = System.getProperty("path.separator");
 
 			final String JAVA_CLASSPATH = System.getProperty("java.class.path");
-						
+
 			final String BIN = "bin";
-			
+
 			final String PLUGINXML = "plugin.xml";
 
 			StringTokenizer st = new StringTokenizer(JAVA_CLASSPATH, PATH_SEPARATOR);
@@ -78,23 +77,22 @@ public class CDAPackageLoader {
 						// If there is an issue loading the plugin jar - we let
 						// normal processing continue
 					}
-				} else if (path.endsWith(BIN))
-				{
-					
+				} else if (path.endsWith(BIN)) {
+
 					String pluginPath = path.substring(0, path.lastIndexOf(BIN)) + PLUGINXML;
 
 					try {
 						FileInputStream pluginInputSteam = new FileInputStream(pluginPath);
 						processPluginXML(pluginInputSteam);
 					} catch (Exception e) {
-					
+
 					}
-					
+
 				}
 			}
 			packagesLoaded = true;
 		}
-		
+
 		return;
 	}
 
@@ -127,38 +125,40 @@ public class CDAPackageLoader {
 		return;
 	}
 
-	private static void processModelPlugin(ZipFile zipFile) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException, ClassNotFoundException,
-			SecurityException, NoSuchFieldException {
-		
+	private static void processModelPlugin(ZipFile zipFile) throws SAXException, IOException,
+			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
+			NoSuchFieldException {
+
 		// Get the plugin.xml
 		ZipEntry pluginEntry = zipFile.getEntry("plugin.xml");
-		
+
 		// if it has a plugin xml
 		if (pluginEntry != null) {
 
 			processPluginXML(zipFile.getInputStream(pluginEntry));
-			
+
 		}
 	}
-	
-	private static void processPluginXML(InputStream pluginStream) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException, NoSuchFieldException
-	{
+
+	private static void processPluginXML(InputStream pluginStream) throws SAXException, IOException,
+			ParserConfigurationException, XPathExpressionException, ClassNotFoundException, SecurityException,
+			NoSuchFieldException {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		
+
 		factory.setNamespaceAware(true);
-		
+
 		DocumentBuilder builder;
-		
+
 		Document doc = null;
-		
+
 		XPathExpression expr = null;
-		
+
 		builder = factory.newDocumentBuilder();
-		
-		doc = builder.parse(new InputSource(pluginStream)); //zipFile.getInputStream(pluginEntry)));
+
+		doc = builder.parse(new InputSource(pluginStream)); // zipFile.getInputStream(pluginEntry)));
 
 		XPathFactory xFactory = XPathFactory.newInstance();
-		
+
 		XPath xpath = xFactory.newXPath();
 
 		expr = xpath.compile("//plugin/extension[@point='org.eclipse.emf.ecore.generated_package']/package");
@@ -178,6 +178,5 @@ public class CDAPackageLoader {
 
 		}
 	}
-	
 
 }

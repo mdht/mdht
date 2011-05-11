@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2011 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,10 +21,13 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil.ValidationHandler;
 // a class to collect diagnostics produced during XML schema validation and/or EMF validation
 public class ValidationResult implements ValidationHandler {
 	private static final String JAVA_XML_VALIDATOR_SOURCE = "javax.xml.validation.Validator";
-	
+
 	private List<Diagnostic> allDiagnostics = null;
+
 	private List<Diagnostic> errorDiagnostics = null;
+
 	private List<Diagnostic> warningDiagnostics = null;
+
 	private List<Diagnostic> infoDiagnostics = null;
 
 	public ValidationResult() {
@@ -33,42 +36,11 @@ public class ValidationResult implements ValidationHandler {
 		warningDiagnostics = new ArrayList<Diagnostic>();
 		infoDiagnostics = new ArrayList<Diagnostic>();
 	}
-	
-	public void handleError(Diagnostic diagnostic) {
-		allDiagnostics.add(diagnostic);
-		errorDiagnostics.add(diagnostic);
-	}
 
-	public void handleWarning(Diagnostic diagnostic) {
-		allDiagnostics.add(diagnostic);
-		warningDiagnostics.add(diagnostic);
-	}
-
-	public void handleInfo(Diagnostic diagnostic) {
-		allDiagnostics.add(diagnostic);
-		infoDiagnostics.add(diagnostic);
-	}
-	
-	public boolean hasErrors() {
-		return !errorDiagnostics.isEmpty();
-	}
-	
 	public List<Diagnostic> getAllDiagnostics() {
 		return Collections.unmodifiableList(allDiagnostics);
 	}
-	
-	public List<Diagnostic> getErrorDiagnostics() {
-		return Collections.unmodifiableList(errorDiagnostics);
-	}
-	
-	public List<Diagnostic> getWarningDiagnostics() {
-		return Collections.unmodifiableList(warningDiagnostics);
-	}
-	
-	public List<Diagnostic> getInfoDiagnostics() {
-		return Collections.unmodifiableList(infoDiagnostics);
-	}
-	
+
 	public List<Diagnostic> getDiagnostics(Filter<Diagnostic> filter) {
 		List<Diagnostic> diagnostics = new ArrayList<Diagnostic>();
 		for (Diagnostic diagnostic : getAllDiagnostics()) {
@@ -78,22 +50,57 @@ public class ValidationResult implements ValidationHandler {
 		}
 		return Collections.unmodifiableList(diagnostics);
 	}
-	
-	// filter out diagnostics produced during XML schema validation
-	public List<Diagnostic> getSchemaValidationDiagnostics() {
-		return getDiagnostics(new Filter<Diagnostic>() {
-			public boolean accept(Diagnostic item) {
-				return JAVA_XML_VALIDATOR_SOURCE.equals(item.getSource()) ? true : false;
-			}
-		});
-	}
-	
+
 	// filter out diagnostics produced during EMF validation
 	public List<Diagnostic> getEMFValidationDiagnostics() {
 		return getDiagnostics(new Filter<Diagnostic>() {
 			public boolean accept(Diagnostic item) {
-				return JAVA_XML_VALIDATOR_SOURCE.equals(item.getSource()) ? false : true;
+				return JAVA_XML_VALIDATOR_SOURCE.equals(item.getSource())
+						? false
+						: true;
 			}
 		});
+	}
+
+	public List<Diagnostic> getErrorDiagnostics() {
+		return Collections.unmodifiableList(errorDiagnostics);
+	}
+
+	public List<Diagnostic> getInfoDiagnostics() {
+		return Collections.unmodifiableList(infoDiagnostics);
+	}
+
+	// filter out diagnostics produced during XML schema validation
+	public List<Diagnostic> getSchemaValidationDiagnostics() {
+		return getDiagnostics(new Filter<Diagnostic>() {
+			public boolean accept(Diagnostic item) {
+				return JAVA_XML_VALIDATOR_SOURCE.equals(item.getSource())
+						? true
+						: false;
+			}
+		});
+	}
+
+	public List<Diagnostic> getWarningDiagnostics() {
+		return Collections.unmodifiableList(warningDiagnostics);
+	}
+
+	public void handleError(Diagnostic diagnostic) {
+		allDiagnostics.add(diagnostic);
+		errorDiagnostics.add(diagnostic);
+	}
+
+	public void handleInfo(Diagnostic diagnostic) {
+		allDiagnostics.add(diagnostic);
+		infoDiagnostics.add(diagnostic);
+	}
+
+	public void handleWarning(Diagnostic diagnostic) {
+		allDiagnostics.add(diagnostic);
+		warningDiagnostics.add(diagnostic);
+	}
+
+	public boolean hasErrors() {
+		return !errorDiagnostics.isEmpty();
 	}
 }
