@@ -14,8 +14,6 @@ package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -32,8 +30,58 @@ public class AdvanceDirectivesSectionOperationsTest
 		extends
 		org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectivesSectionOperationsTest {
 
-	protected static final String ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.34";
+	
+	public static class OperationsForOCL extends AdvanceDirectivesSectionOperations {
+		public String getOCLValue(String fieldName) {
 
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+	
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+	
+	public class ObjectFactory implements TestObjectFactory<AdvanceDirectivesSection> {
+		public AdvanceDirectivesSection create() {
+			return IHEFactory.eINSTANCE.createAdvanceDirectivesSection();
+		}
+	}
+	
+	ObjectFactory objectFactory = new ObjectFactory();
+
+	@Test
+	public void testValidateIHEAdvanceDirectivesSectionTemplateId() {
+		OperationsTestCase<AdvanceDirectivesSection> testCase = new OperationsTestCase<AdvanceDirectivesSection>(
+				"validateIHEAdvanceDirectivesSectionTemplateId", operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectivesSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectivesSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return AdvanceDirectivesSectionOperations.validateIHEAdvanceDirectivesSectionTemplateId((AdvanceDirectivesSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+	
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
@@ -44,42 +92,5 @@ public class AdvanceDirectivesSectionOperationsTest
 		assertTrue(true);
 	} // testConstructor
 	
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID) {
-
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return AdvanceDirectivesSectionOperations
-					.validateIHEAdvanceDirectivesSectionTemplateId(
-							(AdvanceDirectivesSection) objectToTest,
-							diagnostician, map);
-		}
-
-	}
-
-	}; // TEST_CASE_ARRAY
-
-	@Override
-	protected List<CDATestCase> getTestCases() {
-		// Return a new List because the one returned by Arrays.asList is
-		// unmodifiable so a sub-class can't append their test cases.
-		final List<CDATestCase> retValue = super.getTestCases();
-		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		return retValue;
-	}
-
-	@Override
-	protected EObject getObjectToTest() {
-		return IHEFactory.eINSTANCE.createAdvanceDirectivesSection();
-	}
-
-	@Override
-	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createAdvanceDirectivesSection().init();
-	}
 
 } // AdvanceDirectivesSectionOperationsTest

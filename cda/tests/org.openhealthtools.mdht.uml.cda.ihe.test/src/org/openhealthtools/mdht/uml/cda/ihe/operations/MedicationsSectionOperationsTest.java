@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,56 +33,67 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 public class MedicationsSectionOperationsTest extends
 MedicationSectionOperationsTest {
 
-	@SuppressWarnings("hiding")
-	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.8";
+//	@SuppressWarnings("hiding")
+//	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.8";
+//
+//	/**
+//	 * Not a real test, needed for EMMA to report 100% method coverage.
+//	 */
+//	@SuppressWarnings("unused")
+//	@Test
+//	public void testConstructor() {
+//		MedicationsSectionOperations obj = new MedicationsSectionOperations();
+//		assertTrue(true);
+//	} // testConstructor
+//	
+//	private static final CDATestCase TEST_CASE_ARRAY[] = {
+//		// Template ID
+//		// -------------------------------------------------------------
+//		new TemplateIDValidationTest(TEMPLATE_ID) {
+//
+//			@SuppressWarnings("static-access")
+//			@Override
+//			protected boolean validate(final EObject objectToTest,
+//					final BasicDiagnostic diagnostician,
+//					final Map<Object, Object> map) {
+//				return MedicationsSectionOperations
+//				.validateMedicationsSectionTemplateId(
+//						(MedicationsSection) objectToTest, diagnostician,
+//						map);
+//			}
+//
+//		}
+//
+//	}; // TEST_CASE_ARRAY
+//
+//	@Override
+//	protected List<CDATestCase> getTestCases() {
+//		// Return a new List because the one returned by Arrays.asList is
+//		// unmodifiable so a sub-class can't append their test cases.
+//		final List<CDATestCase> retValue = super.getTestCases();
+//		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+//		return retValue;
+//	}
+//
+//	@Override
+//	protected EObject getObjectToTest() {
+//		return IHEFactory.eINSTANCE.createMedicationsSection();
+//	}
+//
+//	@Override
+//	protected EObject getObjectInitToTest() {
+//		return IHEFactory.eINSTANCE.createMedicationsSection().init();
+//	}
 
-	/**
-	 * Not a real test, needed for EMMA to report 100% method coverage.
-	 */
-	@SuppressWarnings("unused")
-	@Test
-	public void testConstructor() {
-		MedicationsSectionOperations obj = new MedicationsSectionOperations();
-		assertTrue(true);
-	} // testConstructor
 	
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
-
-			@SuppressWarnings("static-access")
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return MedicationsSectionOperations
-				.validateMedicationsSectionTemplateId(
-						(MedicationsSection) objectToTest, diagnostician,
-						map);
-			}
-
-		}
-
-	}; // TEST_CASE_ARRAY
-
-	@Override
-	protected List<CDATestCase> getTestCases() {
-		// Return a new List because the one returned by Arrays.asList is
-		// unmodifiable so a sub-class can't append their test cases.
-		final List<CDATestCase> retValue = super.getTestCases();
-		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		return retValue;
+	
+	@Test
+	public void testValidateIHEMedicationsSectionTemplateId() {
+		fail("Not yet implemented");
 	}
 
-	@Override
-	protected EObject getObjectToTest() {
-		return IHEFactory.eINSTANCE.createMedicationsSection();
+	@Test
+	public void testValidateIHEMedicationsSectionMedication() {
+		fail("Not yet implemented");
 	}
-
-	@Override
-	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createMedicationsSection().init();
-	}
-
 }// MedicationsSectionOperationsTest

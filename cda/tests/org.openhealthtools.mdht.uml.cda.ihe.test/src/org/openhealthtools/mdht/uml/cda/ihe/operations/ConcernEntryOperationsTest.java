@@ -12,18 +12,18 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemActOperationsTest;
+import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
  * This class is a JUnit4 test case.
@@ -31,68 +31,147 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 @SuppressWarnings("nls")
 public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
-	protected static final String CONCERN_ENTRY_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.5.1";
-
-	/**
-	 * Not a real test, needed for EMMA to report 100% method coverage.
-	 */
-	@SuppressWarnings("unused")
-	@Test
-	public void testConstructor() {
-		ConcernEntryOperations obj = new ConcernEntryOperations();
-		assertTrue(true);
-	} // testConstructor
 	
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-			// -------------------------------------------------------------
-			new TemplateIDValidationTest(CONCERN_ENTRY_TEMPLATE_ID) {
+	public static class OperationsForOCL extends ConcernEntryOperations {
+		public String getOCLValue(String fieldName) {
 
-				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ConcernEntryOperations
-							.validateConcernEntryTemplateId(
-									(ConcernEntry) objectToTest,
-									diagnostician, map);
-				}
+			String oclValue = null;
 
-			},
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+	
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+	
+	public class ObjectFactory implements TestObjectFactory<ConcernEntry> {
+		public ConcernEntry create() {
+			return IHEFactory.eINSTANCE.createConcernEntry();
+		}
+	}
+	
+	ObjectFactory objectFactory = new ObjectFactory();
+	
+	@Test
+	public void testValidateConcernEntryEffectiveTimeLowHigh() {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+				"ValidateConcernEntryEffectiveTimeLowHigh", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
 
-			// EffectiveTime
-			// -------------------------------------------------------------
-			new EffectiveTimeCCDValidationTest() {
-				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ConcernEntryOperations
-							.validateConcernEntryEffectiveTime(
-									(ConcernEntry) objectToTest,
-									diagnostician, map);
-				}
+			@Override
+			protected void updateToFail(ConcernEntry target) {
+				target.init();
+				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS("lowvalue","highvalue");
+				target.setEffectiveTime(value );
 			}
 
-	}; // TEST_CASE_ARRAY
+			@Override
+			protected void updateToPass(ConcernEntry target) {
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs );
 
-	@Override
-	protected List<CDATestCase> getTestCases() {
-		// Return a new List because the one returned by Arrays.asList is
-		// unmodifiable so a sub-class can't append their test cases.
-		final List<CDATestCase> retValue = super.getTestCases();
-		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		return retValue;
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ConcernEntryOperations.validateConcernEntryEffectiveTimeLowHigh((ConcernEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+		
 	}
 
-	@Override
-	protected EObject getObjectToTest() {
-		return IHEFactory.eINSTANCE.createConcernEntry();
+	@Test
+	public void testValidateConcernEntryEffectiveTimeLowNoHigh() {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+				"ValidateConcernEntryEffectiveTimeLowNoHigh", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+
+			@Override
+			protected void updateToFail(ConcernEntry target) {
+				target.init();
+				CS cs = DatatypesFactory.eINSTANCE.createCS("notcompletedorabortedstatus");
+				target.setStatusCode(cs );
+				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS("lowvalue","highvalue");
+				target.setEffectiveTime(value );
+			}
+
+			@Override
+			protected void updateToPass(ConcernEntry target) {
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs );
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ConcernEntryOperations.validateConcernEntryEffectiveTimeLowHigh((ConcernEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+		
 	}
 
-	@Override
-	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createConcernEntry().init();
+	@Test
+	public void testValidateConcernEntryTemplateId() {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+				"validateConcernEntryTemplateId", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+
+			@Override
+			protected void updateToFail(ConcernEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConcernEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ConcernEntryOperations.validateConcernEntryTemplateId((ConcernEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
+	@Test
+	public void testValidateConcernEntryEffectiveTime() {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+				"ValidateConcernEntryEffectiveTime", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+
+			@Override
+			protected void updateToFail(ConcernEntry target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ConcernEntry target) {
+				
+				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(value );
+				
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ConcernEntryOperations.validateConcernEntryEffectiveTime((ConcernEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+		
+	}
+	
 } // ConcernEntryOperationsTest
