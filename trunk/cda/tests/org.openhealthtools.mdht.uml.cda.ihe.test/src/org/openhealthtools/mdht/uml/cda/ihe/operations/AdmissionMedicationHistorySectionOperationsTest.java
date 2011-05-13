@@ -14,8 +14,6 @@ package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -33,11 +31,31 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 @SuppressWarnings("nls")
 public class AdmissionMedicationHistorySectionOperationsTest extends
 		CCDValidationTest {
+	
+	public static class OperationsForOCL extends AdmissionMedicationHistorySectionOperations {
+		public String getOCLValue(String fieldName) {
 
-	private final static String ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.20";
+			String oclValue = null;
 
-	private static final String CODE = "42346-7";
-	private static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+	
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+	
+	public class ObjectFactory implements TestObjectFactory<AdmissionMedicationHistorySection> {
+		public AdmissionMedicationHistorySection create() {
+			return IHEFactory.eINSTANCE.createAdmissionMedicationHistorySection();
+		}
+	}
+	
+	ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -48,59 +66,79 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 		AdmissionMedicationHistorySectionOperations obj = new AdmissionMedicationHistorySectionOperations();
 		assertTrue(true);
 	} // testConstructor
+
+	@Override
+	protected EObject getObjectToTest() {		
+		return null;
+	}
 	
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-			// -------------------------------------------------------------
-			new TemplateIDValidationTest(
-					ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID) {
+	@Test
+	public void testValidateAdmissionMedicationHistorySectionTemplateId() {
+		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
+				"validateAdmissionMedicationHistorySectionTemplateId", operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
-				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return AdmissionMedicationHistorySectionOperations
-							.validateAdmissionMedicationHistorySectionTemplateId(
-									(AdmissionMedicationHistorySection) objectToTest,
-									diagnostician, map);
-				}
-			},
+			@Override
+			protected void updateToFail(AdmissionMedicationHistorySection target) {
 
-			// Code
-			// -------------------------------------------------------------
-			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return AdmissionMedicationHistorySectionOperations
-							.validateAdmissionMedicationHistorySectionCode(
-									(AdmissionMedicationHistorySection) objectToTest,
-									diagnostician, map);
-				}
-			} };
+			}
 
-	@Override
-	protected List<CDATestCase> getTestCases() {
-		// Return a new List because the one returned by Arrays.asList is
-		// unmodifiable so a sub-class can't append their test cases.
-		final List<CDATestCase> retValue = super.getTestCases();
-		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		return retValue;
+			@Override
+			protected void updateToPass(AdmissionMedicationHistorySection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionTemplateId((AdmissionMedicationHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
-	@Override
-	protected EObject getObjectToTest() {
-		return IHEFactory.eINSTANCE.createAdmissionMedicationHistorySection();
-	}
+	@Test
+	public void testValidateAdmissionMedicationHistorySectionCode() {
+		
+		
+		/*
+		 * Method method = ... // obtain method object
+Annotation annotation = method.getAnnotation(MyAnnotation.class);
 
-	/**
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest#getObjectInitToTest()
-	 */
-	@Override
-	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createAdmissionMedicationHistorySection()
-				.init();
+if(annotation instanceof MyAnnotation){
+    MyAnnotation myAnnotation = (MyAnnotation) annotation;
+    System.out.println("name: " + myAnnotation.name());
+    System.out.println("value: " + myAnnotation.value());
+}
+
+		 */
+		
+		
+		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
+				"validateAdmissionMedicationHistorySectionCode", operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(AdmissionMedicationHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdmissionMedicationHistorySection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionCode((AdmissionMedicationHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
 } // AdmissionMedicationHistorySectionOperationsTest

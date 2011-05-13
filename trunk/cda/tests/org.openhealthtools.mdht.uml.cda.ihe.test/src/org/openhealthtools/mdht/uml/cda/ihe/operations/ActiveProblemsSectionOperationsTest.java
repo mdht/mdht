@@ -14,17 +14,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemSectionOperationsTest;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
@@ -33,10 +27,23 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class ActiveProblemsSectionOperationsTest extends
-		ProblemSectionOperationsTest {
+public class ActiveProblemsSectionOperationsTest extends ProblemSectionOperationsTest {
 
-	private static final String ACTIVE_PROBLEM_SECTION_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.6";
+	public static class OperationsForOCL extends ActiveProblemsSectionOperations {
+		public String getOCLValue(String fieldName) {
+
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -48,60 +55,68 @@ public class ActiveProblemsSectionOperationsTest extends
 		ActiveProblemsSectionOperations obj = new ActiveProblemsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-			// -------------------------------------------------------------
-			new TemplateIDValidationTest(ACTIVE_PROBLEM_SECTION_TEMPLATE_ID) {
 
-				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ActiveProblemsSectionOperations
-							.validateActiveProblemsSectionTemplateId(
-									(ActiveProblemsSection) objectToTest,
-									diagnostician, map);
-				}
-			},
-
-			// Entry
-			// -------------------------------------------------------------
-			new EntryCCDValidationTest() {
-
-				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ActiveProblemsSectionOperations
-							.validateActiveProblemsSectionProblemConcernEntry(
-									(ActiveProblemsSection) objectToTest,
-									diagnostician, map);
-				}
-
-				@Override
-				protected Object getValueToSet() {
-					final EList<Entry> retValue = new BasicEList<Entry>();
-					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setAct(IHEFactory.eINSTANCE
-							.createProblemConcernEntry());
-					retValue.add(entry);
-					return retValue;
-				}
-			} };
-
-	@Override
-	protected List<CDATestCase> getTestCases() {
-		// Return a new List because the one returned by Arrays.asList is
-		// unmodifiable so a sub-class can't append their test cases.
-		final List<CDATestCase> retValue = super.getTestCases();
-		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		return retValue;
+	public class ActiveProblemsSectionObjectFactory implements TestObjectFactory<ActiveProblemsSection> {
+		public ActiveProblemsSection create() {
+			return IHEFactory.eINSTANCE.createActiveProblemsSection();
+		}
 	}
 
-	@Override
-	protected EObject getObjectToTest() {
-		return IHEFactory.eINSTANCE.createActiveProblemsSection();
+	ActiveProblemsSectionObjectFactory activeProblemsSectionObjectFactory = new ActiveProblemsSectionObjectFactory();
+
+	@Test
+	public void testValidateActiveProblemsSectionTemplateId() {
+
+		OperationsTestCase<ActiveProblemsSection> testValidateActiveProblemsSectionTemplateIdTestCase = new OperationsTestCase<ActiveProblemsSection>(
+				"validateActiveProblemsSectionTemplateId", operationsForOCL.getOCLValue("VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				activeProblemsSectionObjectFactory) {
+
+			@Override
+			protected void updateToFail(ActiveProblemsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ActiveProblemsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ActiveProblemsSectionOperations.validateActiveProblemsSectionTemplateId((ActiveProblemsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testValidateActiveProblemsSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	@Test
+	public void testValidateActiveProblemsSectionProblemConcernEntry() {
+
+		OperationsTestCase<ActiveProblemsSection> testValidateActiveProblemsSectionProblemConcernEntryTestCase = new OperationsTestCase<ActiveProblemsSection>(
+				"validateActiveProblemsSectionProblemConcernEntry",
+				operationsForOCL.getOCLValue("VALIDATE_ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), activeProblemsSectionObjectFactory) {
+
+			@Override
+			protected void updateToFail(ActiveProblemsSection target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ActiveProblemsSection target) {
+				target.addAct(IHEFactory.eINSTANCE.createProblemConcernEntry().init());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ActiveProblemsSectionOperations.validateActiveProblemsSectionProblemConcernEntry((ActiveProblemsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testValidateActiveProblemsSectionProblemConcernEntryTestCase.doValidationTest();
 	}
 
 } // ActiveProblemsSectionOperationsTest

@@ -9,5 +9,11 @@ Require-Bundle: org.junit4,
  org.openhealthtools.mdht.uml.cda.test,
  org.openhealthtools.mdht.uml.cda.ccd.test,
  org.openhealthtools.mdht.uml.hl7.vocab,
- org.openhealthtools.mdht.uml.hl7.rim.test;visibility:=reexport
+ org.openhealthtools.mdht.uml.hl7.rim.test;visibility:=reexport,
+ org.eclipse.jdt.junit4.runtime;resolution:=optional,
+ org.apache.commons.lang,
+ org.openhealthtools.mdht.uml.cda.ccd.tests
 Export-Package: org.openhealthtools.mdht.uml.cda.ihe.operations
+Import-Package: org.apache.commons.io,
+ org.apache.tools.ant,
+ org.apache.tools.ant.taskdefs.optional.junit
