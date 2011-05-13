@@ -28,8 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class PhysicalExamSectionOperationsTest extends
-PhysicalExamNarrativeSectionOperationsTest {
+public class PhysicalExamSectionOperationsTest extends PhysicalExamNarrativeSectionOperationsTest {
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.9.15";
@@ -44,23 +43,18 @@ PhysicalExamNarrativeSectionOperationsTest {
 		PhysicalExamSectionOperations obj = new PhysicalExamSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PhysicalExamSectionOperations
-				.validatePhysicalExamSectionTemplateId(
-						(PhysicalExamSection) objectToTest, diagnostician,
-						map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return PhysicalExamSectionOperations.validatePhysicalExamSectionTemplateId((PhysicalExamSection) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 

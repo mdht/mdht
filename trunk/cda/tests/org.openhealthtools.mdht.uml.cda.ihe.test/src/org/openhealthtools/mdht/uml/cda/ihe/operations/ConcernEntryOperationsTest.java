@@ -18,7 +18,6 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemActOperationsTest;
-import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -31,7 +30,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 @SuppressWarnings("nls")
 public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
-	
 	public static class OperationsForOCL extends ConcernEntryOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -45,33 +43,33 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<ConcernEntry> {
 		public ConcernEntry create() {
 			return IHEFactory.eINSTANCE.createConcernEntry();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
-	
+
 	@Test
 	public void testValidateConcernEntryEffectiveTimeLowHigh() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
-				"ValidateConcernEntryEffectiveTimeLowHigh", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("ValidateConcernEntryEffectiveTimeLowHigh",
+				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
 				target.init();
-				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS("lowvalue","highvalue");
-				target.setEffectiveTime(value );
+				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS("lowvalue", "highvalue");
+				target.setEffectiveTime(value);
 			}
 
 			@Override
 			protected void updateToPass(ConcernEntry target) {
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs );
+				target.setStatusCode(cs);
 
 			}
 
@@ -83,27 +81,27 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 		};
 
 		testCase.doValidationTest();
-		
+
 	}
 
 	@Test
 	public void testValidateConcernEntryEffectiveTimeLowNoHigh() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
-				"ValidateConcernEntryEffectiveTimeLowNoHigh", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("ValidateConcernEntryEffectiveTimeLowNoHigh",
+				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
 				target.init();
 				CS cs = DatatypesFactory.eINSTANCE.createCS("notcompletedorabortedstatus");
-				target.setStatusCode(cs );
-				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS("lowvalue","highvalue");
-				target.setEffectiveTime(value );
+				target.setStatusCode(cs);
+				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS("lowvalue", "highvalue");
+				target.setEffectiveTime(value);
 			}
 
 			@Override
 			protected void updateToPass(ConcernEntry target) {
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs );
+				target.setStatusCode(cs);
 
 			}
 
@@ -115,13 +113,13 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 		};
 
 		testCase.doValidationTest();
-		
+
 	}
 
 	@Test
 	public void testValidateConcernEntryTemplateId() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
-				"validateConcernEntryTemplateId", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("validateConcernEntryTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
@@ -146,8 +144,8 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 	@Test
 	public void testValidateConcernEntryEffectiveTime() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
-				"ValidateConcernEntryEffectiveTime", operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("ValidateConcernEntryEffectiveTime",
+				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
@@ -156,10 +154,9 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 			@Override
 			protected void updateToPass(ConcernEntry target) {
-				
+
 				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(value );
-				
+				target.setEffectiveTime(value);
 
 			}
 
@@ -171,7 +168,7 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 		};
 
 		testCase.doValidationTest();
-		
+
 	}
-	
+
 } // ConcernEntryOperationsTest

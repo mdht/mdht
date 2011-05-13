@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class DischargeSummaryOperationsTest extends
-		MedicalSummaryOperationsTest {
+public class DischargeSummaryOperationsTest extends MedicalSummaryOperationsTest {
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.4";
@@ -41,12 +40,8 @@ public class DischargeSummaryOperationsTest extends
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return DischargeSummaryOperations
-					.validateDischargeSummaryTemplateId(
-							(DischargeSummary) objectToTest, diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return DischargeSummaryOperations.validateDischargeSummaryTemplateId((DischargeSummary) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -85,7 +80,7 @@ public class DischargeSummaryOperationsTest extends
 		DischargeSummaryOperations obj = new DischargeSummaryOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.DischargeSummaryOperations#validateDischargeSummaryActiveProblemsSection(org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}

@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class EncounterHistorySectionOperationsTest extends
-		EncountersSectionOperationsTest {
+public class EncounterHistorySectionOperationsTest extends EncountersSectionOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3";
 
@@ -40,13 +39,8 @@ public class EncounterHistorySectionOperationsTest extends
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return EncounterHistorySectionOperations
-					.validateEncounterHistorySectionTemplateId(
-							(EncounterHistorySection) objectToTest,
-							diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return EncounterHistorySectionOperations.validateEncounterHistorySectionTemplateId((EncounterHistorySection) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -82,5 +76,5 @@ public class EncounterHistorySectionOperationsTest extends
 		EncounterHistorySectionOperations obj = new EncounterHistorySectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // EncounterHistorySectionOperationsTest

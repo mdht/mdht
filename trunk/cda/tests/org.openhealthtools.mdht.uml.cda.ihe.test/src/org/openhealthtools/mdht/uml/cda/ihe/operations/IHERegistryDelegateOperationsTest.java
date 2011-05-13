@@ -12,7 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -31,9 +32,11 @@ public class IHERegistryDelegateOperationsTest {
 		IHERegistryDelegateOperations obj = new IHERegistryDelegateOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.IHERegistryDelegateOperations#getEClass(org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate, java.lang.String, java.lang.Object)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.IHERegistryDelegateOperations#getEClass(org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate, java.lang.String, java.lang.Object)}
+	 * .
 	 */
 	@Test
 	public void testGetEClass() {

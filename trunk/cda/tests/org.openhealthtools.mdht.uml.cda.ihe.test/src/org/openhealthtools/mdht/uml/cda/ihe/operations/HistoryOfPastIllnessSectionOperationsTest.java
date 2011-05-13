@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class HistoryOfPastIllnessSectionOperationsTest extends
-		CCDValidationTest {
+public class HistoryOfPastIllnessSectionOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.8";
 
@@ -38,18 +37,13 @@ public class HistoryOfPastIllnessSectionOperationsTest extends
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HistoryOfPastIllnessSectionOperations
-							.validateHistoryOfPastIllnessSectionTemplateId(
-									(HistoryOfPastIllnessSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HistoryOfPastIllnessSectionOperations.validateHistoryOfPastIllnessSectionTemplateId((HistoryOfPastIllnessSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -58,13 +52,8 @@ public class HistoryOfPastIllnessSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HistoryOfPastIllnessSectionOperations
-							.validateHistoryOfPastIllnessSectionCode(
-									(HistoryOfPastIllnessSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HistoryOfPastIllnessSectionOperations.validateHistoryOfPastIllnessSectionCode((HistoryOfPastIllnessSection) objectToTest, diagnostician, map);
 				}
 			}
 

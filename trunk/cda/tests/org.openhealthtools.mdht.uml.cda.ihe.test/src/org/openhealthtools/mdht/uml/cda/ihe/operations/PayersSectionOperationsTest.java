@@ -28,27 +28,22 @@ import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class PayersSectionOperationsTest
-extends
-org.openhealthtools.mdht.uml.cda.ccd.operations.PayersSectionOperationsTest {
+public class PayersSectionOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.PayersSectionOperationsTest {
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PayersSectionOperations.validateIHEPayersSectionTemplateId(
-						(PayersSection) objectToTest, diagnostician, map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return PayersSectionOperations.validateIHEPayersSectionTemplateId((PayersSection) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 
@@ -80,5 +75,5 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.PayersSectionOperationsTest {
 		PayersSectionOperations obj = new PayersSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // PayersSectionOperationsTest

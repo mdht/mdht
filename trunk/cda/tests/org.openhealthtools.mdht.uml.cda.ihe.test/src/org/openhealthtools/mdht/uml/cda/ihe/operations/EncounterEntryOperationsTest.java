@@ -12,7 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.operations.EncounterOperationsTest;
@@ -33,9 +34,11 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 		EncounterEntryOperations obj = new EncounterEntryOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryTemplateId(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryTemplateId(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateEncounterEntryTemplateId() {
@@ -43,7 +46,9 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryClassCode(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryClassCode(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateEncounterEntryClassCode() {
@@ -51,7 +56,9 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryCode(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryCode(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateEncounterEntryCode() {
@@ -59,7 +66,9 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryId(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryId(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateEncounterEntryId() {
@@ -67,7 +76,9 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 	}
 
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryText(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterEntryOperations#validateEncounterEntryText(org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateEncounterEntryText() {

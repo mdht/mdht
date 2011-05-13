@@ -46,20 +46,15 @@ public class DischargeDiagnosisSectionOperationsTest extends SectionOperationsTe
 		DischargeDiagnosisSectionOperations obj = new DischargeDiagnosisSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new CCDValidationTest.TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return DischargeDiagnosisSectionOperations
-							.validateDischargeDiagnosisSectionTemplateId(
-									(DischargeDiagnosisSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return DischargeDiagnosisSectionOperations.validateDischargeDiagnosisSectionTemplateId((DischargeDiagnosisSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -68,13 +63,8 @@ public class DischargeDiagnosisSectionOperationsTest extends SectionOperationsTe
 			// -------------------------------------------------------------
 			new CCDValidationTest.CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return DischargeDiagnosisSectionOperations
-							.validateDischargeDiagnosisSectionCode(
-									(DischargeDiagnosisSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return DischargeDiagnosisSectionOperations.validateDischargeDiagnosisSectionCode((DischargeDiagnosisSection) objectToTest, diagnostician, map);
 				}
 			}
 

@@ -28,9 +28,9 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperationsTest;
 public abstract class SimpleObservationOperationsTest extends ObservationOperationsTest {
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		
+
 	};
-	
+
 	@Override
 	protected List<CDATestCase> getTestCases() {
 		// Return a new List because the one returned by Arrays.asList is
@@ -40,11 +40,11 @@ public abstract class SimpleObservationOperationsTest extends ObservationOperati
 		return retValue;
 	}
 
-//	@Override
-//	protected EObject getObjectToTest() {
-//		return IHEFactory.eINSTANCE.createSimpleObservation();
-//	}
-//	
+	// @Override
+	// protected EObject getObjectToTest() {
+	// return IHEFactory.eINSTANCE.createSimpleObservation();
+	// }
+	//
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
@@ -55,7 +55,7 @@ public abstract class SimpleObservationOperationsTest extends ObservationOperati
 		SimpleObservationOperations obj = new SimpleObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.SimpleObservationOperations#validateSimpleObservationTemplateId(org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}

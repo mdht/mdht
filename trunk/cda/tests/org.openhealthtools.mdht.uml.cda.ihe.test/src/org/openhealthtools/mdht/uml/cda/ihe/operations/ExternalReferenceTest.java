@@ -13,8 +13,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 public class ExternalReferenceTest extends ActOperationsTest {
-	
-	
+
 	public static class OperationsForOCL extends ExternalReferenceOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -28,22 +27,22 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<ExternalReference> {
 		public ExternalReference create() {
 			return IHEFactory.eINSTANCE.createExternalReference();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
 
 	@Test
 	public void testValidateExternalReferenceTemplateId() {
-		
-			OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
-				"ValidateExternalReferenceTemplateId", operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>("ValidateExternalReferenceTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -52,7 +51,7 @@ public class ExternalReferenceTest extends ActOperationsTest {
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				target.init();				
+				target.init();
 
 			}
 
@@ -68,12 +67,12 @@ public class ExternalReferenceTest extends ActOperationsTest {
 
 	@Test
 	public void testValidateExternalReferenceClassCode() {
-		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
-				"ValidateExternalReferenceClassCode", operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>("ValidateExternalReferenceClassCode",
+				operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
-				
+
 			}
 
 			@Override
@@ -94,12 +93,12 @@ public class ExternalReferenceTest extends ActOperationsTest {
 
 	@Test
 	public void testValidateExternalReferenceMoodCode() {
-		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
-				"ValidateExternalReferenceMoodCode", operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>("ValidateExternalReferenceMoodCode",
+				operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
-				
+
 			}
 
 			@Override
@@ -119,8 +118,8 @@ public class ExternalReferenceTest extends ActOperationsTest {
 
 	@Test
 	public void testValidateExternalReferenceId() {
-		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
-				"ValidateExternalReferenceId", operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>("ValidateExternalReferenceId",
+				operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -130,7 +129,7 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				II ii = DatatypesFactory.eINSTANCE.createII("root");
-				target.getIds().add(ii );
+				target.getIds().add(ii);
 
 			}
 
@@ -143,16 +142,15 @@ public class ExternalReferenceTest extends ActOperationsTest {
 
 		testCase.doValidationTest();
 	}
-	
-	
+
 	@Test
 	public void testValidateExternalReferenceNoId() {
-		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
-				"ValidateExternalReferenceNoId", operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>("ValidateExternalReferenceNoId",
+				operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
-				
+
 			}
 
 			@Override
@@ -172,8 +170,8 @@ public class ExternalReferenceTest extends ActOperationsTest {
 
 	@Test
 	public void testValidateExternalReferenceText() {
-		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
-				"ValidateExternalReferenceText", operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>("ValidateExternalReferenceText",
+				operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -183,7 +181,7 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
-				target.setText(value );
+				target.setText(value);
 			}
 
 			@Override

@@ -28,57 +28,58 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 @SuppressWarnings("nls")
 public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 
-//	@SuppressWarnings("hiding")
-//	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.10";
-//
-//	/**
-//	 * Not a real test, needed for EMMA to report 100% method coverage.
-//	 */
-//	@SuppressWarnings("unused")
-//	@Test
-//	public void testConstructor() {
-//		ConditionalDoseOperations obj = new ConditionalDoseOperations();
-//		assertTrue(true);
-//	} // testConstructor
-//	
-//	private static final CDATestCase TEST_CASE_ARRAY[] = {
-//		// Template ID
-//		// -------------------------------------------------------------
-//		new TemplateIDValidationTest(TEMPLATE_ID) {
-//
-//			@Override
-//			protected boolean validate(final EObject objectToTest,
-//					final BasicDiagnostic diagnostician,
-//					final Map<Object, Object> map) {
-//				return ConditionalDoseOperations
-//				.validateConditionalDoseTemplateId(
-//						(ConditionalDose) objectToTest, diagnostician,
-//						map);
-//			}
-//
-//		}
-//
-//	}; // TEST_CASE_ARRAY
-//
-//	@Override
-//	protected List<CDATestCase> getTestCases() {
-//		// Return a new List because the one returned by Arrays.asList is
-//		// unmodifiable so a sub-class can't append their test cases.
-//		final List<CDATestCase> retValue = super.getTestCases();
-//		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-//		return retValue;
-//	}
-//
-//	@Override
-//	protected EObject getObjectToTest() {
-//		return IHEFactory.eINSTANCE.createConditionalDose();
-//	}
-//
-//	@Override
-//	protected EObject getObjectInitToTest() {
-//		return IHEFactory.eINSTANCE.createConditionalDose().init();
-//	}
-	
+	// @SuppressWarnings("hiding")
+	// protected static final String TEMPLATE_ID =
+	// "1.3.6.1.4.1.19376.1.5.3.1.4.10";
+	//
+	// /**
+	// * Not a real test, needed for EMMA to report 100% method coverage.
+	// */
+	// @SuppressWarnings("unused")
+	// @Test
+	// public void testConstructor() {
+	// ConditionalDoseOperations obj = new ConditionalDoseOperations();
+	// assertTrue(true);
+	// } // testConstructor
+	//
+	// private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// // Template ID
+	// // -------------------------------------------------------------
+	// new TemplateIDValidationTest(TEMPLATE_ID) {
+	//
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return ConditionalDoseOperations
+	// .validateConditionalDoseTemplateId(
+	// (ConditionalDose) objectToTest, diagnostician,
+	// map);
+	// }
+	//
+	// }
+	//
+	// }; // TEST_CASE_ARRAY
+	//
+	// @Override
+	// protected List<CDATestCase> getTestCases() {
+	// // Return a new List because the one returned by Arrays.asList is
+	// // unmodifiable so a sub-class can't append their test cases.
+	// final List<CDATestCase> retValue = super.getTestCases();
+	// retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+	// return retValue;
+	// }
+	//
+	// @Override
+	// protected EObject getObjectToTest() {
+	// return IHEFactory.eINSTANCE.createConditionalDose();
+	// }
+	//
+	// @Override
+	// protected EObject getObjectInitToTest() {
+	// return IHEFactory.eINSTANCE.createConditionalDose().init();
+	// }
+
 	public static class OperationsForOCL extends ConditionalDoseOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -92,23 +93,22 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<ConditionalDose> {
 		public ConditionalDose create() {
 			return IHEFactory.eINSTANCE.createConditionalDose();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
-	
-	
+
 	@Test
 	public void testValidateConditionalDoseConditionalDosingSubstanceAdministration() {
-		 
-		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>(
-				"ValidateConditionalDoseConditionalDosingSubstanceAdministration", operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_CONDITIONAL_DOSING_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+
+		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>("ValidateConditionalDoseConditionalDosingSubstanceAdministration",
+				operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_CONDITIONAL_DOSING_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ConditionalDose target) {
@@ -134,9 +134,9 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 
 	@Test
 	public void testValidateConditionalDoseTemplateId() {
-	 
-		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>(
-				"ValidateConditionalDoseTemplateId", operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+
+		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>("ValidateConditionalDoseTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ConditionalDose target) {
@@ -158,6 +158,5 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 
 		testCase.doValidationTest();
 	}
-
 
 } // ConditionalDoseOperationsTest

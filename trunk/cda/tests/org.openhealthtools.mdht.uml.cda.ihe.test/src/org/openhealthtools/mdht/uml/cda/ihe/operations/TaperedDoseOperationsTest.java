@@ -42,21 +42,18 @@ public class TaperedDoseOperationsTest extends MedicationOperationsTest {
 		TaperedDoseOperations obj = new TaperedDoseOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return TaperedDoseOperations.validateTaperedDoseTemplateId(
-						(TaperedDose) objectToTest, diagnostician, map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return TaperedDoseOperations.validateTaperedDoseTemplateId((TaperedDose) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 

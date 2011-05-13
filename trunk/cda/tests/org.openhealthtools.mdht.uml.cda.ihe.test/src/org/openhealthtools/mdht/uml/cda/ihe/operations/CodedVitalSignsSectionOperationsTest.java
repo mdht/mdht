@@ -32,8 +32,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class CodedVitalSignsSectionOperationsTest extends
-VitalSignsSectionOperationsTest {
+public class CodedVitalSignsSectionOperationsTest extends VitalSignsSectionOperationsTest {
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2";
@@ -48,47 +47,36 @@ VitalSignsSectionOperationsTest {
 		CodedVitalSignsSectionOperations obj = new CodedVitalSignsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return CodedVitalSignsSectionOperations
-				.validateCodedVitalSignsSectionTemplateId(
-						(CodedVitalSignsSection) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionTemplateId((CodedVitalSignsSection) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Entry
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionVitalSignsOrganizer((CodedVitalSignsSection) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setOrganizer(IHEFactory.eINSTANCE.createVitalSignsOrganizer());
+					retValue.add(entry);
+					return retValue;
+				}
 			}
-
-		},
-
-		// Entry
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return CodedVitalSignsSectionOperations
-				.validateCodedVitalSignsSectionVitalSignsOrganizer(
-						(CodedVitalSignsSection) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setOrganizer(IHEFactory.eINSTANCE
-						.createVitalSignsOrganizer());
-				retValue.add(entry);
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 

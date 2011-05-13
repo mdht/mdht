@@ -20,8 +20,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.SC;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 
 public class ScanningDeviceOperationsTest extends CDAValidationTest {
-	
-	
+
 	public static class OperationsForOCL extends ScanningDeviceOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -35,35 +34,35 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<ScanningDevice> {
 		public ScanningDevice create() {
 			return IHEFactory.eINSTANCE.createScanningDevice();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
-	
 
 	@Test
 	public void testValidateScanningDeviceTimeEqualsDocumentEffectiveTime() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
-				"ValidateScanningDeviceTimeEqualsDocumentEffectiveTime", operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TIME_EQUALS_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceTimeEqualsDocumentEffectiveTime",
+				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TIME_EQUALS_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
-				
+
 				target.init();
 				TS ts = DatatypesFactory.eINSTANCE.createTS("20071204103022-0500");
 				target.setTime(ts);
 				ClinicalDocument cd = CDAFactory.eINSTANCE.createClinicalDocument();
-				TS docts = DatatypesFactory.eINSTANCE.createTS("20081204103022-0500");;
+				TS docts = DatatypesFactory.eINSTANCE.createTS("20081204103022-0500");
+				;
 				cd.setEffectiveTime(docts);
 				cd.getAuthors().add(target);
-//				cd.setd
-//				cd.getd .setDataEnterer(target);
+				// cd.setd
+				// cd.getd .setDataEnterer(target);
 
 			}
 
@@ -74,7 +73,7 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 				ClinicalDocument cd = CDAFactory.eINSTANCE.createClinicalDocument();
 				cd.setEffectiveTime(ts);
 				cd.getAuthors().add(target);
-//				cd.setDataEnterer(target);
+				// cd.setDataEnterer(target);
 
 			}
 
@@ -90,8 +89,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasAssignedAuthorId() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
-				"ValidateScanningDeviceHasAssignedAuthorId", operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasAssignedAuthorId",
+				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -103,7 +102,6 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 				target.init();
 				AssignedAuthor value = CDAFactory.eINSTANCE.createAssignedAuthor();
 				target.setAssignedAuthor(value);
-				
 
 			}
 
@@ -119,26 +117,25 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasAssignedAuthoringDeviceCode() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
-				"ValidateScanningDeviceHasAssignedAuthoringDeviceCode", operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHORING_DEVICE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasAssignedAuthoringDeviceCode",
+				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHORING_DEVICE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
 				target.init();
 				AssignedAuthor value = CDAFactory.eINSTANCE.createAssignedAuthor();
 				AuthoringDevice device = CDAFactory.eINSTANCE.createAuthoringDevice();
-				value.setAssignedAuthoringDevice(device );
+				value.setAssignedAuthoringDevice(device);
 				target.setAssignedAuthor(value);
 			}
 
 			@Override
 			protected void updateToPass(ScanningDevice target) {
-				
-			
-				CE ce = DatatypesFactory.eINSTANCE.createCE("","1.2.840.10008.2.16.4");
+
+				CE ce = DatatypesFactory.eINSTANCE.createCE("", "1.2.840.10008.2.16.4");
 				ce.setCode("CAPTURE");
 				ce.setDisplayName("PDF Capture");
-				
+
 				target.getAssignedAuthor().getAssignedAuthoringDevice().setCode(ce);
 
 			}
@@ -155,16 +152,16 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasDeviceManufacturerModelName() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
-				"ValidateScanningDeviceHasDeviceManufacturerModelName", operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_MANUFACTURER_MODEL_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasDeviceManufacturerModelName",
+				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_MANUFACTURER_MODEL_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
 				target.init();
 				AssignedAuthor value = CDAFactory.eINSTANCE.createAssignedAuthor();
 				AuthoringDevice device = CDAFactory.eINSTANCE.createAuthoringDevice();
-				
-				value.setAssignedAuthoringDevice(device );
+
+				value.setAssignedAuthoringDevice(device);
 				target.setAssignedAuthor(value);
 			}
 
@@ -188,25 +185,25 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasDeviceSoftwareName() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
-				"ValidateScanningDeviceHasDeviceSoftwareName", operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_SOFTWARE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasDeviceSoftwareName",
+				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_SOFTWARE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
 				target.init();
 				AssignedAuthor value = CDAFactory.eINSTANCE.createAssignedAuthor();
 				AuthoringDevice device = CDAFactory.eINSTANCE.createAuthoringDevice();
-					
-				value.setAssignedAuthoringDevice(device );
+
+				value.setAssignedAuthoringDevice(device);
 				target.setAssignedAuthor(value);
 			}
 
 			@Override
 			protected void updateToPass(ScanningDevice target) {
-				
+
 				SC sc = DatatypesFactory.eINSTANCE.createSC();
-				sc.addText("software");				
-				target.getAssignedAuthor().getAssignedAuthoringDevice().setSoftwareName(sc );
+				sc.addText("software");
+				target.getAssignedAuthor().getAssignedAuthoringDevice().setSoftwareName(sc);
 
 			}
 
@@ -222,22 +219,22 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasAssignedAuthorRepresentedOrganizationId() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
-				"ValidateScanningDeviceHasAssignedAuthorRepresentedOrganizationId", operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_REPRESENTED_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasAssignedAuthorRepresentedOrganizationId",
+				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_REPRESENTED_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
 				target.init();
 				AssignedAuthor value = CDAFactory.eINSTANCE.createAssignedAuthor();
 				Organization reporg = CDAFactory.eINSTANCE.createOrganization();
-				value.setRepresentedOrganization(reporg );
+				value.setRepresentedOrganization(reporg);
 				target.setAssignedAuthor(value);
 			}
 
 			@Override
 			protected void updateToPass(ScanningDevice target) {
 				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getAssignedAuthor().getRepresentedOrganization().getIds().add(ii );
+				target.getAssignedAuthor().getRepresentedOrganization().getIds().add(ii);
 
 			}
 
@@ -253,13 +250,13 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceTemplateId() {
-		
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
-				"ValidateScanningDeviceTemplateId", operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
-				
+
 			}
 
 			@Override
@@ -275,7 +272,7 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 		};
 
 		testCase.doValidationTest();
-		
+
 	}
 
 	@Override

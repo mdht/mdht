@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class PhysicalExamNarrativeSectionOperationsTest extends
-		CCDValidationTest {
+public class PhysicalExamNarrativeSectionOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.24";
 
@@ -46,20 +45,15 @@ public class PhysicalExamNarrativeSectionOperationsTest extends
 		PhysicalExamNarrativeSectionOperations obj = new PhysicalExamNarrativeSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return PhysicalExamNarrativeSectionOperations
-							.validatePhysicalExamNarrativeSectionTemplateId(
-									(PhysicalExamNarrativeSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return PhysicalExamNarrativeSectionOperations.validatePhysicalExamNarrativeSectionTemplateId((PhysicalExamNarrativeSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -68,13 +62,8 @@ public class PhysicalExamNarrativeSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return PhysicalExamNarrativeSectionOperations
-							.validatePhysicalExamNarrativeSectionCode(
-									(PhysicalExamNarrativeSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return PhysicalExamNarrativeSectionOperations.validatePhysicalExamNarrativeSectionCode((PhysicalExamNarrativeSection) objectToTest, diagnostician, map);
 				}
 			}
 

@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class MedicationsAdministeredSectionOperationsTest extends
-		CCDValidationTest {
+public class MedicationsAdministeredSectionOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.21";
 
@@ -47,20 +46,15 @@ public class MedicationsAdministeredSectionOperationsTest extends
 		assertTrue(true);
 	} // testConstructor
 
-	
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return MedicationsAdministeredSectionOperations
-							.validateMedicationsAdministeredSectionTemplateId(
-									(MedicationsAdministeredSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionTemplateId((MedicationsAdministeredSection) objectToTest, diagnostician,
+							map);
 				}
 
 			},
@@ -69,13 +63,8 @@ public class MedicationsAdministeredSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return MedicationsAdministeredSectionOperations
-							.validateMedicationsAdministeredSectionCode(
-									(MedicationsAdministeredSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionCode((MedicationsAdministeredSection) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -97,8 +86,7 @@ public class MedicationsAdministeredSectionOperationsTest extends
 
 	@Override
 	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createMedicationsAdministeredSection()
-				.init();
+		return IHEFactory.eINSTANCE.createMedicationsAdministeredSection().init();
 	}
 
 } // MedicationsAdministeredSectionOperationsTest

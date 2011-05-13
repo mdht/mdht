@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class HospitalAdmissionDiagnosisSectionOperationsTest extends
-		CCDValidationTest {
+public class HospitalAdmissionDiagnosisSectionOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.3";
 
@@ -46,20 +45,16 @@ public class HospitalAdmissionDiagnosisSectionOperationsTest extends
 		HospitalAdmissionDiagnosisSectionOperations obj = new HospitalAdmissionDiagnosisSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HospitalAdmissionDiagnosisSectionOperations
-							.validateHospitalAdmissionDiagnosisSectionTemplateId(
-									(HospitalAdmissionDiagnosisSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HospitalAdmissionDiagnosisSectionOperations.validateHospitalAdmissionDiagnosisSectionTemplateId((HospitalAdmissionDiagnosisSection) objectToTest,
+							diagnostician, map);
 				}
 
 			},
@@ -68,13 +63,9 @@ public class HospitalAdmissionDiagnosisSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HospitalAdmissionDiagnosisSectionOperations
-							.validateHospitalAdmissionDiagnosisSectionCode(
-									(HospitalAdmissionDiagnosisSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HospitalAdmissionDiagnosisSectionOperations.validateHospitalAdmissionDiagnosisSectionCode((HospitalAdmissionDiagnosisSection) objectToTest,
+							diagnostician, map);
 				}
 			}
 
@@ -96,8 +87,7 @@ public class HospitalAdmissionDiagnosisSectionOperationsTest extends
 
 	@Override
 	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection()
-				.init();
+		return IHEFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
 	}
 
 } // HospitalAdmissionDiagnosisSectionOperationsTest

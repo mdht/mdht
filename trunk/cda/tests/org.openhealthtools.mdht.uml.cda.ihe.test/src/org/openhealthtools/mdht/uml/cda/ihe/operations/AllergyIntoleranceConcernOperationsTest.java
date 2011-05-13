@@ -12,15 +12,12 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 
@@ -28,35 +25,30 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class AllergyIntoleranceConcernOperationsTest extends
-		ConcernEntryOperationsTest {
+public class AllergyIntoleranceConcernOperationsTest extends ConcernEntryOperationsTest {
 
 	protected static final String ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.5.3";
 
-//	/**
-//	 * Not a real test, needed for EMMA to report 100% method coverage.
-//	 */
-//	@Override
-//	@SuppressWarnings("unused")
-//	@Test
-//	public void testConstructor() {
-//		AllergyIntoleranceConcernOperations obj = new AllergyIntoleranceConcernOperations();
-//		assertTrue(true);
-//	} // testConstructor
-	
+	// /**
+	// * Not a real test, needed for EMMA to report 100% method coverage.
+	// */
+	// @Override
+	// @SuppressWarnings("unused")
+	// @Test
+	// public void testConstructor() {
+	// AllergyIntoleranceConcernOperations obj = new
+	// AllergyIntoleranceConcernOperations();
+	// assertTrue(true);
+	// } // testConstructor
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return AllergyIntoleranceConcernOperations
-					.validateAllergyIntoleranceConcernTemplateId(
-							(AllergyIntoleranceConcern) objectToTest,
-							diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return AllergyIntoleranceConcernOperations.validateAllergyIntoleranceConcernTemplateId((AllergyIntoleranceConcern) objectToTest, diagnostician, map);
 		}
 
 	}

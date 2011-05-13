@@ -29,9 +29,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * Should extend SectionOpertionsTest if it existed.
  */
 @SuppressWarnings("nls")
-public class AdmissionMedicationHistorySectionOperationsTest extends
-		CCDValidationTest {
-	
+public class AdmissionMedicationHistorySectionOperationsTest extends CCDValidationTest {
+
 	public static class OperationsForOCL extends AdmissionMedicationHistorySectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -45,16 +44,15 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-	
 	public class ObjectFactory implements TestObjectFactory<AdmissionMedicationHistorySection> {
 		public AdmissionMedicationHistorySection create() {
 			return IHEFactory.eINSTANCE.createAdmissionMedicationHistorySection();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
@@ -68,15 +66,15 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 	} // testConstructor
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 	@Test
 	public void testValidateAdmissionMedicationHistorySectionTemplateId() {
 		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
-				"validateAdmissionMedicationHistorySectionTemplateId", operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+				"validateAdmissionMedicationHistorySectionTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedicationHistorySection target) {
@@ -91,7 +89,8 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionTemplateId((AdmissionMedicationHistorySection) objectToTest, diagnostician, map);
+				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionTemplateId((AdmissionMedicationHistorySection) objectToTest,
+						diagnostician, map);
 			}
 
 		};
@@ -101,24 +100,19 @@ public class AdmissionMedicationHistorySectionOperationsTest extends
 
 	@Test
 	public void testValidateAdmissionMedicationHistorySectionCode() {
-		
-		
+
 		/*
-		 * Method method = ... // obtain method object
-Annotation annotation = method.getAnnotation(MyAnnotation.class);
-
-if(annotation instanceof MyAnnotation){
-    MyAnnotation myAnnotation = (MyAnnotation) annotation;
-    System.out.println("name: " + myAnnotation.name());
-    System.out.println("value: " + myAnnotation.value());
-}
-
+		 * Method method = ... // obtain method object Annotation annotation =
+		 * method.getAnnotation(MyAnnotation.class);
+		 * 
+		 * if(annotation instanceof MyAnnotation){ MyAnnotation myAnnotation =
+		 * (MyAnnotation) annotation; System.out.println("name: " +
+		 * myAnnotation.name()); System.out.println("value: " +
+		 * myAnnotation.value()); }
 		 */
-		
-		
-		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
-				"validateAdmissionMedicationHistorySectionCode", operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+
+		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>("validateAdmissionMedicationHistorySectionCode",
+				operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedicationHistorySection target) {
@@ -133,7 +127,8 @@ if(annotation instanceof MyAnnotation){
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionCode((AdmissionMedicationHistorySection) objectToTest, diagnostician, map);
+				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionCode((AdmissionMedicationHistorySection) objectToTest, diagnostician,
+						map);
 			}
 
 		};

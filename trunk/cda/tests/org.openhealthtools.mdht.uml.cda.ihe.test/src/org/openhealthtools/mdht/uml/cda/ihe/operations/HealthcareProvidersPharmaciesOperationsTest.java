@@ -24,8 +24,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.operations.ParticipationOperationsTe
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class HealthcareProvidersPharmaciesOperationsTest extends
-		ParticipationOperationsTest {
+public class HealthcareProvidersPharmaciesOperationsTest extends ParticipationOperationsTest {
 
 	/**
 	 * @see org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest#getObjectToTest()
@@ -40,8 +39,7 @@ public class HealthcareProvidersPharmaciesOperationsTest extends
 	 */
 	@Override
 	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createHealthcareProvidersPharmacies()
-				.init();
+		return IHEFactory.eINSTANCE.createHealthcareProvidersPharmacies().init();
 	}
 
 	/**
@@ -53,7 +51,7 @@ public class HealthcareProvidersPharmaciesOperationsTest extends
 		HealthcareProvidersPharmaciesOperations obj = new HealthcareProvidersPharmaciesOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.HealthcareProvidersPharmaciesOperations#validateHealthcareProvidersPharmaciesTemplateId(org.openhealthtools.mdht.uml.cda.ihe.HealthcareProvidersPharmacies, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}

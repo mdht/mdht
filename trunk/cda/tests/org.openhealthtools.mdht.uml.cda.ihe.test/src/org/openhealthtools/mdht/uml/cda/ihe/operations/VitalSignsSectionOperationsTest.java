@@ -28,9 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class VitalSignsSectionOperationsTest
-		extends
-		org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsSectionOperationsTest {
+public class VitalSignsSectionOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsSectionOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.25";
 
@@ -44,20 +42,15 @@ public class VitalSignsSectionOperationsTest
 		VitalSignsSectionOperations obj = new VitalSignsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return VitalSignsSectionOperations
-					.validateIHEVitalSignsSectionTemplateId(
-							(VitalSignsSection) objectToTest, diagnostician,
-							map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return VitalSignsSectionOperations.validateIHEVitalSignsSectionTemplateId((VitalSignsSection) objectToTest, diagnostician, map);
 		}
 	}
 
