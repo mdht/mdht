@@ -14,6 +14,3 @@ Require-Bundle: org.junit4,
  org.apache.commons.lang,
  org.openhealthtools.mdht.uml.cda.ccd.tests
 Export-Package: org.openhealthtools.mdht.uml.cda.ihe.operations
-Import-Package: org.apache.commons.io,
- org.apache.tools.ant,
- org.apache.tools.ant.taskdefs.optional.junit

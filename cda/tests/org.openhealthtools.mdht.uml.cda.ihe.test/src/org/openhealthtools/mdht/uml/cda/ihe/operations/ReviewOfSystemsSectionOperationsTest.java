@@ -46,20 +46,15 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 		ReviewOfSystemsSectionOperations obj = new ReviewOfSystemsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ReviewOfSystemsSectionOperations
-							.validateReviewOfSystemsSectionTemplateId(
-									(ReviewOfSystemsSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionTemplateId((ReviewOfSystemsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -68,13 +63,8 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ReviewOfSystemsSectionOperations
-							.validateReviewOfSystemsSectionCode(
-									(ReviewOfSystemsSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionCode((ReviewOfSystemsSection) objectToTest, diagnostician, map);
 				}
 			}
 

@@ -33,8 +33,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class AllergyIntoleranceOperationsTest extends
-		ProblemEntryOperationsTest {
+public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest {
 
 	protected static final String ALLERGY_INTOLERANCE_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.6";
 
@@ -47,37 +46,27 @@ public class AllergyIntoleranceOperationsTest extends
 		AllergyIntoleranceOperations obj = new AllergyIntoleranceOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(ALLERGY_INTOLERANCE_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(ALLERGY_INTOLERANCE_TEMPLATE_ID) {
 
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return AllergyIntoleranceOperations
-					.validateAllergyIntoleranceTemplateId(
-							(AllergyIntolerance) objectToTest, diagnostician,
-							map);
-		}
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return AllergyIntoleranceOperations.validateAllergyIntoleranceTemplateId((AllergyIntolerance) objectToTest, diagnostician, map);
+				}
 
-	},
-	
-	// Information Source
-	// -------------------------------------------------------------
-	new InformationSourceCCDValidationTest() {
-		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return ProblemObservationOperations.
-			validateProblemObservationInformationSource(
-					(ProblemObservation) objectToTest,
-					diagnostician, map);
-		}
-	}
+			},
+
+			// Information Source
+			// -------------------------------------------------------------
+			new InformationSourceCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ProblemObservationOperations.validateProblemObservationInformationSource((ProblemObservation) objectToTest, diagnostician, map);
+				}
+			}
 
 	}; // TEST_CASE_ARRAY
 
@@ -98,7 +87,7 @@ public class AllergyIntoleranceOperationsTest extends
 		AllergyIntolerance allergyIntolerance = IHEFactory.eINSTANCE.createAllergyIntolerance();
 		section.addObservation(allergyIntolerance);
 		return allergyIntolerance;
-//		return IHEFactory.eINSTANCE.createAllergyIntolerance();
+		// return IHEFactory.eINSTANCE.createAllergyIntolerance();
 	}
 
 	@Override

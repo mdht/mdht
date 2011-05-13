@@ -26,11 +26,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class AdvanceDirectivesSectionOperationsTest
-		extends
-		org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectivesSectionOperationsTest {
+public class AdvanceDirectivesSectionOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectivesSectionOperationsTest {
 
-	
 	public static class OperationsForOCL extends AdvanceDirectivesSectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -44,22 +41,21 @@ public class AdvanceDirectivesSectionOperationsTest
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<AdvanceDirectivesSection> {
 		public AdvanceDirectivesSection create() {
 			return IHEFactory.eINSTANCE.createAdvanceDirectivesSection();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
 
 	@Test
 	public void testValidateIHEAdvanceDirectivesSectionTemplateId() {
-		OperationsTestCase<AdvanceDirectivesSection> testCase = new OperationsTestCase<AdvanceDirectivesSection>(
-				"validateIHEAdvanceDirectivesSectionTemplateId", operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+		OperationsTestCase<AdvanceDirectivesSection> testCase = new OperationsTestCase<AdvanceDirectivesSection>("validateIHEAdvanceDirectivesSectionTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectivesSection target) {
@@ -81,7 +77,7 @@ public class AdvanceDirectivesSectionOperationsTest
 
 		testCase.doValidationTest();
 	}
-	
+
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
@@ -91,6 +87,5 @@ public class AdvanceDirectivesSectionOperationsTest
 		AdvanceDirectivesSectionOperations obj = new AdvanceDirectivesSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
 
 } // AdvanceDirectivesSectionOperationsTest

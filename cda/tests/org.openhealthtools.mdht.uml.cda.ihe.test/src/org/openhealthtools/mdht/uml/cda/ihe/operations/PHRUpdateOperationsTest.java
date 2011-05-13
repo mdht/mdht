@@ -33,6 +33,7 @@ public class PHRUpdateOperationsTest extends MedicalSummaryOperationsTest {
 		PHRUpdateOperations obj = new PHRUpdateOperations();
 		assertTrue(true);
 	} // testConstructor
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.PHRUpdateOperations#validatePHRUpdateTemplateId(org.openhealthtools.mdht.uml.cda.ihe.PHRUpdate, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}

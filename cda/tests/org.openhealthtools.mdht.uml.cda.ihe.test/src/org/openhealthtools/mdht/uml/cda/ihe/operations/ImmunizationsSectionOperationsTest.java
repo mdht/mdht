@@ -28,9 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class ImmunizationsSectionOperationsTest
-		extends
-		org.openhealthtools.mdht.uml.cda.ccd.operations.ImmunizationsSectionOperationsTest {
+public class ImmunizationsSectionOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.ImmunizationsSectionOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.23";
 
@@ -40,13 +38,8 @@ public class ImmunizationsSectionOperationsTest
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return ImmunizationsSectionOperations
-					.validateIHEImmunizationsSectionTemplateId(
-							(ImmunizationsSection) objectToTest,
-							diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return ImmunizationsSectionOperations.validateIHEImmunizationsSectionTemplateId((ImmunizationsSection) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -82,5 +75,5 @@ public class ImmunizationsSectionOperationsTest
 		ImmunizationsSectionOperations obj = new ImmunizationsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // ImmunizationsSectionOperationsTest

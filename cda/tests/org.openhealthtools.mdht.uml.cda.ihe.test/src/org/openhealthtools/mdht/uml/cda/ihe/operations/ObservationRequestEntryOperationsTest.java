@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class ObservationRequestEntryOperationsTest extends
-		PlanOfCareActivityObservationOperationsTest {
+public class ObservationRequestEntryOperationsTest extends PlanOfCareActivityObservationOperationsTest {
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1";
@@ -44,20 +43,15 @@ public class ObservationRequestEntryOperationsTest extends
 		ObservationRequestEntryOperations obj = new ObservationRequestEntryOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return ObservationRequestEntryOperations
-					.validateObservationRequestEntryTemplateId(
-							(ObservationRequestEntry) objectToTest,
-							diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return ObservationRequestEntryOperations.validateObservationRequestEntryTemplateId((ObservationRequestEntry) objectToTest, diagnostician, map);
 		}
 
 	} }; // TEST_CASE_ARRAY

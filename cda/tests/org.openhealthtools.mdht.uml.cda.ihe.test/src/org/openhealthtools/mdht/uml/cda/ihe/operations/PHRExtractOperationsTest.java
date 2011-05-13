@@ -12,7 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -32,7 +33,7 @@ public class PHRExtractOperationsTest extends MedicalSummaryOperationsTest {
 		PHRExtractOperations obj = new PHRExtractOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.PHRExtractOperations#validatePHRExtractTemplateId(org.openhealthtools.mdht.uml.cda.ihe.PHRExtract, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}

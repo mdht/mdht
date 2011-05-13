@@ -1,7 +1,5 @@
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -13,7 +11,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
-public class PregnancyObservationOperationsTest  extends SimpleObservationOperationsTest {
+public class PregnancyObservationOperationsTest extends SimpleObservationOperationsTest {
 
 	public static class OperationsForOCL extends PregnancyObservationOperations {
 		public String getOCLValue(String fieldName) {
@@ -28,22 +26,21 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<PregnancyObservation> {
 		public PregnancyObservation create() {
 			return IHEFactory.eINSTANCE.createPregnancyObservation();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
 
-	
 	@Test
 	public void testValidatePregnancyObservationCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
-				"ValidatePregnancyObservationCode", operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationCode",
+				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -52,8 +49,8 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-							CD value = DatatypesFactory.eINSTANCE.createCD();
-							target.setCode(value );	
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(value);
 
 			}
 
@@ -69,8 +66,8 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 	@Test
 	public void testValidatePregnancyObservationInterpretationCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
-				"ValidatePregnancyObservationInterpretationCode", operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationInterpretationCode",
+				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -79,7 +76,6 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-								
 
 			}
 
@@ -95,8 +91,8 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 	@Test
 	public void testValidatePregnancyObservationMethodCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
-				"ValidatePregnancyObservationMethodCode", operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationMethodCode",
+				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -105,7 +101,6 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-								
 
 			}
 
@@ -121,8 +116,8 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 	@Test
 	public void testValidatePregnancyObservationRepeatNumber() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
-				"ValidatePregnancyObservationRepeatNumber", operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationRepeatNumber",
+				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -131,7 +126,6 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-								
 
 			}
 
@@ -147,8 +141,8 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 	@Test
 	public void testValidatePregnancyObservationTargetSiteCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
-				"ValidatePregnancyObservationTargetSiteCode", operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationTargetSiteCode",
+				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -157,7 +151,6 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-								
 
 			}
 
@@ -173,8 +166,8 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 	@Test
 	public void testValidatePregnancyObservationValue() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
-				"ValidatePregnancyObservationValue", operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationValue",
+				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -183,9 +176,9 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-				
-								ANY e = DatatypesFactory.eINSTANCE.createCE();
-								target.getValues().add(e );
+
+				ANY e = DatatypesFactory.eINSTANCE.createCE();
+				target.getValues().add(e);
 
 			}
 
@@ -197,7 +190,6 @@ public class PregnancyObservationOperationsTest  extends SimpleObservationOperat
 		};
 
 		testCase.doValidationTest();
-	}		
-	
 	}
 
+}

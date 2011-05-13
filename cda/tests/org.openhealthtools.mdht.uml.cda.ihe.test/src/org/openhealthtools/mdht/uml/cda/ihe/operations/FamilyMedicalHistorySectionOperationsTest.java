@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class FamilyMedicalHistorySectionOperationsTest extends
-		FamilyHistorySectionOperationsTest {
+public class FamilyMedicalHistorySectionOperationsTest extends FamilyHistorySectionOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.14";
 
@@ -43,20 +42,15 @@ public class FamilyMedicalHistorySectionOperationsTest extends
 		FamilyMedicalHistorySectionOperations obj = new FamilyMedicalHistorySectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return FamilyMedicalHistorySectionOperations
-					.validateFamilyMedicalHistorySectionTemplateId(
-							(FamilyMedicalHistorySection) objectToTest,
-							diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return FamilyMedicalHistorySectionOperations.validateFamilyMedicalHistorySectionTemplateId((FamilyMedicalHistorySection) objectToTest, diagnostician, map);
 		}
 
 	}

@@ -1,6 +1,6 @@
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 

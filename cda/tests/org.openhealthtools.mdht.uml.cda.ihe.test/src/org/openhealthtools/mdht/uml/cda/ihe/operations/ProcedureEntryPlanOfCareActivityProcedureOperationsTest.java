@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryPlanOfCareActivityProc
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class ProcedureEntryPlanOfCareActivityProcedureOperationsTest extends
-		PlanOfCareActivityProcedureOperationsTest {
+public class ProcedureEntryPlanOfCareActivityProcedureOperationsTest extends PlanOfCareActivityProcedureOperationsTest {
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.19";
@@ -44,20 +43,16 @@ public class ProcedureEntryPlanOfCareActivityProcedureOperationsTest extends
 		ProcedureEntryPlanOfCareActivityProcedureOperations obj = new ProcedureEntryPlanOfCareActivityProcedureOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
 	// Template ID
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return ProcedureEntryPlanOfCareActivityProcedureOperations
-					.validateProcedureEntryPlanOfCareActivityProcedureTemplateId(
-							(ProcedureEntryPlanOfCareActivityProcedure) objectToTest,
-							diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return ProcedureEntryPlanOfCareActivityProcedureOperations.validateProcedureEntryPlanOfCareActivityProcedureTemplateId(
+					(ProcedureEntryPlanOfCareActivityProcedure) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -75,8 +70,7 @@ public class ProcedureEntryPlanOfCareActivityProcedureOperationsTest extends
 	 */
 	@Override
 	protected EObject getObjectToTest() {
-		return IHEFactory.eINSTANCE
-				.createProcedureEntryPlanOfCareActivityProcedure();
+		return IHEFactory.eINSTANCE.createProcedureEntryPlanOfCareActivityProcedure();
 	}
 
 	/**
@@ -84,8 +78,7 @@ public class ProcedureEntryPlanOfCareActivityProcedureOperationsTest extends
 	 */
 	@Override
 	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE
-				.createProcedureEntryPlanOfCareActivityProcedure().init();
+		return IHEFactory.eINSTANCE.createProcedureEntryPlanOfCareActivityProcedure().init();
 	}
 
 } // ProcedureEntryPlanOfCareActivityProcedureOperationsTest

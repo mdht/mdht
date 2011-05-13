@@ -46,20 +46,15 @@ public class HospitalCourseSectionOperationsTest extends SectionOperationsTest {
 		HospitalCourseSectionOperations obj = new HospitalCourseSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HospitalCourseSectionOperations
-							.validateHospitalCourseSectionTemplateId(
-									(HospitalCourseSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HospitalCourseSectionOperations.validateHospitalCourseSectionTemplateId((HospitalCourseSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -68,13 +63,8 @@ public class HospitalCourseSectionOperationsTest extends SectionOperationsTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HospitalCourseSectionOperations
-							.validateHospitalCourseSectionCode(
-									(HospitalCourseSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HospitalCourseSectionOperations.validateHospitalCourseSectionCode((HospitalCourseSection) objectToTest, diagnostician, map);
 				}
 			}
 

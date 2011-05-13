@@ -12,7 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
@@ -32,7 +33,7 @@ public class IntakeOutputSectionOperationsTest extends SectionOperationsTest {
 		IntakeOutputSectionOperations obj = new IntakeOutputSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.IntakeOutputSectionOperations#validateIntakeOutputSectionTemplateId(org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}

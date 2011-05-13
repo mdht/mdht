@@ -97,13 +97,13 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationDosingRelationship() {
-		
+
 		class CombinationMedicationObjectFactory implements TestObjectFactory<Medication> {
 			public Medication create() {
 				return IHEFactory.eINSTANCE.createCombinationMedication();
 			}
 		}
-		
+
 		OperationsTestCase<Medication> validateMedicationDosingRelationshipTestCase = new OperationsTestCase<Medication>("validateMedicationDosingRelationship",
 				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DOSING_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), new CombinationMedicationObjectFactory()) {
 			@Override

@@ -29,26 +29,22 @@ import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTes
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class MedicalDocumentOperationsTest extends
-ClinicalDocumentOperationsTest {
+public class MedicalDocumentOperationsTest extends ClinicalDocumentOperationsTest {
 
 	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return MedicalDocumentOperations.validateMedicalDocumentTemplateId(
-						(MedicalDocument) objectToTest, diagnostician, map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return MedicalDocumentOperations.validateMedicalDocumentTemplateId((MedicalDocument) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 
@@ -80,5 +76,5 @@ ClinicalDocumentOperationsTest {
 		MedicalDocumentOperations obj = new MedicalDocumentOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // MedicalDocumentOperationsTest

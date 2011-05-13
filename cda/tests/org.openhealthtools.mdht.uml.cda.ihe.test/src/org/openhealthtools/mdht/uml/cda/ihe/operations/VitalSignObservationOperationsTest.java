@@ -42,8 +42,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class VitalSignObservationOperationsTest extends
-ResultObservationOperationsTest {
+public class VitalSignObservationOperationsTest extends ResultObservationOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.13.2";
 
@@ -55,86 +54,63 @@ ResultObservationOperationsTest {
 	private static final String TARGET_SITE_CODE_CODE_SYSTEM = "whatever";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignObservationOperations
-				.validateVitalSignObservationTemplateId(
-						(VitalSignObservation) objectToTest,
-						diagnostician, map);
-			}
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignObservationOperations.validateVitalSignObservationTemplateId((VitalSignObservation) objectToTest, diagnostician, map);
+				}
 
-		},
+			},
 
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignObservationOperations
-				.validateResultObservationCode(
-						(VitalSignObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignObservationOperations.validateResultObservationCode((VitalSignObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-		// value
-		// -------------------------------------------------------------
-		new ObservationValueCCDValidationTest(CODE) {
+			// value
+			// -------------------------------------------------------------
+			new ObservationValueCCDValidationTest(CODE) {
 
-			@SuppressWarnings("synthetic-access")
-			@Override
-			public void doTest(final EObject objectToTest,
-					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-				try {
-					validateExpectPass(objectToTest, diagnostician, map);
-					doSet(objectToTest);
-					validateExpectPass(objectToTest, diagnostician, map);
-				} catch (final UnsupportedOperationException uoe) {
-					fail(CDAValidationTest
-							.createUnsupportedOperationFailureMessage(featureName,
-									uoe));
+				@SuppressWarnings("synthetic-access")
+				@Override
+				public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					try {
+						validateExpectPass(objectToTest, diagnostician, map);
+						doSet(objectToTest);
+						validateExpectPass(objectToTest, diagnostician, map);
+					} catch (final UnsupportedOperationException uoe) {
+						fail(CDAValidationTest.createUnsupportedOperationFailureMessage(featureName, uoe));
+					}
+				}
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignObservationOperations.validateVitalSignObservationValue((VitalSignObservation) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<PQ> retValue = new BasicEList<PQ>();
+					retValue.add(DatatypesFactory.eINSTANCE.createPQ());
+					return retValue;
+				}
+			},
+
+			// Information Source
+			// -------------------------------------------------------------
+			new InformationSourceCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationInformationSource((ResultObservation) objectToTest, diagnostician, map);
 				}
 			}
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignObservationOperations
-				.validateVitalSignObservationValue(
-						(VitalSignObservation) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<PQ> retValue = new BasicEList<PQ>();
-				retValue.add(DatatypesFactory.eINSTANCE.createPQ());
-				return retValue;
-			}
-		},
-		
-		// Information Source
-		// -------------------------------------------------------------
-		new InformationSourceCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations.
-				validateResultObservationInformationSource(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -154,10 +130,9 @@ ResultObservationOperationsTest {
 		clinicalDocument.addSection(section);
 		VitalSignObservation vitalSignObservation = IHEFactory.eINSTANCE.createVitalSignObservation();
 		section.addObservation(vitalSignObservation);
-		return vitalSignObservation;	
-//		return IHEFactory.eINSTANCE.createVitalSignObservation();
+		return vitalSignObservation;
+		// return IHEFactory.eINSTANCE.createVitalSignObservation();
 	}
-
 
 	/**
 	 * JUnit test
@@ -165,29 +140,20 @@ ResultObservationOperationsTest {
 	@Test
 	public void testVitalSignsObservationTargetSiteCode() {
 		final VitalSignObservation vso = (VitalSignObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(vso);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(vso);
 		try {
-			boolean isValid = VitalSignObservationOperations
-			.validateVitalSignObservationTargetSiteCode(vso,
-					diagnostician, map);
+			boolean isValid = VitalSignObservationOperations.validateVitalSignObservationTargetSiteCode(vso, diagnostician, map);
 			assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
-			final CD targetSiteCode = DatatypesFactory.eINSTANCE.createCE(
-					TARGET_SITE_CODE, TARGET_SITE_CODE_CODE_SYSTEM);
+			final CD targetSiteCode = DatatypesFactory.eINSTANCE.createCE(TARGET_SITE_CODE, TARGET_SITE_CODE_CODE_SYSTEM);
 			vso.getTargetSiteCodes().add(targetSiteCode);
 
-			isValid = VitalSignObservationOperations
-			.validateVitalSignObservationTargetSiteCode(vso,
-					diagnostician, map);
+			isValid = VitalSignObservationOperations.validateVitalSignObservationTargetSiteCode(vso, diagnostician, map);
 			assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 		} catch (final UnsupportedOperationException uoe) {
-			fail(createUnsupportedOperationFailureMessage(
-					"TargetSiteCode", uoe));
+			fail(createUnsupportedOperationFailureMessage("TargetSiteCode", uoe));
 		}
 	}
-
-
 
 } // VitalSignObservationOperationsTest

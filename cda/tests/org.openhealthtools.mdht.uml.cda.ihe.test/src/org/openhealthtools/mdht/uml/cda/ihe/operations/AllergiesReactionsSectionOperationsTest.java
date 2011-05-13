@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class AllergiesReactionsSectionOperationsTest extends
-		AlertsSectionOperationsTest {
+public class AllergiesReactionsSectionOperationsTest extends AlertsSectionOperationsTest {
 
 	protected static final String ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.13";
 
@@ -43,20 +42,15 @@ public class AllergiesReactionsSectionOperationsTest extends
 		AllergiesReactionsSectionOperations obj = new AllergiesReactionsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return AllergiesReactionsSectionOperations
-					.validateAllergiesReactionsSectionTemplateId(
-							(AllergiesReactionsSection) objectToTest,
-							diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return AllergiesReactionsSectionOperations.validateAllergiesReactionsSectionTemplateId((AllergiesReactionsSection) objectToTest, diagnostician, map);
 		}
 
 	}

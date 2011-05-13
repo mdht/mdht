@@ -35,10 +35,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class ProblemEntryOperationsTest extends
-		ProblemObservationOperationsTest {
-	
-	
+public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest {
+
 	public static class OperationsForOCL extends ProblemEntryOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -52,36 +50,35 @@ public class ProblemEntryOperationsTest extends
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<ProblemEntry> {
 		public ProblemEntry create() {
 			return IHEFactory.eINSTANCE.createProblemEntry();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
-	
+
 	@Test
 	public void testValidateProblemEntryHasTextReference() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryHasTextReference", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryHasTextReference",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
 				target.init();
-				
+
 				ED value = DatatypesFactory.eINSTANCE.createED("sample text");
-				target.setText(value );
+				target.setText(value);
 			}
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-				
-							TEL value = DatatypesFactory.eINSTANCE.createTEL("reference");
-							target.getText().setReference(value );
-								
+
+				TEL value = DatatypesFactory.eINSTANCE.createTEL("reference");
+				target.getText().setReference(value);
 
 			}
 
@@ -97,23 +94,21 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntryCommentInversionInd() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryCommentInversionInd", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_COMMENT_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryCommentInversionInd",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_COMMENT_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
 				target.init();
 				Act comment = IHEFactory.eINSTANCE.createComment().init();
-				target.addAct(comment );
+				target.addAct(comment);
 			}
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-							for (EntryRelationship er :target.getEntryRelationships())
-							{
-								er.setInversionInd(true);
-							}
-								
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setInversionInd(true);
+				}
 
 			}
 
@@ -129,17 +124,17 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntryTemplateId() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryTemplateId", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
-				
+
 			}
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-				target.init();			
+				target.init();
 			}
 
 			@Override
@@ -154,8 +149,8 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntryCode() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryCode", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryCode",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -164,8 +159,7 @@ public class ProblemEntryOperationsTest extends
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-							target.getCode().setCode("55607006");
-								
+				target.getCode().setCode("55607006");
 
 			}
 
@@ -181,8 +175,8 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntryEffectiveTime() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryEffectiveTime", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryEffectiveTime",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -191,9 +185,9 @@ public class ProblemEntryOperationsTest extends
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-							
+
 				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS("time");
-				target.setEffectiveTime(value );
+				target.setEffectiveTime(value);
 
 			}
 
@@ -209,8 +203,8 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntryId() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryId", operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryId",
+				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -219,9 +213,8 @@ public class ProblemEntryOperationsTest extends
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-							II ii=DatatypesFactory.eINSTANCE.createII("ii");
-							target.getIds().add(ii);
-								
+				II ii = DatatypesFactory.eINSTANCE.createII("ii");
+				target.getIds().add(ii);
 
 			}
 
@@ -237,8 +230,8 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntryText() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryText", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryText",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -247,9 +240,9 @@ public class ProblemEntryOperationsTest extends
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-							
-							ED text= DatatypesFactory.eINSTANCE.createED("text");
-							target.setText(text);	
+
+				ED text = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(text);
 
 			}
 
@@ -265,8 +258,8 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntryValue() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntryValue", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryValue",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -275,9 +268,8 @@ public class ProblemEntryOperationsTest extends
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-							ANY value = DatatypesFactory.eINSTANCE.createCD();
-							target.getValues().add(value);
-								
+				ANY value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
 
 			}
 
@@ -293,8 +285,8 @@ public class ProblemEntryOperationsTest extends
 
 	@Test
 	public void testValidateProblemEntrySeverity() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
-				"ValidateProblemEntrySeverity", operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_SEVERITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntrySeverity",
+				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_SEVERITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -304,10 +296,9 @@ public class ProblemEntryOperationsTest extends
 			@Override
 			protected void updateToPass(ProblemEntry target) {
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				Severity severity  = IHEFactory.eINSTANCE.createSeverity();
-				er.setObservation(severity);				
-				target.getEntryRelationships().add(er );
-								
+				Severity severity = IHEFactory.eINSTANCE.createSeverity();
+				er.setObservation(severity);
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -321,104 +312,105 @@ public class ProblemEntryOperationsTest extends
 		testCase.doValidationTest();
 	}
 
-
-//	protected static final String PROBLEM_ENTRY_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.5";
-//
-//	private static final String VALUE_CODE_SYSTEM = "notspecified";
-//
-//	private static final CDATestCase TEST_CASE_ARRAY[] = {
-//	// Template ID
-//			// -------------------------------------------------------------
-//			new TemplateIDValidationTest(PROBLEM_ENTRY_TEMPLATE_ID) {
-//
-//				@Override
-//				protected boolean validate(final EObject objectToTest,
-//						final BasicDiagnostic diagnostician,
-//						final Map<Object, Object> map) {
-//					return ProblemEntryOperations
-//							.validateProblemEntryTemplateId(
-//									(ProblemEntry) objectToTest,
-//									diagnostician, map);
-//				}
-//			},
-//
-//			// Value
-//			// -------------------------------------------------------------
-//			new ObservationValueCCDValidationTest(VALUE_CODE_SYSTEM) {
-//				@Override
-//				protected boolean validate(final EObject objectToTest,
-//						final BasicDiagnostic diagnostician,
-//						final Map<Object, Object> map) {
-//					return ProblemEntryOperations.validateProblemEntryValue(
-//							(ProblemEntry) objectToTest, diagnostician, map);
-//				}
-//
-//				@Override
-//				protected Object getValueToSet() {
-//					final EList<CD> retValue = new BasicEList<CD>();
-//					final CD cd = DatatypesFactory.eINSTANCE.createCD();
-//					cd.setCodeSystem(observationValueCodeSystem);
-//					retValue.add(cd);
-//					return retValue;
-//				}
-//			},
-//
-//			// Text
-//			// -------------------------------------------------------------
-//			new TextCCDValidationTest() {
-//				@Override
-//				protected boolean validate(final EObject objectToTest,
-//						final BasicDiagnostic diagnostician,
-//						final Map<Object, Object> map) {
-//					return ProblemEntryOperations.validateProblemEntryText(
-//							(ProblemEntry) objectToTest, diagnostician, map);
-//				}
-//
-//				@Override
-//				protected Object getValueToSet() {
-//					return DatatypesFactory.eINSTANCE.createED();
-//				}
-//
-//			},
-//			
-//			// Information Source
-//			// -------------------------------------------------------------
-//			new InformationSourceCCDValidationTest() {
-//				@Override
-//				protected boolean validate(final EObject objectToTest,
-//						final BasicDiagnostic diagnostician,
-//						final Map<Object, Object> map) {
-//					return ProblemObservationOperations.
-//					validateProblemObservationInformationSource(
-//							(ProblemObservation) objectToTest,
-//							diagnostician, map);
-//				}
-//			}
-//	}; // TEST_CASE_ARRAY
-//
-//	@Override
-//	protected List<CDATestCase> getTestCases() {
-//		// Return a new List because the one returned by Arrays.asList is
-//		// unmodifiable so a sub-class can't append their test cases.
-//		final List<CDATestCase> retValue = super.getTestCases();
-//		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-//		return retValue;
-//	}
-//
-//	@Override
-//	protected EObject getObjectToTest() {
-//		ClinicalDocument clinicalDocument = CDAFactory.eINSTANCE.createClinicalDocument();
-//		Section section = CDAFactory.eINSTANCE.createSection();
-//		clinicalDocument.addSection(section);
-//		ProblemEntry problemEntry = IHEFactory.eINSTANCE.createProblemEntry();
-//		section.addObservation(problemEntry);
-//		return problemEntry;
-////		return IHEFactory.eINSTANCE.createProblemEntry();
-//	}
-//
-//	@Override
-//	protected EObject getObjectInitToTest() {
-//		return IHEFactory.eINSTANCE.createProblemEntry().init();
-//	}
+	// protected static final String PROBLEM_ENTRY_TEMPLATE_ID =
+	// "1.3.6.1.4.1.19376.1.5.3.1.4.5";
+	//
+	// private static final String VALUE_CODE_SYSTEM = "notspecified";
+	//
+	// private static final CDATestCase TEST_CASE_ARRAY[] = {
+	// // Template ID
+	// // -------------------------------------------------------------
+	// new TemplateIDValidationTest(PROBLEM_ENTRY_TEMPLATE_ID) {
+	//
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return ProblemEntryOperations
+	// .validateProblemEntryTemplateId(
+	// (ProblemEntry) objectToTest,
+	// diagnostician, map);
+	// }
+	// },
+	//
+	// // Value
+	// // -------------------------------------------------------------
+	// new ObservationValueCCDValidationTest(VALUE_CODE_SYSTEM) {
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return ProblemEntryOperations.validateProblemEntryValue(
+	// (ProblemEntry) objectToTest, diagnostician, map);
+	// }
+	//
+	// @Override
+	// protected Object getValueToSet() {
+	// final EList<CD> retValue = new BasicEList<CD>();
+	// final CD cd = DatatypesFactory.eINSTANCE.createCD();
+	// cd.setCodeSystem(observationValueCodeSystem);
+	// retValue.add(cd);
+	// return retValue;
+	// }
+	// },
+	//
+	// // Text
+	// // -------------------------------------------------------------
+	// new TextCCDValidationTest() {
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return ProblemEntryOperations.validateProblemEntryText(
+	// (ProblemEntry) objectToTest, diagnostician, map);
+	// }
+	//
+	// @Override
+	// protected Object getValueToSet() {
+	// return DatatypesFactory.eINSTANCE.createED();
+	// }
+	//
+	// },
+	//
+	// // Information Source
+	// // -------------------------------------------------------------
+	// new InformationSourceCCDValidationTest() {
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return ProblemObservationOperations.
+	// validateProblemObservationInformationSource(
+	// (ProblemObservation) objectToTest,
+	// diagnostician, map);
+	// }
+	// }
+	// }; // TEST_CASE_ARRAY
+	//
+	// @Override
+	// protected List<CDATestCase> getTestCases() {
+	// // Return a new List because the one returned by Arrays.asList is
+	// // unmodifiable so a sub-class can't append their test cases.
+	// final List<CDATestCase> retValue = super.getTestCases();
+	// retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+	// return retValue;
+	// }
+	//
+	// @Override
+	// protected EObject getObjectToTest() {
+	// ClinicalDocument clinicalDocument =
+	// CDAFactory.eINSTANCE.createClinicalDocument();
+	// Section section = CDAFactory.eINSTANCE.createSection();
+	// clinicalDocument.addSection(section);
+	// ProblemEntry problemEntry = IHEFactory.eINSTANCE.createProblemEntry();
+	// section.addObservation(problemEntry);
+	// return problemEntry;
+	// // return IHEFactory.eINSTANCE.createProblemEntry();
+	// }
+	//
+	// @Override
+	// protected EObject getObjectInitToTest() {
+	// return IHEFactory.eINSTANCE.createProblemEntry().init();
+	// }
 
 } // ProblemEntryOperationsTest

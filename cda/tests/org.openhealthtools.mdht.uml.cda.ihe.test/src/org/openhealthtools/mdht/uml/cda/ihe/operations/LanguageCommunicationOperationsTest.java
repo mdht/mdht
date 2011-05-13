@@ -12,7 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -31,9 +32,11 @@ public class LanguageCommunicationOperationsTest {
 		LanguageCommunicationOperations obj = new LanguageCommunicationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.LanguageCommunicationOperations#validateIHELanguageCommunicationTemplateId(org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 * Test method for
+	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.LanguageCommunicationOperations#validateIHELanguageCommunicationTemplateId(org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
+	 * .
 	 */
 	@Test
 	public void testValidateIHELanguageCommunicationTemplateId() {

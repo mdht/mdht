@@ -27,7 +27,6 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Component4;
 import org.openhealthtools.mdht.uml.cda.Section;
-import org.openhealthtools.mdht.uml.cda.ihe.operations.VitalSignsOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
@@ -36,9 +35,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class VitalSignsOrganizerOperationsTest
-extends
-org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTest {
+public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.13.1";
 
@@ -50,117 +47,84 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.96";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignsOrganizerOperations
-				.validateIHEVitalSignsOrganizerTemplateId(
-						(VitalSignsOrganizer) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerTemplateId((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateResultOrganizerCode((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateResultOrganizerStatusCode((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				}
+			},
+
+			// EffectiveTime
+			// -------------------------------------------------------------
+			new EffectiveTimeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerEffectiveTime((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				}
+			},
+
+			// component
+			// -------------------------------------------------------------
+			new CCDValidationTestCase("component") {
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Component4> retValue = new BasicEList<Component4>();
+
+					final Component4 component = CDAFactory.eINSTANCE.createComponent4();
+
+					final VitalSignObservation vsOb = IHEFactory.eINSTANCE.createVitalSignObservation();
+					// The OCL says this....
+					// component.setTypeCode(org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship.COMP);
+					// ...but this is what compiles.
+					component.setTypeCode(org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipHasComponent.COMP);
+
+					component.setObservation(vsOb);
+
+					final VitalSignsOrganizer vso = IHEFactory.eINSTANCE.createVitalSignsOrganizer();
+					vso.getComponents().add(component);
+
+					retValue.add(component);
+					return retValue;
+				}
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerVitalSignObservation((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Information Source
+			// -------------------------------------------------------------
+			new InformationSourceCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperations.validateVitalSignsOrganizerInformationSource(
+							(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer) objectToTest, diagnostician, map);
+				}
 			}
-
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignsOrganizerOperations
-				.validateResultOrganizerCode(
-						(VitalSignsOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignsOrganizerOperations
-				.validateResultOrganizerStatusCode(
-						(VitalSignsOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// EffectiveTime
-		// -------------------------------------------------------------
-		new EffectiveTimeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignsOrganizerOperations
-				.validateIHEVitalSignsOrganizerEffectiveTime(
-						(VitalSignsOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// component
-		// -------------------------------------------------------------
-		new CCDValidationTestCase("component") {
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Component4> retValue = new BasicEList<Component4>();
-
-				final Component4 component = CDAFactory.eINSTANCE
-				.createComponent4();
-
-				final VitalSignObservation vsOb = IHEFactory.eINSTANCE
-				.createVitalSignObservation();
-				// The OCL says this....
-				// component.setTypeCode(org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship.COMP);
-				// ...but this is what compiles.
-				component
-				.setTypeCode(org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipHasComponent.COMP);
-
-				component.setObservation(vsOb);
-
-				final VitalSignsOrganizer vso = IHEFactory.eINSTANCE
-				.createVitalSignsOrganizer();
-				vso.getComponents().add(component);
-
-				retValue.add(component);
-				return retValue;
-			}
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-				return VitalSignsOrganizerOperations
-				.validateIHEVitalSignsOrganizerVitalSignObservation(
-						(VitalSignsOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		},
-		
-		// Information Source
-		// -------------------------------------------------------------
-		new InformationSourceCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperations
-						.validateVitalSignsOrganizerInformationSource(
-								(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer) objectToTest,
-								diagnostician, map);
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -181,7 +145,7 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 		VitalSignsOrganizer vitalSignsOrganizer = IHEFactory.eINSTANCE.createVitalSignsOrganizer();
 		section.addOrganizer(vitalSignsOrganizer);
 		return vitalSignsOrganizer;
-//		return IHEFactory.eINSTANCE.createVitalSignsOrganizer();
+		// return IHEFactory.eINSTANCE.createVitalSignsOrganizer();
 	}
 
 	@Override
@@ -199,5 +163,5 @@ org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTes
 		VitalSignObservationOperations obj = new VitalSignObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // VitalSignsOrganizerOperationsTest

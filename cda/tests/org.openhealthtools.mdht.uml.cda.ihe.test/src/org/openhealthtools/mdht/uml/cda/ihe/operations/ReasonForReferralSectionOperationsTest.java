@@ -46,20 +46,15 @@ public class ReasonForReferralSectionOperationsTest extends SectionOperationsTes
 		ReasonForReferralSectionOperations obj = new ReasonForReferralSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ReasonForReferralSectionOperations
-							.validateReasonForReferralSectionTemplateId(
-									(ReasonForReferralSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ReasonForReferralSectionOperations.validateReasonForReferralSectionTemplateId((ReasonForReferralSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -68,13 +63,8 @@ public class ReasonForReferralSectionOperationsTest extends SectionOperationsTes
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ReasonForReferralSectionOperations
-							.validateReasonForReferralSectionCode(
-									(ReasonForReferralSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ReasonForReferralSectionOperations.validateReasonForReferralSectionCode((ReasonForReferralSection) objectToTest, diagnostician, map);
 				}
 			}
 

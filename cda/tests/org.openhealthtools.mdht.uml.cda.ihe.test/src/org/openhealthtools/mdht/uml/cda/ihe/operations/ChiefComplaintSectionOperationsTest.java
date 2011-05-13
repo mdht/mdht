@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class ChiefComplaintSectionOperationsTest  extends SectionOperationsTest {
+public class ChiefComplaintSectionOperationsTest extends SectionOperationsTest {
 
 	private final static String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1";
 
@@ -46,20 +46,15 @@ public class ChiefComplaintSectionOperationsTest  extends SectionOperationsTest 
 		ChiefComplaintSectionOperations obj = new ChiefComplaintSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new CCDValidationTest.TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ChiefComplaintSectionOperations
-							.validateChiefComplaintSectionTemplateId(
-									(ChiefComplaintSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ChiefComplaintSectionOperations.validateChiefComplaintSectionTemplateId((ChiefComplaintSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -67,13 +62,8 @@ public class ChiefComplaintSectionOperationsTest  extends SectionOperationsTest 
 			// -------------------------------------------------------------
 			new CCDValidationTest.CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ChiefComplaintSectionOperations
-							.validateChiefComplaintSectionCode(
-									(ChiefComplaintSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return ChiefComplaintSectionOperations.validateChiefComplaintSectionCode((ChiefComplaintSection) objectToTest, diagnostician, map);
 				}
 			} };
 

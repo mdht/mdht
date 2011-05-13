@@ -27,10 +27,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentEncounterMood;
  * This class
  */
 @SuppressWarnings("nls")
-public class EncounterPlanOfCareOperationsTest extends
-		EncounterEntryOperationsTest {
-	
-	
+public class EncounterPlanOfCareOperationsTest extends EncounterEntryOperationsTest {
+
 	public static class OperationsForOCL extends EncounterPlanOfCareOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -44,17 +42,16 @@ public class EncounterPlanOfCareOperationsTest extends
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<EncounterPlanOfCare> {
 		public EncounterPlanOfCare create() {
 			return IHEFactory.eINSTANCE.createEncounterPlanOfCare();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
-	
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -66,8 +63,7 @@ public class EncounterPlanOfCareOperationsTest extends
 		EncounterPlanOfCareOperations obj = new EncounterPlanOfCareOperations();
 		assertTrue(true);
 	} // testConstructor
-	
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterPlanOfCareOperations#validatePlanOfCareActivityEncounterTemplateId(org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -75,8 +71,8 @@ public class EncounterPlanOfCareOperationsTest extends
 	 */
 	@Test
 	public void testValidatePlanOfCareActivityEncounterTemplateId() {
-		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>(
-				"validateEncounterPlanOfCareTemplateId", operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>("validateEncounterPlanOfCareTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterPlanOfCare target) {
@@ -106,8 +102,8 @@ public class EncounterPlanOfCareOperationsTest extends
 	 */
 	@Test
 	public void testValidateEncounterPlanOfCareMoodCodeValue() {
-		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>(
-				"validateEncounterPlanOfCareTemplateId", operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>("validateEncounterPlanOfCareTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterPlanOfCare target) {
@@ -118,7 +114,7 @@ public class EncounterPlanOfCareOperationsTest extends
 
 			@Override
 			protected void updateToPass(EncounterPlanOfCare target) {
-				
+
 				target.setMoodCode(x_DocumentEncounterMood.ARQ);
 
 			}

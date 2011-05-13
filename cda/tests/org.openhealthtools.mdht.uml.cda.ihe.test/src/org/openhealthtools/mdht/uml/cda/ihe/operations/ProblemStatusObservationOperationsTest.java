@@ -14,7 +14,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 
 public class ProblemStatusObservationOperationsTest extends ObservationOperationsTest {
-	
+
 	public static class OperationsForOCL extends ProblemStatusObservationOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -28,35 +28,34 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 			return oclValue;
 		}
 	}
-	
+
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-	
+
 	public class ObjectFactory implements TestObjectFactory<ProblemStatusObservation> {
 		public ProblemStatusObservation create() {
 			return IHEFactory.eINSTANCE.createProblemStatusObservation();
 		}
 	}
-	
+
 	ObjectFactory objectFactory = new ObjectFactory();
 
 	@Test
 	public void testValidateIHEProblemStatusObservationHasTextReference() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
-				"ValidateIHEProblemStatusObservationHasTextReference", operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateIHEProblemStatusObservationHasTextReference",
+				operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
 				target.init();
 				ED value = DatatypesFactory.eINSTANCE.createED("text");
-				target.setText(value );
+				target.setText(value);
 			}
 
 			@Override
 			protected void updateToPass(ProblemStatusObservation target) {
 				TEL value = DatatypesFactory.eINSTANCE.createTEL("reference");
-				target.getText().setReference(value );
-				
-							
+				target.getText().setReference(value);
+
 			}
 
 			@Override
@@ -66,22 +65,22 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 		};
 
-		testCase.doValidationTest();	
+		testCase.doValidationTest();
 	}
 
 	@Test
 	public void testValidateIHEProblemStatusObservationTemplateId() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
-				"ValidateProblemStatusObservationTemplateId", operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateProblemStatusObservationTemplateId",
+				operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
-				
+
 			}
 
 			@Override
 			protected void updateToPass(ProblemStatusObservation target) {
-				target.init();			
+				target.init();
 			}
 
 			@Override
@@ -96,8 +95,8 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 	@Test
 	public void testValidateIHEProblemStatusObservationText() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
-				"ValidateIHEProblemStatusObservationText", operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateIHEProblemStatusObservationText",
+				operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
@@ -107,7 +106,7 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 			@Override
 			protected void updateToPass(ProblemStatusObservation target) {
 				ED value = DatatypesFactory.eINSTANCE.createED("text");
-				target.setText(value );
+				target.setText(value);
 			}
 
 			@Override
@@ -117,23 +116,24 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 		};
 
-		testCase.doValidationTest();	}
+		testCase.doValidationTest();
+	}
 
 	@Test
 	public void testValidateStatusObservationValue() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
-				"ValidateStatusObservationValue", operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateStatusObservationValue",
+				operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
-				
+
 			}
 
 			@Override
 			protected void updateToPass(ProblemStatusObservation target) {
-				target.init();			
-				ANY cd = DatatypesFactory.eINSTANCE.createCE("55561003","2.16.840.1.113883.6.96");
-				target.getValues().add(cd );
+				target.init();
+				ANY cd = DatatypesFactory.eINSTANCE.createCE("55561003", "2.16.840.1.113883.6.96");
+				target.getValues().add(cd);
 			}
 
 			@Override
@@ -143,6 +143,7 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 		};
 
-		testCase.doValidationTest();	}
+		testCase.doValidationTest();
+	}
 
 }

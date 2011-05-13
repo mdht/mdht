@@ -47,20 +47,15 @@ public class AssessmentAndPlanSectionOperationsTest extends SectionOperationsTes
 		AssessmentAndPlanSectionOperations obj = new AssessmentAndPlanSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new CCDValidationTest.TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return AssessmentAndPlanSectionOperations
-							.validateAssessmentAndPlanSectionTemplateId(
-									(AssessmentAndPlanSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionTemplateId((AssessmentAndPlanSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -69,13 +64,8 @@ public class AssessmentAndPlanSectionOperationsTest extends SectionOperationsTes
 			// -------------------------------------------------------------
 			new CCDValidationTest.CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return AssessmentAndPlanSectionOperations
-							.validateAssessmentAndPlanSectionCode(
-									(AssessmentAndPlanSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionCode((AssessmentAndPlanSection) objectToTest, diagnostician, map);
 				}
 			}
 

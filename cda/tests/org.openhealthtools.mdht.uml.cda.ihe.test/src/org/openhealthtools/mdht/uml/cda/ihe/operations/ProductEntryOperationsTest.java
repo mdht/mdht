@@ -42,18 +42,15 @@ public class ProductEntryOperationsTest extends ProductOperationsTest {
 		ProductEntryOperations obj = new ProductEntryOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return ProductEntryOperations.validateProductEntryTemplateId(
-					(ProductEntry) objectToTest, diagnostician, map);
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+			return ProductEntryOperations.validateProductEntryTemplateId((ProductEntry) objectToTest, diagnostician, map);
 		}
 
 	} }; // TEST_CASE_ARRAY

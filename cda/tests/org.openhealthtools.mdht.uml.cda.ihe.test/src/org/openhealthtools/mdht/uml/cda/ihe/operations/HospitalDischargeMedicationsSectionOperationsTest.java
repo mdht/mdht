@@ -29,8 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class HospitalDischargeMedicationsSectionOperationsTest extends
-		CCDValidationTest {
+public class HospitalDischargeMedicationsSectionOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.22";
 
@@ -46,20 +45,16 @@ public class HospitalDischargeMedicationsSectionOperationsTest extends
 		HospitalDischargeMedicationsSectionOperations obj = new HospitalDischargeMedicationsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HospitalDischargeMedicationsSectionOperations
-							.validateHospitalDischargeMedicationsSectionTemplateId(
-									(HospitalDischargeMedicationsSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HospitalDischargeMedicationsSectionOperations.validateHospitalDischargeMedicationsSectionTemplateId((HospitalDischargeMedicationsSection) objectToTest,
+							diagnostician, map);
 				}
 
 			},
@@ -68,13 +63,9 @@ public class HospitalDischargeMedicationsSectionOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return HospitalDischargeMedicationsSectionOperations
-							.validateHospitalDischargeMedicationsSectionCode(
-									(HospitalDischargeMedicationsSection) objectToTest,
-									diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+					return HospitalDischargeMedicationsSectionOperations.validateHospitalDischargeMedicationsSectionCode((HospitalDischargeMedicationsSection) objectToTest,
+							diagnostician, map);
 				}
 			}
 
@@ -96,8 +87,7 @@ public class HospitalDischargeMedicationsSectionOperationsTest extends
 
 	@Override
 	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createHospitalDischargeMedicationsSection()
-				.init();
+		return IHEFactory.eINSTANCE.createHospitalDischargeMedicationsSection().init();
 	}
 
 } // HospitalDischargeMedicationsSectionOperationsTest
