@@ -100,17 +100,17 @@ public class ConditionOperationsTest extends ProblemConcernEntryOperationsTest {
 		return HITSPFactory.eINSTANCE.createCondition().init();
 	}
 
-	/**
-	 * Not a real test, needed for EMMA to report 100% method coverage.
-	 */
-	@Override
-	@SuppressWarnings("unused")
-	@Test
-	public final void testConstructor() {
-		ConditionOperations obj = new ConditionOperations();
-		assertTrue(true);
-	} // testConstructor
-	
+//	/**
+//	 * Not a real test, needed for EMMA to report 100% method coverage.
+//	 */
+//	@Override
+//	@SuppressWarnings("unused")
+//	@Test
+//	public final void testConstructor() {
+//		ConditionOperations obj = new ConditionOperations();
+//		assertTrue(true);
+//	} // testConstructor
+//	
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionOperations#createConditionEntry(org.openhealthtools.mdht.uml.cda.hitsp.Condition)}
