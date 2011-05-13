@@ -5,8 +5,19 @@ Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.hitsp.test
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.junit4;bundle-version="4.0.0",
- org.openhealthtools.mdht.uml.cda.hitsp;visibility:=reexport,
- org.openhealthtools.mdht.uml.cda.ihe.test,
+ org.openhealthtools.mdht.uml.hl7.rim.test;visibility:=reexport, 
+ org.openhealthtools.mdht.uml.cda.test,
+ org.openhealthtools.mdht.uml.cda.cdt.test,
  org.openhealthtools.mdht.uml.cda.ccd.test,
- org.openhealthtools.mdht.uml.cda.test
+ org.openhealthtools.mdht.uml.cda.ihe.test,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda.hitsp;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda.ihe;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda.cdt;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda.ccd;visibility:=reexport,
+ org.openhealthtools.mdht.uml.cda;visibility:=reexport,
+ org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
+ org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport
 Export-Package: org.openhealthtools.mdht.uml.cda.hitsp.operations
