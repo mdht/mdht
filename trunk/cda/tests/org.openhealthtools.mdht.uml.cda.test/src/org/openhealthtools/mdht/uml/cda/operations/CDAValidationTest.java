@@ -104,6 +104,22 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		 */
 		protected CDATestCase(final String testTargetDescription) {
 			this.testTargetDescription = testTargetDescription;
+			
+			String testLogDir = System.getProperty("testlogdir");
+			try {
+				if (testLogDir != null)
+				{
+				String logFileName = String.format("%s/test%s", testLogDir,getTestTargetDescription().substring(0, 1).toUpperCase() + getTestTargetDescription().substring(1) + ".xml");
+				FileWriter fstream = new FileWriter(logFileName); 
+				BufferedWriter out = new BufferedWriter(fstream);
+				out.flush();
+				out.write("<xmlsnippet>" +  "</xmlsnippet>");				
+				out.close();
+				}
+			} catch (Exception e) {
+				System.err.println("Error: " + e.getMessage());
+			}
+			
 		}
 
 		abstract protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map);
