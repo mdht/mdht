@@ -15,11 +15,10 @@ package org.openhealthtools.mdht.cda.xml;
 import org.eclipse.wst.xml.core.internal.validation.core.ValidationInfo;
 import org.eclipse.wst.xml.core.internal.validation.core.ValidationReport;
 
-@SuppressWarnings("restriction")
 public class CDAValidationReport extends ValidationInfo implements ValidationReport {
 
 	public CDAValidationReport(String uri) {
 		super(uri);
 	}
-	
+
 }
