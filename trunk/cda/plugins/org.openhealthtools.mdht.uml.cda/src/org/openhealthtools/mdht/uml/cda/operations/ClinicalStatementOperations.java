@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     David A Carlson - getEntryRelationshipTargets
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
@@ -100,217 +101,20 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 public class ClinicalStatementOperations extends ActOperations {
 	/**
-	 * The cached OCL expression body for the '{@link #hasActTemplate(ClinicalStatement, java.lang.String) <em>Has Act Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @see #hasActTemplate(ClinicalStatement, java.lang.String)
 	 * @generated
-	 * @ordered
 	 */
-	protected static final String HAS_ACT_TEMPLATE__STRING__EOCL_EXP = "self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))";
+	protected ClinicalStatementOperations() {
+		super();
+	}
 
-	/**
-	 * The cached OCL query for the '{@link #hasActTemplate(ClinicalStatement, java.lang.String) <em>Has Act Template</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasActTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_ACT_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasEncounterTemplate(ClinicalStatement, java.lang.String) <em>Has Encounter Template</em>}'
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasEncounterTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP = "self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasEncounterTemplate(ClinicalStatement, java.lang.String) <em>Has Encounter Template</em>}' query
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasEncounterTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasObservationMediaTemplate(ClinicalStatement, java.lang.String)
-	 * <em>Has Observation Media Template</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasObservationMediaTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP = "self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasObservationMediaTemplate(ClinicalStatement, java.lang.String) <em>Has Observation Media Template</em>}
-	 * ' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasObservationMediaTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasObservationTemplate(ClinicalStatement, java.lang.String) <em>Has Observation Template</em>}'
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasObservationTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP = "self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasObservationTemplate(ClinicalStatement, java.lang.String) <em>Has Observation Template</em>}' query
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasObservationTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasOrganizerTemplate(ClinicalStatement, java.lang.String) <em>Has Organizer Template</em>}'
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasOrganizerTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP = "self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasOrganizerTemplate(ClinicalStatement, java.lang.String) <em>Has Organizer Template</em>}' query
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasOrganizerTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasProcedureTemplate(ClinicalStatement, java.lang.String) <em>Has Procedure Template</em>}'
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasProcedureTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP = "self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasProcedureTemplate(ClinicalStatement, java.lang.String) <em>Has Procedure Template</em>}' query
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasProcedureTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
-	 * <em>Has Region Of Interest Template</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP = "self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
-	 * <em>Has Region Of Interest Template</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
-	 * <em>Has Substance Administration Template</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP = "self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
-	 * <em>Has Substance Administration Template</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY;
-
-	/**
-	 * The cached OCL expression body for the '{@link #hasSupplyTemplate(ClinicalStatement, java.lang.String) <em>Has Supply Template</em>}'
-	 * operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasSupplyTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP = "self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))";
-
-	/**
-	 * The cached OCL query for the '{@link #hasSupplyTemplate(ClinicalStatement, java.lang.String) <em>Has Supply Template</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #hasSupplyTemplate(ClinicalStatement, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY;
+	@SuppressWarnings("unchecked")
+	private static List<EntryRelationship> getEntryRelationships(ClinicalStatement clinicalStatement) {
+		return ((List<EntryRelationship>) clinicalStatement.eGet(clinicalStatement.eClass().getEStructuralFeature(
+			"entryRelationship")));
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -463,23 +267,6 @@ public class ClinicalStatementOperations extends ActOperations {
 		return new BasicEList.UnmodifiableEList<Encounter>(encounters.size(), encounters.toArray());
 	}
 
-	@SuppressWarnings("unchecked")
-	private static List<EntryRelationship> getEntryRelationships(ClinicalStatement clinicalStatement) {
-		return ((List<EntryRelationship>) clinicalStatement.eGet(clinicalStatement.eClass().getEStructuralFeature(
-			"entryRelationship")));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public static EList<ClinicalStatement> getEntryRelationshipTargets(ClinicalStatement clinicalStatement,
-			Object targetClass) {
-		return getEntryRelationshipTargets(clinicalStatement, null, targetClass);
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -500,14 +287,9 @@ public class ClinicalStatementOperations extends ActOperations {
 	 * 
 	 * @generated NOT
 	 */
-	public static EList<ObservationMedia> getObservationMedia(ClinicalStatement clinicalStatement) {
-		List<ObservationMedia> observationMedia = new ArrayList<ObservationMedia>();
-		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
-			if (entryRelationship.getObservationMedia() != null) {
-				observationMedia.add(entryRelationship.getObservationMedia());
-			}
-		}
-		return new BasicEList.UnmodifiableEList<ObservationMedia>(observationMedia.size(), observationMedia.toArray());
+	public static EList<ClinicalStatement> getEntryRelationshipTargets(ClinicalStatement clinicalStatement,
+			Object targetClass) {
+		return getEntryRelationshipTargets(clinicalStatement, null, targetClass);
 	}
 
 	/**
@@ -524,6 +306,22 @@ public class ClinicalStatementOperations extends ActOperations {
 			}
 		}
 		return new BasicEList.UnmodifiableEList<Observation>(observations.size(), observations.toArray());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public static EList<ObservationMedia> getObservationMedia(ClinicalStatement clinicalStatement) {
+		List<ObservationMedia> observationMedia = new ArrayList<ObservationMedia>();
+		for (EntryRelationship entryRelationship : getEntryRelationships(clinicalStatement)) {
+			if (entryRelationship.getObservationMedia() != null) {
+				observationMedia.add(entryRelationship.getObservationMedia());
+			}
+		}
+		return new BasicEList.UnmodifiableEList<ObservationMedia>(observationMedia.size(), observationMedia.toArray());
 	}
 
 	/**
@@ -618,6 +416,28 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
+	 * The cached OCL expression body for the '{@link #hasActTemplate(ClinicalStatement, java.lang.String) <em>Has Act Template</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasActTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_ACT_TEMPLATE__STRING__EOCL_EXP = "self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasActTemplate(ClinicalStatement, java.lang.String) <em>Has Act Template</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasActTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_ACT_TEMPLATE__STRING__EOCL_QRY;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -663,6 +483,30 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
+	 * The cached OCL expression body for the '{@link #hasEncounterTemplate(ClinicalStatement, java.lang.String) <em>Has Encounter Template</em>}'
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasEncounterTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP = "self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasEncounterTemplate(ClinicalStatement, java.lang.String) <em>Has Encounter Template</em>}' query
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasEncounterTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -690,6 +534,30 @@ public class ClinicalStatementOperations extends ActOperations {
 		environment.add("templateId", templateId);
 		return ((Boolean) query.evaluate(clinicalStatement)).booleanValue();
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #hasObservationMediaTemplate(ClinicalStatement, java.lang.String)
+	 * <em>Has Observation Media Template</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasObservationMediaTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP = "self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasObservationMediaTemplate(ClinicalStatement, java.lang.String) <em>Has Observation Media Template</em>}
+	 * ' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasObservationMediaTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -721,6 +589,30 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
+	 * The cached OCL expression body for the '{@link #hasObservationTemplate(ClinicalStatement, java.lang.String) <em>Has Observation Template</em>}'
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasObservationTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP = "self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasObservationTemplate(ClinicalStatement, java.lang.String) <em>Has Observation Template</em>}' query
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasObservationTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -748,6 +640,30 @@ public class ClinicalStatementOperations extends ActOperations {
 		environment.add("templateId", templateId);
 		return ((Boolean) query.evaluate(clinicalStatement)).booleanValue();
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #hasOrganizerTemplate(ClinicalStatement, java.lang.String) <em>Has Organizer Template</em>}'
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasOrganizerTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP = "self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasOrganizerTemplate(ClinicalStatement, java.lang.String) <em>Has Organizer Template</em>}' query
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasOrganizerTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -779,6 +695,30 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
+	 * The cached OCL expression body for the '{@link #hasProcedureTemplate(ClinicalStatement, java.lang.String) <em>Has Procedure Template</em>}'
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasProcedureTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP = "self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasProcedureTemplate(ClinicalStatement, java.lang.String) <em>Has Procedure Template</em>}' query
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasProcedureTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -806,6 +746,30 @@ public class ClinicalStatementOperations extends ActOperations {
 		environment.add("templateId", templateId);
 		return ((Boolean) query.evaluate(clinicalStatement)).booleanValue();
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
+	 * <em>Has Region Of Interest Template</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP = "self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
+	 * <em>Has Region Of Interest Template</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasRegionOfInterestTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -837,6 +801,30 @@ public class ClinicalStatementOperations extends ActOperations {
 	}
 
 	/**
+	 * The cached OCL expression body for the '{@link #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
+	 * <em>Has Substance Administration Template</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP = "self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
+	 * <em>Has Substance Administration Template</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasSubstanceAdministrationTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -864,6 +852,29 @@ public class ClinicalStatementOperations extends ActOperations {
 		environment.add("templateId", templateId);
 		return ((Boolean) query.evaluate(clinicalStatement)).booleanValue();
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #hasSupplyTemplate(ClinicalStatement, java.lang.String) <em>Has Supply Template</em>}'
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasSupplyTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP = "self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))";
+
+	/**
+	 * The cached OCL query for the '{@link #hasSupplyTemplate(ClinicalStatement, java.lang.String) <em>Has Supply Template</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #hasSupplyTemplate(ClinicalStatement, java.lang.String)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -908,16 +919,6 @@ public class ClinicalStatementOperations extends ActOperations {
 			}
 		}
 		return false;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected ClinicalStatementOperations() {
-		super();
 	}
 
 } // ClinicalStatementOperations
