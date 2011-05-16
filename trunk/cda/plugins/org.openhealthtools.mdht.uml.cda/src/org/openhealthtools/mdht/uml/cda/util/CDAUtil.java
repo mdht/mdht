@@ -275,8 +275,6 @@ public class CDAUtil {
 		}
 	}
 
-	// END: CDA XPath Support
-	// BEGIN: Experimental Query/Filter operations
 	public interface Filter<T> {
 		public boolean accept(T item);
 	}
@@ -507,10 +505,8 @@ public class CDAUtil {
 
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 
-	// BEGIN: OCL Support
 	private static final OCL ocl = OCL.newInstance();
 
-	// BEGIN: CDA XPath Support
 	public static Map<ClinicalDocument, CDAXPath> CACHE = new HashMap<ClinicalDocument, CDAXPath>();
 
 	public static boolean check(EObject eObject, String body) throws Exception {
@@ -521,9 +517,6 @@ public class CDAUtil {
 		return query.check(eObject);
 	}
 
-	// END: OCL Support
-
-	// BEGIN: Path Expression Support
 	public static <T> T create(EObject root, String path) {
 		return create(root, path, null);
 	}
@@ -638,8 +631,6 @@ public class CDAUtil {
 		}
 		return allEObjects;
 	}
-
-	// END: Experimental Query/Filter operations
 
 	// get all sections in the document (closure)
 	public static List<Section> getAllSections(ClinicalDocument clinicalDocument) {
@@ -1631,8 +1622,6 @@ public class CDAUtil {
 			}
 		}
 	}
-
-	// END: Path Expression Support
 
 	public static boolean validate(ClinicalDocument clinicalDocument) {
 		return validate(clinicalDocument, null);
