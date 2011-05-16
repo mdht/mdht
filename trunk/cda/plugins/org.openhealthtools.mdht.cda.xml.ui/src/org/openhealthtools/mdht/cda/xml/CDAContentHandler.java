@@ -20,7 +20,7 @@ import org.eclipse.core.runtime.content.XMLContentDescriber;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
-public class CDAContentHandler extends XMLContentDescriber  {
+public class CDAContentHandler extends XMLContentDescriber {
 
 	@Override
 	public int describe(InputStream input, IContentDescription description) throws IOException {
@@ -36,6 +36,6 @@ public class CDAContentHandler extends XMLContentDescriber  {
 			}
 		}
 		return result;
-		
+
 	}
 }
