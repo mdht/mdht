@@ -7,7 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *     David A Carlson - getEntryRelationshipTargets
+ *     David A Carlson (XMLmodeling.com) - getEntryRelationshipTargets
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
