@@ -82,4 +82,4 @@ public abstract class ActRelationshipImpl extends InfrastructureRootImpl impleme
 		return ActRelationshipOperations.isTypeCodeDefined(this);
 	}
 
-} //ActRelationshipImpl
+} // ActRelationshipImpl

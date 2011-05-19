@@ -182,15 +182,8 @@ public enum EntityClassManufacturedMaterial implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EntityClassManufacturedMaterial[] VALUES_ARRAY =
-		new EntityClassManufacturedMaterial[] {
-			CER,
-			CONT,
-			DEV,
-			HOLD,
-			MMAT,
-			MODDV,
-		};
+	private static final EntityClassManufacturedMaterial[] VALUES_ARRAY = new EntityClassManufacturedMaterial[] {
+			CER, CONT, DEV, HOLD, MMAT, MODDV, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Class Manufactured Material</b></em>' enumerators.
@@ -240,12 +233,18 @@ public enum EntityClassManufacturedMaterial implements Enumerator {
 	 */
 	public static EntityClassManufacturedMaterial get(int value) {
 		switch (value) {
-			case CER_VALUE: return CER;
-			case CONT_VALUE: return CONT;
-			case DEV_VALUE: return DEV;
-			case HOLD_VALUE: return HOLD;
-			case MMAT_VALUE: return MMAT;
-			case MODDV_VALUE: return MODDV;
+			case CER_VALUE:
+				return CER;
+			case CONT_VALUE:
+				return CONT;
+			case DEV_VALUE:
+				return DEV;
+			case HOLD_VALUE:
+				return HOLD;
+			case MMAT_VALUE:
+				return MMAT;
+			case MODDV_VALUE:
+				return MODDV;
 		}
 		return null;
 	}
@@ -289,7 +288,7 @@ public enum EntityClassManufacturedMaterial implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -298,7 +297,7 @@ public enum EntityClassManufacturedMaterial implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -307,7 +306,7 @@ public enum EntityClassManufacturedMaterial implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -320,5 +319,5 @@ public enum EntityClassManufacturedMaterial implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //EntityClassManufacturedMaterial
+
+} // EntityClassManufacturedMaterial

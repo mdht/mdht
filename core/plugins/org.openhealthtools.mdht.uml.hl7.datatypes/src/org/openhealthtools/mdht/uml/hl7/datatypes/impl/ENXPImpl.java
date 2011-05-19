@@ -112,11 +112,15 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 */
 	public void setPartType(EntityNamePartType newPartType) {
 		EntityNamePartType oldPartType = partType;
-		partType = newPartType == null ? PART_TYPE_EDEFAULT : newPartType;
+		partType = newPartType == null
+				? PART_TYPE_EDEFAULT
+				: newPartType;
 		boolean oldPartTypeESet = partTypeESet;
 		partTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ENXP__PART_TYPE, oldPartType, partType, !oldPartTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.ENXP__PART_TYPE, oldPartType, partType, !oldPartTypeESet));
+		}
 	}
 
 	/**
@@ -129,8 +133,11 @@ public class ENXPImpl extends STImpl implements ENXP {
 		boolean oldPartTypeESet = partTypeESet;
 		partType = PART_TYPE_EDEFAULT;
 		partTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ENXP__PART_TYPE, oldPartType, PART_TYPE_EDEFAULT, oldPartTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, DatatypesPackage.ENXP__PART_TYPE, oldPartType, PART_TYPE_EDEFAULT,
+				oldPartTypeESet));
+		}
 	}
 
 	/**
@@ -149,7 +156,8 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 */
 	public EList<EntityNamePartQualifier> getQualifiers() {
 		if (qualifiers == null) {
-			qualifiers = new EDataTypeUniqueEList.Unsettable<EntityNamePartQualifier>(EntityNamePartQualifier.class, this, DatatypesPackage.ENXP__QUALIFIER);
+			qualifiers = new EDataTypeUniqueEList.Unsettable<EntityNamePartQualifier>(
+				EntityNamePartQualifier.class, this, DatatypesPackage.ENXP__QUALIFIER);
 		}
 		return qualifiers;
 	}
@@ -160,7 +168,9 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 * @generated
 	 */
 	public void unsetQualifiers() {
-		if (qualifiers != null) ((InternalEList.Unsettable<?>)qualifiers).unset();
+		if (qualifiers != null) {
+			((InternalEList.Unsettable<?>) qualifiers).unset();
+		}
 	}
 
 	/**
@@ -169,7 +179,7 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 * @generated
 	 */
 	public boolean isSetQualifiers() {
-		return qualifiers != null && ((InternalEList.Unsettable<?>)qualifiers).isSet();
+		return qualifiers != null && ((InternalEList.Unsettable<?>) qualifiers).isSet();
 	}
 
 	/**
@@ -198,11 +208,11 @@ public class ENXPImpl extends STImpl implements ENXP {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.ENXP__PART_TYPE:
-				setPartType((EntityNamePartType)newValue);
+				setPartType((EntityNamePartType) newValue);
 				return;
 			case DatatypesPackage.ENXP__QUALIFIER:
 				getQualifiers().clear();
-				getQualifiers().addAll((Collection<? extends EntityNamePartQualifier>)newValue);
+				getQualifiers().addAll((Collection<? extends EntityNamePartQualifier>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -249,15 +259,21 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (partType: ");
-		if (partTypeESet) result.append(partType); else result.append("<unset>");
+		if (partTypeESet) {
+			result.append(partType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", qualifier: ");
 		result.append(qualifiers);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ENXPImpl
+} // ENXPImpl

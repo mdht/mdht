@@ -82,11 +82,7 @@ public enum ActClinicalDocument implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActClinicalDocument[] VALUES_ARRAY =
-		new ActClinicalDocument[] {
-			CDALVLONE,
-			DOCCLIN,
-		};
+	private static final ActClinicalDocument[] VALUES_ARRAY = new ActClinicalDocument[] { CDALVLONE, DOCCLIN, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Clinical Document</b></em>' enumerators.
@@ -136,8 +132,10 @@ public enum ActClinicalDocument implements Enumerator {
 	 */
 	public static ActClinicalDocument get(int value) {
 		switch (value) {
-			case CDALVLONE_VALUE: return CDALVLONE;
-			case DOCCLIN_VALUE: return DOCCLIN;
+			case CDALVLONE_VALUE:
+				return CDALVLONE;
+			case DOCCLIN_VALUE:
+				return DOCCLIN;
 		}
 		return null;
 	}
@@ -181,7 +179,7 @@ public enum ActClinicalDocument implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -190,7 +188,7 @@ public enum ActClinicalDocument implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -199,7 +197,7 @@ public enum ActClinicalDocument implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -212,5 +210,5 @@ public enum ActClinicalDocument implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ActClinicalDocument
+
+} // ActClinicalDocument

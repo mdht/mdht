@@ -82,11 +82,8 @@ public enum x_ActClassDocumentEntryOrganizer implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_ActClassDocumentEntryOrganizer[] VALUES_ARRAY =
-		new x_ActClassDocumentEntryOrganizer[] {
-			BATTERY,
-			CLUSTER,
-		};
+	private static final x_ActClassDocumentEntryOrganizer[] VALUES_ARRAY = new x_ActClassDocumentEntryOrganizer[] {
+			BATTERY, CLUSTER, };
 
 	/**
 	 * A public read-only list of all the '<em><b>xAct Class Document Entry Organizer</b></em>' enumerators.
@@ -136,8 +133,10 @@ public enum x_ActClassDocumentEntryOrganizer implements Enumerator {
 	 */
 	public static x_ActClassDocumentEntryOrganizer get(int value) {
 		switch (value) {
-			case BATTERY_VALUE: return BATTERY;
-			case CLUSTER_VALUE: return CLUSTER;
+			case BATTERY_VALUE:
+				return BATTERY;
+			case CLUSTER_VALUE:
+				return CLUSTER;
 		}
 		return null;
 	}
@@ -181,7 +180,7 @@ public enum x_ActClassDocumentEntryOrganizer implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -190,7 +189,7 @@ public enum x_ActClassDocumentEntryOrganizer implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -199,7 +198,7 @@ public enum x_ActClassDocumentEntryOrganizer implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -212,5 +211,5 @@ public enum x_ActClassDocumentEntryOrganizer implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //x_ActClassDocumentEntryOrganizer
+
+} // x_ActClassDocumentEntryOrganizer

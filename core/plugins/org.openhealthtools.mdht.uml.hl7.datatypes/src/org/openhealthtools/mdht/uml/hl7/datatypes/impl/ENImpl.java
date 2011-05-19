@@ -97,7 +97,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 */
 	public EList<EntityNameUse> getUses() {
 		if (uses == null) {
-			uses = new EDataTypeUniqueEList.Unsettable<EntityNameUse>(EntityNameUse.class, this, DatatypesPackage.EN__USE);
+			uses = new EDataTypeUniqueEList.Unsettable<EntityNameUse>(
+				EntityNameUse.class, this, DatatypesPackage.EN__USE);
 		}
 		return uses;
 	}
@@ -108,7 +109,9 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public void unsetUses() {
-		if (uses != null) ((InternalEList.Unsettable<?>)uses).unset();
+		if (uses != null) {
+			((InternalEList.Unsettable<?>) uses).unset();
+		}
 	}
 
 	/**
@@ -117,7 +120,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public boolean isSetUses() {
-		return uses != null && ((InternalEList.Unsettable<?>)uses).isSet();
+		return uses != null && ((InternalEList.Unsettable<?>) uses).isSet();
 	}
 
 	/**
@@ -126,7 +129,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public IVL_TS getValidTime() {
-		return (IVL_TS)getMixed().get(DatatypesPackage.Literals.EN__VALID_TIME, true);
+		return (IVL_TS) getMixed().get(DatatypesPackage.Literals.EN__VALID_TIME, true);
 	}
 
 	/**
@@ -135,7 +138,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public NotificationChain basicSetValidTime(IVL_TS newValidTime, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(DatatypesPackage.Literals.EN__VALID_TIME, newValidTime, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(DatatypesPackage.Literals.EN__VALID_TIME, newValidTime, msgs);
 	}
 
 	/**
@@ -144,7 +147,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public void setValidTime(IVL_TS newValidTime) {
-		((FeatureMap.Internal)getMixed()).set(DatatypesPackage.Literals.EN__VALID_TIME, newValidTime);
+		((FeatureMap.Internal) getMixed()).set(DatatypesPackage.Literals.EN__VALID_TIME, newValidTime);
 	}
 
 	/**
@@ -198,7 +201,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * @generated
 	 */
 	public FeatureMap getParts() {
-		return (FeatureMap)getMixed().<FeatureMap.Entry>list(DatatypesPackage.Literals.EN__PART);
+		return (FeatureMap) getMixed().<FeatureMap.Entry> list(DatatypesPackage.Literals.EN__PART);
 	}
 
 	/**
@@ -330,7 +333,7 @@ public class ENImpl extends ANYImpl implements EN {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DatatypesPackage.EN__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -354,15 +357,19 @@ public class ENImpl extends ANYImpl implements EN {
 			case DatatypesPackage.EN__SUFFIX:
 				return getSuffixes();
 			case DatatypesPackage.EN__PART:
-				if (coreType) return getParts();
-				return ((FeatureMap.Internal)getParts()).getWrapper();
+				if (coreType) {
+					return getParts();
+				}
+				return ((FeatureMap.Internal) getParts()).getWrapper();
 			case DatatypesPackage.EN__VALID_TIME:
 				return getValidTime();
 			case DatatypesPackage.EN__USE:
 				return getUses();
 			case DatatypesPackage.EN__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
+				if (coreType) {
+					return getMixed();
+				}
+				return ((FeatureMap.Internal) getMixed()).getWrapper();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -378,36 +385,36 @@ public class ENImpl extends ANYImpl implements EN {
 		switch (featureID) {
 			case DatatypesPackage.EN__DELIMITER:
 				getDelimiters().clear();
-				getDelimiters().addAll((Collection<? extends ENXP>)newValue);
+				getDelimiters().addAll((Collection<? extends ENXP>) newValue);
 				return;
 			case DatatypesPackage.EN__FAMILY:
 				getFamilies().clear();
-				getFamilies().addAll((Collection<? extends ENXP>)newValue);
+				getFamilies().addAll((Collection<? extends ENXP>) newValue);
 				return;
 			case DatatypesPackage.EN__GIVEN:
 				getGivens().clear();
-				getGivens().addAll((Collection<? extends ENXP>)newValue);
+				getGivens().addAll((Collection<? extends ENXP>) newValue);
 				return;
 			case DatatypesPackage.EN__PREFIX:
 				getPrefixes().clear();
-				getPrefixes().addAll((Collection<? extends ENXP>)newValue);
+				getPrefixes().addAll((Collection<? extends ENXP>) newValue);
 				return;
 			case DatatypesPackage.EN__SUFFIX:
 				getSuffixes().clear();
-				getSuffixes().addAll((Collection<? extends ENXP>)newValue);
+				getSuffixes().addAll((Collection<? extends ENXP>) newValue);
 				return;
 			case DatatypesPackage.EN__PART:
-				((FeatureMap.Internal)getParts()).set(newValue);
+				((FeatureMap.Internal) getParts()).set(newValue);
 				return;
 			case DatatypesPackage.EN__VALID_TIME:
-				setValidTime((IVL_TS)newValue);
+				setValidTime((IVL_TS) newValue);
 				return;
 			case DatatypesPackage.EN__USE:
 				getUses().clear();
-				getUses().addAll((Collection<? extends EntityNameUse>)newValue);
+				getUses().addAll((Collection<? extends EntityNameUse>) newValue);
 				return;
 			case DatatypesPackage.EN__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
+				((FeatureMap.Internal) getMixed()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -440,7 +447,7 @@ public class ENImpl extends ANYImpl implements EN {
 				getParts().clear();
 				return;
 			case DatatypesPackage.EN__VALID_TIME:
-				setValidTime((IVL_TS)null);
+				setValidTime((IVL_TS) null);
 				return;
 			case DatatypesPackage.EN__USE:
 				unsetUses();
@@ -489,7 +496,9 @@ public class ENImpl extends ANYImpl implements EN {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (use: ");
@@ -500,4 +509,4 @@ public class ENImpl extends ANYImpl implements EN {
 		return result.toString();
 	}
 
-} //ENImpl
+} // ENImpl

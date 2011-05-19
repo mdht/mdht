@@ -57,26 +57,26 @@ public class CDAResourceFactoryImpl extends ResourceFactoryImpl implements CDARe
 
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_USE_LEXICAL_HANDLER, Boolean.TRUE);
 		result.setEncoding(CDAResource.DEFAULT_ENCODING);
-		result.getDefaultSaveOptions().put(XMLResource.OPTION_SAVE_TYPE_INFORMATION,
-			new XMLSave.XMLTypeInfo() {
-				public boolean shouldSaveType(EClass objectType, EClassifier featureType, EStructuralFeature feature) {
-					return objectType != featureType && objectType.getEPackage().getNsURI().equals(DatatypesPackage.eNS_URI);
-				}
-				public boolean shouldSaveType(EClass objectType, EClass featureType, EStructuralFeature feature) {
-					return false;
-				}
+		result.getDefaultSaveOptions().put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, new XMLSave.XMLTypeInfo() {
+			public boolean shouldSaveType(EClass objectType, EClassifier featureType, EStructuralFeature feature) {
+				return objectType != featureType &&
+						objectType.getEPackage().getNsURI().equals(DatatypesPackage.eNS_URI);
 			}
-		);
-			
-//		result.getDefaultSaveOptions().put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT, Boolean.TRUE);
 
-//		result.getDefaultLoadOptions().put(XMLResource.OPTION_LAX_FEATURE_PROCESSING, Boolean.TRUE);
+			public boolean shouldSaveType(EClass objectType, EClass featureType, EStructuralFeature feature) {
+				return false;
+			}
+		});
+
+		// result.getDefaultSaveOptions().put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT, Boolean.TRUE);
+
+		// result.getDefaultLoadOptions().put(XMLResource.OPTION_LAX_FEATURE_PROCESSING, Boolean.TRUE);
 
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-			
-//		result.getDefaultLoadOptions().put(XMLResource.OPTION_RESOURCE_HANDLER, new CDAResourceHandler());
-		
+
+		// result.getDefaultLoadOptions().put(XMLResource.OPTION_RESOURCE_HANDLER, new CDAResourceHandler());
+
 		return result;
 	}
 
-} //CDAResourceFactoryImpl
+} // CDAResourceFactoryImpl

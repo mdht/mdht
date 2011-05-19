@@ -641,7 +641,6 @@ public interface VocabPackage extends EPackage {
 	 */
 	int XSERVICE_EVENT_PERFORMER = 57;
 
-
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.vocab.TimingEvent <em>Timing Event</em>}' enum.
 	 * <!-- begin-user-doc -->
@@ -651,7 +650,6 @@ public interface VocabPackage extends EPackage {
 	 * @generated
 	 */
 	int TIMING_EVENT = 58;
-
 
 	/**
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.hl7.vocab.ActClass <em>Act Class</em>}'.
@@ -1252,4 +1250,4 @@ public interface VocabPackage extends EPackage {
 	 */
 	VocabFactory getVocabFactory();
 
-} //VocabPackage
+} // VocabPackage

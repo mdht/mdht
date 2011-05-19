@@ -78,26 +78,27 @@ public class AuthenticatorOperations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateTypeCode(Authenticator authenticator, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateTypeCode(Authenticator authenticator, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.AUTHENTICATOR);
 			try {
 				VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(authenticator)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.AUTHENTICATOR__TYPE_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateTypeCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(authenticator, context) }),
-						 new Object [] { authenticator }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.AUTHENTICATOR__TYPE_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateTypeCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(authenticator, context) }),
+					new Object[] { authenticator }));
 			}
 			return false;
 		}

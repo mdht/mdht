@@ -82,11 +82,7 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final RoleClassManufacturedProduct[] VALUES_ARRAY =
-		new RoleClassManufacturedProduct[] {
-			MANU,
-			THER,
-		};
+	private static final RoleClassManufacturedProduct[] VALUES_ARRAY = new RoleClassManufacturedProduct[] { MANU, THER, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Role Class Manufactured Product</b></em>' enumerators.
@@ -136,8 +132,10 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	 */
 	public static RoleClassManufacturedProduct get(int value) {
 		switch (value) {
-			case MANU_VALUE: return MANU;
-			case THER_VALUE: return THER;
+			case MANU_VALUE:
+				return MANU;
+			case THER_VALUE:
+				return THER;
 		}
 		return null;
 	}
@@ -181,7 +179,7 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -190,7 +188,7 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -199,7 +197,7 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -212,5 +210,5 @@ public enum RoleClassManufacturedProduct implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //RoleClassManufacturedProduct
+
+} // RoleClassManufacturedProduct

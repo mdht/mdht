@@ -66,7 +66,7 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getClassCode(Role role) {
+	public static Enumerator getClassCode(Role role) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -77,7 +77,7 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Entity getPlayer(Role role) {
+	public static Entity getPlayer(Role role) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -88,7 +88,7 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Entity getScoper(Role role) {
+	public static Entity getScoper(Role role) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -99,7 +99,7 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<Participation> getParticipations(Role role) {
+	public static EList<Participation> getParticipations(Role role) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -110,7 +110,7 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<RoleLink> getOutboundLinks(Role role) {
+	public static EList<RoleLink> getOutboundLinks(Role role) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -121,7 +121,7 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<RoleLink> getInboundLinks(Role role) {
+	public static EList<RoleLink> getInboundLinks(Role role) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -136,6 +136,7 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * @ordered
 	 */
 	protected static final String IS_CLASS_CODE_DEFINED__EOCL_EXP = "self.isDefined('classCode')";
+
 	/**
 	 * The cached OCL query for the '{@link #isClassCodeDefined(Role) <em>Is Class Code Defined</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -155,14 +156,13 @@ public class RoleOperations extends InfrastructureRootOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean isClassCodeDefined(Role role) {
+	public static boolean isClassCodeDefined(Role role) {
 		if (IS_CLASS_CODE_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(RIMPackage.Literals.ROLE, RIMPackage.Literals.ROLE.getEAllOperations().get(14));
 			try {
 				IS_CLASS_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_CLASS_CODE_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}

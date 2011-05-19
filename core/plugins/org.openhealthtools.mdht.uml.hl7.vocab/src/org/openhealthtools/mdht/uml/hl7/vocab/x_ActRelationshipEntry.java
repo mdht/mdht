@@ -82,11 +82,7 @@ public enum x_ActRelationshipEntry implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_ActRelationshipEntry[] VALUES_ARRAY =
-		new x_ActRelationshipEntry[] {
-			COMP,
-			DRIV,
-		};
+	private static final x_ActRelationshipEntry[] VALUES_ARRAY = new x_ActRelationshipEntry[] { COMP, DRIV, };
 
 	/**
 	 * A public read-only list of all the '<em><b>xAct Relationship Entry</b></em>' enumerators.
@@ -136,8 +132,10 @@ public enum x_ActRelationshipEntry implements Enumerator {
 	 */
 	public static x_ActRelationshipEntry get(int value) {
 		switch (value) {
-			case COMP_VALUE: return COMP;
-			case DRIV_VALUE: return DRIV;
+			case COMP_VALUE:
+				return COMP;
+			case DRIV_VALUE:
+				return DRIV;
 		}
 		return null;
 	}
@@ -181,7 +179,7 @@ public enum x_ActRelationshipEntry implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -190,7 +188,7 @@ public enum x_ActRelationshipEntry implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -199,7 +197,7 @@ public enum x_ActRelationshipEntry implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -212,5 +210,5 @@ public enum x_ActRelationshipEntry implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //x_ActRelationshipEntry
+
+} // x_ActRelationshipEntry

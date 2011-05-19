@@ -62,7 +62,7 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getTypeCode(Participation participation) {
+	public static Enumerator getTypeCode(Participation participation) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -73,7 +73,7 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Act getAct(Participation participation) {
+	public static Act getAct(Participation participation) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -84,7 +84,7 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Role getRole(Participation participation) {
+	public static Role getRole(Participation participation) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -99,6 +99,7 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 	 * @ordered
 	 */
 	protected static final String IS_TYPE_CODE_DEFINED__EOCL_EXP = "self.isDefined('typeCode')";
+
 	/**
 	 * The cached OCL query for the '{@link #isTypeCodeDefined(Participation) <em>Is Type Code Defined</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -118,14 +119,14 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean isTypeCodeDefined(Participation participation) {
+	public static boolean isTypeCodeDefined(Participation participation) {
 		if (IS_TYPE_CODE_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(RIMPackage.Literals.PARTICIPATION, RIMPackage.Literals.PARTICIPATION.getEAllOperations().get(11));
+			helper.setOperationContext(
+				RIMPackage.Literals.PARTICIPATION, RIMPackage.Literals.PARTICIPATION.getEAllOperations().get(11));
 			try {
 				IS_TYPE_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_TYPE_CODE_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
@@ -142,6 +143,7 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 	 * @ordered
 	 */
 	protected static final String IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_EXP = "self.isDefined('contextControlCode')";
+
 	/**
 	 * The cached OCL query for the '{@link #isContextControlCodeDefined(Participation) <em>Is Context Control Code Defined</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -161,14 +163,14 @@ public class ParticipationOperations extends InfrastructureRootOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean isContextControlCodeDefined(Participation participation) {
+	public static boolean isContextControlCodeDefined(Participation participation) {
 		if (IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(RIMPackage.Literals.PARTICIPATION, RIMPackage.Literals.PARTICIPATION.getEAllOperations().get(12));
+			helper.setOperationContext(
+				RIMPackage.Literals.PARTICIPATION, RIMPackage.Literals.PARTICIPATION.getEAllOperations().get(12));
 			try {
 				IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_CONTEXT_CONTROL_CODE_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}

@@ -38,9 +38,9 @@ public class CDAResourceImpl extends XMLResourceImpl implements CDAResource {
 	protected XMLLoad createXMLLoad() {
 		return new CDALoadImpl(createXMLHelper());
 	}
-	
+
 	@Override
 	protected XMLSave createXMLSave() {
 		return new CDASaveImpl(createXMLHelper());
 	}
-} //CDAResourceImpl
+} // CDAResourceImpl

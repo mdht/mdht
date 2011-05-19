@@ -1232,57 +1232,10 @@ public enum ParticipationType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ParticipationType[] VALUES_ARRAY =
-		new ParticipationType[] {
-			ADM,
-			ATND,
-			AUT,
-			AUTHEN,
-			BBY,
-			BEN,
-			CALLBCK,
-			CON,
-			COV,
-			CSM,
-			CST,
-			DEV,
-			DIR,
-			DIS,
-			DIST,
-			DON,
-			DST,
-			ELOC,
-			ENT,
-			ESC,
-			HLD,
-			IND,
-			INF,
-			IRCP,
-			LA,
-			LOC,
-			NOT,
-			NRD,
-			ORG,
-			PPRF,
-			PRCP,
-			PRD,
-			PRF,
-			RCT,
-			RCV,
-			RDV,
-			REF,
-			REFB,
-			REFT,
-			RESP,
-			RML,
-			SBJ,
-			SPC,
-			SPRF,
-			TRC,
-			VIA,
-			VRF,
-			WIT,
-		};
+	private static final ParticipationType[] VALUES_ARRAY = new ParticipationType[] {
+			ADM, ATND, AUT, AUTHEN, BBY, BEN, CALLBCK, CON, COV, CSM, CST, DEV, DIR, DIS, DIST, DON, DST, ELOC, ENT,
+			ESC, HLD, IND, INF, IRCP, LA, LOC, NOT, NRD, ORG, PPRF, PRCP, PRD, PRF, RCT, RCV, RDV, REF, REFB, REFT,
+			RESP, RML, SBJ, SPC, SPRF, TRC, VIA, VRF, WIT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Participation Type</b></em>' enumerators.
@@ -1332,54 +1285,102 @@ public enum ParticipationType implements Enumerator {
 	 */
 	public static ParticipationType get(int value) {
 		switch (value) {
-			case ADM_VALUE: return ADM;
-			case ATND_VALUE: return ATND;
-			case AUT_VALUE: return AUT;
-			case AUTHEN_VALUE: return AUTHEN;
-			case BBY_VALUE: return BBY;
-			case BEN_VALUE: return BEN;
-			case CALLBCK_VALUE: return CALLBCK;
-			case CON_VALUE: return CON;
-			case COV_VALUE: return COV;
-			case CSM_VALUE: return CSM;
-			case CST_VALUE: return CST;
-			case DEV_VALUE: return DEV;
-			case DIR_VALUE: return DIR;
-			case DIS_VALUE: return DIS;
-			case DIST_VALUE: return DIST;
-			case DON_VALUE: return DON;
-			case DST_VALUE: return DST;
-			case ELOC_VALUE: return ELOC;
-			case ENT_VALUE: return ENT;
-			case ESC_VALUE: return ESC;
-			case HLD_VALUE: return HLD;
-			case IND_VALUE: return IND;
-			case INF_VALUE: return INF;
-			case IRCP_VALUE: return IRCP;
-			case LA_VALUE: return LA;
-			case LOC_VALUE: return LOC;
-			case NOT_VALUE: return NOT;
-			case NRD_VALUE: return NRD;
-			case ORG_VALUE: return ORG;
-			case PPRF_VALUE: return PPRF;
-			case PRCP_VALUE: return PRCP;
-			case PRD_VALUE: return PRD;
-			case PRF_VALUE: return PRF;
-			case RCT_VALUE: return RCT;
-			case RCV_VALUE: return RCV;
-			case RDV_VALUE: return RDV;
-			case REF_VALUE: return REF;
-			case REFB_VALUE: return REFB;
-			case REFT_VALUE: return REFT;
-			case RESP_VALUE: return RESP;
-			case RML_VALUE: return RML;
-			case SBJ_VALUE: return SBJ;
-			case SPC_VALUE: return SPC;
-			case SPRF_VALUE: return SPRF;
-			case TRC_VALUE: return TRC;
-			case VIA_VALUE: return VIA;
-			case VRF_VALUE: return VRF;
-			case WIT_VALUE: return WIT;
+			case ADM_VALUE:
+				return ADM;
+			case ATND_VALUE:
+				return ATND;
+			case AUT_VALUE:
+				return AUT;
+			case AUTHEN_VALUE:
+				return AUTHEN;
+			case BBY_VALUE:
+				return BBY;
+			case BEN_VALUE:
+				return BEN;
+			case CALLBCK_VALUE:
+				return CALLBCK;
+			case CON_VALUE:
+				return CON;
+			case COV_VALUE:
+				return COV;
+			case CSM_VALUE:
+				return CSM;
+			case CST_VALUE:
+				return CST;
+			case DEV_VALUE:
+				return DEV;
+			case DIR_VALUE:
+				return DIR;
+			case DIS_VALUE:
+				return DIS;
+			case DIST_VALUE:
+				return DIST;
+			case DON_VALUE:
+				return DON;
+			case DST_VALUE:
+				return DST;
+			case ELOC_VALUE:
+				return ELOC;
+			case ENT_VALUE:
+				return ENT;
+			case ESC_VALUE:
+				return ESC;
+			case HLD_VALUE:
+				return HLD;
+			case IND_VALUE:
+				return IND;
+			case INF_VALUE:
+				return INF;
+			case IRCP_VALUE:
+				return IRCP;
+			case LA_VALUE:
+				return LA;
+			case LOC_VALUE:
+				return LOC;
+			case NOT_VALUE:
+				return NOT;
+			case NRD_VALUE:
+				return NRD;
+			case ORG_VALUE:
+				return ORG;
+			case PPRF_VALUE:
+				return PPRF;
+			case PRCP_VALUE:
+				return PRCP;
+			case PRD_VALUE:
+				return PRD;
+			case PRF_VALUE:
+				return PRF;
+			case RCT_VALUE:
+				return RCT;
+			case RCV_VALUE:
+				return RCV;
+			case RDV_VALUE:
+				return RDV;
+			case REF_VALUE:
+				return REF;
+			case REFB_VALUE:
+				return REFB;
+			case REFT_VALUE:
+				return REFT;
+			case RESP_VALUE:
+				return RESP;
+			case RML_VALUE:
+				return RML;
+			case SBJ_VALUE:
+				return SBJ;
+			case SPC_VALUE:
+				return SPC;
+			case SPRF_VALUE:
+				return SPRF;
+			case TRC_VALUE:
+				return TRC;
+			case VIA_VALUE:
+				return VIA;
+			case VRF_VALUE:
+				return VRF;
+			case WIT_VALUE:
+				return WIT;
 		}
 		return null;
 	}
@@ -1423,7 +1424,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -1432,7 +1433,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -1441,7 +1442,7 @@ public enum ParticipationType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -1454,5 +1455,5 @@ public enum ParticipationType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ParticipationType
+
+} // ParticipationType

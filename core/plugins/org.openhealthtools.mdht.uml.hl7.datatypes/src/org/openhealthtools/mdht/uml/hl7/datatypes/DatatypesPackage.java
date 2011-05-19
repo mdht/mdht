@@ -3603,7 +3603,6 @@ public interface DatatypesPackage extends EPackage {
 	 */
 	int BINARY_DATA_ENCODING = 45;
 
-
 	/**
 	 * The meta object id for the '<em>cs Type</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -3624,7 +3623,6 @@ public interface DatatypesPackage extends EPackage {
 	 */
 	int UID = 48;
 
-
 	/**
 	 * The meta object id for the '<em>st Type</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -3635,7 +3633,6 @@ public interface DatatypesPackage extends EPackage {
 	 */
 	int ST_TYPE = 49;
 
-
 	/**
 	 * The meta object id for the '<em>ts Type</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -3645,7 +3642,6 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 */
 	int TS_TYPE = 46;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY <em>ANY</em>}'.
@@ -6864,4 +6860,4 @@ public interface DatatypesPackage extends EPackage {
 
 	}
 
-} //DatatypesPackage
+} // DatatypesPackage

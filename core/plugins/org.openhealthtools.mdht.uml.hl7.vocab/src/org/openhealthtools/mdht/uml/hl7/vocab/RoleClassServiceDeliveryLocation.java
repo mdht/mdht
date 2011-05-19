@@ -107,12 +107,8 @@ public enum RoleClassServiceDeliveryLocation implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final RoleClassServiceDeliveryLocation[] VALUES_ARRAY =
-		new RoleClassServiceDeliveryLocation[] {
-			DSDLOC,
-			ISDLOC,
-			SDLOC,
-		};
+	private static final RoleClassServiceDeliveryLocation[] VALUES_ARRAY = new RoleClassServiceDeliveryLocation[] {
+			DSDLOC, ISDLOC, SDLOC, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Role Class Service Delivery Location</b></em>' enumerators.
@@ -162,9 +158,12 @@ public enum RoleClassServiceDeliveryLocation implements Enumerator {
 	 */
 	public static RoleClassServiceDeliveryLocation get(int value) {
 		switch (value) {
-			case DSDLOC_VALUE: return DSDLOC;
-			case ISDLOC_VALUE: return ISDLOC;
-			case SDLOC_VALUE: return SDLOC;
+			case DSDLOC_VALUE:
+				return DSDLOC;
+			case ISDLOC_VALUE:
+				return ISDLOC;
+			case SDLOC_VALUE:
+				return SDLOC;
 		}
 		return null;
 	}
@@ -208,7 +207,7 @@ public enum RoleClassServiceDeliveryLocation implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -217,7 +216,7 @@ public enum RoleClassServiceDeliveryLocation implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -226,7 +225,7 @@ public enum RoleClassServiceDeliveryLocation implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -239,5 +238,5 @@ public enum RoleClassServiceDeliveryLocation implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //RoleClassServiceDeliveryLocation
+
+} // RoleClassServiceDeliveryLocation

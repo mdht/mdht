@@ -86,26 +86,26 @@ public class CROperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCR(CR cr, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateCR(CR cr, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_CR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.CR);
 			try {
 				VALIDATE_CR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(cr)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.CR__CR,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCR", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cr, context) }),
-						 new Object [] { cr }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.CR__CR,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic", new Object[] {
+								"validateCR", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cr, context) }),
+					new Object[] { cr }));
 			}
 			return false;
 		}

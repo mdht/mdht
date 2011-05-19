@@ -275,8 +275,9 @@ public class ClinicalStatementOperations extends ActOperations {
 	 */
 	public static EList<ClinicalStatement> getEntryRelationshipTargets(ClinicalStatement clinicalStatement,
 			x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
-		if (targetClass != null && !(targetClass instanceof EClass))
+		if (targetClass != null && !(targetClass instanceof EClass)) {
 			throw new IllegalArgumentException("targetClass must be an EClass");
+		}
 
 		return CDAUtil.getEntryRelationshipTargets(clinicalStatement, typeCode, (EClass) targetClass);
 	}

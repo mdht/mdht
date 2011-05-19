@@ -56,4 +56,4 @@ public class CEImpl extends CDImpl implements CE {
 		return CEOperations.validateQualifier(this, diagnostics, context);
 	}
 
-} //CEImpl
+} // CEImpl

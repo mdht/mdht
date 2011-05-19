@@ -82,11 +82,7 @@ public enum BinaryDataEncoding implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BinaryDataEncoding[] VALUES_ARRAY =
-		new BinaryDataEncoding[] {
-			B64,
-			TXT,
-		};
+	private static final BinaryDataEncoding[] VALUES_ARRAY = new BinaryDataEncoding[] { B64, TXT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binary Data Encoding</b></em>' enumerators.
@@ -136,8 +132,10 @@ public enum BinaryDataEncoding implements Enumerator {
 	 */
 	public static BinaryDataEncoding get(int value) {
 		switch (value) {
-			case B64_VALUE: return B64;
-			case TXT_VALUE: return TXT;
+			case B64_VALUE:
+				return B64;
+			case TXT_VALUE:
+				return TXT;
 		}
 		return null;
 	}
@@ -181,7 +179,7 @@ public enum BinaryDataEncoding implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -190,7 +188,7 @@ public enum BinaryDataEncoding implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -199,7 +197,7 @@ public enum BinaryDataEncoding implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -212,5 +210,5 @@ public enum BinaryDataEncoding implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //BinaryDataEncoding
+
+} // BinaryDataEncoding

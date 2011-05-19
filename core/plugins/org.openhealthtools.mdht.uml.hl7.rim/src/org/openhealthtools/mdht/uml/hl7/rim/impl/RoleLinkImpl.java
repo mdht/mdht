@@ -82,4 +82,4 @@ public abstract class RoleLinkImpl extends InfrastructureRootImpl implements Rol
 		return RoleLinkOperations.isTypeCodeDefined(this);
 	}
 
-} //RoleLinkImpl
+} // RoleLinkImpl

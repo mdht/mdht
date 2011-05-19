@@ -213,8 +213,13 @@ public class CDImpl extends ANYImpl implements CD {
 		ED oldOriginalText = originalText;
 		originalText = newOriginalText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__ORIGINAL_TEXT, oldOriginalText, newOriginalText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__ORIGINAL_TEXT, oldOriginalText, newOriginalText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -227,15 +232,22 @@ public class CDImpl extends ANYImpl implements CD {
 	public void setOriginalText(ED newOriginalText) {
 		if (newOriginalText != originalText) {
 			NotificationChain msgs = null;
-			if (originalText != null)
-				msgs = ((InternalEObject)originalText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
-			if (newOriginalText != null)
-				msgs = ((InternalEObject)newOriginalText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
+			if (originalText != null) {
+				msgs = ((InternalEObject) originalText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
+			}
+			if (newOriginalText != null) {
+				msgs = ((InternalEObject) newOriginalText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.CD__ORIGINAL_TEXT, null, msgs);
+			}
 			msgs = basicSetOriginalText(newOriginalText, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__ORIGINAL_TEXT, newOriginalText, newOriginalText));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__ORIGINAL_TEXT, newOriginalText, newOriginalText));
 	}
 
 	/**
@@ -279,8 +291,9 @@ public class CDImpl extends ANYImpl implements CD {
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -300,8 +313,10 @@ public class CDImpl extends ANYImpl implements CD {
 	public void setCodeSystem(String newCodeSystem) {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
 	}
 
 	/**
@@ -321,8 +336,10 @@ public class CDImpl extends ANYImpl implements CD {
 	public void setCodeSystemName(String newCodeSystemName) {
 		String oldCodeSystemName = codeSystemName;
 		codeSystemName = newCodeSystemName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+		}
 	}
 
 	/**
@@ -342,8 +359,11 @@ public class CDImpl extends ANYImpl implements CD {
 	public void setCodeSystemVersion(String newCodeSystemVersion) {
 		String oldCodeSystemVersion = codeSystemVersion;
 		codeSystemVersion = newCodeSystemVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_VERSION, oldCodeSystemVersion, codeSystemVersion));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__CODE_SYSTEM_VERSION, oldCodeSystemVersion,
+				codeSystemVersion));
+		}
 	}
 
 	/**
@@ -363,8 +383,10 @@ public class CDImpl extends ANYImpl implements CD {
 	public void setDisplayName(String newDisplayName) {
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CD__DISPLAY_NAME, oldDisplayName, displayName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CD__DISPLAY_NAME, oldDisplayName, displayName));
+		}
 	}
 
 	/**
@@ -378,9 +400,9 @@ public class CDImpl extends ANYImpl implements CD {
 			case DatatypesPackage.CD__ORIGINAL_TEXT:
 				return basicSetOriginalText(null, msgs);
 			case DatatypesPackage.CD__QUALIFIER:
-				return ((InternalEList<?>)getQualifiers()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getQualifiers()).basicRemove(otherEnd, msgs);
 			case DatatypesPackage.CD__TRANSLATION:
-				return ((InternalEList<?>)getTranslations()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTranslations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -423,30 +445,30 @@ public class CDImpl extends ANYImpl implements CD {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.CD__ORIGINAL_TEXT:
-				setOriginalText((ED)newValue);
+				setOriginalText((ED) newValue);
 				return;
 			case DatatypesPackage.CD__QUALIFIER:
 				getQualifiers().clear();
-				getQualifiers().addAll((Collection<? extends CR>)newValue);
+				getQualifiers().addAll((Collection<? extends CR>) newValue);
 				return;
 			case DatatypesPackage.CD__TRANSLATION:
 				getTranslations().clear();
-				getTranslations().addAll((Collection<? extends CD>)newValue);
+				getTranslations().addAll((Collection<? extends CD>) newValue);
 				return;
 			case DatatypesPackage.CD__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 			case DatatypesPackage.CD__CODE_SYSTEM:
-				setCodeSystem((String)newValue);
+				setCodeSystem((String) newValue);
 				return;
 			case DatatypesPackage.CD__CODE_SYSTEM_NAME:
-				setCodeSystemName((String)newValue);
+				setCodeSystemName((String) newValue);
 				return;
 			case DatatypesPackage.CD__CODE_SYSTEM_VERSION:
-				setCodeSystemVersion((String)newValue);
+				setCodeSystemVersion((String) newValue);
 				return;
 			case DatatypesPackage.CD__DISPLAY_NAME:
-				setDisplayName((String)newValue);
+				setDisplayName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -461,7 +483,7 @@ public class CDImpl extends ANYImpl implements CD {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.CD__ORIGINAL_TEXT:
-				setOriginalText((ED)null);
+				setOriginalText((ED) null);
 				return;
 			case DatatypesPackage.CD__QUALIFIER:
 				getQualifiers().clear();
@@ -503,15 +525,25 @@ public class CDImpl extends ANYImpl implements CD {
 			case DatatypesPackage.CD__TRANSLATION:
 				return translations != null && !translations.isEmpty();
 			case DatatypesPackage.CD__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 			case DatatypesPackage.CD__CODE_SYSTEM:
-				return CODE_SYSTEM_EDEFAULT == null ? codeSystem != null : !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
+				return CODE_SYSTEM_EDEFAULT == null
+						? codeSystem != null
+						: !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
 			case DatatypesPackage.CD__CODE_SYSTEM_NAME:
-				return CODE_SYSTEM_NAME_EDEFAULT == null ? codeSystemName != null : !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
+				return CODE_SYSTEM_NAME_EDEFAULT == null
+						? codeSystemName != null
+						: !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
 			case DatatypesPackage.CD__CODE_SYSTEM_VERSION:
-				return CODE_SYSTEM_VERSION_EDEFAULT == null ? codeSystemVersion != null : !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
+				return CODE_SYSTEM_VERSION_EDEFAULT == null
+						? codeSystemVersion != null
+						: !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
 			case DatatypesPackage.CD__DISPLAY_NAME:
-				return DISPLAY_NAME_EDEFAULT == null ? displayName != null : !DISPLAY_NAME_EDEFAULT.equals(displayName);
+				return DISPLAY_NAME_EDEFAULT == null
+						? displayName != null
+						: !DISPLAY_NAME_EDEFAULT.equals(displayName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -523,7 +555,9 @@ public class CDImpl extends ANYImpl implements CD {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
@@ -540,4 +574,4 @@ public class CDImpl extends ANYImpl implements CD {
 		return result.toString();
 	}
 
-} //CDImpl
+} // CDImpl

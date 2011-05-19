@@ -488,10 +488,14 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 * @generated
 	 */
 	public static VocabPackage init() {
-		if (isInited) return (VocabPackage)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI);
+		if (isInited) {
+			return (VocabPackage) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		VocabPackageImpl theVocabPackage = (VocabPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof VocabPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new VocabPackageImpl());
+		VocabPackageImpl theVocabPackage = (VocabPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof VocabPackageImpl
+				? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new VocabPackageImpl());
 
 		isInited = true;
 
@@ -504,7 +508,6 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 		// Mark meta-data to indicate it can't be changed
 		theVocabPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(VocabPackage.eNS_URI, theVocabPackage);
 		return theVocabPackage;
@@ -517,7 +520,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActClass() {
 		if (actClassEEnum == null) {
-			actClassEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(0);
+			actClassEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				0);
 		}
 		return actClassEEnum;
 	}
@@ -529,7 +533,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActClinicalDocument() {
 		if (actClinicalDocumentEEnum == null) {
-			actClinicalDocumentEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(1);
+			actClinicalDocumentEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				1);
 		}
 		return actClinicalDocumentEEnum;
 	}
@@ -541,7 +546,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActClassDocument() {
 		if (actClassDocumentEEnum == null) {
-			actClassDocumentEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(2);
+			actClassDocumentEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				2);
 		}
 		return actClassDocumentEEnum;
 	}
@@ -553,7 +559,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActClassObservation() {
 		if (actClassObservationEEnum == null) {
-			actClassObservationEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(3);
+			actClassObservationEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				3);
 		}
 		return actClassObservationEEnum;
 	}
@@ -565,7 +572,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActClassRoot() {
 		if (actClassRootEEnum == null) {
-			actClassRootEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(4);
+			actClassRootEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				4);
 		}
 		return actClassRootEEnum;
 	}
@@ -577,7 +585,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActClassSupply() {
 		if (actClassSupplyEEnum == null) {
-			actClassSupplyEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(5);
+			actClassSupplyEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				5);
 		}
 		return actClassSupplyEEnum;
 	}
@@ -589,7 +598,7 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActMood() {
 		if (actMoodEEnum == null) {
-			actMoodEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(6);
+			actMoodEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(6);
 		}
 		return actMoodEEnum;
 	}
@@ -601,7 +610,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActRelationshipFulfills() {
 		if (actRelationshipFulfillsEEnum == null) {
-			actRelationshipFulfillsEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(7);
+			actRelationshipFulfillsEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				7);
 		}
 		return actRelationshipFulfillsEEnum;
 	}
@@ -613,7 +623,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActRelationshipHasComponent() {
 		if (actRelationshipHasComponentEEnum == null) {
-			actRelationshipHasComponentEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(8);
+			actRelationshipHasComponentEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				8);
 		}
 		return actRelationshipHasComponentEEnum;
 	}
@@ -625,7 +636,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getActRelationshipType() {
 		if (actRelationshipTypeEEnum == null) {
-			actRelationshipTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(9);
+			actRelationshipTypeEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				9);
 		}
 		return actRelationshipTypeEEnum;
 	}
@@ -637,7 +649,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getAddressPartType() {
 		if (addressPartTypeEEnum == null) {
-			addressPartTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(10);
+			addressPartTypeEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				10);
 		}
 		return addressPartTypeEEnum;
 	}
@@ -649,7 +662,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getCalendarCycle() {
 		if (calendarCycleEEnum == null) {
-			calendarCycleEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(11);
+			calendarCycleEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				11);
 		}
 		return calendarCycleEEnum;
 	}
@@ -661,7 +675,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getCompressionAlgorithm() {
 		if (compressionAlgorithmEEnum == null) {
-			compressionAlgorithmEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(12);
+			compressionAlgorithmEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				12);
 		}
 		return compressionAlgorithmEEnum;
 	}
@@ -673,7 +688,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getContextControl() {
 		if (contextControlEEnum == null) {
-			contextControlEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(13);
+			contextControlEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				13);
 		}
 		return contextControlEEnum;
 	}
@@ -685,7 +701,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityClass() {
 		if (entityClassEEnum == null) {
-			entityClassEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(14);
+			entityClassEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				14);
 		}
 		return entityClassEEnum;
 	}
@@ -697,7 +714,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityClassDevice() {
 		if (entityClassDeviceEEnum == null) {
-			entityClassDeviceEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(15);
+			entityClassDeviceEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				15);
 		}
 		return entityClassDeviceEEnum;
 	}
@@ -709,7 +727,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityClassManufacturedMaterial() {
 		if (entityClassManufacturedMaterialEEnum == null) {
-			entityClassManufacturedMaterialEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(16);
+			entityClassManufacturedMaterialEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				16);
 		}
 		return entityClassManufacturedMaterialEEnum;
 	}
@@ -721,7 +740,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityClassOrganization() {
 		if (entityClassOrganizationEEnum == null) {
-			entityClassOrganizationEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(17);
+			entityClassOrganizationEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				17);
 		}
 		return entityClassOrganizationEEnum;
 	}
@@ -733,7 +753,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityClassPlace() {
 		if (entityClassPlaceEEnum == null) {
-			entityClassPlaceEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(18);
+			entityClassPlaceEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				18);
 		}
 		return entityClassPlaceEEnum;
 	}
@@ -745,7 +766,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityClassRoot() {
 		if (entityClassRootEEnum == null) {
-			entityClassRootEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(19);
+			entityClassRootEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				19);
 		}
 		return entityClassRootEEnum;
 	}
@@ -757,7 +779,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityDeterminer() {
 		if (entityDeterminerEEnum == null) {
-			entityDeterminerEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(20);
+			entityDeterminerEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				20);
 		}
 		return entityDeterminerEEnum;
 	}
@@ -769,7 +792,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityDeterminerDetermined() {
 		if (entityDeterminerDeterminedEEnum == null) {
-			entityDeterminerDeterminedEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(21);
+			entityDeterminerDeterminedEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				21);
 		}
 		return entityDeterminerDeterminedEEnum;
 	}
@@ -781,7 +805,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityNamePartQualifier() {
 		if (entityNamePartQualifierEEnum == null) {
-			entityNamePartQualifierEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(22);
+			entityNamePartQualifierEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				22);
 		}
 		return entityNamePartQualifierEEnum;
 	}
@@ -793,7 +818,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityNamePartType() {
 		if (entityNamePartTypeEEnum == null) {
-			entityNamePartTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(23);
+			entityNamePartTypeEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				23);
 		}
 		return entityNamePartTypeEEnum;
 	}
@@ -805,7 +831,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getEntityNameUse() {
 		if (entityNameUseEEnum == null) {
-			entityNameUseEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(24);
+			entityNameUseEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				24);
 		}
 		return entityNameUseEEnum;
 	}
@@ -817,7 +844,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getIntegrityCheckAlgorithm() {
 		if (integrityCheckAlgorithmEEnum == null) {
-			integrityCheckAlgorithmEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(25);
+			integrityCheckAlgorithmEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				25);
 		}
 		return integrityCheckAlgorithmEEnum;
 	}
@@ -829,7 +857,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getNullFlavor() {
 		if (nullFlavorEEnum == null) {
-			nullFlavorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(26);
+			nullFlavorEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				26);
 		}
 		return nullFlavorEEnum;
 	}
@@ -841,7 +870,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getParticipationPhysicalPerformer() {
 		if (participationPhysicalPerformerEEnum == null) {
-			participationPhysicalPerformerEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(27);
+			participationPhysicalPerformerEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				27);
 		}
 		return participationPhysicalPerformerEEnum;
 	}
@@ -853,7 +883,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getParticipationTargetLocation() {
 		if (participationTargetLocationEEnum == null) {
-			participationTargetLocationEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(28);
+			participationTargetLocationEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				28);
 		}
 		return participationTargetLocationEEnum;
 	}
@@ -865,7 +896,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getParticipationTargetSubject() {
 		if (participationTargetSubjectEEnum == null) {
-			participationTargetSubjectEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(29);
+			participationTargetSubjectEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				29);
 		}
 		return participationTargetSubjectEEnum;
 	}
@@ -877,7 +909,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getParticipationType() {
 		if (participationTypeEEnum == null) {
-			participationTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(30);
+			participationTypeEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				30);
 		}
 		return participationTypeEEnum;
 	}
@@ -889,7 +922,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getPostalAddressUse() {
 		if (postalAddressUseEEnum == null) {
-			postalAddressUseEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(31);
+			postalAddressUseEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				31);
 		}
 		return postalAddressUseEEnum;
 	}
@@ -901,7 +935,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClass() {
 		if (roleClassEEnum == null) {
-			roleClassEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(32);
+			roleClassEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				32);
 		}
 		return roleClassEEnum;
 	}
@@ -913,7 +948,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClassAssignedEntity() {
 		if (roleClassAssignedEntityEEnum == null) {
-			roleClassAssignedEntityEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(33);
+			roleClassAssignedEntityEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				33);
 		}
 		return roleClassAssignedEntityEEnum;
 	}
@@ -925,7 +961,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClassAssociative() {
 		if (roleClassAssociativeEEnum == null) {
-			roleClassAssociativeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(34);
+			roleClassAssociativeEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				34);
 		}
 		return roleClassAssociativeEEnum;
 	}
@@ -937,7 +974,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClassManufacturedProduct() {
 		if (roleClassManufacturedProductEEnum == null) {
-			roleClassManufacturedProductEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(35);
+			roleClassManufacturedProductEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				35);
 		}
 		return roleClassManufacturedProductEEnum;
 	}
@@ -949,7 +987,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClassMutualRelationship() {
 		if (roleClassMutualRelationshipEEnum == null) {
-			roleClassMutualRelationshipEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(36);
+			roleClassMutualRelationshipEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				36);
 		}
 		return roleClassMutualRelationshipEEnum;
 	}
@@ -961,7 +1000,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClassRoot() {
 		if (roleClassRootEEnum == null) {
-			roleClassRootEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(37);
+			roleClassRootEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				37);
 		}
 		return roleClassRootEEnum;
 	}
@@ -973,7 +1013,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClassServiceDeliveryLocation() {
 		if (roleClassServiceDeliveryLocationEEnum == null) {
-			roleClassServiceDeliveryLocationEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(38);
+			roleClassServiceDeliveryLocationEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				38);
 		}
 		return roleClassServiceDeliveryLocationEEnum;
 	}
@@ -985,7 +1026,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getRoleClassSpecimen() {
 		if (roleClassSpecimenEEnum == null) {
-			roleClassSpecimenEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(39);
+			roleClassSpecimenEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				39);
 		}
 		return roleClassSpecimenEEnum;
 	}
@@ -997,7 +1039,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getSetOperator() {
 		if (setOperatorEEnum == null) {
-			setOperatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(40);
+			setOperatorEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				40);
 		}
 		return setOperatorEEnum;
 	}
@@ -1009,7 +1052,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getTelecommunicationAddressUse() {
 		if (telecommunicationAddressUseEEnum == null) {
-			telecommunicationAddressUseEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(41);
+			telecommunicationAddressUseEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				41);
 		}
 		return telecommunicationAddressUseEEnum;
 	}
@@ -1021,7 +1065,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ActClassDocumentEntryAct() {
 		if (x_ActClassDocumentEntryActEEnum == null) {
-			x_ActClassDocumentEntryActEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(42);
+			x_ActClassDocumentEntryActEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				42);
 		}
 		return x_ActClassDocumentEntryActEEnum;
 	}
@@ -1033,7 +1078,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ActClassDocumentEntryOrganizer() {
 		if (x_ActClassDocumentEntryOrganizerEEnum == null) {
-			x_ActClassDocumentEntryOrganizerEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(43);
+			x_ActClassDocumentEntryOrganizerEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				43);
 		}
 		return x_ActClassDocumentEntryOrganizerEEnum;
 	}
@@ -1045,7 +1091,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ActMoodDocumentObservation() {
 		if (x_ActMoodDocumentObservationEEnum == null) {
-			x_ActMoodDocumentObservationEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(44);
+			x_ActMoodDocumentObservationEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				44);
 		}
 		return x_ActMoodDocumentObservationEEnum;
 	}
@@ -1057,7 +1104,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ActRelationshipDocument() {
 		if (x_ActRelationshipDocumentEEnum == null) {
-			x_ActRelationshipDocumentEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(45);
+			x_ActRelationshipDocumentEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				45);
 		}
 		return x_ActRelationshipDocumentEEnum;
 	}
@@ -1069,7 +1117,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ActRelationshipEntry() {
 		if (x_ActRelationshipEntryEEnum == null) {
-			x_ActRelationshipEntryEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(46);
+			x_ActRelationshipEntryEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				46);
 		}
 		return x_ActRelationshipEntryEEnum;
 	}
@@ -1081,7 +1130,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ActRelationshipEntryRelationship() {
 		if (x_ActRelationshipEntryRelationshipEEnum == null) {
-			x_ActRelationshipEntryRelationshipEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(47);
+			x_ActRelationshipEntryRelationshipEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(
+				VocabPackage.eNS_URI).getEClassifiers().get(47);
 		}
 		return x_ActRelationshipEntryRelationshipEEnum;
 	}
@@ -1093,7 +1143,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ActRelationshipExternalReference() {
 		if (x_ActRelationshipExternalReferenceEEnum == null) {
-			x_ActRelationshipExternalReferenceEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(48);
+			x_ActRelationshipExternalReferenceEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(
+				VocabPackage.eNS_URI).getEClassifiers().get(48);
 		}
 		return x_ActRelationshipExternalReferenceEEnum;
 	}
@@ -1105,7 +1156,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_DocumentActMood() {
 		if (x_DocumentActMoodEEnum == null) {
-			x_DocumentActMoodEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(49);
+			x_DocumentActMoodEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				49);
 		}
 		return x_DocumentActMoodEEnum;
 	}
@@ -1117,7 +1169,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_DocumentEncounterMood() {
 		if (x_DocumentEncounterMoodEEnum == null) {
-			x_DocumentEncounterMoodEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(50);
+			x_DocumentEncounterMoodEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				50);
 		}
 		return x_DocumentEncounterMoodEEnum;
 	}
@@ -1129,7 +1182,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_DocumentProcedureMood() {
 		if (x_DocumentProcedureMoodEEnum == null) {
-			x_DocumentProcedureMoodEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(51);
+			x_DocumentProcedureMoodEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				51);
 		}
 		return x_DocumentProcedureMoodEEnum;
 	}
@@ -1141,7 +1195,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_DocumentSubject() {
 		if (x_DocumentSubjectEEnum == null) {
-			x_DocumentSubjectEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(52);
+			x_DocumentSubjectEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				52);
 		}
 		return x_DocumentSubjectEEnum;
 	}
@@ -1153,7 +1208,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_DocumentSubstanceMood() {
 		if (x_DocumentSubstanceMoodEEnum == null) {
-			x_DocumentSubstanceMoodEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(53);
+			x_DocumentSubstanceMoodEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				53);
 		}
 		return x_DocumentSubstanceMoodEEnum;
 	}
@@ -1165,7 +1221,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_EncounterParticipant() {
 		if (x_EncounterParticipantEEnum == null) {
-			x_EncounterParticipantEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(54);
+			x_EncounterParticipantEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				54);
 		}
 		return x_EncounterParticipantEEnum;
 	}
@@ -1177,7 +1234,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_InformationRecipient() {
 		if (x_InformationRecipientEEnum == null) {
-			x_InformationRecipientEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(55);
+			x_InformationRecipientEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				55);
 		}
 		return x_InformationRecipientEEnum;
 	}
@@ -1189,7 +1247,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_InformationRecipientRole() {
 		if (x_InformationRecipientRoleEEnum == null) {
-			x_InformationRecipientRoleEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(56);
+			x_InformationRecipientRoleEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				56);
 		}
 		return x_InformationRecipientRoleEEnum;
 	}
@@ -1201,7 +1260,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getx_ServiceEventPerformer() {
 		if (x_ServiceEventPerformerEEnum == null) {
-			x_ServiceEventPerformerEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(57);
+			x_ServiceEventPerformerEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				57);
 		}
 		return x_ServiceEventPerformerEEnum;
 	}
@@ -1213,7 +1273,8 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 */
 	public EEnum getTimingEvent() {
 		if (timingEventEEnum == null) {
-			timingEventEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(58);
+			timingEventEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI).getEClassifiers().get(
+				58);
 		}
 		return timingEventEEnum;
 	}
@@ -1224,7 +1285,7 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 * @generated
 	 */
 	public VocabFactory getVocabFactory() {
-		return (VocabFactory)getEFactoryInstance();
+		return (VocabFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -1241,7 +1302,9 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 * @generated
 	 */
 	public void loadPackage() {
-		if (isLoaded) return;
+		if (isLoaded) {
+			return;
+		}
 		isLoaded = true;
 
 		URL url = getClass().getResource(packageFilename);
@@ -1252,14 +1315,12 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 		Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
 		try {
 			resource.load(null);
-		}
-		catch (IOException exception) {
+		} catch (IOException exception) {
 			throw new WrappedException(exception);
 		}
-		initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
+		initializeFromLoadedEPackage(this, (EPackage) resource.getContents().get(0));
 		createResource(eNS_URI);
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1275,7 +1336,9 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 	 * @generated
 	 */
 	public void fixPackageContents() {
-		if (isFixed) return;
+		if (isFixed) {
+			return;
+		}
 		isFixed = true;
 		fixEClassifiers();
 	}
@@ -1294,4 +1357,4 @@ public class VocabPackageImpl extends EPackageImpl implements VocabPackage {
 		}
 	}
 
-} //VocabPackageImpl
+} // VocabPackageImpl

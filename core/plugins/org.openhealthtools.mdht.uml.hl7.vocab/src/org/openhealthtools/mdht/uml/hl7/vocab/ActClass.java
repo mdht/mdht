@@ -1757,78 +1757,12 @@ public enum ActClass implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActClass[] VALUES_ARRAY =
-		new ActClass[] {
-			ACCM,
-			ACCT,
-			ACSN,
-			ACT,
-			ACTN,
-			ADJUD,
-			ALRT,
-			BATTERY,
-			CACT,
-			CASE,
-			CATEGORY,
-			CDALVLONE,
-			CLNTRL,
-			CLUSTER,
-			CNOD,
-			CNTRCT,
-			COMPOSITION,
-			COND,
-			CONS,
-			CONTREG,
-			COV,
-			CTTEVENT,
-			DGIMG,
-			DIET,
-			DISPACT,
-			DOC,
-			DOCBODY,
-			DOCCLIN,
-			DOCSECT,
-			EHR,
-			ENC,
-			ENTRY,
-			EXTRACT,
-			FCNTRCT,
-			FOLDER,
-			INC,
-			INFO,
-			INFRM,
-			INVE,
-			INVSTG,
-			LIST,
-			MPROT,
-			OBS,
-			OBSCOR,
-			OBSSER,
-			ORGANIZER,
-			OUTB,
-			PCPR,
-			PROC,
-			REG,
-			REV,
-			ROIBND,
-			ROIOVL,
-			SBADM,
-			SEQ,
-			SEQVAR,
-			SFWL,
-			SIT,
-			SPCOBS,
-			SPCTRT,
-			SPECCOLLECT,
-			SPLY,
-			STC,
-			STDPOL,
-			SUBST,
-			TOPIC,
-			TRNS,
-			VERIF,
-			XACT,
-		};
+	private static final ActClass[] VALUES_ARRAY = new ActClass[] {
+			ACCM, ACCT, ACSN, ACT, ACTN, ADJUD, ALRT, BATTERY, CACT, CASE, CATEGORY, CDALVLONE, CLNTRL, CLUSTER, CNOD,
+			CNTRCT, COMPOSITION, COND, CONS, CONTREG, COV, CTTEVENT, DGIMG, DIET, DISPACT, DOC, DOCBODY, DOCCLIN,
+			DOCSECT, EHR, ENC, ENTRY, EXTRACT, FCNTRCT, FOLDER, INC, INFO, INFRM, INVE, INVSTG, LIST, MPROT, OBS,
+			OBSCOR, OBSSER, ORGANIZER, OUTB, PCPR, PROC, REG, REV, ROIBND, ROIOVL, SBADM, SEQ, SEQVAR, SFWL, SIT,
+			SPCOBS, SPCTRT, SPECCOLLECT, SPLY, STC, STDPOL, SUBST, TOPIC, TRNS, VERIF, XACT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Class</b></em>' enumerators.
@@ -1878,75 +1812,144 @@ public enum ActClass implements Enumerator {
 	 */
 	public static ActClass get(int value) {
 		switch (value) {
-			case ACCM_VALUE: return ACCM;
-			case ACCT_VALUE: return ACCT;
-			case ACSN_VALUE: return ACSN;
-			case ACT_VALUE: return ACT;
-			case ACTN_VALUE: return ACTN;
-			case ADJUD_VALUE: return ADJUD;
-			case ALRT_VALUE: return ALRT;
-			case BATTERY_VALUE: return BATTERY;
-			case CACT_VALUE: return CACT;
-			case CASE_VALUE: return CASE;
-			case CATEGORY_VALUE: return CATEGORY;
-			case CDALVLONE_VALUE: return CDALVLONE;
-			case CLNTRL_VALUE: return CLNTRL;
-			case CLUSTER_VALUE: return CLUSTER;
-			case CNOD_VALUE: return CNOD;
-			case CNTRCT_VALUE: return CNTRCT;
-			case COMPOSITION_VALUE: return COMPOSITION;
-			case COND_VALUE: return COND;
-			case CONS_VALUE: return CONS;
-			case CONTREG_VALUE: return CONTREG;
-			case COV_VALUE: return COV;
-			case CTTEVENT_VALUE: return CTTEVENT;
-			case DGIMG_VALUE: return DGIMG;
-			case DIET_VALUE: return DIET;
-			case DISPACT_VALUE: return DISPACT;
-			case DOC_VALUE: return DOC;
-			case DOCBODY_VALUE: return DOCBODY;
-			case DOCCLIN_VALUE: return DOCCLIN;
-			case DOCSECT_VALUE: return DOCSECT;
-			case EHR_VALUE: return EHR;
-			case ENC_VALUE: return ENC;
-			case ENTRY_VALUE: return ENTRY;
-			case EXTRACT_VALUE: return EXTRACT;
-			case FCNTRCT_VALUE: return FCNTRCT;
-			case FOLDER_VALUE: return FOLDER;
-			case INC_VALUE: return INC;
-			case INFO_VALUE: return INFO;
-			case INFRM_VALUE: return INFRM;
-			case INVE_VALUE: return INVE;
-			case INVSTG_VALUE: return INVSTG;
-			case LIST_VALUE: return LIST;
-			case MPROT_VALUE: return MPROT;
-			case OBS_VALUE: return OBS;
-			case OBSCOR_VALUE: return OBSCOR;
-			case OBSSER_VALUE: return OBSSER;
-			case ORGANIZER_VALUE: return ORGANIZER;
-			case OUTB_VALUE: return OUTB;
-			case PCPR_VALUE: return PCPR;
-			case PROC_VALUE: return PROC;
-			case REG_VALUE: return REG;
-			case REV_VALUE: return REV;
-			case ROIBND_VALUE: return ROIBND;
-			case ROIOVL_VALUE: return ROIOVL;
-			case SBADM_VALUE: return SBADM;
-			case SEQ_VALUE: return SEQ;
-			case SEQVAR_VALUE: return SEQVAR;
-			case SFWL_VALUE: return SFWL;
-			case SIT_VALUE: return SIT;
-			case SPCOBS_VALUE: return SPCOBS;
-			case SPCTRT_VALUE: return SPCTRT;
-			case SPECCOLLECT_VALUE: return SPECCOLLECT;
-			case SPLY_VALUE: return SPLY;
-			case STC_VALUE: return STC;
-			case STDPOL_VALUE: return STDPOL;
-			case SUBST_VALUE: return SUBST;
-			case TOPIC_VALUE: return TOPIC;
-			case TRNS_VALUE: return TRNS;
-			case VERIF_VALUE: return VERIF;
-			case XACT_VALUE: return XACT;
+			case ACCM_VALUE:
+				return ACCM;
+			case ACCT_VALUE:
+				return ACCT;
+			case ACSN_VALUE:
+				return ACSN;
+			case ACT_VALUE:
+				return ACT;
+			case ACTN_VALUE:
+				return ACTN;
+			case ADJUD_VALUE:
+				return ADJUD;
+			case ALRT_VALUE:
+				return ALRT;
+			case BATTERY_VALUE:
+				return BATTERY;
+			case CACT_VALUE:
+				return CACT;
+			case CASE_VALUE:
+				return CASE;
+			case CATEGORY_VALUE:
+				return CATEGORY;
+			case CDALVLONE_VALUE:
+				return CDALVLONE;
+			case CLNTRL_VALUE:
+				return CLNTRL;
+			case CLUSTER_VALUE:
+				return CLUSTER;
+			case CNOD_VALUE:
+				return CNOD;
+			case CNTRCT_VALUE:
+				return CNTRCT;
+			case COMPOSITION_VALUE:
+				return COMPOSITION;
+			case COND_VALUE:
+				return COND;
+			case CONS_VALUE:
+				return CONS;
+			case CONTREG_VALUE:
+				return CONTREG;
+			case COV_VALUE:
+				return COV;
+			case CTTEVENT_VALUE:
+				return CTTEVENT;
+			case DGIMG_VALUE:
+				return DGIMG;
+			case DIET_VALUE:
+				return DIET;
+			case DISPACT_VALUE:
+				return DISPACT;
+			case DOC_VALUE:
+				return DOC;
+			case DOCBODY_VALUE:
+				return DOCBODY;
+			case DOCCLIN_VALUE:
+				return DOCCLIN;
+			case DOCSECT_VALUE:
+				return DOCSECT;
+			case EHR_VALUE:
+				return EHR;
+			case ENC_VALUE:
+				return ENC;
+			case ENTRY_VALUE:
+				return ENTRY;
+			case EXTRACT_VALUE:
+				return EXTRACT;
+			case FCNTRCT_VALUE:
+				return FCNTRCT;
+			case FOLDER_VALUE:
+				return FOLDER;
+			case INC_VALUE:
+				return INC;
+			case INFO_VALUE:
+				return INFO;
+			case INFRM_VALUE:
+				return INFRM;
+			case INVE_VALUE:
+				return INVE;
+			case INVSTG_VALUE:
+				return INVSTG;
+			case LIST_VALUE:
+				return LIST;
+			case MPROT_VALUE:
+				return MPROT;
+			case OBS_VALUE:
+				return OBS;
+			case OBSCOR_VALUE:
+				return OBSCOR;
+			case OBSSER_VALUE:
+				return OBSSER;
+			case ORGANIZER_VALUE:
+				return ORGANIZER;
+			case OUTB_VALUE:
+				return OUTB;
+			case PCPR_VALUE:
+				return PCPR;
+			case PROC_VALUE:
+				return PROC;
+			case REG_VALUE:
+				return REG;
+			case REV_VALUE:
+				return REV;
+			case ROIBND_VALUE:
+				return ROIBND;
+			case ROIOVL_VALUE:
+				return ROIOVL;
+			case SBADM_VALUE:
+				return SBADM;
+			case SEQ_VALUE:
+				return SEQ;
+			case SEQVAR_VALUE:
+				return SEQVAR;
+			case SFWL_VALUE:
+				return SFWL;
+			case SIT_VALUE:
+				return SIT;
+			case SPCOBS_VALUE:
+				return SPCOBS;
+			case SPCTRT_VALUE:
+				return SPCTRT;
+			case SPECCOLLECT_VALUE:
+				return SPECCOLLECT;
+			case SPLY_VALUE:
+				return SPLY;
+			case STC_VALUE:
+				return STC;
+			case STDPOL_VALUE:
+				return STDPOL;
+			case SUBST_VALUE:
+				return SUBST;
+			case TOPIC_VALUE:
+				return TOPIC;
+			case TRNS_VALUE:
+				return TRNS;
+			case VERIF_VALUE:
+				return VERIF;
+			case XACT_VALUE:
+				return XACT;
 		}
 		return null;
 	}
@@ -1990,7 +1993,7 @@ public enum ActClass implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -1999,7 +2002,7 @@ public enum ActClass implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -2008,7 +2011,7 @@ public enum ActClass implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -2021,5 +2024,5 @@ public enum ActClass implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ActClass
+
+} // ActClass

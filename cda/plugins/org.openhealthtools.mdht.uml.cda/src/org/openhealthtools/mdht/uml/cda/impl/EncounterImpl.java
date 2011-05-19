@@ -367,6 +367,7 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ENCOUNTER__REALM_CODE);
@@ -379,6 +380,7 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -392,8 +394,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -406,15 +413,21 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -422,6 +435,7 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENCOUNTER__TEMPLATE_ID);
@@ -459,8 +473,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		CD oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -473,15 +492,21 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public void setCode(CD newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__CODE, newCode, newCode));
+		}
 	}
 
 	/**
@@ -502,8 +527,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		ED oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__TEXT, oldText, newText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__TEXT, oldText, newText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -516,15 +546,21 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public void setText(ED newText) {
 		if (newText != text) {
 			NotificationChain msgs = null;
-			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__TEXT, null, msgs);
-			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__TEXT, null, msgs);
+			if (text != null) {
+				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__TEXT, null, msgs);
+			}
+			if (newText != null) {
+				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__TEXT, null, msgs);
+			}
 			msgs = basicSetText(newText, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__TEXT, newText, newText));
+		}
 	}
 
 	/**
@@ -545,8 +581,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		CS oldStatusCode = statusCode;
 		statusCode = newStatusCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__STATUS_CODE, oldStatusCode, newStatusCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__STATUS_CODE, oldStatusCode, newStatusCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -559,15 +600,22 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public void setStatusCode(CS newStatusCode) {
 		if (newStatusCode != statusCode) {
 			NotificationChain msgs = null;
-			if (statusCode != null)
-				msgs = ((InternalEObject)statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__STATUS_CODE, null, msgs);
-			if (newStatusCode != null)
-				msgs = ((InternalEObject)newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__STATUS_CODE, null, msgs);
+			if (statusCode != null) {
+				msgs = ((InternalEObject) statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__STATUS_CODE, null, msgs);
+			}
+			if (newStatusCode != null) {
+				msgs = ((InternalEObject) newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__STATUS_CODE, null, msgs);
+			}
 			msgs = basicSetStatusCode(newStatusCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__STATUS_CODE, newStatusCode, newStatusCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__STATUS_CODE, newStatusCode, newStatusCode));
 	}
 
 	/**
@@ -588,8 +636,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		IVL_TS oldEffectiveTime = effectiveTime;
 		effectiveTime = newEffectiveTime;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__EFFECTIVE_TIME, oldEffectiveTime, newEffectiveTime);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__EFFECTIVE_TIME, oldEffectiveTime, newEffectiveTime);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -602,15 +655,22 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public void setEffectiveTime(IVL_TS newEffectiveTime) {
 		if (newEffectiveTime != effectiveTime) {
 			NotificationChain msgs = null;
-			if (effectiveTime != null)
-				msgs = ((InternalEObject)effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__EFFECTIVE_TIME, null, msgs);
-			if (newEffectiveTime != null)
-				msgs = ((InternalEObject)newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__EFFECTIVE_TIME, null, msgs);
+			if (effectiveTime != null) {
+				msgs = ((InternalEObject) effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__EFFECTIVE_TIME, null, msgs);
+			}
+			if (newEffectiveTime != null) {
+				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__EFFECTIVE_TIME, null, msgs);
+			}
 			msgs = basicSetEffectiveTime(newEffectiveTime, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__EFFECTIVE_TIME, newEffectiveTime, newEffectiveTime));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__EFFECTIVE_TIME, newEffectiveTime, newEffectiveTime));
 	}
 
 	/**
@@ -631,8 +691,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		CE oldPriorityCode = priorityCode;
 		priorityCode = newPriorityCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__PRIORITY_CODE, oldPriorityCode, newPriorityCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__PRIORITY_CODE, oldPriorityCode, newPriorityCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -645,15 +710,22 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public void setPriorityCode(CE newPriorityCode) {
 		if (newPriorityCode != priorityCode) {
 			NotificationChain msgs = null;
-			if (priorityCode != null)
-				msgs = ((InternalEObject)priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__PRIORITY_CODE, null, msgs);
-			if (newPriorityCode != null)
-				msgs = ((InternalEObject)newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__PRIORITY_CODE, null, msgs);
+			if (priorityCode != null) {
+				msgs = ((InternalEObject) priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__PRIORITY_CODE, null, msgs);
+			}
+			if (newPriorityCode != null) {
+				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__PRIORITY_CODE, null, msgs);
+			}
 			msgs = basicSetPriorityCode(newPriorityCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__PRIORITY_CODE, newPriorityCode, newPriorityCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__PRIORITY_CODE, newPriorityCode, newPriorityCode));
 	}
 
 	/**
@@ -674,8 +746,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		Subject oldSubject = subject;
 		subject = newSubject;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__SUBJECT, oldSubject, newSubject);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__SUBJECT, oldSubject, newSubject);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -688,15 +765,21 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public void setSubject(Subject newSubject) {
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
-			if (subject != null)
-				msgs = ((InternalEObject)subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__SUBJECT, null, msgs);
-			if (newSubject != null)
-				msgs = ((InternalEObject)newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__SUBJECT, null, msgs);
+			if (subject != null) {
+				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__SUBJECT, null, msgs);
+			}
+			if (newSubject != null) {
+				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER__SUBJECT, null, msgs);
+			}
 			msgs = basicSetSubject(newSubject, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__SUBJECT, newSubject, newSubject));
+		}
 	}
 
 	/**
@@ -718,7 +801,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public EList<Performer2> getPerformers() {
 		if (performers == null) {
-			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.ENCOUNTER__PERFORMER);
+			performers = new EObjectContainmentEList<Performer2>(
+				Performer2.class, this, CDAPackage.ENCOUNTER__PERFORMER);
 		}
 		return performers;
 	}
@@ -742,7 +826,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public EList<Informant12> getInformants() {
 		if (informants == null) {
-			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.ENCOUNTER__INFORMANT);
+			informants = new EObjectContainmentEList<Informant12>(
+				Informant12.class, this, CDAPackage.ENCOUNTER__INFORMANT);
 		}
 		return informants;
 	}
@@ -754,7 +839,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public EList<Participant2> getParticipants() {
 		if (participants == null) {
-			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.ENCOUNTER__PARTICIPANT);
+			participants = new EObjectContainmentEList<Participant2>(
+				Participant2.class, this, CDAPackage.ENCOUNTER__PARTICIPANT);
 		}
 		return participants;
 	}
@@ -766,7 +852,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public EList<EntryRelationship> getEntryRelationships() {
 		if (entryRelationships == null) {
-			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.ENCOUNTER__ENTRY_RELATIONSHIP);
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(
+				EntryRelationship.class, this, CDAPackage.ENCOUNTER__ENTRY_RELATIONSHIP);
 		}
 		return entryRelationships;
 	}
@@ -790,7 +877,8 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public EList<Precondition> getPreconditions() {
 		if (preconditions == null) {
-			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.ENCOUNTER__PRECONDITION);
+			preconditions = new EObjectContainmentEList<Precondition>(
+				Precondition.class, this, CDAPackage.ENCOUNTER__PRECONDITION);
 		}
 		return preconditions;
 	}
@@ -800,6 +888,7 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -811,11 +900,16 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -828,8 +922,11 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOUNTER__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENCOUNTER__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -846,6 +943,7 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActClass getClassCode() {
 		return classCode;
 	}
@@ -857,11 +955,15 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public void setClassCode(ActClass newClassCode) {
 		ActClass oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -874,8 +976,11 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOUNTER__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENCOUNTER__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -892,6 +997,7 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public x_DocumentEncounterMood getMoodCode() {
 		return moodCode;
 	}
@@ -903,11 +1009,15 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	public void setMoodCode(x_DocumentEncounterMood newMoodCode) {
 		x_DocumentEncounterMood oldMoodCode = moodCode;
-		moodCode = newMoodCode == null ? MOOD_CODE_EDEFAULT : newMoodCode;
+		moodCode = newMoodCode == null
+				? MOOD_CODE_EDEFAULT
+				: newMoodCode;
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -920,8 +1030,11 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOUNTER__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENCOUNTER__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+				oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -942,13 +1055,13 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ENCOUNTER__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ENCOUNTER__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.ENCOUNTER__TEXT:
@@ -962,21 +1075,21 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 			case CDAPackage.ENCOUNTER__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.ENCOUNTER__SPECIMEN:
-				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__PERFORMER:
-				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__AUTHOR:
-				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__INFORMANT:
-				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__PARTICIPANT:
-				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__REFERENCE:
-				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER__PRECONDITION:
-				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1046,77 +1159,77 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 		switch (featureID) {
 			case CDAPackage.ENCOUNTER__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__CODE:
-				setCode((CD)newValue);
+				setCode((CD) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__TEXT:
-				setText((ED)newValue);
+				setText((ED) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__STATUS_CODE:
-				setStatusCode((CS)newValue);
+				setStatusCode((CS) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__EFFECTIVE_TIME:
-				setEffectiveTime((IVL_TS)newValue);
+				setEffectiveTime((IVL_TS) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__PRIORITY_CODE:
-				setPriorityCode((CE)newValue);
+				setPriorityCode((CE) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__SUBJECT:
-				setSubject((Subject)newValue);
+				setSubject((Subject) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__SPECIMEN:
 				getSpecimens().clear();
-				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().addAll((Collection<? extends Specimen>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__PERFORMER:
 				getPerformers().clear();
-				getPerformers().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().addAll((Collection<? extends Performer2>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__AUTHOR:
 				getAuthors().clear();
-				getAuthors().addAll((Collection<? extends Author>)newValue);
+				getAuthors().addAll((Collection<? extends Author>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__INFORMANT:
 				getInformants().clear();
-				getInformants().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().addAll((Collection<? extends Informant12>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__PARTICIPANT:
 				getParticipants().clear();
-				getParticipants().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().addAll((Collection<? extends Participant2>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__ENTRY_RELATIONSHIP:
 				getEntryRelationships().clear();
-				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__REFERENCE:
 				getReferences().clear();
-				getReferences().addAll((Collection<? extends Reference>)newValue);
+				getReferences().addAll((Collection<? extends Reference>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__PRECONDITION:
 				getPreconditions().clear();
-				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().addAll((Collection<? extends Precondition>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__CLASS_CODE:
-				setClassCode((ActClass)newValue);
+				setClassCode((ActClass) newValue);
 				return;
 			case CDAPackage.ENCOUNTER__MOOD_CODE:
-				setMoodCode((x_DocumentEncounterMood)newValue);
+				setMoodCode((x_DocumentEncounterMood) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1134,7 +1247,7 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.ENCOUNTER__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.ENCOUNTER__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -1143,22 +1256,22 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 				getIds().clear();
 				return;
 			case CDAPackage.ENCOUNTER__CODE:
-				setCode((CD)null);
+				setCode((CD) null);
 				return;
 			case CDAPackage.ENCOUNTER__TEXT:
-				setText((ED)null);
+				setText((ED) null);
 				return;
 			case CDAPackage.ENCOUNTER__STATUS_CODE:
-				setStatusCode((CS)null);
+				setStatusCode((CS) null);
 				return;
 			case CDAPackage.ENCOUNTER__EFFECTIVE_TIME:
-				setEffectiveTime((IVL_TS)null);
+				setEffectiveTime((IVL_TS) null);
 				return;
 			case CDAPackage.ENCOUNTER__PRIORITY_CODE:
-				setPriorityCode((CE)null);
+				setPriorityCode((CE) null);
 				return;
 			case CDAPackage.ENCOUNTER__SUBJECT:
-				setSubject((Subject)null);
+				setSubject((Subject) null);
 				return;
 			case CDAPackage.ENCOUNTER__SPECIMEN:
 				getSpecimens().clear();
@@ -1258,17 +1371,31 @@ public class EncounterImpl extends ClinicalStatementImpl implements Encounter {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", moodCode: ");
-		if (moodCodeESet) result.append(moodCode); else result.append("<unset>");
+		if (moodCodeESet) {
+			result.append(moodCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //EncounterImpl
+} // EncounterImpl

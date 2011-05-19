@@ -92,4 +92,4 @@ public abstract class ParticipationImpl extends InfrastructureRootImpl implement
 		return ParticipationOperations.isContextControlCodeDefined(this);
 	}
 
-} //ParticipationImpl
+} // ParticipationImpl

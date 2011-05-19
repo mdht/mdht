@@ -332,21 +332,8 @@ public enum TelecommunicationAddressUse implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final TelecommunicationAddressUse[] VALUES_ARRAY =
-		new TelecommunicationAddressUse[] {
-			AS,
-			BAD,
-			DIR,
-			EC,
-			H,
-			HP,
-			HV,
-			MC,
-			PG,
-			PUB,
-			TMP,
-			WP,
-		};
+	private static final TelecommunicationAddressUse[] VALUES_ARRAY = new TelecommunicationAddressUse[] {
+			AS, BAD, DIR, EC, H, HP, HV, MC, PG, PUB, TMP, WP, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Telecommunication Address Use</b></em>' enumerators.
@@ -396,18 +383,30 @@ public enum TelecommunicationAddressUse implements Enumerator {
 	 */
 	public static TelecommunicationAddressUse get(int value) {
 		switch (value) {
-			case AS_VALUE: return AS;
-			case BAD_VALUE: return BAD;
-			case DIR_VALUE: return DIR;
-			case EC_VALUE: return EC;
-			case H_VALUE: return H;
-			case HP_VALUE: return HP;
-			case HV_VALUE: return HV;
-			case MC_VALUE: return MC;
-			case PG_VALUE: return PG;
-			case PUB_VALUE: return PUB;
-			case TMP_VALUE: return TMP;
-			case WP_VALUE: return WP;
+			case AS_VALUE:
+				return AS;
+			case BAD_VALUE:
+				return BAD;
+			case DIR_VALUE:
+				return DIR;
+			case EC_VALUE:
+				return EC;
+			case H_VALUE:
+				return H;
+			case HP_VALUE:
+				return HP;
+			case HV_VALUE:
+				return HV;
+			case MC_VALUE:
+				return MC;
+			case PG_VALUE:
+				return PG;
+			case PUB_VALUE:
+				return PUB;
+			case TMP_VALUE:
+				return TMP;
+			case WP_VALUE:
+				return WP;
 		}
 		return null;
 	}
@@ -451,7 +450,7 @@ public enum TelecommunicationAddressUse implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -460,7 +459,7 @@ public enum TelecommunicationAddressUse implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -469,7 +468,7 @@ public enum TelecommunicationAddressUse implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -482,5 +481,5 @@ public enum TelecommunicationAddressUse implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //TelecommunicationAddressUse
+
+} // TelecommunicationAddressUse

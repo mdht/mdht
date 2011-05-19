@@ -56,4 +56,4 @@ public class BNImpl extends BLImpl implements BN {
 		return BNOperations.validateNullFlavor(this, diagnostics, context);
 	}
 
-} //BNImpl
+} // BNImpl

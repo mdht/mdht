@@ -86,26 +86,27 @@ public class RTO_PQ_PQOperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateDenominator(RTO_PQ_PQ rtO_PQ_PQ, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateDenominator(RTO_PQ_PQ rtO_PQ_PQ, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.RTO_PQ_PQ);
 			try {
 				VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(rtO_PQ_PQ)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.RTO_PQ_PQ__DENOMINATOR,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDenominator", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(rtO_PQ_PQ, context) }),
-						 new Object [] { rtO_PQ_PQ }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.RTO_PQ_PQ__DENOMINATOR,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateDenominator",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(rtO_PQ_PQ, context) }),
+					new Object[] { rtO_PQ_PQ }));
 			}
 			return false;
 		}

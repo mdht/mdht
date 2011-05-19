@@ -51,7 +51,7 @@ public class StrucDocTextOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addText(StrucDocText strucDocText, String text) {
+	public static void addText(StrucDocText strucDocText, String text) {
 		if (text == null) {
 			throw new IllegalArgumentException("text is null");
 		}
@@ -63,7 +63,7 @@ public class StrucDocTextOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  String getText(StrucDocText strucDocText) {
+	public static String getText(StrucDocText strucDocText) {
 		return getText(strucDocText.getMixed());
 	}
 
@@ -72,10 +72,10 @@ public class StrucDocTextOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  String getText(StrucDocText strucDocText, String id) {
+	public static String getText(StrucDocText strucDocText, String id) {
 		return getText(strucDocText.getMixed(), id);
 	}
-	
+
 	private static String getText(FeatureMap root, String id) {
 		Stack<FeatureMap> stack = new Stack<FeatureMap>();
 		stack.push(root);
@@ -94,18 +94,17 @@ public class StrucDocTextOperations {
 		}
 		return null;
 	}
-	
+
 	private static String getAttributeValue(FeatureMap featureMap, String name) {
 		for (FeatureMap.Entry entry : featureMap) {
 			EStructuralFeature feature = entry.getEStructuralFeature();
-			if (feature instanceof EAttribute 
-					&& feature.getName().equals(name)) {
+			if (feature instanceof EAttribute && feature.getName().equals(name)) {
 				return entry.getValue().toString();
 			}
 		}
 		return null;
 	}
-	
+
 	private static String getText(FeatureMap featureMap) {
 		StringBuffer buffer = new StringBuffer("");
 		for (FeatureMap.Entry entry : featureMap) {

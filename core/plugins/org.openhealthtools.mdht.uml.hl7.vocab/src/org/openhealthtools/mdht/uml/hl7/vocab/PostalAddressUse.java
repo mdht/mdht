@@ -357,22 +357,8 @@ public enum PostalAddressUse implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PostalAddressUse[] VALUES_ARRAY =
-		new PostalAddressUse[] {
-			ABC,
-			BAD,
-			DIR,
-			H,
-			HP,
-			HV,
-			IDE,
-			PHYS,
-			PST,
-			PUB,
-			SYL,
-			TMP,
-			WP,
-		};
+	private static final PostalAddressUse[] VALUES_ARRAY = new PostalAddressUse[] {
+			ABC, BAD, DIR, H, HP, HV, IDE, PHYS, PST, PUB, SYL, TMP, WP, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Postal Address Use</b></em>' enumerators.
@@ -422,19 +408,32 @@ public enum PostalAddressUse implements Enumerator {
 	 */
 	public static PostalAddressUse get(int value) {
 		switch (value) {
-			case ABC_VALUE: return ABC;
-			case BAD_VALUE: return BAD;
-			case DIR_VALUE: return DIR;
-			case H_VALUE: return H;
-			case HP_VALUE: return HP;
-			case HV_VALUE: return HV;
-			case IDE_VALUE: return IDE;
-			case PHYS_VALUE: return PHYS;
-			case PST_VALUE: return PST;
-			case PUB_VALUE: return PUB;
-			case SYL_VALUE: return SYL;
-			case TMP_VALUE: return TMP;
-			case WP_VALUE: return WP;
+			case ABC_VALUE:
+				return ABC;
+			case BAD_VALUE:
+				return BAD;
+			case DIR_VALUE:
+				return DIR;
+			case H_VALUE:
+				return H;
+			case HP_VALUE:
+				return HP;
+			case HV_VALUE:
+				return HV;
+			case IDE_VALUE:
+				return IDE;
+			case PHYS_VALUE:
+				return PHYS;
+			case PST_VALUE:
+				return PST;
+			case PUB_VALUE:
+				return PUB;
+			case SYL_VALUE:
+				return SYL;
+			case TMP_VALUE:
+				return TMP;
+			case WP_VALUE:
+				return WP;
 		}
 		return null;
 	}
@@ -478,7 +477,7 @@ public enum PostalAddressUse implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -487,7 +486,7 @@ public enum PostalAddressUse implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -496,7 +495,7 @@ public enum PostalAddressUse implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -509,5 +508,5 @@ public enum PostalAddressUse implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //PostalAddressUse
+
+} // PostalAddressUse

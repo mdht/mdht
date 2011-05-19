@@ -56,4 +56,4 @@ public class PNImpl extends ENImpl implements PN {
 		return PNOperations.validateInvariant(this, diagnostics, context);
 	}
 
-} //PNImpl
+} // PNImpl

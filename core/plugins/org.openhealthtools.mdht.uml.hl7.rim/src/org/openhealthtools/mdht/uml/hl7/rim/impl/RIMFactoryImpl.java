@@ -33,12 +33,11 @@ public class RIMFactoryImpl extends EFactoryImpl implements RIMFactory {
 	 */
 	public static RIMFactory init() {
 		try {
-			RIMFactory theRIMFactory = (RIMFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/rim"); 
+			RIMFactory theRIMFactory = (RIMFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/rim");
 			if (theRIMFactory != null) {
 				return theRIMFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RIMFactoryImpl();
@@ -73,7 +72,7 @@ public class RIMFactoryImpl extends EFactoryImpl implements RIMFactory {
 	 * @generated
 	 */
 	public RIMPackage getRIMPackage() {
-		return (RIMPackage)getEPackage();
+		return (RIMPackage) getEPackage();
 	}
 
 	/**
@@ -87,4 +86,4 @@ public class RIMFactoryImpl extends EFactoryImpl implements RIMFactory {
 		return RIMPackage.eINSTANCE;
 	}
 
-} //RIMFactoryImpl
+} // RIMFactoryImpl

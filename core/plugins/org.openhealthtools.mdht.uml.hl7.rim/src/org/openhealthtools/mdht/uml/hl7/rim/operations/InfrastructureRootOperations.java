@@ -53,7 +53,7 @@ public class InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<CS> getRealmCodes(InfrastructureRoot infrastructureRoot) {
+	public static EList<CS> getRealmCodes(InfrastructureRoot infrastructureRoot) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -64,7 +64,7 @@ public class InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  II getTypeId(InfrastructureRoot infrastructureRoot) {
+	public static II getTypeId(InfrastructureRoot infrastructureRoot) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -75,7 +75,7 @@ public class InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<II> getTemplateIds(InfrastructureRoot infrastructureRoot) {
+	public static EList<II> getTemplateIds(InfrastructureRoot infrastructureRoot) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -86,7 +86,7 @@ public class InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  NullFlavor getNullFlavor(InfrastructureRoot infrastructureRoot) {
+	public static NullFlavor getNullFlavor(InfrastructureRoot infrastructureRoot) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -129,7 +129,7 @@ public class InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  boolean isDefined(InfrastructureRoot infrastructureRoot, String featureName) {
+	public static boolean isDefined(InfrastructureRoot infrastructureRoot, String featureName) {
 		return (infrastructureRoot.eIsSet(infrastructureRoot.eClass().getEStructuralFeature(featureName)));
 	}
 

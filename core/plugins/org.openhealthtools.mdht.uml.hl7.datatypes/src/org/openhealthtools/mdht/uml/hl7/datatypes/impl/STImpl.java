@@ -47,97 +47,94 @@ public class STImpl extends EDImpl implements ST {
 		return DatatypesPackage.Literals.ST;
 	}
 
-    /**
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @generated
-	 */
-    public boolean validateThumbnail(DiagnosticChain diagnostics, Map<Object, Object> context)
-    {
-		return STOperations.validateThumbnail(this, diagnostics, context);
-	}
-
-    /**
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @generated
-	 */
-    public boolean validateReference(DiagnosticChain diagnostics, Map<Object, Object> context)
-    {
-		return STOperations.validateReference(this, diagnostics, context);
-	}
-
-    /**
-	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-	 * @generated
-	 */
-    public boolean validateIntegrityCheck(DiagnosticChain diagnostics, Map<Object, Object> context)
-    {
-		return STOperations.validateIntegrityCheck(this, diagnostics, context);
-	}
-
-				/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateThumbnail(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return STOperations.validateThumbnail(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReference(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return STOperations.validateReference(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIntegrityCheck(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return STOperations.validateIntegrityCheck(this, diagnostics, context);
+	}
+
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	public boolean validateCompression(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return STOperations.validateCompression(this, diagnostics, context);
 	}
 
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	public boolean validateRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return STOperations.validateRepresentation(this, diagnostics, context);
 	}
 
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	public boolean validateST(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return STOperations.validateST(this, diagnostics, context);
 	}
 
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	public boolean isCompressionDefined() {
 		return STOperations.isCompressionDefined(this);
 	}
 
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	public boolean isIntegrityCheckAlgorithmDefined() {
 		return STOperations.isIntegrityCheckAlgorithmDefined(this);
 	}
 
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	public boolean isRepresentationDefined() {
 		return STOperations.isRepresentationDefined(this);
 	}
 
-				/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @generated
+	*/
 	public boolean validateIntegrityCheckAlgorithm(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return STOperations.validateIntegrityCheckAlgorithm(this, diagnostics, context);
 	}
 
-} //STImpl
+} // STImpl

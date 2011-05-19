@@ -101,4 +101,4 @@ public class EIVL_eventImpl extends CEImpl implements EIVL_event {
 		return EIVL_eventOperations.init(this);
 	}
 
-} //EIVL_eventImpl
+} // EIVL_eventImpl

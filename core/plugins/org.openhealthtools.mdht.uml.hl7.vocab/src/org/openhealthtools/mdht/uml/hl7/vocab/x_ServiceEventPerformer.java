@@ -45,13 +45,13 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 * @ordered
 	 */
 	PPRF(1, "PPRF", "PPRF"), /**
-	 * The '<em><b>SPRF</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SPRF_VALUE
-	 * @generated
-	 * @ordered
-	 */
+								* The '<em><b>SPRF</b></em>' literal object.
+								* <!-- begin-user-doc -->
+								* <!-- end-user-doc -->
+								* @see #SPRF_VALUE
+								* @generated
+								* @ordered
+								*/
 	SPRF(2, "SPRF", "SPRF");
 
 	/**
@@ -105,12 +105,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_ServiceEventPerformer[] VALUES_ARRAY =
-		new x_ServiceEventPerformer[] {
-			PRF,
-			PPRF,
-			SPRF,
-		};
+	private static final x_ServiceEventPerformer[] VALUES_ARRAY = new x_ServiceEventPerformer[] { PRF, PPRF, SPRF, };
 
 	/**
 	 * A public read-only list of all the '<em><b>xService Event Performer</b></em>' enumerators.
@@ -160,9 +155,12 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 */
 	public static x_ServiceEventPerformer get(int value) {
 		switch (value) {
-			case PRF_VALUE: return PRF;
-			case PPRF_VALUE: return PPRF;
-			case SPRF_VALUE: return SPRF;
+			case PRF_VALUE:
+				return PRF;
+			case PPRF_VALUE:
+				return PPRF;
+			case SPRF_VALUE:
+				return SPRF;
 		}
 		return null;
 	}
@@ -206,7 +204,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -215,7 +213,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -224,7 +222,7 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -237,5 +235,5 @@ public enum x_ServiceEventPerformer implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //x_ServiceEventPerformer
+
+} // x_ServiceEventPerformer

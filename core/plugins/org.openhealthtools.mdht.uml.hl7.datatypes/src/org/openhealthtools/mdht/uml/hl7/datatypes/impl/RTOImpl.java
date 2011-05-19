@@ -43,4 +43,4 @@ public class RTOImpl extends RTO_QTY_QTYImpl implements RTO {
 		return DatatypesPackage.Literals.RTO;
 	}
 
-} //RTOImpl
+} // RTOImpl

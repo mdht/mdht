@@ -78,26 +78,29 @@ public class MaintainedEntityOperations extends RoleOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateClassCode(MaintainedEntity maintainedEntity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateClassCode(MaintainedEntity maintainedEntity, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.MAINTAINED_ENTITY);
 			try {
 				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(maintainedEntity)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.MAINTAINED_ENTITY__CLASS_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateClassCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(maintainedEntity, context) }),
-						 new Object [] { maintainedEntity }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					CDAValidator.DIAGNOSTIC_SOURCE,
+					CDAValidator.MAINTAINED_ENTITY__CLASS_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateClassCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(maintainedEntity, context) }),
+					new Object[] { maintainedEntity }));
 			}
 			return false;
 		}

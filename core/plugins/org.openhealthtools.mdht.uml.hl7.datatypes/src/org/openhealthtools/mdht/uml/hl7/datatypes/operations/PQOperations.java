@@ -43,8 +43,8 @@ public class PQOperations extends ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void setValue(PQ pq, Double newValue) {
-		if (newValue != null){
+	public static void setValue(PQ pq, Double newValue) {
+		if (newValue != null) {
 			pq.setValue(BigDecimal.valueOf(newValue.doubleValue()));
 		} else {
 			pq.setValue((BigDecimal) null);

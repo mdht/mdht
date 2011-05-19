@@ -95,8 +95,13 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 		PQ oldNumerator = numerator;
 		numerator = newNumerator;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__NUMERATOR, oldNumerator, newNumerator);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__NUMERATOR, oldNumerator, newNumerator);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -109,15 +114,22 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 	public void setNumerator(PQ newNumerator) {
 		if (newNumerator != numerator) {
 			NotificationChain msgs = null;
-			if (numerator != null)
-				msgs = ((InternalEObject)numerator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
-			if (newNumerator != null)
-				msgs = ((InternalEObject)newNumerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
+			if (numerator != null) {
+				msgs = ((InternalEObject) numerator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
+			}
+			if (newNumerator != null) {
+				msgs = ((InternalEObject) newNumerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.RTO_PQ_PQ__NUMERATOR, null, msgs);
+			}
 			msgs = basicSetNumerator(newNumerator, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__NUMERATOR, newNumerator, newNumerator));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__NUMERATOR, newNumerator, newNumerator));
 	}
 
 	/**
@@ -138,8 +150,13 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 		PQ oldDenominator = denominator;
 		denominator = newDenominator;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, oldDenominator, newDenominator);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, oldDenominator, newDenominator);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -152,15 +169,22 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 	public void setDenominator(PQ newDenominator) {
 		if (newDenominator != denominator) {
 			NotificationChain msgs = null;
-			if (denominator != null)
-				msgs = ((InternalEObject)denominator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
-			if (newDenominator != null)
-				msgs = ((InternalEObject)newDenominator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
+			if (denominator != null) {
+				msgs = ((InternalEObject) denominator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
+			}
+			if (newDenominator != null) {
+				msgs = ((InternalEObject) newDenominator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, null, msgs);
+			}
 			msgs = basicSetDenominator(newDenominator, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, newDenominator, newDenominator));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.RTO_PQ_PQ__DENOMINATOR, newDenominator, newDenominator));
 	}
 
 	/**
@@ -213,10 +237,10 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.RTO_PQ_PQ__NUMERATOR:
-				setNumerator((PQ)newValue);
+				setNumerator((PQ) newValue);
 				return;
 			case DatatypesPackage.RTO_PQ_PQ__DENOMINATOR:
-				setDenominator((PQ)newValue);
+				setDenominator((PQ) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,10 +255,10 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.RTO_PQ_PQ__NUMERATOR:
-				setNumerator((PQ)null);
+				setNumerator((PQ) null);
 				return;
 			case DatatypesPackage.RTO_PQ_PQ__DENOMINATOR:
-				setDenominator((PQ)null);
+				setDenominator((PQ) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -256,4 +280,4 @@ public class RTO_PQ_PQImpl extends QTYImpl implements RTO_PQ_PQ {
 		return super.eIsSet(featureID);
 	}
 
-} //RTO_PQ_PQImpl
+} // RTO_PQ_PQImpl

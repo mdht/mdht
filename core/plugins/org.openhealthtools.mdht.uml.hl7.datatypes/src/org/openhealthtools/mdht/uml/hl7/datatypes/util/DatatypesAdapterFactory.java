@@ -104,7 +104,7 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -115,193 +115,237 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DatatypesSwitch<Adapter> modelSwitch =
-		new DatatypesSwitch<Adapter>() {
-			@Override
-			public Adapter caseANY(ANY object) {
-				return createANYAdapter();
-			}
-			@Override
-			public Adapter caseBIN(BIN object) {
-				return createBINAdapter();
-			}
-			@Override
-			public Adapter caseED(ED object) {
-				return createEDAdapter();
-			}
-			@Override
-			public Adapter caseTEL(TEL object) {
-				return createTELAdapter();
-			}
-			@Override
-			public Adapter caseURL(URL object) {
-				return createURLAdapter();
-			}
-			@Override
-			public Adapter caseSXCM_TS(SXCM_TS object) {
-				return createSXCM_TSAdapter();
-			}
-			@Override
-			public Adapter caseTS(TS object) {
-				return createTSAdapter();
-			}
-			@Override
-			public Adapter caseQTY(QTY object) {
-				return createQTYAdapter();
-			}
-			@Override
-			public Adapter caseST(ST object) {
-				return createSTAdapter();
-			}
-			@Override
-			public Adapter caseCD(CD object) {
-				return createCDAdapter();
-			}
-			@Override
-			public Adapter caseCR(CR object) {
-				return createCRAdapter();
-			}
-			@Override
-			public Adapter caseCV(CV object) {
-				return createCVAdapter();
-			}
-			@Override
-			public Adapter caseCE(CE object) {
-				return createCEAdapter();
-			}
-			@Override
-			public Adapter caseII(II object) {
-				return createIIAdapter();
-			}
-			@Override
-			public Adapter caseBL(BL object) {
-				return createBLAdapter();
-			}
-			@Override
-			public Adapter caseBN(BN object) {
-				return createBNAdapter();
-			}
-			@Override
-			public Adapter caseAD(AD object) {
-				return createADAdapter();
-			}
-			@Override
-			public Adapter caseADXP(ADXP object) {
-				return createADXPAdapter();
-			}
-			@Override
-			public Adapter caseEN(EN object) {
-				return createENAdapter();
-			}
-			@Override
-			public Adapter caseENXP(ENXP object) {
-				return createENXPAdapter();
-			}
-			@Override
-			public Adapter caseIVL_TS(IVL_TS object) {
-				return createIVL_TSAdapter();
-			}
-			@Override
-			public Adapter caseIVXB_TS(IVXB_TS object) {
-				return createIVXB_TSAdapter();
-			}
-			@Override
-			public Adapter casePQ(PQ object) {
-				return createPQAdapter();
-			}
-			@Override
-			public Adapter casePQR(PQR object) {
-				return createPQRAdapter();
-			}
-			@Override
-			public Adapter caseON(ON object) {
-				return createONAdapter();
-			}
-			@Override
-			public Adapter casePN(PN object) {
-				return createPNAdapter();
-			}
-			@Override
-			public Adapter caseTN(TN object) {
-				return createTNAdapter();
-			}
-			@Override
-			public Adapter caseINT(INT object) {
-				return createINTAdapter();
-			}
-			@Override
-			public Adapter caseREAL(REAL object) {
-				return createREALAdapter();
-			}
-			@Override
-			public Adapter caseCS(CS object) {
-				return createCSAdapter();
-			}
-			@Override
-			public Adapter caseCO(CO object) {
-				return createCOAdapter();
-			}
-			@Override
-			public Adapter caseSC(SC object) {
-				return createSCAdapter();
-			}
-			@Override
-			public Adapter caseRTO_QTY_QTY(RTO_QTY_QTY object) {
-				return createRTO_QTY_QTYAdapter();
-			}
-			@Override
-			public Adapter caseMO(MO object) {
-				return createMOAdapter();
-			}
-			@Override
-			public Adapter caseRTO(RTO object) {
-				return createRTOAdapter();
-			}
-			@Override
-			public Adapter caseSXCM_INT(SXCM_INT object) {
-				return createSXCM_INTAdapter();
-			}
-			@Override
-			public Adapter caseIVXB_INT(IVXB_INT object) {
-				return createIVXB_INTAdapter();
-			}
-			@Override
-			public Adapter caseIVL_INT(IVL_INT object) {
-				return createIVL_INTAdapter();
-			}
-			@Override
-			public Adapter caseIVXB_PQ(IVXB_PQ object) {
-				return createIVXB_PQAdapter();
-			}
-			@Override
-			public Adapter caseSXCM_PQ(SXCM_PQ object) {
-				return createSXCM_PQAdapter();
-			}
-			@Override
-			public Adapter caseIVL_PQ(IVL_PQ object) {
-				return createIVL_PQAdapter();
-			}
-			@Override
-			public Adapter caseRTO_PQ_PQ(RTO_PQ_PQ object) {
-				return createRTO_PQ_PQAdapter();
-			}
-			@Override
-			public Adapter casePIVL_TS(PIVL_TS object) {
-				return createPIVL_TSAdapter();
-			}
-			@Override
-			public Adapter caseEIVL_event(EIVL_event object) {
-				return createEIVL_eventAdapter();
-			}
-			@Override
-			public Adapter caseEIVL_TS(EIVL_TS object) {
-				return createEIVL_TSAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected DatatypesSwitch<Adapter> modelSwitch = new DatatypesSwitch<Adapter>() {
+		@Override
+		public Adapter caseANY(ANY object) {
+			return createANYAdapter();
+		}
+
+		@Override
+		public Adapter caseBIN(BIN object) {
+			return createBINAdapter();
+		}
+
+		@Override
+		public Adapter caseED(ED object) {
+			return createEDAdapter();
+		}
+
+		@Override
+		public Adapter caseTEL(TEL object) {
+			return createTELAdapter();
+		}
+
+		@Override
+		public Adapter caseURL(URL object) {
+			return createURLAdapter();
+		}
+
+		@Override
+		public Adapter caseSXCM_TS(SXCM_TS object) {
+			return createSXCM_TSAdapter();
+		}
+
+		@Override
+		public Adapter caseTS(TS object) {
+			return createTSAdapter();
+		}
+
+		@Override
+		public Adapter caseQTY(QTY object) {
+			return createQTYAdapter();
+		}
+
+		@Override
+		public Adapter caseST(ST object) {
+			return createSTAdapter();
+		}
+
+		@Override
+		public Adapter caseCD(CD object) {
+			return createCDAdapter();
+		}
+
+		@Override
+		public Adapter caseCR(CR object) {
+			return createCRAdapter();
+		}
+
+		@Override
+		public Adapter caseCV(CV object) {
+			return createCVAdapter();
+		}
+
+		@Override
+		public Adapter caseCE(CE object) {
+			return createCEAdapter();
+		}
+
+		@Override
+		public Adapter caseII(II object) {
+			return createIIAdapter();
+		}
+
+		@Override
+		public Adapter caseBL(BL object) {
+			return createBLAdapter();
+		}
+
+		@Override
+		public Adapter caseBN(BN object) {
+			return createBNAdapter();
+		}
+
+		@Override
+		public Adapter caseAD(AD object) {
+			return createADAdapter();
+		}
+
+		@Override
+		public Adapter caseADXP(ADXP object) {
+			return createADXPAdapter();
+		}
+
+		@Override
+		public Adapter caseEN(EN object) {
+			return createENAdapter();
+		}
+
+		@Override
+		public Adapter caseENXP(ENXP object) {
+			return createENXPAdapter();
+		}
+
+		@Override
+		public Adapter caseIVL_TS(IVL_TS object) {
+			return createIVL_TSAdapter();
+		}
+
+		@Override
+		public Adapter caseIVXB_TS(IVXB_TS object) {
+			return createIVXB_TSAdapter();
+		}
+
+		@Override
+		public Adapter casePQ(PQ object) {
+			return createPQAdapter();
+		}
+
+		@Override
+		public Adapter casePQR(PQR object) {
+			return createPQRAdapter();
+		}
+
+		@Override
+		public Adapter caseON(ON object) {
+			return createONAdapter();
+		}
+
+		@Override
+		public Adapter casePN(PN object) {
+			return createPNAdapter();
+		}
+
+		@Override
+		public Adapter caseTN(TN object) {
+			return createTNAdapter();
+		}
+
+		@Override
+		public Adapter caseINT(INT object) {
+			return createINTAdapter();
+		}
+
+		@Override
+		public Adapter caseREAL(REAL object) {
+			return createREALAdapter();
+		}
+
+		@Override
+		public Adapter caseCS(CS object) {
+			return createCSAdapter();
+		}
+
+		@Override
+		public Adapter caseCO(CO object) {
+			return createCOAdapter();
+		}
+
+		@Override
+		public Adapter caseSC(SC object) {
+			return createSCAdapter();
+		}
+
+		@Override
+		public Adapter caseRTO_QTY_QTY(RTO_QTY_QTY object) {
+			return createRTO_QTY_QTYAdapter();
+		}
+
+		@Override
+		public Adapter caseMO(MO object) {
+			return createMOAdapter();
+		}
+
+		@Override
+		public Adapter caseRTO(RTO object) {
+			return createRTOAdapter();
+		}
+
+		@Override
+		public Adapter caseSXCM_INT(SXCM_INT object) {
+			return createSXCM_INTAdapter();
+		}
+
+		@Override
+		public Adapter caseIVXB_INT(IVXB_INT object) {
+			return createIVXB_INTAdapter();
+		}
+
+		@Override
+		public Adapter caseIVL_INT(IVL_INT object) {
+			return createIVL_INTAdapter();
+		}
+
+		@Override
+		public Adapter caseIVXB_PQ(IVXB_PQ object) {
+			return createIVXB_PQAdapter();
+		}
+
+		@Override
+		public Adapter caseSXCM_PQ(SXCM_PQ object) {
+			return createSXCM_PQAdapter();
+		}
+
+		@Override
+		public Adapter caseIVL_PQ(IVL_PQ object) {
+			return createIVL_PQAdapter();
+		}
+
+		@Override
+		public Adapter caseRTO_PQ_PQ(RTO_PQ_PQ object) {
+			return createRTO_PQ_PQAdapter();
+		}
+
+		@Override
+		public Adapter casePIVL_TS(PIVL_TS object) {
+			return createPIVL_TSAdapter();
+		}
+
+		@Override
+		public Adapter caseEIVL_event(EIVL_event object) {
+			return createEIVL_eventAdapter();
+		}
+
+		@Override
+		public Adapter caseEIVL_TS(EIVL_TS object) {
+			return createEIVL_TSAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -313,9 +357,8 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY <em>ANY</em>}'.
@@ -959,4 +1002,4 @@ public class DatatypesAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //DatatypesAdapterFactory
+} // DatatypesAdapterFactory

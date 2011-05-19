@@ -857,4 +857,4 @@ public interface CDAFactory extends EFactory {
 	 */
 	CDAPackage getCDAPackage();
 
-} //CDAFactory
+} // CDAFactory

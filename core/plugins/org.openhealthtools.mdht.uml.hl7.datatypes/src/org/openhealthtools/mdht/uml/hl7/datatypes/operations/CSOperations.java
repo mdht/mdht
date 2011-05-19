@@ -81,26 +81,26 @@ public class CSOperations extends CVOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateOriginalText(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateOriginalText(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.CS);
 			try {
 				VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(cs)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.CS__ORIGINAL_TEXT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateOriginalText", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
-						 new Object [] { cs }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.CS__ORIGINAL_TEXT,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateOriginalText",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
+					new Object[] { cs }));
 			}
 			return false;
 		}
@@ -138,26 +138,26 @@ public class CSOperations extends CVOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCodeSystem(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateCodeSystem(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.CS);
 			try {
 				VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(cs)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.CS__CODE_SYSTEM,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCodeSystem", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
-						 new Object [] { cs }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.CS__CODE_SYSTEM,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateCodeSystem",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
+					new Object[] { cs }));
 			}
 			return false;
 		}
@@ -195,26 +195,26 @@ public class CSOperations extends CVOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCodeSystemName(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateCodeSystemName(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.CS);
 			try {
 				VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(cs)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.CS__CODE_SYSTEM_NAME,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCodeSystemName", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
-						 new Object [] { cs }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.CS__CODE_SYSTEM_NAME,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateCodeSystemName",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
+					new Object[] { cs }));
 			}
 			return false;
 		}
@@ -252,26 +252,26 @@ public class CSOperations extends CVOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCodeSystemVersion(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateCodeSystemVersion(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_CODE_SYSTEM_VERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.CS);
 			try {
 				VALIDATE_CODE_SYSTEM_VERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODE_SYSTEM_VERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CODE_SYSTEM_VERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(cs)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.CS__CODE_SYSTEM_VERSION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCodeSystemVersion", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
-						 new Object [] { cs }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.CS__CODE_SYSTEM_VERSION,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateCodeSystemVersion",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
+					new Object[] { cs }));
 			}
 			return false;
 		}
@@ -309,26 +309,26 @@ public class CSOperations extends CVOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateDisplayName(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateDisplayName(CS cs, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_DISPLAY_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.CS);
 			try {
 				VALIDATE_DISPLAY_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DISPLAY_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DISPLAY_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(cs)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.CS__DISPLAY_NAME,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDisplayName", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
-						 new Object [] { cs }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.CS__DISPLAY_NAME,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateDisplayName",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(cs, context) }),
+					new Object[] { cs }));
 			}
 			return false;
 		}

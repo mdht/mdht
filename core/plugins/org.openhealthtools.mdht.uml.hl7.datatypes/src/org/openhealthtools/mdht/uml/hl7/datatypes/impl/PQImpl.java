@@ -128,8 +128,9 @@ public class PQImpl extends QTYImpl implements PQ {
 	public void setValue(BigDecimal newValue) {
 		BigDecimal oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.PQ__VALUE, oldValue, value));
+		}
 	}
 
 	/**
@@ -158,8 +159,9 @@ public class PQImpl extends QTYImpl implements PQ {
 	public void setUnit(String newUnit) {
 		String oldUnit = unit;
 		unit = newUnit;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.PQ__UNIT, oldUnit, unit));
+		}
 	}
 
 	/**
@@ -183,7 +185,7 @@ public class PQImpl extends QTYImpl implements PQ {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DatatypesPackage.PQ__TRANSLATION:
-				return ((InternalEList<?>)getTranslations()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTranslations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -216,14 +218,14 @@ public class PQImpl extends QTYImpl implements PQ {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.PQ__VALUE:
-				setValue((BigDecimal)newValue);
+				setValue((BigDecimal) newValue);
 				return;
 			case DatatypesPackage.PQ__UNIT:
-				setUnit((String)newValue);
+				setUnit((String) newValue);
 				return;
 			case DatatypesPackage.PQ__TRANSLATION:
 				getTranslations().clear();
-				getTranslations().addAll((Collection<? extends PQR>)newValue);
+				getTranslations().addAll((Collection<? extends PQR>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -259,9 +261,13 @@ public class PQImpl extends QTYImpl implements PQ {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.PQ__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return VALUE_EDEFAULT == null
+						? value != null
+						: !VALUE_EDEFAULT.equals(value);
 			case DatatypesPackage.PQ__UNIT:
-				return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
+				return UNIT_EDEFAULT == null
+						? unit != null
+						: !UNIT_EDEFAULT.equals(unit);
 			case DatatypesPackage.PQ__TRANSLATION:
 				return translations != null && !translations.isEmpty();
 		}
@@ -275,7 +281,9 @@ public class PQImpl extends QTYImpl implements PQ {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -286,4 +294,4 @@ public class PQImpl extends QTYImpl implements PQ {
 		return result.toString();
 	}
 
-} //PQImpl
+} // PQImpl

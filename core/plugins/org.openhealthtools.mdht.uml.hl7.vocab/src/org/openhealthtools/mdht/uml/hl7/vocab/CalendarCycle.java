@@ -607,32 +607,8 @@ public enum CalendarCycle implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final CalendarCycle[] VALUES_ARRAY =
-		new CalendarCycle[] {
-			CD,
-			CH,
-			CM,
-			CN,
-			CS,
-			CW,
-			CY,
-			D,
-			DM,
-			DW,
-			DY,
-			H,
-			HD,
-			J,
-			M,
-			MY,
-			N,
-			NH,
-			S,
-			SN,
-			W,
-			WY,
-			Y,
-		};
+	private static final CalendarCycle[] VALUES_ARRAY = new CalendarCycle[] {
+			CD, CH, CM, CN, CS, CW, CY, D, DM, DW, DY, H, HD, J, M, MY, N, NH, S, SN, W, WY, Y, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Calendar Cycle</b></em>' enumerators.
@@ -682,29 +658,52 @@ public enum CalendarCycle implements Enumerator {
 	 */
 	public static CalendarCycle get(int value) {
 		switch (value) {
-			case CD_VALUE: return CD;
-			case CH_VALUE: return CH;
-			case CM_VALUE: return CM;
-			case CN_VALUE: return CN;
-			case CS_VALUE: return CS;
-			case CW_VALUE: return CW;
-			case CY_VALUE: return CY;
-			case D_VALUE: return D;
-			case DM_VALUE: return DM;
-			case DW_VALUE: return DW;
-			case DY_VALUE: return DY;
-			case H_VALUE: return H;
-			case HD_VALUE: return HD;
-			case J_VALUE: return J;
-			case M_VALUE: return M;
-			case MY_VALUE: return MY;
-			case N_VALUE: return N;
-			case NH_VALUE: return NH;
-			case S_VALUE: return S;
-			case SN_VALUE: return SN;
-			case W_VALUE: return W;
-			case WY_VALUE: return WY;
-			case Y_VALUE: return Y;
+			case CD_VALUE:
+				return CD;
+			case CH_VALUE:
+				return CH;
+			case CM_VALUE:
+				return CM;
+			case CN_VALUE:
+				return CN;
+			case CS_VALUE:
+				return CS;
+			case CW_VALUE:
+				return CW;
+			case CY_VALUE:
+				return CY;
+			case D_VALUE:
+				return D;
+			case DM_VALUE:
+				return DM;
+			case DW_VALUE:
+				return DW;
+			case DY_VALUE:
+				return DY;
+			case H_VALUE:
+				return H;
+			case HD_VALUE:
+				return HD;
+			case J_VALUE:
+				return J;
+			case M_VALUE:
+				return M;
+			case MY_VALUE:
+				return MY;
+			case N_VALUE:
+				return N;
+			case NH_VALUE:
+				return NH;
+			case S_VALUE:
+				return S;
+			case SN_VALUE:
+				return SN;
+			case W_VALUE:
+				return W;
+			case WY_VALUE:
+				return WY;
+			case Y_VALUE:
+				return Y;
 		}
 		return null;
 	}
@@ -748,7 +747,7 @@ public enum CalendarCycle implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -757,7 +756,7 @@ public enum CalendarCycle implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -766,7 +765,7 @@ public enum CalendarCycle implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -779,5 +778,5 @@ public enum CalendarCycle implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //CalendarCycle
+
+} // CalendarCycle

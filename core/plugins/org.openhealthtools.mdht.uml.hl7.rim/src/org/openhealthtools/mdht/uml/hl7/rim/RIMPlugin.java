@@ -43,7 +43,7 @@ public final class RIMPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public RIMPlugin() {
-		super(new ResourceLocator [] {});
+		super(new ResourceLocator[] {});
 	}
 
 	/**

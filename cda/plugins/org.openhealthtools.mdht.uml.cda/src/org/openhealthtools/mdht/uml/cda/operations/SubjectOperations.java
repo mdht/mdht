@@ -79,26 +79,26 @@ public class SubjectOperations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateTypeCode(Subject subject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateTypeCode(Subject subject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.SUBJECT);
 			try {
 				VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(subject)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.SUBJECT__TYPE_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateTypeCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(subject, context) }),
-						 new Object [] { subject }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.SUBJECT__TYPE_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateTypeCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(subject, context) }),
+					new Object[] { subject }));
 			}
 			return false;
 		}
@@ -136,26 +136,27 @@ public class SubjectOperations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateContextControlCode(Subject subject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateContextControlCode(Subject subject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.SUBJECT);
 			try {
 				VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(subject)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.SUBJECT__CONTEXT_CONTROL_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateContextControlCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(subject, context) }),
-						 new Object [] { subject }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.SUBJECT__CONTEXT_CONTROL_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateContextControlCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(subject, context) }),
+					new Object[] { subject }));
 			}
 			return false;
 		}

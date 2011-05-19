@@ -56,4 +56,4 @@ public class TNImpl extends ENImpl implements TN {
 		return TNOperations.validateInvariant(this, diagnostics, context);
 	}
 
-} //TNImpl
+} // TNImpl

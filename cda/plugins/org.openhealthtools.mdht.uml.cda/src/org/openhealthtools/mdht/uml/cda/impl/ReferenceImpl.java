@@ -222,6 +222,7 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.REFERENCE__REALM_CODE);
@@ -234,6 +235,7 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -247,8 +249,13 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -261,15 +268,21 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -277,6 +290,7 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.REFERENCE__TEMPLATE_ID);
@@ -302,8 +316,13 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		BL oldSeperatableInd = seperatableInd;
 		seperatableInd = newSeperatableInd;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__SEPERATABLE_IND, oldSeperatableInd, newSeperatableInd);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__SEPERATABLE_IND, oldSeperatableInd, newSeperatableInd);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -316,15 +335,22 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	public void setSeperatableInd(BL newSeperatableInd) {
 		if (newSeperatableInd != seperatableInd) {
 			NotificationChain msgs = null;
-			if (seperatableInd != null)
-				msgs = ((InternalEObject)seperatableInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__SEPERATABLE_IND, null, msgs);
-			if (newSeperatableInd != null)
-				msgs = ((InternalEObject)newSeperatableInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__SEPERATABLE_IND, null, msgs);
+			if (seperatableInd != null) {
+				msgs = ((InternalEObject) seperatableInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__SEPERATABLE_IND, null, msgs);
+			}
+			if (newSeperatableInd != null) {
+				msgs = ((InternalEObject) newSeperatableInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__SEPERATABLE_IND, null, msgs);
+			}
 			msgs = basicSetSeperatableInd(newSeperatableInd, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__SEPERATABLE_IND, newSeperatableInd, newSeperatableInd));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__SEPERATABLE_IND, newSeperatableInd, newSeperatableInd));
 	}
 
 	/**
@@ -345,8 +371,13 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		ExternalAct oldExternalAct = externalAct;
 		externalAct = newExternalAct;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_ACT, oldExternalAct, newExternalAct);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_ACT, oldExternalAct, newExternalAct);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -359,15 +390,22 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	public void setExternalAct(ExternalAct newExternalAct) {
 		if (newExternalAct != externalAct) {
 			NotificationChain msgs = null;
-			if (externalAct != null)
-				msgs = ((InternalEObject)externalAct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_ACT, null, msgs);
-			if (newExternalAct != null)
-				msgs = ((InternalEObject)newExternalAct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_ACT, null, msgs);
+			if (externalAct != null) {
+				msgs = ((InternalEObject) externalAct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_ACT, null, msgs);
+			}
+			if (newExternalAct != null) {
+				msgs = ((InternalEObject) newExternalAct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_ACT, null, msgs);
+			}
 			msgs = basicSetExternalAct(newExternalAct, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_ACT, newExternalAct, newExternalAct));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_ACT, newExternalAct, newExternalAct));
 	}
 
 	/**
@@ -384,12 +422,19 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExternalObservation(ExternalObservation newExternalObservation, NotificationChain msgs) {
+	public NotificationChain basicSetExternalObservation(ExternalObservation newExternalObservation,
+			NotificationChain msgs) {
 		ExternalObservation oldExternalObservation = externalObservation;
 		externalObservation = newExternalObservation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, oldExternalObservation, newExternalObservation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, oldExternalObservation,
+				newExternalObservation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -402,15 +447,23 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	public void setExternalObservation(ExternalObservation newExternalObservation) {
 		if (newExternalObservation != externalObservation) {
 			NotificationChain msgs = null;
-			if (externalObservation != null)
-				msgs = ((InternalEObject)externalObservation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, null, msgs);
-			if (newExternalObservation != null)
-				msgs = ((InternalEObject)newExternalObservation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, null, msgs);
+			if (externalObservation != null) {
+				msgs = ((InternalEObject) externalObservation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, null, msgs);
+			}
+			if (newExternalObservation != null) {
+				msgs = ((InternalEObject) newExternalObservation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, null, msgs);
+			}
 			msgs = basicSetExternalObservation(newExternalObservation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, newExternalObservation,
+				newExternalObservation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_OBSERVATION, newExternalObservation, newExternalObservation));
 	}
 
 	/**
@@ -431,8 +484,14 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		ExternalProcedure oldExternalProcedure = externalProcedure;
 		externalProcedure = newExternalProcedure;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, oldExternalProcedure, newExternalProcedure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, oldExternalProcedure,
+				newExternalProcedure);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -445,15 +504,23 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	public void setExternalProcedure(ExternalProcedure newExternalProcedure) {
 		if (newExternalProcedure != externalProcedure) {
 			NotificationChain msgs = null;
-			if (externalProcedure != null)
-				msgs = ((InternalEObject)externalProcedure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, null, msgs);
-			if (newExternalProcedure != null)
-				msgs = ((InternalEObject)newExternalProcedure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, null, msgs);
+			if (externalProcedure != null) {
+				msgs = ((InternalEObject) externalProcedure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, null, msgs);
+			}
+			if (newExternalProcedure != null) {
+				msgs = ((InternalEObject) newExternalProcedure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, null, msgs);
+			}
 			msgs = basicSetExternalProcedure(newExternalProcedure, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, newExternalProcedure,
+				newExternalProcedure));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_PROCEDURE, newExternalProcedure, newExternalProcedure));
 	}
 
 	/**
@@ -474,8 +541,14 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		ExternalDocument oldExternalDocument = externalDocument;
 		externalDocument = newExternalDocument;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, oldExternalDocument, newExternalDocument);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, oldExternalDocument,
+				newExternalDocument);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -488,15 +561,23 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	public void setExternalDocument(ExternalDocument newExternalDocument) {
 		if (newExternalDocument != externalDocument) {
 			NotificationChain msgs = null;
-			if (externalDocument != null)
-				msgs = ((InternalEObject)externalDocument).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, null, msgs);
-			if (newExternalDocument != null)
-				msgs = ((InternalEObject)newExternalDocument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, null, msgs);
+			if (externalDocument != null) {
+				msgs = ((InternalEObject) externalDocument).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, null, msgs);
+			}
+			if (newExternalDocument != null) {
+				msgs = ((InternalEObject) newExternalDocument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, null, msgs);
+			}
 			msgs = basicSetExternalDocument(newExternalDocument, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, newExternalDocument,
+				newExternalDocument));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__EXTERNAL_DOCUMENT, newExternalDocument, newExternalDocument));
 	}
 
 	/**
@@ -504,6 +585,7 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -515,11 +597,16 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -532,8 +619,11 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.REFERENCE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.REFERENCE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -550,6 +640,7 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public x_ActRelationshipExternalReference getTypeCode() {
 		return typeCode;
 	}
@@ -561,11 +652,15 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 */
 	public void setTypeCode(x_ActRelationshipExternalReference newTypeCode) {
 		x_ActRelationshipExternalReference oldTypeCode = typeCode;
-		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		typeCode = newTypeCode == null
+				? TYPE_CODE_EDEFAULT
+				: newTypeCode;
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REFERENCE__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -578,8 +673,11 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.REFERENCE__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.REFERENCE__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+				oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -609,11 +707,11 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.REFERENCE__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.REFERENCE__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.REFERENCE__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.REFERENCE__SEPERATABLE_IND:
 				return basicSetSeperatableInd(null, msgs);
 			case CDAPackage.REFERENCE__EXTERNAL_ACT:
@@ -671,35 +769,35 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 		switch (featureID) {
 			case CDAPackage.REFERENCE__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.REFERENCE__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.REFERENCE__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.REFERENCE__SEPERATABLE_IND:
-				setSeperatableInd((BL)newValue);
+				setSeperatableInd((BL) newValue);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_ACT:
-				setExternalAct((ExternalAct)newValue);
+				setExternalAct((ExternalAct) newValue);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_OBSERVATION:
-				setExternalObservation((ExternalObservation)newValue);
+				setExternalObservation((ExternalObservation) newValue);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_PROCEDURE:
-				setExternalProcedure((ExternalProcedure)newValue);
+				setExternalProcedure((ExternalProcedure) newValue);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_DOCUMENT:
-				setExternalDocument((ExternalDocument)newValue);
+				setExternalDocument((ExternalDocument) newValue);
 				return;
 			case CDAPackage.REFERENCE__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.REFERENCE__TYPE_CODE:
-				setTypeCode((x_ActRelationshipExternalReference)newValue);
+				setTypeCode((x_ActRelationshipExternalReference) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -717,25 +815,25 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.REFERENCE__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.REFERENCE__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.REFERENCE__SEPERATABLE_IND:
-				setSeperatableInd((BL)null);
+				setSeperatableInd((BL) null);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_ACT:
-				setExternalAct((ExternalAct)null);
+				setExternalAct((ExternalAct) null);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_OBSERVATION:
-				setExternalObservation((ExternalObservation)null);
+				setExternalObservation((ExternalObservation) null);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_PROCEDURE:
-				setExternalProcedure((ExternalProcedure)null);
+				setExternalProcedure((ExternalProcedure) null);
 				return;
 			case CDAPackage.REFERENCE__EXTERNAL_DOCUMENT:
-				setExternalDocument((ExternalDocument)null);
+				setExternalDocument((ExternalDocument) null);
 				return;
 			case CDAPackage.REFERENCE__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -786,15 +884,25 @@ public class ReferenceImpl extends ActRelationshipImpl implements Reference {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", typeCode: ");
-		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
+		if (typeCodeESet) {
+			result.append(typeCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ReferenceImpl
+} // ReferenceImpl

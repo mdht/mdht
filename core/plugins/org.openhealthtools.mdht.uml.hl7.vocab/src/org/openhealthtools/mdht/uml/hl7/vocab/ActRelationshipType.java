@@ -1432,65 +1432,11 @@ public enum ActRelationshipType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActRelationshipType[] VALUES_ARRAY =
-		new ActRelationshipType[] {
-			APND,
-			ARR,
-			AUTH,
-			CAUS,
-			CHRG,
-			CIND,
-			COMP,
-			COST,
-			COVBY,
-			CREDIT,
-			CTRLV,
-			DEBIT,
-			DEP,
-			DOC,
-			DRIV,
-			ELNK,
-			EXPL,
-			FLFS,
-			GEN,
-			GEVL,
-			GOAL,
-			INST,
-			ITEMSLOC,
-			LIMIT,
-			MFST,
-			MITGT,
-			MTCH,
-			NAME,
-			OBJC,
-			OBJF,
-			OCCR,
-			OPTN,
-			OREF,
-			OUTC,
-			PERT,
-			PRCN,
-			PREV,
-			REFR,
-			REFV,
-			REV,
-			RISK,
-			RPLC,
-			RSON,
-			SAS,
-			SCH,
-			SEQL,
-			SPRT,
-			SPRTBND,
-			SUBJ,
-			SUCC,
-			SUMM,
-			TRIG,
-			UPDT,
-			VRXCRPT,
-			XCRPT,
-			XFRM,
-		};
+	private static final ActRelationshipType[] VALUES_ARRAY = new ActRelationshipType[] {
+			APND, ARR, AUTH, CAUS, CHRG, CIND, COMP, COST, COVBY, CREDIT, CTRLV, DEBIT, DEP, DOC, DRIV, ELNK, EXPL,
+			FLFS, GEN, GEVL, GOAL, INST, ITEMSLOC, LIMIT, MFST, MITGT, MTCH, NAME, OBJC, OBJF, OCCR, OPTN, OREF, OUTC,
+			PERT, PRCN, PREV, REFR, REFV, REV, RISK, RPLC, RSON, SAS, SCH, SEQL, SPRT, SPRTBND, SUBJ, SUCC, SUMM, TRIG,
+			UPDT, VRXCRPT, XCRPT, XFRM, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Relationship Type</b></em>' enumerators.
@@ -1540,62 +1486,118 @@ public enum ActRelationshipType implements Enumerator {
 	 */
 	public static ActRelationshipType get(int value) {
 		switch (value) {
-			case APND_VALUE: return APND;
-			case ARR_VALUE: return ARR;
-			case AUTH_VALUE: return AUTH;
-			case CAUS_VALUE: return CAUS;
-			case CHRG_VALUE: return CHRG;
-			case CIND_VALUE: return CIND;
-			case COMP_VALUE: return COMP;
-			case COST_VALUE: return COST;
-			case COVBY_VALUE: return COVBY;
-			case CREDIT_VALUE: return CREDIT;
-			case CTRLV_VALUE: return CTRLV;
-			case DEBIT_VALUE: return DEBIT;
-			case DEP_VALUE: return DEP;
-			case DOC_VALUE: return DOC;
-			case DRIV_VALUE: return DRIV;
-			case ELNK_VALUE: return ELNK;
-			case EXPL_VALUE: return EXPL;
-			case FLFS_VALUE: return FLFS;
-			case GEN_VALUE: return GEN;
-			case GEVL_VALUE: return GEVL;
-			case GOAL_VALUE: return GOAL;
-			case INST_VALUE: return INST;
-			case ITEMSLOC_VALUE: return ITEMSLOC;
-			case LIMIT_VALUE: return LIMIT;
-			case MFST_VALUE: return MFST;
-			case MITGT_VALUE: return MITGT;
-			case MTCH_VALUE: return MTCH;
-			case NAME_VALUE: return NAME;
-			case OBJC_VALUE: return OBJC;
-			case OBJF_VALUE: return OBJF;
-			case OCCR_VALUE: return OCCR;
-			case OPTN_VALUE: return OPTN;
-			case OREF_VALUE: return OREF;
-			case OUTC_VALUE: return OUTC;
-			case PERT_VALUE: return PERT;
-			case PRCN_VALUE: return PRCN;
-			case PREV_VALUE: return PREV;
-			case REFR_VALUE: return REFR;
-			case REFV_VALUE: return REFV;
-			case REV_VALUE: return REV;
-			case RISK_VALUE: return RISK;
-			case RPLC_VALUE: return RPLC;
-			case RSON_VALUE: return RSON;
-			case SAS_VALUE: return SAS;
-			case SCH_VALUE: return SCH;
-			case SEQL_VALUE: return SEQL;
-			case SPRT_VALUE: return SPRT;
-			case SPRTBND_VALUE: return SPRTBND;
-			case SUBJ_VALUE: return SUBJ;
-			case SUCC_VALUE: return SUCC;
-			case SUMM_VALUE: return SUMM;
-			case TRIG_VALUE: return TRIG;
-			case UPDT_VALUE: return UPDT;
-			case VRXCRPT_VALUE: return VRXCRPT;
-			case XCRPT_VALUE: return XCRPT;
-			case XFRM_VALUE: return XFRM;
+			case APND_VALUE:
+				return APND;
+			case ARR_VALUE:
+				return ARR;
+			case AUTH_VALUE:
+				return AUTH;
+			case CAUS_VALUE:
+				return CAUS;
+			case CHRG_VALUE:
+				return CHRG;
+			case CIND_VALUE:
+				return CIND;
+			case COMP_VALUE:
+				return COMP;
+			case COST_VALUE:
+				return COST;
+			case COVBY_VALUE:
+				return COVBY;
+			case CREDIT_VALUE:
+				return CREDIT;
+			case CTRLV_VALUE:
+				return CTRLV;
+			case DEBIT_VALUE:
+				return DEBIT;
+			case DEP_VALUE:
+				return DEP;
+			case DOC_VALUE:
+				return DOC;
+			case DRIV_VALUE:
+				return DRIV;
+			case ELNK_VALUE:
+				return ELNK;
+			case EXPL_VALUE:
+				return EXPL;
+			case FLFS_VALUE:
+				return FLFS;
+			case GEN_VALUE:
+				return GEN;
+			case GEVL_VALUE:
+				return GEVL;
+			case GOAL_VALUE:
+				return GOAL;
+			case INST_VALUE:
+				return INST;
+			case ITEMSLOC_VALUE:
+				return ITEMSLOC;
+			case LIMIT_VALUE:
+				return LIMIT;
+			case MFST_VALUE:
+				return MFST;
+			case MITGT_VALUE:
+				return MITGT;
+			case MTCH_VALUE:
+				return MTCH;
+			case NAME_VALUE:
+				return NAME;
+			case OBJC_VALUE:
+				return OBJC;
+			case OBJF_VALUE:
+				return OBJF;
+			case OCCR_VALUE:
+				return OCCR;
+			case OPTN_VALUE:
+				return OPTN;
+			case OREF_VALUE:
+				return OREF;
+			case OUTC_VALUE:
+				return OUTC;
+			case PERT_VALUE:
+				return PERT;
+			case PRCN_VALUE:
+				return PRCN;
+			case PREV_VALUE:
+				return PREV;
+			case REFR_VALUE:
+				return REFR;
+			case REFV_VALUE:
+				return REFV;
+			case REV_VALUE:
+				return REV;
+			case RISK_VALUE:
+				return RISK;
+			case RPLC_VALUE:
+				return RPLC;
+			case RSON_VALUE:
+				return RSON;
+			case SAS_VALUE:
+				return SAS;
+			case SCH_VALUE:
+				return SCH;
+			case SEQL_VALUE:
+				return SEQL;
+			case SPRT_VALUE:
+				return SPRT;
+			case SPRTBND_VALUE:
+				return SPRTBND;
+			case SUBJ_VALUE:
+				return SUBJ;
+			case SUCC_VALUE:
+				return SUCC;
+			case SUMM_VALUE:
+				return SUMM;
+			case TRIG_VALUE:
+				return TRIG;
+			case UPDT_VALUE:
+				return UPDT;
+			case VRXCRPT_VALUE:
+				return VRXCRPT;
+			case XCRPT_VALUE:
+				return XCRPT;
+			case XFRM_VALUE:
+				return XFRM;
 		}
 		return null;
 	}
@@ -1639,7 +1641,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -1648,7 +1650,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -1657,7 +1659,7 @@ public enum ActRelationshipType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -1670,5 +1672,5 @@ public enum ActRelationshipType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ActRelationshipType
+
+} // ActRelationshipType

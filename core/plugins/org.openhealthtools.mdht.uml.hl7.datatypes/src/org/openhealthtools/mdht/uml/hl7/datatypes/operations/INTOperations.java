@@ -66,6 +66,7 @@ public class INTOperations extends ANYOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "(self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateINT(INT, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate INT</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -87,26 +88,26 @@ public class INTOperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateINT(INT int_, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateINT(INT int_, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.INT);
 			try {
 				VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_INT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(int_)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.INT__INT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateINT", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(int_, context) }),
-						 new Object [] { int_ }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.INT__INT,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateINT",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(int_, context) }),
+					new Object[] { int_ }));
 			}
 			return false;
 		}
@@ -118,8 +119,8 @@ public class INTOperations extends ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void setValue(INT int_, Integer newValue) {
-		if (newValue != null){
+	public static void setValue(INT int_, Integer newValue) {
+		if (newValue != null) {
 			int_.setValue(BigInteger.valueOf(newValue.longValue()));
 		} else {
 			int_.setValue((BigInteger) null);

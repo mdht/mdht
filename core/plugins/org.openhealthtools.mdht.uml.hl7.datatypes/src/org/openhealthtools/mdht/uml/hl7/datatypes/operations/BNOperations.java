@@ -77,26 +77,26 @@ public class BNOperations extends BLOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateNullFlavor(BN bn, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateNullFlavor(BN bn, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.BN);
 			try {
 				VALIDATE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(bn)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.BN__NULL_FLAVOR,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateNullFlavor", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(bn, context) }),
-						 new Object [] { bn }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.BN__NULL_FLAVOR,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateNullFlavor",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(bn, context) }),
+					new Object[] { bn }));
 			}
 			return false;
 		}

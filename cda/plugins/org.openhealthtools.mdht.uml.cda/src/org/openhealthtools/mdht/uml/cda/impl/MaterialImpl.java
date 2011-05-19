@@ -229,6 +229,7 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.MATERIAL__REALM_CODE);
@@ -241,6 +242,7 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -254,8 +256,13 @@ public class MaterialImpl extends EntityImpl implements Material {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -268,15 +275,21 @@ public class MaterialImpl extends EntityImpl implements Material {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.MATERIAL__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.MATERIAL__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -284,6 +297,7 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.MATERIAL__TEMPLATE_ID);
@@ -309,8 +323,13 @@ public class MaterialImpl extends EntityImpl implements Material {
 		CE oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -323,15 +342,21 @@ public class MaterialImpl extends EntityImpl implements Material {
 	public void setCode(CE newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__CODE, newCode, newCode));
+		}
 	}
 
 	/**
@@ -352,8 +377,13 @@ public class MaterialImpl extends EntityImpl implements Material {
 		EN oldName = name;
 		name = newName;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__NAME, oldName, newName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__NAME, oldName, newName);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -366,15 +396,21 @@ public class MaterialImpl extends EntityImpl implements Material {
 	public void setName(EN newName) {
 		if (newName != name) {
 			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__NAME, null, msgs);
+			if (name != null) {
+				msgs = ((InternalEObject) name).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__NAME, null, msgs);
+			}
+			if (newName != null) {
+				msgs = ((InternalEObject) newName).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__NAME, null, msgs);
+			}
 			msgs = basicSetName(newName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__NAME, newName, newName));
+		}
 	}
 
 	/**
@@ -395,8 +431,13 @@ public class MaterialImpl extends EntityImpl implements Material {
 		ST oldLotNumberText = lotNumberText;
 		lotNumberText = newLotNumberText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__LOT_NUMBER_TEXT, oldLotNumberText, newLotNumberText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__LOT_NUMBER_TEXT, oldLotNumberText, newLotNumberText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -409,15 +450,22 @@ public class MaterialImpl extends EntityImpl implements Material {
 	public void setLotNumberText(ST newLotNumberText) {
 		if (newLotNumberText != lotNumberText) {
 			NotificationChain msgs = null;
-			if (lotNumberText != null)
-				msgs = ((InternalEObject)lotNumberText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__LOT_NUMBER_TEXT, null, msgs);
-			if (newLotNumberText != null)
-				msgs = ((InternalEObject)newLotNumberText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.MATERIAL__LOT_NUMBER_TEXT, null, msgs);
+			if (lotNumberText != null) {
+				msgs = ((InternalEObject) lotNumberText).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.MATERIAL__LOT_NUMBER_TEXT, null, msgs);
+			}
+			if (newLotNumberText != null) {
+				msgs = ((InternalEObject) newLotNumberText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.MATERIAL__LOT_NUMBER_TEXT, null, msgs);
+			}
 			msgs = basicSetLotNumberText(newLotNumberText, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__LOT_NUMBER_TEXT, newLotNumberText, newLotNumberText));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__LOT_NUMBER_TEXT, newLotNumberText, newLotNumberText));
 	}
 
 	/**
@@ -425,6 +473,7 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -436,11 +485,15 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -453,8 +506,11 @@ public class MaterialImpl extends EntityImpl implements Material {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -471,6 +527,7 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityClassManufacturedMaterial getClassCode() {
 		return classCode;
 	}
@@ -482,11 +539,15 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 */
 	public void setClassCode(EntityClassManufacturedMaterial newClassCode) {
 		EntityClassManufacturedMaterial oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -499,8 +560,11 @@ public class MaterialImpl extends EntityImpl implements Material {
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -517,6 +581,7 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityDeterminerDetermined getDeterminerCode() {
 		return determinerCode;
 	}
@@ -528,11 +593,16 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 */
 	public void setDeterminerCode(EntityDeterminerDetermined newDeterminerCode) {
 		EntityDeterminerDetermined oldDeterminerCode = determinerCode;
-		determinerCode = newDeterminerCode == null ? DETERMINER_CODE_EDEFAULT : newDeterminerCode;
+		determinerCode = newDeterminerCode == null
+				? DETERMINER_CODE_EDEFAULT
+				: newDeterminerCode;
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__DETERMINER_CODE, oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.MATERIAL__DETERMINER_CODE, oldDeterminerCode, determinerCode,
+				!oldDeterminerCodeESet));
+		}
 	}
 
 	/**
@@ -545,8 +615,11 @@ public class MaterialImpl extends EntityImpl implements Material {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MATERIAL__DETERMINER_CODE, oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.MATERIAL__DETERMINER_CODE, oldDeterminerCode,
+				DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+		}
 	}
 
 	/**
@@ -585,11 +658,11 @@ public class MaterialImpl extends EntityImpl implements Material {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.MATERIAL__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.MATERIAL__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.MATERIAL__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.MATERIAL__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.MATERIAL__NAME:
@@ -641,32 +714,32 @@ public class MaterialImpl extends EntityImpl implements Material {
 		switch (featureID) {
 			case CDAPackage.MATERIAL__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.MATERIAL__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.MATERIAL__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.MATERIAL__CODE:
-				setCode((CE)newValue);
+				setCode((CE) newValue);
 				return;
 			case CDAPackage.MATERIAL__NAME:
-				setName((EN)newValue);
+				setName((EN) newValue);
 				return;
 			case CDAPackage.MATERIAL__LOT_NUMBER_TEXT:
-				setLotNumberText((ST)newValue);
+				setLotNumberText((ST) newValue);
 				return;
 			case CDAPackage.MATERIAL__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.MATERIAL__CLASS_CODE:
-				setClassCode((EntityClassManufacturedMaterial)newValue);
+				setClassCode((EntityClassManufacturedMaterial) newValue);
 				return;
 			case CDAPackage.MATERIAL__DETERMINER_CODE:
-				setDeterminerCode((EntityDeterminerDetermined)newValue);
+				setDeterminerCode((EntityDeterminerDetermined) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -684,19 +757,19 @@ public class MaterialImpl extends EntityImpl implements Material {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.MATERIAL__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.MATERIAL__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.MATERIAL__CODE:
-				setCode((CE)null);
+				setCode((CE) null);
 				return;
 			case CDAPackage.MATERIAL__NAME:
-				setName((EN)null);
+				setName((EN) null);
 				return;
 			case CDAPackage.MATERIAL__LOT_NUMBER_TEXT:
-				setLotNumberText((ST)null);
+				setLotNumberText((ST) null);
 				return;
 			case CDAPackage.MATERIAL__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -748,17 +821,31 @@ public class MaterialImpl extends EntityImpl implements Material {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", determinerCode: ");
-		if (determinerCodeESet) result.append(determinerCode); else result.append("<unset>");
+		if (determinerCodeESet) {
+			result.append(determinerCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //MaterialImpl
+} // MaterialImpl

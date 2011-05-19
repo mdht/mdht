@@ -112,4 +112,4 @@ public abstract class RoleImpl extends InfrastructureRootImpl implements Role {
 		return RoleOperations.isClassCodeDefined(this);
 	}
 
-} //RoleImpl
+} // RoleImpl

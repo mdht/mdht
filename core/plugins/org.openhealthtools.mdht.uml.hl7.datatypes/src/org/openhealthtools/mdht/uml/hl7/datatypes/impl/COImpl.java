@@ -43,4 +43,4 @@ public class COImpl extends CVImpl implements CO {
 		return DatatypesPackage.Literals.CO;
 	}
 
-} //COImpl
+} // COImpl

@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IVXB INT</b></em>'.

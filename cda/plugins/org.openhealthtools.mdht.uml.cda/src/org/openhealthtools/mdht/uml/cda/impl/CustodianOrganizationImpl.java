@@ -241,6 +241,7 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE);
@@ -253,6 +254,7 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -266,8 +268,13 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -280,15 +287,22 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -296,9 +310,11 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
-			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID);
+			templateIds = new EObjectContainmentEList<II>(
+				II.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID);
 		}
 		return templateIds;
 	}
@@ -333,8 +349,13 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		ON oldName = name;
 		name = newName;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__NAME, oldName, newName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__NAME, oldName, newName);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -347,15 +368,22 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	public void setName(ON newName) {
 		if (newName != name) {
 			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__NAME, null, msgs);
+			if (name != null) {
+				msgs = ((InternalEObject) name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__NAME, null, msgs);
+			}
+			if (newName != null) {
+				msgs = ((InternalEObject) newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__NAME, null, msgs);
+			}
 			msgs = basicSetName(newName, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__NAME, newName, newName));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__NAME, newName, newName));
 	}
 
 	/**
@@ -376,8 +404,13 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		TEL oldTelecom = telecom;
 		telecom = newTelecom;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, oldTelecom, newTelecom);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, oldTelecom, newTelecom);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -390,15 +423,22 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	public void setTelecom(TEL newTelecom) {
 		if (newTelecom != telecom) {
 			NotificationChain msgs = null;
-			if (telecom != null)
-				msgs = ((InternalEObject)telecom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, null, msgs);
-			if (newTelecom != null)
-				msgs = ((InternalEObject)newTelecom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, null, msgs);
+			if (telecom != null) {
+				msgs = ((InternalEObject) telecom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, null, msgs);
+			}
+			if (newTelecom != null) {
+				msgs = ((InternalEObject) newTelecom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, null, msgs);
+			}
 			msgs = basicSetTelecom(newTelecom, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, newTelecom, newTelecom));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM, newTelecom, newTelecom));
 	}
 
 	/**
@@ -419,8 +459,13 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		AD oldAddr = addr;
 		addr = newAddr;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, oldAddr, newAddr);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, oldAddr, newAddr);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -433,15 +478,22 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	public void setAddr(AD newAddr) {
 		if (newAddr != addr) {
 			NotificationChain msgs = null;
-			if (addr != null)
-				msgs = ((InternalEObject)addr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, null, msgs);
-			if (newAddr != null)
-				msgs = ((InternalEObject)newAddr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, null, msgs);
+			if (addr != null) {
+				msgs = ((InternalEObject) addr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, null, msgs);
+			}
+			if (newAddr != null) {
+				msgs = ((InternalEObject) newAddr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, null, msgs);
+			}
 			msgs = basicSetAddr(newAddr, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, newAddr, newAddr));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__ADDR, newAddr, newAddr));
 	}
 
 	/**
@@ -449,6 +501,7 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -460,11 +513,16 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -477,8 +535,11 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CUSTODIAN_ORGANIZATION__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.CUSTODIAN_ORGANIZATION__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -495,6 +556,7 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityClassOrganization getClassCode() {
 		return classCode;
 	}
@@ -506,11 +568,16 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 */
 	public void setClassCode(EntityClassOrganization newClassCode) {
 		EntityClassOrganization oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -523,8 +590,11 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CUSTODIAN_ORGANIZATION__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.CUSTODIAN_ORGANIZATION__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -541,6 +611,7 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityDeterminer getDeterminerCode() {
 		return determinerCode;
 	}
@@ -552,11 +623,16 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 */
 	public void setDeterminerCode(EntityDeterminer newDeterminerCode) {
 		EntityDeterminer oldDeterminerCode = determinerCode;
-		determinerCode = newDeterminerCode == null ? DETERMINER_CODE_EDEFAULT : newDeterminerCode;
+		determinerCode = newDeterminerCode == null
+				? DETERMINER_CODE_EDEFAULT
+				: newDeterminerCode;
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__DETERMINER_CODE, oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.CUSTODIAN_ORGANIZATION__DETERMINER_CODE, oldDeterminerCode,
+				determinerCode, !oldDeterminerCodeESet));
+		}
 	}
 
 	/**
@@ -569,8 +645,11 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CUSTODIAN_ORGANIZATION__DETERMINER_CODE, oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.CUSTODIAN_ORGANIZATION__DETERMINER_CODE, oldDeterminerCode,
+				DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+		}
 	}
 
 	/**
@@ -636,13 +715,13 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
 				return basicSetName(null, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM:
@@ -696,36 +775,36 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 		switch (featureID) {
 			case CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
-				setName((ON)newValue);
+				setName((ON) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM:
-				setTelecom((TEL)newValue);
+				setTelecom((TEL) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ADDR:
-				setAddr((AD)newValue);
+				setAddr((AD) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__CLASS_CODE:
-				setClassCode((EntityClassOrganization)newValue);
+				setClassCode((EntityClassOrganization) newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__DETERMINER_CODE:
-				setDeterminerCode((EntityDeterminer)newValue);
+				setDeterminerCode((EntityDeterminer) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -743,7 +822,7 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -752,13 +831,13 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 				getIds().clear();
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
-				setName((ON)null);
+				setName((ON) null);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM:
-				setTelecom((TEL)null);
+				setTelecom((TEL) null);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ADDR:
-				setAddr((AD)null);
+				setAddr((AD) null);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -812,17 +891,31 @@ public class CustodianOrganizationImpl extends EntityImpl implements CustodianOr
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", determinerCode: ");
-		if (determinerCodeESet) result.append(determinerCode); else result.append("<unset>");
+		if (determinerCodeESet) {
+			result.append(determinerCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //CustodianOrganizationImpl
+} // CustodianOrganizationImpl

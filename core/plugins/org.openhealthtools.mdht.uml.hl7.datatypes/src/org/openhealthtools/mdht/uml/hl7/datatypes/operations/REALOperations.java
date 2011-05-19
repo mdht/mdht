@@ -66,6 +66,7 @@ public class REALOperations extends ANYOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "(self.isNullFlavorDefined() or self.isDefined('value')) and not(self.isNullFlavorDefined() and self.isDefined('value'))";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateREAL(REAL, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate REAL</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -87,26 +88,26 @@ public class REALOperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateREAL(REAL real, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateREAL(REAL real, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.REAL);
 			try {
 				VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_REAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(real)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.REAL__REAL,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateREAL", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(real, context) }),
-						 new Object [] { real }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.REAL__REAL,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateREAL",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(real, context) }),
+					new Object[] { real }));
 			}
 			return false;
 		}
@@ -118,8 +119,8 @@ public class REALOperations extends ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void setValue(REAL real, Double newValue) {
-		if (newValue != null){
+	public static void setValue(REAL real, Double newValue) {
+		if (newValue != null) {
 			real.setValue(BigDecimal.valueOf(newValue.doubleValue()));
 		} else {
 			real.setValue((BigDecimal) null);

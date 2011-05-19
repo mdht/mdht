@@ -79,26 +79,27 @@ public class OrganizationOperations extends EntityOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateClassCode(Organization organization, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateClassCode(Organization organization, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.ORGANIZATION);
 			try {
 				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(organization)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.ORGANIZATION__CLASS_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateClassCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(organization, context) }),
-						 new Object [] { organization }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.ORGANIZATION__CLASS_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateClassCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(organization, context) }),
+					new Object[] { organization }));
 			}
 			return false;
 		}
@@ -136,26 +137,27 @@ public class OrganizationOperations extends EntityOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateDeterminerCode(Organization organization, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateDeterminerCode(Organization organization, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.ORGANIZATION);
 			try {
 				VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(organization)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.ORGANIZATION__DETERMINER_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeterminerCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(organization, context) }),
-						 new Object [] { organization }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.ORGANIZATION__DETERMINER_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateDeterminerCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(organization, context) }),
+					new Object[] { organization }));
 			}
 			return false;
 		}

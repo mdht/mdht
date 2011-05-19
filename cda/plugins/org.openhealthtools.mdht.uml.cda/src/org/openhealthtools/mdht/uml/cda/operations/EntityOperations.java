@@ -77,26 +77,26 @@ public class EntityOperations extends org.openhealthtools.mdht.uml.hl7.rim.opera
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateDeterminerCode(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateDeterminerCode(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.ENTITY);
 			try {
 				VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(entity)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.ENTITY__DETERMINER_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeterminerCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(entity, context) }),
-						 new Object [] { entity }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.ENTITY__DETERMINER_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateDeterminerCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(entity, context) }),
+					new Object[] { entity }));
 			}
 			return false;
 		}

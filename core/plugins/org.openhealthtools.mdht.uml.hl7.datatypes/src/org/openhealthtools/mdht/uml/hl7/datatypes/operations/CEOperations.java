@@ -86,26 +86,26 @@ public class CEOperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateQualifier(CE ce, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateQualifier(CE ce, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.CE);
 			try {
 				VALIDATE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ce)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.CE__QUALIFIER,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateQualifier", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ce, context) }),
-						 new Object [] { ce }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.CE__QUALIFIER,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateQualifier",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ce, context) }),
+					new Object[] { ce }));
 			}
 			return false;
 		}

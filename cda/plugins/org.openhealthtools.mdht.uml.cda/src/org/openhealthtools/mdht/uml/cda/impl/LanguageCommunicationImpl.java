@@ -199,8 +199,13 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -213,15 +218,22 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -231,7 +243,8 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	 */
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
-			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.LANGUAGE_COMMUNICATION__TEMPLATE_ID);
+			templateIds = new EObjectContainmentEList<II>(
+				II.class, this, CDAPackage.LANGUAGE_COMMUNICATION__TEMPLATE_ID);
 		}
 		return templateIds;
 	}
@@ -254,8 +267,14 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		CS oldLanguageCode = languageCode;
 		languageCode = newLanguageCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, oldLanguageCode, newLanguageCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, oldLanguageCode,
+				newLanguageCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -268,15 +287,23 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	public void setLanguageCode(CS newLanguageCode) {
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
-			if (languageCode != null)
-				msgs = ((InternalEObject)languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
-			if (newLanguageCode != null)
-				msgs = ((InternalEObject)newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
+			if (languageCode != null) {
+				msgs = ((InternalEObject) languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
+			}
+			if (newLanguageCode != null) {
+				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, null, msgs);
+			}
 			msgs = basicSetLanguageCode(newLanguageCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, newLanguageCode,
+				newLanguageCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
 	}
 
 	/**
@@ -297,8 +324,13 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		CE oldModeCode = modeCode;
 		modeCode = newModeCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, oldModeCode, newModeCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, oldModeCode, newModeCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -311,15 +343,22 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	public void setModeCode(CE newModeCode) {
 		if (newModeCode != modeCode) {
 			NotificationChain msgs = null;
-			if (modeCode != null)
-				msgs = ((InternalEObject)modeCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
-			if (newModeCode != null)
-				msgs = ((InternalEObject)newModeCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
+			if (modeCode != null) {
+				msgs = ((InternalEObject) modeCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
+			}
+			if (newModeCode != null) {
+				msgs = ((InternalEObject) newModeCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, null, msgs);
+			}
 			msgs = basicSetModeCode(newModeCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, newModeCode, newModeCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE, newModeCode, newModeCode));
 	}
 
 	/**
@@ -340,8 +379,14 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		CE oldProficiencyLevelCode = proficiencyLevelCode;
 		proficiencyLevelCode = newProficiencyLevelCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, oldProficiencyLevelCode, newProficiencyLevelCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE,
+				oldProficiencyLevelCode, newProficiencyLevelCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -354,15 +399,23 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	public void setProficiencyLevelCode(CE newProficiencyLevelCode) {
 		if (newProficiencyLevelCode != proficiencyLevelCode) {
 			NotificationChain msgs = null;
-			if (proficiencyLevelCode != null)
-				msgs = ((InternalEObject)proficiencyLevelCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null, msgs);
-			if (newProficiencyLevelCode != null)
-				msgs = ((InternalEObject)newProficiencyLevelCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null, msgs);
+			if (proficiencyLevelCode != null) {
+				msgs = ((InternalEObject) proficiencyLevelCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null, msgs);
+			}
+			if (newProficiencyLevelCode != null) {
+				msgs = ((InternalEObject) newProficiencyLevelCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, null, msgs);
+			}
 			msgs = basicSetProficiencyLevelCode(newProficiencyLevelCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE,
+				newProficiencyLevelCode, newProficiencyLevelCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE, newProficiencyLevelCode, newProficiencyLevelCode));
 	}
 
 	/**
@@ -383,8 +436,14 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		BL oldPreferenceInd = preferenceInd;
 		preferenceInd = newPreferenceInd;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, oldPreferenceInd, newPreferenceInd);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, oldPreferenceInd,
+				newPreferenceInd);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -397,15 +456,23 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	public void setPreferenceInd(BL newPreferenceInd) {
 		if (newPreferenceInd != preferenceInd) {
 			NotificationChain msgs = null;
-			if (preferenceInd != null)
-				msgs = ((InternalEObject)preferenceInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
-			if (newPreferenceInd != null)
-				msgs = ((InternalEObject)newPreferenceInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
+			if (preferenceInd != null) {
+				msgs = ((InternalEObject) preferenceInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
+			}
+			if (newPreferenceInd != null) {
+				msgs = ((InternalEObject) newPreferenceInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, null, msgs);
+			}
 			msgs = basicSetPreferenceInd(newPreferenceInd, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, newPreferenceInd,
+				newPreferenceInd));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND, newPreferenceInd, newPreferenceInd));
 	}
 
 	/**
@@ -424,11 +491,16 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -441,8 +513,11 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -463,11 +538,11 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.LANGUAGE_COMMUNICATION__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.LANGUAGE_COMMUNICATION__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE:
 				return basicSetLanguageCode(null, msgs);
 			case CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE:
@@ -519,29 +594,29 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 		switch (featureID) {
 			case CDAPackage.LANGUAGE_COMMUNICATION__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE:
-				setLanguageCode((CS)newValue);
+				setLanguageCode((CS) newValue);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE:
-				setModeCode((CE)newValue);
+				setModeCode((CE) newValue);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE:
-				setProficiencyLevelCode((CE)newValue);
+				setProficiencyLevelCode((CE) newValue);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND:
-				setPreferenceInd((BL)newValue);
+				setPreferenceInd((BL) newValue);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -559,22 +634,22 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE:
-				setLanguageCode((CS)null);
+				setLanguageCode((CS) null);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__MODE_CODE:
-				setModeCode((CE)null);
+				setModeCode((CE) null);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE:
-				setProficiencyLevelCode((CE)null);
+				setProficiencyLevelCode((CE) null);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND:
-				setPreferenceInd((BL)null);
+				setPreferenceInd((BL) null);
 				return;
 			case CDAPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -618,13 +693,19 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //LanguageCommunicationImpl
+} // LanguageCommunicationImpl

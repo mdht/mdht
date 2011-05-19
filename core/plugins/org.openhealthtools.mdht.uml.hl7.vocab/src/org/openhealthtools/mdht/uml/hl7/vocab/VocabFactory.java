@@ -38,4 +38,4 @@ public interface VocabFactory extends EFactory {
 	 */
 	VocabPackage getVocabPackage();
 
-} //VocabFactory
+} // VocabFactory

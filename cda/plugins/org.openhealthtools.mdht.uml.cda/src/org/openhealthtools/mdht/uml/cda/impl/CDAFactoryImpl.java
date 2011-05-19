@@ -124,12 +124,11 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 */
 	public static CDAFactory init() {
 		try {
-			CDAFactory theCDAFactory = (CDAFactory)EPackage.Registry.INSTANCE.getEFactory("urn:hl7-org:v3"); 
+			CDAFactory theCDAFactory = (CDAFactory) EPackage.Registry.INSTANCE.getEFactory("urn:hl7-org:v3");
 			if (theCDAFactory != null) {
 				return theCDAFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CDAFactoryImpl();
@@ -153,97 +152,188 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CDAPackage.CLINICAL_DOCUMENT: return createClinicalDocument();
-			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID: return createInfrastructureRootTypeId();
-			case CDAPackage.RECORD_TARGET: return createRecordTarget();
-			case CDAPackage.PATIENT_ROLE: return createPatientRole();
-			case CDAPackage.PATIENT: return createPatient();
-			case CDAPackage.GUARDIAN: return createGuardian();
-			case CDAPackage.PERSON: return createPerson();
-			case CDAPackage.ORGANIZATION: return createOrganization();
-			case CDAPackage.ORGANIZATION_PART_OF: return createOrganizationPartOf();
-			case CDAPackage.BIRTHPLACE: return createBirthplace();
-			case CDAPackage.PLACE: return createPlace();
-			case CDAPackage.LANGUAGE_COMMUNICATION: return createLanguageCommunication();
-			case CDAPackage.AUTHOR: return createAuthor();
-			case CDAPackage.ASSIGNED_AUTHOR: return createAssignedAuthor();
-			case CDAPackage.AUTHORING_DEVICE: return createAuthoringDevice();
-			case CDAPackage.MAINTAINED_ENTITY: return createMaintainedEntity();
-			case CDAPackage.DATA_ENTERER: return createDataEnterer();
-			case CDAPackage.ASSIGNED_ENTITY: return createAssignedEntity();
-			case CDAPackage.SDTC_PATIENT: return createSDTCPatient();
-			case CDAPackage.INFORMANT12: return createInformant12();
-			case CDAPackage.RELATED_ENTITY: return createRelatedEntity();
-			case CDAPackage.CUSTODIAN: return createCustodian();
-			case CDAPackage.ASSIGNED_CUSTODIAN: return createAssignedCustodian();
-			case CDAPackage.CUSTODIAN_ORGANIZATION: return createCustodianOrganization();
-			case CDAPackage.INFORMATION_RECIPIENT: return createInformationRecipient();
-			case CDAPackage.INTENDED_RECIPIENT: return createIntendedRecipient();
-			case CDAPackage.LEGAL_AUTHENTICATOR: return createLegalAuthenticator();
-			case CDAPackage.AUTHENTICATOR: return createAuthenticator();
-			case CDAPackage.PARTICIPANT1: return createParticipant1();
-			case CDAPackage.ASSOCIATED_ENTITY: return createAssociatedEntity();
-			case CDAPackage.IN_FULFILLMENT_OF: return createInFulfillmentOf();
-			case CDAPackage.ORDER: return createOrder();
-			case CDAPackage.DOCUMENTATION_OF: return createDocumentationOf();
-			case CDAPackage.SERVICE_EVENT: return createServiceEvent();
-			case CDAPackage.PERFORMER1: return createPerformer1();
-			case CDAPackage.RELATED_DOCUMENT: return createRelatedDocument();
-			case CDAPackage.PARENT_DOCUMENT: return createParentDocument();
-			case CDAPackage.AUTHORIZATION: return createAuthorization();
-			case CDAPackage.CONSENT: return createConsent();
-			case CDAPackage.COMPONENT1: return createComponent1();
-			case CDAPackage.ENCOMPASSING_ENCOUNTER: return createEncompassingEncounter();
-			case CDAPackage.RESPONSIBLE_PARTY: return createResponsibleParty();
-			case CDAPackage.ENCOUNTER_PARTICIPANT: return createEncounterParticipant();
-			case CDAPackage.LOCATION: return createLocation();
-			case CDAPackage.HEALTH_CARE_FACILITY: return createHealthCareFacility();
-			case CDAPackage.COMPONENT2: return createComponent2();
-			case CDAPackage.NON_XML_BODY: return createNonXMLBody();
-			case CDAPackage.STRUCTURED_BODY: return createStructuredBody();
-			case CDAPackage.COMPONENT3: return createComponent3();
-			case CDAPackage.SECTION: return createSection();
-			case CDAPackage.STRUC_DOC_TEXT: return createStrucDocText();
-			case CDAPackage.SUBJECT: return createSubject();
-			case CDAPackage.RELATED_SUBJECT: return createRelatedSubject();
-			case CDAPackage.SUBJECT_PERSON: return createSubjectPerson();
-			case CDAPackage.ENTRY: return createEntry();
-			case CDAPackage.ACT: return createAct();
-			case CDAPackage.ENCOUNTER: return createEncounter();
-			case CDAPackage.SPECIMEN: return createSpecimen();
-			case CDAPackage.SPECIMEN_ROLE: return createSpecimenRole();
-			case CDAPackage.PLAYING_ENTITY: return createPlayingEntity();
-			case CDAPackage.PERFORMER2: return createPerformer2();
-			case CDAPackage.PARTICIPANT2: return createParticipant2();
-			case CDAPackage.PARTICIPANT_ROLE: return createParticipantRole();
-			case CDAPackage.DEVICE: return createDevice();
-			case CDAPackage.ENTITY: return createEntity();
-			case CDAPackage.ENTRY_RELATIONSHIP: return createEntryRelationship();
-			case CDAPackage.OBSERVATION: return createObservation();
-			case CDAPackage.REFERENCE: return createReference();
-			case CDAPackage.EXTERNAL_ACT: return createExternalAct();
-			case CDAPackage.EXTERNAL_OBSERVATION: return createExternalObservation();
-			case CDAPackage.EXTERNAL_PROCEDURE: return createExternalProcedure();
-			case CDAPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
-			case CDAPackage.PRECONDITION: return createPrecondition();
-			case CDAPackage.CRITERION: return createCriterion();
-			case CDAPackage.REFERENCE_RANGE: return createReferenceRange();
-			case CDAPackage.OBSERVATION_RANGE: return createObservationRange();
-			case CDAPackage.OBSERVATION_MEDIA: return createObservationMedia();
-			case CDAPackage.ORGANIZER: return createOrganizer();
-			case CDAPackage.COMPONENT4: return createComponent4();
-			case CDAPackage.PROCEDURE: return createProcedure();
-			case CDAPackage.REGION_OF_INTEREST: return createRegionOfInterest();
-			case CDAPackage.REGION_OF_INTEREST_VALUE: return createRegionOfInterestValue();
-			case CDAPackage.SUBSTANCE_ADMINISTRATION: return createSubstanceAdministration();
-			case CDAPackage.CONSUMABLE: return createConsumable();
-			case CDAPackage.MANUFACTURED_PRODUCT: return createManufacturedProduct();
-			case CDAPackage.LABELED_DRUG: return createLabeledDrug();
-			case CDAPackage.MATERIAL: return createMaterial();
-			case CDAPackage.SUPPLY: return createSupply();
-			case CDAPackage.PRODUCT: return createProduct();
-			case CDAPackage.COMPONENT5: return createComponent5();
-			case CDAPackage.DOCUMENT_ROOT: return createDocumentRoot();
+			case CDAPackage.CLINICAL_DOCUMENT:
+				return createClinicalDocument();
+			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID:
+				return createInfrastructureRootTypeId();
+			case CDAPackage.RECORD_TARGET:
+				return createRecordTarget();
+			case CDAPackage.PATIENT_ROLE:
+				return createPatientRole();
+			case CDAPackage.PATIENT:
+				return createPatient();
+			case CDAPackage.GUARDIAN:
+				return createGuardian();
+			case CDAPackage.PERSON:
+				return createPerson();
+			case CDAPackage.ORGANIZATION:
+				return createOrganization();
+			case CDAPackage.ORGANIZATION_PART_OF:
+				return createOrganizationPartOf();
+			case CDAPackage.BIRTHPLACE:
+				return createBirthplace();
+			case CDAPackage.PLACE:
+				return createPlace();
+			case CDAPackage.LANGUAGE_COMMUNICATION:
+				return createLanguageCommunication();
+			case CDAPackage.AUTHOR:
+				return createAuthor();
+			case CDAPackage.ASSIGNED_AUTHOR:
+				return createAssignedAuthor();
+			case CDAPackage.AUTHORING_DEVICE:
+				return createAuthoringDevice();
+			case CDAPackage.MAINTAINED_ENTITY:
+				return createMaintainedEntity();
+			case CDAPackage.DATA_ENTERER:
+				return createDataEnterer();
+			case CDAPackage.ASSIGNED_ENTITY:
+				return createAssignedEntity();
+			case CDAPackage.SDTC_PATIENT:
+				return createSDTCPatient();
+			case CDAPackage.INFORMANT12:
+				return createInformant12();
+			case CDAPackage.RELATED_ENTITY:
+				return createRelatedEntity();
+			case CDAPackage.CUSTODIAN:
+				return createCustodian();
+			case CDAPackage.ASSIGNED_CUSTODIAN:
+				return createAssignedCustodian();
+			case CDAPackage.CUSTODIAN_ORGANIZATION:
+				return createCustodianOrganization();
+			case CDAPackage.INFORMATION_RECIPIENT:
+				return createInformationRecipient();
+			case CDAPackage.INTENDED_RECIPIENT:
+				return createIntendedRecipient();
+			case CDAPackage.LEGAL_AUTHENTICATOR:
+				return createLegalAuthenticator();
+			case CDAPackage.AUTHENTICATOR:
+				return createAuthenticator();
+			case CDAPackage.PARTICIPANT1:
+				return createParticipant1();
+			case CDAPackage.ASSOCIATED_ENTITY:
+				return createAssociatedEntity();
+			case CDAPackage.IN_FULFILLMENT_OF:
+				return createInFulfillmentOf();
+			case CDAPackage.ORDER:
+				return createOrder();
+			case CDAPackage.DOCUMENTATION_OF:
+				return createDocumentationOf();
+			case CDAPackage.SERVICE_EVENT:
+				return createServiceEvent();
+			case CDAPackage.PERFORMER1:
+				return createPerformer1();
+			case CDAPackage.RELATED_DOCUMENT:
+				return createRelatedDocument();
+			case CDAPackage.PARENT_DOCUMENT:
+				return createParentDocument();
+			case CDAPackage.AUTHORIZATION:
+				return createAuthorization();
+			case CDAPackage.CONSENT:
+				return createConsent();
+			case CDAPackage.COMPONENT1:
+				return createComponent1();
+			case CDAPackage.ENCOMPASSING_ENCOUNTER:
+				return createEncompassingEncounter();
+			case CDAPackage.RESPONSIBLE_PARTY:
+				return createResponsibleParty();
+			case CDAPackage.ENCOUNTER_PARTICIPANT:
+				return createEncounterParticipant();
+			case CDAPackage.LOCATION:
+				return createLocation();
+			case CDAPackage.HEALTH_CARE_FACILITY:
+				return createHealthCareFacility();
+			case CDAPackage.COMPONENT2:
+				return createComponent2();
+			case CDAPackage.NON_XML_BODY:
+				return createNonXMLBody();
+			case CDAPackage.STRUCTURED_BODY:
+				return createStructuredBody();
+			case CDAPackage.COMPONENT3:
+				return createComponent3();
+			case CDAPackage.SECTION:
+				return createSection();
+			case CDAPackage.STRUC_DOC_TEXT:
+				return createStrucDocText();
+			case CDAPackage.SUBJECT:
+				return createSubject();
+			case CDAPackage.RELATED_SUBJECT:
+				return createRelatedSubject();
+			case CDAPackage.SUBJECT_PERSON:
+				return createSubjectPerson();
+			case CDAPackage.ENTRY:
+				return createEntry();
+			case CDAPackage.ACT:
+				return createAct();
+			case CDAPackage.ENCOUNTER:
+				return createEncounter();
+			case CDAPackage.SPECIMEN:
+				return createSpecimen();
+			case CDAPackage.SPECIMEN_ROLE:
+				return createSpecimenRole();
+			case CDAPackage.PLAYING_ENTITY:
+				return createPlayingEntity();
+			case CDAPackage.PERFORMER2:
+				return createPerformer2();
+			case CDAPackage.PARTICIPANT2:
+				return createParticipant2();
+			case CDAPackage.PARTICIPANT_ROLE:
+				return createParticipantRole();
+			case CDAPackage.DEVICE:
+				return createDevice();
+			case CDAPackage.ENTITY:
+				return createEntity();
+			case CDAPackage.ENTRY_RELATIONSHIP:
+				return createEntryRelationship();
+			case CDAPackage.OBSERVATION:
+				return createObservation();
+			case CDAPackage.REFERENCE:
+				return createReference();
+			case CDAPackage.EXTERNAL_ACT:
+				return createExternalAct();
+			case CDAPackage.EXTERNAL_OBSERVATION:
+				return createExternalObservation();
+			case CDAPackage.EXTERNAL_PROCEDURE:
+				return createExternalProcedure();
+			case CDAPackage.EXTERNAL_DOCUMENT:
+				return createExternalDocument();
+			case CDAPackage.PRECONDITION:
+				return createPrecondition();
+			case CDAPackage.CRITERION:
+				return createCriterion();
+			case CDAPackage.REFERENCE_RANGE:
+				return createReferenceRange();
+			case CDAPackage.OBSERVATION_RANGE:
+				return createObservationRange();
+			case CDAPackage.OBSERVATION_MEDIA:
+				return createObservationMedia();
+			case CDAPackage.ORGANIZER:
+				return createOrganizer();
+			case CDAPackage.COMPONENT4:
+				return createComponent4();
+			case CDAPackage.PROCEDURE:
+				return createProcedure();
+			case CDAPackage.REGION_OF_INTEREST:
+				return createRegionOfInterest();
+			case CDAPackage.REGION_OF_INTEREST_VALUE:
+				return createRegionOfInterestValue();
+			case CDAPackage.SUBSTANCE_ADMINISTRATION:
+				return createSubstanceAdministration();
+			case CDAPackage.CONSUMABLE:
+				return createConsumable();
+			case CDAPackage.MANUFACTURED_PRODUCT:
+				return createManufacturedProduct();
+			case CDAPackage.LABELED_DRUG:
+				return createLabeledDrug();
+			case CDAPackage.MATERIAL:
+				return createMaterial();
+			case CDAPackage.SUPPLY:
+				return createSupply();
+			case CDAPackage.PRODUCT:
+				return createProduct();
+			case CDAPackage.COMPONENT5:
+				return createComponent5();
+			case CDAPackage.DOCUMENT_ROOT:
+				return createDocumentRoot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -1165,7 +1255,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	 * @generated
 	 */
 	public CDAPackage getCDAPackage() {
-		return (CDAPackage)getEPackage();
+		return (CDAPackage) getEPackage();
 	}
 
 	/**
@@ -1179,4 +1269,4 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 		return CDAPackage.eINSTANCE;
 	}
 
-} //CDAFactoryImpl
+} // CDAFactoryImpl

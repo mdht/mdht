@@ -172,13 +172,11 @@ public class CDASwitch<T> {
 	protected T doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
+		} else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+			return eSuperTypes.isEmpty()
+					? defaultCase(theEObject)
+					: doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -192,750 +190,1309 @@ public class CDASwitch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case CDAPackage.CLINICAL_DOCUMENT: {
-				ClinicalDocument clinicalDocument = (ClinicalDocument)theEObject;
+				ClinicalDocument clinicalDocument = (ClinicalDocument) theEObject;
 				T result = caseClinicalDocument(clinicalDocument);
-				if (result == null) result = caseRIM_Act(clinicalDocument);
-				if (result == null) result = caseInfrastructureRoot(clinicalDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(clinicalDocument);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(clinicalDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID: {
-				InfrastructureRootTypeId infrastructureRootTypeId = (InfrastructureRootTypeId)theEObject;
+				InfrastructureRootTypeId infrastructureRootTypeId = (InfrastructureRootTypeId) theEObject;
 				T result = caseInfrastructureRootTypeId(infrastructureRootTypeId);
-				if (result == null) result = caseII(infrastructureRootTypeId);
-				if (result == null) result = caseANY(infrastructureRootTypeId);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseII(infrastructureRootTypeId);
+				}
+				if (result == null) {
+					result = caseANY(infrastructureRootTypeId);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.RECORD_TARGET: {
-				RecordTarget recordTarget = (RecordTarget)theEObject;
+				RecordTarget recordTarget = (RecordTarget) theEObject;
 				T result = caseRecordTarget(recordTarget);
-				if (result == null) result = caseParticipation(recordTarget);
-				if (result == null) result = caseInfrastructureRoot(recordTarget);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(recordTarget);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(recordTarget);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PATIENT_ROLE: {
-				PatientRole patientRole = (PatientRole)theEObject;
+				PatientRole patientRole = (PatientRole) theEObject;
 				T result = casePatientRole(patientRole);
-				if (result == null) result = caseRole(patientRole);
-				if (result == null) result = caseInfrastructureRoot(patientRole);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(patientRole);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(patientRole);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PATIENT: {
-				Patient patient = (Patient)theEObject;
+				Patient patient = (Patient) theEObject;
 				T result = casePatient(patient);
-				if (result == null) result = caseRIM_Entity(patient);
-				if (result == null) result = caseInfrastructureRoot(patient);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(patient);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(patient);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.GUARDIAN: {
-				Guardian guardian = (Guardian)theEObject;
+				Guardian guardian = (Guardian) theEObject;
 				T result = caseGuardian(guardian);
-				if (result == null) result = caseRole(guardian);
-				if (result == null) result = caseInfrastructureRoot(guardian);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(guardian);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(guardian);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PERSON: {
-				Person person = (Person)theEObject;
+				Person person = (Person) theEObject;
 				T result = casePerson(person);
-				if (result == null) result = caseRIM_Entity(person);
-				if (result == null) result = caseInfrastructureRoot(person);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(person);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(person);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ORGANIZATION: {
-				Organization organization = (Organization)theEObject;
+				Organization organization = (Organization) theEObject;
 				T result = caseOrganization(organization);
-				if (result == null) result = caseRIM_Entity(organization);
-				if (result == null) result = caseInfrastructureRoot(organization);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(organization);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(organization);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ORGANIZATION_PART_OF: {
-				OrganizationPartOf organizationPartOf = (OrganizationPartOf)theEObject;
+				OrganizationPartOf organizationPartOf = (OrganizationPartOf) theEObject;
 				T result = caseOrganizationPartOf(organizationPartOf);
-				if (result == null) result = caseRole(organizationPartOf);
-				if (result == null) result = caseInfrastructureRoot(organizationPartOf);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(organizationPartOf);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(organizationPartOf);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.BIRTHPLACE: {
-				Birthplace birthplace = (Birthplace)theEObject;
+				Birthplace birthplace = (Birthplace) theEObject;
 				T result = caseBirthplace(birthplace);
-				if (result == null) result = caseRole(birthplace);
-				if (result == null) result = caseInfrastructureRoot(birthplace);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(birthplace);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(birthplace);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PLACE: {
-				Place place = (Place)theEObject;
+				Place place = (Place) theEObject;
 				T result = casePlace(place);
-				if (result == null) result = caseRIM_Entity(place);
-				if (result == null) result = caseInfrastructureRoot(place);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(place);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(place);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.LANGUAGE_COMMUNICATION: {
-				LanguageCommunication languageCommunication = (LanguageCommunication)theEObject;
+				LanguageCommunication languageCommunication = (LanguageCommunication) theEObject;
 				T result = caseLanguageCommunication(languageCommunication);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.AUTHOR: {
-				Author author = (Author)theEObject;
+				Author author = (Author) theEObject;
 				T result = caseAuthor(author);
-				if (result == null) result = caseParticipation(author);
-				if (result == null) result = caseInfrastructureRoot(author);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(author);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(author);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ASSIGNED_AUTHOR: {
-				AssignedAuthor assignedAuthor = (AssignedAuthor)theEObject;
+				AssignedAuthor assignedAuthor = (AssignedAuthor) theEObject;
 				T result = caseAssignedAuthor(assignedAuthor);
-				if (result == null) result = caseRole(assignedAuthor);
-				if (result == null) result = caseInfrastructureRoot(assignedAuthor);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(assignedAuthor);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(assignedAuthor);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.AUTHORING_DEVICE: {
-				AuthoringDevice authoringDevice = (AuthoringDevice)theEObject;
+				AuthoringDevice authoringDevice = (AuthoringDevice) theEObject;
 				T result = caseAuthoringDevice(authoringDevice);
-				if (result == null) result = caseRIM_Entity(authoringDevice);
-				if (result == null) result = caseInfrastructureRoot(authoringDevice);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(authoringDevice);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(authoringDevice);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.MAINTAINED_ENTITY: {
-				MaintainedEntity maintainedEntity = (MaintainedEntity)theEObject;
+				MaintainedEntity maintainedEntity = (MaintainedEntity) theEObject;
 				T result = caseMaintainedEntity(maintainedEntity);
-				if (result == null) result = caseRole(maintainedEntity);
-				if (result == null) result = caseInfrastructureRoot(maintainedEntity);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(maintainedEntity);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(maintainedEntity);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.DATA_ENTERER: {
-				DataEnterer dataEnterer = (DataEnterer)theEObject;
+				DataEnterer dataEnterer = (DataEnterer) theEObject;
 				T result = caseDataEnterer(dataEnterer);
-				if (result == null) result = caseParticipation(dataEnterer);
-				if (result == null) result = caseInfrastructureRoot(dataEnterer);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(dataEnterer);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(dataEnterer);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ASSIGNED_ENTITY: {
-				AssignedEntity assignedEntity = (AssignedEntity)theEObject;
+				AssignedEntity assignedEntity = (AssignedEntity) theEObject;
 				T result = caseAssignedEntity(assignedEntity);
-				if (result == null) result = caseRole(assignedEntity);
-				if (result == null) result = caseInfrastructureRoot(assignedEntity);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(assignedEntity);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(assignedEntity);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SDTC_PATIENT: {
-				SDTCPatient sdtcPatient = (SDTCPatient)theEObject;
+				SDTCPatient sdtcPatient = (SDTCPatient) theEObject;
 				T result = caseSDTCPatient(sdtcPatient);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.INFORMANT12: {
-				Informant12 informant12 = (Informant12)theEObject;
+				Informant12 informant12 = (Informant12) theEObject;
 				T result = caseInformant12(informant12);
-				if (result == null) result = caseParticipation(informant12);
-				if (result == null) result = caseInfrastructureRoot(informant12);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(informant12);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(informant12);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.RELATED_ENTITY: {
-				RelatedEntity relatedEntity = (RelatedEntity)theEObject;
+				RelatedEntity relatedEntity = (RelatedEntity) theEObject;
 				T result = caseRelatedEntity(relatedEntity);
-				if (result == null) result = caseRole(relatedEntity);
-				if (result == null) result = caseInfrastructureRoot(relatedEntity);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(relatedEntity);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(relatedEntity);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CUSTODIAN: {
-				Custodian custodian = (Custodian)theEObject;
+				Custodian custodian = (Custodian) theEObject;
 				T result = caseCustodian(custodian);
-				if (result == null) result = caseParticipation(custodian);
-				if (result == null) result = caseInfrastructureRoot(custodian);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(custodian);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(custodian);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ASSIGNED_CUSTODIAN: {
-				AssignedCustodian assignedCustodian = (AssignedCustodian)theEObject;
+				AssignedCustodian assignedCustodian = (AssignedCustodian) theEObject;
 				T result = caseAssignedCustodian(assignedCustodian);
-				if (result == null) result = caseRole(assignedCustodian);
-				if (result == null) result = caseInfrastructureRoot(assignedCustodian);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(assignedCustodian);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(assignedCustodian);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CUSTODIAN_ORGANIZATION: {
-				CustodianOrganization custodianOrganization = (CustodianOrganization)theEObject;
+				CustodianOrganization custodianOrganization = (CustodianOrganization) theEObject;
 				T result = caseCustodianOrganization(custodianOrganization);
-				if (result == null) result = caseRIM_Entity(custodianOrganization);
-				if (result == null) result = caseInfrastructureRoot(custodianOrganization);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(custodianOrganization);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(custodianOrganization);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.INFORMATION_RECIPIENT: {
-				InformationRecipient informationRecipient = (InformationRecipient)theEObject;
+				InformationRecipient informationRecipient = (InformationRecipient) theEObject;
 				T result = caseInformationRecipient(informationRecipient);
-				if (result == null) result = caseParticipation(informationRecipient);
-				if (result == null) result = caseInfrastructureRoot(informationRecipient);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(informationRecipient);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(informationRecipient);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.INTENDED_RECIPIENT: {
-				IntendedRecipient intendedRecipient = (IntendedRecipient)theEObject;
+				IntendedRecipient intendedRecipient = (IntendedRecipient) theEObject;
 				T result = caseIntendedRecipient(intendedRecipient);
-				if (result == null) result = caseRole(intendedRecipient);
-				if (result == null) result = caseInfrastructureRoot(intendedRecipient);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(intendedRecipient);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(intendedRecipient);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.LEGAL_AUTHENTICATOR: {
-				LegalAuthenticator legalAuthenticator = (LegalAuthenticator)theEObject;
+				LegalAuthenticator legalAuthenticator = (LegalAuthenticator) theEObject;
 				T result = caseLegalAuthenticator(legalAuthenticator);
-				if (result == null) result = caseParticipation(legalAuthenticator);
-				if (result == null) result = caseInfrastructureRoot(legalAuthenticator);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(legalAuthenticator);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(legalAuthenticator);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.AUTHENTICATOR: {
-				Authenticator authenticator = (Authenticator)theEObject;
+				Authenticator authenticator = (Authenticator) theEObject;
 				T result = caseAuthenticator(authenticator);
-				if (result == null) result = caseParticipation(authenticator);
-				if (result == null) result = caseInfrastructureRoot(authenticator);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(authenticator);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(authenticator);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PARTICIPANT1: {
-				Participant1 participant1 = (Participant1)theEObject;
+				Participant1 participant1 = (Participant1) theEObject;
 				T result = caseParticipant1(participant1);
-				if (result == null) result = caseParticipation(participant1);
-				if (result == null) result = caseInfrastructureRoot(participant1);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(participant1);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(participant1);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ASSOCIATED_ENTITY: {
-				AssociatedEntity associatedEntity = (AssociatedEntity)theEObject;
+				AssociatedEntity associatedEntity = (AssociatedEntity) theEObject;
 				T result = caseAssociatedEntity(associatedEntity);
-				if (result == null) result = caseRole(associatedEntity);
-				if (result == null) result = caseInfrastructureRoot(associatedEntity);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(associatedEntity);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(associatedEntity);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.IN_FULFILLMENT_OF: {
-				InFulfillmentOf inFulfillmentOf = (InFulfillmentOf)theEObject;
+				InFulfillmentOf inFulfillmentOf = (InFulfillmentOf) theEObject;
 				T result = caseInFulfillmentOf(inFulfillmentOf);
-				if (result == null) result = caseActRelationship(inFulfillmentOf);
-				if (result == null) result = caseInfrastructureRoot(inFulfillmentOf);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(inFulfillmentOf);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(inFulfillmentOf);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ORDER: {
-				Order order = (Order)theEObject;
+				Order order = (Order) theEObject;
 				T result = caseOrder(order);
-				if (result == null) result = caseRIM_Act(order);
-				if (result == null) result = caseInfrastructureRoot(order);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(order);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(order);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.DOCUMENTATION_OF: {
-				DocumentationOf documentationOf = (DocumentationOf)theEObject;
+				DocumentationOf documentationOf = (DocumentationOf) theEObject;
 				T result = caseDocumentationOf(documentationOf);
-				if (result == null) result = caseActRelationship(documentationOf);
-				if (result == null) result = caseInfrastructureRoot(documentationOf);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(documentationOf);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(documentationOf);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SERVICE_EVENT: {
-				ServiceEvent serviceEvent = (ServiceEvent)theEObject;
+				ServiceEvent serviceEvent = (ServiceEvent) theEObject;
 				T result = caseServiceEvent(serviceEvent);
-				if (result == null) result = caseRIM_Act(serviceEvent);
-				if (result == null) result = caseInfrastructureRoot(serviceEvent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(serviceEvent);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(serviceEvent);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PERFORMER1: {
-				Performer1 performer1 = (Performer1)theEObject;
+				Performer1 performer1 = (Performer1) theEObject;
 				T result = casePerformer1(performer1);
-				if (result == null) result = caseParticipation(performer1);
-				if (result == null) result = caseInfrastructureRoot(performer1);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(performer1);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(performer1);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.RELATED_DOCUMENT: {
-				RelatedDocument relatedDocument = (RelatedDocument)theEObject;
+				RelatedDocument relatedDocument = (RelatedDocument) theEObject;
 				T result = caseRelatedDocument(relatedDocument);
-				if (result == null) result = caseActRelationship(relatedDocument);
-				if (result == null) result = caseInfrastructureRoot(relatedDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(relatedDocument);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(relatedDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PARENT_DOCUMENT: {
-				ParentDocument parentDocument = (ParentDocument)theEObject;
+				ParentDocument parentDocument = (ParentDocument) theEObject;
 				T result = caseParentDocument(parentDocument);
-				if (result == null) result = caseRIM_Act(parentDocument);
-				if (result == null) result = caseInfrastructureRoot(parentDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(parentDocument);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(parentDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.AUTHORIZATION: {
-				Authorization authorization = (Authorization)theEObject;
+				Authorization authorization = (Authorization) theEObject;
 				T result = caseAuthorization(authorization);
-				if (result == null) result = caseActRelationship(authorization);
-				if (result == null) result = caseInfrastructureRoot(authorization);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(authorization);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(authorization);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CONSENT: {
-				Consent consent = (Consent)theEObject;
+				Consent consent = (Consent) theEObject;
 				T result = caseConsent(consent);
-				if (result == null) result = caseRIM_Act(consent);
-				if (result == null) result = caseInfrastructureRoot(consent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(consent);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(consent);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.COMPONENT1: {
-				Component1 component1 = (Component1)theEObject;
+				Component1 component1 = (Component1) theEObject;
 				T result = caseComponent1(component1);
-				if (result == null) result = caseActRelationship(component1);
-				if (result == null) result = caseInfrastructureRoot(component1);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(component1);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(component1);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ENCOMPASSING_ENCOUNTER: {
-				EncompassingEncounter encompassingEncounter = (EncompassingEncounter)theEObject;
+				EncompassingEncounter encompassingEncounter = (EncompassingEncounter) theEObject;
 				T result = caseEncompassingEncounter(encompassingEncounter);
-				if (result == null) result = caseRIM_Act(encompassingEncounter);
-				if (result == null) result = caseInfrastructureRoot(encompassingEncounter);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(encompassingEncounter);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(encompassingEncounter);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.RESPONSIBLE_PARTY: {
-				ResponsibleParty responsibleParty = (ResponsibleParty)theEObject;
+				ResponsibleParty responsibleParty = (ResponsibleParty) theEObject;
 				T result = caseResponsibleParty(responsibleParty);
-				if (result == null) result = caseParticipation(responsibleParty);
-				if (result == null) result = caseInfrastructureRoot(responsibleParty);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(responsibleParty);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(responsibleParty);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ENCOUNTER_PARTICIPANT: {
-				EncounterParticipant encounterParticipant = (EncounterParticipant)theEObject;
+				EncounterParticipant encounterParticipant = (EncounterParticipant) theEObject;
 				T result = caseEncounterParticipant(encounterParticipant);
-				if (result == null) result = caseParticipation(encounterParticipant);
-				if (result == null) result = caseInfrastructureRoot(encounterParticipant);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(encounterParticipant);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(encounterParticipant);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.LOCATION: {
-				Location location = (Location)theEObject;
+				Location location = (Location) theEObject;
 				T result = caseLocation(location);
-				if (result == null) result = caseParticipation(location);
-				if (result == null) result = caseInfrastructureRoot(location);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(location);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(location);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.HEALTH_CARE_FACILITY: {
-				HealthCareFacility healthCareFacility = (HealthCareFacility)theEObject;
+				HealthCareFacility healthCareFacility = (HealthCareFacility) theEObject;
 				T result = caseHealthCareFacility(healthCareFacility);
-				if (result == null) result = caseRole(healthCareFacility);
-				if (result == null) result = caseInfrastructureRoot(healthCareFacility);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(healthCareFacility);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(healthCareFacility);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.COMPONENT2: {
-				Component2 component2 = (Component2)theEObject;
+				Component2 component2 = (Component2) theEObject;
 				T result = caseComponent2(component2);
-				if (result == null) result = caseActRelationship(component2);
-				if (result == null) result = caseInfrastructureRoot(component2);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(component2);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(component2);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.NON_XML_BODY: {
-				NonXMLBody nonXMLBody = (NonXMLBody)theEObject;
+				NonXMLBody nonXMLBody = (NonXMLBody) theEObject;
 				T result = caseNonXMLBody(nonXMLBody);
-				if (result == null) result = caseRIM_Act(nonXMLBody);
-				if (result == null) result = caseInfrastructureRoot(nonXMLBody);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(nonXMLBody);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(nonXMLBody);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.STRUCTURED_BODY: {
-				StructuredBody structuredBody = (StructuredBody)theEObject;
+				StructuredBody structuredBody = (StructuredBody) theEObject;
 				T result = caseStructuredBody(structuredBody);
-				if (result == null) result = caseRIM_Act(structuredBody);
-				if (result == null) result = caseInfrastructureRoot(structuredBody);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(structuredBody);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(structuredBody);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.COMPONENT3: {
-				Component3 component3 = (Component3)theEObject;
+				Component3 component3 = (Component3) theEObject;
 				T result = caseComponent3(component3);
-				if (result == null) result = caseActRelationship(component3);
-				if (result == null) result = caseInfrastructureRoot(component3);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(component3);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(component3);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SECTION: {
-				Section section = (Section)theEObject;
+				Section section = (Section) theEObject;
 				T result = caseSection(section);
-				if (result == null) result = caseRIM_Act(section);
-				if (result == null) result = caseInfrastructureRoot(section);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(section);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(section);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.STRUC_DOC_TEXT: {
-				StrucDocText strucDocText = (StrucDocText)theEObject;
+				StrucDocText strucDocText = (StrucDocText) theEObject;
 				T result = caseStrucDocText(strucDocText);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SUBJECT: {
-				Subject subject = (Subject)theEObject;
+				Subject subject = (Subject) theEObject;
 				T result = caseSubject(subject);
-				if (result == null) result = caseParticipation(subject);
-				if (result == null) result = caseInfrastructureRoot(subject);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(subject);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(subject);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.RELATED_SUBJECT: {
-				RelatedSubject relatedSubject = (RelatedSubject)theEObject;
+				RelatedSubject relatedSubject = (RelatedSubject) theEObject;
 				T result = caseRelatedSubject(relatedSubject);
-				if (result == null) result = caseRole(relatedSubject);
-				if (result == null) result = caseInfrastructureRoot(relatedSubject);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(relatedSubject);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(relatedSubject);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SUBJECT_PERSON: {
-				SubjectPerson subjectPerson = (SubjectPerson)theEObject;
+				SubjectPerson subjectPerson = (SubjectPerson) theEObject;
 				T result = caseSubjectPerson(subjectPerson);
-				if (result == null) result = caseRIM_Entity(subjectPerson);
-				if (result == null) result = caseInfrastructureRoot(subjectPerson);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(subjectPerson);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(subjectPerson);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ENTRY: {
-				Entry entry = (Entry)theEObject;
+				Entry entry = (Entry) theEObject;
 				T result = caseEntry(entry);
-				if (result == null) result = caseActRelationship(entry);
-				if (result == null) result = caseInfrastructureRoot(entry);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(entry);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(entry);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ACT: {
-				Act act = (Act)theEObject;
+				Act act = (Act) theEObject;
 				T result = caseAct(act);
-				if (result == null) result = caseClinicalStatement(act);
-				if (result == null) result = caseRIM_Act(act);
-				if (result == null) result = caseInfrastructureRoot(act);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(act);
+				}
+				if (result == null) {
+					result = caseRIM_Act(act);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(act);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CLINICAL_STATEMENT: {
-				ClinicalStatement clinicalStatement = (ClinicalStatement)theEObject;
+				ClinicalStatement clinicalStatement = (ClinicalStatement) theEObject;
 				T result = caseClinicalStatement(clinicalStatement);
-				if (result == null) result = caseRIM_Act(clinicalStatement);
-				if (result == null) result = caseInfrastructureRoot(clinicalStatement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(clinicalStatement);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(clinicalStatement);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ENCOUNTER: {
-				Encounter encounter = (Encounter)theEObject;
+				Encounter encounter = (Encounter) theEObject;
 				T result = caseEncounter(encounter);
-				if (result == null) result = caseClinicalStatement(encounter);
-				if (result == null) result = caseRIM_Act(encounter);
-				if (result == null) result = caseInfrastructureRoot(encounter);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(encounter);
+				}
+				if (result == null) {
+					result = caseRIM_Act(encounter);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(encounter);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SPECIMEN: {
-				Specimen specimen = (Specimen)theEObject;
+				Specimen specimen = (Specimen) theEObject;
 				T result = caseSpecimen(specimen);
-				if (result == null) result = caseParticipation(specimen);
-				if (result == null) result = caseInfrastructureRoot(specimen);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(specimen);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(specimen);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SPECIMEN_ROLE: {
-				SpecimenRole specimenRole = (SpecimenRole)theEObject;
+				SpecimenRole specimenRole = (SpecimenRole) theEObject;
 				T result = caseSpecimenRole(specimenRole);
-				if (result == null) result = caseRole(specimenRole);
-				if (result == null) result = caseInfrastructureRoot(specimenRole);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(specimenRole);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(specimenRole);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PLAYING_ENTITY: {
-				PlayingEntity playingEntity = (PlayingEntity)theEObject;
+				PlayingEntity playingEntity = (PlayingEntity) theEObject;
 				T result = casePlayingEntity(playingEntity);
-				if (result == null) result = caseRIM_Entity(playingEntity);
-				if (result == null) result = caseInfrastructureRoot(playingEntity);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(playingEntity);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(playingEntity);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PERFORMER2: {
-				Performer2 performer2 = (Performer2)theEObject;
+				Performer2 performer2 = (Performer2) theEObject;
 				T result = casePerformer2(performer2);
-				if (result == null) result = caseParticipation(performer2);
-				if (result == null) result = caseInfrastructureRoot(performer2);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(performer2);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(performer2);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PARTICIPANT2: {
-				Participant2 participant2 = (Participant2)theEObject;
+				Participant2 participant2 = (Participant2) theEObject;
 				T result = caseParticipant2(participant2);
-				if (result == null) result = caseParticipation(participant2);
-				if (result == null) result = caseInfrastructureRoot(participant2);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(participant2);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(participant2);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PARTICIPANT_ROLE: {
-				ParticipantRole participantRole = (ParticipantRole)theEObject;
+				ParticipantRole participantRole = (ParticipantRole) theEObject;
 				T result = caseParticipantRole(participantRole);
-				if (result == null) result = caseRole(participantRole);
-				if (result == null) result = caseInfrastructureRoot(participantRole);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(participantRole);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(participantRole);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.DEVICE: {
-				Device device = (Device)theEObject;
+				Device device = (Device) theEObject;
 				T result = caseDevice(device);
-				if (result == null) result = caseRIM_Entity(device);
-				if (result == null) result = caseInfrastructureRoot(device);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(device);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(device);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ENTITY: {
-				Entity entity = (Entity)theEObject;
+				Entity entity = (Entity) theEObject;
 				T result = caseEntity(entity);
-				if (result == null) result = caseRIM_Entity(entity);
-				if (result == null) result = caseInfrastructureRoot(entity);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(entity);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(entity);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ENTRY_RELATIONSHIP: {
-				EntryRelationship entryRelationship = (EntryRelationship)theEObject;
+				EntryRelationship entryRelationship = (EntryRelationship) theEObject;
 				T result = caseEntryRelationship(entryRelationship);
-				if (result == null) result = caseActRelationship(entryRelationship);
-				if (result == null) result = caseInfrastructureRoot(entryRelationship);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(entryRelationship);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(entryRelationship);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.OBSERVATION: {
-				Observation observation = (Observation)theEObject;
+				Observation observation = (Observation) theEObject;
 				T result = caseObservation(observation);
-				if (result == null) result = caseClinicalStatement(observation);
-				if (result == null) result = caseRIM_Act(observation);
-				if (result == null) result = caseInfrastructureRoot(observation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(observation);
+				}
+				if (result == null) {
+					result = caseRIM_Act(observation);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(observation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.REFERENCE: {
-				Reference reference = (Reference)theEObject;
+				Reference reference = (Reference) theEObject;
 				T result = caseReference(reference);
-				if (result == null) result = caseActRelationship(reference);
-				if (result == null) result = caseInfrastructureRoot(reference);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(reference);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(reference);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.EXTERNAL_ACT: {
-				ExternalAct externalAct = (ExternalAct)theEObject;
+				ExternalAct externalAct = (ExternalAct) theEObject;
 				T result = caseExternalAct(externalAct);
-				if (result == null) result = caseRIM_Act(externalAct);
-				if (result == null) result = caseInfrastructureRoot(externalAct);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(externalAct);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(externalAct);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.EXTERNAL_OBSERVATION: {
-				ExternalObservation externalObservation = (ExternalObservation)theEObject;
+				ExternalObservation externalObservation = (ExternalObservation) theEObject;
 				T result = caseExternalObservation(externalObservation);
-				if (result == null) result = caseRIM_Act(externalObservation);
-				if (result == null) result = caseInfrastructureRoot(externalObservation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(externalObservation);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(externalObservation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.EXTERNAL_PROCEDURE: {
-				ExternalProcedure externalProcedure = (ExternalProcedure)theEObject;
+				ExternalProcedure externalProcedure = (ExternalProcedure) theEObject;
 				T result = caseExternalProcedure(externalProcedure);
-				if (result == null) result = caseRIM_Act(externalProcedure);
-				if (result == null) result = caseInfrastructureRoot(externalProcedure);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(externalProcedure);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(externalProcedure);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.EXTERNAL_DOCUMENT: {
-				ExternalDocument externalDocument = (ExternalDocument)theEObject;
+				ExternalDocument externalDocument = (ExternalDocument) theEObject;
 				T result = caseExternalDocument(externalDocument);
-				if (result == null) result = caseRIM_Act(externalDocument);
-				if (result == null) result = caseInfrastructureRoot(externalDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(externalDocument);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(externalDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PRECONDITION: {
-				Precondition precondition = (Precondition)theEObject;
+				Precondition precondition = (Precondition) theEObject;
 				T result = casePrecondition(precondition);
-				if (result == null) result = caseActRelationship(precondition);
-				if (result == null) result = caseInfrastructureRoot(precondition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(precondition);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(precondition);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CRITERION: {
-				Criterion criterion = (Criterion)theEObject;
+				Criterion criterion = (Criterion) theEObject;
 				T result = caseCriterion(criterion);
-				if (result == null) result = caseRIM_Act(criterion);
-				if (result == null) result = caseInfrastructureRoot(criterion);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(criterion);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(criterion);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.REFERENCE_RANGE: {
-				ReferenceRange referenceRange = (ReferenceRange)theEObject;
+				ReferenceRange referenceRange = (ReferenceRange) theEObject;
 				T result = caseReferenceRange(referenceRange);
-				if (result == null) result = caseActRelationship(referenceRange);
-				if (result == null) result = caseInfrastructureRoot(referenceRange);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(referenceRange);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(referenceRange);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.OBSERVATION_RANGE: {
-				ObservationRange observationRange = (ObservationRange)theEObject;
+				ObservationRange observationRange = (ObservationRange) theEObject;
 				T result = caseObservationRange(observationRange);
-				if (result == null) result = caseRIM_Act(observationRange);
-				if (result == null) result = caseInfrastructureRoot(observationRange);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Act(observationRange);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(observationRange);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.OBSERVATION_MEDIA: {
-				ObservationMedia observationMedia = (ObservationMedia)theEObject;
+				ObservationMedia observationMedia = (ObservationMedia) theEObject;
 				T result = caseObservationMedia(observationMedia);
-				if (result == null) result = caseClinicalStatement(observationMedia);
-				if (result == null) result = caseRIM_Act(observationMedia);
-				if (result == null) result = caseInfrastructureRoot(observationMedia);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(observationMedia);
+				}
+				if (result == null) {
+					result = caseRIM_Act(observationMedia);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(observationMedia);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.ORGANIZER: {
-				Organizer organizer = (Organizer)theEObject;
+				Organizer organizer = (Organizer) theEObject;
 				T result = caseOrganizer(organizer);
-				if (result == null) result = caseClinicalStatement(organizer);
-				if (result == null) result = caseRIM_Act(organizer);
-				if (result == null) result = caseInfrastructureRoot(organizer);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(organizer);
+				}
+				if (result == null) {
+					result = caseRIM_Act(organizer);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(organizer);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.COMPONENT4: {
-				Component4 component4 = (Component4)theEObject;
+				Component4 component4 = (Component4) theEObject;
 				T result = caseComponent4(component4);
-				if (result == null) result = caseActRelationship(component4);
-				if (result == null) result = caseInfrastructureRoot(component4);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(component4);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(component4);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PROCEDURE: {
-				Procedure procedure = (Procedure)theEObject;
+				Procedure procedure = (Procedure) theEObject;
 				T result = caseProcedure(procedure);
-				if (result == null) result = caseClinicalStatement(procedure);
-				if (result == null) result = caseRIM_Act(procedure);
-				if (result == null) result = caseInfrastructureRoot(procedure);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(procedure);
+				}
+				if (result == null) {
+					result = caseRIM_Act(procedure);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(procedure);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.REGION_OF_INTEREST: {
-				RegionOfInterest regionOfInterest = (RegionOfInterest)theEObject;
+				RegionOfInterest regionOfInterest = (RegionOfInterest) theEObject;
 				T result = caseRegionOfInterest(regionOfInterest);
-				if (result == null) result = caseClinicalStatement(regionOfInterest);
-				if (result == null) result = caseRIM_Act(regionOfInterest);
-				if (result == null) result = caseInfrastructureRoot(regionOfInterest);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(regionOfInterest);
+				}
+				if (result == null) {
+					result = caseRIM_Act(regionOfInterest);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(regionOfInterest);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.REGION_OF_INTEREST_VALUE: {
-				RegionOfInterestValue regionOfInterestValue = (RegionOfInterestValue)theEObject;
+				RegionOfInterestValue regionOfInterestValue = (RegionOfInterestValue) theEObject;
 				T result = caseRegionOfInterestValue(regionOfInterestValue);
-				if (result == null) result = caseINT(regionOfInterestValue);
-				if (result == null) result = caseQTY(regionOfInterestValue);
-				if (result == null) result = caseANY(regionOfInterestValue);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseINT(regionOfInterestValue);
+				}
+				if (result == null) {
+					result = caseQTY(regionOfInterestValue);
+				}
+				if (result == null) {
+					result = caseANY(regionOfInterestValue);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SUBSTANCE_ADMINISTRATION: {
-				SubstanceAdministration substanceAdministration = (SubstanceAdministration)theEObject;
+				SubstanceAdministration substanceAdministration = (SubstanceAdministration) theEObject;
 				T result = caseSubstanceAdministration(substanceAdministration);
-				if (result == null) result = caseClinicalStatement(substanceAdministration);
-				if (result == null) result = caseRIM_Act(substanceAdministration);
-				if (result == null) result = caseInfrastructureRoot(substanceAdministration);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(substanceAdministration);
+				}
+				if (result == null) {
+					result = caseRIM_Act(substanceAdministration);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(substanceAdministration);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.CONSUMABLE: {
-				Consumable consumable = (Consumable)theEObject;
+				Consumable consumable = (Consumable) theEObject;
 				T result = caseConsumable(consumable);
-				if (result == null) result = caseParticipation(consumable);
-				if (result == null) result = caseInfrastructureRoot(consumable);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(consumable);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(consumable);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.MANUFACTURED_PRODUCT: {
-				ManufacturedProduct manufacturedProduct = (ManufacturedProduct)theEObject;
+				ManufacturedProduct manufacturedProduct = (ManufacturedProduct) theEObject;
 				T result = caseManufacturedProduct(manufacturedProduct);
-				if (result == null) result = caseRole(manufacturedProduct);
-				if (result == null) result = caseInfrastructureRoot(manufacturedProduct);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRole(manufacturedProduct);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(manufacturedProduct);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.LABELED_DRUG: {
-				LabeledDrug labeledDrug = (LabeledDrug)theEObject;
+				LabeledDrug labeledDrug = (LabeledDrug) theEObject;
 				T result = caseLabeledDrug(labeledDrug);
-				if (result == null) result = caseRIM_Entity(labeledDrug);
-				if (result == null) result = caseInfrastructureRoot(labeledDrug);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(labeledDrug);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(labeledDrug);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.MATERIAL: {
-				Material material = (Material)theEObject;
+				Material material = (Material) theEObject;
 				T result = caseMaterial(material);
-				if (result == null) result = caseRIM_Entity(material);
-				if (result == null) result = caseInfrastructureRoot(material);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRIM_Entity(material);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(material);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.SUPPLY: {
-				Supply supply = (Supply)theEObject;
+				Supply supply = (Supply) theEObject;
 				T result = caseSupply(supply);
-				if (result == null) result = caseClinicalStatement(supply);
-				if (result == null) result = caseRIM_Act(supply);
-				if (result == null) result = caseInfrastructureRoot(supply);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClinicalStatement(supply);
+				}
+				if (result == null) {
+					result = caseRIM_Act(supply);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(supply);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.PRODUCT: {
-				Product product = (Product)theEObject;
+				Product product = (Product) theEObject;
 				T result = caseProduct(product);
-				if (result == null) result = caseParticipation(product);
-				if (result == null) result = caseInfrastructureRoot(product);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseParticipation(product);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(product);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.COMPONENT5: {
-				Component5 component5 = (Component5)theEObject;
+				Component5 component5 = (Component5) theEObject;
 				T result = caseComponent5(component5);
-				if (result == null) result = caseActRelationship(component5);
-				if (result == null) result = caseInfrastructureRoot(component5);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseActRelationship(component5);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(component5);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.DOCUMENT_ROOT: {
-				DocumentRoot documentRoot = (DocumentRoot)theEObject;
+				DocumentRoot documentRoot = (DocumentRoot) theEObject;
 				T result = caseDocumentRoot(documentRoot);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case CDAPackage.REGISTRY_DELEGATE: {
-				RegistryDelegate registryDelegate = (RegistryDelegate)theEObject;
+				RegistryDelegate registryDelegate = (RegistryDelegate) theEObject;
 				T result = caseRegistryDelegate(registryDelegate);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
-			default: return defaultCase(theEObject);
+			default:
+				return defaultCase(theEObject);
 		}
 	}
 
@@ -2499,4 +3056,4 @@ public class CDASwitch<T> {
 		return null;
 	}
 
-} //CDASwitch
+} // CDASwitch

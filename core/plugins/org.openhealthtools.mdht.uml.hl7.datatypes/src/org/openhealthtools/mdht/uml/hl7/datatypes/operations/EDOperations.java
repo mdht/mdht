@@ -68,6 +68,7 @@ public class EDOperations extends ANYOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.thumbnail.oclIsUndefined() implies self.thumbnail.thumbnail.oclIsUndefined()";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateThumbnailThumbnail(ED, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thumbnail Thumbnail</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -89,26 +90,26 @@ public class EDOperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateThumbnailThumbnail(ED ed, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateThumbnailThumbnail(ED ed, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.ED);
 			try {
 				VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_THUMBNAIL_THUMBNAIL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ed)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.ED__THUMBNAIL_THUMBNAIL,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateThumbnailThumbnail", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ed, context) }),
-						 new Object [] { ed }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.ED__THUMBNAIL_THUMBNAIL,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateThumbnailThumbnail",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ed, context) }),
+					new Object[] { ed }));
 			}
 			return false;
 		}
@@ -120,7 +121,7 @@ public class EDOperations extends ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  ED addText(ED ed, String text) {
+	public static ED addText(ED ed, String text) {
 		if (text == null) {
 			throw new IllegalArgumentException("text is null");
 		}
@@ -133,7 +134,7 @@ public class EDOperations extends ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  String getText(ED ed) {
+	public static String getText(ED ed) {
 		StringBuffer text = new StringBuffer("");
 		for (FeatureMap.Entry entry : ed.getMixed()) {
 			if (FeatureMapUtil.isText(entry)) {

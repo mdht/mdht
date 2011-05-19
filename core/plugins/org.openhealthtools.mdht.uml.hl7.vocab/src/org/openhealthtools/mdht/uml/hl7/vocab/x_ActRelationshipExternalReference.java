@@ -182,15 +182,8 @@ public enum x_ActRelationshipExternalReference implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_ActRelationshipExternalReference[] VALUES_ARRAY =
-		new x_ActRelationshipExternalReference[] {
-			ELNK,
-			REFR,
-			RPLC,
-			SPRT,
-			SUBJ,
-			XCRPT,
-		};
+	private static final x_ActRelationshipExternalReference[] VALUES_ARRAY = new x_ActRelationshipExternalReference[] {
+			ELNK, REFR, RPLC, SPRT, SUBJ, XCRPT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>xAct Relationship External Reference</b></em>' enumerators.
@@ -240,12 +233,18 @@ public enum x_ActRelationshipExternalReference implements Enumerator {
 	 */
 	public static x_ActRelationshipExternalReference get(int value) {
 		switch (value) {
-			case ELNK_VALUE: return ELNK;
-			case REFR_VALUE: return REFR;
-			case RPLC_VALUE: return RPLC;
-			case SPRT_VALUE: return SPRT;
-			case SUBJ_VALUE: return SUBJ;
-			case XCRPT_VALUE: return XCRPT;
+			case ELNK_VALUE:
+				return ELNK;
+			case REFR_VALUE:
+				return REFR;
+			case RPLC_VALUE:
+				return RPLC;
+			case SPRT_VALUE:
+				return SPRT;
+			case SUBJ_VALUE:
+				return SUBJ;
+			case XCRPT_VALUE:
+				return XCRPT;
 		}
 		return null;
 	}
@@ -289,7 +288,7 @@ public enum x_ActRelationshipExternalReference implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -298,7 +297,7 @@ public enum x_ActRelationshipExternalReference implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -307,7 +306,7 @@ public enum x_ActRelationshipExternalReference implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -320,5 +319,5 @@ public enum x_ActRelationshipExternalReference implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //x_ActRelationshipExternalReference
+
+} // x_ActRelationshipExternalReference

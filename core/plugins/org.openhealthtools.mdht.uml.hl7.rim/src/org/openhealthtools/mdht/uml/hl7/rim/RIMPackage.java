@@ -358,4 +358,4 @@ public interface RIMPackage extends EPackage {
 
 	}
 
-} //RIMPackage
+} // RIMPackage
