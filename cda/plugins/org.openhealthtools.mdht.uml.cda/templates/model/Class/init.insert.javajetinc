@@ -9,8 +9,8 @@
 <%}%>
 <%if (isImplementation) {%>
 	public <%=genClass.getInterfaceName()%> init() {
-    		<%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.util.CDAUtil")%>.init(this);
-    		return this;
+    	<%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.util.CDAUtil")%>.init(this);
+    	return this;
 	}
 <%}%>
 <%}%>
