@@ -107,12 +107,7 @@ public enum EntityClassDevice implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EntityClassDevice[] VALUES_ARRAY =
-		new EntityClassDevice[] {
-			CER,
-			DEV,
-			MODDV,
-		};
+	private static final EntityClassDevice[] VALUES_ARRAY = new EntityClassDevice[] { CER, DEV, MODDV, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Class Device</b></em>' enumerators.
@@ -162,9 +157,12 @@ public enum EntityClassDevice implements Enumerator {
 	 */
 	public static EntityClassDevice get(int value) {
 		switch (value) {
-			case CER_VALUE: return CER;
-			case DEV_VALUE: return DEV;
-			case MODDV_VALUE: return MODDV;
+			case CER_VALUE:
+				return CER;
+			case DEV_VALUE:
+				return DEV;
+			case MODDV_VALUE:
+				return MODDV;
 		}
 		return null;
 	}
@@ -208,7 +206,7 @@ public enum EntityClassDevice implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -217,7 +215,7 @@ public enum EntityClassDevice implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -226,7 +224,7 @@ public enum EntityClassDevice implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -239,5 +237,5 @@ public enum EntityClassDevice implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //EntityClassDevice
+
+} // EntityClassDevice

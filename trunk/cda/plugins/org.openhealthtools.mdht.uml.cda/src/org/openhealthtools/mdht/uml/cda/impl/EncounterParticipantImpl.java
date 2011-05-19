@@ -183,6 +183,7 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ENCOUNTER_PARTICIPANT__REALM_CODE);
@@ -195,6 +196,7 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -208,8 +210,13 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -222,15 +229,22 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -238,6 +252,7 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENCOUNTER_PARTICIPANT__TEMPLATE_ID);
@@ -263,8 +278,13 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		IVL_TS oldTime = time;
 		time = newTime;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TIME, oldTime, newTime);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TIME, oldTime, newTime);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -277,15 +297,22 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	public void setTime(IVL_TS newTime) {
 		if (newTime != time) {
 			NotificationChain msgs = null;
-			if (time != null)
-				msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
-			if (newTime != null)
-				msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
+			if (time != null) {
+				msgs = ((InternalEObject) time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
+			}
+			if (newTime != null) {
+				msgs = ((InternalEObject) newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER_PARTICIPANT__TIME, null, msgs);
+			}
 			msgs = basicSetTime(newTime, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TIME, newTime, newTime));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TIME, newTime, newTime));
 	}
 
 	/**
@@ -306,8 +333,14 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		AssignedEntity oldAssignedEntity = assignedEntity;
 		assignedEntity = newAssignedEntity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, oldAssignedEntity, newAssignedEntity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, oldAssignedEntity,
+				newAssignedEntity);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -320,15 +353,23 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	public void setAssignedEntity(AssignedEntity newAssignedEntity) {
 		if (newAssignedEntity != assignedEntity) {
 			NotificationChain msgs = null;
-			if (assignedEntity != null)
-				msgs = ((InternalEObject)assignedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
-			if (newAssignedEntity != null)
-				msgs = ((InternalEObject)newAssignedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
+			if (assignedEntity != null) {
+				msgs = ((InternalEObject) assignedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
+			}
+			if (newAssignedEntity != null) {
+				msgs = ((InternalEObject) newAssignedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, null, msgs);
+			}
 			msgs = basicSetAssignedEntity(newAssignedEntity, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, newAssignedEntity,
+				newAssignedEntity));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY, newAssignedEntity, newAssignedEntity));
 	}
 
 	/**
@@ -336,6 +377,7 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -347,11 +389,16 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -364,8 +411,11 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -382,6 +432,7 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public x_EncounterParticipant getTypeCode() {
 		return typeCode;
 	}
@@ -393,11 +444,16 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 */
 	public void setTypeCode(x_EncounterParticipant newTypeCode) {
 		x_EncounterParticipant oldTypeCode = typeCode;
-		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		typeCode = newTypeCode == null
+				? TYPE_CODE_EDEFAULT
+				: newTypeCode;
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE, oldTypeCode, typeCode,
+				!oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -410,8 +466,11 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+				oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -432,11 +491,11 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ENCOUNTER_PARTICIPANT__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TIME:
 				return basicSetTime(null, msgs);
 			case CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY:
@@ -482,26 +541,26 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 		switch (featureID) {
 			case CDAPackage.ENCOUNTER_PARTICIPANT__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TIME:
-				setTime((IVL_TS)newValue);
+				setTime((IVL_TS) newValue);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY:
-				setAssignedEntity((AssignedEntity)newValue);
+				setAssignedEntity((AssignedEntity) newValue);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_CODE:
-				setTypeCode((x_EncounterParticipant)newValue);
+				setTypeCode((x_EncounterParticipant) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -519,16 +578,16 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__TIME:
-				setTime((IVL_TS)null);
+				setTime((IVL_TS) null);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY:
-				setAssignedEntity((AssignedEntity)null);
+				setAssignedEntity((AssignedEntity) null);
 				return;
 			case CDAPackage.ENCOUNTER_PARTICIPANT__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -573,15 +632,25 @@ public class EncounterParticipantImpl extends ParticipationImpl implements Encou
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", typeCode: ");
-		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
+		if (typeCodeESet) {
+			result.append(typeCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //EncounterParticipantImpl
+} // EncounterParticipantImpl

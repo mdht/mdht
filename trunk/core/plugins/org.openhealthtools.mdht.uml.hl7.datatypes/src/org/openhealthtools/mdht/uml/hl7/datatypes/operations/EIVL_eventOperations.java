@@ -61,6 +61,7 @@ public class EIVL_eventOperations extends CEOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.originalText.oclIsUndefined()";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateOriginalText(EIVL_event, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Original Text</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -82,26 +83,28 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateOriginalText(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateOriginalText(EIVL_event eivL_event, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EIVL_EVENT);
 			try {
 				VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(eivL_event)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.EIVL_EVENT__ORIGINAL_TEXT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateOriginalText", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
-						 new Object [] { eivL_event }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.EIVL_EVENT__ORIGINAL_TEXT,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateOriginalText",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
+					new Object[] { eivL_event }));
 			}
 			return false;
 		}
@@ -117,6 +120,7 @@ public class EIVL_eventOperations extends CEOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_TRANSLATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.translation->size()=0";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateTranslation(EIVL_event, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Translation</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -138,26 +142,27 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateTranslation(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateTranslation(EIVL_event eivL_event, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_TRANSLATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EIVL_EVENT);
 			try {
 				VALIDATE_TRANSLATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_TRANSLATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_TRANSLATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(eivL_event)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.EIVL_EVENT__TRANSLATION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateTranslation", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
-						 new Object [] { eivL_event }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EIVL_EVENT__TRANSLATION,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateTranslation",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
+					new Object[] { eivL_event }));
 			}
 			return false;
 		}
@@ -173,6 +178,7 @@ public class EIVL_eventOperations extends CEOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.codeSystem.oclIsUndefined() implies self.codeSystem='2.16.840.1.113883.5.139'";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateCodeSystem(EIVL_event, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Code System</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -194,26 +200,27 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCodeSystem(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateCodeSystem(EIVL_event eivL_event, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EIVL_EVENT);
 			try {
 				VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(eivL_event)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.EIVL_EVENT__CODE_SYSTEM,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCodeSystem", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
-						 new Object [] { eivL_event }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EIVL_EVENT__CODE_SYSTEM,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateCodeSystem",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
+					new Object[] { eivL_event }));
 			}
 			return false;
 		}
@@ -229,6 +236,7 @@ public class EIVL_eventOperations extends CEOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.codeSystemName.oclIsUndefined() implies self.codeSystemName='TimingEvent'";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateCodeSystemName(EIVL_event, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Code System Name</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -250,26 +258,28 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCodeSystemName(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateCodeSystemName(EIVL_event eivL_event, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EIVL_EVENT);
 			try {
 				VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CODE_SYSTEM_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(eivL_event)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.EIVL_EVENT__CODE_SYSTEM_NAME,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCodeSystemName", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
-						 new Object [] { eivL_event }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.EIVL_EVENT__CODE_SYSTEM_NAME,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateCodeSystemName",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
+					new Object[] { eivL_event }));
 			}
 			return false;
 		}
@@ -286,18 +296,17 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- end-model-doc -->
 	 * @generated NOT
 	 */
-	public static  boolean validateCode(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if ((eivL_event != null) && 
-			(eivL_event.getCode() != null) &&
-			(TimingEvent.get(eivL_event.getCode()) == null)) {
+	public static boolean validateCode(EIVL_event eivL_event, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if ((eivL_event != null) && (eivL_event.getCode() != null) && (TimingEvent.get(eivL_event.getCode()) == null)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.EIVL_EVENT__CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context)}),
-						 new Object [] { eivL_event }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, DatatypesValidator.DIAGNOSTIC_SOURCE, DatatypesValidator.EIVL_EVENT__CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(eivL_event, context) }),
+					new Object[] { eivL_event }));
 			}
 			return false;
 		}
@@ -309,7 +318,7 @@ public class EIVL_eventOperations extends CEOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EIVL_event init(EIVL_event eivL_event) {
+	public static EIVL_event init(EIVL_event eivL_event) {
 		eivL_event.setCodeSystem("2.16.840.1.113883.5.139");
 		eivL_event.setCodeSystemName("TimingEvent");
 		return eivL_event;

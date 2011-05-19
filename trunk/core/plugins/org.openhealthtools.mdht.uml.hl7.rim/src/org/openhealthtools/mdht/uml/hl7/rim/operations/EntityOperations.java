@@ -63,7 +63,7 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getClassCode(Entity entity) {
+	public static Enumerator getClassCode(Entity entity) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -74,7 +74,7 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getDeterminerCode(Entity entity) {
+	public static Enumerator getDeterminerCode(Entity entity) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -85,7 +85,7 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<Role> getPlayedRoles(Entity entity) {
+	public static EList<Role> getPlayedRoles(Entity entity) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -96,7 +96,7 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<Role> getScopedRoles(Entity entity) {
+	public static EList<Role> getScopedRoles(Entity entity) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -111,6 +111,7 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * @ordered
 	 */
 	protected static final String IS_CLASS_CODE_DEFINED__EOCL_EXP = "self.isDefined('classCode')";
+
 	/**
 	 * The cached OCL query for the '{@link #isClassCodeDefined(Entity) <em>Is Class Code Defined</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -130,14 +131,14 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean isClassCodeDefined(Entity entity) {
+	public static boolean isClassCodeDefined(Entity entity) {
 		if (IS_CLASS_CODE_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(RIMPackage.Literals.ENTITY, RIMPackage.Literals.ENTITY.getEAllOperations().get(12));
+			helper.setOperationContext(
+				RIMPackage.Literals.ENTITY, RIMPackage.Literals.ENTITY.getEAllOperations().get(12));
 			try {
 				IS_CLASS_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_CLASS_CODE_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
@@ -154,6 +155,7 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * @ordered
 	 */
 	protected static final String IS_DETERMINER_CODE_DEFINED__EOCL_EXP = "self.isDefined('determinerCode')";
+
 	/**
 	 * The cached OCL query for the '{@link #isDeterminerCodeDefined(Entity) <em>Is Determiner Code Defined</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -173,14 +175,14 @@ public class EntityOperations extends InfrastructureRootOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean isDeterminerCodeDefined(Entity entity) {
+	public static boolean isDeterminerCodeDefined(Entity entity) {
 		if (IS_DETERMINER_CODE_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(RIMPackage.Literals.ENTITY, RIMPackage.Literals.ENTITY.getEAllOperations().get(13));
+			helper.setOperationContext(
+				RIMPackage.Literals.ENTITY, RIMPackage.Literals.ENTITY.getEAllOperations().get(13));
 			try {
 				IS_DETERMINER_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_DETERMINER_CODE_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}

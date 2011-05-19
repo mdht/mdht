@@ -95,11 +95,15 @@ public class ADXPImpl extends STImpl implements ADXP {
 	 */
 	public void setPartType(AddressPartType newPartType) {
 		AddressPartType oldPartType = partType;
-		partType = newPartType == null ? PART_TYPE_EDEFAULT : newPartType;
+		partType = newPartType == null
+				? PART_TYPE_EDEFAULT
+				: newPartType;
 		boolean oldPartTypeESet = partTypeESet;
 		partTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, partType, !oldPartTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, partType, !oldPartTypeESet));
+		}
 	}
 
 	/**
@@ -112,8 +116,11 @@ public class ADXPImpl extends STImpl implements ADXP {
 		boolean oldPartTypeESet = partTypeESet;
 		partType = PART_TYPE_EDEFAULT;
 		partTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, PART_TYPE_EDEFAULT, oldPartTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, PART_TYPE_EDEFAULT,
+				oldPartTypeESet));
+		}
 	}
 
 	/**
@@ -148,7 +155,7 @@ public class ADXPImpl extends STImpl implements ADXP {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.ADXP__PART_TYPE:
-				setPartType((AddressPartType)newValue);
+				setPartType((AddressPartType) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,13 +197,19 @@ public class ADXPImpl extends STImpl implements ADXP {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (partType: ");
-		if (partTypeESet) result.append(partType); else result.append("<unset>");
+		if (partTypeESet) {
+			result.append(partType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ADXPImpl
+} // ADXPImpl

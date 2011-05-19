@@ -245,6 +245,7 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ASSIGNED_ENTITY__REALM_CODE);
@@ -257,6 +258,7 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -270,8 +272,13 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -284,15 +291,22 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -300,6 +314,7 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ASSIGNED_ENTITY__TEMPLATE_ID);
@@ -337,8 +352,13 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		CE oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -351,15 +371,21 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	public void setCode(CE newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__CODE, newCode, newCode));
+		}
 	}
 
 	/**
@@ -404,8 +430,13 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		SDTCPatient oldSDTCPatient = sDTCPatient;
 		sDTCPatient = newSDTCPatient;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, oldSDTCPatient, newSDTCPatient);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, oldSDTCPatient, newSDTCPatient);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -418,15 +449,22 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	public void setSDTCPatient(SDTCPatient newSDTCPatient) {
 		if (newSDTCPatient != sDTCPatient) {
 			NotificationChain msgs = null;
-			if (sDTCPatient != null)
-				msgs = ((InternalEObject)sDTCPatient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
-			if (newSDTCPatient != null)
-				msgs = ((InternalEObject)newSDTCPatient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
+			if (sDTCPatient != null) {
+				msgs = ((InternalEObject) sDTCPatient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
+			}
+			if (newSDTCPatient != null) {
+				msgs = ((InternalEObject) newSDTCPatient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
+			}
 			msgs = basicSetSDTCPatient(newSDTCPatient, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, newSDTCPatient, newSDTCPatient));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, newSDTCPatient, newSDTCPatient));
 	}
 
 	/**
@@ -447,8 +485,14 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		Person oldAssignedPerson = assignedPerson;
 		assignedPerson = newAssignedPerson;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, oldAssignedPerson, newAssignedPerson);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, oldAssignedPerson,
+				newAssignedPerson);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -461,15 +505,23 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	public void setAssignedPerson(Person newAssignedPerson) {
 		if (newAssignedPerson != assignedPerson) {
 			NotificationChain msgs = null;
-			if (assignedPerson != null)
-				msgs = ((InternalEObject)assignedPerson).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
-			if (newAssignedPerson != null)
-				msgs = ((InternalEObject)newAssignedPerson).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
+			if (assignedPerson != null) {
+				msgs = ((InternalEObject) assignedPerson).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
+			}
+			if (newAssignedPerson != null) {
+				msgs = ((InternalEObject) newAssignedPerson).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, null, msgs);
+			}
 			msgs = basicSetAssignedPerson(newAssignedPerson, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, newAssignedPerson,
+				newAssignedPerson));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON, newAssignedPerson, newAssignedPerson));
 	}
 
 	/**
@@ -479,7 +531,8 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 */
 	public EList<Organization> getRepresentedOrganizations() {
 		if (representedOrganizations == null) {
-			representedOrganizations = new EObjectContainmentEList<Organization>(Organization.class, this, CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION);
+			representedOrganizations = new EObjectContainmentEList<Organization>(
+				Organization.class, this, CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION);
 		}
 		return representedOrganizations;
 	}
@@ -489,6 +542,7 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -500,11 +554,16 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -517,8 +576,11 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -535,6 +597,7 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RoleClassAssignedEntity getClassCode() {
 		return classCode;
 	}
@@ -546,11 +609,16 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 */
 	public void setClassCode(RoleClassAssignedEntity newClassCode) {
 		RoleClassAssignedEntity oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -563,8 +631,11 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ASSIGNED_ENTITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -594,23 +665,23 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ASSIGNED_ENTITY__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__ADDR:
-				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
-				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				return basicSetAssignedPerson(null, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
-				return ((InternalEList<?>)getRepresentedOrganizations()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRepresentedOrganizations()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
 				return basicSetSDTCPatient(null, msgs);
 		}
@@ -664,45 +735,45 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 		switch (featureID) {
 			case CDAPackage.ASSIGNED_ENTITY__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__CODE:
-				setCode((CE)newValue);
+				setCode((CE) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__ADDR:
 				getAddrs().clear();
-				getAddrs().addAll((Collection<? extends AD>)newValue);
+				getAddrs().addAll((Collection<? extends AD>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				getTelecoms().clear();
-				getTelecoms().addAll((Collection<? extends TEL>)newValue);
+				getTelecoms().addAll((Collection<? extends TEL>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
-				setAssignedPerson((Person)newValue);
+				setAssignedPerson((Person) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
 				getRepresentedOrganizations().clear();
-				getRepresentedOrganizations().addAll((Collection<? extends Organization>)newValue);
+				getRepresentedOrganizations().addAll((Collection<? extends Organization>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)newValue);
+				setSDTCPatient((SDTCPatient) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__CLASS_CODE:
-				setClassCode((RoleClassAssignedEntity)newValue);
+				setClassCode((RoleClassAssignedEntity) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -720,7 +791,7 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -729,7 +800,7 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 				getIds().clear();
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__CODE:
-				setCode((CE)null);
+				setCode((CE) null);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__ADDR:
 				getAddrs().clear();
@@ -738,13 +809,13 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 				getTelecoms().clear();
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
-				setAssignedPerson((Person)null);
+				setAssignedPerson((Person) null);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
 				getRepresentedOrganizations().clear();
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
-				setSDTCPatient((SDTCPatient)null);
+				setSDTCPatient((SDTCPatient) null);
 				return;
 			case CDAPackage.ASSIGNED_ENTITY__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -799,15 +870,25 @@ public class AssignedEntityImpl extends RoleImpl implements AssignedEntity {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //AssignedEntityImpl
+} // AssignedEntityImpl

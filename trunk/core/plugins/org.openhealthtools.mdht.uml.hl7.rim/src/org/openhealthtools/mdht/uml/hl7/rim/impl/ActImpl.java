@@ -120,4 +120,4 @@ public abstract class ActImpl extends InfrastructureRootImpl implements Act {
 		return ActOperations.isMoodCodeDefined(this);
 	}
 
-} //ActImpl
+} // ActImpl

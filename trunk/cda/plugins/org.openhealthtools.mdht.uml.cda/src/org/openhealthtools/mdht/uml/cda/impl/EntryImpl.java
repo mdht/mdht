@@ -300,6 +300,7 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ENTRY__REALM_CODE);
@@ -312,6 +313,7 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -325,8 +327,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -339,15 +346,21 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -355,6 +368,7 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENTRY__TEMPLATE_ID);
@@ -380,8 +394,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		Act oldAct = act;
 		act = newAct;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__ACT, oldAct, newAct);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__ACT, oldAct, newAct);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -394,15 +413,21 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setAct(Act newAct) {
 		if (newAct != act) {
 			NotificationChain msgs = null;
-			if (act != null)
-				msgs = ((InternalEObject)act).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ACT, null, msgs);
-			if (newAct != null)
-				msgs = ((InternalEObject)newAct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ACT, null, msgs);
+			if (act != null) {
+				msgs = ((InternalEObject) act).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ACT, null, msgs);
+			}
+			if (newAct != null) {
+				msgs = ((InternalEObject) newAct).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ACT, null, msgs);
+			}
 			msgs = basicSetAct(newAct, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__ACT, newAct, newAct));
+		}
 	}
 
 	/**
@@ -423,8 +448,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		Encounter oldEncounter = encounter;
 		encounter = newEncounter;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__ENCOUNTER, oldEncounter, newEncounter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__ENCOUNTER, oldEncounter, newEncounter);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -437,15 +467,22 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setEncounter(Encounter newEncounter) {
 		if (newEncounter != encounter) {
 			NotificationChain msgs = null;
-			if (encounter != null)
-				msgs = ((InternalEObject)encounter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ENCOUNTER, null, msgs);
-			if (newEncounter != null)
-				msgs = ((InternalEObject)newEncounter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ENCOUNTER, null, msgs);
+			if (encounter != null) {
+				msgs = ((InternalEObject) encounter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__ENCOUNTER, null, msgs);
+			}
+			if (newEncounter != null) {
+				msgs = ((InternalEObject) newEncounter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__ENCOUNTER, null, msgs);
+			}
 			msgs = basicSetEncounter(newEncounter, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__ENCOUNTER, newEncounter, newEncounter));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__ENCOUNTER, newEncounter, newEncounter));
 	}
 
 	/**
@@ -466,8 +503,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		Observation oldObservation = observation;
 		observation = newObservation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__OBSERVATION, oldObservation, newObservation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__OBSERVATION, oldObservation, newObservation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -480,15 +522,22 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setObservation(Observation newObservation) {
 		if (newObservation != observation) {
 			NotificationChain msgs = null;
-			if (observation != null)
-				msgs = ((InternalEObject)observation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__OBSERVATION, null, msgs);
-			if (newObservation != null)
-				msgs = ((InternalEObject)newObservation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__OBSERVATION, null, msgs);
+			if (observation != null) {
+				msgs = ((InternalEObject) observation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__OBSERVATION, null, msgs);
+			}
+			if (newObservation != null) {
+				msgs = ((InternalEObject) newObservation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__OBSERVATION, null, msgs);
+			}
 			msgs = basicSetObservation(newObservation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__OBSERVATION, newObservation, newObservation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__OBSERVATION, newObservation, newObservation));
 	}
 
 	/**
@@ -509,8 +558,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		ObservationMedia oldObservationMedia = observationMedia;
 		observationMedia = newObservationMedia;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__OBSERVATION_MEDIA, oldObservationMedia, newObservationMedia);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__OBSERVATION_MEDIA, oldObservationMedia, newObservationMedia);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -523,15 +577,22 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setObservationMedia(ObservationMedia newObservationMedia) {
 		if (newObservationMedia != observationMedia) {
 			NotificationChain msgs = null;
-			if (observationMedia != null)
-				msgs = ((InternalEObject)observationMedia).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__OBSERVATION_MEDIA, null, msgs);
-			if (newObservationMedia != null)
-				msgs = ((InternalEObject)newObservationMedia).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__OBSERVATION_MEDIA, null, msgs);
+			if (observationMedia != null) {
+				msgs = ((InternalEObject) observationMedia).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__OBSERVATION_MEDIA, null, msgs);
+			}
+			if (newObservationMedia != null) {
+				msgs = ((InternalEObject) newObservationMedia).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__OBSERVATION_MEDIA, null, msgs);
+			}
 			msgs = basicSetObservationMedia(newObservationMedia, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__OBSERVATION_MEDIA, newObservationMedia, newObservationMedia));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__OBSERVATION_MEDIA, newObservationMedia, newObservationMedia));
 	}
 
 	/**
@@ -552,8 +613,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		Organizer oldOrganizer = organizer;
 		organizer = newOrganizer;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__ORGANIZER, oldOrganizer, newOrganizer);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__ORGANIZER, oldOrganizer, newOrganizer);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -566,15 +632,22 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setOrganizer(Organizer newOrganizer) {
 		if (newOrganizer != organizer) {
 			NotificationChain msgs = null;
-			if (organizer != null)
-				msgs = ((InternalEObject)organizer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ORGANIZER, null, msgs);
-			if (newOrganizer != null)
-				msgs = ((InternalEObject)newOrganizer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__ORGANIZER, null, msgs);
+			if (organizer != null) {
+				msgs = ((InternalEObject) organizer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__ORGANIZER, null, msgs);
+			}
+			if (newOrganizer != null) {
+				msgs = ((InternalEObject) newOrganizer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__ORGANIZER, null, msgs);
+			}
 			msgs = basicSetOrganizer(newOrganizer, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__ORGANIZER, newOrganizer, newOrganizer));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__ORGANIZER, newOrganizer, newOrganizer));
 	}
 
 	/**
@@ -595,8 +668,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		Procedure oldProcedure = procedure;
 		procedure = newProcedure;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__PROCEDURE, oldProcedure, newProcedure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__PROCEDURE, oldProcedure, newProcedure);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -609,15 +687,22 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setProcedure(Procedure newProcedure) {
 		if (newProcedure != procedure) {
 			NotificationChain msgs = null;
-			if (procedure != null)
-				msgs = ((InternalEObject)procedure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__PROCEDURE, null, msgs);
-			if (newProcedure != null)
-				msgs = ((InternalEObject)newProcedure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__PROCEDURE, null, msgs);
+			if (procedure != null) {
+				msgs = ((InternalEObject) procedure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__PROCEDURE, null, msgs);
+			}
+			if (newProcedure != null) {
+				msgs = ((InternalEObject) newProcedure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__PROCEDURE, null, msgs);
+			}
 			msgs = basicSetProcedure(newProcedure, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__PROCEDURE, newProcedure, newProcedure));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__PROCEDURE, newProcedure, newProcedure));
 	}
 
 	/**
@@ -638,8 +723,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		RegionOfInterest oldRegionOfInterest = regionOfInterest;
 		regionOfInterest = newRegionOfInterest;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__REGION_OF_INTEREST, oldRegionOfInterest, newRegionOfInterest);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__REGION_OF_INTEREST, oldRegionOfInterest, newRegionOfInterest);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -652,15 +742,22 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setRegionOfInterest(RegionOfInterest newRegionOfInterest) {
 		if (newRegionOfInterest != regionOfInterest) {
 			NotificationChain msgs = null;
-			if (regionOfInterest != null)
-				msgs = ((InternalEObject)regionOfInterest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__REGION_OF_INTEREST, null, msgs);
-			if (newRegionOfInterest != null)
-				msgs = ((InternalEObject)newRegionOfInterest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__REGION_OF_INTEREST, null, msgs);
+			if (regionOfInterest != null) {
+				msgs = ((InternalEObject) regionOfInterest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__REGION_OF_INTEREST, null, msgs);
+			}
+			if (newRegionOfInterest != null) {
+				msgs = ((InternalEObject) newRegionOfInterest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__REGION_OF_INTEREST, null, msgs);
+			}
 			msgs = basicSetRegionOfInterest(newRegionOfInterest, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__REGION_OF_INTEREST, newRegionOfInterest, newRegionOfInterest));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__REGION_OF_INTEREST, newRegionOfInterest, newRegionOfInterest));
 	}
 
 	/**
@@ -677,12 +774,19 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSubstanceAdministration(SubstanceAdministration newSubstanceAdministration, NotificationChain msgs) {
+	public NotificationChain basicSetSubstanceAdministration(SubstanceAdministration newSubstanceAdministration,
+			NotificationChain msgs) {
 		SubstanceAdministration oldSubstanceAdministration = substanceAdministration;
 		substanceAdministration = newSubstanceAdministration;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, oldSubstanceAdministration, newSubstanceAdministration);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, oldSubstanceAdministration,
+				newSubstanceAdministration);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -695,15 +799,23 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setSubstanceAdministration(SubstanceAdministration newSubstanceAdministration) {
 		if (newSubstanceAdministration != substanceAdministration) {
 			NotificationChain msgs = null;
-			if (substanceAdministration != null)
-				msgs = ((InternalEObject)substanceAdministration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, null, msgs);
-			if (newSubstanceAdministration != null)
-				msgs = ((InternalEObject)newSubstanceAdministration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, null, msgs);
+			if (substanceAdministration != null) {
+				msgs = ((InternalEObject) substanceAdministration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, null, msgs);
+			}
+			if (newSubstanceAdministration != null) {
+				msgs = ((InternalEObject) newSubstanceAdministration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, null, msgs);
+			}
 			msgs = basicSetSubstanceAdministration(newSubstanceAdministration, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, newSubstanceAdministration,
+				newSubstanceAdministration));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, newSubstanceAdministration, newSubstanceAdministration));
 	}
 
 	/**
@@ -724,8 +836,13 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		Supply oldSupply = supply;
 		supply = newSupply;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__SUPPLY, oldSupply, newSupply);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__SUPPLY, oldSupply, newSupply);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -738,15 +855,21 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public void setSupply(Supply newSupply) {
 		if (newSupply != supply) {
 			NotificationChain msgs = null;
-			if (supply != null)
-				msgs = ((InternalEObject)supply).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__SUPPLY, null, msgs);
-			if (newSupply != null)
-				msgs = ((InternalEObject)newSupply).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENTRY__SUPPLY, null, msgs);
+			if (supply != null) {
+				msgs = ((InternalEObject) supply).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__SUPPLY, null, msgs);
+			}
+			if (newSupply != null) {
+				msgs = ((InternalEObject) newSupply).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ENTRY__SUPPLY, null, msgs);
+			}
 			msgs = basicSetSupply(newSupply, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__SUPPLY, newSupply, newSupply));
+		}
 	}
 
 	/**
@@ -754,6 +877,7 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -765,11 +889,15 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -782,8 +910,11 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -800,6 +931,7 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public x_ActRelationshipEntry getTypeCode() {
 		return typeCode;
 	}
@@ -811,11 +943,15 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 */
 	public void setTypeCode(x_ActRelationshipEntry newTypeCode) {
 		x_ActRelationshipEntry oldTypeCode = typeCode;
-		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		typeCode = newTypeCode == null
+				? TYPE_CODE_EDEFAULT
+				: newTypeCode;
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -828,8 +964,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -860,8 +998,11 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		contextConductionInd = newContextConductionInd;
 		boolean oldContextConductionIndESet = contextConductionIndESet;
 		contextConductionIndESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd, !oldContextConductionIndESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
+				contextConductionInd, !oldContextConductionIndESet));
+		}
 	}
 
 	/**
@@ -874,8 +1015,11 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		boolean oldContextConductionIndESet = contextConductionIndESet;
 		contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
 		contextConductionIndESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd, CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
+				CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+		}
 	}
 
 	/**
@@ -914,11 +1058,11 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ENTRY__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENTRY__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ENTRY__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENTRY__ACT:
 				return basicSetAct(null, msgs);
 			case CDAPackage.ENTRY__ENCOUNTER:
@@ -994,50 +1138,50 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		switch (featureID) {
 			case CDAPackage.ENTRY__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.ENTRY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.ENTRY__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ENTRY__ACT:
-				setAct((Act)newValue);
+				setAct((Act) newValue);
 				return;
 			case CDAPackage.ENTRY__ENCOUNTER:
-				setEncounter((Encounter)newValue);
+				setEncounter((Encounter) newValue);
 				return;
 			case CDAPackage.ENTRY__OBSERVATION:
-				setObservation((Observation)newValue);
+				setObservation((Observation) newValue);
 				return;
 			case CDAPackage.ENTRY__OBSERVATION_MEDIA:
-				setObservationMedia((ObservationMedia)newValue);
+				setObservationMedia((ObservationMedia) newValue);
 				return;
 			case CDAPackage.ENTRY__ORGANIZER:
-				setOrganizer((Organizer)newValue);
+				setOrganizer((Organizer) newValue);
 				return;
 			case CDAPackage.ENTRY__PROCEDURE:
-				setProcedure((Procedure)newValue);
+				setProcedure((Procedure) newValue);
 				return;
 			case CDAPackage.ENTRY__REGION_OF_INTEREST:
-				setRegionOfInterest((RegionOfInterest)newValue);
+				setRegionOfInterest((RegionOfInterest) newValue);
 				return;
 			case CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION:
-				setSubstanceAdministration((SubstanceAdministration)newValue);
+				setSubstanceAdministration((SubstanceAdministration) newValue);
 				return;
 			case CDAPackage.ENTRY__SUPPLY:
-				setSupply((Supply)newValue);
+				setSupply((Supply) newValue);
 				return;
 			case CDAPackage.ENTRY__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.ENTRY__TYPE_CODE:
-				setTypeCode((x_ActRelationshipEntry)newValue);
+				setTypeCode((x_ActRelationshipEntry) newValue);
 				return;
 			case CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND:
-				setContextConductionInd((Boolean)newValue);
+				setContextConductionInd((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1055,37 +1199,37 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.ENTRY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.ENTRY__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.ENTRY__ACT:
-				setAct((Act)null);
+				setAct((Act) null);
 				return;
 			case CDAPackage.ENTRY__ENCOUNTER:
-				setEncounter((Encounter)null);
+				setEncounter((Encounter) null);
 				return;
 			case CDAPackage.ENTRY__OBSERVATION:
-				setObservation((Observation)null);
+				setObservation((Observation) null);
 				return;
 			case CDAPackage.ENTRY__OBSERVATION_MEDIA:
-				setObservationMedia((ObservationMedia)null);
+				setObservationMedia((ObservationMedia) null);
 				return;
 			case CDAPackage.ENTRY__ORGANIZER:
-				setOrganizer((Organizer)null);
+				setOrganizer((Organizer) null);
 				return;
 			case CDAPackage.ENTRY__PROCEDURE:
-				setProcedure((Procedure)null);
+				setProcedure((Procedure) null);
 				return;
 			case CDAPackage.ENTRY__REGION_OF_INTEREST:
-				setRegionOfInterest((RegionOfInterest)null);
+				setRegionOfInterest((RegionOfInterest) null);
 				return;
 			case CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION:
-				setSubstanceAdministration((SubstanceAdministration)null);
+				setSubstanceAdministration((SubstanceAdministration) null);
 				return;
 			case CDAPackage.ENTRY__SUPPLY:
-				setSupply((Supply)null);
+				setSupply((Supply) null);
 				return;
 			case CDAPackage.ENTRY__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -1149,17 +1293,31 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", typeCode: ");
-		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
+		if (typeCodeESet) {
+			result.append(typeCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", contextConductionInd: ");
-		if (contextConductionIndESet) result.append(contextConductionInd); else result.append("<unset>");
+		if (contextConductionIndESet) {
+			result.append(contextConductionInd);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //EntryImpl
+} // EntryImpl

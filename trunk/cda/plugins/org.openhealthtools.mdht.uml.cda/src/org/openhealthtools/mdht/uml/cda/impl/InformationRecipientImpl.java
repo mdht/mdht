@@ -171,6 +171,7 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.INFORMATION_RECIPIENT__REALM_CODE);
@@ -183,6 +184,7 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -196,8 +198,13 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -210,15 +217,22 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -226,6 +240,7 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.INFORMATION_RECIPIENT__TEMPLATE_ID);
@@ -251,8 +266,14 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 		IntendedRecipient oldIntendedRecipient = intendedRecipient;
 		intendedRecipient = newIntendedRecipient;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, oldIntendedRecipient, newIntendedRecipient);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, oldIntendedRecipient,
+				newIntendedRecipient);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -265,15 +286,23 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	public void setIntendedRecipient(IntendedRecipient newIntendedRecipient) {
 		if (newIntendedRecipient != intendedRecipient) {
 			NotificationChain msgs = null;
-			if (intendedRecipient != null)
-				msgs = ((InternalEObject)intendedRecipient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, null, msgs);
-			if (newIntendedRecipient != null)
-				msgs = ((InternalEObject)newIntendedRecipient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, null, msgs);
+			if (intendedRecipient != null) {
+				msgs = ((InternalEObject) intendedRecipient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, null, msgs);
+			}
+			if (newIntendedRecipient != null) {
+				msgs = ((InternalEObject) newIntendedRecipient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, null, msgs);
+			}
 			msgs = basicSetIntendedRecipient(newIntendedRecipient, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, newIntendedRecipient,
+				newIntendedRecipient));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT, newIntendedRecipient, newIntendedRecipient));
 	}
 
 	/**
@@ -281,6 +310,7 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -292,11 +322,16 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -309,8 +344,11 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.INFORMATION_RECIPIENT__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.INFORMATION_RECIPIENT__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -327,6 +365,7 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public x_InformationRecipient getTypeCode() {
 		return typeCode;
 	}
@@ -338,11 +377,16 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 */
 	public void setTypeCode(x_InformationRecipient newTypeCode) {
 		x_InformationRecipient oldTypeCode = typeCode;
-		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		typeCode = newTypeCode == null
+				? TYPE_CODE_EDEFAULT
+				: newTypeCode;
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMATION_RECIPIENT__TYPE_CODE, oldTypeCode, typeCode,
+				!oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -355,8 +399,11 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.INFORMATION_RECIPIENT__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.INFORMATION_RECIPIENT__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+				oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -377,11 +424,11 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.INFORMATION_RECIPIENT__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.INFORMATION_RECIPIENT__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.INFORMATION_RECIPIENT__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT:
 				return basicSetIntendedRecipient(null, msgs);
 		}
@@ -423,23 +470,23 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 		switch (featureID) {
 			case CDAPackage.INFORMATION_RECIPIENT__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT:
-				setIntendedRecipient((IntendedRecipient)newValue);
+				setIntendedRecipient((IntendedRecipient) newValue);
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__TYPE_CODE:
-				setTypeCode((x_InformationRecipient)newValue);
+				setTypeCode((x_InformationRecipient) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -457,13 +504,13 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__INTENDED_RECIPIENT:
-				setIntendedRecipient((IntendedRecipient)null);
+				setIntendedRecipient((IntendedRecipient) null);
 				return;
 			case CDAPackage.INFORMATION_RECIPIENT__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -506,15 +553,25 @@ public class InformationRecipientImpl extends ParticipationImpl implements Infor
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", typeCode: ");
-		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
+		if (typeCodeESet) {
+			result.append(typeCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //InformationRecipientImpl
+} // InformationRecipientImpl

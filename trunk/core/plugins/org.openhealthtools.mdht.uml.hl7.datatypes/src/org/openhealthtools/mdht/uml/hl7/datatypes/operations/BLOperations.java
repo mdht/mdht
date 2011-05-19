@@ -86,26 +86,26 @@ public class BLOperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateBL(BL bl, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateBL(BL bl, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_BL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.BL);
 			try {
 				VALIDATE_BL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_BL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_BL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(bl)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.BL__BL,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateBL", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(bl, context) }),
-						 new Object [] { bl }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.BL__BL,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic", new Object[] {
+								"validateBL", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(bl, context) }),
+					new Object[] { bl }));
 			}
 			return false;
 		}

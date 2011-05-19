@@ -10326,7 +10326,6 @@ public interface CDAPackage extends EPackage {
 	 */
 	int COMPONENT5_FEATURE_COUNT = RIMPackage.ACT_RELATIONSHIP_FEATURE_COUNT + 7;
 
-
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.DocumentRootImpl <em>Document Root</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -10381,7 +10380,6 @@ public interface CDAPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOCUMENT_ROOT_FEATURE_COUNT = 4;
-
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.RegistryDelegate <em>Registry Delegate</em>}' class.
@@ -30241,4 +30239,4 @@ public interface CDAPackage extends EPackage {
 
 	}
 
-} //CDAPackage
+} // CDAPackage

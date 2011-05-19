@@ -121,4 +121,4 @@ public abstract class InfrastructureRootImpl extends EObjectImpl implements Infr
 		return InfrastructureRootOperations.isDefined(this, featureName);
 	}
 
-} //InfrastructureRootImpl
+} // InfrastructureRootImpl

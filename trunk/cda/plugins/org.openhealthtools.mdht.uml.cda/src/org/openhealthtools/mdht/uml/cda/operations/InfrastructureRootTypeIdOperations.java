@@ -80,26 +80,29 @@ public class InfrastructureRootTypeIdOperations extends IIOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateRedefinedRoot(InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateRedefinedRoot(InfrastructureRootTypeId infrastructureRootTypeId,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_REDEFINED_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.INFRASTRUCTURE_ROOT_TYPE_ID);
 			try {
 				VALIDATE_REDEFINED_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_REDEFINED_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_REDEFINED_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(infrastructureRootTypeId)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_REDEFINED_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(
+			infrastructureRootTypeId)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateRedefinedRoot", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(infrastructureRootTypeId, context) }),
-						 new Object [] { infrastructureRootTypeId }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE,
+					CDAValidator.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateRedefinedRoot",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(
+									infrastructureRootTypeId, context) }), new Object[] { infrastructureRootTypeId }));
 			}
 			return false;
 		}
@@ -137,26 +140,29 @@ public class InfrastructureRootTypeIdOperations extends IIOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateRedefinedExtension(InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateRedefinedExtension(InfrastructureRootTypeId infrastructureRootTypeId,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_REDEFINED_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.INFRASTRUCTURE_ROOT_TYPE_ID);
 			try {
 				VALIDATE_REDEFINED_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_REDEFINED_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_REDEFINED_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(infrastructureRootTypeId)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_REDEFINED_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(
+			infrastructureRootTypeId)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateRedefinedExtension", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(infrastructureRootTypeId, context) }),
-						 new Object [] { infrastructureRootTypeId }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE,
+					CDAValidator.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateRedefinedExtension",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(
+									infrastructureRootTypeId, context) }), new Object[] { infrastructureRootTypeId }));
 			}
 			return false;
 		}
@@ -194,26 +200,27 @@ public class InfrastructureRootTypeIdOperations extends IIOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateII(InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateII(InfrastructureRootTypeId infrastructureRootTypeId, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.INFRASTRUCTURE_ROOT_TYPE_ID);
 			try {
 				VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_II__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(infrastructureRootTypeId)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.INFRASTRUCTURE_ROOT_TYPE_ID__II,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateII", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(infrastructureRootTypeId, context) }),
-						 new Object [] { infrastructureRootTypeId }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.INFRASTRUCTURE_ROOT_TYPE_ID__II,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateII",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(
+									infrastructureRootTypeId, context) }), new Object[] { infrastructureRootTypeId }));
 			}
 			return false;
 		}

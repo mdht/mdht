@@ -132,13 +132,8 @@ public enum ActRelationshipFulfills implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActRelationshipFulfills[] VALUES_ARRAY =
-		new ActRelationshipFulfills[] {
-			FLFS,
-			OCCR,
-			OREF,
-			SCH,
-		};
+	private static final ActRelationshipFulfills[] VALUES_ARRAY = new ActRelationshipFulfills[] {
+			FLFS, OCCR, OREF, SCH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Relationship Fulfills</b></em>' enumerators.
@@ -188,10 +183,14 @@ public enum ActRelationshipFulfills implements Enumerator {
 	 */
 	public static ActRelationshipFulfills get(int value) {
 		switch (value) {
-			case FLFS_VALUE: return FLFS;
-			case OCCR_VALUE: return OCCR;
-			case OREF_VALUE: return OREF;
-			case SCH_VALUE: return SCH;
+			case FLFS_VALUE:
+				return FLFS;
+			case OCCR_VALUE:
+				return OCCR;
+			case OREF_VALUE:
+				return OREF;
+			case SCH_VALUE:
+				return SCH;
 		}
 		return null;
 	}
@@ -235,7 +234,7 @@ public enum ActRelationshipFulfills implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -244,7 +243,7 @@ public enum ActRelationshipFulfills implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -253,7 +252,7 @@ public enum ActRelationshipFulfills implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -266,5 +265,5 @@ public enum ActRelationshipFulfills implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ActRelationshipFulfills
+
+} // ActRelationshipFulfills

@@ -78,26 +78,29 @@ public class ParticipantRoleOperations extends RoleOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validatePlayingEntityChoice(ParticipantRole participantRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validatePlayingEntityChoice(ParticipantRole participantRole, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.PARTICIPANT_ROLE);
 			try {
 				VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(participantRole)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.PARTICIPANT_ROLE__PLAYING_ENTITY_CHOICE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validatePlayingEntityChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(participantRole, context) }),
-						 new Object [] { participantRole }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					CDAValidator.DIAGNOSTIC_SOURCE,
+					CDAValidator.PARTICIPANT_ROLE__PLAYING_ENTITY_CHOICE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validatePlayingEntityChoice",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(participantRole, context) }),
+					new Object[] { participantRole }));
 			}
 			return false;
 		}

@@ -707,36 +707,9 @@ public enum AddressPartType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final AddressPartType[] VALUES_ARRAY =
-		new AddressPartType[] {
-			ADL,
-			BNN,
-			BNR,
-			BNS,
-			CAR,
-			CEN,
-			CNT,
-			CPA,
-			CTY,
-			DAL,
-			DEL,
-			DINST,
-			DINSTA,
-			DINSTQ,
-			DIR,
-			DMOD,
-			DMODID,
-			POB,
-			PRE,
-			SAL,
-			STA,
-			STB,
-			STR,
-			STTYP,
-			UNID,
-			UNIT,
-			ZIP,
-		};
+	private static final AddressPartType[] VALUES_ARRAY = new AddressPartType[] {
+			ADL, BNN, BNR, BNS, CAR, CEN, CNT, CPA, CTY, DAL, DEL, DINST, DINSTA, DINSTQ, DIR, DMOD, DMODID, POB, PRE,
+			SAL, STA, STB, STR, STTYP, UNID, UNIT, ZIP, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Address Part Type</b></em>' enumerators.
@@ -786,33 +759,60 @@ public enum AddressPartType implements Enumerator {
 	 */
 	public static AddressPartType get(int value) {
 		switch (value) {
-			case ADL_VALUE: return ADL;
-			case BNN_VALUE: return BNN;
-			case BNR_VALUE: return BNR;
-			case BNS_VALUE: return BNS;
-			case CAR_VALUE: return CAR;
-			case CEN_VALUE: return CEN;
-			case CNT_VALUE: return CNT;
-			case CPA_VALUE: return CPA;
-			case CTY_VALUE: return CTY;
-			case DAL_VALUE: return DAL;
-			case DEL_VALUE: return DEL;
-			case DINST_VALUE: return DINST;
-			case DINSTA_VALUE: return DINSTA;
-			case DINSTQ_VALUE: return DINSTQ;
-			case DIR_VALUE: return DIR;
-			case DMOD_VALUE: return DMOD;
-			case DMODID_VALUE: return DMODID;
-			case POB_VALUE: return POB;
-			case PRE_VALUE: return PRE;
-			case SAL_VALUE: return SAL;
-			case STA_VALUE: return STA;
-			case STB_VALUE: return STB;
-			case STR_VALUE: return STR;
-			case STTYP_VALUE: return STTYP;
-			case UNID_VALUE: return UNID;
-			case UNIT_VALUE: return UNIT;
-			case ZIP_VALUE: return ZIP;
+			case ADL_VALUE:
+				return ADL;
+			case BNN_VALUE:
+				return BNN;
+			case BNR_VALUE:
+				return BNR;
+			case BNS_VALUE:
+				return BNS;
+			case CAR_VALUE:
+				return CAR;
+			case CEN_VALUE:
+				return CEN;
+			case CNT_VALUE:
+				return CNT;
+			case CPA_VALUE:
+				return CPA;
+			case CTY_VALUE:
+				return CTY;
+			case DAL_VALUE:
+				return DAL;
+			case DEL_VALUE:
+				return DEL;
+			case DINST_VALUE:
+				return DINST;
+			case DINSTA_VALUE:
+				return DINSTA;
+			case DINSTQ_VALUE:
+				return DINSTQ;
+			case DIR_VALUE:
+				return DIR;
+			case DMOD_VALUE:
+				return DMOD;
+			case DMODID_VALUE:
+				return DMODID;
+			case POB_VALUE:
+				return POB;
+			case PRE_VALUE:
+				return PRE;
+			case SAL_VALUE:
+				return SAL;
+			case STA_VALUE:
+				return STA;
+			case STB_VALUE:
+				return STB;
+			case STR_VALUE:
+				return STR;
+			case STTYP_VALUE:
+				return STTYP;
+			case UNID_VALUE:
+				return UNID;
+			case UNIT_VALUE:
+				return UNIT;
+			case ZIP_VALUE:
+				return ZIP;
 		}
 		return null;
 	}
@@ -856,7 +856,7 @@ public enum AddressPartType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -865,7 +865,7 @@ public enum AddressPartType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -874,7 +874,7 @@ public enum AddressPartType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -887,5 +887,5 @@ public enum AddressPartType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //AddressPartType
+
+} // AddressPartType

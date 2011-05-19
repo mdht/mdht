@@ -56,4 +56,4 @@ public class ONImpl extends ENImpl implements ON {
 		return ONOperations.validateInvariant(this, diagnostics, context);
 	}
 
-} //ONImpl
+} // ONImpl

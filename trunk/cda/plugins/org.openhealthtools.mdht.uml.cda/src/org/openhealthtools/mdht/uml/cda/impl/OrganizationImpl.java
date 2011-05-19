@@ -264,6 +264,7 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ORGANIZATION__REALM_CODE);
@@ -276,6 +277,7 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -289,8 +291,13 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -303,15 +310,22 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ORGANIZATION__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -319,6 +333,7 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ORGANIZATION__TEMPLATE_ID);
@@ -392,8 +407,14 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		CE oldStandardIndustryClassCode = standardIndustryClassCode;
 		standardIndustryClassCode = newStandardIndustryClassCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, oldStandardIndustryClassCode, newStandardIndustryClassCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE,
+				oldStandardIndustryClassCode, newStandardIndustryClassCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -406,15 +427,23 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	public void setStandardIndustryClassCode(CE newStandardIndustryClassCode) {
 		if (newStandardIndustryClassCode != standardIndustryClassCode) {
 			NotificationChain msgs = null;
-			if (standardIndustryClassCode != null)
-				msgs = ((InternalEObject)standardIndustryClassCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
-			if (newStandardIndustryClassCode != null)
-				msgs = ((InternalEObject)newStandardIndustryClassCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
+			if (standardIndustryClassCode != null) {
+				msgs = ((InternalEObject) standardIndustryClassCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
+			}
+			if (newStandardIndustryClassCode != null) {
+				msgs = ((InternalEObject) newStandardIndustryClassCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, null, msgs);
+			}
 			msgs = basicSetStandardIndustryClassCode(newStandardIndustryClassCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE,
+				newStandardIndustryClassCode, newStandardIndustryClassCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE, newStandardIndustryClassCode, newStandardIndustryClassCode));
 	}
 
 	/**
@@ -431,12 +460,19 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAsOrganizationPartOf(OrganizationPartOf newAsOrganizationPartOf, NotificationChain msgs) {
+	public NotificationChain basicSetAsOrganizationPartOf(OrganizationPartOf newAsOrganizationPartOf,
+			NotificationChain msgs) {
 		OrganizationPartOf oldAsOrganizationPartOf = asOrganizationPartOf;
 		asOrganizationPartOf = newAsOrganizationPartOf;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, oldAsOrganizationPartOf, newAsOrganizationPartOf);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, oldAsOrganizationPartOf,
+				newAsOrganizationPartOf);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -449,15 +485,23 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	public void setAsOrganizationPartOf(OrganizationPartOf newAsOrganizationPartOf) {
 		if (newAsOrganizationPartOf != asOrganizationPartOf) {
 			NotificationChain msgs = null;
-			if (asOrganizationPartOf != null)
-				msgs = ((InternalEObject)asOrganizationPartOf).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
-			if (newAsOrganizationPartOf != null)
-				msgs = ((InternalEObject)newAsOrganizationPartOf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
+			if (asOrganizationPartOf != null) {
+				msgs = ((InternalEObject) asOrganizationPartOf).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
+			}
+			if (newAsOrganizationPartOf != null) {
+				msgs = ((InternalEObject) newAsOrganizationPartOf).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, null, msgs);
+			}
 			msgs = basicSetAsOrganizationPartOf(newAsOrganizationPartOf, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, newAsOrganizationPartOf,
+				newAsOrganizationPartOf));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF, newAsOrganizationPartOf, newAsOrganizationPartOf));
 	}
 
 	/**
@@ -465,6 +509,7 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -476,11 +521,16 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -493,8 +543,11 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ORGANIZATION__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -511,6 +564,7 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityClassOrganization getClassCode() {
 		return classCode;
 	}
@@ -522,11 +576,15 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 */
 	public void setClassCode(EntityClassOrganization newClassCode) {
 		EntityClassOrganization oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -539,8 +597,11 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ORGANIZATION__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -557,6 +618,7 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityDeterminer getDeterminerCode() {
 		return determinerCode;
 	}
@@ -568,11 +630,16 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 */
 	public void setDeterminerCode(EntityDeterminer newDeterminerCode) {
 		EntityDeterminer oldDeterminerCode = determinerCode;
-		determinerCode = newDeterminerCode == null ? DETERMINER_CODE_EDEFAULT : newDeterminerCode;
+		determinerCode = newDeterminerCode == null
+				? DETERMINER_CODE_EDEFAULT
+				: newDeterminerCode;
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ORGANIZATION__DETERMINER_CODE, oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ORGANIZATION__DETERMINER_CODE, oldDeterminerCode, determinerCode,
+				!oldDeterminerCodeESet));
+		}
 	}
 
 	/**
@@ -585,8 +652,11 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ORGANIZATION__DETERMINER_CODE, oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ORGANIZATION__DETERMINER_CODE, oldDeterminerCode,
+				DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+		}
 	}
 
 	/**
@@ -625,19 +695,19 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ORGANIZATION__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZATION__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ORGANIZATION__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZATION__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZATION__NAME:
-				return ((InternalEList<?>)getNames()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getNames()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZATION__TELECOM:
-				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZATION__ADDR:
-				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE:
 				return basicSetStandardIndustryClassCode(null, msgs);
 			case CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF:
@@ -693,45 +763,45 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 		switch (featureID) {
 			case CDAPackage.ORGANIZATION__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__NAME:
 				getNames().clear();
-				getNames().addAll((Collection<? extends ON>)newValue);
+				getNames().addAll((Collection<? extends ON>) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__TELECOM:
 				getTelecoms().clear();
-				getTelecoms().addAll((Collection<? extends TEL>)newValue);
+				getTelecoms().addAll((Collection<? extends TEL>) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__ADDR:
 				getAddrs().clear();
-				getAddrs().addAll((Collection<? extends AD>)newValue);
+				getAddrs().addAll((Collection<? extends AD>) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE:
-				setStandardIndustryClassCode((CE)newValue);
+				setStandardIndustryClassCode((CE) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF:
-				setAsOrganizationPartOf((OrganizationPartOf)newValue);
+				setAsOrganizationPartOf((OrganizationPartOf) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__CLASS_CODE:
-				setClassCode((EntityClassOrganization)newValue);
+				setClassCode((EntityClassOrganization) newValue);
 				return;
 			case CDAPackage.ORGANIZATION__DETERMINER_CODE:
-				setDeterminerCode((EntityDeterminer)newValue);
+				setDeterminerCode((EntityDeterminer) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -749,7 +819,7 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.ORGANIZATION__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.ORGANIZATION__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -767,10 +837,10 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 				getAddrs().clear();
 				return;
 			case CDAPackage.ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE:
-				setStandardIndustryClassCode((CE)null);
+				setStandardIndustryClassCode((CE) null);
 				return;
 			case CDAPackage.ORGANIZATION__AS_ORGANIZATION_PART_OF:
-				setAsOrganizationPartOf((OrganizationPartOf)null);
+				setAsOrganizationPartOf((OrganizationPartOf) null);
 				return;
 			case CDAPackage.ORGANIZATION__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -828,17 +898,31 @@ public class OrganizationImpl extends EntityImpl implements Organization {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", determinerCode: ");
-		if (determinerCodeESet) result.append(determinerCode); else result.append("<unset>");
+		if (determinerCodeESet) {
+			result.append(determinerCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //OrganizationImpl
+} // OrganizationImpl

@@ -43,8 +43,8 @@ public class PQROperations extends CVOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void setValue(PQR pqr, Double newValue) {
-		if (newValue != null){
+	public static void setValue(PQR pqr, Double newValue) {
+		if (newValue != null) {
 			pqr.setValue(BigDecimal.valueOf(newValue.doubleValue()));
 		} else {
 			pqr.setValue((BigDecimal) null);

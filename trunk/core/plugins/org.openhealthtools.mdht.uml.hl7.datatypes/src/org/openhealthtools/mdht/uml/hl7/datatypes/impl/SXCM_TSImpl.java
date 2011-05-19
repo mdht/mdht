@@ -95,11 +95,15 @@ public class SXCM_TSImpl extends TSImpl implements SXCM_TS {
 	 */
 	public void setOperator(SetOperator newOperator) {
 		SetOperator oldOperator = operator;
-		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
+		operator = newOperator == null
+				? OPERATOR_EDEFAULT
+				: newOperator;
 		boolean oldOperatorESet = operatorESet;
 		operatorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator, operator, !oldOperatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator, operator, !oldOperatorESet));
+		}
 	}
 
 	/**
@@ -112,8 +116,11 @@ public class SXCM_TSImpl extends TSImpl implements SXCM_TS {
 		boolean oldOperatorESet = operatorESet;
 		operator = OPERATOR_EDEFAULT;
 		operatorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator, OPERATOR_EDEFAULT, oldOperatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, DatatypesPackage.SXCM_TS__OPERATOR, oldOperator, OPERATOR_EDEFAULT,
+				oldOperatorESet));
+		}
 	}
 
 	/**
@@ -148,7 +155,7 @@ public class SXCM_TSImpl extends TSImpl implements SXCM_TS {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.SXCM_TS__OPERATOR:
-				setOperator((SetOperator)newValue);
+				setOperator((SetOperator) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,13 +197,19 @@ public class SXCM_TSImpl extends TSImpl implements SXCM_TS {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (operator: ");
-		if (operatorESet) result.append(operator); else result.append("<unset>");
+		if (operatorESet) {
+			result.append(operator);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //SXCM_TSImpl
+} // SXCM_TSImpl

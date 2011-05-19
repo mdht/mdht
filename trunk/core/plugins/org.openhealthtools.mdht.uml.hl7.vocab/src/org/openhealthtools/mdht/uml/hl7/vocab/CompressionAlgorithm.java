@@ -132,13 +132,7 @@ public enum CompressionAlgorithm implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final CompressionAlgorithm[] VALUES_ARRAY =
-		new CompressionAlgorithm[] {
-			DF,
-			GZ,
-			Z,
-			ZL,
-		};
+	private static final CompressionAlgorithm[] VALUES_ARRAY = new CompressionAlgorithm[] { DF, GZ, Z, ZL, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Compression Algorithm</b></em>' enumerators.
@@ -188,10 +182,14 @@ public enum CompressionAlgorithm implements Enumerator {
 	 */
 	public static CompressionAlgorithm get(int value) {
 		switch (value) {
-			case DF_VALUE: return DF;
-			case GZ_VALUE: return GZ;
-			case Z_VALUE: return Z;
-			case ZL_VALUE: return ZL;
+			case DF_VALUE:
+				return DF;
+			case GZ_VALUE:
+				return GZ;
+			case Z_VALUE:
+				return Z;
+			case ZL_VALUE:
+				return ZL;
 		}
 		return null;
 	}
@@ -235,7 +233,7 @@ public enum CompressionAlgorithm implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -244,7 +242,7 @@ public enum CompressionAlgorithm implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -253,7 +251,7 @@ public enum CompressionAlgorithm implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -266,5 +264,5 @@ public enum CompressionAlgorithm implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //CompressionAlgorithm
+
+} // CompressionAlgorithm

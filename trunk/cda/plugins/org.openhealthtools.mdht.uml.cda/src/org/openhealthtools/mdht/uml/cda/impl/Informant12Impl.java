@@ -217,6 +217,7 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.INFORMANT12__REALM_CODE);
@@ -229,6 +230,7 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -242,8 +244,13 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -256,15 +263,21 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMANT12__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMANT12__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMANT12__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMANT12__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -272,6 +285,7 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.INFORMANT12__TEMPLATE_ID);
@@ -297,8 +311,13 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 		AssignedEntity oldAssignedEntity = assignedEntity;
 		assignedEntity = newAssignedEntity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__ASSIGNED_ENTITY, oldAssignedEntity, newAssignedEntity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__ASSIGNED_ENTITY, oldAssignedEntity, newAssignedEntity);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -311,15 +330,22 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	public void setAssignedEntity(AssignedEntity newAssignedEntity) {
 		if (newAssignedEntity != assignedEntity) {
 			NotificationChain msgs = null;
-			if (assignedEntity != null)
-				msgs = ((InternalEObject)assignedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMANT12__ASSIGNED_ENTITY, null, msgs);
-			if (newAssignedEntity != null)
-				msgs = ((InternalEObject)newAssignedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMANT12__ASSIGNED_ENTITY, null, msgs);
+			if (assignedEntity != null) {
+				msgs = ((InternalEObject) assignedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMANT12__ASSIGNED_ENTITY, null, msgs);
+			}
+			if (newAssignedEntity != null) {
+				msgs = ((InternalEObject) newAssignedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMANT12__ASSIGNED_ENTITY, null, msgs);
+			}
 			msgs = basicSetAssignedEntity(newAssignedEntity, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__ASSIGNED_ENTITY, newAssignedEntity, newAssignedEntity));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__ASSIGNED_ENTITY, newAssignedEntity, newAssignedEntity));
 	}
 
 	/**
@@ -340,8 +366,13 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 		RelatedEntity oldRelatedEntity = relatedEntity;
 		relatedEntity = newRelatedEntity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__RELATED_ENTITY, oldRelatedEntity, newRelatedEntity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__RELATED_ENTITY, oldRelatedEntity, newRelatedEntity);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -354,15 +385,22 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	public void setRelatedEntity(RelatedEntity newRelatedEntity) {
 		if (newRelatedEntity != relatedEntity) {
 			NotificationChain msgs = null;
-			if (relatedEntity != null)
-				msgs = ((InternalEObject)relatedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMANT12__RELATED_ENTITY, null, msgs);
-			if (newRelatedEntity != null)
-				msgs = ((InternalEObject)newRelatedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.INFORMANT12__RELATED_ENTITY, null, msgs);
+			if (relatedEntity != null) {
+				msgs = ((InternalEObject) relatedEntity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMANT12__RELATED_ENTITY, null, msgs);
+			}
+			if (newRelatedEntity != null) {
+				msgs = ((InternalEObject) newRelatedEntity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.INFORMANT12__RELATED_ENTITY, null, msgs);
+			}
 			msgs = basicSetRelatedEntity(newRelatedEntity, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__RELATED_ENTITY, newRelatedEntity, newRelatedEntity));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__RELATED_ENTITY, newRelatedEntity, newRelatedEntity));
 	}
 
 	/**
@@ -370,6 +408,7 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -381,11 +420,16 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -398,8 +442,11 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.INFORMANT12__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.INFORMANT12__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -416,6 +463,7 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParticipationType getTypeCode() {
 		return typeCode;
 	}
@@ -427,11 +475,15 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 */
 	public void setTypeCode(ParticipationType newTypeCode) {
 		ParticipationType oldTypeCode = typeCode;
-		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		typeCode = newTypeCode == null
+				? TYPE_CODE_EDEFAULT
+				: newTypeCode;
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -444,8 +496,11 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.INFORMANT12__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.INFORMANT12__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+				oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -473,11 +528,16 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 */
 	public void setContextControlCode(ContextControl newContextControlCode) {
 		ContextControl oldContextControlCode = contextControlCode;
-		contextControlCode = newContextControlCode == null ? CONTEXT_CONTROL_CODE_EDEFAULT : newContextControlCode;
+		contextControlCode = newContextControlCode == null
+				? CONTEXT_CONTROL_CODE_EDEFAULT
+				: newContextControlCode;
 		boolean oldContextControlCodeESet = contextControlCodeESet;
 		contextControlCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFORMANT12__CONTEXT_CONTROL_CODE, oldContextControlCode, contextControlCode, !oldContextControlCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFORMANT12__CONTEXT_CONTROL_CODE, oldContextControlCode,
+				contextControlCode, !oldContextControlCodeESet));
+		}
 	}
 
 	/**
@@ -490,8 +550,11 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 		boolean oldContextControlCodeESet = contextControlCodeESet;
 		contextControlCode = CONTEXT_CONTROL_CODE_EDEFAULT;
 		contextControlCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.INFORMANT12__CONTEXT_CONTROL_CODE, oldContextControlCode, CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.INFORMANT12__CONTEXT_CONTROL_CODE, oldContextControlCode,
+				CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
+		}
 	}
 
 	/**
@@ -539,11 +602,11 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.INFORMANT12__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.INFORMANT12__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.INFORMANT12__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.INFORMANT12__ASSIGNED_ENTITY:
 				return basicSetAssignedEntity(null, msgs);
 			case CDAPackage.INFORMANT12__RELATED_ENTITY:
@@ -591,29 +654,29 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 		switch (featureID) {
 			case CDAPackage.INFORMANT12__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.INFORMANT12__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.INFORMANT12__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.INFORMANT12__ASSIGNED_ENTITY:
-				setAssignedEntity((AssignedEntity)newValue);
+				setAssignedEntity((AssignedEntity) newValue);
 				return;
 			case CDAPackage.INFORMANT12__RELATED_ENTITY:
-				setRelatedEntity((RelatedEntity)newValue);
+				setRelatedEntity((RelatedEntity) newValue);
 				return;
 			case CDAPackage.INFORMANT12__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.INFORMANT12__TYPE_CODE:
-				setTypeCode((ParticipationType)newValue);
+				setTypeCode((ParticipationType) newValue);
 				return;
 			case CDAPackage.INFORMANT12__CONTEXT_CONTROL_CODE:
-				setContextControlCode((ContextControl)newValue);
+				setContextControlCode((ContextControl) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -631,16 +694,16 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.INFORMANT12__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.INFORMANT12__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.INFORMANT12__ASSIGNED_ENTITY:
-				setAssignedEntity((AssignedEntity)null);
+				setAssignedEntity((AssignedEntity) null);
 				return;
 			case CDAPackage.INFORMANT12__RELATED_ENTITY:
-				setRelatedEntity((RelatedEntity)null);
+				setRelatedEntity((RelatedEntity) null);
 				return;
 			case CDAPackage.INFORMANT12__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -690,17 +753,31 @@ public class Informant12Impl extends ParticipationImpl implements Informant12 {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", typeCode: ");
-		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
+		if (typeCodeESet) {
+			result.append(typeCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", contextControlCode: ");
-		if (contextControlCodeESet) result.append(contextControlCode); else result.append("<unset>");
+		if (contextControlCodeESet) {
+			result.append(contextControlCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //Informant12Impl
+} // Informant12Impl

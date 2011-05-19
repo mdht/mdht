@@ -77,7 +77,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addAct(Organizer organizer, Act act) {
+	public static void addAct(Organizer organizer, Act act) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setAct(act);
 		organizer.getComponents().add(component4);
@@ -88,7 +88,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addEncounter(Organizer organizer, Encounter encounter) {
+	public static void addEncounter(Organizer organizer, Encounter encounter) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setEncounter(encounter);
 		organizer.getComponents().add(component4);
@@ -99,7 +99,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addObservation(Organizer organizer, Observation observation) {
+	public static void addObservation(Organizer organizer, Observation observation) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setObservation(observation);
 		organizer.getComponents().add(component4);
@@ -110,7 +110,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addObservationMedia(Organizer organizer, ObservationMedia observationMedia) {
+	public static void addObservationMedia(Organizer organizer, ObservationMedia observationMedia) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setObservationMedia(observationMedia);
 		organizer.getComponents().add(component4);
@@ -121,7 +121,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addOrganizer(Organizer organizer, Organizer newOrganizer) {
+	public static void addOrganizer(Organizer organizer, Organizer newOrganizer) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setOrganizer(newOrganizer);
 		organizer.getComponents().add(component4);
@@ -132,7 +132,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addProcedure(Organizer organizer, Procedure procedure) {
+	public static void addProcedure(Organizer organizer, Procedure procedure) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setProcedure(procedure);
 		organizer.getComponents().add(component4);
@@ -143,7 +143,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addRegionOfInterest(Organizer organizer, RegionOfInterest regionOfInterest) {
+	public static void addRegionOfInterest(Organizer organizer, RegionOfInterest regionOfInterest) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setRegionOfInterest(regionOfInterest);
 		organizer.getComponents().add(component4);
@@ -154,7 +154,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addSubstanceAdministration(Organizer organizer, SubstanceAdministration substanceAdministration) {
+	public static void addSubstanceAdministration(Organizer organizer, SubstanceAdministration substanceAdministration) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setSubstanceAdministration(substanceAdministration);
 		organizer.getComponents().add(component4);
@@ -165,7 +165,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void addSupply(Organizer organizer, Supply supply) {
+	public static void addSupply(Organizer organizer, Supply supply) {
 		Component4 component4 = CDAFactory.eINSTANCE.createComponent4();
 		component4.setSupply(supply);
 		organizer.getComponents().add(component4);
@@ -176,7 +176,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<Act> getActs(Organizer organizer) {
+	public static EList<Act> getActs(Organizer organizer) {
 		List<Act> acts = new ArrayList<Act>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getAct() != null) {
@@ -191,7 +191,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<Encounter> getEncounters(Organizer organizer) {
+	public static EList<Encounter> getEncounters(Organizer organizer) {
 		List<Encounter> encounters = new ArrayList<Encounter>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getEncounter() != null) {
@@ -206,7 +206,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<Observation> getObservations(Organizer organizer) {
+	public static EList<Observation> getObservations(Organizer organizer) {
 		List<Observation> observations = new ArrayList<Observation>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getObservation() != null) {
@@ -221,7 +221,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<ObservationMedia> getObservationMedia(Organizer organizer) {
+	public static EList<ObservationMedia> getObservationMedia(Organizer organizer) {
 		List<ObservationMedia> observationMedia = new ArrayList<ObservationMedia>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getObservationMedia() != null) {
@@ -236,7 +236,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<Organizer> getOrganizers(Organizer organizer) {
+	public static EList<Organizer> getOrganizers(Organizer organizer) {
 		List<Organizer> organizers = new ArrayList<Organizer>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getOrganizer() != null) {
@@ -251,7 +251,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<Procedure> getProcedures(Organizer organizer) {
+	public static EList<Procedure> getProcedures(Organizer organizer) {
 		List<Procedure> procedures = new ArrayList<Procedure>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getProcedure() != null) {
@@ -266,7 +266,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<RegionOfInterest> getRegionsOfInterest(Organizer organizer) {
+	public static EList<RegionOfInterest> getRegionsOfInterest(Organizer organizer) {
 		List<RegionOfInterest> regionsOfInterest = new ArrayList<RegionOfInterest>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getRegionOfInterest() != null) {
@@ -281,14 +281,15 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<SubstanceAdministration> getSubstanceAdministrations(Organizer organizer) {
+	public static EList<SubstanceAdministration> getSubstanceAdministrations(Organizer organizer) {
 		List<SubstanceAdministration> substanceAdministrations = new ArrayList<SubstanceAdministration>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getSubstanceAdministration() != null) {
 				substanceAdministrations.add(component.getSubstanceAdministration());
 			}
 		}
-		return new BasicEList.UnmodifiableEList<SubstanceAdministration>(substanceAdministrations.size(), substanceAdministrations.toArray());
+		return new BasicEList.UnmodifiableEList<SubstanceAdministration>(
+			substanceAdministrations.size(), substanceAdministrations.toArray());
 	}
 
 	/**
@@ -296,7 +297,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<Supply> getSupplies(Organizer organizer) {
+	public static EList<Supply> getSupplies(Organizer organizer) {
 		List<Supply> supplies = new ArrayList<Supply>();
 		for (Component4 component : organizer.getComponents()) {
 			if (component.getSupply() != null) {
@@ -311,7 +312,8 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<ClinicalStatement> getEntryRelationshipTargets(Organizer organizer, x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
+	public static EList<ClinicalStatement> getEntryRelationshipTargets(Organizer organizer,
+			x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
 		throw new UnsupportedOperationException("This clinical statement does not have entryRelationship");
 	}
 
@@ -320,7 +322,7 @@ public class OrganizerOperations extends ClinicalStatementOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  EList<ClinicalStatement> getEntryRelationshipTargets(Organizer organizer, Object targetClass) {
+	public static EList<ClinicalStatement> getEntryRelationshipTargets(Organizer organizer, Object targetClass) {
 		throw new UnsupportedOperationException("This clinical statement does not have entryRelationship");
 	}
 

@@ -66,7 +66,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getClassCode(Act act) {
+	public static Enumerator getClassCode(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -77,7 +77,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Enumerator getMoodCode(Act act) {
+	public static Enumerator getMoodCode(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -88,7 +88,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  Boolean getNegationInd(Act act) {
+	public static Boolean getNegationInd(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -99,7 +99,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<Participation> getParticipations(Act act) {
+	public static EList<Participation> getParticipations(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -110,7 +110,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<ActRelationship> getOutboundRelationships(Act act) {
+	public static EList<ActRelationship> getOutboundRelationships(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -121,7 +121,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  EList<ActRelationship> getInboundRelationships(Act act) {
+	public static EList<ActRelationship> getInboundRelationships(Act act) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -136,6 +136,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * @ordered
 	 */
 	protected static final String IS_CLASS_CODE_DEFINED__EOCL_EXP = "self.isDefined('classCode')";
+
 	/**
 	 * The cached OCL query for the '{@link #isClassCodeDefined(Act) <em>Is Class Code Defined</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -155,14 +156,13 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean isClassCodeDefined(Act act) {
+	public static boolean isClassCodeDefined(Act act) {
 		if (IS_CLASS_CODE_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(RIMPackage.Literals.ACT, RIMPackage.Literals.ACT.getEAllOperations().get(14));
 			try {
 				IS_CLASS_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_CLASS_CODE_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
@@ -179,6 +179,7 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * @ordered
 	 */
 	protected static final String IS_MOOD_CODE_DEFINED__EOCL_EXP = "self.isDefined('moodCode')";
+
 	/**
 	 * The cached OCL query for the '{@link #isMoodCodeDefined(Act) <em>Is Mood Code Defined</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -198,14 +199,13 @@ public class ActOperations extends InfrastructureRootOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean isMoodCodeDefined(Act act) {
+	public static boolean isMoodCodeDefined(Act act) {
 		if (IS_MOOD_CODE_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(RIMPackage.Literals.ACT, RIMPackage.Literals.ACT.getEAllOperations().get(15));
 			try {
 				IS_MOOD_CODE_DEFINED__EOCL_QRY = helper.createQuery(IS_MOOD_CODE_DEFINED__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}

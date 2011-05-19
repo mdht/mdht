@@ -78,26 +78,27 @@ public class Participant2Operations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateContextControlCode(Participant2 participant2, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateContextControlCode(Participant2 participant2, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.PARTICIPANT2);
 			try {
 				VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(participant2)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.PARTICIPANT2__CONTEXT_CONTROL_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateContextControlCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(participant2, context) }),
-						 new Object [] { participant2 }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.PARTICIPANT2__CONTEXT_CONTROL_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateContextControlCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(participant2, context) }),
+					new Object[] { participant2 }));
 			}
 			return false;
 		}

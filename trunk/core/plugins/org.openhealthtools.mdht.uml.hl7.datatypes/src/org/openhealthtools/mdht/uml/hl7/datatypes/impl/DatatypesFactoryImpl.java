@@ -81,12 +81,11 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public static DatatypesFactory init() {
 		try {
-			DatatypesFactory theDatatypesFactory = (DatatypesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/datatypes"); 
+			DatatypesFactory theDatatypesFactory = (DatatypesFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/datatypes");
 			if (theDatatypesFactory != null) {
 				return theDatatypesFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DatatypesFactoryImpl();
@@ -110,47 +109,88 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DatatypesPackage.ED: return createED();
-			case DatatypesPackage.TEL: return createTEL();
-			case DatatypesPackage.SXCM_TS: return createSXCM_TS();
-			case DatatypesPackage.TS: return createTS();
-			case DatatypesPackage.ST: return createST();
-			case DatatypesPackage.CD: return createCD();
-			case DatatypesPackage.CR: return createCR();
-			case DatatypesPackage.CV: return createCV();
-			case DatatypesPackage.CE: return createCE();
-			case DatatypesPackage.II: return createII();
-			case DatatypesPackage.BL: return createBL();
-			case DatatypesPackage.BN: return createBN();
-			case DatatypesPackage.AD: return createAD();
-			case DatatypesPackage.ADXP: return createADXP();
-			case DatatypesPackage.EN: return createEN();
-			case DatatypesPackage.ENXP: return createENXP();
-			case DatatypesPackage.IVL_TS: return createIVL_TS();
-			case DatatypesPackage.IVXB_TS: return createIVXB_TS();
-			case DatatypesPackage.PQ: return createPQ();
-			case DatatypesPackage.PQR: return createPQR();
-			case DatatypesPackage.ON: return createON();
-			case DatatypesPackage.PN: return createPN();
-			case DatatypesPackage.TN: return createTN();
-			case DatatypesPackage.INT: return createINT();
-			case DatatypesPackage.REAL: return createREAL();
-			case DatatypesPackage.CS: return createCS();
-			case DatatypesPackage.CO: return createCO();
-			case DatatypesPackage.SC: return createSC();
-			case DatatypesPackage.RTO_QTY_QTY: return createRTO_QTY_QTY();
-			case DatatypesPackage.MO: return createMO();
-			case DatatypesPackage.RTO: return createRTO();
-			case DatatypesPackage.SXCM_INT: return createSXCM_INT();
-			case DatatypesPackage.IVXB_INT: return createIVXB_INT();
-			case DatatypesPackage.IVL_INT: return createIVL_INT();
-			case DatatypesPackage.IVXB_PQ: return createIVXB_PQ();
-			case DatatypesPackage.SXCM_PQ: return createSXCM_PQ();
-			case DatatypesPackage.IVL_PQ: return createIVL_PQ();
-			case DatatypesPackage.RTO_PQ_PQ: return createRTO_PQ_PQ();
-			case DatatypesPackage.PIVL_TS: return createPIVL_TS();
-			case DatatypesPackage.EIVL_EVENT: return createEIVL_event();
-			case DatatypesPackage.EIVL_TS: return createEIVL_TS();
+			case DatatypesPackage.ED:
+				return createED();
+			case DatatypesPackage.TEL:
+				return createTEL();
+			case DatatypesPackage.SXCM_TS:
+				return createSXCM_TS();
+			case DatatypesPackage.TS:
+				return createTS();
+			case DatatypesPackage.ST:
+				return createST();
+			case DatatypesPackage.CD:
+				return createCD();
+			case DatatypesPackage.CR:
+				return createCR();
+			case DatatypesPackage.CV:
+				return createCV();
+			case DatatypesPackage.CE:
+				return createCE();
+			case DatatypesPackage.II:
+				return createII();
+			case DatatypesPackage.BL:
+				return createBL();
+			case DatatypesPackage.BN:
+				return createBN();
+			case DatatypesPackage.AD:
+				return createAD();
+			case DatatypesPackage.ADXP:
+				return createADXP();
+			case DatatypesPackage.EN:
+				return createEN();
+			case DatatypesPackage.ENXP:
+				return createENXP();
+			case DatatypesPackage.IVL_TS:
+				return createIVL_TS();
+			case DatatypesPackage.IVXB_TS:
+				return createIVXB_TS();
+			case DatatypesPackage.PQ:
+				return createPQ();
+			case DatatypesPackage.PQR:
+				return createPQR();
+			case DatatypesPackage.ON:
+				return createON();
+			case DatatypesPackage.PN:
+				return createPN();
+			case DatatypesPackage.TN:
+				return createTN();
+			case DatatypesPackage.INT:
+				return createINT();
+			case DatatypesPackage.REAL:
+				return createREAL();
+			case DatatypesPackage.CS:
+				return createCS();
+			case DatatypesPackage.CO:
+				return createCO();
+			case DatatypesPackage.SC:
+				return createSC();
+			case DatatypesPackage.RTO_QTY_QTY:
+				return createRTO_QTY_QTY();
+			case DatatypesPackage.MO:
+				return createMO();
+			case DatatypesPackage.RTO:
+				return createRTO();
+			case DatatypesPackage.SXCM_INT:
+				return createSXCM_INT();
+			case DatatypesPackage.IVXB_INT:
+				return createIVXB_INT();
+			case DatatypesPackage.IVL_INT:
+				return createIVL_INT();
+			case DatatypesPackage.IVXB_PQ:
+				return createIVXB_PQ();
+			case DatatypesPackage.SXCM_PQ:
+				return createSXCM_PQ();
+			case DatatypesPackage.IVL_PQ:
+				return createIVL_PQ();
+			case DatatypesPackage.RTO_PQ_PQ:
+				return createRTO_PQ_PQ();
+			case DatatypesPackage.PIVL_TS:
+				return createPIVL_TS();
+			case DatatypesPackage.EIVL_EVENT:
+				return createEIVL_event();
+			case DatatypesPackage.EIVL_TS:
+				return createEIVL_TS();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -175,7 +215,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.ST_TYPE:
 				return createstTypeFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -198,7 +239,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 			case DatatypesPackage.ST_TYPE:
 				return convertstTypeToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -211,13 +253,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		EDImpl ed = new EDImpl();
 		return ed;
 	}
-	
+
 	public ED createED(String text) {
 		ED ed = createED();
 		ed.addText(text);
 		return ed;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,13 +269,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		TELImpl tel = new TELImpl();
 		return tel;
 	}
-	
+
 	public TEL createTEL(String value) {
 		TEL tel = new TELImpl();
 		tel.setValue(value);
 		return tel;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,13 +295,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		TSImpl ts = new TSImpl();
 		return ts;
 	}
-	
+
 	public TS createTS(String value) {
 		TS ts = createTS();
 		ts.setValue(value);
 		return ts;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,13 +311,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		STImpl st = new STImpl();
 		return st;
 	}
-	
+
 	public ST createST(String text) {
 		ST st = createST();
 		st.addText(text);
 		return st;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,7 +336,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		cd.setDisplayName(displayName);
 		return cd;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,21 +366,21 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		CEImpl ce = new CEImpl();
 		return ce;
 	}
-	
+
 	public CE createCE(String code, String codeSystem) {
 		CE ce = createCE();
 		ce.setCode(code);
 		ce.setCodeSystem(codeSystem);
 		return ce;
 	}
-	
+
 	public CE createCE(String code, String codeSystem, String codeSystemName, String displayName) {
 		CE ce = createCE(code, codeSystem);
 		ce.setCodeSystemName(codeSystemName);
 		ce.setDisplayName(displayName);
 		return ce;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,25 +390,25 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		IIImpl ii = new IIImpl();
 		return ii;
 	}
-	
+
 	public II createII(String root) {
 		II ii = createII();
 		ii.setRoot(root);
 		return ii;
 	}
-	
+
 	public II createII(String root, String extension) {
 		II ii = createII(root);
 		ii.setExtension(extension);
 		return ii;
 	}
-	
+
 	public II createII(NullFlavor nullFlavor) {
 		II ii = createII();
 		ii.setNullFlavor(nullFlavor);
 		return ii;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -376,13 +418,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		BLImpl bl = new BLImpl();
 		return bl;
 	}
-	
+
 	public BL createBL(Boolean value) {
 		BL bl = createBL();
 		bl.setValue(value);
 		return bl;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -392,13 +434,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		BNImpl bn = new BNImpl();
 		return bn;
 	}
-	
+
 	public BN createBN(Boolean value) {
 		BN bn = createBN();
 		bn.setValue(value);
 		return bn;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,14 +460,14 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		ADXPImpl adxp = new ADXPImpl();
 		return adxp;
 	}
-	
+
 	public ADXP createADXP(AddressPartType partType, String text) {
 		ADXP adxp = createADXP();
 		adxp.setPartType(partType);
 		adxp.addText(text);
 		return adxp;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,7 +487,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		IVL_TSImpl ivL_TS = new IVL_TSImpl();
 		return ivL_TS;
 	}
-	
+
 	public IVL_TS createIVL_TS(String low, String high) {
 		IVL_TS ivL_TS = createIVL_TS();
 		if (low != null) {
@@ -460,7 +502,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		}
 		return ivL_TS;
 	}
-	
+
 	public IVL_TS createIVL_TS(String value) {
 		IVL_TS ivL_TS = createIVL_TS();
 		ivL_TS.setValue(value);
@@ -486,7 +528,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		PQImpl pq = new PQImpl();
 		return pq;
 	}
-	
+
 	public PQ createPQ(double value, String unit) {
 		PQ pq = createPQ();
 		pq.setValue(value);
@@ -513,14 +555,14 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		ENXPImpl enxp = new ENXPImpl();
 		return enxp;
 	}
-	
+
 	public ENXP createENXP(EntityNamePartType partType, String text) {
 		ENXP enxp = createENXP();
 		enxp.setPartType(partType);
 		enxp.addText(text);
 		return enxp;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -580,13 +622,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		CSImpl cs = new CSImpl();
 		return cs;
 	}
-	
+
 	public CS createCS(String code) {
 		CS cs = createCS();
 		cs.setCode(code);
 		return cs;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -744,7 +786,10 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public BinaryDataEncoding createBinaryDataEncodingFromString(EDataType eDataType, String initialValue) {
 		BinaryDataEncoding result = BinaryDataEncoding.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -754,7 +799,9 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String convertBinaryDataEncodingToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -763,7 +810,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createcsTypeFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
 	}
 
 	/**
@@ -781,7 +828,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createuidFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -799,7 +846,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createstTypeFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -817,7 +864,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String createtsTypeFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -835,7 +882,7 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public DatatypesPackage getDatatypesPackage() {
-		return (DatatypesPackage)getEPackage();
+		return (DatatypesPackage) getEPackage();
 	}
 
 	/**
@@ -849,4 +896,4 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		return DatatypesPackage.eINSTANCE;
 	}
 
-} //DatatypesFactoryImpl
+} // DatatypesFactoryImpl

@@ -56,4 +56,4 @@ public class CVImpl extends CEImpl implements CV {
 		return CVOperations.validateTranslation(this, diagnostics, context);
 	}
 
-} //CVImpl
+} // CVImpl

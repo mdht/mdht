@@ -707,36 +707,9 @@ public enum EntityClassRoot implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EntityClassRoot[] VALUES_ARRAY =
-		new EntityClassRoot[] {
-			ANM,
-			CER,
-			CHEM,
-			CITY,
-			CONT,
-			COUNTRY,
-			COUNTY,
-			DEV,
-			ENT,
-			FOOD,
-			HCE,
-			HOLD,
-			LIV,
-			MAT,
-			MIC,
-			MMAT,
-			MODDV,
-			NAT,
-			NLIV,
-			ORG,
-			PLC,
-			PLNT,
-			PROVINCE,
-			PSN,
-			PUB,
-			RGRP,
-			STATE,
-		};
+	private static final EntityClassRoot[] VALUES_ARRAY = new EntityClassRoot[] {
+			ANM, CER, CHEM, CITY, CONT, COUNTRY, COUNTY, DEV, ENT, FOOD, HCE, HOLD, LIV, MAT, MIC, MMAT, MODDV, NAT,
+			NLIV, ORG, PLC, PLNT, PROVINCE, PSN, PUB, RGRP, STATE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Class Root</b></em>' enumerators.
@@ -786,33 +759,60 @@ public enum EntityClassRoot implements Enumerator {
 	 */
 	public static EntityClassRoot get(int value) {
 		switch (value) {
-			case ANM_VALUE: return ANM;
-			case CER_VALUE: return CER;
-			case CHEM_VALUE: return CHEM;
-			case CITY_VALUE: return CITY;
-			case CONT_VALUE: return CONT;
-			case COUNTRY_VALUE: return COUNTRY;
-			case COUNTY_VALUE: return COUNTY;
-			case DEV_VALUE: return DEV;
-			case ENT_VALUE: return ENT;
-			case FOOD_VALUE: return FOOD;
-			case HCE_VALUE: return HCE;
-			case HOLD_VALUE: return HOLD;
-			case LIV_VALUE: return LIV;
-			case MAT_VALUE: return MAT;
-			case MIC_VALUE: return MIC;
-			case MMAT_VALUE: return MMAT;
-			case MODDV_VALUE: return MODDV;
-			case NAT_VALUE: return NAT;
-			case NLIV_VALUE: return NLIV;
-			case ORG_VALUE: return ORG;
-			case PLC_VALUE: return PLC;
-			case PLNT_VALUE: return PLNT;
-			case PROVINCE_VALUE: return PROVINCE;
-			case PSN_VALUE: return PSN;
-			case PUB_VALUE: return PUB;
-			case RGRP_VALUE: return RGRP;
-			case STATE_VALUE: return STATE;
+			case ANM_VALUE:
+				return ANM;
+			case CER_VALUE:
+				return CER;
+			case CHEM_VALUE:
+				return CHEM;
+			case CITY_VALUE:
+				return CITY;
+			case CONT_VALUE:
+				return CONT;
+			case COUNTRY_VALUE:
+				return COUNTRY;
+			case COUNTY_VALUE:
+				return COUNTY;
+			case DEV_VALUE:
+				return DEV;
+			case ENT_VALUE:
+				return ENT;
+			case FOOD_VALUE:
+				return FOOD;
+			case HCE_VALUE:
+				return HCE;
+			case HOLD_VALUE:
+				return HOLD;
+			case LIV_VALUE:
+				return LIV;
+			case MAT_VALUE:
+				return MAT;
+			case MIC_VALUE:
+				return MIC;
+			case MMAT_VALUE:
+				return MMAT;
+			case MODDV_VALUE:
+				return MODDV;
+			case NAT_VALUE:
+				return NAT;
+			case NLIV_VALUE:
+				return NLIV;
+			case ORG_VALUE:
+				return ORG;
+			case PLC_VALUE:
+				return PLC;
+			case PLNT_VALUE:
+				return PLNT;
+			case PROVINCE_VALUE:
+				return PROVINCE;
+			case PSN_VALUE:
+				return PSN;
+			case PUB_VALUE:
+				return PUB;
+			case RGRP_VALUE:
+				return RGRP;
+			case STATE_VALUE:
+				return STATE;
 		}
 		return null;
 	}
@@ -856,7 +856,7 @@ public enum EntityClassRoot implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -865,7 +865,7 @@ public enum EntityClassRoot implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -874,7 +874,7 @@ public enum EntityClassRoot implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -887,5 +887,5 @@ public enum EntityClassRoot implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //EntityClassRoot
+
+} // EntityClassRoot

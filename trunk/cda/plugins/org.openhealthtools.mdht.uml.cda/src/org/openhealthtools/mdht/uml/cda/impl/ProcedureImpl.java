@@ -441,6 +441,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PROCEDURE__REALM_CODE);
@@ -453,6 +454,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -466,8 +468,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -480,15 +487,21 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -496,6 +509,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PROCEDURE__TEMPLATE_ID);
@@ -533,8 +547,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		CD oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -547,15 +566,21 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setCode(CD newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__CODE, newCode, newCode));
+		}
 	}
 
 	/**
@@ -576,8 +601,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		ED oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__TEXT, oldText, newText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__TEXT, oldText, newText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -590,15 +620,21 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setText(ED newText) {
 		if (newText != text) {
 			NotificationChain msgs = null;
-			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__TEXT, null, msgs);
-			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__TEXT, null, msgs);
+			if (text != null) {
+				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__TEXT, null, msgs);
+			}
+			if (newText != null) {
+				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__TEXT, null, msgs);
+			}
 			msgs = basicSetText(newText, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__TEXT, newText, newText));
+		}
 	}
 
 	/**
@@ -619,8 +655,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		CS oldStatusCode = statusCode;
 		statusCode = newStatusCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__STATUS_CODE, oldStatusCode, newStatusCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__STATUS_CODE, oldStatusCode, newStatusCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -633,15 +674,22 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setStatusCode(CS newStatusCode) {
 		if (newStatusCode != statusCode) {
 			NotificationChain msgs = null;
-			if (statusCode != null)
-				msgs = ((InternalEObject)statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__STATUS_CODE, null, msgs);
-			if (newStatusCode != null)
-				msgs = ((InternalEObject)newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__STATUS_CODE, null, msgs);
+			if (statusCode != null) {
+				msgs = ((InternalEObject) statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__STATUS_CODE, null, msgs);
+			}
+			if (newStatusCode != null) {
+				msgs = ((InternalEObject) newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__STATUS_CODE, null, msgs);
+			}
 			msgs = basicSetStatusCode(newStatusCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__STATUS_CODE, newStatusCode, newStatusCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__STATUS_CODE, newStatusCode, newStatusCode));
 	}
 
 	/**
@@ -662,8 +710,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		IVL_TS oldEffectiveTime = effectiveTime;
 		effectiveTime = newEffectiveTime;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__EFFECTIVE_TIME, oldEffectiveTime, newEffectiveTime);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__EFFECTIVE_TIME, oldEffectiveTime, newEffectiveTime);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -676,15 +729,22 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setEffectiveTime(IVL_TS newEffectiveTime) {
 		if (newEffectiveTime != effectiveTime) {
 			NotificationChain msgs = null;
-			if (effectiveTime != null)
-				msgs = ((InternalEObject)effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__EFFECTIVE_TIME, null, msgs);
-			if (newEffectiveTime != null)
-				msgs = ((InternalEObject)newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__EFFECTIVE_TIME, null, msgs);
+			if (effectiveTime != null) {
+				msgs = ((InternalEObject) effectiveTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__EFFECTIVE_TIME, null, msgs);
+			}
+			if (newEffectiveTime != null) {
+				msgs = ((InternalEObject) newEffectiveTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__EFFECTIVE_TIME, null, msgs);
+			}
 			msgs = basicSetEffectiveTime(newEffectiveTime, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__EFFECTIVE_TIME, newEffectiveTime, newEffectiveTime));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__EFFECTIVE_TIME, newEffectiveTime, newEffectiveTime));
 	}
 
 	/**
@@ -705,8 +765,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		CE oldPriorityCode = priorityCode;
 		priorityCode = newPriorityCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__PRIORITY_CODE, oldPriorityCode, newPriorityCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__PRIORITY_CODE, oldPriorityCode, newPriorityCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -719,15 +784,22 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setPriorityCode(CE newPriorityCode) {
 		if (newPriorityCode != priorityCode) {
 			NotificationChain msgs = null;
-			if (priorityCode != null)
-				msgs = ((InternalEObject)priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__PRIORITY_CODE, null, msgs);
-			if (newPriorityCode != null)
-				msgs = ((InternalEObject)newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__PRIORITY_CODE, null, msgs);
+			if (priorityCode != null) {
+				msgs = ((InternalEObject) priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__PRIORITY_CODE, null, msgs);
+			}
+			if (newPriorityCode != null) {
+				msgs = ((InternalEObject) newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__PRIORITY_CODE, null, msgs);
+			}
 			msgs = basicSetPriorityCode(newPriorityCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__PRIORITY_CODE, newPriorityCode, newPriorityCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__PRIORITY_CODE, newPriorityCode, newPriorityCode));
 	}
 
 	/**
@@ -748,8 +820,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		CS oldLanguageCode = languageCode;
 		languageCode = newLanguageCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__LANGUAGE_CODE, oldLanguageCode, newLanguageCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__LANGUAGE_CODE, oldLanguageCode, newLanguageCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -762,15 +839,22 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setLanguageCode(CS newLanguageCode) {
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
-			if (languageCode != null)
-				msgs = ((InternalEObject)languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__LANGUAGE_CODE, null, msgs);
-			if (newLanguageCode != null)
-				msgs = ((InternalEObject)newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__LANGUAGE_CODE, null, msgs);
+			if (languageCode != null) {
+				msgs = ((InternalEObject) languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__LANGUAGE_CODE, null, msgs);
+			}
+			if (newLanguageCode != null) {
+				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__LANGUAGE_CODE, null, msgs);
+			}
 			msgs = basicSetLanguageCode(newLanguageCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
 	}
 
 	/**
@@ -792,7 +876,8 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public EList<CD> getApproachSiteCodes() {
 		if (approachSiteCodes == null) {
-			approachSiteCodes = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.PROCEDURE__APPROACH_SITE_CODE);
+			approachSiteCodes = new EObjectContainmentEList<CD>(
+				CD.class, this, CDAPackage.PROCEDURE__APPROACH_SITE_CODE);
 		}
 		return approachSiteCodes;
 	}
@@ -827,8 +912,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		Subject oldSubject = subject;
 		subject = newSubject;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__SUBJECT, oldSubject, newSubject);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__SUBJECT, oldSubject, newSubject);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -841,15 +931,21 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public void setSubject(Subject newSubject) {
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
-			if (subject != null)
-				msgs = ((InternalEObject)subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__SUBJECT, null, msgs);
-			if (newSubject != null)
-				msgs = ((InternalEObject)newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PROCEDURE__SUBJECT, null, msgs);
+			if (subject != null) {
+				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__SUBJECT, null, msgs);
+			}
+			if (newSubject != null) {
+				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.PROCEDURE__SUBJECT, null, msgs);
+			}
 			msgs = basicSetSubject(newSubject, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__SUBJECT, newSubject, newSubject));
+		}
 	}
 
 	/**
@@ -871,7 +967,8 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public EList<Performer2> getPerformers() {
 		if (performers == null) {
-			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.PROCEDURE__PERFORMER);
+			performers = new EObjectContainmentEList<Performer2>(
+				Performer2.class, this, CDAPackage.PROCEDURE__PERFORMER);
 		}
 		return performers;
 	}
@@ -895,7 +992,8 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public EList<Informant12> getInformants() {
 		if (informants == null) {
-			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.PROCEDURE__INFORMANT);
+			informants = new EObjectContainmentEList<Informant12>(
+				Informant12.class, this, CDAPackage.PROCEDURE__INFORMANT);
 		}
 		return informants;
 	}
@@ -907,7 +1005,8 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public EList<Participant2> getParticipants() {
 		if (participants == null) {
-			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.PROCEDURE__PARTICIPANT);
+			participants = new EObjectContainmentEList<Participant2>(
+				Participant2.class, this, CDAPackage.PROCEDURE__PARTICIPANT);
 		}
 		return participants;
 	}
@@ -919,7 +1018,8 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public EList<EntryRelationship> getEntryRelationships() {
 		if (entryRelationships == null) {
-			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP);
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(
+				EntryRelationship.class, this, CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP);
 		}
 		return entryRelationships;
 	}
@@ -943,7 +1043,8 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public EList<Precondition> getPreconditions() {
 		if (preconditions == null) {
-			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.PROCEDURE__PRECONDITION);
+			preconditions = new EObjectContainmentEList<Precondition>(
+				Precondition.class, this, CDAPackage.PROCEDURE__PRECONDITION);
 		}
 		return preconditions;
 	}
@@ -953,6 +1054,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -964,11 +1066,16 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -981,8 +1088,11 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -999,6 +1109,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActClass getClassCode() {
 		return classCode;
 	}
@@ -1010,11 +1121,15 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public void setClassCode(ActClass newClassCode) {
 		ActClass oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -1027,8 +1142,11 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -1045,6 +1163,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public x_DocumentProcedureMood getMoodCode() {
 		return moodCode;
 	}
@@ -1056,11 +1175,15 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	public void setMoodCode(x_DocumentProcedureMood newMoodCode) {
 		x_DocumentProcedureMood oldMoodCode = moodCode;
-		moodCode = newMoodCode == null ? MOOD_CODE_EDEFAULT : newMoodCode;
+		moodCode = newMoodCode == null
+				? MOOD_CODE_EDEFAULT
+				: newMoodCode;
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -1073,8 +1196,11 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+				oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -1091,6 +1217,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getNegationInd() {
 		return negationInd;
 	}
@@ -1105,8 +1232,11 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		negationInd = newNegationInd;
 		boolean oldNegationIndESet = negationIndESet;
 		negationIndESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd, negationInd, !oldNegationIndESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd, negationInd,
+				!oldNegationIndESet));
+		}
 	}
 
 	/**
@@ -1119,8 +1249,11 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldNegationIndESet = negationIndESet;
 		negationInd = NEGATION_IND_EDEFAULT;
 		negationIndESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd, NEGATION_IND_EDEFAULT, oldNegationIndESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd, NEGATION_IND_EDEFAULT,
+				oldNegationIndESet));
+		}
 	}
 
 	/**
@@ -1141,13 +1274,13 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.PROCEDURE__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.PROCEDURE__TEXT:
@@ -1161,29 +1294,29 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 			case CDAPackage.PROCEDURE__LANGUAGE_CODE:
 				return basicSetLanguageCode(null, msgs);
 			case CDAPackage.PROCEDURE__METHOD_CODE:
-				return ((InternalEList<?>)getMethodCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMethodCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__APPROACH_SITE_CODE:
-				return ((InternalEList<?>)getApproachSiteCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getApproachSiteCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__TARGET_SITE_CODE:
-				return ((InternalEList<?>)getTargetSiteCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTargetSiteCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.PROCEDURE__SPECIMEN:
-				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__PERFORMER:
-				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__AUTHOR:
-				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__INFORMANT:
-				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__PARTICIPANT:
-				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__REFERENCE:
-				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__PRECONDITION:
-				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1263,95 +1396,95 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		switch (featureID) {
 			case CDAPackage.PROCEDURE__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__CODE:
-				setCode((CD)newValue);
+				setCode((CD) newValue);
 				return;
 			case CDAPackage.PROCEDURE__TEXT:
-				setText((ED)newValue);
+				setText((ED) newValue);
 				return;
 			case CDAPackage.PROCEDURE__STATUS_CODE:
-				setStatusCode((CS)newValue);
+				setStatusCode((CS) newValue);
 				return;
 			case CDAPackage.PROCEDURE__EFFECTIVE_TIME:
-				setEffectiveTime((IVL_TS)newValue);
+				setEffectiveTime((IVL_TS) newValue);
 				return;
 			case CDAPackage.PROCEDURE__PRIORITY_CODE:
-				setPriorityCode((CE)newValue);
+				setPriorityCode((CE) newValue);
 				return;
 			case CDAPackage.PROCEDURE__LANGUAGE_CODE:
-				setLanguageCode((CS)newValue);
+				setLanguageCode((CS) newValue);
 				return;
 			case CDAPackage.PROCEDURE__METHOD_CODE:
 				getMethodCodes().clear();
-				getMethodCodes().addAll((Collection<? extends CE>)newValue);
+				getMethodCodes().addAll((Collection<? extends CE>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__APPROACH_SITE_CODE:
 				getApproachSiteCodes().clear();
-				getApproachSiteCodes().addAll((Collection<? extends CD>)newValue);
+				getApproachSiteCodes().addAll((Collection<? extends CD>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__TARGET_SITE_CODE:
 				getTargetSiteCodes().clear();
-				getTargetSiteCodes().addAll((Collection<? extends CD>)newValue);
+				getTargetSiteCodes().addAll((Collection<? extends CD>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__SUBJECT:
-				setSubject((Subject)newValue);
+				setSubject((Subject) newValue);
 				return;
 			case CDAPackage.PROCEDURE__SPECIMEN:
 				getSpecimens().clear();
-				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().addAll((Collection<? extends Specimen>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__PERFORMER:
 				getPerformers().clear();
-				getPerformers().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().addAll((Collection<? extends Performer2>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__AUTHOR:
 				getAuthors().clear();
-				getAuthors().addAll((Collection<? extends Author>)newValue);
+				getAuthors().addAll((Collection<? extends Author>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__INFORMANT:
 				getInformants().clear();
-				getInformants().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().addAll((Collection<? extends Informant12>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__PARTICIPANT:
 				getParticipants().clear();
-				getParticipants().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().addAll((Collection<? extends Participant2>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP:
 				getEntryRelationships().clear();
-				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__REFERENCE:
 				getReferences().clear();
-				getReferences().addAll((Collection<? extends Reference>)newValue);
+				getReferences().addAll((Collection<? extends Reference>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__PRECONDITION:
 				getPreconditions().clear();
-				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().addAll((Collection<? extends Precondition>) newValue);
 				return;
 			case CDAPackage.PROCEDURE__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.PROCEDURE__CLASS_CODE:
-				setClassCode((ActClass)newValue);
+				setClassCode((ActClass) newValue);
 				return;
 			case CDAPackage.PROCEDURE__MOOD_CODE:
-				setMoodCode((x_DocumentProcedureMood)newValue);
+				setMoodCode((x_DocumentProcedureMood) newValue);
 				return;
 			case CDAPackage.PROCEDURE__NEGATION_IND:
-				setNegationInd((Boolean)newValue);
+				setNegationInd((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1369,7 +1502,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.PROCEDURE__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -1378,22 +1511,22 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 				getIds().clear();
 				return;
 			case CDAPackage.PROCEDURE__CODE:
-				setCode((CD)null);
+				setCode((CD) null);
 				return;
 			case CDAPackage.PROCEDURE__TEXT:
-				setText((ED)null);
+				setText((ED) null);
 				return;
 			case CDAPackage.PROCEDURE__STATUS_CODE:
-				setStatusCode((CS)null);
+				setStatusCode((CS) null);
 				return;
 			case CDAPackage.PROCEDURE__EFFECTIVE_TIME:
-				setEffectiveTime((IVL_TS)null);
+				setEffectiveTime((IVL_TS) null);
 				return;
 			case CDAPackage.PROCEDURE__PRIORITY_CODE:
-				setPriorityCode((CE)null);
+				setPriorityCode((CE) null);
 				return;
 			case CDAPackage.PROCEDURE__LANGUAGE_CODE:
-				setLanguageCode((CS)null);
+				setLanguageCode((CS) null);
 				return;
 			case CDAPackage.PROCEDURE__METHOD_CODE:
 				getMethodCodes().clear();
@@ -1405,7 +1538,7 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 				getTargetSiteCodes().clear();
 				return;
 			case CDAPackage.PROCEDURE__SUBJECT:
-				setSubject((Subject)null);
+				setSubject((Subject) null);
 				return;
 			case CDAPackage.PROCEDURE__SPECIMEN:
 				getSpecimens().clear();
@@ -1518,19 +1651,37 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", moodCode: ");
-		if (moodCodeESet) result.append(moodCode); else result.append("<unset>");
+		if (moodCodeESet) {
+			result.append(moodCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", negationInd: ");
-		if (negationIndESet) result.append(negationInd); else result.append("<unset>");
+		if (negationIndESet) {
+			result.append(negationInd);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ProcedureImpl
+} // ProcedureImpl

@@ -26,8 +26,7 @@ public interface CDAResource extends XMLResource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public interface Factory
-			extends Resource.Factory {
+	public interface Factory extends Resource.Factory {
 
 		/**
 		 * <!-- begin-user-doc -->
@@ -54,4 +53,4 @@ public interface CDAResource extends XMLResource {
 	 */
 	public static final String DEFAULT_ENCODING = "UTF-8";
 
-} //CDAResource
+} // CDAResource

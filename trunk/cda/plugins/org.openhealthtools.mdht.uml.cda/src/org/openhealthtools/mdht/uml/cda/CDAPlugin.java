@@ -43,7 +43,7 @@ public final class CDAPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public CDAPlugin() {
-		super(new ResourceLocator [] {});
+		super(new ResourceLocator[] {});
 	}
 
 	/**

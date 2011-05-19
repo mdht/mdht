@@ -157,14 +157,7 @@ public enum EntityNamePartType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EntityNamePartType[] VALUES_ARRAY =
-		new EntityNamePartType[] {
-			DEL,
-			FAM,
-			GIV,
-			PFX,
-			SFX,
-		};
+	private static final EntityNamePartType[] VALUES_ARRAY = new EntityNamePartType[] { DEL, FAM, GIV, PFX, SFX, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Entity Name Part Type</b></em>' enumerators.
@@ -214,11 +207,16 @@ public enum EntityNamePartType implements Enumerator {
 	 */
 	public static EntityNamePartType get(int value) {
 		switch (value) {
-			case DEL_VALUE: return DEL;
-			case FAM_VALUE: return FAM;
-			case GIV_VALUE: return GIV;
-			case PFX_VALUE: return PFX;
-			case SFX_VALUE: return SFX;
+			case DEL_VALUE:
+				return DEL;
+			case FAM_VALUE:
+				return FAM;
+			case GIV_VALUE:
+				return GIV;
+			case PFX_VALUE:
+				return PFX;
+			case SFX_VALUE:
+				return SFX;
 		}
 		return null;
 	}
@@ -262,7 +260,7 @@ public enum EntityNamePartType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -271,7 +269,7 @@ public enum EntityNamePartType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -280,7 +278,7 @@ public enum EntityNamePartType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -293,5 +291,5 @@ public enum EntityNamePartType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //EntityNamePartType
+
+} // EntityNamePartType

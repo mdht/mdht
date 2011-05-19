@@ -101,4 +101,4 @@ public abstract class EntityImpl extends InfrastructureRootImpl implements Entit
 		return EntityOperations.isDeterminerCodeDefined(this);
 	}
 
-} //EntityImpl
+} // EntityImpl

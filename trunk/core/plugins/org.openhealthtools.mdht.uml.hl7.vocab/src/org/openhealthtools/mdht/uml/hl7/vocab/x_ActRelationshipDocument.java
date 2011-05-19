@@ -107,12 +107,7 @@ public enum x_ActRelationshipDocument implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_ActRelationshipDocument[] VALUES_ARRAY =
-		new x_ActRelationshipDocument[] {
-			APND,
-			RPLC,
-			XFRM,
-		};
+	private static final x_ActRelationshipDocument[] VALUES_ARRAY = new x_ActRelationshipDocument[] { APND, RPLC, XFRM, };
 
 	/**
 	 * A public read-only list of all the '<em><b>xAct Relationship Document</b></em>' enumerators.
@@ -162,9 +157,12 @@ public enum x_ActRelationshipDocument implements Enumerator {
 	 */
 	public static x_ActRelationshipDocument get(int value) {
 		switch (value) {
-			case APND_VALUE: return APND;
-			case RPLC_VALUE: return RPLC;
-			case XFRM_VALUE: return XFRM;
+			case APND_VALUE:
+				return APND;
+			case RPLC_VALUE:
+				return RPLC;
+			case XFRM_VALUE:
+				return XFRM;
 		}
 		return null;
 	}
@@ -208,7 +206,7 @@ public enum x_ActRelationshipDocument implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -217,7 +215,7 @@ public enum x_ActRelationshipDocument implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -226,7 +224,7 @@ public enum x_ActRelationshipDocument implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -239,5 +237,5 @@ public enum x_ActRelationshipDocument implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //x_ActRelationshipDocument
+
+} // x_ActRelationshipDocument

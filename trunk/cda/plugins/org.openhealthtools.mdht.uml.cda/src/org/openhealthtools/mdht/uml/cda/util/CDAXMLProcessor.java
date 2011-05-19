@@ -36,7 +36,7 @@ public class CDAXMLProcessor extends XMLProcessor {
 		super((EPackage.Registry.INSTANCE));
 		CDAPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the CDAResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
@@ -53,4 +53,4 @@ public class CDAXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //CDAXMLProcessor
+} // CDAXMLProcessor

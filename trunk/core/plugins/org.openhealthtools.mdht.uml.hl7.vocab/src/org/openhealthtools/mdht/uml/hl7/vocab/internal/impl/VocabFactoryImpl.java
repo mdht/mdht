@@ -93,12 +93,11 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public static VocabFactory init() {
 		try {
-			VocabFactory theVocabFactory = (VocabFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/vocab"); 
+			VocabFactory theVocabFactory = (VocabFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/hl7/vocab");
 			if (theVocabFactory != null) {
 				return theVocabFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new VocabFactoryImpl();
@@ -254,7 +253,8 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 			case VocabPackage.TIMING_EVENT:
 				return createTimingEventFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -385,7 +385,8 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 			case VocabPackage.TIMING_EVENT:
 				return convertTimingEventToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -396,7 +397,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActClass createActClassFromString(EDataType eDataType, String initialValue) {
 		ActClass result = ActClass.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -406,7 +410,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActClassToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -416,7 +422,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActClinicalDocument createActClinicalDocumentFromString(EDataType eDataType, String initialValue) {
 		ActClinicalDocument result = ActClinicalDocument.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -426,7 +435,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActClinicalDocumentToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -436,7 +447,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActClassDocument createActClassDocumentFromString(EDataType eDataType, String initialValue) {
 		ActClassDocument result = ActClassDocument.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -446,7 +460,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActClassDocumentToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -456,7 +472,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActClassObservation createActClassObservationFromString(EDataType eDataType, String initialValue) {
 		ActClassObservation result = ActClassObservation.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -466,7 +485,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActClassObservationToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -476,7 +497,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActClassRoot createActClassRootFromString(EDataType eDataType, String initialValue) {
 		ActClassRoot result = ActClassRoot.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -486,7 +510,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActClassRootToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -496,7 +522,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActClassSupply createActClassSupplyFromString(EDataType eDataType, String initialValue) {
 		ActClassSupply result = ActClassSupply.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -506,7 +535,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActClassSupplyToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -516,7 +547,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActMood createActMoodFromString(EDataType eDataType, String initialValue) {
 		ActMood result = ActMood.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -526,7 +560,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActMoodToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -536,7 +572,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActRelationshipFulfills createActRelationshipFulfillsFromString(EDataType eDataType, String initialValue) {
 		ActRelationshipFulfills result = ActRelationshipFulfills.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -546,7 +585,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActRelationshipFulfillsToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -554,9 +595,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActRelationshipHasComponent createActRelationshipHasComponentFromString(EDataType eDataType, String initialValue) {
+	public ActRelationshipHasComponent createActRelationshipHasComponentFromString(EDataType eDataType,
+			String initialValue) {
 		ActRelationshipHasComponent result = ActRelationshipHasComponent.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -566,7 +611,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActRelationshipHasComponentToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -576,7 +623,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ActRelationshipType createActRelationshipTypeFromString(EDataType eDataType, String initialValue) {
 		ActRelationshipType result = ActRelationshipType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -586,7 +636,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertActRelationshipTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -596,7 +648,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public AddressPartType createAddressPartTypeFromString(EDataType eDataType, String initialValue) {
 		AddressPartType result = AddressPartType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -606,7 +661,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertAddressPartTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -616,7 +673,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public CalendarCycle createCalendarCycleFromString(EDataType eDataType, String initialValue) {
 		CalendarCycle result = CalendarCycle.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -626,7 +686,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertCalendarCycleToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -636,7 +698,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public CompressionAlgorithm createCompressionAlgorithmFromString(EDataType eDataType, String initialValue) {
 		CompressionAlgorithm result = CompressionAlgorithm.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -646,7 +711,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertCompressionAlgorithmToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -656,7 +723,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ContextControl createContextControlFromString(EDataType eDataType, String initialValue) {
 		ContextControl result = ContextControl.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -666,7 +736,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertContextControlToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -676,7 +748,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityClass createEntityClassFromString(EDataType eDataType, String initialValue) {
 		EntityClass result = EntityClass.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -686,7 +761,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityClassToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -696,7 +773,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityClassDevice createEntityClassDeviceFromString(EDataType eDataType, String initialValue) {
 		EntityClassDevice result = EntityClassDevice.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -706,7 +786,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityClassDeviceToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -714,9 +796,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityClassManufacturedMaterial createEntityClassManufacturedMaterialFromString(EDataType eDataType, String initialValue) {
+	public EntityClassManufacturedMaterial createEntityClassManufacturedMaterialFromString(EDataType eDataType,
+			String initialValue) {
 		EntityClassManufacturedMaterial result = EntityClassManufacturedMaterial.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -726,7 +812,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityClassManufacturedMaterialToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -736,7 +824,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityClassOrganization createEntityClassOrganizationFromString(EDataType eDataType, String initialValue) {
 		EntityClassOrganization result = EntityClassOrganization.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -746,7 +837,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityClassOrganizationToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -756,7 +849,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityClassPlace createEntityClassPlaceFromString(EDataType eDataType, String initialValue) {
 		EntityClassPlace result = EntityClassPlace.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -766,7 +862,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityClassPlaceToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -776,7 +874,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityClassRoot createEntityClassRootFromString(EDataType eDataType, String initialValue) {
 		EntityClassRoot result = EntityClassRoot.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -786,7 +887,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityClassRootToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -796,7 +899,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityDeterminer createEntityDeterminerFromString(EDataType eDataType, String initialValue) {
 		EntityDeterminer result = EntityDeterminer.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -806,7 +912,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityDeterminerToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -814,9 +922,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityDeterminerDetermined createEntityDeterminerDeterminedFromString(EDataType eDataType, String initialValue) {
+	public EntityDeterminerDetermined createEntityDeterminerDeterminedFromString(EDataType eDataType,
+			String initialValue) {
 		EntityDeterminerDetermined result = EntityDeterminerDetermined.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -826,7 +938,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityDeterminerDeterminedToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -836,7 +950,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityNamePartQualifier createEntityNamePartQualifierFromString(EDataType eDataType, String initialValue) {
 		EntityNamePartQualifier result = EntityNamePartQualifier.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -846,7 +963,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityNamePartQualifierToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -856,7 +975,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityNamePartType createEntityNamePartTypeFromString(EDataType eDataType, String initialValue) {
 		EntityNamePartType result = EntityNamePartType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -866,7 +988,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityNamePartTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -876,7 +1000,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public EntityNameUse createEntityNameUseFromString(EDataType eDataType, String initialValue) {
 		EntityNameUse result = EntityNameUse.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -886,7 +1013,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertEntityNameUseToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -896,7 +1025,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public IntegrityCheckAlgorithm createIntegrityCheckAlgorithmFromString(EDataType eDataType, String initialValue) {
 		IntegrityCheckAlgorithm result = IntegrityCheckAlgorithm.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -906,7 +1038,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertIntegrityCheckAlgorithmToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -916,7 +1050,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public NullFlavor createNullFlavorFromString(EDataType eDataType, String initialValue) {
 		NullFlavor result = NullFlavor.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -926,7 +1063,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertNullFlavorToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -934,9 +1073,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParticipationPhysicalPerformer createParticipationPhysicalPerformerFromString(EDataType eDataType, String initialValue) {
+	public ParticipationPhysicalPerformer createParticipationPhysicalPerformerFromString(EDataType eDataType,
+			String initialValue) {
 		ParticipationPhysicalPerformer result = ParticipationPhysicalPerformer.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -946,7 +1089,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertParticipationPhysicalPerformerToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -954,9 +1099,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParticipationTargetLocation createParticipationTargetLocationFromString(EDataType eDataType, String initialValue) {
+	public ParticipationTargetLocation createParticipationTargetLocationFromString(EDataType eDataType,
+			String initialValue) {
 		ParticipationTargetLocation result = ParticipationTargetLocation.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -966,7 +1115,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertParticipationTargetLocationToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -974,9 +1125,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParticipationTargetSubject createParticipationTargetSubjectFromString(EDataType eDataType, String initialValue) {
+	public ParticipationTargetSubject createParticipationTargetSubjectFromString(EDataType eDataType,
+			String initialValue) {
 		ParticipationTargetSubject result = ParticipationTargetSubject.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -986,7 +1141,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertParticipationTargetSubjectToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -996,7 +1153,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public ParticipationType createParticipationTypeFromString(EDataType eDataType, String initialValue) {
 		ParticipationType result = ParticipationType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1006,7 +1166,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertParticipationTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1016,7 +1178,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public PostalAddressUse createPostalAddressUseFromString(EDataType eDataType, String initialValue) {
 		PostalAddressUse result = PostalAddressUse.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1026,7 +1191,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertPostalAddressUseToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1036,7 +1203,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public RoleClass createRoleClassFromString(EDataType eDataType, String initialValue) {
 		RoleClass result = RoleClass.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1046,7 +1216,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1056,7 +1228,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public RoleClassAssignedEntity createRoleClassAssignedEntityFromString(EDataType eDataType, String initialValue) {
 		RoleClassAssignedEntity result = RoleClassAssignedEntity.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1066,7 +1241,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassAssignedEntityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1076,7 +1253,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public RoleClassAssociative createRoleClassAssociativeFromString(EDataType eDataType, String initialValue) {
 		RoleClassAssociative result = RoleClassAssociative.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1086,7 +1266,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassAssociativeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1094,9 +1276,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleClassManufacturedProduct createRoleClassManufacturedProductFromString(EDataType eDataType, String initialValue) {
+	public RoleClassManufacturedProduct createRoleClassManufacturedProductFromString(EDataType eDataType,
+			String initialValue) {
 		RoleClassManufacturedProduct result = RoleClassManufacturedProduct.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1106,7 +1292,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassManufacturedProductToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1114,9 +1302,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleClassMutualRelationship createRoleClassMutualRelationshipFromString(EDataType eDataType, String initialValue) {
+	public RoleClassMutualRelationship createRoleClassMutualRelationshipFromString(EDataType eDataType,
+			String initialValue) {
 		RoleClassMutualRelationship result = RoleClassMutualRelationship.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1126,7 +1318,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassMutualRelationshipToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1136,7 +1330,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public RoleClassRoot createRoleClassRootFromString(EDataType eDataType, String initialValue) {
 		RoleClassRoot result = RoleClassRoot.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1146,7 +1343,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassRootToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1154,9 +1353,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleClassServiceDeliveryLocation createRoleClassServiceDeliveryLocationFromString(EDataType eDataType, String initialValue) {
+	public RoleClassServiceDeliveryLocation createRoleClassServiceDeliveryLocationFromString(EDataType eDataType,
+			String initialValue) {
 		RoleClassServiceDeliveryLocation result = RoleClassServiceDeliveryLocation.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1166,7 +1369,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassServiceDeliveryLocationToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1176,7 +1381,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public RoleClassSpecimen createRoleClassSpecimenFromString(EDataType eDataType, String initialValue) {
 		RoleClassSpecimen result = RoleClassSpecimen.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1186,7 +1394,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertRoleClassSpecimenToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1196,7 +1406,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public SetOperator createSetOperatorFromString(EDataType eDataType, String initialValue) {
 		SetOperator result = SetOperator.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1206,7 +1419,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertSetOperatorToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1214,9 +1429,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TelecommunicationAddressUse createTelecommunicationAddressUseFromString(EDataType eDataType, String initialValue) {
+	public TelecommunicationAddressUse createTelecommunicationAddressUseFromString(EDataType eDataType,
+			String initialValue) {
 		TelecommunicationAddressUse result = TelecommunicationAddressUse.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1226,7 +1445,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertTelecommunicationAddressUseToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1234,9 +1455,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public x_ActClassDocumentEntryAct createx_ActClassDocumentEntryActFromString(EDataType eDataType, String initialValue) {
+	public x_ActClassDocumentEntryAct createx_ActClassDocumentEntryActFromString(EDataType eDataType,
+			String initialValue) {
 		x_ActClassDocumentEntryAct result = x_ActClassDocumentEntryAct.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1246,7 +1471,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ActClassDocumentEntryActToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1254,9 +1481,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public x_ActClassDocumentEntryOrganizer createx_ActClassDocumentEntryOrganizerFromString(EDataType eDataType, String initialValue) {
+	public x_ActClassDocumentEntryOrganizer createx_ActClassDocumentEntryOrganizerFromString(EDataType eDataType,
+			String initialValue) {
 		x_ActClassDocumentEntryOrganizer result = x_ActClassDocumentEntryOrganizer.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1266,7 +1497,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ActClassDocumentEntryOrganizerToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1274,9 +1507,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public x_ActMoodDocumentObservation createx_ActMoodDocumentObservationFromString(EDataType eDataType, String initialValue) {
+	public x_ActMoodDocumentObservation createx_ActMoodDocumentObservationFromString(EDataType eDataType,
+			String initialValue) {
 		x_ActMoodDocumentObservation result = x_ActMoodDocumentObservation.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1286,7 +1523,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ActMoodDocumentObservationToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1296,7 +1535,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_ActRelationshipDocument createx_ActRelationshipDocumentFromString(EDataType eDataType, String initialValue) {
 		x_ActRelationshipDocument result = x_ActRelationshipDocument.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1306,7 +1548,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ActRelationshipDocumentToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1316,7 +1560,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_ActRelationshipEntry createx_ActRelationshipEntryFromString(EDataType eDataType, String initialValue) {
 		x_ActRelationshipEntry result = x_ActRelationshipEntry.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1326,7 +1573,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ActRelationshipEntryToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1334,9 +1583,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public x_ActRelationshipEntryRelationship createx_ActRelationshipEntryRelationshipFromString(EDataType eDataType, String initialValue) {
+	public x_ActRelationshipEntryRelationship createx_ActRelationshipEntryRelationshipFromString(EDataType eDataType,
+			String initialValue) {
 		x_ActRelationshipEntryRelationship result = x_ActRelationshipEntryRelationship.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1346,7 +1599,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ActRelationshipEntryRelationshipToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1354,9 +1609,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public x_ActRelationshipExternalReference createx_ActRelationshipExternalReferenceFromString(EDataType eDataType, String initialValue) {
+	public x_ActRelationshipExternalReference createx_ActRelationshipExternalReferenceFromString(EDataType eDataType,
+			String initialValue) {
 		x_ActRelationshipExternalReference result = x_ActRelationshipExternalReference.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1366,7 +1625,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ActRelationshipExternalReferenceToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1376,7 +1637,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_DocumentActMood createx_DocumentActMoodFromString(EDataType eDataType, String initialValue) {
 		x_DocumentActMood result = x_DocumentActMood.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1386,7 +1650,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_DocumentActMoodToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1396,7 +1662,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_DocumentEncounterMood createx_DocumentEncounterMoodFromString(EDataType eDataType, String initialValue) {
 		x_DocumentEncounterMood result = x_DocumentEncounterMood.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1406,7 +1675,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_DocumentEncounterMoodToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1416,7 +1687,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_DocumentProcedureMood createx_DocumentProcedureMoodFromString(EDataType eDataType, String initialValue) {
 		x_DocumentProcedureMood result = x_DocumentProcedureMood.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1426,7 +1700,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_DocumentProcedureMoodToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1436,7 +1712,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_DocumentSubject createx_DocumentSubjectFromString(EDataType eDataType, String initialValue) {
 		x_DocumentSubject result = x_DocumentSubject.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1446,7 +1725,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_DocumentSubjectToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1456,7 +1737,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_DocumentSubstanceMood createx_DocumentSubstanceMoodFromString(EDataType eDataType, String initialValue) {
 		x_DocumentSubstanceMood result = x_DocumentSubstanceMood.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1466,7 +1750,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_DocumentSubstanceMoodToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1476,7 +1762,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_EncounterParticipant createx_EncounterParticipantFromString(EDataType eDataType, String initialValue) {
 		x_EncounterParticipant result = x_EncounterParticipant.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1486,7 +1775,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_EncounterParticipantToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1496,7 +1787,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_InformationRecipient createx_InformationRecipientFromString(EDataType eDataType, String initialValue) {
 		x_InformationRecipient result = x_InformationRecipient.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1506,7 +1800,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_InformationRecipientToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1514,9 +1810,13 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public x_InformationRecipientRole createx_InformationRecipientRoleFromString(EDataType eDataType, String initialValue) {
+	public x_InformationRecipientRole createx_InformationRecipientRoleFromString(EDataType eDataType,
+			String initialValue) {
 		x_InformationRecipientRole result = x_InformationRecipientRole.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1526,7 +1826,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_InformationRecipientRoleToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1536,7 +1838,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public x_ServiceEventPerformer createx_ServiceEventPerformerFromString(EDataType eDataType, String initialValue) {
 		x_ServiceEventPerformer result = x_ServiceEventPerformer.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1546,7 +1851,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertx_ServiceEventPerformerToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1556,7 +1863,10 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 */
 	public TimingEvent createTimingEventFromString(EDataType eDataType, String initialValue) {
 		TimingEvent result = TimingEvent.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1566,7 +1876,9 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public String convertTimingEventToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1575,7 +1887,7 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 	 * @generated
 	 */
 	public VocabPackage getVocabPackage() {
-		return (VocabPackage)getEPackage();
+		return (VocabPackage) getEPackage();
 	}
 
 	/**
@@ -1589,4 +1901,4 @@ public class VocabFactoryImpl extends EFactoryImpl implements VocabFactory {
 		return VocabPackage.eINSTANCE;
 	}
 
-} //VocabFactoryImpl
+} // VocabFactoryImpl

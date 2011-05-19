@@ -95,11 +95,16 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	 */
 	public void setRepresentation(BinaryDataEncoding newRepresentation) {
 		BinaryDataEncoding oldRepresentation = representation;
-		representation = newRepresentation == null ? REPRESENTATION_EDEFAULT : newRepresentation;
+		representation = newRepresentation == null
+				? REPRESENTATION_EDEFAULT
+				: newRepresentation;
 		boolean oldRepresentationESet = representationESet;
 		representationESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation, representation, !oldRepresentationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation, representation,
+				!oldRepresentationESet));
+		}
 	}
 
 	/**
@@ -112,8 +117,11 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 		boolean oldRepresentationESet = representationESet;
 		representation = REPRESENTATION_EDEFAULT;
 		representationESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation, REPRESENTATION_EDEFAULT, oldRepresentationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation,
+				REPRESENTATION_EDEFAULT, oldRepresentationESet));
+		}
 	}
 
 	/**
@@ -148,7 +156,7 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.BIN__REPRESENTATION:
-				setRepresentation((BinaryDataEncoding)newValue);
+				setRepresentation((BinaryDataEncoding) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,13 +198,19 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (representation: ");
-		if (representationESet) result.append(representation); else result.append("<unset>");
+		if (representationESet) {
+			result.append(representation);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //BINImpl
+} // BINImpl

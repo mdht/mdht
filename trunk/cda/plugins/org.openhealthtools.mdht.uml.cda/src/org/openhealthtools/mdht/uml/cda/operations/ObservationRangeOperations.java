@@ -78,26 +78,29 @@ public class ObservationRangeOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateMoodCode(ObservationRange observationRange, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateMoodCode(ObservationRange observationRange, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.OBSERVATION_RANGE);
 			try {
 				VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(observationRange)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.OBSERVATION_RANGE__MOOD_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateMoodCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(observationRange, context) }),
-						 new Object [] { observationRange }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					CDAValidator.DIAGNOSTIC_SOURCE,
+					CDAValidator.OBSERVATION_RANGE__MOOD_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateMoodCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(observationRange, context) }),
+					new Object[] { observationRange }));
 			}
 			return false;
 		}

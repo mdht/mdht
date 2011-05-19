@@ -121,10 +121,14 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * @generated
 	 */
 	public static RIMPackage init() {
-		if (isInited) return (RIMPackage)EPackage.Registry.INSTANCE.getEPackage(RIMPackage.eNS_URI);
+		if (isInited) {
+			return (RIMPackage) EPackage.Registry.INSTANCE.getEPackage(RIMPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		RIMPackageImpl theRIMPackage = (RIMPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RIMPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RIMPackageImpl());
+		RIMPackageImpl theRIMPackage = (RIMPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RIMPackageImpl
+				? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new RIMPackageImpl());
 
 		isInited = true;
 
@@ -140,7 +144,6 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		// Mark meta-data to indicate it can't be changed
 		theRIMPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(RIMPackage.eNS_URI, theRIMPackage);
 		return theRIMPackage;
@@ -215,7 +218,7 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * @generated
 	 */
 	public RIMFactory getRIMFactory() {
-		return (RIMFactory)getEFactoryInstance();
+		return (RIMFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -233,7 +236,9 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -267,7 +272,9 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -276,8 +283,8 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
-		VocabPackage theVocabPackage = (VocabPackage)EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI);
+		DatatypesPackage theDatatypesPackage = (DatatypesPackage) EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
+		VocabPackage theVocabPackage = (VocabPackage) EPackage.Registry.INSTANCE.getEPackage(VocabPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -310,26 +317,36 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(actEClass, ecorePackage.getEBoolean(), "isMoodCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(infrastructureRootEClass, InfrastructureRoot.class, "InfrastructureRoot", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(
+			infrastructureRootEClass, InfrastructureRoot.class, "InfrastructureRoot", IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(infrastructureRootEClass, theDatatypesPackage.getCS(), "getRealmCodes", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			infrastructureRootEClass, theDatatypesPackage.getCS(), "getRealmCodes", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(infrastructureRootEClass, theDatatypesPackage.getII(), "getTypeId", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(infrastructureRootEClass, theDatatypesPackage.getII(), "getTemplateIds", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			infrastructureRootEClass, theDatatypesPackage.getII(), "getTemplateIds", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(infrastructureRootEClass, theVocabPackage.getNullFlavor(), "getNullFlavor", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			infrastructureRootEClass, theVocabPackage.getNullFlavor(), "getNullFlavor", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			infrastructureRootEClass, ecorePackage.getEBoolean(), "isNullFlavorUndefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "hasContent", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		EOperation op = addEOperation(infrastructureRootEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		EOperation op = addEOperation(
+			infrastructureRootEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(participationEClass, Participation.class, "Participation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(
+			participationEClass, Participation.class, "Participation", IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(participationEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -337,9 +354,12 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(participationEClass, this.getRole(), "getRole", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(participationEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			participationEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(participationEClass, ecorePackage.getEBoolean(), "isContextControlCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			participationEClass, ecorePackage.getEBoolean(), "isContextControlCodeDefined", 1, 1, IS_UNIQUE,
+			!IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -381,7 +401,9 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(roleLinkEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(actRelationshipEClass, ActRelationship.class, "ActRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(
+			actRelationshipEClass, ActRelationship.class, "ActRelationship", IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(actRelationshipEClass, ecorePackage.getEEnumerator(), "getTypeCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -389,10 +411,11 @@ public class RIMPackageImpl extends EPackageImpl implements RIMPackage {
 
 		addEOperation(actRelationshipEClass, this.getAct(), "getSource", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(actRelationshipEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(
+			actRelationshipEClass, ecorePackage.getEBoolean(), "isTypeCodeDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //RIMPackageImpl
+} // RIMPackageImpl

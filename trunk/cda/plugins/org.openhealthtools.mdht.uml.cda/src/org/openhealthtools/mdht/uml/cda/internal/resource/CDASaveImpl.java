@@ -22,7 +22,7 @@ public class CDASaveImpl extends XMLSaveImpl {
 	public CDASaveImpl(XMLHelper helper) {
 		super(helper);
 	}
-	
+
 	@Override
 	protected boolean shouldSaveFeature(EObject o, EStructuralFeature f) {
 		return o.eIsSet(f) || (keepDefaults && f.getDefaultValueLiteral() != null && f.getLowerBound() > 0);

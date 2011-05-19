@@ -135,13 +135,13 @@ public enum RoleClassRoot implements Enumerator {
 	 * @ordered
 	 */
 	CASESBJ(10, "CASESBJ", "CASESBJ"), /**
-	 * The '<em><b>CIT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CIT_VALUE
-	 * @generated
-	 * @ordered
-	 */
+										* The '<em><b>CIT</b></em>' literal object.
+										* <!-- begin-user-doc -->
+										* <!-- end-user-doc -->
+										* @see #CIT_VALUE
+										* @generated
+										* @ordered
+										*/
 	CIT(11, "CIT", "CIT"),
 
 	/**
@@ -1855,82 +1855,12 @@ public enum RoleClassRoot implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final RoleClassRoot[] VALUES_ARRAY =
-		new RoleClassRoot[] {
-			ACCESS,
-			ACTI,
-			ACTM,
-			ADTV,
-			AGNT,
-			ALQT,
-			ASSIGNED,
-			BASE,
-			BIRTHPL,
-			CAREGIVER,
-			CASESBJ,
-			CIT,
-			COLR,
-			COMPAR,
-			CON,
-			CONT,
-			COVPTY,
-			CRINV,
-			CRSPNSR,
-			DSDLOC,
-			DST,
-			ECON,
-			EMP,
-			EXPR,
-			FLVR,
-			GEN,
-			GRIC,
-			GUAR,
-			GUARD,
-			HLD,
-			HLTHCHRT,
-			IACT,
-			IDENT,
-			INGR,
-			INST,
-			INVSBJ,
-			ISDLOC,
-			ISLT,
-			LIC,
-			LOCE,
-			MANU,
-			MBR,
-			MIL,
-			MNT,
-			NOK,
-			NOT,
-			OWN,
-			PART,
-			PAT,
-			PAYEE,
-			PAYOR,
-			POLHOLD,
-			PROV,
-			PRS,
-			PRSV,
-			QUAL,
-			RESBJ,
-			RET,
-			RGPR,
-			ROL,
-			SDLOC,
-			SGNOFF,
-			SPEC,
-			SPNSR,
-			STBL,
-			STD,
-			STOR,
-			SUBS,
-			SUBY,
-			TERR,
-			THER,
-			UNDWRT,
-			WRTE,
-		};
+	private static final RoleClassRoot[] VALUES_ARRAY = new RoleClassRoot[] {
+			ACCESS, ACTI, ACTM, ADTV, AGNT, ALQT, ASSIGNED, BASE, BIRTHPL, CAREGIVER, CASESBJ, CIT, COLR, COMPAR, CON,
+			CONT, COVPTY, CRINV, CRSPNSR, DSDLOC, DST, ECON, EMP, EXPR, FLVR, GEN, GRIC, GUAR, GUARD, HLD, HLTHCHRT,
+			IACT, IDENT, INGR, INST, INVSBJ, ISDLOC, ISLT, LIC, LOCE, MANU, MBR, MIL, MNT, NOK, NOT, OWN, PART, PAT,
+			PAYEE, PAYOR, POLHOLD, PROV, PRS, PRSV, QUAL, RESBJ, RET, RGPR, ROL, SDLOC, SGNOFF, SPEC, SPNSR, STBL, STD,
+			STOR, SUBS, SUBY, TERR, THER, UNDWRT, WRTE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Role Class Root</b></em>' enumerators.
@@ -1980,79 +1910,152 @@ public enum RoleClassRoot implements Enumerator {
 	 */
 	public static RoleClassRoot get(int value) {
 		switch (value) {
-			case ACCESS_VALUE: return ACCESS;
-			case ACTI_VALUE: return ACTI;
-			case ACTM_VALUE: return ACTM;
-			case ADTV_VALUE: return ADTV;
-			case AGNT_VALUE: return AGNT;
-			case ALQT_VALUE: return ALQT;
-			case ASSIGNED_VALUE: return ASSIGNED;
-			case BASE_VALUE: return BASE;
-			case BIRTHPL_VALUE: return BIRTHPL;
-			case CAREGIVER_VALUE: return CAREGIVER;
-			case CASESBJ_VALUE: return CASESBJ;
-			case CIT_VALUE: return CIT;
-			case COLR_VALUE: return COLR;
-			case COMPAR_VALUE: return COMPAR;
-			case CON_VALUE: return CON;
-			case CONT_VALUE: return CONT;
-			case COVPTY_VALUE: return COVPTY;
-			case CRINV_VALUE: return CRINV;
-			case CRSPNSR_VALUE: return CRSPNSR;
-			case DSDLOC_VALUE: return DSDLOC;
-			case DST_VALUE: return DST;
-			case ECON_VALUE: return ECON;
-			case EMP_VALUE: return EMP;
-			case EXPR_VALUE: return EXPR;
-			case FLVR_VALUE: return FLVR;
-			case GEN_VALUE: return GEN;
-			case GRIC_VALUE: return GRIC;
-			case GUAR_VALUE: return GUAR;
-			case GUARD_VALUE: return GUARD;
-			case HLD_VALUE: return HLD;
-			case HLTHCHRT_VALUE: return HLTHCHRT;
-			case IACT_VALUE: return IACT;
-			case IDENT_VALUE: return IDENT;
-			case INGR_VALUE: return INGR;
-			case INST_VALUE: return INST;
-			case INVSBJ_VALUE: return INVSBJ;
-			case ISDLOC_VALUE: return ISDLOC;
-			case ISLT_VALUE: return ISLT;
-			case LIC_VALUE: return LIC;
-			case LOCE_VALUE: return LOCE;
-			case MANU_VALUE: return MANU;
-			case MBR_VALUE: return MBR;
-			case MIL_VALUE: return MIL;
-			case MNT_VALUE: return MNT;
-			case NOK_VALUE: return NOK;
-			case NOT_VALUE: return NOT;
-			case OWN_VALUE: return OWN;
-			case PART_VALUE: return PART;
-			case PAT_VALUE: return PAT;
-			case PAYEE_VALUE: return PAYEE;
-			case PAYOR_VALUE: return PAYOR;
-			case POLHOLD_VALUE: return POLHOLD;
-			case PROV_VALUE: return PROV;
-			case PRS_VALUE: return PRS;
-			case PRSV_VALUE: return PRSV;
-			case QUAL_VALUE: return QUAL;
-			case RESBJ_VALUE: return RESBJ;
-			case RET_VALUE: return RET;
-			case RGPR_VALUE: return RGPR;
-			case ROL_VALUE: return ROL;
-			case SDLOC_VALUE: return SDLOC;
-			case SGNOFF_VALUE: return SGNOFF;
-			case SPEC_VALUE: return SPEC;
-			case SPNSR_VALUE: return SPNSR;
-			case STBL_VALUE: return STBL;
-			case STD_VALUE: return STD;
-			case STOR_VALUE: return STOR;
-			case SUBS_VALUE: return SUBS;
-			case SUBY_VALUE: return SUBY;
-			case TERR_VALUE: return TERR;
-			case THER_VALUE: return THER;
-			case UNDWRT_VALUE: return UNDWRT;
-			case WRTE_VALUE: return WRTE;
+			case ACCESS_VALUE:
+				return ACCESS;
+			case ACTI_VALUE:
+				return ACTI;
+			case ACTM_VALUE:
+				return ACTM;
+			case ADTV_VALUE:
+				return ADTV;
+			case AGNT_VALUE:
+				return AGNT;
+			case ALQT_VALUE:
+				return ALQT;
+			case ASSIGNED_VALUE:
+				return ASSIGNED;
+			case BASE_VALUE:
+				return BASE;
+			case BIRTHPL_VALUE:
+				return BIRTHPL;
+			case CAREGIVER_VALUE:
+				return CAREGIVER;
+			case CASESBJ_VALUE:
+				return CASESBJ;
+			case CIT_VALUE:
+				return CIT;
+			case COLR_VALUE:
+				return COLR;
+			case COMPAR_VALUE:
+				return COMPAR;
+			case CON_VALUE:
+				return CON;
+			case CONT_VALUE:
+				return CONT;
+			case COVPTY_VALUE:
+				return COVPTY;
+			case CRINV_VALUE:
+				return CRINV;
+			case CRSPNSR_VALUE:
+				return CRSPNSR;
+			case DSDLOC_VALUE:
+				return DSDLOC;
+			case DST_VALUE:
+				return DST;
+			case ECON_VALUE:
+				return ECON;
+			case EMP_VALUE:
+				return EMP;
+			case EXPR_VALUE:
+				return EXPR;
+			case FLVR_VALUE:
+				return FLVR;
+			case GEN_VALUE:
+				return GEN;
+			case GRIC_VALUE:
+				return GRIC;
+			case GUAR_VALUE:
+				return GUAR;
+			case GUARD_VALUE:
+				return GUARD;
+			case HLD_VALUE:
+				return HLD;
+			case HLTHCHRT_VALUE:
+				return HLTHCHRT;
+			case IACT_VALUE:
+				return IACT;
+			case IDENT_VALUE:
+				return IDENT;
+			case INGR_VALUE:
+				return INGR;
+			case INST_VALUE:
+				return INST;
+			case INVSBJ_VALUE:
+				return INVSBJ;
+			case ISDLOC_VALUE:
+				return ISDLOC;
+			case ISLT_VALUE:
+				return ISLT;
+			case LIC_VALUE:
+				return LIC;
+			case LOCE_VALUE:
+				return LOCE;
+			case MANU_VALUE:
+				return MANU;
+			case MBR_VALUE:
+				return MBR;
+			case MIL_VALUE:
+				return MIL;
+			case MNT_VALUE:
+				return MNT;
+			case NOK_VALUE:
+				return NOK;
+			case NOT_VALUE:
+				return NOT;
+			case OWN_VALUE:
+				return OWN;
+			case PART_VALUE:
+				return PART;
+			case PAT_VALUE:
+				return PAT;
+			case PAYEE_VALUE:
+				return PAYEE;
+			case PAYOR_VALUE:
+				return PAYOR;
+			case POLHOLD_VALUE:
+				return POLHOLD;
+			case PROV_VALUE:
+				return PROV;
+			case PRS_VALUE:
+				return PRS;
+			case PRSV_VALUE:
+				return PRSV;
+			case QUAL_VALUE:
+				return QUAL;
+			case RESBJ_VALUE:
+				return RESBJ;
+			case RET_VALUE:
+				return RET;
+			case RGPR_VALUE:
+				return RGPR;
+			case ROL_VALUE:
+				return ROL;
+			case SDLOC_VALUE:
+				return SDLOC;
+			case SGNOFF_VALUE:
+				return SGNOFF;
+			case SPEC_VALUE:
+				return SPEC;
+			case SPNSR_VALUE:
+				return SPNSR;
+			case STBL_VALUE:
+				return STBL;
+			case STD_VALUE:
+				return STD;
+			case STOR_VALUE:
+				return STOR;
+			case SUBS_VALUE:
+				return SUBS;
+			case SUBY_VALUE:
+				return SUBY;
+			case TERR_VALUE:
+				return TERR;
+			case THER_VALUE:
+				return THER;
+			case UNDWRT_VALUE:
+				return UNDWRT;
+			case WRTE_VALUE:
+				return WRTE;
 		}
 		return null;
 	}
@@ -2096,7 +2099,7 @@ public enum RoleClassRoot implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -2105,7 +2108,7 @@ public enum RoleClassRoot implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -2114,7 +2117,7 @@ public enum RoleClassRoot implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -2127,5 +2130,5 @@ public enum RoleClassRoot implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //RoleClassRoot
+
+} // RoleClassRoot

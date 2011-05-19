@@ -430,6 +430,7 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SUPPLY__REALM_CODE);
@@ -442,6 +443,7 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -455,8 +457,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -469,15 +476,21 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -485,6 +498,7 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUPPLY__TEMPLATE_ID);
@@ -522,8 +536,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		CD oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -536,15 +555,21 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setCode(CD newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__CODE, newCode, newCode));
+		}
 	}
 
 	/**
@@ -565,8 +590,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		ED oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__TEXT, oldText, newText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__TEXT, oldText, newText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -579,15 +609,21 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setText(ED newText) {
 		if (newText != text) {
 			NotificationChain msgs = null;
-			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__TEXT, null, msgs);
-			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__TEXT, null, msgs);
+			if (text != null) {
+				msgs = ((InternalEObject) text).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__TEXT, null, msgs);
+			}
+			if (newText != null) {
+				msgs = ((InternalEObject) newText).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__TEXT, null, msgs);
+			}
 			msgs = basicSetText(newText, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__TEXT, newText, newText));
+		}
 	}
 
 	/**
@@ -608,8 +644,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		CS oldStatusCode = statusCode;
 		statusCode = newStatusCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__STATUS_CODE, oldStatusCode, newStatusCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__STATUS_CODE, oldStatusCode, newStatusCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -622,15 +663,22 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setStatusCode(CS newStatusCode) {
 		if (newStatusCode != statusCode) {
 			NotificationChain msgs = null;
-			if (statusCode != null)
-				msgs = ((InternalEObject)statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__STATUS_CODE, null, msgs);
-			if (newStatusCode != null)
-				msgs = ((InternalEObject)newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__STATUS_CODE, null, msgs);
+			if (statusCode != null) {
+				msgs = ((InternalEObject) statusCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__STATUS_CODE, null, msgs);
+			}
+			if (newStatusCode != null) {
+				msgs = ((InternalEObject) newStatusCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__STATUS_CODE, null, msgs);
+			}
 			msgs = basicSetStatusCode(newStatusCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__STATUS_CODE, newStatusCode, newStatusCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__STATUS_CODE, newStatusCode, newStatusCode));
 	}
 
 	/**
@@ -640,7 +688,8 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	public EList<SXCM_TS> getEffectiveTimes() {
 		if (effectiveTimes == null) {
-			effectiveTimes = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, CDAPackage.SUPPLY__EFFECTIVE_TIME);
+			effectiveTimes = new EObjectContainmentEList<SXCM_TS>(
+				SXCM_TS.class, this, CDAPackage.SUPPLY__EFFECTIVE_TIME);
 		}
 		return effectiveTimes;
 	}
@@ -675,8 +724,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		IVL_INT oldRepeatNumber = repeatNumber;
 		repeatNumber = newRepeatNumber;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__REPEAT_NUMBER, oldRepeatNumber, newRepeatNumber);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__REPEAT_NUMBER, oldRepeatNumber, newRepeatNumber);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -689,15 +743,22 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setRepeatNumber(IVL_INT newRepeatNumber) {
 		if (newRepeatNumber != repeatNumber) {
 			NotificationChain msgs = null;
-			if (repeatNumber != null)
-				msgs = ((InternalEObject)repeatNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__REPEAT_NUMBER, null, msgs);
-			if (newRepeatNumber != null)
-				msgs = ((InternalEObject)newRepeatNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__REPEAT_NUMBER, null, msgs);
+			if (repeatNumber != null) {
+				msgs = ((InternalEObject) repeatNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__REPEAT_NUMBER, null, msgs);
+			}
+			if (newRepeatNumber != null) {
+				msgs = ((InternalEObject) newRepeatNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__REPEAT_NUMBER, null, msgs);
+			}
 			msgs = basicSetRepeatNumber(newRepeatNumber, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__REPEAT_NUMBER, newRepeatNumber, newRepeatNumber));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__REPEAT_NUMBER, newRepeatNumber, newRepeatNumber));
 	}
 
 	/**
@@ -718,8 +779,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		BL oldIndependentInd = independentInd;
 		independentInd = newIndependentInd;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__INDEPENDENT_IND, oldIndependentInd, newIndependentInd);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__INDEPENDENT_IND, oldIndependentInd, newIndependentInd);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -732,15 +798,22 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setIndependentInd(BL newIndependentInd) {
 		if (newIndependentInd != independentInd) {
 			NotificationChain msgs = null;
-			if (independentInd != null)
-				msgs = ((InternalEObject)independentInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__INDEPENDENT_IND, null, msgs);
-			if (newIndependentInd != null)
-				msgs = ((InternalEObject)newIndependentInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__INDEPENDENT_IND, null, msgs);
+			if (independentInd != null) {
+				msgs = ((InternalEObject) independentInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__INDEPENDENT_IND, null, msgs);
+			}
+			if (newIndependentInd != null) {
+				msgs = ((InternalEObject) newIndependentInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__INDEPENDENT_IND, null, msgs);
+			}
 			msgs = basicSetIndependentInd(newIndependentInd, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__INDEPENDENT_IND, newIndependentInd, newIndependentInd));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__INDEPENDENT_IND, newIndependentInd, newIndependentInd));
 	}
 
 	/**
@@ -761,8 +834,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		PQ oldQuantity = quantity;
 		quantity = newQuantity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__QUANTITY, oldQuantity, newQuantity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__QUANTITY, oldQuantity, newQuantity);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -775,15 +853,21 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setQuantity(PQ newQuantity) {
 		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
-			if (quantity != null)
-				msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__QUANTITY, null, msgs);
-			if (newQuantity != null)
-				msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__QUANTITY, null, msgs);
+			if (quantity != null) {
+				msgs = ((InternalEObject) quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__QUANTITY, null, msgs);
+			}
+			if (newQuantity != null) {
+				msgs = ((InternalEObject) newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__QUANTITY, null, msgs);
+			}
 			msgs = basicSetQuantity(newQuantity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__QUANTITY, newQuantity, newQuantity));
+		}
 	}
 
 	/**
@@ -804,8 +888,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		IVL_TS oldExpectedUseTime = expectedUseTime;
 		expectedUseTime = newExpectedUseTime;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__EXPECTED_USE_TIME, oldExpectedUseTime, newExpectedUseTime);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__EXPECTED_USE_TIME, oldExpectedUseTime, newExpectedUseTime);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -818,15 +907,22 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setExpectedUseTime(IVL_TS newExpectedUseTime) {
 		if (newExpectedUseTime != expectedUseTime) {
 			NotificationChain msgs = null;
-			if (expectedUseTime != null)
-				msgs = ((InternalEObject)expectedUseTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__EXPECTED_USE_TIME, null, msgs);
-			if (newExpectedUseTime != null)
-				msgs = ((InternalEObject)newExpectedUseTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__EXPECTED_USE_TIME, null, msgs);
+			if (expectedUseTime != null) {
+				msgs = ((InternalEObject) expectedUseTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__EXPECTED_USE_TIME, null, msgs);
+			}
+			if (newExpectedUseTime != null) {
+				msgs = ((InternalEObject) newExpectedUseTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__EXPECTED_USE_TIME, null, msgs);
+			}
 			msgs = basicSetExpectedUseTime(newExpectedUseTime, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__EXPECTED_USE_TIME, newExpectedUseTime, newExpectedUseTime));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__EXPECTED_USE_TIME, newExpectedUseTime, newExpectedUseTime));
 	}
 
 	/**
@@ -847,8 +943,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		Subject oldSubject = subject;
 		subject = newSubject;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__SUBJECT, oldSubject, newSubject);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__SUBJECT, oldSubject, newSubject);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -861,15 +962,21 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setSubject(Subject newSubject) {
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
-			if (subject != null)
-				msgs = ((InternalEObject)subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__SUBJECT, null, msgs);
-			if (newSubject != null)
-				msgs = ((InternalEObject)newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__SUBJECT, null, msgs);
+			if (subject != null) {
+				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__SUBJECT, null, msgs);
+			}
+			if (newSubject != null) {
+				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__SUBJECT, null, msgs);
+			}
 			msgs = basicSetSubject(newSubject, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__SUBJECT, newSubject, newSubject));
+		}
 	}
 
 	/**
@@ -902,8 +1009,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		Product oldProduct = product;
 		product = newProduct;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__PRODUCT, oldProduct, newProduct);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__PRODUCT, oldProduct, newProduct);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -916,15 +1028,21 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public void setProduct(Product newProduct) {
 		if (newProduct != product) {
 			NotificationChain msgs = null;
-			if (product != null)
-				msgs = ((InternalEObject)product).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__PRODUCT, null, msgs);
-			if (newProduct != null)
-				msgs = ((InternalEObject)newProduct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUPPLY__PRODUCT, null, msgs);
+			if (product != null) {
+				msgs = ((InternalEObject) product).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__PRODUCT, null, msgs);
+			}
+			if (newProduct != null) {
+				msgs = ((InternalEObject) newProduct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUPPLY__PRODUCT, null, msgs);
+			}
 			msgs = basicSetProduct(newProduct, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__PRODUCT, newProduct, newProduct));
+		}
 	}
 
 	/**
@@ -970,7 +1088,8 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	public EList<Participant2> getParticipants() {
 		if (participants == null) {
-			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.SUPPLY__PARTICIPANT);
+			participants = new EObjectContainmentEList<Participant2>(
+				Participant2.class, this, CDAPackage.SUPPLY__PARTICIPANT);
 		}
 		return participants;
 	}
@@ -982,7 +1101,8 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	public EList<EntryRelationship> getEntryRelationships() {
 		if (entryRelationships == null) {
-			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.SUPPLY__ENTRY_RELATIONSHIP);
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(
+				EntryRelationship.class, this, CDAPackage.SUPPLY__ENTRY_RELATIONSHIP);
 		}
 		return entryRelationships;
 	}
@@ -1006,7 +1126,8 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	public EList<Precondition> getPreconditions() {
 		if (preconditions == null) {
-			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.SUPPLY__PRECONDITION);
+			preconditions = new EObjectContainmentEList<Precondition>(
+				Precondition.class, this, CDAPackage.SUPPLY__PRECONDITION);
 		}
 		return preconditions;
 	}
@@ -1016,6 +1137,7 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -1027,11 +1149,15 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -1044,8 +1170,11 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -1062,6 +1191,7 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActClassSupply getClassCode() {
 		return classCode;
 	}
@@ -1073,11 +1203,15 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	public void setClassCode(ActClassSupply newClassCode) {
 		ActClassSupply oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -1090,8 +1224,11 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -1108,6 +1245,7 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public x_DocumentSubstanceMood getMoodCode() {
 		return moodCode;
 	}
@@ -1119,11 +1257,15 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	public void setMoodCode(x_DocumentSubstanceMood newMoodCode) {
 		x_DocumentSubstanceMood oldMoodCode = moodCode;
-		moodCode = newMoodCode == null ? MOOD_CODE_EDEFAULT : newMoodCode;
+		moodCode = newMoodCode == null
+				? MOOD_CODE_EDEFAULT
+				: newMoodCode;
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -1136,8 +1278,11 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+				oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -1167,13 +1312,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.SUPPLY__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.SUPPLY__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.SUPPLY__TEXT:
@@ -1181,9 +1326,9 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 			case CDAPackage.SUPPLY__STATUS_CODE:
 				return basicSetStatusCode(null, msgs);
 			case CDAPackage.SUPPLY__EFFECTIVE_TIME:
-				return ((InternalEList<?>)getEffectiveTimes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEffectiveTimes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__PRIORITY_CODE:
-				return ((InternalEList<?>)getPriorityCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPriorityCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__REPEAT_NUMBER:
 				return basicSetRepeatNumber(null, msgs);
 			case CDAPackage.SUPPLY__INDEPENDENT_IND:
@@ -1195,23 +1340,23 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 			case CDAPackage.SUPPLY__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.SUPPLY__SPECIMEN:
-				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__PRODUCT:
 				return basicSetProduct(null, msgs);
 			case CDAPackage.SUPPLY__PERFORMER:
-				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__AUTHOR:
-				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__INFORMANT:
-				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__PARTICIPANT:
-				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__REFERENCE:
-				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUPPLY__PRECONDITION:
-				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1291,94 +1436,94 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		switch (featureID) {
 			case CDAPackage.SUPPLY__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.SUPPLY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.SUPPLY__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.SUPPLY__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.SUPPLY__CODE:
-				setCode((CD)newValue);
+				setCode((CD) newValue);
 				return;
 			case CDAPackage.SUPPLY__TEXT:
-				setText((ED)newValue);
+				setText((ED) newValue);
 				return;
 			case CDAPackage.SUPPLY__STATUS_CODE:
-				setStatusCode((CS)newValue);
+				setStatusCode((CS) newValue);
 				return;
 			case CDAPackage.SUPPLY__EFFECTIVE_TIME:
 				getEffectiveTimes().clear();
-				getEffectiveTimes().addAll((Collection<? extends SXCM_TS>)newValue);
+				getEffectiveTimes().addAll((Collection<? extends SXCM_TS>) newValue);
 				return;
 			case CDAPackage.SUPPLY__PRIORITY_CODE:
 				getPriorityCodes().clear();
-				getPriorityCodes().addAll((Collection<? extends CE>)newValue);
+				getPriorityCodes().addAll((Collection<? extends CE>) newValue);
 				return;
 			case CDAPackage.SUPPLY__REPEAT_NUMBER:
-				setRepeatNumber((IVL_INT)newValue);
+				setRepeatNumber((IVL_INT) newValue);
 				return;
 			case CDAPackage.SUPPLY__INDEPENDENT_IND:
-				setIndependentInd((BL)newValue);
+				setIndependentInd((BL) newValue);
 				return;
 			case CDAPackage.SUPPLY__QUANTITY:
-				setQuantity((PQ)newValue);
+				setQuantity((PQ) newValue);
 				return;
 			case CDAPackage.SUPPLY__EXPECTED_USE_TIME:
-				setExpectedUseTime((IVL_TS)newValue);
+				setExpectedUseTime((IVL_TS) newValue);
 				return;
 			case CDAPackage.SUPPLY__SUBJECT:
-				setSubject((Subject)newValue);
+				setSubject((Subject) newValue);
 				return;
 			case CDAPackage.SUPPLY__SPECIMEN:
 				getSpecimens().clear();
-				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().addAll((Collection<? extends Specimen>) newValue);
 				return;
 			case CDAPackage.SUPPLY__PRODUCT:
-				setProduct((Product)newValue);
+				setProduct((Product) newValue);
 				return;
 			case CDAPackage.SUPPLY__PERFORMER:
 				getPerformers().clear();
-				getPerformers().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().addAll((Collection<? extends Performer2>) newValue);
 				return;
 			case CDAPackage.SUPPLY__AUTHOR:
 				getAuthors().clear();
-				getAuthors().addAll((Collection<? extends Author>)newValue);
+				getAuthors().addAll((Collection<? extends Author>) newValue);
 				return;
 			case CDAPackage.SUPPLY__INFORMANT:
 				getInformants().clear();
-				getInformants().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().addAll((Collection<? extends Informant12>) newValue);
 				return;
 			case CDAPackage.SUPPLY__PARTICIPANT:
 				getParticipants().clear();
-				getParticipants().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().addAll((Collection<? extends Participant2>) newValue);
 				return;
 			case CDAPackage.SUPPLY__ENTRY_RELATIONSHIP:
 				getEntryRelationships().clear();
-				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>) newValue);
 				return;
 			case CDAPackage.SUPPLY__REFERENCE:
 				getReferences().clear();
-				getReferences().addAll((Collection<? extends Reference>)newValue);
+				getReferences().addAll((Collection<? extends Reference>) newValue);
 				return;
 			case CDAPackage.SUPPLY__PRECONDITION:
 				getPreconditions().clear();
-				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().addAll((Collection<? extends Precondition>) newValue);
 				return;
 			case CDAPackage.SUPPLY__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.SUPPLY__CLASS_CODE:
-				setClassCode((ActClassSupply)newValue);
+				setClassCode((ActClassSupply) newValue);
 				return;
 			case CDAPackage.SUPPLY__MOOD_CODE:
-				setMoodCode((x_DocumentSubstanceMood)newValue);
+				setMoodCode((x_DocumentSubstanceMood) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1396,7 +1541,7 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.SUPPLY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.SUPPLY__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -1405,13 +1550,13 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 				getIds().clear();
 				return;
 			case CDAPackage.SUPPLY__CODE:
-				setCode((CD)null);
+				setCode((CD) null);
 				return;
 			case CDAPackage.SUPPLY__TEXT:
-				setText((ED)null);
+				setText((ED) null);
 				return;
 			case CDAPackage.SUPPLY__STATUS_CODE:
-				setStatusCode((CS)null);
+				setStatusCode((CS) null);
 				return;
 			case CDAPackage.SUPPLY__EFFECTIVE_TIME:
 				getEffectiveTimes().clear();
@@ -1420,25 +1565,25 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 				getPriorityCodes().clear();
 				return;
 			case CDAPackage.SUPPLY__REPEAT_NUMBER:
-				setRepeatNumber((IVL_INT)null);
+				setRepeatNumber((IVL_INT) null);
 				return;
 			case CDAPackage.SUPPLY__INDEPENDENT_IND:
-				setIndependentInd((BL)null);
+				setIndependentInd((BL) null);
 				return;
 			case CDAPackage.SUPPLY__QUANTITY:
-				setQuantity((PQ)null);
+				setQuantity((PQ) null);
 				return;
 			case CDAPackage.SUPPLY__EXPECTED_USE_TIME:
-				setExpectedUseTime((IVL_TS)null);
+				setExpectedUseTime((IVL_TS) null);
 				return;
 			case CDAPackage.SUPPLY__SUBJECT:
-				setSubject((Subject)null);
+				setSubject((Subject) null);
 				return;
 			case CDAPackage.SUPPLY__SPECIMEN:
 				getSpecimens().clear();
 				return;
 			case CDAPackage.SUPPLY__PRODUCT:
-				setProduct((Product)null);
+				setProduct((Product) null);
 				return;
 			case CDAPackage.SUPPLY__PERFORMER:
 				getPerformers().clear();
@@ -1545,17 +1690,31 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", moodCode: ");
-		if (moodCodeESet) result.append(moodCode); else result.append("<unset>");
+		if (moodCodeESet) {
+			result.append(moodCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //SupplyImpl
+} // SupplyImpl

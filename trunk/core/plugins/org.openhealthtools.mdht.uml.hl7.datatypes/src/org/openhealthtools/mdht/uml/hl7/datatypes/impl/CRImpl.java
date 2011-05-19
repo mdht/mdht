@@ -117,8 +117,13 @@ public class CRImpl extends ANYImpl implements CR {
 		CV oldName = name;
 		name = newName;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.CR__NAME, oldName, newName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CR__NAME, oldName, newName);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -131,15 +136,21 @@ public class CRImpl extends ANYImpl implements CR {
 	public void setName(CV newName) {
 		if (newName != name) {
 			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__NAME, null, msgs);
+			if (name != null) {
+				msgs = ((InternalEObject) name).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__NAME, null, msgs);
+			}
+			if (newName != null) {
+				msgs = ((InternalEObject) newName).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__NAME, null, msgs);
+			}
 			msgs = basicSetName(newName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CR__NAME, newName, newName));
+		}
 	}
 
 	/**
@@ -160,8 +171,13 @@ public class CRImpl extends ANYImpl implements CR {
 		CD oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.CR__VALUE, oldValue, newValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.CR__VALUE, oldValue, newValue);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -174,15 +190,21 @@ public class CRImpl extends ANYImpl implements CR {
 	public void setValue(CD newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
-			if (value != null)
-				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__VALUE, null, msgs);
-			if (newValue != null)
-				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.CR__VALUE, null, msgs);
+			if (value != null) {
+				msgs = ((InternalEObject) value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.CR__VALUE, null, msgs);
+			}
+			if (newValue != null) {
+				msgs = ((InternalEObject) newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.CR__VALUE, null, msgs);
+			}
 			msgs = basicSetValue(newValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CR__VALUE, newValue, newValue));
+		}
 	}
 
 	/**
@@ -202,8 +224,9 @@ public class CRImpl extends ANYImpl implements CR {
 	public void setInverted(boolean newInverted) {
 		boolean oldInverted = inverted;
 		inverted = newInverted;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.CR__INVERTED, oldInverted, inverted));
+		}
 	}
 
 	/**
@@ -258,13 +281,13 @@ public class CRImpl extends ANYImpl implements CR {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.CR__NAME:
-				setName((CV)newValue);
+				setName((CV) newValue);
 				return;
 			case DatatypesPackage.CR__VALUE:
-				setValue((CD)newValue);
+				setValue((CD) newValue);
 				return;
 			case DatatypesPackage.CR__INVERTED:
-				setInverted((Boolean)newValue);
+				setInverted((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -279,10 +302,10 @@ public class CRImpl extends ANYImpl implements CR {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.CR__NAME:
-				setName((CV)null);
+				setName((CV) null);
 				return;
 			case DatatypesPackage.CR__VALUE:
-				setValue((CD)null);
+				setValue((CD) null);
 				return;
 			case DatatypesPackage.CR__INVERTED:
 				setInverted(INVERTED_EDEFAULT);
@@ -316,7 +339,9 @@ public class CRImpl extends ANYImpl implements CR {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (inverted: ");
@@ -325,4 +350,4 @@ public class CRImpl extends ANYImpl implements CR {
 		return result.toString();
 	}
 
-} //CRImpl
+} // CRImpl

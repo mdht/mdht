@@ -86,8 +86,9 @@ public class TSImpl extends QTYImpl implements TS {
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.TS__VALUE, oldValue, value));
+		}
 	}
 
 	/**
@@ -113,7 +114,7 @@ public class TSImpl extends QTYImpl implements TS {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.TS__VALUE:
-				setValue((String)newValue);
+				setValue((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -143,7 +144,9 @@ public class TSImpl extends QTYImpl implements TS {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.TS__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return VALUE_EDEFAULT == null
+						? value != null
+						: !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,7 +158,9 @@ public class TSImpl extends QTYImpl implements TS {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -164,4 +169,4 @@ public class TSImpl extends QTYImpl implements TS {
 		return result.toString();
 	}
 
-} //TSImpl
+} // TSImpl

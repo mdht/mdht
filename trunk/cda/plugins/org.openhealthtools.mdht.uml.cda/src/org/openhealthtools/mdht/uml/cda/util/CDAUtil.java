@@ -59,6 +59,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.Diagnostician;
@@ -298,7 +299,7 @@ public class CDAUtil {
 		EAttribute mixed = EcoreFactory.eINSTANCE.createEAttribute();
 		mixed.setName("mixed");
 		mixed.setEType(EcorePackage.eINSTANCE.getEFeatureMapEntry());
-		mixed.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);
+		mixed.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
 		ExtendedMetaData.INSTANCE.setName(mixed, ":mixed");
 		ExtendedMetaData.INSTANCE.setFeatureKind(mixed, ExtendedMetaData.ELEMENT_WILDCARD_FEATURE);
 		documentRootEClass.getEStructuralFeatures().add(mixed);
@@ -308,7 +309,7 @@ public class CDAUtil {
 
 		xmlnsPrefixMap.setEType(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
 
-		xmlnsPrefixMap.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);
+		xmlnsPrefixMap.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
 		xmlnsPrefixMap.setContainment(true);
 		xmlnsPrefixMap.setTransient(true);
 		ExtendedMetaData.INSTANCE.setName(xmlnsPrefixMap, "xmlns:prefix");
@@ -320,7 +321,7 @@ public class CDAUtil {
 
 		xsiSchemaLocation.setEType(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
 
-		xsiSchemaLocation.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);
+		xsiSchemaLocation.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
 		xsiSchemaLocation.setContainment(true);
 		xsiSchemaLocation.setTransient(true);
 		ExtendedMetaData.INSTANCE.setName(xsiSchemaLocation, "xsi:schemaLocation");
@@ -340,7 +341,7 @@ public class CDAUtil {
 		}
 		snippetReference.setName(snippetName.toLowerCase());
 
-		snippetReference.setUpperBound(EStructuralFeature.UNBOUNDED_MULTIPLICITY);
+		snippetReference.setUpperBound(ETypedElement.UNBOUNDED_MULTIPLICITY);
 		snippetReference.setContainment(true);
 		snippetReference.setEType(cdaSnippet.eClass());
 
@@ -553,8 +554,9 @@ public class CDAUtil {
 			if (target != null && isReference(target)) {
 				// resolve 'id' referenced elements
 				ClinicalStatement element = resolveReference(target);
-				if (element != null)
+				if (element != null) {
 					target = element;
+				}
 			}
 			if ((Boolean.FALSE == rel.getInversionInd() || null == rel.getInversionInd()) && typeCodeMatch &&
 					target != null && (targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
@@ -601,8 +603,9 @@ public class CDAUtil {
 			if (target != null && isReference(target)) {
 				// resolve 'id' referenced elements
 				ClinicalStatement element = resolveReference(target);
-				if (element != null)
+				if (element != null) {
 					target = element;
+				}
 			}
 			if (typeCodeMatch && target != null && (targetClass == null || targetClass.isSuperTypeOf(target.eClass()))) {
 				targets.add(target);

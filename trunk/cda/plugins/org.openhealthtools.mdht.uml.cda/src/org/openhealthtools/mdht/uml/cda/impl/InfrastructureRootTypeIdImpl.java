@@ -123,8 +123,11 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 		redefinedRoot = newRedefinedRoot;
 		boolean oldRedefinedRootESet = redefinedRootESet;
 		redefinedRootESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT, oldRedefinedRoot, redefinedRoot, !oldRedefinedRootESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT, oldRedefinedRoot,
+				redefinedRoot, !oldRedefinedRootESet));
+		}
 	}
 
 	/**
@@ -137,8 +140,11 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 		boolean oldRedefinedRootESet = redefinedRootESet;
 		redefinedRoot = REDEFINED_ROOT_EDEFAULT;
 		redefinedRootESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT, oldRedefinedRoot, REDEFINED_ROOT_EDEFAULT, oldRedefinedRootESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT, oldRedefinedRoot,
+				REDEFINED_ROOT_EDEFAULT, oldRedefinedRootESet));
+		}
 	}
 
 	/**
@@ -167,8 +173,11 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	public void setRedefinedExtension(String newRedefinedExtension) {
 		String oldRedefinedExtension = redefinedExtension;
 		redefinedExtension = newRedefinedExtension;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION, oldRedefinedExtension, redefinedExtension));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION,
+				oldRedefinedExtension, redefinedExtension));
+		}
 	}
 
 	/**
@@ -177,7 +186,9 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 * @generated
 	 */
 	public boolean isSetRedefinedExtension() {
-		return REDEFINED_EXTENSION_EDEFAULT == null ? redefinedExtension != null : !REDEFINED_EXTENSION_EDEFAULT.equals(redefinedExtension);
+		return REDEFINED_EXTENSION_EDEFAULT == null
+				? redefinedExtension != null
+				: !REDEFINED_EXTENSION_EDEFAULT.equals(redefinedExtension);
 	}
 
 	/**
@@ -233,10 +244,10 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT:
-				setRedefinedRoot((String)newValue);
+				setRedefinedRoot((String) newValue);
 				return;
 			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION:
-				setRedefinedExtension((String)newValue);
+				setRedefinedExtension((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,11 +294,17 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (redefinedRoot: ");
-		if (redefinedRootESet) result.append(redefinedRoot); else result.append("<unset>");
+		if (redefinedRootESet) {
+			result.append(redefinedRoot);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", redefinedExtension: ");
 		result.append(redefinedExtension);
 		result.append(')');
@@ -320,7 +337,7 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 * @generated
 	 */
 	public boolean isSetRoot() {
-  		return false;
+		return false;
 	}
 
 	/**
@@ -349,7 +366,7 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 * @generated
 	 */
 	public boolean isSetExtension() {
-  		return false;
+		return false;
 	}
 
-} //InfrastructureRootTypeIdImpl
+} // InfrastructureRootTypeIdImpl

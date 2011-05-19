@@ -206,6 +206,7 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.HEALTH_CARE_FACILITY__REALM_CODE);
@@ -218,6 +219,7 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -231,8 +233,13 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -245,15 +252,22 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -261,6 +275,7 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.HEALTH_CARE_FACILITY__TEMPLATE_ID);
@@ -298,8 +313,13 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		CE oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -312,15 +332,22 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	public void setCode(CE newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CODE, newCode, newCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CODE, newCode, newCode));
 	}
 
 	/**
@@ -341,8 +368,13 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		Place oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__LOCATION, oldLocation, newLocation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__LOCATION, oldLocation, newLocation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -355,15 +387,22 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	public void setLocation(Place newLocation) {
 		if (newLocation != location) {
 			NotificationChain msgs = null;
-			if (location != null)
-				msgs = ((InternalEObject)location).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__LOCATION, null, msgs);
-			if (newLocation != null)
-				msgs = ((InternalEObject)newLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__LOCATION, null, msgs);
+			if (location != null) {
+				msgs = ((InternalEObject) location).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__LOCATION, null, msgs);
+			}
+			if (newLocation != null) {
+				msgs = ((InternalEObject) newLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__LOCATION, null, msgs);
+			}
 			msgs = basicSetLocation(newLocation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__LOCATION, newLocation, newLocation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__LOCATION, newLocation, newLocation));
 	}
 
 	/**
@@ -380,12 +419,19 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServiceProviderOrganization(Organization newServiceProviderOrganization, NotificationChain msgs) {
+	public NotificationChain basicSetServiceProviderOrganization(Organization newServiceProviderOrganization,
+			NotificationChain msgs) {
 		Organization oldServiceProviderOrganization = serviceProviderOrganization;
 		serviceProviderOrganization = newServiceProviderOrganization;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION, oldServiceProviderOrganization, newServiceProviderOrganization);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION,
+				oldServiceProviderOrganization, newServiceProviderOrganization);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -398,15 +444,23 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	public void setServiceProviderOrganization(Organization newServiceProviderOrganization) {
 		if (newServiceProviderOrganization != serviceProviderOrganization) {
 			NotificationChain msgs = null;
-			if (serviceProviderOrganization != null)
-				msgs = ((InternalEObject)serviceProviderOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION, null, msgs);
-			if (newServiceProviderOrganization != null)
-				msgs = ((InternalEObject)newServiceProviderOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION, null, msgs);
+			if (serviceProviderOrganization != null) {
+				msgs = ((InternalEObject) serviceProviderOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION, null, msgs);
+			}
+			if (newServiceProviderOrganization != null) {
+				msgs = ((InternalEObject) newServiceProviderOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION, null, msgs);
+			}
 			msgs = basicSetServiceProviderOrganization(newServiceProviderOrganization, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION,
+				newServiceProviderOrganization, newServiceProviderOrganization));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION, newServiceProviderOrganization, newServiceProviderOrganization));
 	}
 
 	/**
@@ -414,6 +468,7 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -425,11 +480,16 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -442,8 +502,11 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -460,6 +523,7 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RoleClassServiceDeliveryLocation getClassCode() {
 		return classCode;
 	}
@@ -471,11 +535,16 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 */
 	public void setClassCode(RoleClassServiceDeliveryLocation newClassCode) {
 		RoleClassServiceDeliveryLocation oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -488,8 +557,11 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE, oldClassCode,
+				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -510,13 +582,13 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.HEALTH_CARE_FACILITY__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.HEALTH_CARE_FACILITY__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.HEALTH_CARE_FACILITY__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.HEALTH_CARE_FACILITY__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.HEALTH_CARE_FACILITY__LOCATION:
@@ -568,33 +640,33 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		switch (featureID) {
 			case CDAPackage.HEALTH_CARE_FACILITY__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__CODE:
-				setCode((CE)newValue);
+				setCode((CE) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__LOCATION:
-				setLocation((Place)newValue);
+				setLocation((Place) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION:
-				setServiceProviderOrganization((Organization)newValue);
+				setServiceProviderOrganization((Organization) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE:
-				setClassCode((RoleClassServiceDeliveryLocation)newValue);
+				setClassCode((RoleClassServiceDeliveryLocation) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -612,7 +684,7 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -621,13 +693,13 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 				getIds().clear();
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__CODE:
-				setCode((CE)null);
+				setCode((CE) null);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__LOCATION:
-				setLocation((Place)null);
+				setLocation((Place) null);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION:
-				setServiceProviderOrganization((Organization)null);
+				setServiceProviderOrganization((Organization) null);
 				return;
 			case CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -676,15 +748,25 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //HealthCareFacilityImpl
+} // HealthCareFacilityImpl

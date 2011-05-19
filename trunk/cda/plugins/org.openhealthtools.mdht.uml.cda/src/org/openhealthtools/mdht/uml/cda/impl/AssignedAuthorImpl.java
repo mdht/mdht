@@ -245,6 +245,7 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ASSIGNED_AUTHOR__REALM_CODE);
@@ -257,6 +258,7 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -270,8 +272,13 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -284,15 +291,22 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -300,6 +314,7 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ASSIGNED_AUTHOR__TEMPLATE_ID);
@@ -337,8 +352,13 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 		CE oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -351,15 +371,21 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	public void setCode(CE newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__CODE, newCode, newCode));
+		}
 	}
 
 	/**
@@ -404,8 +430,14 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 		Person oldAssignedPerson = assignedPerson;
 		assignedPerson = newAssignedPerson;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, oldAssignedPerson, newAssignedPerson);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, oldAssignedPerson,
+				newAssignedPerson);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -418,15 +450,23 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	public void setAssignedPerson(Person newAssignedPerson) {
 		if (newAssignedPerson != assignedPerson) {
 			NotificationChain msgs = null;
-			if (assignedPerson != null)
-				msgs = ((InternalEObject)assignedPerson).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, null, msgs);
-			if (newAssignedPerson != null)
-				msgs = ((InternalEObject)newAssignedPerson).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, null, msgs);
+			if (assignedPerson != null) {
+				msgs = ((InternalEObject) assignedPerson).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, null, msgs);
+			}
+			if (newAssignedPerson != null) {
+				msgs = ((InternalEObject) newAssignedPerson).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, null, msgs);
+			}
 			msgs = basicSetAssignedPerson(newAssignedPerson, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, newAssignedPerson,
+				newAssignedPerson));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON, newAssignedPerson, newAssignedPerson));
 	}
 
 	/**
@@ -443,12 +483,19 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAssignedAuthoringDevice(AuthoringDevice newAssignedAuthoringDevice, NotificationChain msgs) {
+	public NotificationChain basicSetAssignedAuthoringDevice(AuthoringDevice newAssignedAuthoringDevice,
+			NotificationChain msgs) {
 		AuthoringDevice oldAssignedAuthoringDevice = assignedAuthoringDevice;
 		assignedAuthoringDevice = newAssignedAuthoringDevice;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE, oldAssignedAuthoringDevice, newAssignedAuthoringDevice);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE,
+				oldAssignedAuthoringDevice, newAssignedAuthoringDevice);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -461,15 +508,23 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	public void setAssignedAuthoringDevice(AuthoringDevice newAssignedAuthoringDevice) {
 		if (newAssignedAuthoringDevice != assignedAuthoringDevice) {
 			NotificationChain msgs = null;
-			if (assignedAuthoringDevice != null)
-				msgs = ((InternalEObject)assignedAuthoringDevice).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE, null, msgs);
-			if (newAssignedAuthoringDevice != null)
-				msgs = ((InternalEObject)newAssignedAuthoringDevice).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE, null, msgs);
+			if (assignedAuthoringDevice != null) {
+				msgs = ((InternalEObject) assignedAuthoringDevice).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE, null, msgs);
+			}
+			if (newAssignedAuthoringDevice != null) {
+				msgs = ((InternalEObject) newAssignedAuthoringDevice).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE, null, msgs);
+			}
 			msgs = basicSetAssignedAuthoringDevice(newAssignedAuthoringDevice, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE,
+				newAssignedAuthoringDevice, newAssignedAuthoringDevice));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE, newAssignedAuthoringDevice, newAssignedAuthoringDevice));
 	}
 
 	/**
@@ -486,12 +541,19 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRepresentedOrganization(Organization newRepresentedOrganization, NotificationChain msgs) {
+	public NotificationChain basicSetRepresentedOrganization(Organization newRepresentedOrganization,
+			NotificationChain msgs) {
 		Organization oldRepresentedOrganization = representedOrganization;
 		representedOrganization = newRepresentedOrganization;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION, oldRepresentedOrganization, newRepresentedOrganization);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION,
+				oldRepresentedOrganization, newRepresentedOrganization);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -504,15 +566,23 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	public void setRepresentedOrganization(Organization newRepresentedOrganization) {
 		if (newRepresentedOrganization != representedOrganization) {
 			NotificationChain msgs = null;
-			if (representedOrganization != null)
-				msgs = ((InternalEObject)representedOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION, null, msgs);
-			if (newRepresentedOrganization != null)
-				msgs = ((InternalEObject)newRepresentedOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION, null, msgs);
+			if (representedOrganization != null) {
+				msgs = ((InternalEObject) representedOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION, null, msgs);
+			}
+			if (newRepresentedOrganization != null) {
+				msgs = ((InternalEObject) newRepresentedOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION, null, msgs);
+			}
 			msgs = basicSetRepresentedOrganization(newRepresentedOrganization, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION,
+				newRepresentedOrganization, newRepresentedOrganization));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION, newRepresentedOrganization, newRepresentedOrganization));
 	}
 
 	/**
@@ -520,6 +590,7 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -531,11 +602,16 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -548,8 +624,11 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_AUTHOR__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ASSIGNED_AUTHOR__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -566,6 +645,7 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RoleClassAssignedEntity getClassCode() {
 		return classCode;
 	}
@@ -577,11 +657,16 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 */
 	public void setClassCode(RoleClassAssignedEntity newClassCode) {
 		RoleClassAssignedEntity oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_AUTHOR__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -594,8 +679,11 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_AUTHOR__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ASSIGNED_AUTHOR__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -634,19 +722,19 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ASSIGNED_AUTHOR__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__ADDR:
-				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__TELECOM:
-				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON:
 				return basicSetAssignedPerson(null, msgs);
 			case CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE:
@@ -704,44 +792,44 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 		switch (featureID) {
 			case CDAPackage.ASSIGNED_AUTHOR__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__CODE:
-				setCode((CE)newValue);
+				setCode((CE) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__ADDR:
 				getAddrs().clear();
-				getAddrs().addAll((Collection<? extends AD>)newValue);
+				getAddrs().addAll((Collection<? extends AD>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__TELECOM:
 				getTelecoms().clear();
-				getTelecoms().addAll((Collection<? extends TEL>)newValue);
+				getTelecoms().addAll((Collection<? extends TEL>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON:
-				setAssignedPerson((Person)newValue);
+				setAssignedPerson((Person) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE:
-				setAssignedAuthoringDevice((AuthoringDevice)newValue);
+				setAssignedAuthoringDevice((AuthoringDevice) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION:
-				setRepresentedOrganization((Organization)newValue);
+				setRepresentedOrganization((Organization) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__CLASS_CODE:
-				setClassCode((RoleClassAssignedEntity)newValue);
+				setClassCode((RoleClassAssignedEntity) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -759,7 +847,7 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -768,7 +856,7 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 				getIds().clear();
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__CODE:
-				setCode((CE)null);
+				setCode((CE) null);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__ADDR:
 				getAddrs().clear();
@@ -777,13 +865,13 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 				getTelecoms().clear();
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_PERSON:
-				setAssignedPerson((Person)null);
+				setAssignedPerson((Person) null);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE:
-				setAssignedAuthoringDevice((AuthoringDevice)null);
+				setAssignedAuthoringDevice((AuthoringDevice) null);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION:
-				setRepresentedOrganization((Organization)null);
+				setRepresentedOrganization((Organization) null);
 				return;
 			case CDAPackage.ASSIGNED_AUTHOR__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -838,15 +926,25 @@ public class AssignedAuthorImpl extends RoleImpl implements AssignedAuthor {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //AssignedAuthorImpl
+} // AssignedAuthorImpl

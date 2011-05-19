@@ -352,6 +352,7 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.OBSERVATION_MEDIA__REALM_CODE);
@@ -364,6 +365,7 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -377,8 +379,13 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -391,15 +398,22 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -407,6 +421,7 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID);
@@ -444,8 +459,13 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		CS oldLanguageCode = languageCode;
 		languageCode = newLanguageCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, oldLanguageCode, newLanguageCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, oldLanguageCode, newLanguageCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -458,15 +478,22 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	public void setLanguageCode(CS newLanguageCode) {
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
-			if (languageCode != null)
-				msgs = ((InternalEObject)languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, null, msgs);
-			if (newLanguageCode != null)
-				msgs = ((InternalEObject)newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, null, msgs);
+			if (languageCode != null) {
+				msgs = ((InternalEObject) languageCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, null, msgs);
+			}
+			if (newLanguageCode != null) {
+				msgs = ((InternalEObject) newLanguageCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, null, msgs);
+			}
 			msgs = basicSetLanguageCode(newLanguageCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
 	}
 
 	/**
@@ -487,8 +514,13 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		ED oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__VALUE, oldValue, newValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__VALUE, oldValue, newValue);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -501,15 +533,22 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	public void setValue(ED newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
-			if (value != null)
-				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__VALUE, null, msgs);
-			if (newValue != null)
-				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__VALUE, null, msgs);
+			if (value != null) {
+				msgs = ((InternalEObject) value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__VALUE, null, msgs);
+			}
+			if (newValue != null) {
+				msgs = ((InternalEObject) newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__VALUE, null, msgs);
+			}
 			msgs = basicSetValue(newValue, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__VALUE, newValue, newValue));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__VALUE, newValue, newValue));
 	}
 
 	/**
@@ -530,8 +569,13 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		Subject oldSubject = subject;
 		subject = newSubject;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__SUBJECT, oldSubject, newSubject);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__SUBJECT, oldSubject, newSubject);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -544,15 +588,22 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	public void setSubject(Subject newSubject) {
 		if (newSubject != subject) {
 			NotificationChain msgs = null;
-			if (subject != null)
-				msgs = ((InternalEObject)subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__SUBJECT, null, msgs);
-			if (newSubject != null)
-				msgs = ((InternalEObject)newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.OBSERVATION_MEDIA__SUBJECT, null, msgs);
+			if (subject != null) {
+				msgs = ((InternalEObject) subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__SUBJECT, null, msgs);
+			}
+			if (newSubject != null) {
+				msgs = ((InternalEObject) newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.OBSERVATION_MEDIA__SUBJECT, null, msgs);
+			}
 			msgs = basicSetSubject(newSubject, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__SUBJECT, newSubject, newSubject));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__SUBJECT, newSubject, newSubject));
 	}
 
 	/**
@@ -562,7 +613,8 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public EList<Specimen> getSpecimens() {
 		if (specimens == null) {
-			specimens = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.OBSERVATION_MEDIA__SPECIMEN);
+			specimens = new EObjectContainmentEList<Specimen>(
+				Specimen.class, this, CDAPackage.OBSERVATION_MEDIA__SPECIMEN);
 		}
 		return specimens;
 	}
@@ -574,7 +626,8 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public EList<Performer2> getPerformers() {
 		if (performers == null) {
-			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.OBSERVATION_MEDIA__PERFORMER);
+			performers = new EObjectContainmentEList<Performer2>(
+				Performer2.class, this, CDAPackage.OBSERVATION_MEDIA__PERFORMER);
 		}
 		return performers;
 	}
@@ -598,7 +651,8 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public EList<Informant12> getInformants() {
 		if (informants == null) {
-			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.OBSERVATION_MEDIA__INFORMANT);
+			informants = new EObjectContainmentEList<Informant12>(
+				Informant12.class, this, CDAPackage.OBSERVATION_MEDIA__INFORMANT);
 		}
 		return informants;
 	}
@@ -610,7 +664,8 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public EList<Participant2> getParticipants() {
 		if (participants == null) {
-			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.OBSERVATION_MEDIA__PARTICIPANT);
+			participants = new EObjectContainmentEList<Participant2>(
+				Participant2.class, this, CDAPackage.OBSERVATION_MEDIA__PARTICIPANT);
 		}
 		return participants;
 	}
@@ -622,7 +677,8 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public EList<EntryRelationship> getEntryRelationships() {
 		if (entryRelationships == null) {
-			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP);
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(
+				EntryRelationship.class, this, CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP);
 		}
 		return entryRelationships;
 	}
@@ -634,7 +690,8 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public EList<Reference> getReferences() {
 		if (references == null) {
-			references = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.OBSERVATION_MEDIA__REFERENCE);
+			references = new EObjectContainmentEList<Reference>(
+				Reference.class, this, CDAPackage.OBSERVATION_MEDIA__REFERENCE);
 		}
 		return references;
 	}
@@ -646,7 +703,8 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public EList<Precondition> getPreconditions() {
 		if (preconditions == null) {
-			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.OBSERVATION_MEDIA__PRECONDITION);
+			preconditions = new EObjectContainmentEList<Precondition>(
+				Precondition.class, this, CDAPackage.OBSERVATION_MEDIA__PRECONDITION);
 		}
 		return preconditions;
 	}
@@ -668,8 +726,11 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	public void setObservationMediaId(String newObservationMediaId) {
 		String oldObservationMediaId = observationMediaId;
 		observationMediaId = newObservationMediaId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID, oldObservationMediaId, observationMediaId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID, oldObservationMediaId,
+				observationMediaId));
+		}
 	}
 
 	/**
@@ -677,6 +738,7 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -688,11 +750,16 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -705,8 +772,11 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -723,6 +793,7 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActClassObservation getClassCode() {
 		return classCode;
 	}
@@ -734,11 +805,16 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public void setClassCode(ActClassObservation newClassCode) {
 		ActClassObservation oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -751,8 +827,11 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_MEDIA__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.OBSERVATION_MEDIA__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -769,6 +848,7 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActMood getMoodCode() {
 		return moodCode;
 	}
@@ -780,11 +860,16 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	public void setMoodCode(ActMood newMoodCode) {
 		ActMood oldMoodCode = moodCode;
-		moodCode = newMoodCode == null ? MOOD_CODE_EDEFAULT : newMoodCode;
+		moodCode = newMoodCode == null
+				? MOOD_CODE_EDEFAULT
+				: newMoodCode;
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.OBSERVATION_MEDIA__MOOD_CODE, oldMoodCode, moodCode,
+				!oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -797,8 +882,11 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_MEDIA__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.OBSERVATION_MEDIA__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+				oldMoodCodeESet));
+		}
 	}
 
 	/**
@@ -819,13 +907,13 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION_MEDIA__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__ID:
-				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
 				return basicSetLanguageCode(null, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__VALUE:
@@ -833,21 +921,21 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 			case CDAPackage.OBSERVATION_MEDIA__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
-				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__PERFORMER:
-				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__AUTHOR:
-				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__INFORMANT:
-				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__PARTICIPANT:
-				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__REFERENCE:
-				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
-				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -913,71 +1001,71 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 		switch (featureID) {
 			case CDAPackage.OBSERVATION_MEDIA__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__ID:
 				getIds().clear();
-				getIds().addAll((Collection<? extends II>)newValue);
+				getIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
-				setLanguageCode((CS)newValue);
+				setLanguageCode((CS) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__VALUE:
-				setValue((ED)newValue);
+				setValue((ED) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__SUBJECT:
-				setSubject((Subject)newValue);
+				setSubject((Subject) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
 				getSpecimens().clear();
-				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().addAll((Collection<? extends Specimen>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PERFORMER:
 				getPerformers().clear();
-				getPerformers().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().addAll((Collection<? extends Performer2>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__AUTHOR:
 				getAuthors().clear();
-				getAuthors().addAll((Collection<? extends Author>)newValue);
+				getAuthors().addAll((Collection<? extends Author>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__INFORMANT:
 				getInformants().clear();
-				getInformants().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().addAll((Collection<? extends Informant12>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PARTICIPANT:
 				getParticipants().clear();
-				getParticipants().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().addAll((Collection<? extends Participant2>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP:
 				getEntryRelationships().clear();
-				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__REFERENCE:
 				getReferences().clear();
-				getReferences().addAll((Collection<? extends Reference>)newValue);
+				getReferences().addAll((Collection<? extends Reference>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
 				getPreconditions().clear();
-				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().addAll((Collection<? extends Precondition>) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID:
-				setObservationMediaId((String)newValue);
+				setObservationMediaId((String) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__CLASS_CODE:
-				setClassCode((ActClassObservation)newValue);
+				setClassCode((ActClassObservation) newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__MOOD_CODE:
-				setMoodCode((ActMood)newValue);
+				setMoodCode((ActMood) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -995,7 +1083,7 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
 				getTemplateIds().clear();
@@ -1004,13 +1092,13 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 				getIds().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
-				setLanguageCode((CS)null);
+				setLanguageCode((CS) null);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__VALUE:
-				setValue((ED)null);
+				setValue((ED) null);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__SUBJECT:
-				setSubject((Subject)null);
+				setSubject((Subject) null);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
 				getSpecimens().clear();
@@ -1091,7 +1179,9 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
 				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID:
-				return OBSERVATION_MEDIA_ID_EDEFAULT == null ? observationMediaId != null : !OBSERVATION_MEDIA_ID_EDEFAULT.equals(observationMediaId);
+				return OBSERVATION_MEDIA_ID_EDEFAULT == null
+						? observationMediaId != null
+						: !OBSERVATION_MEDIA_ID_EDEFAULT.equals(observationMediaId);
 			case CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.OBSERVATION_MEDIA__CLASS_CODE:
@@ -1109,19 +1199,33 @@ public class ObservationMediaImpl extends ClinicalStatementImpl implements Obser
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (observationMediaId: ");
 		result.append(observationMediaId);
 		result.append(", nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", moodCode: ");
-		if (moodCodeESet) result.append(moodCode); else result.append("<unset>");
+		if (moodCodeESet) {
+			result.append(moodCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ObservationMediaImpl
+} // ObservationMediaImpl

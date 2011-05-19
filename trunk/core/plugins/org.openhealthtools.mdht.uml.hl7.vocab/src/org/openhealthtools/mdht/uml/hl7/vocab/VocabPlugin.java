@@ -43,7 +43,7 @@ public final class VocabPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public VocabPlugin() {
-		super(new ResourceLocator [] {});
+		super(new ResourceLocator[] {});
 	}
 
 	/**

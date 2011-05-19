@@ -90,8 +90,9 @@ public class BLImpl extends ANYImpl implements BL {
 	public void setValue(Boolean newValue) {
 		Boolean oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.BL__VALUE, oldValue, value));
+		}
 	}
 
 	/**
@@ -126,7 +127,7 @@ public class BLImpl extends ANYImpl implements BL {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.BL__VALUE:
-				setValue((Boolean)newValue);
+				setValue((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +157,9 @@ public class BLImpl extends ANYImpl implements BL {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.BL__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return VALUE_EDEFAULT == null
+						? value != null
+						: !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -168,7 +171,9 @@ public class BLImpl extends ANYImpl implements BL {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -177,4 +182,4 @@ public class BLImpl extends ANYImpl implements BL {
 		return result.toString();
 	}
 
-} //BLImpl
+} // BLImpl

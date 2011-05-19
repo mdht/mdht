@@ -174,6 +174,7 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ASSIGNED_CUSTODIAN__REALM_CODE);
@@ -186,6 +187,7 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -199,8 +201,13 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -213,15 +220,22 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, newTypeId, newTypeId));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, newTypeId, newTypeId));
 	}
 
 	/**
@@ -229,6 +243,7 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ASSIGNED_CUSTODIAN__TEMPLATE_ID);
@@ -250,12 +265,19 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRepresentedCustodianOrganization(CustodianOrganization newRepresentedCustodianOrganization, NotificationChain msgs) {
+	public NotificationChain basicSetRepresentedCustodianOrganization(
+			CustodianOrganization newRepresentedCustodianOrganization, NotificationChain msgs) {
 		CustodianOrganization oldRepresentedCustodianOrganization = representedCustodianOrganization;
 		representedCustodianOrganization = newRepresentedCustodianOrganization;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION, oldRepresentedCustodianOrganization, newRepresentedCustodianOrganization);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION,
+				oldRepresentedCustodianOrganization, newRepresentedCustodianOrganization);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -268,15 +290,25 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	public void setRepresentedCustodianOrganization(CustodianOrganization newRepresentedCustodianOrganization) {
 		if (newRepresentedCustodianOrganization != representedCustodianOrganization) {
 			NotificationChain msgs = null;
-			if (representedCustodianOrganization != null)
-				msgs = ((InternalEObject)representedCustodianOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION, null, msgs);
-			if (newRepresentedCustodianOrganization != null)
-				msgs = ((InternalEObject)newRepresentedCustodianOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION, null, msgs);
+			if (representedCustodianOrganization != null) {
+				msgs = ((InternalEObject) representedCustodianOrganization).eInverseRemove(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION,
+					null, msgs);
+			}
+			if (newRepresentedCustodianOrganization != null) {
+				msgs = ((InternalEObject) newRepresentedCustodianOrganization).eInverseAdd(
+					this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION,
+					null, msgs);
+			}
 			msgs = basicSetRepresentedCustodianOrganization(newRepresentedCustodianOrganization, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION,
+				newRepresentedCustodianOrganization, newRepresentedCustodianOrganization));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION, newRepresentedCustodianOrganization, newRepresentedCustodianOrganization));
 	}
 
 	/**
@@ -284,6 +316,7 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -295,11 +328,16 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -312,8 +350,11 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR, oldNullFlavor,
+				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -330,6 +371,7 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RoleClassAssignedEntity getClassCode() {
 		return classCode;
 	}
@@ -341,11 +383,16 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 */
 	public void setClassCode(RoleClassAssignedEntity newClassCode) {
 		RoleClassAssignedEntity oldClassCode = classCode;
-		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		classCode = newClassCode == null
+				? CLASS_CODE_EDEFAULT
+				: newClassCode;
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE, oldClassCode, classCode,
+				!oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -358,8 +405,11 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		boolean oldClassCodeESet = classCodeESet;
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+				oldClassCodeESet));
+		}
 	}
 
 	/**
@@ -389,11 +439,11 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ASSIGNED_CUSTODIAN__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ASSIGNED_CUSTODIAN__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION:
 				return basicSetRepresentedCustodianOrganization(null, msgs);
 		}
@@ -435,23 +485,23 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		switch (featureID) {
 			case CDAPackage.ASSIGNED_CUSTODIAN__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION:
-				setRepresentedCustodianOrganization((CustodianOrganization)newValue);
+				setRepresentedCustodianOrganization((CustodianOrganization) newValue);
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE:
-				setClassCode((RoleClassAssignedEntity)newValue);
+				setClassCode((RoleClassAssignedEntity) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -469,13 +519,13 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION:
-				setRepresentedCustodianOrganization((CustodianOrganization)null);
+				setRepresentedCustodianOrganization((CustodianOrganization) null);
 				return;
 			case CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -518,15 +568,25 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", classCode: ");
-		if (classCodeESet) result.append(classCode); else result.append("<unset>");
+		if (classCodeESet) {
+			result.append(classCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //AssignedCustodianImpl
+} // AssignedCustodianImpl

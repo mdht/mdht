@@ -63,7 +63,7 @@ public class ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  boolean hasContent(ANY any) {
+	public static boolean hasContent(ANY any) {
 		for (EStructuralFeature feature : any.eClass().getEAllStructuralFeatures()) {
 			if (any.eIsSet(feature) && !"nullFlavor".equals(feature.getName())) {
 				return true;
@@ -77,7 +77,7 @@ public class ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  boolean isDefined(ANY any, String featureName) {
+	public static boolean isDefined(ANY any, String featureName) {
 		return (any.eIsSet(any.eClass().getEStructuralFeature(featureName)));
 	}
 

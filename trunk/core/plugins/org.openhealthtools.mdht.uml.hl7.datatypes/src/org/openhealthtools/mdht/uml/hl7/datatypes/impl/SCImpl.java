@@ -170,8 +170,9 @@ public class SCImpl extends STImpl implements SC {
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -191,8 +192,10 @@ public class SCImpl extends STImpl implements SC {
 	public void setCodeSystem(String newCodeSystem) {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
 	}
 
 	/**
@@ -212,8 +215,10 @@ public class SCImpl extends STImpl implements SC {
 	public void setCodeSystemName(String newCodeSystemName) {
 		String oldCodeSystemName = codeSystemName;
 		codeSystemName = newCodeSystemName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+		}
 	}
 
 	/**
@@ -233,8 +238,11 @@ public class SCImpl extends STImpl implements SC {
 	public void setCodeSystemVersion(String newCodeSystemVersion) {
 		String oldCodeSystemVersion = codeSystemVersion;
 		codeSystemVersion = newCodeSystemVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_VERSION, oldCodeSystemVersion, codeSystemVersion));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.SC__CODE_SYSTEM_VERSION, oldCodeSystemVersion,
+				codeSystemVersion));
+		}
 	}
 
 	/**
@@ -254,8 +262,10 @@ public class SCImpl extends STImpl implements SC {
 	public void setDisplayName(String newDisplayName) {
 		String oldDisplayName = displayName;
 		displayName = newDisplayName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SC__DISPLAY_NAME, oldDisplayName, displayName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.SC__DISPLAY_NAME, oldDisplayName, displayName));
+		}
 	}
 
 	/**
@@ -289,19 +299,19 @@ public class SCImpl extends STImpl implements SC {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.SC__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 			case DatatypesPackage.SC__CODE_SYSTEM:
-				setCodeSystem((String)newValue);
+				setCodeSystem((String) newValue);
 				return;
 			case DatatypesPackage.SC__CODE_SYSTEM_NAME:
-				setCodeSystemName((String)newValue);
+				setCodeSystemName((String) newValue);
 				return;
 			case DatatypesPackage.SC__CODE_SYSTEM_VERSION:
-				setCodeSystemVersion((String)newValue);
+				setCodeSystemVersion((String) newValue);
 				return;
 			case DatatypesPackage.SC__DISPLAY_NAME:
-				setDisplayName((String)newValue);
+				setDisplayName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -343,15 +353,25 @@ public class SCImpl extends STImpl implements SC {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.SC__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 			case DatatypesPackage.SC__CODE_SYSTEM:
-				return CODE_SYSTEM_EDEFAULT == null ? codeSystem != null : !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
+				return CODE_SYSTEM_EDEFAULT == null
+						? codeSystem != null
+						: !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
 			case DatatypesPackage.SC__CODE_SYSTEM_NAME:
-				return CODE_SYSTEM_NAME_EDEFAULT == null ? codeSystemName != null : !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
+				return CODE_SYSTEM_NAME_EDEFAULT == null
+						? codeSystemName != null
+						: !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
 			case DatatypesPackage.SC__CODE_SYSTEM_VERSION:
-				return CODE_SYSTEM_VERSION_EDEFAULT == null ? codeSystemVersion != null : !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
+				return CODE_SYSTEM_VERSION_EDEFAULT == null
+						? codeSystemVersion != null
+						: !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
 			case DatatypesPackage.SC__DISPLAY_NAME:
-				return DISPLAY_NAME_EDEFAULT == null ? displayName != null : !DISPLAY_NAME_EDEFAULT.equals(displayName);
+				return DISPLAY_NAME_EDEFAULT == null
+						? displayName != null
+						: !DISPLAY_NAME_EDEFAULT.equals(displayName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -363,7 +383,9 @@ public class SCImpl extends STImpl implements SC {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
@@ -380,4 +402,4 @@ public class SCImpl extends STImpl implements SC {
 		return result.toString();
 	}
 
-} //SCImpl
+} // SCImpl

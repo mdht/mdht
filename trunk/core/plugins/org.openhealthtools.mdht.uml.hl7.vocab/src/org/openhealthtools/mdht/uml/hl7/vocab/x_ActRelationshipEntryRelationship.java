@@ -282,19 +282,8 @@ public enum x_ActRelationshipEntryRelationship implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final x_ActRelationshipEntryRelationship[] VALUES_ARRAY =
-		new x_ActRelationshipEntryRelationship[] {
-			CAUS,
-			COMP,
-			GEVL,
-			MFST,
-			REFR,
-			RSON,
-			SAS,
-			SPRT,
-			SUBJ,
-			XCRPT,
-		};
+	private static final x_ActRelationshipEntryRelationship[] VALUES_ARRAY = new x_ActRelationshipEntryRelationship[] {
+			CAUS, COMP, GEVL, MFST, REFR, RSON, SAS, SPRT, SUBJ, XCRPT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>xAct Relationship Entry Relationship</b></em>' enumerators.
@@ -344,16 +333,26 @@ public enum x_ActRelationshipEntryRelationship implements Enumerator {
 	 */
 	public static x_ActRelationshipEntryRelationship get(int value) {
 		switch (value) {
-			case CAUS_VALUE: return CAUS;
-			case COMP_VALUE: return COMP;
-			case GEVL_VALUE: return GEVL;
-			case MFST_VALUE: return MFST;
-			case REFR_VALUE: return REFR;
-			case RSON_VALUE: return RSON;
-			case SAS_VALUE: return SAS;
-			case SPRT_VALUE: return SPRT;
-			case SUBJ_VALUE: return SUBJ;
-			case XCRPT_VALUE: return XCRPT;
+			case CAUS_VALUE:
+				return CAUS;
+			case COMP_VALUE:
+				return COMP;
+			case GEVL_VALUE:
+				return GEVL;
+			case MFST_VALUE:
+				return MFST;
+			case REFR_VALUE:
+				return REFR;
+			case RSON_VALUE:
+				return RSON;
+			case SAS_VALUE:
+				return SAS;
+			case SPRT_VALUE:
+				return SPRT;
+			case SUBJ_VALUE:
+				return SUBJ;
+			case XCRPT_VALUE:
+				return XCRPT;
 		}
 		return null;
 	}
@@ -397,7 +396,7 @@ public enum x_ActRelationshipEntryRelationship implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -406,7 +405,7 @@ public enum x_ActRelationshipEntryRelationship implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -415,7 +414,7 @@ public enum x_ActRelationshipEntryRelationship implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -428,5 +427,5 @@ public enum x_ActRelationshipEntryRelationship implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //x_ActRelationshipEntryRelationship
+
+} // x_ActRelationshipEntryRelationship

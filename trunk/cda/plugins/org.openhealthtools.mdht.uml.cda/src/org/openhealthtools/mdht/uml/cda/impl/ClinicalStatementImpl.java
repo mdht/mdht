@@ -171,7 +171,8 @@ public abstract class ClinicalStatementImpl extends ActImpl implements ClinicalS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ClinicalStatement> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
+	public EList<ClinicalStatement> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode,
+			Object targetClass) {
 		return ClinicalStatementOperations.getEntryRelationshipTargets(this, typeCode, targetClass);
 	}
 
@@ -355,4 +356,4 @@ public abstract class ClinicalStatementImpl extends ActImpl implements ClinicalS
 		return ClinicalStatementOperations.hasTemplateId(this, templateId);
 	}
 
-} //ClinicalStatementImpl
+} // ClinicalStatementImpl

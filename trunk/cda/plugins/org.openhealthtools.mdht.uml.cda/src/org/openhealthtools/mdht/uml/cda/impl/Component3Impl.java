@@ -204,6 +204,7 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CS> getRealmCodes() {
 		if (realmCodes == null) {
 			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.COMPONENT3__REALM_CODE);
@@ -216,6 +217,7 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InfrastructureRootTypeId getTypeId() {
 		return typeId;
 	}
@@ -229,8 +231,13 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 		InfrastructureRootTypeId oldTypeId = typeId;
 		typeId = newTypeId;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__TYPE_ID, oldTypeId, newTypeId);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.COMPONENT3__TYPE_ID, oldTypeId, newTypeId);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -243,15 +250,21 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	public void setTypeId(InfrastructureRootTypeId newTypeId) {
 		if (newTypeId != typeId) {
 			NotificationChain msgs = null;
-			if (typeId != null)
-				msgs = ((InternalEObject)typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT3__TYPE_ID, null, msgs);
-			if (newTypeId != null)
-				msgs = ((InternalEObject)newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT3__TYPE_ID, null, msgs);
+			if (typeId != null) {
+				msgs = ((InternalEObject) typeId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.COMPONENT3__TYPE_ID, null, msgs);
+			}
+			if (newTypeId != null) {
+				msgs = ((InternalEObject) newTypeId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.COMPONENT3__TYPE_ID, null, msgs);
+			}
 			msgs = basicSetTypeId(newTypeId, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__TYPE_ID, newTypeId, newTypeId));
+		}
 	}
 
 	/**
@@ -259,6 +272,7 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<II> getTemplateIds() {
 		if (templateIds == null) {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.COMPONENT3__TEMPLATE_ID);
@@ -284,8 +298,13 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 		Section oldSection = section;
 		section = newSection;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__SECTION, oldSection, newSection);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.COMPONENT3__SECTION, oldSection, newSection);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -298,15 +317,22 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	public void setSection(Section newSection) {
 		if (newSection != section) {
 			NotificationChain msgs = null;
-			if (section != null)
-				msgs = ((InternalEObject)section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT3__SECTION, null, msgs);
-			if (newSection != null)
-				msgs = ((InternalEObject)newSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.COMPONENT3__SECTION, null, msgs);
+			if (section != null) {
+				msgs = ((InternalEObject) section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.COMPONENT3__SECTION, null, msgs);
+			}
+			if (newSection != null) {
+				msgs = ((InternalEObject) newSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.COMPONENT3__SECTION, null, msgs);
+			}
 			msgs = basicSetSection(newSection, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.COMPONENT3__SECTION, newSection, newSection));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__SECTION, newSection, newSection));
 	}
 
 	/**
@@ -314,6 +340,7 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -325,11 +352,16 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 */
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
-		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		nullFlavor = newNullFlavor == null
+				? NULL_FLAVOR_EDEFAULT
+				: newNullFlavor;
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.COMPONENT3__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+				!oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -342,8 +374,11 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT3__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.COMPONENT3__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+				oldNullFlavorESet));
+		}
 	}
 
 	/**
@@ -360,6 +395,7 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActRelationshipHasComponent getTypeCode() {
 		return typeCode;
 	}
@@ -371,11 +407,15 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 */
 	public void setTypeCode(ActRelationshipHasComponent newTypeCode) {
 		ActRelationshipHasComponent oldTypeCode = typeCode;
-		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		typeCode = newTypeCode == null
+				? TYPE_CODE_EDEFAULT
+				: newTypeCode;
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.COMPONENT3__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -388,8 +428,11 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT3__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.COMPONENT3__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+				oldTypeCodeESet));
+		}
 	}
 
 	/**
@@ -420,8 +463,11 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 		contextConductionInd = newContextConductionInd;
 		boolean oldContextConductionIndESet = contextConductionIndESet;
 		contextConductionIndESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd, !oldContextConductionIndESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.COMPONENT3__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
+				contextConductionInd, !oldContextConductionIndESet));
+		}
 	}
 
 	/**
@@ -434,8 +480,11 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 		boolean oldContextConductionIndESet = contextConductionIndESet;
 		contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
 		contextConductionIndESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT3__CONTEXT_CONDUCTION_IND, oldContextConductionInd, CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, CDAPackage.COMPONENT3__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
+				CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+		}
 	}
 
 	/**
@@ -474,11 +523,11 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT3__REALM_CODE:
-				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.COMPONENT3__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.COMPONENT3__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.COMPONENT3__SECTION:
 				return basicSetSection(null, msgs);
 		}
@@ -522,26 +571,26 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 		switch (featureID) {
 			case CDAPackage.COMPONENT3__REALM_CODE:
 				getRealmCodes().clear();
-				getRealmCodes().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().addAll((Collection<? extends CS>) newValue);
 				return;
 			case CDAPackage.COMPONENT3__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)newValue);
+				setTypeId((InfrastructureRootTypeId) newValue);
 				return;
 			case CDAPackage.COMPONENT3__TEMPLATE_ID:
 				getTemplateIds().clear();
-				getTemplateIds().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.COMPONENT3__SECTION:
-				setSection((Section)newValue);
+				setSection((Section) newValue);
 				return;
 			case CDAPackage.COMPONENT3__NULL_FLAVOR:
-				setNullFlavor((NullFlavor)newValue);
+				setNullFlavor((NullFlavor) newValue);
 				return;
 			case CDAPackage.COMPONENT3__TYPE_CODE:
-				setTypeCode((ActRelationshipHasComponent)newValue);
+				setTypeCode((ActRelationshipHasComponent) newValue);
 				return;
 			case CDAPackage.COMPONENT3__CONTEXT_CONDUCTION_IND:
-				setContextConductionInd((Boolean)newValue);
+				setContextConductionInd((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -559,13 +608,13 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 				getRealmCodes().clear();
 				return;
 			case CDAPackage.COMPONENT3__TYPE_ID:
-				setTypeId((InfrastructureRootTypeId)null);
+				setTypeId((InfrastructureRootTypeId) null);
 				return;
 			case CDAPackage.COMPONENT3__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
 			case CDAPackage.COMPONENT3__SECTION:
-				setSection((Section)null);
+				setSection((Section) null);
 				return;
 			case CDAPackage.COMPONENT3__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -613,17 +662,31 @@ public class Component3Impl extends ActRelationshipImpl implements Component3 {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
+		if (nullFlavorESet) {
+			result.append(nullFlavor);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", typeCode: ");
-		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
+		if (typeCodeESet) {
+			result.append(typeCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", contextConductionInd: ");
-		if (contextConductionIndESet) result.append(contextConductionInd); else result.append("<unset>");
+		if (contextConductionIndESet) {
+			result.append(contextConductionInd);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //Component3Impl
+} // Component3Impl

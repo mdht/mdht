@@ -43,4 +43,4 @@ public abstract class QTYImpl extends ANYImpl implements QTY {
 		return DatatypesPackage.Literals.QTY;
 	}
 
-} //QTYImpl
+} // QTYImpl

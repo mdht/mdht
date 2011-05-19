@@ -79,26 +79,29 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateTypeCode(LegalAuthenticator legalAuthenticator, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateTypeCode(LegalAuthenticator legalAuthenticator, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.LEGAL_AUTHENTICATOR);
 			try {
 				VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(legalAuthenticator)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.LEGAL_AUTHENTICATOR__TYPE_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateTypeCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(legalAuthenticator, context) }),
-						 new Object [] { legalAuthenticator }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					CDAValidator.DIAGNOSTIC_SOURCE,
+					CDAValidator.LEGAL_AUTHENTICATOR__TYPE_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateTypeCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(legalAuthenticator, context) }),
+					new Object[] { legalAuthenticator }));
 			}
 			return false;
 		}
@@ -136,26 +139,30 @@ public class LegalAuthenticatorOperations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateContextControlCode(LegalAuthenticator legalAuthenticator, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateContextControlCode(LegalAuthenticator legalAuthenticator,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.LEGAL_AUTHENTICATOR);
 			try {
 				VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(legalAuthenticator)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(
+			legalAuthenticator)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateContextControlCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(legalAuthenticator, context) }),
-						 new Object [] { legalAuthenticator }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					CDAValidator.DIAGNOSTIC_SOURCE,
+					CDAValidator.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateContextControlCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(legalAuthenticator, context) }),
+					new Object[] { legalAuthenticator }));
 			}
 			return false;
 		}

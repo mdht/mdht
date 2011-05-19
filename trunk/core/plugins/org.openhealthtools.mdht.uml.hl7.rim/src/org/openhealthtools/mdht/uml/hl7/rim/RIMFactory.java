@@ -38,4 +38,4 @@ public interface RIMFactory extends EFactory {
 	 */
 	RIMPackage getRIMPackage();
 
-} //RIMFactory
+} // RIMFactory

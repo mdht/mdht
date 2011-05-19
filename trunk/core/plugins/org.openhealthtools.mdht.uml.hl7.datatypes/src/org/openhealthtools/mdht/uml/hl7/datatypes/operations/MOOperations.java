@@ -66,6 +66,7 @@ public class MOOperations extends ANYOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not(self.isNullFlavorDefined() and (self.isDefined('value') or self.isDefined('currency')))";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateMO(MO, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate MO</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -87,26 +88,26 @@ public class MOOperations extends ANYOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateMO(MO mo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateMO(MO mo, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.MO);
 			try {
 				VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_MO__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(mo)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 DatatypesValidator.DIAGNOSTIC_SOURCE,
-						 DatatypesValidator.MO__MO,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateMO", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(mo, context) }),
-						 new Object [] { mo }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR,
+					DatatypesValidator.DIAGNOSTIC_SOURCE,
+					DatatypesValidator.MO__MO,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic", new Object[] {
+								"validateMO", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(mo, context) }),
+					new Object[] { mo }));
 			}
 			return false;
 		}
@@ -118,8 +119,8 @@ public class MOOperations extends ANYOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  void setValue(MO mo, Double newValue) {
-		if (newValue != null){
+	public static void setValue(MO mo, Double newValue) {
+		if (newValue != null) {
 			mo.setValue(BigDecimal.valueOf(newValue.doubleValue()));
 		} else {
 			mo.setValue((BigDecimal) null);

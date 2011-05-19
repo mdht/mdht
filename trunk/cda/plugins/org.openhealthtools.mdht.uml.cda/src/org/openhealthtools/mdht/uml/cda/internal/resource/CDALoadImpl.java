@@ -37,19 +37,21 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class CDALoadImpl extends XMLLoadImpl {
 	private Map<String, String> partTypes = null;
+
 	private Map<String, String> nsPrefixMap = null;
+
 	private int nsPrefixIndex;
-	
+
 	public CDALoadImpl(XMLHelper helper) {
 		super(helper);
-		
+
 		partTypes = new HashMap<String, String>();
 		nsPrefixMap = new HashMap<String, String>();
 		nsPrefixIndex = 0;
-		
+
 		populatePartTypes();
 	}
-	
+
 	private void populatePartTypes() {
 		// address part types
 		partTypes.put("delimiter", "DEL");
@@ -97,15 +99,17 @@ public class CDALoadImpl extends XMLLoadImpl {
 		}
 		return prefix;
 	}
-	
+
 	@Override
-	protected void traverse(Node node, XMLLoadImpl.AttributesProxy attributesProxy, DefaultHandler handler, LexicalHandler lexicalHandler) throws SAXException {
+	protected void traverse(Node node, XMLLoadImpl.AttributesProxy attributesProxy, DefaultHandler handler,
+			LexicalHandler lexicalHandler) throws SAXException {
 		processNode(node);
 		super.traverse(node, attributesProxy, handler, lexicalHandler);
 	}
 
 	@Override
-	protected void traverseElement(Element element, XMLLoadImpl.AttributesProxy attributesProxy, DefaultHandler handler, LexicalHandler lexicalHandler) throws SAXException {
+	protected void traverseElement(Element element, XMLLoadImpl.AttributesProxy attributesProxy,
+			DefaultHandler handler, LexicalHandler lexicalHandler) throws SAXException {
 		processNode(element);
 		super.traverseElement(element, attributesProxy, handler, lexicalHandler);
 	}
@@ -119,14 +123,14 @@ public class CDALoadImpl extends XMLLoadImpl {
 			handleTemplate(element, root);
 		}
 	}
-	
+
 	private void handlePartType(Element element) {
 		String partType = partTypes.get(element.getLocalName());
 		if (partType != null) {
 			element.setAttributeNS(null, "partType", partType);
 		}
 	}
-	
+
 	private void handleDataType(Element element, Element root) {
 		if (element.hasAttributeNS(XMLResource.XSI_URI, "type")) {
 			String type = element.getAttributeNS(XMLResource.XSI_URI, "type");
@@ -140,72 +144,73 @@ public class CDALoadImpl extends XMLLoadImpl {
 			}
 		}
 	}
-	
+
 	private void handleTemplate(Element element, Element root) {
 		EClass result = null;
 		int last = 0;
 		NodeList nodeList = element.getChildNodes();
-		
+
 		EClass type = getType(element);
-		
+
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			if (nodeList.item(i) instanceof Element) {
 				Element e = (Element) nodeList.item(i);
 				if ("templateId".equals(e.getLocalName())) {
 					EClass eClass = CDARegistry.INSTANCE.getEClass(e.getAttributeNS(null, "root"), element);
-					if (eClass != null && !eClass.isAbstract() && conformsTo(eClass, type) && eClass.getEAllSuperTypes().size() > last) {
+					if (eClass != null && !eClass.isAbstract() && conformsTo(eClass, type) &&
+							eClass.getEAllSuperTypes().size() > last) {
 						result = eClass;
 						last = eClass.getEAllSuperTypes().size();
 					}
 				}
 			}
 		}
-		
+
 		if (result != null) {
 			if (helper.getPrefix(XMLResource.XSI_URI) == null) {
 				helper.addPrefix("xsi", XMLResource.XSI_URI);
 				root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:xsi", XMLResource.XSI_URI);
 			}
-			
+
 			EPackage ePackage = result.getEPackage();
 			String nsURI = ePackage.getNsURI();
 			String nsPrefix = getNsPrefix(nsURI);
-			
+
 			if (helper.getPrefix(nsURI) == null) {
 				helper.addPrefix(nsPrefix, nsURI);
 				root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + nsPrefix, nsURI);
 			}
-			
+
 			element.setAttributeNS(XMLResource.XSI_URI, "xsi:type", nsPrefix + ":" + getName(result));
 		}
 	}
-	
+
 	private List<String> getPath(Element element) {
-	    LinkedList<String> result = new LinkedList<String>();
-        result.addFirst(element.getLocalName());
-	    Node parent = element.getParentNode();
-	    while (parent instanceof Element) {
-	        Element e = (Element) parent;
-	        result.addFirst(e.getLocalName());
-	        parent = e.getParentNode();
-	    }
-	    return result;
+		LinkedList<String> result = new LinkedList<String>();
+		result.addFirst(element.getLocalName());
+		Node parent = element.getParentNode();
+		while (parent instanceof Element) {
+			Element e = (Element) parent;
+			result.addFirst(e.getLocalName());
+			parent = e.getParentNode();
+		}
+		return result;
 	}
-	
+
 	private EClass getType(Element element) {
-	    EClass eClass = CDAPackage.Literals.DOCUMENT_ROOT;
-	    List<String> path = getPath(element);
-	    for (String component : path) {
-	        EStructuralFeature feature = getEStructuralFeature(eClass, component);
-	        if (feature instanceof EReference) {
-	            eClass = (EClass) feature.getEType();
-	        } else {
-	            return null;
-	        }
-	    }
-	    return eClass;
+		EClass eClass = CDAPackage.Literals.DOCUMENT_ROOT;
+		List<String> path = getPath(element);
+		for (String component : path) {
+			EStructuralFeature feature = getEStructuralFeature(eClass, component);
+			if (feature instanceof EReference) {
+				eClass = (EClass) feature.getEType();
+			} else {
+				return null;
+			}
+		}
+		return eClass;
 	}
-	
+
 	private EStructuralFeature getEStructuralFeature(EClass eClass, String name) {
 		for (EStructuralFeature feature : eClass.getEAllStructuralFeatures()) {
 			if (name.equals(getName(feature))) {
@@ -214,14 +219,14 @@ public class CDALoadImpl extends XMLLoadImpl {
 		}
 		return null;
 	}
-	
+
 	private boolean conformsTo(EClass eClass, EClass type) {
 		if (eClass == null || type == null) {
 			return false;
 		}
 		return type.isSuperTypeOf(eClass);
 	}
-	
+
 	private String getName(ENamedElement eNamedElement) {
 		String result = EcoreUtil.getAnnotation(eNamedElement, ExtendedMetaData.ANNOTATION_URI, "name");
 		if (result != null) {

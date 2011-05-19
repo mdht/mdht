@@ -1009,5 +1009,5 @@ public interface Section extends Act {
 	 * @generated
 	 */
 	EList<ClinicalStatement> getEntryTargets(Object targetClass);
-	
+
 } // Section

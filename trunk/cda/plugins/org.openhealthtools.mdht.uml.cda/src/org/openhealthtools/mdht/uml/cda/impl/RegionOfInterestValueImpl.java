@@ -87,8 +87,10 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 	public void setUnsorted(boolean newUnsorted) {
 		boolean oldUnsorted = unsorted;
 		unsorted = newUnsorted;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REGION_OF_INTEREST_VALUE__UNSORTED, oldUnsorted, unsorted));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.REGION_OF_INTEREST_VALUE__UNSORTED, oldUnsorted, unsorted));
+		}
 	}
 
 	/**
@@ -114,7 +116,7 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.REGION_OF_INTEREST_VALUE__UNSORTED:
-				setUnsorted((Boolean)newValue);
+				setUnsorted((Boolean) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +158,9 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (unsorted: ");
@@ -165,4 +169,4 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 		return result.toString();
 	}
 
-} //RegionOfInterestValueImpl
+} // RegionOfInterestValueImpl

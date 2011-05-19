@@ -40,8 +40,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	ED createED();
+
 	ED createED(String text);
-	
+
 	/**
 	 * Returns a new object of class '<em>TEL</em>'.
 	 * <!-- begin-user-doc -->
@@ -50,8 +51,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	TEL createTEL();
+
 	TEL createTEL(String value);
-	
+
 	/**
 	 * Returns a new object of class '<em>SXCM TS</em>'.
 	 * <!-- begin-user-doc -->
@@ -69,8 +71,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	TS createTS();
+
 	TS createTS(String value);
-	
+
 	/**
 	 * Returns a new object of class '<em>ST</em>'.
 	 * <!-- begin-user-doc -->
@@ -79,8 +82,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	ST createST();
+
 	ST createST(String text);
-	
+
 	/**
 	 * Returns a new object of class '<em>CD</em>'.
 	 * <!-- begin-user-doc -->
@@ -89,8 +93,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	CD createCD();
+
 	CD createCD(String code, String codeSystem, String codeSystemName, String displayName);
-	
+
 	/**
 	 * Returns a new object of class '<em>CR</em>'.
 	 * <!-- begin-user-doc -->
@@ -117,9 +122,11 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	CE createCE();
+
 	CE createCE(String code, String codeSystem);
+
 	CE createCE(String code, String codeSystem, String codeSystemName, String displayName);
-	
+
 	/**
 	 * Returns a new object of class '<em>II</em>'.
 	 * <!-- begin-user-doc -->
@@ -128,10 +135,13 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	II createII();
+
 	II createII(String root);
+
 	II createII(String root, String extension);
+
 	II createII(NullFlavor nullFlavor);
-	
+
 	/**
 	 * Returns a new object of class '<em>BL</em>'.
 	 * <!-- begin-user-doc -->
@@ -140,8 +150,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	BL createBL();
+
 	BL createBL(Boolean value);
-	
+
 	/**
 	 * Returns a new object of class '<em>BN</em>'.
 	 * <!-- begin-user-doc -->
@@ -150,8 +161,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	BN createBN();
+
 	BN createBN(Boolean value);
-	
+
 	/**
 	 * Returns a new object of class '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
@@ -169,8 +181,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	ADXP createADXP();
+
 	ADXP createADXP(AddressPartType partType, String text);
-	
+
 	/**
 	 * Returns a new object of class '<em>EN</em>'.
 	 * <!-- begin-user-doc -->
@@ -188,9 +201,11 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	IVL_TS createIVL_TS();
+
 	IVL_TS createIVL_TS(String low, String high);
+
 	IVL_TS createIVL_TS(String value);
-	
+
 	/**
 	 * Returns a new object of class '<em>IVXB TS</em>'.
 	 * <!-- begin-user-doc -->
@@ -208,6 +223,7 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	PQ createPQ();
+
 	PQ createPQ(double value, String unit);
 
 	/**
@@ -227,8 +243,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	ENXP createENXP();
+
 	ENXP createENXP(EntityNamePartType partType, String text);
-	
+
 	/**
 	 * Returns a new object of class '<em>ON</em>'.
 	 * <!-- begin-user-doc -->
@@ -282,8 +299,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	CS createCS();
+
 	CS createCS(String code);
-	
+
 	/**
 	 * Returns a new object of class '<em>CO</em>'.
 	 * <!-- begin-user-doc -->
@@ -409,6 +427,7 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	EIVL_event createEIVL_event();
+
 	/**
 	 * Returns a new object of class '<em>EIVL TS</em>'.
 	 * <!-- begin-user-doc -->
@@ -417,6 +436,7 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	EIVL_TS createEIVL_TS();
+
 	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
@@ -426,4 +446,4 @@ public interface DatatypesFactory extends EFactory {
 	 */
 	DatatypesPackage getDatatypesPackage();
 
-} //DatatypesFactory
+} // DatatypesFactory

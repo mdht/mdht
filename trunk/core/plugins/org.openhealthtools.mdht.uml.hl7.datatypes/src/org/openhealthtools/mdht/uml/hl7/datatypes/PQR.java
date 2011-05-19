@@ -12,7 +12,6 @@ package org.openhealthtools.mdht.uml.hl7.datatypes;
 
 import java.math.BigDecimal;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>PQR</b></em>'.

@@ -82,11 +82,7 @@ public enum ActClassSupply implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActClassSupply[] VALUES_ARRAY =
-		new ActClassSupply[] {
-			DIET,
-			SPLY,
-		};
+	private static final ActClassSupply[] VALUES_ARRAY = new ActClassSupply[] { DIET, SPLY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Act Class Supply</b></em>' enumerators.
@@ -136,8 +132,10 @@ public enum ActClassSupply implements Enumerator {
 	 */
 	public static ActClassSupply get(int value) {
 		switch (value) {
-			case DIET_VALUE: return DIET;
-			case SPLY_VALUE: return SPLY;
+			case DIET_VALUE:
+				return DIET;
+			case SPLY_VALUE:
+				return SPLY;
 		}
 		return null;
 	}
@@ -181,7 +179,7 @@ public enum ActClassSupply implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -190,7 +188,7 @@ public enum ActClassSupply implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -199,7 +197,7 @@ public enum ActClassSupply implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -212,5 +210,5 @@ public enum ActClassSupply implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ActClassSupply
+
+} // ActClassSupply

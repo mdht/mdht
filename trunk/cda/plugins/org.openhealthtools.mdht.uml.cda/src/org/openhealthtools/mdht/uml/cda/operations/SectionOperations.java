@@ -1538,8 +1538,9 @@ public class SectionOperations extends ActOperations {
 	 */
 	public static EList<ClinicalStatement> getEntryTargets(Section section, x_ActRelationshipEntry typeCode,
 			Object targetClass) {
-		if (targetClass != null && !(targetClass instanceof EClass))
+		if (targetClass != null && !(targetClass instanceof EClass)) {
 			throw new IllegalArgumentException("targetClass must be an EClass");
+		}
 
 		return CDAUtil.getEntryTargets(section, typeCode, (EClass) targetClass);
 	}

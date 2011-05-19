@@ -60,6 +60,7 @@ public class AuthorOperations extends ParticipationOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isTypeCodeDefined() implies self.typeCode=vocab::ParticipationType::AUT";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateTypeCode(Author, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Type Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -81,26 +82,26 @@ public class AuthorOperations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateTypeCode(Author author, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateTypeCode(Author author, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.AUTHOR);
 			try {
 				VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(author)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.AUTHOR__TYPE_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateTypeCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(author, context) }),
-						 new Object [] { author }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.AUTHOR__TYPE_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateTypeCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(author, context) }),
+					new Object[] { author }));
 			}
 			return false;
 		}
@@ -116,6 +117,7 @@ public class AuthorOperations extends ParticipationOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isContextControlCodeDefined() implies self.contextControlCode=vocab::ContextControl::OP";
+
 	/**
 	 * The cached OCL invariant for the '{@link #validateContextControlCode(Author, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Context Control Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
@@ -137,26 +139,27 @@ public class AuthorOperations extends ParticipationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateContextControlCode(Author author, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateContextControlCode(Author author, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.Literals.AUTHOR);
 			try {
 				VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_CONTEXT_CONTROL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(author)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CDAValidator.DIAGNOSTIC_SOURCE,
-						 CDAValidator.AUTHOR__CONTEXT_CONTROL_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateContextControlCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(author, context) }),
-						 new Object [] { author }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, CDAValidator.DIAGNOSTIC_SOURCE, CDAValidator.AUTHOR__CONTEXT_CONTROL_CODE,
+					org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+						"_UI_GenericInvariant_diagnostic",
+						new Object[] {
+								"validateContextControlCode",
+								org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(author, context) }),
+					new Object[] { author }));
 			}
 			return false;
 		}
@@ -168,7 +171,7 @@ public class AuthorOperations extends ParticipationOperations {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  ClinicalDocument getClinicalDocument(Author author) {
+	public static ClinicalDocument getClinicalDocument(Author author) {
 		return CDAUtil.getClinicalDocument(author);
 	}
 

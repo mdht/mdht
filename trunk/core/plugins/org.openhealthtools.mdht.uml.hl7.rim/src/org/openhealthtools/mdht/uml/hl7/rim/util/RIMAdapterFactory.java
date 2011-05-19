@@ -66,7 +66,7 @@ public class RIMAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -77,41 +77,47 @@ public class RIMAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RIMSwitch<Adapter> modelSwitch =
-		new RIMSwitch<Adapter>() {
-			@Override
-			public Adapter caseAct(Act object) {
-				return createActAdapter();
-			}
-			@Override
-			public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
-				return createInfrastructureRootAdapter();
-			}
-			@Override
-			public Adapter caseParticipation(Participation object) {
-				return createParticipationAdapter();
-			}
-			@Override
-			public Adapter caseRole(Role object) {
-				return createRoleAdapter();
-			}
-			@Override
-			public Adapter caseEntity(Entity object) {
-				return createEntityAdapter();
-			}
-			@Override
-			public Adapter caseRoleLink(RoleLink object) {
-				return createRoleLinkAdapter();
-			}
-			@Override
-			public Adapter caseActRelationship(ActRelationship object) {
-				return createActRelationshipAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected RIMSwitch<Adapter> modelSwitch = new RIMSwitch<Adapter>() {
+		@Override
+		public Adapter caseAct(Act object) {
+			return createActAdapter();
+		}
+
+		@Override
+		public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
+			return createInfrastructureRootAdapter();
+		}
+
+		@Override
+		public Adapter caseParticipation(Participation object) {
+			return createParticipationAdapter();
+		}
+
+		@Override
+		public Adapter caseRole(Role object) {
+			return createRoleAdapter();
+		}
+
+		@Override
+		public Adapter caseEntity(Entity object) {
+			return createEntityAdapter();
+		}
+
+		@Override
+		public Adapter caseRoleLink(RoleLink object) {
+			return createRoleLinkAdapter();
+		}
+
+		@Override
+		public Adapter caseActRelationship(ActRelationship object) {
+			return createActRelationshipAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -123,9 +129,8 @@ public class RIMAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.hl7.rim.Act <em>Act</em>}'.
@@ -237,4 +242,4 @@ public class RIMAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //RIMAdapterFactory
+} // RIMAdapterFactory

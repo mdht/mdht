@@ -119,8 +119,13 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 		IVXB_TS oldLow = low;
 		low = newLow;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__LOW, oldLow, newLow);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_TS__LOW, oldLow, newLow);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -133,15 +138,21 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 	public void setLow(IVXB_TS newLow) {
 		if (newLow != low) {
 			NotificationChain msgs = null;
-			if (low != null)
-				msgs = ((InternalEObject)low).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__LOW, null, msgs);
-			if (newLow != null)
-				msgs = ((InternalEObject)newLow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__LOW, null, msgs);
+			if (low != null) {
+				msgs = ((InternalEObject) low).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__LOW, null, msgs);
+			}
+			if (newLow != null) {
+				msgs = ((InternalEObject) newLow).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__LOW, null, msgs);
+			}
 			msgs = basicSetLow(newLow, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__LOW, newLow, newLow));
+		}
 	}
 
 	/**
@@ -155,41 +166,50 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 
 	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public NotificationChain basicSetCenter(TS newCenter, NotificationChain msgs)
-    {
+	public NotificationChain basicSetCenter(TS newCenter, NotificationChain msgs) {
 		TS oldCenter = center;
 		center = newCenter;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__CENTER, oldCenter, newCenter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_TS__CENTER, oldCenter, newCenter);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public void setCenter(TS newCenter)
-    {
+	public void setCenter(TS newCenter) {
 		if (newCenter != center) {
 			NotificationChain msgs = null;
-			if (center != null)
-				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__CENTER, null, msgs);
-			if (newCenter != null)
-				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__CENTER, null, msgs);
+			if (center != null) {
+				msgs = ((InternalEObject) center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__CENTER, null, msgs);
+			}
+			if (newCenter != null) {
+				msgs = ((InternalEObject) newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__CENTER, null, msgs);
+			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__CENTER, newCenter, newCenter));
+		}
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -207,8 +227,13 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 		IVXB_TS oldHigh = high;
 		high = newHigh;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__HIGH, oldHigh, newHigh);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_TS__HIGH, oldHigh, newHigh);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -221,15 +246,21 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 	public void setHigh(IVXB_TS newHigh) {
 		if (newHigh != high) {
 			NotificationChain msgs = null;
-			if (high != null)
-				msgs = ((InternalEObject)high).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__HIGH, null, msgs);
-			if (newHigh != null)
-				msgs = ((InternalEObject)newHigh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__HIGH, null, msgs);
+			if (high != null) {
+				msgs = ((InternalEObject) high).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__HIGH, null, msgs);
+			}
+			if (newHigh != null) {
+				msgs = ((InternalEObject) newHigh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__HIGH, null, msgs);
+			}
 			msgs = basicSetHigh(newHigh, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__HIGH, newHigh, newHigh));
+		}
 	}
 
 	/**
@@ -250,8 +281,13 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 		PQ oldWidth = width;
 		width = newWidth;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__WIDTH, oldWidth, newWidth);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, DatatypesPackage.IVL_TS__WIDTH, oldWidth, newWidth);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -264,58 +300,60 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 	public void setWidth(PQ newWidth) {
 		if (newWidth != width) {
 			NotificationChain msgs = null;
-			if (width != null)
-				msgs = ((InternalEObject)width).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__WIDTH, null, msgs);
-			if (newWidth != null)
-				msgs = ((InternalEObject)newWidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.IVL_TS__WIDTH, null, msgs);
+			if (width != null) {
+				msgs = ((InternalEObject) width).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__WIDTH, null, msgs);
+			}
+			if (newWidth != null) {
+				msgs = ((InternalEObject) newWidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						DatatypesPackage.IVL_TS__WIDTH, null, msgs);
+			}
 			msgs = basicSetWidth(newWidth, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.IVL_TS__WIDTH, newWidth, newWidth));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateOptionsContainingLow(DiagnosticChain diagnostics, Map<Object, Object> context)
-    {
+	public boolean validateOptionsContainingLow(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return IVL_TSOperations.validateOptionsContainingLow(this, diagnostics, context);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateOptionsContainingCenter(DiagnosticChain diagnostics, Map<Object, Object> context)
-    {
+	public boolean validateOptionsContainingCenter(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return IVL_TSOperations.validateOptionsContainingCenter(this, diagnostics, context);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateOptionsContainingHigh(DiagnosticChain diagnostics, Map<Object, Object> context)
-    {
+	public boolean validateOptionsContainingHigh(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return IVL_TSOperations.validateOptionsContainingHigh(this, diagnostics, context);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateOptionsContainingWidth(DiagnosticChain diagnostics, Map<Object, Object> context)
-    {
+	public boolean validateOptionsContainingWidth(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return IVL_TSOperations.validateOptionsContainingWidth(this, diagnostics, context);
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -364,16 +402,16 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.IVL_TS__LOW:
-				setLow((IVXB_TS)newValue);
+				setLow((IVXB_TS) newValue);
 				return;
 			case DatatypesPackage.IVL_TS__CENTER:
-				setCenter((TS)newValue);
+				setCenter((TS) newValue);
 				return;
 			case DatatypesPackage.IVL_TS__HIGH:
-				setHigh((IVXB_TS)newValue);
+				setHigh((IVXB_TS) newValue);
 				return;
 			case DatatypesPackage.IVL_TS__WIDTH:
-				setWidth((PQ)newValue);
+				setWidth((PQ) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -388,16 +426,16 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.IVL_TS__LOW:
-				setLow((IVXB_TS)null);
+				setLow((IVXB_TS) null);
 				return;
 			case DatatypesPackage.IVL_TS__CENTER:
-				setCenter((TS)null);
+				setCenter((TS) null);
 				return;
 			case DatatypesPackage.IVL_TS__HIGH:
-				setHigh((IVXB_TS)null);
+				setHigh((IVXB_TS) null);
 				return;
 			case DatatypesPackage.IVL_TS__WIDTH:
-				setWidth((PQ)null);
+				setWidth((PQ) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -423,4 +461,4 @@ public class IVL_TSImpl extends SXCM_TSImpl implements IVL_TS {
 		return super.eIsSet(featureID);
 	}
 
-} //IVL_TSImpl
+} // IVL_TSImpl
