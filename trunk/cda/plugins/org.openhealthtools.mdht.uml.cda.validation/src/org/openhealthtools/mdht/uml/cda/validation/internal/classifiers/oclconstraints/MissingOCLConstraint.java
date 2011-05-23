@@ -74,7 +74,7 @@ public class MissingOCLConstraint extends AbstractModelConstraint implements CDA
 				if (analysis != null) {
 
 					if (ocl == null || ocl.trim().length() == 0) {
-						result = context.createFailureStatus(new Object[] { constraint.getQualifiedName()});
+						result = context.createFailureStatus(new Object[] { constraint.getQualifiedName() });
 					}
 				}
 

@@ -25,8 +25,8 @@ import org.eclipse.emf.validation.model.IClientSelector;
 public class ValidationDelegateClientSelector implements IClientSelector {
 
 	public static boolean running = true;
-	
-	public boolean selects(Object object) {	
+
+	public boolean selects(Object object) {
 		return running;
 	}
 

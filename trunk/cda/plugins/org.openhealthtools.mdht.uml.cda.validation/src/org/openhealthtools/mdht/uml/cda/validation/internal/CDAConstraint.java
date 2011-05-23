@@ -20,8 +20,9 @@ package org.openhealthtools.mdht.uml.cda.validation.internal;
 public interface CDAConstraint {
 
 	public static final String CLASSES_GROUP = Activator.PLUGIN_ID + ".classes.";
-	public static final String OCL_GROUP = Activator.PLUGIN_ID + ".ocl.";
-	public static final String ASSOCIATIONS_GROUP = Activator.PLUGIN_ID + ".associations.";
 
+	public static final String OCL_GROUP = Activator.PLUGIN_ID + ".ocl.";
+
+	public static final String ASSOCIATIONS_GROUP = Activator.PLUGIN_ID + ".associations.";
 
 }
