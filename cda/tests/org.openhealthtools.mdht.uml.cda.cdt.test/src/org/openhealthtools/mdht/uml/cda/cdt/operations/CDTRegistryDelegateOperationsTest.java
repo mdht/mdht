@@ -1,18 +1,16 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.eclipse.emf.ecore.EClass;
 import org.junit.Test;
@@ -22,7 +20,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.CDTRegistryDelegate;
 /**
  * This class is a JUnit 4 test case.
  */
-@SuppressWarnings( { "nls", "unused" })
+@SuppressWarnings({ "nls", "unused" })
 public class CDTRegistryDelegateOperationsTest {
 
 	/**
@@ -32,8 +30,7 @@ public class CDTRegistryDelegateOperationsTest {
 	 */
 	@Test
 	public void testGetEClass() {
-		CDTRegistryDelegate cdtrd = CDTFactory.eINSTANCE
-				.createCDTRegistryDelegate();
+		CDTRegistryDelegate cdtrd = CDTFactory.eINSTANCE.createCDTRegistryDelegate();
 		EClass obj = CDTRegistryDelegateOperations.getEClass(cdtrd, "", null);
 		fail("Not yet implemented");
 	}
