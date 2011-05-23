@@ -117,7 +117,11 @@
 					<pathelement path="../../helios/eclipse/plugins/org.apache.commons.lang_2.3.0.v201005080501.jar"/>
 			</classpath>
 
-			<test name="org.openhealthtools.mdht.uml.cda.ihe.operations.AllIHEOperationsTests" todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" haltonfailure="no" />
+			<test name="org.openhealthtools.mdht.uml.cda.ihe.operations.TaperedDoseOperationsTest" todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" haltonfailure="no" /> 
+			
+			<test name="org.openhealthtools.mdht.uml.cda.ihe.operations.PayersSectionOperationsTest" todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" haltonfailure="no" />
+			
+			<test name="org.openhealthtools.mdht.uml.cda.ihe.operations.CombinationMedicationOperationsTest" todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" haltonfailure="no" />
 			
 			<!-- <test name="org.openhealthtools.mdht.uml.cda.ihe.operations.ActiveProblemsSectionOperationsTest" todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" haltonfailure="no" />
 			<test name="org.openhealthtools.mdht.uml.cda.ihe.operations.AdmissionMedicationHistorySectionOperationsTest" todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" haltonfailure="no" />
@@ -150,13 +154,26 @@
 			<test name="org.openhealthtools.mdht.uml.cda.ihe.operations.SplitDoseOperationsTest" todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" haltonfailure="no" />
 			-->
 			
+			
+		<!--	   <batchtest todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs" >
+			            <fileset dir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/src" includes="**/*.java" />			        
+			  </batchtest> -->
+			
 			</junit> 
 		
 	
 
+		<concat destfile="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs/allvalidationresults.xml" force="no">
+ 			<filelist dir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test"  files="start.tag"/>
+		    <fileset dir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs"	includes="test*.xml" />
+			<filelist dir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test"  files="end.tag"/>
+		 </concat>
+
+
 		<!-- org.TestThis
 		org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationOperationsTest -->
 
+		
 		<junitreport todir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/reports">
 			<fileset dir="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs">
 				<include name="TEST-*.xml" />
@@ -168,6 +185,7 @@
 				 <param name="testlogdir" expression="/home/eclipse/heliosworkspace6B/org.openhealthtools.mdht.uml.cda.ihe.test/testlogs/"/>
 			</report>
 		</junitreport>
+		
 
 
 

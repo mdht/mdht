@@ -943,28 +943,30 @@ h6 {
 <xsl:template name="display-failxml">
     <xsl:param name="value"/>   
     <p>
-    <xsl:copy-of select="document( concat($testlogdir,concat($value,'.xml')) )/xmlsnippet/failsnippet" />
+    <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
     </p>  	
 </xsl:template>
 
 <xsl:template name="display-passxml">
     <xsl:param name="value"/>   
     <p>
-    <xsl:copy-of select="document( concat($testlogdir,concat($value,'.xml')) )/xmlsnippet/passsnippet" />
+    
+    <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
+    
     </p>  	
 </xsl:template>
 
 <xsl:template name="display-diagnostic">
     <xsl:param name="value"/>   
     <p>
-    <xsl:copy-of select="document( concat($testlogdir,concat($value,'.xml')) )/xmlsnippet/diagnostic" />
+    <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
     </p>  	
 </xsl:template>
 
 <xsl:template name="display-ocl">
     <xsl:param name="value"/>   
     <p>
-    <xsl:copy-of select="document( concat($testlogdir,concat($value,'.xml')) )/xmlsnippet/ocl" />
+       <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
     </p>  	
 </xsl:template>
 
