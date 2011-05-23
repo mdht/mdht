@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -35,15 +33,18 @@ import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTest {
+public class VitalSignsOrganizerOperationsTest extends
+		org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperationsTest {
 
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.13.1";
 
 	// Status code
 	private static final String STATUS_CODE = "completed";
+
 	private static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	protected static final String CODE = "46680005"; // Not in OCL
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.96";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -52,8 +53,10 @@ public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerTemplateId((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerTemplateId(
+						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -62,8 +65,10 @@ public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations.validateResultOrganizerCode((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateResultOrganizerCode(
+						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -71,8 +76,10 @@ public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.
 			// -------------------------------------------------------------
 			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations.validateResultOrganizerStatusCode((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateResultOrganizerStatusCode(
+						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -80,8 +87,10 @@ public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.
 			// -------------------------------------------------------------
 			new EffectiveTimeCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerEffectiveTime((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerEffectiveTime(
+						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -111,8 +120,10 @@ public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.
 				}
 
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerVitalSignObservation((VitalSignsOrganizer) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerVitalSignObservation(
+						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -120,9 +131,10 @@ public class VitalSignsOrganizerOperationsTest extends org.openhealthtools.mdht.
 			// -------------------------------------------------------------
 			new InformationSourceCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
 					return org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperations.validateVitalSignsOrganizerInformationSource(
-							(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer) objectToTest, diagnostician, map);
+						(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 			}
 

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -43,8 +53,10 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanDataEntererTimeEqualsDocumentEffectiveTime() {
-		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>("ValidateScanDataEntererTimeEqualsDocumentEffectiveTime",
-				operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TIME_EQUALS_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>(
+			"ValidateScanDataEntererTimeEqualsDocumentEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TIME_EQUALS_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanDataEnterer target) {
@@ -72,7 +84,8 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanDataEntererOperations.validateScanDataEntererTimeEqualsDocumentEffectiveTime((ScanDataEnterer) objectToTest, diagnostician, map);
+				return ScanDataEntererOperations.validateScanDataEntererTimeEqualsDocumentEffectiveTime(
+					(ScanDataEnterer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -82,8 +95,10 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanDataEntererHasAssignedEntityId() {
-		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>("ValidateScanDataEntererHasAssignedEntityId",
-				operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_HAS_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>(
+			"ValidateScanDataEntererHasAssignedEntityId",
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_HAS_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanDataEnterer target) {
@@ -101,7 +116,8 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanDataEntererOperations.validateScanDataEntererHasAssignedEntityId((ScanDataEnterer) objectToTest, diagnostician, map);
+				return ScanDataEntererOperations.validateScanDataEntererHasAssignedEntityId(
+					(ScanDataEnterer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -111,8 +127,10 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanDataEntererTemplateId() {
-		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>("validateScanDataEntererTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>(
+			"validateScanDataEntererTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanDataEnterer target) {
@@ -127,7 +145,8 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanDataEntererOperations.validateScanDataEntererTemplateId((ScanDataEnterer) objectToTest, diagnostician, map);
+				return ScanDataEntererOperations.validateScanDataEntererTemplateId(
+					(ScanDataEnterer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -137,8 +156,10 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanDataEntererTime() {
-		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>("ValidateScanDataEntererTime",
-				operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanDataEnterer> testCase = new OperationsTestCase<ScanDataEnterer>(
+			"ValidateScanDataEntererTime",
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanDataEnterer target) {
@@ -154,7 +175,8 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanDataEntererOperations.validateScanDataEntererTime((ScanDataEnterer) objectToTest, diagnostician, map);
+				return ScanDataEntererOperations.validateScanDataEntererTime(
+					(ScanDataEnterer) objectToTest, diagnostician, map);
 			}
 
 		};

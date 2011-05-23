@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -54,8 +52,10 @@ public class NormalDoseOperationsTest extends MedicationOperationsTest {
 
 	@Test
 	public void testValidateNormalDoseNoSubordinateSubstanceAdministration() {
-		OperationsTestCase<NormalDose> validateNormalDoseTemplateIdTestCase = new OperationsTestCase<NormalDose>("ValidateNormalDoseNoSubordinateSubstanceAdministration",
-				operationsForOCL.getOCLValue("VALIDATE_NORMAL_DOSE_NO_SUBORDINATE_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<NormalDose> validateNormalDoseTemplateIdTestCase = new OperationsTestCase<NormalDose>(
+			"ValidateNormalDoseNoSubordinateSubstanceAdministration",
+			operationsForOCL.getOCLValue("VALIDATE_NORMAL_DOSE_NO_SUBORDINATE_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(NormalDose target) {
 				// target.getSubstanceAdministrations().clear();
@@ -65,7 +65,8 @@ public class NormalDoseOperationsTest extends MedicationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return NormalDoseOperations.validateNormalDoseNoSubordinateSubstanceAdministration((NormalDose) objectToTest, diagnostician, map);
+				return NormalDoseOperations.validateNormalDoseNoSubordinateSubstanceAdministration(
+					(NormalDose) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -83,8 +84,10 @@ public class NormalDoseOperationsTest extends MedicationOperationsTest {
 
 	@Test
 	public void testValidateNormalDoseTemplateId() {
-		OperationsTestCase<NormalDose> validateNormalDoseTemplateIdTestCase = new OperationsTestCase<NormalDose>("ValidateNormalDoseTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_NORMAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<NormalDose> validateNormalDoseTemplateIdTestCase = new OperationsTestCase<NormalDose>(
+			"ValidateNormalDoseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_NORMAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(NormalDose target) {
 				target.init();

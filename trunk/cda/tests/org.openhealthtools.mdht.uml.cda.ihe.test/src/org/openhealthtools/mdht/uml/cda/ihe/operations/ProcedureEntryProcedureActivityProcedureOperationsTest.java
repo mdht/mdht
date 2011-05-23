@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -113,8 +111,9 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 
 	public void testValidateProcedureEntryProcedureActivityProcedureInternalReference() {
 		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
-				"ValidateProcedureEntryProcedureActivityProcedureInternalReference",
-				operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_INTERNAL_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			"ValidateProcedureEntryProcedureActivityProcedureInternalReference",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_INTERNAL_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
@@ -130,7 +129,7 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureInternalReference(
-						(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -141,8 +140,9 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 	@Test
 	public void testValidateProcedureEntryProcedureActivityProcedureInternalReferenceReason() {
 		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
-				"ValidateProcedureEntryProcedureActivityProcedureInternalReferenceReason",
-				operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_INTERNAL_REFERENCE_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			"ValidateProcedureEntryProcedureActivityProcedureInternalReferenceReason",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_INTERNAL_REFERENCE_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
@@ -166,7 +166,7 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureInternalReferenceReason(
-						(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -177,8 +177,9 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 	@Test
 	public void testValidateProcedureEntryProcedureActivityProcedureHasTextReference() {
 		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
-				"ValidateProcedureEntryProcedureActivityProcedureHasTextReference",
-				operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			"ValidateProcedureEntryProcedureActivityProcedureHasTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
@@ -198,7 +199,7 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureHasTextReference(
-						(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -209,8 +210,9 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 	@Test
 	public void testValidateProcedureEntryProcedureActivityProcedureTemplateId() {
 		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
-				"validateProcedureEntryProcedureActivityProcedureTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			"validateProcedureEntryProcedureActivityProcedureTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
@@ -226,7 +228,7 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureTemplateId(
-						(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -237,8 +239,9 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 	@Test
 	public void testValidateProcedureEntryProcedureActivityProcedureText() {
 		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
-				"ValidateProcedureEntryProcedureActivityProcedureText",
-				operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			"ValidateProcedureEntryProcedureActivityProcedureText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
@@ -256,7 +259,7 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureText(
-						(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};

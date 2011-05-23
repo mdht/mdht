@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -63,8 +61,10 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryHasTextReference() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryHasTextReference",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryHasTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -84,7 +84,8 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemEntryOperations.validateProblemEntryHasTextReference((ProblemEntry) objectToTest, diagnostician, map);
+				return ProblemEntryOperations.validateProblemEntryHasTextReference(
+					(ProblemEntry) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -94,8 +95,10 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryCommentInversionInd() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryCommentInversionInd",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_COMMENT_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryCommentInversionInd",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_COMMENT_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -114,7 +117,8 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemEntryOperations.validateProblemEntryCommentInversionInd((ProblemEntry) objectToTest, diagnostician, map);
+				return ProblemEntryOperations.validateProblemEntryCommentInversionInd(
+					(ProblemEntry) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -124,8 +128,10 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryTemplateId() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -139,7 +145,8 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemEntryOperations.validateProblemEntryTemplateId((ProblemEntry) objectToTest, diagnostician, map);
+				return ProblemEntryOperations.validateProblemEntryTemplateId(
+					(ProblemEntry) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -149,8 +156,9 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryCode() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryCode",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -175,8 +183,10 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryEffectiveTime() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryEffectiveTime",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -193,7 +203,8 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemEntryOperations.validateProblemEntryEffectiveTime((ProblemEntry) objectToTest, diagnostician, map);
+				return ProblemEntryOperations.validateProblemEntryEffectiveTime(
+					(ProblemEntry) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -203,8 +214,10 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryId() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryId",
-				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryId",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -230,8 +243,9 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryText() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryText",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryText",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -258,8 +272,9 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntryValue() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntryValue",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -285,8 +300,10 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 	@Test
 	public void testValidateProblemEntrySeverity() {
-		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>("ValidateProblemEntrySeverity",
-				operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_SEVERITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntrySeverity",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_SEVERITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemEntry target) {
@@ -304,7 +321,8 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemEntryOperations.validateProblemEntrySeverity((ProblemEntry) objectToTest, diagnostician, map);
+				return ProblemEntryOperations.validateProblemEntrySeverity(
+					(ProblemEntry) objectToTest, diagnostician, map);
 			}
 
 		};

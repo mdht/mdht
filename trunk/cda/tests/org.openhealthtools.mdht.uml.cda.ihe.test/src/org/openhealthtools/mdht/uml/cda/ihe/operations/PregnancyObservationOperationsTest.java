@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -39,8 +49,10 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 	@Test
 	public void testValidatePregnancyObservationCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationCode",
-				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
+			"ValidatePregnancyObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -56,7 +68,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return PregnancyObservationOperations.validatePregnancyObservationCode((PregnancyObservation) objectToTest, diagnostician, map);
+				return PregnancyObservationOperations.validatePregnancyObservationCode(
+					(PregnancyObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -66,8 +79,10 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 	@Test
 	public void testValidatePregnancyObservationInterpretationCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationInterpretationCode",
-				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
+			"ValidatePregnancyObservationInterpretationCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -81,7 +96,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return PregnancyObservationOperations.validatePregnancyObservationInterpretationCode((PregnancyObservation) objectToTest, diagnostician, map);
+				return PregnancyObservationOperations.validatePregnancyObservationInterpretationCode(
+					(PregnancyObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -91,8 +107,10 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 	@Test
 	public void testValidatePregnancyObservationMethodCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationMethodCode",
-				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
+			"ValidatePregnancyObservationMethodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -106,7 +124,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return PregnancyObservationOperations.validatePregnancyObservationMethodCode((PregnancyObservation) objectToTest, diagnostician, map);
+				return PregnancyObservationOperations.validatePregnancyObservationMethodCode(
+					(PregnancyObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -116,8 +135,10 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 	@Test
 	public void testValidatePregnancyObservationRepeatNumber() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationRepeatNumber",
-				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
+			"ValidatePregnancyObservationRepeatNumber",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -131,7 +152,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return PregnancyObservationOperations.validatePregnancyObservationRepeatNumber((PregnancyObservation) objectToTest, diagnostician, map);
+				return PregnancyObservationOperations.validatePregnancyObservationRepeatNumber(
+					(PregnancyObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -141,8 +163,10 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 	@Test
 	public void testValidatePregnancyObservationTargetSiteCode() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationTargetSiteCode",
-				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
+			"ValidatePregnancyObservationTargetSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -156,7 +180,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return PregnancyObservationOperations.validatePregnancyObservationTargetSiteCode((PregnancyObservation) objectToTest, diagnostician, map);
+				return PregnancyObservationOperations.validatePregnancyObservationTargetSiteCode(
+					(PregnancyObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -166,8 +191,10 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 	@Test
 	public void testValidatePregnancyObservationValue() {
-		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>("ValidatePregnancyObservationValue",
-				operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
+			"ValidatePregnancyObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PregnancyObservation target) {
@@ -184,7 +211,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return PregnancyObservationOperations.validatePregnancyObservationValue((PregnancyObservation) objectToTest, diagnostician, map);
+				return PregnancyObservationOperations.validatePregnancyObservationValue(
+					(PregnancyObservation) objectToTest, diagnostician, map);
 			}
 
 		};

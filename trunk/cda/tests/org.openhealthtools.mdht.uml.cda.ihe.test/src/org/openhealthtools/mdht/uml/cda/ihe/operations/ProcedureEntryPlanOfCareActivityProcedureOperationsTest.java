@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -31,7 +29,6 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryPlanOfCareActivityProc
 @SuppressWarnings("nls")
 public class ProcedureEntryPlanOfCareActivityProcedureOperationsTest extends PlanOfCareActivityProcedureOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.19";
 
 	/**
@@ -50,9 +47,10 @@ public class ProcedureEntryPlanOfCareActivityProcedureOperationsTest extends Pla
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			return ProcedureEntryPlanOfCareActivityProcedureOperations.validateProcedureEntryPlanOfCareActivityProcedureTemplateId(
-					(ProcedureEntryPlanOfCareActivityProcedure) objectToTest, diagnostician, map);
+				(ProcedureEntryPlanOfCareActivityProcedure) objectToTest, diagnostician, map);
 		}
 	} };
 

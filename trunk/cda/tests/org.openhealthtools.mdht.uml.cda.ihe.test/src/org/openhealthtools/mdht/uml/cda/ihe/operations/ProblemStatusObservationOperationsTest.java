@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -41,8 +51,10 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 	@Test
 	public void testValidateIHEProblemStatusObservationHasTextReference() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateIHEProblemStatusObservationHasTextReference",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
+			"ValidateIHEProblemStatusObservationHasTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
@@ -60,7 +72,8 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemStatusObservationOperations.validateIHEProblemStatusObservationHasTextReference((ProblemStatusObservation) objectToTest, diagnostician, map);
+				return ProblemStatusObservationOperations.validateIHEProblemStatusObservationHasTextReference(
+					(ProblemStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -70,8 +83,10 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 	@Test
 	public void testValidateIHEProblemStatusObservationTemplateId() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateProblemStatusObservationTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
+			"ValidateProblemStatusObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
@@ -85,7 +100,8 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemStatusObservationOperations.validateIHEProblemStatusObservationTemplateId((ProblemStatusObservation) objectToTest, diagnostician, map);
+				return ProblemStatusObservationOperations.validateIHEProblemStatusObservationTemplateId(
+					(ProblemStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -95,8 +111,10 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 	@Test
 	public void testValidateIHEProblemStatusObservationText() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateIHEProblemStatusObservationText",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
+			"ValidateIHEProblemStatusObservationText",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_PROBLEM_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
@@ -111,7 +129,8 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemStatusObservationOperations.validateIHEProblemStatusObservationText((ProblemStatusObservation) objectToTest, diagnostician, map);
+				return ProblemStatusObservationOperations.validateIHEProblemStatusObservationText(
+					(ProblemStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -121,8 +140,10 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 	@Test
 	public void testValidateStatusObservationValue() {
-		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>("ValidateStatusObservationValue",
-				operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ProblemStatusObservation> testCase = new OperationsTestCase<ProblemStatusObservation>(
+			"ValidateStatusObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatusObservation target) {
@@ -138,7 +159,8 @@ public class ProblemStatusObservationOperationsTest extends ObservationOperation
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ProblemStatusObservationOperations.validateStatusObservationValue((ProblemStatusObservation) objectToTest, diagnostician, map);
+				return ProblemStatusObservationOperations.validateStatusObservationValue(
+					(ProblemStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};

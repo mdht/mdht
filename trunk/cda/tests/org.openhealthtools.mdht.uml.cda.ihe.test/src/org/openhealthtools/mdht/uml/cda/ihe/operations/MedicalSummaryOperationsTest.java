@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -113,8 +111,10 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 	@Test
 	public void testValidateMedicalSummaryProblemConcernEntry() {
-		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>("ValidateMedicalSummaryProblemConcernEntry",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>(
+			"ValidateMedicalSummaryProblemConcernEntry",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalSummary target) {
@@ -133,7 +133,8 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicalSummaryOperations.validateMedicalSummaryProblemConcernEntry((MedicalSummary) objectToTest, diagnostician, map);
+				return MedicalSummaryOperations.validateMedicalSummaryProblemConcernEntry(
+					(MedicalSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -143,8 +144,10 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 	@Test
 	public void testValidateMedicalSummaryAllergyConcernEntry() {
-		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>("ValidateMedicalSummaryAllergyConcernEntry",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>(
+			"ValidateMedicalSummaryAllergyConcernEntry",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalSummary target) {
@@ -163,7 +166,8 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicalSummaryOperations.validateMedicalSummaryAllergyConcernEntry((MedicalSummary) objectToTest, diagnostician, map);
+				return MedicalSummaryOperations.validateMedicalSummaryAllergyConcernEntry(
+					(MedicalSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -173,8 +177,10 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 	@Test
 	public void testValidateMedicalSummaryMedications() {
-		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>("ValidateMedicalSummaryMedications",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_MEDICATIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>(
+			"ValidateMedicalSummaryMedications",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_MEDICATIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalSummary target) {
@@ -191,7 +197,8 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicalSummaryOperations.validateMedicalSummaryMedications((MedicalSummary) objectToTest, diagnostician, map);
+				return MedicalSummaryOperations.validateMedicalSummaryMedications(
+					(MedicalSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -201,8 +208,10 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 	@Test
 	public void testValidateMedicalSummaryTemplateId() {
-		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>("ValidateMedicalSummaryTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>(
+			"ValidateMedicalSummaryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalSummary target) {
@@ -217,7 +226,8 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicalSummaryOperations.validateMedicalSummaryTemplateId((MedicalSummary) objectToTest, diagnostician, map);
+				return MedicalSummaryOperations.validateMedicalSummaryTemplateId(
+					(MedicalSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -227,8 +237,10 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 	@Test
 	public void testValidateGeneralHeaderConstraintsCodeMedicalSummaryDiagnosticChainMapOfObjectObject() {
-		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>("ValidateGeneralHeaderConstraintsCodeMedicalSummaryDiagnosticChainMapOfObjectObject",
-				operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<MedicalSummary> testCase = new OperationsTestCase<MedicalSummary>(
+			"ValidateGeneralHeaderConstraintsCodeMedicalSummaryDiagnosticChainMapOfObjectObject",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalSummary target) {
@@ -243,7 +255,8 @@ public class MedicalSummaryOperationsTest extends MedicalDocumentOperationsTest 
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicalSummaryOperations.validateGeneralHeaderConstraintsCode((MedicalSummary) objectToTest, diagnostician, map);
+				return MedicalSummaryOperations.validateGeneralHeaderConstraintsCode(
+					(MedicalSummary) objectToTest, diagnostician, map);
 			}
 
 		};

@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -36,6 +34,7 @@ public class HistoryOfPresentIllnessOperationsTest extends SectionOperationsTest
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.3.4";
 
 	protected static final String CODE = "10164-2";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	/**
@@ -54,8 +53,10 @@ public class HistoryOfPresentIllnessOperationsTest extends SectionOperationsTest
 			new CCDValidationTest.TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTemplateId((HistoryOfPresentIllness) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTemplateId(
+						(HistoryOfPresentIllness) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -64,8 +65,10 @@ public class HistoryOfPresentIllnessOperationsTest extends SectionOperationsTest
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessCode((HistoryOfPresentIllness) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessCode(
+						(HistoryOfPresentIllness) objectToTest, diagnostician, map);
 				}
 			}
 

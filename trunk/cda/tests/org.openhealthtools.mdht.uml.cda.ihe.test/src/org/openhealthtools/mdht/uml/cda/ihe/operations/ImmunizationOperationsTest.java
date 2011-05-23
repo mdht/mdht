@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -100,8 +98,10 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 
 	@Test
 	public void testValidateImmunizationTemplateId() {
-		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>("ValidateImmunizationTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>(
+			"ValidateImmunizationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Immunization target) {
@@ -116,7 +116,8 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ImmunizationOperations.validateImmunizationTemplateId((Immunization) objectToTest, diagnostician, map);
+				return ImmunizationOperations.validateImmunizationTemplateId(
+					(Immunization) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -126,8 +127,9 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 
 	@Test
 	public void testValidateImmunizationCode() {
-		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>("ValidateImmunizationCode",
-				operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>(
+			"ValidateImmunizationCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(Immunization target) {
@@ -152,8 +154,10 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 
 	@Test
 	public void testValidateImmunizationStatusCode() {
-		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>("ValidateImmunizationStatusCode",
-				operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>(
+			"ValidateImmunizationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Immunization target) {
@@ -168,7 +172,8 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ImmunizationOperations.validateImmunizationStatusCode((Immunization) objectToTest, diagnostician, map);
+				return ImmunizationOperations.validateImmunizationStatusCode(
+					(Immunization) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -178,8 +183,10 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 
 	@Test
 	public void testValidateImmunizationMoodCode() {
-		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>("ValidateImmunizationMoodCode",
-				operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>(
+			"ValidateImmunizationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Immunization target) {
@@ -194,7 +201,8 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ImmunizationOperations.validateImmunizationMoodCode((Immunization) objectToTest, diagnostician, map);
+				return ImmunizationOperations.validateImmunizationMoodCode(
+					(Immunization) objectToTest, diagnostician, map);
 			}
 
 		};

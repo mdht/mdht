@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -47,8 +57,10 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceTimeEqualsDocumentEffectiveTime() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceTimeEqualsDocumentEffectiveTime",
-				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TIME_EQUALS_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
+			"ValidateScanningDeviceTimeEqualsDocumentEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TIME_EQUALS_DOCUMENT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -79,7 +91,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanningDeviceOperations.validateScanningDeviceTimeEqualsDocumentEffectiveTime((ScanningDevice) objectToTest, diagnostician, map);
+				return ScanningDeviceOperations.validateScanningDeviceTimeEqualsDocumentEffectiveTime(
+					(ScanningDevice) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -89,8 +102,10 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasAssignedAuthorId() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasAssignedAuthorId",
-				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
+			"ValidateScanningDeviceHasAssignedAuthorId",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -107,7 +122,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanningDeviceOperations.validateScanningDeviceHasAssignedAuthorId((ScanningDevice) objectToTest, diagnostician, map);
+				return ScanningDeviceOperations.validateScanningDeviceHasAssignedAuthorId(
+					(ScanningDevice) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -117,8 +133,10 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasAssignedAuthoringDeviceCode() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasAssignedAuthoringDeviceCode",
-				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHORING_DEVICE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
+			"ValidateScanningDeviceHasAssignedAuthoringDeviceCode",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHORING_DEVICE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -142,7 +160,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanningDeviceOperations.validateScanningDeviceHasAssignedAuthoringDeviceCode((ScanningDevice) objectToTest, diagnostician, map);
+				return ScanningDeviceOperations.validateScanningDeviceHasAssignedAuthoringDeviceCode(
+					(ScanningDevice) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -152,8 +171,10 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasDeviceManufacturerModelName() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasDeviceManufacturerModelName",
-				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_MANUFACTURER_MODEL_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
+			"ValidateScanningDeviceHasDeviceManufacturerModelName",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_MANUFACTURER_MODEL_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -175,7 +196,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanningDeviceOperations.validateScanningDeviceHasDeviceManufacturerModelName((ScanningDevice) objectToTest, diagnostician, map);
+				return ScanningDeviceOperations.validateScanningDeviceHasDeviceManufacturerModelName(
+					(ScanningDevice) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -185,8 +207,10 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasDeviceSoftwareName() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasDeviceSoftwareName",
-				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_SOFTWARE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
+			"ValidateScanningDeviceHasDeviceSoftwareName",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_DEVICE_SOFTWARE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -209,7 +233,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanningDeviceOperations.validateScanningDeviceHasDeviceSoftwareName((ScanningDevice) objectToTest, diagnostician, map);
+				return ScanningDeviceOperations.validateScanningDeviceHasDeviceSoftwareName(
+					(ScanningDevice) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -219,8 +244,10 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateScanningDeviceHasAssignedAuthorRepresentedOrganizationId() {
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceHasAssignedAuthorRepresentedOrganizationId",
-				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_REPRESENTED_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
+			"ValidateScanningDeviceHasAssignedAuthorRepresentedOrganizationId",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_HAS_ASSIGNED_AUTHOR_REPRESENTED_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -240,7 +267,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanningDeviceOperations.validateScanningDeviceHasAssignedAuthorRepresentedOrganizationId((ScanningDevice) objectToTest, diagnostician, map);
+				return ScanningDeviceOperations.validateScanningDeviceHasAssignedAuthorRepresentedOrganizationId(
+					(ScanningDevice) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -251,8 +279,10 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 	@Test
 	public void testValidateScanningDeviceTemplateId() {
 
-		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>("ValidateScanningDeviceTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ScanningDevice> testCase = new OperationsTestCase<ScanningDevice>(
+			"ValidateScanningDeviceTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanningDevice target) {
@@ -266,7 +296,8 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ScanningDeviceOperations.validateScanningDeviceTemplateId((ScanningDevice) objectToTest, diagnostician, map);
+				return ScanningDeviceOperations.validateScanningDeviceTemplateId(
+					(ScanningDevice) objectToTest, diagnostician, map);
 			}
 
 		};

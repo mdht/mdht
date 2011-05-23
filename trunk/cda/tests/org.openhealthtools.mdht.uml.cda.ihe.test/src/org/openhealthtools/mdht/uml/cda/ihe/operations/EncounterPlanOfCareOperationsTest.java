@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -71,8 +69,10 @@ public class EncounterPlanOfCareOperationsTest extends EncounterEntryOperationsT
 	 */
 	@Test
 	public void testValidatePlanOfCareActivityEncounterTemplateId() {
-		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>("validateEncounterPlanOfCareTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>(
+			"validateEncounterPlanOfCareTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterPlanOfCare target) {
@@ -87,7 +87,8 @@ public class EncounterPlanOfCareOperationsTest extends EncounterEntryOperationsT
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return EncounterPlanOfCareOperations.validatePlanOfCareActivityEncounterTemplateId((EncounterPlanOfCare) objectToTest, diagnostician, map);
+				return EncounterPlanOfCareOperations.validatePlanOfCareActivityEncounterTemplateId(
+					(EncounterPlanOfCare) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -102,8 +103,10 @@ public class EncounterPlanOfCareOperationsTest extends EncounterEntryOperationsT
 	 */
 	@Test
 	public void testValidateEncounterPlanOfCareMoodCodeValue() {
-		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>("validateEncounterPlanOfCareTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<EncounterPlanOfCare> testCase = new OperationsTestCase<EncounterPlanOfCare>(
+			"validateEncounterPlanOfCareTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_EncounterPlanOfCare_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterPlanOfCare target) {
@@ -121,7 +124,8 @@ public class EncounterPlanOfCareOperationsTest extends EncounterEntryOperationsT
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return EncounterPlanOfCareOperations.validateEncounterPlanOfCareMoodCodeValue((EncounterPlanOfCare) objectToTest, diagnostician, map);
+				return EncounterPlanOfCareOperations.validateEncounterPlanOfCareMoodCodeValue(
+					(EncounterPlanOfCare) objectToTest, diagnostician, map);
 			}
 
 		};

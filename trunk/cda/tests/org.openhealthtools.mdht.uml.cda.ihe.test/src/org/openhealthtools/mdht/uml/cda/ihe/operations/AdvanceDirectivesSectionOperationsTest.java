@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -26,7 +24,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class AdvanceDirectivesSectionOperationsTest extends org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectivesSectionOperationsTest {
+public class AdvanceDirectivesSectionOperationsTest extends
+		org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectivesSectionOperationsTest {
 
 	public static class OperationsForOCL extends AdvanceDirectivesSectionOperations {
 		public String getOCLValue(String fieldName) {
@@ -54,8 +53,10 @@ public class AdvanceDirectivesSectionOperationsTest extends org.openhealthtools.
 
 	@Test
 	public void testValidateIHEAdvanceDirectivesSectionTemplateId() {
-		OperationsTestCase<AdvanceDirectivesSection> testCase = new OperationsTestCase<AdvanceDirectivesSection>("validateIHEAdvanceDirectivesSectionTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<AdvanceDirectivesSection> testCase = new OperationsTestCase<AdvanceDirectivesSection>(
+			"validateIHEAdvanceDirectivesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectivesSection target) {
@@ -70,7 +71,8 @@ public class AdvanceDirectivesSectionOperationsTest extends org.openhealthtools.
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return AdvanceDirectivesSectionOperations.validateIHEAdvanceDirectivesSectionTemplateId((AdvanceDirectivesSection) objectToTest, diagnostician, map);
+				return AdvanceDirectivesSectionOperations.validateIHEAdvanceDirectivesSectionTemplateId(
+					(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 			}
 
 		};
