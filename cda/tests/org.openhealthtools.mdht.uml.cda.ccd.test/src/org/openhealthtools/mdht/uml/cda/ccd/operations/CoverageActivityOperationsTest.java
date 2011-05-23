@@ -33,8 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings({ "nls", "serial" })
-public class CoverageActivityOperationsTest extends
-		StructuralAttributeValidationTest {
+public class CoverageActivityOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String COVERAGE_ACTIVITY_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.20";
 
@@ -46,6 +45,7 @@ public class CoverageActivityOperationsTest extends
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -54,13 +54,10 @@ public class CoverageActivityOperationsTest extends
 			new TemplateIDValidationTest(COVERAGE_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return CoverageActivityOperations
-							.validateCoverageActivityTemplateId(
-									(CoverageActivity) objectToTest,
-									diagnostician, map);
+					return CoverageActivityOperations.validateCoverageActivityTemplateId(
+						(CoverageActivity) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -69,28 +66,21 @@ public class CoverageActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return CoverageActivityOperations
-							.validateCoverageActivityId(
-									(CoverageActivity) objectToTest,
-									diagnostician, map);
+					return CoverageActivityOperations.validateCoverageActivityId(
+						(CoverageActivity) objectToTest, diagnostician, map);
 				}
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return CoverageActivityOperations
-							.validateCoverageActivityStatusCode(
-									(CoverageActivity) objectToTest,
-									diagnostician, map);
+					return CoverageActivityOperations.validateCoverageActivityStatusCode(
+						(CoverageActivity) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -116,21 +106,17 @@ public class CoverageActivityOperationsTest extends
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-				.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return CoverageActivityOperations.validateCoverageActivityClassCode(
-				(CoverageActivity) eObjectToValidate, diagnostician, map)
-				&& CoverageActivityOperations.validateCoverageActivityMoodCode(
-						(CoverageActivity) eObjectToValidate, diagnostician,
-						map);
+			(CoverageActivity) eObjectToValidate, diagnostician, map) &&
+				CoverageActivityOperations.validateCoverageActivityMoodCode(
+					(CoverageActivity) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -140,11 +126,9 @@ public class CoverageActivityOperationsTest extends
 	public void testValidateCoverageActivitySequenceNumber() {
 		// This is not fully implemented.
 		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = CoverageActivityOperations
-				.validateCoverageActivitySequenceNumber(ca, diagnostician, map);
+		boolean isValid = CoverageActivityOperations.validateCoverageActivitySequenceNumber(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -155,11 +139,9 @@ public class CoverageActivityOperationsTest extends
 	public void testValidateCoverageActivityPolicyActivity() {
 		// This is not fully implemented.
 		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = CoverageActivityOperations
-				.validateCoverageActivityPolicyActivity(ca, diagnostician, map);
+		boolean isValid = CoverageActivityOperations.validateCoverageActivityPolicyActivity(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -170,12 +152,9 @@ public class CoverageActivityOperationsTest extends
 	public void testValidateCoverageActivityInformationSource() {
 		// This is not fully implemented.
 		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = CoverageActivityOperations
-				.validateCoverageActivityInformationSource(ca, diagnostician,
-						map);
+		boolean isValid = CoverageActivityOperations.validateCoverageActivityInformationSource(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -186,11 +165,9 @@ public class CoverageActivityOperationsTest extends
 	public void testValidateCoverageActivityCode() {
 		// This is not fully implemented.
 		final CoverageActivity ca = (CoverageActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = CoverageActivityOperations
-				.validateCoverageActivityCode(ca, diagnostician, map);
+		boolean isValid = CoverageActivityOperations.validateCoverageActivityCode(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 

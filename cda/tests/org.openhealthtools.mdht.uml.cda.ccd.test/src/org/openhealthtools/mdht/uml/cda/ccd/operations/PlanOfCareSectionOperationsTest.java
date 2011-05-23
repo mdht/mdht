@@ -38,6 +38,7 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.10";
 
 	protected static final String CODE = "18776-5";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -46,13 +47,10 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionTemplateId(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionTemplateId(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -62,13 +60,10 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionTitle(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionTitle(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -77,13 +72,10 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionCode(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionCode(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -92,13 +84,10 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			new TextCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionText(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionText(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -107,21 +96,17 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionPlanOfCareActivityAct(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionPlanOfCareActivityAct(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setAct(CCDFactory.eINSTANCE
-							.createPlanOfCareActivityAct());
+					entry.setAct(CCDFactory.eINSTANCE.createPlanOfCareActivityAct());
 					retValue.add(entry);
 
 					return retValue;
@@ -132,21 +117,17 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionPlanOfCareActivityEncounter(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionPlanOfCareActivityEncounter(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setEncounter(CCDFactory.eINSTANCE
-							.createPlanOfCareActivityEncounter());
+					entry.setEncounter(CCDFactory.eINSTANCE.createPlanOfCareActivityEncounter());
 					retValue.add(entry);
 					return retValue;
 				}
@@ -156,21 +137,17 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionPlanOfCareActivityObservation(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionPlanOfCareActivityObservation(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setObservation(CCDFactory.eINSTANCE
-							.createPlanOfCareActivityObservation());
+					entry.setObservation(CCDFactory.eINSTANCE.createPlanOfCareActivityObservation());
 					retValue.add(entry);
 					return retValue;
 				}
@@ -180,21 +157,17 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setSubstanceAdministration(CCDFactory.eINSTANCE
-							.createPlanOfCareActivitySubstanceAdministration());
+					entry.setSubstanceAdministration(CCDFactory.eINSTANCE.createPlanOfCareActivitySubstanceAdministration());
 					retValue.add(entry);
 					return retValue;
 				}
@@ -204,21 +177,17 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PlanOfCareSectionOperations
-							.validatePlanOfCareSectionPlanOfCareActivitySupply(
-									(PlanOfCareSection) objectToTest,
-									diagnostician, map);
+					return PlanOfCareSectionOperations.validatePlanOfCareSectionPlanOfCareActivitySupply(
+						(PlanOfCareSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setSupply(CCDFactory.eINSTANCE
-							.createPlanOfCareActivitySupply());
+					entry.setSupply(CCDFactory.eINSTANCE.createPlanOfCareActivitySupply());
 					retValue.add(entry);
 					return retValue;
 				}
@@ -242,12 +211,10 @@ public class PlanOfCareSectionOperationsTest extends CCDValidationTest {
 	public void testValidatePlanOfCareSectionPlanOfCareActivityProcedure() {
 		// This is not fully implemented.
 		final PlanOfCareSection sa = (PlanOfCareSection) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(sa);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(sa);
 
-		boolean isValid = PlanOfCareSectionOperations
-				.validatePlanOfCareSectionPlanOfCareActivityProcedure(sa,
-						diagnostician, map);
+		boolean isValid = PlanOfCareSectionOperations.validatePlanOfCareSectionPlanOfCareActivityProcedure(
+			sa, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 

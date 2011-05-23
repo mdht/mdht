@@ -31,7 +31,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 public class AlertStatusObservationOperationsTest extends CCDValidationTest {
 
 	private static final String ALERTS_STATUS_OBSERVATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.39";
-	//	private static final String OBSERVATION_VALUE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.3";
+
+	// private static final String OBSERVATION_VALUE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.3";
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -42,24 +43,20 @@ public class AlertStatusObservationOperationsTest extends CCDValidationTest {
 		AlertStatusObservationOperations obj = new AlertStatusObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(
-				ALERTS_STATUS_OBSERVATION_TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(ALERTS_STATUS_OBSERVATION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertStatusObservationOperations
-				.validateStatusObservationTemplateId(
-						(AlertStatusObservation) objectToTest,
-						diagnostician, map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return AlertStatusObservationOperations.validateStatusObservationTemplateId(
+				(AlertStatusObservation) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 

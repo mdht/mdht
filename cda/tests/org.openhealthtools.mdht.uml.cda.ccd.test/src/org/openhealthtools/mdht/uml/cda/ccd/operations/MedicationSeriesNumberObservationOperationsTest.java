@@ -32,50 +32,44 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class MedicationSeriesNumberObservationOperationsTest extends
-		CCDValidationTest {
+public class MedicationSeriesNumberObservationOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.46";
 
 	protected static final String STATUS_CODE = "completed";
+
 	// This CODE_SYSTEM is likely incorrect. The OCL doesn't specify one.
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	protected static final String CODE = "30973-2";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	// Incorrect value, not specified in OCL
 	private static final String OBSERVATION_VALUE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.3";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationSeriesNumberObservationOperations
-							.validateMedicationSeriesNumberObservationTemplateId(
-									(MedicationSeriesNumberObservation) objectToTest,
-									diagnostician, map);
+					return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationTemplateId(
+						(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 				}
 
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationSeriesNumberObservationOperations
-							.validateMedicationSeriesNumberObservationStatusCode(
-									(MedicationSeriesNumberObservation) objectToTest,
-									diagnostician, map);
+					return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationStatusCode(
+						(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -83,13 +77,10 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationSeriesNumberObservationOperations
-							.validateMedicationSeriesNumberObservationCode(
-									(MedicationSeriesNumberObservation) objectToTest,
-									diagnostician, map);
+					return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationCode(
+						(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -97,13 +88,10 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 			// -------------------------------------------------------------
 			new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationSeriesNumberObservationOperations
-							.validateMedicationSeriesNumberObservationValue(
-									(MedicationSeriesNumberObservation) objectToTest,
-									diagnostician, map);
+					return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationValue(
+						(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 				}
 
 				@Override
@@ -132,8 +120,7 @@ public class MedicationSeriesNumberObservationOperationsTest extends
 
 	@Override
 	protected EObject getObjectInitToTest() {
-		return CCDFactory.eINSTANCE.createMedicationSeriesNumberObservation()
-				.init();
+		return CCDFactory.eINSTANCE.createMedicationSeriesNumberObservation().init();
 	}
 
 	/**

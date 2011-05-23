@@ -42,20 +42,17 @@ public class EncounterLocationOperationsTest extends CCDValidationTest {
 		EncounterLocationOperations obj = new EncounterLocationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(ENCOUNTER_LOCATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return EncounterLocationOperations
-					.validateEncounterLocationTemplateId(
-							(EncounterLocation) objectToTest, diagnostician,
-							map);
+			return EncounterLocationOperations.validateEncounterLocationTemplateId(
+				(EncounterLocation) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -78,14 +75,12 @@ public class EncounterLocationOperationsTest extends CCDValidationTest {
 	public void testValidateEncounterLocationTypeCode() {
 		// This is not fully implemented.
 		final EncounterLocation el = (EncounterLocation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(el);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(el);
 
-		boolean isValid = EncounterLocationOperations
-				.validateEncounterLocationTypeCode(el, diagnostician, map);
+		boolean isValid = EncounterLocationOperations.validateEncounterLocationTypeCode(el, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createEncounterLocation();

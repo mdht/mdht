@@ -37,6 +37,7 @@ public class ResultsSectionOperationsTest extends CCDValidationTest {
 	protected static final String RESULTS_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.14";
 
 	protected static final String CODE = "30954-2";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	/**
@@ -48,20 +49,17 @@ public class ResultsSectionOperationsTest extends CCDValidationTest {
 		ResultsSectionOperations obj = new ResultsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(RESULTS_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ResultsSectionOperations
-							.validateResultsSectionTemplateId(
-									(ResultsSection) objectToTest,
-									diagnostician, map);
+					return ResultsSectionOperations.validateResultsSectionTemplateId(
+						(ResultsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -71,13 +69,10 @@ public class ResultsSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ResultsSectionOperations
-							.validateResultsSectionTitle(
-									(ResultsSection) objectToTest,
-									diagnostician, map);
+					return ResultsSectionOperations.validateResultsSectionTitle(
+						(ResultsSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -86,11 +81,10 @@ public class ResultsSectionOperationsTest extends CCDValidationTest {
 			new TextCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ResultsSectionOperations.validateResultsSectionText(
-							(ResultsSection) objectToTest, diagnostician, map);
+						(ResultsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -99,11 +93,10 @@ public class ResultsSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ResultsSectionOperations.validateResultsSectionCode(
-							(ResultsSection) objectToTest, diagnostician, map);
+						(ResultsSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -111,21 +104,17 @@ public class ResultsSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ResultsSectionOperations
-							.validateResultsSectionResultOrganizer(
-									(ResultsSection) objectToTest,
-									diagnostician, map);
+					return ResultsSectionOperations.validateResultsSectionResultOrganizer(
+						(ResultsSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setOrganizer(CCDFactory.eINSTANCE
-							.createResultOrganizer());
+					entry.setOrganizer(CCDFactory.eINSTANCE.createResultOrganizer());
 					retValue.add(entry);
 					return retValue;
 				}

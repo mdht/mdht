@@ -33,22 +33,19 @@ public class FamilyHistoryObservationOperationsTest extends CCDValidationTest {
 	protected static final String FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.22";
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDValidationTest(
-					FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID) {
+			new TemplateIDValidationTest(FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistoryObservationOperations
-							.validateFamilyHistoryObservationTemplateId(
-									(FamilyHistoryObservation) objectToTest,
-									diagnostician, map);
+					return FamilyHistoryObservationOperations.validateFamilyHistoryObservationTemplateId(
+						(FamilyHistoryObservation) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -57,28 +54,21 @@ public class FamilyHistoryObservationOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistoryObservationOperations
-							.validateFamilyHistoryObservationId(
-									(FamilyHistoryObservation) objectToTest,
-									diagnostician, map);
+					return FamilyHistoryObservationOperations.validateFamilyHistoryObservationId(
+						(FamilyHistoryObservation) objectToTest, diagnostician, map);
 				}
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistoryObservationOperations
-							.validateFamilyHistoryObservationStatusCode(
-									(FamilyHistoryObservation) objectToTest,
-									diagnostician, map);
+					return FamilyHistoryObservationOperations.validateFamilyHistoryObservationStatusCode(
+						(FamilyHistoryObservation) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -112,5 +102,5 @@ public class FamilyHistoryObservationOperationsTest extends CCDValidationTest {
 		FamilyHistoryObservationOperations obj = new FamilyHistoryObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // FamilyHistoryObservationOperationsTest

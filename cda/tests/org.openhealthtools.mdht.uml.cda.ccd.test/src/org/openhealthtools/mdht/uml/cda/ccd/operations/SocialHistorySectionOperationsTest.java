@@ -33,6 +33,7 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 	protected static final String SOCIAL_HISTORY_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.15";
 
 	protected static final String CODE = "29762-2";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	/**
@@ -44,20 +45,17 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 		SocialHistorySectionOperations obj = new SocialHistorySectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(SOCIAL_HISTORY_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SocialHistorySectionOperations
-							.validateSocialHistorySectionTemplateId(
-									(SocialHistorySection) objectToTest,
-									diagnostician, map);
+					return SocialHistorySectionOperations.validateSocialHistorySectionTemplateId(
+						(SocialHistorySection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -67,13 +65,10 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SocialHistorySectionOperations
-							.validateSocialHistorySectionTitle(
-									(SocialHistorySection) objectToTest,
-									diagnostician, map);
+					return SocialHistorySectionOperations.validateSocialHistorySectionTitle(
+						(SocialHistorySection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -81,13 +76,10 @@ public class SocialHistorySectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SocialHistorySectionOperations
-							.validateSocialHistorySectionCode(
-									(SocialHistorySection) objectToTest,
-									diagnostician, map);
+					return SocialHistorySectionOperations.validateSocialHistorySectionCode(
+						(SocialHistorySection) objectToTest, diagnostician, map);
 				}
 			}
 

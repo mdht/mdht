@@ -34,9 +34,11 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 	protected static final String SEVERITY_OBSERVATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.55";
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	protected static final String CODE = "SEV";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.5.4";
 
 	// Likely incorrect value, not specified in OCL.
@@ -51,36 +53,29 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 		SeverityObservationOperations obj = new SeverityObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(SEVERITY_OBSERVATION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SeverityObservationOperations
-							.validateSeverityObservationTemplateId(
-									(SeverityObservation) objectToTest,
-									diagnostician, map);
+					return SeverityObservationOperations.validateSeverityObservationTemplateId(
+						(SeverityObservation) objectToTest, diagnostician, map);
 				}
 
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SeverityObservationOperations
-							.validateSeverityObservationStatusCode(
-									(SeverityObservation) objectToTest,
-									diagnostician, map);
+					return SeverityObservationOperations.validateSeverityObservationStatusCode(
+						(SeverityObservation) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -88,13 +83,10 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SeverityObservationOperations
-							.validateSeverityObservationCode(
-									(SeverityObservation) objectToTest,
-									diagnostician, map);
+					return SeverityObservationOperations.validateSeverityObservationCode(
+						(SeverityObservation) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -102,13 +94,10 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SeverityObservationOperations
-							.validateSeverityObservationValue(
-									(SeverityObservation) objectToTest,
-									diagnostician, map);
+					return SeverityObservationOperations.validateSeverityObservationValue(
+						(SeverityObservation) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -130,11 +119,9 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 	public void testValidateSeverityObservationClassCode() {
 		// This is not fully implemented.
 		final SeverityObservation so = (SeverityObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(so);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(so);
 
-		boolean isValid = SeverityObservationOperations
-				.validateSeverityObservationClassCode(so, diagnostician, map);
+		boolean isValid = SeverityObservationOperations.validateSeverityObservationClassCode(so, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -145,11 +132,9 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 	public void testValidateSeverityObservationMoodCode() {
 		// This is not fully implemented.
 		final SeverityObservation so = (SeverityObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(so);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(so);
 
-		boolean isValid = SeverityObservationOperations
-				.validateSeverityObservationMoodCode(so, diagnostician, map);
+		boolean isValid = SeverityObservationOperations.validateSeverityObservationMoodCode(so, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -163,5 +148,4 @@ public class SeverityObservationOperationsTest extends CCDValidationTest {
 		return CCDFactory.eINSTANCE.createSeverityObservation().init();
 	}
 
-	
 } // SeverityObservationOperationsTest

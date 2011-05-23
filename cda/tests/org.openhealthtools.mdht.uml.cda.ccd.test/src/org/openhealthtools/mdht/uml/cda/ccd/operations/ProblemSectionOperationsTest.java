@@ -37,6 +37,7 @@ public class ProblemSectionOperationsTest extends CCDValidationTest {
 	protected static final String PROBLEM_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.11";
 
 	protected static final String CODE = "11450-4";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	/**
@@ -48,20 +49,17 @@ public class ProblemSectionOperationsTest extends CCDValidationTest {
 		ProblemSectionOperations obj = new ProblemSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(PROBLEM_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ProblemSectionOperations
-							.validateProblemSectionTemplateId(
-									(ProblemSection) objectToTest,
-									diagnostician, map);
+					return ProblemSectionOperations.validateProblemSectionTemplateId(
+						(ProblemSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -71,13 +69,10 @@ public class ProblemSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ProblemSectionOperations
-							.validateProblemSectionTitle(
-									(ProblemSection) objectToTest,
-									diagnostician, map);
+					return ProblemSectionOperations.validateProblemSectionTitle(
+						(ProblemSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -87,11 +82,10 @@ public class ProblemSectionOperationsTest extends CCDValidationTest {
 			new TextCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ProblemSectionOperations.validateProblemSectionText(
-							(ProblemSection) objectToTest, diagnostician, map);
+						(ProblemSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -100,11 +94,10 @@ public class ProblemSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ProblemSectionOperations.validateProblemSectionCode(
-							(ProblemSection) objectToTest, diagnostician, map);
+						(ProblemSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -112,13 +105,10 @@ public class ProblemSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ProblemSectionOperations
-							.validateProblemSectionProblemAct(
-									(ProblemSection) objectToTest,
-									diagnostician, map);
+					return ProblemSectionOperations.validateProblemSectionProblemAct(
+						(ProblemSection) objectToTest, diagnostician, map);
 				}
 
 				@Override

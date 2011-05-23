@@ -41,21 +41,20 @@ public class ProcedureActivityActOperationsTest extends CCDValidationTest {
 		ProcedureActivityActOperations obj = new ProcedureActivityActOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProcedureActivityActOperations.validateProcedureActivityActTemplateId(
-						(ProcedureActivityAct) objectToTest, diagnostician, map);
-			}
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return ProcedureActivityActOperations.validateProcedureActivityActTemplateId(
+				(ProcedureActivityAct) objectToTest, diagnostician, map);
+		}
 
-		} }; // TEST_CASE_ARRAY
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {

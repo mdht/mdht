@@ -39,6 +39,7 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	protected static final String SUPPLY_ACTIVITY_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.34";
 
 	protected static final String STATUS_CODE = "completed";
+
 	// This CODE_SYSTEM is likely not correct. The OCL doesn't specify one.
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
@@ -51,20 +52,17 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 		SupplyActivityOperations obj = new SupplyActivityOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(SUPPLY_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SupplyActivityOperations
-							.validateSupplyActivityTemplateId(
-									(SupplyActivity) objectToTest,
-									diagnostician, map);
+					return SupplyActivityOperations.validateSupplyActivityTemplateId(
+						(SupplyActivity) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -73,26 +71,21 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return SupplyActivityOperations.validateSupplyActivityId(
-							(SupplyActivity) objectToTest, diagnostician, map);
+						(SupplyActivity) objectToTest, diagnostician, map);
 				}
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SupplyActivityOperations
-							.validateSupplyActivityStatusCode(
-									(SupplyActivity) objectToTest,
-									diagnostician, map);
+					return SupplyActivityOperations.validateSupplyActivityStatusCode(
+						(SupplyActivity) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -100,24 +93,19 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryRelationshipCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return SupplyActivityOperations
-							.validateSupplyActivityFulfillmentInstruction(
-									(SupplyActivity) objectToTest,
-									diagnostician, map);
+					return SupplyActivityOperations.validateSupplyActivityFulfillmentInstruction(
+						(SupplyActivity) objectToTest, diagnostician, map);
 
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
-					final EntryRelationship er = CDAFactory.eINSTANCE
-							.createEntryRelationship();
+					final EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-					er.setAct(CCDFactory.eINSTANCE
-							.createFulfillmentInstruction());
+					er.setAct(CCDFactory.eINSTANCE.createFulfillmentInstruction());
 					retValue.add(er);
 					return retValue;
 				}
@@ -152,22 +140,16 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	@Test
 	public final void testValidateSupplyActivityMedicationStatusObservation() {
 		final SupplyActivity sa = (SupplyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(sa);
-		boolean isValid = SupplyActivityOperations
-				.validateSupplyActivityMedicationStatusObservation(sa,
-						diagnostician, map);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(sa);
+		boolean isValid = SupplyActivityOperations.validateSupplyActivityMedicationStatusObservation(
+			sa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), !isValid);
 
-		final EntryRelationship rel = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-		rel.setObservation(CCDFactory.eINSTANCE
-				.createMedicationStatusObservation());
+		final EntryRelationship rel = CDAFactory.eINSTANCE.createEntryRelationship();
+		rel.setObservation(CCDFactory.eINSTANCE.createMedicationStatusObservation());
 		sa.getEntryRelationships().add(rel);
 
-		isValid = SupplyActivityOperations
-				.validateSupplyActivityMedicationStatusObservation(sa,
-						diagnostician, map);
+		isValid = SupplyActivityOperations.validateSupplyActivityMedicationStatusObservation(sa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 	}
 
@@ -178,11 +160,9 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	public void testSupplyActivityEffectiveTime() {
 		// This is not fully implemented.
 		final SupplyActivity sa = (SupplyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(sa);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(sa);
 
-		boolean isValid = SupplyActivityOperations
-				.validateSupplyActivityEffectiveTime(sa, diagnostician, map);
+		boolean isValid = SupplyActivityOperations.validateSupplyActivityEffectiveTime(sa, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -193,12 +173,9 @@ public class SupplyActivityOperationsTest extends CCDValidationTest {
 	public void testSupplyActivityFullfillmentInstruction() {
 		// This is not fully implemented.
 		final SupplyActivity sa = (SupplyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(sa);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(sa);
 
-		boolean isValid = SupplyActivityOperations
-				.validateSupplyActivityFulfillmentInstruction(sa,
-						diagnostician, map);
+		boolean isValid = SupplyActivityOperations.validateSupplyActivityFulfillmentInstruction(sa, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 

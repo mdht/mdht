@@ -34,22 +34,19 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 	protected static final String ADVANCE_DIRECTIVE_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.1";
 
 	protected static final String CODE = "42348-3";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDValidationTest(
-					ADVANCE_DIRECTIVE_SECTION_TEMPLATE_ID) {
+			new TemplateIDValidationTest(ADVANCE_DIRECTIVE_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return AdvanceDirectivesSectionOperations
-							.validateAdvanceDirectivesSectionTemplateId(
-									(AdvanceDirectivesSection) objectToTest,
-									diagnostician, map);
+					return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTemplateId(
+						(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -59,13 +56,10 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return AdvanceDirectivesSectionOperations
-							.validateAdvanceDirectivesSectionTitle(
-									(AdvanceDirectivesSection) objectToTest,
-									diagnostician, map);
+					return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTitle(
+						(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -74,13 +68,10 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return AdvanceDirectivesSectionOperations
-							.validateAdvanceDirectivesSectionCode(
-									(AdvanceDirectivesSection) objectToTest,
-									diagnostician, map);
+					return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionCode(
+						(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -88,21 +79,17 @@ public class AdvanceDirectivesSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return AdvanceDirectivesSectionOperations
-							.validateAdvanceDirectivesSectionAdvanceDirectiveObservation(
-									(AdvanceDirectivesSection) objectToTest,
-									diagnostician, map);
+					return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionAdvanceDirectiveObservation(
+						(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setObservation(CCDFactory.eINSTANCE
-							.createAdvanceDirectiveObservation());
+					entry.setObservation(CCDFactory.eINSTANCE.createAdvanceDirectiveObservation());
 					retValue.add(entry);
 					return retValue;
 				}

@@ -33,8 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings({ "nls", "serial" })
-public class PolicyActivityOperationsTest extends
-		StructuralAttributeValidationTest {
+public class PolicyActivityOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.26";
 
@@ -46,6 +45,7 @@ public class PolicyActivityOperationsTest extends
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -54,13 +54,10 @@ public class PolicyActivityOperationsTest extends
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PolicyActivityOperations
-							.validatePolicyActivityTemplateId(
-									(PolicyActivity) objectToTest,
-									diagnostician, map);
+					return PolicyActivityOperations.validatePolicyActivityTemplateId(
+						(PolicyActivity) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -69,26 +66,21 @@ public class PolicyActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PolicyActivityOperations.validatePolicyActivityId(
-							(PolicyActivity) objectToTest, diagnostician, map);
+						(PolicyActivity) objectToTest, diagnostician, map);
 				}
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PolicyActivityOperations
-							.validatePolicyActivityStatusCode(
-									(PolicyActivity) objectToTest,
-									diagnostician, map);
+					return PolicyActivityOperations.validatePolicyActivityStatusCode(
+						(PolicyActivity) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -114,20 +106,17 @@ public class PolicyActivityOperationsTest extends
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-				.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return PolicyActivityOperations.validatePolicyActivityClassCode(
-				(PolicyActivity) eObjectToValidate, diagnostician, map)
-				&& PolicyActivityOperations.validatePolicyActivityMoodCode(
-						(PolicyActivity) eObjectToValidate, diagnostician, map);
+			(PolicyActivity) eObjectToValidate, diagnostician, map) &&
+				PolicyActivityOperations.validatePolicyActivityMoodCode(
+					(PolicyActivity) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -137,11 +126,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivitySubscriberTime() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivitySubscriberTime(ca, diagnostician, map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivitySubscriberTime(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -152,12 +139,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivitySubscriberIsAllowed() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivitySubscriberIsAllowed(ca, diagnostician,
-						map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivitySubscriberIsAllowed(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -168,11 +152,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityPolicySubscriber() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityPolicySubscriber(ca, diagnostician, map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivitySubscriber(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -183,12 +165,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityPayerEntityIsRequired() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityPayerEntityIsRequired(ca, diagnostician,
-						map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivityPayerEntityIsRequired(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -199,11 +178,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityPayerEntity() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityPayerEntity(ca, diagnostician, map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivityPayerEntity(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -214,12 +191,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityEntryRelationshipTarget() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityEntryRelationshipTarget(ca,
-						diagnostician, map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivityEntryRelationshipTarget(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -230,12 +204,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityEntryRelationshipREFR() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityEntryRelationshipREFR(ca, diagnostician,
-						map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivityEntryRelationshipREFR(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -246,11 +217,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityCoveredPartyTime() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityCoveredPartyTime(ca, diagnostician, map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivityCoveredPartyTime(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -261,12 +230,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityCoveredPartyIsRequired() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityCoveredPartyIsRequired(ca,
-						diagnostician, map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivityCoveredPartyIsRequired(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -277,11 +243,9 @@ public class PolicyActivityOperationsTest extends
 	public void testValidatePolicyActivityCoveredParty() {
 		// This is not fully implemented.
 		final PolicyActivity ca = (PolicyActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ca);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ca);
 
-		boolean isValid = PolicyActivityOperations
-				.validatePolicyActivityCoveredParty(ca, diagnostician, map);
+		boolean isValid = PolicyActivityOperations.validatePolicyActivityCoveredParty(ca, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 } // PolicyActivityOperationsTest

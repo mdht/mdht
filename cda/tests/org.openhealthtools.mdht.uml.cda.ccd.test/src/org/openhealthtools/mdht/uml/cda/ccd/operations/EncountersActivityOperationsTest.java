@@ -34,6 +34,7 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 	protected static final String ENCOUNTERS_ACTIVITY_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.21";
 
 	protected static final String CODE = "completed";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.1.11.13955";
 
 	/**
@@ -45,20 +46,17 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 		EncountersActivityOperations obj = new EncountersActivityOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(ENCOUNTERS_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return EncountersActivityOperations
-							.validateEncountersActivityTemplateId(
-									(EncountersActivity) objectToTest,
-									diagnostician, map);
+					return EncountersActivityOperations.validateEncountersActivityTemplateId(
+						(EncountersActivity) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -67,13 +65,10 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return EncountersActivityOperations
-							.validateEncountersActivityId(
-									(EncountersActivity) objectToTest,
-									diagnostician, map);
+					return EncountersActivityOperations.validateEncountersActivityId(
+						(EncountersActivity) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -81,13 +76,10 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EffectiveTimeCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return EncountersActivityOperations
-							.validateEncountersActivityEffectiveTime(
-									(EncountersActivity) objectToTest,
-									diagnostician, map);
+					return EncountersActivityOperations.validateEncountersActivityEffectiveTime(
+						(EncountersActivity) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -109,11 +101,9 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 	public void testValidateEncountersActivityClassCode() {
 		// This is not fully implemented.
 		final EncountersActivity ea = (EncountersActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ea);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ea);
 
-		boolean isValid = EncountersActivityOperations
-				.validateEncountersActivityClassCode(ea, diagnostician, map);
+		boolean isValid = EncountersActivityOperations.validateEncountersActivityClassCode(ea, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 
@@ -124,11 +114,9 @@ public class EncountersActivityOperationsTest extends CCDValidationTest {
 	public void testValidateEncountersActivityMoodCode() {
 		// This is not fully implemented.
 		final EncountersActivity ea = (EncountersActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ea);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ea);
 
-		boolean isValid = EncountersActivityOperations
-				.validateEncountersActivityMoodCode(ea, diagnostician, map);
+		boolean isValid = EncountersActivityOperations.validateEncountersActivityMoodCode(ea, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
 

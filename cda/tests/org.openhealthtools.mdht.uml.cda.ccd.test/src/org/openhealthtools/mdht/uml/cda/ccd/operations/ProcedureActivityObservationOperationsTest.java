@@ -41,23 +41,20 @@ public class ProcedureActivityObservationOperationsTest extends CCDValidationTes
 		ProcedureActivityObservationOperations obj = new ProcedureActivityObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProcedureActivityObservationOperations
-				.validateProcedureActivityObservationTemplateId(
-						(ProcedureActivityObservation) objectToTest,
-						diagnostician, map);
-			}
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return ProcedureActivityObservationOperations.validateProcedureActivityObservationTemplateId(
+				(ProcedureActivityObservation) objectToTest, diagnostician, map);
+		}
 
-		} }; // TEST_CASE_ARRAY
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -67,7 +64,7 @@ public class ProcedureActivityObservationOperationsTest extends CCDValidationTes
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createProcedureActivityObservation();

@@ -31,8 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class AdvanceDirectiveVerificationOperationsTest extends
-		CCDValidationTest {
+public class AdvanceDirectiveVerificationOperationsTest extends CCDValidationTest {
 
 	protected static final String ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.58";
 
@@ -42,13 +41,10 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	new TemplateIDValidationTest(ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return AdvanceDirectiveVerificationOperations
-					.validateAdvanceDirectiveVerificationTemplateId(
-							(AdvanceDirectiveVerification) objectToTest,
-							diagnostician, map);
+			return AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTemplateId(
+				(AdvanceDirectiveVerification) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -63,7 +59,7 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAdvanceDirectiveVerification();
@@ -83,7 +79,7 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 		AdvanceDirectiveVerificationOperations obj = new AdvanceDirectiveVerificationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectiveVerificationOperations#validateAdvanceDirectiveVerificationTypeCode(org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -92,21 +88,17 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	@Test
 	public final void testValidateAdvanceDirectiveVerificationTypeCode() {
 		final AdvanceDirectiveVerification adv = (AdvanceDirectiveVerification) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(adv);
-		assertTrue(!AdvanceDirectiveVerificationOperations
-				.validateAdvanceDirectiveVerificationTypeCode(adv,
-						diagnostician, map));
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(adv);
+		assertTrue(!AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTypeCode(
+			adv, diagnostician, map));
 
 		adv.setTypeCode(ParticipationType.ADM);
-		assertTrue(!AdvanceDirectiveVerificationOperations
-				.validateAdvanceDirectiveVerificationTypeCode(adv,
-						diagnostician, map));
+		assertTrue(!AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTypeCode(
+			adv, diagnostician, map));
 
 		adv.setTypeCode(ParticipationType.VRF);
-		assertTrue(AdvanceDirectiveVerificationOperations
-				.validateAdvanceDirectiveVerificationTypeCode(adv,
-						diagnostician, map));
+		assertTrue(AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTypeCode(
+			adv, diagnostician, map));
 	}
 
 	/**
@@ -117,20 +109,14 @@ public class AdvanceDirectiveVerificationOperationsTest extends
 	@Test
 	public final void testValidateAdvanceDirectiveVerificationTime() {
 		final EObject objectToTest = getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(objectToTest);
-		assertTrue(!AdvanceDirectiveVerificationOperations
-				.validateAdvanceDirectiveVerificationTime(
-						(AdvanceDirectiveVerification) objectToTest,
-						diagnostician, map));
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest);
+		assertTrue(!AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTime(
+			(AdvanceDirectiveVerification) objectToTest, diagnostician, map));
 
-		((AdvanceDirectiveVerification) objectToTest)
-				.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+		((AdvanceDirectiveVerification) objectToTest).setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
 
-		assertTrue(AdvanceDirectiveVerificationOperations
-				.validateAdvanceDirectiveVerificationTime(
-						(AdvanceDirectiveVerification) objectToTest,
-						diagnostician, map));
+		assertTrue(AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTime(
+			(AdvanceDirectiveVerification) objectToTest, diagnostician, map));
 	}
 
 } // AdvanceDirectiveVerificationOperationsTest

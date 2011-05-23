@@ -31,7 +31,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
 public class ProblemStatusOperationsTest extends CCDValidationTest {
 
 	protected static final String PROBLEM_STATUS_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.50";
-	//	private static final String PROBLEM_STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.13";
+
+	// private static final String PROBLEM_STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.13";
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -42,21 +43,20 @@ public class ProblemStatusOperationsTest extends CCDValidationTest {
 		ProblemStatusObservationOperations obj = new ProblemStatusObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(PROBLEM_STATUS_TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(PROBLEM_STATUS_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProblemStatusObservationOperations.validateStatusObservationTemplateId(
-						(ProblemStatusObservation) objectToTest, diagnostician, map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return ProblemStatusObservationOperations.validateStatusObservationTemplateId(
+				(ProblemStatusObservation) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 

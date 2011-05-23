@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperationsTest;
 public class CoveragePlanDescriptionOperationsTest extends ActOperationsTest {
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {};
-	
+
 	@Override
 	protected List<CDATestCase> getTestCases() {
 		// Return a new List because the one returned by Arrays.asList is
@@ -38,7 +38,7 @@ public class CoveragePlanDescriptionOperationsTest extends ActOperationsTest {
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-		
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ccd.operations.CoveragePlanDescriptionOperations#validateCoveragePlanDescriptionClassCode(org.openhealthtools.mdht.uml.cda.ccd.CoveragePlanDescription, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}

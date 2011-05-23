@@ -35,6 +35,7 @@ public class ProblemHealthStatusOperationsTest extends CCDValidationTest {
 	protected static final String HEALTH_STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.12";
 
 	protected static final String CODE = "11323-3";
+
 	protected static final String CODE_CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	/**
@@ -46,39 +47,32 @@ public class ProblemHealthStatusOperationsTest extends CCDValidationTest {
 		ProblemHealthStatusObservationOperations obj = new ProblemHealthStatusObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProblemHealthStatusObservationOperations
-				.validateStatusObservationTemplateId(
-						(ProblemHealthStatusObservation) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemHealthStatusObservationOperations.validateStatusObservationTemplateId(
+						(ProblemHealthStatusObservation) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					// The OCL specifies CD as the type but the type is CS
+					return ProblemHealthStatusObservationOperations.validateStatusObservationCode(
+						(ProblemHealthStatusObservation) objectToTest, diagnostician, map);
+				}
 			}
-
-		},
-
-		// Status Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE,
-				CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				// The OCL specifies CD as the type but the type is CS
-				return ProblemHealthStatusObservationOperations
-				.validateStatusObservationCode(
-						(ProblemHealthStatusObservation) objectToTest,
-						diagnostician, map);
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 

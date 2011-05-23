@@ -27,9 +27,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
-public class FulfillmentInstructionOperationsTest extends
-		StructuralAttributeValidationTest {
+@SuppressWarnings({ "nls", "serial" })
+public class FulfillmentInstructionOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String FULFILLMENT_INSTRUCTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.43";
 
@@ -45,13 +44,10 @@ public class FulfillmentInstructionOperationsTest extends
 	new TemplateIDValidationTest(FULFILLMENT_INSTRUCTION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return FulfillmentInstructionOperations
-					.validateFulfillmentInstructionTemplateId(
-							(FulfillmentInstruction) objectToTest,
-							diagnostician, map);
+			return FulfillmentInstructionOperations.validateFulfillmentInstructionTemplateId(
+				(FulfillmentInstruction) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -78,20 +74,15 @@ public class FulfillmentInstructionOperationsTest extends
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-				.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-		return FulfillmentInstructionOperations
-				.validateFulfillmentInstructionMoodCode(
-						(FulfillmentInstruction) eObjectToValidate,
-						diagnostician, map);
+		return FulfillmentInstructionOperations.validateFulfillmentInstructionMoodCode(
+			(FulfillmentInstruction) eObjectToValidate, diagnostician, map);
 	}
 
 } // FulfillmentInstructionOperationsTest

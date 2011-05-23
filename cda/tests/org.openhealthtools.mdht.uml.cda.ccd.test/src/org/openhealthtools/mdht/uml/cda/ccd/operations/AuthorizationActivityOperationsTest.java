@@ -28,9 +28,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
-public class AuthorizationActivityOperationsTest extends
-		StructuralAttributeValidationTest {
+@SuppressWarnings({ "nls", "serial" })
+public class AuthorizationActivityOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String AUTHORIZATION_ACTIVITY_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.19";
 
@@ -42,18 +41,15 @@ public class AuthorizationActivityOperationsTest extends
 	};
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(AUTHORIZATION_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return AuthorizationActivityOperations
-							.validateAuthorizationActivityTemplateId(
-									(AuthorizationActivity) objectToTest,
-									diagnostician, map);
+					return AuthorizationActivityOperations.validateAuthorizationActivityTemplateId(
+						(AuthorizationActivity) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -62,13 +58,10 @@ public class AuthorizationActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return AuthorizationActivityOperations
-							.validateAuthorizationActivityId(
-									(AuthorizationActivity) objectToTest,
-									diagnostician, map);
+					return AuthorizationActivityOperations.validateAuthorizationActivityId(
+						(AuthorizationActivity) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -82,7 +75,7 @@ public class AuthorizationActivityOperationsTest extends
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAuthorizationActivity();
@@ -94,24 +87,17 @@ public class AuthorizationActivityOperationsTest extends
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-				.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-		return AuthorizationActivityOperations
-				.validateAuthorizationActivityClassCode(
-						(AuthorizationActivity) eObjectToValidate,
-						diagnostician, map)
-				&& AuthorizationActivityOperations
-						.validateAuthorizationActivityMoodCode(
-								(AuthorizationActivity) eObjectToValidate,
-								diagnostician, map);
+		return AuthorizationActivityOperations.validateAuthorizationActivityClassCode(
+			(AuthorizationActivity) eObjectToValidate, diagnostician, map) &&
+				AuthorizationActivityOperations.validateAuthorizationActivityMoodCode(
+					(AuthorizationActivity) eObjectToValidate, diagnostician, map);
 	}
 
 } // AuthorizationActivityOperationsTest

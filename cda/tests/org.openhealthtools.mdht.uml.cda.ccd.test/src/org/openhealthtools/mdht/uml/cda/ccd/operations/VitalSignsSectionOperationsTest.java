@@ -37,6 +37,7 @@ public class VitalSignsSectionOperationsTest extends CCDValidationTest {
 	protected static final String VITAL_SIGNS_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.16";
 
 	protected static final String CODE = "8716-3";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	/**
@@ -48,20 +49,17 @@ public class VitalSignsSectionOperationsTest extends CCDValidationTest {
 		VitalSignsSectionOperations obj = new VitalSignsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(VITAL_SIGNS_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return VitalSignsSectionOperations
-							.validateVitalSignsSectionTemplateId(
-									(VitalSignsSection) objectToTest,
-									diagnostician, map);
+					return VitalSignsSectionOperations.validateVitalSignsSectionTemplateId(
+						(VitalSignsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -71,13 +69,10 @@ public class VitalSignsSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return VitalSignsSectionOperations
-							.validateVitalSignsSectionTitle(
-									(VitalSignsSection) objectToTest,
-									diagnostician, map);
+					return VitalSignsSectionOperations.validateVitalSignsSectionTitle(
+						(VitalSignsSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -86,13 +81,10 @@ public class VitalSignsSectionOperationsTest extends CCDValidationTest {
 			new TextCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return VitalSignsSectionOperations
-							.validateVitalSignsSectionText(
-									(VitalSignsSection) objectToTest,
-									diagnostician, map);
+					return VitalSignsSectionOperations.validateVitalSignsSectionText(
+						(VitalSignsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -101,13 +93,10 @@ public class VitalSignsSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return VitalSignsSectionOperations
-							.validateVitalSignsSectionCode(
-									(VitalSignsSection) objectToTest,
-									diagnostician, map);
+					return VitalSignsSectionOperations.validateVitalSignsSectionCode(
+						(VitalSignsSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -115,21 +104,17 @@ public class VitalSignsSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new EntryCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return VitalSignsSectionOperations
-							.validateVitalSignsSectionVitalSignsOrganizer(
-									(VitalSignsSection) objectToTest,
-									diagnostician, map);
+					return VitalSignsSectionOperations.validateVitalSignsSectionVitalSignsOrganizer(
+						(VitalSignsSection) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<Entry> retValue = new BasicEList<Entry>();
 					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setOrganizer(CCDFactory.eINSTANCE
-							.createVitalSignsOrganizer());
+					entry.setOrganizer(CCDFactory.eINSTANCE.createVitalSignsOrganizer());
 					retValue.add(entry);
 					return retValue;
 				}

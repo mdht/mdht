@@ -28,12 +28,11 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class MedicationStatusObservationOperationsTest extends
-CCDValidationTest {
+public class MedicationStatusObservationOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.47";
 
-	//	private static final String OBSERVATION_VALUE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.7";
+	// private static final String OBSERVATION_VALUE_CODE_SYSTEM = "2.16.840.1.113883.1.11.20.7";
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -44,23 +43,20 @@ CCDValidationTest {
 		MedicationStatusObservationOperations obj = new MedicationStatusObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return MedicationStatusObservationOperations
-				.validateStatusObservationTemplateId(
-						(MedicationStatusObservation) objectToTest,
-						diagnostician, map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return MedicationStatusObservationOperations.validateStatusObservationTemplateId(
+				(MedicationStatusObservation) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 

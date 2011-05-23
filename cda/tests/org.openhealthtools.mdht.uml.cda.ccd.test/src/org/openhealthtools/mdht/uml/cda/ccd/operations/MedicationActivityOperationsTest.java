@@ -36,9 +36,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
-public class MedicationActivityOperationsTest extends
-		StructuralAttributeValidationTest {
+@SuppressWarnings({ "nls", "serial" })
+public class MedicationActivityOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String MEDICATION_ACTIVITY_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.24";
 
@@ -51,22 +50,20 @@ public class MedicationActivityOperationsTest extends
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	// This status code is likely not correct. The OCL doesn't specify one.
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(MEDICATION_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationActivityOperations
-							.validateMedicationActivityTemplateId(
-									(MedicationActivity) objectToTest,
-									diagnostician, map);
+					return MedicationActivityOperations.validateMedicationActivityTemplateId(
+						(MedicationActivity) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -75,28 +72,21 @@ public class MedicationActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new IDCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationActivityOperations
-							.validateMedicationActivityId(
-									(MedicationActivity) objectToTest,
-									diagnostician, map);
+					return MedicationActivityOperations.validateMedicationActivityId(
+						(MedicationActivity) objectToTest, diagnostician, map);
 				}
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationActivityOperations
-							.validateMedicationActivityStatusCode(
-									(MedicationActivity) objectToTest,
-									diagnostician, map);
+					return MedicationActivityOperations.validateMedicationActivityStatusCode(
+						(MedicationActivity) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -104,21 +94,17 @@ public class MedicationActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new EntryRelationshipCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicationActivityOperations
-							.validateMedicationActivityPatientInstruction(
-									(MedicationActivity) objectToTest,
-									diagnostician, map);
+					return MedicationActivityOperations.validateMedicationActivityPatientInstruction(
+						(MedicationActivity) objectToTest, diagnostician, map);
 				}
 
 				@Override
 				protected Object getValueToSet() {
 					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
 
-					final EntryRelationship er = CDAFactory.eINSTANCE
-							.createEntryRelationship();
+					final EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 					er.setAct(CCDFactory.eINSTANCE.createPatientInstruction());
 					retValue.add(er);
@@ -137,7 +123,7 @@ public class MedicationActivityOperationsTest extends
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createMedicationActivity();
@@ -149,18 +135,15 @@ public class MedicationActivityOperationsTest extends
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-				.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return MedicationActivityOperations.validateMedicationActivityMoodCode(
-				(MedicationActivity) eObjectToValidate, diagnostician, map);
+			(MedicationActivity) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -171,19 +154,15 @@ public class MedicationActivityOperationsTest extends
 	@Test
 	public final void testValidateMedicationActivityMedicationSeriesNumberObservation() {
 		final MedicationActivity ma = (MedicationActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ma);
-		boolean isValid = MedicationActivityOperations
-				.validateMedicationActivityMedicationSeriesNumberObservation(
-						ma, diagnostician, map);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ma);
+		boolean isValid = MedicationActivityOperations.validateMedicationActivityMedicationSeriesNumberObservation(
+			ma, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), !isValid);
 
-		ma.addObservation(CCDFactory.eINSTANCE
-				.createMedicationSeriesNumberObservation());
+		ma.addObservation(CCDFactory.eINSTANCE.createMedicationSeriesNumberObservation());
 
-		isValid = MedicationActivityOperations
-				.validateMedicationActivityMedicationSeriesNumberObservation(
-						ma, diagnostician, map);
+		isValid = MedicationActivityOperations.validateMedicationActivityMedicationSeriesNumberObservation(
+			ma, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 	}
 
@@ -195,20 +174,16 @@ public class MedicationActivityOperationsTest extends
 	@Test
 	public final void testValidateMedicationActivityMedicationStatusObservation() {
 		final MedicationActivity ma = (MedicationActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ma);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ma);
 
-		boolean isValid = MedicationActivityOperations
-				.validateMedicationActivityMedicationStatusObservation(ma,
-						diagnostician, map);
+		boolean isValid = MedicationActivityOperations.validateMedicationActivityMedicationStatusObservation(
+			ma, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), !isValid);
 
-		ma.addObservation(CCDFactory.eINSTANCE
-				.createMedicationStatusObservation());
+		ma.addObservation(CCDFactory.eINSTANCE.createMedicationStatusObservation());
 
-		isValid = MedicationActivityOperations
-				.validateMedicationActivityMedicationStatusObservation(ma,
-						diagnostician, map);
+		isValid = MedicationActivityOperations.validateMedicationActivityMedicationStatusObservation(
+			ma, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 	}
 

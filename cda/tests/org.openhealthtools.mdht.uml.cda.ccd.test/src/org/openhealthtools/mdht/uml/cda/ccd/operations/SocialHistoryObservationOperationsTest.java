@@ -41,20 +41,17 @@ public class SocialHistoryObservationOperationsTest extends CCDValidationTest {
 		SocialHistoryObservationOperations obj = new SocialHistoryObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(SOCIAL_HISTORY_OBSERVATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return SocialHistoryObservationOperations
-					.validateSocialHistoryObservationTemplateId(
-							(SocialHistoryObservation) objectToTest,
-							diagnostician, map);
+			return SocialHistoryObservationOperations.validateSocialHistoryObservationTemplateId(
+				(SocialHistoryObservation) objectToTest, diagnostician, map);
 		}
 
 	}

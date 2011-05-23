@@ -57,117 +57,96 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	};
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProblemActOperations.validateProblemActTemplateId(
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemActOperations.validateProblemActTemplateId(
 						(ProblemAct) objectToTest, diagnostician, map);
-			}
+				}
 
-		},
+			},
 
-		// ID
-		// -------------------------------------------------------------
-		new IDCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProblemActOperations.validateProblemActId(
+			// ID
+			// -------------------------------------------------------------
+			new IDCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemActOperations.validateProblemActId((ProblemAct) objectToTest, diagnostician, map);
+				}
+			},
+
+			// EffectiveTime
+			// -------------------------------------------------------------
+			new EffectiveTimeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemActOperations.validateProblemActEffectiveTime(
 						(ProblemAct) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Entry Relationship
+			// -------------------------------------------------------------
+			new EntryRelationshipCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemActOperations.validateProblemActEpisodeObservation(
+						(ProblemAct) objectToTest, diagnostician, map) &&
+							ProblemActOperations.validateProblemActSubjectOfTarget(
+								(ProblemAct) objectToTest, diagnostician, map) &&
+							ProblemActOperations.validateProblemActEntryRelationshipRequired(
+								(ProblemAct) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
+
+					EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+					// er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
+					er.setObservation(CCDFactory.eINSTANCE.createEpisodeObservation());
+					retValue.add(er);
+
+					er = CDAFactory.eINSTANCE.createEntryRelationship();
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+					er.setObservation(CCDFactory.eINSTANCE.createProblemObservation());
+					retValue.add(er);
+
+					er = CDAFactory.eINSTANCE.createEntryRelationship();
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+					er.setObservation(CCDFactory.eINSTANCE.createAlertObservation());
+					retValue.add(er);
+
+					return retValue;
+				}
+			},
+
+			// Patient Awareness
+			// -------------------------------------------------------------
+			new CCDValidationTestCase("participant") {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemActOperations.validateProblemActContainsPatientAwareness(
+						(ProblemAct) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Participant2> retValue = new BasicEList<Participant2>();
+
+					final Participant2 participant = CCDFactory.eINSTANCE.createPatientAwareness();
+					retValue.add(participant);
+					return retValue;
+				}
 			}
-		},
-
-		// EffectiveTime
-		// -------------------------------------------------------------
-		new EffectiveTimeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProblemActOperations
-				.validateProblemActEffectiveTime(
-						(ProblemAct) objectToTest, diagnostician,
-						map);
-			}
-		},
-
-		// Entry Relationship
-		// -------------------------------------------------------------
-		new EntryRelationshipCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProblemActOperations
-				.validateProblemActEpisodeObservation(
-						(ProblemAct) objectToTest, diagnostician,
-						map)
-						&& ProblemActOperations
-						.validateProblemActSubjectOfTarget(
-								(ProblemAct) objectToTest,
-								diagnostician, map)
-								&& ProblemActOperations
-								.validateProblemActEntryRelationshipRequired(
-										(ProblemAct) objectToTest,
-										diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
-
-				EntryRelationship er = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-				// er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
-				er.setObservation(CCDFactory.eINSTANCE
-						.createEpisodeObservation());
-				retValue.add(er);
-
-				er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				er.setObservation(CCDFactory.eINSTANCE
-						.createProblemObservation());
-				retValue.add(er);
-
-				er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				er.setObservation(CCDFactory.eINSTANCE
-						.createAlertObservation());
-				retValue.add(er);
-
-				return retValue;
-			}
-		},
-
-		// Patient Awareness
-		// -------------------------------------------------------------
-		new CCDValidationTestCase("participant") {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProblemActOperations
-				.validateProblemActContainsPatientAwareness(
-						(ProblemAct) objectToTest, diagnostician,
-						map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Participant2> retValue = new BasicEList<Participant2>();
-
-				final Participant2 participant = CCDFactory.eINSTANCE
-				.createPatientAwareness();
-				retValue.add(participant);
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -191,20 +170,15 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-		return ProblemActOperations.validateProblemActClassCode(
-				(ProblemAct) eObjectToValidate, diagnostician, map)
-				&& ProblemActOperations.validateProblemActMoodCode(
-						(ProblemAct) eObjectToValidate, diagnostician, map);
+		return ProblemActOperations.validateProblemActClassCode((ProblemAct) eObjectToValidate, diagnostician, map) &&
+				ProblemActOperations.validateProblemActMoodCode((ProblemAct) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -215,19 +189,16 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	@Test
 	public final void testValidateProblemActCodeNullFlavor() {
 		final ProblemAct pa = (ProblemAct) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(pa);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(pa);
 
-		boolean isValid = ProblemActOperations
-		.validateProblemActCodeNullFlavor(pa, diagnostician, map);
+		boolean isValid = ProblemActOperations.validateProblemActCodeNullFlavor(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), !isValid);
 
 		final CD cd = DatatypesFactory.eINSTANCE.createCD();
 		cd.setNullFlavor(NullFlavor.NA);
 		pa.setCode(cd);
 
-		isValid = ProblemActOperations.validateProblemActCodeNullFlavor(pa,
-				diagnostician, map);
+		isValid = ProblemActOperations.validateProblemActCodeNullFlavor(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 	}
 
@@ -238,27 +209,21 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	 */
 	@Test
 	public void testValidateProblemActContainsProblemObservation() {
-		final ProblemSection problemSection = CCDFactory.eINSTANCE
-		.createProblemSection();
+		final ProblemSection problemSection = CCDFactory.eINSTANCE.createProblemSection();
 		final ProblemAct problemAct = (ProblemAct) getObjectToTest();
 		final Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setAct(problemAct);
 		problemSection.getEntries().add(entry);
 
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(problemAct);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(problemAct);
 
-		boolean isValid = ProblemActOperations
-		.validateProblemActContainsProblemObservation(problemAct,
-				diagnostician, map);
+		boolean isValid = ProblemActOperations.validateProblemActContainsProblemObservation(
+			problemAct, diagnostician, map);
 		assertTrue("Validation passed when it was expected to fail.", !isValid);
 
-		problemAct.addObservation(CCDFactory.eINSTANCE
-				.createProblemObservation());
+		problemAct.addObservation(CCDFactory.eINSTANCE.createProblemObservation());
 
-		isValid = ProblemActOperations
-		.validateProblemActContainsProblemObservation(problemAct,
-				diagnostician, map);
+		isValid = ProblemActOperations.validateProblemActContainsProblemObservation(problemAct, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 	}
 
@@ -269,27 +234,21 @@ public class ProblemActOperationsTest extends StructuralAttributeValidationTest 
 	 */
 	@Test
 	public void testValidateProblemActContainsAlertObservation() {
-		final AlertsSection problemSection = CCDFactory.eINSTANCE
-		.createAlertsSection();
+		final AlertsSection problemSection = CCDFactory.eINSTANCE.createAlertsSection();
 		final ProblemAct problemAct = (ProblemAct) getObjectToTest();
 		final Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setAct(problemAct);
 		problemSection.getEntries().add(entry);
 
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(problemAct);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(problemAct);
 
-		boolean isValid = ProblemActOperations
-		.validateProblemActContainsAlertObservation(problemAct,
-				diagnostician, map);
+		boolean isValid = ProblemActOperations.validateProblemActContainsAlertObservation(
+			problemAct, diagnostician, map);
 		assertTrue("Validation passed when it was expected to fail.", !isValid);
 
-		problemAct
-		.addObservation(CCDFactory.eINSTANCE.createAlertObservation());
+		problemAct.addObservation(CCDFactory.eINSTANCE.createAlertObservation());
 
-		isValid = ProblemActOperations
-		.validateProblemActContainsAlertObservation(problemAct,
-				diagnostician, map);
+		isValid = ProblemActOperations.validateProblemActContainsAlertObservation(problemAct, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 	}
 

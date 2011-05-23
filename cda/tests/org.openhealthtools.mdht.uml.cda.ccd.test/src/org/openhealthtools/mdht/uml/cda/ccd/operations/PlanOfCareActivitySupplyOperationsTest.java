@@ -27,81 +27,71 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  * This class
  */
 @SuppressWarnings({ "nls" })
-public class PlanOfCareActivitySupplyOperationsTest extends
-CCDValidationTest {
+public class PlanOfCareActivitySupplyOperationsTest extends CCDValidationTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.25";
 
 	// This Code may be incorrect, it is not specified in the OCL
 	protected static final String CODE = "ASSERTION";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.5.4";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivitySupplyOperations
-				.validatePlanOfCareActivitySupplyTemplateId(
-						(PlanOfCareActivitySupply) objectToTest,
-						diagnostician, map);
-			}
-
-		},
-
-		// ID
-		// -------------------------------------------------------------
-		new IDCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivitySupplyOperations
-				.validatePlanOfCareActivitySupplyId(
-						(PlanOfCareActivitySupply) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Mood Code
-		// -------------------------------------------------------------
-		new MoodCodeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyMoodCode(
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyTemplateId(
 						(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
-			}
-		},
+				}
 
-		// Mood Code Value
-		// -------------------------------------------------------------
-		new MoodCodeValueCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivitySupplyOperations
-				.validatePlanOfCareActivitySupplyMoodCodeValue(
-						(PlanOfCareActivitySupply) objectToTest,
-						diagnostician, map);
-			}
+			},
 
-			@Override
-			List<Object> getModeCodeValues() {
-				final List<Object> retValue = new ArrayList<Object>();
-				retValue.add(x_DocumentSubstanceMood.INT);
-				retValue.add(x_DocumentSubstanceMood.RQO);
-				retValue.add(x_DocumentSubstanceMood.PRMS);
-				retValue.add(x_DocumentSubstanceMood.PRP);
-				return retValue;
+			// ID
+			// -------------------------------------------------------------
+			new IDCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyId(
+						(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Mood Code
+			// -------------------------------------------------------------
+			new MoodCodeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyMoodCode(
+						(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Mood Code Value
+			// -------------------------------------------------------------
+			new MoodCodeValueCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyMoodCodeValue(
+						(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				List<Object> getModeCodeValues() {
+					final List<Object> retValue = new ArrayList<Object>();
+					retValue.add(x_DocumentSubstanceMood.INT);
+					retValue.add(x_DocumentSubstanceMood.RQO);
+					retValue.add(x_DocumentSubstanceMood.PRMS);
+					retValue.add(x_DocumentSubstanceMood.PRP);
+					return retValue;
+				}
 			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -113,7 +103,7 @@ CCDValidationTest {
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPlanOfCareActivitySupply();
@@ -123,6 +113,5 @@ CCDValidationTest {
 	protected EObject getObjectInitToTest() {
 		return CCDFactory.eINSTANCE.createPlanOfCareActivitySupply().init();
 	}
-
 
 } // PlanOfCareActivitySupplyOperationsTest

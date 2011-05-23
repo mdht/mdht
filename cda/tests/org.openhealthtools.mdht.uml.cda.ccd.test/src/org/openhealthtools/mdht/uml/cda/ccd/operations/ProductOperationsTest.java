@@ -35,11 +35,9 @@ public class ProductOperationsTest extends CCDValidationTest {
 	new TemplateIDValidationTest(PRODUCT_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return ProductOperations.validateProductTemplateId(
-					(Product) objectToTest, diagnostician, map);
+			return ProductOperations.validateProductTemplateId((Product) objectToTest, diagnostician, map);
 		}
 
 	}
